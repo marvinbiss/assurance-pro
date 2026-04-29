@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Environment variables
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+/coverage/
+/playwright-report/
+/test-results/
+
+# TypeScript
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# Misc
+*.log
+npm-debug.log*
+.vercel
+.env*.local
+scripts/.collect-progress.json
+scripts/.enrich-phone-progress.json
+scripts/.enrich-data/
+scripts/.lean-data/
+scripts/.mobile-data/
+scripts/.pw-data/
+scripts/.verify-data/
+scripts/.bulk-data/
+scripts/.gm-data/
+scripts/output/
+
+# Debug/temp files — never commit
+scripts/debug-*
+tmp_audit_*
+audit-prompt.txt
+force-deploy-fix.txt
+test-webhook.txt
+trigger-vercel-deploy.txt
+*.debug.html
+*.bak
