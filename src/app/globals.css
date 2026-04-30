@@ -1,0 +1,875 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================
+   ServicesArtisans - Brand CSS Variables
+   World-class design system
+   =========================================== */
+
+@layer base {
+  :root {
+    /* Brand Colors — Terracotta-first palette */
+    --brand-primary: #E86B4B;
+    --brand-primary-light: #EF9171;
+    --brand-primary-dark: #C24B2A;
+    --brand-primary-50: #FDF1EC;
+    --brand-primary-100: #FADDCF;
+
+    --brand-secondary: #e8960a;
+    --brand-secondary-light: #f2b523;
+    --brand-secondary-dark: #c97308;
+
+    --brand-success: #3D8B68;
+    --brand-success-light: #55A882;
+    --brand-success-50: #F0F7F4;
+
+    --brand-warning: #e8960a;
+    --brand-warning-50: #fefaec;
+
+    --brand-error: #ef4444;
+    --brand-error-50: #fef2f2;
+
+    /* Brand Terracotta */
+    --tc: #E86B4B;
+    --tc-dark: #C24B2A;
+    --tc-light: #F5BAA0;
+    --sand: #F4EFE8;
+    --sand2: #EDE8E1;
+    --sand3: #E5DDD4;
+    --dark-text: #1C1917;
+
+    /* Warm Neutrals (sand-tinted, not cold gray) */
+    --color-white: #ffffff;
+    --color-black: #0F0E0C;
+    --color-gray-50: #FDFAF7;
+    --color-gray-100: #F9F4EE;
+    --color-gray-200: #E5DDD4;
+    --color-gray-300: #D5C9BE;
+    --color-gray-400: #B8A99A;
+    --color-gray-500: #9A8879;
+    --color-gray-600: #7D6A5C;
+    --color-gray-700: #614F43;
+    --color-gray-800: #302C28;
+    --color-gray-900: #1C1917;
+
+    /* Semantic Colors */
+    --color-background: #FDFAF7;
+    --color-surface: var(--color-white);
+    --color-border: #E5DDD4;
+    --color-text-primary: #1C1917;
+    --color-text-secondary: #7D6A5C;
+    --color-text-muted: #B8A99A;
+
+    /* Typography */
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+    /* Font Sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-primary: 0 4px 14px 0 rgba(29, 79, 215, 0.3);
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 200ms ease;
+    --transition-slow: 300ms ease;
+
+    /* Z-Index Scale */
+    --z-dropdown: 1000;
+    --z-sticky: 1100;
+    --z-overlay: 1300;
+    --z-modal: 1400;
+    --z-toast: 1700;
+    --z-tooltip: 1800;
+  }
+
+  /* Dark mode: intentionally disabled — site is light-only.
+     The darkMode:'class' config in tailwind.config.js is kept
+     to prevent Tailwind from auto-applying dark: variants via
+     media query, but no .dark class is ever set on <html>. */
+}
+
+/* ===========================================
+   Brand Component Styles
+   =========================================== */
+
+@layer components {
+  /* Verification Badges (used in VerifiedBadge.tsx) */
+  .verified-badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .verified-badge-identity {
+    @apply bg-blue-100 text-blue-700 border border-blue-200;
+  }
+
+  .verified-badge-insurance {
+    @apply bg-green-100 text-green-700 border border-green-200;
+  }
+
+  .verified-badge-certification {
+    @apply bg-purple-100 text-purple-700 border border-purple-200;
+  }
+
+  .verified-badge-premium {
+    @apply bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 border border-amber-300;
+  }
+
+  .verified-badge-enterprise {
+    @apply bg-gradient-to-r from-slate-100 to-gray-100 text-slate-800 border border-slate-300;
+  }
+
+  /* Trust Score Indicator (used in VerifiedBadge.tsx) */
+  .trust-score {
+    @apply inline-flex items-center gap-1.5;
+  }
+
+  .trust-score-excellent {
+    @apply text-green-600;
+  }
+
+  .trust-score-good {
+    @apply text-blue-600;
+  }
+
+  .trust-score-fair {
+    @apply text-amber-600;
+  }
+
+  .trust-score-poor {
+    @apply text-red-600;
+  }
+
+  /* KYC Status Indicators (used in VerifiedBadge.tsx) */
+  .kyc-status-verified {
+    @apply bg-green-50 border-green-200 text-green-700;
+  }
+
+  .kyc-status-pending {
+    @apply bg-amber-50 border-amber-200 text-amber-700;
+  }
+
+  .kyc-status-rejected {
+    @apply bg-red-50 border-red-200 text-red-700;
+  }
+
+  /* Escrow Status (used in VerifiedBadge.tsx) */
+  .escrow-funded {
+    @apply bg-blue-100 text-blue-700;
+  }
+
+  .escrow-in-progress {
+    @apply bg-amber-100 text-amber-700;
+  }
+
+  .escrow-completed {
+    @apply bg-green-100 text-green-700;
+  }
+
+  .escrow-disputed {
+    @apply bg-red-100 text-red-700;
+  }
+
+  /* ===========================================
+     Premium Card & Button System
+     =========================================== */
+
+  .card-premium {
+    @apply bg-white/95 backdrop-blur-sm border border-sand-300 rounded-2xl
+           shadow-soft hover:shadow-card-hover hover:border-primary-200
+           transition-all duration-300 ease-out;
+  }
+
+  .card-premium:hover {
+    @apply -translate-y-1;
+  }
+
+  .btn-premium-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-gradient-to-r from-primary-400 to-primary-600
+           text-white font-bold rounded-xl
+           shadow-cta
+           hover:from-primary-500 hover:to-primary-700
+           hover:shadow-cta-hover
+           hover:scale-[1.02] hover:-translate-y-0.5
+           active:scale-[0.98] active:translate-y-0
+           transition-all duration-200;
+  }
+
+  .btn-premium-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-charcoal-900 text-white font-bold rounded-xl
+           shadow-md
+           hover:bg-charcoal-800
+           hover:shadow-lg
+           hover:scale-[1.02] hover:-translate-y-0.5
+           active:scale-[0.98] active:translate-y-0
+           transition-all duration-200;
+  }
+}
+
+/* Custom marker styles for Leaflet */
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+.custom-marker > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Leaflet popup styles */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  min-width: 200px;
+}
+
+.leaflet-popup-tip {
+  background: white;
+}
+
+/* Hide Leaflet attribution on mobile */
+@media (max-width: 640px) {
+  .leaflet-control-attribution {
+    display: none;
+  }
+}
+
+/* ===========================================
+   Premium Loading & Animation Utilities
+   =========================================== */
+
+.shimmer-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmerLoad 1.5s infinite;
+}
+
+@keyframes shimmerLoad {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Star pulse animation for rating hover */
+@keyframes starPulse {
+  0%, 100% { transform: scale(1.1); filter: drop-shadow(0 0 0 rgba(232, 150, 10, 0)); }
+  50% { transform: scale(1.2); filter: drop-shadow(0 0 8px rgba(232, 150, 10, 0.4)); }
+}
+
+/* Favorite button bounce animation */
+@keyframes favoriteScale {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+/* Toast fade-in animation */
+@keyframes toastFadeIn {
+  0% { opacity: 0; transform: translateY(-4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================================
+   MOBILE-FIRST UX ENHANCEMENTS
+   World-class mobile experience like Doctolib
+   =========================================== */
+
+/* Safe area support for iOS devices with notch */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Improve tap feedback on mobile — haptic-like press effect */
+@media (hover: none) {
+  button, a[role="button"], [class*="btn"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  button:active,
+  a:active,
+  a[role="button"]:active {
+    transform: scale(0.97);
+    transition: transform 100ms ease;
+  }
+
+  .card-premium:active {
+    transform: scale(0.98);
+    transition-duration: 100ms;
+  }
+}
+
+/* Better mobile input styling */
+@media (max-width: 640px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Mobile-optimized typography — tighter, more readable on small screens */
+@media (max-width: 640px) {
+  h1 { font-size: 1.75rem; line-height: 1.2; }
+  h2 { font-size: 1.375rem; line-height: 1.3; }
+  h3 { font-size: 1.125rem; line-height: 1.4; }
+  p { font-size: 0.9375rem; line-height: 1.7; }
+}
+
+/* Bottom navigation spacer */
+@media (max-width: 767px) {
+  main {
+    padding-bottom: 80px; /* Bottom nav height + safe area */
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  /* Prevent overscroll bounce on iOS */
+  overscroll-behavior: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Touch optimization utilities */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+/* Ensure buttons and interactive elements are easily tappable */
+button, a, [role="button"] {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for iOS double-tap zoom on buttons */
+button {
+  touch-action: manipulation;
+}
+
+/* Smooth transitions for interactive elements (links and buttons only, not form inputs — avoids INP penalty) */
+a, button, [role="button"] {
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+/* Prevent layout shifts */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===========================================
+   CONTENT-VISIBILITY — Skip rendering of
+   off-screen content until scrolled into view.
+   Reduces initial rendering work (CLS-safe
+   because contain-intrinsic-size is specified).
+   =========================================== */
+
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* ===========================================
+   HERO SECTION - Premium Animations
+   =========================================== */
+
+/* Animated mesh gradient background */
+@keyframes meshGradient {
+  0%, 100% {
+    background-position: 0% 50%, 100% 50%, 50% 100%;
+  }
+  25% {
+    background-position: 50% 0%, 0% 100%, 100% 0%;
+  }
+  50% {
+    background-position: 100% 50%, 50% 0%, 0% 50%;
+  }
+  75% {
+    background-position: 50% 100%, 100% 0%, 50% 50%;
+  }
+}
+
+/* Shimmer sweep effect for the search button */
+@keyframes heroShimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+/* Subtle floating animation for background blobs */
+@keyframes blobFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 15px) scale(0.95);
+  }
+}
+
+/* Smooth focus rings — terracotta brand accent */
+:focus-visible {
+  outline: 2px solid #E86B4B;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove default focus outline when not using keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: rgba(232, 107, 75, 0.2);
+  color: inherit;
+}
+
+/* Page entrance animation — disabled to avoid LCP delay.
+   The opacity:0 start frame blocks Largest Contentful Paint
+   until the animation completes. Use ScrollReveal for
+   below-fold section animations instead. */
+
+/* Reviews carousel — infinite scroll */
+@keyframes scroll-carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===========================================
+   BLOG ARTICLE - Premium Reading Experience
+   =========================================== */
+
+/* Article body — base typography */
+.article-body {
+  font-size: 1.0625rem; /* 17px — optimal for long-form reading */
+  line-height: 1.8;
+  color: #374151; /* gray-700 */
+}
+
+@media (min-width: 640px) {
+  .article-body {
+    font-size: 1.125rem; /* 18px on larger screens */
+    line-height: 1.85;
+  }
+}
+
+/* Intro paragraph — larger, bolder opening */
+.article-intro {
+  font-size: 1.1875rem;
+  line-height: 1.75;
+  color: #1f2937; /* gray-800 */
+  font-weight: 450;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+@media (min-width: 640px) {
+  .article-intro {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Regular paragraphs */
+.article-paragraph {
+  margin-bottom: 1.25rem;
+  color: #4b5563; /* gray-600 */
+}
+
+.article-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Section separator — visual break between major sections */
+.article-section {
+  position: relative;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.article-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #e5e7eb 15%,
+    #d1d5db 50%,
+    #e5e7eb 85%,
+    transparent 100%
+  );
+}
+
+@media (min-width: 640px) {
+  .article-section {
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+  }
+}
+
+/* H2 headings — bold, anchored, with amber accent bar */
+.article-h2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-family: var(--font-heading), 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #111827; /* gray-900 */
+  margin-bottom: 1.25rem;
+  scroll-margin-top: 5rem;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .article-h2 {
+    font-size: 1.625rem;
+    gap: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Amber accent bar next to H2 */
+.article-h2-bar {
+  display: block;
+  flex-shrink: 0;
+  width: 4px;
+  min-height: 1.6em;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #e8960a 0%, #c97308 100%);
+  margin-top: 0.15em;
+}
+
+/* H3 headings — slightly smaller, no amber bar */
+.article-h3 {
+  font-family: var(--font-heading), 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #1f2937; /* gray-800 */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  scroll-margin-top: 5rem;
+  letter-spacing: -0.005em;
+}
+
+@media (min-width: 640px) {
+  .article-h3 {
+    font-size: 1.375rem;
+    margin-top: 2.25rem;
+    margin-bottom: 1.125rem;
+  }
+}
+
+/* Lists — unordered and ordered */
+.article-list {
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.article-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.625rem;
+  color: #4b5563; /* gray-600 */
+  line-height: 1.75;
+}
+
+.article-list-unordered li::before {
+  content: '';
+  position: absolute;
+  left: 0.375rem;
+  top: 0.75em;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #e8960a; /* honey-gold-500 */
+}
+
+.article-list-ordered {
+  counter-reset: article-list-counter;
+}
+
+.article-list-ordered li {
+  counter-increment: article-list-counter;
+}
+
+.article-list-ordered li::before {
+  content: counter(article-list-counter) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  color: #e8960a; /* honey-gold-500 */
+  font-size: 0.9375rem;
+}
+
+/* Callout boxes — shared base */
+.article-callout {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.article-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.625rem;
+}
+
+.article-callout-content {
+  color: #374151;
+  line-height: 1.75;
+  font-size: inherit;
+}
+
+.article-callout-content p {
+  margin-bottom: 0.5rem;
+}
+
+.article-callout-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Table — responsive with horizontal scroll */
+.article-table-wrapper {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.article-table thead {
+  background: linear-gradient(135deg, #e8960a 0%, #c97308 100%);
+}
+
+.article-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+
+.article-table th:first-child {
+  border-top-left-radius: 0.75rem;
+}
+
+.article-table th:last-child {
+  border-top-right-radius: 0.75rem;
+}
+
+.article-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+}
+
+.article-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.article-table tbody tr:hover {
+  background-color: #fefaec;
+}
+
+.article-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Blockquote */
+.article-blockquote {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #d1d5db;
+  background-color: #f9fafb;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  color: #4b5563; /* gray-600 */
+  line-height: 1.75;
+}
+
+/* FAQ accordion */
+.article-faq {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.article-faq-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.article-faq-item:hover {
+  border-color: #f2b523;
+}
+
+.article-faq-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background-color: #fafafa;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 500;
+  color: #111827;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: background-color 0.2s ease;
+}
+
+.article-faq-button:hover {
+  background-color: #f5f5f5;
+}
+
+.article-faq-answer {
+  padding: 0 1.25rem 1rem;
+  color: #4b5563;
+  line-height: 1.75;
+  font-size: inherit;
+}
+
+/* ── Scroll Reveal (CSS-only, replaces framer-motion) ── */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+

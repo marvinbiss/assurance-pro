@@ -1,0 +1,84 @@
+/**
+ * Newsletter API - Assurance Pro
+ * Handles newsletter subscriptions
+ */
+
+import { NextResponse } from 'next/server'
+import { logger } from '@/lib/logger'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limiter'
+import { getResendClient } from '@/lib/api/resend-client'
+import { z } from 'zod'
+
+export const dynamic = 'force-dynamic'
+
+const getResend = () => getResendClient()
+
+const newsletterSchema = z.object({
+  email: z.string().email('Email invalide'),
+})
+
+export async function POST(request: Request) {
+  try {
+    // Rate limiting (public endpoint — 3 requests per 5 min per IP)
+    const ip = getClientIp(request.headers)
+    const rl = await checkRateLimit(`newsletter:${ip}`, { window: 300_000, max: 3 })
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { error: 'Trop de requêtes, veuillez réessayer plus tard' },
+        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) } }
+      )
+    }
+
+    const body = await request.json()
+
+    // Validate input
+    const validation = newsletterSchema.safeParse(body)
+    if (!validation.success) {
+      return NextResponse.json(
+        { error: 'Email invalide' },
+        { status: 400 }
+      )
+    }
+
+    const { email } = validation.data
+
+    // Send welcome email (non-blocking — don't crash signup if email fails)
+    try {
+      await getResend().emails.send({
+        from: process.env.FROM_EMAIL || 'noreply@assurance-pro.fr',
+        to: email,
+        subject: 'Bienvenue dans la newsletter Assurance Pro !',
+        html: `
+          <h2>Bienvenue !</h2>
+          <p>Merci de vous être inscrit à notre newsletter.</p>
+          <p>Vous recevrez régulièrement nos meilleurs articles et conseils pour vos projets de travaux :</p>
+          <ul>
+            <li>Guides pratiques</li>
+            <li>Conseils d'experts</li>
+            <li>Tendances déco</li>
+            <li>Aides et subventions</li>
+          </ul>
+          <p>À bientôt sur Assurance Pro !</p>
+          <hr />
+          <p style="color: #666; font-size: 12px;">
+            Pour vous désinscrire, répondez simplement à cet email.<br />
+            <a href="https://assurance-pro.fr">assurance-pro.fr</a>
+          </p>
+        `,
+      })
+    } catch (emailError) {
+      logger.error('Newsletter welcome email failed', emailError)
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Inscription enregistrée',
+    })
+  } catch (error) {
+    logger.error('Newsletter API error', error)
+    return NextResponse.json(
+      { error: 'Erreur serveur' },
+      { status: 500 }
+    )
+  }
+}

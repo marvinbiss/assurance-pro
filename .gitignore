@@ -53,3 +53,26 @@ test-webhook.txt
 trigger-vercel-deploy.txt
 *.debug.html
 *.bak
+
+# Sentry
+.sentryclirc
+sentry.properties
+
+# Supabase local
+/supabase/.temp/
+/supabase/.branches/
+
+# Backups
+*.bak
+*.backup
+package.json.bak
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Local Development
+.env.development.local
