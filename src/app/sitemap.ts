@@ -94,6 +94,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'assurance-habitation-professionnelle', priority: 0.85, changeFrequency: 'weekly' },  // 150 vol KD 0 CPC 300€
   { path: 'assurance-mission-professionnelle', priority: 0.85, changeFrequency: 'weekly' },     // 150 vol KD 0 CPC 140€
 
+  // Sprint 1 KPMG — Lot 11 : 5 piliers (comparateur, juridique, santé pro, EI, décennale ME)
+  { path: 'comparateur-assurance-professionnelle', priority: 0.9, changeFrequency: 'weekly' }, // 700 vol KD 5
+  { path: 'assurance-juridique-professionnelle', priority: 0.85, changeFrequency: 'weekly' },  // 150 vol KD 0 CPC 200€
+  { path: 'assurance-sante-professionnelle', priority: 0.85, changeFrequency: 'weekly' },      // 150 vol KD 0 CPC 450€
+  { path: 'assurance-pour-entreprise-individuelle', priority: 0.85, changeFrequency: 'weekly' }, // 150 vol KD 0 CPC 350€
+  { path: 'assurance-decennale/micro-entreprise', priority: 0.85, changeFrequency: 'weekly' }, // 150 vol KD 0 CPC 500€
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
