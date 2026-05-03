@@ -47,6 +47,11 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'guides/dommages-ouvrage', priority: 0.85, changeFrequency: 'monthly' },      // 400 vol (famille 1 200)
   { path: 'guides/parfait-achevement', priority: 0.8, changeFrequency: 'monthly' },     // april capte 1 052 vis/mois
 
+  // Sprint 1 KPMG — 3 piliers verticaux à fort CPC (KD 0-1, 78-99% marché vacant)
+  { path: 'assurance-local-commercial', priority: 0.9, changeFrequency: 'weekly' },     // 800 vol KD 0 CPC 600€ (famille 1 550)
+  { path: 'assurance-restaurant', priority: 0.9, changeFrequency: 'weekly' },           // 400 vol KD 1 CPC 600€ (famille 800)
+  { path: 'assurance-bureau', priority: 0.85, changeFrequency: 'weekly' },              // 250 vol KD 0 CPC 700€ (famille 600)
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
