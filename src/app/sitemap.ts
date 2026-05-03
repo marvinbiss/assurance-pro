@@ -52,6 +52,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'assurance-restaurant', priority: 0.9, changeFrequency: 'weekly' },           // 400 vol KD 1 CPC 600€ (famille 800)
   { path: 'assurance-bureau', priority: 0.85, changeFrequency: 'weekly' },              // 250 vol KD 0 CPC 700€ (famille 600)
 
+  // Sprint 1 KPMG — Lot 5 : 4 piliers + 1 guide (familles 8 140 vol/mois cumulé)
+  { path: 'assurance-commerce', priority: 0.9, changeFrequency: 'weekly' },             // 500 vol KD 1 CPC 500€ (famille 1 710)
+  { path: 'assurance-taxi', priority: 0.9, changeFrequency: 'weekly' },                 // 500 vol KD 0 CPC 250€ (famille 1 510 — 98% vacant)
+  { path: 'prevoyance-tns', priority: 0.85, changeFrequency: 'weekly' },                // 500 vol KD 4 CPC 350€ (famille 1 350)
+  { path: 'assurance-artisan', priority: 0.9, changeFrequency: 'weekly' },              // 400 vol KD 1 CPC 300€ (famille 2 650)
+  { path: 'guides/attestation-rc-pro', priority: 0.85, changeFrequency: 'monthly' },    // 350 vol KD 3 CPC 450€ (famille 920)
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
