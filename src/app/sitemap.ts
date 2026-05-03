@@ -42,6 +42,11 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'assurance-decennale/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' }, // 800 vol/mois
   { path: 'assurance-homme-cle', priority: 0.85, changeFrequency: 'weekly' },        // 1 100 vol/mois
 
+  // Sprint 1 KPMG — guides juridiques (long-tail concentré + concurrents validés)
+  { path: 'guides/attestation-decennale', priority: 0.85, changeFrequency: 'monthly' }, // 600 vol KD 1 (famille 1 800)
+  { path: 'guides/dommages-ouvrage', priority: 0.85, changeFrequency: 'monthly' },      // 400 vol (famille 1 200)
+  { path: 'guides/parfait-achevement', priority: 0.8, changeFrequency: 'monthly' },     // april capte 1 052 vis/mois
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
