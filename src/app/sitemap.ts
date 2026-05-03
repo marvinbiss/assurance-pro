@@ -101,6 +101,12 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'assurance-pour-entreprise-individuelle', priority: 0.85, changeFrequency: 'weekly' }, // 150 vol KD 0 CPC 350€
   { path: 'assurance-decennale/micro-entreprise', priority: 0.85, changeFrequency: 'weekly' }, // 150 vol KD 0 CPC 500€
 
+  // Sprint 1 KPMG — Lot 12 FINAL : 4 piliers (atteint 50/50 = 100%)
+  { path: 'guides/quelle-assurance-professionnelle-choisir', priority: 0.9, changeFrequency: 'monthly' }, // 700 vol KD 7 (guide hub)
+  { path: 'assurance-obligatoire-entreprise', priority: 0.9, changeFrequency: 'weekly' },     // 150 vol KD 0 (liste exhaustive)
+  { path: 'prevoyance-artisan', priority: 0.85, changeFrequency: 'weekly' },                  // 150 vol KD 0 CPC 250€ (sectoriel BTP)
+  { path: 'assurance-sasu', priority: 0.85, changeFrequency: 'weekly' },                      // long-tail SASU (assimilé salarié)
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
