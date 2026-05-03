@@ -121,6 +121,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'assurance-decennale/photovoltaique', priority: 0.85, changeFrequency: 'weekly' },  // RGE PV sous-route
   { path: 'guides/resiliation-assurance-professionnelle', priority: 0.8, changeFrequency: 'monthly' }, // Loi Hamon
 
+  // Sprint 2 Lot 15 : 5 piliers métiers RC Pro (coiffeur, esthétique, photographe, coach, formateur)
+  { path: 'rc-pro/coiffeur', priority: 0.85, changeFrequency: 'weekly' },                     // 200 vol
+  { path: 'rc-pro/esthetique', priority: 0.85, changeFrequency: 'weekly' },                   // 250 vol KD 0
+  { path: 'rc-pro/photographe', priority: 0.85, changeFrequency: 'weekly' },                  // 290 vol KD 0
+  { path: 'rc-pro/coach-sportif', priority: 0.85, changeFrequency: 'weekly' },                // 200 vol KD 0 OBLIGATOIRE
+  { path: 'rc-pro/formateur', priority: 0.85, changeFrequency: 'weekly' },                    // 70+50 vol KD 0
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
