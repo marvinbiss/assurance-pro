@@ -80,6 +80,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'protection-juridique-professionnelle', priority: 0.85, changeFrequency: 'weekly' },  // 200 vol KD 1 CPC 250€
   { path: 'assurance-sante-entreprise', priority: 0.85, changeFrequency: 'weekly' },            // 200 vol KD 11 CPC 150€ (mutuelle collective ANI 2013)
 
+  // Sprint 1 KPMG — Lot 9 : 3 piliers + 2 guides (~1 350 vol direct, complémentaires)
+  { path: 'assurance-auto-entreprise', priority: 0.9, changeFrequency: 'weekly' },              // 600 vol KD 7 CPC 300€
+  { path: 'assurance-dommages-ouvrage', priority: 0.9, changeFrequency: 'weekly' },             // 150 vol KD 0 (transactionnel DO maître ouvrage)
+  { path: 'assurance-chauffeur-taxi', priority: 0.85, changeFrequency: 'weekly' },              // 200 vol KD 0 (sous-pilier /assurance-taxi)
+  { path: 'guides/tous-risques-chantier', priority: 0.85, changeFrequency: 'monthly' },         // 200 vol KD 0 CPC 80€ (guide TRC)
+  { path: 'guides/avocat-litige-assurance', priority: 0.8, changeFrequency: 'monthly' },        // 200 vol KD 0 CPC 60€ (famille 700)
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
