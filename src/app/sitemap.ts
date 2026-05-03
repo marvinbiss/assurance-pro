@@ -35,6 +35,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'rc-pro-avocat', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'rc-pro-medecin', priority: 0.85, changeFrequency: 'monthly' },
 
+  // Sprint 1 KPMG — piliers data-driven (Ahrefs vol >= 100, KD <= 30)
+  { path: 'mutuelle-pro-btp', priority: 0.95, changeFrequency: 'weekly' },           // 16 000 vol/mois
+  { path: 'mutuelle-tns', priority: 0.9, changeFrequency: 'weekly' },                // 1 400 vol/mois
+  { path: 'rc-pro/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' },    // 1 900 vol/mois
+  { path: 'assurance-decennale/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' }, // 800 vol/mois
+  { path: 'assurance-homme-cle', priority: 0.85, changeFrequency: 'weekly' },        // 1 100 vol/mois
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
