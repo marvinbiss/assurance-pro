@@ -17,6 +17,7 @@ import {
   decennaleStaticSlugs,
   rcProStaticSlugs,
 } from '@/lib/seo/garantie-slug-dispatcher'
+import { getMetierSlugs as getDecennaleMetierSlugs } from '@/lib/data/decennale-metiers'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'
 
@@ -97,8 +98,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.4,
   }))
 
-  // Phase 1 : 4 nouvelles verticales avec routes ville (template générique).
   const villeSlugs = getVilleSlugs()
+
+  // Phase 3 — routes nested décennale × ville (37 métiers × 100 villes ≈ 3 700 URLs).
+  // Long-tail pSEO : "décennale plombier paris", "décennale couvreur lyon", etc.
+  const decennaleNested = getDecennaleMetierSlugs().flatMap((metier) =>
+    villeSlugs.map((ville) => ({
+      url: `${BASE_URL}/assurance-decennale/${metier}/${ville}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as ChangeFrequency,
+      priority: 0.75,
+    }))
+  )
+
+  // Phase 1 : 4 nouvelles verticales avec routes ville (template générique).
   const verticales: Array<'multirisque-pro' | 'mutuelle-pro' | 'assurance-vtc' | 'cyber-assurance'> = [
     'multirisque-pro',
     'mutuelle-pro',
@@ -139,6 +152,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticEntries,
     ...decennaleSlugs,
     ...rcProSlugs,
+    ...decennaleNested,
     ...villesParVerticale,
     ...ipidProducts,
     ...blogPosts,
