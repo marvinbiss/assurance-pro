@@ -107,6 +107,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'prevoyance-artisan', priority: 0.85, changeFrequency: 'weekly' },                  // 150 vol KD 0 CPC 250€ (sectoriel BTP)
   { path: 'assurance-sasu', priority: 0.85, changeFrequency: 'weekly' },                      // long-tail SASU (assimilé salarié)
 
+  // Sprint 2 Lot 13 : 3 guides + 2 piliers (avocat IAS, AM médecin, travaux, courtier)
+  { path: 'guides/avocat-specialise-assurance', priority: 0.8, changeFrequency: 'monthly' },  // 200 vol KD 0
+  { path: 'guides/carte-professionnelle-assurance', priority: 0.8, changeFrequency: 'monthly' }, // 200 vol KD 0 CPC 200€
+  { path: 'guides/numero-assurance-maladie-medecin', priority: 0.8, changeFrequency: 'monthly' }, // 300 vol KD 4
+  { path: 'assurance-travaux-artisan', priority: 0.85, changeFrequency: 'weekly' },           // 150 vol KD 3 CPC 100€
+  { path: 'courtier-assurance-pro', priority: 0.85, changeFrequency: 'weekly' },              // 100 vol KD 13 CPC 350€
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
