@@ -73,6 +73,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'assurance-freelance', priority: 0.85, changeFrequency: 'weekly' },                   // 250 vol KD 1 CPC 350€ (famille 410)
   { path: 'guides/devis-assurance-professionnelle', priority: 0.85, changeFrequency: 'monthly' }, // 450 vol KD 17 CPC 600€ (money KW)
 
+  // Sprint 1 KPMG — Lot 8 : 5 piliers (~1 350 vol/mois cumulé direct, marchés vacants KD 0-1)
+  { path: 'assurance-btp', priority: 0.9, changeFrequency: 'weekly' },                          // 500 vol KD 27 CPC 250€ (HUB BTP global)
+  { path: 'assurance-locaux-entreprise', priority: 0.85, changeFrequency: 'weekly' },           // 250 vol KD 1 CPC 350€ (vacant)
+  { path: 'assurance-flotte-automobile', priority: 0.85, changeFrequency: 'weekly' },           // 200 vol KD 0 CPC 400€ (vacant)
+  { path: 'protection-juridique-professionnelle', priority: 0.85, changeFrequency: 'weekly' },  // 200 vol KD 1 CPC 250€
+  { path: 'assurance-sante-entreprise', priority: 0.85, changeFrequency: 'weekly' },            // 200 vol KD 11 CPC 150€ (mutuelle collective ANI 2013)
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
