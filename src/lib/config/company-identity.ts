@@ -1,25 +1,25 @@
 /**
- * Company Identity — Single Source of Truth
+ * Company Identity — Single Source of Truth (Assurance Pro, courtier ORIAS).
  *
- * CHARTER.md Source Hierarchy:
- *   Level 1 (Legal docs): siret, legalName, address, phone, rcs, tva
- *   Level 5 (UI copy): description, tagline
+ * Hiérarchie des sources :
+ *   Niveau 1 (mentions légales) : siret, legalName, address, phone, rcs, tva, orias
+ *   Niveau 5 (UI copy) : description, tagline
  *
- * RULE: Any field that is `null` MUST NOT appear in:
- *   - Structured data (JSON-LD)
- *   - Mentions légales
- *   - Footer contact section
+ * RÈGLE : tout champ `null` ne doit JAMAIS apparaître dans :
+ *   - Le JSON-LD structuré
+ *   - Les mentions légales
+ *   - Le footer
  *
- * When the company is registered, update the null fields here.
- * Every page that imports this file will automatically reflect the change.
+ * À jour au registre ORIAS ⇒ remplir les variables d'environnement
+ * `COMPANY_*` (voir .env.example).
  */
 
 export const companyIdentity = {
   // Brand (Level 5 — UI copy only)
   name: 'Assurance Pro' as const,
-  tagline: 'Trouvez des artisans qualifiés près de chez vous',
+  tagline: 'Courtier ORIAS — comparez et négociez votre assurance pro en 2 minutes',
   description:
-    'Des artisans référencés dans toute la France grâce aux données SIREN officielles. Comparez, contactez et trouvez le bon professionnel en quelques clics.',
+    'Cabinet de courtage ORIAS spécialiste de l\'assurance professionnelle. 10 assureurs partenaires comparés sur 17 verticaux : décennale BTP, RC Pro, multirisque, mutuelle TNS Madelin, VTC, cyber. Aucun frais de courtage facturé.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://assurance-pro.fr',
 
   // Legal identity (Level 1 — from env vars, null until company registration)
@@ -61,19 +61,7 @@ export const companyIdentity = {
   status: (process.env.COMPANY_STATUS as 'pre-launch' | 'launched') || 'launched',
 }
 
-/**
- * Centralized marketing statistics — Single Source of Truth.
- * Import this in any component that displays platform numbers.
- */
-export const marketingStats = {
-  artisanCount: 'SIREN',
-  artisanCountShort: 'SIREN',
-  cityCount: '1 000+',
-  serviceCount: '46',
-  responseTime: 'Variable',
-} as const
-
-/** True when SIRET, legal name, and address are all filled. */
+/** True quand l'identité légale du cabinet est entièrement renseignée. */
 export function isCompanyRegistered(): boolean {
   return (
     companyIdentity.siret !== null &&
@@ -82,12 +70,7 @@ export function isCompanyRegistered(): boolean {
   )
 }
 
-/** True once the platform has real artisans / is live. */
-export function isPlatformLaunched(): boolean {
-  return companyIdentity.status === 'launched'
-}
-
-/** Non-null social profile URLs for schema.org sameAs. */
+/** URLs sociales non-nulles pour schema.org sameAs. */
 export function getSocialLinks(): string[] {
   return Object.values(companyIdentity.social).filter(Boolean)
 }

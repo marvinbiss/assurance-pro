@@ -7,8 +7,9 @@ type LogLevel = 'debug' | 'info' | 'warn' | 'error'
 
 export interface LogContext {
   userId?: string
-  bookingId?: string
-  artisanId?: string
+  reference?: string
+  ticket?: string
+  leadId?: string
   action?: string
   [key: string]: unknown
 }
@@ -74,6 +75,7 @@ function createLogger(defaultContext?: LogContext): AppLogger {
     debug(a?: string | LogContext, b?: string | LogContext): void {
       if (shouldLog('debug')) {
         const { message, context } = normaliseArgs(a, b)
+        // eslint-disable-next-line no-console -- this IS the structured logger sink
         console.log(formatMessage('debug', message, mergeContext(context)))
       }
     },
@@ -81,6 +83,7 @@ function createLogger(defaultContext?: LogContext): AppLogger {
     info(a?: string | LogContext, b?: string | LogContext): void {
       if (shouldLog('info')) {
         const { message, context } = normaliseArgs(a, b)
+        // eslint-disable-next-line no-console -- this IS the structured logger sink
         console.log(formatMessage('info', message, mergeContext(context)))
       }
     },
@@ -137,11 +140,5 @@ function createLogger(defaultContext?: LogContext): AppLogger {
 }
 
 export const logger = createLogger()
-
-// Named child loggers for specific subsystems
-export const apiLogger = logger.child({ component: 'api' })
-export const dbLogger = logger.child({ component: 'database' })
-export const authLogger = logger.child({ component: 'auth' })
-export const paymentLogger = logger.child({ component: 'payment' })
 
 export default logger

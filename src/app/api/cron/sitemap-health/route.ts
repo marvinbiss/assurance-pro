@@ -1,13 +1,14 @@
 import { NextResponse } from 'next/server'
 import { SITE_URL } from '@/lib/seo/config'
+import { verifyCronAuthorization } from '@/lib/security/cron-auth'
+import { logger } from '@/lib/logger'
 
 /**
  * Daily cron: Verify all sitemaps return HTTP 200 with valid XML.
  * Alerts via structured logging (visible in Vercel logs).
  */
 export async function GET(request: Request) {
-  const authHeader = request.headers.get('authorization')
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  if (!verifyCronAuthorization(request.headers.get('authorization'))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
@@ -21,9 +22,10 @@ export async function GET(request: Request) {
   const indexXml = await indexRes.text()
   const locRegex = /<loc>(.*?)<\/loc>/g
   const sitemapUrls: string[] = []
-  let match
+  let match: RegExpExecArray | null
   while ((match = locRegex.exec(indexXml)) !== null) {
-    sitemapUrls.push(match[1]!)
+    const url = match[1]
+    if (url) sitemapUrls.push(url)
   }
 
   // Check each child sitemap
@@ -69,9 +71,9 @@ export async function GET(request: Request) {
   const allOk = failures.length === 0
 
   if (!allOk) {
-    console.error(`[sitemap-health] ALERT: ${failures.length} sitemaps failed:`, failures)
+    logger.error({ failures }, 'sitemap-health: failures detected')
   } else {
-    console.log(`[sitemap-health] OK: ${results.length} sitemaps healthy, ${totalUrls} total URLs`)
+    logger.info({ checked: results.length, urls: totalUrls }, 'sitemap-health: all healthy')
   }
 
   return NextResponse.json({

@@ -15,11 +15,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          '/auth/',
-          '/connexion',
-          '/inscription',
-          '/mot-de-passe-oublie',
-          '/definir-mot-de-passe',
           '/devis/merci',
           '/_next/',
           '/private/',

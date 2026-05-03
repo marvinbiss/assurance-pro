@@ -1,135 +1,119 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import Link from 'next/link'
 import { SITE_URL } from '@/lib/seo/config'
-import ContactPageClient from './ContactPageClient'
-import Breadcrumb from '@/components/Breadcrumb'
-import JsonLd from '@/components/JsonLd'
-import { getBreadcrumbSchema } from '@/lib/seo/jsonld'
-import { getPageContent } from '@/lib/cms'
-import { CmsContent } from '@/components/CmsContent'
-
-const contactTitle = 'Contactez l\'équipe Assurance Pro — Support & Questions'
 
 export const metadata: Metadata = {
-  title: contactTitle,
-  description: 'Contactez l\'équipe Assurance Pro pour toute question sur notre annuaire d\'artisans. Formulaire de contact, email et assistance rapide.',
-  alternates: {
-    canonical: `${SITE_URL}/contact`,
-  },
-  openGraph: {
-    title: contactTitle,
-    description: 'Contactez l\'équipe Assurance Pro pour toute question sur notre annuaire d\'artisans.',
-    url: `${SITE_URL}/contact`,
-    type: 'website',
-    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: 'Assurance Pro — Contact' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: contactTitle,
-    description: 'Contactez l\'équipe Assurance Pro pour toute question sur notre annuaire d\'artisans.',
-    images: [`${SITE_URL}/opengraph-image`],
-  },
+  title: 'Contact — Cabinet de courtage ORIAS | Assurance Pro',
+  description:
+    'Contactez notre cabinet de courtage ORIAS. Conseil personnalisé, devis gratuit, gestion sinistres. Réponse sous 24h ouvrées.',
+  alternates: { canonical: `${SITE_URL}/contact` },
 }
 
-export const revalidate = 86400
-
-export default async function ContactPage() {
-  const cmsPage = await getPageContent('contact', 'static')
-
-  if (cmsPage?.content_html) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <JsonLd data={getBreadcrumbSchema([
-          { name: 'Accueil', url: '/' },
-          { name: 'Contact', url: '/contact' },
-        ])} />
-        <section className="bg-white border-b">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <Breadcrumb items={[{ label: 'Contact' }]} className="mb-4" />
-            <h1 className="font-heading text-3xl font-bold text-gray-900">
-              {cmsPage.title}
-            </h1>
-          </div>
-        </section>
-        <section className="py-12">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-xl shadow-sm p-8">
-              <CmsContent html={cmsPage.content_html} />
-            </div>
-          </div>
-        </section>
-      </div>
-    )
-  }
-
+export default function ContactPage() {
   return (
-    <>
-      <JsonLd data={getBreadcrumbSchema([
-        { name: 'Accueil', url: '/' },
-        { name: 'Contact', url: '/contact' },
-      ])} />
+    <main className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <header className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">Nous contacter</h1>
+          <p className="text-gray-600 text-lg">
+            Cabinet de courtage ORIAS — Conseil personnalisé, gestion contrats, sinistres et réclamations
+          </p>
+        </header>
 
-      {/* Server-rendered intro for SEO — visible content before client hydration */}
-      <div className="min-h-screen bg-gray-50">
-        <section className="relative bg-[#0a0f1e] text-white overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0" style={{
-              background: 'radial-gradient(ellipse 80% 50% at 50% -10%, rgba(37,99,235,0.18) 0%, transparent 60%), radial-gradient(ellipse 60% 60% at 80% 110%, rgba(37,99,235,0.1) 0%, transparent 50%), radial-gradient(ellipse 50% 40% at 10% 90%, rgba(59,130,246,0.06) 0%, transparent 50%)',
-            }} />
-            <div className="absolute inset-0 opacity-[0.025]" style={{
-              backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-              backgroundSize: '64px 64px',
-            }} />
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-50 to-transparent" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 text-center">
+            <div className="text-3xl mb-3" aria-hidden="true">💼</div>
+            <h2 className="font-semibold mb-2">Demande de devis</h2>
+            <p className="text-sm text-gray-600 mb-4">
+              Recevez vos devis personnalisés sur 10 assureurs en 24&nbsp;heures.
+            </p>
+            <Link
+              href="/devis"
+              className="inline-block w-full px-4 py-2 bg-blue-700 text-white rounded font-semibold hover:bg-blue-800"
+            >
+              Devis gratuit →
+            </Link>
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-28 md:pt-14 md:pb-36">
-            <Breadcrumb
-              items={[{ label: 'Contact' }]}
-              className="mb-6 text-slate-400 [&_a]:text-slate-400 [&_a:hover]:text-white [&_svg]:text-slate-600"
-            />
-            <div className="text-center">
-              <h1 className="font-heading text-4xl md:text-5xl font-extrabold mb-4 tracking-[-0.025em]">
-                Contactez Assurance Pro
-              </h1>
-              <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-                Une question sur notre annuaire d&apos;artisans ? Notre équipe est disponible pour vous aider par email, téléphone ou via le formulaire ci-dessous.
-              </p>
-            </div>
-          </div>
-        </section>
 
-        {/* Server-rendered contact info for SEO */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Nos coordonnées</h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-semibold text-gray-900">Email</h3>
-                  <p><a href="mailto:contact@assurance-pro.fr" className="text-blue-600 hover:underline font-medium">contact@assurance-pro.fr</a></p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">Téléphone</h3>
-                  <p><a href="tel:+33651858930" className="text-blue-600 hover:text-blue-700 font-medium">06 51 85 89 30</a></p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">Horaires d&apos;ouverture</h3>
-                  <p className="text-gray-600">Lundi - Vendredi : 9h - 18h</p>
-                  <p className="text-gray-600">Samedi : 9h - 12h</p>
-                </div>
-              </div>
-              <div className="mt-8">
-                <h3 className="font-semibold text-gray-900 mb-2">Besoin d&apos;aide rapide ?</h3>
-                <p className="text-gray-600 text-sm">
-                  Consultez notre <a href="/faq" className="text-blue-600 hover:underline">FAQ</a> pour trouver des réponses aux questions les plus fréquentes sur l&apos;utilisation de Assurance Pro, la demande de devis ou l&apos;inscription en tant qu&apos;artisan.
-                </p>
-              </div>
-            </div>
-            <div className="lg:col-span-2">
-              <ContactPageClient />
-            </div>
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 text-center">
+            <div className="text-3xl mb-3" aria-hidden="true">📧</div>
+            <h2 className="font-semibold mb-2">Email général</h2>
+            <p className="text-sm text-gray-600 mb-4">
+              Pour toute question sur nos services, conseil produit, partenariat.
+            </p>
+            <a
+              href="mailto:contact@assurance-pro.fr"
+              className="inline-block w-full px-4 py-2 border border-blue-700 text-blue-700 rounded font-semibold hover:bg-blue-50"
+            >
+              contact@assurance-pro.fr
+            </a>
           </div>
-        </section>
+
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 text-center">
+            <div className="text-3xl mb-3" aria-hidden="true">📞</div>
+            <h2 className="font-semibold mb-2">Téléphone</h2>
+            <p className="text-sm text-gray-600 mb-4">
+              Lundi-vendredi 9h-19h. Conseiller ORIAS dédié.
+            </p>
+            <a
+              href="tel:+33186652485"
+              className="inline-block w-full px-4 py-2 border border-blue-700 text-blue-700 rounded font-semibold hover:bg-blue-50"
+            >
+              01 86 65 24 85
+            </a>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-10">
+          <h2 className="text-xl font-bold mb-4">Réclamations</h2>
+          <p className="text-gray-700 mb-3">
+            Pour toute réclamation, vous pouvez nous écrire à&nbsp;:
+          </p>
+          <p className="mb-3">
+            <a href="mailto:reclamations@assurance-pro.fr" className="text-blue-700 underline font-semibold">
+              reclamations@assurance-pro.fr
+            </a>
+          </p>
+          <p className="text-sm text-gray-600 mb-4">
+            Conformément à la <strong>Recommandation ACPR 2024-R-02</strong>, nous nous engageons à&nbsp;:
+          </p>
+          <ul className="list-disc pl-6 text-sm text-gray-700 space-y-1 mb-4">
+            <li>Vous accuser réception sous <strong>10 jours ouvrés</strong></li>
+            <li>Vous répondre sur le fond sous <strong>2 mois maximum</strong></li>
+            <li>Vous tenir informé(e) à chaque étape</li>
+          </ul>
+          <p className="text-sm text-gray-600">
+            En cas de désaccord persistant, vous pouvez saisir le{' '}
+            <a
+              href="https://www.mediation-assurance.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 underline"
+            >
+              Médiateur de l&apos;Assurance
+            </a>{' '}
+            (TSA 50110, 75441 Paris cedex 09).
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-xl font-bold mb-4">Vos données personnelles</h2>
+          <p className="text-sm text-gray-700 leading-relaxed">
+            Conformément au RGPD, les données personnelles que vous nous transmettez sont traitées par notre
+            cabinet en sa qualité de responsable de traitement, aux fins de répondre à votre demande et de
+            vous présenter une offre d&apos;assurance adaptée. Durée de conservation&nbsp;: 3&nbsp;ans à compter du
+            dernier contact en l&apos;absence de souscription.
+          </p>
+          <p className="text-sm text-gray-700 mt-3">
+            Pour exercer vos droits (accès, rectification, effacement, opposition, portabilité, retrait du
+            consentement)&nbsp;:{' '}
+            <a href="mailto:dpo@assurance-pro.fr" className="text-blue-700 underline">
+              dpo@assurance-pro.fr
+            </a>
+            . Vous pouvez également adresser une réclamation à la CNIL.
+          </p>
+        </div>
       </div>
-    </>
+    </main>
   )
 }

@@ -10,7 +10,10 @@
  * Sortie : POST /api/devis-assurance → scoring + dispatch routing
  */
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+
+const DRAFT_STORAGE_KEY = 'devis_draft_v1'
+const DRAFT_TTL_MS = 24 * 60 * 60 * 1000 // 24h
 
 type Step = 1 | 2 | 3
 
@@ -37,6 +40,7 @@ interface FormData {
   siret: string
   consent_rgpd: boolean
   consent_marketing: boolean
+  consent_fic_ipid: boolean
 }
 
 interface Props {
@@ -64,6 +68,7 @@ const initialData: FormData = {
   siret: '',
   consent_rgpd: false,
   consent_marketing: false,
+  consent_fic_ipid: false,
 }
 
 export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubmitted }: Props) {
@@ -71,14 +76,75 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
   const [data, setData] = useState<FormData>({ ...initialData, ...prefill })
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const stepHeadingRef = useRef<HTMLHeadingElement | null>(null)
+  const errorRef = useRef<HTMLDivElement | null>(null)
+
+  // Hydratation localStorage (TTL 24h) — anti-abandon courtage.
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    try {
+      const raw = localStorage.getItem(DRAFT_STORAGE_KEY)
+      if (!raw) return
+      const parsed = JSON.parse(raw) as { savedAt: number; data: Partial<FormData> }
+      if (!parsed?.savedAt || Date.now() - parsed.savedAt > DRAFT_TTL_MS) {
+        localStorage.removeItem(DRAFT_STORAGE_KEY)
+        return
+      }
+      // Ne pas écraser un prefill JWT cross-domain (déjà appliqué).
+      setData((d) => ({ ...parsed.data, ...d, ...prefill }))
+    } catch {
+      // ignore parse errors
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // Persistance à chaque update (debounce léger via JSON.stringify).
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    try {
+      // On NE persiste PAS les données sensibles : siret + email + téléphone restent
+      // en mémoire seule pour limiter l'exposition en cas de partage de PC.
+      const safe = { ...data, siret: '', email: '', telephone: '' }
+      localStorage.setItem(
+        DRAFT_STORAGE_KEY,
+        JSON.stringify({ savedAt: Date.now(), data: safe })
+      )
+    } catch {
+      // quota exceeded ; ignore
+    }
+  }, [data])
+
+  // Focus management : à chaque changement d'étape, focus sur le H2 de la nouvelle étape.
+  useEffect(() => {
+    stepHeadingRef.current?.focus()
+  }, [step])
+
+  // Focus l'erreur quand elle apparaît.
+  useEffect(() => {
+    if (error) errorRef.current?.focus()
+  }, [error])
 
   function update<K extends keyof FormData>(key: K, value: FormData[K]) {
     setData((d) => ({ ...d, [key]: value }))
   }
 
+  function clearDraft() {
+    try {
+      if (typeof window !== 'undefined') localStorage.removeItem(DRAFT_STORAGE_KEY)
+    } catch {
+      // ignore
+    }
+  }
+
   async function handleSubmit() {
     if (!data.consent_rgpd) {
       setError('Le consentement RGPD est obligatoire pour traiter votre demande.')
+      return
+    }
+    if (!data.consent_fic_ipid) {
+      setError(
+        "Vous devez confirmer avoir consulté la Fiche d'Information Précontractuelle (FIC) et la fiche IPID du produit (art. L. 521-2 C. assur.)."
+      )
       return
     }
     setSubmitting(true)
@@ -94,6 +160,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
         throw new Error(err.error ?? `Erreur ${res.status}`)
       }
       const json = (await res.json()) as { lead_id: string; redirect_url?: string }
+      clearDraft()
       onSubmitted?.(json.lead_id)
       if (json.redirect_url) {
         window.location.href = json.redirect_url
@@ -114,11 +181,30 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
     data.statut_juridique
   const canGoStep3 = data.anciennete_annees !== undefined && data.sinistralite_36m !== undefined
   const canSubmit =
-    data.prenom && data.nom && data.email && data.telephone && data.consent_rgpd
+    data.prenom &&
+    data.nom &&
+    data.email &&
+    data.telephone &&
+    data.consent_rgpd &&
+    data.consent_fic_ipid
 
   return (
     <section className="devis-form mx-auto max-w-2xl p-6 bg-white rounded-lg shadow">
-      <div className="mb-6">
+      <form
+        noValidate
+        onSubmit={(e) => {
+          e.preventDefault()
+          if (step === 3 && canSubmit) handleSubmit()
+        }}
+      >
+      <div
+        className="mb-6"
+        role="progressbar"
+        aria-valuenow={step}
+        aria-valuemin={1}
+        aria-valuemax={3}
+        aria-label={`Étape ${step} sur 3`}
+      >
         <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
           <span className={step >= 1 ? 'font-semibold text-blue-600' : ''}>1. Activité</span>
           <span className={step >= 2 ? 'font-semibold text-blue-600' : ''}>2. Profil</span>
@@ -134,7 +220,13 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
 
       {step === 1 && (
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold mb-4">Votre activité</h2>
+          <h2
+            ref={stepHeadingRef}
+            tabIndex={-1}
+            className="text-2xl font-bold mb-4 outline-none"
+          >
+            Votre activité
+          </h2>
 
           <Field label="Garantie souhaitée">
             <select
@@ -231,7 +323,9 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
 
       {step === 2 && (
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold mb-4">Votre profil de risque</h2>
+          <h2 ref={stepHeadingRef} tabIndex={-1} className="text-2xl font-bold mb-4 outline-none">
+            Votre profil de risque
+          </h2>
 
           <Field label="Ancienneté de votre activité (années)">
             <input
@@ -320,23 +414,33 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
 
       {step === 3 && (
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold mb-4">Vos coordonnées</h2>
+          <h2 ref={stepHeadingRef} tabIndex={-1} className="text-2xl font-bold mb-4 outline-none">
+            Vos coordonnées
+          </h2>
 
           <div className="grid grid-cols-2 gap-4">
             <Field label="Prénom">
               <input
                 type="text"
+                name="prenom"
                 value={data.prenom}
                 onChange={(e) => update('prenom', e.target.value)}
                 className="w-full p-2 border rounded"
+                autoComplete="given-name"
+                required
+                maxLength={80}
               />
             </Field>
             <Field label="Nom">
               <input
                 type="text"
+                name="nom"
                 value={data.nom}
                 onChange={(e) => update('nom', e.target.value)}
                 className="w-full p-2 border rounded"
+                autoComplete="family-name"
+                required
+                maxLength={80}
               />
             </Field>
           </div>
@@ -344,29 +448,43 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
           <Field label="Email professionnel">
             <input
               type="email"
+              name="email"
               value={data.email}
               onChange={(e) => update('email', e.target.value)}
               className="w-full p-2 border rounded"
+              autoComplete="email"
+              inputMode="email"
+              required
+              maxLength={254}
             />
           </Field>
 
           <Field label="Téléphone">
             <input
               type="tel"
+              name="telephone"
               value={data.telephone}
               onChange={(e) => update('telephone', e.target.value)}
               pattern="[0-9 +]+"
               className="w-full p-2 border rounded"
+              autoComplete="tel"
+              inputMode="tel"
+              required
+              maxLength={30}
             />
           </Field>
 
           <Field label="SIRET (optionnel — accélère le devis)">
             <input
               type="text"
+              name="siret"
               value={data.siret}
               onChange={(e) => update('siret', e.target.value)}
               maxLength={14}
               className="w-full p-2 border rounded"
+              autoComplete="organization-identifier"
+              inputMode="numeric"
+              pattern="\d{14}"
             />
           </Field>
 
@@ -377,15 +495,36 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 checked={data.consent_rgpd}
                 onChange={(e) => update('consent_rgpd', e.target.checked)}
                 className="mt-1"
+                aria-required="true"
               />
               <span>
-                J'accepte que mes données soient traitées par le courtier dans le cadre de
-                cette demande de devis (
-                <a href="/confidentialite" className="underline">
+                <strong>(Obligatoire)</strong> J&apos;accepte que mes données soient traitées par le
+                courtier dans le cadre de cette demande de devis (
+                <a href="/confidentialite" target="_blank" rel="noopener noreferrer" className="underline">
                   Politique de confidentialité
                 </a>
-                ). Conformément au RGPD, je dispose d'un droit d'accès, de rectification
-                et d'effacement.
+                ). Conformément au RGPD, je dispose d&apos;un droit d&apos;accès, de rectification
+                et d&apos;effacement.
+              </span>
+            </label>
+            <label className="flex items-start gap-2 text-sm">
+              <input
+                type="checkbox"
+                checked={data.consent_fic_ipid}
+                onChange={(e) => update('consent_fic_ipid', e.target.checked)}
+                className="mt-1"
+                aria-required="true"
+              />
+              <span>
+                <strong>(Obligatoire)</strong> J&apos;ai pris connaissance de la{' '}
+                <a href="/fic" target="_blank" rel="noopener noreferrer" className="underline">
+                  Fiche d&apos;Information Précontractuelle (FIC)
+                </a>{' '}
+                et des{' '}
+                <a href="/ipid" target="_blank" rel="noopener noreferrer" className="underline">
+                  fiches IPID
+                </a>{' '}
+                des produits (art. L. 521-2 du Code des assurances + règlement UE 2017/1469).
               </span>
             </label>
             <label className="flex items-start gap-2 text-sm">
@@ -395,7 +534,10 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 onChange={(e) => update('consent_marketing', e.target.checked)}
                 className="mt-1"
               />
-              <span>J'accepte de recevoir des conseils par email (facultatif).</span>
+              <span>
+                J&apos;accepte de recevoir des conseils et actualités réglementaires par email
+                (facultatif, désinscription à tout moment).
+              </span>
             </label>
           </div>
 
@@ -405,7 +547,17 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
             situation, un courtier ORIAS vous recontactera après réception du formulaire.
           </div>
 
-          {error ? <p className="text-red-600 text-sm">{error}</p> : null}
+          {error ? (
+            <div
+              ref={errorRef}
+              tabIndex={-1}
+              role="alert"
+              aria-live="assertive"
+              className="text-red-700 text-sm bg-red-50 border border-red-200 rounded px-3 py-2 outline-none"
+            >
+              {error}
+            </div>
+          ) : null}
 
           <div className="flex gap-3">
             <button
@@ -416,8 +568,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               ← Retour
             </button>
             <button
-              type="button"
-              onClick={handleSubmit}
+              type="submit"
               disabled={!canSubmit || submitting}
               className="flex-1 py-3 bg-blue-600 text-white rounded font-semibold disabled:bg-gray-300"
             >
@@ -426,6 +577,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
           </div>
         </div>
       )}
+      </form>
     </section>
   )
 }

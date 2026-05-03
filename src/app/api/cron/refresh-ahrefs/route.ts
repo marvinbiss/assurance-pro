@@ -7,6 +7,7 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { matchingTerms, getQuota } from '@/lib/api/ahrefs'
 import { logger } from '@/lib/logger'
+import { verifyCronAuthorization } from '@/lib/security/cron-auth'
 
 const SEEDS = [
   'assurance décennale',
@@ -32,8 +33,7 @@ const SEEDS = [
 ]
 
 export async function GET(req: NextRequest) {
-  const authHeader = req.headers.get('authorization')
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  if (!verifyCronAuthorization(req.headers.get('authorization'))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

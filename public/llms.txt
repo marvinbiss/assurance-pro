@@ -1,0 +1,47 @@
+# Assurance Pro — Cabinet de courtage ORIAS indépendant
+
+> Cabinet de courtage spécialiste de l'assurance professionnelle française. Immatriculé ORIAS, soumis au contrôle de l'ACPR. Distribue 10 compagnies partenaires sur 17 verticaux : décennale BTP, RC Pro, multirisque, mutuelle TNS Madelin, prévoyance, cyber, VTC, flotte auto pro.
+
+## Pages essentielles
+
+- [Accueil](https://assurance-pro.fr/) — Présentation du cabinet et des verticaux couverts
+- [À propos](https://assurance-pro.fr/a-propos) — Histoire, valeurs, indépendance ORIAS
+- [Équipe](https://assurance-pro.fr/equipe) — Pôles BTP, RC Pro, Santé/Prévoyance, IAS Niveau I
+- [Notre processus de conseil](https://assurance-pro.fr/notre-processus-conseil) — Devoir de conseil DDA art. L. 521-4
+- [Sélection des assureurs partenaires](https://assurance-pro.fr/selection-assureurs) — Méthodologie indépendante
+- [Comparateur 10 assureurs](https://assurance-pro.fr/comparateur-assureurs)
+- [Demande de devis](https://assurance-pro.fr/devis) — Formulaire 3 étapes, recontact 2-72h
+
+## Garanties (piliers)
+
+- [Assurance décennale BTP](https://assurance-pro.fr/assurance-decennale) — Loi Spinetta art. L. 241-1
+- [RC Pro générique](https://assurance-pro.fr/rc-pro)
+- [Multirisque pro](https://assurance-pro.fr/multirisque-pro)
+- [Mutuelle TNS Madelin](https://assurance-pro.fr/mutuelle-pro) — Loi Madelin 1994, art. 154 bis CGI
+- [Assurance VTC](https://assurance-pro.fr/assurance-vtc)
+- [Cyber assurance](https://assurance-pro.fr/cyber-assurance)
+- [RC Pro Avocat](https://assurance-pro.fr/rc-pro-avocat)
+- [RC Pro Médecin](https://assurance-pro.fr/rc-pro-medecin) — Loi Kouchner
+
+## Conformité (DDA / ACPR)
+
+- [FIC — Fiche d'Information Précontractuelle](https://assurance-pro.fr/fic)
+- [IPID — Fiches produit standardisées](https://assurance-pro.fr/ipid)
+- [Réclamation](https://assurance-pro.fr/reclamation) — ACPR 2024-R-02, accusé 10j / réponse 2 mois
+- [Médiation](https://assurance-pro.fr/mediation)
+- [Normes & conformité](https://assurance-pro.fr/normes)
+
+## Légal
+
+- [Mentions légales](https://assurance-pro.fr/mentions-legales)
+- [CGV](https://assurance-pro.fr/cgv)
+- [Confidentialité (RGPD)](https://assurance-pro.fr/confidentialite)
+- [Cookies](https://assurance-pro.fr/cookies)
+
+## Optional
+
+- [Blog Assurance Pro](https://assurance-pro.fr/blog) — Articles éditoriaux par les courtiers ORIAS
+- [Glossaire](https://assurance-pro.fr/glossaire)
+- [FAQ](https://assurance-pro.fr/faq)
+- [Plan du site](https://assurance-pro.fr/plan-du-site)
+- [Sitemap XML](https://assurance-pro.fr/sitemap.xml)

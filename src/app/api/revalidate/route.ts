@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
     })
   } catch (err) {
     return NextResponse.json(
-      { success: false, error: { message: 'Erreur lors de la revalidation', details: err instanceof Error ? err.message : String(err) } },
+      { success: false, error: { message: 'Erreur lors de la revalidation', ...(process.env.NODE_ENV !== 'production' && { details: err instanceof Error ? err.message : String(err) }) } },
       { status: 500 }
     )
   }
@@ -115,11 +115,17 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ success: false, error: { message: 'Secret invalide' } }, { status: 401 })
     }
 
-    // Revalider les pages principales
+    // Revalider les piliers + homepage par défaut
     const paths = [
-      '/services/plombier/paris',
-      '/services',
       '/',
+      '/assurance-decennale',
+      '/rc-pro',
+      '/multirisque-pro',
+      '/mutuelle-pro',
+      '/assurance-vtc',
+      '/cyber-assurance',
+      '/comparateur-assureurs',
+      '/blog',
     ]
 
     for (const path of paths) {
@@ -133,7 +139,7 @@ export async function GET(request: NextRequest) {
     })
   } catch (err) {
     return NextResponse.json(
-      { success: false, error: { message: 'Erreur lors de la revalidation', details: err instanceof Error ? err.message : String(err) } },
+      { success: false, error: { message: 'Erreur lors de la revalidation', ...(process.env.NODE_ENV !== 'production' && { details: err instanceof Error ? err.message : String(err) }) } },
       { status: 500 }
     )
   }

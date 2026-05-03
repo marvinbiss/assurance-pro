@@ -1,35 +1,45 @@
 import { createClient } from '@supabase/supabase-js'
+import { supabaseUrl, supabaseServiceRoleKey } from './env'
 
 /**
- * Client Supabase avec la clé service_role
- * UNIQUEMENT côté serveur (admin / bypass RLS)
+ * Server-only Supabase client with service_role key (bypasses RLS).
  *
- * The global.fetch wrapper passes `next: { revalidate: 3600 }` so that
- * Next.js caches Supabase responses and enables ISR for pages that use
- * this client.  Without this, internal HEAD/GET requests from PostgREST
- * are treated as uncacheable and force every page into dynamic SSR
- * (perpetual x-vercel-cache: MISS).
+ * Two factories :
+ * - createAdminClient()           : default for ISR-cacheable reads (1h)
+ * - createPiiAdminClient()        : strict no-store for PII reads/writes
+ *                                   (réclamations, leads, conseil_records).
+ *
+ * Both must NEVER be exported to client bundles. Usage outside `app/api/**`
+ * or `app/**` server components is forbidden.
  */
 export function createAdminClient() {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-
-  if (!supabaseUrl || !supabaseServiceKey) {
-    throw new Error('Supabase admin env vars missing')
-  }
-
-  return createClient(supabaseUrl, supabaseServiceKey, {
+  return createClient(supabaseUrl(), supabaseServiceRoleKey(), {
     auth: {
       autoRefreshToken: false,
       persistSession: false,
     },
     global: {
-      fetch: (url, options = {}) => {
-        return fetch(url, {
-          ...options,
-          next: { revalidate: 3600 },
-        } as RequestInit)
-      },
+      // ISR cache (1h) for the public/cacheable read path.
+      fetch: (url, options = {}) =>
+        fetch(url, { ...options, next: { revalidate: 3600 } } as RequestInit),
+    },
+  })
+}
+
+/**
+ * Same as createAdminClient but disables Next fetch cache.
+ * Use for any query touching PII (réclamations, leads, conseil_records,
+ * GDPR export/delete) so a stale view never returns user-specific rows.
+ */
+export function createPiiAdminClient() {
+  return createClient(supabaseUrl(), supabaseServiceRoleKey(), {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+    global: {
+      fetch: (url, options = {}) =>
+        fetch(url, { ...options, cache: 'no-store' } as RequestInit),
     },
   })
 }

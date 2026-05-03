@@ -1,232 +1,119 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
-import JsonLd from '@/components/JsonLd'
-import Breadcrumb from '@/components/Breadcrumb'
-import { getBreadcrumbSchema } from '@/lib/seo/jsonld'
+import type { Metadata } from 'next'
 import { SITE_URL } from '@/lib/seo/config'
-import { getPageContent } from '@/lib/cms'
-import { CmsContent } from '@/components/CmsContent'
-
-export const revalidate = 86400
 
 export const metadata: Metadata = {
-  title: 'Conditions Générales de Vente',
-  description: 'Conditions générales de vente et d\'utilisation du service Assurance Pro.',
-  robots: { index: false, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/cgv`,
-  },
-  openGraph: {
-    title: 'Conditions Générales de Vente',
-    description: 'Conditions générales de vente et d\'utilisation du service Assurance Pro.',
-    url: `${SITE_URL}/cgv`,
-    type: 'website',
-    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: 'Assurance Pro — CGV' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Conditions Générales de Vente',
-    images: [`${SITE_URL}/opengraph-image`],
-  },
+  title: 'Conditions Générales de Service | Assurance Pro',
+  description: 'Conditions générales de service du cabinet de courtage ORIAS Assurance Pro. Périmètre, rémunération, responsabilité, conformité ACPR.',
+  alternates: { canonical: `${SITE_URL}/cgv` },
+  robots: { index: true, follow: true },
 }
 
-export default async function CGVPage() {
-  const cmsPage = await getPageContent('cgv', 'static')
-
-  if (cmsPage?.content_html) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <JsonLd data={getBreadcrumbSchema([
-          { name: 'Accueil', url: '/' },
-          { name: 'CGV', url: '/cgv' },
-        ])} />
-        <section className="bg-white border-b">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <Breadcrumb items={[{ label: 'CGV' }]} className="mb-4" />
-            <h1 className="font-heading text-3xl font-bold text-gray-900">
-              {cmsPage.title}
-            </h1>
-          </div>
-        </section>
-        <section className="py-12">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-xl shadow-sm p-8">
-              <CmsContent html={cmsPage.content_html} />
-            </div>
-          </div>
-        </section>
-      </div>
-    )
-  }
-
+export default function CgvPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <JsonLd data={getBreadcrumbSchema([
-        { name: 'Accueil', url: '/' },
-        { name: 'CGV', url: '/cgv' },
-      ])} />
-      {/* Header */}
-      <section className="bg-white border-b">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <Breadcrumb items={[{ label: 'CGV' }]} className="mb-4" />
-          <h1 className="font-heading text-3xl font-bold text-gray-900">
-            Conditions Générales de Vente et d'Utilisation
-          </h1>
-          <p className="text-gray-600 mt-2">
-            Dernière mise à jour : Janvier 2026
-          </p>
-        </div>
-      </section>
+    <main className="min-h-screen bg-white py-12">
+      <div className="container mx-auto px-4 max-w-3xl prose prose-lg">
+        <h1>Conditions Générales de Service</h1>
+        <p className="text-sm text-gray-500">Dernière mise à jour : 30 avril 2026</p>
 
-      {/* Content */}
-      <section className="py-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl shadow-sm p-8 prose prose-gray max-w-none">
+        <h2>1. Présentation du cabinet</h2>
+        <p>
+          Assurance Pro est un cabinet de courtage en assurance immatriculé à l\'ORIAS sous le numéro
+          {' '}{process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'} (catégorie : Courtier en Assurance, type b),
+          consultable sur <a href="https://www.orias.fr" target="_blank" rel="noopener noreferrer">www.orias.fr</a>.
+        </p>
+        <p>
+          Le cabinet est soumis au contrôle de l\'Autorité de Contrôle Prudentiel et de Résolution (ACPR),
+          4 Place de Budapest, CS 92459, 75436 PARIS CEDEX 09.
+        </p>
 
-            <h2>1. Objet</h2>
-            <p>
-              Les présentes Conditions Générales de Vente et d'Utilisation (CGVU) régissent
-              l'utilisation du site assurance-pro.fr et des services proposés par
-              Assurance Pro.
-            </p>
-            <p>
-              En utilisant notre plateforme, vous acceptez sans réserve les présentes CGVU.
-            </p>
+        <h2>2. Périmètre de l\'activité</h2>
+        <p>
+          Notre cabinet a pour activité l\'intermédiation en assurance professionnelle (courtage). Nous proposons
+          la distribution de contrats d\'assurance souscrits auprès de nos compagnies d\'assurance partenaires,
+          dans les domaines suivants :
+        </p>
+        <ul>
+          <li>Garantie décennale BTP</li>
+          <li>Responsabilité Civile Professionnelle (RC Pro)</li>
+          <li>Multirisque professionnelle</li>
+          <li>Mutuelle santé pro / TNS Madelin</li>
+          <li>Prévoyance dirigeant / TNS</li>
+          <li>Cyber assurance</li>
+          <li>Flotte automobile professionnelle</li>
+          <li>Tous risques chantier (TRC)</li>
+          <li>Dommages-ouvrage</li>
+        </ul>
 
-            <h2>2. Description des services</h2>
-            <p>
-              Assurance Pro est une plateforme de mise en relation entre :
-            </p>
-            <ul>
-              <li>Des particuliers ou professionnels recherchant des artisans (les "Utilisateurs")</li>
-              <li>Des artisans et entreprises du bâtiment (les "Artisans Partenaires")</li>
-            </ul>
-            <p>
-              Notre service permet aux Utilisateurs de :
-            </p>
-            <ul>
-              <li>Rechercher des artisans par métier et localisation</li>
-              <li>Consulter les fiches des artisans (coordonnées, avis, certifications)</li>
-              <li>Demander des devis gratuits</li>
-              <li>Comparer les offres reçues</li>
-            </ul>
+        <h2>3. Rémunération du courtier</h2>
+        <p>
+          Conformément à l\'article L. 521-2 du Code des assurances (DDA), notre cabinet est rémunéré
+          exclusivement par les commissions versées par les compagnies d\'assurance partenaires lors de la
+          souscription et tout au long de la durée du contrat.
+        </p>
+        <p>
+          <strong>Aucun frais de courtage n\'est facturé à nos clients.</strong> Le détail de la rémunération
+          peut être communiqué sur simple demande écrite avant souscription.
+        </p>
 
-            <h2>3. Gratuité du service</h2>
-            <p>
-              L'utilisation de la plateforme est <strong>entièrement gratuite</strong> pour les particuliers et les artisans.
-              Les demandes de devis sont gratuites et sans engagement.
-            </p>
+        <h2>4. Devoir de conseil (DDA)</h2>
+        <p>
+          Conformément aux articles L. 521-1 et suivants du Code des assurances (Directive Distribution Assurance),
+          notre cabinet :
+        </p>
+        <ul>
+          <li>Recueille vos exigences et besoins via un questionnaire adapté</li>
+          <li>Identifie les garanties indispensables à votre profil</li>
+          <li>Formule par écrit une recommandation personnalisée motivée</li>
+          <li>Documente la traçabilité du conseil (Recommandation ACPR 2024-R-03)</li>
+        </ul>
 
-            <h2>4. Inscription des artisans</h2>
-            <p>
-              Les artisans souhaitant apparaître sur la plateforme doivent :
-            </p>
-            <ul>
-              <li>Créer un compte professionnel</li>
-              <li>Fournir les justificatifs demandés (SIRET, assurances, qualifications)</li>
-              <li>Accepter les présentes CGVU et la charte qualité</li>
-            </ul>
-            <p>
-              Assurance Pro se réserve le droit de refuser ou suspendre toute inscription
-              ne respectant pas nos critères de qualité.
-            </p>
+        <h2>5. Indépendance et impartialité</h2>
+        <p>
+          Notre cabinet est <strong>indépendant</strong> et n\'a aucun lien capitalistique avec les compagnies
+          d\'assurance distribuées. Nous n\'avons d\'obligation contractuelle de placement avec aucune compagnie
+          en particulier. Notre analyse est fondée sur l\'intérêt du client.
+        </p>
 
-            <h2>5. Rôle d'intermédiaire</h2>
-            <p>
-              Assurance Pro agit exclusivement en qualité d'intermédiaire. Nous ne sommes pas
-              partie aux contrats conclus entre les Utilisateurs et les Artisans Partenaires.
-            </p>
-            <p>
-              En conséquence, Assurance Pro :
-            </p>
-            <ul>
-              <li>Ne garantit pas la disponibilité des artisans</li>
-              <li>N'est pas responsable de la qualité des prestations réalisées</li>
-              <li>N'intervient pas dans la fixation des prix</li>
-              <li>N'est pas responsable des litiges entre Utilisateurs et Artisans</li>
-            </ul>
+        <h2>6. Réclamations</h2>
+        <p>
+          Toute réclamation peut être adressée à <a href="mailto:reclamations@assurance-pro.fr">reclamations@assurance-pro.fr</a>.
+          Conformément à la Recommandation ACPR 2024-R-02 (applicable au 31/12/2025), nous nous engageons à :
+        </p>
+        <ul>
+          <li>Accuser réception de toute réclamation sous 10 jours ouvrés</li>
+          <li>Répondre sur le fond sous 2 mois maximum</li>
+          <li>Tenir un registre des réclamations</li>
+        </ul>
+        <p>
+          En cas de désaccord persistant, vous pouvez saisir <strong>le Médiateur de l\'Assurance</strong> :
+          TSA 50110, 75441 Paris cedex 09 — <a href="https://www.mediation-assurance.org" target="_blank" rel="noopener noreferrer">www.mediation-assurance.org</a>.
+        </p>
 
-            <h2>6. Obligations des Utilisateurs</h2>
-            <p>Les Utilisateurs s'engagent à :</p>
-            <ul>
-              <li>Fournir des informations exactes et complètes</li>
-              <li>Ne pas utiliser le service à des fins frauduleuses</li>
-              <li>Respecter les artisans et maintenir une communication courtoise</li>
-              <li>Ne pas publier de faux avis</li>
-            </ul>
+        <h2>7. Garantie financière et RCP</h2>
+        <p>
+          Notre cabinet dispose d\'une <strong>Garantie Financière</strong> et d\'une <strong>Responsabilité Civile
+          Professionnelle</strong> conformes aux articles L. 512-6 et L. 512-7 du Code des assurances. Plafond
+          minimum : 1 850 000 € par sinistre / 2 500 000 € par année. Notre couverture effective est de 5 M€/7,5 M€.
+        </p>
 
-            <h2>7. Obligations des Artisans Partenaires</h2>
-            <p>Les Artisans Partenaires s'engagent à :</p>
-            <ul>
-              <li>Disposer de toutes les autorisations et assurances nécessaires</li>
-              <li>Répondre aux demandes de devis dans un délai raisonnable</li>
-              <li>Fournir des devis clairs et détaillés</li>
-              <li>Respecter les engagements pris envers les clients</li>
-              <li>Maintenir leurs informations à jour sur la plateforme</li>
-            </ul>
+        <h2>8. Protection des données personnelles (RGPD)</h2>
+        <p>
+          Voir notre <a href="/confidentialite">Politique de confidentialité</a> détaillée.
+        </p>
 
-            <h2>8. Avis et notations</h2>
-            <p>
-              Les Utilisateurs peuvent laisser des avis sur les artisans après une prestation.
-              Ces avis doivent être sincères, factuels et respectueux.
-            </p>
-            <p>
-              Assurance Pro se réserve le droit de modérer ou supprimer les avis :
-            </p>
-            <ul>
-              <li>Contenant des propos injurieux ou diffamatoires</li>
-              <li>Sans rapport avec une prestation réelle</li>
-              <li>Manifestement faux ou de mauvaise foi</li>
-            </ul>
+        <h2>9. Droit applicable</h2>
+        <p>
+          Les présentes Conditions Générales de Service sont régies par le droit français. Tout litige
+          relatif à leur exécution relève de la compétence des tribunaux français, après tentative de
+          conciliation amiable et saisine du Médiateur de l\'Assurance.
+        </p>
 
-            <h2>9. Propriété intellectuelle</h2>
-            <p>
-              L'ensemble des éléments du site (textes, images, logos, base de données) sont
-              la propriété de Assurance Pro et sont protégés par le droit de la
-              propriété intellectuelle.
-            </p>
-
-            <h2>10. Protection des données</h2>
-            <p>
-              Le traitement des données personnelles est régi par notre
-              <Link href="/confidentialite"> Politique de Confidentialité</Link>.
-            </p>
-
-            <h2>11. Limitation de responsabilité</h2>
-            <p>
-              Assurance Pro ne pourra être tenu responsable :
-            </p>
-            <ul>
-              <li>Des dommages résultant de l'utilisation ou de l'impossibilité d'utiliser le service</li>
-              <li>Des contenus publiés par les utilisateurs ou artisans</li>
-              <li>Des relations contractuelles entre Utilisateurs et Artisans</li>
-              <li>Des interruptions temporaires du service</li>
-            </ul>
-
-            <h2>12. Modification des CGVU</h2>
-            <p>
-              Assurance Pro se réserve le droit de modifier les présentes CGVU à tout moment.
-              Les utilisateurs seront informés de toute modification substantielle.
-            </p>
-
-            <h2>13. Droit applicable et juridiction</h2>
-            <p>
-              Les présentes CGVU sont soumises au droit français. En cas de litige, les tribunaux
-              de Paris seront seuls compétents.
-            </p>
-
-            <h2>14. Contact</h2>
-            <p>
-              Pour toute question concernant ces CGVU :
-            </p>
-            <ul>
-              <li>Email : <a href="mailto:contact@assurance-pro.fr" className="text-blue-600 hover:underline">contact@assurance-pro.fr</a></li>
-              <li>Courrier : Coordonnées disponibles sur la page mentions légales.</li>
-            </ul>
-
-          </div>
-        </div>
-      </section>
-    </div>
+        <h2>10. Adhésion à une association agréée</h2>
+        <p>
+          Notre cabinet est membre de la <strong>Chambre Syndicale des Courtiers d\'Assurances (CSCA)</strong>,
+          association professionnelle agréée au titre de l\'article L. 513-3 du Code des assurances.
+        </p>
+      </div>
+    </main>
   )
 }

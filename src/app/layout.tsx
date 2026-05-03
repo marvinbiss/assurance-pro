@@ -6,7 +6,7 @@ import { DM_Sans, Sora } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { MobileMenuProvider } from '@/contexts/MobileMenuContext'
+import { TrackingScripts } from '@/components/TrackingScripts'
 import { getOrganizationSchema, getWebsiteSchema } from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -25,10 +25,7 @@ const sora = Sora({
   adjustFontFallback: true,
 })
 
-// Dynamic imports for performance
-const MobileBottomNav = dynamic(() => import('@/components/MobileBottomNav'), {
-  ssr: false,
-})
+// Dynamic imports for performance (client-only utilities)
 const ServiceWorkerRegistration = dynamic(
   () => import('@/components/ServiceWorkerRegistration'),
   { ssr: false }
@@ -38,13 +35,6 @@ const CookieConsent = dynamic(() => import('@/components/CookieConsent'), {
 })
 const WebVitals = dynamic(
   () => import('@/components/WebVitals').then(mod => ({ default: mod.WebVitals })),
-  { ssr: false }
-)
-const PageViewTracker = dynamic(() => import('@/components/PageViewTracker'), {
-  ssr: false,
-})
-const CompareProviderWrapper = dynamic(
-  () => import('@/components/compare/CompareProvider').then(mod => ({ default: mod.CompareProviderWrapper })),
   { ssr: false }
 )
 
@@ -112,8 +102,6 @@ export const metadata: Metadata = {
     types: {
       'application/rss+xml': [
         { url: `${SITE_URL}/feed/blog.xml`, title: 'Blog Assurance Pro' },
-        { url: `${SITE_URL}/feed/nouveaux-artisans.xml`, title: 'Nouveaux artisans' },
-        { url: `${SITE_URL}/feed/nouvelles-pages.xml`, title: 'Nouvelles pages' },
       ],
     },
   },
@@ -182,62 +170,37 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
       <body className="font-sans bg-sand-50 antialiased text-charcoal-900">
-        {/* Google Tag Manager */}
-        <Script id="gtm" strategy="afterInteractive" nonce={nonce}>
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-THV3KZ8N');`}
+        {/*
+         * Google Consent Mode v2 — 'denied' par défaut.
+         * Aucun pixel ne se déclenche tant que l'utilisateur n'a pas
+         * explicitement consenti via la bannière. CookieConsent passe ensuite
+         * 'granted' aux catégories acceptées et émet un événement
+         * 'cookie-consent-changed' que TrackingScripts consomme pour injecter
+         * les balises (GTM, Meta Pixel, Contentsquare).
+         */}
+        <Script id="consent-default" strategy="beforeInteractive" nonce={nonce}>
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});`}
         </Script>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-THV3KZ8N"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {/* Meta Pixel — chargé après consentement analytics (RGPD) */}
-        {process.env.NEXT_PUBLIC_META_PIXEL_ID && (
-          <Script id="meta-pixel" strategy="lazyOnload" nonce={nonce}>
-            {`!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '${process.env.NEXT_PUBLIC_META_PIXEL_ID}');
-fbq('track', 'PageView');`}
-          </Script>
-        )}
-        {/* Contentsquare UX Analytics — deferred until idle or 5s fallback */}
-        <Script id="contentsquare-deferred" strategy="lazyOnload" nonce={nonce}>
-          {`(function(){function l(){if(l.d)return;l.d=1;var s=document.createElement('script');s.src='https://t.contentsquare.net/uxa/8da7eeef2dab8.js';s.async=true;document.head.appendChild(s)}if(typeof requestIdleCallback==='function'){requestIdleCallback(l,{timeout:5000})}else{setTimeout(l,5000)}})();`}
-        </Script>
-        {/* GA4 removed — GTM (GTM-THV3KZ8N) already includes GA4 tracking, standalone gtag.js was duplicate */}
+        <TrackingScripts
+          nonce={nonce}
+          gtmId={process.env.NEXT_PUBLIC_GTM_ID || 'GTM-THV3KZ8N'}
+          metaPixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID}
+        />
         <WebVitals />
-        <PageViewTracker />
-        <MobileMenuProvider>
-          <CompareProviderWrapper>
-          {/* Skip to main content for accessibility */}
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-          >
-            Aller au contenu principal
-          </a>
-          <Header />
-          <main id="main-content" tabIndex={-1} className="pb-16 md:pb-0 outline-none">{children}</main>
-          <Footer />
-          <MobileBottomNav />
-          <ServiceWorkerRegistration />
-          <CookieConsent />
-          </CompareProviderWrapper>
-        </MobileMenuProvider>
+        {/* Skip to main content for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+        >
+          Aller au contenu principal
+        </a>
+        <Header />
+        <main id="main-content" tabIndex={-1} className="outline-none">
+          {children}
+        </main>
+        <Footer />
+        <ServiceWorkerRegistration />
+        <CookieConsent />
       </body>
     </html>
   )

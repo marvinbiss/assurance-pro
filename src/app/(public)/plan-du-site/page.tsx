@@ -1,312 +1,114 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
-import { services, villes, departements, regions, getQuartiersByVille } from '@/lib/data/france'
 import { SITE_URL } from '@/lib/seo/config'
-import Breadcrumb from '@/components/Breadcrumb'
-import { getBreadcrumbSchema } from '@/lib/seo/jsonld'
-import { tradeContent } from '@/lib/data/trade-content'
-import { allArticlesMeta } from '@/lib/data/blog/articles-index'
-import { getPageContent } from '@/lib/cms'
-import { CmsContent } from '@/components/CmsContent'
-
-export const revalidate = 86400
+import { DECENNALE_METIERS } from '@/lib/data/decennale-metiers'
+import { RC_PRO_PROFESSIONS } from '@/lib/data/rc-pro-professions'
 
 export const metadata: Metadata = {
-  title: 'Plan du site',
-  description: 'Plan du site complet de Assurance Pro. Accédez à tous nos services, villes, départements et régions.',
+  title: 'Plan du site | Assurance Pro',
+  description: 'Plan du site Assurance Pro — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
   alternates: { canonical: `${SITE_URL}/plan-du-site` },
-  robots: { index: false, follow: true },
-  openGraph: {
-    title: 'Plan du site',
-    description: 'Plan du site complet de Assurance Pro. Accédez à tous nos services, villes, départements et régions.',
-    url: `${SITE_URL}/plan-du-site`,
-    siteName: 'Assurance Pro',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Plan du site',
-    description: 'Plan du site complet de Assurance Pro. Accédez à tous nos services, villes, départements et régions.',
-  },
 }
 
-export default async function PlanDuSitePage() {
-  const cmsPage = await getPageContent('plan-du-site', 'static')
-
-  if (cmsPage?.content_html) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <section className="bg-white border-b">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <h1 className="font-heading text-3xl font-bold text-gray-900">
-              {cmsPage.title}
-            </h1>
-          </div>
-        </section>
-        <section className="py-12">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-xl shadow-sm p-8">
-              <CmsContent html={cmsPage.content_html} />
-            </div>
-          </div>
-        </section>
-      </div>
-    )
-  }
-
-  const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Accueil', url: '/' },
-    { name: 'Plan du site', url: '/plan-du-site' },
-  ])
-
-  // Group cities by department for structured display
-  const citiesByDept = departements
-    .map(dept => ({
-      dept,
-      cities: villes.filter(v => v.departementCode === dept.code),
-    }))
-    .filter(g => g.cities.length > 0)
-
+export default function PlanDuSitePage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+    <main className="min-h-screen bg-white py-12">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <header className="mb-10">
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">Plan du site</h1>
+          <p className="text-gray-600 text-lg">
+            Toutes les pages d\'Assurance Pro organisées par catégorie.
+          </p>
+        </header>
 
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 py-3">
-          <Breadcrumb items={[{ label: 'Plan du site' }]} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <section>
+            <h2 className="text-xl font-bold mb-3 pb-2 border-b">Pages principales</h2>
+            <ul className="space-y-1.5">
+              <li><Link href="/" className="text-blue-700 hover:underline">Accueil</Link></li>
+              <li><Link href="/devis" className="text-blue-700 hover:underline">Devis gratuit en 2 min</Link></li>
+              <li><Link href="/a-propos" className="text-blue-700 hover:underline">À propos du cabinet</Link></li>
+              <li><Link href="/comparateur-assureurs" className="text-blue-700 hover:underline">Comparateur des 10 assureurs</Link></li>
+              <li><Link href="/contact" className="text-blue-700 hover:underline">Nous contacter</Link></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold mb-3 pb-2 border-b">Garanties (Piliers)</h2>
+            <ul className="space-y-1.5">
+              <li><Link href="/assurance-decennale" className="text-blue-700 hover:underline">Assurance décennale BTP</Link></li>
+              <li><Link href="/rc-pro" className="text-blue-700 hover:underline">RC Pro générique</Link></li>
+              <li><Link href="/multirisque-pro" className="text-blue-700 hover:underline">Multirisque professionnelle</Link></li>
+              <li><Link href="/mutuelle-pro" className="text-blue-700 hover:underline">Mutuelle pro / TNS Madelin</Link></li>
+              <li><Link href="/assurance-vtc" className="text-blue-700 hover:underline">Assurance VTC / Taxi</Link></li>
+              <li><Link href="/cyber-assurance" className="text-blue-700 hover:underline">Cyber assurance</Link></li>
+              <li><Link href="/rc-pro-avocat" className="text-blue-700 hover:underline">RC Pro Avocat</Link></li>
+              <li><Link href="/rc-pro-medecin" className="text-blue-700 hover:underline">RC Pro Médecin</Link></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold mb-3 pb-2 border-b">Décennale × Métiers BTP</h2>
+            <ul className="space-y-1.5 columns-2">
+              {Object.values(DECENNALE_METIERS).map((m) => (
+                <li key={m.slug}>
+                  <Link href={`/assurance-decennale/${m.slug}`} className="text-blue-700 hover:underline text-sm">
+                    {m.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold mb-3 pb-2 border-b">RC Pro × Professions</h2>
+            <ul className="space-y-1.5 columns-2">
+              {Object.values(RC_PRO_PROFESSIONS).map((p) => (
+                <li key={p.slug}>
+                  <Link href={`/rc-pro/${p.slug}`} className="text-blue-700 hover:underline text-sm">
+                    {p.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold mb-3 pb-2 border-b">Ressources</h2>
+            <ul className="space-y-1.5">
+              <li><Link href="/blog" className="text-blue-700 hover:underline">Blog</Link></li>
+              <li><Link href="/glossaire" className="text-blue-700 hover:underline">Glossaire (40+ termes)</Link></li>
+              <li><Link href="/faq" className="text-blue-700 hover:underline">FAQ assurance pro</Link></li>
+              <li><Link href="/normes" className="text-blue-700 hover:underline">Normes et conformité</Link></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold mb-3 pb-2 border-b">Mentions légales</h2>
+            <ul className="space-y-1.5">
+              <li><Link href="/mentions-legales" className="text-blue-700 hover:underline">Mentions légales</Link></li>
+              <li><Link href="/cgv" className="text-blue-700 hover:underline">Conditions Générales de Service</Link></li>
+              <li><Link href="/fic" className="text-blue-700 hover:underline">FIC — Fiche d&apos;Information Précontractuelle</Link></li>
+              <li><Link href="/ipid" className="text-blue-700 hover:underline">IPID — Fiches produit standardisées</Link></li>
+              <li><Link href="/confidentialite" className="text-blue-700 hover:underline">Politique de confidentialité (RGPD)</Link></li>
+              <li><Link href="/cookies" className="text-blue-700 hover:underline">Politique cookies</Link></li>
+              <li><Link href="/reclamation" className="text-blue-700 hover:underline">Déposer une réclamation</Link></li>
+              <li><Link href="/mediation" className="text-blue-700 hover:underline">Médiation</Link></li>
+            </ul>
+          </section>
+        </div>
+
+        <div className="mt-12 p-6 bg-gray-50 rounded-lg text-sm text-gray-600">
+          <p>
+            <strong>Sitemap XML :</strong>{' '}
+            <a href="/sitemap.xml" className="text-blue-700 underline">sitemap.xml</a> (pour les moteurs de recherche)
+          </p>
+          <p className="mt-2">
+            <strong>Robots :</strong>{' '}
+            <a href="/robots.txt" className="text-blue-700 underline">robots.txt</a>
+          </p>
         </div>
       </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="font-heading text-3xl font-bold text-gray-900 mb-2">Plan du site</h1>
-        <p className="text-gray-500 mb-10">
-          Retrouvez l'ensemble des pages de Assurance Pro pour trouver votre artisan.
-        </p>
-
-        {/* Services */}
-        <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-amber-500 pl-4">
-            Services ({services.length})
-          </h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-3">
-            {services.map(s => (
-              <Link
-                key={s.slug}
-                href={`/services/${s.slug}`}
-                className="text-sm text-blue-600 hover:text-blue-800 py-1"
-              >
-                {s.name}
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Régions */}
-        <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-amber-500 pl-4">
-            Régions ({regions.length})
-          </h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {regions.map(r => (
-              <Link
-                key={r.slug}
-                href={`/regions/${r.slug}`}
-                className="text-sm text-blue-600 hover:text-blue-800 py-1"
-              >
-                {r.name}
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Départements avec villes */}
-        <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-amber-500 pl-4">
-            Départements et villes ({departements.length} départements, {villes.length} villes)
-          </h2>
-          <div className="space-y-6">
-            {citiesByDept.map(({ dept, cities }) => (
-              <div key={dept.code}>
-                <h3 className="font-semibold text-gray-900 mb-2">
-                  <Link href={`/departements/${dept.slug}`} className="hover:text-blue-600 transition-colors">
-                    {dept.name} ({dept.code})
-                  </Link>
-                </h3>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 ml-4">
-                  {cities.slice(0, 15).map(c => (
-                    <Link
-                      key={c.slug}
-                      href={`/villes/${c.slug}`}
-                      className="text-sm text-gray-600 hover:text-blue-600"
-                    >
-                      {c.name}
-                    </Link>
-                  ))}
-                  {cities.length > 15 && (
-                    <Link
-                      href={`/departements/${dept.slug}`}
-                      className="text-sm text-blue-600 font-medium"
-                    >
-                      +{cities.length - 15} villes
-                    </Link>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Services par ville (matrice) */}
-        <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-amber-500 pl-4">
-            Services par ville
-          </h2>
-          <div className="space-y-6">
-            {services.map(s => (
-              <div key={s.slug}>
-                <h3 className="font-semibold text-gray-900 mb-2">{s.name}</h3>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 ml-4">
-                  {villes.slice(0, 20).map(v => (
-                    <Link
-                      key={`${s.slug}-${v.slug}`}
-                      href={`/services/${s.slug}/${v.slug}`}
-                      className="text-sm text-gray-600 hover:text-blue-600"
-                    >
-                      {s.name} à {v.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Urgences par service */}
-        <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-amber-500 pl-4">
-            Urgences par service
-          </h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-3">
-            {Object.keys(tradeContent).map(slug => (
-              <Link
-                key={slug}
-                href={`/urgence/${slug}`}
-                className="text-sm text-blue-600 hover:text-blue-800 py-1"
-              >
-                {tradeContent[slug]?.name} urgence
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Tarifs par service */}
-        <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-amber-500 pl-4">
-            Tarifs par service ({Object.keys(tradeContent).length})
-          </h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-3">
-            {Object.values(tradeContent).map(trade => (
-              <Link
-                key={trade.slug}
-                href={`/tarifs/${trade.slug}`}
-                className="text-sm text-blue-600 hover:text-blue-800 py-1"
-              >
-                Tarifs {trade.name.toLowerCase()}
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Quartiers des grandes villes */}
-        <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-amber-500 pl-4">
-            Quartiers des grandes villes
-          </h2>
-          <div className="space-y-6">
-            {villes.slice(0, 20).map(v => {
-              const quartiers = getQuartiersByVille(v.slug)
-              if (quartiers.length === 0) return null
-              return (
-                <div key={v.slug}>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    <Link href={`/villes/${v.slug}`} className="hover:text-blue-600 transition-colors">
-                      {v.name}
-                    </Link>
-                    {' '}({quartiers.length} quartiers)
-                  </h3>
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 ml-4">
-                    {quartiers.map(q => (
-                      <Link
-                        key={q.slug}
-                        href={`/villes/${v.slug}/${q.slug}`}
-                        className="text-sm text-gray-600 hover:text-blue-600"
-                      >
-                        {q.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </section>
-
-        {/* Blog articles */}
-        <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-amber-500 pl-4">
-            Articles du blog ({allArticlesMeta.length})
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {allArticlesMeta.map(article => (
-              <Link
-                key={article.slug}
-                href={`/blog/${article.slug}`}
-                className="text-sm text-blue-600 hover:text-blue-800 py-1"
-              >
-                {article.title}
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Pages utiles */}
-        <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-amber-500 pl-4">
-            Pages utiles
-          </h2>
-          <div className="grid md:grid-cols-3 gap-3">
-            {[
-              { href: '/a-propos', label: 'À propos' },
-              { href: '/contact', label: 'Contact' },
-              { href: '/faq', label: 'FAQ' },
-              { href: '/comment-ca-marche', label: 'Comment ça marche' },
-              { href: '/devis', label: 'Demander un devis' },
-              { href: '/urgence', label: 'Urgence 24h/24' },
-              { href: '/blog', label: 'Blog' },
-              { href: '/tarifs', label: 'Tarifs artisans' },
-              { href: '/recherche', label: 'Recherche' },
-              { href: '/notre-processus-de-verification', label: 'Processus de vérification' },
-              { href: '/mentions-legales', label: 'Mentions légales' },
-              { href: '/confidentialite', label: 'Confidentialité' },
-              { href: '/cgv', label: 'CGV' },
-              { href: '/accessibilite', label: 'Accessibilité' },
-              { href: '/mediation', label: 'Médiation' },
-              { href: '/politique-avis', label: 'Politique d\'avis' },
-            ].map(p => (
-              <Link
-                key={p.href}
-                href={p.href}
-                className="text-sm text-blue-600 hover:text-blue-800 py-1"
-              >
-                {p.label}
-              </Link>
-            ))}
-          </div>
-        </section>
-      </div>
-    </div>
+    </main>
   )
 }

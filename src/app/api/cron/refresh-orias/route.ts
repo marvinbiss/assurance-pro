@@ -8,10 +8,10 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { fetchOriasFiche } from '@/lib/api/orias'
 import { logger } from '@/lib/logger'
 import { createClient } from '@/lib/supabase/server'
+import { verifyCronAuthorization } from '@/lib/security/cron-auth'
 
 export async function GET(req: NextRequest) {
-  const authHeader = req.headers.get('authorization')
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  if (!verifyCronAuthorization(req.headers.get('authorization'))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
@@ -72,6 +72,6 @@ export async function GET(req: NextRequest) {
     })
   } catch (err) {
     logger.error({ err }, 'ORIAS cron failed')
-    return NextResponse.json({ error: String(err) }, { status: 500 })
+    return NextResponse.json({ error: 'Internal error' }, { status: 500 })
   }
 }

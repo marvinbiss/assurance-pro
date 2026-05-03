@@ -20,16 +20,16 @@ export async function GET() {
   try {
     env = (await import('@/lib/env')).env as unknown as Record<string, string | undefined>
     checks.environment = { status: 'healthy' }
-  } catch (err) {
+  } catch {
     checks.environment = { status: 'unhealthy' }
   }
 
-  // Check Supabase
+  // Check Supabase via la table villes (read public, RLS-allowed)
   try {
     const { createAdminClient } = await import('@/lib/supabase/admin')
     const supabase = createAdminClient()
     const dbStart = Date.now()
-    const { error } = await supabase.from('profiles').select('id', { count: 'exact', head: true })
+    const { error } = await supabase.from('villes').select('slug', { count: 'exact', head: true })
     const dbLatency = Date.now() - dbStart
 
     if (error) {
@@ -39,15 +39,15 @@ export async function GET() {
     } else {
       checks.database = { status: 'healthy', latency: dbLatency }
     }
-  } catch (err) {
+  } catch {
     checks.database = { status: 'unhealthy' }
   }
 
-  // Check Stripe (config only)
-  const stripeKey = env?.STRIPE_SECRET_KEY ?? process.env.STRIPE_SECRET_KEY
-  checks.stripe = stripeKey
+  // Check Resend config
+  const resendKey = env?.RESEND_API_KEY ?? process.env.RESEND_API_KEY
+  checks.email = resendKey
     ? { status: 'healthy' }
-    : { status: 'degraded', error: 'Stripe keys not configured' }
+    : { status: 'degraded', error: 'Resend API key not configured' }
 
   // Check Redis (optional)
   const redisUrl = env?.UPSTASH_REDIS_REST_URL ?? process.env.UPSTASH_REDIS_REST_URL

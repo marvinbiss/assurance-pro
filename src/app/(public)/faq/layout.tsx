@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
   title: 'FAQ - Questions fréquentes | Assurance Pro',
-  description: 'Trouvez les réponses à vos questions sur Assurance Pro. Comment demander un devis, choisir un artisan, garanties et plus.',
+  description: 'Réponses aux questions fréquentes sur l\'assurance professionnelle : décennale BTP, RC Pro, multirisque, mutuelle TNS Madelin, VTC, cyber. Cabinet de courtage ORIAS.',
   alternates: {
     canonical: `${SITE_URL}/faq`,
   },

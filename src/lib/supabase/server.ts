@@ -24,15 +24,15 @@ export async function createClient() {
         set(name: string, value: string, options: CookieOptions) {
           try {
             cookieStore.set({ name, value, ...options })
-          } catch (_error) {
-            // no-op (Server Components)
+          } catch {
+            // Cookie writes throw inside Server Components — safe to ignore.
           }
         },
         remove(name: string, options: CookieOptions) {
           try {
             cookieStore.set({ name, value: '', ...options })
-          } catch (_error) {
-            // no-op (Server Components)
+          } catch {
+            // Cookie writes throw inside Server Components — safe to ignore.
           }
         },
       },
