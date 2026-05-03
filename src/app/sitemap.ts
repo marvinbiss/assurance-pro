@@ -66,6 +66,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'rc-pro/informatique', priority: 0.9, changeFrequency: 'weekly' },                    // CPC 1 300€ (le plus haut du marché)
   { path: 'assurance-voiture-professionnelle', priority: 0.9, changeFrequency: 'weekly' },      // 600 vol KD 1 CPC 500€ (famille 2 450, vacant)
 
+  // Sprint 1 KPMG — Lot 7 : 4 piliers + 1 guide (~9 000 vol/mois cumulé)
+  { path: 'assurance-entreprise', priority: 0.9, changeFrequency: 'weekly' },                   // 1 600 vol KD 30 CPC 400€ (famille 3 000 hors branded)
+  { path: 'assurance-medecin', priority: 0.85, changeFrequency: 'weekly' },                     // 400 vol KD 0 (vacant)
+  { path: 'assurance-transport-marchandises', priority: 0.85, changeFrequency: 'weekly' },      // 300 vol KD 1 (famille 920, vacant)
+  { path: 'assurance-freelance', priority: 0.85, changeFrequency: 'weekly' },                   // 250 vol KD 1 CPC 350€ (famille 410)
+  { path: 'guides/devis-assurance-professionnelle', priority: 0.85, changeFrequency: 'monthly' }, // 450 vol KD 17 CPC 600€ (money KW)
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
