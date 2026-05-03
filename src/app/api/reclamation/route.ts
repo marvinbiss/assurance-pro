@@ -9,6 +9,8 @@ import {
 } from '@/lib/email/templates/reclamation-ack'
 import { logger } from '@/lib/logger'
 import { RECLAMATIONS_INBOX } from '@/lib/email/inboxes'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limiter'
+import { captureApiException } from '@/lib/observability/sentry'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -38,6 +40,19 @@ const ReclamationSchema = z.object({
 
 
 export async function POST(req: NextRequest) {
+  // Rate limiting (formulaire ACPR — 3 réclamations / 15 min / IP).
+  // Conforme Recommandation ACPR 2024-R-02 : éviter saturation médiateur,
+  // tout en laissant la possibilité légitime de soumettre une réclamation
+  // multi-contrat (max 3 / 15 min suffit largement).
+  const ip = getClientIp(req.headers)
+  const rl = await checkRateLimit(`reclamation:${ip}`, { window: 900_000, max: 3 })
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: 'Trop de réclamations soumises depuis cette adresse, veuillez réessayer dans quelques minutes' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) } }
+    )
+  }
+
   let body: unknown
   try {
     body = await req.json()
@@ -77,10 +92,12 @@ export async function POST(req: NextRequest) {
     })
     if (error) {
       logger.error({ err: error, ticket }, 'reclamation supabase insert error')
+      captureApiException(error, { route: 'api/reclamation', category: 'compliance', extra: { ticket, stage: 'supabase-insert' } })
       return NextResponse.json({ error: 'Persistence indisponible' }, { status: 500 })
     }
   } catch (e) {
     logger.error({ err: e, ticket }, 'reclamation admin client error')
+    captureApiException(e, { route: 'api/reclamation', category: 'compliance', extra: { ticket, stage: 'admin-client' } })
     return NextResponse.json({ error: 'Persistence indisponible' }, { status: 500 })
   }
 
@@ -98,6 +115,7 @@ export async function POST(req: NextRequest) {
       await sendEmail({ to: data.email, subject: ack.subject, html: ack.html })
     } catch (err) {
       logger.error({ err, ticket }, 'reclamation ack email failed')
+      captureApiException(err, { route: 'api/reclamation', category: 'compliance', extra: { ticket, stage: 'ack-email' } })
     }
     try {
       const internal = reclamationInternalNotificationTemplate({
@@ -119,6 +137,7 @@ export async function POST(req: NextRequest) {
       await sendEmail({ to: RECLAMATIONS_INBOX, subject: internal.subject, html: internal.html })
     } catch (err) {
       logger.error({ err, ticket }, 'reclamation internal notification failed')
+      captureApiException(err, { route: 'api/reclamation', category: 'compliance', extra: { ticket, stage: 'internal-notification' } })
     }
   })()
 

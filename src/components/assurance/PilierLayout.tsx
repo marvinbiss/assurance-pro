@@ -5,6 +5,34 @@
 
 import Link from 'next/link'
 import type { ReactNode } from 'react'
+import { getBreadcrumbSchema } from '@/lib/seo/jsonld'
+
+/**
+ * Construit dynamiquement la liste BreadcrumbList depuis le slug.
+ * Ex : "guides/attestation-decennale" → [Accueil, Guides, Attestation décennale]
+ */
+function buildBreadcrumbItems(slug: string, title: string) {
+  const segments = slug.split('/').filter((s): s is string => Boolean(s))
+  const items: { name: string; url: string }[] = [{ name: 'Accueil', url: '/' }]
+  let acc = ''
+  for (let i = 0; i < segments.length; i++) {
+    const seg = segments[i] ?? ''
+    acc = `${acc}/${seg}`
+    const isLast = i === segments.length - 1
+    items.push({
+      name: isLast ? title : prettifySegment(seg),
+      url: acc,
+    })
+  }
+  return items
+}
+
+function prettifySegment(s: string): string {
+  return s
+    .split('-')
+    .map((w) => (w.length > 0 ? `${w[0]?.toUpperCase() ?? ''}${w.slice(1)}` : w))
+    .join(' ')
+}
 
 export interface PilierProps {
   /** Slug pour Schema.org */
@@ -202,6 +230,14 @@ export function PilierLayout({
               acceptedAnswer: { '@type': 'Answer', text: f.a },
             })),
           }),
+        }}
+      />
+
+      {/* BreadcrumbList Schema.org — rich snippet Google + UX nav */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbSchema(buildBreadcrumbItems(slug, title))),
         }}
       />
     </article>

@@ -18,6 +18,7 @@ import { createPiiAdminClient } from '@/lib/supabase/admin'
 import { sendEmail } from '@/lib/email/resend'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limiter'
 import { logger } from '@/lib/logger'
+import { captureApiException } from '@/lib/observability/sentry'
 import { SITE_URL } from '@/lib/seo/config'
 import { signGdprToken, verifyGdprToken, hashEmail, GDPR_TOKEN_TTL_MINUTES } from '@/lib/security/gdpr-token'
 import { esc } from '@/lib/email/templates/_html'
@@ -175,6 +176,11 @@ export async function GET(req: NextRequest) {
       { errors, emailHash: hashEmail(email).slice(0, 12) },
       'gdpr-delete partial anonymization — manual review required'
     )
+    captureApiException(new Error('gdpr-delete partial anonymization'), {
+      route: 'api/gdpr/delete',
+      category: 'gdpr',
+      extra: { emailHash: hashEmail(email).slice(0, 12), errorCount: errors.length },
+    })
     return NextResponse.json(
       { error: 'Anonymisation partielle, équipe DPO notifiée.' },
       { status: 500 }

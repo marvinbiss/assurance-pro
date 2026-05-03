@@ -94,7 +94,14 @@ async function seedKeywords(client: SupabaseClient, dir: string): Promise<number
       join(dir, file)
     )
     const kws = data.keywords ?? []
+    let skipped = 0
     for (const k of kws) {
+      // Skip entries sans volume (Ahrefs renvoie null pour les vol < 10
+      // — pas pertinent pour pSEO et viole la contrainte NOT NULL).
+      if (k.volume == null || !Number.isFinite(k.volume) || k.volume < 0) {
+        skipped++
+        continue
+      }
       // Dedup : on garde la 1re occurrence (les fichiers ont des recouvrements).
       if (!allRows.has(k.keyword)) {
         allRows.set(k.keyword, {
@@ -107,7 +114,8 @@ async function seedKeywords(client: SupabaseClient, dir: string): Promise<number
         })
       }
     }
-    console.log(`  [kw] ${file}: ${kws.length} entries`)
+    const note = skipped > 0 ? ` (${skipped} skipped : null volume)` : ''
+    console.log(`  [kw] ${file}: ${kws.length} entries${note}`)
   }
 
   const rows = Array.from(allRows.values())
