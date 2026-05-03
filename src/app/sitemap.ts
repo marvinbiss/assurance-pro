@@ -128,6 +128,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'rc-pro/coach-sportif', priority: 0.85, changeFrequency: 'weekly' },                // 200 vol KD 0 OBLIGATOIRE
   { path: 'rc-pro/formateur', priority: 0.85, changeFrequency: 'weekly' },                    // 70+50 vol KD 0
 
+  // Sprint 2 Lot 16 : 5 piliers transverses (association, RC SASU, mutuelle dirigeant, portage, micro-prest)
+  { path: 'assurance-association', priority: 0.85, changeFrequency: 'weekly' },               // 100 vol KD 2 (famille 400)
+  { path: 'rc-pro/sasu', priority: 0.85, changeFrequency: 'weekly' },                         // 150 vol KD 0
+  { path: 'mutuelle-dirigeant', priority: 0.85, changeFrequency: 'weekly' },                  // 180 vol KD 0
+  { path: 'assurance-portage-salarial', priority: 0.85, changeFrequency: 'weekly' },          // long-tail freelance
+  { path: 'rc-pro/micro-entreprise-prestation-service', priority: 0.85, changeFrequency: 'weekly' }, // 150 vol KD 8
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
