@@ -52,21 +52,3 @@ export async function submitToIndexNow(urls: string[]): Promise<IndexNowResult> 
   return { submitted: totalSubmitted, success: totalSubmitted > 0 }
 }
 
-/**
- * Build the list of affected URLs when a provider changes.
- * Notifies: the provider page, the service+ville hub page, and the city page.
- */
-export function getProviderAffectedUrls(
-  serviceSlug: string,
-  villeSlug: string,
-  providerPublicId?: string
-): string[] {
-  const urls = [
-    `/services/${serviceSlug}/${villeSlug}`,
-    `/villes/${villeSlug}`,
-  ]
-  if (providerPublicId) {
-    urls.push(`/services/${serviceSlug}/${villeSlug}/${providerPublicId}`)
-  }
-  return urls
-}

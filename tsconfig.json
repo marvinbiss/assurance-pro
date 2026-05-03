@@ -38,15 +38,5 @@
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    ".next",
-    "__tests__",
-    "docs/_servicesartisans-reference",
-    "node_modules",
-    "scripts",
-    "src/app/api/admin",
-    "src/components/admin",
-    "src/components/artisan",
-    "src/components/artisan-dashboard"
-  ]
+  "exclude": [".next", "__tests__", "node_modules"]
 }

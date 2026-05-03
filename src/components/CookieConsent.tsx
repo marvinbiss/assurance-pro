@@ -84,12 +84,18 @@ export default function CookieConsent() {
       console.error('Failed to save consent to server:', error)
     }
 
-    // Apply preferences
+    // Apply preferences via Google Consent Mode v2.
     if (prefs.analytics) {
       enableAnalytics()
     }
     if (prefs.marketing) {
       enableMarketing()
+    }
+
+    // Notifie TrackingScripts (et tout autre listener) que le consentement
+    // a évolué — déclenche l'injection conditionnelle des balises.
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('cookie-consent-changed', { detail: prefs }))
     }
   }
 
@@ -274,17 +280,19 @@ export default function CookieConsent() {
               )}
             </AnimatePresence>
 
-            {/* Actions */}
+            {/* Actions — parité visuelle stricte CNIL délibération SAN-2023-024 :
+                "Refuser tout" doit être au même niveau visuel que "Tout accepter".
+                Les deux sont en bouton plein, même couleur, même taille, même padding. */}
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <button
                 onClick={acceptAll}
-                className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+                className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
               >
                 Tout accepter
               </button>
               <button
                 onClick={acceptNecessaryOnly}
-                className="rounded-lg border border-gray-300 bg-white px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
               >
                 Refuser tout
               </button>

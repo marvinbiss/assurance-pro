@@ -8,21 +8,8 @@ import { logger } from '@/lib/logger'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limiter'
 import { Resend } from 'resend'
 import { z } from 'zod'
-
-// HTML escape function to prevent XSS
-function escapeHtml(text: string): string {
-  const htmlEntities: Record<string, string> = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;',
-    '/': '&#x2F;',
-    '`': '&#x60;',
-    '=': '&#x3D;'
-  }
-  return text.replace(/[&<>"'`=/]/g, (char) => htmlEntities[char]!)
-}
+import { esc as escapeHtml } from '@/lib/email/templates/_html'
+import { CONTACT_INBOX, NOREPLY_FROM } from '@/lib/email/inboxes'
 
 export const dynamic = 'force-dynamic'
 
@@ -71,9 +58,10 @@ export async function POST(request: Request) {
 
     // Map subject to readable text
     const sujetTexte: Record<string, string> = {
-      devis: 'Question sur un devis',
-      artisan: 'Problème avec un artisan',
-      inscription: 'Inscription artisan',
+      devis: 'Question sur un devis assurance',
+      sinistre: 'Question sur un sinistre',
+      conseil: 'Demande de conseil DDA',
+      reclamation: 'Réclamation (voir aussi /reclamation)',
       partenariat: 'Partenariat',
       autre: 'Autre',
     }
@@ -86,8 +74,8 @@ export async function POST(request: Request) {
 
     // Send email to support team
     const { error: sendError } = await getResend().emails.send({
-      from: process.env.FROM_EMAIL || 'contact@assurance-pro.fr',
-      to: 'contact@assurance-pro.fr',
+      from: NOREPLY_FROM,
+      to: CONTACT_INBOX,
       reply_to: safeEmailHeader,
       subject: `[Contact] ${safeSujet} - ${safeNom}`,
       html: `
@@ -116,7 +104,7 @@ export async function POST(request: Request) {
     // Send confirmation email to user (non-critical — don't fail if this errors)
     try {
       await getResend().emails.send({
-        from: process.env.FROM_EMAIL || 'noreply@assurance-pro.fr',
+        from: NOREPLY_FROM,
         to: email,
         subject: 'Votre message a bien été reçu - Assurance Pro',
         html: `

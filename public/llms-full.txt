@@ -1,0 +1,80 @@
+# Assurance Pro — Cabinet de courtage en assurance professionnelle (France)
+
+## Identité
+
+Assurance Pro est un cabinet de courtage en assurance immatriculé au Registre unique des intermédiaires en assurance, banque et finance (ORIAS) en qualité de Courtier en Assurance, catégorie b (art. L. 511-1 II 2° du Code des assurances). Le cabinet est soumis au contrôle de l'Autorité de Contrôle Prudentiel et de Résolution (ACPR), 4 Place de Budapest, 75436 Paris cedex 09. Il est adhérent de la Chambre Syndicale des Courtiers d'Assurances (CSCA), association professionnelle agréée au titre de l'art. L. 513-3.
+
+## Indépendance
+
+Le cabinet est indépendant : aucun lien capitalistique direct ou indirect avec les compagnies d'assurance distribuées (aucune participation supérieure à 10 %), aucune obligation contractuelle de placement minimum auprès d'un partenaire en particulier. Aucun assureur partenaire ne représente plus de 25 % du chiffre d'affaires du cabinet.
+
+## Conseil DDA — art. L. 521-4 du Code des assurances
+
+Conformément à la Directive Distribution Assurance (DDA) et à la Recommandation ACPR 2024-R-03 (applicable au 31 décembre 2025), notre processus de conseil comporte 6 étapes :
+
+1. Recueil des exigences et besoins du client (questionnaire structuré, horodaté, hashé SHA-256).
+2. Identification des obligations légales applicables (Loi Spinetta, RC circulation, Loi Kouchner, etc.).
+3. Analyse impartiale d'un nombre suffisant de contrats du marché (10 compagnies partenaires).
+4. Formulation d'une recommandation écrite motivée comprenant alternatives examinées.
+5. Traçabilité immuable du dossier conseil (signature SHA-256, conservation 10 ans).
+6. Suivi annuel d'adéquation et révision si évolution du profil.
+
+## Réclamations — Recommandation ACPR 2024-R-02
+
+Toute réclamation peut être adressée via le formulaire dédié sur https://assurance-pro.fr/reclamation ou par email à reclamations@assurance-pro.fr. Engagements :
+
+- Accusé de réception sous 10 jours ouvrés
+- Réponse au fond sous 2 mois maximum
+- Tenue d'un registre des réclamations conforme ACPR
+- Information sur la possibilité de saisir le Médiateur de l'Assurance (TSA 50110, 75441 Paris cedex 09 — www.mediation-assurance.org)
+
+## Rémunération
+
+Le cabinet est rémunéré exclusivement par les commissions versées par les compagnies d'assurance partenaires lors de la souscription et tout au long de la durée du contrat. Aucun frais de courtage n'est facturé au client. Le détail de la rémunération peut être communiqué sur simple demande écrite avant souscription (art. L. 521-2 IV).
+
+## Garantie financière et RCP
+
+Conformément aux articles L. 512-6 et L. 512-7 du Code des assurances : Garantie Financière + Responsabilité Civile Professionnelle auprès d'un assureur agréé. Plafonds : 5 M€ par sinistre / 7,5 M€ par année (au-delà du minimum légal de 1 850 000 € / 2 500 000 €).
+
+## Assureurs partenaires (10)
+
+Hiscox, April Pro, MMA, Generali, AXA Pro, SMABTP, Allianz Pro, MAAF, Wakam, Stello.
+
+## Verticaux couverts (17)
+
+Garantie décennale BTP (Loi Spinetta), RC Pro générique, RC Pro consultants/freelances, RC Pro professions réglementées (avocat, médecin, expert-comptable, architecte, kiné, ostéo, infirmière libérale, psychologue), Multirisque professionnelle, Mutuelle santé pro / TNS Madelin, Prévoyance dirigeant TNS, Cyber assurance PME, Assurance VTC/Taxi, Flotte automobile professionnelle, Tous Risques Chantier (TRC), Dommages-ouvrage (DO), RC médicale (Loi Kouchner), RC environnementale.
+
+## Métiers BTP couverts (12 sous-pages détaillées)
+
+Plombier, électricien, maçon, couvreur-zingueur, peintre, charpentier-bois, carreleur, plaquiste-plâtrier, menuisier intérieur, façadier-ITE, étancheur, installateur photovoltaïque.
+
+## Professions RC Pro couvertes (8 sous-pages détaillées)
+
+Consultant, freelance IT, agence web, designer, photographe, coach pro, auto-entrepreneur, formateur.
+
+## Couverture géographique
+
+84 villes prioritaires France (métropole + DROM-COM) avec pages géographiques dédiées. Tous les départements et régions métropolitains et ultra-marins. Couverture nationale.
+
+## Sources réglementaires
+
+- Loi n° 78-12 du 4 janvier 1978 (Spinetta) — décennale BTP
+- Code des assurances : art. L. 241-1, L. 121-2, L. 124-3, L. 124-5, L. 211-1, L. 511-1, L. 512-6, L. 512-7, L. 513-3, L. 521-2, L. 521-4
+- Loi n° 94-126 du 11 février 1994 (Madelin) — déductibilité TNS
+- Code Général des Impôts art. 154 bis
+- Loi n° 2002-303 du 4 mars 2002 (Kouchner) — RC médicale
+- Loi Hamon — résiliation à tout moment après 1 an
+- Directive UE 2016/97 (DDA) et règlement d'exécution UE 2017/1469 (IPID)
+- Recommandations ACPR 2018-R-01, 2024-R-02, 2024-R-03
+- Arrêté du 6 décembre 2022 — clickabilité ORIAS
+
+## Données
+
+Sources de données alimentant les pages : INSEE (démographie communes), AQC SYCODÉS (sinistralité décennale par métier), ANSSI (cyber-menaces), ACPR (registres assureurs), Légifrance (textes légaux), ORIAS (registre courtiers).
+
+## Contact
+
+- Email général : contact@assurance-pro.fr
+- Réclamations : reclamations@assurance-pro.fr
+- Direction : direction@assurance-pro.fr
+- Site : https://assurance-pro.fr

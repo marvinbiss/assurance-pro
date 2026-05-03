@@ -8,6 +8,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { searchJurisprudence } from '@/lib/api/legifrance'
 import { logger } from '@/lib/logger'
 import { createClient } from '@/lib/supabase/server'
+import { verifyCronAuthorization } from '@/lib/security/cron-auth'
 
 const QUERIES = [
   'décennale plombier',
@@ -26,8 +27,7 @@ const QUERIES = [
 ]
 
 export async function GET(req: NextRequest) {
-  const authHeader = req.headers.get('authorization')
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  if (!verifyCronAuthorization(req.headers.get('authorization'))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

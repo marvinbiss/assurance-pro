@@ -71,6 +71,13 @@ export default function HeaderClient() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="tel:+33651858930"
+              className="text-sm text-gray-700 hover:text-blue-700 font-semibold tabular-nums"
+              aria-label="Appeler le cabinet au 06 51 85 89 30"
+            >
+              📞 06 51 85 89 30
+            </a>
             <Link
               href="/devis"
               className="px-5 py-2.5 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-800 transition"

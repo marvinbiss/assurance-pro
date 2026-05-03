@@ -9,6 +9,7 @@ import { cookies } from 'next/headers'
 import { createServerClient } from '@supabase/ssr'
 import { logger } from '@/lib/logger'
 import { z } from 'zod'
+import { supabaseUrl, supabaseAnonKey, supabaseServiceRoleKey } from '@/lib/supabase/env'
 
 // POST request schema
 const consentPostSchema = z.object({
@@ -25,10 +26,7 @@ const consentPostSchema = z.object({
 
 // Lazy initialize to avoid build-time errors
 function getSupabaseAdmin() {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  )
+  return createClient(supabaseUrl(), supabaseServiceRoleKey())
 }
 
 // POST /api/gdpr/consent - Record cookie consent
@@ -48,8 +46,8 @@ export async function POST(request: Request) {
     try {
       const cookieStore = await cookies()
       const supabase = createServerClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        supabaseUrl(),
+        supabaseAnonKey(),
         {
           cookies: {
             getAll() {
@@ -104,8 +102,8 @@ export async function GET(_request: Request) {
   try {
     const cookieStore = await cookies()
     const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      supabaseUrl(),
+      supabaseAnonKey(),
       {
         cookies: {
           getAll() {

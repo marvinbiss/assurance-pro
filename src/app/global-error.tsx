@@ -71,6 +71,7 @@ export default function GlobalError({
             >
               Réessayer
             </button>
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- global-error sits outside the Next routing layer; force a hard reload via native anchor */}
             <a
               href="/"
               style={{

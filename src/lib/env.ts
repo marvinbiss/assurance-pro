@@ -1,140 +1,75 @@
 import { z } from 'zod'
 
 /**
- * Environment variable validation schema.
- *
- * Categories:
- *   1. Core infrastructure (Supabase, Stripe) -- required at runtime
- *   2. Public client-side vars (NEXT_PUBLIC_*) -- required for frontend
- *   3. Optional third-party services (AI, Redis, Twilio, etc.)
- *   4. Optional business/config vars (company info, secrets, etc.)
- *
- * Usage:
- *   import { env } from '@/lib/env'
- *   // env.STRIPE_SECRET_KEY is guaranteed to be a valid string starting with 'sk_'
- *
- * This module is NOT meant to be imported everywhere. Use it in critical
- * server-side entry points (health route, stripe webhook, etc.) where
- * validated env vars are essential.
+ * Validation runtime des variables d'environnement Assurance Pro.
+ * Importé uniquement par /api/health pour la sonde infrastructure.
  */
 
 const envSchema = z.object({
-  // ──────────────────────────────────────────────
-  // Core infrastructure -- required at runtime
-  // ──────────────────────────────────────────────
+  // Core infra
   NEXT_PUBLIC_SUPABASE_URL: z.string().url(),
   NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().min(1),
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
-  STRIPE_SECRET_KEY: z.string().startsWith('sk_').optional(),
-  STRIPE_WEBHOOK_SECRET: z.string().startsWith('whsec_').optional(),
-  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string().startsWith('pk_').optional(),
-
-  // ──────────────────────────────────────────────
-  // Node / Next.js
-  // ──────────────────────────────────────────────
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
 
-  // ──────────────────────────────────────────────
-  // Public client-side vars (optional -- may not be set in all envs)
-  // ──────────────────────────────────────────────
+  // Identité publique
   NEXT_PUBLIC_SITE_URL: z.string().url().optional(),
-  NEXT_PUBLIC_APP_URL: z.string().url().optional(),
-  NEXT_PUBLIC_APP_VERSION: z.string().optional(),
-  NEXT_PUBLIC_GA_ID: z.string().optional(),
-  NEXT_PUBLIC_SENTRY_DSN: z.string().optional(),
-  NEXT_PUBLIC_VAPID_PUBLIC_KEY: z.string().optional(),
+  NEXT_PUBLIC_ORIAS_NUMBER: z.string().optional(),
+  NEXT_PUBLIC_GTM_ID: z.string().optional(),
+  NEXT_PUBLIC_META_PIXEL_ID: z.string().optional(),
 
-  // ──────────────────────────────────────────────
-  // AI services (optional)
-  // ──────────────────────────────────────────────
-  ANTHROPIC_API_KEY: z.string().optional(),
-  OPENAI_API_KEY: z.string().optional(),
+  // Email transactionnel
+  RESEND_API_KEY: z.string().optional(),
+  RESEND_FROM: z.string().optional(),
+  COURTIER_INBOX: z.string().email().optional(),
+  RECLAMATIONS_INBOX: z.string().email().optional(),
 
-  // ──────────────────────────────────────────────
-  // Redis / rate-limiting (optional)
-  // ──────────────────────────────────────────────
+  // Sécurité
+  CRON_SECRET: z.string().min(16).optional(),
+  ADMIN_API_TOKEN: z.string().min(32).optional(),
+  CROSS_DOMAIN_JWT_SECRET: z.string().min(32).optional(),
+  GDPR_DELETE_TOKEN_SECRET: z.string().min(32).optional(),
+  GDPR_EXPORT_TOKEN_SECRET: z.string().min(32).optional(),
+  REVALIDATE_SECRET: z.string().min(16).optional(),
+
+  // Rate-limiting
   UPSTASH_REDIS_REST_URL: z.string().url().optional(),
   UPSTASH_REDIS_REST_TOKEN: z.string().optional(),
 
-  // ──────────────────────────────────────────────
-  // Two-factor authentication (optional)
-  // ──────────────────────────────────────────────
-  TWO_FACTOR_ENCRYPTION_KEY: z.string().min(32).optional(),
-  TWO_FACTOR_SALT: z.string().min(8).optional(),
-
-  // ──────────────────────────────────────────────
-  // Email (Resend) (optional)
-  // ──────────────────────────────────────────────
-  RESEND_API_KEY: z.string().optional(),
-  RESEND_FROM_EMAIL: z.string().optional(),
-  RESEND_WEBHOOK_SECRET: z.string().optional(),
-  FROM_EMAIL: z.string().optional(),
-
-  // ──────────────────────────────────────────────
-  // Twilio (optional)
-  // ──────────────────────────────────────────────
-  TWILIO_ACCOUNT_SID: z.string().optional(),
-  TWILIO_AUTH_TOKEN: z.string().optional(),
-  TWILIO_PHONE_NUMBER: z.string().optional(),
-  TWILIO_WHATSAPP_NUMBER: z.string().optional(),
-
-  // ──────────────────────────────────────────────
-  // Stripe plan price IDs (optional)
-  // ──────────────────────────────────────────────
-  STRIPE_PRO_PRICE_ID: z.string().optional(),
-  STRIPE_PREMIUM_PRICE_ID: z.string().optional(),
-
-  // ──────────────────────────────────────────────
-  // INSEE / Pappers API (optional)
-  // ──────────────────────────────────────────────
+  // APIs externes (optionnelles)
+  LEGIFRANCE_CLIENT_ID: z.string().optional(),
+  LEGIFRANCE_CLIENT_SECRET: z.string().optional(),
   INSEE_API_TOKEN: z.string().optional(),
-  INSEE_CONSUMER_KEY: z.string().optional(),
-  INSEE_CONSUMER_SECRET: z.string().optional(),
-  PAPPERS_API_KEY: z.string().optional(),
+  AHREFS_API_TOKEN: z.string().optional(),
 
-  // ──────────────────────────────────────────────
-  // Misc secrets & config (optional)
-  // ──────────────────────────────────────────────
-  CRON_SECRET: z.string().optional(),
+  // Indexation
   INDEXNOW_API_KEY: z.string().optional(),
-  REVALIDATE_SECRET: z.string().optional(),
-  REVIEW_HMAC_SECRET: z.string().optional(),
-  UNSUBSCRIBE_SECRET: z.string().optional(),
-  ADMIN_EMAILS: z.string().optional(),
-  NEXTAUTH_URL: z.string().url().optional(),
-  VAPID_PRIVATE_KEY: z.string().optional(),
 
-  // ──────────────────────────────────────────────
-  // Company / legal metadata (optional -- used in legal pages)
-  // ──────────────────────────────────────────────
+  // Identité légale (mentions, FIC, IPID)
   COMPANY_LEGAL_NAME: z.string().optional(),
-  COMPANY_ADDRESS: z.string().optional(),
-  COMPANY_PHONE: z.string().optional(),
+  COMPANY_FORME_JURIDIQUE: z.string().optional(),
+  COMPANY_CAPITAL_SOCIAL: z.string().optional(),
   COMPANY_SIRET: z.string().optional(),
   COMPANY_RCS: z.string().optional(),
   COMPANY_TVA: z.string().optional(),
-  COMPANY_CAPITAL_SOCIAL: z.string().optional(),
-  COMPANY_FORME_JURIDIQUE: z.string().optional(),
+  COMPANY_ADDRESS: z.string().optional(),
+  COMPANY_PHONE: z.string().optional(),
   COMPANY_DIRECTEUR_PUBLICATION: z.string().optional(),
-  COMPANY_STATUS: z.string().optional(),
   COMPANY_FOUNDING_DATE: z.string().optional(),
+  COMPANY_STATUS: z.enum(['pre-launch', 'launched']).optional(),
 })
 
 export type Env = z.infer<typeof envSchema>
 
 function validateEnv(): Env {
-  // Skip validation during build and tests
   if (process.env.NEXT_BUILD_SKIP_DB || process.env.NODE_ENV === 'test' || process.env.VITEST) {
     return process.env as unknown as Env
   }
-
   const result = envSchema.safeParse(process.env)
-
   if (!result.success) {
     const issues = result.error.issues
       .map((i) => `  - ${i.path.join('.')}: ${i.message}`)
       .join('\n')
-
     throw new Error(
       [
         '',
@@ -143,13 +78,12 @@ function validateEnv(): Env {
         '===========================================',
         issues,
         '',
-        'Hint: check your .env.local file or hosting environment variables.',
+        'Hint: check .env.local for development or the hosting environment for prod.',
         '===========================================',
         '',
       ].join('\n')
     )
   }
-
   return result.data
 }
 

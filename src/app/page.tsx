@@ -5,6 +5,9 @@
 
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { TrustBadgesRow } from '@/components/conversion/TrustBadgesRow'
+import { StatsBar } from '@/components/conversion/StatsBar'
+import { TestimonialsBlock } from '@/components/conversion/TestimonialsBlock'
 
 export const metadata: Metadata = {
   title: 'Assurance Pro — Comparez et économisez en 2 minutes',
@@ -116,6 +119,10 @@ export default function HomePage() {
         </div>
       </section>
 
+      <TrustBadgesRow />
+
+      <StatsBar />
+
       <section id="verticaux" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -165,6 +172,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <TestimonialsBlock />
 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-5xl text-center">
