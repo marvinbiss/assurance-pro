@@ -87,6 +87,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'guides/tous-risques-chantier', priority: 0.85, changeFrequency: 'monthly' },         // 200 vol KD 0 CPC 80€ (guide TRC)
   { path: 'guides/avocat-litige-assurance', priority: 0.8, changeFrequency: 'monthly' },        // 200 vol KD 0 CPC 60€ (famille 700)
 
+  // Sprint 1 KPMG — Lot 10 : 5 piliers niches (e-commerce, consultant, moto, domicile, mission)
+  { path: 'assurance-e-commerce', priority: 0.85, changeFrequency: 'weekly' },                  // 150 vol KD 0 CPC 200€
+  { path: 'assurance-consultant-independant', priority: 0.85, changeFrequency: 'weekly' },      // 150 vol KD 0 CPC 200€
+  { path: 'assurance-moto-professionnelle', priority: 0.85, changeFrequency: 'weekly' },        // 150 vol KD 2 CPC 200€
+  { path: 'assurance-habitation-professionnelle', priority: 0.85, changeFrequency: 'weekly' },  // 150 vol KD 0 CPC 300€
+  { path: 'assurance-mission-professionnelle', priority: 0.85, changeFrequency: 'weekly' },     // 150 vol KD 0 CPC 140€
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
