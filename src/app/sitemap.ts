@@ -59,6 +59,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'assurance-artisan', priority: 0.9, changeFrequency: 'weekly' },              // 400 vol KD 1 CPC 300€ (famille 2 650)
   { path: 'guides/attestation-rc-pro', priority: 0.85, changeFrequency: 'monthly' },    // 350 vol KD 3 CPC 450€ (famille 920)
 
+  // Sprint 1 KPMG — Lot 6 : 5 piliers (~13 000 vol/mois cumulé)
+  { path: 'responsabilite-civile-professionnelle', priority: 0.95, changeFrequency: 'weekly' }, // 5 200 vol KD 22 (famille 12 000)
+  { path: 'assurance-professionnelle', priority: 0.95, changeFrequency: 'weekly' },             // pilier RACINE (famille 10 000)
+  { path: 'assurance-micro-entreprise', priority: 0.9, changeFrequency: 'weekly' },             // 1 100 vol KD 4 CPC 300€
+  { path: 'rc-pro/informatique', priority: 0.9, changeFrequency: 'weekly' },                    // CPC 1 300€ (le plus haut du marché)
+  { path: 'assurance-voiture-professionnelle', priority: 0.9, changeFrequency: 'weekly' },      // 600 vol KD 1 CPC 500€ (famille 2 450, vacant)
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
