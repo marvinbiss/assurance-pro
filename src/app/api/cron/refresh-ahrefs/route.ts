@@ -8,6 +8,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { matchingTerms, getQuota } from '@/lib/api/ahrefs'
 import { logger } from '@/lib/logger'
 import { verifyCronAuthorization } from '@/lib/security/cron-auth'
+import { createPiiAdminClient } from '@/lib/supabase/admin'
 
 const SEEDS = [
   'assurance décennale',
@@ -67,21 +68,40 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    // TODO: persist via Supabase service role (kw_universe upsert)
     const rows = Array.from(allKeywords.entries()).map(([keyword, m]) => ({
       keyword,
       volume: m.volume,
-      kd: m.difficulty,
+      difficulty: m.difficulty,
       cpc: m.cpc,
+      source: 'cron-refresh-ahrefs',
       country: 'fr',
       refreshed_at: new Date().toISOString(),
     }))
 
-    logger.info({ totalKeywords: rows.length }, 'Ahrefs refresh complete')
+    // Upsert via service role (bypass RLS — kw_universe est intelligence
+    // concurrentielle, accès strict service role uniquement). Batch de 1000
+    // pour rester sous les limites Postgres / requête HTTP.
+    const supabase = createPiiAdminClient()
+    let upserted = 0
+    const BATCH = 1000
+    for (let i = 0; i < rows.length; i += BATCH) {
+      const batch = rows.slice(i, i + BATCH)
+      const { error } = await supabase
+        .from('kw_universe')
+        .upsert(batch, { onConflict: 'keyword', ignoreDuplicates: false })
+      if (error) {
+        logger.error({ err: error, batchOffset: i }, 'kw_universe upsert batch failed')
+        throw new Error(`kw_universe upsert failed at batch ${i}: ${error.message}`)
+      }
+      upserted += batch.length
+    }
+
+    logger.info({ totalKeywords: rows.length, upserted }, 'Ahrefs refresh complete')
 
     return NextResponse.json({
       ok: true,
       total_keywords: rows.length,
+      upserted,
       total_volume: rows.reduce((s, r) => s + r.volume, 0),
       seeds_processed: SEEDS.length,
       quota_remaining: quota.units_limit - quota.units_used,
