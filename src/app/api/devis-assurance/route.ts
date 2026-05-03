@@ -25,6 +25,7 @@ import {
   deriveLegalRequirements,
 } from '@/lib/compliance/exigences-capture'
 import { logger } from '@/lib/logger'
+import { captureApiException } from '@/lib/observability/sentry'
 
 const Schema = z.object({
   garantie_code: z.string().min(2),
@@ -297,6 +298,7 @@ export async function POST(req: NextRequest) {
     })
   } catch (err) {
     logger.error({ err }, '/api/devis-assurance error')
+    captureApiException(err, { route: 'api/devis-assurance', category: 'lead' })
     return NextResponse.json({ error: 'Internal error' }, { status: 500 })
   }
 }

@@ -10,6 +10,8 @@ import { createServerClient } from '@supabase/ssr'
 import { logger } from '@/lib/logger'
 import { z } from 'zod'
 import { supabaseUrl, supabaseAnonKey, supabaseServiceRoleKey } from '@/lib/supabase/env'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limiter'
+import { captureApiException } from '@/lib/observability/sentry'
 
 // POST request schema
 const consentPostSchema = z.object({
@@ -34,6 +36,19 @@ export const dynamic = 'force-dynamic'
 
 export async function POST(request: Request) {
   try {
+    // Rate limiting (RGPD consent — 10 changes / 5 min / IP).
+    // Évite spam toggling qui pollue les logs et fausse les statistiques
+    // d'opt-in CNIL ; 10 toggles légitimes en 5 min couvre tous les cas réels
+    // (parcours utilisateur exploratoire, changement d'avis, multi-onglets).
+    const ip = getClientIp(request.headers)
+    const rl = await checkRateLimit(`gdpr-consent:${ip}`, { window: 300_000, max: 10 })
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { success: false, error: { message: 'Trop de mises à jour de consentement, veuillez patienter' } },
+        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) } }
+      )
+    }
+
     const body = await request.json()
     const result = consentPostSchema.safeParse(body)
     if (!result.success) {
@@ -67,15 +82,14 @@ export async function POST(request: Request) {
       // User not authenticated, that's fine
     }
 
-    // Get IP address (for compliance records)
-    const forwarded = request.headers.get('x-forwarded-for')
-    const ip = forwarded?.split(',')[0] || request.headers.get('x-real-ip') || 'unknown'
+    // IP for compliance record (déjà extraite plus haut pour le rate-limit).
+    const ipAddress = ip || 'unknown'
 
     // Record consent
     const { error } = await getSupabaseAdmin().from('cookie_consents').insert({
       user_id: userId,
       session_id: crypto.randomUUID(),
-      ip_address: ip,
+      ip_address: ipAddress,
       user_agent: userAgent,
       necessary: preferences.necessary,
       functional: preferences.functional ?? false,
@@ -90,6 +104,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true })
   } catch (error) {
     logger.error('GDPR consent error:', error)
+    captureApiException(error, { route: 'api/gdpr/consent', category: 'gdpr', extra: { method: 'POST' } })
     return NextResponse.json(
       { success: false, error: { message: 'Erreur lors de l\'enregistrement du consentement' } },
       { status: 500 }
@@ -136,6 +151,7 @@ export async function GET(_request: Request) {
     return NextResponse.json({ consents: consents || [] })
   } catch (error) {
     logger.error('GDPR consent fetch error:', error)
+    captureApiException(error, { route: 'api/gdpr/consent', category: 'gdpr', extra: { method: 'GET' } })
     return NextResponse.json(
       { success: false, error: { message: 'Erreur lors de la récupération de l\'historique de consentement' } },
       { status: 500 }

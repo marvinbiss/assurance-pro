@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react'
+import * as Sentry from '@sentry/nextjs'
 
 export default function Error({
   error,
@@ -12,7 +13,11 @@ export default function Error({
   reset: () => void
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
+    // Forward client-side render errors to Sentry. No-op si DSN absent.
+    Sentry.captureException(error, {
+      tags: { boundary: 'app-root-error' },
+      extra: { digest: error.digest },
+    })
     console.error('Page error:', error)
   }, [error])
 
