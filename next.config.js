@@ -100,4 +100,16 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+// Sentry wrapping — no-op si SENTRY_DSN absent (sentry.{client,server,edge}.config.ts).
+// withSentryConfig n'ajoute pas d'overhead runtime s'il n'y a pas de DSN.
+const { withSentryConfig } = require('@sentry/nextjs')
+
+module.exports = withSentryConfig(nextConfig, {
+  silent: true,
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+  widenClientFileUpload: true,
+  hideSourceMaps: true,
+  disableLogger: true,
+})
