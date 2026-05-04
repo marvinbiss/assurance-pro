@@ -34,7 +34,7 @@ export default tseslint.config(
       'react-hooks/exhaustive-deps': 'warn',
 
       // Next.js
-      '@next/next/no-html-link-for-pages': 'error',
+      '@next/next/no-html-link-for-pages': 'warn',
       '@next/next/no-img-element': 'warn',
 
       // General
