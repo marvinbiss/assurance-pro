@@ -166,6 +166,7 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'assurance-decennale/charpentier', priority: 0.85, changeFrequency: 'weekly' },       // 60+40 vol KD 0 (~100), AQC 10,1%
   { path: 'rc-pro/expert-comptable', priority: 0.9, changeFrequency: 'weekly' },                // 100+80 vol KD 1 (~220), OBLIGATION Ord. 1945
   { path: 'rc-pro/sante-paramedical', priority: 0.9, changeFrequency: 'weekly' },               // 80+100+60 vol (~240), OBLIGATION L. 1142-2 CSP
+  { path: 'outils/calculateur-tarif-cyber-assurance', priority: 0.95, changeFrequency: 'weekly' },// 9 KW 1 990 vol ROI 330k + sinistre moyen PME 80-300k€ (ANSSI) = forte conversion
 
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
