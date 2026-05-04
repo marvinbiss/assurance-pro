@@ -138,6 +138,7 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   // OUTILS UTILITAIRES — money keywords (CPC 600-900€), conversion 3-5% vs 0,3% éditorial
   { path: 'outils/devis-rc-pro', priority: 0.95, changeFrequency: 'weekly' },                  // 400 vol KD 0 CPC 600€
   { path: 'outils/devis-assurance-decennale', priority: 0.95, changeFrequency: 'weekly' },     // 450 vol KD 7 CPC 900€
+  { path: 'outils/comparateur-mutuelle-pro', priority: 0.95, changeFrequency: 'weekly' },      // 100 vol KD 8 CPC 600€ (famille 600)
 
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
