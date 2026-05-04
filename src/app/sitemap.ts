@@ -150,6 +150,16 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'outils/calculateur-tarif-vtc', priority: 0.95, changeFrequency: 'weekly' },         // 79 KW 13 090 vol/m ROI 3M, KD moyen 1 ("assurance vtc" 3 300 vol KD 1)
   { path: 'outils/comparateur-rc-pro', priority: 0.95, changeFrequency: 'weekly' },             // sous-fam comparative ~2 200 vol/m ROI 1,5M (intent comparatif vs devis)
 
+  // COUCHE B INDUSTRIALISÉE — guides métier sous-niches (vol 150-400, KD <=3, CPC 300-600€)
+  { path: 'assurance-decennale/plombier', priority: 0.85, changeFrequency: 'weekly' },          // 150 vol KD 3 CPC 500€ + tail (~270 cumul)
+  { path: 'assurance-decennale/electricien', priority: 0.85, changeFrequency: 'weekly' },       // 150 vol KD 0 CPC 500€ + tail
+  { path: 'assurance-decennale/macon', priority: 0.85, changeFrequency: 'weekly' },             // 80 vol KD 2 + tail "tarif" "maconnerie" ~200
+  { path: 'assurance-decennale/couvreur-zingueur', priority: 0.85, changeFrequency: 'weekly' }, // 100 vol KD 2 + tail (~280 cumul, top 1 sinistralite BTP)
+  { path: 'assurance-decennale/maitre-oeuvre', priority: 0.85, changeFrequency: 'weekly' },     // 150 vol KD 0 CPC 500€ (responsabilite etendue)
+  { path: 'rc-pro/immobilier', priority: 0.9, changeFrequency: 'weekly' },                      // 200 vol KD 1 CPC 600€ + tail (~600 cumul, OBLIGATION Loi Hoguet)
+  { path: 'rc-pro/consultant', priority: 0.9, changeFrequency: 'weekly' },                      // 150 vol KD 0 CPC 500€ + tail "consultant info" (~430)
+  { path: 'rc-pro/transport-marchandises', priority: 0.85, changeFrequency: 'weekly' },         // 200 vol KD 1 CPC 450€ + tail (~600, CMR + L. 132-1)
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
