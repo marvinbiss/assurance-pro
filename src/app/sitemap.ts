@@ -160,6 +160,13 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'rc-pro/consultant', priority: 0.9, changeFrequency: 'weekly' },                      // 150 vol KD 0 CPC 500€ + tail "consultant info" (~430)
   { path: 'rc-pro/transport-marchandises', priority: 0.85, changeFrequency: 'weekly' },         // 200 vol KD 1 CPC 450€ + tail (~600, CMR + L. 132-1)
 
+  // COUCHE B BATCH 2 — 5 guides supplémentaires (carreleur, peintre-plaquiste, charpentier, EC, paramédical)
+  { path: 'assurance-decennale/carreleur', priority: 0.85, changeFrequency: 'weekly' },         // 100 vol KD 1 + tail (~180), AQC 6,5%
+  { path: 'assurance-decennale/peintre-plaquiste', priority: 0.85, changeFrequency: 'weekly' }, // 80+60 vol KD 0 (~140), AQC 3,1% le moins risqué
+  { path: 'assurance-decennale/charpentier', priority: 0.85, changeFrequency: 'weekly' },       // 60+40 vol KD 0 (~100), AQC 10,1%
+  { path: 'rc-pro/expert-comptable', priority: 0.9, changeFrequency: 'weekly' },                // 100+80 vol KD 1 (~220), OBLIGATION Ord. 1945
+  { path: 'rc-pro/sante-paramedical', priority: 0.9, changeFrequency: 'weekly' },               // 80+100+60 vol (~240), OBLIGATION L. 1142-2 CSP
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
