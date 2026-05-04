@@ -366,12 +366,19 @@ export function getRelatedCluster(slug: string): RelatedCluster | null {
 }
 
 /**
- * Sélectionne 6 liens pertinents pour la page courante (excluant son propre slug).
- * Mix : 1 hub + 3 spokes cousins + 2 tools.
+ * Sélectionne MIN 15 liens contextuels pertinents pour la page courante (excluant son propre slug).
+ * Best practice SEO 2024 : 15+ liens internes/page maximise le link juice + topical authority.
+ *
+ * Mix optimal :
+ * - 1 hub principal (du cluster)
+ * - TOUS les spokes cousins du cluster (8-14)
+ * - TOUS les tools du cluster (1-4)
+ * - TOUS les guides du cluster (0-4)
+ * - + complément cross-cluster si <15 (autres hubs comme "voir aussi")
  */
-export function selectContextualLinks(currentSlug: string, max = 6): RelatedLink[] {
+export function selectContextualLinks(currentSlug: string, _max = 15): RelatedLink[] {
   const cluster = getRelatedCluster(currentSlug)
-  if (!cluster) return []
+  if (!cluster) return getCrossClusterLinks(currentSlug, 15)
 
   const isCurrent = (href: string) => href === `/${currentSlug}` || href === currentSlug
 
@@ -380,13 +387,59 @@ export function selectContextualLinks(currentSlug: string, max = 6): RelatedLink
   /* 1 hub si différent */
   if (!isCurrent(cluster.hub.href)) result.push(cluster.hub)
 
-  /* 3 spokes cousins (excluant courant) */
-  const spokes = cluster.spokes.filter((s) => !isCurrent(s.href)).slice(0, 3)
+  /* TOUS les spokes cousins (excluant courant) */
+  const spokes = cluster.spokes.filter((s) => !isCurrent(s.href))
   result.push(...spokes)
 
-  /* 2 tools en priorité */
-  const tools = cluster.tools.filter((t) => !isCurrent(t.href)).slice(0, 2)
+  /* TOUS les tools */
+  const tools = cluster.tools.filter((t) => !isCurrent(t.href))
   result.push(...tools)
 
-  return result.slice(0, max)
+  /* TOUS les guides */
+  const guides = cluster.guides.filter((g) => !isCurrent(g.href))
+  result.push(...guides)
+
+  /* Si toujours <15, complète avec hubs cross-cluster (voir aussi) */
+  if (result.length < 15) {
+    const crossLinks = getCrossClusterLinks(currentSlug, 15 - result.length, [cluster.id])
+    result.push(...crossLinks)
+  }
+
+  return result
+}
+
+/**
+ * Retourne les hubs + tools des autres clusters (cross-linking sémantique).
+ * Utilisé en complément quand un cluster est petit ou pour une page hors-cluster.
+ */
+function getCrossClusterLinks(
+  currentSlug: string,
+  count: number,
+  excludeClusters: string[] = []
+): RelatedLink[] {
+  const isCurrent = (href: string) => href === `/${currentSlug}` || href === currentSlug
+  const allClusters = [
+    RC_PRO_CLUSTER,
+    DECENNALE_CLUSTER,
+    MUTUELLE_CLUSTER,
+    LOCAUX_CLUSTER,
+    CYBER_CLUSTER,
+    VTC_CLUSTER,
+  ]
+
+  const candidates: RelatedLink[] = []
+  for (const c of allClusters) {
+    if (excludeClusters.includes(c.id)) continue
+    /* hub */
+    if (!isCurrent(c.hub.href)) candidates.push({ ...c.hub, type: 'sibling' })
+    /* top 2 tools */
+    c.tools
+      .filter((t) => !isCurrent(t.href))
+      .slice(0, 2)
+      .forEach((t) => candidates.push(t))
+    /* top 1 spoke */
+    const topSpoke = c.spokes.find((s) => !isCurrent(s.href))
+    if (topSpoke) candidates.push(topSpoke)
+  }
+  return candidates.slice(0, count)
 }
