@@ -1,9 +1,9 @@
 /**
- * Sentry — client (browser) instrumentation.
+ * Next.js Instrumentation — Sentry client (browser).
  *
- * Activation : positionner SENTRY_DSN (ou NEXT_PUBLIC_SENTRY_DSN) en prod.
- * Sans DSN, Sentry est entièrement no-op (aucun appel réseau, aucune perf hit).
+ * Remplace sentry.client.config.ts (renommage requis Sentry 8.x + Turbopack).
  */
+
 import * as Sentry from '@sentry/nextjs'
 
 const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN ?? process.env.SENTRY_DSN
@@ -31,3 +31,5 @@ if (dsn) {
     },
   })
 }
+
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart
