@@ -150,6 +150,108 @@ export function getArticleSchema(params: {
   }
 }
 
+/**
+ * Schema.org HowTo — guides procéduraux (étapes numérotées en SERP).
+ */
+export interface HowToStep {
+  name: string
+  text: string
+  url?: string
+  imageUrl?: string
+}
+
+export function getHowToSchema(params: {
+  name: string
+  description: string
+  totalTimeIso?: string
+  steps: HowToStep[]
+  estimatedCostEur?: number
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: params.name,
+    description: params.description,
+    ...(params.totalTimeIso ? { totalTime: params.totalTimeIso } : {}),
+    ...(params.estimatedCostEur != null
+      ? {
+          estimatedCost: {
+            '@type': 'MonetaryAmount',
+            currency: 'EUR',
+            value: String(params.estimatedCostEur),
+          },
+        }
+      : {}),
+    step: params.steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      ...(s.url ? { url: s.url } : {}),
+      ...(s.imageUrl ? { image: s.imageUrl } : {}),
+    })),
+  }
+}
+
+/**
+ * Schema.org Person — pages auteur expert (E-E-A-T critique YMYL).
+ */
+export function getPersonSchema(params: {
+  name: string
+  jobTitle: string
+  url: string
+  imageUrl?: string
+  description?: string
+  sameAs?: string[]
+  alumniOf?: string[]
+  knowsAbout?: string[]
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: params.name,
+    jobTitle: params.jobTitle,
+    url: params.url,
+    ...(params.imageUrl ? { image: params.imageUrl } : {}),
+    ...(params.description ? { description: params.description } : {}),
+    ...(params.sameAs && params.sameAs.length > 0 ? { sameAs: params.sameAs } : {}),
+    ...(params.alumniOf && params.alumniOf.length > 0
+      ? { alumniOf: params.alumniOf.map((name) => ({ '@type': 'EducationalOrganization', name })) }
+      : {}),
+    ...(params.knowsAbout && params.knowsAbout.length > 0 ? { knowsAbout: params.knowsAbout } : {}),
+    worksFor: { '@id': `${SITE_URL}#organization` },
+  }
+}
+
+/**
+ * Schema.org DefinedTerm — termes assurance (glossaire).
+ */
+export function getDefinedTermSchema(params: {
+  name: string
+  description: string
+  termCode?: string
+  url: string
+  inDefinedTermSet?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTerm',
+    name: params.name,
+    description: params.description,
+    url: params.url,
+    ...(params.termCode ? { termCode: params.termCode } : {}),
+    ...(params.inDefinedTermSet
+      ? {
+          inDefinedTermSet: {
+            '@type': 'DefinedTermSet',
+            name: 'Glossaire Assurance Pro',
+            url: params.inDefinedTermSet,
+          },
+        }
+      : {}),
+  }
+}
+
 export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     '@context': 'https://schema.org',
