@@ -167,6 +167,11 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'rc-pro/expert-comptable', priority: 0.9, changeFrequency: 'weekly' },                // 100+80 vol KD 1 (~220), OBLIGATION Ord. 1945
   { path: 'rc-pro/sante-paramedical', priority: 0.9, changeFrequency: 'weekly' },               // 80+100+60 vol (~240), OBLIGATION L. 1142-2 CSP
   { path: 'outils/calculateur-tarif-cyber-assurance', priority: 0.95, changeFrequency: 'weekly' },// 9 KW 1 990 vol ROI 330k + sinistre moyen PME 80-300k€ (ANSSI) = forte conversion
+  { path: 'outils/calculateur-tarif-prevoyance-tns', priority: 0.95, changeFrequency: 'weekly' },// 9 KW 1 020 vol ROI 262k + Loi Madelin CGI 154 bis (économie fiscale)
+  { path: 'outils/calculateur-tarif-multirisque-pro', priority: 0.95, changeFrequency: 'weekly' },// 8 KW 1 580 vol ROI 508k (multirisque locaux pro)
+  { path: 'guides/courtier-assurance-decennale', priority: 0.85, changeFrequency: 'monthly' },  // 150 vol KD 3 CPC 700€ + tail (~230)
+  { path: 'guides/franchise-assurance-pro', priority: 0.85, changeFrequency: 'monthly' },        // 200+ vol/m cumul (transversal RC/décennale/multirisque)
+  { path: 'assurance-restaurant-en-ligne', priority: 0.85, changeFrequency: 'weekly' },         // 150 vol KD null CPC 700€ + tail (~230)
 
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
