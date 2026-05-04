@@ -55,6 +55,7 @@ const nextConfig = {
 
   experimental: {
     optimizePackageImports: ['lucide-react', '@supabase/supabase-js', 'date-fns', 'zod'],
+    instrumentationHook: true,
   },
 
   async headers() {
@@ -111,5 +112,5 @@ module.exports = withSentryConfig(nextConfig, {
   authToken: process.env.SENTRY_AUTH_TOKEN,
   widenClientFileUpload: true,
   hideSourceMaps: true,
-  disableLogger: true,
+  // disableLogger deprecated → utiliser webpack.treeshake.removeDebugLogging dans Next 15+
 })
