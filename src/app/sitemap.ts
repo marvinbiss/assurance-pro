@@ -135,6 +135,10 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'assurance-portage-salarial', priority: 0.85, changeFrequency: 'weekly' },          // long-tail freelance
   { path: 'rc-pro/micro-entreprise-prestation-service', priority: 0.85, changeFrequency: 'weekly' }, // 150 vol KD 8
 
+  // OUTILS UTILITAIRES — money keywords (CPC 600-900€), conversion 3-5% vs 0,3% éditorial
+  { path: 'outils/devis-rc-pro', priority: 0.95, changeFrequency: 'weekly' },                  // 400 vol KD 0 CPC 600€
+  { path: 'outils/devis-assurance-decennale', priority: 0.95, changeFrequency: 'weekly' },     // 450 vol KD 7 CPC 900€
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
