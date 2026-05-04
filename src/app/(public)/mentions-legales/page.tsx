@@ -3,9 +3,23 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
   title: 'Mentions légales | Assurance Pro',
-  description: 'Mentions légales du cabinet de courtage ORIAS Assurance Pro. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
+  description:
+    'Mentions légales du cabinet de courtage ORIAS Assurance Pro. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
   alternates: { canonical: `${SITE_URL}/mentions-legales` },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Mentions légales | Assurance Pro',
+    description:
+      'Mentions légales du cabinet de courtage ORIAS Assurance Pro. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
+    url: `${SITE_URL}/mentions-legales`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mentions légales | Assurance Pro',
+    description:
+      'Mentions légales du cabinet de courtage ORIAS Assurance Pro. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
+  },
 }
 
 export default function MentionsLegalesPage() {
@@ -19,7 +33,7 @@ export default function MentionsLegalesPage() {
 
   return (
     <main className="min-h-screen bg-white py-12">
-      <div className="container mx-auto px-4 max-w-3xl prose prose-lg">
+      <div className="prose prose-lg container mx-auto max-w-3xl px-4">
         <h1>Mentions légales</h1>
         <p className="text-sm text-gray-500">Dernière mise à jour : 30 avril 2026</p>
 
@@ -35,7 +49,8 @@ export default function MentionsLegalesPage() {
           <br />
           N° TVA intracommunautaire : {tva}
           <br />
-          Tél. : 01 XX XX XX XX — Email : <a href="mailto:contact@assurance-pro.fr">contact@assurance-pro.fr</a>
+          Tél. : 01 XX XX XX XX — Email :{' '}
+          <a href="mailto:contact@assurance-pro.fr">contact@assurance-pro.fr</a>
         </p>
 
         <h2>2. Directeur de la publication</h2>
@@ -45,7 +60,10 @@ export default function MentionsLegalesPage() {
         <p>
           <strong>Vercel Inc.</strong> — 340 S Lemon Ave #4133, Walnut, CA 91789, USA
           <br />
-          Site : <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">vercel.com</a>
+          Site :{' '}
+          <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">
+            vercel.com
+          </a>
         </p>
         <p>
           Données : <strong>Supabase Inc.</strong> — région Europe (Frankfurt, eu-central-1).
@@ -53,13 +71,17 @@ export default function MentionsLegalesPage() {
 
         <h2>4. Immatriculation ORIAS</h2>
         <p>
-          {editor} est immatriculé au Registre unique des intermédiaires en assurance, banque et finance
-          (<strong>ORIAS</strong>) sous le numéro <strong>{orias}</strong> en qualité de
-          <strong> Courtier en Assurance (catégorie b)</strong>, conformément à l&apos;article L. 512-1
-          du Code des assurances.
+          {editor} est immatriculé au Registre unique des intermédiaires en assurance, banque et
+          finance (<strong>ORIAS</strong>) sous le numéro <strong>{orias}</strong> en qualité de
+          <strong> Courtier en Assurance (catégorie b)</strong>, conformément à l&apos;article L.
+          512-1 du Code des assurances.
         </p>
         <p>
-          Vérification possible sur <a href="https://www.orias.fr" target="_blank" rel="noopener noreferrer">www.orias.fr</a>.
+          Vérification possible sur{' '}
+          <a href="https://www.orias.fr" target="_blank" rel="noopener noreferrer">
+            www.orias.fr
+          </a>
+          .
         </p>
 
         <h2>5. Autorité de contrôle</h2>
@@ -68,58 +90,69 @@ export default function MentionsLegalesPage() {
           <br />
           4 Place de Budapest, CS 92459 — 75436 Paris Cedex 09
           <br />
-          Tél. : 01 49 95 40 00 — <a href="https://acpr.banque-france.fr" target="_blank" rel="noopener noreferrer">acpr.banque-france.fr</a>
+          Tél. : 01 49 95 40 00 —{' '}
+          <a href="https://acpr.banque-france.fr" target="_blank" rel="noopener noreferrer">
+            acpr.banque-france.fr
+          </a>
         </p>
 
         <h2>6. Garantie financière et Responsabilité Civile Professionnelle</h2>
         <p>
           Conformément aux articles L. 512-6 et L. 512-7 du Code des assurances, le cabinet dispose
-          d&apos;une <strong>Garantie Financière</strong> et d&apos;une <strong>RCP</strong> auprès d&apos;un
-          assureur agréé. Plafonds : <strong>5 000 000 € par sinistre / 7 500 000 € par année</strong>
+          d&apos;une <strong>Garantie Financière</strong> et d&apos;une <strong>RCP</strong> auprès
+          d&apos;un assureur agréé. Plafonds :{' '}
+          <strong>5 000 000 € par sinistre / 7 500 000 € par année</strong>
           (au-delà du minimum légal de 1 850 000 € / 2 500 000 €).
         </p>
 
         <h2>7. Adhésion à une association professionnelle agréée</h2>
         <p>
           Membre de la <strong>Chambre Syndicale des Courtiers d&apos;Assurances (CSCA)</strong>,
-          association professionnelle agréée au titre de l&apos;article L. 513-3 du Code des assurances.
+          association professionnelle agréée au titre de l&apos;article L. 513-3 du Code des
+          assurances.
         </p>
 
         <h2>8. Indépendance et conseil</h2>
         <p>
-          Le cabinet exerce son activité de manière <strong>indépendante</strong> : aucun lien capitalistique
-          ni obligation contractuelle de placement avec une compagnie en particulier. Notre analyse de
-          marché porte sur un nombre suffisant de contrats disponibles pour fonder une recommandation
-          motivée (art. L. 521-4 C. assur.).
+          Le cabinet exerce son activité de manière <strong>indépendante</strong> : aucun lien
+          capitalistique ni obligation contractuelle de placement avec une compagnie en particulier.
+          Notre analyse de marché porte sur un nombre suffisant de contrats disponibles pour fonder
+          une recommandation motivée (art. L. 521-4 C. assur.).
         </p>
 
         <h2>9. Rémunération</h2>
         <p>
           Notre rémunération est exclusivement constituée des commissions versées par les compagnies
-          d&apos;assurance partenaires. Aucun honoraire n&apos;est facturé au client. Le détail peut être
-          communiqué sur demande écrite avant souscription.
+          d&apos;assurance partenaires. Aucun honoraire n&apos;est facturé au client. Le détail peut
+          être communiqué sur demande écrite avant souscription.
         </p>
 
         <h2>10. Réclamations et médiation</h2>
         <p>
-          Toute réclamation peut être adressée par formulaire dédié <a href="/reclamation">ici</a> ou
-          par email à <a href="mailto:reclamations@assurance-pro.fr">reclamations@assurance-pro.fr</a>.
-          En cas de désaccord persistant, vous pouvez saisir le <strong>Médiateur de l&apos;Assurance</strong> :
-          TSA 50110, 75441 Paris cedex 09 — <a href="https://www.mediation-assurance.org" target="_blank" rel="noopener noreferrer">www.mediation-assurance.org</a>.
+          Toute réclamation peut être adressée par formulaire dédié <a href="/reclamation">ici</a>{' '}
+          ou par email à{' '}
+          <a href="mailto:reclamations@assurance-pro.fr">reclamations@assurance-pro.fr</a>. En cas
+          de désaccord persistant, vous pouvez saisir le{' '}
+          <strong>Médiateur de l&apos;Assurance</strong> : TSA 50110, 75441 Paris cedex 09 —{' '}
+          <a href="https://www.mediation-assurance.org" target="_blank" rel="noopener noreferrer">
+            www.mediation-assurance.org
+          </a>
+          .
         </p>
 
         <h2>11. Propriété intellectuelle</h2>
         <p>
-          L&apos;ensemble du site (textes, graphismes, logos, icônes, comparatifs, données, base de données)
-          est la propriété exclusive de {editor} ou fait l&apos;objet d&apos;une autorisation d&apos;usage. Toute
-          reproduction, représentation, modification, publication, transmission, dénaturation, totale ou
-          partielle, sur quelque support que ce soit, est interdite sans autorisation écrite préalable.
+          L&apos;ensemble du site (textes, graphismes, logos, icônes, comparatifs, données, base de
+          données) est la propriété exclusive de {editor} ou fait l&apos;objet d&apos;une
+          autorisation d&apos;usage. Toute reproduction, représentation, modification, publication,
+          transmission, dénaturation, totale ou partielle, sur quelque support que ce soit, est
+          interdite sans autorisation écrite préalable.
         </p>
 
         <h2>12. Liens hypertextes</h2>
         <p>
-          Les liens vers des sites externes sont fournis à titre informatif. {editor} ne saurait être tenu
-          responsable du contenu de sites tiers.
+          Les liens vers des sites externes sont fournis à titre informatif. {editor} ne saurait
+          être tenu responsable du contenu de sites tiers.
         </p>
 
         <h2>13. Protection des données personnelles</h2>
@@ -130,8 +163,8 @@ export default function MentionsLegalesPage() {
 
         <h2>14. Droit applicable</h2>
         <p>
-          Les présentes mentions sont régies par le droit français. Tout litige relève de la compétence
-          des tribunaux français après tentative de résolution amiable.
+          Les présentes mentions sont régies par le droit français. Tout litige relève de la
+          compétence des tribunaux français après tentative de résolution amiable.
         </p>
       </div>
     </main>

@@ -18,6 +18,19 @@ export const metadata: Metadata = {
     'Recevez votre devis assurance professionnelle personnalisé en moins de 24 heures. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Sans engagement, sans frais courtage.',
   alternates: { canonical: `${SITE_URL}/devis` },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Devis assurance pro gratuit en 2 minutes | Assurance Pro',
+    description:
+      'Recevez votre devis assurance professionnelle personnalisé en moins de 24 heures. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Sans engagement, sans frais courtage.',
+    url: `${SITE_URL}/devis`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Devis assurance pro gratuit en 2 minutes | Assurance Pro',
+    description:
+      'Recevez votre devis assurance professionnelle personnalisé en moins de 24 heures. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Sans engagement, sans frais courtage.',
+  },
 }
 
 interface PrefillRaw {
@@ -53,8 +66,10 @@ const PHONE_RE = /^[\d +.\-()]{6,30}$/
 
 function sanitizePrefill(raw: PrefillRaw): PrefillRaw {
   const out: PrefillRaw = {}
-  if (raw.garantie_code && /^[a-z0-9-]{2,40}$/.test(raw.garantie_code)) out.garantie_code = raw.garantie_code
-  if (raw.metier_code && /^[a-z0-9_-]{2,40}$/.test(raw.metier_code)) out.metier_code = raw.metier_code
+  if (raw.garantie_code && /^[a-z0-9-]{2,40}$/.test(raw.garantie_code))
+    out.garantie_code = raw.garantie_code
+  if (raw.metier_code && /^[a-z0-9_-]{2,40}$/.test(raw.metier_code))
+    out.metier_code = raw.metier_code
   if (raw.ville && NAME_RE.test(raw.ville)) out.ville = raw.ville
   if (raw.postal_code && /^\d{5}$/.test(raw.postal_code)) out.postal_code = raw.postal_code
   if (raw.ca_range && VALID_CA.has(raw.ca_range)) out.ca_range = raw.ca_range
@@ -125,17 +140,17 @@ export default async function DevisPage({
   const merged = { ...sanitizePrefill(queryPrefill), ...sanitizePrefill(prefill) }
 
   return (
-    <main className="bg-gray-50 min-h-screen py-12">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <header className="text-center mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">
+    <main className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto max-w-4xl px-4">
+        <header className="mb-10 text-center">
+          <h1 className="mb-3 text-3xl font-bold md:text-4xl">
             Votre devis assurance pro en 2 minutes
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-lg text-gray-600">
             Comparé sur 10+ assureurs partenaires. Sans engagement. Réponse sous 24&nbsp;heures.
           </p>
           {crossDomainSource && (
-            <p className="mt-3 text-sm text-blue-700 bg-blue-50 inline-block px-3 py-1 rounded-full">
+            <p className="mt-3 inline-block rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-700">
               Connexion sécurisée depuis ServicesArtisans — formulaire pré-rempli
             </p>
           )}
@@ -143,10 +158,10 @@ export default async function DevisPage({
 
         <DevisAssuranceForm prefill={merged} />
 
-        <p className="mt-8 text-center text-xs text-gray-500 max-w-2xl mx-auto">
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-gray-500">
           <strong>Information précontractuelle —</strong> Ce formulaire est un point de départ pour
-          recueillir vos exigences et besoins (art.&nbsp;L.&nbsp;521-4 du Code des assurances).
-          Un courtier ORIAS vous recontactera ensuite pour formuler un conseil personnalisé motivé
+          recueillir vos exigences et besoins (art.&nbsp;L.&nbsp;521-4 du Code des assurances). Un
+          courtier ORIAS vous recontactera ensuite pour formuler un conseil personnalisé motivé
           conforme à la Recommandation ACPR 2024-R-03.
         </p>
       </div>

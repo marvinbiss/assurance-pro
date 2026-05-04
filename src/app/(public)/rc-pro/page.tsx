@@ -1,11 +1,27 @@
 import type { Metadata } from 'next'
+import { SITE_URL } from '@/lib/seo/config'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 
 export const metadata: Metadata = {
   title: 'RC Pro — Responsabilité Civile Professionnelle | Assurance Pro',
   description:
     'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
-  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/rc-pro` },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/rc-pro`,
+  },
+  openGraph: {
+    title: 'RC Pro — Responsabilité Civile Professionnelle | Assurance Pro',
+    description:
+      'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
+    url: `${SITE_URL}/rc-pro`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'RC Pro — Responsabilité Civile Professionnelle | Assurance Pro',
+    description:
+      'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
+  },
 }
 
 const PROFESSIONS_RC_PRO = [
@@ -31,7 +47,7 @@ export default function PilierRcProPage() {
       isObligatoire={false}
       intro="La RC Pro (Responsabilité Civile Professionnelle) couvre les dommages corporels, matériels et immatériels que vous pourriez causer à vos clients ou à des tiers dans l'exercice de votre activité professionnelle. Elle est obligatoire pour certaines professions réglementées (avocats, médecins, agents immobiliers) et fortement recommandée pour toutes les autres. Notre cabinet ORIAS compare 10 assureurs partenaires (Hiscox, April Pro, Stello, Wakam, AXA Pro…) pour vous proposer la meilleure couverture au tarif le plus adapté."
       benefits={[
-        { icon: '🛡️', title: 'Jusqu\'à 5M€ de couverture', desc: 'Plafonds élevés disponibles' },
+        { icon: '🛡️', title: "Jusqu'à 5M€ de couverture", desc: 'Plafonds élevés disponibles' },
         { icon: '💼', title: '32 professions couvertes', desc: 'Spécialiste services pros' },
         { icon: '⚡', title: 'Souscription en ligne', desc: 'Attestation immédiate' },
         { icon: '💰', title: 'À partir de 12€/mois', desc: 'Pour les auto-entrepreneurs' },
@@ -73,26 +89,24 @@ export default function PilierRcProPage() {
               <p>La RC Pro couvre 3 types de dommages causés à des tiers&nbsp;:</p>
               <ul>
                 <li>
-                  <strong>Dommages corporels</strong>&nbsp;: blessures physiques, atteinte à la santé
-                  (rare hors métiers à risque)
+                  <strong>Dommages corporels</strong>&nbsp;: blessures physiques, atteinte à la
+                  santé (rare hors métiers à risque)
                 </li>
                 <li>
                   <strong>Dommages matériels</strong>&nbsp;: dégradation ou perte de biens
-                  appartenant à vos clients (matériel cassé chez un client, équipement
-                  endommagé pendant une intervention)
+                  appartenant à vos clients (matériel cassé chez un client, équipement endommagé
+                  pendant une intervention)
                 </li>
                 <li>
                   <strong>Dommages immatériels</strong>&nbsp;: pertes financières causées par votre
-                  faute ou négligence (perte d\'exploitation, perte de chiffre d\'affaires,
-                  manque à gagner). C\'est la <em>garantie reine</em> pour les consultants
-                  et freelances.
+                  faute ou négligence (perte d\'exploitation, perte de chiffre d\'affaires, manque à
+                  gagner). C\'est la <em>garantie reine</em> pour les consultants et freelances.
                 </li>
               </ul>
-              <p className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-4 text-sm">
+              <p className="my-4 border-l-4 border-yellow-400 bg-yellow-50 p-4 text-sm">
                 <strong>Exclusions classiques</strong>&nbsp;: dommages intentionnels, manquements
-                délibérés à la réglementation, dommages causés aux biens dont vous avez
-                la garde, certaines exclusions sectorielles. Vérifiez attentivement les
-                conditions générales.
+                délibérés à la réglementation, dommages causés aux biens dont vous avez la garde,
+                certaines exclusions sectorielles. Vérifiez attentivement les conditions générales.
               </p>
             </>
           ),
@@ -101,8 +115,11 @@ export default function PilierRcProPage() {
           h2: 'Combien coûte une RC Pro ?',
           body: (
             <>
-              <p>Le tarif annuel dépend de votre activité, de votre CA et du plafond de couverture choisi&nbsp;:</p>
-              <table className="w-full text-sm border-collapse my-4">
+              <p>
+                Le tarif annuel dépend de votre activité, de votre CA et du plafond de couverture
+                choisi&nbsp;:
+              </p>
+              <table className="my-4 w-full border-collapse text-sm">
                 <thead>
                   <tr className="bg-gray-100">
                     <th className="border border-gray-300 p-2 text-left">Profession</th>
@@ -112,11 +129,36 @@ export default function PilierRcProPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td className="border border-gray-300 p-2">Consultant</td><td className="border border-gray-300 p-2 text-right">144-288€</td><td className="border border-gray-300 p-2 text-right">450-1 200€</td><td className="border border-gray-300 p-2 text-right">2 500-5 500€</td></tr>
-                  <tr><td className="border border-gray-300 p-2">Agence web</td><td className="border border-gray-300 p-2 text-right">200-380€</td><td className="border border-gray-300 p-2 text-right">600-1 800€</td><td className="border border-gray-300 p-2 text-right">3 200-7 000€</td></tr>
-                  <tr><td className="border border-gray-300 p-2">Coach pro</td><td className="border border-gray-300 p-2 text-right">120-240€</td><td className="border border-gray-300 p-2 text-right">350-900€</td><td className="border border-gray-300 p-2 text-right">2 000-4 500€</td></tr>
-                  <tr><td className="border border-gray-300 p-2">Avocat</td><td className="border border-gray-300 p-2 text-right">N/A</td><td className="border border-gray-300 p-2 text-right">800-2 200€</td><td className="border border-gray-300 p-2 text-right">3 500-8 000€</td></tr>
-                  <tr><td className="border border-gray-300 p-2">Médecin</td><td className="border border-gray-300 p-2 text-right">N/A</td><td className="border border-gray-300 p-2 text-right">1 200-3 500€</td><td className="border border-gray-300 p-2 text-right">5 000-12 000€</td></tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2">Consultant</td>
+                    <td className="border border-gray-300 p-2 text-right">144-288€</td>
+                    <td className="border border-gray-300 p-2 text-right">450-1 200€</td>
+                    <td className="border border-gray-300 p-2 text-right">2 500-5 500€</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2">Agence web</td>
+                    <td className="border border-gray-300 p-2 text-right">200-380€</td>
+                    <td className="border border-gray-300 p-2 text-right">600-1 800€</td>
+                    <td className="border border-gray-300 p-2 text-right">3 200-7 000€</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2">Coach pro</td>
+                    <td className="border border-gray-300 p-2 text-right">120-240€</td>
+                    <td className="border border-gray-300 p-2 text-right">350-900€</td>
+                    <td className="border border-gray-300 p-2 text-right">2 000-4 500€</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2">Avocat</td>
+                    <td className="border border-gray-300 p-2 text-right">N/A</td>
+                    <td className="border border-gray-300 p-2 text-right">800-2 200€</td>
+                    <td className="border border-gray-300 p-2 text-right">3 500-8 000€</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2">Médecin</td>
+                    <td className="border border-gray-300 p-2 text-right">N/A</td>
+                    <td className="border border-gray-300 p-2 text-right">1 200-3 500€</td>
+                    <td className="border border-gray-300 p-2 text-right">5 000-12 000€</td>
+                  </tr>
                 </tbody>
               </table>
             </>
@@ -126,7 +168,7 @@ export default function PilierRcProPage() {
       faq={[
         {
           q: 'La RC Pro est-elle obligatoire pour un auto-entrepreneur ?',
-          a: 'Cela dépend de l\'activité. Pour les consultants, freelances digitaux, coachs, services aux particuliers, elle n\'est pas obligatoire mais fortement recommandée (et souvent exigée par les clients pros). Pour les professions réglementées (avocat, médecin, agent immobilier…), elle est OBLIGATOIRE quel que soit le statut.',
+          a: "Cela dépend de l'activité. Pour les consultants, freelances digitaux, coachs, services aux particuliers, elle n'est pas obligatoire mais fortement recommandée (et souvent exigée par les clients pros). Pour les professions réglementées (avocat, médecin, agent immobilier…), elle est OBLIGATOIRE quel que soit le statut.",
         },
         {
           q: 'RC Pro vs RC Exploitation : quelle différence ?',
@@ -137,8 +179,8 @@ export default function PilierRcProPage() {
           a: 'Pour un auto-entrepreneur consultant, 500k-1M€ par sinistre suffit généralement. Pour une agence ou un freelance qui intervient sur des projets stratégiques (>50k€), prévoir 2-3M€. Pour les professions à risque élevé (médical, juridique, IT critique), 5M€+ sont recommandés.',
         },
         {
-          q: 'Que se passe-t-il si je n\'ai pas de RC Pro ?',
-          a: 'En cas de sinistre, vous engagez votre patrimoine personnel (auto-entrepreneur, EI) ou celui de votre société. Pour les professions réglementées, l\'absence de RC Pro est sanctionnée pénalement et peut entraîner radiation/suspension de votre droit d\'exercer.',
+          q: "Que se passe-t-il si je n'ai pas de RC Pro ?",
+          a: "En cas de sinistre, vous engagez votre patrimoine personnel (auto-entrepreneur, EI) ou celui de votre société. Pour les professions réglementées, l'absence de RC Pro est sanctionnée pénalement et peut entraîner radiation/suspension de votre droit d'exercer.",
         },
         {
           q: 'Puis-je déclarer un sinistre rétroactivement ?',

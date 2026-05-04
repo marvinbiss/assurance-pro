@@ -5,7 +5,7 @@
 
 import Link from 'next/link'
 import type { ReactNode } from 'react'
-import { getBreadcrumbSchema, getServiceSchema } from '@/lib/seo/jsonld'
+import { getBreadcrumbSchema, getServiceSchema, getArticleSchema } from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
 
@@ -244,19 +244,34 @@ export function PilierLayout({
         }}
       />
 
-      {/* Service Schema.org — rich snippet pour piliers métier */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            getServiceSchema({
-              name: title,
-              description: tagline,
-              url: `${SITE_URL}/${slug}`,
-            })
-          ),
-        }}
-      />
+      {/* Service OU Article Schema.org — rich snippet conditionnel selon segment */}
+      {slug.startsWith('guides/') ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              getArticleSchema({
+                headline: title,
+                description: tagline,
+                url: `${SITE_URL}/${slug}`,
+              })
+            ),
+          }}
+        />
+      ) : (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              getServiceSchema({
+                name: title,
+                description: tagline,
+                url: `${SITE_URL}/${slug}`,
+              })
+            ),
+          }}
+        />
+      )}
     </article>
   )
 }
