@@ -173,6 +173,12 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'guides/franchise-assurance-pro', priority: 0.85, changeFrequency: 'monthly' },        // 200+ vol/m cumul (transversal RC/décennale/multirisque)
   { path: 'assurance-restaurant-en-ligne', priority: 0.85, changeFrequency: 'weekly' },         // 150 vol KD null CPC 700€ + tail (~230)
 
+  // COUCHE B BATCH 3 — 4 guides KW orphelins top ROI restant
+  { path: 'guides/meilleure-mutuelle-tns', priority: 0.85, changeFrequency: 'monthly' },        // 300 vol KD 5 CPC 500€ + tail comparatif
+  { path: 'assurance-auto-professionnelle', priority: 0.85, changeFrequency: 'weekly' },         // 200 vol KD 1 CPC 500€ + tail (~320)
+  { path: 'guides/assurance-decennale-immediate', priority: 0.85, changeFrequency: 'monthly' }, // 150 vol KD 0 CPC 700€ — intent urgence chantier
+  { path: 'guides/responsabilite-civile-professionnelle-informatique', priority: 0.85, changeFrequency: 'monthly' }, // 100 vol KD 0 CPC 1 300€ ⭐ CPC #1 marché entier
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },

@@ -14,6 +14,7 @@
 
 import type { Metadata } from 'next'
 import { CalculateurTarifCyber } from '@/components/outils/CalculateurTarifCyber'
+import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const dynamic = 'force-dynamic'
@@ -172,6 +173,12 @@ export default function Page() {
             ],
           }),
         }}
+      />
+      <StickyConversionBar
+        ctaText="→ Devis cyber 24h"
+        ctaUrl="/outils/devis-rc-pro?secteur=cyber"
+        trustSignal="6 assureurs cyber spécialisés • RGPD + ANSSI • ORIAS"
+        variant="slate"
       />
     </main>
   )
