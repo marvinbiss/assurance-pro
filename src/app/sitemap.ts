@@ -147,6 +147,7 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'outils/calculateur-tarif-decennale', priority: 0.95, changeFrequency: 'weekly' },// famille 2 700 vol/m, intent commercial pur (CPC 280-450€), funnel direct devis
   { path: 'outils/calculateur-tarif-rc-pro', priority: 0.95, changeFrequency: 'weekly' },   // FAMILLE #1 MARCHÉ 265 KW 43 440 vol/m ROI 17,4M (×3 décennale), funnel direct devis-rc-pro
   { path: 'outils/calculateur-tarif-mutuelle-pro', priority: 0.95, changeFrequency: 'weekly' },// 55 KW 32 100 vol/m ROI 3M ("pro btp mutuelle" 16 000 vol KD 4) + Loi ANI part employeur
+  { path: 'outils/calculateur-tarif-vtc', priority: 0.95, changeFrequency: 'weekly' },         // 79 KW 13 090 vol/m ROI 3M, KD moyen 1 ("assurance vtc" 3 300 vol KD 1)
 
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
