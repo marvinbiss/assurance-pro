@@ -1,0 +1,349 @@
+{
+  "generated_at": "2026-05-04T01:52:40.880Z",
+  "total_kw_couche_b": 795,
+  "clusters": [
+    {
+      "slug": "guides/assurance-local-professionnel-bail-commercial",
+      "title": "Assurance local pro — obligations bail commercial",
+      "cluster_theme": "local pro",
+      "kws": [
+        {
+          "keyword": "assurance local entreprise",
+          "volume": 100,
+          "difficulty": 0,
+          "cpc": 350,
+          "source": "vert-assurance_entreprise.json"
+        },
+        {
+          "keyword": "devis assurance local commercial",
+          "volume": 200,
+          "difficulty": 1,
+          "cpc": 600,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "tarif assurance local commercial",
+          "volume": 200,
+          "difficulty": 1,
+          "cpc": 350,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "prix assurance local commercial",
+          "volume": 150,
+          "difficulty": 2,
+          "cpc": 250,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance local commercial en ligne",
+          "volume": 100,
+          "difficulty": 3,
+          "cpc": 600,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "comparateur assurance local commercial",
+          "volume": 100,
+          "difficulty": 1,
+          "cpc": 450,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance pour local commercial",
+          "volume": 100,
+          "difficulty": 1,
+          "cpc": 600,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance propriétaire non occupant local commercial",
+          "volume": 90,
+          "difficulty": 0,
+          "cpc": 170,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "simulation assurance local commercial",
+          "volume": 80,
+          "difficulty": 2,
+          "cpc": 500,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance professionnelle local commercial",
+          "volume": 80,
+          "difficulty": 1,
+          "cpc": 600,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance pno local commercial",
+          "volume": 80,
+          "difficulty": 0,
+          "cpc": 180,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance local commercial devis en ligne",
+          "volume": 70,
+          "difficulty": null,
+          "cpc": 500,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "cout assurance local commercial",
+          "volume": 70,
+          "difficulty": null,
+          "cpc": 250,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance local commercial proprietaire non occupant",
+          "volume": 60,
+          "difficulty": null,
+          "cpc": 170,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance local commercial propriétaire non occupant",
+          "volume": 50,
+          "difficulty": 0,
+          "cpc": 200,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance propriétaire non occupant local commercial obligatoire",
+          "volume": 40,
+          "difficulty": 0,
+          "cpc": 170,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance pour un local commercial",
+          "volume": 40,
+          "difficulty": null,
+          "cpc": 500,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance local commercial pas cher",
+          "volume": 30,
+          "difficulty": 4,
+          "cpc": 600,
+          "source": "vert-assurance_local_commercial.json"
+        },
+        {
+          "keyword": "assurance local commercial vide",
+          "volume": 30,
+          "difficulty": null,
+          "cpc": 160,
+          "source": "vert-assurance_local_commercial.json"
+        }
+      ],
+      "vol_total": 1670,
+      "cpc_avg": 379,
+      "source_family": "vert-assurance_entreprise.json"
+    },
+    {
+      "slug": "guides/loi-madelin-prevoyance-tns",
+      "title": "Loi Madelin prévoyance TNS — déduction CGI 154 bis",
+      "cluster_theme": "fiscalité",
+      "kws": [
+        {
+          "keyword": "mutuelle madelin tns",
+          "volume": 80,
+          "difficulty": null,
+          "cpc": 500,
+          "source": "vert-mutuelle_tns.json"
+        }
+      ],
+      "vol_total": 80,
+      "cpc_avg": 500,
+      "source_family": "vert-mutuelle_tns.json"
+    },
+    {
+      "slug": "guides/tarif-decennale-par-metier",
+      "title": "Tarif décennale par métier BTP (37 métiers)",
+      "cluster_theme": "tarifs métier",
+      "kws": [
+        {
+          "keyword": "prix assurance décennale maçonnerie",
+          "volume": 60,
+          "difficulty": null,
+          "cpc": 170,
+          "source": "kw-assurance_decennale.json"
+        },
+        {
+          "keyword": "prix assurance décennale plombier",
+          "volume": 30,
+          "difficulty": 0,
+          "cpc": 200,
+          "source": "kw-assurance_decennale.json"
+        }
+      ],
+      "vol_total": 90,
+      "cpc_avg": 185,
+      "source_family": "kw-assurance_decennale.json"
+    },
+    {
+      "slug": "guides/prix-rc-pro-auto-entrepreneur",
+      "title": "Prix RC Pro auto-entrepreneur 2026 par activité",
+      "cluster_theme": "prix par profil",
+      "kws": [
+        {
+          "keyword": "prix rc pro auto entrepreneur",
+          "volume": 60,
+          "difficulty": 2,
+          "cpc": 160,
+          "source": "kw-RC_pro.json"
+        }
+      ],
+      "vol_total": 60,
+      "cpc_avg": 160,
+      "source_family": "kw-RC_pro.json"
+    }
+  ],
+  "orphelins_top_20": [
+    {
+      "keyword": "assurance décennale auto-entrepreneur",
+      "volume": 300,
+      "difficulty": 1,
+      "cpc": 700,
+      "source": "kw-assurance_decennale.json"
+    },
+    {
+      "keyword": "assurance bureau",
+      "volume": 250,
+      "difficulty": 0,
+      "cpc": 700,
+      "source": "vert-assurance_bureau.json"
+    },
+    {
+      "keyword": "meilleure mutuelle tns",
+      "volume": 300,
+      "difficulty": 5,
+      "cpc": 500,
+      "source": "vert-mutuelle_tns.json"
+    },
+    {
+      "keyword": "rc pro micro entreprise",
+      "volume": 300,
+      "difficulty": 2,
+      "cpc": 450,
+      "source": "kw-RC_pro.json"
+    },
+    {
+      "keyword": "responsabilité civile professionnelle informatique",
+      "volume": 100,
+      "difficulty": 0,
+      "cpc": 1300,
+      "source": "kw-responsabilite_civile_professionnelle.json"
+    },
+    {
+      "keyword": "rc pro immobilier",
+      "volume": 200,
+      "difficulty": 1,
+      "cpc": 600,
+      "source": "kw-RC_pro.json"
+    },
+    {
+      "keyword": "attestation de responsabilité civile professionnelle",
+      "volume": 300,
+      "difficulty": 4,
+      "cpc": 400,
+      "source": "kw-responsabilite_civile_professionnelle.json"
+    },
+    {
+      "keyword": "attestation d'assurance responsabilité civile professionnelle",
+      "volume": 300,
+      "difficulty": 3,
+      "cpc": 400,
+      "source": "kw-responsabilite_civile_professionnelle.json"
+    },
+    {
+      "keyword": "mutuelle santé tns",
+      "volume": 200,
+      "difficulty": 4,
+      "cpc": 600,
+      "source": "vert-mutuelle_tns.json"
+    },
+    {
+      "keyword": "assurance décennale immédiate",
+      "volume": 150,
+      "difficulty": 0,
+      "cpc": 700,
+      "source": "kw-assurance_decennale.json"
+    },
+    {
+      "keyword": "courtier assurance décennale",
+      "volume": 150,
+      "difficulty": 3,
+      "cpc": 700,
+      "source": "kw-assurance_decennale.json"
+    },
+    {
+      "keyword": "devis assurance multirisque professionnelle",
+      "volume": 150,
+      "difficulty": null,
+      "cpc": 700,
+      "source": "vert-assurance_professionnelle.json"
+    },
+    {
+      "keyword": "assurance restaurant en ligne",
+      "volume": 150,
+      "difficulty": null,
+      "cpc": 700,
+      "source": "vert-assurance_restaurant.json"
+    },
+    {
+      "keyword": "devis rc pro en ligne",
+      "volume": 200,
+      "difficulty": 0,
+      "cpc": 500,
+      "source": "kw-RC_pro.json"
+    },
+    {
+      "keyword": "rc pro agent immobilier",
+      "volume": 200,
+      "difficulty": 1,
+      "cpc": 500,
+      "source": "kw-RC_pro.json"
+    },
+    {
+      "keyword": "rc pro informatique",
+      "volume": 200,
+      "difficulty": 0,
+      "cpc": 500,
+      "source": "kw-RC_pro.json"
+    },
+    {
+      "keyword": "devis assurance décennale auto entrepreneur",
+      "volume": 100,
+      "difficulty": 2,
+      "cpc": 1000,
+      "source": "kw-assurance_decennale.json"
+    },
+    {
+      "keyword": "assurance professionnelle micro entreprise",
+      "volume": 250,
+      "difficulty": 0,
+      "cpc": 400,
+      "source": "vert-assurance_entreprise.json"
+    },
+    {
+      "keyword": "assurance entreprise individuelle",
+      "volume": 250,
+      "difficulty": 0,
+      "cpc": 400,
+      "source": "vert-assurance_entreprise.json"
+    },
+    {
+      "keyword": "assurance professionnelle automobile",
+      "volume": 200,
+      "difficulty": 1,
+      "cpc": 500,
+      "source": "vert-assurance_professionnelle.json"
+    }
+  ]
+}
