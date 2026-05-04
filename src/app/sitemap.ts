@@ -179,6 +179,32 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'guides/assurance-decennale-immediate', priority: 0.85, changeFrequency: 'monthly' }, // 150 vol KD 0 CPC 700€ — intent urgence chantier
   { path: 'guides/responsabilite-civile-professionnelle-informatique', priority: 0.85, changeFrequency: 'monthly' }, // 100 vol KD 0 CPC 1 300€ ⭐ CPC #1 marché entier
 
+  // // EXPLOIT 100% AHREFS - 24 NOUVELLES PAGES (extraction script extract-50-targets.ts)
+  { path: 'guides/garantie-decennale-comprendre', priority: 0.85, changeFrequency: 'weekly' }, // T3 94KW 12880vol ROI 1 233 917
+  { path: 'assurance-decennale-btp', priority: 0.85, changeFrequency: 'weekly' }, // T3 8KW 960vol ROI 458 370
+  { path: 'assurance-decennale-pas-cher', priority: 0.85, changeFrequency: 'weekly' }, // T3 4KW 750vol ROI 294 000
+  { path: 'guides/rc-pro-tarif-prix', priority: 0.8, changeFrequency: 'weekly' }, // T4 5KW 1050vol ROI 210 825
+  { path: 'rc-pro/transport', priority: 0.8, changeFrequency: 'weekly' }, // T4 6KW 560vol ROI 206 100
+  { path: 'guides/multirisque-pro-en-ligne', priority: 0.8, changeFrequency: 'weekly' }, // T4 3KW 350vol ROI 205 000
+  { path: 'guides/devis-multirisque-professionnelle', priority: 0.8, changeFrequency: 'weekly' }, // T4 2KW 300vol ROI 195 000
+  { path: 'rc-pro/agent-immobilier', priority: 0.8, changeFrequency: 'weekly' }, // T4 4KW 500vol ROI 189 000
+  { path: 'guides/decennale-assurance-comparer', priority: 0.85, changeFrequency: 'weekly' }, // T3 1KW 400vol ROI 166 000
+  { path: 'guides/assurance-flotte-vehicules-pro', priority: 0.8, changeFrequency: 'weekly' }, // T4 3KW 390vol ROI 116 100
+  { path: 'rc-pro/artisan', priority: 0.8, changeFrequency: 'weekly' }, // T4 2KW 180vol ROI 98 000
+  { path: 'rc-pro/freelance-informatique', priority: 0.8, changeFrequency: 'weekly' }, // T4 2KW 180vol ROI 96 000
+  { path: 'assurance-decennale-prix', priority: 0.8, changeFrequency: 'weekly' }, // T4 1KW 400vol ROI 95 000
+  { path: 'guides/meilleure-assurance-decennale', priority: 0.8, changeFrequency: 'weekly' }, // T4 2KW 200vol ROI 94 050
+  { path: 'rc-pro/orus', priority: 0.8, changeFrequency: 'weekly' }, // T4 1KW 300vol ROI 89 100
+  { path: 'rc-pro/restauration', priority: 0.8, changeFrequency: 'weekly' }, // T4 1KW 150vol ROI 89 100
+  { path: 'rc-pro/mma', priority: 0.8, changeFrequency: 'weekly' }, // T4 1KW 350vol ROI 83 125
+  { path: 'rc-pro/photographe-graphiste', priority: 0.8, changeFrequency: 'weekly' }, // T4 2KW 150vol ROI 60 000
+  { path: 'guides/courtier-en-assurance-decennale', priority: 0.8, changeFrequency: 'weekly' }, // T4 1KW 70vol ROI 46 550
+  { path: 'guides/protec-btp-assurance', priority: 0.75, changeFrequency: 'weekly' }, // T5 4KW 290vol ROI 42 600
+  { path: 'rc-pro/jardinier-paysagiste', priority: 0.75, changeFrequency: 'weekly' }, // T5 1KW 100vol ROI 30 000
+  { path: 'guides/decennale-auto-entrepreneur-prix', priority: 0.8, changeFrequency: 'weekly' }, // T4 1KW 90vol ROI 27 000
+  { path: 'guides/assurance-emprunteur-pro', priority: 0.75, changeFrequency: 'weekly' }, // T5 1KW 90vol ROI 22 500
+  { path: 'guides/comment-obtenir-attestation-rc-civile-pro', priority: 0.75, changeFrequency: 'weekly' }, // T5 1KW 90vol ROI 9 900
+
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
   { path: 'devis', priority: 0.95, changeFrequency: 'monthly' },
