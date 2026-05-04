@@ -1,0 +1,289 @@
+[
+  {
+    "slug": "guides/garantie-decennale-comprendre",
+    "title": "Garantie décennale — guide complet",
+    "tier": 3,
+    "nb_kw": 94,
+    "vol_total": 12880,
+    "roi_cumul": 1233917,
+    "top_kw": [
+      "7200 vol KD 14 : garantie décennale",
+      "200 vol KD 1 : garantie décennale plomberie",
+      "150 vol KD 1 : assurance dommage ouvrage et garantie décennale"
+    ]
+  },
+  {
+    "slug": "assurance-decennale-btp",
+    "title": "Assurance décennale BTP — pilier 37 métiers",
+    "tier": 3,
+    "nb_kw": 8,
+    "vol_total": 960,
+    "roi_cumul": 458370,
+    "top_kw": [
+      "300 vol KD 12 : assurance décennale btp",
+      "200 vol KD 6 : assurance décennale pro btp",
+      "150 vol KD 5 : assurance décennale btp prix"
+    ]
+  },
+  {
+    "slug": "assurance-decennale-pas-cher",
+    "title": "Assurance décennale pas cher 2026",
+    "tier": 3,
+    "nb_kw": 4,
+    "vol_total": 750,
+    "roi_cumul": 294000,
+    "top_kw": [
+      "600 vol KD 26 : assurance décennale pas cher",
+      "60 vol KD null : assurance décennale auto entrepreneur moins cher",
+      "50 vol KD 24 : assurance décennale moins cher"
+    ]
+  },
+  {
+    "slug": "guides/rc-pro-tarif-prix",
+    "title": "RC Pro tarif prix 2026 — guide complet",
+    "tier": 4,
+    "nb_kw": 5,
+    "vol_total": 1050,
+    "roi_cumul": 210825,
+    "top_kw": [
+      "300 vol KD 4 : prix assurance rc pro",
+      "250 vol KD 3 : tarif rc pro",
+      "200 vol KD 3 : prix rc pro"
+    ]
+  },
+  {
+    "slug": "rc-pro/transport",
+    "title": "RC Pro transport 2026 (marchandises + voyageurs)",
+    "tier": 4,
+    "nb_kw": 6,
+    "vol_total": 560,
+    "roi_cumul": 206100,
+    "top_kw": [
+      "200 vol KD 1 : assurance professionnelle transport de marchandises",
+      "150 vol KD 0 : rc pro transport de personnes",
+      "80 vol KD 0 : rc pro transport de marchandises"
+    ]
+  },
+  {
+    "slug": "guides/multirisque-pro-en-ligne",
+    "title": "Multirisque pro en ligne — souscription digitale",
+    "tier": 4,
+    "nb_kw": 3,
+    "vol_total": 350,
+    "roi_cumul": 205000,
+    "top_kw": [
+      "150 vol KD null : assurance multirisque pro en ligne",
+      "100 vol KD 0 : assurance multirisque professionnelle en ligne",
+      "100 vol KD null : devis assurance multirisque professionnelle en ligne"
+    ]
+  },
+  {
+    "slug": "guides/devis-multirisque-professionnelle",
+    "title": "Devis multirisque professionnelle — comparateur",
+    "tier": 4,
+    "nb_kw": 2,
+    "vol_total": 300,
+    "roi_cumul": 195000,
+    "top_kw": [
+      "150 vol KD null : devis assurance multirisque professionnelle",
+      "150 vol KD null : devis multirisque professionnelle"
+    ]
+  },
+  {
+    "slug": "rc-pro/agent-immobilier",
+    "title": "RC Pro agent immobilier 2026 (Loi Hoguet)",
+    "tier": 4,
+    "nb_kw": 4,
+    "vol_total": 500,
+    "roi_cumul": 189000,
+    "top_kw": [
+      "200 vol KD 1 : rc pro agent immobilier",
+      "150 vol KD null : tarif rc pro agent immobilier",
+      "90 vol KD null : assurance rc pro agent immobilier"
+    ]
+  },
+  {
+    "slug": "guides/decennale-assurance-comparer",
+    "title": "Décennale assurance — méthode comparaison",
+    "tier": 3,
+    "nb_kw": 1,
+    "vol_total": 400,
+    "roi_cumul": 166000,
+    "top_kw": [
+      "400 vol KD 17 : décennale assurance"
+    ]
+  },
+  {
+    "slug": "guides/assurance-flotte-vehicules-pro",
+    "title": "Assurance flotte véhicules pro — gestion 5+ véhicules",
+    "tier": 4,
+    "nb_kw": 3,
+    "vol_total": 390,
+    "roi_cumul": 116100,
+    "top_kw": [
+      "200 vol KD 0 : assurance flotte automobile professionnelle",
+      "150 vol KD 0 : tarif assurance flotte automobile professionnelle",
+      "40 vol KD 0 : tarif assurance flotte automobile professionnelle forum"
+    ]
+  },
+  {
+    "slug": "rc-pro/artisan",
+    "title": "RC Pro artisan 2026",
+    "tier": 4,
+    "nb_kw": 2,
+    "vol_total": 180,
+    "roi_cumul": 98000,
+    "top_kw": [
+      "100 vol KD null : rc pro artisan",
+      "80 vol KD null : responsabilité civile professionnelle artisan"
+    ]
+  },
+  {
+    "slug": "rc-pro/freelance-informatique",
+    "title": "RC Pro freelance informatique 2026",
+    "tier": 4,
+    "nb_kw": 2,
+    "vol_total": 180,
+    "roi_cumul": 96000,
+    "top_kw": [
+      "150 vol KD 0 : rc pro freelance informatique",
+      "30 vol KD null : assurance rc pro freelance informatique"
+    ]
+  },
+  {
+    "slug": "assurance-decennale-prix",
+    "title": "Assurance décennale prix 2026 — guide complet",
+    "tier": 4,
+    "nb_kw": 1,
+    "vol_total": 400,
+    "roi_cumul": 95000,
+    "top_kw": [
+      "400 vol KD 5 : assurance décennale prix"
+    ]
+  },
+  {
+    "slug": "guides/meilleure-assurance-decennale",
+    "title": "Meilleure assurance décennale 2026 — Top 8 assureurs",
+    "tier": 4,
+    "nb_kw": 2,
+    "vol_total": 200,
+    "roi_cumul": 94050,
+    "top_kw": [
+      "100 vol KD 1 : meilleur assurance décennale",
+      "100 vol KD 1 : meilleure assurance décennale"
+    ]
+  },
+  {
+    "slug": "rc-pro/orus",
+    "title": "RC Pro Orus — alternative & comparatif 2026",
+    "tier": 4,
+    "nb_kw": 1,
+    "vol_total": 300,
+    "roi_cumul": 89100,
+    "top_kw": [
+      "300 vol KD 1 : orus rc pro"
+    ]
+  },
+  {
+    "slug": "rc-pro/restauration",
+    "title": "RC Pro restauration 2026 — restaurateurs/traiteurs",
+    "tier": 4,
+    "nb_kw": 1,
+    "vol_total": 150,
+    "roi_cumul": 89100,
+    "top_kw": [
+      "150 vol KD 1 : assurance professionnelle restauration"
+    ]
+  },
+  {
+    "slug": "rc-pro/mma",
+    "title": "RC Pro MMA Pro — analyse complète 2026",
+    "tier": 4,
+    "nb_kw": 1,
+    "vol_total": 350,
+    "roi_cumul": 83125,
+    "top_kw": [
+      "350 vol KD 5 : mma rc pro"
+    ]
+  },
+  {
+    "slug": "rc-pro/photographe-graphiste",
+    "title": "RC Pro photographe & graphiste 2026",
+    "tier": 4,
+    "nb_kw": 2,
+    "vol_total": 150,
+    "roi_cumul": 60000,
+    "top_kw": [
+      "90 vol KD 0 : rc pro photographe",
+      "60 vol KD null : assurance rc pro photographe"
+    ]
+  },
+  {
+    "slug": "guides/courtier-en-assurance-decennale",
+    "title": "Courtier en assurance décennale — sélection",
+    "tier": 4,
+    "nb_kw": 1,
+    "vol_total": 70,
+    "roi_cumul": 46550,
+    "top_kw": [
+      "70 vol KD 5 : courtier en assurance décennale"
+    ]
+  },
+  {
+    "slug": "guides/protec-btp-assurance",
+    "title": "Protec BTP assurance — analyse 2026",
+    "tier": 5,
+    "nb_kw": 4,
+    "vol_total": 290,
+    "roi_cumul": 42600,
+    "top_kw": [
+      "100 vol KD 1 : protec btp assurance",
+      "80 vol KD 0 : protec btp assurance auto",
+      "70 vol KD 0 : protec btp assurance voiture"
+    ]
+  },
+  {
+    "slug": "rc-pro/jardinier-paysagiste",
+    "title": "RC Pro jardinier paysagiste 2026",
+    "tier": 5,
+    "nb_kw": 1,
+    "vol_total": 100,
+    "roi_cumul": 30000,
+    "top_kw": [
+      "100 vol KD null : rc pro paysagiste"
+    ]
+  },
+  {
+    "slug": "guides/decennale-auto-entrepreneur-prix",
+    "title": "Décennale auto-entrepreneur prix 2026",
+    "tier": 4,
+    "nb_kw": 1,
+    "vol_total": 90,
+    "roi_cumul": 27000,
+    "top_kw": [
+      "90 vol KD null : assurance décennale auto entrepreneur prix"
+    ]
+  },
+  {
+    "slug": "guides/assurance-emprunteur-pro",
+    "title": "Assurance emprunteur professionnel — crédit pro",
+    "tier": 5,
+    "nb_kw": 1,
+    "vol_total": 90,
+    "roi_cumul": 22500,
+    "top_kw": [
+      "90 vol KD 0 : assurance emprunteur pro btp"
+    ]
+  },
+  {
+    "slug": "guides/comment-obtenir-attestation-rc-civile-pro",
+    "title": "Comment obtenir attestation responsabilité civile professionnelle ?",
+    "tier": 5,
+    "nb_kw": 1,
+    "vol_total": 90,
+    "roi_cumul": 9900,
+    "top_kw": [
+      "90 vol KD 0 : comment obtenir une attestation de responsabilité civile professionnelle"
+    ]
+  }
+]
