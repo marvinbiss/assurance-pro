@@ -143,6 +143,7 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'outils/modele-attestation-rc-pro', priority: 0.95, changeFrequency: 'weekly' },   // 350 vol KD 3 CPC 350-450€ (famille 920)
   { path: 'outils/modele-facture-pro', priority: 0.95, changeFrequency: 'weekly' },          // pattern coover.fr 14 792 vis/m (#1 marché entier)
   { path: 'outils/modele-devis-pro', priority: 0.95, changeFrequency: 'weekly' },            // pattern coover.fr 6 276 vis/m (#2 marché entier)
+  { path: 'outils/lettre-resiliation-assurance', priority: 0.9, changeFrequency: 'weekly' },// Loi Hamon, famille 500-700 vol/m
 
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
