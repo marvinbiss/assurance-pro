@@ -3,31 +3,46 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
   title: 'Politique cookies | Assurance Pro',
-  description: 'Politique cookies du cabinet de courtage ORIAS Assurance Pro. Cookies essentiels, mesure d\'audience, marketing. Gestion du consentement RGPD.',
+  description:
+    "Politique cookies du cabinet de courtage ORIAS Assurance Pro. Cookies essentiels, mesure d'audience, marketing. Gestion du consentement RGPD.",
   alternates: { canonical: `${SITE_URL}/cookies` },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Politique cookies | Assurance Pro',
+    description:
+      'Politique cookies du cabinet de courtage ORIAS Assurance Pro. Cookies essentiels, mesure d\\',
+    url: `${SITE_URL}/cookies`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Politique cookies | Assurance Pro',
+    description:
+      'Politique cookies du cabinet de courtage ORIAS Assurance Pro. Cookies essentiels, mesure d\\',
+  },
 }
 
 export default function CookiesPage() {
   return (
     <main className="min-h-screen bg-white py-12">
-      <div className="container mx-auto px-4 max-w-3xl prose prose-lg">
+      <div className="prose prose-lg container mx-auto max-w-3xl px-4">
         <h1>Politique cookies</h1>
         <p className="text-sm text-gray-500">Dernière mise à jour : 30 avril 2026</p>
 
         <h2>1. Qu&apos;est-ce qu&apos;un cookie ?</h2>
         <p>
-          Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette, mobile)
-          lors de la visite d&apos;un site. Il permet au site de reconnaître votre navigateur et de stocker
-          des préférences ou informations utiles.
+          Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette,
+          mobile) lors de la visite d&apos;un site. Il permet au site de reconnaître votre
+          navigateur et de stocker des préférences ou informations utiles.
         </p>
 
         <h2>2. Cadre juridique</h2>
         <p>
-          Conformément à l&apos;article 82 de la <strong>Loi Informatique et Libertés</strong>, à l&apos;article
-          5(3) de la <strong>directive ePrivacy 2002/58/CE</strong> et aux <strong>lignes directrices et
-          recommandation cookies 2020 de la CNIL</strong>, votre consentement est requis avant tout dépôt
-          de cookie non strictement nécessaire au fonctionnement du site.
+          Conformément à l&apos;article 82 de la <strong>Loi Informatique et Libertés</strong>, à
+          l&apos;article 5(3) de la <strong>directive ePrivacy 2002/58/CE</strong> et aux{' '}
+          <strong>lignes directrices et recommandation cookies 2020 de la CNIL</strong>, votre
+          consentement est requis avant tout dépôt de cookie non strictement nécessaire au
+          fonctionnement du site.
         </p>
 
         <h2>3. Cookies utilisés sur ce site</h2>
@@ -43,12 +58,16 @@ export default function CookiesPage() {
           </thead>
           <tbody>
             <tr>
-              <td><code>cookie_consent</code></td>
+              <td>
+                <code>cookie_consent</code>
+              </td>
               <td>Mémoriser votre choix de consentement cookies</td>
               <td>13 mois</td>
             </tr>
             <tr>
-              <td><code>session</code></td>
+              <td>
+                <code>session</code>
+              </td>
               <td>Sécurité (jeton CSRF, anti-spam formulaires)</td>
               <td>Session</td>
             </tr>
@@ -103,46 +122,78 @@ export default function CookiesPage() {
 
         <h2>4. Gérer mon consentement</h2>
         <p>
-          Lors de votre première visite, une bannière vous permet d&apos;accepter, refuser ou personnaliser
-          chaque catégorie de cookies. Vous pouvez à tout moment modifier vos choix :
+          Lors de votre première visite, une bannière vous permet d&apos;accepter, refuser ou
+          personnaliser chaque catégorie de cookies. Vous pouvez à tout moment modifier vos choix :
         </p>
         <p>
           <button
             type="button"
             data-cookie-consent-reopen
-            className="inline-block px-4 py-2 bg-blue-700 text-white rounded font-semibold not-prose"
+            className="not-prose inline-block rounded bg-blue-700 px-4 py-2 font-semibold text-white"
           >
             Modifier mes préférences cookies
           </button>
         </p>
         <p>
-          Vous pouvez également configurer votre navigateur pour bloquer tous les cookies ou être averti
-          avant leur dépôt :
+          Vous pouvez également configurer votre navigateur pour bloquer tous les cookies ou être
+          averti avant leur dépôt :
         </p>
         <ul>
-          <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Chrome</a></li>
-          <li><a href="https://support.mozilla.org/fr/kb/protection-renforcee-contre-pistage-firefox-ordinateur" target="_blank" rel="noopener noreferrer">Firefox</a></li>
-          <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a></li>
-          <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge" target="_blank" rel="noopener noreferrer">Edge</a></li>
+          <li>
+            <a
+              href="https://support.google.com/chrome/answer/95647"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chrome
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://support.mozilla.org/fr/kb/protection-renforcee-contre-pistage-firefox-ordinateur"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Firefox
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Safari
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://support.microsoft.com/fr-fr/microsoft-edge"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Edge
+            </a>
+          </li>
         </ul>
 
         <h2>5. Durée de conservation du consentement</h2>
         <p>
-          Conformément aux recommandations CNIL, votre choix est conservé <strong>13 mois maximum</strong>.
-          Au-delà, la bannière vous est de nouveau présentée.
+          Conformément aux recommandations CNIL, votre choix est conservé{' '}
+          <strong>13 mois maximum</strong>. Au-delà, la bannière vous est de nouveau présentée.
         </p>
 
         <h2>6. Refus = pas de pénalisation</h2>
         <p>
-          Refuser les cookies non essentiels ne dégrade en rien l&apos;accès au site. Toutes les pages
-          informatives, le comparateur et le formulaire de devis restent accessibles sans cookies
-          marketing ni mesure d&apos;audience.
+          Refuser les cookies non essentiels ne dégrade en rien l&apos;accès au site. Toutes les
+          pages informatives, le comparateur et le formulaire de devis restent accessibles sans
+          cookies marketing ni mesure d&apos;audience.
         </p>
 
         <h2>7. Vos droits RGPD</h2>
         <p>
-          Pour l&apos;exercice de vos droits (accès, rectification, effacement, opposition, portabilité),
-          consultez notre <a href="/confidentialite">Politique de confidentialité</a>.
+          Pour l&apos;exercice de vos droits (accès, rectification, effacement, opposition,
+          portabilité), consultez notre <a href="/confidentialite">Politique de confidentialité</a>.
         </p>
 
         <h2>8. Contact</h2>

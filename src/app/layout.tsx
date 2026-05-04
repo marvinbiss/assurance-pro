@@ -26,15 +26,14 @@ const sora = Sora({
 })
 
 // Dynamic imports for performance (client-only utilities)
-const ServiceWorkerRegistration = dynamic(
-  () => import('@/components/ServiceWorkerRegistration'),
-  { ssr: false }
-)
+const ServiceWorkerRegistration = dynamic(() => import('@/components/ServiceWorkerRegistration'), {
+  ssr: false,
+})
 const CookieConsent = dynamic(() => import('@/components/CookieConsent'), {
   ssr: false,
 })
 const WebVitals = dynamic(
-  () => import('@/components/WebVitals').then(mod => ({ default: mod.WebVitals })),
+  () => import('@/components/WebVitals').then((mod) => ({ default: mod.WebVitals })),
   { ssr: false }
 )
 
@@ -78,7 +77,14 @@ export const metadata: Metadata = {
     title: 'Assurance Pro — Comparez et économisez en 2 minutes',
     description:
       'Courtier ORIAS spécialiste assurance pro. 10+ assureurs partenaires comparés. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Devis gratuit en 24h.',
-    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: 'Assurance Pro — Comparez et économisez en 2 minutes' }],
+    images: [
+      {
+        url: `${SITE_URL}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: 'Assurance Pro — Comparez et économisez en 2 minutes',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -100,19 +106,13 @@ export const metadata: Metadata = {
       'x-default': SITE_URL,
     },
     types: {
-      'application/rss+xml': [
-        { url: `${SITE_URL}/feed/blog.xml`, title: 'Blog Assurance Pro' },
-      ],
+      'application/rss+xml': [{ url: `${SITE_URL}/feed/blog.xml`, title: 'Blog Assurance Pro' }],
     },
   },
   manifest: '/manifest.json',
   icons: {
-    icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180' },
-    ],
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
   },
   other: {
     'mobile-web-app-capable': 'yes',
@@ -121,11 +121,7 @@ export const metadata: Metadata = {
 
 // revalidate removed — each page sets its own (86400 for pSEO pages)
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <html lang="fr" className={`scroll-smooth ${dmSans.variable} ${sora.variable}`}>
@@ -139,13 +135,18 @@ export default async function RootLayout({
 
         {/* LLM discovery — llms.txt (GEO/AEO optimization) */}
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM access guidelines" />
-        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM detailed content" />
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms-full.txt"
+          title="LLM detailed content"
+        />
 
         {/* Global Organization + WebSite schema (E-E-A-T) */}
         <script
           nonce={nonce}
           type="application/ld+json"
-                   dangerouslySetInnerHTML={{
+          dangerouslySetInnerHTML={{
             __html: JSON.stringify([getOrganizationSchema(), getWebsiteSchema()])
               .replace(/</g, '\\u003c')
               .replace(/>/g, '\\u003e')
@@ -169,7 +170,7 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
-      <body className="font-sans bg-sand-50 antialiased text-charcoal-900">
+      <body className="bg-sand-50 font-sans text-charcoal-900 antialiased">
         {/*
          * Google Consent Mode v2 — 'denied' par défaut.
          * Aucun pixel ne se déclenche tant que l'utilisateur n'a pas
@@ -185,12 +186,13 @@ export default async function RootLayout({
           nonce={nonce}
           gtmId={process.env.NEXT_PUBLIC_GTM_ID || 'GTM-THV3KZ8N'}
           metaPixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID}
+          clarityId={process.env.NEXT_PUBLIC_CLARITY_ID}
         />
         <WebVitals />
         {/* Skip to main content for accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-lg focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
         >
           Aller au contenu principal
         </a>

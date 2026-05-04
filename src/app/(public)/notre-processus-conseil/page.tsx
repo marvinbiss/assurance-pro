@@ -4,16 +4,32 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
   title: 'Notre processus de conseil DDA | Assurance Pro',
-  description: 'Comment notre cabinet ORIAS applique le devoir de conseil (art. L. 521-4 C. assur.) et la Recommandation ACPR 2024-R-03 : recueil exigences, analyse impartiale, recommandation motivée, traçabilité.',
+  description:
+    'Comment notre cabinet ORIAS applique le devoir de conseil (art. L. 521-4 C. assur.) et la Recommandation ACPR 2024-R-03 : recueil exigences, analyse impartiale, recommandation motivée, traçabilité.',
   alternates: { canonical: `${SITE_URL}/notre-processus-conseil` },
+  openGraph: {
+    title: 'Notre processus de conseil DDA | Assurance Pro',
+    description:
+      'Comment notre cabinet ORIAS applique le devoir de conseil (art. L. 521-4 C. assur.) et la Recommandation ACPR 2024-R-03 : recueil exigences, analyse impartiale, recommandation motivée, traçabilité.',
+    url: `${SITE_URL}/notre-processus-conseil`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Notre processus de conseil DDA | Assurance Pro',
+    description:
+      'Comment notre cabinet ORIAS applique le devoir de conseil (art. L. 521-4 C. assur.) et la Recommandation ACPR 2024-R-03 : recueil exigences, analyse impartiale, recommandation motivée, traçabilité.',
+  },
 }
 
 export default function ProcessusPage() {
   return (
     <main className="min-h-screen bg-white py-12">
-      <div className="container mx-auto px-4 max-w-3xl prose prose-lg">
+      <div className="prose prose-lg container mx-auto max-w-3xl px-4">
         <h1>Notre processus de conseil</h1>
-        <p className="text-sm text-gray-500">Conforme art. L. 521-4 C. assur. et Recommandation ACPR 2024-R-03</p>
+        <p className="text-sm text-gray-500">
+          Conforme art. L. 521-4 C. assur. et Recommandation ACPR 2024-R-03
+        </p>
 
         <p>
           Le devoir de conseil n&apos;est pas une simple formalité&nbsp;: c&apos;est l&apos;essence
@@ -23,19 +39,21 @@ export default function ProcessusPage() {
 
         <h2>Étape 1 — Recueil des exigences et besoins</h2>
         <p>
-          Au démarrage de la relation, nous collectons via un <strong>questionnaire structuré</strong>{' '}
-          (web, téléphone ou rendez-vous) :
+          Au démarrage de la relation, nous collectons via un{' '}
+          <strong>questionnaire structuré</strong> (web, téléphone ou rendez-vous) :
         </p>
         <ul>
           <li>Activité exacte (codes NAF, métiers exercés, sous-traitance)</li>
           <li>Statut juridique, ancienneté, chiffre d&apos;affaires, effectifs</li>
           <li>Sinistralité historique (3 dernières années)</li>
           <li>Garanties souhaitées et plafonds attendus</li>
-          <li>Contraintes particulières (clients grands comptes, marchés publics, international)</li>
+          <li>
+            Contraintes particulières (clients grands comptes, marchés publics, international)
+          </li>
         </ul>
         <p>
-          Ce recueil est <strong>horodaté et hashé en SHA-256</strong> pour garantir son intégrité en
-          cas de contrôle ACPR ou de litige ultérieur.
+          Ce recueil est <strong>horodaté et hashé en SHA-256</strong> pour garantir son intégrité
+          en cas de contrôle ACPR ou de litige ultérieur.
         </p>
 
         <h2>Étape 2 — Identification des besoins légalement applicables</h2>
@@ -58,9 +76,7 @@ export default function ProcessusPage() {
           Notre périmètre couvre 10 compagnies partenaires&nbsp;: Hiscox, April Pro, MMA, Generali,
           AXA Pro, SMABTP, Allianz Pro, MAAF, Wakam, Stello.
         </p>
-        <p>
-          Pour chaque produit, nous comparons&nbsp;:
-        </p>
+        <p>Pour chaque produit, nous comparons&nbsp;:</p>
         <ul>
           <li>Plafonds et franchises</li>
           <li>Périmètre des garanties (clauses, exclusions)</li>
@@ -80,8 +96,8 @@ export default function ProcessusPage() {
           <li>Précise le nombre de contrats analysés (preuve d&apos;impartialité)</li>
         </ol>
         <p>
-          Cette recommandation vous est délivrée par email (avec accusé de réception) ou en signature
-          électronique selon le canal choisi. Elle est <strong>conservée 10 ans</strong>.
+          Cette recommandation vous est délivrée par email (avec accusé de réception) ou en
+          signature électronique selon le canal choisi. Elle est <strong>conservée 10 ans</strong>.
         </p>
 
         <h2>Étape 5 — Traçabilité immuable et audit ACPR</h2>
@@ -104,14 +120,14 @@ export default function ProcessusPage() {
           changements réglementaires).
         </p>
 
-        <div className="not-prose bg-blue-50 border border-blue-200 rounded-lg p-6 my-8 text-center">
-          <h3 className="text-xl font-bold mb-2">Démarrer un dossier</h3>
-          <p className="text-sm text-gray-700 mb-4">
+        <div className="not-prose my-8 rounded-lg border border-blue-200 bg-blue-50 p-6 text-center">
+          <h3 className="mb-2 text-xl font-bold">Démarrer un dossier</h3>
+          <p className="mb-4 text-sm text-gray-700">
             Devis gratuit, sans engagement. Première recommandation sous 24-72 h selon priorité.
           </p>
           <Link
             href="/devis"
-            className="inline-block px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded font-semibold"
+            className="inline-block rounded bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800"
           >
             Demander un devis →
           </Link>
@@ -119,10 +135,20 @@ export default function ProcessusPage() {
 
         <h2>Pour aller plus loin</h2>
         <ul>
-          <li><Link href="/equipe">Découvrir l&apos;équipe</Link></li>
-          <li><Link href="/selection-assureurs">Comment nous sélectionnons nos assureurs partenaires</Link></li>
-          <li><Link href="/comparateur-assureurs">Comparateur des 10 assureurs</Link></li>
-          <li><Link href="/normes">Normes et conformité</Link></li>
+          <li>
+            <Link href="/equipe">Découvrir l&apos;équipe</Link>
+          </li>
+          <li>
+            <Link href="/selection-assureurs">
+              Comment nous sélectionnons nos assureurs partenaires
+            </Link>
+          </li>
+          <li>
+            <Link href="/comparateur-assureurs">Comparateur des 10 assureurs</Link>
+          </li>
+          <li>
+            <Link href="/normes">Normes et conformité</Link>
+          </li>
         </ul>
       </div>
     </main>

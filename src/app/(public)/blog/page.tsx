@@ -6,8 +6,21 @@ import { SITE_URL } from '@/lib/seo/config'
 export const metadata: Metadata = {
   title: 'Blog — Actualités et conseils assurance pro | Assurance Pro',
   description:
-    'Blog du cabinet de courtage ORIAS Assurance Pro. Actualités réglementaires, conseils, guides pratiques sur l\'assurance professionnelle française.',
+    "Blog du cabinet de courtage ORIAS Assurance Pro. Actualités réglementaires, conseils, guides pratiques sur l'assurance professionnelle française.",
   alternates: { canonical: `${SITE_URL}/blog` },
+  openGraph: {
+    title: 'Blog — Actualités et conseils assurance pro | Assurance Pro',
+    description:
+      'Blog du cabinet de courtage ORIAS Assurance Pro. Actualités réglementaires, conseils, guides pratiques sur l\\',
+    url: `${SITE_URL}/blog`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog — Actualités et conseils assurance pro | Assurance Pro',
+    description:
+      'Blog du cabinet de courtage ORIAS Assurance Pro. Actualités réglementaires, conseils, guides pratiques sur l\\',
+  },
 }
 
 export default function BlogPage() {
@@ -16,38 +29,37 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-white py-12">
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto max-w-5xl px-4">
         <header className="mb-10 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">Blog Assurance Pro</h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <h1 className="mb-3 text-3xl font-bold md:text-4xl">Blog Assurance Pro</h1>
+          <p className="mx-auto max-w-2xl text-lg text-gray-600">
             Actualités réglementaires, guides pratiques et conseils d&apos;experts sur
             l&apos;assurance professionnelle française. Rédigé par notre équipe de courtiers ORIAS.
           </p>
         </header>
 
-        <nav className="mb-10 flex flex-wrap gap-2 justify-center" aria-label="Catégories">
+        <nav className="mb-10 flex flex-wrap justify-center gap-2" aria-label="Catégories">
           {categories.map((cat) => (
             <Link
               key={cat.slug}
               href={`/blog/categorie/${cat.slug}`}
-              className="px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded font-semibold text-sm"
+              className="rounded bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700 hover:bg-blue-100"
             >
-              {cat.name}{' '}
-              <span className="text-blue-500 font-normal">({cat.count})</span>
+              {cat.name} <span className="font-normal text-blue-500">({cat.count})</span>
             </Link>
           ))}
         </nav>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {posts.map((post) => (
             <article
               key={post.slug}
-              className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition"
+              className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md"
             >
-              <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
+              <div className="mb-2 flex items-center gap-2 text-xs text-gray-500">
                 <Link
-                  href={`/blog/categorie/${post.slug ? '' : ''}${(typeof post.category === 'string' ? '' : '')}`}
-                  className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded font-semibold"
+                  href={`/blog/categorie/${post.slug ? '' : ''}${typeof post.category === 'string' ? '' : ''}`}
+                  className="rounded bg-blue-100 px-2 py-0.5 font-semibold text-blue-700"
                 >
                   {post.category}
                 </Link>
@@ -62,18 +74,15 @@ export default function BlogPage() {
                 <span>•</span>
                 <span>{post.readTime} de lecture</span>
               </div>
-              <h2 className="text-xl font-bold mb-2">
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="text-blue-700 hover:underline"
-                >
+              <h2 className="mb-2 text-xl font-bold">
+                <Link href={`/blog/${post.slug}`} className="text-blue-700 hover:underline">
                   {post.title}
                 </Link>
               </h2>
-              <p className="text-gray-600 mb-4">{post.description}</p>
+              <p className="mb-4 text-gray-600">{post.description}</p>
               <Link
                 href={`/blog/${post.slug}`}
-                className="text-sm text-blue-700 font-semibold hover:underline"
+                className="text-sm font-semibold text-blue-700 hover:underline"
               >
                 Lire l&apos;article →
               </Link>
@@ -81,14 +90,14 @@ export default function BlogPage() {
           ))}
         </div>
 
-        <div className="mt-16 text-center bg-blue-50 p-8 rounded-lg">
-          <h2 className="text-xl font-bold mb-3">Besoin d&apos;un conseil personnalisé&nbsp;?</h2>
-          <p className="text-gray-700 mb-6">
+        <div className="mt-16 rounded-lg bg-blue-50 p-8 text-center">
+          <h2 className="mb-3 text-xl font-bold">Besoin d&apos;un conseil personnalisé&nbsp;?</h2>
+          <p className="mb-6 text-gray-700">
             Notre équipe de courtiers ORIAS analyse gratuitement votre situation.
           </p>
           <Link
             href="/devis"
-            className="inline-block px-6 py-3 bg-blue-700 text-white rounded font-semibold hover:bg-blue-800"
+            className="inline-block rounded bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800"
           >
             Demander un devis →
           </Link>

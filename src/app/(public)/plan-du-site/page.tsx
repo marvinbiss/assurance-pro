@@ -6,53 +6,122 @@ import { RC_PRO_PROFESSIONS } from '@/lib/data/rc-pro-professions'
 
 export const metadata: Metadata = {
   title: 'Plan du site | Assurance Pro',
-  description: 'Plan du site Assurance Pro — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
+  description:
+    'Plan du site Assurance Pro — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
   alternates: { canonical: `${SITE_URL}/plan-du-site` },
+  openGraph: {
+    title: 'Plan du site | Assurance Pro',
+    description:
+      'Plan du site Assurance Pro — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
+    url: `${SITE_URL}/plan-du-site`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Plan du site | Assurance Pro',
+    description:
+      'Plan du site Assurance Pro — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
+  },
 }
 
 export default function PlanDuSitePage() {
   return (
     <main className="min-h-screen bg-white py-12">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto max-w-4xl px-4">
         <header className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">Plan du site</h1>
-          <p className="text-gray-600 text-lg">
+          <h1 className="mb-3 text-3xl font-bold md:text-4xl">Plan du site</h1>
+          <p className="text-lg text-gray-600">
             Toutes les pages d\'Assurance Pro organisées par catégorie.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <section>
-            <h2 className="text-xl font-bold mb-3 pb-2 border-b">Pages principales</h2>
+            <h2 className="mb-3 border-b pb-2 text-xl font-bold">Pages principales</h2>
             <ul className="space-y-1.5">
-              <li><Link href="/" className="text-blue-700 hover:underline">Accueil</Link></li>
-              <li><Link href="/devis" className="text-blue-700 hover:underline">Devis gratuit en 2 min</Link></li>
-              <li><Link href="/a-propos" className="text-blue-700 hover:underline">À propos du cabinet</Link></li>
-              <li><Link href="/comparateur-assureurs" className="text-blue-700 hover:underline">Comparateur des 10 assureurs</Link></li>
-              <li><Link href="/contact" className="text-blue-700 hover:underline">Nous contacter</Link></li>
+              <li>
+                <Link href="/" className="text-blue-700 hover:underline">
+                  Accueil
+                </Link>
+              </li>
+              <li>
+                <Link href="/devis" className="text-blue-700 hover:underline">
+                  Devis gratuit en 2 min
+                </Link>
+              </li>
+              <li>
+                <Link href="/a-propos" className="text-blue-700 hover:underline">
+                  À propos du cabinet
+                </Link>
+              </li>
+              <li>
+                <Link href="/comparateur-assureurs" className="text-blue-700 hover:underline">
+                  Comparateur des 10 assureurs
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-blue-700 hover:underline">
+                  Nous contacter
+                </Link>
+              </li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold mb-3 pb-2 border-b">Garanties (Piliers)</h2>
+            <h2 className="mb-3 border-b pb-2 text-xl font-bold">Garanties (Piliers)</h2>
             <ul className="space-y-1.5">
-              <li><Link href="/assurance-decennale" className="text-blue-700 hover:underline">Assurance décennale BTP</Link></li>
-              <li><Link href="/rc-pro" className="text-blue-700 hover:underline">RC Pro générique</Link></li>
-              <li><Link href="/multirisque-pro" className="text-blue-700 hover:underline">Multirisque professionnelle</Link></li>
-              <li><Link href="/mutuelle-pro" className="text-blue-700 hover:underline">Mutuelle pro / TNS Madelin</Link></li>
-              <li><Link href="/assurance-vtc" className="text-blue-700 hover:underline">Assurance VTC / Taxi</Link></li>
-              <li><Link href="/cyber-assurance" className="text-blue-700 hover:underline">Cyber assurance</Link></li>
-              <li><Link href="/rc-pro-avocat" className="text-blue-700 hover:underline">RC Pro Avocat</Link></li>
-              <li><Link href="/rc-pro-medecin" className="text-blue-700 hover:underline">RC Pro Médecin</Link></li>
+              <li>
+                <Link href="/assurance-decennale" className="text-blue-700 hover:underline">
+                  Assurance décennale BTP
+                </Link>
+              </li>
+              <li>
+                <Link href="/rc-pro" className="text-blue-700 hover:underline">
+                  RC Pro générique
+                </Link>
+              </li>
+              <li>
+                <Link href="/multirisque-pro" className="text-blue-700 hover:underline">
+                  Multirisque professionnelle
+                </Link>
+              </li>
+              <li>
+                <Link href="/mutuelle-pro" className="text-blue-700 hover:underline">
+                  Mutuelle pro / TNS Madelin
+                </Link>
+              </li>
+              <li>
+                <Link href="/assurance-vtc" className="text-blue-700 hover:underline">
+                  Assurance VTC / Taxi
+                </Link>
+              </li>
+              <li>
+                <Link href="/cyber-assurance" className="text-blue-700 hover:underline">
+                  Cyber assurance
+                </Link>
+              </li>
+              <li>
+                <Link href="/rc-pro-avocat" className="text-blue-700 hover:underline">
+                  RC Pro Avocat
+                </Link>
+              </li>
+              <li>
+                <Link href="/rc-pro-medecin" className="text-blue-700 hover:underline">
+                  RC Pro Médecin
+                </Link>
+              </li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold mb-3 pb-2 border-b">Décennale × Métiers BTP</h2>
-            <ul className="space-y-1.5 columns-2">
+            <h2 className="mb-3 border-b pb-2 text-xl font-bold">Décennale × Métiers BTP</h2>
+            <ul className="columns-2 space-y-1.5">
               {Object.values(DECENNALE_METIERS).map((m) => (
                 <li key={m.slug}>
-                  <Link href={`/assurance-decennale/${m.slug}`} className="text-blue-700 hover:underline text-sm">
+                  <Link
+                    href={`/assurance-decennale/${m.slug}`}
+                    className="text-sm text-blue-700 hover:underline"
+                  >
                     {m.name}
                   </Link>
                 </li>
@@ -61,11 +130,14 @@ export default function PlanDuSitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold mb-3 pb-2 border-b">RC Pro × Professions</h2>
-            <ul className="space-y-1.5 columns-2">
+            <h2 className="mb-3 border-b pb-2 text-xl font-bold">RC Pro × Professions</h2>
+            <ul className="columns-2 space-y-1.5">
               {Object.values(RC_PRO_PROFESSIONS).map((p) => (
                 <li key={p.slug}>
-                  <Link href={`/rc-pro/${p.slug}`} className="text-blue-700 hover:underline text-sm">
+                  <Link
+                    href={`/rc-pro/${p.slug}`}
+                    className="text-sm text-blue-700 hover:underline"
+                  >
                     {p.name}
                   </Link>
                 </li>
@@ -74,38 +146,91 @@ export default function PlanDuSitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold mb-3 pb-2 border-b">Ressources</h2>
+            <h2 className="mb-3 border-b pb-2 text-xl font-bold">Ressources</h2>
             <ul className="space-y-1.5">
-              <li><Link href="/blog" className="text-blue-700 hover:underline">Blog</Link></li>
-              <li><Link href="/glossaire" className="text-blue-700 hover:underline">Glossaire (40+ termes)</Link></li>
-              <li><Link href="/faq" className="text-blue-700 hover:underline">FAQ assurance pro</Link></li>
-              <li><Link href="/normes" className="text-blue-700 hover:underline">Normes et conformité</Link></li>
+              <li>
+                <Link href="/blog" className="text-blue-700 hover:underline">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/glossaire" className="text-blue-700 hover:underline">
+                  Glossaire (40+ termes)
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-blue-700 hover:underline">
+                  FAQ assurance pro
+                </Link>
+              </li>
+              <li>
+                <Link href="/normes" className="text-blue-700 hover:underline">
+                  Normes et conformité
+                </Link>
+              </li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold mb-3 pb-2 border-b">Mentions légales</h2>
+            <h2 className="mb-3 border-b pb-2 text-xl font-bold">Mentions légales</h2>
             <ul className="space-y-1.5">
-              <li><Link href="/mentions-legales" className="text-blue-700 hover:underline">Mentions légales</Link></li>
-              <li><Link href="/cgv" className="text-blue-700 hover:underline">Conditions Générales de Service</Link></li>
-              <li><Link href="/fic" className="text-blue-700 hover:underline">FIC — Fiche d&apos;Information Précontractuelle</Link></li>
-              <li><Link href="/ipid" className="text-blue-700 hover:underline">IPID — Fiches produit standardisées</Link></li>
-              <li><Link href="/confidentialite" className="text-blue-700 hover:underline">Politique de confidentialité (RGPD)</Link></li>
-              <li><Link href="/cookies" className="text-blue-700 hover:underline">Politique cookies</Link></li>
-              <li><Link href="/reclamation" className="text-blue-700 hover:underline">Déposer une réclamation</Link></li>
-              <li><Link href="/mediation" className="text-blue-700 hover:underline">Médiation</Link></li>
+              <li>
+                <Link href="/mentions-legales" className="text-blue-700 hover:underline">
+                  Mentions légales
+                </Link>
+              </li>
+              <li>
+                <Link href="/cgv" className="text-blue-700 hover:underline">
+                  Conditions Générales de Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/fic" className="text-blue-700 hover:underline">
+                  FIC — Fiche d&apos;Information Précontractuelle
+                </Link>
+              </li>
+              <li>
+                <Link href="/ipid" className="text-blue-700 hover:underline">
+                  IPID — Fiches produit standardisées
+                </Link>
+              </li>
+              <li>
+                <Link href="/confidentialite" className="text-blue-700 hover:underline">
+                  Politique de confidentialité (RGPD)
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookies" className="text-blue-700 hover:underline">
+                  Politique cookies
+                </Link>
+              </li>
+              <li>
+                <Link href="/reclamation" className="text-blue-700 hover:underline">
+                  Déposer une réclamation
+                </Link>
+              </li>
+              <li>
+                <Link href="/mediation" className="text-blue-700 hover:underline">
+                  Médiation
+                </Link>
+              </li>
             </ul>
           </section>
         </div>
 
-        <div className="mt-12 p-6 bg-gray-50 rounded-lg text-sm text-gray-600">
+        <div className="mt-12 rounded-lg bg-gray-50 p-6 text-sm text-gray-600">
           <p>
             <strong>Sitemap XML :</strong>{' '}
-            <a href="/sitemap.xml" className="text-blue-700 underline">sitemap.xml</a> (pour les moteurs de recherche)
+            <a href="/sitemap.xml" className="text-blue-700 underline">
+              sitemap.xml
+            </a>{' '}
+            (pour les moteurs de recherche)
           </p>
           <p className="mt-2">
             <strong>Robots :</strong>{' '}
-            <a href="/robots.txt" className="text-blue-700 underline">robots.txt</a>
+            <a href="/robots.txt" className="text-blue-700 underline">
+              robots.txt
+            </a>
           </p>
         </div>
       </div>

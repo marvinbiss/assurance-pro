@@ -53,9 +53,10 @@ interface TrackingScriptsProps {
   nonce?: string
   gtmId?: string
   metaPixelId?: string
+  clarityId?: string
 }
 
-export function TrackingScripts({ nonce, gtmId, metaPixelId }: TrackingScriptsProps) {
+export function TrackingScripts({ nonce, gtmId, metaPixelId, clarityId }: TrackingScriptsProps) {
   const [prefs, setPrefs] = useState<Preferences>(DENIED)
 
   useEffect(() => {
@@ -72,6 +73,7 @@ export function TrackingScripts({ nonce, gtmId, metaPixelId }: TrackingScriptsPr
   const loadGTM = prefs.analytics && Boolean(gtmId)
   const loadMetaPixel = prefs.marketing && Boolean(metaPixelId)
   const loadContentsquare = prefs.analytics
+  const loadClarity = prefs.analytics && Boolean(clarityId)
 
   return (
     <>
@@ -105,6 +107,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {loadContentsquare && (
         <Script id="contentsquare-deferred" strategy="lazyOnload" nonce={nonce}>
           {`(function(){function l(){if(l.d)return;l.d=1;var s=document.createElement('script');s.src='https://t.contentsquare.net/uxa/8da7eeef2dab8.js';s.async=true;document.head.appendChild(s)}if(typeof requestIdleCallback==='function'){requestIdleCallback(l,{timeout:5000})}else{setTimeout(l,5000)}})();`}
+        </Script>
+      )}
+
+      {loadClarity && clarityId && (
+        <Script id="ms-clarity" strategy="lazyOnload" nonce={nonce}>
+          {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","${clarityId}");`}
         </Script>
       )}
     </>
