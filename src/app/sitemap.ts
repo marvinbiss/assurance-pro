@@ -144,6 +144,7 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'outils/modele-facture-pro', priority: 0.95, changeFrequency: 'weekly' },          // pattern coover.fr 14 792 vis/m (#1 marché entier)
   { path: 'outils/modele-devis-pro', priority: 0.95, changeFrequency: 'weekly' },            // pattern coover.fr 6 276 vis/m (#2 marché entier)
   { path: 'outils/lettre-resiliation-assurance', priority: 0.9, changeFrequency: 'weekly' },// Loi Hamon, famille 500-700 vol/m
+  { path: 'outils/calculateur-tarif-decennale', priority: 0.95, changeFrequency: 'weekly' },// famille 2 700 vol/m, intent commercial pur (CPC 280-450€), funnel direct devis
 
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
