@@ -10,6 +10,7 @@
 
 import type { Metadata } from 'next'
 import { CalculateurTarifMultirisquePro } from '@/components/outils/CalculateurTarifMultirisquePro'
+import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const dynamic = 'force-dynamic'
@@ -151,6 +152,12 @@ export default function Page() {
             ],
           }),
         }}
+      />
+      <StickyConversionBar
+        ctaText="→ Devis multirisque 24h"
+        ctaUrl="/outils/devis-rc-pro?secteur=multirisque"
+        trustSignal="7 assureurs comparés • Tarif négocié -10-25%"
+        variant="orange"
       />
     </main>
   )

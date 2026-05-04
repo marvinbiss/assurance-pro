@@ -27,6 +27,7 @@
 
 import type { Metadata } from 'next'
 import { CalculateurTarifDecennale } from '@/components/outils/CalculateurTarifDecennale'
+import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const dynamic = 'force-dynamic'
@@ -337,6 +338,12 @@ export default function Page() {
             ],
           }),
         }}
+      />
+      <StickyConversionBar
+        ctaText="→ Devis décennale 24h"
+        ctaUrl="/outils/devis-assurance-decennale"
+        trustSignal="8 assureurs BTP • Attestation 24h • ORIAS"
+        variant="orange"
       />
     </main>
   )

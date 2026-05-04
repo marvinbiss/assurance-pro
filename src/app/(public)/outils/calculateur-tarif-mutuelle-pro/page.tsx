@@ -20,6 +20,7 @@
 
 import type { Metadata } from 'next'
 import { CalculateurTarifMutuellePro } from '@/components/outils/CalculateurTarifMutuellePro'
+import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const dynamic = 'force-dynamic'
@@ -230,6 +231,12 @@ export default function Page() {
             ],
           }),
         }}
+      />
+      <StickyConversionBar
+        ctaText="→ Comparer 8 mutuelles 24h"
+        ctaUrl="/outils/comparateur-mutuelle-pro"
+        trustSignal="Loi ANI calculée • TNS Madelin déductible • ORIAS"
+        variant="emerald"
       />
     </main>
   )

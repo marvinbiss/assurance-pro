@@ -21,6 +21,7 @@
 
 import type { Metadata } from 'next'
 import { ComparateurRcPro } from '@/components/outils/ComparateurRcPro'
+import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const dynamic = 'force-dynamic'
@@ -185,6 +186,12 @@ export default function Page() {
             ],
           }),
         }}
+      />
+      <StickyConversionBar
+        ctaText="→ 3 devis personnalisés 24h"
+        ctaUrl="/outils/devis-rc-pro"
+        trustSignal="8 assureurs analysés • Devoir conseil ACPR • ORIAS"
+        variant="blue"
       />
     </main>
   )

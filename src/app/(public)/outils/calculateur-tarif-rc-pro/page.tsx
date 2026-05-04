@@ -28,6 +28,7 @@
 
 import type { Metadata } from 'next'
 import { CalculateurTarifRcPro } from '@/components/outils/CalculateurTarifRcPro'
+import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const dynamic = 'force-dynamic'
@@ -374,6 +375,12 @@ export default function Page() {
             ],
           }),
         }}
+      />
+      <StickyConversionBar
+        ctaText="→ Devis RC Pro 24h"
+        ctaUrl="/outils/devis-rc-pro"
+        trustSignal="8 assureurs comparés • Devis ORIAS sous 24h • Gratuit"
+        variant="blue"
       />
     </main>
   )

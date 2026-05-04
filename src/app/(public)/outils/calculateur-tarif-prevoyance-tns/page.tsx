@@ -12,6 +12,7 @@
 
 import type { Metadata } from 'next'
 import { CalculateurPrevoyanceTns } from '@/components/outils/CalculateurPrevoyanceTns'
+import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const dynamic = 'force-dynamic'
@@ -158,6 +159,12 @@ export default function Page() {
             ],
           }),
         }}
+      />
+      <StickyConversionBar
+        ctaText="→ Devis prévoyance TNS"
+        ctaUrl="/outils/devis-rc-pro?secteur=prevoyance-tns"
+        trustSignal="7 assureurs comparés • Loi Madelin déductible • ORIAS"
+        variant="amber"
       />
     </main>
   )

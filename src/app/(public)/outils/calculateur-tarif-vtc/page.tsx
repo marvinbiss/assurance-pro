@@ -19,6 +19,7 @@
 
 import type { Metadata } from 'next'
 import { CalculateurTarifVtc } from '@/components/outils/CalculateurTarifVtc'
+import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const dynamic = 'force-dynamic'
@@ -183,6 +184,12 @@ export default function Page() {
             ],
           }),
         }}
+      />
+      <StickyConversionBar
+        ctaText="→ Devis VTC 24h"
+        ctaUrl="/outils/devis-rc-pro?secteur=transport-vtc"
+        trustSignal="6 assureurs VTC spécialisés • Loi LOTI • ORIAS"
+        variant="violet"
       />
     </main>
   )
