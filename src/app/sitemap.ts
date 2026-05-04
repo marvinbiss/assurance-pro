@@ -139,6 +139,7 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'outils/devis-rc-pro', priority: 0.95, changeFrequency: 'weekly' },                  // 400 vol KD 0 CPC 600€
   { path: 'outils/devis-assurance-decennale', priority: 0.95, changeFrequency: 'weekly' },     // 450 vol KD 7 CPC 900€
   { path: 'outils/comparateur-mutuelle-pro', priority: 0.95, changeFrequency: 'weekly' },      // 100 vol KD 8 CPC 600€ (famille 600)
+  { path: 'outils/modele-attestation-decennale', priority: 0.95, changeFrequency: 'weekly' }, // 600 vol KD 1 CPC 300€ (famille 1 800) — pattern coover.fr 14k vis/m
 
   // Action / acquisition
   { path: 'comparateur-assureurs', priority: 0.85, changeFrequency: 'monthly' },
