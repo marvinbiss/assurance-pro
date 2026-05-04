@@ -81,6 +81,75 @@ export function getWebsiteSchema() {
   }
 }
 
+/**
+ * Schema.org Service — pour les piliers métier (RC Pro, décennale, mutuelle, etc.)
+ * Génère un rich snippet "Service" avec provider + areaServed + offer.
+ */
+export function getServiceSchema(params: {
+  name: string
+  description: string
+  url: string
+  serviceType?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: params.name,
+    description: params.description,
+    provider: { '@id': `${SITE_URL}#organization` },
+    areaServed: { '@type': 'Country', name: 'France' },
+    serviceType: params.serviceType ?? 'Courtage en assurance professionnelle',
+    url: params.url,
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Travailleurs indépendants, TPE, PME, professions réglementées',
+    },
+  }
+}
+
+/**
+ * Schema.org FAQPage — rich snippet questions/réponses.
+ */
+export function getFAQPageSchema(faq: { q: string; a: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a,
+      },
+    })),
+  }
+}
+
+/**
+ * Schema.org Article — pour les guides juridiques (/guides/*).
+ */
+export function getArticleSchema(params: {
+  headline: string
+  description: string
+  url: string
+  datePublished?: string
+  dateModified?: string
+}) {
+  const now = new Date().toISOString().split('T')[0]
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: params.headline,
+    description: params.description,
+    url: params.url,
+    author: { '@id': `${SITE_URL}#organization` },
+    publisher: { '@id': `${SITE_URL}#organization` },
+    datePublished: params.datePublished ?? now,
+    dateModified: params.dateModified ?? now,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': params.url },
+  }
+}
+
 export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     '@context': 'https://schema.org',

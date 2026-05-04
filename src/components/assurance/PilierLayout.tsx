@@ -5,7 +5,9 @@
 
 import Link from 'next/link'
 import type { ReactNode } from 'react'
-import { getBreadcrumbSchema } from '@/lib/seo/jsonld'
+import { getBreadcrumbSchema, getServiceSchema } from '@/lib/seo/jsonld'
+import { SITE_URL } from '@/lib/seo/config'
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
 
 /**
  * Construit dynamiquement la liste BreadcrumbList depuis le slug.
@@ -72,9 +74,9 @@ export function PilierLayout({
   return (
     <article className="min-h-screen">
       {/* HERO */}
-      <header className="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <nav className="text-sm opacity-80 mb-4" aria-label="Fil d'Ariane">
+      <header className="bg-gradient-to-br from-blue-700 to-blue-900 py-16 text-white">
+        <div className="container mx-auto max-w-4xl px-4">
+          <nav className="mb-4 text-sm opacity-80" aria-label="Fil d'Ariane">
             <Link href="/" className="hover:underline">
               Accueil
             </Link>
@@ -83,31 +85,31 @@ export function PilierLayout({
           </nav>
 
           {isObligatoire ? (
-            <span className="inline-block mb-4 px-3 py-1 bg-red-500/90 text-white rounded-full text-sm font-semibold">
+            <span className="mb-4 inline-block rounded-full bg-red-500/90 px-3 py-1 text-sm font-semibold text-white">
               ⚠️ Garantie obligatoire
             </span>
           ) : null}
 
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">{title}</h1>
-          <p className="text-lg md:text-xl opacity-95 mb-6 max-w-3xl">{tagline}</p>
+          <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">{title}</h1>
+          <p className="mb-6 max-w-3xl text-lg opacity-95 md:text-xl">{tagline}</p>
 
           <div className="flex flex-wrap gap-3">
             <Link
               href={`/devis?garantie=${slug}`}
-              className="inline-block px-6 py-3 bg-white text-blue-700 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-blue-700 shadow-lg transition hover:bg-gray-100"
             >
               Obtenir mon devis →
             </Link>
             <a
               href="#faq"
-              className="inline-block px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10"
+              className="inline-block rounded-lg border-2 border-white px-6 py-3 font-semibold text-white hover:bg-white/10"
             >
               Questions fréquentes
             </a>
           </div>
 
           {legalReference ? (
-            <p className="mt-6 text-sm opacity-80 italic">
+            <p className="mt-6 text-sm italic opacity-80">
               📜 Référence légale&nbsp;: {legalReference}
             </p>
           ) : null}
@@ -115,17 +117,17 @@ export function PilierLayout({
       </header>
 
       {/* BÉNÉFICES */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="bg-white py-12">
+        <div className="container mx-auto max-w-5xl px-4">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {benefits.map((b) => (
               <div key={b.title} className="text-center">
                 {b.icon ? (
-                  <div className="text-3xl mb-2" aria-hidden="true">
+                  <div className="mb-2 text-3xl" aria-hidden="true">
                     {b.icon}
                   </div>
                 ) : null}
-                <h3 className="font-semibold mb-1">{b.title}</h3>
+                <h3 className="mb-1 font-semibold">{b.title}</h3>
                 <p className="text-sm text-gray-600">{b.desc}</p>
               </div>
             ))}
@@ -134,8 +136,8 @@ export function PilierLayout({
       </section>
 
       {/* INTRO */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="bg-gray-50 py-12">
+        <div className="container mx-auto max-w-3xl px-4">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed text-gray-700">{intro}</p>
           </div>
@@ -143,11 +145,11 @@ export function PilierLayout({
       </section>
 
       {/* SECTIONS */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 max-w-3xl space-y-12">
+      <section className="bg-white py-12">
+        <div className="container mx-auto max-w-3xl space-y-12 px-4">
           {sections.map((s) => (
             <div key={s.h2}>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">{s.h2}</h2>
+              <h2 className="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">{s.h2}</h2>
               <div className="prose prose-lg max-w-none text-gray-700">{s.body}</div>
             </div>
           ))}
@@ -156,17 +158,17 @@ export function PilierLayout({
 
       {/* RELATED MÉTIERS */}
       {relatedMetiers && relatedMetiers.length > 0 ? (
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="text-2xl font-bold mb-6 text-center">
+        <section className="bg-gray-50 py-12">
+          <div className="container mx-auto max-w-5xl px-4">
+            <h2 className="mb-6 text-center text-2xl font-bold">
               Couvert pour votre métier&nbsp;?
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-6">
               {relatedMetiers.map((m) => (
                 <Link
                   key={m.slug}
                   href={`/${slug}/${m.slug}`}
-                  className="block px-4 py-3 bg-white rounded text-center text-sm hover:bg-blue-50 hover:text-blue-700 border border-gray-200 transition"
+                  className="block rounded border border-gray-200 bg-white px-4 py-3 text-center text-sm transition hover:bg-blue-50 hover:text-blue-700"
                 >
                   {m.name}
                 </Link>
@@ -176,25 +178,26 @@ export function PilierLayout({
         </section>
       ) : null}
 
+      {/* MAILLAGE INTERNE — Pages connexes (auto-injecté selon cluster sémantique) */}
+      <RelatedPagesSection currentSlug={slug} />
+
       {/* FAQ */}
-      <section id="faq" className="py-12 bg-white">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
-            Questions fréquentes
-          </h2>
+      <section id="faq" className="bg-white py-12">
+        <div className="container mx-auto max-w-3xl px-4">
+          <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">Questions fréquentes</h2>
           <div className="space-y-3">
             {faq.map((f) => (
-              <details
-                key={f.q}
-                className="bg-gray-50 rounded-lg p-5 cursor-pointer group"
-              >
-                <summary className="font-semibold text-gray-900 list-none flex justify-between items-center">
+              <details key={f.q} className="group cursor-pointer rounded-lg bg-gray-50 p-5">
+                <summary className="flex list-none items-center justify-between font-semibold text-gray-900">
                   <span>{f.q}</span>
-                  <span className="text-blue-600 group-open:rotate-180 transition" aria-hidden="true">
+                  <span
+                    className="text-blue-600 transition group-open:rotate-180"
+                    aria-hidden="true"
+                  >
                     ▼
                   </span>
                 </summary>
-                <p className="mt-3 text-gray-700 leading-relaxed">{f.a}</p>
+                <p className="mt-3 leading-relaxed text-gray-700">{f.a}</p>
               </details>
             ))}
           </div>
@@ -202,15 +205,15 @@ export function PilierLayout({
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-16 bg-blue-700 text-white text-center">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-bold mb-4">Prêt à comparer&nbsp;?</h2>
-          <p className="text-lg mb-8 opacity-95">
+      <section className="bg-blue-700 py-16 text-center text-white">
+        <div className="container mx-auto max-w-3xl px-4">
+          <h2 className="mb-4 text-3xl font-bold">Prêt à comparer&nbsp;?</h2>
+          <p className="mb-8 text-lg opacity-95">
             Devis gratuit et sans engagement. Réponse sous 24&nbsp;heures.
           </p>
           <Link
             href={`/devis?garantie=${slug}`}
-            className="inline-block px-8 py-4 bg-white text-blue-700 rounded-lg font-bold text-lg hover:bg-gray-100 shadow-lg"
+            className="inline-block rounded-lg bg-white px-8 py-4 text-lg font-bold text-blue-700 shadow-lg hover:bg-gray-100"
           >
             Démarrer mon devis →
           </Link>
@@ -238,6 +241,20 @@ export function PilierLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getBreadcrumbSchema(buildBreadcrumbItems(slug, title))),
+        }}
+      />
+
+      {/* Service Schema.org — rich snippet pour piliers métier */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            getServiceSchema({
+              name: title,
+              description: tagline,
+              url: `${SITE_URL}/${slug}`,
+            })
+          ),
         }}
       />
     </article>
