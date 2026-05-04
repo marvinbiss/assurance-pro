@@ -28,8 +28,27 @@ function shouldLog(level: LogLevel): boolean {
   return LOG_LEVELS[level] >= LOG_LEVELS[MIN_LOG_LEVEL]
 }
 
+/**
+ * Format de log :
+ * - DEV : `[timestamp] [LEVEL] message {ctx}` (lisible terminal)
+ * - PROD : JSON structuré (parseable par Datadog/Vercel Logs/Loki/etc.)
+ */
 function formatMessage(level: LogLevel, message: string, context?: LogContext): string {
   const timestamp = new Date().toISOString()
+
+  if (process.env.NODE_ENV === 'production') {
+    /* JSON structuré : 1 ligne = 1 event */
+    return JSON.stringify({
+      timestamp,
+      level,
+      msg: message,
+      env: process.env.VERCEL_ENV ?? process.env.NODE_ENV,
+      service: 'assurance-pro',
+      ...(context ?? {}),
+    })
+  }
+
+  /* Format dev lisible */
   const contextStr = context ? ` ${JSON.stringify(context)}` : ''
   return `[${timestamp}] [${level.toUpperCase()}] ${message}${contextStr}`
 }
@@ -60,7 +79,7 @@ function createLogger(defaultContext?: LogContext): AppLogger {
   // Normalise (msg, ctx) ou (ctx, msg) — supporte le pattern pino-like
   const normaliseArgs = (
     a?: string | LogContext,
-    b?: string | LogContext | unknown,
+    b?: string | LogContext | unknown
   ): { message: string; context?: LogContext } => {
     if (typeof a === 'string') {
       return { message: a, context: b as LogContext | undefined }
@@ -110,10 +129,13 @@ function createLogger(defaultContext?: LogContext): AppLogger {
           context = a as LogContext
         }
 
-        const errorDetails = error instanceof Error
-          ? { name: error.name, message: error.message, stack: error.stack }
-          : error
-        console.error(formatMessage('error', message, { ...mergeContext(context), error: errorDetails }))
+        const errorDetails =
+          error instanceof Error
+            ? { name: error.name, message: error.message, stack: error.stack }
+            : error
+        console.error(
+          formatMessage('error', message, { ...mergeContext(context), error: errorDetails })
+        )
       }
     },
 
