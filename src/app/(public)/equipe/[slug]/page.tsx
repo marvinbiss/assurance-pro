@@ -12,7 +12,8 @@ export function generateStaticParams(): Params[] {
   return getMembreSlugs().map((slug) => ({ slug }))
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params
   const m = getMembre(params.slug)
   if (!m) return {}
   return {
@@ -22,7 +23,8 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   }
 }
 
-export default function MembrePage({ params }: { params: Params }) {
+export default async function MembrePage(props: { params: Promise<Params> }) {
+  const params = await props.params
   const m = getMembre(params.slug)
   if (!m) notFound()
 
@@ -53,24 +55,32 @@ export default function MembrePage({ params }: { params: Params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      <div className="container mx-auto px-4 max-w-3xl">
-        <nav aria-label="Fil d'Ariane" className="text-sm text-gray-600 mb-4">
-          <Link href="/" className="hover:underline">Accueil</Link> ›{' '}
-          <Link href="/equipe" className="hover:underline">Équipe</Link> ›{' '}
-          <span className="text-gray-900">{m.prenom} {m.nom}</span>
+      <div className="container mx-auto max-w-3xl px-4">
+        <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-gray-600">
+          <Link href="/" className="hover:underline">
+            Accueil
+          </Link>{' '}
+          ›{' '}
+          <Link href="/equipe" className="hover:underline">
+            Équipe
+          </Link>{' '}
+          ›{' '}
+          <span className="text-gray-900">
+            {m.prenom} {m.nom}
+          </span>
         </nav>
 
-        <header className="border-b border-gray-200 pb-6 mb-6">
+        <header className="mb-6 border-b border-gray-200 pb-6">
           <div className="flex items-start gap-5">
-            <div className="flex-shrink-0 w-20 h-20 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-2xl">
+            <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-2xl font-bold text-blue-700">
               {m.prenom.charAt(0)}
               {m.nom.charAt(0)}
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold mb-1">
+              <h1 className="mb-1 text-2xl font-bold md:text-3xl">
                 {m.prenom} {m.nom}
               </h1>
-              <p className="text-gray-600 mb-2">{m.poste}</p>
+              <p className="mb-2 text-gray-600">{m.poste}</p>
               {m.oriasNumber && (
                 <p className="text-xs text-gray-500">
                   N° ORIAS&nbsp;:{' '}
@@ -78,7 +88,7 @@ export default function MembrePage({ params }: { params: Params }) {
                     href="https://www.orias.fr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-700 hover:underline font-semibold"
+                    className="font-semibold text-blue-700 hover:underline"
                   >
                     {m.oriasNumber}
                   </a>
@@ -88,48 +98,51 @@ export default function MembrePage({ params }: { params: Params }) {
           </div>
         </header>
 
-        <section className="prose prose-lg max-w-none mb-8">
+        <section className="prose prose-lg mb-8 max-w-none">
           <h2>Présentation</h2>
           <p>{m.bio}</p>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <section className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
           <Block title="Expertises">
-            <ul className="text-sm space-y-1">
+            <ul className="space-y-1 text-sm">
               {m.expertises.map((e) => (
                 <li key={e}>• {e}</li>
               ))}
             </ul>
           </Block>
           <Block title="Formations">
-            <ul className="text-sm space-y-1">
+            <ul className="space-y-1 text-sm">
               {m.formations.map((f) => (
                 <li key={f}>• {f}</li>
               ))}
             </ul>
           </Block>
           <Block title="Expérience">
-            <ul className="text-sm space-y-1">
+            <ul className="space-y-1 text-sm">
               {m.experiences.map((e) => (
                 <li key={e}>• {e}</li>
               ))}
             </ul>
           </Block>
           <Block title="Certifications">
-            <ul className="text-sm space-y-1">
+            <ul className="space-y-1 text-sm">
               {m.certifications.map((c) => (
                 <li key={c}>• {c}</li>
               ))}
             </ul>
-            <p className="text-xs text-gray-500 mt-2">Langues&nbsp;: {m.langues.join(', ')}</p>
+            <p className="mt-2 text-xs text-gray-500">Langues&nbsp;: {m.langues.join(', ')}</p>
           </Block>
         </section>
 
         {m.emailPro && (
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-8">
+          <div className="mb-8 rounded-lg border border-blue-200 bg-blue-50 p-5">
             <p className="text-sm">
               Contact direct&nbsp;:{' '}
-              <a href={`mailto:${m.emailPro}`} className="text-blue-700 hover:underline font-semibold">
+              <a
+                href={`mailto:${m.emailPro}`}
+                className="font-semibold text-blue-700 hover:underline"
+              >
                 {m.emailPro}
               </a>
             </p>
@@ -138,13 +151,13 @@ export default function MembrePage({ params }: { params: Params }) {
 
         {others.length > 0 && (
           <section className="border-t border-gray-200 pt-6">
-            <h2 className="text-lg font-bold mb-3">Autres membres de l&apos;équipe</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+            <h2 className="mb-3 text-lg font-bold">Autres membres de l&apos;équipe</h2>
+            <ul className="grid grid-cols-1 gap-3 text-sm md:grid-cols-3">
               {others.map((o) => (
                 <li key={o.slug}>
                   <Link
                     href={`/equipe/${o.slug}`}
-                    className="block bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md transition"
+                    className="block rounded-lg border border-gray-200 bg-white p-3 transition hover:shadow-md"
                   >
                     <div className="font-semibold text-gray-900">
                       {o.prenom} {o.nom}
@@ -163,8 +176,8 @@ export default function MembrePage({ params }: { params: Params }) {
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-4">
-      <h3 className="text-sm font-bold mb-2 text-gray-900">{title}</h3>
+    <div className="rounded-lg border border-gray-200 bg-white p-4">
+      <h3 className="mb-2 text-sm font-bold text-gray-900">{title}</h3>
       {children}
     </div>
   )

@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next'
-import dynamic from 'next/dynamic'
 import Script from 'next/script'
 import { headers } from 'next/headers'
 import { DM_Sans, Sora } from 'next/font/google'
@@ -9,6 +8,7 @@ import Footer from '@/components/Footer'
 import { TrackingScripts } from '@/components/TrackingScripts'
 import { getOrganizationSchema, getWebsiteSchema } from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
+import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -25,17 +25,8 @@ const sora = Sora({
   adjustFontFallback: true,
 })
 
-// Dynamic imports for performance (client-only utilities)
-const ServiceWorkerRegistration = dynamic(() => import('@/components/ServiceWorkerRegistration'), {
-  ssr: false,
-})
-const CookieConsent = dynamic(() => import('@/components/CookieConsent'), {
-  ssr: false,
-})
-const WebVitals = dynamic(
-  () => import('@/components/WebVitals').then((mod) => ({ default: mod.WebVitals })),
-  { ssr: false }
-)
+// Client-only dynamic imports moved to ./_components/client-only-helpers.tsx
+// (Next 15: `ssr: false` requires a Client Component boundary)
 
 // Viewport configuration - Primary brand color
 export const viewport: Viewport = {
@@ -188,7 +179,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           metaPixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID}
           clarityId={process.env.NEXT_PUBLIC_CLARITY_ID}
         />
-        <WebVitals />
+        <ClientOnlyWebVitals />
         {/* Skip to main content for accessibility */}
         <a
           href="#main-content"
@@ -201,8 +192,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
         </main>
         <Footer />
-        <ServiceWorkerRegistration />
-        <CookieConsent />
+        <ClientOnlyFooterHelpers />
       </body>
     </html>
   )

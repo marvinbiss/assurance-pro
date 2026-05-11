@@ -59,7 +59,8 @@ export async function generateStaticParams() {
 // generateMetadata
 // ────────────────────────────────────────────────────────────────────────────
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params
   const slug = `prix/${params.garantie}/${params.metier}/${params.statut}`
   const enrichment = await getPageEnrichment(slug)
   if (!enrichment) return {}
@@ -82,7 +83,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 // Page Component
 // ────────────────────────────────────────────────────────────────────────────
 
-export default async function PrixPage({ params }: { params: Params }) {
+export default async function PrixPage(props: { params: Promise<Params> }) {
+  const params = await props.params
   const slug = `prix/${params.garantie}/${params.metier}/${params.statut}`
   const enrichment = await getPageEnrichment(slug)
   if (!enrichment) notFound()

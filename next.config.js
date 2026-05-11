@@ -55,7 +55,6 @@ const nextConfig = {
 
   experimental: {
     optimizePackageImports: ['lucide-react', '@supabase/supabase-js', 'date-fns', 'zod'],
-    instrumentationHook: true,
   },
 
   async headers() {

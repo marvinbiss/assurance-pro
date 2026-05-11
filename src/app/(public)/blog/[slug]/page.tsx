@@ -13,7 +13,8 @@ export function generateStaticParams(): Params[] {
   return getPostSlugs().map((slug) => ({ slug }))
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params
   const post = getPost(params.slug)
   if (!post) return {}
   return {
@@ -38,7 +39,8 @@ const TONE_CLASSES: Record<'info' | 'warning' | 'success', string> = {
   success: 'border-green-200 bg-green-50 text-green-900',
 }
 
-export default function BlogPostPage({ params }: { params: Params }) {
+export default async function BlogPostPage(props: { params: Promise<Params> }) {
+  const params = await props.params
   const post = getPost(params.slug)
   if (!post) notFound()
 
@@ -73,10 +75,16 @@ export default function BlogPostPage({ params }: { params: Params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <div className="container mx-auto px-4 max-w-3xl">
-        <nav aria-label="Fil d'Ariane" className="text-sm text-gray-600 mb-4">
-          <Link href="/" className="hover:underline">Accueil</Link> ›{' '}
-          <Link href="/blog" className="hover:underline">Blog</Link> ›{' '}
+      <div className="container mx-auto max-w-3xl px-4">
+        <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-gray-600">
+          <Link href="/" className="hover:underline">
+            Accueil
+          </Link>{' '}
+          ›{' '}
+          <Link href="/blog" className="hover:underline">
+            Blog
+          </Link>{' '}
+          ›{' '}
           <Link
             href={`/blog/categorie/${getCategorySlug(post.category)}`}
             className="hover:underline"
@@ -87,10 +95,10 @@ export default function BlogPostPage({ params }: { params: Params }) {
         </nav>
 
         <header className="mb-8 border-b border-gray-200 pb-6">
-          <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
+          <div className="mb-3 flex items-center gap-2 text-xs text-gray-500">
             <Link
               href={`/blog/categorie/${getCategorySlug(post.category)}`}
-              className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded font-semibold"
+              className="rounded bg-blue-100 px-2 py-0.5 font-semibold text-blue-700"
             >
               {post.category}
             </Link>
@@ -105,10 +113,10 @@ export default function BlogPostPage({ params }: { params: Params }) {
             <span>•</span>
             <span>{post.readTime} de lecture</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">{post.title}</h1>
-          <p className="text-gray-700 text-lg">{post.description}</p>
+          <h1 className="mb-3 text-3xl font-bold md:text-4xl">{post.title}</h1>
+          <p className="text-lg text-gray-700">{post.description}</p>
           <div className="mt-4 flex items-center gap-3 text-sm text-gray-600">
-            <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 font-bold text-blue-700">
               {post.author.charAt(0)}
             </div>
             <div>
@@ -119,9 +127,9 @@ export default function BlogPostPage({ params }: { params: Params }) {
         </header>
 
         {/* Sommaire */}
-        <aside className="mb-8 bg-gray-50 border border-gray-200 rounded-lg p-5">
-          <p className="font-bold mb-2">Sommaire</p>
-          <ol className="list-decimal pl-5 text-sm space-y-1 text-gray-700">
+        <aside className="mb-8 rounded-lg border border-gray-200 bg-gray-50 p-5">
+          <p className="mb-2 font-bold">Sommaire</p>
+          <ol className="list-decimal space-y-1 pl-5 text-sm text-gray-700">
             {post.toc.map((item) => (
               <li key={item.id}>
                 <a href={`#${item.id}`} className="text-blue-700 hover:underline">
@@ -132,15 +140,15 @@ export default function BlogPostPage({ params }: { params: Params }) {
           </ol>
         </aside>
 
-        <article className="prose prose-lg max-w-none mb-10">
+        <article className="prose prose-lg mb-10 max-w-none">
           {post.body.map((section) => (
             <section key={section.id} id={section.id}>
               <h2>{section.h2}</h2>
               {section.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
-              {section.list && (
-                section.list.ordered ? (
+              {section.list &&
+                (section.list.ordered ? (
                   <ol>
                     {section.list.items.map((item, i) => (
                       <li key={i}>{item}</li>
@@ -152,13 +160,12 @@ export default function BlogPostPage({ params }: { params: Params }) {
                       <li key={i}>{item}</li>
                     ))}
                   </ul>
-                )
-              )}
+                ))}
               {section.callout && (
                 <div
-                  className={`not-prose border rounded-lg p-4 my-4 ${TONE_CLASSES[section.callout.tone]}`}
+                  className={`not-prose my-4 rounded-lg border p-4 ${TONE_CLASSES[section.callout.tone]}`}
                 >
-                  <p className="text-sm font-medium m-0">{section.callout.text}</p>
+                  <p className="m-0 text-sm font-medium">{section.callout.text}</p>
                 </div>
               )}
             </section>
@@ -166,8 +173,8 @@ export default function BlogPostPage({ params }: { params: Params }) {
         </article>
 
         <section className="mb-10 border-t border-gray-200 pt-6">
-          <h2 className="text-lg font-bold mb-3">Sources</h2>
-          <ul className="text-sm space-y-1.5">
+          <h2 className="mb-3 text-lg font-bold">Sources</h2>
+          <ul className="space-y-1.5 text-sm">
             {post.sources.map((s, i) => (
               <li key={i}>
                 <a
@@ -183,14 +190,14 @@ export default function BlogPostPage({ params }: { params: Params }) {
           </ul>
         </section>
 
-        <section className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-10 text-center">
-          <h2 className="text-xl font-bold mb-2">Besoin d&apos;un conseil sur ce sujet&nbsp;?</h2>
-          <p className="text-sm mb-4 text-gray-700">
+        <section className="mb-10 rounded-lg border border-blue-200 bg-blue-50 p-6 text-center">
+          <h2 className="mb-2 text-xl font-bold">Besoin d&apos;un conseil sur ce sujet&nbsp;?</h2>
+          <p className="mb-4 text-sm text-gray-700">
             Notre équipe ORIAS vous accompagne — devis gratuit, sans engagement.
           </p>
           <Link
             href="/devis"
-            className="inline-block px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded font-semibold"
+            className="inline-block rounded bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800"
           >
             Demander un devis →
           </Link>
@@ -198,18 +205,16 @@ export default function BlogPostPage({ params }: { params: Params }) {
 
         {related.length > 0 && (
           <section>
-            <h2 className="text-lg font-bold mb-3">Articles liés</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <h2 className="mb-3 text-lg font-bold">Articles liés</h2>
+            <ul className="grid grid-cols-1 gap-3 md:grid-cols-3">
               {related.map((p) => (
                 <li key={p.slug}>
                   <Link
                     href={`/blog/${p.slug}`}
-                    className="block bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition"
+                    className="block rounded-lg border border-gray-200 bg-white p-4 transition hover:shadow-md"
                   >
-                    <div className="text-xs text-blue-700 font-semibold mb-1">
-                      {p.category}
-                    </div>
-                    <div className="text-sm font-bold text-gray-900 line-clamp-3">{p.title}</div>
+                    <div className="mb-1 text-xs font-semibold text-blue-700">{p.category}</div>
+                    <div className="line-clamp-3 text-sm font-bold text-gray-900">{p.title}</div>
                   </Link>
                 </li>
               ))}

@@ -32,7 +32,8 @@ export async function generateStaticParams() {
     .filter((p) => p.garantie && p.ville)
 }
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params
   const slug = `comparateur/${params.garantie}/${params.ville}`
   const enrichment = await getPageEnrichment(slug)
   if (!enrichment) return {}
@@ -44,7 +45,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   }
 }
 
-export default async function ComparateurPage({ params }: { params: Params }) {
+export default async function ComparateurPage(props: { params: Promise<Params> }) {
+  const params = await props.params
   const slug = `comparateur/${params.garantie}/${params.ville}`
   const enrichment = await getPageEnrichment(slug)
   if (!enrichment) notFound()

@@ -9,10 +9,7 @@ import type { Metadata } from 'next'
 import { DECENNALE_METIERS } from '@/lib/data/decennale-metiers'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { DecennaleVilleTemplate } from '@/components/assurance/DecennaleVilleTemplate'
-import {
-  decennaleStaticSlugs,
-  resolveDecennaleSlug,
-} from '@/lib/seo/garantie-slug-dispatcher'
+import { decennaleStaticSlugs, resolveDecennaleSlug } from '@/lib/seo/garantie-slug-dispatcher'
 import { SITE_URL } from '@/lib/seo/config'
 
 type Params = { slug: string }
@@ -22,7 +19,8 @@ export const revalidate = 86400
 
 export const generateStaticParams = decennaleStaticSlugs
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params
   const r = resolveDecennaleSlug(params.slug)
   if (!r) return {}
   if (r.kind === 'metier') {
@@ -41,7 +39,8 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   }
 }
 
-export default function DecennaleSlugPage({ params }: { params: Params }) {
+export default async function DecennaleSlugPage(props: { params: Promise<Params> }) {
+  const params = await props.params
   const r = resolveDecennaleSlug(params.slug)
   if (!r) notFound()
   if (r.kind === 'ville') return <DecennaleVilleTemplate ville={r.ville} />
@@ -85,9 +84,9 @@ export default function DecennaleSlugPage({ params }: { params: Params }) {
               <>
                 <p>
                   En tant que <strong>{m.name}</strong>, vous êtes tenu par la{' '}
-                  <strong>Loi Spinetta du 4 janvier 1978</strong> de souscrire une garantie décennale
-                  couvrant tous vos travaux susceptibles d&apos;affecter la solidité de l&apos;ouvrage ou
-                  de le rendre impropre à sa destination.
+                  <strong>Loi Spinetta du 4 janvier 1978</strong> de souscrire une garantie
+                  décennale couvrant tous vos travaux susceptibles d&apos;affecter la solidité de
+                  l&apos;ouvrage ou de le rendre impropre à sa destination.
                 </p>
                 <p>L&apos;absence de couverture est sanctionnée par&nbsp;:</p>
                 <ul>
@@ -112,7 +111,7 @@ export default function DecennaleSlugPage({ params }: { params: Params }) {
             h2: `Combien coûte la décennale ${m.name} ?`,
             body: (
               <>
-                <table className="w-full text-sm border-collapse my-4">
+                <table className="my-4 w-full border-collapse text-sm">
                   <thead>
                     <tr className="bg-gray-100">
                       <th className="border border-gray-300 p-2 text-left">Profil</th>
@@ -155,10 +154,10 @@ export default function DecennaleSlugPage({ params }: { params: Params }) {
                   </tbody>
                 </table>
                 <p className="text-xs italic text-gray-600">
-                  Tarifs indicatifs basés sur les barèmes 2026 de nos 10 assureurs partenaires (Hiscox,
-                  April Pro, MMA, Generali, AXA Pro, SMABTP, Allianz Pro, MAAF, Wakam, Stello). Le
-                  tarif réel dépend de votre profil (ancienneté, antécédents sinistres, zone
-                  géographique) et fait l&apos;objet d&apos;un devis personnalisé.
+                  Tarifs indicatifs basés sur les barèmes 2026 de nos 10 assureurs partenaires
+                  (Hiscox, April Pro, MMA, Generali, AXA Pro, SMABTP, Allianz Pro, MAAF, Wakam,
+                  Stello). Le tarif réel dépend de votre profil (ancienneté, antécédents sinistres,
+                  zone géographique) et fait l&apos;objet d&apos;un devis personnalisé.
                 </p>
               </>
             ),
@@ -168,8 +167,8 @@ export default function DecennaleSlugPage({ params }: { params: Params }) {
             body: (
               <>
                 <p>
-                  D&apos;après l&apos;AQC SYCODÉS 2024, les principales causes de sinistres décennaux
-                  pour ce métier sont&nbsp;:
+                  D&apos;après l&apos;AQC SYCODÉS 2024, les principales causes de sinistres
+                  décennaux pour ce métier sont&nbsp;:
                 </p>
                 <ul>
                   {m.topCauses.map((c) => (
