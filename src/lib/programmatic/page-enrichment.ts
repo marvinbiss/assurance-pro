@@ -104,13 +104,7 @@ export interface StatSectorielle {
  */
 export async function getPageEnrichment(pageSlug: string): Promise<PageEnrichmentRow | null> {
   const supabase = createAdminClient()
-  const { data, error } = await supabase
-    .schema('app')
-    .from('v_page_enrichment_full')
-    .select('*')
-    .eq('page_slug', pageSlug)
-    .maybeSingle()
-
+  const { data, error } = await supabase.rpc('get_page_enrichment', { p_slug: pageSlug })
   if (error) {
     console.error('[page-enrichment] read error', { pageSlug, error })
     return null
@@ -132,21 +126,16 @@ export async function getEligibleSlugsForTemplate(
   limit = 5820
 ): Promise<string[]> {
   const supabase = createAdminClient()
-  const { data, error } = await supabase
-    .schema('app')
-    .from('page_enrichment_cache')
-    .select('page_slug')
-    .eq('page_template', template)
-    .gte('yield_score', minYield)
-    .in('generation_status', ['generated', 'published', 'indexed'])
-    .order('yield_score', { ascending: false })
-    .limit(limit)
-
+  const { data, error } = await supabase.rpc('get_eligible_slugs_for_template', {
+    p_template: template,
+    p_min_yield: minYield,
+    p_limit: limit,
+  })
   if (error) {
     console.error('[page-enrichment] eligible slugs error', { template, error })
     return []
   }
-  return (data ?? []).map((row) => row.page_slug as string)
+  return (data as string[] | null) ?? []
 }
 
 /**
@@ -154,23 +143,14 @@ export async function getEligibleSlugsForTemplate(
  */
 export async function countEligiblePages(template?: PageTemplate): Promise<number> {
   const supabase = createAdminClient()
-  let query = supabase
-    .schema('app')
-    .from('page_enrichment_cache')
-    .select('page_slug', { count: 'exact', head: true })
-    .gte('yield_score', 15)
-    .in('generation_status', ['generated', 'published', 'indexed'])
-
-  if (template) {
-    query = query.eq('page_template', template)
-  }
-
-  const { count, error } = await query
+  const { data, error } = await supabase.rpc('count_eligible_pages', {
+    p_template: template ?? null,
+  })
   if (error) {
     console.error('[page-enrichment] count error', { template, error })
     return 0
   }
-  return count ?? 0
+  return (data as number | null) ?? 0
 }
 
 // ────────────────────────────────────────────────────────────────────────────
