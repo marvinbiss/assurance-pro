@@ -18,7 +18,8 @@
     "test:debug": "playwright test --debug",
     "prepare": "husky",
     "data:populate-cache": "tsx scripts/populate-page-enrichment-cache.ts",
-    "data:seed-ahrefs": "tsx scripts/seed-ahrefs-data.ts"
+    "data:seed-ahrefs": "tsx scripts/seed-ahrefs-data.ts",
+    "data:embed": "tsx scripts/generate-embeddings.ts"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

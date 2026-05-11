@@ -10,6 +10,10 @@ const WebVitals = dynamic(
   () => import('@/components/WebVitals').then((mod) => ({ default: mod.WebVitals })),
   { ssr: false }
 )
+const ChatWidget = dynamic(
+  () => import('@/components/chat/ChatWidget').then((mod) => ({ default: mod.ChatWidget })),
+  { ssr: false }
+)
 
 export function ClientOnlyWebVitals() {
   return <WebVitals />
@@ -20,6 +24,7 @@ export function ClientOnlyFooterHelpers() {
     <>
       <ServiceWorkerRegistration />
       <CookieConsent />
+      <ChatWidget />
     </>
   )
 }
