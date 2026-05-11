@@ -41,7 +41,7 @@ export default function MediationPage() {
         <ul>
           <li>
             📧 Email :{' '}
-            <a href="mailto:reclamations@assurance-pro.fr">reclamations@assurance-pro.fr</a>
+            <a href="mailto:reclamations@vivos-assurance.fr">reclamations@vivos-assurance.fr</a>
           </li>
           <li>📨 Courrier : Service Réclamations — Assurance Pro — [Adresse cabinet]</li>
         </ul>

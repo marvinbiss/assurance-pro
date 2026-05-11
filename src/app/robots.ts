@@ -5,7 +5,7 @@
 
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -13,14 +13,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/devis/merci',
-          '/_next/',
-          '/private/',
-          '*?token=*',
-          '*?utm_*=*',
-        ],
+        disallow: ['/api/', '/devis/merci', '/_next/', '/private/', '*?token=*', '*?utm_*=*'],
       },
       {
         userAgent: 'GPTBot',

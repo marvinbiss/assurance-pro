@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Comparez votre mutuelle santé pro auprès de 8 mutuelles. TNS, dirigeants, freelances. Loi Madelin déductible.',
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/mutuelle-pro`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/mutuelle-pro`,
   },
   openGraph: {
     title: 'Mutuelle TNS / Pro Madelin — Comparez 8 mutuelles | Assurance Pro',

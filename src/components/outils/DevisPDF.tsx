@@ -23,7 +23,12 @@ const styles = StyleSheet.create({
   destinataire: { width: '45%', borderLeft: '1px solid #d1d5db', paddingLeft: 12 },
   block: { marginBottom: 4 },
   bold: { fontWeight: 'bold' },
-  devisMeta: { backgroundColor: '#dbeafe', padding: 10, marginVertical: 16, borderLeft: '3px solid #1e40af' },
+  devisMeta: {
+    backgroundColor: '#dbeafe',
+    padding: 10,
+    marginVertical: 16,
+    borderLeft: '3px solid #1e40af',
+  },
   table: { marginVertical: 16 },
   tableRow: { flexDirection: 'row', borderBottom: '1px solid #e5e7eb', padding: 6 },
   tableHeader: { backgroundColor: '#1e40af', color: 'white', fontWeight: 'bold' },
@@ -128,7 +133,9 @@ export function DevisPDF({ data }: { data: DevisData }) {
             <Text style={[styles.bold, { marginBottom: 4 }]}>DESTINATAIRE</Text>
             <Text style={styles.block}>{data.destinataireNom}</Text>
             <Text style={styles.block}>{data.destinataireAdresse}</Text>
-            {data.destinataireSiret && <Text style={styles.block}>SIRET : {data.destinataireSiret}</Text>}
+            {data.destinataireSiret && (
+              <Text style={styles.block}>SIRET : {data.destinataireSiret}</Text>
+            )}
           </View>
         </View>
 
@@ -138,8 +145,12 @@ export function DevisPDF({ data }: { data: DevisData }) {
             DEVIS N° {data.numeroDevis}
           </Text>
           <Text>Date d&apos;émission : {data.dateDevis}</Text>
-          <Text style={{ fontWeight: 'bold' }}>Validité du devis : jusqu&apos;au {data.dateValidite}</Text>
-          <Text style={{ fontStyle: 'italic', marginTop: 2 }}>Devis gratuit et sans engagement</Text>
+          <Text style={{ fontWeight: 'bold' }}>
+            Validité du devis : jusqu&apos;au {data.dateValidite}
+          </Text>
+          <Text style={{ fontStyle: 'italic', marginTop: 2 }}>
+            Devis gratuit et sans engagement
+          </Text>
         </View>
 
         {/* Lignes */}
@@ -180,7 +191,9 @@ export function DevisPDF({ data }: { data: DevisData }) {
         <View style={styles.conditions}>
           <Text style={[styles.bold, { marginBottom: 4 }]}>CONDITIONS DE RÉALISATION</Text>
           {data.dureeRealisation && <Text>• Durée prévisionnelle : {data.dureeRealisation}</Text>}
-          {data.conditionsReglement && <Text>• Conditions de règlement : {data.conditionsReglement}</Text>}
+          {data.conditionsReglement && (
+            <Text>• Conditions de règlement : {data.conditionsReglement}</Text>
+          )}
           {data.acompte && <Text>• Acompte demandé : {data.acompte}</Text>}
           {data.garanties && <Text>• Garanties incluses : {data.garanties}</Text>}
           {data.emetteurAssureur && (
@@ -193,9 +206,7 @@ export function DevisPDF({ data }: { data: DevisData }) {
 
         {/* Bon pour accord */}
         <View style={styles.signatureBox}>
-          <Text style={[styles.bold, { fontSize: 11, marginBottom: 4 }]}>
-            ACCEPTATION DU DEVIS
-          </Text>
+          <Text style={[styles.bold, { fontSize: 11, marginBottom: 4 }]}>ACCEPTATION DU DEVIS</Text>
           <Text style={{ fontSize: 9 }}>
             Pour valider ce devis, le client doit apposer la mention manuscrite « Bon pour accord »
             suivie de sa signature et de la date.
@@ -217,18 +228,24 @@ export function DevisPDF({ data }: { data: DevisData }) {
         <View style={styles.legalSection}>
           <Text style={[styles.bold, { marginBottom: 2 }]}>MENTIONS LÉGALES</Text>
           <Text>
-            • Devis valable {Math.ceil((new Date(data.dateValidite).getTime() - new Date(data.dateDevis).getTime()) / (1000 * 60 * 60 * 24))} jours à compter de la date d&apos;émission
+            • Devis valable{' '}
+            {Math.ceil(
+              (new Date(data.dateValidite).getTime() - new Date(data.dateDevis).getTime()) /
+                (1000 * 60 * 60 * 24)
+            )}{' '}
+            jours à compter de la date d&apos;émission
           </Text>
           <Text>
             • Devis gratuit conformément à l&apos;article L. 111-1 du Code de la consommation
           </Text>
-          <Text>
-            • Toute commande implique l&apos;acceptation pleine et entière de nos CGV
-          </Text>
+          <Text>• Toute commande implique l&apos;acceptation pleine et entière de nos CGV</Text>
         </View>
 
         <View style={styles.footer} fixed>
-          <Text>Devis généré par Assurance Pro (https://assurance-pro.fr) — Modèle conforme art. L. 111-1 C. conso + L. 441-3 C. com.</Text>
+          <Text>
+            Devis généré par Assurance Pro (https://vivos-assurance.fr) — Modèle conforme art. L.
+            111-1 C. conso + L. 441-3 C. com.
+          </Text>
         </View>
       </Page>
     </Document>

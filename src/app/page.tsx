@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     'Courtier ORIAS spécialiste assurance professionnelle. Comparez les offres de 10+ assureurs partenaires. Décennale, RC Pro, Multirisque, Mutuelle, VTC, Cyber. Devis gratuit et sans engagement.',
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr',
+    canonical: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr',
   },
 }
 
@@ -79,40 +79,42 @@ const TRUST_INDICATORS = [
 export default function HomePage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-20">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <p className="text-sm font-semibold tracking-wider uppercase opacity-90 mb-4">
+      <section className="bg-gradient-to-br from-blue-700 to-blue-900 py-20 text-white">
+        <div className="container mx-auto max-w-5xl px-4">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-wider opacity-90">
             Courtier en assurance professionnelle ORIAS n°
             {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'}
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Votre assurance pro,<br />comparée et négociée en 2&nbsp;minutes
+          <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+            Votre assurance pro,
+            <br />
+            comparée et négociée en 2&nbsp;minutes
           </h1>
-          <p className="text-lg md:text-xl mb-8 opacity-95 max-w-3xl">
-            Décennale, RC&nbsp;Pro, Multirisque, Mutuelle TNS, VTC, Cyber. Recevez 3&nbsp;devis personnalisés
-            en moins de 24&nbsp;heures auprès de nos partenaires assureurs reconnus.
+          <p className="mb-8 max-w-3xl text-lg opacity-95 md:text-xl">
+            Décennale, RC&nbsp;Pro, Multirisque, Mutuelle TNS, VTC, Cyber. Recevez 3&nbsp;devis
+            personnalisés en moins de 24&nbsp;heures auprès de nos partenaires assureurs reconnus.
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="mb-10 flex flex-wrap gap-3">
             <Link
               href="/devis"
-              className="inline-block px-8 py-4 bg-white text-blue-700 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-lg"
+              className="inline-block rounded-lg bg-white px-8 py-4 text-lg font-bold text-blue-700 shadow-lg transition hover:bg-gray-100"
             >
               Obtenir mon devis gratuit →
             </Link>
             <a
               href="#verticaux"
-              className="inline-block px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition"
+              className="inline-block rounded-lg border-2 border-white px-8 py-4 font-semibold text-white transition hover:bg-white/10"
             >
               Découvrir les garanties
             </a>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/20">
+          <div className="grid grid-cols-2 gap-6 border-t border-white/20 pt-8 md:grid-cols-4">
             {TRUST_INDICATORS.map((t) => (
               <div key={t.label}>
-                <div className="text-3xl md:text-4xl font-bold">{t.value}</div>
-                <div className="text-sm opacity-90 mt-1">{t.label}</div>
+                <div className="text-3xl font-bold md:text-4xl">{t.value}</div>
+                <div className="mt-1 text-sm opacity-90">{t.label}</div>
               </div>
             ))}
           </div>
@@ -123,27 +125,29 @@ export default function HomePage() {
 
       <StatsBar />
 
-      <section id="verticaux" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+      <section id="verticaux" className="bg-gray-50 py-16">
+        <div className="container mx-auto max-w-6xl px-4">
+          <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">
             Une assurance adaptée à votre métier
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Notre cabinet de courtage spécialiste de l’assurance pro intervient
-            sur l’ensemble des verticaux professionnels en France.
+          <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
+            Notre cabinet de courtage spécialiste de l’assurance pro intervient sur l’ensemble des
+            verticaux professionnels en France.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {VERTICALS.map((v) => (
               <Link
                 key={v.code}
                 href={v.href}
-                className="bg-white rounded-lg p-6 shadow hover:shadow-lg transition border border-gray-200"
+                className="rounded-lg border border-gray-200 bg-white p-6 shadow transition hover:shadow-lg"
               >
-                <div className="text-4xl mb-3" aria-hidden="true">{v.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{v.title}</h3>
-                <p className="text-gray-600 mb-4">{v.desc}</p>
-                <p className="text-sm text-blue-600 font-medium">{v.examples} →</p>
+                <div className="mb-3 text-4xl" aria-hidden="true">
+                  {v.icon}
+                </div>
+                <h3 className="mb-2 text-xl font-semibold">{v.title}</h3>
+                <p className="mb-4 text-gray-600">{v.desc}</p>
+                <p className="text-sm font-medium text-blue-600">{v.examples} →</p>
               </Link>
             ))}
           </div>
@@ -151,21 +155,33 @@ export default function HomePage() {
       </section>
 
       <section className="py-16">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <div className="container mx-auto max-w-5xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
             3 étapes pour souscrire votre assurance pro
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
-              { n: 1, title: 'Vos besoins', desc: 'Décrivez votre activité, votre profil et vos garanties souhaitées. 2 minutes chrono.' },
-              { n: 2, title: 'Comparaison', desc: 'Notre équipe interroge nos 10 assureurs partenaires et négocie pour vous. Réponse sous 24 heures.' },
-              { n: 3, title: 'Souscription', desc: 'Vous choisissez l’offre la plus adaptée. Attestation délivrée sous 24 heures après souscription.' },
+              {
+                n: 1,
+                title: 'Vos besoins',
+                desc: 'Décrivez votre activité, votre profil et vos garanties souhaitées. 2 minutes chrono.',
+              },
+              {
+                n: 2,
+                title: 'Comparaison',
+                desc: 'Notre équipe interroge nos 10 assureurs partenaires et négocie pour vous. Réponse sous 24 heures.',
+              },
+              {
+                n: 3,
+                title: 'Souscription',
+                desc: 'Vous choisissez l’offre la plus adaptée. Attestation délivrée sous 24 heures après souscription.',
+              },
             ].map((s) => (
               <div key={s.n} className="text-center">
-                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-2xl font-bold">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-2xl font-bold text-blue-700">
                   {s.n}
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+                <h3 className="mb-2 text-xl font-semibold">{s.title}</h3>
                 <p className="text-gray-600">{s.desc}</p>
               </div>
             ))}
@@ -175,41 +191,58 @@ export default function HomePage() {
 
       <TestimonialsBlock />
 
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">Nos partenaires assureurs</h2>
-          <p className="text-gray-600 mb-8">
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto max-w-5xl px-4 text-center">
+          <h2 className="mb-4 text-2xl font-semibold md:text-3xl">Nos partenaires assureurs</h2>
+          <p className="mb-8 text-gray-600">
             Nous comparons les offres de plus de 10 compagnies d’assurance reconnues.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-gray-700 font-medium">
-            {['Hiscox', 'April Pro', 'Allianz Pro', 'MMA Pro', 'Generali Pro', 'AXA Pro', 'MAAF Pro', 'SMABTP', 'Wakam', 'Stello'].map((p) => (
-              <span key={p} className="px-4 py-2 bg-white rounded border border-gray-200">{p}</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 font-medium text-gray-700">
+            {[
+              'Hiscox',
+              'April Pro',
+              'Allianz Pro',
+              'MMA Pro',
+              'Generali Pro',
+              'AXA Pro',
+              'MAAF Pro',
+              'SMABTP',
+              'Wakam',
+              'Stello',
+            ].map((p) => (
+              <span key={p} className="rounded border border-gray-200 bg-white px-4 py-2">
+                {p}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-blue-700 text-white text-center">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Prêt à comparer votre assurance pro&nbsp;?</h2>
-          <p className="text-lg mb-8 opacity-95">
+      <section className="bg-blue-700 py-16 text-center text-white">
+        <div className="container mx-auto max-w-3xl px-4">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+            Prêt à comparer votre assurance pro&nbsp;?
+          </h2>
+          <p className="mb-8 text-lg opacity-95">
             Devis gratuit, sans engagement. Recevez vos premières offres en moins de 24&nbsp;heures.
           </p>
-          <Link href="/devis" className="inline-block px-8 py-4 bg-white text-blue-700 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-lg">
+          <Link
+            href="/devis"
+            className="inline-block rounded-lg bg-white px-8 py-4 text-lg font-bold text-blue-700 shadow-lg transition hover:bg-gray-100"
+          >
             Démarrer mon devis →
           </Link>
         </div>
       </section>
 
-      <section className="py-6 bg-gray-100 text-xs text-gray-600">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="bg-gray-100 py-6 text-xs text-gray-600">
+        <div className="container mx-auto max-w-5xl px-4">
           <p>
             <strong>Information précontractuelle —</strong> Ce contenu est informatif et ne
             constitue pas un conseil personnalisé au sens de l’article L.&nbsp;521-4 du Code des
             assurances. Pour un conseil adapté à votre situation, un courtier ORIAS vous
-            recontactera après réception de votre demande de devis. Aucune commission n’est
-            facturée à nos clients ; nous sommes rémunérés par les compagnies d’assurance
-            partenaires.
+            recontactera après réception de votre demande de devis. Aucune commission n’est facturée
+            à nos clients ; nous sommes rémunérés par les compagnies d’assurance partenaires.
           </p>
         </div>
       </section>

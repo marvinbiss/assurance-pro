@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Comparez votre assurance VTC ou taxi auprès des spécialistes (Wakam, Hiscox, Stello). Auto-entrepreneur, SARL, plateformes Uber/Bolt. Devis en 2 min.',
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/assurance-vtc`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/assurance-vtc`,
   },
   openGraph: {
     title: 'Assurance VTC / Taxi — Tarifs négociés | Assurance Pro',

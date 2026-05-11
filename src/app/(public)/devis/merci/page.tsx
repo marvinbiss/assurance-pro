@@ -125,8 +125,8 @@ export default async function MerciPage({
             Téléphone : <strong>01 XX XX XX XX</strong> (lundi-vendredi 9h-18h)
             <br />
             Email :{' '}
-            <a href="mailto:contact@assurance-pro.fr" className="underline">
-              contact@assurance-pro.fr
+            <a href="mailto:contact@vivos-assurance.fr" className="underline">
+              contact@vivos-assurance.fr
             </a>
           </p>
         </div>

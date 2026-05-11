@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'RC Pro médicale obligatoire (Loi Kouchner). Médecins, infirmiers, kinés, ostéopathes, sage-femmes. Comparaison sur 6 assureurs spécialistes.',
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/rc-pro-medecin`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/rc-pro-medecin`,
   },
   openGraph: {
     title: 'RC Pro Médecin / Praticien santé | Assurance Pro',

@@ -21,7 +21,14 @@ const styles = StyleSheet.create({
   objet: { marginBottom: 20, fontWeight: 'bold' },
   body: { textAlign: 'justify', marginBottom: 12 },
   signature: { marginTop: 40 },
-  signatureLine: { marginTop: 24, borderTop: '1px solid #d1d5db', width: 200, paddingTop: 4, fontSize: 9, textAlign: 'center' },
+  signatureLine: {
+    marginTop: 24,
+    borderTop: '1px solid #d1d5db',
+    width: 200,
+    paddingTop: 4,
+    fontSize: 9,
+    textAlign: 'center',
+  },
   footer: {
     position: 'absolute',
     bottom: 25,
@@ -58,17 +65,32 @@ export interface LettreResiliationData {
 }
 
 export function LettreResiliationPDF({ data }: { data: LettreResiliationData }) {
-  const dateAujourdhui = new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
-  const dateEffet = new Date(data.dateEffetResiliation).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+  const dateAujourdhui = new Date().toLocaleDateString('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
+  const dateEffet = new Date(data.dateEffetResiliation).toLocaleDateString('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 
   return (
-    <Document title={`Lettre résiliation ${data.numeroPolice}`} author={`${data.assurePrenom} ${data.assureNom}`}>
+    <Document
+      title={`Lettre résiliation ${data.numeroPolice}`}
+      author={`${data.assurePrenom} ${data.assureNom}`}
+    >
       <Page size="A4" style={styles.page}>
         {/* Émetteur (haut gauche) */}
         <View style={styles.emetteur}>
-          <Text>{data.assurePrenom} {data.assureNom}</Text>
+          <Text>
+            {data.assurePrenom} {data.assureNom}
+          </Text>
           <Text>{data.assureAdresse}</Text>
-          <Text>{data.assureCp} {data.assureVille}</Text>
+          <Text>
+            {data.assureCp} {data.assureVille}
+          </Text>
         </View>
 
         {/* Mention LRAR */}
@@ -81,12 +103,16 @@ export function LettreResiliationPDF({ data }: { data: LettreResiliationData }) 
           <Text>{data.assureurNom}</Text>
           <Text>Service Résiliations</Text>
           <Text>{data.assureurAdresse}</Text>
-          <Text>{data.assureurCp} {data.assureurVille}</Text>
+          <Text>
+            {data.assureurCp} {data.assureurVille}
+          </Text>
         </View>
 
         {/* Date */}
         <View style={styles.date}>
-          <Text>Fait à {data.assureVille}, le {dateAujourdhui}</Text>
+          <Text>
+            Fait à {data.assureVille}, le {dateAujourdhui}
+          </Text>
         </View>
 
         {/* Objet */}
@@ -100,21 +126,23 @@ export function LettreResiliationPDF({ data }: { data: LettreResiliationData }) 
         </View>
         <View style={styles.body}>
           <Text>
-            Conformément à la loi du 17 mars 2014 (dite Loi Hamon) et à l&apos;article
-            L. 113-15-2 du Code des assurances, je vous notifie par la présente la résiliation
-            de mon contrat d&apos;assurance professionnelle référencé ci-dessous :
+            Conformément à la loi du 17 mars 2014 (dite Loi Hamon) et à l&apos;article L. 113-15-2
+            du Code des assurances, je vous notifie par la présente la résiliation de mon contrat
+            d&apos;assurance professionnelle référencé ci-dessous :
           </Text>
         </View>
         <View style={styles.body}>
           <Text>• Type d&apos;assurance : {data.typeAssurance}</Text>
           <Text>• Numéro de police : {data.numeroPolice}</Text>
-          <Text>• Date de souscription : {new Date(data.dateSouscription).toLocaleDateString('fr-FR')}</Text>
+          <Text>
+            • Date de souscription : {new Date(data.dateSouscription).toLocaleDateString('fr-FR')}
+          </Text>
         </View>
         <View style={styles.body}>
           <Text>
-            Mon contrat ayant plus d&apos;un an d&apos;engagement, je suis fondé(e) à exercer
-            mon droit à la résiliation infra-annuelle, sans frais et sans motif. La résiliation
-            prendra effet 1 mois après la réception de la présente, soit le {dateEffet}.
+            Mon contrat ayant plus d&apos;un an d&apos;engagement, je suis fondé(e) à exercer mon
+            droit à la résiliation infra-annuelle, sans frais et sans motif. La résiliation prendra
+            effet 1 mois après la réception de la présente, soit le {dateEffet}.
           </Text>
         </View>
         {data.motif && (
@@ -124,10 +152,10 @@ export function LettreResiliationPDF({ data }: { data: LettreResiliationData }) 
         )}
         <View style={styles.body}>
           <Text>
-            Je vous prie de bien vouloir me confirmer la prise en compte de cette résiliation
-            par retour de courrier et de procéder, dans un délai de 30 jours, au remboursement
-            au prorata temporis de la fraction de cotisation déjà versée pour la période
-            postérieure à la date d&apos;effet de la résiliation.
+            Je vous prie de bien vouloir me confirmer la prise en compte de cette résiliation par
+            retour de courrier et de procéder, dans un délai de 30 jours, au remboursement au
+            prorata temporis de la fraction de cotisation déjà versée pour la période postérieure à
+            la date d&apos;effet de la résiliation.
           </Text>
         </View>
         <View style={styles.body}>
@@ -137,19 +165,27 @@ export function LettreResiliationPDF({ data }: { data: LettreResiliationData }) 
           </Text>
         </View>
         <View style={styles.body}>
-          <Text>Je vous prie d&apos;agréer, Madame, Monsieur, l&apos;expression de mes salutations distinguées.</Text>
+          <Text>
+            Je vous prie d&apos;agréer, Madame, Monsieur, l&apos;expression de mes salutations
+            distinguées.
+          </Text>
         </View>
 
         {/* Signature */}
         <View style={styles.signature}>
-          <Text style={{ fontWeight: 'bold' }}>{data.assurePrenom} {data.assureNom}</Text>
+          <Text style={{ fontWeight: 'bold' }}>
+            {data.assurePrenom} {data.assureNom}
+          </Text>
           <View style={styles.signatureLine}>
             <Text>Signature</Text>
           </View>
         </View>
 
         <View style={styles.footer} fixed>
-          <Text>Lettre générée par Assurance Pro (https://assurance-pro.fr) — Conforme Loi Hamon (art. L. 113-15-2 C. assur.)</Text>
+          <Text>
+            Lettre générée par Assurance Pro (https://vivos-assurance.fr) — Conforme Loi Hamon (art.
+            L. 113-15-2 C. assur.)
+          </Text>
         </View>
       </Page>
     </Document>

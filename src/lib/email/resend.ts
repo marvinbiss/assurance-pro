@@ -4,7 +4,7 @@
  */
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
-const FROM_EMAIL = process.env.RESEND_FROM || 'Assurance Pro <noreply@assurance-pro.fr>'
+const FROM_EMAIL = process.env.RESEND_FROM || 'Assurance Pro <noreply@vivos-assurance.fr>'
 
 interface SendEmailParams {
   to: string
@@ -12,7 +12,11 @@ interface SendEmailParams {
   html: string
 }
 
-export async function sendEmail({ to, subject, html }: SendEmailParams): Promise<{ success: boolean; error?: string }> {
+export async function sendEmail({
+  to,
+  subject,
+  html,
+}: SendEmailParams): Promise<{ success: boolean; error?: string }> {
   if (!RESEND_API_KEY) {
     console.warn('[email] RESEND_API_KEY not configured — skipping email')
     return { success: false, error: 'RESEND_API_KEY not configured' }

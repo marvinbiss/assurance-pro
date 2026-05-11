@@ -75,7 +75,7 @@ export function getWebsiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: SITE_NAME,
-    alternateName: ['assurance-pro.fr'],
+    alternateName: ['vivos-assurance.fr'],
     url: SITE_URL,
     publisher: { '@id': `${SITE_URL}#organization` },
   }

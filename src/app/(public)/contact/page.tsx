@@ -60,10 +60,10 @@ export default function ContactPage() {
               Pour toute question sur nos services, conseil produit, partenariat.
             </p>
             <a
-              href="mailto:contact@assurance-pro.fr"
+              href="mailto:contact@vivos-assurance.fr"
               className="inline-block w-full rounded border border-blue-700 px-4 py-2 font-semibold text-blue-700 hover:bg-blue-50"
             >
-              contact@assurance-pro.fr
+              contact@vivos-assurance.fr
             </a>
           </div>
 
@@ -91,10 +91,10 @@ export default function ContactPage() {
           </p>
           <p className="mb-3">
             <a
-              href="mailto:reclamations@assurance-pro.fr"
+              href="mailto:reclamations@vivos-assurance.fr"
               className="font-semibold text-blue-700 underline"
             >
-              reclamations@assurance-pro.fr
+              reclamations@vivos-assurance.fr
             </a>
           </p>
           <p className="mb-4 text-sm text-gray-600">
@@ -136,8 +136,8 @@ export default function ContactPage() {
           <p className="mt-3 text-sm text-gray-700">
             Pour exercer vos droits (accès, rectification, effacement, opposition, portabilité,
             retrait du consentement)&nbsp;:{' '}
-            <a href="mailto:dpo@assurance-pro.fr" className="text-blue-700 underline">
-              dpo@assurance-pro.fr
+            <a href="mailto:dpo@vivos-assurance.fr" className="text-blue-700 underline">
+              dpo@vivos-assurance.fr
             </a>
             . Vous pouvez également adresser une réclamation à la CNIL.
           </p>

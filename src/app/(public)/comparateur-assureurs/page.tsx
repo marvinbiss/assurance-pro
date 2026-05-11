@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     'Comparez les 10 principaux assureurs pro français. Hiscox, April Pro, Allianz, MMA, Generali, AXA, MAAF, SMABTP, Wakam, Stello. Tarifs, garanties, spécialités.',
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/comparateur-assureurs`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/comparateur-assureurs`,
   },
   openGraph: {
     title: 'Comparateur d\\',

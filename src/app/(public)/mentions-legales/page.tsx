@@ -50,7 +50,7 @@ export default function MentionsLegalesPage() {
           N° TVA intracommunautaire : {tva}
           <br />
           Tél. : 01 XX XX XX XX — Email :{' '}
-          <a href="mailto:contact@assurance-pro.fr">contact@assurance-pro.fr</a>
+          <a href="mailto:contact@vivos-assurance.fr">contact@vivos-assurance.fr</a>
         </p>
 
         <h2>2. Directeur de la publication</h2>
@@ -131,8 +131,8 @@ export default function MentionsLegalesPage() {
         <p>
           Toute réclamation peut être adressée par formulaire dédié <a href="/reclamation">ici</a>{' '}
           ou par email à{' '}
-          <a href="mailto:reclamations@assurance-pro.fr">reclamations@assurance-pro.fr</a>. En cas
-          de désaccord persistant, vous pouvez saisir le{' '}
+          <a href="mailto:reclamations@vivos-assurance.fr">reclamations@vivos-assurance.fr</a>. En
+          cas de désaccord persistant, vous pouvez saisir le{' '}
           <strong>Médiateur de l&apos;Assurance</strong> : TSA 50110, 75441 Paris cedex 09 —{' '}
           <a href="https://www.mediation-assurance.org" target="_blank" rel="noopener noreferrer">
             www.mediation-assurance.org

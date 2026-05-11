@@ -64,8 +64,7 @@ const Schema = z.object({
   utm: z.record(z.string(), z.string()).optional(),
 })
 
-const COURTIER_INBOX = process.env.COURTIER_INBOX ?? 'leads@assurance-pro.fr'
-
+const COURTIER_INBOX = process.env.COURTIER_INBOX ?? 'leads@vivos-assurance.fr'
 
 export async function POST(req: NextRequest) {
   try {
@@ -208,23 +207,26 @@ export async function POST(req: NextRequest) {
     const lead = { id: persistResult.legacyLeadId }
 
     // 3) Audit event
-    await supabase.schema('app').from('events').insert({
-      entity_type: 'lead',
-      entity_id: lead.id,
-      event_type: 'lead.created',
-      ip_address: ip,
-      user_agent: userAgent,
-      metadata: {
-        reference,
-        score: scoring.score,
-        segment: scoring.segment,
-        breakdown: scoring.breakdown,
-        conseil_hash: conseilHash,
-        obligations_legales: obligationsLegales,
-        source_page_id: data.source_page_id,
-        source_url: data.source_url,
-      },
-    })
+    await supabase
+      .schema('app')
+      .from('events')
+      .insert({
+        entity_type: 'lead',
+        entity_id: lead.id,
+        event_type: 'lead.created',
+        ip_address: ip,
+        user_agent: userAgent,
+        metadata: {
+          reference,
+          score: scoring.score,
+          segment: scoring.segment,
+          breakdown: scoring.breakdown,
+          conseil_hash: conseilHash,
+          obligations_legales: obligationsLegales,
+          source_page_id: data.source_page_id,
+          source_url: data.source_url,
+        },
+      })
 
     // 4) Emails (best-effort, non-bloquant)
     void (async () => {

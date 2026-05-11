@@ -62,7 +62,7 @@ export function leadConfirmationTemplate({
 
       <p style="font-size:13px;color:#64748b;margin-top:24px">
         Une question avant&nbsp;? Répondez à cet email ou écrivez-nous à
-        <a href="mailto:contact@assurance-pro.fr" style="color:#1d4ed8">contact@assurance-pro.fr</a>.
+        <a href="mailto:contact@vivos-assurance.fr" style="color:#1d4ed8">contact@vivos-assurance.fr</a>.
       </p>
 
       <hr style="border:0;border-top:1px solid #e2e8f0;margin:24px 0">
@@ -72,7 +72,7 @@ export function leadConfirmationTemplate({
           process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
         }.
         Soumis au contrôle de l&apos;ACPR. Pour toute réclamation&nbsp;:
-        <a href="https://assurance-pro.fr/reclamation" style="color:#1d4ed8">assurance-pro.fr/reclamation</a>.
+        <a href="https://vivos-assurance.fr/reclamation" style="color:#1d4ed8">vivos-assurance.fr/reclamation</a>.
       </p>
     </div>
   </body>

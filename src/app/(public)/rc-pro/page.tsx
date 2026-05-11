@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/rc-pro`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/rc-pro`,
   },
   openGraph: {
     title: 'RC Pro — Responsabilité Civile Professionnelle | Assurance Pro',

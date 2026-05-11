@@ -70,10 +70,10 @@ export default function ReclamationPage() {
               <strong>1ère étape — interne</strong> : remplissez le formulaire ci-dessous ou écrivez
               à{' '}
               <a
-                href="mailto:reclamations@assurance-pro.fr"
+                href="mailto:reclamations@vivos-assurance.fr"
                 className="text-blue-700 hover:underline"
               >
-                reclamations@assurance-pro.fr
+                reclamations@vivos-assurance.fr
               </a>
               .
             </li>

@@ -43,7 +43,7 @@ export default function ConfidentialitePage() {
         </p>
         <p>
           <strong>Délégué à la Protection des Données (DPO)</strong> :{' '}
-          <a href="mailto:dpo@assurance-pro.fr">dpo@assurance-pro.fr</a>
+          <a href="mailto:dpo@vivos-assurance.fr">dpo@vivos-assurance.fr</a>
         </p>
 
         <h2>2. Données collectées</h2>
@@ -142,7 +142,7 @@ export default function ConfidentialitePage() {
         </ul>
         <p>
           Pour exercer vos droits, contactez notre DPO :{' '}
-          <a href="mailto:dpo@assurance-pro.fr">dpo@assurance-pro.fr</a>. Réponse sous 1 mois
+          <a href="mailto:dpo@vivos-assurance.fr">dpo@vivos-assurance.fr</a>. Réponse sous 1 mois
           maximum.
         </p>
         <p>

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "40+ questions fréquentes sur l'assurance pro : décennale, RC Pro, courtage ORIAS, ACPR, Loi Madelin, sinistre, résiliation. Réponses claires.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/faq`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/faq`,
   },
   openGraph: {
     title: 'FAQ — Assurance professionnelle 2026 | Assurance Pro',
@@ -150,7 +150,7 @@ const FAQ: FaqItem[] = [
   {
     category: 'ACPR / Réclamation',
     q: 'Que faire si je ne suis pas satisfait du service de mon courtier ?',
-    a: "Adressez votre réclamation par écrit (email ou courrier) à reclamations@assurance-pro.fr. Conformément à la Recommandation ACPR 2024-R-02, nous accusons réception sous 10 jours ouvrés et répondons sur le fond sous 2 mois. En cas de désaccord persistant, vous pouvez saisir le Médiateur de l'Assurance.",
+    a: "Adressez votre réclamation par écrit (email ou courrier) à reclamations@vivos-assurance.fr. Conformément à la Recommandation ACPR 2024-R-02, nous accusons réception sous 10 jours ouvrés et répondons sur le fond sous 2 mois. En cas de désaccord persistant, vous pouvez saisir le Médiateur de l'Assurance.",
   },
   {
     category: 'ACPR / Réclamation',

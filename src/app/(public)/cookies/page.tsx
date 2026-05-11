@@ -199,7 +199,7 @@ export default function CookiesPage() {
         <h2>8. Contact</h2>
         <p>
           Pour toute question relative aux cookies :{' '}
-          <a href="mailto:dpo@assurance-pro.fr">dpo@assurance-pro.fr</a>
+          <a href="mailto:dpo@vivos-assurance.fr">dpo@vivos-assurance.fr</a>
         </p>
       </div>
     </main>

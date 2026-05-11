@@ -30,8 +30,8 @@ export const EQUIPE: Record<string, MembreEquipe> = {
     nom: 'Cabinet',
     poste: 'Directeur du cabinet — Courtier responsable',
     oriasNumber: process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX',
-    emailPro: 'direction@assurance-pro.fr',
-    bio: 'Directeur du cabinet Assurance Pro et courtier responsable au sens des articles L. 511-1 et suivants du Code des assurances. Représente le cabinet auprès de l\'ACPR et de l\'ORIAS. Garant de la conformité des recommandations délivrées et de la traçabilité du devoir de conseil (art. L. 521-4).',
+    emailPro: 'direction@vivos-assurance.fr',
+    bio: "Directeur du cabinet Assurance Pro et courtier responsable au sens des articles L. 511-1 et suivants du Code des assurances. Représente le cabinet auprès de l'ACPR et de l'ORIAS. Garant de la conformité des recommandations délivrées et de la traçabilité du devoir de conseil (art. L. 521-4).",
     expertises: [
       'Direction de cabinet de courtage indépendant',
       'Conformité ACPR / ORIAS / DDA',
@@ -45,7 +45,7 @@ export const EQUIPE: Record<string, MembreEquipe> = {
     ],
     experiences: [
       '+10 ans en courtage indépendant',
-      'Pilotage d\'un portefeuille pluri-millions € de cotisations',
+      "Pilotage d'un portefeuille pluri-millions € de cotisations",
       'Conduite des audits annuels CSCA',
     ],
     certifications: ['IAS Niveau I', 'Adhérent CSCA'],
@@ -68,7 +68,7 @@ export const EQUIPE: Record<string, MembreEquipe> = {
     experiences: [
       '+8 ans courtage spécialisé BTP',
       'Connaissance fine sinistralité AQC SYCODÉS',
-      'Réseau d\'experts d\'assurés et avocats spécialisés',
+      "Réseau d'experts d'assurés et avocats spécialisés",
     ],
     certifications: ['IAS Niveau I'],
     langues: ['Français'],
@@ -89,7 +89,7 @@ export const EQUIPE: Record<string, MembreEquipe> = {
     formations: ['IAS Niveau I', 'Formation RC professions réglementées'],
     experiences: [
       '+7 ans courtage RC Pro',
-      'Accompagnement sur appels d\'offres grands comptes',
+      "Accompagnement sur appels d'offres grands comptes",
       'Audit de couverture pour cabinets cotés',
     ],
     certifications: ['IAS Niveau I'],

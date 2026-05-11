@@ -96,7 +96,7 @@ export default function CgvPage() {
         <h2>6. Réclamations</h2>
         <p>
           Toute réclamation peut être adressée à{' '}
-          <a href="mailto:reclamations@assurance-pro.fr">reclamations@assurance-pro.fr</a>.
+          <a href="mailto:reclamations@vivos-assurance.fr">reclamations@vivos-assurance.fr</a>.
           Conformément à la Recommandation ACPR 2024-R-02 (applicable au 31/12/2025), nous nous
           engageons à :
         </p>

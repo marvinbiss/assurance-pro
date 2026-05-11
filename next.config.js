@@ -34,7 +34,7 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     remotePatterns: [
-      { protocol: 'https', hostname: 'assurance-pro.fr' },
+      { protocol: 'https', hostname: 'vivos-assurance.fr' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       ...(SUPABASE_HOST ? [{ protocol: 'https', hostname: SUPABASE_HOST }] : []),
       ...(process.env.NODE_ENV !== 'production'
@@ -97,7 +97,7 @@ const nextConfig = {
 
   env: {
     NEXT_PUBLIC_SITE_URL:
-      process.env.NEXT_PUBLIC_SITE_URL || 'https://assurance-pro.fr',
+      process.env.NEXT_PUBLIC_SITE_URL || 'https://vivos-assurance.fr',
   },
 }
 

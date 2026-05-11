@@ -30,7 +30,7 @@ const WELCOME_HTML = `
       </ul>
       <p style="font-size:12px;color:#64748b;margin-top:24px">
         Pour vous désinscrire, répondez simplement à cet email avec « STOP ».
-        <br>Politique RGPD&nbsp;: <a href="https://assurance-pro.fr/confidentialite" style="color:#1d4ed8">assurance-pro.fr/confidentialite</a>
+        <br>Politique RGPD&nbsp;: <a href="https://vivos-assurance.fr/confidentialite" style="color:#1d4ed8">vivos-assurance.fr/confidentialite</a>
       </p>
     </div>
   </body>
@@ -74,7 +74,10 @@ export async function POST(request: Request) {
         source: 'site_web',
       })
     } catch (err) {
-      logger.error({ err, email: crypto.createHash('sha256').update(email).digest('hex').slice(0, 12) }, 'newsletter consent record failed')
+      logger.error(
+        { err, email: crypto.createHash('sha256').update(email).digest('hex').slice(0, 12) },
+        'newsletter consent record failed'
+      )
       return NextResponse.json({ error: 'Persistence indisponible.' }, { status: 500 })
     }
 

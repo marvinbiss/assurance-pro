@@ -116,7 +116,7 @@ export default function FicPage() {
         <p>
           Toute réclamation peut être déposée via notre{' '}
           <a href="/reclamation">formulaire en ligne</a> ou par email à{' '}
-          <a href="mailto:reclamations@assurance-pro.fr">reclamations@assurance-pro.fr</a>.
+          <a href="mailto:reclamations@vivos-assurance.fr">reclamations@vivos-assurance.fr</a>.
         </p>
         <ul>
           <li>Accusé de réception sous 10 jours ouvrés (Recommandation ACPR 2024-R-02).</li>
@@ -160,7 +160,7 @@ export default function FicPage() {
         <p>
           Une version PDF de la présente FIC vous est remise au démarrage du processus de
           souscription. Sur demande à{' '}
-          <a href="mailto:contact@assurance-pro.fr">contact@assurance-pro.fr</a>.
+          <a href="mailto:contact@vivos-assurance.fr">contact@vivos-assurance.fr</a>.
         </p>
 
         <p className="mt-8 text-xs italic text-gray-500">

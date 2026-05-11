@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu'à 5M€.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/cyber-assurance`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/cyber-assurance`,
   },
   openGraph: {
     title: 'Cyber Assurance Pro — Ransomware, RGPD breach | Assurance Pro',

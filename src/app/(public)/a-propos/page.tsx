@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     'Cabinet de courtage indépendant ORIAS spécialisé en assurance professionnelle. 17 verticaux. 10+ assureurs partenaires. Membre CSCA.',
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/a-propos`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/a-propos`,
   },
   openGraph: {
     title: 'À propos — Cabinet de courtage ORIAS | Assurance Pro',
@@ -173,8 +173,8 @@ export default function AProposPage() {
           </p>
           <p>
             Pour une réclamation&nbsp;:{' '}
-            <a href="mailto:reclamations@assurance-pro.fr" className="font-semibold">
-              reclamations@assurance-pro.fr
+            <a href="mailto:reclamations@vivos-assurance.fr" className="font-semibold">
+              reclamations@vivos-assurance.fr
             </a>{' '}
             — accusé réception sous 10 jours ouvrés, réponse sur le fond sous 2 mois (Reco ACPR
             2024-R-02). En cas de désaccord persistant, vous pouvez saisir{' '}

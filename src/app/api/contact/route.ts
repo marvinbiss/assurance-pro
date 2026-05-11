@@ -36,7 +36,10 @@ export async function POST(request: Request) {
     if (!rl.allowed) {
       return NextResponse.json(
         { error: 'Trop de requêtes, veuillez réessayer plus tard' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) },
+        }
       )
     }
 
@@ -95,10 +98,7 @@ export async function POST(request: Request) {
 
     if (sendError) {
       logger.error('Error sending email', sendError)
-      return NextResponse.json(
-        { error: 'Erreur lors de l\'envoi du message' },
-        { status: 500 }
-      )
+      return NextResponse.json({ error: "Erreur lors de l'envoi du message" }, { status: 500 })
     }
 
     // Send confirmation email to user (non-critical — don't fail if this errors)
@@ -117,7 +117,7 @@ export async function POST(request: Request) {
           <hr />
           <p>Cordialement,<br />L'équipe Assurance Pro</p>
           <p style="color: #666; font-size: 12px;">
-            <a href="https://assurance-pro.fr">assurance-pro.fr</a>
+            <a href="https://vivos-assurance.fr">vivos-assurance.fr</a>
           </p>
         `,
       })
@@ -131,9 +131,6 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     logger.error('Contact API error', error)
-    return NextResponse.json(
-      { error: 'Erreur serveur' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 })
   }
 }

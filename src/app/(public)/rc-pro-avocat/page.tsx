@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "RC Pro avocat conforme aux exigences du CNB et de l'Ordre. Comparaison sur 6 assureurs spécialistes. Devis personnalisé en 24h.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/rc-pro-avocat`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/rc-pro-avocat`,
   },
   openGraph: {
     title: 'RC Pro Avocat — Comparez les contrats CNB | Assurance Pro',

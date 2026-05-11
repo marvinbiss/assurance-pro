@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/assurance-decennale`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/assurance-decennale`,
   },
   openGraph: {
     title: 'Assurance décennale BTP — Comparez en 2 min | Assurance Pro',
