@@ -7,6 +7,7 @@
  * Usage build-time (generateStaticParams) + render-time (Server Components).
  */
 
+import * as Sentry from '@sentry/nextjs'
 import { createAdminClient } from '@/lib/supabase/admin'
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -103,13 +104,22 @@ export interface StatSectorielle {
  * Retourne null si page absente ou status = retired/pending.
  */
 export async function getPageEnrichment(pageSlug: string): Promise<PageEnrichmentRow | null> {
-  const supabase = createAdminClient()
-  const { data, error } = await supabase.rpc('get_page_enrichment', { p_slug: pageSlug })
-  if (error) {
-    console.error('[page-enrichment] read error', { pageSlug, error })
-    return null
-  }
-  return (data as PageEnrichmentRow | null) ?? null
+  return Sentry.startSpan(
+    { op: 'db.rpc', name: 'rpc.get_page_enrichment', attributes: { 'page.slug': pageSlug } },
+    async () => {
+      const supabase = createAdminClient()
+      const { data, error } = await supabase.rpc('get_page_enrichment', { p_slug: pageSlug })
+      if (error) {
+        Sentry.captureException(error, {
+          tags: { rpc: 'get_page_enrichment' },
+          extra: { pageSlug },
+        })
+        console.error('[page-enrichment] read error', { pageSlug, error })
+        return null
+      }
+      return (data as PageEnrichmentRow | null) ?? null
+    }
+  )
 }
 
 /**
@@ -125,17 +135,30 @@ export async function getEligibleSlugsForTemplate(
   minYield = 15,
   limit = 5820
 ): Promise<string[]> {
-  const supabase = createAdminClient()
-  const { data, error } = await supabase.rpc('get_eligible_slugs_for_template', {
-    p_template: template,
-    p_min_yield: minYield,
-    p_limit: limit,
-  })
-  if (error) {
-    console.error('[page-enrichment] eligible slugs error', { template, error })
-    return []
-  }
-  return (data as string[] | null) ?? []
+  return Sentry.startSpan(
+    {
+      op: 'db.rpc',
+      name: 'rpc.get_eligible_slugs_for_template',
+      attributes: { 'page.template': template, 'page.min_yield': minYield },
+    },
+    async () => {
+      const supabase = createAdminClient()
+      const { data, error } = await supabase.rpc('get_eligible_slugs_for_template', {
+        p_template: template,
+        p_min_yield: minYield,
+        p_limit: limit,
+      })
+      if (error) {
+        Sentry.captureException(error, {
+          tags: { rpc: 'get_eligible_slugs_for_template' },
+          extra: { template },
+        })
+        console.error('[page-enrichment] eligible slugs error', { template, error })
+        return []
+      }
+      return (data as string[] | null) ?? []
+    }
+  )
 }
 
 /**
