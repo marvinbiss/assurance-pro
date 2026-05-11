@@ -9,6 +9,8 @@
 
 import * as Sentry from '@sentry/nextjs'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { ResultAsync, ok, err, type DomainError, notFoundError, databaseError } from '@/lib/result'
+import { type PageSlug } from '@/lib/types/branded'
 
 // ────────────────────────────────────────────────────────────────────────────
 // Types alignés sur app.v_page_enrichment_full (migration 015)
@@ -120,6 +122,49 @@ export async function getPageEnrichment(pageSlug: string): Promise<PageEnrichmen
       return (data as PageEnrichmentRow | null) ?? null
     }
   )
+}
+
+/**
+ * Variante Result-based de getPageEnrichment.
+ *
+ * Préférée pour les nouveaux call sites — discrimine explicitement entre
+ * "non trouvé" (NotFound) et "erreur base" (Database). L'ancienne variante
+ * confond les deux en `null`.
+ *
+ * Usage :
+ *   const r = await getPageEnrichmentResult(toPageSlug(slug))
+ *   if (r.isErr()) {
+ *     if (r.error.code === 'NotFound') return notFound()
+ *     throw r.error  // bubble Database errors
+ *   }
+ *   return renderPage(r.value)
+ */
+export function getPageEnrichmentResult(
+  pageSlug: PageSlug
+): ResultAsync<PageEnrichmentRow, DomainError> {
+  const promise = Sentry.startSpan(
+    {
+      op: 'db.rpc',
+      name: 'rpc.get_page_enrichment',
+      attributes: { 'page.slug': pageSlug },
+    },
+    async () => {
+      const supabase = createAdminClient()
+      const { data, error } = await supabase.rpc('get_page_enrichment', { p_slug: pageSlug })
+      if (error) {
+        Sentry.captureException(error, {
+          tags: { rpc: 'get_page_enrichment' },
+          extra: { pageSlug },
+        })
+        return err<PageEnrichmentRow, DomainError>(databaseError('get_page_enrichment', error))
+      }
+      if (!data) {
+        return err<PageEnrichmentRow, DomainError>(notFoundError('Page', pageSlug))
+      }
+      return ok<PageEnrichmentRow, DomainError>(data as PageEnrichmentRow)
+    }
+  )
+  return ResultAsync.fromSafePromise(promise).andThen((r) => r)
 }
 
 /**
