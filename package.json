@@ -16,7 +16,9 @@
     "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
-    "prepare": "husky"
+    "prepare": "husky",
+    "data:populate-cache": "tsx scripts/populate-page-enrichment-cache.ts",
+    "data:seed-ahrefs": "tsx scripts/seed-ahrefs-data.ts"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
