@@ -11,7 +11,13 @@ const SECURITY_HEADERS = [
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   { key: 'X-Frame-Options', value: 'DENY' },
   { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
-  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(self), payment=(self)' },
+  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(self), payment=(self), interest-cohort=()' },
+  // Cross-origin isolation (Mozilla Observatory A+)
+  { key: 'Cross-Origin-Opener-Policy', value: 'same-origin-allow-popups' },
+  { key: 'Cross-Origin-Resource-Policy', value: 'same-site' },
+  // Browser feature opt-out
+  { key: 'X-Permitted-Cross-Domain-Policies', value: 'none' },
+  { key: 'Origin-Agent-Cluster', value: '?1' },
 ]
 
 const SUPABASE_HOST = (() => {
