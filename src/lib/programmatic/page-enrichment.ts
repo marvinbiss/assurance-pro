@@ -213,19 +213,61 @@ export function buildCanonical(pageSlug: string): string {
  * Schema.org markup factory (Service + Place + AggregateRating).
  * Injecte data Pappers + Trustpilot + INSEE = E-E-A-T anti-HCU.
  */
+function prettifyBreadcrumbSegment(s: string): string {
+  return s
+    .split('-')
+    .map((w) => (w.length > 0 ? `${w[0]?.toUpperCase() ?? ''}${w.slice(1)}` : w))
+    .join(' ')
+}
+
 export function buildSchemaOrg(enrichment: PageEnrichmentRow) {
   const schemas: Record<string, unknown>[] = []
+  const canonical = buildCanonical(enrichment.page_slug)
+  const title = buildPageTitle(enrichment)
+  const description = buildPageDescription(enrichment)
 
-  // Service schema
+  // BreadcrumbList — dérivé du slug
+  const segments = enrichment.page_slug.split('/').filter(Boolean)
+  if (segments.length > 0) {
+    let acc = ''
+    const breadcrumbItems = [
+      { name: 'Accueil', url: '/' },
+      ...segments.map((seg, i) => {
+        acc = `${acc}/${seg}`
+        const isLast = i === segments.length - 1
+        return {
+          name: isLast ? title : prettifyBreadcrumbSegment(seg),
+          url: acc,
+        }
+      }),
+    ]
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbItems.map((item, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        name: item.name,
+        item: item.url.startsWith('http')
+          ? item.url
+          : `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}${item.url}`,
+      })),
+    })
+  }
+
+  // Service schema (insurance offering)
   if (enrichment.garantie_label) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'Service',
+      '@id': `${canonical}#service`,
       name: enrichment.garantie_label,
-      description: buildPageDescription(enrichment),
+      description,
+      url: canonical,
       provider: {
         '@type': 'InsuranceAgency',
         name: 'Vivos Assurance Pro',
+        url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr',
       },
       areaServed: enrichment.ville_nom
         ? { '@type': 'City', name: enrichment.ville_nom }
@@ -233,12 +275,33 @@ export function buildSchemaOrg(enrichment: PageEnrichmentRow) {
       offers: enrichment.prix_min_eur
         ? {
             '@type': 'AggregateOffer',
-            lowPrice: enrichment.prix_min_eur,
-            highPrice: enrichment.prix_max_eur,
+            lowPrice: Math.round(enrichment.prix_min_eur),
+            highPrice: enrichment.prix_max_eur ? Math.round(enrichment.prix_max_eur) : undefined,
             priceCurrency: 'EUR',
+            offerCount: enrichment.assureurs_top3_jsonb?.length ?? 1,
+            availability: 'https://schema.org/InStock',
           }
         : undefined,
     })
+
+    // Product schema (when prix is set — improves shopping-style rich results)
+    if (enrichment.prix_min_eur) {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        '@id': `${canonical}#product`,
+        name: title,
+        description,
+        category: enrichment.garantie_label,
+        offers: {
+          '@type': 'AggregateOffer',
+          lowPrice: Math.round(enrichment.prix_min_eur),
+          highPrice: enrichment.prix_max_eur ? Math.round(enrichment.prix_max_eur) : undefined,
+          priceCurrency: 'EUR',
+          offerCount: enrichment.assureurs_top3_jsonb?.length ?? 1,
+        },
+      })
+    }
   }
 
   // AggregateRating depuis Trustpilot
@@ -252,6 +315,42 @@ export function buildSchemaOrg(enrichment: PageEnrichmentRow) {
       reviewCount: validAvis.length,
       bestRating: 5,
       worstRating: 1,
+      itemReviewed: {
+        '@type': 'Service',
+        name: enrichment.garantie_label ?? 'Assurance professionnelle',
+      },
+    })
+  }
+
+  // FAQPage — auto-generated from data signals (price + density + sinistralité)
+  const faqItems: { q: string; a: string }[] = []
+  if (enrichment.prix_min_eur && enrichment.prix_max_eur && enrichment.garantie_label) {
+    faqItems.push({
+      q: `Quel est le prix de ${enrichment.garantie_label}${enrichment.metier_nom ? ` pour un ${enrichment.metier_nom}` : ''} ?`,
+      a: `Le tarif marché 2026 s'étend de ${Math.round(enrichment.prix_min_eur)}€/an à ${Math.round(enrichment.prix_max_eur)}€/an, avec une médiane de ${enrichment.prix_med_eur ? Math.round(enrichment.prix_med_eur) : '—'}€/an. Devis personnalisé via courtier ORIAS partenaire.`,
+    })
+  }
+  if (enrichment.sinistralite_pct && enrichment.garantie_label) {
+    faqItems.push({
+      q: `Quelle est la sinistralité de ${enrichment.garantie_label}${enrichment.metier_nom ? ` chez les ${enrichment.metier_nom}s` : ''} ?`,
+      a: `La sinistralité observée est de ${enrichment.sinistralite_pct.toFixed(1)}% (source AQC SYCODÉS, dernière année disponible).`,
+    })
+  }
+  if (enrichment.density_insee && enrichment.metier_nom && enrichment.ville_nom) {
+    faqItems.push({
+      q: `Combien y a-t-il de ${enrichment.metier_nom}s à ${enrichment.ville_nom} ?`,
+      a: `~${enrichment.density_insee.toLocaleString('fr-FR')} ${enrichment.metier_nom}s sont recensés à ${enrichment.ville_nom} selon l'INSEE Sirene (mis à jour mensuel).`,
+    })
+  }
+  if (faqItems.length >= 2) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
     })
   }
 
