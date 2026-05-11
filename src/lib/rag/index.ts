@@ -15,6 +15,7 @@ import OpenAI from 'openai'
 import * as Sentry from '@sentry/nextjs'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { type DomainError, ResultAsync, ok, err, externalError, databaseError } from '@/lib/result'
+import { inferTier, streamWithFallback, type ChatMessage as ChatMessageInternal } from './models'
 
 const EMBED_MODEL = 'text-embedding-3-small'
 const EMBED_DIM = 1536
@@ -207,18 +208,19 @@ export interface ChatMessage {
 
 /**
  * Stream une réponse depuis le LLM avec contexte RAG.
+ *
+ * Multi-model :
+ *   - Routing par complexité (inferTier) — FAQ simple → Haiku, juridique → Opus
+ *   - Fallback chain : Anthropic → OpenAI → message générique
+ *   - Métadonnées du modèle utilisé loggées (Sentry)
+ *
  * Compatible Vercel AI SDK ou consumer direct du stream.
  */
 export async function* streamChatCompletion(
   question: string,
   history: ChatMessage[] = []
 ): AsyncGenerator<string, void, unknown> {
-  const client = getOpenAI()
-  if (!client) {
-    yield 'Le chatbot est temporairement indisponible. Utilisez le formulaire devis pour être recontacté.'
-    return
-  }
-
+  // ── Retrieval ─────────────────────────────────────────────────────────────
   const retrievalResult = await retrieveSimilarPages(question, 5, 0.55)
   const context = retrievalResult.isOk() ? buildContext(retrievalResult.value) : ''
 
@@ -227,24 +229,22 @@ export async function* streamChatCompletion(
     return
   }
 
-  const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
-    { role: 'system', content: SYSTEM_PROMPT },
-    { role: 'system', content: `CONTEXTE :\n${context}` },
-    ...history.map((m) => ({ role: m.role, content: m.content }) as const),
-    { role: 'user', content: question },
-  ]
+  // ── Multi-model selection + fallback ──────────────────────────────────────
+  const tier = inferTier(question)
+  Sentry.setTag('chat.tier', tier)
 
-  const stream = await client.chat.completions.create({
-    model: 'gpt-4o-mini',
-    messages,
-    temperature: 0.3,
-    max_tokens: 600,
-    stream: true,
-  })
-
-  for await (const chunk of stream) {
-    const delta = chunk.choices[0]?.delta?.content
-    if (delta) yield delta
+  for await (const event of streamWithFallback(tier, {
+    systemPrompt: SYSTEM_PROMPT,
+    context,
+    question,
+    history: history as ChatMessageInternal[],
+  })) {
+    if (event.meta) {
+      Sentry.setTag('chat.provider', event.meta.provider)
+      Sentry.setTag('chat.model', event.meta.model)
+      continue
+    }
+    if (event.delta) yield event.delta
   }
 }
 

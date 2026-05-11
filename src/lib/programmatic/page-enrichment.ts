@@ -372,9 +372,40 @@ export function buildSchemaOrg(enrichment: PageEnrichmentRow) {
     }
   }
 
-  // AggregateRating depuis Trustpilot
+  // Review[] + AggregateRating depuis Trustpilot ISO 20488 vérifiés
+  // (Google rich snippet stars + LLM context)
   const validAvis = enrichment.avis_top_jsonb?.filter((a) => a.iso_20488) ?? []
   if (validAvis.length > 0) {
+    const itemReviewedName = enrichment.garantie_label ?? 'Assurance professionnelle'
+
+    // Review unitaires (max 8 — Google AdWords recommandation)
+    for (const [idx, avis] of validAvis.slice(0, 8).entries()) {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'Review',
+        '@id': `${canonical}#review-${idx}`,
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: avis.note,
+          bestRating: 5,
+          worstRating: 1,
+        },
+        name: `Avis ${avis.note}/5 — ${itemReviewedName}`,
+        reviewBody: avis.texte,
+        datePublished: avis.date,
+        author: {
+          '@type': 'Person',
+          name: avis.auteur,
+          ...(avis.ville
+            ? { address: { '@type': 'PostalAddress', addressLocality: avis.ville } }
+            : {}),
+        },
+        itemReviewed: { '@type': 'Service', name: itemReviewedName },
+      })
+    }
+
+    // AggregateRating (synthèse) — émis dès 1 avis valide (Google rich snippet
+    // optimal à partir de 3, mais syntaxe valide dès 1)
     const avgRating = validAvis.reduce((sum, a) => sum + a.note, 0) / validAvis.length
     schemas.push({
       '@context': 'https://schema.org',
@@ -383,10 +414,7 @@ export function buildSchemaOrg(enrichment: PageEnrichmentRow) {
       reviewCount: validAvis.length,
       bestRating: 5,
       worstRating: 1,
-      itemReviewed: {
-        '@type': 'Service',
-        name: enrichment.garantie_label ?? 'Assurance professionnelle',
-      },
+      itemReviewed: { '@type': 'Service', name: itemReviewedName },
     })
   }
 

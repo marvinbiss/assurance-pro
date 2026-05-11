@@ -19,7 +19,8 @@
     "prepare": "husky",
     "data:populate-cache": "tsx scripts/populate-page-enrichment-cache.ts",
     "data:seed-ahrefs": "tsx scripts/seed-ahrefs-data.ts",
-    "data:embed": "tsx scripts/generate-embeddings.ts"
+    "data:embed": "tsx scripts/generate-embeddings.ts",
+    "data:llms": "tsx scripts/generate-llms.ts"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
