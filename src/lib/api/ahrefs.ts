@@ -15,11 +15,7 @@ import { MemoryCache } from '@/lib/utils/cache'
 
 const apiCache = new MemoryCache<unknown>({ ttl: 24 * 60 * 60 * 1000, maxSize: 500 })
 
-async function getOrSetCache<T>(
-  key: string,
-  fetcher: () => Promise<T>,
-  ttl?: number
-): Promise<T> {
+async function getOrSetCache<T>(key: string, fetcher: () => Promise<T>, ttl?: number): Promise<T> {
   const cached = apiCache.get(key)
   if (cached !== undefined) return cached as T
   const fresh = await fetcher()
@@ -86,6 +82,7 @@ async function callAhrefs<T>(
       Authorization: `Bearer ${token}`,
       Accept: 'application/json',
     },
+    signal: AbortSignal.timeout(10_000),
   })
 
   if (!res.ok) {
@@ -109,19 +106,16 @@ export async function matchingTerms(
     orderBy?: string
   } = {}
 ): Promise<KeywordData[]> {
-  const data = await callAhrefs<{ keywords: KeywordData[] }>(
-    '/keywords-explorer/matching-terms',
-    {
-      keywords,
-      country: options.country ?? 'fr',
-      match_mode: options.matchMode ?? 'terms',
-      volume_min: options.volumeMin ?? 10,
-      limit: Math.min(options.limit ?? 500, 500),
-      order_by: options.orderBy ?? 'volume:desc',
-      output: 'json',
-      select: 'keyword,volume,difficulty,cpc,parent_topic,traffic_potential',
-    }
-  )
+  const data = await callAhrefs<{ keywords: KeywordData[] }>('/keywords-explorer/matching-terms', {
+    keywords,
+    country: options.country ?? 'fr',
+    match_mode: options.matchMode ?? 'terms',
+    volume_min: options.volumeMin ?? 10,
+    limit: Math.min(options.limit ?? 500, 500),
+    order_by: options.orderBy ?? 'volume:desc',
+    output: 'json',
+    select: 'keyword,volume,difficulty,cpc,parent_topic,traffic_potential',
+  })
   return data.keywords ?? []
 }
 
@@ -134,16 +128,13 @@ export async function getDomainMetrics(target: string, country = 'fr'): Promise<
     cacheKey,
     async () => {
       const today = new Date().toISOString().slice(0, 10)
-      const data = await callAhrefs<{ metrics: ConcurrentMetrics }>(
-        '/site-explorer/metrics',
-        {
-          target,
-          date: today,
-          country,
-          protocol: 'both',
-          volume_mode: 'monthly',
-        }
-      )
+      const data = await callAhrefs<{ metrics: ConcurrentMetrics }>('/site-explorer/metrics', {
+        target,
+        date: today,
+        country,
+        protocol: 'both',
+        volume_mode: 'monthly',
+      })
       return data.metrics
     },
     24 * 60 * 60 * 1000

@@ -12,6 +12,7 @@
  */
 
 import { notFound } from 'next/navigation'
+import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import {
   getPageEnrichment,
@@ -23,6 +24,7 @@ import {
   shouldShowDevisForm,
   type PageEnrichmentRow,
 } from '@/lib/programmatic/page-enrichment'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -91,16 +93,13 @@ export default async function PrixPage(props: { params: Promise<Params> }) {
 
   const schemas = buildSchemaOrg(enrichment)
   const showDevisForm = shouldShowDevisForm(enrichment)
+  const nonce = (await headers()).get('x-nonce') ?? undefined
 
   return (
     <>
-      {/* Schema.org JSON-LD */}
+      {/* Schema.org JSON-LD — safe escape + nonce CSP */}
       {schemas.map((schema, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
+        <script key={i} {...jsonLdScriptProps(schema, nonce)} />
       ))}
 
       <article className="prix-template mx-auto max-w-5xl px-4 py-12">

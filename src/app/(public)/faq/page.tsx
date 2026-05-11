@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { headers } from 'next/headers'
 import { SITE_URL } from '@/lib/seo/config'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
+import { getFAQPageSchema } from '@/lib/seo/jsonld'
 
 export const metadata: Metadata = {
   title: 'FAQ — Assurance professionnelle 2026 | Assurance Pro',
@@ -166,7 +169,8 @@ const FAQ: FaqItem[] = [
 
 const CATEGORIES = Array.from(new Set(FAQ.map((f) => f.category)))
 
-export default function FaqPage() {
+export default async function FaqPage() {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <main className="min-h-screen bg-white py-12">
       <div className="container mx-auto max-w-4xl px-4">
@@ -227,20 +231,7 @@ export default function FaqPage() {
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: FAQ.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
-          }),
-        }}
-      />
+      <script {...jsonLdScriptProps(getFAQPageSchema(FAQ), nonce)} />
     </main>
   )
 }

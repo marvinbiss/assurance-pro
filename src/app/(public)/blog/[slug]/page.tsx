@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { getPost, getPostSlugs, getAllPosts, getCategorySlug } from '@/lib/data/blog-posts'
 import { SITE_URL } from '@/lib/seo/config'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 
 type Params = { slug: string }
 
@@ -44,6 +46,8 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
   const post = getPost(params.slug)
   if (!post) notFound()
 
+  const nonce = (await headers()).get('x-nonce') ?? undefined
+
   const related = getAllPosts()
     .filter((p) => p.slug !== post.slug && p.category === post.category)
     .slice(0, 3)
@@ -71,10 +75,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
 
   return (
     <main className="min-h-screen bg-white py-10">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <script {...jsonLdScriptProps(articleSchema, nonce)} />
       <div className="container mx-auto max-w-3xl px-4">
         <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-gray-600">
           <Link href="/" className="hover:underline">

@@ -78,10 +78,16 @@ export async function POST(req: NextRequest) {
         controller.close()
       } catch (e) {
         logger.error('[chat] stream error', { error: String(e) })
-        controller.enqueue(
-          encoder.encode(`data: ${JSON.stringify({ error: 'stream_failed' })}\n\n`)
-        )
-        controller.close()
+        // Émet d'abord un événement error explicite (client peut le détecter)
+        // puis ferme le stream avec error() pour propager côté reader.
+        try {
+          controller.enqueue(
+            encoder.encode(`data: ${JSON.stringify({ error: 'stream_failed' })}\n\n`)
+          )
+        } catch {
+          /* controller already errored — propagate */
+        }
+        controller.error(e instanceof Error ? e : new Error('stream_failed'))
       }
     },
   })

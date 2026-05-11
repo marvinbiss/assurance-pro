@@ -16,8 +16,8 @@
  *   - GPT-4o            : $2.50 input / $10 output      ⭐ fallback quality
  */
 
-import Anthropic from '@anthropic-ai/sdk'
-import OpenAI from 'openai'
+import type OpenAI from 'openai'
+import { getAnthropic, getOpenAI } from './clients'
 
 export type ModelTier = 'fast' | 'standard' | 'premium'
 export type ModelProvider = 'anthropic' | 'openai'
@@ -97,26 +97,6 @@ export function inferTier(question: string): ModelTier {
   if (PREMIUM_KEYWORDS.some((k) => q.includes(k))) return 'premium'
   if (FAST_KEYWORDS.some((k) => q.includes(k))) return 'fast'
   return 'standard'
-}
-
-// ─── Client singletons ──────────────────────────────────────────────────────
-
-let _anthropic: Anthropic | null = null
-function getAnthropic(): Anthropic | null {
-  if (_anthropic) return _anthropic
-  const apiKey = process.env.ANTHROPIC_API_KEY
-  if (!apiKey) return null
-  _anthropic = new Anthropic({ apiKey })
-  return _anthropic
-}
-
-let _openai: OpenAI | null = null
-function getOpenAI(): OpenAI | null {
-  if (_openai) return _openai
-  const apiKey = process.env.OPENAI_API_KEY
-  if (!apiKey) return null
-  _openai = new OpenAI({ apiKey })
-  return _openai
 }
 
 // ─── Streaming completion (provider-agnostic) ────────────────────────────────

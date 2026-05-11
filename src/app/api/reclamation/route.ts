@@ -38,7 +38,6 @@ const ReclamationSchema = z.object({
   consent: z.literal(true),
 })
 
-
 export async function POST(req: NextRequest) {
   // Rate limiting (formulaire ACPR — 3 réclamations / 15 min / IP).
   // Conforme Recommandation ACPR 2024-R-02 : éviter saturation médiateur,
@@ -48,8 +47,14 @@ export async function POST(req: NextRequest) {
   const rl = await checkRateLimit(`reclamation:${ip}`, { window: 900_000, max: 3 })
   if (!rl.allowed) {
     return NextResponse.json(
-      { error: 'Trop de réclamations soumises depuis cette adresse, veuillez réessayer dans quelques minutes' },
-      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) } }
+      {
+        error:
+          'Trop de réclamations soumises depuis cette adresse, veuillez réessayer dans quelques minutes',
+      },
+      {
+        status: 429,
+        headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) },
+      }
     )
   }
 
@@ -70,6 +75,11 @@ export async function POST(req: NextRequest) {
   const data = parsed.data
   const ticket = makeReference('RCL')
 
+  // SLA ACPR 2024-R-02 : accusé réception 10 jours ouvrés, réponse fond 2 mois max
+  const now = Date.now()
+  const slaAcknowledge = new Date(now + 10 * 86_400_000).toISOString() // 10 jours
+  const slaResponse = new Date(now + 61 * 86_400_000).toISOString() // 2 mois (61 jours)
+
   // 1) Persistance Supabase
   try {
     const supabase = createPiiAdminClient()
@@ -89,15 +99,25 @@ export async function POST(req: NextRequest) {
       ip: req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? null,
       user_agent: req.headers.get('user-agent') ?? null,
       status: 'received',
+      sla_acknowledge_deadline: slaAcknowledge,
+      sla_response_deadline: slaResponse,
     })
     if (error) {
       logger.error({ err: error, ticket }, 'reclamation supabase insert error')
-      captureApiException(error, { route: 'api/reclamation', category: 'compliance', extra: { ticket, stage: 'supabase-insert' } })
+      captureApiException(error, {
+        route: 'api/reclamation',
+        category: 'compliance',
+        extra: { ticket, stage: 'supabase-insert' },
+      })
       return NextResponse.json({ error: 'Persistence indisponible' }, { status: 500 })
     }
   } catch (e) {
     logger.error({ err: e, ticket }, 'reclamation admin client error')
-    captureApiException(e, { route: 'api/reclamation', category: 'compliance', extra: { ticket, stage: 'admin-client' } })
+    captureApiException(e, {
+      route: 'api/reclamation',
+      category: 'compliance',
+      extra: { ticket, stage: 'admin-client' },
+    })
     return NextResponse.json({ error: 'Persistence indisponible' }, { status: 500 })
   }
 
@@ -115,7 +135,11 @@ export async function POST(req: NextRequest) {
       await sendEmail({ to: data.email, subject: ack.subject, html: ack.html })
     } catch (err) {
       logger.error({ err, ticket }, 'reclamation ack email failed')
-      captureApiException(err, { route: 'api/reclamation', category: 'compliance', extra: { ticket, stage: 'ack-email' } })
+      captureApiException(err, {
+        route: 'api/reclamation',
+        category: 'compliance',
+        extra: { ticket, stage: 'ack-email' },
+      })
     }
     try {
       const internal = reclamationInternalNotificationTemplate({
@@ -137,7 +161,11 @@ export async function POST(req: NextRequest) {
       await sendEmail({ to: RECLAMATIONS_INBOX, subject: internal.subject, html: internal.html })
     } catch (err) {
       logger.error({ err, ticket }, 'reclamation internal notification failed')
-      captureApiException(err, { route: 'api/reclamation', category: 'compliance', extra: { ticket, stage: 'internal-notification' } })
+      captureApiException(err, {
+        route: 'api/reclamation',
+        category: 'compliance',
+        extra: { ticket, stage: 'internal-notification' },
+      })
     }
   })()
 

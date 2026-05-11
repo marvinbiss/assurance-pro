@@ -4,9 +4,16 @@
  */
 
 import Link from 'next/link'
+import { headers } from 'next/headers'
 import type { ReactNode } from 'react'
-import { getBreadcrumbSchema, getServiceSchema, getArticleSchema } from '@/lib/seo/jsonld'
+import {
+  getBreadcrumbSchema,
+  getServiceSchema,
+  getArticleSchema,
+  getFAQPageSchema,
+} from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
 
 /**
@@ -59,7 +66,7 @@ export interface PilierProps {
   isObligatoire?: boolean
 }
 
-export function PilierLayout({
+export async function PilierLayout({
   slug,
   title,
   tagline,
@@ -71,6 +78,7 @@ export function PilierLayout({
   legalReference,
   isObligatoire,
 }: PilierProps) {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <article className="min-h-screen">
       {/* HERO */}
@@ -220,58 +228,27 @@ export function PilierLayout({
         </div>
       </section>
 
-      {/* FAQ Schema.org JSON-LD */}
+      {/* Schemas JSON-LD — safe escape + nonce CSP (defense in depth XSS) */}
+      <script {...jsonLdScriptProps(getFAQPageSchema(faq), nonce)} />
       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faq.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
-          }),
-        }}
+        {...jsonLdScriptProps(getBreadcrumbSchema(buildBreadcrumbItems(slug, title)), nonce)}
       />
-
-      {/* BreadcrumbList Schema.org — rich snippet Google + UX nav */}
       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getBreadcrumbSchema(buildBreadcrumbItems(slug, title))),
-        }}
-      />
-
-      {/* Service OU Article Schema.org — rich snippet conditionnel selon segment */}
-      {slug.startsWith('guides/') ? (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              getArticleSchema({
+        {...jsonLdScriptProps(
+          slug.startsWith('guides/')
+            ? getArticleSchema({
                 headline: title,
                 description: tagline,
                 url: `${SITE_URL}/${slug}`,
               })
-            ),
-          }}
-        />
-      ) : (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              getServiceSchema({
+            : getServiceSchema({
                 name: title,
                 description: tagline,
                 url: `${SITE_URL}/${slug}`,
-              })
-            ),
-          }}
-        />
-      )}
+              }),
+          nonce
+        )}
+      />
     </article>
   )
 }

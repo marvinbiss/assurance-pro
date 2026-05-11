@@ -35,7 +35,18 @@ export interface OriasIntermediaire {
   orias_number: string
   legal_name: string
   siret?: string
-  category: 'IAS' | 'IOBSP' | 'CIF' | 'IFP' | 'AGENT_GENERAL' | 'COURTIER' | 'MIA' | 'MAA' | 'MIOBSP' | 'MCIOB' | 'MIFP'
+  category:
+    | 'IAS'
+    | 'IOBSP'
+    | 'CIF'
+    | 'IFP'
+    | 'AGENT_GENERAL'
+    | 'COURTIER'
+    | 'MIA'
+    | 'MAA'
+    | 'MIOBSP'
+    | 'MCIOB'
+    | 'MIFP'
   status: 'ACTIVE' | 'SUSPENDED' | 'WITHDRAWN'
   immatriculation_date?: string
   address?: string
@@ -81,9 +92,7 @@ export function buildOriasRegistryUrl(): string {
  * Récupère la fiche publique d'un courtier par son numéro ORIAS
  * Utilise le cache (24h) car les données changent peu
  */
-export async function fetchOriasFiche(
-  oriasNumber: string
-): Promise<OriasIntermediaire | null> {
+export async function fetchOriasFiche(oriasNumber: string): Promise<OriasIntermediaire | null> {
   if (!isValidOriasFormat(oriasNumber)) {
     return null
   }
@@ -101,6 +110,7 @@ export async function fetchOriasFiche(
             'User-Agent': 'AssurancePro-Compliance-Bot/1.0',
             Accept: 'text/html',
           },
+          signal: AbortSignal.timeout(8000),
         })
 
         if (!res.ok) {
@@ -123,11 +133,7 @@ export async function fetchOriasFiche(
 /**
  * Parse le HTML public ORIAS (best-effort, structure peut évoluer)
  */
-function parseOriasHtml(
-  html: string,
-  oriasNumber: string,
-  url: string
-): OriasIntermediaire {
+function parseOriasHtml(html: string, oriasNumber: string, url: string): OriasIntermediaire {
   const extract = (regex: RegExp): string | undefined => {
     const m = html.match(regex)
     return m?.[1]?.trim()
@@ -143,19 +149,19 @@ function parseOriasHtml(
   const status: OriasIntermediaire['status'] = statusRaw.includes('actif')
     ? 'ACTIVE'
     : statusRaw.includes('suspend')
-    ? 'SUSPENDED'
-    : statusRaw.includes('radi')
-    ? 'WITHDRAWN'
-    : 'ACTIVE'
+      ? 'SUSPENDED'
+      : statusRaw.includes('radi')
+        ? 'WITHDRAWN'
+        : 'ACTIVE'
 
   const categoryRaw = extract(/Cat[ée]gorie[^<]*<[^>]+>([^<]+)</i)?.toUpperCase() ?? ''
   const category: OriasIntermediaire['category'] = categoryRaw.includes('COURTIER')
     ? 'COURTIER'
     : categoryRaw.includes('AGENT')
-    ? 'AGENT_GENERAL'
-    : categoryRaw.includes('MIA')
-    ? 'MIA'
-    : 'IAS'
+      ? 'AGENT_GENERAL'
+      : categoryRaw.includes('MIA')
+        ? 'MIA'
+        : 'IAS'
 
   return {
     orias_number: oriasNumber,

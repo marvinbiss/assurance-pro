@@ -89,6 +89,7 @@ async function getOAuthToken(): Promise<string> {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: params.toString(),
+    signal: AbortSignal.timeout(8000),
   })
 
   if (!res.ok) {
@@ -113,6 +114,7 @@ async function callLegifranceApi<T>(endpoint: string, body: unknown): Promise<T>
       Accept: 'application/json',
     },
     body: JSON.stringify(body),
+    signal: AbortSignal.timeout(10_000),
   })
 
   if (!res.ok) {
@@ -144,10 +146,7 @@ export async function searchCodeArticles(
       fond: 'CODE',
     },
   }
-  const data = await callLegifranceApi<{ results: CodeArticle[] }>(
-    '/consult/jorf',
-    body
-  )
+  const data = await callLegifranceApi<{ results: CodeArticle[] }>('/consult/jorf', body)
   return data.results ?? []
 }
 
@@ -176,10 +175,7 @@ export async function searchJurisprudence(
       fond: options.juridiction === 'CETAT' ? 'CETAT' : 'JURI',
     },
   }
-  const data = await callLegifranceApi<{ results: JuriDecision[] }>(
-    '/search',
-    body
-  )
+  const data = await callLegifranceApi<{ results: JuriDecision[] }>('/search', body)
   return data.results ?? []
 }
 
@@ -206,14 +202,14 @@ export function buildLegifranceUrl(articleId: string): string {
  * Articles de référence pour l'assurance pro (à citer fréquemment)
  */
 export const REFERENCE_ARTICLES = {
-  decennale_obligation: 'LEGIARTI000006791570',  // L. 241-1 C. assur. (décennale obligatoire)
-  spinetta: 'LEGITEXT000006072026',              // Loi Spinetta du 4 janv. 1978
-  art_1792_civ: 'LEGIARTI000006429931',          // art. 1792 C. civ. (présomption responsabilité)
-  dda_devoir_conseil: 'LEGIARTI000037018921',    // L. 521-4 C. assur. (devoir de conseil)
-  dommages_ouvrage: 'LEGIARTI000006791560',      // L. 242-1 C. assur. (DO obligatoire)
-  rc_pro: 'LEGIARTI000006290631',                // L. 121-2 C. assur.
-  exclusions: 'LEGIARTI000006290478',            // L. 113-1 (exclusions garantie)
-  retractation: 'LEGIARTI000006290471',          // L. 112-2-1 (rétractation 14j)
-  acpr_competence: 'LEGIARTI000027478183',       // L. 612-1 CMF (pouvoirs ACPR)
+  decennale_obligation: 'LEGIARTI000006791570', // L. 241-1 C. assur. (décennale obligatoire)
+  spinetta: 'LEGITEXT000006072026', // Loi Spinetta du 4 janv. 1978
+  art_1792_civ: 'LEGIARTI000006429931', // art. 1792 C. civ. (présomption responsabilité)
+  dda_devoir_conseil: 'LEGIARTI000037018921', // L. 521-4 C. assur. (devoir de conseil)
+  dommages_ouvrage: 'LEGIARTI000006791560', // L. 242-1 C. assur. (DO obligatoire)
+  rc_pro: 'LEGIARTI000006290631', // L. 121-2 C. assur.
+  exclusions: 'LEGIARTI000006290478', // L. 113-1 (exclusions garantie)
+  retractation: 'LEGIARTI000006290471', // L. 112-2-1 (rétractation 14j)
+  acpr_competence: 'LEGIARTI000027478183', // L. 612-1 CMF (pouvoirs ACPR)
   orias_immatriculation: 'LEGIARTI000006290622', // L. 512-1 C. assur.
 }

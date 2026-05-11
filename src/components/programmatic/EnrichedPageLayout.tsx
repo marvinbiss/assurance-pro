@@ -5,8 +5,10 @@
  * Évite la duplication du rendu data-injected.
  */
 
+import { headers } from 'next/headers'
 import type { PageEnrichmentRow } from '@/lib/programmatic/page-enrichment'
 import { buildSchemaOrg, shouldShowDevisForm } from '@/lib/programmatic/page-enrichment'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 
 interface Props {
@@ -17,18 +19,21 @@ interface Props {
   extraSections?: React.ReactNode
 }
 
-export function EnrichedPageLayout({ enrichment, variant, headline, intro, extraSections }: Props) {
+export async function EnrichedPageLayout({
+  enrichment,
+  variant,
+  headline,
+  intro,
+  extraSections,
+}: Props) {
   const schemas = buildSchemaOrg(enrichment)
   const showDevis = shouldShowDevisForm(enrichment)
+  const nonce = (await headers()).get('x-nonce') ?? undefined
 
   return (
     <>
       {schemas.map((schema, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
+        <script key={i} {...jsonLdScriptProps(schema, nonce)} />
       ))}
 
       <article className="enriched-page mx-auto max-w-5xl px-4 py-12">

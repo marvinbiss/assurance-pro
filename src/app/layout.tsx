@@ -7,6 +7,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { TrackingScripts } from '@/components/TrackingScripts'
 import { getOrganizationSchema, getWebsiteSchema } from '@/lib/seo/jsonld'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
 
@@ -134,16 +135,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
 
         {/* Global Organization + WebSite schema (E-E-A-T) */}
-        <script
-          nonce={nonce}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([getOrganizationSchema(), getWebsiteSchema()])
-              .replace(/</g, '\\u003c')
-              .replace(/>/g, '\\u003e')
-              .replace(/&/g, '\\u0026'),
-          }}
-        />
+        <script {...jsonLdScriptProps([getOrganizationSchema(), getWebsiteSchema()], nonce)} />
 
         {/* Preconnect for Google Tag Manager */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />

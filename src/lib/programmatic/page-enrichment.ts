@@ -9,7 +9,7 @@
 
 import * as Sentry from '@sentry/nextjs'
 import { createAdminClient } from '@/lib/supabase/admin'
-import { ResultAsync, ok, err, type DomainError, notFoundError, databaseError } from '@/lib/result'
+import { ResultAsync, type DomainError, notFoundError, databaseError } from '@/lib/result'
 import { type PageSlug } from '@/lib/types/branded'
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -101,9 +101,17 @@ export interface StatSectorielle {
 // ────────────────────────────────────────────────────────────────────────────
 
 /**
+ * @deprecated Préférer `getPageEnrichmentResult()` qui discrimine NotFound vs Database error.
+ *
  * Récupère l'enrichissement complet d'une page par slug.
  * Lit la vue v_page_enrichment_full (join 8 sources).
- * Retourne null si page absente ou status = retired/pending.
+ * Retourne null si page absente OU erreur DB (ambiguïté problématique pour le 404 vs 500).
+ *
+ * Migration : remplacer par `getPageEnrichmentResult(toPageSlug(slug))` puis :
+ *   if (r.isErr()) {
+ *     if (r.error.code === 'NotFound') notFound()
+ *     throw r.error
+ *   }
  */
 export async function getPageEnrichment(pageSlug: string): Promise<PageEnrichmentRow | null> {
   return Sentry.startSpan(
@@ -142,29 +150,37 @@ export async function getPageEnrichment(pageSlug: string): Promise<PageEnrichmen
 export function getPageEnrichmentResult(
   pageSlug: PageSlug
 ): ResultAsync<PageEnrichmentRow, DomainError> {
-  const promise = Sentry.startSpan(
-    {
-      op: 'db.rpc',
-      name: 'rpc.get_page_enrichment',
-      attributes: { 'page.slug': pageSlug },
-    },
-    async () => {
-      const supabase = createAdminClient()
-      const { data, error } = await supabase.rpc('get_page_enrichment', { p_slug: pageSlug })
-      if (error) {
-        Sentry.captureException(error, {
-          tags: { rpc: 'get_page_enrichment' },
-          extra: { pageSlug },
-        })
-        return err<PageEnrichmentRow, DomainError>(databaseError('get_page_enrichment', error))
+  return ResultAsync.fromPromise(
+    Sentry.startSpan(
+      {
+        op: 'db.rpc',
+        name: 'rpc.get_page_enrichment',
+        attributes: { 'page.slug': pageSlug },
+      },
+      async (): Promise<PageEnrichmentRow> => {
+        const supabase = createAdminClient()
+        const { data, error } = await supabase.rpc('get_page_enrichment', { p_slug: pageSlug })
+        if (error) {
+          Sentry.captureException(error, {
+            tags: { rpc: 'get_page_enrichment' },
+            extra: { pageSlug },
+          })
+          throw databaseError('get_page_enrichment', error)
+        }
+        if (!data) {
+          throw notFoundError('Page', pageSlug)
+        }
+        return data as PageEnrichmentRow
       }
-      if (!data) {
-        return err<PageEnrichmentRow, DomainError>(notFoundError('Page', pageSlug))
+    ),
+    (e) => {
+      // Si l'inner throw a déjà un DomainError, on le préserve via discriminator code
+      if (typeof e === 'object' && e !== null && 'code' in e) {
+        return e as DomainError
       }
-      return ok<PageEnrichmentRow, DomainError>(data as PageEnrichmentRow)
+      return databaseError('get_page_enrichment', e)
     }
   )
-  return ResultAsync.fromSafePromise(promise).andThen((r) => r)
 }
 
 /**
@@ -280,6 +296,12 @@ export function buildCanonical(pageSlug: string): string {
 /**
  * Schema.org markup factory (Service + Place + AggregateRating).
  * Injecte data Pappers + Trustpilot + INSEE = E-E-A-T anti-HCU.
+ */
+/**
+ * TODO(post-audit) : convergence Schema.org en un seul producer.
+ * `buildSchemaOrg()` duplique partiellement `lib/seo/jsonld.ts`.
+ * Prochain refactor : appeler les helpers `getServiceSchema`, `getBreadcrumbSchema`,
+ * `getFAQPageSchema`, `getReviewSchema` depuis ici pour avoir 1 source de vérité.
  */
 function prettifyBreadcrumbSegment(s: string): string {
   return s

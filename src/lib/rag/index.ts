@@ -11,23 +11,14 @@
  * Tous appels externes wrappés en Result<T, DomainError>.
  */
 
-import OpenAI from 'openai'
 import * as Sentry from '@sentry/nextjs'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { type DomainError, ResultAsync, ok, err, externalError, databaseError } from '@/lib/result'
+import { getOpenAI } from './clients'
 import { inferTier, streamWithFallback, type ChatMessage as ChatMessageInternal } from './models'
 
 const EMBED_MODEL = 'text-embedding-3-small'
 const EMBED_DIM = 1536
-
-let _openai: OpenAI | null = null
-function getOpenAI(): OpenAI | null {
-  if (_openai) return _openai
-  const apiKey = process.env.OPENAI_API_KEY
-  if (!apiKey) return null
-  _openai = new OpenAI({ apiKey })
-  return _openai
-}
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 

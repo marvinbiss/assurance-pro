@@ -20,12 +20,18 @@ export const dynamic = 'force-dynamic'
 
 function isAuthorized(req: NextRequest): boolean {
   const expected = process.env.LEAD_SCORING_API_KEY
-  if (!expected) {
-    // Si pas de clé configurée, refuser tout en prod, autoriser en dev
-    return process.env.NODE_ENV !== 'production'
-  }
+  // Fail-closed : sans clé configurée, JAMAIS d'accès (même dev/preview Vercel)
+  // Évite l'exposition accidentelle de la business logic sur Vercel Preview
+  // où NODE_ENV=production n'est pas garanti.
+  if (!expected) return false
   const provided = req.headers.get('x-api-key')
-  return provided === expected
+  if (!provided || provided.length !== expected.length) return false
+  // Comparaison constant-time pour empêcher timing attacks
+  let diff = 0
+  for (let i = 0; i < expected.length; i++) {
+    diff |= expected.charCodeAt(i) ^ provided.charCodeAt(i)
+  }
+  return diff === 0
 }
 
 export async function POST(req: NextRequest) {

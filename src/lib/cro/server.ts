@@ -58,12 +58,20 @@ export async function getServerVariant<E extends ExperimentMetadata>(
     return cached as E['variants'][number]
   }
 
-  // Holdout : skip exposure pour un % de visiteurs (groupe contrôle pur)
+  // Holdout : skip exposure pour un % de visiteurs (groupe contrôle pur).
+  // Calcul fraction sans bitshift signé (bug si byte ≥ 128) :
+  // on combine 4 octets en uint32 via arithmétique sûre, normalisée sur [0,1).
   if (experiment.holdout && experiment.holdout > 0) {
     const holdoutHash = createHash('sha256')
       .update(`holdout:${experiment.id}:${visitorId}`)
       .digest()
-    const fraction = (((holdoutHash[0]! << 24) | (holdoutHash[1]! << 16)) >>> 0) / 2 ** 32
+    const b0 = holdoutHash[0] ?? 0
+    const b1 = holdoutHash[1] ?? 0
+    const b2 = holdoutHash[2] ?? 0
+    const b3 = holdoutHash[3] ?? 0
+    // 2^24 * b0 + 2^16 * b1 + 2^8 * b2 + b3 → uint32 [0, 2^32-1]
+    const uint32 = b0 * 16_777_216 + b1 * 65_536 + b2 * 256 + b3
+    const fraction = uint32 / 4_294_967_296 // 2^32
     if (fraction < experiment.holdout) {
       return experiment.variants[0] as E['variants'][number] /* control = first variant */
     }

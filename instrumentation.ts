@@ -33,6 +33,14 @@ export async function register() {
       dsn,
       environment: process.env.VERCEL_ENV ?? process.env.NODE_ENV ?? 'development',
       tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
+      // Strip PII (cookies, headers) — conformité RGPD courtage assurance.
+      beforeSend(event) {
+        if (event.request) {
+          delete event.request.cookies
+          delete event.request.headers
+        }
+        return event
+      },
     })
   }
 }
