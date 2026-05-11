@@ -1,9 +1,8 @@
 /**
  * Souscription — "rc pro en ligne" (700 vol, KD 22, CPC 600€)
  */
-import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
-import { SITE_URL } from '@/lib/seo/config'
+import { buildPageMetadata } from '@/lib/seo/page-metadata'
 
 export const revalidate = 86400
 const SLUG = 'rc-pro-en-ligne'
@@ -11,13 +10,14 @@ const TITLE = 'RC Pro En Ligne — Comparer + souscrire en 5 min'
 const TAGLINE =
   'RC Pro 100% en ligne : comparez 5 assureurs (Hiscox, Stello, Allianz, MMA, AXA) puis souscrivez en 5 min. Attestation immédiate, sans rendez-vous.'
 
-export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+export const metadata = buildPageMetadata({
+  slug: SLUG,
+  title: TITLE,
+  tagline: TAGLINE,
   description:
     'RC Pro en ligne : comparateur 5 assureurs leaders + souscription immédiate 5 min. Hiscox 95€/an, Stello 90€/an. Attestation téléchargeable PDF.',
-  alternates: { canonical: `${SITE_URL}/${SLUG}` },
-  openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
-}
+  price: 'dès 95€/an',
+})
 
 export default function Page() {
   return (

@@ -1,9 +1,8 @@
 /**
  * Prix — "rc pro prix" (200 vol, KD 3, CPC 300€)
  */
-import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
-import { SITE_URL } from '@/lib/seo/config'
+import { buildPageMetadata } from '@/lib/seo/page-metadata'
 
 export const revalidate = 86400
 const SLUG = 'prix/rc-pro-prix'
@@ -11,13 +10,14 @@ const TITLE = 'RC Pro Prix 2026 — Combien coûte la responsabilité civile pro
 const TAGLINE =
   'RC Pro prix 2026 : AE dès 95€/an, SARL 600€/an, SAS PME 1 500€/an. Grilles par activité + 6 leviers économies + 4 pièges low-cost.'
 
-export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+export const metadata = buildPageMetadata({
+  slug: SLUG,
+  title: TITLE,
+  tagline: TAGLINE,
   description:
     'RC Pro prix vérifié 2026 par statut/activité. Hiscox 95€/an best AE services. Allianz 600€/an SARL. 6 leviers économies. CPC 300€.',
-  alternates: { canonical: `${SITE_URL}/${SLUG}` },
-  openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
-}
+  price: 'dès 95€/an',
+})
 
 export default function Page() {
   return (
