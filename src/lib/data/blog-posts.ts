@@ -437,6 +437,7 @@ import { BLOG_POSTS_BATCH_4 } from './blog-posts-batch4'
 import { BLOG_POSTS_BATCH_5 } from './blog-posts-batch5'
 import { BLOG_POSTS_BATCH_6 } from './blog-posts-batch6'
 import { BLOG_POSTS_BATCH_7 } from './blog-posts-batch7'
+import { BLOG_POSTS_BATCH_8 } from './blog-posts-batch8'
 
 /** Tous les articles fusionnés. L'ordre du spread garantit que les versions
  *  étoffées ÉCRASENT les versions courtes pour les slugs communs. */
@@ -449,6 +450,7 @@ const ALL_POSTS: Record<string, BlogPost> = {
   ...BLOG_POSTS_BATCH_5,
   ...BLOG_POSTS_BATCH_6,
   ...BLOG_POSTS_BATCH_7,
+  ...BLOG_POSTS_BATCH_8,
 }
 
 export function getPost(slug: string): BlogPost | undefined {
