@@ -227,11 +227,14 @@ export default function HomePage() {
   return (
     <>
       {/* ═══════════════════════════════════════════════════════════════════
-          HERO — gradient hero warm + radial blobs + trust signals
+          HERO — gradient hero warm animé + radial blobs + trust signals
           ═══════════════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
-        {/* Mesh gradient background */}
-        <div className="absolute inset-0 bg-gradient-hero-warm opacity-90" aria-hidden="true" />
+        {/* Mesh gradient background — animé subtilement */}
+        <div
+          className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90"
+          aria-hidden="true"
+        />
 
         {/* Radial blobs decoratifs */}
         <div
@@ -257,8 +260,8 @@ export default function HomePage() {
                 <span className="ml-1 text-secondary-300">· ACPR · CSCA</span>
               </div>
 
-              {/* H1 typographie display */}
-              <h1 className="mb-6 font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[5rem]">
+              {/* H1 typographie display premium */}
+              <h1 className="font-display-premium mb-6 font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[5rem]">
                 Votre assurance pro,
                 <br />
                 <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent">
@@ -325,7 +328,7 @@ export default function HomePage() {
                 {/* Header mock */}
                 <div className="mb-5 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/85">
-                    <span className="flex h-2 w-2 rounded-full bg-accent-400 shadow-glow-green" />
+                    <span className="live-pulse flex h-2 w-2 rounded-full bg-accent-400" />
                     Comparateur · live
                   </div>
                   <div className="text-xs text-white/70">RC Pro · Consultant IT</div>
@@ -351,13 +354,23 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Badge flottant -32% */}
-              <div className="absolute -right-4 -top-4 rotate-6 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 px-3.5 py-2.5 text-xs font-extrabold uppercase tracking-wider text-white shadow-glow-clay">
+              {/* Badge flottant -32% — anim float subtle */}
+              <div
+                className="float-anim absolute -right-4 -top-4 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 px-3.5 py-2.5 text-xs font-extrabold uppercase tracking-wider text-white shadow-glow-clay"
+                style={{ ['--rot' as string]: '6deg', transform: 'rotate(6deg)' }}
+              >
                 -32% économie moy.
               </div>
 
               {/* Badge ORIAS flottant */}
-              <div className="absolute -bottom-3 -left-3 -rotate-3 rounded-xl bg-white/95 px-3.5 py-2 text-[10px] font-extrabold uppercase tracking-wider text-charcoal-900 shadow-premium backdrop-blur-sm">
+              <div
+                className="float-anim absolute -bottom-3 -left-3 rounded-xl bg-white/95 px-3.5 py-2 text-[10px] font-extrabold uppercase tracking-wider text-charcoal-900 shadow-premium backdrop-blur-sm"
+                style={{
+                  ['--rot' as string]: '-3deg',
+                  transform: 'rotate(-3deg)',
+                  animationDelay: '1.5s',
+                }}
+              >
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck className="h-3.5 w-3.5 text-accent-600" strokeWidth={2.5} />
                   ORIAS · ACPR
@@ -406,13 +419,14 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Bento grid asymétrique avec photos pros */}
+          {/* Bento grid asymétrique avec photos pros — mount cascade */}
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {VERTICALS.map((v) => (
+            {VERTICALS.map((v, idx) => (
               <Link
                 key={v.code}
                 href={v.href}
-                className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${v.span ?? ''}`}
+                style={{ animationDelay: `${idx * 80}ms` }}
+                className={`mount-fade-up group relative flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${v.span ?? ''}`}
               >
                 {/* Photo header — aspect 16/9 */}
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-charcoal-100">
@@ -422,7 +436,7 @@ export default function HomePage() {
                     alt={v.imageAlt}
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="bento-card-img absolute inset-0 h-full w-full object-cover"
                   />
                   {/* Overlay gradient pour lisibilité */}
                   <div
