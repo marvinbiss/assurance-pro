@@ -430,16 +430,24 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   },
 }
 
+import { BLOG_POSTS_BATCH_2 } from './blog-posts-batch2'
+
+/** Tous les articles fusionnés (batch 1 + batch 2 + futurs batches). */
+const ALL_POSTS: Record<string, BlogPost> = {
+  ...BLOG_POSTS,
+  ...BLOG_POSTS_BATCH_2,
+}
+
 export function getPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS[slug]
+  return ALL_POSTS[slug]
 }
 
 export function getPostSlugs(): string[] {
-  return Object.keys(BLOG_POSTS)
+  return Object.keys(ALL_POSTS)
 }
 
 export function getAllPosts(): BlogPost[] {
-  return Object.values(BLOG_POSTS).sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
+  return Object.values(ALL_POSTS).sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
 }
 
 export function getPostsByCategory(category: string): BlogPost[] {
