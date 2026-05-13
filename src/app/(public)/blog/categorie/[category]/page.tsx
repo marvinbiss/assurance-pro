@@ -50,7 +50,7 @@ export default async function BlogCategoryPage(props: { params: Promise<Params> 
         </nav>
 
         <header className="mb-8">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-blue-700">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-primary-700">
             Catégorie
           </p>
           <h1 className="mb-2 text-3xl font-bold md:text-4xl">{cat.name}</h1>
@@ -77,7 +77,7 @@ export default async function BlogCategoryPage(props: { params: Promise<Params> 
                 <span>{p.readTime}</span>
               </div>
               <h2 className="mb-2 text-xl font-bold">
-                <Link href={`/blog/${p.slug}`} className="text-blue-700 hover:underline">
+                <Link href={`/blog/${p.slug}`} className="text-primary-700 hover:underline">
                   {p.title}
                 </Link>
               </h2>
@@ -87,7 +87,7 @@ export default async function BlogCategoryPage(props: { params: Promise<Params> 
         </ul>
 
         <div className="mt-10 text-center">
-          <Link href="/blog" className="text-sm font-semibold text-blue-700 hover:underline">
+          <Link href="/blog" className="text-sm font-semibold text-primary-700 hover:underline">
             ← Retour au blog
           </Link>
         </div>

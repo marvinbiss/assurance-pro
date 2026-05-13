@@ -186,7 +186,7 @@ export default async function Page() {
               <strong>Comparaison des relevés d&apos;information</strong> (antécédents 5 ans)
             </li>
           </ol>
-          <p className="mt-4 border-l-4 border-blue-500 bg-blue-50 p-3 text-sm">
+          <p className="mt-4 border-l-4 border-primary-500 bg-primary-50 p-3 text-sm">
             C&apos;est pour cette raison que notre cabinet ORIAS vous transmet sous 24h{' '}
             <strong>3 propositions personnalisées</strong> avec analyse d&apos;adéquation détaillée
             — vs un simple comparateur en ligne automatique.
@@ -206,13 +206,13 @@ export default async function Page() {
           <div className="flex flex-col justify-center gap-3 md:flex-row">
             <a
               href="/outils/devis-rc-pro"
-              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-blue-700 shadow-lg transition hover:bg-gray-100"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
             >
               → Devis officiel RC Pro (2 min)
             </a>
             <a
               href="/outils/calculateur-tarif-rc-pro"
-              className="inline-block rounded-lg border border-white/30 bg-blue-800 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-blue-900"
+              className="inline-block rounded-lg border border-white/30 bg-primary-800 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-primary-900"
             >
               → Estimer mon tarif d&apos;abord
             </a>

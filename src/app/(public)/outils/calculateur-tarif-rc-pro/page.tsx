@@ -135,9 +135,9 @@ export default async function Page() {
           <table className="w-full border-collapse bg-white text-sm">
             <thead>
               <tr>
-                <th className="border bg-blue-50 p-2 text-left">Critère</th>
-                <th className="border bg-blue-50 p-2 text-left">Impact tarif</th>
-                <th className="border bg-blue-50 p-2 text-left">Source</th>
+                <th className="border bg-primary-50 p-2 text-left">Critère</th>
+                <th className="border bg-primary-50 p-2 text-left">Impact tarif</th>
+                <th className="border bg-primary-50 p-2 text-left">Source</th>
               </tr>
             </thead>
             <tbody>
@@ -219,7 +219,7 @@ export default async function Page() {
           </h2>
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="bg-blue-50">
+              <tr className="bg-primary-50">
                 <th className="border p-2 text-left">Secteur</th>
                 <th className="border p-2 text-right">Tarif annuel HT</th>
                 <th className="border p-2 text-left">Sinistralité</th>
@@ -337,7 +337,7 @@ export default async function Page() {
           </p>
           <a
             href="/outils/devis-rc-pro"
-            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-blue-700 shadow-lg transition hover:bg-gray-100"
+            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
           >
             → Devis officiel RC Pro (2 min, ORIAS)
           </a>
@@ -349,7 +349,7 @@ export default async function Page() {
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-6 text-2xl font-bold">FAQ — Tarif RC Pro 2026</h2>
           <div className="space-y-5">
-            <details className="rounded-r border-l-4 border-blue-500 bg-blue-50 p-4">
+            <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
                 Pourquoi tant d&apos;écart entre 90 € et 12 000 €/an ?
               </summary>
@@ -361,7 +361,7 @@ export default async function Page() {
                 donner la fourchette précise à votre profil.
               </p>
             </details>
-            <details className="rounded-r border-l-4 border-blue-500 bg-blue-50 p-4">
+            <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
                 RC Pro est-elle obligatoire ?
               </summary>
@@ -375,7 +375,7 @@ export default async function Page() {
                 sinistre = patrimoine personnel engagé.
               </p>
             </details>
-            <details className="rounded-r border-l-4 border-blue-500 bg-blue-50 p-4">
+            <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
                 Mon tarif estimé est élevé : comment le réduire ?
               </summary>
@@ -389,7 +389,7 @@ export default async function Page() {
                 fidélité après 5 ans). Notre cabinet ORIAS optimise ces leviers dans chaque devis.
               </p>
             </details>
-            <details className="rounded-r border-l-4 border-blue-500 bg-blue-50 p-4">
+            <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
                 RC Pro : déductible fiscalement ?
               </summary>
@@ -399,7 +399,7 @@ export default async function Page() {
                 résultat fiscal IS. Économie réelle : 15-25% du tarif brut selon votre TMI.
               </p>
             </details>
-            <details className="rounded-r border-l-4 border-blue-500 bg-blue-50 p-4">
+            <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
                 Plafond garantie : quel niveau choisir ?
               </summary>

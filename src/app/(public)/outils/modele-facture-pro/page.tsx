@@ -169,13 +169,13 @@ export default async function Page() {
           <div className="flex flex-col justify-center gap-3 md:flex-row">
             <a
               href="/outils/devis-rc-pro"
-              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-blue-700 shadow-lg transition hover:bg-gray-100"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
             >
               → Devis RC Pro (2 min)
             </a>
             <a
               href="/outils/devis-assurance-decennale"
-              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-blue-700 shadow-lg transition hover:bg-gray-100"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
             >
               → Devis décennale (2 min)
             </a>

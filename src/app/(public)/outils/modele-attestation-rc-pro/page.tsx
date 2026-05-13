@@ -121,7 +121,10 @@ export default async function Page() {
             obligatoires de l&apos;arrêté du 23 janvier 2024. Il NE constitue PAS une attestation
             d&apos;assurance valable juridiquement — seule une attestation émise et signée par votre
             assureur réel a une valeur opposable. Pour obtenir une attestation conforme :
-            <a href="/outils/devis-rc-pro" className="ml-1 font-semibold text-blue-700 underline">
+            <a
+              href="/outils/devis-rc-pro"
+              className="ml-1 font-semibold text-primary-700 underline"
+            >
               souscrivez votre RC Pro ORIAS sous 24h →
             </a>
           </p>
@@ -166,7 +169,7 @@ export default async function Page() {
           </ul>
           <p className="mt-4 text-sm">
             Pour comprendre les 8 mentions obligatoires en détail :
-            <a href="/guides/attestation-rc-pro" className="ml-1 text-blue-600 underline">
+            <a href="/guides/attestation-rc-pro" className="ml-1 text-primary-600 underline">
               guide complet attestation RC Pro →
             </a>
           </p>

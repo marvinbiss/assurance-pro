@@ -142,7 +142,7 @@ export default async function Page() {
             notre{' '}
             <a
               href="/guides/resiliation-assurance-professionnelle"
-              className="text-blue-600 underline"
+              className="text-primary-600 underline"
             >
               guide complet résiliation
             </a>
@@ -176,7 +176,7 @@ export default async function Page() {
               preuve. Effet : 1 mois après réception.
             </li>
           </ol>
-          <p className="mt-4 border-l-4 border-blue-500 bg-blue-50 p-3 text-sm">
+          <p className="mt-4 border-l-4 border-primary-500 bg-primary-50 p-3 text-sm">
             <strong>💡 Astuce :</strong> demandez à votre nouveau courtier ORIAS d&apos;effectuer la
             résiliation à votre place (mandat de résiliation). Notre cabinet le fait gratuitement
             pour ses nouveaux clients — gain de temps + zéro risque de rupture de couverture.

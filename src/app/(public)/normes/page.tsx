@@ -141,7 +141,7 @@ export default function NormesPage() {
           </div>
         </section>
 
-        <section className="mb-10 rounded-lg bg-blue-50 p-6">
+        <section className="mb-10 rounded-lg bg-primary-50 p-6">
           <h2 className="mb-4 text-xl font-bold">Notre conformité</h2>
           <ul className="space-y-2">
             <li>✅ Immatriculation ORIAS active (vérifiable sur orias.fr)</li>
@@ -169,7 +169,7 @@ export default function NormesPage() {
                   href="https://acpr.banque-france.fr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-700 underline"
+                  className="text-primary-700 underline"
                 >
                   acpr.banque-france.fr
                 </a>
@@ -183,7 +183,7 @@ export default function NormesPage() {
                   href="https://www.orias.fr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-700 underline"
+                  className="text-primary-700 underline"
                 >
                   orias.fr
                 </a>
@@ -197,7 +197,7 @@ export default function NormesPage() {
                   href="https://www.cnil.fr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-700 underline"
+                  className="text-primary-700 underline"
                 >
                   cnil.fr
                 </a>
@@ -212,7 +212,7 @@ export default function NormesPage() {
                   href="https://www.mediation-assurance.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-700 underline"
+                  className="text-primary-700 underline"
                 >
                   mediation-assurance.org
                 </a>

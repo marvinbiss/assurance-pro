@@ -175,7 +175,7 @@ export default async function DevisPage({
             Comparé sur 10+ assureurs partenaires. Sans engagement. Réponse sous 24&nbsp;heures.
           </p>
           {crossDomainSource && (
-            <p className="mt-3 inline-block rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-700">
+            <p className="mt-3 inline-block rounded-full bg-primary-50 px-3 py-1 text-sm text-primary-700">
               Connexion sécurisée depuis ServicesArtisans — formulaire pré-rempli
             </p>
           )}

@@ -132,7 +132,7 @@ export default async function Page() {
             administration). Pour obtenir une attestation conforme et opposable :
             <a
               href="/outils/devis-assurance-decennale"
-              className="ml-1 font-semibold text-blue-700 underline"
+              className="ml-1 font-semibold text-primary-700 underline"
             >
               souscrivez une décennale ORIAS sous 24h →
             </a>
@@ -195,7 +195,7 @@ export default async function Page() {
           </ol>
           <p className="mt-4 text-sm">
             Pour comprendre chaque mention en détail :
-            <a href="/guides/attestation-decennale" className="ml-1 text-blue-600 underline">
+            <a href="/guides/attestation-decennale" className="ml-1 text-primary-600 underline">
               guide complet attestation décennale →
             </a>
           </p>
@@ -216,7 +216,7 @@ export default async function Page() {
           </p>
           <a
             href="/outils/devis-assurance-decennale"
-            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-blue-700 shadow-lg transition hover:bg-gray-100"
+            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
           >
             → Devis décennale gratuit (2 min)
           </a>

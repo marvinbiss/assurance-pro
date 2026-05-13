@@ -55,7 +55,7 @@ function PersonLink({ person, prefix }: { person: BylinePerson; prefix: string }
     <span className="text-sm text-gray-600">
       {prefix}{' '}
       {person.slug ? (
-        <Link href={`/equipe/${person.slug}`} className="hover:text-blue-700 hover:underline">
+        <Link href={`/equipe/${person.slug}`} className="hover:text-primary-700 hover:underline">
           {display}
         </Link>
       ) : (

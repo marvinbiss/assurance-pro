@@ -134,9 +134,9 @@ export default async function Page() {
           <table className="w-full border-collapse bg-white text-sm">
             <thead>
               <tr>
-                <th className="border bg-blue-50 p-2 text-left">Critère</th>
-                <th className="border bg-blue-50 p-2 text-left">Impact tarif</th>
-                <th className="border bg-blue-50 p-2 text-left">Source</th>
+                <th className="border bg-primary-50 p-2 text-left">Critère</th>
+                <th className="border bg-primary-50 p-2 text-left">Impact tarif</th>
+                <th className="border bg-primary-50 p-2 text-left">Source</th>
               </tr>
             </thead>
             <tbody>
@@ -240,7 +240,7 @@ export default async function Page() {
           </p>
           <a
             href="/outils/devis-assurance-decennale"
-            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-blue-700 shadow-lg transition hover:bg-gray-100"
+            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
           >
             → Devis officiel décennale (2 min, ORIAS)
           </a>
@@ -252,7 +252,7 @@ export default async function Page() {
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-6 text-2xl font-bold">FAQ — Tarif décennale 2026</h2>
           <div className="space-y-5">
-            <details className="rounded-r border-l-4 border-blue-500 bg-blue-50 p-4">
+            <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
                 Pourquoi tant d&apos;écart entre 480 € et 16 000 €/an ?
               </summary>
@@ -264,7 +264,7 @@ export default async function Page() {
                 donner la fourchette précise à votre profil.
               </p>
             </details>
-            <details className="rounded-r border-l-4 border-blue-500 bg-blue-50 p-4">
+            <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
                 Le tarif réel sera-t-il dans la fourchette estimée ?
               </summary>
@@ -277,7 +277,7 @@ export default async function Page() {
                 tarif contractuel exact.
               </p>
             </details>
-            <details className="rounded-r border-l-4 border-blue-500 bg-blue-50 p-4">
+            <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
                 Mon tarif estimé est élevé : comment le réduire ?
               </summary>
@@ -292,7 +292,7 @@ export default async function Page() {
                 leviers dans chaque devis.
               </p>
             </details>
-            <details className="rounded-r border-l-4 border-blue-500 bg-blue-50 p-4">
+            <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
                 Tarif décennale : déductible fiscalement ?
               </summary>
@@ -303,7 +303,7 @@ export default async function Page() {
                 TMI (taux marginal d&apos;imposition).
               </p>
             </details>
-            <details className="rounded-r border-l-4 border-blue-500 bg-blue-50 p-4">
+            <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
                 Combien de temps pour obtenir l&apos;attestation ?
               </summary>

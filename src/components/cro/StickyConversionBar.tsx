@@ -21,9 +21,16 @@ interface Props {
   variant?: 'blue' | 'emerald' | 'orange' | 'violet' | 'amber' | 'slate'
 }
 
-const VARIANT_STYLES: Record<NonNullable<Props['variant']>, { bg: string; btn: string; btnHover: string }> = {
-  blue: { bg: 'bg-blue-700', btn: 'bg-white text-blue-700', btnHover: 'hover:bg-gray-100' },
-  emerald: { bg: 'bg-emerald-700', btn: 'bg-white text-emerald-700', btnHover: 'hover:bg-gray-100' },
+const VARIANT_STYLES: Record<
+  NonNullable<Props['variant']>,
+  { bg: string; btn: string; btnHover: string }
+> = {
+  blue: { bg: 'bg-primary-700', btn: 'bg-white text-primary-700', btnHover: 'hover:bg-gray-100' },
+  emerald: {
+    bg: 'bg-emerald-700',
+    btn: 'bg-white text-emerald-700',
+    btnHover: 'hover:bg-gray-100',
+  },
   orange: { bg: 'bg-orange-700', btn: 'bg-white text-orange-700', btnHover: 'hover:bg-gray-100' },
   violet: { bg: 'bg-violet-700', btn: 'bg-white text-violet-700', btnHover: 'hover:bg-gray-100' },
   amber: { bg: 'bg-amber-700', btn: 'bg-white text-amber-800', btnHover: 'hover:bg-gray-100' },
@@ -83,21 +90,21 @@ export function StickyConversionBar({
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
-        <div className="hidden sm:block flex-1 min-w-0">
-          <p className="text-sm font-semibold truncate">{trustSignal}</p>
+      <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-3">
+        <div className="hidden min-w-0 flex-1 sm:block">
+          <p className="truncate text-sm font-semibold">{trustSignal}</p>
         </div>
         <a
           href={ctaUrl}
           onClick={handleCtaClick}
-          className={`${styles.btn} ${styles.btnHover} font-bold px-4 sm:px-6 py-2.5 rounded-lg shadow-lg transition text-sm sm:text-base whitespace-nowrap`}
+          className={`${styles.btn} ${styles.btnHover} whitespace-nowrap rounded-lg px-4 py-2.5 text-sm font-bold shadow-lg transition sm:px-6 sm:text-base`}
         >
           {ctaText}
         </a>
         <button
           onClick={handleDismiss}
           aria-label="Masquer le bandeau"
-          className="text-white/70 hover:text-white text-xl leading-none px-2 py-1"
+          className="px-2 py-1 text-xl leading-none text-white/70 hover:text-white"
         >
           ×
         </button>

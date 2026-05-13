@@ -206,7 +206,7 @@ export default async function Page() {
           <p className="mt-3 text-sm">
             Une fois votre devis SIGNÉ par le client, vous pouvez générer la facture correspondante
             :
-            <a href="/outils/modele-facture-pro" className="ml-1 text-blue-600 underline">
+            <a href="/outils/modele-facture-pro" className="ml-1 text-primary-600 underline">
               générateur facture pro PDF →
             </a>
           </p>

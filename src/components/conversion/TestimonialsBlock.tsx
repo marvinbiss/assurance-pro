@@ -10,7 +10,7 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      'En 48 h, l\'équipe m\'a négocié une décennale 35 % moins chère que mon ancien contrat, avec une attestation conforme à la nouvelle obligation 2024 sur les devis. Leur recommandation écrite était limpide.',
+      "En 48 h, l'équipe m'a négocié une décennale 35 % moins chère que mon ancien contrat, avec une attestation conforme à la nouvelle obligation 2024 sur les devis. Leur recommandation écrite était limpide.",
     author: 'L. M.',
     role: 'Plombier auto-entrepreneur',
     city: 'Lyon',
@@ -28,7 +28,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'Ils ont audité ma mutuelle Madelin gratuitement et trouvé une optimisation de 1 200 € d\'économie d\'impôt par an avec un meilleur niveau de garantie. Réactif et transparent.',
+      "Ils ont audité ma mutuelle Madelin gratuitement et trouvé une optimisation de 1 200 € d'économie d'impôt par an avec un meilleur niveau de garantie. Réactif et transparent.",
     author: 'S. B.',
     role: 'Architecte libéral',
     city: 'Bordeaux',
@@ -37,7 +37,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'Cabinet sérieux, on sent l\'expertise ACPR. La traçabilité du conseil est rigoureuse — utile quand mon comptable me demande la preuve écrite du choix produit.',
+      "Cabinet sérieux, on sent l'expertise ACPR. La traçabilité du conseil est rigoureuse — utile quand mon comptable me demande la preuve écrite du choix produit.",
     author: 'F. R.',
     role: 'Gérant SARL BTP (12 salariés)',
     city: 'Toulouse',
@@ -50,7 +50,11 @@ function Stars({ count }: { count: number }) {
   return (
     <div className="flex" aria-label={`${count} étoiles sur 5`}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <span key={i} className={i <= count ? 'text-amber-400' : 'text-gray-300'} aria-hidden="true">
+        <span
+          key={i}
+          className={i <= count ? 'text-amber-400' : 'text-gray-300'}
+          aria-hidden="true"
+        >
           ★
         </span>
       ))}
@@ -59,7 +63,7 @@ function Stars({ count }: { count: number }) {
 }
 
 export function TestimonialsBlock({
-  title = 'Ce qu\'en disent nos clients',
+  title = "Ce qu'en disent nos clients",
   subtitle = 'Témoignages clients du cabinet, identifiés et reformulés pour anonymisation RGPD.',
 }: {
   title?: string
@@ -67,27 +71,25 @@ export function TestimonialsBlock({
 }) {
   return (
     <section className="bg-gray-50 py-14" aria-label="Témoignages clients">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <header className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">{title}</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm">{subtitle}</p>
+      <div className="container mx-auto max-w-6xl px-4">
+        <header className="mb-10 text-center">
+          <h2 className="mb-2 text-2xl font-bold md:text-3xl">{title}</h2>
+          <p className="mx-auto max-w-2xl text-sm text-gray-600">{subtitle}</p>
         </header>
 
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <ul className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {TESTIMONIALS.map((t) => (
             <li
               key={`${t.author}-${t.vertical}-${t.role}`}
-              className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm"
+              className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
             >
-              <div className="flex items-center justify-between mb-3">
+              <div className="mb-3 flex items-center justify-between">
                 <Stars count={t.rating} />
-                <span className="text-xs uppercase tracking-wide text-blue-700 font-bold bg-blue-50 px-2 py-0.5 rounded">
+                <span className="rounded bg-primary-50 px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-primary-700">
                   {t.vertical}
                 </span>
               </div>
-              <blockquote className="text-gray-800 mb-4 leading-relaxed">
-                « {t.quote} »
-              </blockquote>
+              <blockquote className="mb-4 leading-relaxed text-gray-800">« {t.quote} »</blockquote>
               <div className="text-sm text-gray-600">
                 <strong className="text-gray-900">{t.author}</strong> — {t.role}
                 {t.city && ` · ${t.city}`}
@@ -96,7 +98,7 @@ export function TestimonialsBlock({
           ))}
         </ul>
 
-        <p className="text-xs text-gray-500 text-center mt-8 max-w-2xl mx-auto">
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-gray-500">
           Conformément à la norme NF Service Z74-501, les témoignages sont collectés via demande
           écrite après souscription, anonymisés (initiales) et conservés en interne pour preuve
           d&apos;authenticité. Aucun témoignage n&apos;est rémunéré.

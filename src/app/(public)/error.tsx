@@ -20,40 +20,36 @@ export default function Error({
   }, [error])
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="max-w-md w-full text-center">
-        <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <AlertTriangle className="w-10 h-10 text-red-600" />
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
+      <div className="w-full max-w-md text-center">
+        <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-red-100">
+          <AlertTriangle className="h-10 w-10 text-red-600" />
         </div>
-        <h1 className="font-heading text-3xl font-bold text-gray-900 mb-4 tracking-tight">
+        <h1 className="mb-4 font-heading text-3xl font-bold tracking-tight text-gray-900">
           Oups ! Une erreur est survenue
         </h1>
-        <p className="text-gray-600 mb-8">
+        <p className="mb-8 text-gray-600">
           Nous nous excusons pour ce désagrément. Notre équipe technique a été notifiée.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <button
             onClick={() => reset()}
-            className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-700"
           >
-            <RefreshCw className="w-5 h-5" />
+            <RefreshCw className="h-5 w-5" />
             Réessayer
           </button>
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-700 transition-colors hover:bg-gray-50"
           >
-            <Home className="w-5 h-5" />
+            <Home className="h-5 w-5" />
             Retour à l'accueil
           </Link>
         </div>
 
-        {error.digest && (
-          <p className="mt-8 text-sm text-gray-400">
-            Code erreur : {error.digest}
-          </p>
-        )}
+        {error.digest && <p className="mt-8 text-sm text-gray-400">Code erreur : {error.digest}</p>}
       </div>
     </div>
   )

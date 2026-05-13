@@ -72,7 +72,7 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
 
         <header className="mb-6 border-b border-gray-200 pb-6">
           <div className="flex items-start gap-5">
-            <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-2xl font-bold text-blue-700">
+            <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-primary-700">
               {m.prenom.charAt(0)}
               {m.nom.charAt(0)}
             </div>
@@ -88,7 +88,7 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
                     href="https://www.orias.fr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-blue-700 hover:underline"
+                    className="font-semibold text-primary-700 hover:underline"
                   >
                     {m.oriasNumber}
                   </a>
@@ -136,12 +136,12 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
         </section>
 
         {m.emailPro && (
-          <div className="mb-8 rounded-lg border border-blue-200 bg-blue-50 p-5">
+          <div className="mb-8 rounded-lg border border-primary-200 bg-primary-50 p-5">
             <p className="text-sm">
               Contact direct&nbsp;:{' '}
               <a
                 href={`mailto:${m.emailPro}`}
-                className="font-semibold text-blue-700 hover:underline"
+                className="font-semibold text-primary-700 hover:underline"
               >
                 {m.emailPro}
               </a>

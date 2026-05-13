@@ -112,7 +112,7 @@ export function ChatWidget() {
         type="button"
         aria-label={open ? 'Fermer le chat' : 'Ouvrir le chat'}
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl transition hover:scale-105 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary-600 text-white shadow-xl transition hover:scale-105 hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
       >
         {open ? (
           <svg
@@ -144,7 +144,7 @@ export function ChatWidget() {
         <div className="fixed bottom-24 right-6 z-50 flex h-[560px] w-[380px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
           <header className="flex items-center justify-between border-b border-slate-200 bg-gradient-to-r from-blue-700 to-blue-900 px-4 py-3 text-white">
             <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-sm font-bold text-blue-700">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-sm font-bold text-primary-700">
                 AP
               </span>
               <div>
@@ -165,7 +165,7 @@ export function ChatWidget() {
                 <div
                   className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-3 py-2 text-sm ${
                     m.role === 'user'
-                      ? 'rounded-br-sm bg-blue-600 text-white'
+                      ? 'rounded-br-sm bg-primary-600 text-white'
                       : 'rounded-bl-sm bg-white text-slate-800 shadow-sm'
                   }`}
                 >
@@ -190,12 +190,12 @@ export function ChatWidget() {
                 placeholder="Votre question (décennale, RC Pro…)"
                 rows={2}
                 disabled={streaming}
-                className="flex-1 resize-none rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 disabled:bg-slate-50"
+                className="flex-1 resize-none rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-blue-200 disabled:bg-slate-50"
               />
               <button
                 type="submit"
                 disabled={streaming || !input.trim()}
-                className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow transition hover:bg-blue-700 disabled:opacity-50"
+                className="rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white shadow transition hover:bg-primary-700 disabled:opacity-50"
               >
                 {streaming ? '…' : 'Envoyer'}
               </button>

@@ -71,7 +71,7 @@ export default function PilierDecennalePage() {
                 RGE (photovoltaïque, pompes à chaleur), les paysagistes lorsqu\'ils réalisent des
                 ouvrages durs.
               </p>
-              <p className="my-4 border-l-4 border-blue-400 bg-blue-50 p-4 text-sm">
+              <p className="my-4 border-l-4 border-primary-400 bg-primary-50 p-4 text-sm">
                 <strong>Auto-entrepreneurs&nbsp;:</strong> l\'obligation s\'applique aussi aux
                 micro-entrepreneurs du BTP. Notre cabinet propose des contrats spécifiques adaptés
                 au statut AE avec primes à partir de 35€/mois selon le métier et le CA déclaré.

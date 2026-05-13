@@ -42,11 +42,13 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
       'Plafonds élevés (5M€+ standard)',
       'Service client anglophone',
     ],
-    faiblesses: [
-      'Tarifs premium (-15-25% vs concurrents)',
-      'Refus profils à risque aggravé',
+    faiblesses: ['Tarifs premium (-15-25% vs concurrents)', 'Refus profils à risque aggravé'],
+    secteursForts: [
+      'Informatique / SaaS / freelance IT',
+      'Marketing / communication',
+      'Consultant / conseil',
+      'Photographe / graphiste',
     ],
-    secteursForts: ['Informatique / SaaS / freelance IT', 'Marketing / communication', 'Consultant / conseil', 'Photographe / graphiste'],
     secteursEvites: ['BTP', 'Restaurateur (sinistralité élevée)'],
     tarifRangAdequation: 'premium',
     delaiDevis: 'Immédiat (en ligne)',
@@ -66,11 +68,13 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
       'Pack RC Pro + multirisque + auto pro avantageux',
       'Spécialiste artisans + commerçants',
     ],
-    faiblesses: [
-      'Souscription en ligne moins fluide',
-      'Pas de spécialité cyber',
+    faiblesses: ['Souscription en ligne moins fluide', 'Pas de spécialité cyber'],
+    secteursForts: [
+      'Artisans BTP',
+      'Commerce de détail',
+      'Restaurateur / traiteur',
+      'Esthétique / bien-être',
     ],
-    secteursForts: ['Artisans BTP', 'Commerce de détail', 'Restaurateur / traiteur', 'Esthétique / bien-être'],
     secteursEvites: ['Avocat affaires (plafonds insuffisants)'],
     tarifRangAdequation: 'low',
     delaiDevis: '24-48h',
@@ -90,11 +94,13 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
       'Garanties optionnelles complètes',
       'Réputation institutionnelle forte',
     ],
-    faiblesses: [
-      'Tarifs premium',
-      'Délais souscription longs (3-7j)',
+    faiblesses: ['Tarifs premium', 'Délais souscription longs (3-7j)'],
+    secteursForts: [
+      'ETI / grandes structures',
+      'Avocat affaires',
+      'Expert-comptable cabinet',
+      'Médecin libéral spécialiste',
     ],
-    secteursForts: ['ETI / grandes structures', 'Avocat affaires', 'Expert-comptable cabinet', 'Médecin libéral spécialiste'],
     secteursEvites: ['AE solo (sur-dimensionné)'],
     tarifRangAdequation: 'premium',
     delaiDevis: '3-5j',
@@ -113,10 +119,7 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
       'Garanties optionnelles RGE photovoltaïque',
       'Réseau partenaire Wakam pour profils atypiques',
     ],
-    faiblesses: [
-      'Tarifs au-dessus de la moyenne',
-      'Moins fluide pour TPE simples',
-    ],
+    faiblesses: ['Tarifs au-dessus de la moyenne', 'Moins fluide pour TPE simples'],
     secteursForts: ['Industriels', 'BTP gros œuvre', 'RGE photovoltaïque', 'Couvreur-zingueur'],
     secteursEvites: ['Freelance solo activité simple'],
     tarifRangAdequation: 'medium',
@@ -136,11 +139,13 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
       'Pack RC pro + prévoyance + retraite Madelin',
       'Délais courts si dossier simple',
     ],
-    faiblesses: [
-      'Moins compétitif sur BTP',
-      'Tarifs moyens',
+    faiblesses: ['Moins compétitif sur BTP', 'Tarifs moyens'],
+    secteursForts: [
+      'Médecin libéral',
+      'Santé paramédical (kiné, infirmier)',
+      'Avocat / juridique',
+      'Expert-comptable',
     ],
-    secteursForts: ['Médecin libéral', 'Santé paramédical (kiné, infirmier)', 'Avocat / juridique', 'Expert-comptable'],
     secteursEvites: ['Restaurateur (sinistralité)', 'VTC'],
     tarifRangAdequation: 'medium',
     delaiDevis: '24-48h',
@@ -160,11 +165,13 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
       'Service client en français+++',
       'Engagement RSE',
     ],
-    faiblesses: [
-      'Plafonds plus modestes (1M€ standard)',
-      'Moins fort sur risques techniques',
+    faiblesses: ['Plafonds plus modestes (1M€ standard)', 'Moins fort sur risques techniques'],
+    secteursForts: [
+      'Formateur / coach',
+      'Consultant / conseil',
+      'Photographe / graphiste',
+      'Marketing / communication',
     ],
-    secteursForts: ['Formateur / coach', 'Consultant / conseil', 'Photographe / graphiste', 'Marketing / communication'],
     secteursEvites: ['BTP gros œuvre', 'Médical à risque'],
     tarifRangAdequation: 'low',
     delaiDevis: '24-72h',
@@ -184,11 +191,13 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
       'API ouverte aux courtiers',
       'Spécialiste BTP via partenariat Allianz',
     ],
-    faiblesses: [
-      'Tarifs majorés (+15-30% vs marché)',
-      'Pas de service client physique',
+    faiblesses: ['Tarifs majorés (+15-30% vs marché)', 'Pas de service client physique'],
+    secteursForts: [
+      'AE primo-installés',
+      'Profils résiliés',
+      'Niches BTP atypiques',
+      'Auto-entrepreneurs jeunes',
     ],
-    secteursForts: ['AE primo-installés', 'Profils résiliés', 'Niches BTP atypiques', 'Auto-entrepreneurs jeunes'],
     secteursEvites: ['ETI grandes structures'],
     tarifRangAdequation: 'medium',
     delaiDevis: 'Immédiat',
@@ -207,11 +216,13 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
       'Pack RC Pro + décennale + multirisque chantier',
       'Spécialiste santé paramédical',
     ],
-    faiblesses: [
-      'Tarifs moyens à premium',
-      'Moins fort sur services intellectuels',
+    faiblesses: ['Tarifs moyens à premium', 'Moins fort sur services intellectuels'],
+    secteursForts: [
+      'Couvreur-zingueur',
+      'RGE photovoltaïque',
+      'Santé paramédical',
+      'Plombier-chauffagiste',
     ],
-    secteursForts: ['Couvreur-zingueur', 'RGE photovoltaïque', 'Santé paramédical', 'Plombier-chauffagiste'],
     secteursEvites: ['Conseil / consultant pur (sur-prime)'],
     tarifRangAdequation: 'medium',
     delaiDevis: '48-72h',
@@ -227,15 +238,22 @@ export function getAssureurById(id: string): Assureur | undefined {
 export function getAssureursForSecteur(secteur: string): Assureur[] {
   /* Tri descendant : assureurs forts pour le secteur en premier */
   return [...ASSUREURS_RC_PRO].sort((a, b) => {
-    const aFort = a.secteursForts.some((s) => s.toLowerCase().includes(secteur.toLowerCase())) ? 1 : 0
-    const bFort = b.secteursForts.some((s) => s.toLowerCase().includes(secteur.toLowerCase())) ? 1 : 0
+    const aFort = a.secteursForts.some((s) => s.toLowerCase().includes(secteur.toLowerCase()))
+      ? 1
+      : 0
+    const bFort = b.secteursForts.some((s) => s.toLowerCase().includes(secteur.toLowerCase()))
+      ? 1
+      : 0
     if (aFort !== bFort) return bFort - aFort
     return b.noteGlobale - a.noteGlobale
   })
 }
 
-export const TARIF_LABELS: Record<Assureur['tarifRangAdequation'], { label: string; couleur: string }> = {
+export const TARIF_LABELS: Record<
+  Assureur['tarifRangAdequation'],
+  { label: string; couleur: string }
+> = {
   low: { label: 'Tarif compétitif', couleur: 'bg-green-100 text-green-800' },
-  medium: { label: 'Tarif moyen', couleur: 'bg-blue-100 text-blue-800' },
+  medium: { label: 'Tarif moyen', couleur: 'bg-primary-50 text-primary-800' },
   premium: { label: 'Tarif premium', couleur: 'bg-orange-100 text-orange-800' },
 }

@@ -162,7 +162,7 @@ export default async function Page() {
       </section>
 
       {/* TRUST FOOTER */}
-      <section className="border-t bg-blue-50 py-10">
+      <section className="border-t bg-primary-50 py-10">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-xl font-bold">Pourquoi passer par notre cabinet ORIAS ?</h2>
           <ul className="grid gap-3 text-sm md:grid-cols-2">

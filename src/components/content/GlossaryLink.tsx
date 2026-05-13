@@ -35,7 +35,7 @@ export function GlossaryLink({ termId, children }: Props) {
       href={`/glossaire#${term.id}`}
       title={term.shortDef}
       aria-label={`${term.term} — ${term.shortDef}`}
-      className="rounded px-0.5 text-blue-700 underline decoration-dotted underline-offset-2 transition hover:bg-blue-50 hover:decoration-solid"
+      className="rounded px-0.5 text-primary-700 underline decoration-dotted underline-offset-2 transition hover:bg-primary-50 hover:decoration-solid"
     >
       {display}
     </Link>

@@ -47,7 +47,7 @@ export default async function IpidProductPage(props: { params: Promise<Params> }
         </nav>
 
         <header className="mb-6 border-b border-gray-200 pb-6">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-blue-700">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-primary-700">
             Document d&apos;Information Produit Assurance
           </p>
           <h1 className="mb-2 text-2xl font-bold md:text-3xl">{p.productName}</h1>
@@ -111,15 +111,15 @@ export default async function IpidProductPage(props: { params: Promise<Params> }
           <p>{p.termination}</p>
         </Section>
 
-        <div className="mt-10 rounded-lg border border-blue-200 bg-blue-50 p-5">
-          <p className="mb-3 text-sm text-blue-900">
+        <div className="mt-10 rounded-lg border border-primary-200 bg-primary-50 p-5">
+          <p className="mb-3 text-sm text-primary-900">
             <strong>Important :</strong> ce document est un résumé conforme au règlement
             d&apos;exécution UE 2017/1469. Il ne se substitue pas aux Conditions Générales et
             Particulières du contrat, qui seules ont valeur contractuelle.
           </p>
           <Link
             href="/devis"
-            className="inline-block rounded bg-blue-700 px-5 py-2.5 font-semibold text-white hover:bg-blue-800"
+            className="inline-block rounded bg-primary-700 px-5 py-2.5 font-semibold text-white hover:bg-primary-800"
           >
             Demander un devis →
           </Link>
@@ -131,7 +131,7 @@ export default async function IpidProductPage(props: { params: Promise<Params> }
             <ul className="grid grid-cols-2 gap-2 text-sm">
               {others.map((o) => (
                 <li key={o.slug}>
-                  <Link href={`/ipid/${o.slug}`} className="text-blue-700 hover:underline">
+                  <Link href={`/ipid/${o.slug}`} className="text-primary-700 hover:underline">
                     {o.productName}
                   </Link>
                 </li>
