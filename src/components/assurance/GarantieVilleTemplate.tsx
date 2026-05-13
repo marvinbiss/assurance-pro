@@ -4,6 +4,7 @@ import type { VilleData } from '@/lib/data/villes-top100'
 import { VILLES_TOP100 } from '@/lib/data/villes-top100'
 import { PageHero } from '@/components/layout/PageHero'
 import { CTA_TEXTS } from '@/lib/config/pre-orias'
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
 
 export interface GarantieVilleConfig {
   /** Slug de la garantie (ex: 'multirisque-pro') */
@@ -185,6 +186,11 @@ export function GarantieVilleTemplate({
             </ul>
           </section>
         )}
+
+        {/* Maillage interne contextuel cluster (15+ liens) */}
+        <div className="mb-14">
+          <RelatedPagesSection currentSlug={`${config.garantieSlug}/${ville.slug}`} />
+        </div>
 
         {/* Voir aussi */}
         <section className="rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft">

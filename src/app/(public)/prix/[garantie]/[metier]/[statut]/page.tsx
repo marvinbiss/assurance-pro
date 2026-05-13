@@ -39,6 +39,7 @@ import {
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 import { PageHero } from '@/components/layout/PageHero'
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
 
 // ────────────────────────────────────────────────────────────────────────────
 // Configuration Next.js App Router
@@ -160,6 +161,11 @@ export default async function PrixPage(props: { params: Promise<Params> }) {
         <AvisVerifiesBlock enrichment={enrichment} />
 
         {showDevisForm && <DevisFormCTA enrichment={enrichment} />}
+
+        {/* Maillage interne contextuel cluster (15+ liens) */}
+        <div className="mt-14">
+          <RelatedPagesSection currentSlug={enrichment.page_slug ?? slug} />
+        </div>
 
         <DisclaimerOrias />
       </article>

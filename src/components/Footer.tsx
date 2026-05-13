@@ -13,6 +13,27 @@ import { ShieldCheck, Phone, Mail, MapPin, ExternalLink } from 'lucide-react'
 import { buildOriasFicheUrl, buildOriasRegistryUrl, formatOriasDisplay } from '@/lib/api/orias'
 import { VivosLogo } from '@/components/brand/VivosLogo'
 import { IS_PRE_ORIAS, ORIAS_EXPECTED_DATE } from '@/lib/config/pre-orias'
+import { DECENNALE_METIERS } from '@/lib/data/decennale-metiers'
+import { RC_PRO_PROFESSIONS } from '@/lib/data/rc-pro-professions'
+import { VILLES_TOP100 } from '@/lib/data/villes-top100'
+
+/** Top 8 métiers décennale par nombre d'entreprises France */
+const TOP_DECENNALE = Object.values(DECENNALE_METIERS)
+  .sort((a, b) => b.nbEntreprisesFrance - a.nbEntreprisesFrance)
+  .slice(0, 8)
+  .map((m) => ({ label: m.name, href: `/assurance-decennale/${m.slug}` }))
+
+/** Top 8 professions RC Pro par nb pros */
+const TOP_RC_PRO = Object.values(RC_PRO_PROFESSIONS)
+  .sort((a, b) => b.nbProsFrance - a.nbProsFrance)
+  .slice(0, 8)
+  .map((p) => ({ label: p.name, href: `/rc-pro/${p.slug}` }))
+
+/** Top 8 villes par densité freelances */
+const TOP_VILLES = [...VILLES_TOP100]
+  .sort((a, b) => b.freelancesEstime - a.freelancesEstime)
+  .slice(0, 8)
+  .map((v) => ({ label: v.nom, href: `/rc-pro/${v.slug}` }))
 
 const ORIAS_NUMBER = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
 
@@ -138,6 +159,61 @@ export default function Footer() {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Rich-links dynamiques : top métiers, top RC Pro, top villes */}
+        <div className="mb-12 grid grid-cols-1 gap-8 border-t border-charcoal-800 pt-12 sm:grid-cols-3">
+          <div>
+            <h3 className="mb-4 font-heading text-xs font-extrabold uppercase tracking-wider text-white">
+              Décennale BTP — Top métiers
+            </h3>
+            <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              {TOP_DECENNALE.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-charcoal-400 transition-colors hover:text-primary-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="mb-4 font-heading text-xs font-extrabold uppercase tracking-wider text-white">
+              RC Pro — Top professions
+            </h3>
+            <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              {TOP_RC_PRO.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-charcoal-400 transition-colors hover:text-primary-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="mb-4 font-heading text-xs font-extrabold uppercase tracking-wider text-white">
+              Couverture — Top villes
+            </h3>
+            <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              {TOP_VILLES.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-charcoal-400 transition-colors hover:text-primary-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

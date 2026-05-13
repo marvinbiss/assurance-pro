@@ -10,6 +10,8 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { Sparkles, type LucideIcon } from 'lucide-react'
+import { SITE_URL } from '@/lib/seo/config'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 
 interface BreadcrumbItem {
   label: string
@@ -44,6 +46,23 @@ const SIZE_CLASSES: Record<Required<PageHeroProps>['size'], string> = {
   lg: 'py-20 md:py-28',
 }
 
+function buildBreadcrumbSchema(breadcrumbs: BreadcrumbItem[]) {
+  const items = [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
+    ...breadcrumbs.map((b, i) => ({
+      '@type': 'ListItem',
+      position: i + 2,
+      name: b.label,
+      ...(b.href ? { item: `${SITE_URL}${b.href}` } : {}),
+    })),
+  ]
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items,
+  }
+}
+
 export function PageHero({
   breadcrumbs,
   eyebrow,
@@ -53,10 +72,13 @@ export function PageHero({
   meta,
   size = 'md',
 }: PageHeroProps) {
+  const schema = breadcrumbs && breadcrumbs.length > 0 ? buildBreadcrumbSchema(breadcrumbs) : null
+
   return (
     <section
       className={`relative overflow-hidden bg-charcoal-900 text-white ${SIZE_CLASSES[size]}`}
     >
+      {schema && <script {...jsonLdScriptProps(schema)} />}
       <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />
       <div
         className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-secondary-400/25 blur-3xl"

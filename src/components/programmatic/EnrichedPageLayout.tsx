@@ -24,6 +24,7 @@ import { buildSchemaOrg, shouldShowDevisForm } from '@/lib/programmatic/page-enr
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 import { PageHero } from '@/components/layout/PageHero'
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
 
 type Variant = 'prix' | 'comparateur' | 'guide' | 'devis' | 'tarif'
 
@@ -101,6 +102,11 @@ export async function EnrichedPageLayout({
         )}
 
         {showDevis && <DevisCta enrichment={enrichment} />}
+
+        {/* Maillage interne contextuel (15+ liens cluster) */}
+        <div className="mt-14">
+          <RelatedPagesSection currentSlug={enrichment.page_slug ?? ''} />
+        </div>
 
         <DdaDisclaimer />
       </article>
