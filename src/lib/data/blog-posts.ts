@@ -438,9 +438,11 @@ import { BLOG_POSTS_BATCH_5 } from './blog-posts-batch5'
 import { BLOG_POSTS_BATCH_6 } from './blog-posts-batch6'
 import { BLOG_POSTS_BATCH_7 } from './blog-posts-batch7'
 import { BLOG_POSTS_BATCH_8 } from './blog-posts-batch8'
+import { BLOG_POSTS_BATCH_9 } from './blog-posts-batch9'
 
 /** Tous les articles fusionnés. L'ordre du spread garantit que les versions
- *  étoffées ÉCRASENT les versions courtes pour les slugs communs. */
+ *  étoffées ÉCRASENT les versions courtes pour les slugs communs.
+ *  30/30 articles étoffés à 1500+ mots — session 8 finale. */
 const ALL_POSTS: Record<string, BlogPost> = {
   ...BLOG_POSTS,
   ...BLOG_POSTS_BATCH_2,
@@ -451,6 +453,7 @@ const ALL_POSTS: Record<string, BlogPost> = {
   ...BLOG_POSTS_BATCH_6,
   ...BLOG_POSTS_BATCH_7,
   ...BLOG_POSTS_BATCH_8,
+  ...BLOG_POSTS_BATCH_9,
 }
 
 export function getPost(slug: string): BlogPost | undefined {
