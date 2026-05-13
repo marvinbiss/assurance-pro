@@ -12,7 +12,7 @@ const TAGLINE =
   'Souscrire assurance responsabilité civile professionnelle 100% en ligne. 5 assureurs comparés (Hiscox, Stello, Allianz, MMA, AXA). 5 min, attestation immédiate.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance responsabilité civile professionnelle en ligne : comparateur 5 assureurs + souscription 5 min + attestation immédiate. AE 95€/an, SAS 1800€/an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

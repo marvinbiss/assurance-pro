@@ -17,7 +17,7 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   const m = getMembre(params.slug)
   if (!m) return {}
   return {
-    title: `${m.prenom} ${m.nom} — ${m.poste} | Vivos Assurance`,
+    title: `${m.prenom} ${m.nom} — ${m.poste}`,
     description: m.bio.slice(0, 200),
     alternates: { canonical: `${SITE_URL}/equipe/${m.slug}` },
   }

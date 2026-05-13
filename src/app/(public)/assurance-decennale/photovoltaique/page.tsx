@@ -15,7 +15,7 @@ const TAGLINE =
   'La décennale obligatoire pour installateurs photovoltaïques RGE : couverture spécifique panneaux solaires, onduleurs, étanchéité toiture. Tarifs majorés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale photovoltaïque RGE : OBLIGATOIRE Loi Spinetta + qualification RGE. Couverture panneaux solaires + onduleurs + étanchéité toiture. Sinistralité AQC 9,2% (incendies onduleurs). Tarifs 880-1 680€/an AE, 9 200-16 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

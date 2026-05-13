@@ -12,7 +12,7 @@ const TAGLINE =
   'Tarifs détaillés PRO BTP Mutuelle 2026 par âge (25-65+) et formule (S1-S4) : de 38€/mois (S1 jeune) à 230€/mois (S4 senior). Comparatif April Pro Santé.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Tarif PRO BTP Mutuelle 2026 : S1 38-95€/mois, S2 55-140€/mois, S3 85-180€/mois, S4 115-230€/mois. Comparatif honnête vs April Pro Santé (-15-25%).',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

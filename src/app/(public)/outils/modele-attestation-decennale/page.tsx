@@ -37,7 +37,7 @@ export const revalidate = 86400
 const SLUG = 'outils/modele-attestation-decennale'
 
 export const metadata: Metadata = {
-  title: 'Modèle attestation décennale PDF — Générateur gratuit 2026 | Vivos Assurance',
+  title: 'Modèle attestation décennale PDF — Générateur gratuit 2026',
   description:
     "Générez votre modèle d'attestation décennale au format PDF en 2 minutes. Conforme arrêté du 23 janvier 2024 (11 mentions obligatoires). Téléchargement immédiat, gratuit, sans inscription. Bonus : devis décennale ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

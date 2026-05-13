@@ -12,7 +12,7 @@ const TAGLINE =
   'La RC Pro micro-entreprise couvre 3 statuts : AE, EI (ex-régime micro), EURL micro. Spécificités et tarifs 95-450€/an selon profil.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro micro-entreprise : AE, EI, EURL régime micro. Tarifs 95-450€/an. Plafond 1M€ standard. Hiscox best price services, April Pro BTP, Allianz multi-secteurs.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

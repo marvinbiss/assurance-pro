@@ -12,7 +12,7 @@ const TAGLINE =
   'Devis RC Pro GRATUIT en 5 min : Hiscox, Stello, Allianz Pro, MMA, AXA comparés. Tarifs 95-2 500€/an selon profil. Attestation immédiate.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Devis RC Pro gratuit. Hiscox 95€/an AE services, Allianz 280€/an SARL, MMA 600€/an PME. Comparatif 5 assureurs spécialisés. Attestation immédiate.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   "MMA propose une multirisque pro couvrant locaux, stock, matériel et perte d'exploitation. Analyse des garanties, tarifs 350-2 800€/an et comparatif avec Allianz Pro, AXA, Hiscox."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'MMA Multirisque Pro : couverture locaux + contenu + perte exploitation. Tarif 350-2 800€/an (commerce TPE/PME). Pack BTP/services dispo. Comparatif Allianz, AXA, Generali.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

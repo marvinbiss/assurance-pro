@@ -14,7 +14,7 @@ const TAGLINE =
   "L'assurance RC pro OBLIGATOIRE pour coachs sportifs : Code du sport. Couvre blessures clients, malaise cardiaque, dommages matériel salle. Tarifs 220-580€/an."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro coach sportif OBLIGATOIRE (Code du sport L. 321-7). Couvre blessures clients pendant séance, malaise cardiaque, dommages matériel salle. Coach à domicile, en salle, en plein air. Tarifs 220-580€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   "L'attestation décennale est obligatoire pour tout BTP (Loi Spinetta). Modèle PDF, 10 mentions obligatoires, démarches d'obtention en 24h. Présentation MO."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Attestation décennale BTP : modèle PDF, mentions obligatoires Loi Spinetta. Obligation présentation maître d'ouvrage AVANT chantier. April Pro 24h, autres 48h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

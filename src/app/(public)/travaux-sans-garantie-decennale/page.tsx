@@ -12,7 +12,7 @@ const TAGLINE =
   'Travaux réalisés sans décennale : risques pour le propriétaire (vente immobilière bloquée, défaut couverture sinistre) et options de régularisation.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Travaux sans décennale : conséquences vente immobilière, vérification ouvrage par notaire, régularisation possible (DO rétroactive), recours contre constructeur.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

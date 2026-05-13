@@ -12,7 +12,7 @@ const TAGLINE =
   'La décennale BTP est obligatoire (Loi Spinetta) pour 52 métiers : maçon, plombier, électricien, couvreur, etc. Tarifs 2026 et comparatif April Pro, SMABTP, Allianz Pro, Hiscox.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale BTP : tarif par métier (peintre 950€, plombier 1400€, maçon 2500€). Comparatif April Pro vs SMABTP vs Allianz Pro vs Hiscox. Devis 24h gratuit.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

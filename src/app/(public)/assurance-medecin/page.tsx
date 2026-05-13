@@ -28,7 +28,7 @@ const TAGLINE =
   'Le pack assurance complet pour médecins libéraux : RC Pro médicale (Loi Kouchner), multirisque cabinet, mutuelle TNS Madelin, prévoyance, cyber. Conseil ORIAS dédié santé.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance médecin libéral : RC Pro médicale 8M€ (Loi Kouchner), multirisque cabinet, mutuelle TNS Madelin déductible, prévoyance, cyber RGPD données patients. Pack 2 200-4 800€/an. Comparatif MACSF, Generali, Allianz, Hiscox. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

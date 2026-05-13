@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance auto professionnelle pour véhicule à usage pro : VUL, VL société, voiture commerciale, véhicule de fonction. Différente de l'assurance auto perso. Obligation art. L. 211-1 C. assur."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance auto professionnelle 2026 : OBLIGATOIRE pour tout véhicule à usage pro (art. L. 211-1 C. assur.). Couvre VUL, VL société, voiture commerciale, véhicule de fonction. Tarifs 480-2 800€/an selon profil. Distinct assurance auto perso. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

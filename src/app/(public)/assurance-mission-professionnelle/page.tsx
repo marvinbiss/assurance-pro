@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance mission pour les déplacements pro de vos salariés avec leur véhicule perso : RC employeur, garantie tous risques mission, prise en charge sinistre."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance mission professionnelle : couverture des déplacements pro de vos salariés avec leur véhicule personnel (auto-mission). RC employeur + garantie tous risques mission. Tarifs 480-1 800€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

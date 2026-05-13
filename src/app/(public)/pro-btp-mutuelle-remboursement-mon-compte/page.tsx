@@ -16,7 +16,7 @@ const TAGLINE =
   "Guide complet pour gérer vos remboursements PRO BTP : accès à l'espace adhérent, télétransmission, démarches papier, délais et solutions en cas de retard."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'PRO BTP mutuelle remboursement : accès mon compte adhérent probtp.com, télétransmission carte vitale, envoi factures papier, délais 7 jours ouvrés. Aide en cas de retard.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

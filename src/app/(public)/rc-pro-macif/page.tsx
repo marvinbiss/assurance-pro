@@ -12,7 +12,7 @@ const TAGLINE =
   'La MACIF (Mutuelle Assurance des Commerçants et Industriels de France) propose une RC Pro mutualiste. Analyse des garanties, tarifs 200-1 500€/an et comparatif.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'MACIF RC Pro : assureur mutualiste 5M sociétaires. Plafond 500k€-1M€, tarif 200-1 500€/an. Comparatif avec MAIF, MMA, Matmut, Hiscox.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

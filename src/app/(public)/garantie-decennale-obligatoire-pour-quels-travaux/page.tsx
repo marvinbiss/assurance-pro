@@ -12,7 +12,7 @@ const TAGLINE =
   'Liste exacte des travaux soumis à la décennale (Loi Spinetta) : gros œuvre, second œuvre, équipements techniques, énergétique. Exclusions et zones grises.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale obligatoire pour quels travaux ? Loi Spinetta art. 1792 : structure + clos/couvert + équipements indissociables. Exclusions : mobilier, décoration, équipements dissociables.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

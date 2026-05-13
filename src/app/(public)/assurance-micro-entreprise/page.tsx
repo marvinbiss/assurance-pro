@@ -28,7 +28,7 @@ const TAGLINE =
   "L'assurance dédiée aux micro-entreprises (TPE < 10 salariés) et micro-entrepreneurs : RC Pro, multirisque, mutuelle TNS, prévoyance. Tarifs ajustés à la taille."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance micro-entreprise : pack adapté aux TPE et micro-entrepreneurs (RC Pro, multirisque local, mutuelle TNS, prévoyance Madelin). Tarifs négociés à partir de 220 €/an. Comparatif 8 assureurs. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

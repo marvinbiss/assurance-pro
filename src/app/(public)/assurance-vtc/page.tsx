@@ -3,14 +3,14 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Assurance VTC / Taxi — Tarifs négociés | Vivos Assurance',
+  title: 'Assurance VTC / Taxi — Tarifs négociés',
   description:
     'Comparez votre assurance VTC ou taxi auprès des spécialistes (Wakam, Hiscox, Stello). Auto-entrepreneur, SARL, plateformes Uber/Bolt. Devis en 2 min.',
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/assurance-vtc`,
   },
   openGraph: {
-    title: 'Assurance VTC / Taxi — Tarifs négociés | Vivos Assurance',
+    title: 'Assurance VTC / Taxi — Tarifs négociés',
     description:
       'Comparez votre assurance VTC ou taxi auprès des spécialistes (Wakam, Hiscox, Stello). Auto-entrepreneur, SARL, plateformes Uber/Bolt. Devis en 2 min.',
     url: `${SITE_URL}/assurance-vtc`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Assurance VTC / Taxi — Tarifs négociés | Vivos Assurance',
+    title: 'Assurance VTC / Taxi — Tarifs négociés',
     description:
       'Comparez votre assurance VTC ou taxi auprès des spécialistes (Wakam, Hiscox, Stello). Auto-entrepreneur, SARL, plateformes Uber/Bolt. Devis en 2 min.',
   },

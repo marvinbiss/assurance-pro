@@ -13,7 +13,7 @@ const TAGLINE =
   'Souscrire votre RC Pro chez MMA : démarches en agence ou en ligne, devis personnalisé, pack multi-contrats. Guide complet 2026.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'MMA Assurance RC Pro : souscription via 1 500+ agences ou en ligne mma.fr. Pack RC Pro + multirisque + flotte = remise -15-25%. Devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

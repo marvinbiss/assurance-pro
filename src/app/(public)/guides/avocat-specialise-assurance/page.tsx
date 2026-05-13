@@ -16,7 +16,7 @@ const TAGLINE =
   'Le guide pour trouver et choisir un avocat spécialisé en droit des assurances : annuaire officiel, critères de choix, honoraires, alternatives gratuites.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Guide avocat spécialisé en assurance : trouver via avocat.fr (mention de spécialisation), critères de choix (barreau, expérience, honoraires), tarifs 200-450€/h. Alternatives gratuites : médiation + PJ Pro. Conseil ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

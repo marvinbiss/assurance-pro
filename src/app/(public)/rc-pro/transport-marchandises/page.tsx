@@ -22,7 +22,7 @@ const TAGLINE =
   'La RC Pro obligatoire pour transporteurs marchandises : couverture Convention CMR (international) + art. L. 132-1 C. transp. (national). Plafonds règlementaires + garantie complément possible.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro transport marchandises 2026 : OBLIGATOIRE Convention CMR (international) + art. L. 132-1 C. transp. (national). Plafonds règlementaires CMR : 8,33 DTS/kg (≈10€/kg). Garantie ad valorem complémentaire possible. Tarifs 380-1 800€/an AE/EI, 5 200-12 000€/an SARL flotte. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

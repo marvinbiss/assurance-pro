@@ -12,7 +12,7 @@ const TAGLINE =
   'La RC Pro consultant couvre les conseils erronés, retards livraison, fautes de gestion. Tarifs 95-1 500€/an selon spécialité et CA. Hiscox leader segment.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro consultant : tarif AE 95-220€/an, SARL 350-1 500€/an. Couvre erreurs conseil, fautes gestion, retards. Hiscox leader, Stello challenger digital.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

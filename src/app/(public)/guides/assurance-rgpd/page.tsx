@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance RGPD pour entreprises : couverture sanctions CNIL (jusqu'à 4% CA mondial), notification breach 72h, frais juridiques. Cyber assurance dédiée."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance RGPD entreprise : couverture sanctions CNIL (4% CA mondial OU 20 M€), notification breach 72h, frais juridiques RGPD, communication crise, restauration données. Cyber assurance dédiée. Tarifs 200-2 800€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

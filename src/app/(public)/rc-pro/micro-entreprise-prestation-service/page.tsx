@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance RC pro pour micro-entreprises de prestation de services (BNC) : conseil, design, formation, freelance digital. Madelin déductible si réel."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro micro-entreprise prestation de service (BNC) : couverture freelance/consultant + plateformes B2B. Madelin déductible au régime réel. Tarifs 220-580€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

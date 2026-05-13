@@ -12,7 +12,7 @@ const TAGLINE =
   'Prix RC Pro 2026 par profil : AE 95-450€/an, SARL 350-2 800€/an, SAS PME 2 500-15 000€/an. Comparatif Hiscox vs Stello vs Allianz vs MMA vs AXA.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Prix RC Pro 2026 : grilles vérifiées par profil et activité. Best price Hiscox 95€/an AE. Comparatif 5 assureurs leaders en parallèle.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

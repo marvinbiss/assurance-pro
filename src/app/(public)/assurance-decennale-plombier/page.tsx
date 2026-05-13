@@ -12,7 +12,7 @@ const TAGLINE =
   'Le plombier est soumis à la décennale (Loi Spinetta). Tarif AE 1 400-2 100€/an, SARL 1 800-3 500€/an. Sinistralité 18% AQC. Comparatif April Pro, SMABTP.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance décennale plombier : obligation Loi Spinetta. AE 1 400-2 100€/an, plombier-chauffagiste 1 600-2 500€/an, SARL 1 800-3 500€/an. April Pro / SMABTP / Allianz.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -5,7 +5,7 @@ import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: "Fiche d'Information Précontractuelle (FIC) | Vivos Assurance",
+  title: "Fiche d'Information Précontractuelle (FIC)",
   description:
     "Fiche d'information précontractuelle de notre cabinet de courtage ORIAS. Identité, statut, rémunération, conseil, conformité DDA art. L. 521-2 du Code des assurances.",
   alternates: { canonical: `${SITE_URL}/fic` },

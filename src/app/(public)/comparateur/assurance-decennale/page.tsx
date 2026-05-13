@@ -13,7 +13,7 @@ const TAGLINE =
   'Comparateur assurance décennale BTP 2026 : April Pro, SMABTP, Allianz Pro BTP, MMA Pro BTP, AXA Pro BTP. Tarifs, garanties, postériorité comparés côte à côte.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Comparateur décennale 2026 : 5 assureurs BTP (April Pro, SMABTP, Allianz, MMA, AXA) — tarifs, plafonds, exclusions, postériorité. Économies -20-40%.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

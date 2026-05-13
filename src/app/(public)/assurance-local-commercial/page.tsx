@@ -30,7 +30,7 @@ const TAGLINE =
   "Assurance multirisque pour locaux commerciaux : couverture incendie, vol, dégâts des eaux, perte d'exploitation, RC exploitation. Tarifs négociés à partir de 280 €/an."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Assurance local commercial obligatoire (clause bail commercial) : couverture incendie, dégâts des eaux, vol, vandalisme, RC exploitation, perte d'exploitation. Tarifs négociés à partir de 280 €/an HT. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

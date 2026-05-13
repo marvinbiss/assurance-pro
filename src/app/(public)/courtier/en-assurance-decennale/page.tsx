@@ -12,7 +12,7 @@ const TAGLINE =
   'Guide pour choisir son courtier en assurance décennale : 8 critères de sélection + 4 pièges à éviter + recommandations spécialistes ORIAS BTP 2026.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Choisir courtier en assurance décennale : 8 critères sélection (ORIAS, RC Pro, partenariats, références BTP), 4 pièges à éviter, recommandations 2026.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

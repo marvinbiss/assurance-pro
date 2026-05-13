@@ -4,14 +4,14 @@ import { getBreadcrumbSchema } from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Contact - Nous contacter | Vivos Assurance',
+  title: 'Contact - Nous contacter',
   description:
     "Contactez l'équipe Vivos Assurance. Questions, support, partenariats. Nous sommes là pour vous aider.",
   alternates: {
     canonical: `${SITE_URL}/contact`,
   },
   openGraph: {
-    title: 'Contact - Nous contacter | Vivos Assurance',
+    title: 'Contact - Nous contacter',
     description: "Contactez l'équipe Vivos Assurance pour toute question ou demande.",
     url: `${SITE_URL}/contact`,
   },

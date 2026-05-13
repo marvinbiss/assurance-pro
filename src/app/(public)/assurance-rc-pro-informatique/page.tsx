@@ -13,7 +13,7 @@ const TAGLINE =
   'Souscrire une assurance RC Pro informatique : guide pas à pas pour freelance dev, ESN, agence web. Comparatif 5 assureurs + cyber-assurance combinée.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance RC Pro informatique : souscription en ligne 5 min. Hiscox, Stello, Allianz Pro, MMA, AXA comparés. Cyber-assurance combinée. Attestation immédiate.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

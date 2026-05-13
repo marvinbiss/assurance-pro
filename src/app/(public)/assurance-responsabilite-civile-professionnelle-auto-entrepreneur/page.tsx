@@ -13,7 +13,7 @@ const TAGLINE =
   "Guide complet de l'assurance RC Pro pour auto-entrepreneurs : pièces, démarches, comparatif détaillé Hiscox vs Stello vs Allianz Pro vs April Pro."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance RC Pro auto-entrepreneur : guide souscription complet. Hiscox 95€/an services, April Pro 250€/an BTP. Pièces nécessaires + démarches 5 min.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

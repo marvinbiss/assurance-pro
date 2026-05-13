@@ -12,7 +12,7 @@ const TAGLINE =
   'Barème tarif assurance RC Pro 2026 : tarif de base + options (cyber, juridique, dommages aux biens) + ajustements (franchise, plafond, postériorité).'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Barème tarif RC Pro 2026 décomposé : tarif base + options (cyber +15-30%, juridique +5%, dommages biens +20%) + ajustements (franchise -15%, plafond +30%).',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

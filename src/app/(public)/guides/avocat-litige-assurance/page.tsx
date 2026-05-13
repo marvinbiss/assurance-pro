@@ -26,7 +26,7 @@ const TAGLINE =
   "Comment trouver et choisir un avocat spécialisé en droit des assurances : refus d'indemnisation, mauvaise foi, mise en demeure, expertise judiciaire. Conseil ORIAS."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Guide avocat litige assurance : trouver un avocat spécialisé droit des assurances, procédure recours après refus indemnisation, médiation préalable, expertise judiciaire, alternatives (PJ Pro, médiateur). Conseil ORIAS gratuit sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

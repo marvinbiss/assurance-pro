@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance Responsabilité Civile Professionnelle couvre les dommages causés à vos clients dans l'exercice de votre activité. Obligation légale pour 70+ professions, fortement recommandée pour toutes."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance RC Pro : tarif à partir de 95€/an (auto-entrepreneur), 180€/an (SARL). Couverture dommages corporels, matériels, immatériels. Comparatif Hiscox, Allianz, AXA, MMA. Devis gratuit en 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

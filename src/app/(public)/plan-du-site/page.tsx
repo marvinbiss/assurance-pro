@@ -7,12 +7,12 @@ import { DECENNALE_METIERS } from '@/lib/data/decennale-metiers'
 import { RC_PRO_PROFESSIONS } from '@/lib/data/rc-pro-professions'
 
 export const metadata: Metadata = {
-  title: 'Plan du site | Vivos Assurance',
+  title: 'Plan du site',
   description:
     'Plan du site Vivos Assurance — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
   alternates: { canonical: `${SITE_URL}/plan-du-site` },
   openGraph: {
-    title: 'Plan du site | Vivos Assurance',
+    title: 'Plan du site',
     description:
       'Plan du site Vivos Assurance — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
     url: `${SITE_URL}/plan-du-site`,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Plan du site | Vivos Assurance',
+    title: 'Plan du site',
     description:
       'Plan du site Vivos Assurance — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
   },

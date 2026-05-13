@@ -15,7 +15,7 @@ const TAGLINE =
   'Trouver une RC Pro pas chère sans risquer un défaut de couverture : 6 leviers concrets pour réduire votre prime, fourchettes par profession et pièges à éviter.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "RC Pro pas chère : tarif à partir de 95€/an (AE freelance services), 180€/an (SARL). 6 leviers d'économies, pièges des contrats low-cost, comparatif Hiscox / Stello / Allianz.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -13,7 +13,7 @@ const TAGLINE =
   'RC Pro informatique : guide complet pour développeurs, consultants IT, agences web, cybersécurité. Plafonds, sinistres, cyber-assurance combinée, comparatif assureurs.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Responsabilité Civile Professionnelle informatique : guide expert pour pros IT. Plafond 1-10M€, postériorité 10 ans, cyber-assurance combinée. Tarifs 95-15 000€/an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

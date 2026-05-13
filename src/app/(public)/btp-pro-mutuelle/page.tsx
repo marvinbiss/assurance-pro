@@ -12,7 +12,7 @@ const TAGLINE =
   'Les meilleures mutuelles santé dédiées aux pros du BTP : PRO BTP, April Pro Santé, Harmonie BTP. Comparatif détaillé, tarifs et critères de choix par profil.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'BTP Pro Mutuelle : comparatif PRO BTP S1-S4, April Pro Santé, Harmonie Mutuelle BTP, MMA Mutuelle Pro. Tarifs 38-180€/mois. Madelin déductible TNS. Devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   "Tout sur l'attestation assurance décennale : à qui présenter, valeur juridique 10 ans, démarches d'obtention express, vérification authenticité MO."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Attestation assurance décennale : présentation MO obligatoire avant chantier. Valeur 10 ans. Vérification authenticité. April Pro 24h, SMABTP 48h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   'Le convoyage professionnel (véhicules, animaux, personnes) nécessite une RC Pro spécifique. Garanties, plafonds, tarifs et conditions assurance auto-mission.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro convoyage : convoyeur véhicules (auto, moto, camion), animaux (chevaux, NAC), personnes (chauffeur privé). Tarif 350-1 800€/an. Auto-mission complémentaire.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -17,7 +17,7 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   const p = getIpidProduct(params.product)
   if (!p) return {}
   return {
-    title: `IPID ${p.productName} | Vivos Assurance`,
+    title: `IPID ${p.productName}`,
     description: `Fiche d'information produit standardisée DDA pour ${p.productName}. Garanties, exclusions, restrictions, obligations, durée.`,
     alternates: { canonical: `${SITE_URL}/ipid/${p.slug}` },
   }

@@ -12,7 +12,7 @@ const TAGLINE =
   'Tout savoir sur l&apos;obligation de souscrire une décennale : qui est concerné (Loi Spinetta), sanctions pénales si défaut, durée 10 ans, plafonds légaux.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale obligatoire : qui est concerné (Loi Spinetta, art. 1792-1), durée 10 ans, sanctions pénales (75 000€ amende + 6 mois prison). Plafonds, exceptions, vérifications.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -15,7 +15,7 @@ const TAGLINE =
   'Souscrivez votre assurance restaurant 100% en ligne en 10 minutes : multirisque restaurant + RC Pro + perte exploitation + intoxications alimentaires + dommages électroménager.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance restaurant en ligne 2026 : souscription 100% digitale en 10 min. Multirisque restaurant (incendie, dégâts eaux, vol) + RC Pro intoxications alimentaires + perte exploitation + dommages cuisine pro. Tarifs 480-2 800€/an. 6 assureurs spécialisés HCR. Devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

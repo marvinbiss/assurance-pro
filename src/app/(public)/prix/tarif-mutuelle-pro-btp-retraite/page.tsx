@@ -12,7 +12,7 @@ const TAGLINE =
   'Tarif Mutuelle Pro BTP retraite 2026 : 50€/mois à 60 ans, 75€ à 70 ans, 110€ à 80 ans, 140€+ à 85 ans. Anticiper budget santé retraite BTP.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Tarif Mutuelle Pro BTP retraite 2026 par âge : 60 ans 50€/mois, 70 ans 75€, 80 ans 110€, 85 ans 140€+. Anticiper budget santé retraite.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

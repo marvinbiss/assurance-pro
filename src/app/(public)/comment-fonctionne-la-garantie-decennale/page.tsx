@@ -12,7 +12,7 @@ const TAGLINE =
   'La décennale fonctionne en 3 étapes : souscription avant chantier, attestation au MO, indemnisation en cas de sinistre 10 ans après réception. Détail du mécanisme.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Comment fonctionne la garantie décennale : mécanisme légal Loi Spinetta. Souscription avant chantier, attestation MO, déclaration sinistre, indemnisation. Délais et acteurs.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

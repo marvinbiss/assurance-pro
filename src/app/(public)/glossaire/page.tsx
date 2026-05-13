@@ -2,14 +2,15 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Sparkles, BookOpen, Hash, Link2, Search, ShieldCheck } from 'lucide-react'
 import { SITE_URL } from '@/lib/seo/config'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 
 export const metadata: Metadata = {
-  title: "Glossaire de l'assurance pro — 40+ définitions claires | Vivos Assurance",
+  title: "Glossaire de l'assurance pro — 40+ définitions claires",
   description:
     "Glossaire complet de l'assurance professionnelle : décennale, RC Pro, DDA, Loi Spinetta, Madelin, IPID, ACPR, ORIAS... 40+ définitions rédigées par nos courtiers ORIAS.",
   alternates: { canonical: `${SITE_URL}/glossaire` },
   openGraph: {
-    title: "Glossaire de l'assurance pro — 40+ définitions claires | Vivos Assurance",
+    title: "Glossaire de l'assurance pro — 40+ définitions claires",
     description:
       "40+ définitions claires de l'assurance professionnelle, rédigées par nos courtiers ORIAS.",
     url: `${SITE_URL}/glossaire`,
@@ -274,6 +275,7 @@ const TERMS_BY_LETTER = ALPHABET.map((letter) => ({
 export default function GlossairePage() {
   return (
     <main className="min-h-screen bg-sand-50">
+      <BreadcrumbSchema items={[{ label: 'Glossaire' }]} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
         <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />

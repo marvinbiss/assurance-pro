@@ -12,7 +12,7 @@ const TAGLINE =
   'Souscrire une RC Pro en tant qu&apos;auto-entrepreneur : démarches simplifiées, comparatif 5 assureurs, tarifs 95-450€/an. Hiscox best price, Stello digital.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance RC Pro auto-entrepreneur : souscription en ligne 5 min. Hiscox 95-220€/an (services), April Pro 250-450€/an (BTP). Comparatif honnête 5 assureurs.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

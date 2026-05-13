@@ -5,19 +5,19 @@ import { SITE_URL } from '@/lib/seo/config'
 import { PageHero } from '@/components/layout/PageHero'
 
 export const metadata: Metadata = {
-  title: 'Comment nous sélectionnons nos assureurs partenaires | Vivos Assurance',
+  title: 'Comment nous sélectionnons nos assureurs partenaires',
   description:
     "Méthodologie de sélection des 10 assureurs partenaires d'Vivos Assurance : critères de solvabilité, qualité de gestion sinistres, indépendance, transparence.",
   alternates: { canonical: `${SITE_URL}/selection-assureurs` },
   openGraph: {
-    title: 'Comment nous sélectionnons nos assureurs partenaires | Vivos Assurance',
+    title: 'Comment nous sélectionnons nos assureurs partenaires',
     description: 'Méthodologie de sélection des 10 assureurs partenaires d\\',
     url: `${SITE_URL}/selection-assureurs`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Comment nous sélectionnons nos assureurs partenaires | Vivos Assurance',
+    title: 'Comment nous sélectionnons nos assureurs partenaires',
     description: 'Méthodologie de sélection des 10 assureurs partenaires d\\',
   },
 }

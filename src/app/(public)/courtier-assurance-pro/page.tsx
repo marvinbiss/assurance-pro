@@ -15,7 +15,7 @@ const TAGLINE =
   'Notre cabinet de courtage en assurance professionnelle : conseil ORIAS indépendant, comparatif 8 assureurs, devis sous 24h. 100% conforme DDA + ACPR.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Courtier assurance pro ORIAS : conseil indépendant, comparatif 8 assureurs (Allianz, AXA, MMA, MAAF, Hiscox, April, Generali, Wakam), devis personnalisé sous 24h. Conforme DDA + Recommandation ACPR 2024-R-03. Service gratuit (commission assureur).',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   'Trouver une décennale moins chère sans sacrifier la conformité : 7 leviers concrets pour réduire votre prime, pièges à éviter et tarifs marché précis.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Décennale moins chère : 7 leviers d'économies (-25-40% prime). Tarifs marché précis par métier. Pièges contrats low-cost. April Pro, SMABTP, Allianz comparatif honnête.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

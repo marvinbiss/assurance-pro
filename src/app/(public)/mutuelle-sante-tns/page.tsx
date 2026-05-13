@@ -16,7 +16,7 @@ const TAGLINE =
   'La mutuelle santé pour Travailleurs Non Salariés (TNS) : remboursements optique/dentaire renforcés, hospitalisation, médecines douces. Loi Madelin déductible.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Mutuelle santé TNS Loi Madelin : remboursements optique/dentaire, hospitalisation 100-400% BR, médecines douces. Comparatif April Pro Santé, MMA Pro, Generali, Aon. Tarifs 32-180€/mois. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

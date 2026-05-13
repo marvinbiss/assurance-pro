@@ -12,7 +12,7 @@ const TAGLINE =
   'Tarifs RC Pro détaillés 2026 par profil (AE/SARL/SAS) et par assureur. Hiscox / Stello / Allianz / MMA / AXA — fourchettes précises et devis express.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro devis : tarifs précis 2026 par activité + statut. Hiscox 95€/an services AE, Allianz 280€/an SARL services, MMA 700€/an SAS PME. Comparatif honnête.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   'Stello est un challenger 100% digital pour la RC Pro freelance et VTC. Analyse complète des garanties, tarifs 90-450€/an et comparatif avec Hiscox, Wakam.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Stello RC Pro : assureur digital pure leader VTC + freelance services. Souscription 100% en ligne. Tarif AE 90-200€/an, VTC 350-450€/an. Comparatif Hiscox/Wakam.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

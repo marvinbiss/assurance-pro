@@ -28,7 +28,7 @@ const TAGLINE =
   "L'assurance multirisque dédiée aux commerçants : couverture incendie, vol, dégâts des eaux, perte d'exploitation, RC client, marchandises. Devis gratuit ORIAS sous 24h."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance commerce : multirisque commerçant (vitrine, stock, RC client, perte exploitation), couverture incendie, vol, vandalisme. Tarifs négociés à partir de 380 €/an. Comparatif 8 assureurs. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

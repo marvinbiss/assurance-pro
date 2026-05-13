@@ -12,7 +12,7 @@ const TAGLINE =
   "Besoin d'une décennale en urgence pour démarrer un chantier ? Souscription rapide possible en 24h chez April Pro, Hiscox, Allianz. Pièces et délais."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale immédiate : attestation en 24h pour démarrage chantier urgent. Pièces nécessaires, assureurs proposant souscription express, tarifs, risques contrats accélérés.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

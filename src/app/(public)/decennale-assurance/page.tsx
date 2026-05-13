@@ -15,7 +15,7 @@ const TAGLINE =
   "Comprendre l'assurance décennale en BTP : loi Spinetta, périmètre exact des travaux couverts, durée 10 ans, coût par métier et différence avec dommages-ouvrage."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale assurance : obligation Loi Spinetta pour 52 métiers BTP, durée 10 ans à réception, plafond illimité Spinetta. Coût 950-8 000€/an. Comparatif avec Dommages-Ouvrage.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

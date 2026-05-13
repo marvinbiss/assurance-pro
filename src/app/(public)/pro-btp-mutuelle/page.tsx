@@ -16,7 +16,7 @@ const TAGLINE =
   'Tout savoir sur la mutuelle PRO BTP (le régime historique de la branche Bâtiment) : niveaux S1 à S4, tarifs par âge, comparatifs avec April Pro, Harmonie BTP et MMA Mutuelle Pro.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'PRO BTP mutuelle : prix par âge et formule (S1, S2, S3, S4), couverture hospitalisation, dentaire, optique, médecines douces. Comparatif avec April Pro Santé et Harmonie Mutuelle BTP. Devis gratuit ORIAS.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -15,7 +15,7 @@ const TAGLINE =
   "Comparez gratuitement les 8 principales compagnies d'assurance professionnelle en France : Allianz, AXA, MMA, MAAF, Hiscox, April, Generali, Wakam. Conseil ORIAS sous 24h."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Comparateur assurance professionnelle 2026 : 8 assureurs comparés (Allianz Pro, AXA Pro, MMA Pro, MAAF Pro, Hiscox, April Pro, Generali Pro, Wakam). Critères : tarifs, garanties, plafonds, exclusions, qualité service sinistre. Comparatif gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

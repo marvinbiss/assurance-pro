@@ -12,7 +12,7 @@ const TAGLINE =
   'Prix décennale BTP 2026 : peintre AE 950€/an, plombier 1 400€/an, maçon 1 800€/an, couvreur 2 500€/an. Comparatif April Pro best price.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Prix assurance décennale 2026 par métier : peintre 950€/an, plombier 1400€/an, maçon 1800€/an, couvreur 2500€/an. April Pro best price marché.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -25,7 +25,7 @@ const TAGLINE =
   "L'assurance multirisque pour les locaux d'entreprise : siège social, atelier, entrepôt, dépôt, magasin annexe. Couverture incendie, vol, dégâts eaux, perte d'exploitation."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Assurance locaux entreprise : multirisque siège social, atelier, entrepôt, dépôt. Couverture incendie, vol, vandalisme, dégâts des eaux, événements climatiques, perte d'exploitation. Tarifs négociés à partir de 480 €/an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

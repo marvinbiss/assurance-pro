@@ -28,7 +28,7 @@ export const revalidate = 86400
 const SLUG = 'outils/lettre-resiliation-assurance'
 
 export const metadata: Metadata = {
-  title: 'Lettre de résiliation assurance pro PDF — Loi Hamon 2026 | Vivos Assurance',
+  title: 'Lettre de résiliation assurance pro PDF — Loi Hamon 2026',
   description:
     "Générez votre lettre de résiliation d'assurance professionnelle au format PDF en 2 minutes. Conforme Loi Hamon (art. L. 113-15-2 C. assur.) — résiliation infra-annuelle après 1 an, sans frais, sans motif. Modèle prêt à imprimer + envoyer en LRAR.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

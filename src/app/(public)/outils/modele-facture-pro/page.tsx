@@ -25,7 +25,7 @@ export const revalidate = 86400
 const SLUG = 'outils/modele-facture-pro'
 
 export const metadata: Metadata = {
-  title: 'Modèle facture pro PDF — Générateur gratuit auto-entrepreneur 2026 | Vivos Assurance',
+  title: 'Modèle facture pro PDF — Générateur gratuit auto-entrepreneur 2026',
   description:
     'Générez votre facture professionnelle au format PDF en 2 minutes. Conforme art. L. 441-9 C. com. (mentions légales obligatoires) + mention assurance pro (décret 2024). Auto-entrepreneur, EI, EURL, SARL, SASU. Téléchargement immédiat, gratuit, sans inscription.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

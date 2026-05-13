@@ -24,7 +24,7 @@ const TAGLINE =
   "L'assurance DO obligatoire pour tout maître d'ouvrage : particulier construisant sa maison, promoteur, copropriété. Souscription AVANT travaux. Comparatif 5 assureurs."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Souscription assurance dommages-ouvrage (Loi Spinetta L. 242-1) : maître d'ouvrage particulier, promoteur, copropriété. Prix 2-5% du coût HT travaux. Comparatif SMABTP, MAAF Pro, Generali, AXA, Groupama. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

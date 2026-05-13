@@ -26,7 +26,7 @@ const TAGLINE =
   'Comment obtenir un devis assurance professionnelle gratuit, rapide et conforme : étapes, documents, comparatif assureurs, pièges à éviter. Conseil ORIAS sous 24h.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Devis assurance professionnelle 2026 : procédure complète en 5 étapes, documents à préparer, comparatif 8 assureurs (Allianz, AXA, MMA, MAAF, Hiscox, April, Generali, Wakam), pièges à éviter. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

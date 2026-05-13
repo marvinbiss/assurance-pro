@@ -31,7 +31,7 @@ export const revalidate = 86400
 const SLUG = 'outils/comparateur-mutuelle-pro'
 
 export const metadata: Metadata = {
-  title: 'Comparateur mutuelle pro 2026 — TNS, BTP, dirigeant | Vivos Assurance',
+  title: 'Comparateur mutuelle pro 2026 — TNS, BTP, dirigeant',
   description:
     'Comparateur mutuelle pro gratuit en 2 minutes : TNS Madelin déductible, mutuelle pro BTP (16k recherches/mois), mutuelle dirigeant SASU/SAS. 6 assureurs comparés (PRO BTP, April Pro, MMA, Generali, Aon, Harmonie). Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

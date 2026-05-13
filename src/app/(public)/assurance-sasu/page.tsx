@@ -16,7 +16,7 @@ const TAGLINE =
   "L'assurance dédiée à la SASU (Société par Actions Simplifiée Unipersonnelle) : RC pro, multirisque local, mutuelle collective (président assimilé salarié), RCMS."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance SASU : RC pro adaptée + multirisque local + mutuelle COLLECTIVE (président assimilé salarié, vs Madelin TNS) + RCMS dirigeant + cyber. Tarifs 580-2 800€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -31,7 +31,7 @@ const TAGLINE =
   "Tout savoir sur l'attestation de responsabilité civile professionnelle : mentions légales, modèle PDF, délais d'obtention, sanctions absence et différence avec l'attestation décennale."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Attestation RC Pro : mentions obligatoires (Code des assurances + arrêté 2024), modèle PDF gratuit, délai d'obtention 24h, sanctions absence (75 000€ + 6 mois prison). Guide complet auto-entrepreneur, freelance, profession libérale.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

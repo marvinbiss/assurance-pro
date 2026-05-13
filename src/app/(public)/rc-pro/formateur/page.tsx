@@ -14,7 +14,7 @@ const TAGLINE =
   "L'assurance RC pro pour formateurs indépendants : RC pédagogique, casse matériel salle, dommages stagiaires. Tarifs accessibles. Conseil ORIAS."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro formateur indépendant : couvre RC pédagogique (formation inadaptée), casse matériel salle louée, dommages stagiaires. Conformité Qualiopi (audit qualité formation). Tarifs 220-580€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

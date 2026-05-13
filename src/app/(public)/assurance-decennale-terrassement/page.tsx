@@ -12,7 +12,7 @@ const TAGLINE =
   'Le terrassier (TP) est soumis à une décennale renforcée : risques élevés (effondrements, glissements, instabilité sol). Tarif AE 2 800-4 500€/an, SARL 5 000-12 000€/an.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale terrassement : risques élevés (effondrement, glissement terrain), Loi Spinetta. AE 2 800-4 500€/an, SARL TP 5 000-12 000€/an. Étude sol obligatoire.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

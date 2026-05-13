@@ -5,13 +5,13 @@ import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Politique cookies | Vivos Assurance',
+  title: 'Politique cookies',
   description:
     "Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d'audience, marketing. Gestion du consentement RGPD.",
   alternates: { canonical: `${SITE_URL}/cookies` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Politique cookies | Vivos Assurance',
+    title: 'Politique cookies',
     description:
       'Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d\\',
     url: `${SITE_URL}/cookies`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Politique cookies | Vivos Assurance',
+    title: 'Politique cookies',
     description:
       'Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d\\',
   },

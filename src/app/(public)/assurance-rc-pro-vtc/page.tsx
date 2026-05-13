@@ -14,7 +14,7 @@ const TITLE = 'Assurance RC Pro VTC — Souscription en ligne, attestation immé
 const TAGLINE =
   'Souscrire votre RC Pro VTC en 5 minutes : devis personnalisé selon votre profil, comparatif Wakam / Stello / Hiscox / AXA, attestation conforme EVTC téléchargeable immédiatement.'
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance RC Pro VTC : souscription en ligne, plafond 1.5M€ corporel + 1M€ matériel (mini légal), tarifs à partir de 280€/an. Comparatif assureurs + attestation immédiate.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -25,7 +25,7 @@ const TAGLINE =
   "L'assurance personnelle pour les chauffeurs de taxi : mutuelle santé adaptée, prévoyance IJ + invalidité, protection juridique conducteur, garantie agression."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance chauffeur de taxi : mutuelle santé adaptée (longues stations assises, stress urbain), prévoyance IJ dès J0, garantie invalidité, protection juridique conducteur, garantie agression. Tarifs 480-1 280 €/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

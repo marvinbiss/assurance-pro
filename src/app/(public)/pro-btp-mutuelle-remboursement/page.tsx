@@ -12,7 +12,7 @@ const TAGLINE =
   'Tout savoir sur les remboursements PRO BTP : télétransmission automatique, envoi de factures papier, délais 3-10 jours ouvrés, recours en cas de retard.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Remboursement PRO BTP : délais 3-7j télétransmission, 7-10j papier. Démarches en cas de retard, recours médiation, solutions alternatives si insatisfaction.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

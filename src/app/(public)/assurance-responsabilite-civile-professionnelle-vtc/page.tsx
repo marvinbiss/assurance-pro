@@ -12,7 +12,7 @@ const TAGLINE =
   "L'assurance RC Professionnelle VTC est imposée par le décret 2014-371 : plafonds 1.5M€ corporel + 1M€ matériel mini. Comparatif Wakam, Stello, Hiscox, AXA."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Professionnelle VTC : obligation légale décret 2014-371, plafond mini 1.5M€ corporel. Tarifs 280-650€/an (AE), 450-1 200€/an (SARL). 4 assureurs comparés.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

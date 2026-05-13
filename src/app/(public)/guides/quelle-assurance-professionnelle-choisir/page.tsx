@@ -15,7 +15,7 @@ const TAGLINE =
   'Le guide pour identifier les assurances professionnelles indispensables selon votre profil : métier, statut juridique, taille entreprise. Méthode en 5 étapes.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Guide quelle assurance professionnelle choisir : méthode en 5 étapes pour identifier les garanties INDISPENSABLES selon votre métier, statut juridique, taille entreprise. Comparatif 8 assureurs. Conseil ORIAS gratuit sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

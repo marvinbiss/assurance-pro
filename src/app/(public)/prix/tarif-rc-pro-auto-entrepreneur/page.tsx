@@ -12,7 +12,7 @@ const TAGLINE =
   'Tarif RC Pro AE 2026 : Hiscox 95€/an services intellectuels, April Pro 250€/an BTP, Allianz 220€/an coaching. Comparatif détaillé par activité.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Tarif RC Pro auto-entrepreneur 2026 : Hiscox 95€/an best price services, Allianz 220€/an coaching, April Pro 250€/an BTP. Comparatif 5 assureurs.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

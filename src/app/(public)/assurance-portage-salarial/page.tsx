@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance pour freelances en portage salarial : RC pro incluse par société de portage, mutuelle collective, prévoyance. Garanties souvent INSUFFISANTES — comment compléter."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance portage salarial : RC pro incluse par société de portage (souvent plafond 1,5 M€ INSUFFISANT pour clients institutionnels). Mutuelle collective + prévoyance + chômage. Comment compléter avec RC pro 5 M€ individuelle. Guide ORIAS.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   "Comment obtenir votre attestation d'assurance RC Pro : démarches, modèle PDF, mentions obligatoires et utilisation. Téléchargeable en 24h après souscription."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Attestation d'assurance RC Pro : modèle PDF, mentions obligatoires (n° contrat, plafond, période, ORIAS), démarches en 24h. À présenter aux clients B2B.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

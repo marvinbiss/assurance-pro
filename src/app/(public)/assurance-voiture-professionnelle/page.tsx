@@ -27,7 +27,7 @@ const TAGLINE =
   "L'assurance dédiée aux véhicules professionnels : auto-mission, utilitaire, VTC, flotte. Couverture RC obligatoire + tous risques pro + marchandises. Tarifs négociés."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance voiture professionnelle : RC pro circulation obligatoire + tous risques pro + marchandises transportées. Auto-mission, utilitaire, VTC, flotte. Tarifs négociés à partir de 580€/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance RC pro spécifique VTC : RC chauffeur passagers + RC tiers + plafond corporel illimité. Obligation Code des transports."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "RC Pro VTC OBLIGATOIRE (Code des transports L. 3120-1) : couvre passagers + tiers + véhicule. Plafond corporel illimité. Distinct de l'assurance VTC complète (multirisque + ADS). Tarifs 380-980€/an. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -16,7 +16,7 @@ const TAGLINE =
   'Le rôle du courtier assurance décennale : analyse adéquation, mise en concurrence 8 assureurs BTP, négociation tarif, gestion sinistres. ORIAS obligatoire.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Courtier assurance décennale 2026 : 5 critères pour bien le choisir. Inscription ORIAS obligatoire (R. 511-1 C. assur.), expertise BTP minimum 5 ans, partenariats 8+ assureurs spécialisés (SMABTP, MAAF Pro, April), transparence commission. Cabinet ORIAS — devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

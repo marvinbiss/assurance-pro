@@ -12,7 +12,7 @@ const TAGLINE =
   "Guide complet de l'attestation d'assurance RC Pro : utilité, valeur juridique, mentions obligatoires, démarches express et modèles types par profession."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Attestation d'assurance RC Pro : guide complet. Valeur juridique, 9 mentions obligatoires, démarches 24h, modèles par profession (consultant, BTP, médical, immobilier).",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

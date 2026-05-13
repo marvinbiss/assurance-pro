@@ -15,7 +15,7 @@ const TAGLINE =
   'Quelle est la meilleure mutuelle santé pour Travailleur Non Salarié en 2026 ? Comparatif honnête de 7 organismes : Apicil, Pro BTP, Malakoff Humanis, AG2R, Allianz, Generali, MAAF Pro.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Meilleure mutuelle TNS 2026 : comparatif 7 organismes (Apicil, Pro BTP, Malakoff Humanis, AG2R La Mondiale, Allianz, Generali, MAAF Pro). Avis cabinet ORIAS basé sur 800+ adhésions 2024-2025. Tarifs 32-145€/mois adulte. Loi Madelin déductible.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

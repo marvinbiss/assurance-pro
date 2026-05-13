@@ -12,7 +12,7 @@ const TAGLINE =
   "La multirisque pro protège votre local, stock, matériel et exploitation contre les sinistres courants (vol, incendie, dégâts des eaux, bris, perte d'exploitation). Tarifs et comparatif 5 assureurs."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Multirisque pro : protection locaux + stock + perte d'exploitation. Tarifs à partir de 380€/an (commerce TPE), 850€/an (PME). Comparatif Allianz, AXA, MMA, Generali, Hiscox.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

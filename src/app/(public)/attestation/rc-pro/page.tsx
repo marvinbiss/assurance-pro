@@ -12,7 +12,7 @@ const TAGLINE =
   'Obtenir votre attestation RC Pro rapidement : démarches express, modèle PDF, mentions obligatoires. Téléchargeable en 24h chez April Pro / Hiscox / Stello.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Attestation RC Pro : obtenir en 24h. Modèle PDF, mentions obligatoires. Hiscox/Stello immédiat, April Pro 24h, autres 24-48h. Tous statuts juridiques.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

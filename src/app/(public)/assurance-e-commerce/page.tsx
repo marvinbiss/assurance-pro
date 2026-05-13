@@ -19,7 +19,7 @@ const TAGLINE =
   "L'assurance dédiée aux e-commerçants : RC pro produit + cyber assurance RGPD + assurance marchandises stockées + responsabilité expéditions. Tarifs négociés."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance e-commerce : pack RC pro produits + cyber assurance (breach RGPD, fraude paiement) + assurance marchandises stockées + responsabilité livraison. Tous statuts (AE, EI, SARL, SAS). Tarifs à partir de 380€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

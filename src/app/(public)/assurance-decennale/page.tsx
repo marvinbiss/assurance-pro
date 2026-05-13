@@ -3,14 +3,14 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Assurance décennale BTP — Comparez en 2 min | Vivos Assurance',
+  title: 'Assurance décennale BTP — Comparez en 2 min',
   description:
     'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/assurance-decennale`,
   },
   openGraph: {
-    title: 'Assurance décennale BTP — Comparez en 2 min | Vivos Assurance',
+    title: 'Assurance décennale BTP — Comparez en 2 min',
     description:
       'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
     url: `${SITE_URL}/assurance-decennale`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Assurance décennale BTP — Comparez en 2 min | Vivos Assurance',
+    title: 'Assurance décennale BTP — Comparez en 2 min',
     description:
       'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
   },

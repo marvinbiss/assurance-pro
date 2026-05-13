@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance dédiée aux TRAVAUX réalisés par un artisan : décennale + RC pro travaux + TRC pour gros chantiers + garantie outillage embarqué."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance travaux artisan : pack chantier complet (décennale Loi Spinetta + RC pro travaux + TRC + garantie outillage + véhicule pro). Pour artisans BTP réalisant des chantiers réguliers. Tarifs 980-2 800€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

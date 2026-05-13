@@ -16,7 +16,7 @@ const TAGLINE =
   'La RC Pro obligatoire pour experts-comptables : couverture erreurs déclarations fiscales, défauts conseil, mauvais bilan, recours URSSAF. Plafond mini 600 000€ par sinistre.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro expert-comptable 2026 : OBLIGATOIRE Ordonnance 1945 art. 17 + Décret 2012-432. Plafond mini 600 000€/sinistre + 1,2M€/an. Couverture erreurs déclarations TVA/IS/IR, défauts bilan, recours URSSAF/DGFiP. Sinistralité 3,8%. Tarifs 420-1 280€/an indépendant, 8 500-22 000€/an cabinet. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

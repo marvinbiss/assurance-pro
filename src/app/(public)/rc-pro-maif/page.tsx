@@ -12,7 +12,7 @@ const TAGLINE =
   'La MAIF propose une RC Pro principalement orientée associations, économie sociale et solidaire, professions libérales. Analyse des garanties, tarifs et comparatif avec MMA, Hiscox, Allianz Pro.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'MAIF RC Pro : assureur mutualiste, fort sur associations + ESS + professions libérales (enseignants, médical). Tarif 180-1 500€/an. Comparatif honnête avec MMA et Hiscox.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

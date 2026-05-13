@@ -12,7 +12,7 @@ const TAGLINE =
   'Guide pour souscrire votre RC Pro 100% en ligne en 2026 : étapes, documents requis, comparaison assureurs, choix optimal. Best price Hiscox 95€/an AE.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Souscrire RC Pro en ligne : guide complet — étapes, documents, comparaison Hiscox/Stello/Allianz/MMA/AXA, choix optimal. 5 min, attestation immédiate.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

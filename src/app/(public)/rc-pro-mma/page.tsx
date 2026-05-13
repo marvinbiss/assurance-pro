@@ -12,7 +12,7 @@ const TAGLINE =
   "MMA Pro propose une RC Pro équilibrée pour SARL/SAS PME : analyse des garanties, tarifs 250-2 500€/an, retours d'adhérents et comparatif avec Hiscox, Allianz Pro, AXA."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'MMA RC Pro : assureur paritaire historique (groupe MMA). Plafond 500k€-3M€, postériorité 5 ans. Tarif 250-2 500€/an. Comparatif Hiscox, Allianz, AXA, Generali.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

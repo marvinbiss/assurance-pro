@@ -12,7 +12,7 @@ const TAGLINE =
   'Tarifs RC Pro 2026 détaillés par activité (services, BTP, médical, immobilier) et statut juridique. Hiscox 95€/an best AE, MMA 600€/an SARL PME.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Tarif RC Pro 2026 : AE services 95-220€/an, AE BTP 250-450€/an, SARL 350-1500€/an, médical 800-2500€/an. Comparatif 5 assureurs détaillé.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

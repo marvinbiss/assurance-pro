@@ -17,7 +17,7 @@ const TAGLINE =
   'La décennale obligatoire pour maçon gros œuvre : couverture spécifique fissures structurelles, fondations, dalles, murs porteurs. Sinistralité AQC 11,4% (top 4 BTP). Tarifs 2026 négociés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale maçon 2026 : OBLIGATOIRE Loi Spinetta. Couverture fissures structurelles (top sinistre AQC 11,4%), fondations, dalles béton, murs porteurs. Tarifs 720-1 380€/an AE, 7 800-15 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

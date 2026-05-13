@@ -14,7 +14,7 @@ const TAGLINE =
   "L'assurance pour professionnels exerçant à domicile : extension habitation pro, RC pro à domicile, équipement pro, accueil clients. Tarifs négociés."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Assurance habitation professionnelle : extension de l'habitation pour activité pro à domicile. Couvre équipement pro, RC visiteurs business, multirisque local pro à domicile. Tarifs 120-380 €/an supplémentaires. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

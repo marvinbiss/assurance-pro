@@ -37,7 +37,7 @@ const TAGLINE =
   'Le pack assurance complet pour artisans : décennale obligatoire BTP, RC pro, multirisque atelier, mutuelle TNS, prévoyance. Conseil ORIAS dédié, devis gratuit sous 24h.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance artisan : décennale BTP obligatoire, RC pro, multirisque atelier/véhicule, mutuelle TNS, prévoyance Madelin. Pack négocié à partir de 980 €/an. 8 assureurs comparés. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

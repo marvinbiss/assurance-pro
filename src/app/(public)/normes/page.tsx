@@ -4,12 +4,12 @@ import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Normes et conformité | Vivos Assurance',
+  title: 'Normes et conformité',
   description:
     'Conformité ORIAS, ACPR, CSCA, RGPD, DDA. Normes et obligations légales du courtier en assurance.',
   alternates: { canonical: `${SITE_URL}/normes` },
   openGraph: {
-    title: 'Normes et conformité | Vivos Assurance',
+    title: 'Normes et conformité',
     description:
       'Conformité ORIAS, ACPR, CSCA, RGPD, DDA. Normes et obligations légales du courtier en assurance.',
     url: `${SITE_URL}/normes`,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Normes et conformité | Vivos Assurance',
+    title: 'Normes et conformité',
     description:
       'Conformité ORIAS, ACPR, CSCA, RGPD, DDA. Normes et obligations légales du courtier en assurance.',
   },

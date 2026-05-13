@@ -12,7 +12,7 @@ const TAGLINE =
   'Devis RC Pro 100% en ligne en 5 min. Hiscox + Stello en pure digital. Attestation téléchargeable immédiatement après paiement. Sans rendez-vous.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Devis RC Pro en ligne 100% digital. Hiscox 95€/an + Stello 90€/an best price. Souscription 5 min, attestation immédiate. Sans rendez-vous physique.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

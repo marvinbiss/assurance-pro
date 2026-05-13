@@ -12,7 +12,7 @@ const TAGLINE =
   'La SASU (Société par Actions Simplifiée Unipersonnelle) impose une RC Pro pour son dirigeant. Spécificités statut, plafonds recommandés, tarifs 350-1 500€/an.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro SASU : couvre activité société + dirigeant personne morale. Tarif 350-1 500€/an. Spécificités vs SARL/AE. Recommandé plafond 1-2M€ + cyber-assurance.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

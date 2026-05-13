@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance pour consultants indépendants : RC pro avec plafond élevé (5 M€), mutuelle TNS, prévoyance, protection juridique. Tous statuts (EI, EURL, SASU, portage)."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance consultant indépendant : pack RC Pro 5 M€ (clients institutionnels) + mutuelle TNS Madelin + prévoyance + cyber + protection juridique. Tarifs 880-2 200€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

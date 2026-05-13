@@ -12,7 +12,7 @@ const TAGLINE =
   'La RC Pro micro-entreprise protège votre patrimoine personnel contre les sinistres clients. Tarif 95-450€/an selon activité. Hiscox, Stello, April Pro comparatif.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro micro-entreprise : protection patrimoine perso AE/EI. Tarifs 95-450€/an. Hiscox 95€ services, April Pro 250€ BTP. Comparatif 5 assureurs spécialisés.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

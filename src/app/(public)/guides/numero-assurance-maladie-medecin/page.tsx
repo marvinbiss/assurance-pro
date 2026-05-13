@@ -15,7 +15,7 @@ const TAGLINE =
   "Tout savoir sur les numéros d'identification médecin : RPPS (Répertoire Partagé Pros Santé), ADELI, numéro AM, numéro CPS. À quoi servent-ils ? Comment les obtenir ?"
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Numéros d'identification médecin : RPPS (11 chiffres, identifiant unique), ADELI (9 chiffres, ancien système), numéro AM (Assurance Maladie, conventionnement), CPS (Carte Pro Santé). Démarches d'obtention + utilité de chaque numéro.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

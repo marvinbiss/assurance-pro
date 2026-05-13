@@ -12,7 +12,7 @@ const TAGLINE =
   'La Matmut propose une RC Pro mutualiste accessible aux TPE et associations. Analyse des garanties, tarifs 180-1 200€/an et comparatif avec Hiscox, MMA, MAIF.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Matmut RC Pro : assureur mutualiste (groupe Matmut + AMF). Plafond 500k€-1.5M€, tarif 180-1 200€/an. Comparatif Matmut vs MAIF vs MMA vs Hiscox.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

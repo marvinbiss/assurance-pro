@@ -22,7 +22,7 @@ const TAGLINE =
   'La RC Pro obligatoire pour agents immobiliers et mandataires : couverture défaut conseil, erreur estimation, vice de procuration, manquement obligation information. Loi Hoguet.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro agent immobilier 2026 : OBLIGATOIRE Loi Hoguet (art. 49 L. 70-9). Couverture défaut conseil mandant, erreur estimation, vice procuration, manquement information acquéreur. Sinistralité 4,1%. Tarifs 280-920€/an AE/EI, 1 800-4 200€/an SARL agence. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

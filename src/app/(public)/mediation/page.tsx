@@ -4,12 +4,12 @@ import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Médiation — Réclamation et résolution de litige | Vivos Assurance',
+  title: 'Médiation — Réclamation et résolution de litige',
   description:
     "Procédure de médiation conforme à la Recommandation ACPR 2024-R-02. Réclamation interne puis Médiateur de l'Assurance.",
   alternates: { canonical: `${SITE_URL}/mediation` },
   openGraph: {
-    title: 'Médiation — Réclamation et résolution de litige | Vivos Assurance',
+    title: 'Médiation — Réclamation et résolution de litige',
     description:
       'Procédure de médiation conforme à la Recommandation ACPR 2024-R-02. Réclamation interne puis Médiateur de l\\',
     url: `${SITE_URL}/mediation`,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Médiation — Réclamation et résolution de litige | Vivos Assurance',
+    title: 'Médiation — Réclamation et résolution de litige',
     description:
       'Procédure de médiation conforme à la Recommandation ACPR 2024-R-02. Réclamation interne puis Médiateur de l\\',
   },

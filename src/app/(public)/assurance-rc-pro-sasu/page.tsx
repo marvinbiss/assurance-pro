@@ -13,7 +13,7 @@ const TAGLINE =
   'Souscrire une RC Pro pour votre SASU : pièces nécessaires (K-bis, SIRET), comparatif 5 assureurs, tarifs 350-1 500€/an. Guide souscription en ligne.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance RC Pro SASU : guide souscription. Pièces (K-bis, SIRET, RIB), comparatif Hiscox/Stello/Allianz/MMA. Plafond 1-3M€ recommandé. Tarif 350-1 500€/an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

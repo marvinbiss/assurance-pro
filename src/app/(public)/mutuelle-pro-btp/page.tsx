@@ -20,7 +20,7 @@ const TAGLINE =
   'La complémentaire santé dédiée aux artisans, salariés et dirigeants du BTP. Comparatif des principaux contrats, tarifs négociés et conseil ORIAS.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Mutuelle pro BTP : comparatif des contrats PRO BTP, April Pro, Harmonie BTP. Tarifs négociés à partir de 38€/mois (formule Madelin TNS). Couverture optique, dentaire, hospitalisation. Devis gratuit sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

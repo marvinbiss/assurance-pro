@@ -32,7 +32,7 @@ const TAGLINE =
   "L'assurance dommages-ouvrage (DO) protège le maître d'ouvrage en pré-financant la réparation des sinistres décennaux, sans attendre l'identification du responsable. Guide complet 2026."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Assurance dommages-ouvrage : obligation pour tout maître d'ouvrage faisant construire (Loi Spinetta art. L. 242-1). Prix moyen 2-5% du coût des travaux, différence avec la garantie décennale, sanctions absence. Guide expert.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

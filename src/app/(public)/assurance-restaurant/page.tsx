@@ -28,7 +28,7 @@ const TAGLINE =
   "L'assurance professionnelle dédiée aux restaurants, brasseries, pizzerias, food trucks : couverture incendie cuisine, intoxication alimentaire, perte d'exploitation, RC client. Tarifs négociés."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Assurance restaurant : multirisque pro (incendie cuisine, vol, dégâts eaux), RC pro intoxication alimentaire, perte d'exploitation, RC client. Tarifs négociés à partir de 680 €/an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

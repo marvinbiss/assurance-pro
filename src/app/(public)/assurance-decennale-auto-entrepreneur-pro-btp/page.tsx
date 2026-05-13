@@ -12,7 +12,7 @@ const TAGLINE =
   'Pack décennale + mutuelle PRO BTP pour auto-entrepreneur BTP : décennale via April Pro/SMABTP + santé PRO BTP TNS. Coût pack 2 800-4 500€/an.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale AE BTP + Mutuelle PRO BTP : pack complet artisan. Décennale 950-2 800€/an + Mutuelle PRO BTP 65-120€/mois TNS. Coût total 2 800-4 500€/an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

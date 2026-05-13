@@ -33,7 +33,7 @@ const TAGLINE =
   'Le guide de référence pour choisir vos assurances professionnelles : RC Pro, décennale, multirisque, mutuelle, prévoyance, cyber. Comparatif assureurs et tarifs 2026.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance professionnelle : guide complet 2026 (RC Pro, décennale, multirisque pro, mutuelle TNS, prévoyance Madelin, cyber). Comparatif 8 assureurs (Allianz, AXA, MMA, MAAF, Hiscox, April, Generali, Wakam). Tarifs négociés. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

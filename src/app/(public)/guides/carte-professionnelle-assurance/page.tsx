@@ -14,7 +14,7 @@ const TAGLINE =
   'Tout savoir sur la carte professionnelle assurance (IAS) : conditions, formation 150h, immatriculation ORIAS, niveau I/II/III, démarches 2026.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Carte professionnelle assurance (IAS) : conditions d'obtention, formation 150h obligatoire, immatriculation ORIAS, niveau I (courtier) / II (mandataire) / III (mandataire intermédiaire). Démarches complètes + sanctions absence.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

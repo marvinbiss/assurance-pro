@@ -13,7 +13,7 @@ const TAGLINE =
   'Tout auto-entrepreneur BTP est soumis à la décennale (Loi Spinetta). Tarif AE peintre 950€/an, plombier 1 400€/an, maçon 1 800€/an. Souscription en ligne 24h.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale auto-entrepreneur BTP obligatoire (Spinetta). Tarif peintre 950€/an, plombier 1 400€/an, maçon 1 800€/an. April Pro best price, en ligne 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

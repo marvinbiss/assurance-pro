@@ -30,7 +30,7 @@ const TAGLINE =
   'Le pack assurance complet pour freelances : RC Pro adaptée à votre métier, mutuelle TNS Madelin, prévoyance dès J0, cyber. Tous statuts (EI, EURL, SASU, portage).'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance freelance : RC Pro adaptée (3 à 10 M€), mutuelle TNS Madelin, prévoyance dès J0, cyber assurance. Tous statuts (EI, EURL, SASU, AE, portage salarial). Tarifs négociés à partir de 220 €/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   "L'assurance voiture pro BTP couvre utilitaires (Trafic, Boxer, Master) avec spécificités transport matériaux + outillage embarqué. Tarifs et 5 leviers d'économies."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance voiture pro BTP : utilitaires (Trafic 800-1 500€/an, Master 1 200-2 200€/an), transport matériaux inclus, outillage embarqué. Comparatif Allianz, MMA, AXA.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

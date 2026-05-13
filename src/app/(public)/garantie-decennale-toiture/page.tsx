@@ -12,7 +12,7 @@ const TAGLINE =
   'La décennale toiture couvre les défauts d&apos;étanchéité, infiltrations et effondrements de charpente pendant 10 ans. Tarifs couvreur, étancheur, charpentier 2026.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Garantie décennale toiture : obligation Loi Spinetta pour couvreur, étancheur, charpentier. Tarif 1 800-3 500€/an (AE) à 4 500€/an (SARL). Infiltrations + effondrement couverts.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

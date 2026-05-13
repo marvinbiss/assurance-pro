@@ -23,7 +23,7 @@ const TAGLINE =
   'La décennale obligatoire pour plombier-chauffagiste : couverture spécifique dégâts des eaux encastrés (top sinistre AQC 7,2%), chaudières, robinetterie. Tarifs 2026 négociés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale plombier-chauffagiste 2026 : OBLIGATOIRE Loi Spinetta. Couverture dégâts des eaux encastrés (3e sinistre AQC), chaudières gaz/condensation, plancher chauffant. Tarifs 540-980€/an AE, 5 800-12 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -16,7 +16,7 @@ const TAGLINE =
   "L'assurance santé pour les professionnels indépendants : mutuelle TNS Madelin, panier optique/dentaire renforcé, médecines douces, hospitalisation. Conseil ORIAS."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Assurance santé professionnelle pour indépendants : mutuelle TNS Madelin déductible, optique 100% Santé+, dentaire renforcé, médecines douces, hospitalisation jusqu'à 400% BR. Comparatif April, MMA, Generali, Aon. Tarifs 32-220€/mois. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance RC pro pour photographes et vidéastes : mariage, événementiel, studio, corporate. Couvre matériel client + perte fichiers + droit à l'image."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "RC Pro photographe : couverture perte fichiers (carte SD, disque dur), casse matériel client, droit à l'image, retard livraison événement. Plafond 1,5-3 M€. Tarifs 280-680€/an. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

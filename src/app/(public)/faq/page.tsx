@@ -20,12 +20,12 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { getFAQPageSchema } from '@/lib/seo/jsonld'
 
 export const metadata: Metadata = {
-  title: 'FAQ — Assurance professionnelle 2026 | Vivos Assurance',
+  title: 'FAQ — Assurance professionnelle 2026',
   description:
     "20+ questions fréquentes sur l'assurance pro : décennale, RC Pro, courtage ORIAS, ACPR, Loi Madelin, sinistre, résiliation. Réponses motivées et sourcées.",
   alternates: { canonical: `${SITE_URL}/faq` },
   openGraph: {
-    title: 'FAQ — Assurance professionnelle 2026 | Vivos Assurance',
+    title: 'FAQ — Assurance professionnelle 2026',
     description:
       "20+ questions fréquentes sur l'assurance pro. Réponses motivées et sourcées par nos courtiers ORIAS.",
     url: `${SITE_URL}/faq`,

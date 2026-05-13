@@ -12,7 +12,7 @@ const TAGLINE =
   'Quels travaux sont vraiment couverts par la décennale ? Loi Spinetta art. 1792 : structure + clos/couvert + équipements indissociables. Liste exhaustive.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Garantie décennale travaux : périmètre légal Loi Spinetta. Structure (maçonnerie, charpente), clos/couvert (toiture, façade), équipements indissociables. Exclusions claires.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

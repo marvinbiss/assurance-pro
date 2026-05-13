@@ -21,7 +21,7 @@ const TAGLINE =
   'La décennale obligatoire pour micro-entrepreneurs et auto-entrepreneurs du BTP. Tarifs négociés à partir de 480 €/an, attestation 24h, conseil ORIAS spécialisé artisans.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance décennale auto-entrepreneur BTP : obligatoire (Loi Spinetta), tarifs négociés à partir de 480 €/an, attestation immédiate. 8 assureurs comparés (Hiscox, April, MMA, AXA Pro, SMABTP, Wakam, Stello, Generali). Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

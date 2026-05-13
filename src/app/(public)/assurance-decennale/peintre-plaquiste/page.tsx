@@ -16,7 +16,7 @@ const TAGLINE =
   'La décennale obligatoire pour peintre-plaquiste : couverture spécifique défauts cloisons sèches, joints, isolation phonique. Sinistralité AQC 3,1% (la plus faible BTP).'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale peintre-plaquiste 2026 : OBLIGATOIRE Loi Spinetta. Couverture défauts cloisons sèches BA13/BA15, joints lisses/jeux, isolation thermique/phonique cloisons. Sinistralité AQC 3,1% (la plus faible). Tarifs 480-760€/an AE, 4 800-9 200€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

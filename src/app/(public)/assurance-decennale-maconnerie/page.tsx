@@ -12,7 +12,7 @@ const TAGLINE =
   'Le maçon (traditionnel, béton armé, pierre sèche) est soumis à la décennale. Tarif AE 1 800-2 800€/an, SARL 2 500-5 000€/an. 12% sinistralité (AQC).'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale maçonnerie : 3 spécialisations (traditionnel, béton armé, pierre sèche). AE 1 800-2 800€/an, SARL 2 500-5 000€/an. April Pro, SMABTP, Allianz.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

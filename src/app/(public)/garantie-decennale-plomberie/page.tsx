@@ -12,7 +12,7 @@ const TAGLINE =
   'La décennale plomberie couvre les défauts d&apos;étanchéité, fuites encastrées et installations chauffage central. Tarifs plombier AE 1 400€/an, SARL 2 200€/an.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale plomberie : obligation Loi Spinetta. Plombier AE 1 400-2 100€/an, plombier-chauffagiste 1 600-2 500€/an, SARL plomberie 1 800-3 500€/an. Sinistralité 18% AQC.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

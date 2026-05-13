@@ -13,7 +13,7 @@ const TAGLINE =
   "Analyse approfondie de l'assurance RC Pro MMA : garanties par formule, fourchettes tarifaires précises, comparaison avec MAAF/GMF (groupe Covéa) et concurrents."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance RC Pro MMA : tarifs détaillés par profil (AE 250-450€, SARL 600-1 200€, SAS PME 1 200-2 500€). Comparatif MMA vs MAAF/GMF vs Allianz/Hiscox/Generali.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

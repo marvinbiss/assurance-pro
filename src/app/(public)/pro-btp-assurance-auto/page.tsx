@@ -12,7 +12,7 @@ const TAGLINE =
   'PRO BTP propose une assurance auto dédiée au secteur BTP : utilitaires, camions, flotte de chantier. Tarifs, alternatives (Allianz Pro, MMA Flotte, AXA Flotte) et leviers d&apos;économies.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance auto PRO BTP : couverture utilitaires (Trafic, Master, Boxer), camions chantier, flotte multi-véhicules. Comparatif avec Allianz, MMA, AXA. Tarifs et économies.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

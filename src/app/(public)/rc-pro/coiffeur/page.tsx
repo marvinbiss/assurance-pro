@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance RC pro pour coiffeurs : salon coiffure, barbier, coiffeur à domicile. Couverture brûlure cuir chevelu, allergie produits, casse matériel client."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro coiffeur : couvre brûlures cuir chevelu, allergies coloration, casse lunettes/portable client en salon. Plafond 1,5 M€. Tarifs 220-580€/an (AE) / 580-1 200€/an (salon). Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

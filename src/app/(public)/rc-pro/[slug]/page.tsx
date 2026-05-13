@@ -26,14 +26,14 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   if (r.kind === 'profession') {
     const p = r.profession
     return {
-      title: `RC Pro ${p.name} 2026 — Tarifs + Comparatif | Vivos Assurance`,
+      title: `RC Pro ${p.name} 2026 — Tarifs + Comparatif`,
       description: `${p.tagline} Tarifs négociés à partir de ${p.tarifs.auto_entrepreneur.max > 0 ? p.tarifs.auto_entrepreneur.min : p.tarifs.sarl_sas.min}€/an. Plafond recommandé ${p.plafondRecommande}M€. Devis gratuit en 24h.`,
       alternates: { canonical: `${SITE_URL}/rc-pro/${p.slug}` },
     }
   }
   const v = r.ville
   return {
-    title: `RC Pro ${v.nom} (${v.departementCode}) — Freelances, consultants, agences | Vivos Assurance`,
+    title: `RC Pro ${v.nom} (${v.departementCode}) — Freelances, consultants, agences`,
     description: `Responsabilité civile professionnelle pour les ~${v.freelancesEstime.toLocaleString('fr-FR')} freelances, consultants et agences de ${v.nom}. Plafond 500k€-2M€. Tarifs à partir de 95€/an. Devis gratuit ORIAS.`,
     alternates: { canonical: `${SITE_URL}/rc-pro/${v.slug}` },
   }

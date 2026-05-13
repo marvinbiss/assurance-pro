@@ -12,7 +12,7 @@ const TAGLINE =
   'Courtier spécialiste assurance décennale : comparez April Pro BTP, SMABTP, Allianz Pro BTP, MMA Pro BTP. Économies -20-40% vs souscription directe.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Courtier ORIAS spécialiste assurance décennale BTP : comparatif 5 assureurs (April Pro, SMABTP, Allianz Pro, MMA, AXA). Économies 20-40% vs direct.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

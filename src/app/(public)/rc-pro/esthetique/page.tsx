@@ -14,7 +14,7 @@ const TAGLINE =
   "L'assurance RC pro pour esthéticiennes : institut beauté, esthétique à domicile, prothésiste ongulaire, masseur bien-être. Couverture brûlure, allergie, blessure."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro esthéticienne OBLIGATOIRE pour actes invasifs (épilation cire chaude, soins visage, prothèses ongulaires). Couverture brûlures, allergies cosmétiques, blessures. Tarifs 280-880€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

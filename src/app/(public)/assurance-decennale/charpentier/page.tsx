@@ -16,7 +16,7 @@ const TAGLINE =
   'La décennale obligatoire pour charpentier : couverture spécifique charpente traditionnelle/industrielle, fermettes, ossature bois, structures porteuses. Sinistralité AQC 10,1%.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale charpentier 2026 : OBLIGATOIRE Loi Spinetta. Couverture charpente traditionnelle/industrielle bois, fermettes, ossature bois (MOB), traitement xylophages, ferrures. Sinistralité AQC 10,1%. Tarifs 690-1 320€/an AE, 7 200-14 800€/an SARL 5 sal.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

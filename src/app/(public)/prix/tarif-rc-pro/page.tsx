@@ -12,7 +12,7 @@ const TAGLINE =
   'Grilles tarifaires RC Pro 2026 vérifiées sur 1 000+ devis : Hiscox, Stello, Allianz Pro, MMA Pro, AXA Pro. AE 95€, SARL 600€, SAS PME 1 500€/an.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Tarif RC Pro vérifié 2026 : grilles par profil (AE, SARL, SAS), par activité, par assureur. Hiscox 95€/an, Allianz 600€, MMA 1 200€.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

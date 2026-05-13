@@ -12,7 +12,7 @@ const TAGLINE =
   'RC Pro et Décennale sont 2 assurances distinctes mais complémentaires pour les pros BTP. Différences exactes, périodes de garantie, exclusions et pack combiné.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro vs Décennale : différences exactes (périmètre, durée, plafond). Pack combiné recommandé BTP. Tarif AE pack 2 500-3 500€/an. April Pro, SMABTP comparatif.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

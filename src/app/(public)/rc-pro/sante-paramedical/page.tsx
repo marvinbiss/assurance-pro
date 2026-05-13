@@ -16,7 +16,7 @@ const TAGLINE =
   'La RC Pro obligatoire pour kinésithérapeutes, infirmiers libéraux, ostéopathes, sages-femmes, orthophonistes : couverture responsabilité médicale + dommages corporels patient.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro santé paramédical 2026 : OBLIGATOIRE art. L. 1142-2 CSP. Couverture kiné, infirmier libéral, ostéopathe, sage-femme, orthophoniste, podologue. Responsabilité médicale + dommages corporels patient. Sinistralité 2,7%. Tarifs 220-680€/an libéral, 1 800-4 500€/an cabinet. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

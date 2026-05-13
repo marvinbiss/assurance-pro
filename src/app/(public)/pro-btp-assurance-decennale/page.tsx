@@ -12,7 +12,7 @@ const TAGLINE =
   'PRO BTP ne fait pas de décennale directement (institution paritaire santé). Le décennale BTP passe par SMABTP, IRP Auto BTP, ou April Pro BTP. Comparatif détaillé.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale BTP via PRO BTP : SMABTP (institution paritaire), IRP Auto, April Pro. PRO BTP ne fait pas directement décennale. Comparatif tarifs et garanties 2026.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

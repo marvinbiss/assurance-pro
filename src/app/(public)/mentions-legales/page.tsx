@@ -5,13 +5,13 @@ import { SITE_URL } from '@/lib/seo/config'
 import { PageHero } from '@/components/layout/PageHero'
 
 export const metadata: Metadata = {
-  title: 'Mentions légales | Vivos Assurance',
+  title: 'Mentions légales',
   description:
     'Mentions légales du cabinet de courtage ORIAS Vivos Assurance. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
   alternates: { canonical: `${SITE_URL}/mentions-legales` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Mentions légales | Vivos Assurance',
+    title: 'Mentions légales',
     description:
       'Mentions légales du cabinet de courtage ORIAS Vivos Assurance. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
     url: `${SITE_URL}/mentions-legales`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mentions légales | Vivos Assurance',
+    title: 'Mentions légales',
     description:
       'Mentions légales du cabinet de courtage ORIAS Vivos Assurance. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
   },

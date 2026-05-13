@@ -12,7 +12,7 @@ const TAGLINE =
   "Le maître d'oeuvre (MOE), BET et architecte sont soumis à la décennale (Loi Spinetta). Spécificités, plafonds élevés requis, tarifs 1 800-8 000€/an."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Décennale maître d'œuvre : MOE, BET, architecte couverts Loi Spinetta. Tarif AE 1 800-2 800€/an, SARL 3 500-8 000€/an. Plafond 3-5M€ recommandé.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

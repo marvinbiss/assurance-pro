@@ -12,7 +12,7 @@ const TAGLINE =
   "Tout savoir sur l'attestation de RC Pro : à quoi sert, qui doit la fournir, valeur juridique, validité et démarches d'obtention rapide."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Attestation de RC Pro : valeur juridique, durée validité 1 an, démarches obtention 24h. Délivrée par assureur agréé ACPR. À présenter clients B2B + Ordres.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

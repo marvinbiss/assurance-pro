@@ -26,7 +26,7 @@ const TAGLINE =
   "L'assurance multirisque pour bureaux professionnels : TPE, PME, coworking, indépendants. Couverture incendie, vol, dégâts des eaux, RC exploitation, perte d'exploitation. À partir de 220 €/an."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Assurance bureau professionnel : multirisque TPE/PME (incendie, vol, dégâts eaux, RC exploitation), équipement informatique, perte d'exploitation. Tarifs négociés à partir de 220 €/an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -15,7 +15,7 @@ const TAGLINE =
   'RC Pro : tout ce que vous devez savoir avant de souscrire. Obligations légales, garanties, exclusions, prix marché, et comment éviter les pièges des contrats low-cost.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro : guide complet souscription. Obligations par profession, plafonds recommandés, exclusions à connaître, comparatif Hiscox / Allianz / AXA. Attestation immédiate après devis.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

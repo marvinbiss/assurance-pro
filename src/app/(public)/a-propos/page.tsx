@@ -21,12 +21,12 @@ const PARTENAIRES = [
 ] as const
 
 export const metadata: Metadata = {
-  title: 'À propos — Cabinet de courtage ORIAS | Vivos Assurance',
+  title: 'À propos — Cabinet de courtage ORIAS',
   description:
     'Cabinet de courtage indépendant ORIAS spécialisé en assurance professionnelle. 17 verticaux. 10+ assureurs partenaires. Membre CSCA.',
   alternates: { canonical: `${SITE_URL}/a-propos` },
   openGraph: {
-    title: 'À propos — Cabinet de courtage ORIAS | Vivos Assurance',
+    title: 'À propos — Cabinet de courtage ORIAS',
     description:
       'Cabinet de courtage indépendant ORIAS. 17 verticaux. 10+ assureurs partenaires. Membre CSCA.',
     url: `${SITE_URL}/a-propos`,

@@ -12,7 +12,7 @@ const TAGLINE =
   "L'agent immobilier titulaire de la Carte T (transactions) doit obligatoirement avoir une RC Pro. Plafond légal 305k€ minimum, tarifs 2026 et démarches CCI."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro agent immobilier Carte T : obligation Loi Hoguet, plafond minimum 305 000€. Tarif 350-1 800€/an selon CA et agence. Présentation CCI lors renouvellement carte T.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

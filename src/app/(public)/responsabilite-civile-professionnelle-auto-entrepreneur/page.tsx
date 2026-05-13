@@ -12,7 +12,7 @@ const TAGLINE =
   'La RC Pro pour AE/micro-entrepreneur est obligatoire pour certaines professions (médical, BTP, immobilier) et fortement recommandée pour toutes. Tarif 95-450€/an.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro auto-entrepreneur : obligation par profession + tarifs 95-450€/an. Hiscox best price AE freelance 95€/an. Comparatif 5 assureurs + cyber combinée IT.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

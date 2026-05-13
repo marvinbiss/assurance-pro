@@ -12,7 +12,7 @@ const TAGLINE =
   'Classement précis 2026 des assurances décennales les moins chères par métier BTP. April Pro best price AE/SARL. Tarifs vérifiés du peintre au couvreur.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale la moins chère 2026 : April Pro best price AE peintre 950€/an, plombier 1 400€/an, maçon 1 800€/an. Comparatif honnête April vs SMABTP vs Allianz.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

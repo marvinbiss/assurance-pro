@@ -15,7 +15,7 @@ const TAGLINE =
   'La Responsabilité Civile Professionnelle est obligatoire pour tout chauffeur VTC en France (LOTI / décret 2014). Tarifs Wakam, Hiscox, Stello + souscription en ligne sous 24h.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro VTC : obligation légale décret 2014, plafond 1.5M€ corporel + 1M€ matériel, tarif à partir de 280€/an. Comparatif Wakam, Stello, Hiscox, AXA. Attestation immédiate.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

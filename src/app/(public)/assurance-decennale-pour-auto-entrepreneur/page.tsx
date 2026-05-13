@@ -12,7 +12,7 @@ const TAGLINE =
   "Souscrire une décennale en tant qu'auto-entrepreneur BTP : pièces (SIRET + ACOSS), démarches simplifiées, tarifs April Pro best price 950-3 500€/an."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale pour auto-entrepreneur BTP : démarches en ligne 24h. SIRET + ACOSS + CNI suffisent. April Pro best price 950€/an peintre, 1 400€/an plombier.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

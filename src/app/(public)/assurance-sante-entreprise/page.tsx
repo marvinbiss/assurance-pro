@@ -22,7 +22,7 @@ const TAGLINE =
   "L'assurance santé collective obligatoire pour tous les employeurs : conformité ANI 2013, prise en charge employeur 50% min, panier de soins minimum, comparatif assureurs."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance santé entreprise : mutuelle collective OBLIGATOIRE pour tous les employeurs (ANI 2013, prise en charge employeur 50% min). Panier de soins minimum, optique 100% santé, comparatif Alan, April, Generali, Allianz, MMA, AXA. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -15,7 +15,7 @@ const TAGLINE =
   'Le pack assurance complet pour les pros du Bâtiment : décennale (obligatoire Spinetta), RC Pro, multirisque pro, mutuelle pro BTP et flotte véhicule. Devis groupé sous 24h.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance pro BTP : pack décennale + RC Pro + multirisque + mutuelle santé + flotte. Tarifs négociés 52 métiers BTP. Devis groupé 24h. Économies 15-25% vs souscription séparée.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

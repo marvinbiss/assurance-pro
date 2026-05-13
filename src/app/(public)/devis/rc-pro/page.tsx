@@ -12,7 +12,7 @@ const TAGLINE =
   'Devis RC Pro GRATUIT en 5 minutes pour tous statuts (AE, EI, SARL, SAS). Comparatif Hiscox, Stello, Allianz, MMA, AXA. Attestation immédiate.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Devis RC Pro gratuit 5 min. Hiscox 95€/an best price AE, Stello 90€/an digital, Allianz 280€/an SARL. Tous statuts juridiques. Sans engagement.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

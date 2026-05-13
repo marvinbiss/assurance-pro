@@ -24,7 +24,7 @@ const TAGLINE =
   "L'assurance dédiée au transport de marchandises : RC pro transporteur, garantie facultés (marchandises transportées), responsabilité contractuelle CMR. Tarifs négociés."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance transport de marchandises : RC pro transporteur (LOTI/CMR), garantie facultés (marchandises transportées tous risques), responsabilité contractuelle, garantie ad valorem. Tarifs à partir de 1 480 €/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

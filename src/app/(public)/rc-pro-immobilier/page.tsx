@@ -12,7 +12,7 @@ const TAGLINE =
   'La RC Pro Immobilier est obligatoire (Loi Hoguet) pour tout agent immobilier, mandataire, syndic. Garanties, plafonds, comparatif et tarifs 2026.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro Immobilier obligatoire Loi Hoguet (art. 49 loi 70-9) : agent immobilier, mandataire, syndic, gestion locative. Plafond 305k€-2M€ mini. Tarif 350-2 500€/an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   'Assurance RC Pro auto-entrepreneur 100% en ligne. Hiscox 95€/an best price. Souscription 5 min, attestation immédiate. Sans rendez-vous.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro auto-entrepreneur en ligne : Hiscox 95€/an, Stello 90€/an. Souscription 5 min, attestation immédiate PDF. Adapté freelance services + BTP.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

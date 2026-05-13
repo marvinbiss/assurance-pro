@@ -24,7 +24,7 @@ export const revalidate = 86400
 const SLUG = 'outils/modele-devis-pro'
 
 export const metadata: Metadata = {
-  title: 'Modèle devis pro PDF — Générateur gratuit auto-entrepreneur 2026 | Vivos Assurance',
+  title: 'Modèle devis pro PDF — Générateur gratuit auto-entrepreneur 2026',
   description:
     'Générez vos devis professionnels au format PDF en 2 minutes. Conforme art. L. 111-1 C. conso + arrêté 27/03/2017 BTP. Auto-entrepreneur, EI, EURL, SARL, SASU. Inclut zone signature « Bon pour accord » et mention assurance pro. Téléchargement immédiat, gratuit.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   'Prix PRO BTP S4 P4 (formule haut de gamme) : 115-230€/mois selon âge. Garanties premium hospi + dentaire + optique + médecines douces.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Prix PRO BTP S4 P4 : haut de gamme 115-230€/mois. Hospi 500% BR + dentaire implants 2k€ + optique 600€. Comparatif Aon Santé Pro Premium.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -4,14 +4,14 @@ import { getBreadcrumbSchema } from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'FAQ - Questions fréquentes | Vivos Assurance',
+  title: 'FAQ - Questions fréquentes',
   description:
     "Réponses aux questions fréquentes sur l'assurance professionnelle : décennale BTP, RC Pro, multirisque, mutuelle TNS Madelin, VTC, cyber. Cabinet de courtage ORIAS.",
   alternates: {
     canonical: `${SITE_URL}/faq`,
   },
   openGraph: {
-    title: 'FAQ - Questions fréquentes | Vivos Assurance',
+    title: 'FAQ - Questions fréquentes',
     description: 'Trouvez les réponses à vos questions sur Vivos Assurance.',
     url: `${SITE_URL}/faq`,
   },

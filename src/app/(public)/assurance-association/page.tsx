@@ -14,7 +14,7 @@ const TAGLINE =
   "L'assurance dédiée aux associations loi 1901 : RC pro association + multirisque local + RC dirigeants bénévoles + protection juridique. Tarifs accessibles."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance association loi 1901 : RC pro (responsabilité envers adhérents et tiers), multirisque local, RC dirigeants bénévoles, protection juridique. Pack 280-1 480€/an selon taille. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

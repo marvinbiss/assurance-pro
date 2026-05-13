@@ -25,7 +25,7 @@ const TAGLINE =
   'Le hub assurance BTP : décennale, RC pro travaux, multirisque chantier, dommages-ouvrage, TRC, garantie financière. 8 assureurs comparés. Conseil ORIAS spécialisé.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance BTP : décennale obligatoire (Loi Spinetta), RC pro travaux, multirisque chantier, dommages-ouvrage, TRC (Tous Risques Chantier), garantie financière, biennale. Comparatif 8 assureurs spécialisés (SMABTP, MAAF Pro, Allianz Pro, AXA Pro). Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

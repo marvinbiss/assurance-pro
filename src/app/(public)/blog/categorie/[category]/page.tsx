@@ -22,7 +22,7 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   const cat = findCategoryBySlug(params.category)
   if (!cat) return {}
   return {
-    title: `Blog — Catégorie ${cat.name} | Vivos Assurance`,
+    title: `Blog — Catégorie ${cat.name}`,
     description: `Tous les articles du blog Vivos Assurance sur la thématique ${cat.name}.`,
     alternates: { canonical: `${SITE_URL}/blog/categorie/${cat.slug}` },
   }

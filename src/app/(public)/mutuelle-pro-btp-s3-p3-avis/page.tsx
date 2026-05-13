@@ -12,7 +12,7 @@ const TAGLINE =
   'Avis et analyse du contrat PRO BTP S3 P3 (formule intermédiaire renforcée) : garanties détaillées, tarifs par âge, retours d&apos;adhérents et comparatif avec April Pro Santé.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'PRO BTP S3 P3 : analyse complète de la formule intermédiaire renforcée. Garanties hospi, dentaire, optique, méd. douces. Avis adhérents, tarifs 65-140€/mois, alternatives.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -16,7 +16,7 @@ const TAGLINE =
   "Besoin d'une décennale en urgence pour démarrer un chantier ? Procédure express : attestation provisoire en 6h, attestation conforme arrêté 23 janvier 2024 sous 24h."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance décennale immédiate 2026 : procédure express 6h (attestation provisoire) ou 24h (attestation conforme arrêté 23 janvier 2024). Pour artisans BTP en démarrage de chantier urgent. 5 assureurs spécialisés Express : SMABTP, Wakam, MAAF Pro, April BTP, Hiscox. Cabinet ORIAS.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

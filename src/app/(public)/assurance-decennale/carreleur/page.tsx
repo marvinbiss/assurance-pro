@@ -16,7 +16,7 @@ const TAGLINE =
   'La décennale obligatoire pour carreleur : couverture spécifique fissures carrelage, défauts pose chape, étanchéité salle de bain. Sinistralité AQC 6,5%.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale carreleur 2026 : OBLIGATOIRE Loi Spinetta. Couverture fissures carrelage (sol/mur), défauts pose chape, étanchéité salle de bain (SPEC), désolidarisation. Sinistralité AQC 6,5%. Tarifs 560-920€/an AE, 5 800-12 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

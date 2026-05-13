@@ -12,7 +12,7 @@ const TAGLINE =
   "L'esthéticienne (à domicile ou en institut) doit avoir une RC Pro pour couvrir réactions allergiques, brûlures épilation, dommages cutanés. Tarif 180-450€/an."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro esthéticienne : couvre allergies, brûlures épilation laser, dommages soins. Tarif AE 180-350€/an, institut 350-750€/an. Comparatif assureurs spécialisés beauté.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

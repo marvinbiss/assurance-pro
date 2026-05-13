@@ -15,7 +15,7 @@ const TAGLINE =
   "La liste exhaustive des assurances OBLIGATOIRES pour une entreprise en France selon métier et statut juridique. Sanctions absence détaillées (jusqu'à 75 000€ + prison)."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Liste exhaustive 2026 des assurances OBLIGATOIRES par entreprise : décennale BTP, RC Pro santé/juridique/conseil financier/transport/sport, multirisque bail commercial, mutuelle collective ANI, auto pro. Sanctions absence + références légales. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   'Le Crédit Agricole propose une RC Pro via Pacifica (filiale assurance du groupe). Analyse des garanties, tarifs et alternatives spécialisées pro (MMA, Hiscox).'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro Crédit Agricole (Pacifica) : assureur bancaire accessible si client CA. Tarif 280-1 500€/an. Comparatif vs Hiscox, MMA, Allianz Pro — quel choix pour qui ?',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

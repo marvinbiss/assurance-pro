@@ -15,7 +15,7 @@ const TAGLINE =
   "La franchise assurance pro : montant à votre charge en cas de sinistre. Choisir 300€ vs 5 000€ peut faire varier votre cotisation de 30%. Stratégie d'optimisation."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Franchise assurance pro 2026 : guide complet pour bien choisir sa franchise (RC Pro, décennale, multirisque). Impact tarifaire jusqu'à -30%. 4 paliers standard 300€/750€/1500€/3000€/5000€. Stratégie selon profil sinistralité.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

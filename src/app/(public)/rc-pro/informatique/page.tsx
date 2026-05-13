@@ -32,7 +32,7 @@ const TAGLINE =
   "L'assurance responsabilité civile professionnelle dédiée aux métiers IT : développeurs freelance, ESN, agences web, DevOps, cybersécurité, data scientists. Plafonds 5-10 M€ + cyber."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro informatique : couverture freelance dev, ESN, agences digitales, DevOps. Plafonds recommandés 5-10 M€ (gestion de système critique). Cyber assurance couplée recommandée. Tarifs négociés à partir de 380 €/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

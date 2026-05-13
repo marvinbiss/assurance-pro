@@ -12,7 +12,7 @@ const TAGLINE =
   'Prix de la formule Mutuelle Pro BTP S3 P3 en 2026 : 35-55€/mois actif salarié. Couverture intermédiaire (renforts soins courants + dentaire + optique).'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Mutuelle Pro BTP S3 P3 prix 2026 : 35-55€/mois actif salarié. Formule milieu de gamme. Comparée à S2P2 (-15€) et S4P4 (+20€).',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

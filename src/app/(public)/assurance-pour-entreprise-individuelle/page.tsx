@@ -16,7 +16,7 @@ const TAGLINE =
   "L'assurance dédiée à l'entreprise individuelle (EI) au régime réel : RC pro, multirisque local, mutuelle TNS Madelin, prévoyance, protection patrimoine."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance entreprise individuelle (EI) : RC pro adaptée + multirisque local pro + mutuelle TNS Madelin + prévoyance Madelin + protection juridique. Tarifs 380-2 800€/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

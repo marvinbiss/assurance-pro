@@ -23,7 +23,7 @@ const TAGLINE =
   "L'assurance dédiée aux véhicules détenus par votre société : voiture de société, véhicule de fonction, voiture de direction. Couverture RC pro + tous risques + conducteur."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance auto entreprise : véhicule de société (carte grise au nom de la SARL/SAS/SCI), véhicule de fonction salarié, voiture direction. RC pro + tous risques + conducteur étendue. Tarifs 680-1 480€/an. Comparatif 6 assureurs. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

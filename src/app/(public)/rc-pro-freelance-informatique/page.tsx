@@ -12,7 +12,7 @@ const TAGLINE =
   'RC Pro spécifique pour freelance IT (dev, consultant, agence web, cybersécurité, data) : sinistres typiques, plafond recommandé, comparatif Hiscox / Stello.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro freelance informatique : tarif AE dev 95-220€/an, consultant IT 180-350€/an. Cyber-assurance combinée recommandée. Hiscox best price, Stello digital pur.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

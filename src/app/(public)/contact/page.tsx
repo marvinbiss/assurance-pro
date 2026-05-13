@@ -18,12 +18,12 @@ import { SITE_URL } from '@/lib/seo/config'
 import { CTA_TEXTS } from '@/lib/config/pre-orias'
 
 export const metadata: Metadata = {
-  title: 'Contact — Cabinet de courtage ORIAS | Vivos Assurance',
+  title: 'Contact — Cabinet de courtage ORIAS',
   description:
     'Contactez notre cabinet de courtage ORIAS. Téléphone, email, réclamations ACPR, données personnelles RGPD. Réponse sous 24 h ouvrées.',
   alternates: { canonical: `${SITE_URL}/contact` },
   openGraph: {
-    title: 'Contact — Cabinet de courtage ORIAS | Vivos Assurance',
+    title: 'Contact — Cabinet de courtage ORIAS',
     description:
       'Conseil personnalisé, gestion contrats, sinistres, réclamations. Réponse sous 24 h ouvrées.',
     url: `${SITE_URL}/contact`,

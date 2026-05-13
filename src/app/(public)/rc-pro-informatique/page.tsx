@@ -12,7 +12,7 @@ const TAGLINE =
   "RC Pro pour les pros de l'informatique : freelance dev, ESN, agence web, consultant cybersécurité. Plafonds adaptés, cyber-assurance combinée, tarifs 2026."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro informatique : freelance dev 95-220€/an, ESN 800-3 500€/an, agence web 350-1 200€/an. Cyber-assurance combinée recommandée. Plafond 1-5M€ selon profil.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

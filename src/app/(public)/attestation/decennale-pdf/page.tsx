@@ -12,7 +12,7 @@ const TAGLINE =
   "Tout sur le format PDF de l'attestation décennale : taille, qualité, sécurité, modèles par assureur (April Pro, SMABTP, Allianz Pro, MMA, AXA)."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Attestation décennale PDF : format A4 standard, taille 50-200 Ko. Téléchargement espace adhérent. Différences modèles April Pro, SMABTP, Allianz Pro, MMA, AXA.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

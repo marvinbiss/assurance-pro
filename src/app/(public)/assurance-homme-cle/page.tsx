@@ -18,7 +18,7 @@ const TAGLINE =
   "L'assurance homme-clé indemnise votre société en cas de décès ou d'invalidité d'un dirigeant ou d'un collaborateur indispensable. Conseil ORIAS pour PME, ETI, start-ups."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Assurance homme-clé (key-person) : capital ou rente versée à l'entreprise en cas de décès ou d'invalidité d'un dirigeant ou collaborateur stratégique. Tarifs négociés, fiscalité optimisée. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

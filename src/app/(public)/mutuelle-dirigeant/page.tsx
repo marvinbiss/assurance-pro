@@ -14,7 +14,7 @@ const TAGLINE =
   'La mutuelle santé pour dirigeants assimilés salariés (SASU, SAS) : régime collectif optimisé, garanties cadres, déduction 100% du résultat.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Mutuelle dirigeant SASU/SAS : régime collectif d'entreprise pour président assimilé salarié. Garanties haut de gamme cadres (optique premium, dentaire renforcé, médecines douces). Déductible 100% du résultat. Tarifs 80-220€/mois. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

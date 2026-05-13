@@ -22,7 +22,7 @@ const TAGLINE =
   'La décennale obligatoire pour électricien BTP : couverture spécifique courts-circuits, incendies tableau, mise aux normes NF C 15-100. Tarifs 2026 négociés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale électricien BTP 2026 : OBLIGATOIRE Loi Spinetta. Couverture incendies tableau, courts-circuits, défauts NF C 15-100, mise à la terre, domotique. Sinistralité AQC 5,8%. Tarifs 490-880€/an AE, 5 200-11 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -29,7 +29,7 @@ export const revalidate = 86400
 const SLUG = 'outils/modele-attestation-rc-pro'
 
 export const metadata: Metadata = {
-  title: 'Modèle attestation RC Pro PDF — Générateur gratuit 2026 | Vivos Assurance',
+  title: 'Modèle attestation RC Pro PDF — Générateur gratuit 2026',
   description:
     "Générez votre modèle d'attestation RC Pro au format PDF en 2 minutes. Conforme arrêté du 23 janvier 2024 (mentions obligatoires). Téléchargement immédiat, gratuit, sans inscription. Bonus : devis RC Pro ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

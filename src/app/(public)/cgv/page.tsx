@@ -5,13 +5,13 @@ import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Conditions Générales de Service | Vivos Assurance',
+  title: 'Conditions Générales de Service',
   description:
     'Conditions générales de service du cabinet de courtage ORIAS Vivos Assurance. Périmètre, rémunération, responsabilité, conformité ACPR.',
   alternates: { canonical: `${SITE_URL}/cgv` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Conditions Générales de Service | Vivos Assurance',
+    title: 'Conditions Générales de Service',
     description:
       'Conditions générales de service du cabinet de courtage ORIAS Vivos Assurance. Périmètre, rémunération, responsabilité, conformité ACPR.',
     url: `${SITE_URL}/cgv`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Conditions Générales de Service | Vivos Assurance',
+    title: 'Conditions Générales de Service',
     description:
       'Conditions générales de service du cabinet de courtage ORIAS Vivos Assurance. Périmètre, rémunération, responsabilité, conformité ACPR.',
   },

@@ -22,6 +22,7 @@ import {
 import { getPost, getPostSlugs, getAllPosts, getCategorySlug } from '@/lib/data/blog-posts'
 import { SITE_URL } from '@/lib/seo/config'
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 
 type Params = { slug: string }
 
@@ -155,6 +156,13 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
   return (
     <main className="min-h-screen bg-sand-50">
       <script {...jsonLdScriptProps(articleSchema, nonce)} />
+      <BreadcrumbSchema
+        items={[
+          { label: 'Blog', href: '/blog' },
+          { label: post.category, href: `/blog/categorie/${categorySlug}` },
+          { label: post.title },
+        ]}
+      />
 
       {/* Hero — fil d'Ariane + meta + titre + auteur */}
       <section className="relative overflow-hidden bg-charcoal-900 py-14 text-white md:py-20">

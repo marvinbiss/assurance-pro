@@ -12,7 +12,7 @@ const TAGLINE =
   'Souscrire RC Pro et Décennale ensemble : économies -15-25%, 1 interlocuteur, simplification gestion. Comparatif des 5 assureurs BTP proposant le pack.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Pack assurance RC Pro et Décennale BTP : économies -15-25% vs souscriptions séparées. Tarif AE pack 1 200-3 500€/an. April Pro, SMABTP, Allianz, MMA, AXA.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

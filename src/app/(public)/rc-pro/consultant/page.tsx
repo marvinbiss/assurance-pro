@@ -20,7 +20,7 @@ const TAGLINE =
   'La RC Pro recommandée pour consultants/coachs/experts indépendants : couverture défaut conseil, erreur préconisation, manquement obligation moyens, perte chance client. Tarifs ultra-compétitifs.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro consultant 2026 : couverture défaut conseil, erreur préconisation stratégique, manquement obligation moyens, perte chance, dommages immatériels. Sinistralité 1,2% (faible mais sinistres lourds). Tarifs 90-280€/an AE. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

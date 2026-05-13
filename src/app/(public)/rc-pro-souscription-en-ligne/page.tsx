@@ -12,7 +12,7 @@ const TAGLINE =
   'RC Pro souscription 100% en ligne : 6 étapes digitales pour souscrire votre contrat en 5 min. Hiscox + Stello + April Pro digital pure. CPC 800€.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro souscription en ligne : process digital 6 étapes, 5 min total. Hiscox, Stello, April Pro 100% online. Attestation immédiate. CPC Google Ads 800€.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

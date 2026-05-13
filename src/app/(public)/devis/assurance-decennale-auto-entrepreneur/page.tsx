@@ -12,7 +12,7 @@ const TAGLINE =
   'Obtenez gratuitement votre devis décennale auto-entrepreneur en 5 minutes. Comparatif April Pro vs SMABTP vs Allianz Pro. Attestation 24h.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Devis décennale AE gratuit en 5 min. April Pro best price 950€/an peintre, 1 400€/an plombier. Comparatif April / SMABTP / Allianz. Attestation 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

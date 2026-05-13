@@ -12,7 +12,7 @@ const TAGLINE =
   'La RC Pro bâtiment couvre les dommages causés à tiers pendant le chantier BTP (avant réception). Complément essentiel de la décennale. Tarifs AE 250-700€/an.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro bâtiment : protection PENDANT chantier (vs Décennale après réception). Tarif AE 250-700€/an, SARL 500-1 500€/an. Pack RC Pro + Décennale = -15-25%.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

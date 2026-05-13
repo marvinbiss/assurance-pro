@@ -3,21 +3,21 @@ import { SITE_URL } from '@/lib/seo/config'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 
 export const metadata: Metadata = {
-  title: 'RC Pro Avocat — Comparez les contrats CNB | Vivos Assurance',
+  title: 'RC Pro Avocat — Comparez les contrats CNB',
   description:
     "RC Pro avocat conforme aux exigences du CNB et de l'Ordre. Comparaison sur 6 assureurs spécialistes. Devis personnalisé en 24h.",
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/rc-pro-avocat`,
   },
   openGraph: {
-    title: 'RC Pro Avocat — Comparez les contrats CNB | Vivos Assurance',
+    title: 'RC Pro Avocat — Comparez les contrats CNB',
     description: 'RC Pro avocat conforme aux exigences du CNB et de l\\',
     url: `${SITE_URL}/rc-pro-avocat`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RC Pro Avocat — Comparez les contrats CNB | Vivos Assurance',
+    title: 'RC Pro Avocat — Comparez les contrats CNB',
     description: 'RC Pro avocat conforme aux exigences du CNB et de l\\',
   },
 }

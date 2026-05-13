@@ -22,7 +22,7 @@ const TAGLINE =
   "L'assurance Responsabilité Civile Professionnelle pour micro-entrepreneurs et auto-entrepreneurs : obligations métier, tarifs négociés à partir de 89€/an, devis ORIAS sous 24h."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro auto-entrepreneur : couverture obligatoire pour 21 métiers, recommandée pour tous. Tarifs négociés à partir de 89€/an. Conseil ORIAS, attestation immédiate. Devis gratuit sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

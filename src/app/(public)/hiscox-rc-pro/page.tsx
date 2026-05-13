@@ -12,7 +12,7 @@ const TAGLINE =
   'Hiscox est l&apos;un des leaders RC Pro en France pour les pros services intellectuels. Analyse des garanties, tarifs 95-1 200€/an et comparatif avec Stello, Allianz Pro, MMA.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Hiscox RC Pro : leader assurance pros services intellectuels. Plafond 1-5M€, postériorité 10 ans, tarif 95€/an (AE freelance) à 1 200€/an (SARL). Comparatif honnête.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

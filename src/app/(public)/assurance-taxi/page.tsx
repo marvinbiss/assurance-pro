@@ -29,7 +29,7 @@ const TAGLINE =
   "L'assurance professionnelle dédiée aux taxis : couverture véhicule, RC client, ADS-licence, marchandises transportées, perte d'exploitation. Tarifs négociés à partir de 1 280 €/an."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Assurance taxi : pack véhicule pro + RC pro chauffeur, ADS-licence, perte d'exploitation, garanties artisan-taxi. Tarifs à partir de 1 280€/an. Comparatif 6 assureurs spécialisés (AXA, MMA, Allianz, Wakam, Stello). Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

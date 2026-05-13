@@ -30,7 +30,7 @@ export const revalidate = 86400
 const SLUG = 'outils/devis-rc-pro'
 
 export const metadata: Metadata = {
-  title: 'Devis RC Pro 2026 — Comparateur 8 assureurs en 2 minutes | Vivos Assurance',
+  title: 'Devis RC Pro 2026 — Comparateur 8 assureurs en 2 minutes',
   description:
     'Devis RC Pro gratuit en 2 minutes : comparatif 8 assureurs (Hiscox, AXA Pro, Allianz Pro, MMA Pro, MAAF Pro, April Pro, Generali, Wakam). Tarifs 89-2 800€/an. Conseil ORIAS sous 24h. Sans engagement.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

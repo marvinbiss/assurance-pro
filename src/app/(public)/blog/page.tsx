@@ -15,14 +15,15 @@ import {
 } from 'lucide-react'
 import { getAllPosts, getAllCategories, getCategorySlug } from '@/lib/data/blog-posts'
 import { SITE_URL } from '@/lib/seo/config'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 
 export const metadata: Metadata = {
-  title: 'Blog — Insights & guides assurance pro | Vivos Assurance',
+  title: 'Blog — Insights & guides assurance pro',
   description:
     'Décryptages réglementaires, guides pratiques et analyses de marché par les courtiers ORIAS Vivos Assurance. Décennale, RC Pro, Mutuelle TNS, Cyber assurance.',
   alternates: { canonical: `${SITE_URL}/blog` },
   openGraph: {
-    title: 'Blog — Insights & guides assurance pro | Vivos Assurance',
+    title: 'Blog — Insights & guides assurance pro',
     description:
       'Décryptages réglementaires, guides pratiques et analyses de marché par les courtiers ORIAS Vivos Assurance.',
     url: `${SITE_URL}/blog`,
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog — Insights & guides assurance pro | Vivos Assurance',
+    title: 'Blog — Insights & guides assurance pro',
     description:
       'Décryptages réglementaires, guides pratiques et analyses de marché par les courtiers ORIAS Vivos Assurance.',
   },
@@ -109,6 +110,7 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-sand-50">
+      <BreadcrumbSchema items={[{ label: 'Blog' }]} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
         <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />

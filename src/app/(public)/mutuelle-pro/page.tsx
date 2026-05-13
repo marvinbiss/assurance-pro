@@ -3,14 +3,14 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Mutuelle TNS / Pro Madelin — Comparez 8 mutuelles | Vivos Assurance',
+  title: 'Mutuelle TNS / Pro Madelin — Comparez 8 mutuelles',
   description:
     'Comparez votre mutuelle santé pro auprès de 8 mutuelles. TNS, dirigeants, freelances. Loi Madelin déductible.',
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/mutuelle-pro`,
   },
   openGraph: {
-    title: 'Mutuelle TNS / Pro Madelin — Comparez 8 mutuelles | Vivos Assurance',
+    title: 'Mutuelle TNS / Pro Madelin — Comparez 8 mutuelles',
     description:
       'Comparez votre mutuelle santé pro auprès de 8 mutuelles. TNS, dirigeants, freelances. Loi Madelin déductible.',
     url: `${SITE_URL}/mutuelle-pro`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mutuelle TNS / Pro Madelin — Comparez 8 mutuelles | Vivos Assurance',
+    title: 'Mutuelle TNS / Pro Madelin — Comparez 8 mutuelles',
     description:
       'Comparez votre mutuelle santé pro auprès de 8 mutuelles. TNS, dirigeants, freelances. Loi Madelin déductible.',
   },

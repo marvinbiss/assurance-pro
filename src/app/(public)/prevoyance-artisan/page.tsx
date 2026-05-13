@@ -16,7 +16,7 @@ const TAGLINE =
   'La prévoyance dédiée aux artisans BTP : IJ dès J0, rente invalidité, capital décès. Calibrée sur la sinistralité corporelle élevée du métier (chutes, dorsalgies).'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Prévoyance artisan BTP : IJ dès J0 (vs 3 j Sécu), rente invalidité jusqu'à 70% du revenu, capital décès, garantie agression chantier. Madelin déductible. Comparatif PRO BTP, April BTP, Harmonie. Tarifs 128-380€/mois. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

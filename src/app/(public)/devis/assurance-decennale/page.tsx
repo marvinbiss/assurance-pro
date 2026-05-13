@@ -12,7 +12,7 @@ const TAGLINE =
   'Devis assurance décennale GRATUIT en 5 min. Comparatif April Pro, SMABTP, Allianz, MMA, AXA. Tous métiers BTP, AE et SARL. Attestation sous 24h.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Devis décennale gratuit. April Pro best price 950€/an peintre AE, 2 500€/an maçon SARL. Comparatif 5 assureurs BTP. Attestation Loi Spinetta sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -15,7 +15,7 @@ const TAGLINE =
   'Trouver une décennale pas chère sans sacrifier la conformité Loi Spinetta : 7 leviers pour réduire votre prime, pièges à éviter et comparatif des assureurs low-cost vs premium.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     "Décennale pas chère : tarif à partir de 950€/an (auto-entrepreneur peintre), 1 800€/an (SARL maçon). 7 leviers d'économies, pièges à éviter, comparatif Hiscox vs April vs SMABTP.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

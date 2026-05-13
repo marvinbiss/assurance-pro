@@ -5,12 +5,12 @@ import { SITE_URL } from '@/lib/seo/config'
 import { PageHero } from '@/components/layout/PageHero'
 
 export const metadata: Metadata = {
-  title: 'Notre processus de conseil DDA | Vivos Assurance',
+  title: 'Notre processus de conseil DDA',
   description:
     'Comment notre cabinet ORIAS applique le devoir de conseil (art. L. 521-4 C. assur.) et la Recommandation ACPR 2024-R-03 : recueil exigences, analyse impartiale, recommandation motivée, traçabilité.',
   alternates: { canonical: `${SITE_URL}/notre-processus-conseil` },
   openGraph: {
-    title: 'Notre processus de conseil DDA | Vivos Assurance',
+    title: 'Notre processus de conseil DDA',
     description:
       'Comment notre cabinet ORIAS applique le devoir de conseil (art. L. 521-4 C. assur.) et la Recommandation ACPR 2024-R-03 : recueil exigences, analyse impartiale, recommandation motivée, traçabilité.',
     url: `${SITE_URL}/notre-processus-conseil`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Notre processus de conseil DDA | Vivos Assurance',
+    title: 'Notre processus de conseil DDA',
     description:
       'Comment notre cabinet ORIAS applique le devoir de conseil (art. L. 521-4 C. assur.) et la Recommandation ACPR 2024-R-03 : recueil exigences, analyse impartiale, recommandation motivée, traçabilité.',
   },

@@ -12,7 +12,7 @@ const TAGLINE =
   'Tarif assurance responsabilité civile professionnelle 2026 : grilles complètes par profil et activité. AE 95€/an, SARL 600€/an, SAS PME 1 500€/an.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Tarif assurance RC Pro 2026 vérifié : AE dès 95€/an, SARL 350-2 800€, SAS PME 2 500-15 000€. Comparatif 5 assureurs en parallèle.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -16,7 +16,7 @@ const TAGLINE =
   'La décennale obligatoire pour les micro-entreprises BTP : Loi Spinetta, tarifs négociés à partir de 480€/an, attestation 24h, conseil ORIAS spécialisé artisans.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale micro-entreprise BTP : OBLIGATOIRE Loi Spinetta. Tarifs 480-1 540€/an selon métier. Attestation 24h. 8 assureurs comparés (Hiscox, April Pro, SMABTP, MMA, AXA Pro, Wakam, Stello, Generali). Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   "L'assurance Tous Risques Chantier (TRC) couvre les dommages matériels durant la construction : vol, incendie, vandalisme, intempéries. Tarifs et obligation."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Tous Risques Chantier (TRC) : assurance complémentaire décennale couvrant le chantier en cours. Vol matériaux, incendie, vandalisme, intempéries. Tarif 1.5-5% montant travaux.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

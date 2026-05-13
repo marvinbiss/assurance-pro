@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance RC pro pour SASU : couverture président assimilé salarié, plafond adapté CA, RCMS dirigeant. Tous secteurs."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro SASU : couverture adaptée au statut SASU (président assimilé salarié). Plafonds 1,5-10 M€ selon métier. RCMS dirigeant recommandée. Tarifs 380-2 200€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

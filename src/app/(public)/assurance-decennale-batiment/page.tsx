@@ -12,7 +12,7 @@ const TAGLINE =
   'La décennale bâtiment couvre tous les corps d&apos;état BTP : gros œuvre, second œuvre, finitions, équipements techniques. 52 métiers, tarifs 950-15 000€/an.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Décennale bâtiment : 52 métiers BTP couverts (Loi Spinetta). Gros œuvre, second œuvre, finitions. Tarif AE 950€/an (peintre) à 4 500€/an (couvreur). Comparatif assureurs.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

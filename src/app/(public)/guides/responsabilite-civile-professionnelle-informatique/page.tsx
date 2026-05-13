@@ -16,7 +16,7 @@ const TAGLINE =
   'Tout sur la RC pro informatique : 5 risques spécifiques (RGPD, cyber, propriété intellectuelle, défaut conseil, perte données client). 6 assureurs IT spécialisés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Responsabilité civile professionnelle informatique 2026 : 5 risques spécifiques IT (breach RGPD, cyberattaque, propriété intellectuelle, défaut conseil tech, perte données client). 6 assureurs spécialisés (Hiscox, Beazley, AIG, AXA Cyber, Allianz, Wakam). Tarifs 180-1 200€/an freelance, 2 800-12 000€/an SSII. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

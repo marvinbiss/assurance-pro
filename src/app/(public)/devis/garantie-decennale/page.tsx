@@ -12,7 +12,7 @@ const TAGLINE =
   'Devis garantie décennale GRATUIT en 5 min. April Pro best price AE 950€/an. Comparatif SMABTP, Allianz, MMA, AXA. Attestation Loi Spinetta 24h.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Devis garantie décennale gratuit. April Pro 950€/an peintre, 1 400€/an plombier. SMABTP, Allianz, MMA, AXA comparés. Attestation conforme 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

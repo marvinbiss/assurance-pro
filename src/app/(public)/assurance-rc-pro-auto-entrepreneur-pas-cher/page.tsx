@@ -12,7 +12,7 @@ const TAGLINE =
   'RC Pro auto-entrepreneur à prix imbattable : Hiscox dès 95€/an pour AE services intellectuels. 6 leviers d&apos;économies + classement marché 2026.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro AE pas chère : Hiscox dès 95€/an, Stello 90€/an. 6 leviers économies, 4 pièges low-cost. Classement marché vérifié 2026.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

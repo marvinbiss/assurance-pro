@@ -12,7 +12,7 @@ const TAGLINE =
   "Modèle officiel d'attestation RC Pro + démarches d'obtention 24h. Mentions obligatoires, exemple PDF, utilisation client B2B et conformité ACPR."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Attestation RC Pro : modèle PDF officiel + mentions obligatoires (n° contrat, plafond, période). Obtention 24h. Présentation clients B2B + cartes professionnelles.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

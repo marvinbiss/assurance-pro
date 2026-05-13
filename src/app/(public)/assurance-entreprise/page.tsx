@@ -34,7 +34,7 @@ const TAGLINE =
   "L'assurance globale pour TPE, PME et ETI : RC entreprise, multirisque, mutuelle collective, prévoyance dirigeants, cyber, flotte. Tarifs négociés, conseil ORIAS dédié."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'Assurance entreprise : pack global TPE/PME/ETI (RC pro, multirisque locaux, mutuelle collective ANI, prévoyance dirigeants, cyber, flotte automobile). Tarifs négociés à partir de 980 €/an pour TPE 5 salariés. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -12,7 +12,7 @@ const TAGLINE =
   'Pourquoi un pro BTP a besoin des 2 ? Distinction RC Pro et Décennale, périodes, sinistres types, pack combiné économique. Guide complet artisan BTP.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Vivos Assurance`,
+  title: `${TITLE}`,
   description:
     'RC Pro et Décennale : 2 assurances DIFFÉRENTES mais COMPLÉMENTAIRES pour pros BTP. Distinction exacte, exemples sinistres, pack combiné -15-25% économie.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
