@@ -11,7 +11,6 @@
  */
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import {
   ChevronDown,
@@ -99,7 +98,6 @@ const NAV_LINKS = [
 ] as const
 
 export default function HeaderClient() {
-  const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [verticalsOpen, setVerticalsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -111,23 +109,15 @@ export default function HeaderClient() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Mode "hero sombre" uniquement sur la home (qui a le hero charcoal-900 + gradient terra).
-  // Toutes les autres pages ont un fond clair → header toujours glassmorph + dark text.
-  const isHomeHero = pathname === '/'
-  const isTransparent = isHomeHero && !scrolled
-
-  // Variant couleur nav dynamique :
-  //  - Home au top : transparent + blanc (lisible sur hero rouge)
-  //  - Home scrolled / autres pages : glassmorph + charcoal (lisible sur blanc)
-  const navColor = isTransparent ? 'text-white/95' : 'text-charcoal-700'
-  const navHover = isTransparent ? 'hover:text-white' : 'hover:text-primary-700'
+  // Header toujours glassmorph + charcoal text (lisible sur tous fonds).
+  // Au scroll : ajoute shadow + border pour profondeur supplémentaire.
+  const navColor = 'text-charcoal-700'
+  const navHover = 'hover:text-primary-700'
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        isTransparent
-          ? 'border-b border-transparent bg-transparent'
-          : 'border-b border-charcoal-100/80 bg-white/90 shadow-soft backdrop-blur-xl'
+      className={`sticky top-0 z-50 border-b bg-white/90 backdrop-blur-xl transition-all duration-300 ${
+        scrolled ? 'border-charcoal-100/80 shadow-soft' : 'border-charcoal-100/40'
       }`}
     >
       <div className="container mx-auto max-w-7xl px-4">
@@ -138,7 +128,7 @@ export default function HeaderClient() {
             className="transition-opacity hover:opacity-90"
             aria-label="Vivos Assurance — Accueil"
           >
-            <VivosLogo size="md" variant={isTransparent ? 'light' : 'dark'} />
+            <VivosLogo size="md" variant="dark" />
           </Link>
 
           {/* Desktop nav */}
