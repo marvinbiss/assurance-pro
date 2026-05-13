@@ -8,7 +8,7 @@ import {
 import { logger } from '@/lib/logger'
 
 /**
- * Middleware Assurance Pro — concerns hot-path uniquement.
+ * Middleware Vivos Assurance — concerns hot-path uniquement.
  *
  * Responsabilités (single source of truth) :
  * - URL canonicalization (https, non-www, no trailing slash, lowercase, strip tracking params)

@@ -19,6 +19,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -30,7 +31,7 @@ export const revalidate = 86400
 const SLUG = 'outils/comparateur-mutuelle-pro'
 
 export const metadata: Metadata = {
-  title: 'Comparateur mutuelle pro 2026 — TNS, BTP, dirigeant | Assurance Pro',
+  title: 'Comparateur mutuelle pro 2026 — TNS, BTP, dirigeant | Vivos Assurance',
   description:
     'Comparateur mutuelle pro gratuit en 2 minutes : TNS Madelin déductible, mutuelle pro BTP (16k recherches/mois), mutuelle dirigeant SASU/SAS. 6 assureurs comparés (PRO BTP, April Pro, MMA, Generali, Aon, Harmonie). Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -52,13 +53,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-emerald-700 to-teal-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/mutuelle-pro" className="hover:underline">
+            <Link href="/mutuelle-pro" className="hover:underline">
               Mutuelle pro
-            </a>{' '}
+            </Link>{' '}
             / <span>Comparateur mutuelle pro</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-amber-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -305,7 +306,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Comparateur mutuelle pro — Assurance Pro',
+            name: 'Comparateur mutuelle pro — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Any',

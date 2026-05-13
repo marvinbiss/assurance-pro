@@ -63,7 +63,7 @@ export function reclamationAckTemplate({
         — TSA 50110, 75441 Paris cedex 09.
       </p>
       <p style="margin-top:24px;color:#475569;font-size:13px">
-        Service Réclamations — Assurance Pro<br>
+        Service Réclamations — Vivos Assurance<br>
         <a href="mailto:reclamations@vivos-assurance.fr" style="color:#1d4ed8">reclamations@vivos-assurance.fr</a>
       </p>
     </div>

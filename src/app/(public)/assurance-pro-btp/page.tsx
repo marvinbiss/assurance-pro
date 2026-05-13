@@ -10,7 +10,7 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'assurance-pro-btp'
-const TITLE = 'Assurance Pro BTP — Décennale, RC Pro, Mutuelle, Multirisque 2026'
+const TITLE = 'Vivos Assurance BTP — Décennale, RC Pro, Mutuelle, Multirisque 2026'
 const TAGLINE =
   'Le pack assurance complet pour les pros du Bâtiment : décennale (obligatoire Spinetta), RC Pro, multirisque pro, mutuelle pro BTP et flotte véhicule. Devis groupé sous 24h.'
 

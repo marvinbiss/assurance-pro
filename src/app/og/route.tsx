@@ -5,7 +5,9 @@ export const runtime = 'edge'
 
 const SIZE = { width: 1200, height: 630 }
 
-const CATEGORY_PALETTE: Record<string, { bg: string; accent: string; label: string }> = {
+type PaletteEntry = { bg: string; accent: string; label: string }
+
+const CATEGORY_PALETTE = {
   pilier: {
     bg: 'linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%)',
     accent: '#fbbf24',
@@ -46,7 +48,7 @@ const CATEGORY_PALETTE: Record<string, { bg: string; accent: string; label: stri
     accent: '#fbbf24',
     label: 'ASSURANCE PRO',
   },
-}
+} as const satisfies Record<string, PaletteEntry>
 
 function truncate(text: string, max: number): string {
   if (text.length <= max) return text
@@ -56,12 +58,12 @@ function truncate(text: string, max: number): string {
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
 
-  const title = truncate(searchParams.get('title')?.trim() || 'Assurance Professionnelle', 90)
+  const title = truncate(searchParams.get('title')?.trim() || 'Vivos Assurancefessionnelle', 90)
   const subtitle = truncate(searchParams.get('subtitle')?.trim() || '', 120)
   const categoryKey = (searchParams.get('category')?.trim().toLowerCase() ||
     'default') as keyof typeof CATEGORY_PALETTE
   const price = searchParams.get('price')?.trim() || ''
-  const palette = CATEGORY_PALETTE[categoryKey] ?? CATEGORY_PALETTE.default!
+  const palette: PaletteEntry = CATEGORY_PALETTE[categoryKey] ?? CATEGORY_PALETTE.default
 
   return new ImageResponse(
     <div

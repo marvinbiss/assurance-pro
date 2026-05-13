@@ -1,5 +1,5 @@
 /**
- * Rate Limiter Service - Assurance Pro
+ * Rate Limiter Service - Vivos Assurance
  * Uses Redis (Upstash) for distributed rate limiting in production
  * Falls back to in-memory for development
  */

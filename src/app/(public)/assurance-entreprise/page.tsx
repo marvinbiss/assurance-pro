@@ -22,6 +22,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -33,7 +34,7 @@ const TAGLINE =
   "L'assurance globale pour TPE, PME et ETI : RC entreprise, multirisque, mutuelle collective, prévoyance dirigeants, cyber, flotte. Tarifs négociés, conseil ORIAS dédié."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance entreprise : pack global TPE/PME/ETI (RC pro, multirisque locaux, mutuelle collective ANI, prévoyance dirigeants, cyber, flotte automobile). Tarifs négociés à partir de 980 €/an pour TPE 5 salariés. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -183,84 +184,84 @@ export default function Page() {
               <h3>Garanties transversales</h3>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/responsabilite-civile-professionnelle"
                     className="text-primary-600 underline"
                   >
                     RC Pro / RCP
-                  </a>{' '}
+                  </Link>{' '}
                   — pilier complet
                 </li>
                 <li>
-                  <a href="/multirisque-pro" className="text-primary-600 underline">
+                  <Link href="/multirisque-pro" className="text-primary-600 underline">
                     Multirisque pro
-                  </a>{' '}
+                  </Link>{' '}
                   — locaux + matériel + stock
                 </li>
                 <li>
-                  <a href="/cyber-assurance" className="text-primary-600 underline">
+                  <Link href="/cyber-assurance" className="text-primary-600 underline">
                     Cyber assurance
-                  </a>{' '}
+                  </Link>{' '}
                   — fuite données + ransomware
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-voiture-professionnelle"
                     className="text-primary-600 underline"
                   >
                     Flotte automobile pro
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <h3>Par taille / type</h3>
               <ul>
                 <li>
-                  <a href="/assurance-micro-entreprise" className="text-primary-600 underline">
+                  <Link href="/assurance-micro-entreprise" className="text-primary-600 underline">
                     Micro-entreprise / TPE &lt; 10
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-artisan" className="text-primary-600 underline">
+                  <Link href="/assurance-artisan" className="text-primary-600 underline">
                     Pack artisan
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-commerce" className="text-primary-600 underline">
+                  <Link href="/assurance-commerce" className="text-primary-600 underline">
                     Pack commerce
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-restaurant" className="text-primary-600 underline">
+                  <Link href="/assurance-restaurant" className="text-primary-600 underline">
                     Pack restauration
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-bureau" className="text-primary-600 underline">
+                  <Link href="/assurance-bureau" className="text-primary-600 underline">
                     Pack bureau / coworking
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-local-commercial" className="text-primary-600 underline">
+                  <Link href="/assurance-local-commercial" className="text-primary-600 underline">
                     Pack local commercial
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <h3>Salariés et dirigeants</h3>
               <ul>
                 <li>
-                  <a href="/mutuelle-pro" className="text-primary-600 underline">
+                  <Link href="/mutuelle-pro" className="text-primary-600 underline">
                     Mutuelle collective ANI
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/mutuelle-pro-btp" className="text-primary-600 underline">
+                  <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                     Mutuelle pro BTP
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-homme-cle" className="text-primary-600 underline">
+                  <Link href="/assurance-homme-cle" className="text-primary-600 underline">
                     Assurance homme-clé
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </>

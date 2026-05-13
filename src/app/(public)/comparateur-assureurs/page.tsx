@@ -10,7 +10,7 @@ import { SITE_URL } from '@/lib/seo/config'
 import { PageHero } from '@/components/layout/PageHero'
 
 export const metadata: Metadata = {
-  title: "Comparateur d'assureurs pro 2026 — 10 compagnies | Assurance Pro",
+  title: "Comparateur d'assureurs pro 2026 — 10 compagnies | Vivos Assurance",
   description:
     'Comparez les 10 principaux assureurs pro français. Hiscox, April Pro, Allianz, MMA, Generali, AXA, MAAF, SMABTP, Wakam, Stello. Tarifs, garanties, spécialités.',
   alternates: {

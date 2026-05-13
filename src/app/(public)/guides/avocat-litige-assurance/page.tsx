@@ -14,6 +14,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -25,7 +26,7 @@ const TAGLINE =
   "Comment trouver et choisir un avocat spécialisé en droit des assurances : refus d'indemnisation, mauvaise foi, mise en demeure, expertise judiciaire. Conseil ORIAS."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Guide avocat litige assurance : trouver un avocat spécialisé droit des assurances, procédure recours après refus indemnisation, médiation préalable, expertise judiciaire, alternatives (PJ Pro, médiateur). Conseil ORIAS gratuit sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -60,7 +61,7 @@ export default function Page() {
         {
           icon: '🛡️',
           title: 'PJ Pro = défense gratuite',
-          desc: 'Si vous avez une <a href="/protection-juridique-professionnelle" className="underline">PJ pro</a>, frais avocat pris en charge jusqu\'à 30 000€',
+          desc: 'Si vous avez une <Link href="/protection-juridique-professionnelle" className="underline">PJ pro</Link>, frais avocat pris en charge jusqu\'à 30 000€',
         },
       ]}
       sections={[
@@ -113,12 +114,12 @@ export default function Page() {
               <h3>2. Protection juridique professionnelle (frais avocat couverts)</h3>
               <p>
                 Si vous avez souscrit une{' '}
-                <a
+                <Link
                   href="/protection-juridique-professionnelle"
                   className="text-primary-600 underline"
                 >
                   PJ Pro
-                </a>
+                </Link>
                 , votre assureur PJ prend en charge :
               </p>
               <ul>

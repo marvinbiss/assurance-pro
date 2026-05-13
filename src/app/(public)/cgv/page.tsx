@@ -1,26 +1,27 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { FileText } from 'lucide-react'
 import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Conditions Générales de Service | Assurance Pro',
+  title: 'Conditions Générales de Service | Vivos Assurance',
   description:
-    'Conditions générales de service du cabinet de courtage ORIAS Assurance Pro. Périmètre, rémunération, responsabilité, conformité ACPR.',
+    'Conditions générales de service du cabinet de courtage ORIAS Vivos Assurance. Périmètre, rémunération, responsabilité, conformité ACPR.',
   alternates: { canonical: `${SITE_URL}/cgv` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Conditions Générales de Service | Assurance Pro',
+    title: 'Conditions Générales de Service | Vivos Assurance',
     description:
-      'Conditions générales de service du cabinet de courtage ORIAS Assurance Pro. Périmètre, rémunération, responsabilité, conformité ACPR.',
+      'Conditions générales de service du cabinet de courtage ORIAS Vivos Assurance. Périmètre, rémunération, responsabilité, conformité ACPR.',
     url: `${SITE_URL}/cgv`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Conditions Générales de Service | Assurance Pro',
+    title: 'Conditions Générales de Service | Vivos Assurance',
     description:
-      'Conditions générales de service du cabinet de courtage ORIAS Assurance Pro. Périmètre, rémunération, responsabilité, conformité ACPR.',
+      'Conditions générales de service du cabinet de courtage ORIAS Vivos Assurance. Périmètre, rémunération, responsabilité, conformité ACPR.',
   },
 }
 
@@ -42,7 +43,7 @@ export default function CgvPage() {
 
           <h2>1. Présentation du cabinet</h2>
           <p>
-            Assurance Pro est un cabinet de courtage en assurance immatriculé à l\'ORIAS sous le
+            Vivos Assurance est un cabinet de courtage en assurance immatriculé à l\'ORIAS sous le
             numéro {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'} (catégorie : Courtier en
             Assurance, type b), consultable sur{' '}
             <a href="https://www.orias.fr" target="_blank" rel="noopener noreferrer">
@@ -135,7 +136,7 @@ export default function CgvPage() {
 
           <h2>8. Protection des données personnelles (RGPD)</h2>
           <p>
-            Voir notre <a href="/confidentialite">Politique de confidentialité</a> détaillée.
+            Voir notre <Link href="/confidentialite">Politique de confidentialité</Link> détaillée.
           </p>
 
           <h2>9. Droit applicable</h2>

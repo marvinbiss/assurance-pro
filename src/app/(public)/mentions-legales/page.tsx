@@ -1,32 +1,33 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Scale } from 'lucide-react'
 import { SITE_URL } from '@/lib/seo/config'
 import { PageHero } from '@/components/layout/PageHero'
 
 export const metadata: Metadata = {
-  title: 'Mentions légales | Assurance Pro',
+  title: 'Mentions légales | Vivos Assurance',
   description:
-    'Mentions légales du cabinet de courtage ORIAS Assurance Pro. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
+    'Mentions légales du cabinet de courtage ORIAS Vivos Assurance. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
   alternates: { canonical: `${SITE_URL}/mentions-legales` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Mentions légales | Assurance Pro',
+    title: 'Mentions légales | Vivos Assurance',
     description:
-      'Mentions légales du cabinet de courtage ORIAS Assurance Pro. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
+      'Mentions légales du cabinet de courtage ORIAS Vivos Assurance. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
     url: `${SITE_URL}/mentions-legales`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mentions légales | Assurance Pro',
+    title: 'Mentions légales | Vivos Assurance',
     description:
-      'Mentions légales du cabinet de courtage ORIAS Assurance Pro. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
+      'Mentions légales du cabinet de courtage ORIAS Vivos Assurance. Éditeur, hébergeur, ORIAS, ACPR, RCP, garantie financière, propriété intellectuelle.',
   },
 }
 
 export default function MentionsLegalesPage() {
   const orias = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
-  const editor = process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Assurance Pro SAS'
+  const editor = process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Vivos Assurance SAS'
   const siret = process.env.NEXT_PUBLIC_LEGAL_SIRET ?? 'XXX XXX XXX 00000'
   const rcs = process.env.NEXT_PUBLIC_LEGAL_RCS ?? 'RCS Paris'
   const capital = process.env.NEXT_PUBLIC_LEGAL_CAPITAL ?? '10 000 €'
@@ -140,8 +141,8 @@ export default function MentionsLegalesPage() {
 
           <h2>10. Réclamations et médiation</h2>
           <p>
-            Toute réclamation peut être adressée par formulaire dédié <a href="/reclamation">ici</a>{' '}
-            ou par email à{' '}
+            Toute réclamation peut être adressée par formulaire dédié{' '}
+            <Link href="/reclamation">ici</Link> ou par email à{' '}
             <a href="mailto:reclamations@vivos-assurance.fr">reclamations@vivos-assurance.fr</a>. En
             cas de désaccord persistant, vous pouvez saisir le{' '}
             <strong>Médiateur de l&apos;Assurance</strong> : TSA 50110, 75441 Paris cedex 09 —{' '}
@@ -168,8 +169,8 @@ export default function MentionsLegalesPage() {
 
           <h2>13. Protection des données personnelles</h2>
           <p>
-            Voir notre <a href="/confidentialite">Politique de confidentialité</a> et notre{' '}
-            <a href="/cookies">Politique cookies</a>.
+            Voir notre <Link href="/confidentialite">Politique de confidentialité</Link> et notre{' '}
+            <Link href="/cookies">Politique cookies</Link>.
           </p>
 
           <h2>14. Droit applicable</h2>

@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   "L'assurance santé pour les professionnels indépendants : mutuelle TNS Madelin, panier optique/dentaire renforcé, médecines douces, hospitalisation. Conseil ORIAS."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Assurance santé professionnelle pour indépendants : mutuelle TNS Madelin déductible, optique 100% Santé+, dentaire renforcé, médecines douces, hospitalisation jusqu'à 400% BR. Comparatif April, MMA, Generali, Aon. Tarifs 32-220€/mois. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -60,33 +61,33 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/mutuelle-tns" className="text-primary-600 underline">
+                  <Link href="/mutuelle-tns" className="text-primary-600 underline">
                     Mutuelle TNS Madelin
-                  </a>{' '}
+                  </Link>{' '}
                   — pilier complet pour indépendants au régime réel
                 </li>
                 <li>
-                  <a href="/mutuelle-pro-btp" className="text-primary-600 underline">
+                  <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                     Mutuelle pro BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — comparatif PRO BTP, April BTP, Harmonie BTP (16k vol/mois)
                 </li>
                 <li>
-                  <a href="/assurance-sante-entreprise" className="text-primary-600 underline">
+                  <Link href="/assurance-sante-entreprise" className="text-primary-600 underline">
                     Assurance santé entreprise
-                  </a>{' '}
+                  </Link>{' '}
                   — mutuelle COLLECTIVE obligatoire ANI 2013 (pour les SALARIÉS)
                 </li>
                 <li>
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     Prévoyance TNS
-                  </a>{' '}
+                  </Link>{' '}
                   — IJ + invalidité + capital décès (couplable Madelin)
                 </li>
                 <li>
-                  <a href="/assurance-medecin" className="text-primary-600 underline">
+                  <Link href="/assurance-medecin" className="text-primary-600 underline">
                     Assurance médecin
-                  </a>{' '}
+                  </Link>{' '}
                   — pack libéral global pour praticiens santé
                 </li>
               </ul>

@@ -9,6 +9,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -19,7 +20,7 @@ const TAGLINE =
   'La RC Pro recommandée pour consultants/coachs/experts indépendants : couverture défaut conseil, erreur préconisation, manquement obligation moyens, perte chance client. Tarifs ultra-compétitifs.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'RC Pro consultant 2026 : couverture défaut conseil, erreur préconisation stratégique, manquement obligation moyens, perte chance, dommages immatériels. Sinistralité 1,2% (faible mais sinistres lourds). Tarifs 90-280€/an AE. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -142,24 +143,27 @@ export default function Page() {
             <div>
               <ul>
                 <li>
-                  <a href="/outils/calculateur-tarif-rc-pro" className="text-primary-600 underline">
+                  <Link
+                    href="/outils/calculateur-tarif-rc-pro"
+                    className="text-primary-600 underline"
+                  >
                     Calculateur tarif RC Pro consultant
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/outils/devis-rc-pro" className="text-primary-600 underline">
+                  <Link href="/outils/devis-rc-pro" className="text-primary-600 underline">
                     Devis officiel RC Pro ORIAS sous 24h
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/cyber-assurance" className="text-primary-600 underline">
+                  <Link href="/cyber-assurance" className="text-primary-600 underline">
                     Cyber assurance (pack pour consultants IT/data)
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/rc-pro" className="text-primary-600 underline">
+                  <Link href="/rc-pro" className="text-primary-600 underline">
                     Pilier RC Pro — 18 professions
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

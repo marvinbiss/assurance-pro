@@ -27,6 +27,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { CalculateurTarifRcPro } from '@/components/outils/CalculateurTarifRcPro'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
@@ -61,13 +62,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-blue-700 to-cyan-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/rc-pro" className="hover:underline">
+            <Link href="/rc-pro" className="hover:underline">
               RC Pro
-            </a>{' '}
+            </Link>{' '}
             / <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -335,12 +336,12 @@ export default async function Page() {
             officielles parmi nos 8 assureurs partenaires. Souscription en ligne, attestation RC Pro
             téléchargeable dans les 24h suivant le paiement.
           </p>
-          <a
+          <Link
             href="/outils/devis-rc-pro"
             className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
           >
             → Devis officiel RC Pro (2 min, ORIAS)
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -423,7 +424,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Calculateur tarif RC Pro 2026 — Assurance Pro',
+            name: 'Calculateur tarif RC Pro 2026 — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Any',

@@ -12,6 +12,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -22,7 +23,7 @@ const TAGLINE =
   'La décennale obligatoire pour plombier-chauffagiste : couverture spécifique dégâts des eaux encastrés (top sinistre AQC 7,2%), chaudières, robinetterie. Tarifs 2026 négociés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Décennale plombier-chauffagiste 2026 : OBLIGATOIRE Loi Spinetta. Couverture dégâts des eaux encastrés (3e sinistre AQC), chaudières gaz/condensation, plancher chauffant. Tarifs 540-980€/an AE, 5 800-12 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -97,31 +98,31 @@ export default function Page() {
             <div>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/outils/calculateur-tarif-decennale"
                     className="text-primary-600 underline"
                   >
                     Calculateur tarif décennale plombier
-                  </a>{' '}
+                  </Link>{' '}
                   — estimation 30 secondes
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/outils/devis-assurance-decennale"
                     className="text-primary-600 underline"
                   >
                     Devis officiel ORIAS sous 24h
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Pilier décennale BTP — Loi Spinetta + 37 métiers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/guides/attestation-decennale" className="text-primary-600 underline">
+                  <Link href="/guides/attestation-decennale" className="text-primary-600 underline">
                     Guide attestation décennale (11 mentions arrêté 2024)
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

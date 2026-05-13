@@ -21,6 +21,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -32,7 +33,7 @@ const TAGLINE =
   'Le guide de référence pour choisir vos assurances professionnelles : RC Pro, décennale, multirisque, mutuelle, prévoyance, cyber. Comparatif assureurs et tarifs 2026.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance professionnelle : guide complet 2026 (RC Pro, décennale, multirisque pro, mutuelle TNS, prévoyance Madelin, cyber). Comparatif 8 assureurs (Allianz, AXA, MMA, MAAF, Hiscox, April, Generali, Wakam). Tarifs négociés. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -169,100 +170,100 @@ export default function Page() {
               <h3>Auto-entrepreneur / freelance digital</h3>
               <ul>
                 <li>
-                  <a href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
+                  <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     RC Pro AE
-                  </a>{' '}
+                  </Link>{' '}
                   — exigée par 78% des plateformes B2B (89-340€/an)
                 </li>
                 <li>
                   Mutuelle individuelle Madelin (au régime réel) — voir{' '}
-                  <a href="/mutuelle-tns" className="text-primary-600 underline">
+                  <Link href="/mutuelle-tns" className="text-primary-600 underline">
                     /mutuelle-tns
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <h3>Artisan BTP</h3>
               <ul>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Décennale obligatoire
-                  </a>{' '}
+                  </Link>{' '}
                   + RC Pro travaux + véhicule pro
                 </li>
                 <li>
-                  <a href="/mutuelle-pro-btp" className="text-primary-600 underline">
+                  <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                     Mutuelle pro BTP
-                  </a>{' '}
+                  </Link>{' '}
                   +{' '}
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     Prévoyance TNS
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   Pack complet : voir{' '}
-                  <a href="/assurance-artisan" className="text-primary-600 underline">
+                  <Link href="/assurance-artisan" className="text-primary-600 underline">
                     /assurance-artisan
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <h3>Commerçant en boutique</h3>
               <ul>
                 <li>
-                  <a href="/assurance-local-commercial" className="text-primary-600 underline">
+                  <Link href="/assurance-local-commercial" className="text-primary-600 underline">
                     Multirisque local
-                  </a>{' '}
+                  </Link>{' '}
                   obligatoire (bail commercial)
                 </li>
                 <li>
-                  <a href="/assurance-commerce" className="text-primary-600 underline">
+                  <Link href="/assurance-commerce" className="text-primary-600 underline">
                     Pack commerce
-                  </a>{' '}
+                  </Link>{' '}
                   avec stock + bris de glace + RC client
                 </li>
               </ul>
               <h3>Restaurateur / hôtelier</h3>
               <ul>
                 <li>
-                  <a href="/assurance-restaurant" className="text-primary-600 underline">
+                  <Link href="/assurance-restaurant" className="text-primary-600 underline">
                     Pack HCR
-                  </a>{' '}
+                  </Link>{' '}
                   avec garantie intoxication alimentaire + bris matériel pro
                 </li>
               </ul>
               <h3>Cabinet libéral / consulting / agence</h3>
               <ul>
                 <li>
-                  <a href="/assurance-bureau" className="text-primary-600 underline">
+                  <Link href="/assurance-bureau" className="text-primary-600 underline">
                     Multirisque bureau
-                  </a>{' '}
+                  </Link>{' '}
                   + équipement IT
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/responsabilite-civile-professionnelle"
                     className="text-primary-600 underline"
                   >
                     RC Pro
-                  </a>{' '}
+                  </Link>{' '}
                   avec plafond adapté (5 M€ pour conseil IT/financier)
                 </li>
                 <li>
                   Cyber assurance recommandée — voir{' '}
-                  <a href="/cyber-assurance" className="text-primary-600 underline">
+                  <Link href="/cyber-assurance" className="text-primary-600 underline">
                     /cyber-assurance
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <h3>VTC / Taxi</h3>
               <ul>
                 <li>
-                  <a href="/assurance-vtc" className="text-primary-600 underline">
+                  <Link href="/assurance-vtc" className="text-primary-600 underline">
                     Pack VTC
-                  </a>{' '}
+                  </Link>{' '}
                   ou{' '}
-                  <a href="/assurance-taxi" className="text-primary-600 underline">
+                  <Link href="/assurance-taxi" className="text-primary-600 underline">
                     /assurance-taxi
-                  </a>{' '}
+                  </Link>{' '}
                   avec garantie ADS-licence
                 </li>
               </ul>

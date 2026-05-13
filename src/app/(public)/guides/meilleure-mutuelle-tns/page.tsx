@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   'Quelle est la meilleure mutuelle santé pour Travailleur Non Salarié en 2026 ? Comparatif honnête de 7 organismes : Apicil, Pro BTP, Malakoff Humanis, AG2R, Allianz, Generali, MAAF Pro.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Meilleure mutuelle TNS 2026 : comparatif 7 organismes (Apicil, Pro BTP, Malakoff Humanis, AG2R La Mondiale, Allianz, Generali, MAAF Pro). Avis cabinet ORIAS basé sur 800+ adhésions 2024-2025. Tarifs 32-145€/mois adulte. Loi Madelin déductible.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -183,30 +184,33 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <a
+                <Link
                   href="/outils/calculateur-tarif-mutuelle-pro"
                   className="text-primary-600 underline"
                 >
                   Calculateur tarif mutuelle TNS
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/outils/comparateur-mutuelle-pro" className="text-primary-600 underline">
+                <Link
+                  href="/outils/comparateur-mutuelle-pro"
+                  className="text-primary-600 underline"
+                >
                   Comparateur officiel mutuelle pro
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/mutuelle-sante-tns" className="text-primary-600 underline">
+                <Link href="/mutuelle-sante-tns" className="text-primary-600 underline">
                   Pilier mutuelle santé TNS
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/outils/calculateur-tarif-prevoyance-tns"
                   className="text-primary-600 underline"
                 >
                   Calculateur prévoyance TNS Madelin
-                </a>
+                </Link>
               </li>
             </ul>
           ),

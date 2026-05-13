@@ -85,7 +85,7 @@ export function TestimonialsSection({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Assurance Pro',
+              name: 'Vivos Assurance',
               aggregateRating: {
                 '@type': 'AggregateRating',
                 ratingValue: avgRating.toFixed(1),

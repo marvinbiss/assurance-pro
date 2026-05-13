@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   'La mutuelle santé pour Travailleurs Non Salariés (TNS) : remboursements optique/dentaire renforcés, hospitalisation, médecines douces. Loi Madelin déductible.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Mutuelle santé TNS Loi Madelin : remboursements optique/dentaire, hospitalisation 100-400% BR, médecines douces. Comparatif April Pro Santé, MMA Pro, Generali, Aon. Tarifs 32-180€/mois. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -60,9 +61,9 @@ export default function Page() {
             <>
               <p>
                 Cette page est complémentaire à notre pilier{' '}
-                <a href="/mutuelle-tns" className="text-primary-600 underline">
+                <Link href="/mutuelle-tns" className="text-primary-600 underline">
                   /mutuelle-tns
-                </a>{' '}
+                </Link>{' '}
                 qui détaille en profondeur :
               </p>
               <ul>
@@ -79,9 +80,9 @@ export default function Page() {
               </ul>
               <p>
                 Voir aussi{' '}
-                <a href="/prevoyance-tns" className="text-primary-600 underline">
+                <Link href="/prevoyance-tns" className="text-primary-600 underline">
                   /prevoyance-tns
-                </a>{' '}
+                </Link>{' '}
                 (IJ + invalidité + capital décès, complément critique pour TNS).
               </p>
             </>

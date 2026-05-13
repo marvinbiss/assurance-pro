@@ -1,5 +1,5 @@
 /**
- * Company Identity — Single Source of Truth (Assurance Pro, courtier ORIAS).
+ * Company Identity — Single Source of Truth (Vivos Assurance, courtier ORIAS).
  *
  * Hiérarchie des sources :
  *   Niveau 1 (mentions légales) : siret, legalName, address, phone, rcs, tva, orias
@@ -16,7 +16,7 @@
 
 export const companyIdentity = {
   // Brand (Level 5 — UI copy only)
-  name: 'Assurance Pro' as const,
+  name: 'Vivos Assurance' as const,
   tagline: 'Courtier ORIAS — comparez et négociez votre assurance pro en 2 minutes',
   description:
     "Cabinet de courtage ORIAS spécialiste de l'assurance professionnelle. 10 assureurs partenaires comparés sur 17 verticaux : décennale BTP, RC Pro, multirisque, mutuelle TNS Madelin, VTC, cyber. Aucun frais de courtage facturé.",

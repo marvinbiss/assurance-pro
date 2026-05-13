@@ -26,14 +26,14 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   if (r.kind === 'metier') {
     const m = r.metier
     return {
-      title: `Assurance décennale ${m.name} 2026 — Tarifs + comparatif | Assurance Pro`,
+      title: `Assurance décennale ${m.name} 2026 — Tarifs + comparatif | Vivos Assurance`,
       description: `${m.tagline} Sinistralité ${m.sinistraliteAqc}% (AQC). Tarifs négociés à partir de ${m.tarifs.auto_entrepreneur.min}€/an pour les auto-entrepreneurs. Devis gratuit en 24h.`,
       alternates: { canonical: `${SITE_URL}/assurance-decennale/${m.slug}` },
     }
   }
   const v = r.ville
   return {
-    title: `Assurance décennale ${v.nom} (${v.departementCode}) — Tarifs artisans BTP 2026 | Assurance Pro`,
+    title: `Assurance décennale ${v.nom} (${v.departementCode}) — Tarifs artisans BTP 2026 | Vivos Assurance`,
     description: `Garantie décennale obligatoire pour les artisans BTP de ${v.nom}. ~${v.artisansBtpEstime.toLocaleString('fr-FR')} entreprises BTP locales. Tarifs négociés à partir de 480€/an. Devis gratuit ORIAS sous 24h.`,
     alternates: { canonical: `${SITE_URL}/assurance-decennale/${v.slug}` },
   }

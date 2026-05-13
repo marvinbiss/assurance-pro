@@ -9,6 +9,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { CalculateurTarifMultirisquePro } from '@/components/outils/CalculateurTarifMultirisquePro'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
@@ -41,13 +42,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-orange-700 to-red-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/multirisque-pro" className="hover:underline">
+            <Link href="/multirisque-pro" className="hover:underline">
               Multirisque pro
-            </a>{' '}
+            </Link>{' '}
             / <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -178,18 +179,18 @@ export default async function Page() {
             officielles parmi nos 7 partenaires multirisque pro. Tarif négocié -10-25% vs direct.
           </p>
           <div className="flex flex-col justify-center gap-3 md:flex-row">
-            <a
+            <Link
               href="/multirisque-pro"
               className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-orange-700 shadow-lg transition hover:bg-gray-100"
             >
               → Pilier multirisque pro
-            </a>
-            <a
+            </Link>
+            <Link
               href="/assurance-locaux-entreprise"
               className="inline-block rounded-lg border border-white/30 bg-orange-800 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-orange-900"
             >
               → Guide assurance locaux entreprise
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -199,7 +200,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Calculateur tarif multirisque pro 2026 — Assurance Pro',
+            name: 'Calculateur tarif multirisque pro 2026 — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Any',

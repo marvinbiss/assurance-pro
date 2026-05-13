@@ -11,6 +11,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -21,7 +22,7 @@ const TAGLINE =
   'La RC Pro obligatoire pour transporteurs marchandises : couverture Convention CMR (international) + art. L. 132-1 C. transp. (national). Plafonds règlementaires + garantie complément possible.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'RC Pro transport marchandises 2026 : OBLIGATOIRE Convention CMR (international) + art. L. 132-1 C. transp. (national). Plafonds règlementaires CMR : 8,33 DTS/kg (≈10€/kg). Garantie ad valorem complémentaire possible. Tarifs 380-1 800€/an AE/EI, 5 200-12 000€/an SARL flotte. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -147,24 +148,27 @@ export default function Page() {
             <div>
               <ul>
                 <li>
-                  <a href="/outils/calculateur-tarif-rc-pro" className="text-primary-600 underline">
+                  <Link
+                    href="/outils/calculateur-tarif-rc-pro"
+                    className="text-primary-600 underline"
+                  >
                     Calculateur tarif RC Pro transport
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/outils/devis-rc-pro" className="text-primary-600 underline">
+                  <Link href="/outils/devis-rc-pro" className="text-primary-600 underline">
                     Devis officiel RC Pro ORIAS sous 24h
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-vtc" className="text-primary-600 underline">
+                  <Link href="/assurance-vtc" className="text-primary-600 underline">
                     Assurance VTC (transport personnes)
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/rc-pro" className="text-primary-600 underline">
+                  <Link href="/rc-pro" className="text-primary-600 underline">
                     Pilier RC Pro
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "L'assurance RC pro pour coiffeurs : salon coiffure, barbier, coiffeur à domicile. Couverture brûlure cuir chevelu, allergie produits, casse matériel client."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'RC Pro coiffeur : couvre brûlures cuir chevelu, allergies coloration, casse lunettes/portable client en salon. Plafond 1,5 M€. Tarifs 220-580€/an (AE) / 580-1 200€/an (salon). Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -89,9 +90,9 @@ export default function Page() {
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
                 Pour salon avec local : ajouter multirisque local commercial 380-680€/an. Voir{' '}
-                <a href="/assurance-local-commercial" className="text-primary-600 underline">
+                <Link href="/assurance-local-commercial" className="text-primary-600 underline">
                   /assurance-local-commercial
-                </a>
+                </Link>
                 .
               </p>
             </>

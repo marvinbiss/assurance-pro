@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { FileText } from 'lucide-react'
 import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: "Fiche d'Information Précontractuelle (FIC) | Assurance Pro",
+  title: "Fiche d'Information Précontractuelle (FIC) | Vivos Assurance",
   description:
     "Fiche d'information précontractuelle de notre cabinet de courtage ORIAS. Identité, statut, rémunération, conseil, conformité DDA art. L. 521-2 du Code des assurances.",
   alternates: { canonical: `${SITE_URL}/fic` },
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function FicPage() {
   const orias = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
-  const editor = process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Assurance Pro SAS'
+  const editor = process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Vivos Assurance SAS'
   const address = process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'
 
   return (
@@ -130,7 +131,7 @@ export default function FicPage() {
           <h2>5. Procédure de réclamation et médiation</h2>
           <p>
             Toute réclamation peut être déposée via notre{' '}
-            <a href="/reclamation">formulaire en ligne</a> ou par email à{' '}
+            <Link href="/reclamation">formulaire en ligne</Link> ou par email à{' '}
             <a href="mailto:reclamations@vivos-assurance.fr">reclamations@vivos-assurance.fr</a>.
           </p>
           <ul>
@@ -172,7 +173,7 @@ export default function FicPage() {
           <h2>8. Protection des données personnelles</h2>
           <p>
             Vos données sont traitées dans le respect du RGPD et de la Loi Informatique et Libertés.
-            Voir notre <a href="/confidentialite">Politique de confidentialité</a>.
+            Voir notre <Link href="/confidentialite">Politique de confidentialité</Link>.
           </p>
 
           <h2>9. Téléchargement</h2>

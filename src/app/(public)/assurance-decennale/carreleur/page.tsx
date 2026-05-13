@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   'La décennale obligatoire pour carreleur : couverture spécifique fissures carrelage, défauts pose chape, étanchéité salle de bain. Sinistralité AQC 6,5%.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Décennale carreleur 2026 : OBLIGATOIRE Loi Spinetta. Couverture fissures carrelage (sol/mur), défauts pose chape, étanchéité salle de bain (SPEC), désolidarisation. Sinistralité AQC 6,5%. Tarifs 560-920€/an AE, 5 800-12 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -88,22 +89,25 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <a
+                <Link
                   href="/outils/calculateur-tarif-decennale"
                   className="text-primary-600 underline"
                 >
                   Calculateur tarif décennale carreleur
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/outils/devis-assurance-decennale" className="text-primary-600 underline">
+                <Link
+                  href="/outils/devis-assurance-decennale"
+                  className="text-primary-600 underline"
+                >
                   Devis officiel ORIAS sous 24h
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/assurance-decennale" className="text-primary-600 underline">
+                <Link href="/assurance-decennale" className="text-primary-600 underline">
                   Pilier décennale BTP
-                </a>
+                </Link>
               </li>
             </ul>
           ),

@@ -20,6 +20,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { ComparateurRcPro } from '@/components/outils/ComparateurRcPro'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
@@ -52,13 +53,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-blue-700 to-indigo-900 py-12 text-white">
         <div className="container mx-auto max-w-5xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/rc-pro" className="hover:underline">
+            <Link href="/rc-pro" className="hover:underline">
               RC Pro
-            </a>{' '}
+            </Link>{' '}
             / <span>Comparateur 8 assureurs</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -204,18 +205,18 @@ export default async function Page() {
             les 3 meilleures offres parmi nos 8 partenaires. Conseil expert + tarif optimisé.
           </p>
           <div className="flex flex-col justify-center gap-3 md:flex-row">
-            <a
+            <Link
               href="/outils/devis-rc-pro"
               className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
             >
               → Devis officiel RC Pro (2 min)
-            </a>
-            <a
+            </Link>
+            <Link
               href="/outils/calculateur-tarif-rc-pro"
               className="inline-block rounded-lg border border-white/30 bg-primary-800 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-primary-900"
             >
               → Estimer mon tarif d&apos;abord
-            </a>
+            </Link>
           </div>
         </div>
       </section>

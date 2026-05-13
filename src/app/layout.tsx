@@ -45,17 +45,17 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Assurance Pro — Courtier ORIAS multi-vertical',
-    template: '%s | Assurance Pro',
+    default: 'Vivos Assurance — Courtier ORIAS multi-vertical',
+    template: '%s | Vivos Assurance',
   },
   description:
     'Courtier ORIAS spécialiste assurance professionnelle. Comparez les offres de 10+ assureurs partenaires. Décennale, RC Pro, Multirisque, Mutuelle, VTC, Cyber. Devis gratuit et sans engagement.',
-  authors: [{ name: 'Assurance Pro' }],
-  applicationName: 'Assurance Pro',
+  authors: [{ name: 'Vivos Assurance' }],
+  applicationName: 'Vivos Assurance',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'Assurance Pro',
+    title: 'Vivos Assurance',
   },
   formatDetection: {
     telephone: true,
@@ -66,8 +66,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     url: SITE_URL,
-    siteName: 'Assurance Pro',
-    title: 'Assurance Pro — Comparez et économisez en 2 minutes',
+    siteName: 'Vivos Assurance',
+    title: 'Vivos Assurance — Comparez et économisez en 2 minutes',
     description:
       'Courtier ORIAS spécialiste assurance pro. 10+ assureurs partenaires comparés. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Devis gratuit en 24h.',
     images: [
@@ -75,13 +75,13 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/opengraph-image`,
         width: 1200,
         height: 630,
-        alt: 'Assurance Pro — Comparez et économisez en 2 minutes',
+        alt: 'Vivos Assurance — Comparez et économisez en 2 minutes',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Assurance Pro — Comparez et économisez en 2 minutes',
+    title: 'Vivos Assurance — Comparez et économisez en 2 minutes',
     description:
       'Courtier ORIAS — Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Devis gratuit.',
   },
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
       'x-default': SITE_URL,
     },
     types: {
-      'application/rss+xml': [{ url: `${SITE_URL}/feed/blog.xml`, title: 'Blog Assurance Pro' }],
+      'application/rss+xml': [{ url: `${SITE_URL}/feed/blog.xml`, title: 'Blog Vivos Assurance' }],
     },
   },
   manifest: '/manifest.json',

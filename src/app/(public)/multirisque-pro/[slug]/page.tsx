@@ -19,7 +19,7 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   const v = getVille(params.slug)
   if (!v) return {}
   return {
-    title: `${CONFIG.garantieLabel} ${v.nom} (${v.departementCode}) — Tarifs 2026 | Assurance Pro`,
+    title: `${CONFIG.garantieLabel} ${v.nom} (${v.departementCode}) — Tarifs 2026 | Vivos Assurance`,
     description: `Multirisque professionnelle pour les commerces, ESN, agences de ${v.nom}. Locaux, biens, perte d'exploitation, RC Exploitation. À partir de ${CONFIG.priceFrom}. Devis gratuit ORIAS.`,
     alternates: { canonical: `${SITE_URL}/${CONFIG.garantieSlug}/${v.slug}` },
   }

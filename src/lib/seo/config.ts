@@ -1,5 +1,5 @@
 /**
- * SEO core constants — Assurance Pro (cabinet de courtage ORIAS).
+ * SEO core constants — Vivos Assurance (cabinet de courtage ORIAS).
  * Importé partout où on a besoin de l'URL canonique du site.
  */
 
@@ -7,4 +7,4 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://vivos-assu
   .trim()
   .replace(/\/+$/, '')
 
-export const SITE_NAME = 'Assurance Pro'
+export const SITE_NAME = 'Vivos Assurance'

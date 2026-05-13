@@ -13,6 +13,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -24,7 +25,7 @@ const TAGLINE =
   'Le hub assurance BTP : décennale, RC pro travaux, multirisque chantier, dommages-ouvrage, TRC, garantie financière. 8 assureurs comparés. Conseil ORIAS spécialisé.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance BTP : décennale obligatoire (Loi Spinetta), RC pro travaux, multirisque chantier, dommages-ouvrage, TRC (Tous Risques Chantier), garantie financière, biennale. Comparatif 8 assureurs spécialisés (SMABTP, MAAF Pro, Allianz Pro, AXA Pro). Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -144,17 +145,20 @@ export default function Page() {
               </table>
               <p className="mt-3 text-xs italic">
                 Pour aller plus loin :{' '}
-                <a href="/guides/parfait-achevement" className="text-primary-600 underline">
+                <Link href="/guides/parfait-achevement" className="text-primary-600 underline">
                   Guide GPA
-                </a>
+                </Link>
                 ,
-                <a href="/guides/dommages-ouvrage" className="ml-1 text-primary-600 underline">
+                <Link href="/guides/dommages-ouvrage" className="ml-1 text-primary-600 underline">
                   Guide DO
-                </a>
+                </Link>
                 ,
-                <a href="/guides/attestation-decennale" className="ml-1 text-primary-600 underline">
+                <Link
+                  href="/guides/attestation-decennale"
+                  className="ml-1 text-primary-600 underline"
+                >
                   Attestation décennale
-                </a>
+                </Link>
                 .
               </p>
             </>
@@ -228,74 +232,74 @@ export default function Page() {
               <h3>Garanties BTP individuelles</h3>
               <ul>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Pilier décennale
-                  </a>{' '}
+                  </Link>{' '}
                   — Loi Spinetta + 37 métiers BTP
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-decennale/auto-entrepreneur"
                     className="text-primary-600 underline"
                   >
                     Décennale auto-entrepreneur BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — pack AE
                 </li>
                 <li>
-                  <a href="/assurance-artisan" className="text-primary-600 underline">
+                  <Link href="/assurance-artisan" className="text-primary-600 underline">
                     Pack artisan complet
-                  </a>{' '}
+                  </Link>{' '}
                   — décennale + RC + véhicule
                 </li>
               </ul>
               <h3>Mutuelle et prévoyance BTP</h3>
               <ul>
                 <li>
-                  <a href="/mutuelle-pro-btp" className="text-primary-600 underline">
+                  <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                     Mutuelle pro BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — comparatif PRO BTP, April, Harmonie
                 </li>
                 <li>
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     Prévoyance TNS
-                  </a>{' '}
+                  </Link>{' '}
                   — IJ + invalidité + capital décès
                 </li>
               </ul>
               <h3>Locaux, véhicules et chantiers</h3>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-voiture-professionnelle"
                     className="text-primary-600 underline"
                   >
                     Véhicule pro / utilitaire
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-bureau" className="text-primary-600 underline">
+                  <Link href="/assurance-bureau" className="text-primary-600 underline">
                     Multirisque local pro
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <h3>Guides juridiques BTP</h3>
               <ul>
                 <li>
-                  <a href="/guides/attestation-decennale" className="text-primary-600 underline">
+                  <Link href="/guides/attestation-decennale" className="text-primary-600 underline">
                     Guide attestation décennale
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/guides/dommages-ouvrage" className="text-primary-600 underline">
+                  <Link href="/guides/dommages-ouvrage" className="text-primary-600 underline">
                     Guide dommages-ouvrage
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/guides/parfait-achevement" className="text-primary-600 underline">
+                  <Link href="/guides/parfait-achevement" className="text-primary-600 underline">
                     Guide garantie parfait achèvement
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </>

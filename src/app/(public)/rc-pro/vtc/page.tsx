@@ -3,6 +3,7 @@
  * KW Ahrefs : "rc pro vtc" 1 000 vol KD 2 + "assurance rcp vtc" 200 vol + "assurance rc circulation vtc" 200 vol
  */
 
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
@@ -14,7 +15,7 @@ const TAGLINE =
   "L'assurance RC pro spécifique VTC : RC chauffeur passagers + RC tiers + plafond corporel illimité. Obligation Code des transports."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "RC Pro VTC OBLIGATOIRE (Code des transports L. 3120-1) : couvre passagers + tiers + véhicule. Plafond corporel illimité. Distinct de l'assurance VTC complète (multirisque + ADS). Tarifs 380-980€/an. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -113,9 +114,9 @@ export default function Page() {
               </table>
               <p className="mt-3">
                 Voir notre pilier complet{' '}
-                <a href="/assurance-vtc" className="text-primary-600 underline">
+                <Link href="/assurance-vtc" className="text-primary-600 underline">
                   /assurance-vtc
-                </a>{' '}
+                </Link>{' '}
                 pour le pack VTC complet.
               </p>
             </>

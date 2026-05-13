@@ -13,6 +13,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { CalculateurTarifCyber } from '@/components/outils/CalculateurTarifCyber'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
@@ -45,13 +46,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-slate-700 to-slate-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/cyber-assurance" className="hover:underline">
+            <Link href="/cyber-assurance" className="hover:underline">
               Cyber assurance
-            </a>{' '}
+            </Link>{' '}
             / <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-red-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -173,18 +174,18 @@ export default async function Page() {
             officielles parmi nos 6 assureurs cyber partenaires. Audit cyber gratuit inclus.
           </p>
           <div className="flex flex-col justify-center gap-3 md:flex-row">
-            <a
+            <Link
               href="/cyber-assurance"
               className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-slate-800 shadow-lg transition hover:bg-gray-100"
             >
               → Pilier cyber assurance
-            </a>
-            <a
+            </Link>
+            <Link
               href="/guides/assurance-rgpd"
               className="inline-block rounded-lg border border-white/30 bg-slate-800 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-slate-900"
             >
               → Guide RGPD entreprise
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -194,7 +195,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Calculateur tarif cyber assurance 2026 — Assurance Pro',
+            name: 'Calculateur tarif cyber assurance 2026 — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Any',

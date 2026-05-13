@@ -24,7 +24,7 @@ const TAGLINE =
   "L'assurance dédiée aux flottes automobiles d'entreprise (≥ 4 véhicules) : contrat mutualisé, économie 20-30%, gestion centralisée, reporting consolidé."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance flotte automobile professionnelle (4+ véhicules) : contrat mutualisé, économie 20-30% vs assurance individuelle, gestion centralisée des sinistres, reporting consolidé. Tarifs négociés à partir de 580 €/véhicule. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -4,13 +4,13 @@ import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Politique de confidentialité (RGPD) | Assurance Pro',
+  title: 'Politique de confidentialité (RGPD) | Vivos Assurance',
   description:
     'Politique de protection des données personnelles. RGPD, finalités, durées de conservation, droits, DPO, cookies.',
   alternates: { canonical: `${SITE_URL}/confidentialite` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Politique de confidentialité (RGPD) | Assurance Pro',
+    title: 'Politique de confidentialité (RGPD) | Vivos Assurance',
     description:
       'Politique de protection des données personnelles. RGPD, finalités, durées de conservation, droits, DPO, cookies.',
     url: `${SITE_URL}/confidentialite`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Politique de confidentialité (RGPD) | Assurance Pro',
+    title: 'Politique de confidentialité (RGPD) | Vivos Assurance',
     description:
       'Politique de protection des données personnelles. RGPD, finalités, durées de conservation, droits, DPO, cookies.',
   },
@@ -42,15 +42,15 @@ export default function ConfidentialitePage() {
 
           <p>
             La protection de vos données personnelles est essentielle pour notre cabinet de courtage
-            ORIAS Assurance Pro. La présente politique décrit la manière dont nous collectons,
+            ORIAS Vivos Assurance. La présente politique décrit la manière dont nous collectons,
             utilisons et protégeons vos données conformément au Règlement Général sur la Protection
             des Données (RGPD).
           </p>
 
           <h2>1. Responsable du traitement</h2>
           <p>
-            Le responsable du traitement est <strong>Assurance Pro</strong>, immatriculé à l\'ORIAS
-            sous le numéro {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'}.
+            Le responsable du traitement est <strong>Vivos Assurance</strong>, immatriculé à
+            l\'ORIAS sous le numéro {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'}.
           </p>
           <p>
             <strong>Délégué à la Protection des Données (DPO)</strong> :{' '}

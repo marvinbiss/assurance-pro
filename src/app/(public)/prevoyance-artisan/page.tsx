@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   'La prévoyance dédiée aux artisans BTP : IJ dès J0, rente invalidité, capital décès. Calibrée sur la sinistralité corporelle élevée du métier (chutes, dorsalgies).'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Prévoyance artisan BTP : IJ dès J0 (vs 3 j Sécu), rente invalidité jusqu'à 70% du revenu, capital décès, garantie agression chantier. Madelin déductible. Comparatif PRO BTP, April BTP, Harmonie. Tarifs 128-380€/mois. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -135,21 +136,21 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     Pilier prévoyance TNS
-                  </a>{' '}
+                  </Link>{' '}
                   — vue d&apos;ensemble + comparatif assureurs
                 </li>
                 <li>
-                  <a href="/mutuelle-pro-btp" className="text-primary-600 underline">
+                  <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                     Mutuelle pro BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — santé complémentaire (16k vol/mois)
                 </li>
                 <li>
-                  <a href="/assurance-artisan" className="text-primary-600 underline">
+                  <Link href="/assurance-artisan" className="text-primary-600 underline">
                     Pack artisan complet
-                  </a>{' '}
+                  </Link>{' '}
                   — décennale + RC + véhicule + mutuelle + prévoyance
                 </li>
               </ul>

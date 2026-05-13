@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   'Tout sur la RC pro informatique : 5 risques spécifiques (RGPD, cyber, propriété intellectuelle, défaut conseil, perte données client). 6 assureurs IT spécialisés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Responsabilité civile professionnelle informatique 2026 : 5 risques spécifiques IT (breach RGPD, cyberattaque, propriété intellectuelle, défaut conseil tech, perte données client). 6 assureurs spécialisés (Hiscox, Beazley, AIG, AXA Cyber, Allianz, Wakam). Tarifs 180-1 200€/an freelance, 2 800-12 000€/an SSII. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -144,27 +145,30 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <a href="/outils/calculateur-tarif-rc-pro" className="text-primary-600 underline">
+                <Link
+                  href="/outils/calculateur-tarif-rc-pro"
+                  className="text-primary-600 underline"
+                >
                   Calculateur tarif RC Pro IT
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/outils/calculateur-tarif-cyber-assurance"
                   className="text-primary-600 underline"
                 >
                   Calculateur cyber assurance
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/rc-pro/informatique" className="text-primary-600 underline">
+                <Link href="/rc-pro/informatique" className="text-primary-600 underline">
                   RC Pro informatique freelance
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/guides/assurance-rgpd" className="text-primary-600 underline">
+                <Link href="/guides/assurance-rgpd" className="text-primary-600 underline">
                   Guide assurance RGPD entreprise
-                </a>
+                </Link>
               </li>
             </ul>
           ),

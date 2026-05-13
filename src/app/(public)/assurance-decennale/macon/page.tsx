@@ -6,6 +6,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -16,7 +17,7 @@ const TAGLINE =
   'La décennale obligatoire pour maçon gros œuvre : couverture spécifique fissures structurelles, fondations, dalles, murs porteurs. Sinistralité AQC 11,4% (top 4 BTP). Tarifs 2026 négociés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Décennale maçon 2026 : OBLIGATOIRE Loi Spinetta. Couverture fissures structurelles (top sinistre AQC 11,4%), fondations, dalles béton, murs porteurs. Tarifs 720-1 380€/an AE, 7 800-15 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -91,30 +92,30 @@ export default function Page() {
             <div>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/outils/calculateur-tarif-decennale"
                     className="text-primary-600 underline"
                   >
                     Calculateur tarif décennale maçon
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/outils/devis-assurance-decennale"
                     className="text-primary-600 underline"
                   >
                     Devis officiel ORIAS sous 24h
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Pilier décennale BTP — 37 métiers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/guides/dommages-ouvrage" className="text-primary-600 underline">
+                  <Link href="/guides/dommages-ouvrage" className="text-primary-600 underline">
                     Dommages ouvrage (DO) — assurance maître d&apos;ouvrage complémentaire
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

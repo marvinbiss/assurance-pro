@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   'La RC Pro obligatoire pour experts-comptables : couverture erreurs déclarations fiscales, défauts conseil, mauvais bilan, recours URSSAF. Plafond mini 600 000€ par sinistre.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'RC Pro expert-comptable 2026 : OBLIGATOIRE Ordonnance 1945 art. 17 + Décret 2012-432. Plafond mini 600 000€/sinistre + 1,2M€/an. Couverture erreurs déclarations TVA/IS/IR, défauts bilan, recours URSSAF/DGFiP. Sinistralité 3,8%. Tarifs 420-1 280€/an indépendant, 8 500-22 000€/an cabinet. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -93,24 +94,27 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <a href="/outils/calculateur-tarif-rc-pro" className="text-primary-600 underline">
+                <Link
+                  href="/outils/calculateur-tarif-rc-pro"
+                  className="text-primary-600 underline"
+                >
                   Calculateur tarif RC Pro expert-comptable
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/outils/devis-rc-pro" className="text-primary-600 underline">
+                <Link href="/outils/devis-rc-pro" className="text-primary-600 underline">
                   Devis officiel ORIAS sous 24h
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/cyber-assurance" className="text-primary-600 underline">
+                <Link href="/cyber-assurance" className="text-primary-600 underline">
                   Cyber assurance (recommandée pour EC manipulant données fiscales clients)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/rc-pro" className="text-primary-600 underline">
+                <Link href="/rc-pro" className="text-primary-600 underline">
                   Pilier RC Pro
-                </a>
+                </Link>
               </li>
             </ul>
           ),

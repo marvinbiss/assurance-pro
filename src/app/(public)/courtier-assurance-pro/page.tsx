@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   'Notre cabinet de courtage en assurance professionnelle : conseil ORIAS indépendant, comparatif 8 assureurs, devis sous 24h. 100% conforme DDA + ACPR.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Courtier assurance pro ORIAS : conseil indépendant, comparatif 8 assureurs (Allianz, AXA, MMA, MAAF, Hiscox, April, Generali, Wakam), devis personnalisé sous 24h. Conforme DDA + Recommandation ACPR 2024-R-03. Service gratuit (commission assureur).',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -132,35 +133,35 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/comparateur-assurance-professionnelle"
                     className="text-primary-600 underline"
                   >
                     Comparateur 8 assureurs
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/guides/devis-assurance-professionnelle"
                     className="text-primary-600 underline"
                   >
                     Guide devis assurance pro
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/notre-processus-conseil" className="text-primary-600 underline">
+                  <Link href="/notre-processus-conseil" className="text-primary-600 underline">
                     Notre processus conseil
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/selection-assureurs" className="text-primary-600 underline">
+                  <Link href="/selection-assureurs" className="text-primary-600 underline">
                     Sélection assureurs partenaires
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/equipe" className="text-primary-600 underline">
+                  <Link href="/equipe" className="text-primary-600 underline">
                     Notre équipe
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </>

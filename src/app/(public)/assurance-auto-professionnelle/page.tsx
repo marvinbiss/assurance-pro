@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "L'assurance auto professionnelle pour véhicule à usage pro : VUL, VL société, voiture commerciale, véhicule de fonction. Différente de l'assurance auto perso. Obligation art. L. 211-1 C. assur."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance auto professionnelle 2026 : OBLIGATOIRE pour tout véhicule à usage pro (art. L. 211-1 C. assur.). Couvre VUL, VL société, voiture commerciale, véhicule de fonction. Tarifs 480-2 800€/an selon profil. Distinct assurance auto perso. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -108,24 +109,24 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <a href="/assurance-flotte-automobile" className="text-primary-600 underline">
+                <Link href="/assurance-flotte-automobile" className="text-primary-600 underline">
                   Assurance flotte automobile (5+ véhicules)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/outils/calculateur-tarif-vtc" className="text-primary-600 underline">
+                <Link href="/outils/calculateur-tarif-vtc" className="text-primary-600 underline">
                   Calculateur tarif VTC (transport personnes)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/rc-pro/transport-marchandises" className="text-primary-600 underline">
+                <Link href="/rc-pro/transport-marchandises" className="text-primary-600 underline">
                   RC Pro transport de marchandises
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/multirisque-pro" className="text-primary-600 underline">
+                <Link href="/multirisque-pro" className="text-primary-600 underline">
                   Pilier multirisque pro
-                </a>
+                </Link>
               </li>
             </ul>
           ),

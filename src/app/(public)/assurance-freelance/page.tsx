@@ -18,6 +18,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -29,7 +30,7 @@ const TAGLINE =
   'Le pack assurance complet pour freelances : RC Pro adaptée à votre métier, mutuelle TNS Madelin, prévoyance dès J0, cyber. Tous statuts (EI, EURL, SASU, portage).'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance freelance : RC Pro adaptée (3 à 10 M€), mutuelle TNS Madelin, prévoyance dès J0, cyber assurance. Tous statuts (EI, EURL, SASU, AE, portage salarial). Tarifs négociés à partir de 220 €/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -102,9 +103,9 @@ export default function Page() {
                     <td className="border p-2">TNS</td>
                     <td className="border p-2">❌ NON</td>
                     <td className="border p-2">
-                      <a href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
+                      <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                         /rc-pro/auto-entrepreneur
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                   <tr>
@@ -112,9 +113,9 @@ export default function Page() {
                     <td className="border p-2">TNS</td>
                     <td className="border p-2">✅ OUI</td>
                     <td className="border p-2">
-                      <a href="/mutuelle-tns" className="text-primary-600 underline">
+                      <Link href="/mutuelle-tns" className="text-primary-600 underline">
                         /mutuelle-tns
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                   <tr>
@@ -122,9 +123,12 @@ export default function Page() {
                     <td className="border p-2">TNS</td>
                     <td className="border p-2">✅ OUI</td>
                     <td className="border p-2">
-                      <a href="/assurance-micro-entreprise" className="text-primary-600 underline">
+                      <Link
+                        href="/assurance-micro-entreprise"
+                        className="text-primary-600 underline"
+                      >
                         /assurance-micro-entreprise
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                   <tr>
@@ -261,39 +265,39 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
+                  <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     RC Pro auto-entrepreneur
-                  </a>{' '}
+                  </Link>{' '}
                   — pour AE / micro-entrepreneurs
                 </li>
                 <li>
-                  <a href="/rc-pro/informatique" className="text-primary-600 underline">
+                  <Link href="/rc-pro/informatique" className="text-primary-600 underline">
                     RC Pro informatique
-                  </a>{' '}
+                  </Link>{' '}
                   — freelance IT, dev, DevOps, cybersécurité
                 </li>
                 <li>
-                  <a href="/mutuelle-tns" className="text-primary-600 underline">
+                  <Link href="/mutuelle-tns" className="text-primary-600 underline">
                     Mutuelle TNS Madelin
-                  </a>{' '}
+                  </Link>{' '}
                   — santé déductible
                 </li>
                 <li>
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     Prévoyance TNS
-                  </a>{' '}
+                  </Link>{' '}
                   — IJ + invalidité + capital décès
                 </li>
                 <li>
-                  <a href="/assurance-bureau" className="text-primary-600 underline">
+                  <Link href="/assurance-bureau" className="text-primary-600 underline">
                     Assurance bureau / coworking
-                  </a>{' '}
+                  </Link>{' '}
                   — si local pro
                 </li>
                 <li>
-                  <a href="/cyber-assurance" className="text-primary-600 underline">
+                  <Link href="/cyber-assurance" className="text-primary-600 underline">
                     Cyber assurance
-                  </a>{' '}
+                  </Link>{' '}
                   — protection données client
                 </li>
               </ul>

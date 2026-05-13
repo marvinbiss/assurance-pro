@@ -1,5 +1,5 @@
 /**
- * Sitemap — Assurance Pro France
+ * Sitemap — Vivos Assurance France
  *
  * Architecture segmentée :
  * - Pages statiques principales (homepage, piliers, ressources)

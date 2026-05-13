@@ -1,5 +1,5 @@
 /**
- * Homepage — Vivos Assurance / Assurance Pro France
+ * Homepage — Vivos Assurance France
  * Courtier ORIAS multi-vertical (BTP / RC Pro / Mutuelle / VTC / etc.)
  *
  * Design language : brand palette terracotta + sand + forest green,
@@ -32,7 +32,7 @@ import { MockOfferCard } from '@/components/home/MockOfferCard'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const metadata: Metadata = {
-  title: 'Assurance Pro — Comparez et économisez en 2 minutes',
+  title: 'Vivos Assurance — Comparez et économisez en 2 minutes',
   description:
     'Courtier ORIAS spécialiste assurance professionnelle. Comparez les offres de 10+ assureurs partenaires. Décennale, RC Pro, Multirisque, Mutuelle, VTC, Cyber. Devis gratuit et sans engagement.',
   alternates: {

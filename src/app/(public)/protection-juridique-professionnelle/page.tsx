@@ -20,7 +20,7 @@ const TAGLINE =
   "L'assurance protection juridique pour entreprises : prise en charge des frais d'avocat, conseil juridique illimité, défense pénale, recouvrement créances. Tarifs négociés."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Protection juridique professionnelle : prise en charge frais avocat (jusqu'à 30 000€/litige), conseil juridique illimité 7j/7, défense pénale dirigeant, recouvrement créances impayées, litiges fournisseurs/bailleur/salariés. Tarifs négociés à partir de 280 €/an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

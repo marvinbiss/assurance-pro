@@ -1,5 +1,5 @@
 /**
- * Schema.org JSON-LD pour Assurance Pro (cabinet de courtage ORIAS).
+ * Schema.org JSON-LD pour Vivos Assurance (cabinet de courtage ORIAS).
  * Trois schémas exportés :
  * - getOrganizationSchema : InsuranceAgency (E-E-A-T critique YMYL)
  * - getWebsiteSchema : WebSite + SearchAction
@@ -244,7 +244,7 @@ export function getDefinedTermSchema(params: {
       ? {
           inDefinedTermSet: {
             '@type': 'DefinedTermSet',
-            name: 'Glossaire Assurance Pro',
+            name: 'Glossaire Vivos Assurance',
             url: params.inDefinedTermSet,
           },
         }

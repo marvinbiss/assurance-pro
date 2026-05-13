@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   'Le rôle du courtier assurance décennale : analyse adéquation, mise en concurrence 8 assureurs BTP, négociation tarif, gestion sinistres. ORIAS obligatoire.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Courtier assurance décennale 2026 : 5 critères pour bien le choisir. Inscription ORIAS obligatoire (R. 511-1 C. assur.), expertise BTP minimum 5 ans, partenariats 8+ assureurs spécialisés (SMABTP, MAAF Pro, April), transparence commission. Cabinet ORIAS — devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -146,27 +147,30 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <a href="/outils/devis-assurance-decennale" className="text-primary-600 underline">
+                <Link
+                  href="/outils/devis-assurance-decennale"
+                  className="text-primary-600 underline"
+                >
                   Devis officiel cabinet ORIAS sous 24h
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/outils/calculateur-tarif-decennale"
                   className="text-primary-600 underline"
                 >
                   Calculateur tarif décennale
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/equipe" className="text-primary-600 underline">
+                <Link href="/equipe" className="text-primary-600 underline">
                   Équipe cabinet ORIAS
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/notre-processus-conseil" className="text-primary-600 underline">
+                <Link href="/notre-processus-conseil" className="text-primary-600 underline">
                   Notre processus conseil
-                </a>
+                </Link>
               </li>
             </ul>
           ),

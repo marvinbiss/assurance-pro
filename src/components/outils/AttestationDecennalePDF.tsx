@@ -87,8 +87,8 @@ export function AttestationDecennalePDF({ data }: { data: AttestationData }) {
 
   return (
     <Document
-      title="Modèle attestation décennale — Assurance Pro"
-      author="Assurance Pro (modèle type)"
+      title="Modèle attestation décennale — Vivos Assurance"
+      author="Vivos Assurance (modèle type)"
     >
       <Page size="A4" style={styles.page}>
         <Text style={styles.watermark}>MODÈLE TYPE</Text>
@@ -208,7 +208,9 @@ export function AttestationDecennalePDF({ data }: { data: AttestationData }) {
         </View>
 
         <View style={styles.footer} fixed>
-          <Text>Modèle généré par Assurance Pro (https://vivos-assurance.fr) — {dateEmission}</Text>
+          <Text>
+            Modèle généré par Vivos Assurance (https://vivos-assurance.fr) — {dateEmission}
+          </Text>
           <Text>
             Conformité arrêté 23 janvier 2024 (mentions obligatoires) — Loi Spinetta art. L. 241-1
             C. assur.

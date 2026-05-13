@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "L'assurance RC pro pour micro-entreprises de prestation de services (BNC) : conseil, design, formation, freelance digital. Madelin déductible si réel."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'RC Pro micro-entreprise prestation de service (BNC) : couverture freelance/consultant + plateformes B2B. Madelin déductible au régime réel. Tarifs 220-580€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -59,33 +60,33 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
+                  <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     RC Pro auto-entrepreneur
-                  </a>{' '}
+                  </Link>{' '}
                   — pilier complet AE/micro-entrepreneur
                 </li>
                 <li>
-                  <a href="/assurance-micro-entreprise" className="text-primary-600 underline">
+                  <Link href="/assurance-micro-entreprise" className="text-primary-600 underline">
                     Pack micro-entreprise
-                  </a>{' '}
+                  </Link>{' '}
                   — RC + multirisque + mutuelle
                 </li>
                 <li>
-                  <a href="/assurance-freelance" className="text-primary-600 underline">
+                  <Link href="/assurance-freelance" className="text-primary-600 underline">
                     Assurance freelance
-                  </a>{' '}
+                  </Link>{' '}
                   — tous statuts
                 </li>
                 <li>
-                  <a href="/rc-pro/informatique" className="text-primary-600 underline">
+                  <Link href="/rc-pro/informatique" className="text-primary-600 underline">
                     RC Pro informatique
-                  </a>{' '}
+                  </Link>{' '}
                   — pour freelances IT (CPC 1 300€)
                 </li>
                 <li>
-                  <a href="/mutuelle-tns" className="text-primary-600 underline">
+                  <Link href="/mutuelle-tns" className="text-primary-600 underline">
                     Mutuelle TNS Madelin
-                  </a>{' '}
+                  </Link>{' '}
                   — santé déductible (régime réel)
                 </li>
               </ul>

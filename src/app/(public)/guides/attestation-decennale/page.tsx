@@ -32,7 +32,7 @@ const TAGLINE =
   "Tout savoir sur l'attestation d'assurance décennale : mentions obligatoires depuis 2024, modèle PDF téléchargeable, délais d'obtention et sanctions en cas d'absence."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Attestation décennale : mentions légales obligatoires (Loi Spinetta + décret 2024), modèle PDF gratuit, délai d'obtention 24h, sanctions en cas d'absence (75 000€ + 6 mois prison). Guide complet artisans BTP.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

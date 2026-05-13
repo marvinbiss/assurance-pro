@@ -18,6 +18,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -29,7 +30,7 @@ export const revalidate = 86400
 const SLUG = 'outils/devis-rc-pro'
 
 export const metadata: Metadata = {
-  title: 'Devis RC Pro 2026 — Comparateur 8 assureurs en 2 minutes | Assurance Pro',
+  title: 'Devis RC Pro 2026 — Comparateur 8 assureurs en 2 minutes | Vivos Assurance',
   description:
     'Devis RC Pro gratuit en 2 minutes : comparatif 8 assureurs (Hiscox, AXA Pro, Allianz Pro, MMA Pro, MAAF Pro, April Pro, Generali, Wakam). Tarifs 89-2 800€/an. Conseil ORIAS sous 24h. Sans engagement.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -51,13 +52,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-blue-700 to-blue-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/responsabilite-civile-professionnelle" className="hover:underline">
+            <Link href="/responsabilite-civile-professionnelle" className="hover:underline">
               RC Pro
-            </a>{' '}
+            </Link>{' '}
             / <span>Devis RC Pro</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -195,7 +196,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Devis RC Pro — Assurance Pro',
+            name: 'Devis RC Pro — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Any',

@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "L'assurance dédiée aux TRAVAUX réalisés par un artisan : décennale + RC pro travaux + TRC pour gros chantiers + garantie outillage embarqué."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance travaux artisan : pack chantier complet (décennale Loi Spinetta + RC pro travaux + TRC + garantie outillage + véhicule pro). Pour artisans BTP réalisant des chantiers réguliers. Tarifs 980-2 800€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -59,40 +60,40 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Pilier décennale BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — Loi Spinetta + 37 métiers
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-decennale/auto-entrepreneur"
                     className="text-primary-600 underline"
                   >
                     Décennale AE BTP
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-artisan" className="text-primary-600 underline">
+                  <Link href="/assurance-artisan" className="text-primary-600 underline">
                     Pack artisan complet
-                  </a>{' '}
+                  </Link>{' '}
                   — pilier transverse global
                 </li>
                 <li>
-                  <a href="/assurance-btp" className="text-primary-600 underline">
+                  <Link href="/assurance-btp" className="text-primary-600 underline">
                     Hub BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — 8 garanties détaillées
                 </li>
                 <li>
-                  <a href="/guides/tous-risques-chantier" className="text-primary-600 underline">
+                  <Link href="/guides/tous-risques-chantier" className="text-primary-600 underline">
                     Guide TRC
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/guides/parfait-achevement" className="text-primary-600 underline">
+                  <Link href="/guides/parfait-achevement" className="text-primary-600 underline">
                     Guide GPA
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </>

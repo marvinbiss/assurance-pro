@@ -4,12 +4,12 @@ import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Médiation — Réclamation et résolution de litige | Assurance Pro',
+  title: 'Médiation — Réclamation et résolution de litige | Vivos Assurance',
   description:
     "Procédure de médiation conforme à la Recommandation ACPR 2024-R-02. Réclamation interne puis Médiateur de l'Assurance.",
   alternates: { canonical: `${SITE_URL}/mediation` },
   openGraph: {
-    title: 'Médiation — Réclamation et résolution de litige | Assurance Pro',
+    title: 'Médiation — Réclamation et résolution de litige | Vivos Assurance',
     description:
       'Procédure de médiation conforme à la Recommandation ACPR 2024-R-02. Réclamation interne puis Médiateur de l\\',
     url: `${SITE_URL}/mediation`,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Médiation — Réclamation et résolution de litige | Assurance Pro',
+    title: 'Médiation — Réclamation et résolution de litige | Vivos Assurance',
     description:
       'Procédure de médiation conforme à la Recommandation ACPR 2024-R-02. Réclamation interne puis Médiateur de l\\',
   },
@@ -53,7 +53,7 @@ export default function MediationPage() {
               📧 Email :{' '}
               <a href="mailto:reclamations@vivos-assurance.fr">reclamations@vivos-assurance.fr</a>
             </li>
-            <li>📨 Courrier : Service Réclamations — Assurance Pro — [Adresse cabinet]</li>
+            <li>📨 Courrier : Service Réclamations — Vivos Assurance — [Adresse cabinet]</li>
           </ul>
 
           <h3>Nos engagements</h3>

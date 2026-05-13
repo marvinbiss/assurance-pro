@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "Tout savoir sur les numéros d'identification médecin : RPPS (Répertoire Partagé Pros Santé), ADELI, numéro AM, numéro CPS. À quoi servent-ils ? Comment les obtenir ?"
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Numéros d'identification médecin : RPPS (11 chiffres, identifiant unique), ADELI (9 chiffres, ancien système), numéro AM (Assurance Maladie, conventionnement), CPS (Carte Pro Santé). Démarches d'obtention + utilité de chaque numéro.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -126,15 +127,15 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Souscription RC Pro médicale</strong> (Loi Kouchner) — voir{' '}
-                  <a href="/rc-pro-medecin" className="text-primary-600 underline">
+                  <Link href="/rc-pro-medecin" className="text-primary-600 underline">
                     /rc-pro-medecin
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <strong>Mutuelle TNS Madelin</strong> + prévoyance — voir{' '}
-                  <a href="/assurance-medecin" className="text-primary-600 underline">
+                  <Link href="/assurance-medecin" className="text-primary-600 underline">
                     /assurance-medecin
-                  </a>
+                  </Link>
                 </li>
               </ol>
             </>

@@ -253,9 +253,9 @@ export function buildPageTitle(enrichment: PageEnrichmentRow): string {
 
   const base = parts.join(' ')
   if (enrichment.prix_min_eur && enrichment.prix_max_eur) {
-    return `${base} — Tarif ${Math.round(enrichment.prix_min_eur)}-${Math.round(enrichment.prix_max_eur)}€/an | Assurance Pro`
+    return `${base} — Tarif ${Math.round(enrichment.prix_min_eur)}-${Math.round(enrichment.prix_max_eur)}€/an | Vivos Assurance`
   }
-  return `${base} — Devis gratuit | Assurance Pro`
+  return `${base} — Devis gratuit | Vivos Assurance`
 }
 
 /**
@@ -356,7 +356,7 @@ export function buildSchemaOrg(enrichment: PageEnrichmentRow) {
       url: canonical,
       provider: {
         '@type': 'InsuranceAgency',
-        name: 'Vivos Assurance Pro',
+        name: 'Vivos Vivos Assurance',
         url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr',
       },
       areaServed: enrichment.ville_nom

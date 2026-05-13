@@ -36,7 +36,7 @@ export function leadConfirmationTemplate({
 <html lang="fr">
   <body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;padding:24px;color:#0f172a">
     <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:8px;padding:28px;border:1px solid #e2e8f0">
-      <div style="font-size:13px;color:#64748b;margin-bottom:8px">Assurance Pro — Cabinet de courtage ORIAS</div>
+      <div style="font-size:13px;color:#64748b;margin-bottom:8px">Vivos Assurance — Cabinet de courtage ORIAS</div>
       <h1 style="font-size:22px;margin:0 0 16px">Votre demande de devis est bien reçue</h1>
       <p>Bonjour ${safePrenom} ${safeNom},</p>
       <p>
@@ -68,7 +68,7 @@ export function leadConfirmationTemplate({
       <hr style="border:0;border-top:1px solid #e2e8f0;margin:24px 0">
 
       <p style="font-size:11px;color:#94a3b8;line-height:1.5">
-        Assurance Pro — Courtier en assurance immatriculé ORIAS sous le n° ${
+        Vivos Assurance — Courtier en assurance immatriculé ORIAS sous le n° ${
           process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
         }.
         Soumis au contrôle de l&apos;ACPR. Pour toute réclamation&nbsp;:

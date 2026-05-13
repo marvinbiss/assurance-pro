@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "L'assurance RC pro pour SASU : couverture président assimilé salarié, plafond adapté CA, RCMS dirigeant. Tous secteurs."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'RC Pro SASU : couverture adaptée au statut SASU (président assimilé salarié). Plafonds 1,5-10 M€ selon métier. RCMS dirigeant recommandée. Tarifs 380-2 200€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -59,24 +60,24 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/assurance-sasu" className="text-primary-600 underline">
+                  <Link href="/assurance-sasu" className="text-primary-600 underline">
                     Pack assurance SASU complet
-                  </a>{' '}
+                  </Link>{' '}
                   — RC + multirisque + mutuelle + RCMS + cyber
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/responsabilite-civile-professionnelle"
                     className="text-primary-600 underline"
                   >
                     Pilier RC Pro complet
-                  </a>{' '}
+                  </Link>{' '}
                   — 21 métiers + plafonds détaillés
                 </li>
                 <li>
-                  <a href="/assurance-homme-cle" className="text-primary-600 underline">
+                  <Link href="/assurance-homme-cle" className="text-primary-600 underline">
                     Assurance homme-clé
-                  </a>{' '}
+                  </Link>{' '}
                   — critique pour SASU avec dirigeant unique
                 </li>
               </ul>

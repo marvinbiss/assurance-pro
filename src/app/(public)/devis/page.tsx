@@ -13,7 +13,7 @@ import { IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const dynamic = 'force-dynamic'
 
-const FULL_TITLE = 'Devis assurance pro gratuit en 2 minutes | Assurance Pro'
+const FULL_TITLE = 'Devis assurance pro gratuit en 2 minutes | Vivos Assurance'
 const FULL_DESC =
   'Recevez votre devis assurance professionnelle personnalisé en moins de 24 heures. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Sans engagement, sans frais courtage.'
 

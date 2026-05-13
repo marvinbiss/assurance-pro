@@ -1,5 +1,5 @@
 /**
- * GDPR Cookie Consent API - Assurance Pro
+ * GDPR Cookie Consent API - Vivos Assurance
  * Records user cookie consent for compliance
  */
 
@@ -44,15 +44,24 @@ export async function POST(request: Request) {
     const rl = await checkRateLimit(`gdpr-consent:${ip}`, { window: 300_000, max: 10 })
     if (!rl.allowed) {
       return NextResponse.json(
-        { success: false, error: { message: 'Trop de mises à jour de consentement, veuillez patienter' } },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) } }
+        {
+          success: false,
+          error: { message: 'Trop de mises à jour de consentement, veuillez patienter' },
+        },
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) },
+        }
       )
     }
 
     const body = await request.json()
     const result = consentPostSchema.safeParse(body)
     if (!result.success) {
-      return NextResponse.json({ success: false, error: { message: 'Requête invalide', details: result.error.flatten() } }, { status: 400 })
+      return NextResponse.json(
+        { success: false, error: { message: 'Requête invalide', details: result.error.flatten() } },
+        { status: 400 }
+      )
     }
     const { preferences, timestamp, userAgent } = result.data
 
@@ -60,23 +69,23 @@ export async function POST(request: Request) {
     let userId: string | null = null
     try {
       const cookieStore = await cookies()
-      const supabase = createServerClient(
-        supabaseUrl(),
-        supabaseAnonKey(),
-        {
-          cookies: {
-            getAll() {
-              return cookieStore.getAll()
-            },
-            setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, unknown> }>) {
-              cookiesToSet.forEach(({ name, value, options }) => {
-                cookieStore.set(name, value, options)
-              })
-            },
+      const supabase = createServerClient(supabaseUrl(), supabaseAnonKey(), {
+        cookies: {
+          getAll() {
+            return cookieStore.getAll()
           },
-        }
-      )
-      const { data: { user } } = await supabase.auth.getUser()
+          setAll(
+            cookiesToSet: Array<{ name: string; value: string; options?: Record<string, unknown> }>
+          ) {
+            cookiesToSet.forEach(({ name, value, options }) => {
+              cookieStore.set(name, value, options)
+            })
+          },
+        },
+      })
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
       userId = user?.id || null
     } catch {
       // User not authenticated, that's fine
@@ -86,27 +95,33 @@ export async function POST(request: Request) {
     const ipAddress = ip || 'unknown'
 
     // Record consent
-    const { error } = await getSupabaseAdmin().from('cookie_consents').insert({
-      user_id: userId,
-      session_id: crypto.randomUUID(),
-      ip_address: ipAddress,
-      user_agent: userAgent,
-      necessary: preferences.necessary,
-      functional: preferences.functional ?? false,
-      analytics: preferences.analytics,
-      marketing: preferences.marketing,
-      personalization: preferences.personalization,
-      consent_given_at: timestamp,
-    })
+    const { error } = await getSupabaseAdmin()
+      .from('cookie_consents')
+      .insert({
+        user_id: userId,
+        session_id: crypto.randomUUID(),
+        ip_address: ipAddress,
+        user_agent: userAgent,
+        necessary: preferences.necessary,
+        functional: preferences.functional ?? false,
+        analytics: preferences.analytics,
+        marketing: preferences.marketing,
+        personalization: preferences.personalization,
+        consent_given_at: timestamp,
+      })
 
     if (error) throw error
 
     return NextResponse.json({ success: true })
   } catch (error) {
     logger.error('GDPR consent error:', error)
-    captureApiException(error, { route: 'api/gdpr/consent', category: 'gdpr', extra: { method: 'POST' } })
+    captureApiException(error, {
+      route: 'api/gdpr/consent',
+      category: 'gdpr',
+      extra: { method: 'POST' },
+    })
     return NextResponse.json(
-      { success: false, error: { message: 'Erreur lors de l\'enregistrement du consentement' } },
+      { success: false, error: { message: "Erreur lors de l'enregistrement du consentement" } },
       { status: 500 }
     )
   }
@@ -116,24 +131,24 @@ export async function POST(request: Request) {
 export async function GET(_request: Request) {
   try {
     const cookieStore = await cookies()
-    const supabase = createServerClient(
-      supabaseUrl(),
-      supabaseAnonKey(),
-      {
-        cookies: {
-          getAll() {
-            return cookieStore.getAll()
-          },
-          setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, unknown> }>) {
-            cookiesToSet.forEach(({ name, value, options }) => {
-              cookieStore.set(name, value, options)
-            })
-          },
+    const supabase = createServerClient(supabaseUrl(), supabaseAnonKey(), {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll()
         },
-      }
-    )
+        setAll(
+          cookiesToSet: Array<{ name: string; value: string; options?: Record<string, unknown> }>
+        ) {
+          cookiesToSet.forEach(({ name, value, options }) => {
+            cookieStore.set(name, value, options)
+          })
+        },
+      },
+    })
 
-    const { data: { user } } = await supabase.auth.getUser()
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
 
     if (!user) {
       return NextResponse.json(
@@ -144,16 +159,25 @@ export async function GET(_request: Request) {
 
     const { data: consents } = await getSupabaseAdmin()
       .from('cookie_consents')
-      .select('id, user_id, session_id, ip_address, user_agent, necessary, analytics, marketing, personalization, consent_given_at, updated_at')
+      .select(
+        'id, user_id, session_id, ip_address, user_agent, necessary, analytics, marketing, personalization, consent_given_at, updated_at'
+      )
       .eq('user_id', user.id)
       .order('consent_given_at', { ascending: false })
 
     return NextResponse.json({ consents: consents || [] })
   } catch (error) {
     logger.error('GDPR consent fetch error:', error)
-    captureApiException(error, { route: 'api/gdpr/consent', category: 'gdpr', extra: { method: 'GET' } })
+    captureApiException(error, {
+      route: 'api/gdpr/consent',
+      category: 'gdpr',
+      extra: { method: 'GET' },
+    })
     return NextResponse.json(
-      { success: false, error: { message: 'Erreur lors de la récupération de l\'historique de consentement' } },
+      {
+        success: false,
+        error: { message: "Erreur lors de la récupération de l'historique de consentement" },
+      },
       { status: 500 }
     )
   }

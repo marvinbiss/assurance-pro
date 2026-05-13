@@ -1,7 +1,7 @@
 /**
- * Cross-domain JWT — ServicesArtisans → Assurance Pro
+ * Cross-domain JWT — ServicesArtisans → Vivos Assurance
  *
- * ServicesArtisans peut envoyer un visiteur vers Assurance Pro avec un token
+ * ServicesArtisans peut envoyer un visiteur vers Vivos Assurance avec un token
  * JWT signé qui pré-remplit certains champs du formulaire devis (vertical,
  * métier, ville, données de contact si l'utilisateur a déjà consenti).
  *
@@ -69,11 +69,11 @@ export async function signCrossDomainToken(payload: CrossDomainPayload): Promise
 }
 
 /**
- * Vérifie + décode côté Assurance Pro.
+ * Vérifie + décode côté Vivos Assurance.
  * Renvoie null si invalide / expiré.
  */
 /**
- * Vérifie + décode un token côté Assurance Pro.
+ * Vérifie + décode un token côté Vivos Assurance.
  * Si `consumeJti=true` (défaut en prod), enregistre le jti dans la table
  * `public.jwt_jti_consumed` ; toute réutilisation ultérieure renvoie null.
  *

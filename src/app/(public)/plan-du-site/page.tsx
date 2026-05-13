@@ -7,22 +7,22 @@ import { DECENNALE_METIERS } from '@/lib/data/decennale-metiers'
 import { RC_PRO_PROFESSIONS } from '@/lib/data/rc-pro-professions'
 
 export const metadata: Metadata = {
-  title: 'Plan du site | Assurance Pro',
+  title: 'Plan du site | Vivos Assurance',
   description:
-    'Plan du site Assurance Pro — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
+    'Plan du site Vivos Assurance — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
   alternates: { canonical: `${SITE_URL}/plan-du-site` },
   openGraph: {
-    title: 'Plan du site | Assurance Pro',
+    title: 'Plan du site | Vivos Assurance',
     description:
-      'Plan du site Assurance Pro — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
+      'Plan du site Vivos Assurance — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
     url: `${SITE_URL}/plan-du-site`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Plan du site | Assurance Pro',
+    title: 'Plan du site | Vivos Assurance',
     description:
-      'Plan du site Assurance Pro — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
+      'Plan du site Vivos Assurance — toutes les pages organisées par catégorie : verticaux, métiers, ressources, légal.',
   },
 }
 
@@ -300,16 +300,16 @@ export default function PlanDuSitePage() {
         <div className="mt-12 rounded-lg bg-gray-50 p-6 text-sm text-gray-600">
           <p>
             <strong>Sitemap XML :</strong>{' '}
-            <a href="/sitemap.xml" className="font-semibold text-primary-700 underline">
+            <Link href="/sitemap.xml" className="font-semibold text-primary-700 underline">
               sitemap.xml
-            </a>{' '}
+            </Link>{' '}
             (pour les moteurs de recherche)
           </p>
           <p className="mt-2">
             <strong>Robots :</strong>{' '}
-            <a href="/robots.txt" className="font-semibold text-primary-700 underline">
+            <Link href="/robots.txt" className="font-semibold text-primary-700 underline">
               robots.txt
-            </a>
+            </Link>
           </p>
         </div>
       </div>

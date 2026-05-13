@@ -15,6 +15,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -26,7 +27,7 @@ const TAGLINE =
   "L'assurance dédiée aux véhicules professionnels : auto-mission, utilitaire, VTC, flotte. Couverture RC obligatoire + tous risques pro + marchandises. Tarifs négociés."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance voiture professionnelle : RC pro circulation obligatoire + tous risques pro + marchandises transportées. Auto-mission, utilitaire, VTC, flotte. Tarifs négociés à partir de 580€/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -127,13 +128,13 @@ export default function Page() {
                     <td className="border p-2">RC pro chauffeur dédié</td>
                     <td className="border p-2 text-right">
                       650 – 3 800 €/an (voir{' '}
-                      <a href="/assurance-vtc" className="text-primary-600 underline">
+                      <Link href="/assurance-vtc" className="text-primary-600 underline">
                         /assurance-vtc
-                      </a>{' '}
+                      </Link>{' '}
                       ou{' '}
-                      <a href="/assurance-taxi" className="text-primary-600 underline">
+                      <Link href="/assurance-taxi" className="text-primary-600 underline">
                         /assurance-taxi
-                      </a>
+                      </Link>
                       )
                     </td>
                   </tr>

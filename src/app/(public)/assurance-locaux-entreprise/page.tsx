@@ -13,6 +13,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -24,7 +25,7 @@ const TAGLINE =
   "L'assurance multirisque pour les locaux d'entreprise : siège social, atelier, entrepôt, dépôt, magasin annexe. Couverture incendie, vol, dégâts eaux, perte d'exploitation."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Assurance locaux entreprise : multirisque siège social, atelier, entrepôt, dépôt. Couverture incendie, vol, vandalisme, dégâts des eaux, événements climatiques, perte d'exploitation. Tarifs négociés à partir de 480 €/an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -78,25 +79,28 @@ export default function Page() {
                   <tr>
                     <td className="border p-2">Boutique avec vitrine et clientèle reçue</td>
                     <td className="border p-2">
-                      <a href="/assurance-local-commercial" className="text-primary-600 underline">
+                      <Link
+                        href="/assurance-local-commercial"
+                        className="text-primary-600 underline"
+                      >
                         /assurance-local-commercial
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                   <tr>
                     <td className="border p-2">Bureau tertiaire (TPE, agence, cabinet)</td>
                     <td className="border p-2">
-                      <a href="/assurance-bureau" className="text-primary-600 underline">
+                      <Link href="/assurance-bureau" className="text-primary-600 underline">
                         /assurance-bureau
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                   <tr>
                     <td className="border p-2">Restaurant / hôtel / brasserie (HCR)</td>
                     <td className="border p-2">
-                      <a href="/assurance-restaurant" className="text-primary-600 underline">
+                      <Link href="/assurance-restaurant" className="text-primary-600 underline">
                         /assurance-restaurant
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                   <tr>

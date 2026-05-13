@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 /**
- * Validation runtime des variables d'environnement Assurance Pro.
+ * Validation runtime des variables d'environnement Vivos Assurance.
  * Importé uniquement par /api/health pour la sonde infrastructure.
  */
 

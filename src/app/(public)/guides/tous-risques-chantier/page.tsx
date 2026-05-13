@@ -22,7 +22,7 @@ const TAGLINE =
   "Tout savoir sur l'assurance Tous Risques Chantier : couvertures pendant les travaux, prix moyen 0,2-0,5% du coût HT, distinction avec décennale et DO. Guide expert."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Assurance Tous Risques Chantier (TRC) : couverture des dommages au chantier PENDANT les travaux (incendie, vol matériel, effondrement, événements climatiques). Distinction décennale (10 ans après) et DO (maître d'ouvrage). Prix 0,2-0,5% du coût HT. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

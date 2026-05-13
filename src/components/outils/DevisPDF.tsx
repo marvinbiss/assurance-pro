@@ -243,7 +243,7 @@ export function DevisPDF({ data }: { data: DevisData }) {
 
         <View style={styles.footer} fixed>
           <Text>
-            Devis généré par Assurance Pro (https://vivos-assurance.fr) — Modèle conforme art. L.
+            Devis généré par Vivos Assurance (https://vivos-assurance.fr) — Modèle conforme art. L.
             111-1 C. conso + L. 441-3 C. com.
           </Text>
         </View>

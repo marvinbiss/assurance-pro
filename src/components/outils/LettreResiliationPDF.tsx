@@ -183,8 +183,8 @@ export function LettreResiliationPDF({ data }: { data: LettreResiliationData }) 
 
         <View style={styles.footer} fixed>
           <Text>
-            Lettre générée par Assurance Pro (https://vivos-assurance.fr) — Conforme Loi Hamon (art.
-            L. 113-15-2 C. assur.)
+            Lettre générée par Vivos Assurance (https://vivos-assurance.fr) — Conforme Loi Hamon
+            (art. L. 113-15-2 C. assur.)
           </Text>
         </View>
       </Page>

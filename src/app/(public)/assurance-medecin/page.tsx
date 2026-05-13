@@ -16,6 +16,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -27,7 +28,7 @@ const TAGLINE =
   'Le pack assurance complet pour médecins libéraux : RC Pro médicale (Loi Kouchner), multirisque cabinet, mutuelle TNS Madelin, prévoyance, cyber. Conseil ORIAS dédié santé.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance médecin libéral : RC Pro médicale 8M€ (Loi Kouchner), multirisque cabinet, mutuelle TNS Madelin déductible, prévoyance, cyber RGPD données patients. Pack 2 200-4 800€/an. Comparatif MACSF, Generali, Allianz, Hiscox. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -75,9 +76,9 @@ export default function Page() {
                   <strong>RC Pro médicale (OBLIGATOIRE Loi Kouchner)</strong> — plafond 8
                   M€/sinistre standard pour médecin généraliste, jusqu&apos;à 15 M€ pour spécialités
                   à risque (chirurgie, anesthésie, gynéco-obstétrique). Voir{' '}
-                  <a href="/rc-pro-medecin" className="text-primary-600 underline">
+                  <Link href="/rc-pro-medecin" className="text-primary-600 underline">
                     /rc-pro-medecin
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <strong>Multirisque cabinet</strong> — local + mobilier + matériel médical (un
@@ -91,16 +92,16 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Mutuelle TNS Madelin</strong> — santé du médecin déductible BNC. Voir{' '}
-                  <a href="/mutuelle-tns" className="text-primary-600 underline">
+                  <Link href="/mutuelle-tns" className="text-primary-600 underline">
                     /mutuelle-tns
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <strong>Prévoyance TNS Madelin</strong> — IJ + invalidité + décès. CRITIQUE pour
                   médecins libéraux (revenus dépendant de la présence physique). Voir{' '}
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     /prevoyance-tns
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <strong>Auto-mission</strong> ou véhicule pro — pour les visites à domicile

@@ -14,7 +14,7 @@ const TAGLINE =
   'Comment résilier son assurance professionnelle : Loi Hamon, résiliation infra-annuelle, lettre type, délais, mandat nouveau courtier. Guide complet 2026.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Résiliation assurance pro : Loi Hamon (15 mars 2014), résiliation infra-annuelle après 1 an d'engagement, lettre recommandée AR, délais 1 mois, mandat de résiliation par nouveau courtier. Cas particuliers (cession fonds, changement situation).",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

@@ -16,6 +16,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -27,7 +28,7 @@ const TAGLINE =
   "L'assurance dédiée aux micro-entreprises (TPE < 10 salariés) et micro-entrepreneurs : RC Pro, multirisque, mutuelle TNS, prévoyance. Tarifs ajustés à la taille."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance micro-entreprise : pack adapté aux TPE et micro-entrepreneurs (RC Pro, multirisque local, mutuelle TNS, prévoyance Madelin). Tarifs négociés à partir de 220 €/an. Comparatif 8 assureurs. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -222,13 +223,13 @@ export default function Page() {
               </ul>
               <p>
                 Plus de détails sur{' '}
-                <a href="/mutuelle-tns" className="text-primary-600 underline">
+                <Link href="/mutuelle-tns" className="text-primary-600 underline">
                   /mutuelle-tns
-                </a>{' '}
+                </Link>{' '}
                 et{' '}
-                <a href="/prevoyance-tns" className="text-primary-600 underline">
+                <Link href="/prevoyance-tns" className="text-primary-600 underline">
                   /prevoyance-tns
-                </a>
+                </Link>
                 .
               </p>
             </>
@@ -240,42 +241,42 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
+                  <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     RC Pro auto-entrepreneur
-                  </a>{' '}
+                  </Link>{' '}
                   — 21 métiers obligatoires + plateformes B2B
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-decennale/auto-entrepreneur"
                     className="text-primary-600 underline"
                   >
                     Décennale auto-entrepreneur BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — pour artisans BTP en AE
                 </li>
                 <li>
-                  <a href="/assurance-bureau" className="text-primary-600 underline">
+                  <Link href="/assurance-bureau" className="text-primary-600 underline">
                     Assurance bureau
-                  </a>{' '}
+                  </Link>{' '}
                   — pour TPE en local séparé ou bureau à domicile
                 </li>
                 <li>
-                  <a href="/assurance-local-commercial" className="text-primary-600 underline">
+                  <Link href="/assurance-local-commercial" className="text-primary-600 underline">
                     Assurance local commercial
-                  </a>{' '}
+                  </Link>{' '}
                   — pour micro-commerces en boutique
                 </li>
                 <li>
-                  <a href="/mutuelle-tns" className="text-primary-600 underline">
+                  <Link href="/mutuelle-tns" className="text-primary-600 underline">
                     Mutuelle TNS Madelin
-                  </a>{' '}
+                  </Link>{' '}
                   — santé pour indépendants au régime réel
                 </li>
                 <li>
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     Prévoyance TNS Madelin
-                  </a>{' '}
+                  </Link>{' '}
                   — IJ + invalidité + capital décès
                 </li>
               </ul>

@@ -17,7 +17,7 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   const m = getMembre(params.slug)
   if (!m) return {}
   return {
-    title: `${m.prenom} ${m.nom} — ${m.poste} | Assurance Pro`,
+    title: `${m.prenom} ${m.nom} — ${m.poste} | Vivos Assurance`,
     description: m.bio.slice(0, 200),
     alternates: { canonical: `${SITE_URL}/equipe/${m.slug}` },
   }
@@ -37,7 +37,7 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
     jobTitle: m.poste,
     worksFor: {
       '@type': 'InsuranceAgency',
-      name: 'Assurance Pro',
+      name: 'Vivos Assurance',
       url: SITE_URL,
       identifier: m.oriasNumber,
     },

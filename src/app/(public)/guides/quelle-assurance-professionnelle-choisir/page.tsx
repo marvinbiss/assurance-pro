@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   'Le guide pour identifier les assurances professionnelles indispensables selon votre profil : métier, statut juridique, taille entreprise. Méthode en 5 étapes.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Guide quelle assurance professionnelle choisir : méthode en 5 étapes pour identifier les garanties INDISPENSABLES selon votre métier, statut juridique, taille entreprise. Comparatif 8 assureurs. Conseil ORIAS gratuit sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -61,9 +62,9 @@ export default function Page() {
               <ul>
                 <li>
                   RC Pro adaptée — voir{' '}
-                  <a href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
+                  <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     /rc-pro/auto-entrepreneur
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   Mutuelle santé individuelle (basculer au régime réel pour Madelin si bénéfice ≥
@@ -73,98 +74,98 @@ export default function Page() {
               <h3>Artisan BTP</h3>
               <ul>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Décennale obligatoire
-                  </a>{' '}
+                  </Link>{' '}
                   + RC Pro travaux + véhicule pro
                 </li>
                 <li>
-                  <a href="/mutuelle-pro-btp" className="text-primary-600 underline">
+                  <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                     Mutuelle pro BTP
-                  </a>{' '}
+                  </Link>{' '}
                   +{' '}
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     Prévoyance TNS
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   Pack complet :{' '}
-                  <a href="/assurance-artisan" className="text-primary-600 underline">
+                  <Link href="/assurance-artisan" className="text-primary-600 underline">
                     /assurance-artisan
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <h3>Commerçant en boutique</h3>
               <ul>
                 <li>
-                  <a href="/assurance-local-commercial" className="text-primary-600 underline">
+                  <Link href="/assurance-local-commercial" className="text-primary-600 underline">
                     Multirisque local
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-commerce" className="text-primary-600 underline">
+                  <Link href="/assurance-commerce" className="text-primary-600 underline">
                     Pack commerce
-                  </a>{' '}
+                  </Link>{' '}
                   avec stock + bris glace + RC client
                 </li>
               </ul>
               <h3>Restaurateur / hôtelier</h3>
               <ul>
                 <li>
-                  <a href="/assurance-restaurant" className="text-primary-600 underline">
+                  <Link href="/assurance-restaurant" className="text-primary-600 underline">
                     Pack HCR
-                  </a>{' '}
+                  </Link>{' '}
                   avec garantie intoxication alimentaire
                 </li>
               </ul>
               <h3>Cabinet libéral / consulting / agence</h3>
               <ul>
                 <li>
-                  <a href="/assurance-bureau" className="text-primary-600 underline">
+                  <Link href="/assurance-bureau" className="text-primary-600 underline">
                     Multirisque bureau
-                  </a>{' '}
+                  </Link>{' '}
                   + équipement IT
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/responsabilite-civile-professionnelle"
                     className="text-primary-600 underline"
                   >
                     RC Pro
-                  </a>{' '}
+                  </Link>{' '}
                   avec plafond adapté
                 </li>
                 <li>
-                  <a href="/cyber-assurance" className="text-primary-600 underline">
+                  <Link href="/cyber-assurance" className="text-primary-600 underline">
                     Cyber assurance
-                  </a>{' '}
+                  </Link>{' '}
                   recommandée
                 </li>
               </ul>
               <h3>VTC / Taxi</h3>
               <ul>
                 <li>
-                  <a href="/assurance-vtc" className="text-primary-600 underline">
+                  <Link href="/assurance-vtc" className="text-primary-600 underline">
                     Pack VTC
-                  </a>{' '}
+                  </Link>{' '}
                   ou{' '}
-                  <a href="/assurance-taxi" className="text-primary-600 underline">
+                  <Link href="/assurance-taxi" className="text-primary-600 underline">
                     /assurance-taxi
-                  </a>{' '}
+                  </Link>{' '}
                   avec garantie ADS-licence
                 </li>
               </ul>
               <h3>PME / ETI avec salariés</h3>
               <ul>
                 <li>
-                  <a href="/assurance-entreprise" className="text-primary-600 underline">
+                  <Link href="/assurance-entreprise" className="text-primary-600 underline">
                     Pack TPE/PME/ETI complet
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-sante-entreprise" className="text-primary-600 underline">
+                  <Link href="/assurance-sante-entreprise" className="text-primary-600 underline">
                     Mutuelle collective ANI 2013
-                  </a>{' '}
+                  </Link>{' '}
                   obligatoire
                 </li>
                 <li>RCMS pour dirigeant + cyber + flotte si véhicules</li>
@@ -178,12 +179,12 @@ export default function Page() {
             <>
               <p>
                 Voir aussi notre guide{' '}
-                <a
+                <Link
                   href="/guides/devis-assurance-professionnelle"
                   className="text-primary-600 underline"
                 >
                   /guides/devis-assurance-professionnelle
-                </a>{' '}
+                </Link>{' '}
                 qui détaille la procédure complète de demande de devis en 5 étapes + documents à
                 préparer + 5 pièges à éviter.
               </p>

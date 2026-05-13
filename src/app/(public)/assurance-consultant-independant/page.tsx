@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "L'assurance pour consultants indépendants : RC pro avec plafond élevé (5 M€), mutuelle TNS, prévoyance, protection juridique. Tous statuts (EI, EURL, SASU, portage)."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance consultant indépendant : pack RC Pro 5 M€ (clients institutionnels) + mutuelle TNS Madelin + prévoyance + cyber + protection juridique. Tarifs 880-2 200€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -107,33 +108,33 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/responsabilite-civile-professionnelle"
                     className="text-primary-600 underline"
                   >
                     RC Pro complet
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/rc-pro/informatique" className="text-primary-600 underline">
+                  <Link href="/rc-pro/informatique" className="text-primary-600 underline">
                     RC Pro informatique
-                  </a>{' '}
+                  </Link>{' '}
                   — pour consultants IT (CPC 1 300€)
                 </li>
                 <li>
-                  <a href="/mutuelle-tns" className="text-primary-600 underline">
+                  <Link href="/mutuelle-tns" className="text-primary-600 underline">
                     Mutuelle TNS Madelin
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     Prévoyance TNS
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-freelance" className="text-primary-600 underline">
+                  <Link href="/assurance-freelance" className="text-primary-600 underline">
                     Assurance freelance
-                  </a>{' '}
+                  </Link>{' '}
                   — pour consultants en portage/AE
                 </li>
               </ul>

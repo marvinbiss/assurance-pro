@@ -5,13 +5,13 @@ import { ReclamationForm } from '@/components/forms/ReclamationForm'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Déposer une réclamation | Assurance Pro',
+  title: 'Déposer une réclamation | Vivos Assurance',
   description:
     'Procédure de réclamation conforme à la Recommandation ACPR 2024-R-02. Formulaire en ligne, accusé réception sous 10 jours ouvrés, réponse sous 2 mois.',
   alternates: { canonical: `${SITE_URL}/reclamation` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Déposer une réclamation | Assurance Pro',
+    title: 'Déposer une réclamation | Vivos Assurance',
     description:
       'Procédure de réclamation conforme à la Recommandation ACPR 2024-R-02. Formulaire en ligne, accusé réception sous 10 jours ouvrés, réponse sous 2 mois.',
     url: `${SITE_URL}/reclamation`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Déposer une réclamation | Assurance Pro',
+    title: 'Déposer une réclamation | Vivos Assurance',
     description:
       'Procédure de réclamation conforme à la Recommandation ACPR 2024-R-02. Formulaire en ligne, accusé réception sous 10 jours ouvrés, réponse sous 2 mois.',
   },

@@ -6,7 +6,7 @@ import { IPID_PRODUCTS } from '@/lib/data/ipid-products'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: "IPID — Fiches d'information produit | Assurance Pro",
+  title: "IPID — Fiches d'information produit | Vivos Assurance",
   description:
     "Fiches IPID standardisées DDA pour chaque produit d'assurance distribué : décennale, RC Pro, mutuelle TNS, cyber, multirisque, VTC.",
   alternates: { canonical: `${SITE_URL}/ipid` },

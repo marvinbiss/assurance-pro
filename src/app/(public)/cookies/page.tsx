@@ -1,26 +1,27 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Cookie } from 'lucide-react'
 import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Politique cookies | Assurance Pro',
+  title: 'Politique cookies | Vivos Assurance',
   description:
-    "Politique cookies du cabinet de courtage ORIAS Assurance Pro. Cookies essentiels, mesure d'audience, marketing. Gestion du consentement RGPD.",
+    "Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d'audience, marketing. Gestion du consentement RGPD.",
   alternates: { canonical: `${SITE_URL}/cookies` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Politique cookies | Assurance Pro',
+    title: 'Politique cookies | Vivos Assurance',
     description:
-      'Politique cookies du cabinet de courtage ORIAS Assurance Pro. Cookies essentiels, mesure d\\',
+      'Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d\\',
     url: `${SITE_URL}/cookies`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Politique cookies | Assurance Pro',
+    title: 'Politique cookies | Vivos Assurance',
     description:
-      'Politique cookies du cabinet de courtage ORIAS Assurance Pro. Cookies essentiels, mesure d\\',
+      'Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d\\',
   },
 }
 
@@ -206,7 +207,7 @@ export default function CookiesPage() {
           <p>
             Pour l&apos;exercice de vos droits (accès, rectification, effacement, opposition,
             portabilité), consultez notre{' '}
-            <a href="/confidentialite">Politique de confidentialité</a>.
+            <Link href="/confidentialite">Politique de confidentialité</Link>.
           </p>
 
           <h2>8. Contact</h2>

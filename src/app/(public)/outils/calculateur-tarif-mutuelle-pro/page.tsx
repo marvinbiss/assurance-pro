@@ -19,6 +19,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { CalculateurTarifMutuellePro } from '@/components/outils/CalculateurTarifMutuellePro'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
@@ -52,13 +53,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-emerald-700 to-teal-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/mutuelle-pro-btp" className="hover:underline">
+            <Link href="/mutuelle-pro-btp" className="hover:underline">
               Mutuelle pro
-            </a>{' '}
+            </Link>{' '}
             / <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -251,12 +252,12 @@ export default async function Page() {
             officielles parmi nos 8 mutuelles santé partenaires. Adhésion en ligne, attestation
             mutuelle téléchargeable dans les 24h.
           </p>
-          <a
+          <Link
             href="/outils/comparateur-mutuelle-pro"
             className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-emerald-700 shadow-lg transition hover:bg-gray-100"
           >
             → Comparateur officiel mutuelle pro (2 min, ORIAS)
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -265,7 +266,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Calculateur tarif mutuelle pro 2026 — Assurance Pro',
+            name: 'Calculateur tarif mutuelle pro 2026 — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Any',

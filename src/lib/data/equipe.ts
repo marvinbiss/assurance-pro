@@ -1,5 +1,5 @@
 /**
- * Équipe Assurance Pro — pages auteur YMYL
+ * Équipe Vivos Assurance — pages auteur YMYL
  * E-E-A-T : Expérience, Expertise, Authoritativeness, Trustworthiness.
  *
  * NB : ces données sont des templates ; à personnaliser avant prod
@@ -31,7 +31,7 @@ export const EQUIPE: Record<string, MembreEquipe> = {
     poste: 'Directeur du cabinet — Courtier responsable',
     oriasNumber: process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX',
     emailPro: 'direction@vivos-assurance.fr',
-    bio: "Directeur du cabinet Assurance Pro et courtier responsable au sens des articles L. 511-1 et suivants du Code des assurances. Représente le cabinet auprès de l'ACPR et de l'ORIAS. Garant de la conformité des recommandations délivrées et de la traçabilité du devoir de conseil (art. L. 521-4).",
+    bio: "Directeur du cabinet Vivos Assurance et courtier responsable au sens des articles L. 511-1 et suivants du Code des assurances. Représente le cabinet auprès de l'ACPR et de l'ORIAS. Garant de la conformité des recommandations délivrées et de la traçabilité du devoir de conseil (art. L. 521-4).",
     expertises: [
       'Direction de cabinet de courtage indépendant',
       'Conformité ACPR / ORIAS / DDA',

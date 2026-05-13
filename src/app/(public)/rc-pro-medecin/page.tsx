@@ -3,14 +3,14 @@ import { SITE_URL } from '@/lib/seo/config'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 
 export const metadata: Metadata = {
-  title: 'RC Pro Médecin / Praticien santé | Assurance Pro',
+  title: 'RC Pro Médecin / Praticien santé | Vivos Assurance',
   description:
     'RC Pro médicale obligatoire (Loi Kouchner). Médecins, infirmiers, kinés, ostéopathes, sage-femmes. Comparaison sur 6 assureurs spécialistes.',
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/rc-pro-medecin`,
   },
   openGraph: {
-    title: 'RC Pro Médecin / Praticien santé | Assurance Pro',
+    title: 'RC Pro Médecin / Praticien santé | Vivos Assurance',
     description:
       'RC Pro médicale obligatoire (Loi Kouchner). Médecins, infirmiers, kinés, ostéopathes, sage-femmes. Comparaison sur 6 assureurs spécialistes.',
     url: `${SITE_URL}/rc-pro-medecin`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RC Pro Médecin / Praticien santé | Assurance Pro',
+    title: 'RC Pro Médecin / Praticien santé | Vivos Assurance',
     description:
       'RC Pro médicale obligatoire (Loi Kouchner). Médecins, infirmiers, kinés, ostéopathes, sage-femmes. Comparaison sur 6 assureurs spécialistes.',
   },

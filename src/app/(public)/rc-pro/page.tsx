@@ -3,14 +3,14 @@ import { SITE_URL } from '@/lib/seo/config'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 
 export const metadata: Metadata = {
-  title: 'RC Pro — Responsabilité Civile Professionnelle | Assurance Pro',
+  title: 'RC Pro — Responsabilité Civile Professionnelle | Vivos Assurance',
   description:
     'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/rc-pro`,
   },
   openGraph: {
-    title: 'RC Pro — Responsabilité Civile Professionnelle | Assurance Pro',
+    title: 'RC Pro — Responsabilité Civile Professionnelle | Vivos Assurance',
     description:
       'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
     url: `${SITE_URL}/rc-pro`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RC Pro — Responsabilité Civile Professionnelle | Assurance Pro',
+    title: 'RC Pro — Responsabilité Civile Professionnelle | Vivos Assurance',
     description:
       'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
   },

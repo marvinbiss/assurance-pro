@@ -24,6 +24,7 @@
  * — utilisé par les juristes, comptables, conseillers financiers.
  */
 
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
@@ -36,7 +37,7 @@ const TAGLINE =
   "Tout savoir sur la responsabilité civile professionnelle (RCP) : définition juridique, métiers concernés, plafonds recommandés, tarifs 2026 et différence avec l'assurance décennale."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Responsabilité Civile Professionnelle (RCP / RC Pro) : définition juridique, 21 métiers réglementés, plafonds recommandés (1,5 M€ standard, 5 M€ conseil financier), tarifs 2026, distinction avec décennale et cyber. Guide expert ORIAS.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -230,27 +231,27 @@ export default function Page() {
               <p>Pages-piliers connexes :</p>
               <ul>
                 <li>
-                  <a href="/rc-pro" className="text-primary-600 underline">
+                  <Link href="/rc-pro" className="text-primary-600 underline">
                     Pilier RC Pro complet
-                  </a>{' '}
+                  </Link>{' '}
                   — toutes garanties + 30 professions couvertes
                 </li>
                 <li>
-                  <a href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
+                  <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     RC Pro auto-entrepreneur
-                  </a>{' '}
+                  </Link>{' '}
                   — guide spécifique AE/micro
                 </li>
                 <li>
-                  <a href="/rc-pro/informatique" className="text-primary-600 underline">
+                  <Link href="/rc-pro/informatique" className="text-primary-600 underline">
                     RC Pro informatique
-                  </a>{' '}
+                  </Link>{' '}
                   — métiers IT, ESN, freelance dev (CPC le plus haut du marché)
                 </li>
                 <li>
-                  <a href="/guides/attestation-rc-pro" className="text-primary-600 underline">
+                  <Link href="/guides/attestation-rc-pro" className="text-primary-600 underline">
                     Guide attestation RC Pro
-                  </a>{' '}
+                  </Link>{' '}
                   — modèle PDF + mentions obligatoires
                 </li>
               </ul>

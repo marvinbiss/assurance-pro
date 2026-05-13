@@ -25,6 +25,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -36,7 +37,7 @@ const TAGLINE =
   'Le pack assurance complet pour artisans : décennale obligatoire BTP, RC pro, multirisque atelier, mutuelle TNS, prévoyance. Conseil ORIAS dédié, devis gratuit sous 24h.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance artisan : décennale BTP obligatoire, RC pro, multirisque atelier/véhicule, mutuelle TNS, prévoyance Madelin. Pack négocié à partir de 980 €/an. 8 assureurs comparés. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -224,60 +225,60 @@ export default function Page() {
               <h3>Artisans BTP</h3>
               <ul>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Pilier décennale BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — toutes garanties Loi Spinetta
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-decennale/auto-entrepreneur"
                     className="text-primary-600 underline"
                   >
                     Décennale auto-entrepreneur BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — tarifs + procédure 24h
                 </li>
                 <li>
-                  <a href="/mutuelle-pro-btp" className="text-primary-600 underline">
+                  <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                     Mutuelle pro BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — comparatif PRO BTP, April, Harmonie
                 </li>
               </ul>
               <h3>Artisans hors BTP</h3>
               <ul>
                 <li>
-                  <a href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
+                  <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     RC Pro auto-entrepreneur
-                  </a>{' '}
+                  </Link>{' '}
                   — couverture esthétique, coiffure, etc.
                 </li>
                 <li>
-                  <a href="/mutuelle-tns" className="text-primary-600 underline">
+                  <Link href="/mutuelle-tns" className="text-primary-600 underline">
                     Mutuelle TNS Madelin
-                  </a>{' '}
+                  </Link>{' '}
                   — santé déductible
                 </li>
                 <li>
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     Prévoyance TNS
-                  </a>{' '}
+                  </Link>{' '}
                   — IJ + invalidité + capital décès
                 </li>
               </ul>
               <h3>Locaux et équipement</h3>
               <ul>
                 <li>
-                  <a href="/assurance-local-commercial" className="text-primary-600 underline">
+                  <Link href="/assurance-local-commercial" className="text-primary-600 underline">
                     Assurance local commercial
-                  </a>{' '}
+                  </Link>{' '}
                   — pour artisans en boutique
                 </li>
                 <li>
-                  <a href="/assurance-bureau" className="text-primary-600 underline">
+                  <Link href="/assurance-bureau" className="text-primary-600 underline">
                     Assurance bureau
-                  </a>{' '}
+                  </Link>{' '}
                   — pour artisans en cabinet/bureau
                 </li>
               </ul>
@@ -318,9 +319,9 @@ export default function Page() {
                 compare souvent à d&apos;autres acteurs (April, MMA, Aon, Generali) pour trouver le
                 meilleur rapport garanties/cotisation selon le profil. Voir notre page comparatif
                 dédiée :{' '}
-                <a href="/mutuelle-pro-btp" className="text-primary-600 underline">
+                <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                   /mutuelle-pro-btp
-                </a>
+                </Link>
                 .
               </p>
             </>

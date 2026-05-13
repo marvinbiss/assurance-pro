@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   'La décennale obligatoire pour les micro-entreprises BTP : Loi Spinetta, tarifs négociés à partir de 480€/an, attestation 24h, conseil ORIAS spécialisé artisans.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Décennale micro-entreprise BTP : OBLIGATOIRE Loi Spinetta. Tarifs 480-1 540€/an selon métier. Attestation 24h. 8 assureurs comparés (Hiscox, April Pro, SMABTP, MMA, AXA Pro, Wakam, Stello, Generali). Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -61,30 +62,30 @@ export default function Page() {
               <p>Cette page renvoie vers nos piliers spécialisés :</p>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-decennale/auto-entrepreneur"
                     className="text-primary-600 underline"
                   >
                     Décennale auto-entrepreneur
-                  </a>{' '}
+                  </Link>{' '}
                   — pilier complet (tarifs détaillés par métier, procédure 24h, modèle attestation)
                 </li>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Pilier décennale BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — Loi Spinetta + 37 métiers BTP couverts
                 </li>
                 <li>
-                  <a href="/assurance-micro-entreprise" className="text-primary-600 underline">
+                  <Link href="/assurance-micro-entreprise" className="text-primary-600 underline">
                     Assurance micro-entreprise
-                  </a>{' '}
+                  </Link>{' '}
                   — pack global pour micro-entrepreneurs (RC Pro, multirisque, mutuelle)
                 </li>
                 <li>
-                  <a href="/guides/attestation-decennale" className="text-primary-600 underline">
+                  <Link href="/guides/attestation-decennale" className="text-primary-600 underline">
                     Guide attestation décennale
-                  </a>{' '}
+                  </Link>{' '}
                   — 11 mentions obligatoires + modèle PDF
                 </li>
               </ul>

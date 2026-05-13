@@ -16,6 +16,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { LettreResiliationForm } from '@/components/outils/LettreResiliationForm'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -27,7 +28,7 @@ export const revalidate = 86400
 const SLUG = 'outils/lettre-resiliation-assurance'
 
 export const metadata: Metadata = {
-  title: 'Lettre de résiliation assurance pro PDF — Loi Hamon 2026 | Assurance Pro',
+  title: 'Lettre de résiliation assurance pro PDF — Loi Hamon 2026 | Vivos Assurance',
   description:
     "Générez votre lettre de résiliation d'assurance professionnelle au format PDF en 2 minutes. Conforme Loi Hamon (art. L. 113-15-2 C. assur.) — résiliation infra-annuelle après 1 an, sans frais, sans motif. Modèle prêt à imprimer + envoyer en LRAR.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -49,13 +50,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-rose-700 to-pink-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/guides/resiliation-assurance-professionnelle" className="hover:underline">
+            <Link href="/guides/resiliation-assurance-professionnelle" className="hover:underline">
               Guide résiliation
-            </a>{' '}
+            </Link>{' '}
             / <span>Lettre PDF</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -140,12 +141,12 @@ export default async function Page() {
             Cas particuliers (résiliation IMMÉDIATE possible) : cession fonds de commerce, cessation
             d&apos;activité, changement situation matérielle, augmentation tarif &gt; 10%. Voir
             notre{' '}
-            <a
+            <Link
               href="/guides/resiliation-assurance-professionnelle"
               className="text-primary-600 underline"
             >
               guide complet résiliation
-            </a>
+            </Link>
             .
           </p>
         </div>
@@ -194,24 +195,24 @@ export default async function Page() {
             contrat actuel. Mandat de résiliation pris en charge gratuitement.
           </p>
           <div className="flex flex-col justify-center gap-3 md:flex-row">
-            <a
+            <Link
               href="/outils/devis-rc-pro"
               className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-rose-700 shadow-lg transition hover:bg-gray-100"
             >
               → Devis RC Pro (2 min)
-            </a>
-            <a
+            </Link>
+            <Link
               href="/outils/devis-assurance-decennale"
               className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-rose-700 shadow-lg transition hover:bg-gray-100"
             >
               → Devis décennale (2 min)
-            </a>
-            <a
+            </Link>
+            <Link
               href="/outils/comparateur-mutuelle-pro"
               className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-rose-700 shadow-lg transition hover:bg-gray-100"
             >
               → Comparateur mutuelle
-            </a>
+            </Link>
           </div>
         </div>
       </section>

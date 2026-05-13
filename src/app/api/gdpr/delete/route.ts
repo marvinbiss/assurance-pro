@@ -20,7 +20,12 @@ import { checkRateLimit, getClientIp } from '@/lib/rate-limiter'
 import { logger } from '@/lib/logger'
 import { captureApiException } from '@/lib/observability/sentry'
 import { SITE_URL } from '@/lib/seo/config'
-import { signGdprToken, verifyGdprToken, hashEmail, GDPR_TOKEN_TTL_MINUTES } from '@/lib/security/gdpr-token'
+import {
+  signGdprToken,
+  verifyGdprToken,
+  hashEmail,
+  GDPR_TOKEN_TTL_MINUTES,
+} from '@/lib/security/gdpr-token'
 import { esc } from '@/lib/email/templates/_html'
 
 export const dynamic = 'force-dynamic'
@@ -77,7 +82,7 @@ export async function POST(req: NextRequest) {
   const url = `${SITE_URL}/api/gdpr/delete?token=${encodeURIComponent(token)}`
   void sendEmail({
     to: email,
-    subject: '[Assurance Pro] Confirmer l\'anonymisation de vos données',
+    subject: "[Vivos Assurance] Confirmer l'anonymisation de vos données",
     html: `
       <p>Bonjour,</p>
       <p>Vous avez demandé l'exercice de votre droit à l'effacement (RGPD art. 17)
@@ -92,13 +97,14 @@ export async function POST(req: NextRequest) {
       <p><a href="${url}">${url}</a></p>
       <p>Si vous n'êtes pas à l'origine de cette demande, ignorez ce message —
       aucune anonymisation ne sera effectuée.</p>
-      <p>— Service DPO Assurance Pro</p>
+      <p>— Service DPO Vivos Assurance</p>
     `,
   }).catch((err) => logger.error({ err }, 'gdpr-delete confirmation email failed'))
 
   return NextResponse.json({
     ok: true,
-    message: 'Email de confirmation envoyé. Cliquez sur le lien dans l\'heure pour valider l\'anonymisation.',
+    message:
+      "Email de confirmation envoyé. Cliquez sur le lien dans l'heure pour valider l'anonymisation.",
   })
 }
 
@@ -125,7 +131,10 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'Lien déjà utilisé.' }, { status: 400 })
     }
     // Fail-closed : pas de consume = pas d'anonymisation (CRITICAL : ne PAS continuer)
-    logger.error({ err: replayErr, tokenHash: tokenHash.slice(0, 12) }, 'gdpr-delete consume insert failed')
+    logger.error(
+      { err: replayErr, tokenHash: tokenHash.slice(0, 12) },
+      'gdpr-delete consume insert failed'
+    )
     return NextResponse.json({ error: 'Service indisponible.' }, { status: 500 })
   }
 
@@ -163,13 +172,11 @@ export async function GET(req: NextRequest) {
   // prospect (déduite via leads anonymisés) n'est plus accessible. Choix RGPD
   // art. 23 — limitation pour obligation légale de conservation.
 
-  const newsletterRes = await admin
-    .from('newsletter_subscribers')
-    .delete()
-    .eq('email', email)
+  const newsletterRes = await admin.from('newsletter_subscribers').delete().eq('email', email)
 
-  const errors = [leadsRes.error, reclamationsRes.error, newsletterRes.error]
-    .filter((e): e is NonNullable<typeof e> => e !== null && e !== undefined)
+  const errors = [leadsRes.error, reclamationsRes.error, newsletterRes.error].filter(
+    (e): e is NonNullable<typeof e> => e !== null && e !== undefined
+  )
 
   if (errors.length > 0) {
     logger.error(
@@ -191,7 +198,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({
     ok: true,
     message:
-      'Vos données personnelles ont été anonymisées sur l\'ensemble des registres. '
-      + 'Les obligations légales de conservation ACPR sont respectées avec données anonymisées.',
+      "Vos données personnelles ont été anonymisées sur l'ensemble des registres. " +
+      'Les obligations légales de conservation ACPR sont respectées avec données anonymisées.',
   })
 }

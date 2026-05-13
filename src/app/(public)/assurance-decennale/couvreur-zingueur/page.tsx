@@ -6,6 +6,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -16,7 +17,7 @@ const TAGLINE =
   'La décennale obligatoire pour couvreur-zingueur : couverture spécifique étanchéité toiture (top sinistre BTP — sinistralité AQC 13,2%), zinc, chéneaux, isolation. Tarifs 2026 négociés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Décennale couvreur-zingueur 2026 : OBLIGATOIRE Loi Spinetta. Couverture étanchéité toiture (TOP 1 sinistre BTP — AQC 13,2%), zinc, chéneaux, isolation thermique toiture. Tarifs 820-1 540€/an AE, 9 200-17 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -92,34 +93,34 @@ export default function Page() {
             <div>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/outils/calculateur-tarif-decennale"
                     className="text-primary-600 underline"
                   >
                     Calculateur tarif décennale couvreur
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/outils/devis-assurance-decennale"
                     className="text-primary-600 underline"
                   >
                     Devis officiel ORIAS sous 24h
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-decennale/photovoltaique"
                     className="text-primary-600 underline"
                   >
                     Décennale photovoltaïque RGE
-                  </a>{' '}
+                  </Link>{' '}
                   (couvreur peut élargir activité)
                 </li>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Pilier décennale BTP — 37 métiers
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

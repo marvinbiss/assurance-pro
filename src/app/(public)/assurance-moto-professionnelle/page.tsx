@@ -15,7 +15,7 @@ const TAGLINE =
   "L'assurance dédiée aux 2 roues à usage pro : livreur Uber Eats/Deliveroo, taxi-moto, coursier, commercial nomade. RC pro + tous risques + équipement."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance moto professionnelle : 2 roues utilitaire (livreur Uber Eats/Deliveroo, taxi-moto, coursier, commercial). RC pro + tous risques + équipement + conducteur étendue. Tarifs 680-1 580€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

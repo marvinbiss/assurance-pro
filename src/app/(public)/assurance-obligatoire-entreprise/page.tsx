@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "La liste exhaustive des assurances OBLIGATOIRES pour une entreprise en France selon métier et statut juridique. Sanctions absence détaillées (jusqu'à 75 000€ + prison)."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Liste exhaustive 2026 des assurances OBLIGATOIRES par entreprise : décennale BTP, RC Pro santé/juridique/conseil financier/transport/sport, multirisque bail commercial, mutuelle collective ANI, auto pro. Sanctions absence + références légales. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -160,36 +161,36 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Décennale BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — Loi Spinetta
                 </li>
                 <li>
-                  <a href="/assurance-dommages-ouvrage" className="text-primary-600 underline">
+                  <Link href="/assurance-dommages-ouvrage" className="text-primary-600 underline">
                     Dommages-ouvrage
-                  </a>{' '}
+                  </Link>{' '}
                   — souscription maître d&apos;ouvrage
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/responsabilite-civile-professionnelle"
                     className="text-primary-600 underline"
                   >
                     RC Pro
-                  </a>{' '}
+                  </Link>{' '}
                   — pilier complet 21 métiers réglementés
                 </li>
                 <li>
-                  <a href="/assurance-sante-entreprise" className="text-primary-600 underline">
+                  <Link href="/assurance-sante-entreprise" className="text-primary-600 underline">
                     Mutuelle collective ANI
-                  </a>{' '}
+                  </Link>{' '}
                   — obligation employeur
                 </li>
                 <li>
-                  <a href="/assurance-local-commercial" className="text-primary-600 underline">
+                  <Link href="/assurance-local-commercial" className="text-primary-600 underline">
                     Multirisque local
-                  </a>{' '}
+                  </Link>{' '}
                   — clause bail commercial
                 </li>
               </ul>

@@ -11,6 +11,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -21,7 +22,7 @@ const TAGLINE =
   'La décennale obligatoire pour électricien BTP : couverture spécifique courts-circuits, incendies tableau, mise aux normes NF C 15-100. Tarifs 2026 négociés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Décennale électricien BTP 2026 : OBLIGATOIRE Loi Spinetta. Couverture incendies tableau, courts-circuits, défauts NF C 15-100, mise à la terre, domotique. Sinistralité AQC 5,8%. Tarifs 490-880€/an AE, 5 200-11 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -95,34 +96,34 @@ export default function Page() {
             <div>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/outils/calculateur-tarif-decennale"
                     className="text-primary-600 underline"
                   >
                     Calculateur tarif décennale électricien
-                  </a>{' '}
+                  </Link>{' '}
                   — estimation 30 secondes
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/outils/devis-assurance-decennale"
                     className="text-primary-600 underline"
                   >
                     Devis officiel ORIAS sous 24h
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Pilier décennale BTP — 37 métiers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-decennale/photovoltaique"
                     className="text-primary-600 underline"
                   >
                     Décennale photovoltaïque RGE
-                  </a>{' '}
+                  </Link>{' '}
                   (sous-segment électricien spécialisé)
                 </li>
               </ul>

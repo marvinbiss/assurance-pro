@@ -189,8 +189,8 @@ export function FacturePDF({ data }: { data: FactureData }) {
 
         <View style={styles.footer} fixed>
           <Text>
-            Facture générée par Assurance Pro (https://vivos-assurance.fr) — Modèle conforme art. L.
-            441-9 C. com.
+            Facture générée par Vivos Assurance (https://vivos-assurance.fr) — Modèle conforme art.
+            L. 441-9 C. com.
           </Text>
         </View>
       </Page>

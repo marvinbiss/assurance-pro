@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   'La décennale obligatoire pour charpentier : couverture spécifique charpente traditionnelle/industrielle, fermettes, ossature bois, structures porteuses. Sinistralité AQC 10,1%.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Décennale charpentier 2026 : OBLIGATOIRE Loi Spinetta. Couverture charpente traditionnelle/industrielle bois, fermettes, ossature bois (MOB), traitement xylophages, ferrures. Sinistralité AQC 10,1%. Tarifs 690-1 320€/an AE, 7 200-14 800€/an SARL 5 sal.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -90,30 +91,33 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <a
+                <Link
                   href="/outils/calculateur-tarif-decennale"
                   className="text-primary-600 underline"
                 >
                   Calculateur tarif décennale charpentier
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/outils/devis-assurance-decennale" className="text-primary-600 underline">
+                <Link
+                  href="/outils/devis-assurance-decennale"
+                  className="text-primary-600 underline"
+                >
                   Devis officiel ORIAS sous 24h
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/assurance-decennale/couvreur-zingueur"
                   className="text-primary-600 underline"
                 >
                   Décennale couvreur (souvent métier complémentaire)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/assurance-decennale" className="text-primary-600 underline">
+                <Link href="/assurance-decennale" className="text-primary-600 underline">
                   Pilier décennale BTP
-                </a>
+                </Link>
               </li>
             </ul>
           ),

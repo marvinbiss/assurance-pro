@@ -1,5 +1,5 @@
 /**
- * robots.txt — Vivos Assurance / Assurance Pro France
+ * robots.txt — Vivos Assurance France
  *
  * Stratégie LLM-first 2026 :
  *   - SEO bots traditionnels : full allow (sauf /api, /admin, /devis/merci)

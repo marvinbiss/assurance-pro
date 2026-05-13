@@ -20,6 +20,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -31,7 +32,7 @@ const TAGLINE =
   "L'assurance responsabilité civile professionnelle dédiée aux métiers IT : développeurs freelance, ESN, agences web, DevOps, cybersécurité, data scientists. Plafonds 5-10 M€ + cyber."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'RC Pro informatique : couverture freelance dev, ESN, agences digitales, DevOps. Plafonds recommandés 5-10 M€ (gestion de système critique). Cyber assurance couplée recommandée. Tarifs négociés à partir de 380 €/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -211,9 +212,9 @@ export default function Page() {
               </p>
               <p>
                 Voir notre page dédiée{' '}
-                <a href="/cyber-assurance" className="text-primary-600 underline">
+                <Link href="/cyber-assurance" className="text-primary-600 underline">
                   /cyber-assurance
-                </a>
+                </Link>
                 .
               </p>
             </>

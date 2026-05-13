@@ -73,7 +73,7 @@ describe('buildPageTitle', () => {
     expect(t).toContain('Plombier')
     expect(t).toContain('Paris')
     expect(t).toContain('Tarif 89-320€/an')
-    expect(t).toContain('Assurance Pro')
+    expect(t).toContain('Vivos Assurance')
   })
 
   it('fallback si pas de prix → "Devis gratuit"', () => {

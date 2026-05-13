@@ -12,6 +12,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { DevisForm } from '@/components/outils/DevisForm'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -23,7 +24,7 @@ export const revalidate = 86400
 const SLUG = 'outils/modele-devis-pro'
 
 export const metadata: Metadata = {
-  title: 'Modèle devis pro PDF — Générateur gratuit auto-entrepreneur 2026 | Assurance Pro',
+  title: 'Modèle devis pro PDF — Générateur gratuit auto-entrepreneur 2026 | Vivos Assurance',
   description:
     'Générez vos devis professionnels au format PDF en 2 minutes. Conforme art. L. 111-1 C. conso + arrêté 27/03/2017 BTP. Auto-entrepreneur, EI, EURL, SARL, SASU. Inclut zone signature « Bon pour accord » et mention assurance pro. Téléchargement immédiat, gratuit.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -45,9 +46,9 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-teal-700 to-cyan-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             / <span>Modèle devis pro PDF</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -206,9 +207,9 @@ export default async function Page() {
           <p className="mt-3 text-sm">
             Une fois votre devis SIGNÉ par le client, vous pouvez générer la facture correspondante
             :
-            <a href="/outils/modele-facture-pro" className="ml-1 text-primary-600 underline">
+            <Link href="/outils/modele-facture-pro" className="ml-1 text-primary-600 underline">
               générateur facture pro PDF →
-            </a>
+            </Link>
           </p>
         </div>
       </section>
@@ -225,18 +226,18 @@ export default async function Page() {
             cabinet ORIAS vous transmet sous 24h 3 à 5 propositions adaptées.
           </p>
           <div className="flex flex-col justify-center gap-3 md:flex-row">
-            <a
+            <Link
               href="/outils/devis-rc-pro"
               className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-teal-700 shadow-lg transition hover:bg-gray-100"
             >
               → Devis RC Pro (2 min)
-            </a>
-            <a
+            </Link>
+            <Link
               href="/outils/devis-assurance-decennale"
               className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-teal-700 shadow-lg transition hover:bg-gray-100"
             >
               → Devis décennale (2 min)
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -247,7 +248,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Générateur modèle devis pro PDF — Assurance Pro',
+            name: 'Générateur modèle devis pro PDF — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Any',

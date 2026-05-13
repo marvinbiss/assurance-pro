@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   "L'assurance dédiée à la SASU (Société par Actions Simplifiée Unipersonnelle) : RC pro, multirisque local, mutuelle collective (président assimilé salarié), RCMS."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance SASU : RC pro adaptée + multirisque local + mutuelle COLLECTIVE (président assimilé salarié, vs Madelin TNS) + RCMS dirigeant + cyber. Tarifs 580-2 800€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -140,37 +141,37 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/responsabilite-civile-professionnelle"
                     className="text-primary-600 underline"
                   >
                     RC Pro complet
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-sante-entreprise" className="text-primary-600 underline">
+                  <Link href="/assurance-sante-entreprise" className="text-primary-600 underline">
                     Mutuelle collective ANI
-                  </a>{' '}
+                  </Link>{' '}
                   — pour SASU + salariés
                 </li>
                 <li>
-                  <a href="/assurance-homme-cle" className="text-primary-600 underline">
+                  <Link href="/assurance-homme-cle" className="text-primary-600 underline">
                     Assurance homme-clé
-                  </a>{' '}
+                  </Link>{' '}
                   — critique pour SASU avec dirigeant unique
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/protection-juridique-professionnelle"
                     className="text-primary-600 underline"
                   >
                     Protection juridique pro
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/cyber-assurance" className="text-primary-600 underline">
+                  <Link href="/cyber-assurance" className="text-primary-600 underline">
                     Cyber assurance
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </>

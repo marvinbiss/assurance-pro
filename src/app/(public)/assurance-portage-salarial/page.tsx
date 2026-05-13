@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "L'assurance pour freelances en portage salarial : RC pro incluse par société de portage, mutuelle collective, prévoyance. Garanties souvent INSUFFISANTES — comment compléter."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance portage salarial : RC pro incluse par société de portage (souvent plafond 1,5 M€ INSUFFISANT pour clients institutionnels). Mutuelle collective + prévoyance + chômage. Comment compléter avec RC pro 5 M€ individuelle. Guide ORIAS.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -95,9 +96,9 @@ export default function Page() {
                 <li>
                   <strong>Métier IT à risque systémique</strong> (DevOps, cybersécurité, architecte
                   cloud) — voir{' '}
-                  <a href="/rc-pro/informatique" className="text-primary-600 underline">
+                  <Link href="/rc-pro/informatique" className="text-primary-600 underline">
                     /rc-pro/informatique
-                  </a>{' '}
+                  </Link>{' '}
                   (CPC 1 300€)
                 </li>
                 <li>

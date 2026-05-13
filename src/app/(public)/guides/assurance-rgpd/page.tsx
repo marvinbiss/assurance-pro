@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "L'assurance RGPD pour entreprises : couverture sanctions CNIL (jusqu'à 4% CA mondial), notification breach 72h, frais juridiques. Cyber assurance dédiée."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance RGPD entreprise : couverture sanctions CNIL (4% CA mondial OU 20 M€), notification breach 72h, frais juridiques RGPD, communication crise, restauration données. Cyber assurance dédiée. Tarifs 200-2 800€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -123,27 +124,27 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/cyber-assurance" className="text-primary-600 underline">
+                  <Link href="/cyber-assurance" className="text-primary-600 underline">
                     Cyber assurance complète
-                  </a>{' '}
+                  </Link>{' '}
                   — pilier global cyber + RGPD
                 </li>
                 <li>
-                  <a href="/assurance-e-commerce" className="text-primary-600 underline">
+                  <Link href="/assurance-e-commerce" className="text-primary-600 underline">
                     Assurance e-commerce
-                  </a>{' '}
+                  </Link>{' '}
                   — cyber + RGPD pour vente en ligne
                 </li>
                 <li>
-                  <a href="/rc-pro/informatique" className="text-primary-600 underline">
+                  <Link href="/rc-pro/informatique" className="text-primary-600 underline">
                     RC Pro informatique
-                  </a>{' '}
+                  </Link>{' '}
                   — pour freelances IT manipulant données client
                 </li>
                 <li>
-                  <a href="/assurance-medecin" className="text-primary-600 underline">
+                  <Link href="/assurance-medecin" className="text-primary-600 underline">
                     Assurance médecin
-                  </a>{' '}
+                  </Link>{' '}
                   — données de santé (sanctions aggravées art. 9 RGPD)
                 </li>
               </ul>

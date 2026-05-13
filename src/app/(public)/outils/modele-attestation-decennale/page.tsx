@@ -25,6 +25,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { AttestationDecennaleForm } from '@/components/outils/AttestationDecennaleForm'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -36,7 +37,7 @@ export const revalidate = 86400
 const SLUG = 'outils/modele-attestation-decennale'
 
 export const metadata: Metadata = {
-  title: 'Modèle attestation décennale PDF — Générateur gratuit 2026 | Assurance Pro',
+  title: 'Modèle attestation décennale PDF — Générateur gratuit 2026 | Vivos Assurance',
   description:
     "Générez votre modèle d'attestation décennale au format PDF en 2 minutes. Conforme arrêté du 23 janvier 2024 (11 mentions obligatoires). Téléchargement immédiat, gratuit, sans inscription. Bonus : devis décennale ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -58,13 +59,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-blue-700 to-indigo-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/guides/attestation-decennale" className="hover:underline">
+            <Link href="/guides/attestation-decennale" className="hover:underline">
               Guide attestation
-            </a>{' '}
+            </Link>{' '}
             / <span>Modèle PDF</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -130,12 +131,12 @@ export default async function Page() {
             d&apos;assurance valable juridiquement — seule une attestation émise et signée par votre
             assureur réel a une valeur opposable aux tiers (clients, maîtres d&apos;ouvrage,
             administration). Pour obtenir une attestation conforme et opposable :
-            <a
+            <Link
               href="/outils/devis-assurance-decennale"
               className="ml-1 font-semibold text-primary-700 underline"
             >
               souscrivez une décennale ORIAS sous 24h →
-            </a>
+            </Link>
           </p>
         </div>
       </section>
@@ -195,9 +196,9 @@ export default async function Page() {
           </ol>
           <p className="mt-4 text-sm">
             Pour comprendre chaque mention en détail :
-            <a href="/guides/attestation-decennale" className="ml-1 text-primary-600 underline">
+            <Link href="/guides/attestation-decennale" className="ml-1 text-primary-600 underline">
               guide complet attestation décennale →
-            </a>
+            </Link>
           </p>
         </div>
       </section>
@@ -214,12 +215,12 @@ export default async function Page() {
             <strong>480 €/an</strong>. Attestation conforme arrêté 23 janvier 2024 téléchargeable
             dans les 24h suivant la souscription.
           </p>
-          <a
+          <Link
             href="/outils/devis-assurance-decennale"
             className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
           >
             → Devis décennale gratuit (2 min)
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -229,7 +230,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Générateur modèle attestation décennale PDF — Assurance Pro',
+            name: 'Générateur modèle attestation décennale PDF — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Any',

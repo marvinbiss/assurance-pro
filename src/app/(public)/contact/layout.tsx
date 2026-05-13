@@ -4,14 +4,15 @@ import { getBreadcrumbSchema } from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Contact - Nous contacter | Assurance Pro',
-  description: 'Contactez l\'équipe Assurance Pro. Questions, support, partenariats. Nous sommes là pour vous aider.',
+  title: 'Contact - Nous contacter | Vivos Assurance',
+  description:
+    "Contactez l'équipe Vivos Assurance. Questions, support, partenariats. Nous sommes là pour vous aider.",
   alternates: {
     canonical: `${SITE_URL}/contact`,
   },
   openGraph: {
-    title: 'Contact - Nous contacter | Assurance Pro',
-    description: 'Contactez l\'équipe Assurance Pro pour toute question ou demande.',
+    title: 'Contact - Nous contacter | Vivos Assurance',
+    description: "Contactez l'équipe Vivos Assurance pour toute question ou demande.",
     url: `${SITE_URL}/contact`,
   },
   robots: {
@@ -23,11 +24,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ContactLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function ContactLayout({ children }: { children: React.ReactNode }) {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: 'Accueil', url: '/' },
     { name: 'Contact', url: '/contact' },

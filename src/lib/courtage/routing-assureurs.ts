@@ -1,7 +1,7 @@
 /**
  * ROUTING DES LEADS vers ASSUREURS PARTENAIRES
  *
- * Pattern emprunté à algorithm_config + lead_assignments de Assurance Pro,
+ * Pattern emprunté à algorithm_config + lead_assignments de Vivos Assurance,
  * adapté pour router des leads d'assurance vers les assureurs partenaires
  * (Hiscox, April Pro, MMA, Generali, AXA Pro, SMABTP, Wakam, Stello, ...)
  *
@@ -68,7 +68,9 @@ export async function decideRouting(input: LeadRoutingInput): Promise<RoutingDec
   const { data: partners, error } = await supabase
     .schema('app')
     .from('insurance_partners')
-    .select('code,name,is_active,metiers_couverts,garanties_couvertes,ca_min,ca_max,partner_priority,solidity_score,acpr_agrement')
+    .select(
+      'code,name,is_active,metiers_couverts,garanties_couvertes,ca_min,ca_max,partner_priority,solidity_score,acpr_agrement'
+    )
     .eq('is_active', true)
     .order('partner_priority', { ascending: true })
 
@@ -210,7 +212,11 @@ export async function dispatchLeadToPartners(
         .insert({
           lead_id: leadId,
           partner_id: partner.id,
-          payload_in: { lead_id: leadId, partner_code: partnerCode, dispatched_at: new Date().toISOString() },
+          payload_in: {
+            lead_id: leadId,
+            partner_code: partnerCode,
+            dispatched_at: new Date().toISOString(),
+          },
           status: 'pending',
         })
 
@@ -222,12 +228,15 @@ export async function dispatchLeadToPartners(
       dispatched.push(partnerCode)
 
       // Audit event
-      await supabase.schema('app').from('events').insert({
-        entity_type: 'lead',
-        entity_id: leadId,
-        event_type: 'lead.dispatched',
-        metadata: { partner_code: partnerCode, partner_name: partner.name },
-      })
+      await supabase
+        .schema('app')
+        .from('events')
+        .insert({
+          entity_type: 'lead',
+          entity_id: leadId,
+          event_type: 'lead.dispatched',
+          metadata: { partner_code: partnerCode, partner_name: partner.name },
+        })
     } catch (err) {
       logger.error({ err, leadId, partnerCode }, 'Dispatch failed')
       errors.push(`exception:${partnerCode}`)

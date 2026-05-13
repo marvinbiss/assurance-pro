@@ -13,6 +13,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -24,7 +25,7 @@ const TAGLINE =
   "L'assurance personnelle pour les chauffeurs de taxi : mutuelle santé adaptée, prévoyance IJ + invalidité, protection juridique conducteur, garantie agression."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance chauffeur de taxi : mutuelle santé adaptée (longues stations assises, stress urbain), prévoyance IJ dès J0, garantie invalidité, protection juridique conducteur, garantie agression. Tarifs 480-1 280 €/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -195,9 +196,9 @@ export default function Page() {
               <p>
                 L&apos;assurance chauffeur de taxi (cette page — couverture PERSONNELLE) est
                 COMPLÉMENTAIRE à{' '}
-                <a href="/assurance-taxi" className="text-primary-600 underline">
+                <Link href="/assurance-taxi" className="text-primary-600 underline">
                   /assurance-taxi
-                </a>
+                </Link>
                 (couverture VÉHICULE + ADS + RC pro chauffeur).
               </p>
               <table className="w-full border-collapse text-sm">
@@ -210,9 +211,9 @@ export default function Page() {
                 <tbody>
                   <tr>
                     <td className="border p-2">
-                      <a href="/assurance-taxi" className="text-primary-600 underline">
+                      <Link href="/assurance-taxi" className="text-primary-600 underline">
                         /assurance-taxi
-                      </a>
+                      </Link>
                     </td>
                     <td className="border p-2">
                       Véhicule + ADS-licence (50-250k€) + RC pro chauffeur (passagers + tiers) +

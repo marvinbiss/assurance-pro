@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   'Souscrivez votre assurance restaurant 100% en ligne en 10 minutes : multirisque restaurant + RC Pro + perte exploitation + intoxications alimentaires + dommages électroménager.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance restaurant en ligne 2026 : souscription 100% digitale en 10 min. Multirisque restaurant (incendie, dégâts eaux, vol) + RC Pro intoxications alimentaires + perte exploitation + dommages cuisine pro. Tarifs 480-2 800€/an. 6 assureurs spécialisés HCR. Devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -129,22 +130,25 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <a
+                <Link
                   href="/outils/devis-rc-pro?secteur=restaurateur-traiteur"
                   className="text-primary-600 underline"
                 >
                   Devis officiel restaurant ORIAS sous 24h
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/outils/calculateur-tarif-rc-pro" className="text-primary-600 underline">
+                <Link
+                  href="/outils/calculateur-tarif-rc-pro"
+                  className="text-primary-600 underline"
+                >
                   Calculateur tarif RC Pro restaurateur
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/assurance-restaurant" className="text-primary-600 underline">
+                <Link href="/assurance-restaurant" className="text-primary-600 underline">
                   Pilier assurance restaurant
-                </a>
+                </Link>
               </li>
             </ul>
           ),

@@ -80,8 +80,8 @@ export function AttestationRcProPDF({ data }: { data: RcProAttestationData }) {
 
   return (
     <Document
-      title="Modèle attestation RC Pro — Assurance Pro"
-      author="Assurance Pro (modèle type)"
+      title="Modèle attestation RC Pro — Vivos Assurance"
+      author="Vivos Assurance (modèle type)"
     >
       <Page size="A4" style={styles.page}>
         <Text style={styles.watermark}>MODÈLE TYPE</Text>
@@ -202,7 +202,9 @@ export function AttestationRcProPDF({ data }: { data: RcProAttestationData }) {
         </View>
 
         <View style={styles.footer} fixed>
-          <Text>Modèle généré par Assurance Pro (https://vivos-assurance.fr) — {dateEmission}</Text>
+          <Text>
+            Modèle généré par Vivos Assurance (https://vivos-assurance.fr) — {dateEmission}
+          </Text>
           <Text>
             Conformité arrêté 23 janvier 2024 (mentions obligatoires) — Article L. 113-1 du Code des
             assurances

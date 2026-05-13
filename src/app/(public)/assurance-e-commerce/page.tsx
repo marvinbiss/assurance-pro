@@ -7,6 +7,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -18,7 +19,7 @@ const TAGLINE =
   "L'assurance dédiée aux e-commerçants : RC pro produit + cyber assurance RGPD + assurance marchandises stockées + responsabilité expéditions. Tarifs négociés."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance e-commerce : pack RC pro produits + cyber assurance (breach RGPD, fraude paiement) + assurance marchandises stockées + responsabilité livraison. Tous statuts (AE, EI, SARL, SAS). Tarifs à partir de 380€/an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -140,36 +141,36 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/cyber-assurance" className="text-primary-600 underline">
+                  <Link href="/cyber-assurance" className="text-primary-600 underline">
                     Cyber assurance
-                  </a>{' '}
+                  </Link>{' '}
                   — protection breach RGPD + ransomware
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/responsabilite-civile-professionnelle"
                     className="text-primary-600 underline"
                   >
                     RC Pro
-                  </a>{' '}
+                  </Link>{' '}
                   — pilier complet RC pro
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/protection-juridique-professionnelle"
                     className="text-primary-600 underline"
                   >
                     PJ Pro
-                  </a>{' '}
+                  </Link>{' '}
                   — défense litiges client B2C
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-transport-marchandises"
                     className="text-primary-600 underline"
                   >
                     Transport marchandises
-                  </a>{' '}
+                  </Link>{' '}
                   — si volume livraison important
                 </li>
               </ul>

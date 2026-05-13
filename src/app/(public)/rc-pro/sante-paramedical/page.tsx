@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   'La RC Pro obligatoire pour kinésithérapeutes, infirmiers libéraux, ostéopathes, sages-femmes, orthophonistes : couverture responsabilité médicale + dommages corporels patient.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'RC Pro santé paramédical 2026 : OBLIGATOIRE art. L. 1142-2 CSP. Couverture kiné, infirmier libéral, ostéopathe, sage-femme, orthophoniste, podologue. Responsabilité médicale + dommages corporels patient. Sinistralité 2,7%. Tarifs 220-680€/an libéral, 1 800-4 500€/an cabinet. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -147,24 +148,27 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <a href="/outils/calculateur-tarif-rc-pro" className="text-primary-600 underline">
+                <Link
+                  href="/outils/calculateur-tarif-rc-pro"
+                  className="text-primary-600 underline"
+                >
                   Calculateur tarif RC Pro santé paramédical
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/outils/devis-rc-pro" className="text-primary-600 underline">
+                <Link href="/outils/devis-rc-pro" className="text-primary-600 underline">
                   Devis officiel ORIAS sous 24h
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/assurance-medecin" className="text-primary-600 underline">
+                <Link href="/assurance-medecin" className="text-primary-600 underline">
                   Assurance médecin libéral
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/rc-pro" className="text-primary-600 underline">
+                <Link href="/rc-pro" className="text-primary-600 underline">
                   Pilier RC Pro
-                </a>
+                </Link>
               </li>
             </ul>
           ),

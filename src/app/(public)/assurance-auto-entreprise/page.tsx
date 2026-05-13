@@ -11,6 +11,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -22,7 +23,7 @@ const TAGLINE =
   "L'assurance dédiée aux véhicules détenus par votre société : voiture de société, véhicule de fonction, voiture de direction. Couverture RC pro + tous risques + conducteur."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance auto entreprise : véhicule de société (carte grise au nom de la SARL/SAS/SCI), véhicule de fonction salarié, voiture direction. RC pro + tous risques + conducteur étendue. Tarifs 680-1 480€/an. Comparatif 6 assureurs. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -82,12 +83,12 @@ export default function Page() {
                     <td className="border p-2">Salarié / dirigeant (perso)</td>
                     <td className="border p-2">Lui-même + occasionnel pro</td>
                     <td className="border p-2">
-                      <a
+                      <Link
                         href="/assurance-voiture-professionnelle"
                         className="text-primary-600 underline"
                       >
                         /assurance-voiture-professionnelle
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                   <tr>
@@ -117,9 +118,12 @@ export default function Page() {
                     <td className="border p-2">Société (≥ 4 véhicules)</td>
                     <td className="border p-2">Tous salariés autorisés</td>
                     <td className="border p-2">
-                      <a href="/assurance-flotte-automobile" className="text-primary-600 underline">
+                      <Link
+                        href="/assurance-flotte-automobile"
+                        className="text-primary-600 underline"
+                      >
                         /assurance-flotte-automobile
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                 </tbody>

@@ -29,7 +29,7 @@ const TAGLINE =
   "La GPA oblige l'entrepreneur à réparer pendant 1 an tous les désordres signalés à la réception ou apparus dans l'année. Guide complet 2026 : déclenchement, exemples, recours."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Garantie de parfait achèvement (GPA) : tout savoir sur cette garantie de 1 an post-réception (art. 1792-6 C. civ.). Désordres couverts, procédure de mise en œuvre, recours en cas de refus de l'artisan, différence avec la décennale.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

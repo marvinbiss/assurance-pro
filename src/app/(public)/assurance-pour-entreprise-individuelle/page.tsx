@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   "L'assurance dédiée à l'entreprise individuelle (EI) au régime réel : RC pro, multirisque local, mutuelle TNS Madelin, prévoyance, protection patrimoine."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Assurance entreprise individuelle (EI) : RC pro adaptée + multirisque local pro + mutuelle TNS Madelin + prévoyance Madelin + protection juridique. Tarifs 380-2 800€/an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -113,34 +114,34 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/assurance-micro-entreprise" className="text-primary-600 underline">
+                  <Link href="/assurance-micro-entreprise" className="text-primary-600 underline">
                     Assurance micro-entreprise
-                  </a>{' '}
+                  </Link>{' '}
                   — pour AE / micro-entrepreneurs
                 </li>
                 <li>
-                  <a href="/mutuelle-tns" className="text-primary-600 underline">
+                  <Link href="/mutuelle-tns" className="text-primary-600 underline">
                     Mutuelle TNS Madelin
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/prevoyance-tns" className="text-primary-600 underline">
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
                     Prévoyance TNS Madelin
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-freelance" className="text-primary-600 underline">
+                  <Link href="/assurance-freelance" className="text-primary-600 underline">
                     Assurance freelance
-                  </a>{' '}
+                  </Link>{' '}
                   — tous statuts
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/responsabilite-civile-professionnelle"
                     className="text-primary-600 underline"
                   >
                     RC Pro complet
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </>

@@ -16,6 +16,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -48,13 +49,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-orange-700 to-red-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/assurance-decennale" className="hover:underline">
+            <Link href="/assurance-decennale" className="hover:underline">
               Décennale
-            </a>{' '}
+            </Link>{' '}
             / <span>Devis décennale</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-red-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -231,7 +232,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Devis assurance décennale — Assurance Pro',
+            name: 'Devis assurance décennale — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Any',

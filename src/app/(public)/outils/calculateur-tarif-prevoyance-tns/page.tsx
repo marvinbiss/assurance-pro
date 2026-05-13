@@ -11,6 +11,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { CalculateurPrevoyanceTns } from '@/components/outils/CalculateurPrevoyanceTns'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
@@ -43,13 +44,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-amber-700 to-orange-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/prevoyance-artisan" className="hover:underline">
+            <Link href="/prevoyance-artisan" className="hover:underline">
               Prévoyance
-            </a>{' '}
+            </Link>{' '}
             / <span>Calculateur TNS Madelin</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-emerald-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -186,18 +187,18 @@ export default async function Page() {
             officielles parmi nos 7 partenaires prévoyance TNS. Avantage fiscal Madelin maximisé.
           </p>
           <div className="flex flex-col justify-center gap-3 md:flex-row">
-            <a
+            <Link
               href="/prevoyance-artisan"
               className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-amber-700 shadow-lg transition hover:bg-gray-100"
             >
               → Pilier prévoyance artisan/TNS
-            </a>
-            <a
+            </Link>
+            <Link
               href="/mutuelle-sante-tns"
               className="inline-block rounded-lg border border-white/30 bg-amber-800 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-amber-900"
             >
               → Mutuelle santé TNS
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -207,7 +208,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Calculateur prévoyance TNS Madelin 2026 — Assurance Pro',
+            name: 'Calculateur prévoyance TNS Madelin 2026 — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Any',

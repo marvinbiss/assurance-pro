@@ -4,7 +4,7 @@
  */
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
-const FROM_EMAIL = process.env.RESEND_FROM || 'Assurance Pro <noreply@vivos-assurance.fr>'
+const FROM_EMAIL = process.env.RESEND_FROM || 'Vivos Assurance <noreply@vivos-assurance.fr>'
 
 interface SendEmailParams {
   to: string

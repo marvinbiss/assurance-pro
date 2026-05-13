@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   "L'assurance juridique pour les professionnels : frais avocat, conseil illimité, défense pénale dirigeant, recouvrement créances. Tarifs négociés ORIAS."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Assurance juridique professionnelle : prise en charge frais avocat (jusqu'à 30 000€/litige), conseil juridique illimité 7j/7, défense pénale dirigeant, recouvrement impayés. Tarifs 280-1 800€/an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -60,12 +61,12 @@ export default function Page() {
             <>
               <p>
                 Cette page est complémentaire à notre pilier{' '}
-                <a
+                <Link
                   href="/protection-juridique-professionnelle"
                   className="text-primary-600 underline"
                 >
                   /protection-juridique-professionnelle
-                </a>{' '}
+                </Link>{' '}
                 qui détaille en profondeur :
               </p>
               <ul>
@@ -77,9 +78,9 @@ export default function Page() {
               </ul>
               <p>
                 Voir aussi notre guide pratique{' '}
-                <a href="/guides/avocat-litige-assurance" className="text-primary-600 underline">
+                <Link href="/guides/avocat-litige-assurance" className="text-primary-600 underline">
                   /guides/avocat-litige-assurance
-                </a>{' '}
+                </Link>{' '}
                 pour les cas où vous êtes en conflit avec votre propre assureur.
               </p>
             </>

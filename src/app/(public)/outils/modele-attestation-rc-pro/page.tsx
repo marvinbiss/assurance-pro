@@ -17,6 +17,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { AttestationRcProForm } from '@/components/outils/AttestationRcProForm'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -28,7 +29,7 @@ export const revalidate = 86400
 const SLUG = 'outils/modele-attestation-rc-pro'
 
 export const metadata: Metadata = {
-  title: 'Modèle attestation RC Pro PDF — Générateur gratuit 2026 | Assurance Pro',
+  title: 'Modèle attestation RC Pro PDF — Générateur gratuit 2026 | Vivos Assurance',
   description:
     "Générez votre modèle d'attestation RC Pro au format PDF en 2 minutes. Conforme arrêté du 23 janvier 2024 (mentions obligatoires). Téléchargement immédiat, gratuit, sans inscription. Bonus : devis RC Pro ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -50,13 +51,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-purple-700 to-indigo-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/guides/attestation-rc-pro" className="hover:underline">
+            <Link href="/guides/attestation-rc-pro" className="hover:underline">
               Guide attestation RC Pro
-            </a>{' '}
+            </Link>{' '}
             / <span>Modèle PDF</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -121,12 +122,12 @@ export default async function Page() {
             obligatoires de l&apos;arrêté du 23 janvier 2024. Il NE constitue PAS une attestation
             d&apos;assurance valable juridiquement — seule une attestation émise et signée par votre
             assureur réel a une valeur opposable. Pour obtenir une attestation conforme :
-            <a
+            <Link
               href="/outils/devis-rc-pro"
               className="ml-1 font-semibold text-primary-700 underline"
             >
               souscrivez votre RC Pro ORIAS sous 24h →
-            </a>
+            </Link>
           </p>
         </div>
       </section>
@@ -169,9 +170,9 @@ export default async function Page() {
           </ul>
           <p className="mt-4 text-sm">
             Pour comprendre les 8 mentions obligatoires en détail :
-            <a href="/guides/attestation-rc-pro" className="ml-1 text-primary-600 underline">
+            <Link href="/guides/attestation-rc-pro" className="ml-1 text-primary-600 underline">
               guide complet attestation RC Pro →
-            </a>
+            </Link>
           </p>
         </div>
       </section>
@@ -188,12 +189,12 @@ export default async function Page() {
             Attestation conforme arrêté 23 janvier 2024 téléchargeable dans les 24h suivant la
             souscription.
           </p>
-          <a
+          <Link
             href="/outils/devis-rc-pro"
             className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-purple-700 shadow-lg transition hover:bg-gray-100"
           >
             → Devis RC Pro gratuit (2 min)
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -203,7 +204,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Générateur modèle attestation RC Pro PDF — Assurance Pro',
+            name: 'Générateur modèle attestation RC Pro PDF — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Any',

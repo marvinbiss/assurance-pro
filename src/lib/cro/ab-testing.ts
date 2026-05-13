@@ -29,8 +29,13 @@ const COOKIE_MAX_AGE = 60 * 60 * 24 * 50 /* 50 jours */
  */
 function hashToFraction(seed: string): number {
   const hash = createHash('sha256').update(seed).digest()
-  /* Premiers 4 octets en uint32 puis normalise sur [0,1] */
-  const n = (hash[0]! << 24) | (hash[1]! << 16) | (hash[2]! << 8) | hash[3]!
+  /* Premiers 4 octets en uint32 puis normalise sur [0,1].
+     SHA-256 garantit length >= 32 bytes, donc hash[0..3] sont toujours définis. */
+  const b0 = hash[0] ?? 0
+  const b1 = hash[1] ?? 0
+  const b2 = hash[2] ?? 0
+  const b3 = hash[3] ?? 0
+  const n = (b0 << 24) | (b1 << 16) | (b2 << 8) | b3
   return (n >>> 0) / 2 ** 32
 }
 

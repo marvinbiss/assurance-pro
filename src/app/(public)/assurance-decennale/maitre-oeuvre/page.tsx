@@ -6,6 +6,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -16,7 +17,7 @@ const TAGLINE =
   "La décennale obligatoire pour maîtres d'œuvre : couverture spécifique conception + supervision chantier + coordination corps d'état. Responsabilité étendue aux fautes des sous-traitants."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Décennale maître d'œuvre 2026 : OBLIGATOIRE Loi Spinetta. Couverture conception + supervision chantier + coordination 8-15 corps d'état + recours sous-traitants. Tarifs 1 280-3 200€/an indépendant, 8 500-22 000€/an SARL. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -137,30 +138,30 @@ export default function Page() {
             <div>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/outils/calculateur-tarif-decennale"
                     className="text-primary-600 underline"
                   >
                     Calculateur tarif décennale MdŒ
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/outils/devis-assurance-decennale"
                     className="text-primary-600 underline"
                   >
                     Devis officiel ORIAS sous 24h
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Pilier décennale BTP
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/guides/dommages-ouvrage" className="text-primary-600 underline">
+                  <Link href="/guides/dommages-ouvrage" className="text-primary-600 underline">
                     Dommages ouvrage (DO) — assurance complémentaire MdŒ
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

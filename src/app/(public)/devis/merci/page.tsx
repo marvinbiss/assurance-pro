@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Merci — Demande reçue | Assurance Pro',
+  title: 'Merci — Demande reçue | Vivos Assurance',
   description:
     'Votre demande de devis a bien été reçue. Un courtier ORIAS vous recontactera dans les délais SLA.',
   robots: { index: false, follow: true },
   openGraph: {
-    title: 'Merci — Demande reçue | Assurance Pro',
+    title: 'Merci — Demande reçue | Vivos Assurance',
     description:
       'Votre demande de devis a bien été reçue. Un courtier ORIAS vous recontactera dans les délais SLA.',
     url: `${SITE_URL}/devis/merci`,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Merci — Demande reçue | Assurance Pro',
+    title: 'Merci — Demande reçue | Vivos Assurance',
     description:
       'Votre demande de devis a bien été reçue. Un courtier ORIAS vous recontactera dans les délais SLA.',
   },

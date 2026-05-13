@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "La franchise assurance pro : montant à votre charge en cas de sinistre. Choisir 300€ vs 5 000€ peut faire varier votre cotisation de 30%. Stratégie d'optimisation."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Franchise assurance pro 2026 : guide complet pour bien choisir sa franchise (RC Pro, décennale, multirisque). Impact tarifaire jusqu'à -30%. 4 paliers standard 300€/750€/1500€/3000€/5000€. Stratégie selon profil sinistralité.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -149,25 +150,28 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <a href="/outils/calculateur-tarif-rc-pro" className="text-primary-600 underline">
+                <Link
+                  href="/outils/calculateur-tarif-rc-pro"
+                  className="text-primary-600 underline"
+                >
                   Calculateur RC Pro avec sélection franchise
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/outils/calculateur-tarif-decennale"
                   className="text-primary-600 underline"
                 >
                   Calculateur décennale avec franchise
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/guides/quelle-assurance-professionnelle-choisir"
                   className="text-primary-600 underline"
                 >
                   Quelle assurance professionnelle choisir ?
-                </a>
+                </Link>
               </li>
             </ul>
           ),

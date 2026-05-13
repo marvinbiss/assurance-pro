@@ -31,7 +31,7 @@ const TAGLINE =
   'La prévoyance dédiée aux Travailleurs Non Salariés : indemnités journalières, rente invalidité, capital décès. Loi Madelin déductible. Devis gratuit ORIAS.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Prévoyance TNS Loi Madelin : indemnités journalières dès J0, rente invalidité jusqu'à 70% du revenu, capital décès, rente conjoint, rente éducation. Cotisations déductibles fiscalement. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

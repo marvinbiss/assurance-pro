@@ -18,7 +18,7 @@ const TAGLINE =
   'La mutuelle santé déductible pour Travailleurs Non Salariés : artisans, commerçants, professions libérales, gérants majoritaires. Économies fiscales et conseil ORIAS.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "Mutuelle TNS Loi Madelin : déduisez vos cotisations santé du résultat imposable (jusqu'à 5 800€/an). Comparatif April, MMA, Generali, Aon. Tarifs à partir de 32€/mois. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },

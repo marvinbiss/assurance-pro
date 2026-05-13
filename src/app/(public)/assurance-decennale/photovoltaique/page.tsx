@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   'La décennale obligatoire pour installateurs photovoltaïques RGE : couverture spécifique panneaux solaires, onduleurs, étanchéité toiture. Tarifs majorés.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Décennale photovoltaïque RGE : OBLIGATOIRE Loi Spinetta + qualification RGE. Couverture panneaux solaires + onduleurs + étanchéité toiture. Sinistralité AQC 9,2% (incendies onduleurs). Tarifs 880-1 680€/an AE, 9 200-16 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -59,30 +60,30 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="/assurance-decennale/auto-entrepreneur"
                     className="text-primary-600 underline"
                   >
                     Décennale auto-entrepreneur BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — pilier complet AE
                 </li>
                 <li>
-                  <a href="/assurance-decennale" className="text-primary-600 underline">
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
                     Pilier décennale BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — Loi Spinetta + 37 métiers
                 </li>
                 <li>
-                  <a href="/assurance-btp" className="text-primary-600 underline">
+                  <Link href="/assurance-btp" className="text-primary-600 underline">
                     Hub BTP
-                  </a>{' '}
+                  </Link>{' '}
                   — 8 garanties
                 </li>
                 <li>
-                  <a href="/guides/attestation-decennale" className="text-primary-600 underline">
+                  <Link href="/guides/attestation-decennale" className="text-primary-600 underline">
                     Guide attestation décennale
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </>

@@ -19,7 +19,7 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   const v = getVille(params.slug)
   if (!v) return {}
   return {
-    title: `Assurance VTC ${v.nom} (${v.departementCode}) — Uber Bolt Heetch | Assurance Pro`,
+    title: `Assurance VTC ${v.nom} (${v.departementCode}) — Uber Bolt Heetch | Vivos Assurance`,
     description: `Assurance VTC professionnelle obligatoire à ${v.nom}. Conforme exigences plateformes Uber, Bolt, Heetch. Tarifs à partir de ${CONFIG.priceFrom}. Devis gratuit ORIAS.`,
     alternates: { canonical: `${SITE_URL}/${CONFIG.garantieSlug}/${v.slug}` },
   }

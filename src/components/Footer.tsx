@@ -1,5 +1,5 @@
 /**
- * Footer — Vivos Assurance / Assurance Pro France
+ * Footer — Vivos Assurance France
  *
  * Conformité ORIAS arrêté 6/12/2022 (cliquabilité obligatoire),
  * mentions légales + ACPR + RCP + association agréée.

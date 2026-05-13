@@ -18,6 +18,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { CalculateurTarifVtc } from '@/components/outils/CalculateurTarifVtc'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
@@ -51,13 +52,13 @@ export default async function Page() {
       <header className="bg-gradient-to-br from-violet-700 to-fuchsia-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Accueil
-            </a>{' '}
+            </Link>{' '}
             /{' '}
-            <a href="/assurance-vtc" className="hover:underline">
+            <Link href="/assurance-vtc" className="hover:underline">
               Assurance VTC
-            </a>{' '}
+            </Link>{' '}
             / <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-red-500/90 px-3 py-1 text-sm font-semibold text-white">
@@ -207,12 +208,12 @@ export default async function Page() {
             officielles parmi nos 6 assureurs spécialisés VTC. Souscription en ligne, attestation
             VTC téléchargeable dans les 24h.
           </p>
-          <a
+          <Link
             href="/outils/devis-rc-pro?secteur=transport-vtc"
             className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-violet-700 shadow-lg transition hover:bg-gray-100"
           >
             → Devis officiel assurance VTC (2 min, ORIAS)
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -221,7 +222,7 @@ export default async function Page() {
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Calculateur tarif assurance VTC 2026 — Assurance Pro',
+            name: 'Calculateur tarif assurance VTC 2026 — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Any',

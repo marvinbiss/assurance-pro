@@ -1,5 +1,5 @@
 /**
- * Contact API - Assurance Pro
+ * Contact API - Vivos Assurance
  * Handles contact form submissions and sends emails via Resend
  */
 
@@ -91,7 +91,7 @@ export async function POST(request: Request) {
         <p>${safeMessage}</p>
         <hr />
         <p style="color: #666; font-size: 12px;">
-          Message envoyé depuis le formulaire de contact de Assurance Pro
+          Message envoyé depuis le formulaire de contact de Vivos Assurance
         </p>
       `,
     })
@@ -106,7 +106,7 @@ export async function POST(request: Request) {
       await getResend().emails.send({
         from: NOREPLY_FROM,
         to: email,
-        subject: 'Votre message a bien été reçu - Assurance Pro',
+        subject: 'Votre message a bien été reçu - Vivos Assurance',
         html: `
           <h2>Bonjour ${safeNom},</h2>
           <p>Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.</p>
@@ -115,7 +115,7 @@ export async function POST(request: Request) {
           <p><strong>Votre message:</strong></p>
           <p>${safeMessage}</p>
           <hr />
-          <p>Cordialement,<br />L'équipe Assurance Pro</p>
+          <p>Cordialement,<br />L'équipe Vivos Assurance</p>
           <p style="color: #666; font-size: 12px;">
             <a href="https://vivos-assurance.fr">vivos-assurance.fr</a>
           </p>

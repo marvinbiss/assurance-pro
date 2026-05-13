@@ -5,6 +5,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -15,7 +16,7 @@ const TAGLINE =
   'Le guide pour trouver et choisir un avocat spécialisé en droit des assurances : annuaire officiel, critères de choix, honoraires, alternatives gratuites.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     'Guide avocat spécialisé en assurance : trouver via avocat.fr (mention de spécialisation), critères de choix (barreau, expérience, honoraires), tarifs 200-450€/h. Alternatives gratuites : médiation + PJ Pro. Conseil ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -127,18 +128,21 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <a href="/guides/avocat-litige-assurance" className="text-primary-600 underline">
+                  <Link
+                    href="/guides/avocat-litige-assurance"
+                    className="text-primary-600 underline"
+                  >
                     Guide litige assurance complet
-                  </a>{' '}
+                  </Link>{' '}
                   — quand engager un avocat, procédure type, alternatives
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/protection-juridique-professionnelle"
                     className="text-primary-600 underline"
                   >
                     Protection juridique pro
-                  </a>{' '}
+                  </Link>{' '}
                   — couvre les frais avocat jusqu&apos;à 30 000€/litige
                 </li>
               </ul>

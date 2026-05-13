@@ -4,6 +4,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -14,7 +15,7 @@ const TAGLINE =
   "L'assurance RC pro pour photographes et vidéastes : mariage, événementiel, studio, corporate. Couvre matériel client + perte fichiers + droit à l'image."
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE} | Vivos Assurance`,
   description:
     "RC Pro photographe : couverture perte fichiers (carte SD, disque dur), casse matériel client, droit à l'image, retard livraison événement. Plafond 1,5-3 M€. Tarifs 280-680€/an. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
@@ -93,9 +94,12 @@ export default function Page() {
                 Garanties optionnelles indispensables : « tous risques matériel photo » (boîtiers,
                 objectifs — souvent 15-50k€ de matériel) + « bris matériel transporté » + « location
                 matériel ». Voir{' '}
-                <a href="/assurance-voiture-professionnelle" className="text-primary-600 underline">
+                <Link
+                  href="/assurance-voiture-professionnelle"
+                  className="text-primary-600 underline"
+                >
                   /assurance-voiture-professionnelle
-                </a>{' '}
+                </Link>{' '}
                 pour le véhicule pro avec matériel embarqué.
               </p>
             </>
