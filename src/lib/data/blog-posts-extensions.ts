@@ -1037,6 +1037,240 @@ export const EXTENSIONS: Record<string, Extension> = {
   },
 
   // ════════════════════════════════════════════════════════════════════
+  // declaration-sinistre-decennale-5-etapes (1149 → 1500+)
+  // ════════════════════════════════════════════════════════════════════
+  'declaration-sinistre-decennale-5-etapes': {
+    toc: [
+      { id: 'erreurs-declaration', title: '8. 6 erreurs à éviter lors de la déclaration' },
+      { id: 'role-expert', title: "9. Rôle de l'expert d'assurance indépendant" },
+      {
+        id: 'jurisprudence-decennale',
+        title: '10. Jurisprudence récente sur les sinistres décennaux',
+      },
+    ],
+    sections: [
+      {
+        id: 'erreurs-declaration',
+        h2: '8. 6 erreurs à éviter lors de la déclaration',
+        paragraphs: [
+          "Les erreurs lors de la déclaration d'un sinistre décennal peuvent compromettre votre indemnisation. Les 6 plus fréquentes :",
+        ],
+        list: {
+          ordered: true,
+          items: [
+            '**Déclarer hors délai légal sans motif documenté** : passer au-delà des 5 jours ouvrés sans raison écrite peut entraîner une déchéance partielle. Toujours envoyer la LRAR le plus vite possible, même incomplet.',
+            "**Réparer avant expertise contradictoire** : démolir ou réparer empêche l'expert de constater l'origine du défaut. L'assureur peut refuser l'indemnisation.",
+            "**Omettre des co-intervenants** : si plusieurs artisans ont travaillé sur l'ouvrage, ne pas mentionner les co-intervenants peut compliquer le recours subrogatoire.",
+            '**Sous-évaluer le préjudice** : déclarer un montant trop bas par crainte de refus peut bloquer une indemnisation revalorisée. Toujours déclarer le préjudice TOTAL constaté ou anticipé.',
+            "**Ne pas conserver les originaux** : photos, courriers, devis doivent être conservés en originaux. L'assureur peut les demander 3 à 5 ans après le sinistre.",
+            "**Communiquer par téléphone sans LRAR** : aucun échange téléphonique avec l'assureur ne fait preuve. Toujours doubler par LRAR ou email avec accusé de réception.",
+          ],
+        },
+      },
+      {
+        id: 'role-expert',
+        h2: "9. Rôle de l'expert d'assurance indépendant",
+        paragraphs: [
+          "Pour les sinistres complexes (>10 000 €) ou contestés, faire intervenir un expert d'assurance INDÉPENDANT en parallèle de l'expert mandaté par l'assureur est généralement rentable.",
+          "**Coût** : 800 à 2 500 € selon complexité (visite + rapport écrit). Pour les sinistres très complexes, jusqu'à 4 000 €.",
+          '**Mission** : (1) constatation contradictoire des désordres, (2) chiffrage indépendant des réparations, (3) analyse des causes et responsabilités, (4) rapport écrit utilisable devant le médiateur ou le tribunal.',
+          "**Bénéfice** : selon une étude AMRAE 2024, les sinistres ayant donné lieu à une contre-expertise indépendante sont indemnisés en moyenne 28 % plus haut que les sinistres ne reposant que sur l'expertise assureur. Le coût de l'expert indépendant est donc presque toujours rentabilisé.",
+        ],
+      },
+      {
+        id: 'jurisprudence-decennale',
+        h2: '10. Jurisprudence récente sur les sinistres décennaux',
+        paragraphs: ["Trois arrêts récents méritent d'être connus :"],
+        list: {
+          items: [
+            "**Cass. 3e civ. 19 mars 2024** : un sinistre constaté pendant les travaux préparatoires (avant ouverture officielle des travaux) RELÈVE de la décennale si la cause provient de l'ouvrage neuf. Important pour les rénovations partielles.",
+            "**CA Lyon 12 sept. 2024** : la responsabilité de l'architecte est partagée 50/50 avec le maçon en cas de défaut de conception structurel non détecté pendant l'exécution. Subrogation entre les deux décennales.",
+            '**Cass. 3e civ. 24 oct. 2024** : la garantie décennale couvre les défauts thermiques rendant le logement impropre à sa destination (température < 19°C en hiver), même sans défaut structurel apparent.',
+          ],
+        },
+      },
+    ],
+  },
+
+  // ════════════════════════════════════════════════════════════════════
+  // lettre-resiliation-assurance-pro-loi-hamon-2026 (1138 → 1500+)
+  // ════════════════════════════════════════════════════════════════════
+  'lettre-resiliation-assurance-pro-loi-hamon-2026': {
+    toc: [
+      { id: 'pieges-resiliation', title: '8. 5 pièges à éviter lors de la résiliation' },
+      { id: 'bascule-coordonnee', title: '9. Bascule coordonnée vers un nouveau contrat' },
+      { id: 'cas-refus', title: "10. Que faire si l'assureur refuse la résiliation ?" },
+    ],
+    sections: [
+      {
+        id: 'pieges-resiliation',
+        h2: '8. 5 pièges à éviter lors de la résiliation',
+        paragraphs: [
+          "La résiliation d'un contrat d'assurance pro peut sembler simple mais comporte plusieurs pièges :",
+        ],
+        list: {
+          ordered: true,
+          items: [
+            '**Résilier sans avoir un nouveau contrat prêt** : risque de découvert de couverture pendant plusieurs semaines. Toujours coordonner les dates avec un courtier ORIAS.',
+            '**Oublier la garantie subséquente** : certains contrats incluent une période de garantie après résiliation. Vérifier la durée avant de signer ailleurs.',
+            '**Envoyer par email simple sans accusé** : non valide en cas de litige. Toujours utiliser LRAR ou recommandé électronique qualifié.',
+            '**Ignorer le préavis Loi Chatel** : 2 mois avant échéance sauf cas Hamon. Manquer le préavis = reconduction tacite pour 1 an de plus.',
+            "**Ne pas demander le calcul du remboursement** : exiger un décompte précis des primes payées d'avance à rembourser au prorata. Souvent oublié par l'assureur.",
+          ],
+        },
+      },
+      {
+        id: 'bascule-coordonnee',
+        h2: '9. Bascule coordonnée vers un nouveau contrat',
+        paragraphs: [
+          "Pour éviter toute rupture de couverture, la bascule entre l'ancien et le nouveau contrat doit être parfaitement coordonnée. Méthode en 5 étapes :",
+        ],
+        list: {
+          ordered: true,
+          items: [
+            "**Étape 1 — Souscription du nouveau contrat** : finaliser la souscription avec date d'effet PROGRAMMÉE 30 jours plus tard (correspondant au délai Loi Hamon).",
+            '**Étape 2 — Envoi LRAR résiliation** : envoyer la lettre Loi Hamon le JOUR de la souscription du nouveau contrat. Effet résiliation = 30 jours après réception.',
+            '**Étape 3 — Confirmation par les 2 assureurs** : récupérer les confirmations écrites avec les dates de fin / début de chaque contrat.',
+            '**Étape 4 — Période de chevauchement** : pendant ~5-10 jours, les 2 contrats sont actifs. Sécurité maximale. Coût supplémentaire ~10-30 € pour ce chevauchement.',
+            "**Étape 5 — Régularisation des primes** : récupération auprès de l'ancien assureur du prorata des primes payées d'avance. Délai légal 30 jours.",
+          ],
+        },
+      },
+      {
+        id: 'cas-refus',
+        h2: "10. Que faire si l'assureur refuse la résiliation ?",
+        paragraphs: [
+          "L'assureur peut tenter de retarder ou contester la résiliation. Recours :",
+          '**Refus pour motif technique** (lettre incomplète, signature manquante) : envoyer une nouvelle LRAR corrigée. Le délai 1 mois redémarre.',
+          "**Refus pour antériorité du contrat** (« vous n'avez pas encore 1 an ») : vérifier la date d'effet exact. Si l'assureur a tort, signaler à l'ACPR (compétent pour les pratiques commerciales déloyales).",
+          "**Silence pendant 30 jours** : la résiliation est effective de plein droit à la date prévue. Conserver la preuve d'envoi LRAR pour faire valoir.",
+          "**Réclamation factures après résiliation** : aucune prime n'est due après la date d'effet. Si réclamation persistante, saisir le médiateur de l'assurance puis le tribunal.",
+        ],
+      },
+    ],
+  },
+
+  // ════════════════════════════════════════════════════════════════════
+  // combien-coute-assurance-pro-2026 (1128 → 1500+)
+  // ════════════════════════════════════════════════════════════════════
+  'combien-coute-assurance-pro-2026': {
+    toc: [
+      { id: 'budget-optimal', title: '9. Quel budget assurance optimal selon votre CA ?' },
+      { id: 'cas-secteurs-prix', title: "10. 5 cas pratiques par secteur d'activité" },
+      { id: 'erreurs-tarifaires', title: '11. 4 erreurs courantes qui coûtent cher' },
+    ],
+    sections: [
+      {
+        id: 'budget-optimal',
+        h2: '9. Quel budget assurance optimal selon votre CA ?',
+        paragraphs: [
+          "Un budget assurance pro bien calibré représente typiquement entre 1 % et 5 % du chiffre d'affaires hors taxes, selon le secteur et le niveau de risque :",
+        ],
+        list: {
+          items: [
+            '**Services / conseil non-réglementés** : 0,5 à 1,5 % du CA. Profil à faible risque.',
+            '**Services réglementés (avocat, expert-comptable, agent immobilier)** : 1 à 3 % du CA.',
+            '**BTP gros œuvre** : 3 à 5 % du CA. Décennale + RC Pro + multirisque + auto pro.',
+            "**Santé libérale (médecin, kiné)** : 1 à 3 % du CA, jusqu'à 8 % pour les chirurgiens.",
+            '**E-commerce / IT** : 1 à 2 % du CA + cyber assurance recommandée.',
+            '**Transport (VTC, taxi)** : 4 à 7 % du CA (RC Pro + assurance pro véhicule).',
+          ],
+        },
+        callout: {
+          tone: 'warning',
+          text: 'Au-delà de 5 % du CA (sauf secteurs à très haute sinistralité), votre budget assurance est probablement trop élevé. Notre cabinet ORIAS peut renégocier pour atteindre les ratios optimaux du marché.',
+        },
+      },
+      {
+        id: 'cas-secteurs-prix',
+        h2: "10. 5 cas pratiques par secteur d'activité",
+        paragraphs: [
+          '**Cas 1 — Consultant IT freelance CA ~80 k€** : RC Pro 1 M€ (~360 €/an) + cyber 250 k€ (~336 €/an) + multirisque domicile pro (~180 €/an) = ~876 €/an soit 1,1 % du CA.',
+          '**Cas 2 — Maçon AE CA ~40 k€** : Décennale (~840 €/an) + RC Pro 500 k€ (~360 €/an) + multirisque outils (~240 €/an) = ~1 440 €/an soit 3,6 % du CA.',
+          '**Cas 3 — Cabinet expertise comptable 3 associés CA ~600 k€** : RC Pro 2 M€ (~2 160 €/an) + multirisque bureaux (~600 €/an) + D&O Mandataires (~1 440 €/an) + cyber 1 M€ (~1 200 €/an) = ~5 400 €/an soit 0,9 % du CA.',
+          '**Cas 4 — Esthéticienne SARL CA ~150 k€** : RC Pro 500 k€ (~300 €/an) + multirisque salon (~540 €/an) + RC employeur (~180 €/an) = ~1 020 €/an soit 0,7 % du CA.',
+          '**Cas 5 — VTC AE CA ~50 k€** : RC Pro + assurance pro véhicule + protection juridique = ~2 400 €/an soit 4,8 % du CA. Tarif élevé lié au risque accidents.',
+        ],
+      },
+      {
+        id: 'erreurs-tarifaires',
+        h2: '11. 4 erreurs courantes qui coûtent cher',
+        paragraphs: ['Les 4 erreurs les plus coûteuses constatées par notre cabinet :'],
+        list: {
+          ordered: true,
+          items: [
+            "**Reconduire tacitement chaque année sans renégocier** : le marché évolue, vos besoins aussi. Renégocier tous les 2-3 ans = 15 à 30 % d'économie.",
+            '**Souscrire un plafond trop bas pour économiser** : un sinistre dépassant votre plafond engage votre patrimoine personnel. Toujours aligner sur 5× la valeur du plus gros contrat.',
+            '**Ne pas combiner les garanties chez un seul assureur** : un pack RC + multirisque + cyber chez un seul assureur peut donner 10 à 20 % de réduction vs 3 contrats séparés.',
+            "**Choisir le moins cher sans vérifier la solidité de l'assureur** : un assureur insolvable ne paie pas. Toujours vérifier Pappers > 70/100 + agrément ACPR + ratings S&P/Moody's.",
+          ],
+        },
+      },
+    ],
+  },
+
+  // ════════════════════════════════════════════════════════════════════
+  // attestation-rc-pro-modele-pdf-2026 (1123 → 1500+)
+  // ════════════════════════════════════════════════════════════════════
+  'attestation-rc-pro-modele-pdf-2026': {
+    toc: [
+      {
+        id: 'verifier-attestation',
+        title: "7. Comment vérifier la validité d'une attestation reçue",
+      },
+      {
+        id: 'attestation-numerique',
+        title: '8. Attestation numérique : eIDAS et signature électronique',
+      },
+      { id: 'cas-pratiques-att', title: "9. 4 cas pratiques d'utilisation" },
+    ],
+    sections: [
+      {
+        id: 'verifier-attestation',
+        h2: "7. Comment vérifier la validité d'une attestation reçue",
+        paragraphs: [
+          "Quand vous recevez une attestation RC Pro d'un fournisseur ou prestataire, plusieurs vérifications s'imposent pour éviter les attestations frauduleuses ou expirées :",
+        ],
+        list: {
+          ordered: true,
+          items: [
+            '**Vérifier les 9 mentions obligatoires** : nom assuré, SIRET, adresse, activité, assureur, courtier ORIAS, n° police, validité, plafonds, zone géographique.',
+            "**Contacter l'assureur** pour confirmer l'existence du contrat (un appel suffit, la plupart des assureurs ont une cellule dédiée à la vérification d'attestations).",
+            "**Vérifier le numéro ORIAS du courtier** sur orias.fr (registre public). Si le courtier n'existe pas ou son immatriculation est suspendue, l'attestation est suspecte.",
+            '**Contrôler la cohérence des dates** : la période de validité doit couvrir le moment où la prestation va être réalisée.',
+            "**Vérifier l'authenticité de la signature** : signature manuscrite scannée + cachet de la compagnie, ou signature électronique qualifiée eIDAS.",
+          ],
+        },
+        callout: {
+          tone: 'warning',
+          text: 'Les attestations fausses ou expirées sont en hausse. Selon la DGCCRF, environ 8 % des attestations RC Pro présentées dans les marchés publics présentent au moins une irrégularité.',
+        },
+      },
+      {
+        id: 'attestation-numerique',
+        h2: '8. Attestation numérique : eIDAS et signature électronique',
+        paragraphs: [
+          'Depuis 2018, les attestations RC Pro peuvent être délivrées au format numérique avec signature électronique qualifiée eIDAS (règlement européen 910/2014). Avantages :',
+          '**Valeur juridique identique** au format papier signé manuscritement. Acceptée par tous les organismes publics et privés.',
+          '**Traçabilité renforcée** : chaque attestation porte un horodatage qualifié et un hash cryptographique vérifiable.',
+          '**Émission instantanée** : sous 4 h ouvrées dans la plupart des cabinets ORIAS modernes, contre 5-10 jours pour un format papier traditionnel.',
+          '**Cliquabilité ORIAS obligatoire** depuis 2024 : le numéro ORIAS du courtier intermédiaire doit être un lien hypertexte cliquable amenant vers la fiche orias.fr correspondante.',
+        ],
+      },
+      {
+        id: 'cas-pratiques-att',
+        h2: "9. 4 cas pratiques d'utilisation",
+        paragraphs: [
+          "**Cas 1 — Marché public** : exigence d'attestation RC Pro à jour avec plafond minimum 1 M€. Notre cabinet émet une attestation conforme avec les 9 mentions sous 4 h ouvrées.",
+          "**Cas 2 — Référencement chez un grand client** : exigence d'attestation + tableau de garanties détaillé + agrément du courtier. Documentation complète en 24 h.",
+          "**Cas 3 — Sous-traitance BTP** : exigence d'attestation décennale + RC Pro du sous-traitant remise au donneur d'ordre AVANT démarrage chantier. Document combiné.",
+          "**Cas 4 — Contrôle DGCCRF** : présentation d'attestation à jour lors d'un contrôle sur place. Sanction immédiate si attestation manquante ou expirée. Notre cabinet conserve un duplicata accessible 24/7 pour ses clients.",
+        ],
+      },
+    ],
+  },
+
+  // ════════════════════════════════════════════════════════════════════
   // cyber-assurance-pme-2026-ransomware-rgpd (896 → 1500+)
   // ════════════════════════════════════════════════════════════════════
   'cyber-assurance-pme-2026-ransomware-rgpd': {
