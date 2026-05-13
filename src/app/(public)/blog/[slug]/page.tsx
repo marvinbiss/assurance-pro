@@ -136,26 +136,104 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
   const config = configForCategory(post.category)
   const categorySlug = getCategorySlug(post.category)
 
+  // Maillage interne sémantique : score pondéré par catégorie + tags + titre
+  const titleWords = new Set(
+    post.title
+      .toLowerCase()
+      .replace(/[^a-zà-ÿ0-9\s-]/g, ' ')
+      .split(/\s+/)
+      .filter((w) => w.length >= 4)
+  )
+  const postTagsLower = new Set(post.tags.map((t) => t.toLowerCase()))
+
   const related = getAllPosts()
-    .filter((p) => p.slug !== post.slug && p.category === post.category)
-    .slice(0, 3)
+    .filter((p) => p.slug !== post.slug)
+    .map((p) => {
+      let score = 0
+      if (p.category === post.category) score += 3
+      for (const t of p.tags) if (postTagsLower.has(t.toLowerCase())) score += 2
+      const otherWords = p.title.toLowerCase().split(/\s+/)
+      for (const w of otherWords) if (w.length >= 4 && titleWords.has(w)) score += 1
+      return { post: p, score }
+    })
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 4)
+    .map((x) => x.post)
+
+  const pageUrl = `${SITE_URL}/blog/${post.slug}`
+
+  // Extraire la section FAQ (id "faq") pour générer le schema FAQPage
+  const faqSection = post.body.find((s) => s.id === 'faq')
+  const faqItems =
+    faqSection?.list?.items
+      .map((raw) => {
+        const cleaned = raw.replace(/\*\*/g, '')
+        const qEnd = cleaned.indexOf('?')
+        if (qEnd === -1) return null
+        const q = cleaned.slice(0, qEnd + 1).trim()
+        const a = cleaned.slice(qEnd + 1).trim()
+        return q && a ? { q, a } : null
+      })
+      .filter((x): x is { q: string; a: string } => x !== null) ?? []
 
   const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
-    author: { '@type': 'Organization', name: post.author, url: SITE_URL },
-    publisher: { '@type': 'Organization', name: 'Vivos Assurance', url: SITE_URL },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/${post.slug}` },
+    author: {
+      '@type': 'Organization',
+      name: post.author,
+      url: `${SITE_URL}/a-propos`,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Vivos Assurance',
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/logo-vivos.png`,
+        width: 600,
+        height: 60,
+      },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+    url: pageUrl,
+    inLanguage: 'fr-FR',
+    articleSection: post.category,
     keywords: post.tags.join(', '),
+    image: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/og?title=${encodeURIComponent(post.title)}`,
+      width: 1200,
+      height: 630,
+    },
+    isAccessibleForFree: true,
   }
+
+  const faqSchema =
+    faqItems.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqItems.map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.a,
+            },
+          })),
+        }
+      : null
 
   return (
     <main className="min-h-screen bg-sand-50">
       <script {...jsonLdScriptProps(articleSchema, nonce)} />
+      {faqSchema && <script {...jsonLdScriptProps(faqSchema, nonce)} />}
       <BreadcrumbSchema
         items={[
           { label: 'Blog', href: '/blog' },
@@ -436,11 +514,11 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
                 Pour approfondir
               </span>
               <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
-                Articles {post.category} liés
+                Articles connexes recommandés
               </h2>
             </header>
 
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
               {related.map((p) => {
                 const rConfig = configForCategory(p.category)
                 return (

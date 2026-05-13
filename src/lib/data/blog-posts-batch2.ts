@@ -20,9 +20,9 @@ const AUTHOR = {
   authorRole: 'Courtier ORIAS spécialiste assurance pro',
 }
 
-const LEGIFRANCE = (label: string, _path: string) => ({
+const LEGIFRANCE = (label: string, _path?: string) => ({
   label,
-  url: 'https://www.legifrance.gouv.fr/',
+  url: `https://www.legifrance.gouv.fr/search/all?query=${encodeURIComponent(label)}`,
 })
 
 const ACPR = (label: string) => ({
