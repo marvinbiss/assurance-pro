@@ -4,6 +4,7 @@ import { headers } from 'next/headers'
 import { DM_Sans, Sora } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
+import { PreOriasBanner } from '@/components/PreOriasBanner'
 import Footer from '@/components/Footer'
 import { TrackingScripts } from '@/components/TrackingScripts'
 import { getOrganizationSchema, getWebsiteSchema } from '@/lib/seo/jsonld'
@@ -179,6 +180,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           Aller au contenu principal
         </a>
+        <PreOriasBanner />
         <Header />
         <main id="main-content" tabIndex={-1} className="outline-none">
           {children}

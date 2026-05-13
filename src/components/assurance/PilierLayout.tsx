@@ -28,6 +28,7 @@ import {
 } from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
+import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
 
 function buildBreadcrumbItems(slug: string, title: string) {
@@ -151,7 +152,7 @@ export async function PilierLayout({
               href={`/devis?garantie=${slug}`}
               className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
             >
-              Obtenir mon devis
+              {CTA_TEXTS.primary}
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
@@ -342,8 +343,9 @@ export async function PilierLayout({
             </span>
           </h2>
           <p className="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
-            Devis gratuit, sans engagement. Notre courtier ORIAS vous recontacte avec 3 offres
-            personnalisées en moins de 24 heures.
+            {IS_PRE_ORIAS
+              ? "Cabinet en cours d'immatriculation ORIAS. Rejoignez la liste pour être prévenu(e) dès l'ouverture commerciale."
+              : 'Devis gratuit, sans engagement. Notre courtier ORIAS vous recontacte avec 3 offres personnalisées en moins de 24 heures.'}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -351,7 +353,7 @@ export async function PilierLayout({
               href={`/devis?garantie=${slug}`}
               className="group inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-extrabold text-primary-700 shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-premium-lg"
             >
-              Démarrer mon devis
+              {CTA_TEXTS.start}
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link

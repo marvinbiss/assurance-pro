@@ -12,6 +12,7 @@ import Link from 'next/link'
 import { ShieldCheck, Phone, Mail, MapPin, ExternalLink } from 'lucide-react'
 import { buildOriasFicheUrl, buildOriasRegistryUrl, formatOriasDisplay } from '@/lib/api/orias'
 import { VivosLogo } from '@/components/brand/VivosLogo'
+import { IS_PRE_ORIAS, ORIAS_EXPECTED_DATE } from '@/lib/config/pre-orias'
 
 const ORIAS_NUMBER = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
 
@@ -140,41 +141,69 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ORIAS bandeau premium */}
+        {/* ORIAS bandeau premium — mode pre-ORIAS vs full */}
         <div className="mb-8 rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 backdrop-blur-sm">
           <div className="flex flex-wrap items-center gap-5">
             <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 shadow-glow-clay">
               <ShieldCheck className="h-6 w-6 text-white" strokeWidth={2.2} />
             </div>
-            <div className="flex-1 text-sm leading-relaxed text-charcoal-300">
-              <strong className="font-bold text-white">Courtier ORIAS </strong>
-              n°{' '}
-              <a
-                href={oriasFicheUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-bold text-primary-300 underline-offset-2 hover:underline"
-              >
-                {oriasFormatted}
-                <ExternalLink className="h-3 w-3" />
-              </a>
-              {' · '}
-              <span className="text-charcoal-400">Catégorie b</span>
-              {' · '}
-              Registre :{' '}
-              <a
-                href={oriasRegistryUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-300 underline-offset-2 hover:underline"
-              >
-                orias.fr
-              </a>
-              {' · '}
-              <span className="text-charcoal-400">
-                Adhérent CSCA · RCP & garantie financière conformes art. L. 512-6/7 C. assur.
-              </span>
-            </div>
+            {IS_PRE_ORIAS ? (
+              <div className="flex-1 text-sm leading-relaxed text-charcoal-300">
+                <strong className="font-bold text-white">
+                  Cabinet en cours d&apos;immatriculation au registre ORIAS
+                </strong>
+                {' · '}
+                <span className="text-charcoal-400">
+                  Catégorie b prévue (courtier en assurance)
+                </span>
+                {' · '}
+                Registre :{' '}
+                <a
+                  href={oriasRegistryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-300 underline-offset-2 hover:underline"
+                >
+                  orias.fr
+                </a>
+                {' · '}
+                <span className="text-charcoal-400">
+                  Ouverture commerciale prévue {ORIAS_EXPECTED_DATE}. Aucun acte de distribution
+                  d&apos;assurance n&apos;est effectué tant que le numéro ORIAS n&apos;est pas
+                  attribué (art. L. 512-1 C. assur.).
+                </span>
+              </div>
+            ) : (
+              <div className="flex-1 text-sm leading-relaxed text-charcoal-300">
+                <strong className="font-bold text-white">Courtier ORIAS </strong>
+                n°{' '}
+                <a
+                  href={oriasFicheUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-bold text-primary-300 underline-offset-2 hover:underline"
+                >
+                  {oriasFormatted}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+                {' · '}
+                <span className="text-charcoal-400">Catégorie b</span>
+                {' · '}
+                Registre :{' '}
+                <a
+                  href={oriasRegistryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-300 underline-offset-2 hover:underline"
+                >
+                  orias.fr
+                </a>
+                {' · '}
+                <span className="text-charcoal-400">
+                  Adhérent CSCA · RCP & garantie financière conformes art. L. 512-6/7 C. assur.
+                </span>
+              </div>
+            )}
           </div>
         </div>
 

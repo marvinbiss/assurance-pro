@@ -30,6 +30,7 @@ import {
   Check,
 } from 'lucide-react'
 import { VivosLogo } from '@/components/brand/VivosLogo'
+import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 const VERTICALS_NAV = [
   {
@@ -214,7 +215,7 @@ export default function HeaderClient() {
                             href="/devis"
                             className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-primary-700 shadow-soft transition-all hover:-translate-y-0.5"
                           >
-                            Devis gratuit
+                            {CTA_TEXTS.short}
                             <ArrowRight className="h-3.5 w-3.5" />
                           </Link>
                         </div>
@@ -224,7 +225,9 @@ export default function HeaderClient() {
                     {/* Footer mega menu */}
                     <div className="flex items-center justify-between border-t border-charcoal-100 bg-sand-50 px-5 py-3 text-xs">
                       <span className="text-charcoal-500">
-                        17 verticaux couverts · ORIAS · ACPR
+                        {IS_PRE_ORIAS
+                          ? '17 verticaux couverts · Immatriculation ORIAS en cours'
+                          : '17 verticaux couverts · ORIAS · ACPR'}
                       </span>
                       <Link
                         href="/comparateur-assureurs"
@@ -264,7 +267,7 @@ export default function HeaderClient() {
               href="/devis"
               className="group inline-flex items-center gap-1.5 rounded-xl bg-primary-500 px-5 py-2.5 text-sm font-bold text-white shadow-cta transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
             >
-              Devis gratuit
+              {CTA_TEXTS.short}
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
@@ -325,7 +328,7 @@ export default function HeaderClient() {
               className="mt-4 flex items-center justify-center gap-1.5 rounded-xl bg-primary-500 px-5 py-3 text-sm font-bold text-white shadow-cta"
               onClick={() => setMobileOpen(false)}
             >
-              Devis gratuit
+              {CTA_TEXTS.short}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

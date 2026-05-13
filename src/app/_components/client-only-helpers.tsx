@@ -1,6 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
+import { IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 const ServiceWorkerRegistration = dynamic(() => import('@/components/ServiceWorkerRegistration'), {
   ssr: false,
@@ -24,7 +25,7 @@ export function ClientOnlyFooterHelpers() {
     <>
       <ServiceWorkerRegistration />
       <CookieConsent />
-      <ChatWidget />
+      {!IS_PRE_ORIAS && <ChatWidget />}
     </>
   )
 }
