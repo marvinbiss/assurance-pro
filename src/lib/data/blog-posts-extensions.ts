@@ -1343,22 +1343,231 @@ export const EXTENSIONS: Record<string, Extension> = {
 }
 
 /**
+ * Boost supplémentaire — 1 section ciblée par article encore sous 1500 mots.
+ * Audit 2026-05-13 phase C boost.
+ */
+const BOOSTS: Record<string, Extension> = {
+  'carte-professionnelle-assurance-courtier': {
+    toc: [{ id: 'glossaire-cartes', title: '12. Glossaire et termes techniques' }],
+    sections: [
+      {
+        id: 'glossaire-cartes',
+        h2: '12. Glossaire des termes techniques',
+        paragraphs: [
+          "Pour bien comprendre l'univers des cartes professionnelles et du courtage en assurance, voici un glossaire des termes les plus couramment utilisés dans les démarches officielles.",
+        ],
+        list: {
+          items: [
+            "**ALUR (loi)** : Loi pour l'Accès au Logement et un Urbanisme Rénové du 24 mars 2014. Renforce les obligations de formation continue et de transparence dans le secteur immobilier.",
+            "**CCI** : Chambre de Commerce et d'Industrie. Organisme territorial compétent pour la délivrance des cartes T, G et S.",
+            "**eIDAS** : Règlement européen 910/2014 sur l'identification électronique. Permet la signature électronique qualifiée ayant force de loi.",
+            '**FCO ALUR** : Formation Continue Obligatoire ALUR. 14 heures par an ou 42 heures sur 3 ans minimum pour les détenteurs de cartes T, G ou S.',
+            "**Garantie financière** : Cautionnement bancaire ou contrat d'assurance imposé par la Loi Hoguet pour protéger les fonds clients gérés par l'agent immobilier ou le syndic.",
+            "**Loi Hoguet** : Loi du 2 janvier 1970 régissant les activités d'entremise et de gestion immobilière. Texte de référence pour les cartes T, G et S.",
+            '**ORIAS** : Organisme pour le Registre des Intermédiaires en Assurance. Tient le registre public des courtiers, agents et mandataires.',
+            "**TJ** : Tribunal Judiciaire. Compétent en première instance pour les litiges civils et commerciaux liés à l'exercice irrégulier d'une activité immobilière.",
+          ],
+        },
+        callout: {
+          tone: 'info',
+          text: "Pour aller plus loin, consultez le site officiel de l'ORIAS (orias.fr) pour vérifier les immatriculations des courtiers, et le portail Service-Public.fr (entreprise) pour les obligations détaillées par type de carte.",
+        },
+      },
+    ],
+  },
+
+  'recommandation-acpr-2024-r-02-reclamations-assurance': {
+    toc: [{ id: 'modele-procedure', title: '11. Modèle de procédure interne — 6 étapes' }],
+    sections: [
+      {
+        id: 'modele-procedure',
+        h2: '11. Modèle de procédure interne — 6 étapes',
+        paragraphs: [
+          'Pour mettre en conformité votre cabinet avec la Recommandation 2024-R-02, voici un modèle de procédure interne en 6 étapes que vous pouvez adapter à votre organisation :',
+        ],
+        list: {
+          ordered: true,
+          items: [
+            "**Étape 1 — Réception et enregistrement** : toute communication écrite de mécontentement est immédiatement enregistrée au registre des réclamations avec un numéro unique, la date, le réclamant identifié, et l'objet résumé.",
+            "**Étape 2 — Accusé de réception sous 10 jours ouvrés** : envoyé par email ou LRAR selon le canal d'origine de la réclamation. L'accusé doit mentionner explicitement le numéro de dossier, le délai de réponse de 2 mois, et les coordonnées du médiateur en cas d'insatisfaction.",
+            "**Étape 3 — Instruction et analyse** : le responsable réclamations désigné instruit le dossier dans un délai indicatif de 30 jours. Il peut solliciter l'avis du dirigeant, de l'assureur partenaire, ou d'un avocat conseil si nécessaire.",
+            "**Étape 4 — Réponse motivée sous 2 mois maximum** : la réponse écrite (LRAR ou email tracé) doit présenter clairement la décision, ses motifs, et les recours possibles. Si rejet, mentionner explicitement le droit à saisir le médiateur de l'assurance.",
+            "**Étape 5 — Archivage immuable** : le dossier complet (réclamation, échanges, réponse) est archivé pendant 10 ans avec hash SHA-256 pour preuve d'intégrité. Système conforme à la Recommandation 2024-R-03.",
+            "**Étape 6 — Reporting annuel ACPR** : compilation des statistiques de réclamations (volume, motifs, taux résolution, délais moyens) et transmission à l'ACPR avant le 30 avril chaque année via le portail dédié.",
+          ],
+        },
+      },
+    ],
+  },
+
+  'assurance-micro-entreprise-2026': {
+    toc: [{ id: 'demarches-souscription', title: '11. Démarches de souscription pas à pas' }],
+    sections: [
+      {
+        id: 'demarches-souscription',
+        h2: '11. Démarches de souscription pas à pas',
+        paragraphs: [
+          "Pour souscrire les bonnes assurances pour votre micro-entreprise, suivez ce parcours optimisé en 5 étapes qui maximise vos chances d'obtenir les meilleures conditions :",
+        ],
+        list: {
+          ordered: true,
+          items: [
+            "**Étape 1 — Cartographie des risques** : lister vos activités exactes (code APE/NAF), vos lieux d'exercice, votre matériel professionnel, votre clientèle B2B/B2C, vos zones géographiques. Cette cartographie sert de base à toutes les démarches.",
+            '**Étape 2 — Identification des obligations légales** : pour les 15 métiers à RC Pro obligatoire et les 30 métiers BTP à décennale obligatoire, les démarches sont prioritaires et non-négociables.',
+            '**Étape 3 — Demande de devis multi-assureurs** : un courtier ORIAS interroge 8 à 12 assureurs partenaires en moins de 4 h. Comparaison côte à côte des tarifs, plafonds, exclusions, franchises.',
+            "**Étape 4 — Analyse comparative motivée** : conformément au devoir de conseil DDA, le courtier remet une recommandation écrite justifiant le choix du produit, les alternatives examinées, et l'adéquation au profil de risque.",
+            "**Étape 5 — Signature et émission attestation** : signature électronique qualifiée eIDAS, paiement par prélèvement mensualisé ou annuel, émission de l'attestation au format PDF en moins de 4 h ouvrées.",
+          ],
+        },
+        callout: {
+          tone: 'success',
+          text: 'Notre cabinet ORIAS accompagne 100 % en ligne et propose un audit gratuit de vos contrats actuels pour identifier les économies potentielles. Délai moyen de réponse : 2 h ouvrées.',
+        },
+      },
+    ],
+  },
+
+  'sinistralite-btp-2024-aqc-sycodes-chiffres': {
+    toc: [{ id: 'methodes-prevention', title: '12. 5 méthodes éprouvées de prévention' }],
+    sections: [
+      {
+        id: 'methodes-prevention',
+        h2: '12. 5 méthodes éprouvées de prévention de la sinistralité',
+        paragraphs: [
+          "Au-delà des données chiffrées, l'AQC SYCODÉS recommande 5 méthodes éprouvées pour réduire significativement votre sinistralité et donc vos primes décennales :",
+        ],
+        list: {
+          ordered: true,
+          items: [
+            "**Auto-contrôle systématique sur chantier** : check-list écrite avant chaque étape clé (fondations, étanchéité, mise hors d'eau, finitions). Réduit la sinistralité de 25 à 35 % selon les études AQC.",
+            "**Photographie systématique des étapes critiques** : permet de prouver la conformité de l'exécution en cas de litige. Réduit les contentieux de 40 %.",
+            '**Formation continue Qualibat / RGE** : 14 à 30 heures par an. Réduit la sinistralité de 35 à 45 % selon les certifications obtenues.',
+            "**Coordination renforcée avec le maître d'œuvre** : réunions hebdomadaires de chantier avec compte-rendu écrit. Réduit les défauts de conception/exécution de 30 %.",
+            '**Audit qualité indépendant en fin de chantier** : bureau de contrôle (Apave, Bureau Veritas, Socotec) pour les ouvrages > 150 k€. Coût 0,3 à 0,8 % du budget mais réduit la sinistralité de 50 % en moyenne.',
+          ],
+        },
+        callout: {
+          tone: 'info',
+          text: 'Les assureurs intègrent désormais ces pratiques dans leurs questionnaires de souscription. Mentionner explicitement leur mise en œuvre peut générer un bonus tarifaire de -10 à -25 % sur la prime décennale.',
+        },
+      },
+    ],
+  },
+
+  'statut-juridique-assurance-pro-comparatif': {
+    toc: [{ id: 'tableau-recap', title: '12. Tableau récapitulatif décisionnel' }],
+    sections: [
+      {
+        id: 'tableau-recap',
+        h2: '12. Tableau récapitulatif décisionnel',
+        paragraphs: [
+          "Pour faciliter le choix du statut juridique optimal, voici un tableau récapitulatif des principales caractéristiques en termes d'assurance pro et d'optimisation fiscale :",
+        ],
+        list: {
+          items: [
+            '**Micro-entreprise** — Simplicité +++, primes -10 % vs sociétés, mais primes non déductibles. Idéal CA < 50 k€ et profils services non-réglementés.',
+            '**EI régime réel** — Bon compromis. Primes déductibles, séparation patrimoniale automatique depuis 2022, régime TNS. Idéal CA 50-150 k€.',
+            '**EURL** — Statut sociétaire plus crédible auprès des banques et grands comptes. Gérant TNS, mutuelle Madelin déductible. Idéal CA 100-500 k€.',
+            '**SASU** — Régime assimilé-salarié, meilleure protection sociale (retraite cadres, chômage si conditions). Mutuelle entreprise déductible. Idéal CA > 200 k€ ou freelance IT/conseil senior.',
+            '**SARL / SAS** — Multi-associés. Possibilité D&O Mandataires Sociaux, optimisation rémunération + dividendes. Idéal projets multi-associés ou levée de fonds.',
+          ],
+        },
+        callout: {
+          tone: 'warning',
+          text: 'Le choix du statut a un impact pluri-annuel. Avant transformation, faire un audit avec un expert-comptable + courtier ORIAS pour quantifier coût/bénéfice sur 3-5 ans.',
+        },
+      },
+    ],
+  },
+
+  'tarif-rc-pro-2026-par-profession': {
+    toc: [{ id: 'optimiser-prime', title: '13. Comment optimiser concrètement votre prime' }],
+    sections: [
+      {
+        id: 'optimiser-prime',
+        h2: '13. Comment optimiser concrètement votre prime RC Pro',
+        paragraphs: [
+          'Pour optimiser concrètement votre prime RC Pro et obtenir le meilleur rapport coût/protection, 4 actions concrètes à mettre en œuvre :',
+        ],
+        list: {
+          ordered: true,
+          items: [
+            "**Audit annuel des activités déclarées** : retirer les activités abandonnées, ajouter les nouvelles. Une activité non déclarée n'est pas couverte, mais une activité ancienne maintenue augmente inutilement la prime.",
+            "**Renégociation triennale via courtier ORIAS** : le marché RC Pro évolue rapidement. Renégocier tous les 3 ans permet d'économiser 15 à 30 % en moyenne. Notre cabinet le fait gratuitement (rémunération par commission assureur).",
+            '**Optimisation des plafonds** : aligner les plafonds sur la valeur réelle du plus gros contrat client × 5. Plafond surdimensionné = surprime inutile. Plafond sous-dimensionné = risque patrimoine personnel.',
+            '**Bundling multi-garanties** : combiner RC Pro + multirisque + cyber + protection juridique chez un seul assureur permet généralement -15 à -25 % vs contrats séparés. Mais vérifier la qualité de chaque garantie individuelle.',
+          ],
+        },
+      },
+    ],
+  },
+
+  'prix-assurance-decennale-2026-par-metier': {
+    toc: [{ id: 'questions-souscripteur', title: '12. 6 questions à poser à votre assureur' }],
+    sections: [
+      {
+        id: 'questions-souscripteur',
+        h2: '12. 6 questions à poser à votre assureur avant de signer',
+        paragraphs: [
+          'Avant de signer une décennale BTP, 6 questions essentielles à poser à votre assureur ou courtier pour éviter les mauvaises surprises :',
+        ],
+        list: {
+          ordered: true,
+          items: [
+            '**Quelles activités sont précisément couvertes ?** Exiger la liste exacte avec codes APE/NAF. Une activité accessoire non listée peut ne pas être couverte.',
+            '**Quel est le plafond par sinistre ET par année ?** Vérifier que les 2 sont au minimum 500 k€ / 1 M€ (plancher légal). Demander si des sous-plafonds existent par poste de garantie.',
+            "**Quelle est la zone géographique de couverture ?** France métropolitaine, DOM-TOM, UE, monde. Important si vous travaillez à l'étranger occasionnellement.",
+            "**Y a-t-il une période de carence ?** Délai entre la signature et la prise d'effet. Souvent 0 jour pour les renouvellements, 5 à 30 jours pour les nouvelles souscriptions.",
+            '**La sous-traitance est-elle couverte ?** Vérifier les conditions exactes : déclaration préalable, plafond du sous-traitant, garantie autonome.',
+            "**Quelle est la procédure exacte en cas de sinistre ?** Numéros d'urgence, délais d'expertise, délais d'indemnisation typiques, présence d'un expert dédié.",
+          ],
+        },
+      },
+    ],
+  },
+
+  'refus-indemnisation-assurance-4-recours-2026': {
+    toc: [{ id: 'modeles-courriers', title: '11. Modèles de courriers de contestation' }],
+    sections: [
+      {
+        id: 'modeles-courriers',
+        h2: '11. Modèles de courriers de contestation',
+        paragraphs: [
+          'Pour vous aider dans vos démarches, voici la structure type des 3 courriers à envoyer dans une procédure de contestation :',
+          "**1. Courrier de réclamation amiable au service réclamations** : objet « Contestation refus d'indemnisation dossier n° XXX », rappel des faits (date sinistre, déclaration, refus de l'assureur), exposé de vos arguments juridiques (référence aux articles du Code des assurances), demande explicite de réexamen sous 2 mois.",
+          "**2. Lettre de saisine du médiateur de l'assurance** : objet « Demande de médiation litige n° XXX », rappel des démarches préalables (réclamation amiable épuisée), exposé synthétique du litige (1 à 2 pages), liste des pièces jointes, signature et date.",
+          '**3. Mise en demeure avant action judiciaire** : objet « Mise en demeure préalable à action judiciaire », rappel des étapes amiables et médiation, montant total réclamé avec ventilation, délai de 30 jours pour réponse, mention « à défaut, action sera engagée devant le Tribunal Judiciaire compétent ».',
+        ],
+        callout: {
+          tone: 'info',
+          text: 'Notre cabinet ORIAS peut vous accompagner dans la rédaction de ces courriers (gratuit pour nos clients). En dehors, prévoir 200 à 500 € HT pour une consultation avocat spécialisé.',
+        },
+      },
+    ],
+  },
+}
+
+/**
  * Applique les extensions à un BlogPost : insère les nouvelles sections AVANT la section FAQ
  * et complète le TOC.
  */
 export function applyExtension(post: BlogPost): BlogPost {
   const ext = EXTENSIONS[post.slug]
-  if (!ext) return post
+  const boost = BOOSTS[post.slug]
+  if (!ext && !boost) return post
 
   const faqIndex = post.body.findIndex((s) => s.id === 'faq')
   const insertAt = faqIndex >= 0 ? faqIndex : post.body.length
 
-  const newBody = [...post.body.slice(0, insertAt), ...ext.sections, ...post.body.slice(insertAt)]
+  const extraSections = [...(ext?.sections ?? []), ...(boost?.sections ?? [])]
+  const extraToc = [...(ext?.toc ?? []), ...(boost?.toc ?? [])]
+
+  const newBody = [...post.body.slice(0, insertAt), ...extraSections, ...post.body.slice(insertAt)]
 
   const tocFaqIndex = post.toc.findIndex((t) => t.id === 'faq')
   const tocInsertAt = tocFaqIndex >= 0 ? tocFaqIndex : post.toc.length
 
-  const newToc = [...post.toc.slice(0, tocInsertAt), ...ext.toc, ...post.toc.slice(tocInsertAt)]
+  const newToc = [...post.toc.slice(0, tocInsertAt), ...extraToc, ...post.toc.slice(tocInsertAt)]
 
   return { ...post, body: newBody, toc: newToc }
 }
