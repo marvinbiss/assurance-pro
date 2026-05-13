@@ -5,7 +5,9 @@
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { ArrowRight, Award, CheckCircle2, Scale, ShieldCheck, Sparkles, Star } from 'lucide-react'
 import { SITE_URL } from '@/lib/seo/config'
+import { PageHero } from '@/components/layout/PageHero'
 
 export const metadata: Metadata = {
   title: "Comparateur d'assureurs pro 2026 — 10 compagnies | Assurance Pro",
@@ -187,111 +189,217 @@ function tarifDisplay(tarif: Assureur['tarif']): string {
 
 export default function ComparateurAssureursPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <header className="bg-gradient-to-br from-blue-700 to-blue-900 py-16 text-white">
-        <div className="container mx-auto max-w-5xl px-4">
-          <h1 className="mb-4 text-3xl font-bold md:text-5xl">
-            Comparateur d&apos;assureurs pro 2026
-          </h1>
-          <p className="max-w-3xl text-lg opacity-95 md:text-xl">
+    <main className="min-h-screen bg-sand-50">
+      <PageHero
+        breadcrumbs={[{ label: 'Comparateur' }]}
+        eyebrow="10 assureurs leaders pro"
+        EyebrowIcon={Scale}
+        title={
+          <>
+            Comparateur
+            <br />
+            <span className="text-secondary-200">d&apos;assureurs pro 2026.</span>
+          </>
+        }
+        description={
+          <>
             Notre cabinet ORIAS travaille avec les 10 assureurs leaders de l&apos;assurance
-            professionnelle française. Comparez leurs forces, spécialités et niveau tarifaire pour
-            choisir le partenaire adapté à votre profil.
-          </p>
-        </div>
-      </header>
+            professionnelle française. Comparez forces, spécialités et niveau tarifaire pour choisir
+            le partenaire adapté à votre profil.
+          </>
+        }
+        meta={[
+          { Icon: Award, label: `${ASSUREURS.length} compagnies analysées` },
+          { Icon: ShieldCheck, label: 'Agréments ACPR vérifiés' },
+        ]}
+      />
 
-      <section className="py-12">
-        <div className="container mx-auto max-w-6xl px-4">
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="border p-3 text-left">Assureur</th>
-                  <th className="hidden border p-3 text-left md:table-cell">Spécialités</th>
-                  <th className="border p-3 text-center">Note</th>
-                  <th className="border p-3 text-center">Tarif</th>
-                  <th className="border p-3 text-left">Idéal pour</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ASSUREURS.map((a) => (
-                  <tr key={a.slug} className="hover:bg-gray-50">
-                    <td className="border p-3 font-semibold">{a.name}</td>
-                    <td className="hidden border p-3 text-xs md:table-cell">
-                      {a.specialites.map((s) => (
-                        <span
-                          key={s}
-                          className="mb-1 mr-1 inline-block rounded bg-blue-50 px-2 py-1 text-blue-700"
-                        >
-                          {s}
-                        </span>
-                      ))}
-                    </td>
-                    <td className="border p-3 text-center font-semibold">
-                      {a.rating} <span className="text-yellow-500">★</span>
-                    </td>
-                    <td className="border p-3 text-center font-semibold">
-                      {tarifDisplay(a.tarif)}
-                    </td>
-                    <td className="border p-3 text-xs">{a.bestFor}</td>
+      <div className="container mx-auto max-w-6xl px-4 py-14">
+        {/* Tableau premium */}
+        <section className="mb-14">
+          <header className="mb-6">
+            <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+              <Sparkles className="h-3.5 w-3.5" strokeWidth={2.4} />
+              Vue d&apos;ensemble
+            </span>
+            <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+              Tableau comparatif
+            </h2>
+          </header>
+
+          <div className="overflow-hidden rounded-3xl border border-charcoal-100 bg-white shadow-soft">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-gradient-to-br from-charcoal-900 to-charcoal-800">
+                  <tr>
+                    <th className="px-5 py-4 text-left text-xs font-extrabold uppercase tracking-wider text-white">
+                      Assureur
+                    </th>
+                    <th className="hidden px-5 py-4 text-left text-xs font-extrabold uppercase tracking-wider text-white md:table-cell">
+                      Spécialités
+                    </th>
+                    <th className="px-5 py-4 text-center text-xs font-extrabold uppercase tracking-wider text-white">
+                      Note
+                    </th>
+                    <th className="px-5 py-4 text-center text-xs font-extrabold uppercase tracking-wider text-white">
+                      Tarif
+                    </th>
+                    <th className="px-5 py-4 text-left text-xs font-extrabold uppercase tracking-wider text-white">
+                      Idéal pour
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {ASSUREURS.map((a) => (
+                    <tr
+                      key={a.slug}
+                      className="border-t border-charcoal-100 transition-colors hover:bg-sand-50/60"
+                    >
+                      <td className="px-5 py-4 font-heading font-extrabold text-charcoal-900">
+                        {a.name}
+                      </td>
+                      <td className="hidden px-5 py-4 md:table-cell">
+                        <div className="flex flex-wrap gap-1">
+                          {a.specialites.map((s) => (
+                            <span
+                              key={s}
+                              className="inline-flex items-center rounded-full bg-primary-50 px-2 py-0.5 text-[11px] font-bold text-primary-700"
+                            >
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                      </td>
+                      <td className="px-5 py-4 text-center font-bold text-charcoal-900">
+                        <span className="inline-flex items-center gap-1">
+                          {a.rating}
+                          <Star
+                            className="h-3.5 w-3.5 fill-secondary-500 text-secondary-500"
+                            strokeWidth={2}
+                          />
+                        </span>
+                      </td>
+                      <td className="px-5 py-4 text-center font-extrabold tabular-nums text-primary-700">
+                        {tarifDisplay(a.tarif)}
+                      </td>
+                      <td className="px-5 py-4 text-xs text-charcoal-700">{a.bestFor}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
+        </section>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {/* Cards détaillées */}
+        <section className="mb-14">
+          <header className="mb-8">
+            <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+              <Award className="h-3.5 w-3.5" strokeWidth={2.4} />
+              Fiches détaillées
+            </span>
+            <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+              Forces et positionnement
+            </h2>
+          </header>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {ASSUREURS.map((a) => (
               <article
                 key={a.slug}
-                className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+                className="group relative overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-premium"
               >
-                <header className="mb-3 flex items-start justify-between">
-                  <h2 className="text-xl font-bold">{a.name}</h2>
-                  <span className="text-sm text-yellow-500">{a.rating} ★</span>
+                <span
+                  className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 to-primary-700 opacity-60 transition-opacity group-hover:opacity-100"
+                  aria-hidden="true"
+                />
+                <header className="mb-4 flex items-start justify-between gap-3">
+                  <h3 className="font-heading text-xl font-extrabold tracking-tight text-charcoal-900">
+                    {a.name}
+                  </h3>
+                  <span className="inline-flex items-center gap-1 rounded-full bg-secondary-50 px-2.5 py-0.5 text-xs font-bold text-secondary-800">
+                    {a.rating}
+                    <Star
+                      className="h-3 w-3 fill-secondary-500 text-secondary-500"
+                      strokeWidth={2}
+                    />
+                  </span>
                 </header>
-                <p className="mb-4 text-gray-600">{a.description}</p>
-                <h3 className="mb-2 text-sm font-semibold">Forces&nbsp;:</h3>
-                <ul className="mb-4 list-disc space-y-1 pl-5 text-sm text-gray-700">
+                <p className="mb-5 text-sm leading-relaxed text-charcoal-600">{a.description}</p>
+
+                <p className="mb-2 inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-primary-700">
+                  <Sparkles className="h-3 w-3" strokeWidth={2.4} />
+                  Forces
+                </p>
+                <ul className="mb-5 space-y-1.5 text-sm">
                   {a.forces.map((f) => (
-                    <li key={f}>{f}</li>
+                    <li key={f} className="flex items-start gap-2 text-charcoal-700">
+                      <CheckCircle2
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
+                        strokeWidth={2.4}
+                      />
+                      <span className="leading-relaxed">{f}</span>
+                    </li>
                   ))}
                 </ul>
-                <div className="mb-4 flex flex-wrap gap-2 text-xs">
-                  {a.acprAgrement ? (
-                    <span className="rounded bg-green-50 px-2 py-1 text-green-700">
-                      ✓ Agrément ACPR
+
+                <div className="mb-4 flex flex-wrap gap-1.5">
+                  {a.acprAgrement && (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-secondary-50 px-2.5 py-0.5 text-[11px] font-bold text-secondary-800">
+                      <ShieldCheck className="h-3 w-3" strokeWidth={2.4} />
+                      ACPR
                     </span>
-                  ) : null}
-                  {a.csaMember ? (
-                    <span className="rounded bg-green-50 px-2 py-1 text-green-700">
-                      ✓ Membre CSCA
+                  )}
+                  {a.csaMember && (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-accent-50 px-2.5 py-0.5 text-[11px] font-bold text-accent-800">
+                      <Award className="h-3 w-3" strokeWidth={2.4} />
+                      CSCA
                     </span>
-                  ) : null}
+                  )}
                 </div>
-                <p className="text-sm font-semibold">
-                  Idéal pour&nbsp;: <span className="text-blue-600">{a.bestFor}</span>
-                </p>
+
+                <div className="border-t border-charcoal-100 pt-4">
+                  <p className="text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
+                    Idéal pour
+                  </p>
+                  <p className="mt-1 text-sm font-bold text-primary-700">{a.bestFor}</p>
+                </div>
               </article>
             ))}
           </div>
+        </section>
 
-          <div className="mt-12 rounded-lg bg-blue-50 p-8 text-center">
-            <h2 className="mb-3 text-2xl font-bold">Ne savez pas lequel choisir&nbsp;?</h2>
-            <p className="mb-6 text-gray-700">
-              Notre cabinet ORIAS interroge automatiquement les 3-5 partenaires les plus adaptés à
-              votre profil et vous remet leur meilleur devis.
-            </p>
+        {/* CTA */}
+        <section className="relative overflow-hidden rounded-3xl bg-charcoal-900 p-10 text-white shadow-premium-lg md:p-14">
+          <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-95" />
+          <div
+            className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-secondary-400/30 blur-3xl"
+            aria-hidden="true"
+          />
+          <div className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-[1fr_auto]">
+            <div>
+              <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider backdrop-blur-sm">
+                <Sparkles className="h-3 w-3 text-secondary-300" />
+                Devis comparatif
+              </span>
+              <h2 className="mb-2 font-heading text-3xl font-extrabold tracking-display md:text-4xl">
+                Ne savez pas lequel choisir&nbsp;?
+              </h2>
+              <p className="max-w-xl text-base text-white/85 md:text-lg">
+                Notre cabinet ORIAS interroge automatiquement les 3-5 partenaires les plus adaptés à
+                votre profil et vous remet leur meilleur devis.
+              </p>
+            </div>
             <Link
               href="/devis"
-              className="inline-block rounded-lg bg-blue-700 px-8 py-4 font-semibold text-white hover:bg-blue-800"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 text-base font-extrabold text-primary-700 shadow-premium transition-all hover:-translate-y-0.5"
             >
-              Obtenir un devis comparatif →
+              Obtenir un devis comparatif
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   )
 }

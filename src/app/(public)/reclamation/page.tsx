@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { FileWarning } from 'lucide-react'
+import { PageHero } from '@/components/layout/PageHero'
 import { ReclamationForm } from '@/components/forms/ReclamationForm'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -26,23 +27,17 @@ export const metadata: Metadata = {
 
 export default function ReclamationPage() {
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
-      <div className="container mx-auto max-w-3xl px-4">
-        <header className="mb-8">
-          <nav aria-label="Fil d'Ariane" className="mb-3 text-sm text-gray-600">
-            <Link href="/" className="hover:underline">
-              Accueil
-            </Link>{' '}
-            › <span className="text-gray-900">Déposer une réclamation</span>
-          </nav>
-          <h1 className="mb-3 text-3xl font-bold md:text-4xl">Déposer une réclamation</h1>
-          <p className="text-lg text-gray-700">
-            Vous avez un différend avec notre cabinet ou avec un produit que nous avons
-            distribué&nbsp;? Nous traitons votre réclamation dans le respect de la{' '}
-            <strong>Recommandation ACPR 2024-R-02</strong>.
-          </p>
-        </header>
+    <main className="min-h-screen bg-sand-50">
+      <PageHero
+        breadcrumbs={[{ label: 'Réclamation' }]}
+        eyebrow="Reco ACPR 2024-R-02"
+        EyebrowIcon={FileWarning}
+        title="Déposer une réclamation"
+        description="Différend avec notre cabinet ou avec un produit distribué ? Nous traitons votre réclamation dans le respect de la Recommandation ACPR 2024-R-02."
+        size="sm"
+      />
 
+      <div className="container mx-auto max-w-3xl px-4 py-14">
         <section className="mb-8 rounded-lg border border-blue-200 bg-blue-50 p-5">
           <h2 className="mb-2 text-lg font-bold">Engagements de notre cabinet</h2>
           <ul className="list-disc space-y-1 pl-5 text-sm text-blue-900">

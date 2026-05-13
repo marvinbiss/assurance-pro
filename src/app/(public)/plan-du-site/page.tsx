@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Map } from 'lucide-react'
+import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 import { DECENNALE_METIERS } from '@/lib/data/decennale-metiers'
 import { RC_PRO_PROFESSIONS } from '@/lib/data/rc-pro-professions'
@@ -26,15 +28,17 @@ export const metadata: Metadata = {
 
 export default function PlanDuSitePage() {
   return (
-    <main className="min-h-screen bg-white py-12">
-      <div className="container mx-auto max-w-4xl px-4">
-        <header className="mb-10">
-          <h1 className="mb-3 text-3xl font-bold md:text-4xl">Plan du site</h1>
-          <p className="text-lg text-gray-600">
-            Toutes les pages d\'Assurance Pro organisées par catégorie.
-          </p>
-        </header>
+    <main className="min-h-screen bg-sand-50">
+      <PageHero
+        breadcrumbs={[{ label: 'Plan du site' }]}
+        eyebrow="Navigation complète"
+        EyebrowIcon={Map}
+        title="Plan du site"
+        description="Toutes les pages du site organisées par catégorie."
+        size="sm"
+      />
 
+      <div className="container mx-auto max-w-4xl px-4 py-14">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <section>
             <h2 className="mb-3 border-b pb-2 text-xl font-bold">Pages principales</h2>
