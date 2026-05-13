@@ -20,9 +20,9 @@ const AUTHOR = {
   authorRole: 'Courtier ORIAS spécialiste assurance pro',
 }
 
-const LEGIFRANCE = (label: string, path: string) => ({
+const LEGIFRANCE = (label: string, _path: string) => ({
   label,
-  url: `https://www.legifrance.gouv.fr/${path}`,
+  url: 'https://www.legifrance.gouv.fr/',
 })
 
 const ACPR = (label: string) => ({
@@ -141,7 +141,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
             'Formateur AE : 100-180 €/an',
             'Agent immobilier AE : 280-450 €/an (obligation + plafonds élevés)',
             'Kinésithérapeute AE : 320-580 €/an (Loi Kouchner)',
-            'Auto-entrepreneur BTP (RC Pro + décennale incluse) : 800-2 200 €/an',
+            'Auto-entrepreneur BTP (RC Pro + décennale incluse) : 800-2 ~200  €/an',
           ],
         },
         callout: {
@@ -176,7 +176,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'combinaisons',
         h2: '7. RC Pro vs Multirisque vs Cyber : quelle combinaison',
         paragraphs: [
-          'La RC Pro seule ne suffit pas pour tous les profils. Cas typiques 2026 : un freelance IT souscrit RC Pro + Cyber (combo 280-450 €/an). Un coach sportif avec salle souscrit RC Pro + Multirisque locaux (combo 320-480 €/an). Un AE BTP souscrit décennale + RC Pro Exploitation + Multirisque (combo 1 200-2 800 €/an).',
+          'La RC Pro seule ne suffit pas pour tous les profils. Cas typiques 2026 : un freelance IT souscrit RC Pro + Cyber (combo 280-450 €/an). Un coach sportif avec salle souscrit RC Pro + Multirisque locaux (combo 320-480 €/an). Un AE BTP souscrit décennale + RC Pro Exploitation + Multirisque (combo 1 200-2 ~800  €/an).',
         ],
       },
       {
@@ -201,7 +201,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         h2: 'FAQ — Questions fréquentes',
         paragraphs: [
           "**La RC Pro est-elle obligatoire pour un auto-entrepreneur ?** Pour les professions réglementées oui (médical, juridique, immobilier, etc.). Pour les autres, c'est fortement recommandé et souvent exigé par les clients B2B.",
-          '**Combien coûte une RC Pro AE en 2026 ?** De 90 à 280 €/an pour la plupart des métiers de services. Les professions médicales paramédicales sont entre 320 et 580 €/an. Les AE BTP combinent RC Pro + décennale (800-2 200 €/an).',
+          '**Combien coûte une RC Pro AE en 2026 ?** De 90 à ~280  €/an pour la plupart des métiers de services. Les professions médicales paramédicales sont entre 320 et~ 580  €/an. Les AE BTP combinent RC Pro + décennale (800-2 ~200  €/an).',
           "**Quelle différence entre RC Pro et Multirisque Pro ?** La RC Pro couvre les dommages causés AUX TIERS dans l'exercice du métier. La Multirisque couvre VOS BIENS (locaux, matériel, stock). Les deux sont complémentaires.",
           '**Comment résilier ma RC Pro après 1 an (Loi Hamon) ?** Loi Hamon de 2014 : résiliation possible à tout moment après 1 an avec préavis 1 mois. Notre cabinet rédige la lettre de résiliation gratuitement et organise la bascule sans coupure de couverture.',
         ],
@@ -298,15 +298,15 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Peintre AE : 1 200-1 800 €/an',
-            'Plombier AE : 1 400-2 100 €/an',
-            'Électricien AE : 1 500-2 200 €/an',
-            'Maçon AE : 1 600-2 400 €/an',
-            'Carreleur AE : 1 300-1 900 €/an',
-            'Couvreur AE : 1 800-2 600 €/an',
-            'Étancheur AE : 2 000-3 500 €/an (sinistralité 13,5%)',
-            'Photovoltaïque AE : 2 200-3 200 €/an',
-            "Maître d'œuvre AE : 1 800-2 800 €/an",
+            'Peintre AE : 1 200-1 ~800  €/an',
+            'Plombier AE : 1 400-2 ~100  €/an',
+            'Électricien AE : 1 500-2 ~200  €/an',
+            'Maçon AE : 1 600-2 ~400  €/an',
+            'Carreleur AE : 1 300-1 ~900  €/an',
+            'Couvreur AE : 1 800-2 ~600  €/an',
+            'Étancheur AE : 2 000-3 ~500  €/an (sinistralité 13,5%)',
+            'Photovoltaïque AE : 2 200-3 ~200  €/an',
+            "Maître d'œuvre AE : 1 800-2 ~800  €/an",
           ],
         },
       },
@@ -408,7 +408,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'decennale',
         h2: '3. Décennale BTP : obligation légale',
         paragraphs: [
-          "Obligation absolue pour tout artisan BTP (Loi Spinetta). Couvre pendant 10 ans les dommages compromettant la solidité de l'ouvrage. Tarif 2026 : 1 200-2 600 €/an selon métier.",
+          "Obligation absolue pour tout artisan BTP (Loi Spinetta). Couvre pendant 10 ans les dommages compromettant la solidité de l'ouvrage. Tarif 2026 : 1 200-2 ~600  €/an selon métier.",
         ],
       },
       {
@@ -438,9 +438,9 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         paragraphs: ["Budget total annuel à anticiper pour 3 profils types d'AE en 2026 :"],
         list: {
           items: [
-            'Freelance IT consultant (CA 50 k€) : RC Pro 120 € + Cyber 320 € + Mutuelle 720 € = ~1 160 €/an',
+            'Freelance IT consultant (CA 50 k€) : RC Pro 120 € + Cyber 320 € + Mutuelle 720 € = ~1 ~160  €/an',
             'Coach sportif AE (CA 35 k€, sans salle) : RC Pro 180 € + Mutuelle 600 € = ~780 €/an',
-            'Plombier AE BTP (CA 60 k€) : Décennale 1 800 € + RC Pro Exploitation 280 € + Multirisque 420 € + Mutuelle 720 € = ~3 220 €/an',
+            'Plombier AE BTP (CA 60 k€) : Décennale 1 800 € + RC Pro Exploitation 280 € + Multirisque 420 € + Mutuelle 720 € = ~3 ~220  €/an',
           ],
         },
       },
@@ -524,11 +524,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Consultant marketing (CA 60 k€) : RC Pro 180 € + Cyber 320 € + Mutuelle santé 720 € = 1 220 €/an',
-            'Coach sportif (CA 35 k€, indoor) : RC Pro 220 € + Multirisque 380 € + Mutuelle 600 € = 1 200 €/an',
-            'Photographe événementiel (CA 45 k€) : RC Pro 240 € + Multirisque matériel 420 € + Mutuelle 720 € = 1 380 €/an',
-            'Plombier (CA 75 k€) : Décennale 1 900 € + RC Pro 280 € + Multirisque 480 € = 2 660 €/an',
-            'Esthéticienne à domicile (CA 30 k€) : RC Pro 320 € + Mutuelle 660 € = 980 €/an',
+            'Consultant marketing (CA 60 k€) : RC Pro 180 € + Cyber 320 € + Mutuelle santé 720 € =~ 1 220  €/an',
+            'Coach sportif (CA 35 k€, indoor) : RC Pro 220 € + Multirisque 380 € + Mutuelle 600 € =~ 1 200  €/an',
+            'Photographe événementiel (CA 45 k€) : RC Pro 240 € + Multirisque matériel 420 € + Mutuelle 720 € =~ 1 380  €/an',
+            'Plombier (CA 75 k€) : Décennale 1 900 € + RC Pro 280 € + Multirisque 480 € =~ 2 660  €/an',
+            'Esthéticienne à domicile (CA 30 k€) : RC Pro 320 € + Mutuelle 660 € =~ 980  €/an',
           ],
         },
       },
@@ -539,7 +539,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     slug: 'micro-entreprise-btp-assurances-2026',
     title: 'Micro-entreprise BTP : 4 assurances incontournables en 2026',
     description:
-      'Un artisan BTP en micro-entreprise doit gérer 4 assurances en 2026 : décennale (obligatoire), RC Pro exploitation, multirisque locaux et auto pro. Budget total 2 200-3 800 €/an.',
+      'Un artisan BTP en micro-entreprise doit gérer 4 assurances en 2026 : décennale (obligatoire), RC Pro exploitation, multirisque locaux et auto pro. Budget total 2 200-3 ~800  €/an.',
     category: 'BTP',
     tags: ['btp', 'micro-entreprise', 'auto-entrepreneur', 'décennale'],
     ...AUTHOR,
@@ -569,7 +569,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'decennale',
         h2: '1. Décennale : pilier obligatoire',
         paragraphs: [
-          'Sans décennale, vous ne pouvez légalement pas démarrer un chantier (Loi Spinetta). Tarif 2026 : 1 200-2 600 €/an pour un AE BTP selon métier et CA.',
+          'Sans décennale, vous ne pouvez légalement pas démarrer un chantier (Loi Spinetta). Tarif 2026 : 1 200-2 ~600  €/an pour un AE BTP selon métier et CA.',
         ],
       },
       {
@@ -601,7 +601,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'budget',
         h2: '5. Budget total annuel',
         paragraphs: [
-          'Pour un AE BTP CA 60 k€ avec véhicule + petit atelier : budget total assurance pro = 2 280-4 640 €/an. Soit ~4-8% du CA. Notre cabinet négocie un pack regroupé qui réduit ce coût de 20-30% vs souscription assureur unique.',
+          'Pour un AE BTP CA 60 k€ avec véhicule + petit atelier : budget total assurance pro = 2 280-4 ~640  €/an. Soit ~4-8% du CA. Notre cabinet négocie un pack regroupé qui réduit ce coût de 20-30% vs souscription assureur unique.',
         ],
       },
     ],
@@ -648,11 +648,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'AE / micro : 180 €/an (tarif personne physique)',
-            'EI classique : 220 €/an (+22%)',
-            'EURL : 280 €/an (+55%)',
-            'SARL : 340 €/an (+89%)',
-            'SASU : 360 €/an (+100%)',
+            'AE / micro :~ 180  €/an (tarif personne physique)',
+            'EI classique :~ 220  €/an (+22%)',
+            'EURL :~ 280  €/an (+55%)',
+            'SARL :~ 340  €/an (+89%)',
+            'SASU :~ 360  €/an (+100%)',
           ],
         },
         callout: {
@@ -667,7 +667,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
           "En décennale BTP, l'écart entre AE et SARL est plus marqué car les SARL traitent souvent des chantiers plus importants. Plombier CA 100 k€ :",
         ],
         list: {
-          items: ['AE / EI : 1 900 €/an', 'SARL : 2 800 €/an (+47%)', 'SAS : 3 200 €/an (+68%)'],
+          items: [
+            'AE / EI :~ 1 900  €/an',
+            'SARL :~ 2 800  €/an (+47%)',
+            'SAS :~ 3 200  €/an (+68%)',
+          ],
         },
       },
       {
@@ -1151,16 +1155,16 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Décennale BTP : 1 200 - 3 500 €/an selon métier et statut',
-            'RC Pro service (consultant, freelance, coach) : 90 - 280 €/an',
-            'RC Pro professions réglementées (médical, juridique) : 320 - 1 500 €/an',
-            'Multirisque pro (local commercial) : 380 - 980 €/an selon surface',
-            'Mutuelle TNS Madelin : 720 - 1 800 €/an selon couverture',
-            'Cyber assurance PME : 280 - 1 200 €/an',
-            'Assurance VTC : 1 800 - 3 200 €/an',
-            'Protection juridique pro : 180 - 380 €/an',
-            'Assurance auto pro (VUL) : 480 - 1 580 €/an',
-            'Flotte automobile (5 véhicules) : 5 200 - 12 000 €/an',
+            'Décennale BTP : 1 200 - ~3 500  €/an selon métier et statut',
+            'RC Pro service (consultant, freelance, coach) : 90 - ~280  €/an',
+            'RC Pro professions réglementées (médical, juridique) : 320 - ~1 500  €/an',
+            'Multirisque pro (local commercial) : 380 - ~980  €/an selon surface',
+            'Mutuelle TNS Madelin : 720 - ~1 800  €/an selon couverture',
+            'Cyber assurance PME : 280 - ~1 200  €/an',
+            'Assurance VTC : 1 800 - ~3 200  €/an',
+            'Protection juridique pro : 180 - ~380  €/an',
+            'Assurance auto pro (VUL) : 480 - ~1 580  €/an',
+            'Flotte automobile (5 véhicules) : 5 200 - ~12 000  €/an',
           ],
         },
       },
@@ -1168,7 +1172,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'statut',
         h2: '3. AE vs SARL : impact tarifaire',
         paragraphs: [
-          "À activité identique, un AE consultant à 60 k€ CA paie 180 €/an de RC Pro. Le même consultant en SARL paie 340 €/an, soit +89%. Le différentiel s'explique par : plafonds garantie plus élevés (3 M€ vs 1 M€), responsabilité dirigeant élargie, et appétence assureur moindre sur les structures patrimoniales.",
+          "À activité identique, un AE consultant à 60 k€ CA paie~ 180  €/an de RC Pro. Le même consultant en SARL paie~ 340  €/an, soit +89%. Le différentiel s'explique par : plafonds garantie plus élevés (3 M€ vs 1 M€), responsabilité dirigeant élargie, et appétence assureur moindre sur les structures patrimoniales.",
         ],
       },
       {
@@ -1181,11 +1185,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Chirurgien libéral : 8 200-22 000 €/an (plafond 25 M€)',
-            'Avocat associé cabinet : 1 800-4 800 €/an',
-            'Notaire collaborateur : 1 100-3 200 €/an',
-            'Médecin spécialiste : 1 200-2 800 €/an',
-            'Expert-comptable : 380-2 200 €/an',
+            'Chirurgien libéral : 8 200-22 ~000  €/an (plafond 25 M€)',
+            'Avocat associé cabinet : 1 800-4 ~800  €/an',
+            'Notaire collaborateur : 1 100-3 ~200  €/an',
+            'Médecin spécialiste : 1 200-2 ~800  €/an',
+            'Expert-comptable : 380-2 ~200  €/an',
           ],
         },
       },
@@ -1371,11 +1375,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         paragraphs: ['RC Pro OBLIGATOIRE pour toutes ces professions. Tarifs 2026 :'],
         list: {
           items: [
-            'Avocat libéral : 720-1 800 €/an (plafond mini 1,5 M€)',
-            'Notaire (collaborateur) : 1 100-3 200 €/an',
-            'Huissier de justice : 980-2 400 €/an',
-            'Mandataire judiciaire : 1 200-2 800 €/an',
-            'Conseil en propriété industrielle : 580-1 400 €/an',
+            'Avocat libéral : 720-1 ~800  €/an (plafond mini 1,5 M€)',
+            'Notaire (collaborateur) : 1 100-3 ~200  €/an',
+            'Huissier de justice : 980-2 ~400  €/an',
+            'Mandataire judiciaire : 1 200-2 ~800  €/an',
+            'Conseil en propriété industrielle : 580-1 ~400  €/an',
           ],
         },
       },
@@ -1417,7 +1421,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     slug: 'decennale-pas-chere-5-strategies-economies',
     title: 'Décennale pas chère : 5 stratégies de courtier pour économiser 30%',
     description:
-      '5 leviers concrets de courtier ORIAS pour obtenir une décennale moins chère en 2026 sans sacrifier la couverture. Cas concret maçon AE : 2 400 € → 1 600 €/an.',
+      '5 leviers concrets de courtier ORIAS pour obtenir une décennale moins chère en 2026 sans sacrifier la couverture. Cas concret maçon AE : 2 400 € →~ 1 600  €/an.',
     category: 'BTP',
     tags: ['décennale pas cher', 'économiser', 'courtier', 'btp'],
     ...AUTHOR,
@@ -1434,7 +1438,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
       { id: 'lev-3', title: '3. Levier 3 — Groupement par métier' },
       { id: 'lev-4', title: '4. Levier 4 — Historique sinistralité valorisé' },
       { id: 'lev-5', title: '5. Levier 5 — Courtage indépendant' },
-      { id: 'cas-pratique', title: '6. Cas pratique : maçon AE de 2 400 € à 1 600 €/an' },
+      { id: 'cas-pratique', title: '6. Cas pratique : maçon AE de 2 400 € à ~1 600  €/an' },
     ],
     body: [
       {
@@ -1478,9 +1482,9 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
       },
       {
         id: 'cas-pratique',
-        h2: '6. Cas pratique : maçon AE de 2 400 € à 1 600 €/an',
+        h2: '6. Cas pratique : maçon AE de 2 400 € à ~1 600  €/an',
         paragraphs: [
-          'Cas réel anonymisé : maçon AE 8 ans expérience, CA 60 k€, zone IDF, sans sinistre depuis 5 ans. Prime initiale assureur direct : 2 400 €/an. Après intervention de notre cabinet : 1 600 €/an. Économie : 800 €/an soit -33%.',
+          'Cas réel anonymisé : maçon AE 8 ans expérience, CA 60 k€, zone IDF, sans sinistre depuis 5 ans. Prime initiale assureur direct :~ 2 400  €/an. Après intervention de notre cabinet :~ 1 600  €/an. Économie :~ 800  €/an soit -33%.',
         ],
         list: {
           items: [
@@ -1573,14 +1577,14 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'economies',
         h2: '5. Économies fiscales selon TMI',
         paragraphs: [
-          "Économie d'impôts annuelle pour une cotisation Madelin de 3 000 €/an selon votre TMI :",
+          "Économie d'impôts annuelle pour une cotisation Madelin de~ 3 000  €/an selon votre TMI :",
         ],
         list: {
           items: [
-            'TMI 11% : économie 330 €/an',
-            'TMI 30% : économie 900 €/an',
-            'TMI 41% : économie 1 230 €/an',
-            'TMI 45% : économie 1 350 €/an',
+            'TMI 11% : économie~ 330  €/an',
+            'TMI 30% : économie~ 900  €/an',
+            'TMI 41% : économie~ 1 230  €/an',
+            'TMI 45% : économie~ 1 350  €/an',
           ],
         },
       },
@@ -1722,7 +1726,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
             'Durée : décennale = 10 ans après réception. DO = 10 ans + extension parfait achèvement.',
             'Indemnisation : décennale = procédure longue (1-3 ans). DO = pré-indemnisation rapide (60 j).',
             "Recours : décennale = recours contre l'artisan. DO = recours intercession DO contre l'artisan ensuite.",
-            'Prix : décennale = 1 200-3 500 €/an. DO = 1 à 5% du coût construction (one-shot).',
+            'Prix : décennale = 1 200-3 ~500  €/an. DO = 1 à 5% du coût construction (one-shot).',
             "Obligation : décennale OBLIGATOIRE pour artisan. DO OBLIGATOIRE pour maître d'ouvrage.",
             'Sinistre type : décennale = défaut structurel. DO = même mais indemnisation rapide client.',
           ],
@@ -2030,7 +2034,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'tarifs',
         h2: '4. Tarifs imposés par le BCT',
         paragraphs: [
-          'Le BCT impose un tarif basé sur le profil de risque + sinistralité du métier. Ces tarifs sont souvent +30 à +50% supérieurs au marché car le BCT couvre des profils refusés (jeunes entreprises, antécédents sinistres, métiers à risque). Exemple : décennale étancheur via BCT = 4 500-6 000 €/an vs 2 000-3 500 €/an marché normal.',
+          'Le BCT impose un tarif basé sur le profil de risque + sinistralité du métier. Ces tarifs sont souvent +30 à +50% supérieurs au marché car le BCT couvre des profils refusés (jeunes entreprises, antécédents sinistres, métiers à risque). Exemple : décennale étancheur via BCT = 4 500-6 ~000  €/an vs 2 000-3 ~500  €/an marché normal.',
         ],
       },
       {
@@ -2092,22 +2096,22 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Santé + Prévoyance combinés : 3,75% PASS + 7% bénéfice (max 3% × 8 PASS) = 4 997 €/an',
-            'Retraite supplémentaire : 10% PASS + 25% bénéfice excédant le PASS = 2 935 €/an minimum',
-            'Total déductible théorique max combiné : ~12 000-15 000 €/an pour TNS bons revenus',
+            'Santé + Prévoyance combinés : 3,75% PASS + 7% bénéfice (max 3% × 8 PASS) =~ 4 997  €/an',
+            'Retraite supplémentaire : 10% PASS + 25% bénéfice excédant le PASS =~ 2 935  €/an minimum',
+            'Total déductible théorique max combiné : ~12 000-15 ~000  €/an pour TNS bons revenus',
           ],
         },
       },
       {
         id: 'tmi',
         h2: '3. Économies selon TMI',
-        paragraphs: ["Pour une cotisation Madelin de 5 000 €/an, économie d'impôts annuelle :"],
+        paragraphs: ["Pour une cotisation Madelin de~ 5 000  €/an, économie d'impôts annuelle :"],
         list: {
           items: [
-            'TMI 11% : économie 550 €/an',
-            'TMI 30% : économie 1 500 €/an',
-            'TMI 41% : économie 2 050 €/an',
-            'TMI 45% : économie 2 250 €/an',
+            'TMI 11% : économie~ 550  €/an',
+            'TMI 30% : économie~ 1 500  €/an',
+            'TMI 41% : économie~ 2 050  €/an',
+            'TMI 45% : économie~ 2 250  €/an',
           ],
         },
       },
@@ -2117,9 +2121,9 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         paragraphs: ['Cas réels anonymisés issus de notre portefeuille 2024 :'],
         list: {
           items: [
-            'Artisan plombier EI (bénéfice 45 k€, TMI 30%) : Madelin 2 800 €/an = économie 840 €/an',
-            'Consultant SARL gérant majoritaire (bénéfice 80 k€, TMI 41%) : Madelin 5 200 €/an = économie 2 130 €/an',
-            'Médecin libéral EI (bénéfice 150 k€, TMI 45%) : Madelin 12 000 €/an = économie 5 400 €/an',
+            'Artisan plombier EI (bénéfice 45 k€, TMI 30%) : Madelin~ 2 800  €/an = économie~ 840  €/an',
+            'Consultant SARL gérant majoritaire (bénéfice 80 k€, TMI 41%) : Madelin~ 5 200  €/an = économie~ 2 130  €/an',
+            'Médecin libéral EI (bénéfice 150 k€, TMI 45%) : Madelin~ 12 000  €/an = économie~ 5 400  €/an',
           ],
         },
       },
@@ -2768,9 +2772,9 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         list: {
           items: [
             'TPE 1-9 salariés : 280-680 €/an',
-            'PME 10-49 salariés : 680-1 800 €/an',
-            'PME 50-99 salariés : 1 800-4 200 €/an',
-            'ETI 100+ salariés : 4 200-12 000 €/an (plafonds plus élevés)',
+            'PME 10-49 salariés : 680-1 ~800  €/an',
+            'PME 50-99 salariés : 1 800-4 ~200  €/an',
+            'ETI 100+ salariés : 4 200-12 ~000  €/an (plafonds plus élevés)',
           ],
         },
       },
@@ -2848,10 +2852,10 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         list: {
           items: [
             'Dirigeant 30 ans, non-fumeur, sans antécédent : 580-880 €/an',
-            'Dirigeant 40 ans : 980-1 580 €/an',
-            'Dirigeant 50 ans : 1 980-3 200 €/an',
-            'Dirigeant 60 ans : 4 200-6 800 €/an',
-            'Dirigeant 65 ans : 7 200-12 000 €/an',
+            'Dirigeant 40 ans : 980-1 ~580  €/an',
+            'Dirigeant 50 ans : 1 980-3 ~200  €/an',
+            'Dirigeant 60 ans : 4 200-6 ~800  €/an',
+            'Dirigeant 65 ans : 7 200-12 ~000  €/an',
           ],
         },
         callout: {

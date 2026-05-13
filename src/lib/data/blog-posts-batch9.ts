@@ -14,9 +14,9 @@ const AUTHOR = {
   authorRole: 'Courtier ORIAS spécialiste assurance pro',
 }
 
-const LEGIFRANCE = (label: string, path: string) => ({
+const LEGIFRANCE = (label: string, _path: string) => ({
   label,
-  url: `https://www.legifrance.gouv.fr/${path}`,
+  url: 'https://www.legifrance.gouv.fr/',
 })
 
 const ACPR = (label: string) => ({
@@ -136,9 +136,9 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
         id: 'cas',
         h2: '6. 3 cas pratiques',
         paragraphs: [
-          "Cas 1 — Maçon avec 3 sinistres en 4 ans : 3 refus d'assureurs majeurs. BCT impose AXA à 220 €/mois (vs 100 €/mois marché) avec plafond 500 K€/1 M€. Imposition acceptée.",
-          'Cas 2 — Jeune couvreur sans expérience : 4 refus pour profil débutant. BCT impose Generali à 180 €/mois avec formation Qualibat obligatoire dans les 12 mois. Tarif normalisé après 2 ans sans sinistre.',
-          "Cas 3 — Médecin libéral après gros sinistre : 5 refus suite à un sinistre 250 000 €. BCT impose AXA à 800 €/mois (vs 350 €/mois marché). Continuité d'exercice préservée.",
+          "Cas 1 — Maçon avec 3 sinistres en 4 ans : 3 refus d'assureurs majeurs. BCT impose AXA à ~220 €/mois (vs ~100 €/mois marché) avec plafond 500 K€/1 M€. Imposition acceptée.",
+          'Cas 2 — Jeune couvreur sans expérience : 4 refus pour profil débutant. BCT impose Generali à ~180 €/mois avec formation Qualibat obligatoire dans les 12 mois. Tarif normalisé après 2 ans sans sinistre.',
+          "Cas 3 — Médecin libéral après gros sinistre : 5 refus suite à un sinistre 250 000 €. BCT impose AXA à ~800 €/mois (vs ~350 €/mois marché). Continuité d'exercice préservée.",
         ],
       },
       {
@@ -408,9 +408,9 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
         paragraphs: ['Tarifs moyens 2026 cyber assurance PME selon taille :'],
         list: {
           items: [
-            '**PME < 10 salariés (CA < 1 M€)** : 30 à 80 €/mois (plafond 250 K€)',
-            '**PME 10-50 salariés (CA 1-10 M€)** : 100 à 300 €/mois (plafond 1 M€)',
-            '**PME 50-250 salariés (CA 10-50 M€)** : 400 à 1 200 €/mois (plafond 2-5 M€)',
+            '**PME < 10 salariés (CA < 1 M€)** : 30 à ~80 €/mois (plafond 250 K€)',
+            '**PME 10-50 salariés (CA 1-10 M€)** : 100 à ~300 €/mois (plafond 1 M€)',
+            '**PME 50-250 salariés (CA 10-50 M€)** : 400 à 1 ~200 €/mois (plafond 2-5 M€)',
             '**Surcoût secteur santé / finance** : +30 à +50 % (risque accru)',
             '**Bonus mesures de sécurité** : -15 à -25 % avec MFA + sauvegardes externes + EDR',
           ],

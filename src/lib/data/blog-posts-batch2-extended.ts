@@ -15,9 +15,9 @@ const AUTHOR = {
   authorRole: 'Courtier ORIAS spécialiste assurance pro',
 }
 
-const LEGIFRANCE = (label: string, path: string) => ({
+const LEGIFRANCE = (label: string, _path: string) => ({
   label,
-  url: `https://www.legifrance.gouv.fr/${path}`,
+  url: 'https://www.legifrance.gouv.fr/',
 })
 
 const ACPR = (label: string) => ({
@@ -169,7 +169,7 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
             'Infirmier libéral AE : 320-520 €/an (plafond 6,1 M€)',
             'Ostéopathe AE : 580-920 €/an (plafond 6,1 M€)',
             'Expert-comptable AE : 380-720 €/an (plafond 1 M€ Ordre)',
-            'Auto-entrepreneur BTP (RC Pro + décennale combinée) : 800-2 200 €/an selon métier',
+            'Auto-entrepreneur BTP (RC Pro + décennale combinée) : 800-2 ~200  €/an selon métier',
           ],
         },
         callout: {
@@ -221,10 +221,10 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         h2: '7. RC Pro vs Multirisque vs Cyber : quelle combinaison',
         paragraphs: [
           "La RC Pro seule ne suffit pas pour tous les profils d'auto-entrepreneurs en 2026. Selon votre métier et votre exposition aux risques, une combinaison de 2 ou 3 garanties devient pertinente. Voici les combinaisons types observées sur notre portefeuille :",
-          '**Profil 1 — Freelance IT/Digital** : RC Pro (180 €/an) + Cyber (320 €/an) = 500 €/an total. La cyber assurance couvre les attaques RGPD breach, ransomwares affectant les données clients, fuites de données.',
-          "**Profil 2 — Coach avec salle/local** : RC Pro (220 €/an) + Multirisque locaux (380 €/an) = 600 €/an total. La Multirisque couvre vos biens (matériel, mobilier), vos locaux (vol, incendie, dégât des eaux), et la perte d'exploitation si fermeture forcée.",
-          '**Profil 3 — Artisan BTP en AE** : Décennale (1 800 €/an) + RC Pro Exploitation (280 €/an) + Multirisque (480 €/an) + Auto pro VUL (680 €/an) = 3 240 €/an total. La RC Pro Exploitation couvre les dommages hors malfaçon décennale (objets tombés, client glissant sur câble, etc.).',
-          '**Profil 4 — Profession médicale paramédicale** : RC Pro (420 €/an plafond 6,1 M€) + Multirisque cabinet (320 €/an) + Protection juridique (180 €/an) = 920 €/an total. La PJ est cruciale pour le médico-légal.',
+          '**Profil 1 — Freelance IT/Digital** : RC Pro (~180  €/an) + Cyber (~320  €/an) =~ 500  €/an total. La cyber assurance couvre les attaques RGPD breach, ransomwares affectant les données clients, fuites de données.',
+          "**Profil 2 — Coach avec salle/local** : RC Pro (~220  €/an) + Multirisque locaux (~380  €/an) =~ 600  €/an total. La Multirisque couvre vos biens (matériel, mobilier), vos locaux (vol, incendie, dégât des eaux), et la perte d'exploitation si fermeture forcée.",
+          '**Profil 3 — Artisan BTP en AE** : Décennale (~1 800  €/an) + RC Pro Exploitation (~280  €/an) + Multirisque (~480  €/an) + Auto pro VUL (~680  €/an) =~ 3 240  €/an total. La RC Pro Exploitation couvre les dommages hors malfaçon décennale (objets tombés, client glissant sur câble, etc.).',
+          '**Profil 4 — Profession médicale paramédicale** : RC Pro (~420  €/an plafond 6,1 M€) + Multirisque cabinet (~320  €/an) + Protection juridique (~180  €/an) =~ 920  €/an total. La PJ est cruciale pour le médico-légal.',
         ],
       },
       {
@@ -262,7 +262,7 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         h2: 'FAQ — Questions fréquentes',
         paragraphs: [
           "**La RC Pro est-elle obligatoire pour un auto-entrepreneur ?** Pour les professions réglementées oui (médical paramédical, juridique, immobilier, expertise comptable, agences voyage, coachs sportifs encadrant contre rémunération). Pour les autres, c'est fortement recommandé et exigé par 91 % des clients B2B.",
-          '**Combien coûte une RC Pro AE en 2026 ?** De 90 à 280 €/an pour la plupart des métiers de services (consultant, coach, freelance IT, photographe, formateur). Les professions médicales paramédicales sont entre 320 et 920 €/an du fait du plafond 6,1 M€. Les AE BTP combinent RC Pro + décennale entre 800 et 2 200 €/an.',
+          '**Combien coûte une RC Pro AE en 2026 ?** De 90 à ~280  €/an pour la plupart des métiers de services (consultant, coach, freelance IT, photographe, formateur). Les professions médicales paramédicales sont entre 320 et~ 920  €/an du fait du plafond 6,1 M€. Les AE BTP combinent RC Pro + décennale entre 800 et~ 2 200  €/an.',
           "**Quelle différence entre RC Pro et Multirisque Pro ?** La RC Pro couvre les dommages causés AUX TIERS dans l'exercice du métier. La Multirisque couvre VOS BIENS (locaux, matériel, stock, perte d'exploitation). Les deux sont complémentaires : la RC Pro protège votre patrimoine du tiers, la Multirisque protège votre patrimoine du sinistre.",
           "**Comment résilier ma RC Pro après 1 an (Loi Hamon) ?** Loi Hamon de 2014 : résiliation possible à tout moment après 1 an avec préavis 1 mois, sans frais ni justification. Lettre recommandée AR avec mention 'Loi Hamon'. Notre cabinet gère gratuitement la résiliation et la bascule.",
           '**Quel plafond de garantie choisir pour un AE consultant ?** Pour un consultant facturant des missions standards (5-50 k€) : plafond 1 M€ suffit dans 95 % des cas. Pour un consultant intervenant sur projets stratégiques > 100 k€ : prévoir 2-3 M€. Pour IT critique : 3-5 M€ minimum.',
@@ -385,21 +385,21 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Peintre en bâtiment AE : 1 200-1 800 €/an (sinistralité 3,8 %)',
-            'Carreleur AE : 1 300-1 900 €/an (sinistralité 4,2 %)',
-            'Plâtrier-plaquiste AE : 1 300-1 900 €/an (sinistralité 4,1 %)',
-            'Menuisier intérieur AE : 1 400-2 100 €/an (sinistralité 4,5 %)',
-            'Plombier-chauffagiste AE : 1 400-2 100 €/an (sinistralité 7,9 %)',
-            'Électricien BTP AE : 1 500-2 200 €/an (sinistralité 5,9 %)',
-            'Menuisier extérieur AE : 1 500-2 200 €/an (sinistralité 5,4 %)',
-            'Charpentier bois AE : 1 700-2 500 €/an (sinistralité 6,8 %)',
-            'Maçon gros œuvre AE : 1 600-2 400 €/an (sinistralité 8,4 %)',
-            'Couvreur-zingueur AE : 1 800-2 600 €/an (sinistralité 9,8 %)',
-            'Façadier AE : 1 700-2 500 €/an',
-            "Maître d'œuvre AE : 1 800-2 800 €/an",
-            'Charpentier métal AE : 2 000-2 900 €/an (sinistralité 7,2 %)',
-            'Étancheur AE : 2 000-3 500 €/an (sinistralité 13,5 % — métier le plus risqué)',
-            'Photovoltaïque RGE AE : 2 200-3 200 €/an (sinistralité 11,2 %)',
+            'Peintre en bâtiment AE : 1 200-1 ~800  €/an (sinistralité 3,8 %)',
+            'Carreleur AE : 1 300-1 ~900  €/an (sinistralité 4,2 %)',
+            'Plâtrier-plaquiste AE : 1 300-1 ~900  €/an (sinistralité 4,1 %)',
+            'Menuisier intérieur AE : 1 400-2 ~100  €/an (sinistralité 4,5 %)',
+            'Plombier-chauffagiste AE : 1 400-2 ~100  €/an (sinistralité 7,9 %)',
+            'Électricien BTP AE : 1 500-2 ~200  €/an (sinistralité 5,9 %)',
+            'Menuisier extérieur AE : 1 500-2 ~200  €/an (sinistralité 5,4 %)',
+            'Charpentier bois AE : 1 700-2 ~500  €/an (sinistralité 6,8 %)',
+            'Maçon gros œuvre AE : 1 600-2 ~400  €/an (sinistralité 8,4 %)',
+            'Couvreur-zingueur AE : 1 800-2 ~600  €/an (sinistralité 9,8 %)',
+            'Façadier AE : 1 700-2 ~500  €/an',
+            "Maître d'œuvre AE : 1 800-2 ~800  €/an",
+            'Charpentier métal AE : 2 000-2 ~900  €/an (sinistralité 7,2 %)',
+            'Étancheur AE : 2 000-3 ~500  €/an (sinistralité 13,5 % — métier le plus risqué)',
+            'Photovoltaïque RGE AE : 2 200-3 ~200  €/an (sinistralité 11,2 %)',
           ],
         },
         callout: {
@@ -500,7 +500,7 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         h2: 'FAQ — Questions fréquentes',
         paragraphs: [
           "**Un AE BTP peut-il commencer un chantier sans décennale ?** NON. La décennale doit être active AVANT l'ouverture du chantier (art. L. 241-1 C. assur.). Sans attestation valide en main au démarrage = infraction passible 75 000 € amende + 6 mois prison.",
-          "**Combien coûte la décennale pour un peintre AE en 2026 ?** 1 200 à 1 800 €/an pour un peintre AE avec CA < 50 k€, sans antécédent sinistre, en zone hors IDF. La sinistralité peinture étant basse (3,8 %), c'est l'un des métiers BTP les moins chers.",
+          "**Combien coûte la décennale pour un peintre AE en 2026 ?** 1 200 à ~1 800  €/an pour un peintre AE avec CA < 50 k€, sans antécédent sinistre, en zone hors IDF. La sinistralité peinture étant basse (3,8 %), c'est l'un des métiers BTP les moins chers.",
           "**Que faire si tous les assureurs refusent ma décennale ?** Recours au Bureau Central de Tarification (BCT) après 3 refus écrits. Le BCT impose un assureur au tarif qu'il fixe (généralement +30 à +50 % vs marché normal). Notre cabinet évite le BCT dans 87 % des cas via partenaires spécialistes.",
           "**Combien de temps avant un chantier dois-je souscrire ?** Idéalement 15-30 jours avant pour avoir le contrat définitif. Notre cabinet délivre l'attestation provisoire sous 24 heures après validation du dossier pour les démarrages urgents. Le contrat définitif suit sous 5-10 jours.",
           "**Mon ancien assureur peut-il me refuser de me résilier ?** NON. La Loi Hamon (art. L. 113-15-2 C. assur.) impose à l'assureur d'accepter la résiliation après 1 an sans justification. Préavis 1 mois. Notre cabinet rédige la lettre type et gère la bascule.",
@@ -681,7 +681,7 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
     slug: 'assurance-homme-cle-dirigeant-2026',
     title: "Assurance Homme-clé 2026 : protéger l'entreprise du décès du dirigeant",
     description:
-      "Guide complet 2026 de l'assurance homme-clé pour PME et professions libérales. Capital recommandé selon CA + EBE, tarifs par âge (580-12 000 €/an), fiscalité art. 39 CGI, différence assurance vie classique, top 5 assureurs.",
+      "Guide complet 2026 de l'assurance homme-clé pour PME et professions libérales. Capital recommandé selon CA + EBE, tarifs par âge (580-12 ~000  €/an), fiscalité art. 39 CGI, différence assurance vie classique, top 5 assureurs.",
     category: 'RC Pro',
     tags: ['homme-clé', 'dirigeant', 'protection entreprise', 'fiscal', 'gap KD 0'],
     ...AUTHOR,
@@ -778,13 +778,13 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         list: {
           items: [
             'Dirigeant 30 ans, non-fumeur : 580-880 €/an',
-            'Dirigeant 35 ans, non-fumeur : 720-1 100 €/an',
-            'Dirigeant 40 ans, non-fumeur : 980-1 580 €/an',
-            'Dirigeant 45 ans, non-fumeur : 1 380-2 200 €/an',
-            'Dirigeant 50 ans, non-fumeur : 1 980-3 200 €/an',
-            'Dirigeant 55 ans, non-fumeur : 2 880-4 600 €/an',
-            'Dirigeant 60 ans, non-fumeur : 4 200-6 800 €/an',
-            'Dirigeant 65 ans, non-fumeur : 7 200-12 000 €/an',
+            'Dirigeant 35 ans, non-fumeur : 720-1 ~100  €/an',
+            'Dirigeant 40 ans, non-fumeur : 980-1 ~580  €/an',
+            'Dirigeant 45 ans, non-fumeur : 1 380-2 ~200  €/an',
+            'Dirigeant 50 ans, non-fumeur : 1 980-3 ~200  €/an',
+            'Dirigeant 55 ans, non-fumeur : 2 880-4 ~600  €/an',
+            'Dirigeant 60 ans, non-fumeur : 4 200-6 ~800  €/an',
+            'Dirigeant 65 ans, non-fumeur : 7 200-12 ~000  €/an',
             'Surprime fumeur : +35 à +50 % selon âge',
             'Surprime profession à risque (BTP, sports extrêmes, pilote) : +25 à +60 %',
             'Surprime antécédent médical (hypertension, diabète, cardio) : +20 à +80 %',
@@ -874,7 +874,7 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
           '**Combien coûte une assurance homme-clé en 2026 ?** Tarifs annuels HT pour capital 500 k€ : 580-880 € à 30 ans, 1 380-2 200 € à 45 ans, 4 200-6 800 € à 60 ans. Surprime fumeur +35-50 %.',
           "**Est-ce déductible fiscalement ?** OUI, si l'entreprise est bénéficiaire (régime art. 39 CGI). Les cotisations sont intégralement déductibles du résultat imposable. Économie IS = cotisation × taux IS (25 % standard).",
           "**Quelle différence avec une assurance vie classique ?** L'homme-clé protège l'ENTREPRISE (bénéficiaire = société). L'assurance vie classique protège la FAMILLE (bénéficiaires = conjoint, enfants). Les deux sont complémentaires.",
-          '**À quel âge est-ce le plus avantageux ?** Avant 45 ans, les tarifs sont très accessibles (980-1 580 €/an pour 500 k€). Après 55 ans, le coût augmente fortement. Idéal : souscrire entre 35 et 45 ans pour locker les tarifs.',
+          '**À quel âge est-ce le plus avantageux ?** Avant 45 ans, les tarifs sont très accessibles (980-1 ~580  €/an pour 500 k€). Après 55 ans, le coût augmente fortement. Idéal : souscrire entre 35 et 45 ans pour locker les tarifs.',
           "**Que se passe-t-il si le dirigeant change d'entreprise ?** Le contrat est lié à la fonction. En cas de départ, deux options : (1) transfert vers la nouvelle entreprise si elle accepte de devenir bénéficiaire, (2) résiliation et restitution éventuelle de la valeur de rachat (selon contrat).",
           "**L'assurance homme-clé est-elle obligatoire ?** NON, jamais obligatoire. Mais elle est SYSTÉMATIQUEMENT exigée par les banques lors d'un financement de reprise d'entreprise (LBO, MBO). Aussi recommandée pour PME < 20 salariés.",
         ],
@@ -922,7 +922,7 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         h2: '1. Loi Madelin : mécanique et conditions',
         paragraphs: [
           "La Loi Madelin du 11 février 1994, codifiée à l'article 154 bis du Code Général des Impôts, permet aux Travailleurs Non-Salariés (TNS) de déduire fiscalement les cotisations versées à des contrats d'assurance complémentaire santé, prévoyance, retraite et perte d'emploi. L'objectif politique était d'offrir aux indépendants un mécanisme de protection sociale équivalent à celui des salariés (mutuelle d'entreprise).",
-          "La déduction fonctionne en réduisant le bénéfice imposable du TNS : pour chaque euro de cotisation versé, l'impôt sur le revenu diminue de l'équivalent du TMI (Taux Marginal d'Imposition). Un TNS au TMI 41 % qui cotise 5 000 €/an économise 2 050 € d'impôt l'année concernée.",
+          "La déduction fonctionne en réduisant le bénéfice imposable du TNS : pour chaque euro de cotisation versé, l'impôt sur le revenu diminue de l'équivalent du TMI (Taux Marginal d'Imposition). Un TNS au TMI 41 % qui cotise~ 5 000  €/an économise 2 050 € d'impôt l'année concernée.",
           "Conditions cumulatives d'éligibilité à la Loi Madelin :",
         ],
         list: {
@@ -946,19 +946,19 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         paragraphs: [
           "Notre comparatif 2026 est basé sur l'analyse de 487 souscriptions TNS effectuées par notre cabinet en 2024-2025, avec retours satisfaction clients post-sinistre. Les 7 organismes retenus représentent 78 % du marché Madelin français.",
           '**1. Swiss Life Pro** — Note globale 78/100',
-          "Leader du marché Madelin (28 % parts) avec un positionnement premium. Excellence sur l'optique et le dentaire (remboursements jusqu'à 100 % du tarif conventionné +200 % en cas de chambre particulière). Délais de carence courts (1 mois standard, 3 mois pour orthodontie adulte). Cotisation moyenne TNS 35 ans : 95 €/mois. Réseau d'opticiens et dentistes Itelis large (3 800 partenaires).",
+          "Leader du marché Madelin (28 % parts) avec un positionnement premium. Excellence sur l'optique et le dentaire (remboursements jusqu'à 100 % du tarif conventionné +200 % en cas de chambre particulière). Délais de carence courts (1 mois standard, 3 mois pour orthodontie adulte). Cotisation moyenne TNS 35 ans : ~95 €/mois. Réseau d'opticiens et dentistes Itelis large (3 800 partenaires).",
           '**2. Allianz Pro Mutuelle** — Note 75/100',
-          'Excellente accessibilité (acceptation 95 % des dossiers TNS sans questionnaire médical pour les < 50 ans). Large réseau (Carte Blanche Partenaires 8 200 professionnels santé). Tiers payant généralisé. Cotisation moyenne 35 ans : 88 €/mois. Faiblesse : médecine douce limitée (200 €/an pour ostéo, acupuncture, kiné non remboursée).',
+          'Excellente accessibilité (acceptation 95 % des dossiers TNS sans questionnaire médical pour les < 50 ans). Large réseau (Carte Blanche Partenaires 8 200 professionnels santé). Tiers payant généralisé. Cotisation moyenne 35 ans : ~88 €/mois. Faiblesse : médecine douce limitée (~200  €/an pour ostéo, acupuncture, kiné non remboursée).',
           '**3. MGEN TNS** — Note 73/100',
-          'Mutuelle historiquement fonction publique, ouverte aux TNS depuis 2018. Très forte sur le préventif (bilans annuels remboursés intégralement). Tarifs modérés (78 €/mois à 35 ans). Faiblesse : dentaire et optique en retrait sur les hauts plafonds.',
+          'Mutuelle historiquement fonction publique, ouverte aux TNS depuis 2018. Très forte sur le préventif (bilans annuels remboursés intégralement). Tarifs modérés (~78 €/mois à 35 ans). Faiblesse : dentaire et optique en retrait sur les hauts plafonds.',
           '**4. Generali Pro Santé** — Note 72/100',
-          "Référence médecine douce et alternative (ostéo, acupuncture, naturopathie, kiné non remboursée jusqu'à 500 €/an). Très adaptée aux profils 'wellness' (entrepreneurs santé, coachs, métiers créatifs). Cotisation 35 ans : 92 €/mois.",
+          "Référence médecine douce et alternative (ostéo, acupuncture, naturopathie, kiné non remboursée jusqu'à ~500  €/an). Très adaptée aux profils 'wellness' (entrepreneurs santé, coachs, métiers créatifs). Cotisation 35 ans : ~92 €/mois.",
           '**5. AXA Pro Santé** — Note 71/100',
-          "Bon équilibre généraliste avec réseau Itelis (3 800 partenaires). Hospitalisation premium (chambre particulière + assistante personnelle remboursées jusqu'à 350 €/jour). Cotisation 35 ans : 90 €/mois.",
+          "Bon équilibre généraliste avec réseau Itelis (3 800 partenaires). Hospitalisation premium (chambre particulière + assistante personnelle remboursées jusqu'à 350 €/jour). Cotisation 35 ans : ~90 €/mois.",
           '**6. MMA Pro Santé** — Note 70/100',
-          'Bonne hospitalisation (forfait 200 €/jour chambre particulière). Tarifs compétitifs (82 €/mois à 35 ans). Tiers payant systématique. Faiblesse : médecine douce limitée à 150 €/an.',
+          'Bonne hospitalisation (forfait 200 €/jour chambre particulière). Tarifs compétitifs (~82 €/mois à 35 ans). Tiers payant systématique. Faiblesse : médecine douce limitée à ~150  €/an.',
           '**7. Aésio (ex-Adréa)** — Note 68/100',
-          'Mutuelle économique avec rapport qualité/prix excellent pour TNS débutants. Cotisation 35 ans : 68 €/mois. Garanties de base solides mais hauts plafonds (dentaire céramique, optique > 400 €) en retrait.',
+          'Mutuelle économique avec rapport qualité/prix excellent pour TNS débutants. Cotisation 35 ans : ~68 €/mois. Garanties de base solides mais hauts plafonds (dentaire céramique, optique > 400 €) en retrait.',
         ],
       },
       {
@@ -970,9 +970,9 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         list: {
           ordered: true,
           items: [
-            "**Cotisation mensuelle vs garanties** : ne comparez jamais le tarif seul. Une mutuelle à 70 €/mois avec plafond dentaire 500 €/an est moins intéressante qu'une à 90 €/mois avec plafond 1 200 €/an si vous prévoyez des soins.",
-            '**Plafond optique** (lunettes, lentilles) : moyenne 2026 = 350 €/an (montures + verres). Si vous portez des verres progressifs : viser 500-800 €/an. Si lentilles annuelles : 400 €/an spécifique.',
-            '**Plafond dentaire** (couronnes, orthodontie) : moyenne 2026 = 600 €/an pour des couronnes céramique. Orthodontie adulte : 1 200-2 400 €/an pour traitement complet. Implants : couverture rare, vérifier plafond spécifique.',
+            "**Cotisation mensuelle vs garanties** : ne comparez jamais le tarif seul. Une mutuelle à ~70 €/mois avec plafond dentaire~ 500  €/an est moins intéressante qu'une à ~90 €/mois avec plafond~ 1 200  €/an si vous prévoyez des soins.",
+            '**Plafond optique** (lunettes, lentilles) : moyenne 2026 =~ 350  €/an (montures + verres). Si vous portez des verres progressifs : viser 500-800 €/an. Si lentilles annuelles :~ 400  €/an spécifique.',
+            '**Plafond dentaire** (couronnes, orthodontie) : moyenne 2026 =~ 600  €/an pour des couronnes céramique. Orthodontie adulte : 1 200-2 ~400  €/an pour traitement complet. Implants : couverture rare, vérifier plafond spécifique.',
             '**Plafond hospitalisation** (chambre particulière, dépassements honoraires) : crucial pour les TNS car la Sécu rembourse mal les dépassements de spécialistes (chirurgien, anesthésiste). Cible : prise en charge 100-150 % du tarif conventionné.',
             '**Médecine douce** (ostéo, acupuncture, kiné non remboursée) : enjeu pour les TNS stressés. Cible : 300-500 €/an minimum.',
             '**Délai de carence** : période entre souscription et activation des garanties. Standard : 1 mois pour tout, 3 mois pour orthodontie, 6 mois pour grossesse, 12 mois pour prothèses dentaires céramique.',
@@ -986,11 +986,11 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
           'Le plafond Madelin santé + prévoyance combinés en 2026 est calculé sur le PASS (Plafond Annuel Sécurité Sociale 2026 = 47 100 €) selon la formule :',
           '**Plafond = 3,75 % × PASS + 7 % du bénéfice imposable, dans la limite globale de 3 % × 8 PASS**',
           'Calcul concret : 3,75 % × 47 100 = 1 766 €. Plus 7 % du bénéfice imposable. Pour un TNS avec bénéfice 50 k€ : 7 % × 50 000 = 3 500 €. Total déductible = 1 766 + 3 500 = 5 266 €. Limité au plafond global 3 % × 8 PASS = 11 304 €.',
-          "Pour la plupart des TNS (bénéfice < 100 k€), le plafond effectif s'établit autour de 4 997 €/an de cotisations déductibles. Au-delà, le surplus de cotisation est non déductible mais peut quand même être versé (pour augmenter les garanties).",
+          "Pour la plupart des TNS (bénéfice < 100 k€), le plafond effectif s'établit autour de~ 4 997  €/an de cotisations déductibles. Au-delà, le surplus de cotisation est non déductible mais peut quand même être versé (pour augmenter les garanties).",
         ],
         callout: {
           tone: 'info',
-          text: 'Le plafond Madelin SANTÉ est distinct du plafond Madelin RETRAITE. Le plafond retraite supplémentaire 2026 est de 2 935 €/an minimum (10 % PASS + 25 % bénéfice excédant PASS). Les deux peuvent être cumulés.',
+          text: 'Le plafond Madelin SANTÉ est distinct du plafond Madelin RETRAITE. Le plafond retraite supplémentaire 2026 est de~ 2 935  €/an minimum (10 % PASS + 25 % bénéfice excédant PASS). Les deux peuvent être cumulés.',
         },
       },
       {
@@ -1001,10 +1001,10 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'TMI 11 % (bénéfice 11 295 - 28 797 €) : économie 550 €/an, soit 11 % de la cotisation',
-            'TMI 30 % (bénéfice 28 797 - 82 341 €) : économie 1 500 €/an, soit 30 % de la cotisation',
-            'TMI 41 % (bénéfice 82 341 - 177 106 €) : économie 2 050 €/an, soit 41 % de la cotisation',
-            'TMI 45 % (bénéfice > 177 106 €) : économie 2 250 €/an, soit 45 % de la cotisation',
+            'TMI 11 % (bénéfice 11 295 - 28 797 €) : économie~ 550  €/an, soit 11 % de la cotisation',
+            'TMI 30 % (bénéfice 28 797 - 82 341 €) : économie~ 1 500  €/an, soit 30 % de la cotisation',
+            'TMI 41 % (bénéfice 82 341 - 177 106 €) : économie~ 2 050  €/an, soit 41 % de la cotisation',
+            'TMI 45 % (bénéfice > 177 106 €) : économie~ 2 250  €/an, soit 45 % de la cotisation',
           ],
         },
       },
@@ -1017,9 +1017,9 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         list: {
           items: [
             '**TNS jeune (< 35 ans, célibataire ou couple sans enfant)** : Aésio ou MMA Pro Santé. Économique (68-82 €/mois) avec garanties de base solides. Peu de besoins dentaires/optique à cet âge.',
-            '**TNS 35-50 ans avec famille (enfants en orthodontie ou grossesse)** : Allianz Pro Mutuelle ou Generali Pro Santé. Bons plafonds famille (orthodontie 2 400 €/an enfant, grossesse hospi confort).',
-            '**TNS > 50 ans (besoins dentaires accrus, optique progressive)** : Swiss Life Pro. Excellence sur dentaire (couronnes céramique 800 €/an) et optique progressive (700 €/an). Cotisation 145 €/mois mais retour sur investissement excellent.',
-            '**TNS pratiquant médecine douce (ostéo, acupuncture)** : Generali Pro Santé. Plafonds médecine douce élevés (500 €/an). Idéal coachs, créatifs, métiers stressés.',
+            '**TNS 35-50 ans avec famille (enfants en orthodontie ou grossesse)** : Allianz Pro Mutuelle ou Generali Pro Santé. Bons plafonds famille (orthodontie~ 2 400  €/an enfant, grossesse hospi confort).',
+            '**TNS > 50 ans (besoins dentaires accrus, optique progressive)** : Swiss Life Pro. Excellence sur dentaire (couronnes céramique~ 800  €/an) et optique progressive (~700  €/an). Cotisation ~145 €/mois mais retour sur investissement excellent.',
+            '**TNS pratiquant médecine douce (ostéo, acupuncture)** : Generali Pro Santé. Plafonds médecine douce élevés (~500  €/an). Idéal coachs, créatifs, métiers stressés.',
             '**TNS sportif amateur (sports à risque léger)** : AXA Pro Santé. Couverture sport étendue (immobilisation, ré-éducation, kiné non remboursée).',
             '**TNS profession libérale médicale (médecin, dentiste, kiné)** : Swiss Life Pro Premium ou Allianz Pro. Plafond hospitalisation élevé (300-400 % BR) crucial pour les profils qui choisissent leurs praticiens.',
             '**TNS senior > 60 ans** : Swiss Life Pro ou MGEN. Couverture longue durée (aide à domicile, prévention) et tarification plus stable post-60.',
@@ -1035,7 +1035,7 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         list: {
           ordered: true,
           items: [
-            "**Surassurer dès la jeunesse** : un TNS de 30 ans en bonne santé n'a pas besoin d'un plafond dentaire 1 500 €/an. Mieux : cotisation modérée + capacité d'augmentation à 40-50 ans quand les besoins arrivent.",
+            "**Surassurer dès la jeunesse** : un TNS de 30 ans en bonne santé n'a pas besoin d'un plafond dentaire~ 1 500  €/an. Mieux : cotisation modérée + capacité d'augmentation à 40-50 ans quand les besoins arrivent.",
             "**Ignorer les délais de carence** : un sinistre survenant pendant la période de carence (1-12 mois selon poste) n'est PAS pris en charge. Anticipez les soins importants (orthodontie, lunettes) en amont de la souscription.",
             '**Oublier la portabilité TNS → salarié** : si vous basculez en SARL avec statut assimilé salarié, la mutuelle Madelin doit être adaptée. Notre cabinet gère cette transition.',
             "**Ne pas comparer le 'reste à charge'** : deux mutuelles à même cotisation peuvent avoir des restes à charge 200 % différents. Demandez un simulateur sur 5 soins types (consultation spécialiste, dentaire, optique, hospi, médecine douce).",
@@ -1048,7 +1048,7 @@ export const BLOG_POSTS_BATCH_2_EXTENDED: Record<string, BlogPost> = {
         h2: 'FAQ — Questions fréquentes',
         paragraphs: [
           "**Quelle est la meilleure mutuelle TNS Madelin en 2026 ?** Selon notre observatoire 2024-2025, Swiss Life Pro est le leader (note 78/100), suivie d'Allianz Pro (75) et MGEN TNS (73). Le choix optimal dépend toutefois de votre profil (âge, famille, médecine douce, sports).",
-          "**Combien puis-je déduire de mes impôts ?** Plafond Madelin santé + prévoyance combinés 2026 : ~4 997 €/an pour la plupart des TNS. Le plafond retraite supplémentaire (2 935 €) s'ajoute. Total max combiné : ~7 932 €/an déductibles.",
+          "**Combien puis-je déduire de mes impôts ?** Plafond Madelin santé + prévoyance combinés 2026 : ~4 ~997  €/an pour la plupart des TNS. Le plafond retraite supplémentaire (2 935 €) s'ajoute. Total max combiné : ~7 ~932  €/an déductibles.",
           "**Madelin est-il intéressant pour un auto-entrepreneur ?** NON, la Loi Madelin n'est PAS applicable aux AE (régime micro-fiscal sans bénéfice imposable). Préférez une mutuelle santé indépendant non-Madelin, souvent 15-20 % moins chère.",
           '**Combien coûte une mutuelle TNS en 2026 ?** Cotisation mensuelle moyenne 2026 : 68-95 €/mois pour un TNS 35 ans en bonne santé. 90-145 €/mois à 50 ans. 145-220 €/mois à 60+.',
           '**Comment résilier ma mutuelle TNS ?** Loi Hamon (depuis 2014) permet la résiliation à tout moment après 1 an avec préavis 1 mois. Lettre recommandée AR. Notre cabinet gère la résiliation gratuitement.',

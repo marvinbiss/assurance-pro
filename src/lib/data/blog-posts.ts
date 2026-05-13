@@ -46,11 +46,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     sources: [
       {
         label: 'Loi n° 78-12 du 4 janvier 1978 (Spinetta) — Légifrance',
-        url: 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000522321',
+        url: 'https://www.legifrance.gouv.fr/',
       },
       {
         label: 'Code des assurances — art. L. 241-1',
-        url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006794155',
+        url: 'https://www.legifrance.gouv.fr/',
       },
       {
         label: 'AQC SYCODÉS — Sinistralité décennale 2024',
@@ -157,11 +157,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     sources: [
       {
         label: 'Code des assurances — art. L. 124-3',
-        url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792655',
+        url: 'https://www.legifrance.gouv.fr/',
       },
       {
         label: 'Directive Distribution Assurance (DDA) — art. L. 521-4',
-        url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037524470',
+        url: 'https://www.legifrance.gouv.fr/',
       },
     ],
     toc: [
@@ -241,11 +241,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     sources: [
       {
         label: 'Loi Madelin n° 94-126 du 11 février 1994',
-        url: 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000549413',
+        url: 'https://www.legifrance.gouv.fr/',
       },
       {
         label: 'CGI — art. 154 bis (déductibilité TNS)',
-        url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044980893',
+        url: 'https://www.legifrance.gouv.fr/',
       },
     ],
     toc: [
@@ -439,11 +439,11 @@ import { BLOG_POSTS_BATCH_6 } from './blog-posts-batch6'
 import { BLOG_POSTS_BATCH_7 } from './blog-posts-batch7'
 import { BLOG_POSTS_BATCH_8 } from './blog-posts-batch8'
 import { BLOG_POSTS_BATCH_9 } from './blog-posts-batch9'
+import { applyExtension } from './blog-posts-extensions'
 
 /** Tous les articles fusionnés. L'ordre du spread garantit que les versions
- *  étoffées ÉCRASENT les versions courtes pour les slugs communs.
- *  30/30 articles étoffés à 1500+ mots — session 8 finale. */
-const ALL_POSTS: Record<string, BlogPost> = {
+ *  étoffées ÉCRASENT les versions courtes pour les slugs communs. */
+const MERGED_POSTS: Record<string, BlogPost> = {
   ...BLOG_POSTS,
   ...BLOG_POSTS_BATCH_2,
   ...BLOG_POSTS_BATCH_2_EXTENDED,
@@ -455,6 +455,11 @@ const ALL_POSTS: Record<string, BlogPost> = {
   ...BLOG_POSTS_BATCH_8,
   ...BLOG_POSTS_BATCH_9,
 }
+
+/** Application des extensions de sections aux articles courts (audit fix 2026-05). */
+const ALL_POSTS: Record<string, BlogPost> = Object.fromEntries(
+  Object.entries(MERGED_POSTS).map(([slug, post]) => [slug, applyExtension(post)])
+)
 
 export function getPost(slug: string): BlogPost | undefined {
   return ALL_POSTS[slug]

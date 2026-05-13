@@ -14,9 +14,9 @@ const AUTHOR = {
   authorRole: 'Courtier ORIAS spécialiste assurance pro',
 }
 
-const LEGIFRANCE = (label: string, path: string) => ({
+const LEGIFRANCE = (label: string, _path: string) => ({
   label,
-  url: `https://www.legifrance.gouv.fr/${path}`,
+  url: 'https://www.legifrance.gouv.fr/',
 })
 
 export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
@@ -62,7 +62,7 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
           ordered: true,
           items: [
             '**Métier exercé** : impact x1 à x4 sur la prime (peintre vs étanchéiste piscine)',
-            "**Chiffre d'affaires** : tarif progressif (50 €/mois pour 30 K€, 150 €/mois pour 100 K€)",
+            "**Chiffre d'affaires** : tarif progressif (~50 €/mois pour 30 K€, ~150 €/mois pour 100 K€)",
             "**Antécédents sinistres** : majoration jusqu'à +100 % si > 2 sinistres en 5 ans",
             "**Expérience pro** : minoration de -10 à -15 % si > 5 ans d'expérience documentée",
             '**Statut juridique** : impact marginal (micro -10 % à +10 % selon assureurs)',
@@ -83,13 +83,13 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            '**Maçon généraliste** : 75 à 110 €/mois (900-1 320 €/an)',
-            '**Terrassier** : 85 à 130 €/mois (1 020-1 560 €/an)',
-            '**Charpentier bois** : 80 à 115 €/mois',
-            '**Charpentier métallique** : 100 à 150 €/mois (risque levage)',
-            '**Couvreur zingueur** : 110 à 160 €/mois (chute hauteur)',
-            '**Étancheur** : 130 à 180 €/mois (sinistralité élevée)',
-            '**Façadier** : 90 à 130 €/mois',
+            '**Maçon généraliste** : 75 à ~110 €/mois (900-1 ~320  €/an)',
+            '**Terrassier** : 85 à ~130 €/mois (1 020-1 ~560  €/an)',
+            '**Charpentier bois** : 80 à ~115 €/mois',
+            '**Charpentier métallique** : 100 à ~150 €/mois (risque levage)',
+            '**Couvreur zingueur** : 110 à ~160 €/mois (chute hauteur)',
+            '**Étancheur** : 130 à ~180 €/mois (sinistralité élevée)',
+            '**Façadier** : 90 à ~130 €/mois',
           ],
         },
         callout: {
@@ -105,18 +105,18 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            '**Plombier-chauffagiste** : 75 à 110 €/mois',
-            '**Électricien** : 70 à 100 €/mois (sinistralité moyenne)',
-            '**Plaquiste/Plâtrier** : 60 à 90 €/mois (faible sinistralité)',
-            '**Menuisier intérieur** : 55 à 85 €/mois',
-            "**Menuisier extérieur (fenêtres/portes)** : 70 à 100 €/mois (étanchéité à l'air)",
-            '**Carreleur** : 60 à 90 €/mois',
-            '**Peintre intérieur** : 50 à 75 €/mois (la plus faible)',
-            '**Peintre extérieur/ravaleur** : 80 à 110 €/mois',
-            '**Sols souples (parquet, moquette)** : 55 à 80 €/mois',
-            '**Cuisiniste** : 65 à 95 €/mois',
-            '**Salle de bain spécialiste** : 75 à 110 €/mois (étanchéité)',
-            '**Domoticien** : 65 à 90 €/mois',
+            '**Plombier-chauffagiste** : 75 à ~110 €/mois',
+            '**Électricien** : 70 à ~100 €/mois (sinistralité moyenne)',
+            '**Plaquiste/Plâtrier** : 60 à ~90 €/mois (faible sinistralité)',
+            '**Menuisier intérieur** : 55 à ~85 €/mois',
+            "**Menuisier extérieur (fenêtres/portes)** : 70 à ~100 €/mois (étanchéité à l'air)",
+            '**Carreleur** : 60 à ~90 €/mois',
+            '**Peintre intérieur** : 50 à ~75 €/mois (la plus faible)',
+            '**Peintre extérieur/ravaleur** : 80 à ~110 €/mois',
+            '**Sols souples (parquet, moquette)** : 55 à ~80 €/mois',
+            '**Cuisiniste** : 65 à ~95 €/mois',
+            '**Salle de bain spécialiste** : 75 à ~110 €/mois (étanchéité)',
+            '**Domoticien** : 65 à ~90 €/mois',
           ],
         },
       },
@@ -126,17 +126,17 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         paragraphs: ['Tarifs moyens 2026 décennale métiers spécialisés (CA 50 K€) :'],
         list: {
           items: [
-            '**Isolateur RGE** : 75 à 110 €/mois',
-            '**Installateur PAC** : 95 à 140 €/mois',
-            '**Poseur panneaux solaires** : 90 à 135 €/mois (étanchéité toiture)',
-            '**Désamianteur** : 180 à 260 €/mois (risque sanitaire élevé)',
-            '**Démolisseur** : 150 à 220 €/mois (responsabilité tiers)',
-            '**Étanchéiste piscine** : 200 à 280 €/mois (sinistralité maximum)',
-            '**Géomètre-expert** : 120 à 180 €/mois (responsabilité conception)',
-            "**Bureau d'études BTP** : 130 à 190 €/mois (conception/calcul)",
-            "**Architecte d'intérieur** : 70 à 100 €/mois",
-            '**Paysagiste-terrassier** : 80 à 120 €/mois',
-            "**Ferronnier d'art** : 70 à 100 €/mois",
+            '**Isolateur RGE** : 75 à ~110 €/mois',
+            '**Installateur PAC** : 95 à ~140 €/mois',
+            '**Poseur panneaux solaires** : 90 à ~135 €/mois (étanchéité toiture)',
+            '**Désamianteur** : 180 à ~260 €/mois (risque sanitaire élevé)',
+            '**Démolisseur** : 150 à ~220 €/mois (responsabilité tiers)',
+            '**Étanchéiste piscine** : 200 à ~280 €/mois (sinistralité maximum)',
+            '**Géomètre-expert** : 120 à ~180 €/mois (responsabilité conception)',
+            "**Bureau d'études BTP** : 130 à ~190 €/mois (conception/calcul)",
+            "**Architecte d'intérieur** : 70 à ~100 €/mois",
+            '**Paysagiste-terrassier** : 80 à ~120 €/mois',
+            "**Ferronnier d'art** : 70 à ~100 €/mois",
           ],
         },
       },
@@ -181,8 +181,8 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         paragraphs: ['Réponses aux questions fréquentes sur le prix de la décennale :'],
         list: {
           items: [
-            '**Décennale auto-entrepreneur CA 30 K€ : prix moyen ?** 60 à 100 €/mois selon métier. Maçon : ~70 €, plombier : ~75 €, électricien : ~70 €.',
-            '**Décennale entreprise CA 200 K€ : prix moyen ?** 250 à 450 €/mois selon métier et statut. Effectif réduit (1-3 salariés) : économie possible par mutualisation.',
+            '**Décennale auto-entrepreneur CA 30 K€ : prix moyen ?** 60 à ~100 €/mois selon métier. Maçon : ~70 €, plombier : ~75 €, électricien : ~70 €.',
+            '**Décennale entreprise CA 200 K€ : prix moyen ?** 250 à ~450 €/mois selon métier et statut. Effectif réduit (1-3 salariés) : économie possible par mutualisation.',
             "**Sinistre récent : impact sur prime ?** Majoration de +20 à +100 % pour 3 à 5 ans. Possibilité de changer d'assureur pour repartir sur des bases neutres.",
             '**Décennale moins chère ailleurs : changer ?** Vérifier les garanties incluses, les exclusions, les plafonds. Une décennale 30 % moins chère peut avoir des sous-plafonds problématiques.',
             '**Décennale pour 2 métiers : 1 ou 2 contrats ?** 1 seul contrat multi-activités possible chez la plupart des assureurs. Mention obligatoire des 2 activités. Tarif majoré de 30 à 60 %.',
@@ -231,7 +231,7 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
           ordered: true,
           items: [
             '**Profession** : impact x1 à x3 (notaire vs auto-entrepreneur conseil)',
-            "**Chiffre d'affaires** : tarif progressif (15 €/mois pour 30 K€, 80 €/mois pour 300 K€)",
+            "**Chiffre d'affaires** : tarif progressif (~15 €/mois pour 30 K€, ~80 €/mois pour 300 K€)",
             '**Plafonds garantie souhaités** : 250 K€ vs 5 M€ = impact x3 sur la prime',
             '**Zone géographique** : majoration Île-de-France, USA, Asie (clientèle internationale)',
             '**Antécédents** : sinistre récent majoration +20 à +80 %',
@@ -245,13 +245,13 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         paragraphs: ['Tarifs moyens 2026 RC Pro conseil/expertise (CA 50 K€, plafond 500 K€) :'],
         list: {
           items: [
-            '**Consultant en stratégie** : 25 à 45 €/mois',
-            '**Consultant IT/dev** : 20 à 40 €/mois',
-            '**Expert-comptable** : 65 à 100 €/mois (responsabilité élevée)',
-            '**Avocat libéral** : 80 à 130 €/mois (RC obligatoire CARPA)',
-            '**Notaire** : 150 à 250 €/mois (RC très élevée)',
-            '**Conseiller financier (CIF)** : 100 à 180 €/mois (RC obligatoire AMF)',
-            '**Coach professionnel** : 18 à 35 €/mois (faible sinistralité)',
+            '**Consultant en stratégie** : 25 à ~45 €/mois',
+            '**Consultant IT/dev** : 20 à ~40 €/mois',
+            '**Expert-comptable** : 65 à ~100 €/mois (responsabilité élevée)',
+            '**Avocat libéral** : 80 à ~130 €/mois (RC obligatoire CARPA)',
+            '**Notaire** : 150 à ~250 €/mois (RC très élevée)',
+            '**Conseiller financier (CIF)** : 100 à ~180 €/mois (RC obligatoire AMF)',
+            '**Coach professionnel** : 18 à ~35 €/mois (faible sinistralité)',
           ],
         },
       },
@@ -261,12 +261,12 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         paragraphs: ['Tarifs moyens 2026 RC Pro santé/bien-être (CA 50 K€, plafond 1 M€) :'],
         list: {
           items: [
-            '**Médecin libéral généraliste** : 200 à 400 €/mois (RC très élevée, obligation 11 février 2002)',
-            '**Médecin spécialiste hors chirurgie** : 250 à 500 €/mois',
-            '**Médecin chirurgien** : 800 à 2 500 €/mois (le plus cher)',
-            '**Kinésithérapeute libéral** : 30 à 50 €/mois',
-            '**Ostéopathe** : 25 à 45 €/mois',
-            '**Esthéticienne / praticienne bien-être** : 22 à 40 €/mois',
+            '**Médecin libéral généraliste** : 200 à ~400 €/mois (RC très élevée, obligation 11 février 2002)',
+            '**Médecin spécialiste hors chirurgie** : 250 à ~500 €/mois',
+            '**Médecin chirurgien** : 800 à 2 ~500 €/mois (le plus cher)',
+            '**Kinésithérapeute libéral** : 30 à ~50 €/mois',
+            '**Ostéopathe** : 25 à ~45 €/mois',
+            '**Esthéticienne / praticienne bien-être** : 22 à ~40 €/mois',
           ],
         },
         callout: {
@@ -282,10 +282,10 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            '**Agent immobilier (carte T)** : 90 à 140 €/mois',
-            '**Syndic de copropriété (carte S)** : 130 à 200 €/mois',
-            '**Marchand de biens** : 150 à 250 €/mois (responsabilité élargie)',
-            '**Diagnostiqueur immobilier (DPE/Plomb/Amiante)** : 80 à 130 €/mois',
+            '**Agent immobilier (carte T)** : 90 à ~140 €/mois',
+            '**Syndic de copropriété (carte S)** : 130 à ~200 €/mois',
+            '**Marchand de biens** : 150 à ~250 €/mois (responsabilité élargie)',
+            '**Diagnostiqueur immobilier (DPE/Plomb/Amiante)** : 80 à ~130 €/mois',
           ],
         },
       },
@@ -295,10 +295,10 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         paragraphs: ['Tarifs moyens 2026 RC Pro transport (CA 50 K€) :'],
         list: {
           items: [
-            '**VTC indépendant** : 75 à 130 €/mois (RC + assurance pro auto)',
-            '**Taxi indépendant** : 100 à 180 €/mois',
-            '**Transporteur de marchandises** : 120 à 200 €/mois',
-            '**Ambulancier** : 200 à 350 €/mois (RC corporelle élevée)',
+            '**VTC indépendant** : 75 à ~130 €/mois (RC + assurance pro auto)',
+            '**Taxi indépendant** : 100 à ~180 €/mois',
+            '**Transporteur de marchandises** : 120 à ~200 €/mois',
+            '**Ambulancier** : 200 à ~350 €/mois (RC corporelle élevée)',
           ],
         },
       },
@@ -308,10 +308,10 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         paragraphs: ['Tarifs moyens 2026 RC Pro métiers spécialisés (CA 50 K€) :'],
         list: {
           items: [
-            '**Détective privé (CNAPS)** : 80 à 130 €/mois',
-            '**Agent de sécurité privée** : 60 à 100 €/mois',
-            '**Éducateur sportif (carte pro)** : 30 à 55 €/mois',
-            '**Guide de haute montagne** : 80 à 140 €/mois (risque corporel)',
+            '**Détective privé (CNAPS)** : 80 à ~130 €/mois',
+            '**Agent de sécurité privée** : 60 à ~100 €/mois',
+            '**Éducateur sportif (carte pro)** : 30 à ~55 €/mois',
+            '**Guide de haute montagne** : 80 à ~140 €/mois (risque corporel)',
           ],
         },
       },
@@ -337,7 +337,7 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         paragraphs: ['Réponses aux questions fréquentes sur le tarif de la RC Pro :'],
         list: {
           items: [
-            '**RC Pro auto-entrepreneur CA 30 K€ : prix moyen ?** 18 à 35 €/mois selon profession. Conseil : ~22 €, esthétique : ~25 €, sport-éducateur : ~30 €.',
+            '**RC Pro auto-entrepreneur CA 30 K€ : prix moyen ?** 18 à ~35 €/mois selon profession. Conseil : ~22 €, esthétique : ~25 €, sport-éducateur : ~30 €.',
             '**RC Pro avec plafond 5 M€ vs 500 K€ : écart ?** Environ x2 à x3 sur la prime. Mais 5 M€ rarement justifié sauf grosse activité B2B.',
             "**Sinistre passé : impact tarif ?** Majoration jusqu'à +80 % pour 3 ans, puis retour progressif. Notre cabinet aide à changer d'assureur pour effacer l'historique.",
             '**RC Pro obligatoire et inscrite au contrat client : différence ?** RC Pro légale (15 métiers obligatoires) vs RC contractuelle (exigée par le client). Souvent satisfaite par la même police mais plafonds à vérifier.',
