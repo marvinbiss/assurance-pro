@@ -109,23 +109,29 @@ export default function HeaderClient() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Variant logo + couleur nav dynamique :
+  // - Sur hero (au top, non scrolled) : transparent + texte blanc (lisible sur hero terra)
+  // - Au scroll : glassmorph + texte charcoal (lisible sur fond clair)
+  const navColor = scrolled ? 'text-charcoal-700' : 'text-white/95'
+  const navHover = scrolled ? 'hover:text-primary-700' : 'hover:text-white'
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'border-b border-charcoal-100/80 bg-white/90 shadow-soft backdrop-blur-xl'
-          : 'border-b border-transparent bg-white/0 backdrop-blur-sm'
+          : 'border-b border-transparent bg-transparent'
       }`}
     >
       <div className="container mx-auto max-w-7xl px-4">
         <div className="flex h-[68px] items-center justify-between">
-          {/* Logo */}
+          {/* Logo — variant light sur hero, dark au scroll */}
           <Link
             href="/"
             className="transition-opacity hover:opacity-90"
             aria-label="Vivos Assurance — Accueil"
           >
-            <VivosLogo size="md" variant="dark" />
+            <VivosLogo size="md" variant={scrolled ? 'dark' : 'light'} />
           </Link>
 
           {/* Desktop nav */}
@@ -138,7 +144,7 @@ export default function HeaderClient() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1.5 text-[15px] font-semibold text-charcoal-700 transition-colors hover:text-primary-700"
+                className={`flex items-center gap-1.5 text-[15px] font-semibold ${navColor} transition-colors ${navHover}`}
               >
                 Garanties
                 <ChevronDown
@@ -240,7 +246,7 @@ export default function HeaderClient() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-[15px] font-semibold text-charcoal-700 transition-colors hover:text-primary-700"
+                className={`text-[15px] font-semibold ${navColor} transition-colors ${navHover}`}
               >
                 {l.label}
               </Link>
@@ -251,7 +257,7 @@ export default function HeaderClient() {
           <div className="hidden items-center gap-3 lg:flex">
             <a
               href="tel:+33651858930"
-              className="inline-flex items-center gap-1.5 text-sm font-bold tabular-nums text-charcoal-700 transition-colors hover:text-primary-700"
+              className={`inline-flex items-center gap-1.5 text-sm font-bold tabular-nums ${navColor} transition-colors ${navHover}`}
               aria-label="Appeler le cabinet"
             >
               <Phone className="h-4 w-4" strokeWidth={2.2} />
@@ -270,7 +276,7 @@ export default function HeaderClient() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="rounded-lg p-2 text-charcoal-700 transition-colors hover:bg-sand-100 lg:hidden"
+            className={`rounded-lg p-2 ${navColor} transition-colors hover:bg-white/10 lg:hidden`}
             aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

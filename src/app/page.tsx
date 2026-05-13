@@ -49,8 +49,14 @@ interface Vertical {
   badge?: string
   metric: string
   span?: string
+  image: string
+  imageAlt: string
 }
 
+// Photos Unsplash optimisées (WebP + auto-format + crop).
+// next.config.js whitelist images.unsplash.com via remotePatterns.
+// On utilise <img> HTML standard (pas next/image) pour éviter le bug
+// Sentry RSC wrapping vs lazy hydration sur Next 15.5.18.
 const VERTICALS: readonly Vertical[] = [
   {
     code: 'decennale',
@@ -62,6 +68,9 @@ const VERTICALS: readonly Vertical[] = [
     badge: 'Loi Spinetta',
     metric: '52 métiers BTP',
     span: 'md:col-span-2',
+    image:
+      'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80&fm=webp&auto=format&fit=crop',
+    imageAlt: 'Artisan BTP en chantier — décennale obligatoire Loi Spinetta',
   },
   {
     code: 'rc-pro',
@@ -72,6 +81,9 @@ const VERTICALS: readonly Vertical[] = [
     accent: 'from-secondary-500 to-secondary-700',
     badge: '#1 marché',
     metric: '32 professions',
+    image:
+      'https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=800&q=80&fm=webp&auto=format&fit=crop',
+    imageAlt: 'Consultante freelance en réunion stratégique',
   },
   {
     code: 'multirisque-pro',
@@ -81,6 +93,9 @@ const VERTICALS: readonly Vertical[] = [
     Icon: Building2,
     accent: 'from-accent-500 to-accent-700',
     metric: '30 secteurs',
+    image:
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&fm=webp&auto=format&fit=crop',
+    imageAlt: 'Bureau professionnel moderne et lumineux',
   },
   {
     code: 'mutuelle-pro',
@@ -92,6 +107,9 @@ const VERTICALS: readonly Vertical[] = [
     badge: 'Madelin',
     metric: '8 mutuelles comparées',
     span: 'md:col-span-2',
+    image:
+      'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=1200&q=80&fm=webp&auto=format&fit=crop',
+    imageAlt: 'Médecin examinant un dossier patient',
   },
   {
     code: 'assurance-vtc',
@@ -101,6 +119,9 @@ const VERTICALS: readonly Vertical[] = [
     Icon: Car,
     accent: 'from-indigo-500 to-indigo-700',
     metric: 'AE ou SARL',
+    image:
+      'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80&fm=webp&auto=format&fit=crop',
+    imageAlt: 'Chauffeur VTC au volant de son véhicule',
   },
   {
     code: 'cyber-assurance',
@@ -111,6 +132,9 @@ const VERTICALS: readonly Vertical[] = [
     accent: 'from-charcoal-700 to-charcoal-900',
     badge: "Jusqu'à 5M€",
     metric: 'Couverture étendue',
+    image:
+      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80&fm=webp&auto=format&fit=crop',
+    imageAlt: 'Centre de données et serveurs cybersécurité',
   },
 ] as const
 
@@ -151,6 +175,8 @@ const TESTIMONIALS = [
     city: 'Lyon',
     rating: 5,
     metric: '-32%',
+    avatar:
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&fm=webp&auto=format&fit=crop&crop=faces',
   },
   {
     quote:
@@ -160,6 +186,8 @@ const TESTIMONIALS = [
     city: 'Paris',
     rating: 5,
     metric: '4 devis / 24h',
+    avatar:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&fm=webp&auto=format&fit=crop&crop=faces',
   },
   {
     quote:
@@ -169,20 +197,30 @@ const TESTIMONIALS = [
     city: 'Bordeaux',
     rating: 5,
     metric: 'Sinistre géré',
+    avatar:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80&fm=webp&auto=format&fit=crop&crop=faces',
   },
 ] as const
 
-const ASSUREURS = [
-  'Hiscox',
-  'April Pro',
-  'Allianz Pro',
-  'MMA Pro',
-  'Generali Pro',
-  'AXA Pro',
-  'MAAF Pro',
-  'SMABTP',
-  'Wakam',
-  'Stello',
+interface Assureur {
+  name: string
+  /** Initiales pour mark stylé (fallback à logo officiel) */
+  initials: string
+  /** Couleur brand officielle assureur (pour border + text au hover) */
+  color: string
+}
+
+const ASSUREURS: readonly Assureur[] = [
+  { name: 'Hiscox', initials: 'Hi', color: '#7B2CBF' },
+  { name: 'April Pro', initials: 'A', color: '#00A859' },
+  { name: 'Allianz Pro', initials: 'A', color: '#003781' },
+  { name: 'MMA Pro', initials: 'M', color: '#003B71' },
+  { name: 'Generali Pro', initials: 'G', color: '#C8102E' },
+  { name: 'AXA Pro', initials: 'A', color: '#00008F' },
+  { name: 'MAAF Pro', initials: 'M', color: '#E2001A' },
+  { name: 'SMABTP', initials: 'S', color: '#1A4F8B' },
+  { name: 'Wakam', initials: 'W', color: '#FF6B35' },
+  { name: 'Stello', initials: 'S', color: '#0F172A' },
 ] as const
 
 export default function HomePage() {
@@ -368,45 +406,56 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Bento grid asymétrique */}
+          {/* Bento grid asymétrique avec photos pros */}
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {VERTICALS.map((v) => (
               <Link
                 key={v.code}
                 href={v.href}
-                className={`group relative overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${v.span}`}
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${v.span ?? ''}`}
               >
-                {/* Accent gradient bar */}
-                <div
-                  className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${v.accent} opacity-70 transition-opacity group-hover:opacity-100`}
-                  aria-hidden="true"
-                />
-
-                {/* Glow on hover */}
-                <div
-                  className={`absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${v.accent} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-25`}
-                  aria-hidden="true"
-                />
-
-                <div className="relative">
-                  {/* Icon + badge */}
-                  <div className="mb-4 flex items-start justify-between">
+                {/* Photo header — aspect 16/9 */}
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-charcoal-100">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={v.image}
+                    alt={v.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Overlay gradient pour lisibilité */}
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-charcoal-900/75 via-charcoal-900/15 to-transparent"
+                    aria-hidden="true"
+                  />
+                  {/* Icon + badge overlay bottom */}
+                  <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
                     <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${v.accent} text-white shadow-soft`}
+                      className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${v.accent} text-white shadow-card-hover ring-2 ring-white/40 transition-transform duration-300 group-hover:scale-110`}
                     >
-                      <v.Icon className="h-6 w-6" strokeWidth={2} />
+                      <v.Icon className="h-5 w-5" strokeWidth={2.2} />
                     </div>
                     {v.badge && (
-                      <span className="rounded-full bg-charcoal-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-600">
+                      <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-900 backdrop-blur-sm">
                         {v.badge}
                       </span>
                     )}
                   </div>
+                </div>
 
+                {/* Glow on hover */}
+                <div
+                  className={`pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${v.accent} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-25`}
+                  aria-hidden="true"
+                />
+
+                {/* Content */}
+                <div className="relative flex flex-1 flex-col p-6">
                   <h3 className="mb-2 font-heading text-2xl font-bold text-charcoal-900">
                     {v.title}
                   </h3>
-                  <p className="mb-5 text-sm leading-relaxed text-charcoal-600">{v.desc}</p>
+                  <p className="mb-5 flex-1 text-sm leading-relaxed text-charcoal-600">{v.desc}</p>
 
                   <div className="flex items-center justify-between border-t border-charcoal-100 pt-4">
                     <span className="text-xs font-semibold text-charcoal-500">{v.metric}</span>
@@ -494,14 +543,14 @@ export default function HomePage() {
                 key={t.author}
                 className="group relative flex flex-col rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
               >
-                {/* Quote icon */}
+                {/* Quote icon décoratif */}
                 <Quote
-                  className="mb-4 h-7 w-7 text-primary-300"
-                  strokeWidth={1.8}
+                  className="absolute right-6 top-6 h-8 w-8 text-primary-200 transition-colors group-hover:text-primary-300"
+                  strokeWidth={1.5}
                   aria-hidden="true"
                 />
 
-                {/* Rating */}
+                {/* Rating étoiles */}
                 <div className="mb-4 flex items-center gap-0.5">
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star
@@ -516,14 +565,24 @@ export default function HomePage() {
                   &ldquo;{t.quote}&rdquo;
                 </p>
 
-                {/* Author + metric */}
-                <footer className="flex items-end justify-between border-t border-charcoal-100 pt-5">
-                  <div>
-                    <div className="font-bold text-charcoal-900">{t.author}</div>
-                    <div className="text-xs text-charcoal-500">{t.role}</div>
-                    <div className="text-xs text-charcoal-400">{t.city}</div>
+                {/* Author + avatar + metric */}
+                <footer className="flex items-center justify-between gap-3 border-t border-charcoal-100 pt-5">
+                  <div className="flex items-center gap-3">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={t.avatar}
+                      alt={t.author}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-11 w-11 rounded-full object-cover ring-2 ring-primary-100"
+                    />
+                    <div className="leading-tight">
+                      <div className="font-bold text-charcoal-900">{t.author}</div>
+                      <div className="text-[11px] text-charcoal-500">{t.role}</div>
+                      <div className="text-[11px] text-charcoal-400">{t.city}</div>
+                    </div>
                   </div>
-                  <div className="rounded-lg bg-accent-50 px-3 py-1.5 text-xs font-extrabold text-accent-700">
+                  <div className="flex-shrink-0 rounded-lg bg-accent-50 px-3 py-1.5 text-xs font-extrabold text-accent-700">
                     {t.metric}
                   </div>
                 </footer>
@@ -546,13 +605,24 @@ export default function HomePage() {
             leur service sinistres.
           </p>
 
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-5">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
             {ASSUREURS.map((p) => (
               <div
-                key={p}
-                className="flex items-center justify-center rounded-xl border border-charcoal-100 bg-white px-4 py-5 text-sm font-bold text-charcoal-400 grayscale transition-all duration-300 hover:border-primary-200 hover:text-primary-700 hover:shadow-soft hover:grayscale-0"
+                key={p.name}
+                className="group flex items-center gap-3 rounded-xl border border-charcoal-100 bg-white px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-charcoal-200 hover:shadow-soft"
+                title={p.name}
               >
-                {p}
+                {/* Mark stylé avec couleur officielle assureur */}
+                <span
+                  className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg font-heading text-sm font-extrabold text-white transition-transform group-hover:scale-110"
+                  style={{ backgroundColor: p.color }}
+                  aria-hidden="true"
+                >
+                  {p.initials}
+                </span>
+                <span className="font-heading text-sm font-bold text-charcoal-800 transition-colors group-hover:text-charcoal-900">
+                  {p.name}
+                </span>
               </div>
             ))}
           </div>
