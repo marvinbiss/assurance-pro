@@ -15,6 +15,18 @@ import { notFound } from 'next/navigation'
 import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import {
+  ArrowUpRight,
+  BarChart3,
+  CheckCircle2,
+  Euro,
+  Quote,
+  Scale,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  TrendingUp,
+} from 'lucide-react'
+import {
   getPageEnrichment,
   getEligibleSlugsForTemplate,
   buildPageTitle,
@@ -26,6 +38,7 @@ import {
 } from '@/lib/programmatic/page-enrichment'
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
+import { PageHero } from '@/components/layout/PageHero'
 
 // ────────────────────────────────────────────────────────────────────────────
 // Configuration Next.js App Router
@@ -96,16 +109,39 @@ export default async function PrixPage(props: { params: Promise<Params> }) {
   const nonce = (await headers()).get('x-nonce') ?? undefined
 
   return (
-    <>
+    <main className="min-h-screen bg-sand-50">
       {/* Schema.org JSON-LD — safe escape + nonce CSP */}
       {schemas.map((schema, i) => (
         <script key={i} {...jsonLdScriptProps(schema, nonce)} />
       ))}
 
-      <article className="prix-template mx-auto max-w-5xl px-4 py-12">
-        <PageHeader enrichment={enrichment} />
+      <PageHero
+        breadcrumbs={[{ label: enrichment.garantie_label ?? 'Garantie' }, { label: 'Tarifs' }]}
+        eyebrow={`Tarifs marché ${new Date().getFullYear()}`}
+        EyebrowIcon={Euro}
+        title={
+          <>
+            Prix {enrichment.garantie_label}
+            <br />
+            <span className="text-secondary-200">
+              {enrichment.metier_nom} {enrichment.statut_label}
+            </span>
+          </>
+        }
+        description={
+          enrichment.density_insee && enrichment.metier_nom && enrichment.ville_nom ? (
+            <>
+              ~{enrichment.density_insee.toLocaleString('fr-FR')} {enrichment.metier_nom}s recensés
+              à {enrichment.ville_nom} (source INSEE Sirene).
+            </>
+          ) : (
+            'Tarifs marché négociés par notre cabinet ORIAS auprès de 10 assureurs partenaires.'
+          )
+        }
+      />
 
-        <section className="mt-12 grid gap-6 md:grid-cols-3">
+      <article className="container mx-auto max-w-5xl px-4 py-14">
+        <section className="grid gap-5 md:grid-cols-3">
           <PrixCard label="Tarif minimum marché" value={enrichment.prix_min_eur} highlight />
           <PrixCard label="Tarif médian" value={enrichment.prix_med_eur} />
           <PrixCard label="Tarif maximum" value={enrichment.prix_max_eur} />
@@ -127,32 +163,13 @@ export default async function PrixPage(props: { params: Promise<Params> }) {
 
         <DisclaimerOrias />
       </article>
-    </>
+    </main>
   )
 }
 
 // ────────────────────────────────────────────────────────────────────────────
 // Subcomponents (inline pour minimiser dépendances ; à externaliser plus tard)
 // ────────────────────────────────────────────────────────────────────────────
-
-function PageHeader({ enrichment }: { enrichment: PageEnrichmentRow }) {
-  return (
-    <header>
-      <h1 className="text-3xl font-bold text-slate-900 md:text-4xl">
-        Prix {enrichment.garantie_label} {enrichment.metier_nom} {enrichment.statut_label} en{' '}
-        {new Date().getFullYear()}
-      </h1>
-      <p className="mt-3 text-lg text-slate-600">
-        {enrichment.density_insee && enrichment.metier_nom && enrichment.ville_nom && (
-          <>
-            ~{enrichment.density_insee.toLocaleString('fr-FR')} {enrichment.metier_nom}s recensés à{' '}
-            {enrichment.ville_nom} (INSEE Sirene).
-          </>
-        )}
-      </p>
-    </header>
-  )
-}
 
 function PrixCard({
   label,
@@ -166,14 +183,34 @@ function PrixCard({
   if (value == null) return null
   return (
     <div
-      className={`rounded-xl border p-6 ${highlight ? 'border-orange-300 bg-orange-50' : 'border-slate-200 bg-slate-50'}`}
+      className={`group relative overflow-hidden rounded-2xl border bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-premium ${
+        highlight
+          ? 'border-primary-200 ring-2 ring-primary-100'
+          : 'border-charcoal-100 hover:border-primary-200'
+      }`}
     >
-      <div className="text-sm text-slate-600">{label}</div>
+      {highlight && (
+        <span
+          className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-700"
+          aria-hidden="true"
+        />
+      )}
+      <div className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
+        {highlight ? (
+          <Sparkles className="h-3.5 w-3.5 text-primary-700" strokeWidth={2.4} />
+        ) : (
+          <Euro className="h-3.5 w-3.5 text-charcoal-500" strokeWidth={2.4} />
+        )}
+        {label}
+      </div>
       <div
-        className={`mt-2 text-3xl font-bold ${highlight ? 'text-orange-700' : 'text-slate-900'}`}
+        className={`font-heading text-3xl font-extrabold tabular-nums tracking-tight ${
+          highlight ? 'text-primary-700' : 'text-charcoal-900'
+        }`}
       >
-        {Math.round(value).toLocaleString('fr-FR')}€
-        <span className="text-base font-normal">/an</span>
+        {Math.round(value).toLocaleString('fr-FR')}
+        <span className="text-xl">€</span>
+        <span className="ml-1 text-base font-normal text-charcoal-500">/an</span>
       </div>
     </div>
   )
@@ -181,21 +218,70 @@ function PrixCard({
 
 function DataTrustSignals({ enrichment }: { enrichment: PageEnrichmentRow }) {
   return (
-    <aside className="mt-10 rounded-lg border border-blue-200 bg-blue-50 p-5 text-sm">
-      <strong className="mb-2 block text-blue-900">📊 Sources data vérifiées :</strong>
-      <ul className="grid gap-1 text-blue-800 md:grid-cols-2">
-        <li>✓ Tarifs : agrégation devis propriétaires + partenaires</li>
-        <li>✓ Densité : INSEE Sirene (mis à jour mensuel)</li>
+    <aside className="mt-10 overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft">
+      <p className="mb-4 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+        <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2.4} />
+        Sources data vérifiées
+      </p>
+      <ul className="grid gap-2 text-sm md:grid-cols-2">
+        <li className="flex items-start gap-2 text-charcoal-700">
+          <CheckCircle2
+            className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
+            strokeWidth={2.4}
+          />
+          <span>Tarifs : agrégation devis propriétaires + partenaires</span>
+        </li>
+        <li className="flex items-start gap-2 text-charcoal-700">
+          <CheckCircle2
+            className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
+            strokeWidth={2.4}
+          />
+          <span>Densité : INSEE Sirene (mis à jour mensuel)</span>
+        </li>
         {enrichment.sinistralite_pct && (
-          <li>✓ Sinistralité : AQC SYCODÉS (référence sectorielle)</li>
+          <li className="flex items-start gap-2 text-charcoal-700">
+            <CheckCircle2
+              className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
+              strokeWidth={2.4}
+            />
+            <span>Sinistralité : AQC SYCODÉS (référence sectorielle)</span>
+          </li>
         )}
-        {enrichment.jurisprudence_refs?.length > 0 && <li>✓ Jurisprudence : Légifrance API</li>}
+        {enrichment.jurisprudence_refs?.length > 0 && (
+          <li className="flex items-start gap-2 text-charcoal-700">
+            <CheckCircle2
+              className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
+              strokeWidth={2.4}
+            />
+            <span>Jurisprudence : Légifrance API</span>
+          </li>
+        )}
         {enrichment.assureurs_top3_jsonb?.length > 0 && (
-          <li>✓ Solidité assureurs : Pappers (notation S&P/Moody&apos;s)</li>
+          <li className="flex items-start gap-2 text-charcoal-700">
+            <CheckCircle2
+              className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
+              strokeWidth={2.4}
+            />
+            <span>Solidité assureurs : Pappers (S&amp;P/Moody&apos;s)</span>
+          </li>
         )}
-        {enrichment.avis_top_jsonb?.length > 0 && <li>✓ Avis : Trustpilot ISO 20488 vérifiés</li>}
+        {enrichment.avis_top_jsonb?.length > 0 && (
+          <li className="flex items-start gap-2 text-charcoal-700">
+            <CheckCircle2
+              className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
+              strokeWidth={2.4}
+            />
+            <span>Avis : Trustpilot ISO 20488 vérifiés</span>
+          </li>
+        )}
         {enrichment.stats_sectorielles_jsonb?.length > 0 && (
-          <li>✓ Stats : FFA / FFB / CAPEB / Mutualité Française</li>
+          <li className="flex items-start gap-2 text-charcoal-700">
+            <CheckCircle2
+              className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
+              strokeWidth={2.4}
+            />
+            <span>Stats : FFA / FFB / CAPEB / Mutualité Française</span>
+          </li>
         )}
       </ul>
     </aside>
@@ -205,12 +291,18 @@ function DataTrustSignals({ enrichment }: { enrichment: PageEnrichmentRow }) {
 function PrixContextBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
   if (!enrichment.prix_med_eur) return null
   return (
-    <section className="mt-12">
-      <h2 className="text-2xl font-bold text-slate-900">
-        Pourquoi ce tarif {enrichment.garantie_label} pour un {enrichment.metier_nom}{' '}
-        {enrichment.statut_label} ?
-      </h2>
-      <div className="prose prose-slate mt-4 max-w-none">
+    <section className="mt-14">
+      <header className="mb-6">
+        <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+          <TrendingUp className="h-3.5 w-3.5" strokeWidth={2.4} />
+          Analyse marché
+        </span>
+        <h2 className="font-heading text-2xl font-extrabold leading-tight tracking-tight text-charcoal-900 md:text-3xl">
+          Pourquoi ce tarif {enrichment.garantie_label} pour un {enrichment.metier_nom}{' '}
+          {enrichment.statut_label} ?
+        </h2>
+      </header>
+      <div className="pilier-prose prose prose-lg max-w-none text-charcoal-700">
         <p>
           Le tarif médian observé pour {enrichment.garantie_label} appliqué aux{' '}
           {enrichment.metier_nom}s sous statut {enrichment.statut_label}
@@ -241,34 +333,73 @@ function ComparatifAssureurs({ enrichment }: { enrichment: PageEnrichmentRow }) 
   const top3 = enrichment.assureurs_top3_jsonb ?? []
   if (top3.length === 0) return null
   return (
-    <section className="mt-12">
-      <h2 className="text-2xl font-bold text-slate-900">Top 3 assureurs partenaires</h2>
-      <div className="mt-6 overflow-x-auto">
-        <table className="w-full border-collapse">
-          <thead>
-            <tr className="bg-slate-100 text-left">
-              <th className="border-b px-4 py-3">Assureur</th>
-              <th className="border-b px-4 py-3">Solidité (Pappers)</th>
-              <th className="border-b px-4 py-3">TrustScore</th>
-              <th className="border-b px-4 py-3">Tarif indicatif</th>
-            </tr>
-          </thead>
-          <tbody>
-            {top3.map((a) => (
-              <tr key={a.partner_slug} className="border-b">
-                <td className="px-4 py-3 font-semibold">{a.nom}</td>
-                <td className="px-4 py-3">
-                  {a.score_solidite}/100
-                  {a.rating && <span className="ml-2 text-xs text-slate-600">({a.rating})</span>}
-                </td>
-                <td className="px-4 py-3">{a.trustscore ? `${a.trustscore.toFixed(1)}/5` : '—'}</td>
-                <td className="px-4 py-3">
-                  {a.prix_indicatif_min ? `${a.prix_indicatif_min}€/an min` : 'Sur devis'}
-                </td>
+    <section className="mt-14">
+      <header className="mb-6">
+        <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+          <Star className="h-3.5 w-3.5" strokeWidth={2.4} />
+          Top assureurs
+        </span>
+        <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+          Top 3 assureurs partenaires
+        </h2>
+      </header>
+      <div className="overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft">
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead className="bg-gradient-to-br from-charcoal-900 to-charcoal-800">
+              <tr>
+                <th className="px-5 py-4 text-left text-xs font-extrabold uppercase tracking-wider text-white">
+                  Assureur
+                </th>
+                <th className="px-5 py-4 text-left text-xs font-extrabold uppercase tracking-wider text-white">
+                  Solidité Pappers
+                </th>
+                <th className="px-5 py-4 text-left text-xs font-extrabold uppercase tracking-wider text-white">
+                  TrustScore
+                </th>
+                <th className="px-5 py-4 text-right text-xs font-extrabold uppercase tracking-wider text-white">
+                  Tarif indicatif
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {top3.map((a) => (
+                <tr
+                  key={a.partner_slug}
+                  className="border-t border-charcoal-100 transition-colors hover:bg-sand-50/60"
+                >
+                  <td className="px-5 py-3.5 font-heading font-extrabold text-charcoal-900">
+                    {a.nom}
+                  </td>
+                  <td className="px-5 py-3.5 font-bold text-charcoal-800">
+                    {a.score_solidite}/100
+                    {a.rating && (
+                      <span className="ml-2 text-xs font-normal text-charcoal-500">
+                        ({a.rating})
+                      </span>
+                    )}
+                  </td>
+                  <td className="px-5 py-3.5">
+                    {a.trustscore ? (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-secondary-50 px-2.5 py-0.5 text-xs font-bold text-secondary-800">
+                        {a.trustscore.toFixed(1)}
+                        <Star
+                          className="h-3 w-3 fill-secondary-500 text-secondary-500"
+                          strokeWidth={2}
+                        />
+                      </span>
+                    ) : (
+                      <span className="text-charcoal-400">—</span>
+                    )}
+                  </td>
+                  <td className="px-5 py-3.5 text-right font-extrabold tabular-nums text-primary-700">
+                    {a.prix_indicatif_min ? `${a.prix_indicatif_min}€/an min` : 'Sur devis'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   )
@@ -278,20 +409,38 @@ function JurisprudenceBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
   const refs = enrichment.jurisprudence_refs ?? []
   if (refs.length === 0) return null
   return (
-    <section className="mt-12">
-      <h2 className="text-2xl font-bold text-slate-900">Cadre juridique</h2>
-      <ul className="mt-4 space-y-3">
+    <section className="mt-14">
+      <header className="mb-6">
+        <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+          <Scale className="h-3.5 w-3.5" strokeWidth={2.4} />
+          Cadre juridique
+        </span>
+        <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+          Références légales applicables
+        </h2>
+      </header>
+      <ul className="grid gap-4">
         {refs.slice(0, 3).map((r, i) => (
-          <li key={i} className="border-l-4 border-slate-400 bg-slate-50 p-4">
-            <strong className="block">{r.article}</strong>
-            <p className="mt-1 text-sm text-slate-700">{r.texte_court}</p>
+          <li
+            key={i}
+            className="group relative overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-premium"
+          >
+            <span
+              className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary-500 to-primary-700 opacity-60 transition-opacity group-hover:opacity-100"
+              aria-hidden="true"
+            />
+            <strong className="block font-heading text-base font-extrabold text-charcoal-900">
+              {r.article}
+            </strong>
+            <p className="mt-1.5 text-sm leading-relaxed text-charcoal-700">{r.texte_court}</p>
             <a
               href={r.legifrance_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block text-sm text-blue-600 hover:underline"
+              className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-primary-700 underline-offset-4 hover:underline"
             >
-              Texte intégral (Légifrance) →
+              Texte intégral (Légifrance)
+              <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.4} />
             </a>
           </li>
         ))}
@@ -304,18 +453,29 @@ function StatsSectoriellesBlock({ enrichment }: { enrichment: PageEnrichmentRow 
   const stats = enrichment.stats_sectorielles_jsonb ?? []
   if (stats.length === 0) return null
   return (
-    <section className="mt-12">
-      <h2 className="text-2xl font-bold text-slate-900">Statistiques sectorielles</h2>
-      <ul className="mt-4 grid gap-3 md:grid-cols-2">
+    <section className="mt-14">
+      <header className="mb-6">
+        <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+          <BarChart3 className="h-3.5 w-3.5" strokeWidth={2.4} />
+          Data sectorielle
+        </span>
+        <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+          Statistiques marché
+        </h2>
+      </header>
+      <ul className="grid gap-4 md:grid-cols-3">
         {stats.slice(0, 6).map((s, i) => (
-          <li key={i} className="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
-            <div className="text-2xl font-bold text-emerald-700">
+          <li
+            key={i}
+            className="overflow-hidden rounded-2xl border border-accent-100 bg-gradient-to-br from-accent-50 to-white p-5 shadow-soft"
+          >
+            <div className="font-heading text-3xl font-extrabold text-accent-700">
               {s.valeur}
               {s.unite === '%' ? '%' : s.unite === 'EUR' ? '€' : ''}
             </div>
-            <div className="mt-1 text-sm text-emerald-900">{s.indicateur}</div>
-            <div className="mt-1 text-xs text-slate-500">
-              Source : {s.source} · {s.annee}
+            <div className="mt-2 text-sm font-semibold text-charcoal-900">{s.indicateur}</div>
+            <div className="mt-2 text-[11px] font-medium text-charcoal-500">
+              {s.source} · {s.annee}
             </div>
           </li>
         ))}
@@ -328,19 +488,47 @@ function AvisVerifiesBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
   const avis = enrichment.avis_top_jsonb?.filter((a) => a.iso_20488) ?? []
   if (avis.length === 0) return null
   return (
-    <section className="mt-12">
-      <h2 className="text-2xl font-bold text-slate-900">Avis clients vérifiés (ISO 20488)</h2>
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
+    <section className="mt-14">
+      <header className="mb-6">
+        <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+          <Quote className="h-3.5 w-3.5" strokeWidth={2.4} />
+          ISO 20488
+        </span>
+        <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+          Avis clients vérifiés
+        </h2>
+      </header>
+      <div className="grid gap-4 md:grid-cols-2">
         {avis.slice(0, 4).map((a, i) => (
-          <blockquote key={i} className="rounded-xl border border-slate-200 bg-white p-5">
-            <div className="flex items-center gap-2">
-              <span className="text-orange-500">{'★'.repeat(a.note)}</span>
-              <span className="text-slate-400">{'★'.repeat(5 - a.note)}</span>
+          <blockquote
+            key={i}
+            className="relative overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft"
+          >
+            <Quote className="absolute right-4 top-4 h-8 w-8 text-primary-100" strokeWidth={1.5} />
+            <div className="mb-3 flex items-center gap-1">
+              {Array.from({ length: a.note }).map((_, j) => (
+                <Star
+                  key={`f-${j}`}
+                  className="h-4 w-4 fill-secondary-500 text-secondary-500"
+                  strokeWidth={2}
+                />
+              ))}
+              {Array.from({ length: 5 - a.note }).map((_, j) => (
+                <Star key={`e-${j}`} className="h-4 w-4 text-charcoal-200" strokeWidth={2} />
+              ))}
             </div>
-            <p className="mt-2 italic text-slate-700">&quot;{a.texte}&quot;</p>
-            <footer className="mt-3 text-xs text-slate-500">
-              — {a.auteur}
-              {a.ville && `, ${a.ville}`} · {a.date} · vérifié ISO 20488
+            <p className="text-sm italic leading-relaxed text-charcoal-700">
+              &ldquo;{a.texte}&rdquo;
+            </p>
+            <footer className="mt-4 flex items-center justify-between gap-2 border-t border-charcoal-100 pt-3 text-xs">
+              <span className="font-bold text-charcoal-700">
+                {a.auteur}
+                {a.ville && ` · ${a.ville}`}
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full bg-secondary-50 px-2 py-0.5 font-bold text-secondary-800">
+                <ShieldCheck className="h-3 w-3" strokeWidth={2.4} />
+                ISO 20488
+              </span>
             </footer>
           </blockquote>
         ))}
@@ -357,13 +545,25 @@ function DevisFormCTA({ enrichment }: { enrichment: PageEnrichmentRow }) {
     statut_juridique: enrichment.statut_juridique ?? '',
   }
   return (
-    <section id="devis" className="mt-16 rounded-2xl border border-slate-200 bg-slate-50 p-8">
-      <header className="mb-6">
-        <h2 className="text-3xl font-bold text-slate-900">
-          Demande d&apos;information gratuite — {enrichment.garantie_label}
+    <section
+      id="devis"
+      className="relative mt-16 overflow-hidden rounded-3xl border border-charcoal-100 bg-white p-8 shadow-premium-lg md:p-12"
+    >
+      <span
+        className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-700"
+        aria-hidden="true"
+      />
+      <header className="mb-7">
+        <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary-700">
+          <Sparkles className="h-3 w-3" strokeWidth={2.4} />
+          Devis ORIAS · 24 h
+        </span>
+        <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-display text-charcoal-900 md:text-4xl">
+          Devis personnalisé {enrichment.garantie_label}
         </h2>
-        <p className="mt-3 text-slate-600">
-          Vous serez recontacté gratuitement par notre courtier partenaire ORIAS sous 24h ouvrées.
+        <p className="mt-3 text-base text-charcoal-600">
+          Notre courtier partenaire ORIAS vous recontacte gratuitement sous 24 h ouvrées avec
+          jusqu&apos;à 3 offres comparées.
         </p>
       </header>
       <DevisAssuranceForm prefill={prefill} source_url={enrichment.page_slug} />
@@ -373,21 +573,24 @@ function DevisFormCTA({ enrichment }: { enrichment: PageEnrichmentRow }) {
 
 function DisclaimerOrias() {
   return (
-    <footer className="mt-16 rounded-lg border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600">
-      <strong className="mb-1 block">Information précontractuelle DDA</strong>
-      Cette page constitue une présentation factuelle des tarifs marché et ne vaut pas conseil. Les
-      devis personnalisés sont émis par notre courtier partenaire ORIAS (n° à mettre à jour). Tarifs
-      indicatifs basés sur agrégation données propriétaires + INSEE Sirene + AQC SYCODÉS.
-      Conformément à l&apos;arrêté du 6 décembre 2022, le registre ORIAS est consultable sur{' '}
-      <a
-        href="https://www.orias.fr"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underline"
-      >
-        orias.fr
-      </a>
-      .
+    <footer className="mt-12 flex items-start gap-3 rounded-2xl border border-charcoal-100 bg-white p-5 text-xs leading-relaxed text-charcoal-600 shadow-soft">
+      <ShieldCheck className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-700" strokeWidth={2.4} />
+      <p>
+        <strong className="text-charcoal-900">Information précontractuelle DDA.</strong> Cette page
+        constitue une présentation factuelle des tarifs marché et ne vaut pas conseil. Les devis
+        personnalisés sont émis par notre courtier partenaire ORIAS. Tarifs indicatifs basés sur
+        agrégation données propriétaires + INSEE Sirene + AQC SYCODÉS. Conformément à l&apos;arrêté
+        du 6 décembre 2022, le registre ORIAS est consultable sur{' '}
+        <a
+          href="https://www.orias.fr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold text-primary-700 underline-offset-2 hover:underline"
+        >
+          orias.fr
+        </a>
+        .
+      </p>
     </footer>
   )
 }
