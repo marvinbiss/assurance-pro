@@ -14,9 +14,9 @@ const AUTHOR = {
   authorRole: 'Courtier ORIAS spécialiste assurance pro',
 }
 
-const LEGIFRANCE = (label: string, _path: string) => ({
+const LEGIFRANCE = (label: string, _path?: string) => ({
   label,
-  url: 'https://www.legifrance.gouv.fr/',
+  url: `https://www.legifrance.gouv.fr/search/all?query=${encodeURIComponent(label)}`,
 })
 
 export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {

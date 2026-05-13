@@ -46,11 +46,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     sources: [
       {
         label: 'Loi n° 78-12 du 4 janvier 1978 (Spinetta) — Légifrance',
-        url: 'https://www.legifrance.gouv.fr/',
+        url: `https://www.legifrance.gouv.fr/search/all?query=${encodeURIComponent('Loi n° 78-12 du 4 janvier 1978 (Spinetta) — Légifrance')}`,
       },
       {
         label: 'Code des assurances — art. L. 241-1',
-        url: 'https://www.legifrance.gouv.fr/',
+        url: `https://www.legifrance.gouv.fr/search/all?query=${encodeURIComponent('Code des assurances — art. L. 241-1')}`,
       },
       {
         label: 'AQC SYCODÉS — Sinistralité décennale 2024',
@@ -157,11 +157,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     sources: [
       {
         label: 'Code des assurances — art. L. 124-3',
-        url: 'https://www.legifrance.gouv.fr/',
+        url: `https://www.legifrance.gouv.fr/search/all?query=${encodeURIComponent('Code des assurances — art. L. 124-3')}`,
       },
       {
         label: 'Directive Distribution Assurance (DDA) — art. L. 521-4',
-        url: 'https://www.legifrance.gouv.fr/',
+        url: `https://www.legifrance.gouv.fr/search/all?query=${encodeURIComponent('Directive Distribution Assurance (DDA) — art. L. 521-4')}`,
       },
     ],
     toc: [
@@ -241,11 +241,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     sources: [
       {
         label: 'Loi Madelin n° 94-126 du 11 février 1994',
-        url: 'https://www.legifrance.gouv.fr/',
+        url: `https://www.legifrance.gouv.fr/search/all?query=${encodeURIComponent('Loi Madelin n° 94-126 du 11 février 1994')}`,
       },
       {
         label: 'CGI — art. 154 bis (déductibilité TNS)',
-        url: 'https://www.legifrance.gouv.fr/',
+        url: `https://www.legifrance.gouv.fr/search/all?query=${encodeURIComponent('CGI — art. 154 bis (déductibilité TNS)')}`,
       },
     ],
     toc: [

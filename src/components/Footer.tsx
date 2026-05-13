@@ -63,6 +63,7 @@ const FOOTER_GROUPS = [
     title: 'Ressources',
     links: [
       { label: 'Blog', href: '/blog' },
+      { label: 'Simulateur', href: '/simulateur' },
       { label: 'Glossaire', href: '/glossaire' },
       { label: 'FAQ', href: '/faq' },
       { label: 'Contact', href: '/contact' },
