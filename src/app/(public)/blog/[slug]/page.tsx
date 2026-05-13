@@ -279,7 +279,8 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
                     ))}
                   {section.callout &&
                     (() => {
-                      const theme = CALLOUT_THEMES[section.callout.tone]
+                      const callout = section.callout
+                      const theme = CALLOUT_THEMES[callout.tone]
                       return (
                         <div
                           className={`not-prose my-6 flex gap-4 rounded-2xl border p-5 ${theme.container}`}
@@ -294,7 +295,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
                               {theme.title}
                             </div>
                             <p className="m-0 text-sm leading-relaxed text-charcoal-800">
-                              {section.callout!.text}
+                              {callout.text}
                             </p>
                           </div>
                         </div>
