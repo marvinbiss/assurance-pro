@@ -11,6 +11,7 @@
  */
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import {
   ChevronDown,
@@ -98,6 +99,7 @@ const NAV_LINKS = [
 ] as const
 
 export default function HeaderClient() {
+  const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [verticalsOpen, setVerticalsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -109,18 +111,23 @@ export default function HeaderClient() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Variant logo + couleur nav dynamique :
-  // - Sur hero (au top, non scrolled) : transparent + texte blanc (lisible sur hero terra)
-  // - Au scroll : glassmorph + texte charcoal (lisible sur fond clair)
-  const navColor = scrolled ? 'text-charcoal-700' : 'text-white/95'
-  const navHover = scrolled ? 'hover:text-primary-700' : 'hover:text-white'
+  // Mode "hero sombre" uniquement sur la home (qui a le hero charcoal-900 + gradient terra).
+  // Toutes les autres pages ont un fond clair → header toujours glassmorph + dark text.
+  const isHomeHero = pathname === '/'
+  const isTransparent = isHomeHero && !scrolled
+
+  // Variant couleur nav dynamique :
+  //  - Home au top : transparent + blanc (lisible sur hero rouge)
+  //  - Home scrolled / autres pages : glassmorph + charcoal (lisible sur blanc)
+  const navColor = isTransparent ? 'text-white/95' : 'text-charcoal-700'
+  const navHover = isTransparent ? 'hover:text-white' : 'hover:text-primary-700'
 
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'border-b border-charcoal-100/80 bg-white/90 shadow-soft backdrop-blur-xl'
-          : 'border-b border-transparent bg-transparent'
+        isTransparent
+          ? 'border-b border-transparent bg-transparent'
+          : 'border-b border-charcoal-100/80 bg-white/90 shadow-soft backdrop-blur-xl'
       }`}
     >
       <div className="container mx-auto max-w-7xl px-4">
@@ -131,7 +138,7 @@ export default function HeaderClient() {
             className="transition-opacity hover:opacity-90"
             aria-label="Vivos Assurance — Accueil"
           >
-            <VivosLogo size="md" variant={scrolled ? 'dark' : 'light'} />
+            <VivosLogo size="md" variant={isTransparent ? 'light' : 'dark'} />
           </Link>
 
           {/* Desktop nav */}
