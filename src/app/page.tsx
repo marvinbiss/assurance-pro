@@ -412,7 +412,7 @@ export default function HomePage() {
               <Link
                 key={v.code}
                 href={v.href}
-                className={`group relative flex flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${v.span ?? ''}`}
+                className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${v.span ?? ''}`}
               >
                 {/* Photo header — aspect 16/9 */}
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-charcoal-100">
@@ -502,8 +502,8 @@ export default function HomePage() {
               <div key={s.n} className="relative text-center md:text-left">
                 {/* Step number + icon */}
                 <div className="relative z-10 mb-5 flex justify-center md:justify-start">
-                  <div className="relative">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-glow-clay">
+                  <div className="group relative">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-glow-clay transition-transform duration-300 hover:scale-110">
                       <s.Icon className="h-6 w-6" strokeWidth={2.2} />
                     </div>
                     <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white font-heading text-xs font-extrabold text-primary-700 shadow-soft ring-2 ring-primary-100">
@@ -541,7 +541,7 @@ export default function HomePage() {
             {TESTIMONIALS.map((t) => (
               <article
                 key={t.author}
-                className="group relative flex flex-col rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                className="group relative flex h-full flex-col rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
               >
                 {/* Quote icon décoratif */}
                 <Quote
