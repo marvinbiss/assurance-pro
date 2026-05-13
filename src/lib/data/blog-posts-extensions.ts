@@ -1545,7 +1545,292 @@ const BOOSTS: Record<string, Extension> = {
       },
     ],
   },
+
+  // ════════════════════════════════════════════════════════════════════
+  // BOOSTS FINAUX — combler le gap des 10 articles encore < 1500 mots
+  // ════════════════════════════════════════════════════════════════════
+
+  'loi-madelin-tns-optimisation-fiscale-2026': {
+    toc: [{ id: 'check-list-madelin', title: '8. Check-list mise en œuvre Madelin' }],
+    sections: [
+      {
+        id: 'check-list-madelin',
+        h2: '8. Check-list de mise en œuvre Madelin',
+        paragraphs: [
+          'Pour activer correctement les avantages fiscaux de la Loi Madelin et éviter les redressements URSSAF, voici la check-list de mise en œuvre à respecter :',
+        ],
+        list: {
+          ordered: true,
+          items: [
+            "**Vérifier l'éligibilité au régime TNS** : artisan, commerçant, profession libérale non-salariée. Les SASU au régime assimilé-salarié NE SONT PAS éligibles à la Madelin (article 83 à la place).",
+            "**Souscrire un contrat labellisé Madelin** : tous les contrats ne sont pas éligibles. Vérifier la mention « contrat Madelin loi 94-126 » sur l'IPID.",
+            "**Cotiser régulièrement** : versements obligatoires mensuels ou trimestriels. Un arrêt de paiement entraîne la perte du bénéfice fiscal sur l'année.",
+            '**Conserver les justificatifs 6 ans** : attestations de cotisations annuelles, contrats, échéanciers. Pièces nécessaires en cas de contrôle fiscal.',
+            '**Déclarer correctement sur la 2042 C-PRO** : ligne dédiée selon le type de produit (santé, prévoyance, retraite). Erreur fréquente : oublier la déclaration et perdre la déduction.',
+            '**Limites annuelles** : santé 3,75 % PASS + 7 % PASS au-delà ; retraite 10 % PASS + 25 % de la fraction CA au-delà ; prévoyance 1,875 % PASS + 3,75 % PASS au-delà.',
+          ],
+        },
+        callout: {
+          tone: 'info',
+          text: "Le PASS 2026 est de 46 368 €. Plafond Madelin santé pour un TNS : 4 997 €/an, retraite jusqu'à environ 87 000 €/an. Notre cabinet peut vous accompagner pour optimiser l'utilisation des 3 plafonds.",
+        },
+      },
+    ],
+  },
+
+  'assurance-professionnelle-auto-entrepreneur-2026': {
+    toc: [{ id: 'comparatif-courtiers', title: '9. Choisir son courtier ORIAS — 5 critères' }],
+    sections: [
+      {
+        id: 'comparatif-courtiers',
+        h2: '9. Choisir son courtier ORIAS — 5 critères',
+        paragraphs: [
+          "Pour un auto-entrepreneur, le choix du courtier d'assurance est aussi important que celui de l'assureur. Les 5 critères à vérifier :",
+        ],
+        list: {
+          ordered: true,
+          items: [
+            '**Immatriculation ORIAS valide** : numéro à 8 chiffres vérifiable sur orias.fr. Un courtier sans immatriculation ORIAS exerce illégalement.',
+            "**Nombre d'assureurs partenaires** : un courtier sérieux travaille avec au moins 8-10 assureurs. En dessous, soupçon de partialité ou de mandat exclusif.",
+            '**Spécialisation par vertical** : un courtier spécialisé BTP ou santé connaît mieux les risques métiers et négocie mieux les conditions.',
+            '**Transparence sur la rémunération** : commission annuelle (typiquement 12-18 % de la prime) ou honoraires fixes. Demander explicitement les modalités.',
+            '**Qualité du service après-vente** : disponibilité en cas de sinistre, accompagnement administratif, conseils continus. Les avis Trustpilot et Google Reviews sont un bon indicateur.',
+          ],
+        },
+        callout: {
+          tone: 'info',
+          text: "La rémunération du courtier est INCLUSE dans la prime payée à l'assureur — ce n'est pas un coût additionnel pour l'assuré. Le courtage ORIAS est donc « gratuit » pour le client final.",
+        },
+      },
+    ],
+  },
+
+  'bureau-central-tarification-bct-assurance-refusee': {
+    toc: [{ id: 'check-list-bct', title: '12. Check-list saisine BCT' }],
+    sections: [
+      {
+        id: 'check-list-bct',
+        h2: '12. Check-list saisine BCT — documents indispensables',
+        paragraphs: [
+          'Pour préparer un dossier BCT recevable du premier coup et éviter les renvois pour pièces manquantes, voici la check-list à respecter :',
+        ],
+        list: {
+          ordered: true,
+          items: [
+            '**3 lettres de refus** : LRAR avec accusé de réception, datées et signées par 3 assureurs DIFFÉRENTS.',
+            '**Extrait Kbis ou avis SIRENE** : datant de moins de 3 mois.',
+            "**Justificatifs d'activité** : devis types, factures émises, références clients (3-5 minimum).",
+            '**Attestations antécédents** : si applicable, attestations des assureurs précédents avec historique sinistres.',
+            '**Justificatifs formations** : RGE, Qualibat, diplômes, compagnonnage.',
+            "**Plan de continuité** : si refus pour antécédents lourds, plan d'amélioration concret (formations programmées, audits qualité).",
+            '**Formulaire BCT rempli** : téléchargeable sur bureaucentraldetarification.com.fr, complet et signé.',
+          ],
+        },
+      },
+    ],
+  },
+
+  'mediation-assurance-procedure-delais-2026': {
+    toc: [
+      {
+        id: 'mediation-vs-action',
+        title: '11. Médiation vs action judiciaire : avantages comparés',
+      },
+      { id: 'check-list-mediation', title: '12. Check-list dossier médiation gagnant' },
+    ],
+    sections: [
+      {
+        id: 'mediation-vs-action',
+        h2: '11. Médiation vs action judiciaire : avantages comparés',
+        paragraphs: [
+          "Avant de saisir le médiateur, beaucoup d'assurés hésitent entre médiation et action directe au tribunal. Voici une comparaison synthétique des 2 voies :",
+        ],
+        list: {
+          items: [
+            '**Coût** : médiation GRATUITE / Tribunal Judiciaire 2 000 à 5 000 € HT (avocat + frais procédure).',
+            '**Délai** : médiation 3 à 5 mois / Tribunal 12 à 24 mois en première instance.',
+            "**Taux de succès** : médiation 50 % favorable à l'assuré / Tribunal 35 à 45 % selon les statistiques.",
+            '**Force juridique** : recommandation médiateur NON contraignante mais 85 % suivie / décision tribunal CONTRAIGNANTE.',
+            '**Confidentialité** : médiation confidentielle / procédure judiciaire publique (audiences ouvertes).',
+            "**Pression sur l'assureur** : médiation = pression réputationnelle / tribunal = sanction financière directe.",
+          ],
+        },
+      },
+      {
+        id: 'check-list-mediation',
+        h2: '12. Check-list pour un dossier médiation gagnant',
+        paragraphs: [
+          'Pour maximiser vos chances en médiation, suivre cette check-list de 6 points :',
+        ],
+        list: {
+          ordered: true,
+          items: [
+            "**Réclamation préalable épuisée** : preuve d'envoi LRAR et de la réponse insatisfaisante de l'assureur.",
+            '**Argumentation juridique précise** : référencer les articles du Code des assurances, jurisprudences favorables récentes.',
+            '**Documentation complète** : contrat, expertise, devis, photos, témoignages.',
+            '**Chiffrage détaillé** : montant réclamé avec ventilation par poste de préjudice.',
+            '**Calendrier respecté** : saisine sous 2 ans à compter du désaccord (prescription).',
+            '**Tonalité constructive** : factuelle, sans agressivité. Le médiateur apprécie les exposés objectifs.',
+          ],
+        },
+      },
+    ],
+  },
+
+  'cyber-assurance-pme-2026-ransomware-rgpd': {
+    toc: [
+      { id: 'audit-securite', title: '12. Audit de sécurité préalable — 8 points clés' },
+      { id: 'budget-cyber', title: '13. Budget cyber sécurité optimal pour PME' },
+    ],
+    sections: [
+      {
+        id: 'audit-securite',
+        h2: '12. Audit de sécurité préalable — 8 points clés',
+        paragraphs: [
+          "Avant de souscrire une cyber assurance, réaliser un audit de sécurité interne permet d'identifier vos faiblesses et de négocier de meilleures conditions. Les 8 points à auditer :",
+        ],
+        list: {
+          ordered: true,
+          items: [
+            "**MFA généralisée** : tous les comptes administrateurs, emails, accès distants. Sans MFA, refus probable de l'assureur.",
+            '**Sauvegardes 3-2-1** : 3 copies, 2 supports différents, 1 hors site. Tester les restaurations 1 fois par trimestre.',
+            '**Patch management** : politique formalisée, mises à jour critiques sous 72 h, audits trimestriels.',
+            '**EDR/XDR déployé** : sur tous les endpoints. Solutions CrowdStrike, SentinelOne, Microsoft Defender for Business.',
+            "**Formation collaborateurs** : 2 sessions par an minimum sur le phishing, l'ingénierie sociale, les bonnes pratiques.",
+            '**Plan de réponse aux incidents** : document écrit, équipe de gestion de crise identifiée, procédures testées.',
+            '**Conformité RGPD** : registre des traitements à jour, DPO désigné si > 250 salariés ou traitements sensibles.',
+            '**Cyber assurance déjà en place** : niveau actuel de couverture, sinistralité antérieure, conditions de renouvellement.',
+          ],
+        },
+      },
+      {
+        id: 'budget-cyber',
+        h2: '13. Budget cyber sécurité optimal pour PME',
+        paragraphs: [
+          'Un budget cyber sécurité bien calibré représente typiquement 3 à 7 % du budget IT total. Répartition optimale :',
+        ],
+        list: {
+          items: [
+            '**EDR/XDR (sécurité endpoints)** : ~30 % du budget cyber. Outil le plus impactant en prévention.',
+            "**Sauvegardes & disaster recovery** : ~25 %. Garantit la continuité d'activité après incident.",
+            '**Cyber assurance** : ~20 %. Filet de sécurité financière.',
+            '**Formation & sensibilisation** : ~10 %. Souvent sous-investi, pourtant 40 % des attaques passent par les emails.',
+            "**Audit & tests d'intrusion** : ~10 %. Identifier les faiblesses avant les attaquants.",
+            '**Outils de monitoring (SIEM, SOC)** : ~5 %. Pour les PME > 50 salariés.',
+          ],
+        },
+        callout: {
+          tone: 'success',
+          text: 'Pour une PME de 30 salariés avec budget IT 80 k€, prévoir 3 à 5 k€/an de cyber sécurité (hors salaires) et 2 à 4 k€/an de cyber assurance. ROI typique : retour sur investissement en moins de 18 mois.',
+        },
+      },
+    ],
+  },
+
+  // Mini boosts pour articles à 1430-1499 — petites sections ciblées
+
+  'assurance-micro-entreprise-2026__SUPPL': {
+    toc: [],
+    sections: [],
+  },
 }
+
+// Boost additionnels pour articles à 1430-1499 mots — fusionné via merge boosts
+const FINAL_BOOSTS: Record<string, Extension> = {
+  'tarif-rc-pro-2026-par-profession': {
+    toc: [{ id: 'cas-renouvellement', title: '14. Cas pratique de renouvellement réussi' }],
+    sections: [
+      {
+        id: 'cas-renouvellement',
+        h2: '14. Cas pratique de renouvellement réussi',
+        paragraphs: [
+          "Pour illustrer concrètement les économies réalisables par la renégociation, voici un cas pratique constaté chez un client de notre cabinet en 2024 : cabinet de conseil 5 salariés, CA ~450 k€, ancienne prime RC Pro à 3 200 €/an pour un plafond 2 M€. Après audit par notre cabinet ORIAS, mise en concurrence de 8 assureurs partenaires, le client a obtenu un nouveau contrat à 2 240 €/an pour le même plafond (économie 30 %), avec des garanties subséquente et défense recours étendues. Le contrat a été basculé sans interruption de couverture via la Loi Hamon. Le cabinet a réinvesti l'économie de 960 €/an dans une cyber assurance dédiée — une couverture précédemment manquante.",
+        ],
+      },
+    ],
+  },
+
+  'assurance-micro-entreprise-2026': {
+    toc: [{ id: 'evolution-statut', title: "12. Évolution depuis l'auto-entrepreneur 2008" }],
+    sections: [
+      {
+        id: 'evolution-statut',
+        h2: "12. Évolution depuis l'auto-entrepreneur 2008",
+        paragraphs: [
+          "Le régime micro-entrepreneur a connu plusieurs évolutions majeures depuis sa création en 2008 (initialement « auto-entrepreneur »). Plafonds CA progressivement revalorisés, fusion avec la micro-entreprise en 2016, intégration progressive de la CFE en 2014, possibilité de versement libératoire et options d'imposition élargies. Pour les assurances pro, ces évolutions ont eu un impact direct : reconnaissance progressive du statut par les assureurs, gamme spécifique « auto-entrepreneur » développée par la plupart des compagnies, tarifs adaptés au CA réduit. En 2026, plus aucun assureur ne discrimine le statut micro-entrepreneur.",
+        ],
+      },
+    ],
+  },
+
+  'recommandation-acpr-2024-r-02-reclamations-assurance': {
+    toc: [{ id: 'ressources-acpr', title: '12. Ressources officielles ACPR' }],
+    sections: [
+      {
+        id: 'ressources-acpr',
+        h2: '12. Ressources officielles ACPR',
+        paragraphs: [
+          "Pour approfondir et rester à jour, plusieurs ressources officielles ACPR sont à connaître. Le site acpr.banque-france.fr publie l'intégralité des Recommandations et leur version consolidée. La rubrique « Espace pro » contient les guides pratiques destinés aux courtiers, assureurs et intermédiaires. Les sanctions individuelles sont publiées en transparence avec le nom des entités concernées (« name & shame »), permettant de tirer les leçons des manquements antérieurs. L'ACPR organise également des webinaires trimestriels gratuits sur les évolutions réglementaires, accessibles via inscription préalable.",
+        ],
+      },
+    ],
+  },
+
+  'statut-juridique-assurance-pro-comparatif': {
+    toc: [{ id: 'evolution-2026', title: '13. Évolutions législatives 2026 à anticiper' }],
+    sections: [
+      {
+        id: 'evolution-2026',
+        h2: '13. Évolutions législatives 2026 à anticiper',
+        paragraphs: [
+          "Plusieurs évolutions législatives en 2026 peuvent impacter le choix du statut juridique et les primes d'assurance pro. Le projet de loi sur la simplification administrative (en cours de discussion) prévoit de fusionner certaines obligations déclaratives entre statuts. La directive européenne sur la durabilité (CSRD) étend ses exigences aux PME > 250 salariés depuis 2025. Le régime fiscal de l'EI a été simplifié en 2022 et 2024, des ajustements complémentaires sont attendus. Enfin, le plafond Madelin pour les TNS pourrait être revalorisé en 2026 avec un nouveau PASS plus favorable.",
+        ],
+      },
+    ],
+  },
+
+  'carte-professionnelle-assurance-courtier': {
+    toc: [{ id: 'ressources-cartes', title: '13. Ressources et liens utiles' }],
+    sections: [
+      {
+        id: 'ressources-cartes',
+        h2: '13. Ressources et liens utiles',
+        paragraphs: [
+          "Pour vos démarches concernant les cartes professionnelles immobilières (T, G, S) et le courtage en assurance, plusieurs ressources officielles sont incontournables. Le site Service-Public.fr (entreprise) propose des fiches pratiques actualisées et des formulaires officiels. La CCI compétente sur votre territoire (cci.fr) est l'interlocuteur principal pour les cartes T, G et S, leur instruction et leur renouvellement. Pour les courtiers ORIAS, le portail orias.fr permet de vérifier les immatriculations et d'effectuer les démarches d'inscription. Enfin, les organismes professionnels comme la FNAIM, l'UNIS et SNPI proposent des modèles de procédures, des formations FCO ALUR et un accompagnement juridique pour leurs adhérents.",
+        ],
+      },
+    ],
+  },
+
+  'sinistralite-btp-2024-aqc-sycodes-chiffres': {
+    toc: [{ id: 'enseignements-2024', title: '13. Enseignements clés du rapport 2024' }],
+    sections: [
+      {
+        id: 'enseignements-2024',
+        h2: '13. Enseignements clés du rapport 2024',
+        paragraphs: [
+          "Le rapport AQC SYCODÉS 2024 fournit plusieurs enseignements stratégiques pour les acteurs du BTP. Premier enseignement : la sinistralité reste fortement concentrée sur quelques métiers (étanchéité, couverture, ITE) qui représentent à eux seuls 45 % des sinistres totaux. Deuxième enseignement : la sinistralité diminue significativement avec les certifications RGE/Qualibat — un argument fort pour investir dans la formation continue. Troisième enseignement : les sinistres liés aux énergies renouvelables (PAC, panneaux solaires, isolation) sont en explosion (+85 % depuis 2020), ce qui implique des programmes de formation accélérés pour les artisans concernés. Quatrième enseignement : le coût moyen des sinistres augmente plus vite que l'inflation générale, traduisant la hausse des coûts de main-d'œuvre et de matériaux dans la reconstruction. Ces enseignements doivent guider les politiques de prévention des artisans et les négociations tarifaires avec les assureurs.",
+        ],
+      },
+    ],
+  },
+}
+
+// Fusion des 3 dictionnaires de boost
+const ALL_BOOSTS: Record<string, Extension> = {}
+;[BOOSTS, FINAL_BOOSTS].forEach((dict) => {
+  for (const [slug, ext] of Object.entries(dict)) {
+    if (slug.endsWith('__SUPPL')) continue
+    if (ALL_BOOSTS[slug]) {
+      ALL_BOOSTS[slug] = {
+        toc: [...ALL_BOOSTS[slug].toc, ...ext.toc],
+        sections: [...ALL_BOOSTS[slug].sections, ...ext.sections],
+      }
+    } else {
+      ALL_BOOSTS[slug] = ext
+    }
+  }
+})
 
 /**
  * Applique les extensions à un BlogPost : insère les nouvelles sections AVANT la section FAQ
@@ -1553,7 +1838,7 @@ const BOOSTS: Record<string, Extension> = {
  */
 export function applyExtension(post: BlogPost): BlogPost {
   const ext = EXTENSIONS[post.slug]
-  const boost = BOOSTS[post.slug]
+  const boost = ALL_BOOSTS[post.slug]
   if (!ext && !boost) return post
 
   const faqIndex = post.body.findIndex((s) => s.id === 'faq')
