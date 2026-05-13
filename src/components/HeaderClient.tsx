@@ -1,9 +1,13 @@
 'use client'
 
 /**
- * HeaderClient — Navigation principale Vivos Assurance
- * Design : sticky avec scroll detection → glass effect au scroll,
- * brand palette terracotta + sand, dropdown verticaux avec icons.
+ * HeaderClient — Navigation premium Vivos Assurance.
+ *
+ * Design inspiré Stripe / Alan / Linear :
+ *   - Logo SVG custom avec wordmark
+ *   - Mega menu Garanties : grid 8 catégories + featured card visual
+ *   - Sticky scroll detection → glass effect
+ *   - Tonalité tracking-tight + font-heading
  */
 
 import Link from 'next/link'
@@ -11,7 +15,6 @@ import { useState, useEffect } from 'react'
 import {
   ChevronDown,
   Phone,
-  ShieldCheck,
   Menu,
   X,
   Hammer,
@@ -22,22 +25,69 @@ import {
   Lock,
   Stethoscope,
   Scale,
+  ArrowRight,
+  Sparkles,
+  Check,
 } from 'lucide-react'
+import { VivosLogo } from '@/components/brand/VivosLogo'
 
 const VERTICALS_NAV = [
   {
-    label: 'BTP / Décennale',
+    label: 'Décennale BTP',
     href: '/assurance-decennale',
     Icon: Hammer,
-    color: 'text-primary-600',
+    color: 'text-primary-600 bg-primary-50',
+    sub: 'Loi Spinetta · 52 métiers',
   },
-  { label: 'RC Pro', href: '/rc-pro', Icon: Briefcase, color: 'text-secondary-600' },
-  { label: 'Multirisque Pro', href: '/multirisque-pro', Icon: Building2, color: 'text-accent-600' },
-  { label: 'Mutuelle / TNS', href: '/mutuelle-pro', Icon: Heart, color: 'text-rose-600' },
-  { label: 'VTC / Taxi', href: '/assurance-vtc', Icon: Car, color: 'text-indigo-600' },
-  { label: 'Avocats / Juridique', href: '/rc-pro-avocat', Icon: Scale, color: 'text-charcoal-700' },
-  { label: 'Médical / Santé', href: '/rc-pro-medecin', Icon: Stethoscope, color: 'text-rose-700' },
-  { label: 'Cyber Assurance', href: '/cyber-assurance', Icon: Lock, color: 'text-charcoal-700' },
+  {
+    label: 'RC Pro',
+    href: '/rc-pro',
+    Icon: Briefcase,
+    color: 'text-secondary-600 bg-secondary-50',
+    sub: 'Consultants, freelances, services',
+  },
+  {
+    label: 'Multirisque Pro',
+    href: '/multirisque-pro',
+    Icon: Building2,
+    color: 'text-accent-600 bg-accent-50',
+    sub: 'Local, atelier, bureau, stock',
+  },
+  {
+    label: 'Mutuelle TNS',
+    href: '/mutuelle-pro',
+    Icon: Heart,
+    color: 'text-rose-600 bg-rose-50',
+    sub: 'Loi Madelin déductible',
+  },
+  {
+    label: 'VTC / Taxi',
+    href: '/assurance-vtc',
+    Icon: Car,
+    color: 'text-indigo-600 bg-indigo-50',
+    sub: 'Uber, Bolt, Heetch',
+  },
+  {
+    label: 'Cyber assurance',
+    href: '/cyber-assurance',
+    Icon: Lock,
+    color: 'text-charcoal-700 bg-charcoal-100',
+    sub: 'Ransomware, RGPD, data',
+  },
+  {
+    label: 'Avocats / Libéral',
+    href: '/rc-pro-avocat',
+    Icon: Scale,
+    color: 'text-violet-600 bg-violet-50',
+    sub: 'Professions réglementées',
+  },
+  {
+    label: 'Médical / Santé',
+    href: '/rc-pro-medecin',
+    Icon: Stethoscope,
+    color: 'text-rose-700 bg-rose-50',
+    sub: 'Loi Kouchner, paramédical',
+  },
 ] as const
 
 const NAV_LINKS = [
@@ -63,28 +113,24 @@ export default function HeaderClient() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'border-b border-charcoal-100/80 bg-white/85 shadow-soft backdrop-blur-xl'
-          : 'border-b border-transparent bg-white/0'
+          ? 'border-b border-charcoal-100/80 bg-white/90 shadow-soft backdrop-blur-xl'
+          : 'border-b border-transparent bg-white/0 backdrop-blur-sm'
       }`}
     >
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="flex h-16 items-center justify-between">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="flex h-[68px] items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 font-heading text-xl font-extrabold text-charcoal-900 transition-colors hover:text-primary-700"
+            className="transition-opacity hover:opacity-90"
+            aria-label="Vivos Assurance — Accueil"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-soft">
-              <ShieldCheck className="h-5 w-5" strokeWidth={2.4} />
-            </span>
-            <span>
-              Vivos<span className="text-primary-600">.</span>
-            </span>
+            <VivosLogo size="md" variant="dark" />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-7 lg:flex">
-            {/* Garanties dropdown */}
+          <nav className="hidden items-center gap-8 lg:flex">
+            {/* Garanties mega menu */}
             <div
               className="relative"
               onMouseEnter={() => setVerticalsOpen(true)}
@@ -92,34 +138,99 @@ export default function HeaderClient() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1 text-sm font-semibold text-charcoal-700 transition-colors hover:text-primary-700"
+                className="flex items-center gap-1.5 text-[15px] font-semibold text-charcoal-700 transition-colors hover:text-primary-700"
               >
                 Garanties
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform ${verticalsOpen ? 'rotate-180' : ''}`}
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    verticalsOpen ? 'rotate-180' : ''
+                  }`}
                   strokeWidth={2.4}
                 />
               </button>
 
               {verticalsOpen && (
-                <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3">
-                  <div className="grid w-[480px] grid-cols-2 gap-1 rounded-2xl border border-charcoal-100 bg-white p-2 shadow-premium">
-                    {VERTICALS_NAV.map((v) => (
+                <div className="absolute left-1/2 top-full -translate-x-1/2 pt-4">
+                  <div className="w-[760px] overflow-hidden rounded-3xl border border-charcoal-100 bg-white shadow-premium-lg">
+                    <div className="grid grid-cols-3">
+                      {/* Colonne 1+2 : Liens catégories */}
+                      <div className="col-span-2 grid grid-cols-2 gap-1 p-4">
+                        {VERTICALS_NAV.map((v) => (
+                          <Link
+                            key={v.href}
+                            href={v.href}
+                            className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-sand-50"
+                          >
+                            <span
+                              className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl transition-transform group-hover:scale-110 ${v.color}`}
+                            >
+                              <v.Icon className="h-5 w-5" strokeWidth={2.2} />
+                            </span>
+                            <div className="flex-1 leading-tight">
+                              <div className="font-heading text-sm font-bold text-charcoal-900 group-hover:text-primary-700">
+                                {v.label}
+                              </div>
+                              <div className="mt-0.5 text-[11px] text-charcoal-500">{v.sub}</div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+
+                      {/* Colonne 3 : Featured card visual */}
+                      <div className="relative overflow-hidden bg-gradient-hero-warm p-5 text-white">
+                        <div
+                          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-secondary-400/30 blur-3xl"
+                          aria-hidden="true"
+                        />
+                        <div className="relative">
+                          <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">
+                            <Sparkles className="h-3 w-3" />
+                            Économies moy.
+                          </div>
+                          <div className="mb-1 font-heading text-4xl font-extrabold tracking-tight">
+                            -32<span className="text-2xl">%</span>
+                          </div>
+                          <p className="mb-5 text-xs leading-relaxed text-white/85">
+                            Économie observée vs souscription en direct.
+                          </p>
+
+                          <ul className="mb-5 space-y-1.5 text-[11px]">
+                            {[
+                              'Comparaison 10+ assureurs',
+                              'Devis en 24 h ouvrées',
+                              'Aucun frais',
+                            ].map((item) => (
+                              <li key={item} className="flex items-center gap-1.5">
+                                <Check className="h-3 w-3 text-secondary-300" strokeWidth={3} />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+
+                          <Link
+                            href="/devis"
+                            className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-primary-700 shadow-soft transition-all hover:-translate-y-0.5"
+                          >
+                            Devis gratuit
+                            <ArrowRight className="h-3.5 w-3.5" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Footer mega menu */}
+                    <div className="flex items-center justify-between border-t border-charcoal-100 bg-sand-50 px-5 py-3 text-xs">
+                      <span className="text-charcoal-500">
+                        17 verticaux couverts · ORIAS · ACPR
+                      </span>
                       <Link
-                        key={v.href}
-                        href={v.href}
-                        className="group flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-sand-50"
+                        href="/comparateur-assureurs"
+                        className="inline-flex items-center gap-1 font-bold text-primary-700 hover:text-primary-800"
                       >
-                        <span
-                          className={`flex h-9 w-9 items-center justify-center rounded-lg bg-sand-50 transition-colors group-hover:bg-white ${v.color}`}
-                        >
-                          <v.Icon className="h-4 w-4" strokeWidth={2.2} />
-                        </span>
-                        <span className="text-sm font-semibold text-charcoal-800 group-hover:text-charcoal-900">
-                          {v.label}
-                        </span>
+                        Comparer tous les assureurs
+                        <ArrowRight className="h-3 w-3" />
                       </Link>
-                    ))}
+                    </div>
                   </div>
                 </div>
               )}
@@ -129,7 +240,7 @@ export default function HeaderClient() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm font-semibold text-charcoal-700 transition-colors hover:text-primary-700"
+                className="text-[15px] font-semibold text-charcoal-700 transition-colors hover:text-primary-700"
               >
                 {l.label}
               </Link>
@@ -141,16 +252,17 @@ export default function HeaderClient() {
             <a
               href="tel:+33651858930"
               className="inline-flex items-center gap-1.5 text-sm font-bold tabular-nums text-charcoal-700 transition-colors hover:text-primary-700"
-              aria-label="Appeler le cabinet au 06 51 85 89 30"
+              aria-label="Appeler le cabinet"
             >
               <Phone className="h-4 w-4" strokeWidth={2.2} />
               06 51 85 89 30
             </a>
             <Link
               href="/devis"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-primary-500 px-5 py-2.5 text-sm font-bold text-white shadow-cta transition-all hover:bg-primary-600 hover:shadow-cta-hover"
+              className="group inline-flex items-center gap-1.5 rounded-xl bg-primary-500 px-5 py-2.5 text-sm font-bold text-white shadow-cta transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
             >
               Devis gratuit
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
 
@@ -180,11 +292,14 @@ export default function HeaderClient() {
                   onClick={() => setMobileOpen(false)}
                 >
                   <span
-                    className={`flex h-9 w-9 items-center justify-center rounded-lg bg-sand-50 ${v.color}`}
+                    className={`flex h-9 w-9 items-center justify-center rounded-lg ${v.color}`}
                   >
                     <v.Icon className="h-4 w-4" strokeWidth={2.2} />
                   </span>
-                  <span className="text-sm font-semibold text-charcoal-800">{v.label}</span>
+                  <div>
+                    <div className="text-sm font-semibold text-charcoal-800">{v.label}</div>
+                    <div className="text-[11px] text-charcoal-500">{v.sub}</div>
+                  </div>
                 </Link>
               ))}
             </div>
@@ -208,6 +323,7 @@ export default function HeaderClient() {
               onClick={() => setMobileOpen(false)}
             >
               Devis gratuit
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         )}

@@ -121,5 +121,11 @@ module.exports = withSentryConfig(withBundleAnalyzer(nextConfig), {
   authToken: process.env.SENTRY_AUTH_TOKEN,
   widenClientFileUpload: true,
   hideSourceMaps: true,
-  // disableLogger deprecated → utiliser webpack.treeshake.removeDebugLogging dans Next 15+
+  // Désactive l'auto-instrumentation App Router qui casse les imports
+  // de composants externes en dev sur Next 15.5+ (voir audit 2026-05).
+  webpack: {
+    autoInstrumentServerFunctions: false,
+    autoInstrumentAppDirectory: false,
+    autoInstrumentMiddleware: false,
+  },
 })

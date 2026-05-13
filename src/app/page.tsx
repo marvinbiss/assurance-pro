@@ -28,6 +28,7 @@ import {
   Quote,
 } from 'lucide-react'
 import { TrustBadgesRow } from '@/components/conversion/TrustBadgesRow'
+import { MockOfferCard } from '@/components/home/MockOfferCard'
 
 export const metadata: Metadata = {
   title: 'Assurance Pro — Comparez et économisez en 2 minutes',
@@ -207,49 +208,128 @@ export default function HomePage() {
         {/* Hero pattern subtle */}
         <div className="absolute inset-0 bg-hero-pattern opacity-30" aria-hidden="true" />
 
-        <div className="container relative mx-auto max-w-6xl px-4">
-          {/* Eyebrow ORIAS pill */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            ORIAS n° {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'}
-            <span className="ml-1 text-secondary-300">· ACPR</span>
+        <div className="container relative mx-auto max-w-7xl px-4">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
+            {/* TEXTE colonne */}
+            <div>
+              {/* Eyebrow ORIAS pill */}
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
+                <ShieldCheck className="h-3.5 w-3.5" />
+                ORIAS n° {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'}
+                <span className="ml-1 text-secondary-300">· ACPR · CSCA</span>
+              </div>
+
+              {/* H1 typographie display */}
+              <h1 className="mb-6 font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[5rem]">
+                Votre assurance pro,
+                <br />
+                <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent">
+                  comparée et négociée
+                </span>
+                <br />
+                en 2 minutes.
+              </h1>
+
+              <p className="mb-10 max-w-xl text-lg text-white/85 md:text-xl">
+                Décennale, RC&nbsp;Pro, Multirisque, Mutuelle&nbsp;TNS, VTC, Cyber. Recevez 3 devis
+                personnalisés en moins de 24 heures auprès de nos partenaires reconnus.
+              </p>
+
+              {/* CTAs */}
+              <div className="mb-10 flex flex-wrap gap-3">
+                <Link
+                  href="/devis"
+                  className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
+                >
+                  Obtenir mon devis gratuit
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <a
+                  href="#verticaux"
+                  className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
+                >
+                  Découvrir les garanties
+                </a>
+              </div>
+
+              {/* Trust ribbon — avis Trustpilot inline */}
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/80">
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="flex">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <Star
+                        key={i}
+                        className="h-3.5 w-3.5 fill-secondary-300 text-secondary-300"
+                        aria-hidden="true"
+                      />
+                    ))}
+                  </span>
+                  <strong className="font-bold text-white">4.9/5</strong>
+                  <span className="opacity-75">· 142 avis vérifiés ISO 20488</span>
+                </span>
+                <span className="hidden h-3 w-px bg-white/20 md:block" />
+                <span className="inline-flex items-center gap-1.5">
+                  <Users className="h-3.5 w-3.5" strokeWidth={2.5} />
+                  <strong className="font-bold text-white">1 200+ pros</strong> assurés
+                </span>
+              </div>
+            </div>
+
+            {/* MOCKUP comparateur (desktop only) */}
+            <div className="relative hidden lg:block">
+              {/* Halo gradient derrière */}
+              <div
+                className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-secondary-400/25 via-primary-400/20 to-accent-400/20 blur-3xl"
+                aria-hidden="true"
+              />
+
+              <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/10 p-5 shadow-premium-lg backdrop-blur-2xl">
+                {/* Header mock */}
+                <div className="mb-5 flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/85">
+                    <span className="flex h-2 w-2 rounded-full bg-accent-400 shadow-glow-green" />
+                    Comparateur · live
+                  </div>
+                  <div className="text-xs text-white/70">RC Pro · Consultant IT</div>
+                </div>
+
+                {/* Cards offres */}
+                <div className="space-y-3">
+                  <MockOfferCard name="Hiscox" tag="best price" price="95€" recommended />
+                  <MockOfferCard name="Allianz Pro" tag="premium" price="180€" />
+                  <MockOfferCard name="MMA Pro" tag="standard" price="250€" />
+                </div>
+
+                {/* Footer mock */}
+                <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-[11px] text-white/80">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock className="h-3.5 w-3.5" strokeWidth={2.5} />
+                    Devis sous 24h
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2.5} />
+                    Sans engagement
+                  </span>
+                </div>
+              </div>
+
+              {/* Badge flottant -32% */}
+              <div className="absolute -right-4 -top-4 rotate-6 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 px-3.5 py-2.5 text-xs font-extrabold uppercase tracking-wider text-white shadow-glow-clay">
+                -32% économie moy.
+              </div>
+
+              {/* Badge ORIAS flottant */}
+              <div className="absolute -bottom-3 -left-3 -rotate-3 rounded-xl bg-white/95 px-3.5 py-2 text-[10px] font-extrabold uppercase tracking-wider text-charcoal-900 shadow-premium backdrop-blur-sm">
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="h-3.5 w-3.5 text-accent-600" strokeWidth={2.5} />
+                  ORIAS · ACPR
+                </span>
+              </div>
+            </div>
           </div>
 
-          {/* H1 typographie display */}
-          <h1 className="mb-6 font-heading text-5xl font-extrabold leading-[1.05] tracking-display md:text-6xl lg:text-7xl">
-            Votre assurance pro,
-            <br />
-            <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent">
-              comparée et négociée
-            </span>
-            <br />
-            en 2 minutes.
-          </h1>
-
-          <p className="mb-10 max-w-2xl text-lg text-white/85 md:text-xl">
-            Décennale, RC&nbsp;Pro, Multirisque, Mutuelle&nbsp;TNS, VTC, Cyber. Recevez 3 devis
-            personnalisés en moins de 24 heures auprès de nos partenaires reconnus.
-          </p>
-
-          {/* CTAs */}
-          <div className="mb-12 flex flex-wrap gap-3">
-            <Link
-              href="/devis"
-              className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
-            >
-              Obtenir mon devis gratuit
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <a
-              href="#verticaux"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
-            >
-              Découvrir les garanties
-            </a>
-          </div>
-
-          {/* Trust indicators */}
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md md:grid-cols-4">
+          {/* Trust indicators row */}
+          <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md md:grid-cols-4">
             {TRUST_INDICATORS.map((t) => (
               <div key={t.label} className="bg-charcoal-900/30 px-5 py-5 backdrop-blur-md">
                 <t.Icon className="mb-2 h-5 w-5 text-secondary-300" strokeWidth={2.2} />

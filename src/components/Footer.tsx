@@ -11,6 +11,7 @@
 import Link from 'next/link'
 import { ShieldCheck, Phone, Mail, MapPin, ExternalLink } from 'lucide-react'
 import { buildOriasFicheUrl, buildOriasRegistryUrl, formatOriasDisplay } from '@/lib/api/orias'
+import { VivosLogo } from '@/components/brand/VivosLogo'
 
 const ORIAS_NUMBER = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
 
@@ -79,12 +80,10 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link
               href="/"
-              className="mb-5 inline-flex items-center gap-2 font-heading text-xl font-extrabold text-white transition-colors hover:text-primary-300"
+              className="mb-5 inline-block transition-opacity hover:opacity-90"
+              aria-label="Vivos Assurance — Accueil"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-glow-clay">
-                <ShieldCheck className="h-5 w-5" strokeWidth={2.4} />
-              </span>
-              Vivos<span className="text-primary-400">.</span>
+              <VivosLogo size="lg" variant="light" />
             </Link>
 
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-charcoal-400">
