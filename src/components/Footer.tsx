@@ -1,263 +1,235 @@
 /**
- * Footer — Assurance Pro France
- * Conformité ORIAS arrêté 6/12/2022 (cliquabilité obligatoire)
- * Mentions légales + ACPR + RCP + association agréée
+ * Footer — Vivos Assurance / Assurance Pro France
+ *
+ * Conformité ORIAS arrêté 6/12/2022 (cliquabilité obligatoire),
+ * mentions légales + ACPR + RCP + association agréée.
+ *
+ * Design : charcoal-950 deep avec accents brand, hiérarchie claire,
+ * grille 4 colonnes desktop / 2 mobile, mentions légales en bas pliable.
  */
 
 import Link from 'next/link'
+import { ShieldCheck, Phone, Mail, MapPin, ExternalLink } from 'lucide-react'
 import { buildOriasFicheUrl, buildOriasRegistryUrl, formatOriasDisplay } from '@/lib/api/orias'
 
 const ORIAS_NUMBER = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
 
+const FOOTER_GROUPS = [
+  {
+    title: 'Garanties',
+    links: [
+      { label: 'Décennale BTP', href: '/assurance-decennale' },
+      { label: 'RC Pro', href: '/rc-pro' },
+      { label: 'Multirisque Pro', href: '/multirisque-pro' },
+      { label: 'Mutuelle / TNS', href: '/mutuelle-pro' },
+      { label: 'VTC / Taxi', href: '/assurance-vtc' },
+      { label: 'Cyber assurance', href: '/cyber-assurance' },
+    ],
+  },
+  {
+    title: 'Cabinet',
+    links: [
+      { label: 'À propos', href: '/a-propos' },
+      { label: "L'équipe", href: '/equipe' },
+      { label: 'Notre processus', href: '/notre-processus-conseil' },
+      { label: 'Sélection assureurs', href: '/selection-assureurs' },
+      { label: 'Comparateur', href: '/comparateur-assureurs' },
+    ],
+  },
+  {
+    title: 'Ressources',
+    links: [
+      { label: 'Blog', href: '/blog' },
+      { label: 'Glossaire', href: '/glossaire' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Contact', href: '/contact' },
+      { label: 'Devis gratuit', href: '/devis' },
+    ],
+  },
+  {
+    title: 'Mentions légales',
+    links: [
+      { label: 'Mentions légales', href: '/mentions-legales' },
+      { label: 'CGV', href: '/cgv' },
+      { label: 'FIC (DDA)', href: '/fic' },
+      { label: 'Fiches IPID', href: '/ipid' },
+      { label: 'Confidentialité', href: '/confidentialite' },
+      { label: 'Cookies', href: '/cookies' },
+      { label: 'Réclamation', href: '/reclamation' },
+      { label: 'Médiation', href: '/mediation' },
+    ],
+  },
+] as const
+
 export default function Footer() {
-  const oriasFormatted = formatOriasDisplay(ORIAS_NUMBER.replace(/\s/g, '') || '07000000')
-  const oriasFicheUrl = buildOriasFicheUrl(ORIAS_NUMBER.replace(/\s/g, '') || '07000000')
+  const oriasClean = ORIAS_NUMBER.replace(/\s/g, '') || '07000000'
+  const oriasFormatted = formatOriasDisplay(oriasClean)
+  const oriasFicheUrl = buildOriasFicheUrl(oriasClean)
   const oriasRegistryUrl = buildOriasRegistryUrl()
+  const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="container mx-auto max-w-6xl px-4 py-12">
-        <div className="mb-10 grid grid-cols-1 gap-8 md:grid-cols-4">
-          <div>
-            <h3 className="mb-4 flex items-center gap-2 font-semibold text-white">
-              🛡️ Assurance Pro
-            </h3>
-            <p className="text-sm leading-relaxed">
-              Cabinet de courtage indépendant spécialiste de l’assurance professionnelle. 17
+    <footer className="relative overflow-hidden bg-charcoal-950 text-charcoal-300">
+      {/* Top accent gradient */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-primary-500/40 to-transparent" />
+
+      <div className="container mx-auto max-w-6xl px-4 py-16">
+        {/* Top : brand + contact */}
+        <div className="mb-12 grid grid-cols-1 gap-10 lg:grid-cols-3">
+          <div className="lg:col-span-1">
+            <Link
+              href="/"
+              className="mb-5 inline-flex items-center gap-2 font-heading text-xl font-extrabold text-white transition-colors hover:text-primary-300"
+            >
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-glow-clay">
+                <ShieldCheck className="h-5 w-5" strokeWidth={2.4} />
+              </span>
+              Vivos<span className="text-primary-400">.</span>
+            </Link>
+
+            <p className="mb-6 max-w-sm text-sm leading-relaxed text-charcoal-400">
+              Cabinet de courtage indépendant spécialiste de l'assurance professionnelle. 17
               verticaux couverts. 10+ assureurs partenaires.
             </p>
-          </div>
 
-          <div>
-            <h3 className="mb-4 font-semibold text-white">Garanties</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/assurance-decennale" className="hover:text-white">
-                  Décennale BTP
-                </Link>
+            <ul className="space-y-2.5 text-sm">
+              <li className="flex items-center gap-2.5 text-charcoal-300">
+                <Phone className="h-4 w-4 text-primary-400" strokeWidth={2.2} />
+                <a href="tel:+33651858930" className="font-bold tabular-nums hover:text-white">
+                  06 51 85 89 30
+                </a>
               </li>
-              <li>
-                <Link href="/rc-pro" className="hover:text-white">
-                  RC Pro
-                </Link>
+              <li className="flex items-center gap-2.5 text-charcoal-300">
+                <Mail className="h-4 w-4 text-primary-400" strokeWidth={2.2} />
+                <a href="mailto:contact@vivos-assurance.fr" className="hover:text-white">
+                  contact@vivos-assurance.fr
+                </a>
               </li>
-              <li>
-                <Link href="/multirisque-pro" className="hover:text-white">
-                  Multirisque Pro
-                </Link>
-              </li>
-              <li>
-                <Link href="/mutuelle-pro" className="hover:text-white">
-                  Mutuelle / TNS
-                </Link>
-              </li>
-              <li>
-                <Link href="/assurance-vtc" className="hover:text-white">
-                  VTC / Taxi
-                </Link>
-              </li>
-              <li>
-                <Link href="/cyber-assurance" className="hover:text-white">
-                  Cyber
-                </Link>
+              <li className="flex items-start gap-2.5 text-charcoal-300">
+                <MapPin
+                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-400"
+                  strokeWidth={2.2}
+                />
+                <span className="text-charcoal-400">
+                  {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'}
+                </span>
               </li>
             </ul>
           </div>
 
-          <div>
-            <h3 className="mb-4 font-semibold text-white">Cabinet</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/a-propos" className="hover:text-white">
-                  À propos
-                </Link>
-              </li>
-              <li>
-                <Link href="/equipe" className="hover:text-white">
-                  L&apos;équipe
-                </Link>
-              </li>
-              <li>
-                <Link href="/notre-processus-conseil" className="hover:text-white">
-                  Notre processus de conseil
-                </Link>
-              </li>
-              <li>
-                <Link href="/selection-assureurs" className="hover:text-white">
-                  Sélection des assureurs
-                </Link>
-              </li>
-              <li>
-                <Link href="/comparateur-assureurs" className="hover:text-white">
-                  Comparateur
-                </Link>
-              </li>
-              <li>
-                <Link href="/devis" className="hover:text-white">
-                  Devis gratuit
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-white">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/glossaire" className="hover:text-white">
-                  Glossaire
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="hover:text-white">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-white">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/mediation" className="hover:text-white">
-                  Médiation
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 font-semibold text-white">Mentions légales</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/mentions-legales" className="hover:text-white">
-                  Mentions légales
-                </Link>
-              </li>
-              <li>
-                <Link href="/cgv" className="hover:text-white">
-                  CGV
-                </Link>
-              </li>
-              <li>
-                <Link href="/fic" className="hover:text-white">
-                  FIC (DDA)
-                </Link>
-              </li>
-              <li>
-                <Link href="/ipid" className="hover:text-white">
-                  Fiches IPID
-                </Link>
-              </li>
-              <li>
-                <Link href="/confidentialite" className="hover:text-white">
-                  Confidentialité (RGPD)
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookies" className="hover:text-white">
-                  Politique cookies
-                </Link>
-              </li>
-              <li>
-                <Link href="/reclamation" className="hover:text-white">
-                  Réclamation
-                </Link>
-              </li>
-              <li>
-                <Link href="/normes" className="hover:text-white">
-                  Normes & conformité
-                </Link>
-              </li>
-              <li>
-                <Link href="/plan-du-site" className="hover:text-white">
-                  Plan du site
-                </Link>
-              </li>
-            </ul>
+          {/* Sitemap groups */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-2">
+            {FOOTER_GROUPS.map((group) => (
+              <div key={group.title}>
+                <h3 className="mb-4 font-heading text-xs font-extrabold uppercase tracking-wider text-white">
+                  {group.title}
+                </h3>
+                <ul className="space-y-2.5 text-sm">
+                  {group.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-charcoal-400 transition-colors hover:text-white"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Bandeau ORIAS — Conformité arrêté 6/12/2022 */}
-        <div className="space-y-3 border-t border-gray-700 pt-8 text-xs leading-relaxed text-gray-400">
+        {/* ORIAS bandeau premium */}
+        <div className="mb-8 rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 backdrop-blur-sm">
+          <div className="flex flex-wrap items-center gap-5">
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 shadow-glow-clay">
+              <ShieldCheck className="h-6 w-6 text-white" strokeWidth={2.2} />
+            </div>
+            <div className="flex-1 text-sm leading-relaxed text-charcoal-300">
+              <strong className="font-bold text-white">Courtier ORIAS </strong>
+              n°{' '}
+              <a
+                href={oriasFicheUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-bold text-primary-300 underline-offset-2 hover:underline"
+              >
+                {oriasFormatted}
+                <ExternalLink className="h-3 w-3" />
+              </a>
+              {' · '}
+              <span className="text-charcoal-400">Catégorie b</span>
+              {' · '}
+              Registre :{' '}
+              <a
+                href={oriasRegistryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-300 underline-offset-2 hover:underline"
+              >
+                orias.fr
+              </a>
+              {' · '}
+              <span className="text-charcoal-400">
+                Adhérent CSCA · RCP & garantie financière conformes art. L. 512-6/7 C. assur.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Mentions légales bas — paragraphe dense mais lisible */}
+        <div className="space-y-3 text-xs leading-relaxed text-charcoal-500">
           <p>
-            <strong className="text-gray-200">Assurance Pro</strong> est un cabinet de courtage en
-            assurance immatriculé à l’ORIAS sous le numéro&nbsp;
-            <a
-              href={oriasFicheUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-white underline hover:text-blue-300"
-            >
-              {oriasFormatted}
-            </a>
-            &nbsp;(catégorie&nbsp;:&nbsp;Courtier&nbsp;–&nbsp;b). Le registre est consultable
-            sur&nbsp;
-            <a
-              href={oriasRegistryUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-white"
-            >
-              www.orias.fr
-            </a>
-            .
+            Soumis au contrôle de l'<strong className="text-charcoal-300">ACPR</strong> (Autorité de
+            Contrôle Prudentiel et de Résolution) — 4 Place de Budapest, CS 92459, 75436 PARIS CEDEX
+            09.
           </p>
           <p>
-            Soumis au contrôle de l’
-            <strong>Autorité de Contrôle Prudentiel et de Résolution</strong> (ACPR) — 4 Place de
-            Budapest, CS 92459, 75436 PARIS CEDEX 09.
-          </p>
-          <p>
-            <strong className="text-gray-200">Éditeur</strong> :{' '}
-            {process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Assurance Pro SAS'} —{' '}
-            {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'} — SIRET{' '}
+            <strong className="text-charcoal-300">Éditeur</strong> :{' '}
+            {process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Vivos Assurance SAS'} — SIRET{' '}
             {process.env.NEXT_PUBLIC_LEGAL_SIRET ?? 'XXX XXX XXX 00000'}.{' '}
-            <strong className="text-gray-200">Directeur de la publication</strong> : représentant
-            légal du cabinet. <strong className="text-gray-200">Hébergeur</strong> : Vercel Inc.,
-            340 S Lemon Ave #4133, Walnut, CA 91789, USA —{' '}
+            <strong className="text-charcoal-300">Hébergeur</strong> : Vercel Inc., USA —{' '}
             <a
               href="https://vercel.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline"
+              className="underline-offset-2 hover:underline"
             >
               vercel.com
             </a>
-            . Données : Supabase Inc. (région UE Frankfurt). Détails complets sur{' '}
-            <Link href="/mentions-legales" className="underline">
-              mentions légales
-            </Link>
-            .
+            . Données : Supabase Inc. (région UE Frankfurt).
           </p>
           <p>
-            Responsabilité Civile Professionnelle et Garantie Financière conformes aux articles
-            L.&nbsp;512-6 et L.&nbsp;512-7 du Code des assurances. Adhérent CSCA.
-          </p>
-          <p>
-            En cas de réclamation :{' '}
-            <Link href="/reclamation" className="underline">
+            Réclamations :{' '}
+            <Link
+              href="/reclamation"
+              className="text-charcoal-300 underline-offset-2 hover:underline"
+            >
               formulaire dédié
             </Link>{' '}
-            ou email{' '}
-            <a href="mailto:reclamations@vivos-assurance.fr" className="underline">
+            ou{' '}
+            <a
+              href="mailto:reclamations@vivos-assurance.fr"
+              className="text-charcoal-300 underline-offset-2 hover:underline"
+            >
               reclamations@vivos-assurance.fr
             </a>
-            . Médiation possible auprès de la Médiation de l’Assurance — TSA 50110, 75441 Paris
-            cedex 09 —{' '}
+            . Médiation : Médiation de l'Assurance — TSA 50110, 75441 Paris cedex 09 —{' '}
             <a
               href="https://www.mediation-assurance.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline"
+              className="text-charcoal-300 underline-offset-2 hover:underline"
             >
-              www.mediation-assurance.org
+              mediation-assurance.org
             </a>
             .
           </p>
-          <p className="pt-3 text-gray-500">
-            © {new Date().getFullYear()} Assurance Pro. Tous droits réservés. Service de courtage —
-            aucun frais facturé aux clients ; rémunération exclusivement par commissions des
-            compagnies d’assurance partenaires.
+          <p className="pt-4 text-charcoal-600">
+            © {year} Vivos Assurance. Tous droits réservés. Service de courtage gratuit pour les
+            clients ; rémunération par commissions des compagnies d'assurance partenaires.
           </p>
         </div>
       </div>
