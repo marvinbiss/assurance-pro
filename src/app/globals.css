@@ -1059,3 +1059,169 @@ html {
 .nav-link-underline:hover::after {
   width: 100%;
 }
+
+/* ──────────────────────────────────────────────────────────────────
+   .pilier-prose — Styling premium pour le body des sections piliers.
+   Cible toutes les pages /assurance-decennale/[slug], /rc-pro/[slug],
+   et tout PilierLayout. Transforme automatiquement les <table>,
+   <ul>, <ol> bruts du contenu en composants brand premium.
+   ────────────────────────────────────────────────────────────────── */
+
+.pilier-prose p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgb(60 56 53);
+}
+
+.pilier-prose strong {
+  color: rgb(28 24 22);
+  font-weight: 700;
+}
+
+.pilier-prose a {
+  color: rgb(232 107 75);
+  font-weight: 600;
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.pilier-prose a:hover {
+  text-decoration: underline;
+}
+
+/* Tables : carte premium, header gradient charcoal, lignes hover */
+.pilier-prose table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgb(238 232 228);
+  background: white;
+  box-shadow:
+    0 1px 3px rgba(20, 16, 14, 0.05),
+    0 4px 12px rgba(20, 16, 14, 0.04);
+}
+
+.pilier-prose thead {
+  background: linear-gradient(135deg, rgb(28 24 22) 0%, rgb(45 39 36) 100%);
+}
+
+.pilier-prose th {
+  padding: 0.95rem 1.25rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+}
+
+.pilier-prose th:last-child {
+  text-align: right;
+}
+
+.pilier-prose td {
+  padding: 0.95rem 1.25rem;
+  font-size: 0.95rem;
+  color: rgb(45 39 36);
+  border: none;
+  border-top: 1px solid rgb(245 240 235);
+}
+
+.pilier-prose td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: rgb(28 24 22);
+  font-variant-numeric: tabular-nums;
+}
+
+.pilier-prose tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.pilier-prose tbody tr:hover {
+  background-color: rgb(252 248 244);
+}
+
+/* Listes UL : checkmarks premium en pills primary */
+.pilier-prose ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pilier-prose ul > li {
+  position: relative;
+  padding-left: 2.25rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  line-height: 1.6;
+  color: rgb(60 56 53);
+}
+
+.pilier-prose ul > li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgb(255 232 217) 0%, rgb(254 213 188) 100%);
+  color: rgb(192 60 30);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Listes OL : nombres premium */
+.pilier-prose ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+  counter-reset: pilier-counter;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pilier-prose ol > li {
+  position: relative;
+  padding-left: 2.5rem;
+  line-height: 1.6;
+  counter-increment: pilier-counter;
+  color: rgb(60 56 53);
+}
+
+.pilier-prose ol > li::before {
+  content: counter(pilier-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, rgb(232 107 75) 0%, rgb(192 60 30) 100%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(232, 107, 75, 0.35);
+}
+
+/* Note italique fine */
+.pilier-prose em {
+  color: rgb(120 108 100);
+  font-style: italic;
+  font-size: 0.9em;
+}

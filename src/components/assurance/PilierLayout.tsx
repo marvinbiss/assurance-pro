@@ -235,12 +235,18 @@ export async function PilierLayout({
           className={`py-16 md:py-20 ${idx % 2 === 0 ? 'bg-sand-50' : 'bg-white'}`}
         >
           <div className="container mx-auto max-w-4xl px-4">
-            <h2 className="mb-8 font-heading text-3xl font-extrabold leading-tight tracking-display text-charcoal-900 md:text-4xl">
-              {s.h2}
-            </h2>
-            <div className="prose prose-lg prose-headings:font-heading prose-headings:font-extrabold prose-headings:text-charcoal-900 prose-strong:text-charcoal-900 prose-a:text-primary-700 prose-a:no-underline hover:prose-a:underline prose-li:my-1 max-w-none text-charcoal-700">
-              {s.body}
+            <div className="mb-8 flex items-start gap-4">
+              <span
+                className="mt-2 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 font-heading text-base font-extrabold text-white shadow-glow-clay"
+                aria-hidden="true"
+              >
+                {idx + 1}
+              </span>
+              <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-display text-charcoal-900 md:text-4xl">
+                {s.h2}
+              </h2>
             </div>
+            <div className="pilier-prose prose prose-lg max-w-none text-charcoal-700">{s.body}</div>
           </div>
         </section>
       ))}
