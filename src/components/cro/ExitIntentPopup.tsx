@@ -134,7 +134,7 @@ export function ExitIntentPopup({
         <Link
           href={ctaUrl}
           onClick={handleCtaClick}
-          className="block w-full rounded-lg bg-blue-700 px-6 py-3 text-center font-bold text-white shadow-lg transition hover:bg-blue-800"
+          className="block w-full rounded-lg bg-primary-700 px-6 py-3 text-center font-bold text-white shadow-lg transition hover:bg-primary-800"
         >
           {ctaText}
         </Link>

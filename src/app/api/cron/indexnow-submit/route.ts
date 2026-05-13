@@ -10,7 +10,7 @@ import { verifyCronAuthorization } from '@/lib/security/cron-auth'
 
 /**
  * Cron quotidien : soumet à IndexNow (Bing/Yandex) les URLs prioritaires
- * du site Assurance Pro pour garantir une indexation rapide post-deploy.
+ * du site Vivos Assurance pour garantir une indexation rapide post-deploy.
  */
 
 const STATIC_PRIORITY = [

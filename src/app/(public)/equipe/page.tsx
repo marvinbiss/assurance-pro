@@ -1,85 +1,157 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { ArrowRight, Users, Award, CheckCircle2, ShieldCheck } from 'lucide-react'
 import { EQUIPE } from '@/lib/data/equipe'
 import { SITE_URL } from '@/lib/seo/config'
+import { PageHero } from '@/components/layout/PageHero'
 
 export const metadata: Metadata = {
-  title: "L'équipe — Courtiers ORIAS Assurance Pro",
+  title: "L'équipe — Courtiers ORIAS Vivos Assurance",
   description:
-    "Découvrez l'équipe du cabinet de courtage ORIAS Assurance Pro : direction, pôles BTP, RC Pro, Santé/Prévoyance. Expertise certifiée IAS Niveau I.",
+    "Découvrez l'équipe du cabinet de courtage ORIAS Vivos Assurance : direction, pôles BTP, RC Pro, Santé/Prévoyance. Expertise certifiée IAS Niveau I.",
   alternates: { canonical: `${SITE_URL}/equipe` },
   openGraph: {
-    title: 'L\\',
-    description: 'Découvrez l\\',
+    title: "L'équipe — Courtiers ORIAS Vivos Assurance",
+    description: "Découvrez l'équipe : direction, pôles BTP, RC Pro, Santé/Prévoyance.",
     url: `${SITE_URL}/equipe`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'L\\',
-    description: 'Découvrez l\\',
+    title: "L'équipe — Courtiers ORIAS",
+    description: 'Direction, pôles BTP, RC Pro, Santé/Prévoyance. Expertise IAS Niveau I.',
   },
 }
+
+const ENGAGEMENTS = [
+  "Indépendance capitalistique totale (aucune participation d'assureur)",
+  "Analyse impartiale d'un nombre suffisant de contrats (art. L. 521-4 II)",
+  'Recommandation écrite motivée pour chaque souscription',
+  'Aucun frais de courtage facturé au client',
+  'Réclamations traitées sous 10 j / réponse fond sous 2 mois (ACPR 2024-R-02)',
+  'Adhésion CSCA et formation continue annuelle ACPR (15 h/an minimum)',
+] as const
 
 export default function EquipePage() {
   const membres = Object.values(EQUIPE)
   return (
-    <main className="min-h-screen bg-white py-12">
-      <div className="container mx-auto max-w-5xl px-4">
-        <header className="mb-10">
-          <h1 className="mb-3 text-3xl font-bold md:text-4xl">Notre équipe</h1>
-          <p className="max-w-3xl text-lg text-gray-700">
+    <main className="min-h-screen bg-sand-50">
+      <PageHero
+        breadcrumbs={[{ label: 'Cabinet' }, { label: "L'équipe" }]}
+        eyebrow="Pôles d'expertise sectoriels"
+        EyebrowIcon={Users}
+        title={
+          <>
+            Notre équipe,
+            <br />
+            <span className="text-secondary-200">votre expertise dédiée.</span>
+          </>
+        }
+        description={
+          <>
             Cabinet de courtage indépendant immatriculé ORIAS, organisé en pôles d&apos;expertise
             sectoriels. Tous nos courtiers sont titulaires de la capacité professionnelle{' '}
-            <strong>IAS Niveau I</strong> (art. R. 512-9 C. assur.) et adhèrent à la formation
-            continue annuelle ACPR (15h/an minimum).
-          </p>
-        </header>
+            <strong className="text-white">IAS Niveau I</strong> (art. R. 512-9 C. assur.).
+          </>
+        }
+        meta={[
+          { Icon: Users, label: `${membres.length} courtiers ORIAS` },
+          { Icon: Award, label: 'IAS Niveau I certifié' },
+          { Icon: ShieldCheck, label: 'CSCA · Formation 15h/an' },
+        ]}
+      />
 
-        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {membres.map((m) => (
-            <li key={m.slug} className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-              <div className="mb-4 flex items-start gap-4">
-                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-xl font-bold text-blue-700">
-                  {m.prenom.charAt(0)}
-                  {m.nom.charAt(0)}
-                </div>
-                <div>
-                  <h2 className="text-lg font-bold">
-                    <Link href={`/equipe/${m.slug}`} className="text-gray-900 hover:underline">
-                      {m.prenom} {m.nom}
-                    </Link>
-                  </h2>
-                  <p className="text-sm text-gray-600">{m.poste}</p>
-                </div>
-              </div>
-              <p className="mb-3 line-clamp-3 text-sm text-gray-700">{m.bio}</p>
-              <div className="mb-3 flex flex-wrap gap-1.5">
-                {m.expertises.slice(0, 3).map((e) => (
-                  <span key={e} className="rounded bg-blue-50 px-2 py-0.5 text-xs text-blue-700">
-                    {e}
-                  </span>
-                ))}
-              </div>
-              <Link
-                href={`/equipe/${m.slug}`}
-                className="text-sm font-semibold text-blue-700 hover:underline"
+      <div className="container mx-auto max-w-6xl px-4 py-14">
+        {/* Grid équipe */}
+        <section className="mb-14">
+          <header className="mb-8">
+            <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+              <Users className="h-3.5 w-3.5" strokeWidth={2.4} />
+              Profils
+            </span>
+            <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+              Tous nos courtiers ORIAS
+            </h2>
+          </header>
+
+          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {membres.map((m) => (
+              <li
+                key={m.slug}
+                className="group relative overflow-hidden rounded-3xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-premium"
               >
-                Voir le profil →
-              </Link>
-            </li>
-          ))}
-        </ul>
+                <span
+                  className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 transition-opacity group-hover:opacity-100"
+                  aria-hidden="true"
+                />
+                <div className="mb-5 flex items-start gap-4">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 font-heading text-lg font-extrabold text-white shadow-glow-clay">
+                    {m.prenom.charAt(0)}
+                    {m.nom.charAt(0)}
+                  </div>
+                  <div className="flex-1 leading-tight">
+                    <h3 className="mb-1 font-heading text-lg font-extrabold tracking-tight text-charcoal-900">
+                      <Link
+                        href={`/equipe/${m.slug}`}
+                        className="transition-colors group-hover:text-primary-700"
+                      >
+                        {m.prenom} {m.nom}
+                      </Link>
+                    </h3>
+                    <p className="text-sm font-semibold text-charcoal-500">{m.poste}</p>
+                  </div>
+                </div>
+                <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-charcoal-600">
+                  {m.bio}
+                </p>
+                <div className="mb-5 flex flex-wrap gap-1.5">
+                  {m.expertises.slice(0, 3).map((e) => (
+                    <span
+                      key={e}
+                      className="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-[11px] font-bold text-primary-700"
+                    >
+                      {e}
+                    </span>
+                  ))}
+                </div>
+                <Link
+                  href={`/equipe/${m.slug}`}
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-primary-700 transition-transform group-hover:translate-x-0.5"
+                >
+                  Voir le profil
+                  <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.4} />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-        <section className="mt-12 rounded-lg border border-blue-200 bg-blue-50 p-6">
-          <h2 className="mb-3 text-xl font-bold">Nos engagements</h2>
-          <ul className="grid grid-cols-1 gap-3 text-sm text-blue-900 md:grid-cols-2">
-            <li>✓ Indépendance capitalistique totale (aucune participation d&apos;assureur)</li>
-            <li>✓ Analyse impartiale d&apos;un nombre suffisant de contrats (art. L. 521-4 II)</li>
-            <li>✓ Recommandation écrite motivée pour chaque souscription</li>
-            <li>✓ Aucun frais de courtage facturé au client</li>
-            <li>✓ Réclamations traitées sous 10j / réponse fond sous 2 mois (ACPR 2024-R-02)</li>
-            <li>✓ Adhésion CSCA et formation continue annuelle</li>
+        {/* Engagements premium */}
+        <section className="overflow-hidden rounded-3xl border border-charcoal-100 bg-white p-8 shadow-soft md:p-12">
+          <header className="mb-8 flex items-start gap-4">
+            <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-secondary-500 to-secondary-700 shadow-soft">
+              <Award className="h-6 w-6 text-white" strokeWidth={2.2} />
+            </span>
+            <div>
+              <span className="mb-1 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-secondary-700">
+                <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2.4} />
+                Promesse cabinet
+              </span>
+              <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+                Nos engagements
+              </h2>
+            </div>
+          </header>
+          <ul className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-2">
+            {ENGAGEMENTS.map((e) => (
+              <li key={e} className="flex items-start gap-3 text-sm text-charcoal-700">
+                <CheckCircle2
+                  className="mt-0.5 h-5 w-5 flex-shrink-0 text-secondary-700"
+                  strokeWidth={2.4}
+                />
+                <span className="leading-relaxed">{e}</span>
+              </li>
+            ))}
           </ul>
         </section>
       </div>

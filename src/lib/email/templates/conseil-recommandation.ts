@@ -100,11 +100,11 @@ export function conseilRecommandationTemplate(d: ConseilRecommandationData): {
       <p style="font-size:12px;color:#475569;line-height:1.5">
         ${esc(d.signatureCourtier)}<br>
         Courtier responsable — ORIAS n° ${esc(d.oriasCourtier)}<br>
-        <a href="mailto:contact@assurance-pro.fr" style="color:#1d4ed8">contact@assurance-pro.fr</a>
+        <a href="mailto:contact@vivos-assurance.fr" style="color:#1d4ed8">contact@vivos-assurance.fr</a>
       </p>
       <p style="font-size:11px;color:#94a3b8;line-height:1.5;margin-top:16px">
         Cabinet immatriculé ORIAS — soumis au contrôle de l'ACPR.
-        Pour toute réclamation : <a href="https://assurance-pro.fr/reclamation" style="color:#1d4ed8">assurance-pro.fr/reclamation</a>.
+        Pour toute réclamation : <a href="https://vivos-assurance.fr/reclamation" style="color:#1d4ed8">vivos-assurance.fr/reclamation</a>.
       </p>
     </div>
   </body>

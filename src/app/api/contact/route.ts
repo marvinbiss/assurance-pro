@@ -1,5 +1,5 @@
 /**
- * Contact API - Assurance Pro
+ * Contact API - Vivos Assurance
  * Handles contact form submissions and sends emails via Resend
  */
 
@@ -36,7 +36,10 @@ export async function POST(request: Request) {
     if (!rl.allowed) {
       return NextResponse.json(
         { error: 'Trop de requêtes, veuillez réessayer plus tard' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetTime - Date.now()) / 1000)) },
+        }
       )
     }
 
@@ -88,17 +91,14 @@ export async function POST(request: Request) {
         <p>${safeMessage}</p>
         <hr />
         <p style="color: #666; font-size: 12px;">
-          Message envoyé depuis le formulaire de contact de Assurance Pro
+          Message envoyé depuis le formulaire de contact de Vivos Assurance
         </p>
       `,
     })
 
     if (sendError) {
       logger.error('Error sending email', sendError)
-      return NextResponse.json(
-        { error: 'Erreur lors de l\'envoi du message' },
-        { status: 500 }
-      )
+      return NextResponse.json({ error: "Erreur lors de l'envoi du message" }, { status: 500 })
     }
 
     // Send confirmation email to user (non-critical — don't fail if this errors)
@@ -106,7 +106,7 @@ export async function POST(request: Request) {
       await getResend().emails.send({
         from: NOREPLY_FROM,
         to: email,
-        subject: 'Votre message a bien été reçu - Assurance Pro',
+        subject: 'Votre message a bien été reçu - Vivos Assurance',
         html: `
           <h2>Bonjour ${safeNom},</h2>
           <p>Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.</p>
@@ -115,9 +115,9 @@ export async function POST(request: Request) {
           <p><strong>Votre message:</strong></p>
           <p>${safeMessage}</p>
           <hr />
-          <p>Cordialement,<br />L'équipe Assurance Pro</p>
+          <p>Cordialement,<br />L'équipe Vivos Assurance</p>
           <p style="color: #666; font-size: 12px;">
-            <a href="https://assurance-pro.fr">assurance-pro.fr</a>
+            <a href="https://vivos-assurance.fr">vivos-assurance.fr</a>
           </p>
         `,
       })
@@ -131,9 +131,6 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     logger.error('Contact API error', error)
-    return NextResponse.json(
-      { error: 'Erreur serveur' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 })
   }
 }

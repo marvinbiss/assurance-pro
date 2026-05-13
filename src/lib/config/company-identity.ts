@@ -1,5 +1,5 @@
 /**
- * Company Identity — Single Source of Truth (Assurance Pro, courtier ORIAS).
+ * Company Identity — Single Source of Truth (Vivos Assurance, courtier ORIAS).
  *
  * Hiérarchie des sources :
  *   Niveau 1 (mentions légales) : siret, legalName, address, phone, rcs, tva, orias
@@ -16,11 +16,11 @@
 
 export const companyIdentity = {
   // Brand (Level 5 — UI copy only)
-  name: 'Assurance Pro' as const,
+  name: 'Vivos Assurance' as const,
   tagline: 'Courtier ORIAS — comparez et négociez votre assurance pro en 2 minutes',
   description:
-    'Cabinet de courtage ORIAS spécialiste de l\'assurance professionnelle. 10 assureurs partenaires comparés sur 17 verticaux : décennale BTP, RC Pro, multirisque, mutuelle TNS Madelin, VTC, cyber. Aucun frais de courtage facturé.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://assurance-pro.fr',
+    "Cabinet de courtage ORIAS spécialiste de l'assurance professionnelle. 10 assureurs partenaires comparés sur 17 verticaux : décennale BTP, RC Pro, multirisque, mutuelle TNS Madelin, VTC, cyber. Aucun frais de courtage facturé.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://vivos-assurance.fr',
 
   // Legal identity (Level 1 — from env vars, null until company registration)
   legalName: process.env.COMPANY_LEGAL_NAME || null,
@@ -35,12 +35,12 @@ export const companyIdentity = {
   foundingDate: process.env.COMPANY_FOUNDING_DATE || null,
 
   // Contact (real and functional)
-  email: 'contact@assurance-pro.fr',
-  supportEmail: 'support@assurance-pro.fr',
-  dpoEmail: 'dpo@assurance-pro.fr',
-  presseEmail: 'presse@assurance-pro.fr',
-  partenairesEmail: 'partenaires@assurance-pro.fr',
-  careersEmail: 'careers@assurance-pro.fr',
+  email: 'contact@vivos-assurance.fr',
+  supportEmail: 'support@vivos-assurance.fr',
+  dpoEmail: 'dpo@vivos-assurance.fr',
+  presseEmail: 'presse@vivos-assurance.fr',
+  partenairesEmail: 'partenaires@vivos-assurance.fr',
+  careersEmail: 'careers@vivos-assurance.fr',
 
   // Social (real profiles)
   social: {

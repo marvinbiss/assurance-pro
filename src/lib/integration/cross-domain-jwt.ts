@@ -1,12 +1,12 @@
 /**
- * Cross-domain JWT — ServicesArtisans → Assurance Pro
+ * Cross-domain JWT — ServicesArtisans → Vivos Assurance
  *
- * ServicesArtisans peut envoyer un visiteur vers Assurance Pro avec un token
+ * ServicesArtisans peut envoyer un visiteur vers Vivos Assurance avec un token
  * JWT signé qui pré-remplit certains champs du formulaire devis (vertical,
  * métier, ville, données de contact si l'utilisateur a déjà consenti).
  *
  * Algo : HS256 avec une clé partagée stockée dans CROSS_DOMAIN_JWT_SECRET.
- * Audience : 'assurance-pro.fr'. Issuer : 'servicesartisans.fr'.
+ * Audience : 'vivos-assurance.fr'. Issuer : 'servicesartisans.fr'.
  * TTL : 10 minutes (limiter la fenêtre de remploi).
  */
 
@@ -20,7 +20,10 @@ const CrossDomainPayloadSchema = z.object({
   metier: z.string().max(40).optional(),
   garantie: z.string().max(40).optional(),
   ville: z.string().max(80).optional(),
-  postal_code: z.string().regex(/^\d{5}$/).optional(),
+  postal_code: z
+    .string()
+    .regex(/^\d{5}$/)
+    .optional(),
   prenom: z.string().max(80).optional(),
   nom: z.string().max(80).optional(),
   email: z.string().email().max(254).optional(),
@@ -35,7 +38,7 @@ const CrossDomainPayloadSchema = z.object({
 export type CrossDomainPayload = z.infer<typeof CrossDomainPayloadSchema>
 
 const ISSUER = 'servicesartisans.fr'
-const AUDIENCE = 'assurance-pro.fr'
+const AUDIENCE = 'vivos-assurance.fr'
 const TTL = '10m'
 
 function getKey(): Uint8Array {
@@ -52,9 +55,7 @@ function getKey(): Uint8Array {
 /**
  * Signe un token côté ServicesArtisans (utilitaire exporté pour le partner).
  */
-export async function signCrossDomainToken(
-  payload: CrossDomainPayload
-): Promise<string> {
+export async function signCrossDomainToken(payload: CrossDomainPayload): Promise<string> {
   // Validate before signing to surface programmer errors immediately.
   const validated = CrossDomainPayloadSchema.parse(payload)
   return await new SignJWT({ ...validated } as Record<string, unknown>)
@@ -68,11 +69,11 @@ export async function signCrossDomainToken(
 }
 
 /**
- * Vérifie + décode côté Assurance Pro.
+ * Vérifie + décode côté Vivos Assurance.
  * Renvoie null si invalide / expiré.
  */
 /**
- * Vérifie + décode un token côté Assurance Pro.
+ * Vérifie + décode un token côté Vivos Assurance.
  * Si `consumeJti=true` (défaut en prod), enregistre le jti dans la table
  * `public.jwt_jti_consumed` ; toute réutilisation ultérieure renvoie null.
  *
@@ -97,7 +98,13 @@ export async function verifyCrossDomainToken(
     // Anti-replay déterministe : INSERT avec onConflict ignoreDuplicates.
     // Si data est vide → JTI déjà consommé → replay rejeté.
     // Si erreur autre que succès → fail-closed (DoS Supabase n'ouvre pas de fenêtre).
-    if (consumeJti && jti && exp && process.env.NEXT_PUBLIC_SUPABASE_URL && !process.env.NEXT_BUILD_SKIP_DB) {
+    if (
+      consumeJti &&
+      jti &&
+      exp &&
+      process.env.NEXT_PUBLIC_SUPABASE_URL &&
+      !process.env.NEXT_BUILD_SKIP_DB
+    ) {
       try {
         const admin = createPiiAdminClient()
         const { data, error } = await admin

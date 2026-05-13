@@ -1,5 +1,5 @@
 /**
- * Header — Assurance Pro France
+ * Header — Vivos Assurance France
  * Server component wrapper for HeaderClient
  */
 import HeaderClient from './HeaderClient'

@@ -3,14 +3,14 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Assurance décennale BTP — Comparez en 2 min | Assurance Pro',
+  title: 'Assurance décennale BTP — Comparez en 2 min',
   description:
     'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/assurance-decennale`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/assurance-decennale`,
   },
   openGraph: {
-    title: 'Assurance décennale BTP — Comparez en 2 min | Assurance Pro',
+    title: 'Assurance décennale BTP — Comparez en 2 min',
     description:
       'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
     url: `${SITE_URL}/assurance-decennale`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Assurance décennale BTP — Comparez en 2 min | Assurance Pro',
+    title: 'Assurance décennale BTP — Comparez en 2 min',
     description:
       'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
   },
@@ -71,7 +71,7 @@ export default function PilierDecennalePage() {
                 RGE (photovoltaïque, pompes à chaleur), les paysagistes lorsqu\'ils réalisent des
                 ouvrages durs.
               </p>
-              <p className="my-4 border-l-4 border-blue-400 bg-blue-50 p-4 text-sm">
+              <p className="my-4 border-l-4 border-primary-400 bg-primary-50 p-4 text-sm">
                 <strong>Auto-entrepreneurs&nbsp;:</strong> l\'obligation s\'applique aussi aux
                 micro-entrepreneurs du BTP. Notre cabinet propose des contrats spécifiques adaptés
                 au statut AE avec primes à partir de 35€/mois selon le métier et le CA déclaré.

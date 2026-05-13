@@ -1,14 +1,16 @@
 import type { Metadata, Viewport } from 'next'
-import dynamic from 'next/dynamic'
 import Script from 'next/script'
 import { headers } from 'next/headers'
 import { DM_Sans, Sora } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
+import { PreOriasBanner } from '@/components/PreOriasBanner'
 import Footer from '@/components/Footer'
 import { TrackingScripts } from '@/components/TrackingScripts'
 import { getOrganizationSchema, getWebsiteSchema } from '@/lib/seo/jsonld'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { SITE_URL } from '@/lib/seo/config'
+import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -25,17 +27,8 @@ const sora = Sora({
   adjustFontFallback: true,
 })
 
-// Dynamic imports for performance (client-only utilities)
-const ServiceWorkerRegistration = dynamic(() => import('@/components/ServiceWorkerRegistration'), {
-  ssr: false,
-})
-const CookieConsent = dynamic(() => import('@/components/CookieConsent'), {
-  ssr: false,
-})
-const WebVitals = dynamic(
-  () => import('@/components/WebVitals').then((mod) => ({ default: mod.WebVitals })),
-  { ssr: false }
-)
+// Client-only dynamic imports moved to ./_components/client-only-helpers.tsx
+// (Next 15: `ssr: false` requires a Client Component boundary)
 
 // Viewport configuration - Primary brand color
 export const viewport: Viewport = {
@@ -52,17 +45,17 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Assurance Pro — Courtier ORIAS multi-vertical',
-    template: '%s | Assurance Pro',
+    default: 'Vivos Assurance — Courtier ORIAS multi-vertical',
+    template: '%s | Vivos Assurance',
   },
   description:
     'Courtier ORIAS spécialiste assurance professionnelle. Comparez les offres de 10+ assureurs partenaires. Décennale, RC Pro, Multirisque, Mutuelle, VTC, Cyber. Devis gratuit et sans engagement.',
-  authors: [{ name: 'Assurance Pro' }],
-  applicationName: 'Assurance Pro',
+  authors: [{ name: 'Vivos Assurance' }],
+  applicationName: 'Vivos Assurance',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'Assurance Pro',
+    title: 'Vivos Assurance',
   },
   formatDetection: {
     telephone: true,
@@ -73,8 +66,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     url: SITE_URL,
-    siteName: 'Assurance Pro',
-    title: 'Assurance Pro — Comparez et économisez en 2 minutes',
+    siteName: 'Vivos Assurance',
+    title: 'Vivos Assurance — Comparez et économisez en 2 minutes',
     description:
       'Courtier ORIAS spécialiste assurance pro. 10+ assureurs partenaires comparés. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Devis gratuit en 24h.',
     images: [
@@ -82,13 +75,13 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/opengraph-image`,
         width: 1200,
         height: 630,
-        alt: 'Assurance Pro — Comparez et économisez en 2 minutes',
+        alt: 'Vivos Assurance — Comparez et économisez en 2 minutes',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Assurance Pro — Comparez et économisez en 2 minutes',
+    title: 'Vivos Assurance — Comparez et économisez en 2 minutes',
     description:
       'Courtier ORIAS — Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Devis gratuit.',
   },
@@ -106,13 +99,12 @@ export const metadata: Metadata = {
       'x-default': SITE_URL,
     },
     types: {
-      'application/rss+xml': [{ url: `${SITE_URL}/feed/blog.xml`, title: 'Blog Assurance Pro' }],
+      'application/rss+xml': [{ url: `${SITE_URL}/feed/blog.xml`, title: 'Blog Vivos Assurance' }],
     },
   },
   manifest: '/manifest.json',
   icons: {
-    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    icon: [{ url: '/favicon.ico', sizes: 'any' }],
   },
   other: {
     'mobile-web-app-capable': 'yes',
@@ -130,9 +122,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <meta name="msapplication-TileColor" content="#E86B4B" />
         <meta name="msapplication-tap-highlight" content="no" />
 
-        {/* Additional icon size (180px apple-touch-icon + icon.svg handled by metadata.icons export) */}
-        <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
-
         {/* LLM discovery — llms.txt (GEO/AEO optimization) */}
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM access guidelines" />
         <link
@@ -143,16 +132,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
 
         {/* Global Organization + WebSite schema (E-E-A-T) */}
-        <script
-          nonce={nonce}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([getOrganizationSchema(), getWebsiteSchema()])
-              .replace(/</g, '\\u003c')
-              .replace(/>/g, '\\u003e')
-              .replace(/&/g, '\\u0026'),
-          }}
-        />
+        <script {...jsonLdScriptProps([getOrganizationSchema(), getWebsiteSchema()], nonce)} />
 
         {/* Preconnect for Google Tag Manager */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -188,21 +168,21 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           metaPixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID}
           clarityId={process.env.NEXT_PUBLIC_CLARITY_ID}
         />
-        <WebVitals />
+        <ClientOnlyWebVitals />
         {/* Skip to main content for accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-lg focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-lg focus:bg-primary-600 focus:px-4 focus:py-2 focus:text-white focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
         >
           Aller au contenu principal
         </a>
+        <PreOriasBanner />
         <Header />
         <main id="main-content" tabIndex={-1} className="outline-none">
           {children}
         </main>
         <Footer />
-        <ServiceWorkerRegistration />
-        <CookieConsent />
+        <ClientOnlyFooterHelpers />
       </body>
     </html>
   )

@@ -1,5 +1,5 @@
 /**
- * Ambient global type augmentations for Assurance Pro.
+ * Ambient global type augmentations for Vivos Assurance.
  * Loaded automatically by TypeScript via tsconfig "include".
  */
 

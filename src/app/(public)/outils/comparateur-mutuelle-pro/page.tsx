@@ -19,8 +19,11 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 import { SITE_URL } from '@/lib/seo/config'
+import { headers } from 'next/headers'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
@@ -28,56 +31,83 @@ export const revalidate = 86400
 const SLUG = 'outils/comparateur-mutuelle-pro'
 
 export const metadata: Metadata = {
-  title: 'Comparateur mutuelle pro 2026 — TNS, BTP, dirigeant | Assurance Pro',
+  title: 'Comparateur mutuelle pro 2026 — TNS, BTP, dirigeant',
   description:
-    "Comparateur mutuelle pro gratuit en 2 minutes : TNS Madelin déductible, mutuelle pro BTP (16k recherches/mois), mutuelle dirigeant SASU/SAS. 6 assureurs comparés (PRO BTP, April Pro, MMA, Generali, Aon, Harmonie). Devis ORIAS sous 24h.",
+    'Comparateur mutuelle pro gratuit en 2 minutes : TNS Madelin déductible, mutuelle pro BTP (16k recherches/mois), mutuelle dirigeant SASU/SAS. 6 assureurs comparés (PRO BTP, April Pro, MMA, Generali, Aon, Harmonie). Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: 'Comparateur mutuelle pro 2026 — TNS Madelin + BTP + dirigeant',
-    description: "Comparatif 6 mutuelles pro (PRO BTP, April, MMA, Generali, Aon, Harmonie). Devis sous 24h.",
+    description:
+      'Comparatif 6 mutuelles pro (PRO BTP, April, MMA, Generali, Aon, Harmonie). Devis sous 24h.',
     url: `${SITE_URL}/${SLUG}`,
     type: 'website',
   },
   robots: { index: true, follow: true },
 }
 
-export default function Page() {
+export default async function Page() {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <main className="min-h-screen bg-white">
       {/* HERO */}
-      <header className="bg-gradient-to-br from-emerald-700 to-teal-900 text-white py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <nav aria-label="Fil d'Ariane" className="text-sm opacity-80 mb-4">
-            <a href="/" className="hover:underline">Accueil</a>{' '}/{' '}
-            <a href="/mutuelle-pro" className="hover:underline">Mutuelle pro</a>{' '}/{' '}
-            <span>Comparateur mutuelle pro</span>
+      <header className="bg-gradient-to-br from-emerald-700 to-teal-900 py-12 text-white">
+        <div className="container mx-auto max-w-4xl px-4">
+          <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
+            <Link href="/" className="hover:underline">
+              Accueil
+            </Link>{' '}
+            /{' '}
+            <Link href="/mutuelle-pro" className="hover:underline">
+              Mutuelle pro
+            </Link>{' '}
+            / <span>Comparateur mutuelle pro</span>
           </nav>
-          <span className="inline-block mb-4 px-3 py-1 bg-amber-500/90 text-white rounded-full text-sm font-semibold">
+          <span className="mb-4 inline-block rounded-full bg-amber-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ Madelin déductible (TNS) — économie ~1 750 €/an
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+          <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">
             Comparateur mutuelle pro 2026
           </h1>
-          <p className="text-lg md:text-xl opacity-95 mb-6 max-w-3xl">
+          <p className="mb-6 max-w-3xl text-lg opacity-95 md:text-xl">
             Comparatif gratuit des 6 principales mutuelles pro distribuées en France :
-            <strong> PRO BTP, April Pro Santé, MMA Pro, Generali, Aon, Harmonie Mutuelle Pro</strong>.
-            Tarifs négociés à partir de <strong>32 €/mois</strong> (formule TNS de base) jusqu&apos;à
+            <strong>
+              {' '}
+              PRO BTP, April Pro Santé, MMA Pro, Generali, Aon, Harmonie Mutuelle Pro
+            </strong>
+            . Tarifs négociés à partir de <strong>32 €/mois</strong> (formule TNS de base)
+            jusqu&apos;à
             <strong> 280 €/mois</strong> (haut de gamme famille). Conseil ORIAS sous 24h.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-            <div className="bg-white/10 rounded p-3"><strong>⏱ 2 minutes</strong><br />Formulaire</div>
-            <div className="bg-white/10 rounded p-3"><strong>📧 24h</strong><br />3-5 propositions</div>
-            <div className="bg-white/10 rounded p-3"><strong>💰 Madelin</strong><br />Déductible TNS</div>
-            <div className="bg-white/10 rounded p-3"><strong>🆓 Gratuit</strong><br />ORIAS</div>
+          <div className="grid grid-cols-2 gap-4 text-sm md:grid-cols-4">
+            <div className="rounded bg-white/10 p-3">
+              <strong>⏱ 2 minutes</strong>
+              <br />
+              Formulaire
+            </div>
+            <div className="rounded bg-white/10 p-3">
+              <strong>📧 24h</strong>
+              <br />
+              3-5 propositions
+            </div>
+            <div className="rounded bg-white/10 p-3">
+              <strong>💰 Madelin</strong>
+              <br />
+              Déductible TNS
+            </div>
+            <div className="rounded bg-white/10 p-3">
+              <strong>🆓 Gratuit</strong>
+              <br />
+              ORIAS
+            </div>
           </div>
         </div>
       </header>
 
       {/* TARIFS RÉFÉRENCE */}
-      <section className="py-10 bg-gray-50 border-b">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-2xl font-bold mb-4">Tarifs mutuelle pro 2026 par profil</h2>
-          <table className="w-full text-sm border-collapse">
+      <section className="border-b bg-gray-50 py-10">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-4 text-2xl font-bold">Tarifs mutuelle pro 2026 par profil</h2>
+          <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-white">
                 <th className="border p-2 text-left">Profil</th>
@@ -86,40 +116,66 @@ export default function Page() {
               </tr>
             </thead>
             <tbody>
-              <tr><td className="border p-2">Artisan TNS solo, 35 ans (BTP)</td><td className="border p-2">PRO BTP Madelin Confort</td><td className="border p-2 text-right">38 € – 62 €</td></tr>
-              <tr><td className="border p-2">Consultant TNS solo, 35 ans (tertiaire)</td><td className="border p-2">April Pro Santé Madelin</td><td className="border p-2 text-right">32 € – 55 €</td></tr>
-              <tr><td className="border p-2">Médecin libéral 40 ans</td><td className="border p-2">MACSF Madelin Premium</td><td className="border p-2 text-right">68 € – 110 €</td></tr>
-              <tr><td className="border p-2">Dirigeant SASU/SAS 45 ans (assimilé salarié)</td><td className="border p-2">Régime collectif 1 personne</td><td className="border p-2 text-right">95 € – 180 €</td></tr>
-              <tr><td className="border p-2">Famille TNS 4 personnes (40 ans)</td><td className="border p-2">Madelin Premium famille</td><td className="border p-2 text-right">160 € – 280 €</td></tr>
-              <tr><td className="border p-2">Salarié BTP collectif obligatoire</td><td className="border p-2">ANI 2013 (50% employeur)</td><td className="border p-2 text-right">~50% pris en charge</td></tr>
+              <tr>
+                <td className="border p-2">Artisan TNS solo, 35 ans (BTP)</td>
+                <td className="border p-2">PRO BTP Madelin Confort</td>
+                <td className="border p-2 text-right">38 € – 62 €</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Consultant TNS solo, 35 ans (tertiaire)</td>
+                <td className="border p-2">April Pro Santé Madelin</td>
+                <td className="border p-2 text-right">32 € – 55 €</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Médecin libéral 40 ans</td>
+                <td className="border p-2">MACSF Madelin Premium</td>
+                <td className="border p-2 text-right">68 € – 110 €</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Dirigeant SASU/SAS 45 ans (assimilé salarié)</td>
+                <td className="border p-2">Régime collectif 1 personne</td>
+                <td className="border p-2 text-right">95 € – 180 €</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Famille TNS 4 personnes (40 ans)</td>
+                <td className="border p-2">Madelin Premium famille</td>
+                <td className="border p-2 text-right">160 € – 280 €</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Salarié BTP collectif obligatoire</td>
+                <td className="border p-2">ANI 2013 (50% employeur)</td>
+                <td className="border p-2 text-right">~50% pris en charge</td>
+              </tr>
             </tbody>
           </table>
-          <p className="text-xs text-gray-600 italic mt-2">
+          <p className="mt-2 text-xs italic text-gray-600">
             Loi Madelin (art. 154 bis CGI) : pour TNS au régime réel, cotisations mutuelle +
-            prévoyance déductibles dans plafond commun ~5 800 €/an pour 60 k€ de bénéfice
-            (économie d&apos;impôt nette ~1 750 €/an à TMI 30%).
+            prévoyance déductibles dans plafond commun ~5 800 €/an pour 60 k€ de bénéfice (économie
+            d&apos;impôt nette ~1 750 €/an à TMI 30%).
           </p>
         </div>
       </section>
 
       {/* FORMULAIRE — pré-rempli garantie_code='mutuelle-pro' */}
       <section className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-2xl font-bold mb-2">Démarrer mon comparatif mutuelle pro</h2>
-          <p className="text-gray-600 mb-6">
+        <div className="container mx-auto max-w-3xl px-4">
+          <h2 className="mb-2 text-2xl font-bold">Démarrer mon comparatif mutuelle pro</h2>
+          <p className="mb-6 text-gray-600">
             3 étapes — 2 minutes. Vos données sont transmises uniquement aux 3-5 mutuelles
-            sélectionnées pour votre profil (TNS, dirigeant assimilé salarié, BTP). Conformité
-            RGPD + ACPR 2024-R-03 (devoir de conseil tracé).
+            sélectionnées pour votre profil (TNS, dirigeant assimilé salarié, BTP). Conformité RGPD
+            + ACPR 2024-R-03 (devoir de conseil tracé).
           </p>
           <DevisAssuranceForm prefill={{ garantie_code: 'mutuelle-pro' }} />
         </div>
       </section>
 
       {/* COMPARATIF 6 MUTUELLES */}
-      <section className="py-10 bg-emerald-50 border-t">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-2xl font-bold mb-4">Comparatif des 6 mutuelles pro distribuées en France</h2>
-          <table className="w-full text-sm border-collapse">
+      <section className="border-t bg-emerald-50 py-10">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-4 text-2xl font-bold">
+            Comparatif des 6 mutuelles pro distribuées en France
+          </h2>
+          <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-white">
                 <th className="border p-2 text-left">Mutuelle</th>
@@ -128,22 +184,64 @@ export default function Page() {
               </tr>
             </thead>
             <tbody>
-              <tr><td className="border p-2"><strong>PRO BTP</strong></td><td className="border p-2">Régime historique branche BTP</td><td className="border p-2">Réseau santé conventionné, prévoyance + retraite intégrées</td></tr>
-              <tr><td className="border p-2"><strong>April Pro Santé</strong></td><td className="border p-2">Multi-secteurs TNS</td><td className="border p-2">Modulaire à la carte, app mobile, dématérialisation</td></tr>
-              <tr><td className="border p-2"><strong>MMA Pro Santé</strong></td><td className="border p-2">TPE / PME locales</td><td className="border p-2">Réseau agences physique fort, conseiller dédié</td></tr>
-              <tr><td className="border p-2"><strong>Generali Santé</strong></td><td className="border p-2">Cabinets libéraux + dirigeants</td><td className="border p-2">Garanties haut de gamme (médecines douces, optique premium)</td></tr>
-              <tr><td className="border p-2"><strong>Aon Santé Pro</strong></td><td className="border p-2">Cadres + dirigeants haut de gamme</td><td className="border p-2">Couverture expat OK, garanties premium</td></tr>
-              <tr><td className="border p-2"><strong>Harmonie Mutuelle Pro</strong></td><td className="border p-2">Mutualiste TPE/PME</td><td className="border p-2">Sans actionnaire, prix attractifs entrée gamme</td></tr>
+              <tr>
+                <td className="border p-2">
+                  <strong>PRO BTP</strong>
+                </td>
+                <td className="border p-2">Régime historique branche BTP</td>
+                <td className="border p-2">
+                  Réseau santé conventionné, prévoyance + retraite intégrées
+                </td>
+              </tr>
+              <tr>
+                <td className="border p-2">
+                  <strong>April Pro Santé</strong>
+                </td>
+                <td className="border p-2">Multi-secteurs TNS</td>
+                <td className="border p-2">Modulaire à la carte, app mobile, dématérialisation</td>
+              </tr>
+              <tr>
+                <td className="border p-2">
+                  <strong>MMA Pro Santé</strong>
+                </td>
+                <td className="border p-2">TPE / PME locales</td>
+                <td className="border p-2">Réseau agences physique fort, conseiller dédié</td>
+              </tr>
+              <tr>
+                <td className="border p-2">
+                  <strong>Generali Santé</strong>
+                </td>
+                <td className="border p-2">Cabinets libéraux + dirigeants</td>
+                <td className="border p-2">
+                  Garanties haut de gamme (médecines douces, optique premium)
+                </td>
+              </tr>
+              <tr>
+                <td className="border p-2">
+                  <strong>Aon Santé Pro</strong>
+                </td>
+                <td className="border p-2">Cadres + dirigeants haut de gamme</td>
+                <td className="border p-2">Couverture expat OK, garanties premium</td>
+              </tr>
+              <tr>
+                <td className="border p-2">
+                  <strong>Harmonie Mutuelle Pro</strong>
+                </td>
+                <td className="border p-2">Mutualiste TPE/PME</td>
+                <td className="border p-2">Sans actionnaire, prix attractifs entrée gamme</td>
+              </tr>
             </tbody>
           </table>
         </div>
       </section>
 
       {/* TNS vs ASSIMILÉ SALARIÉ — clé de choix */}
-      <section className="py-10 bg-white border-t">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-xl font-bold mb-4">TNS vs assimilé salarié : impact sur votre mutuelle</h2>
-          <table className="w-full text-sm border-collapse">
+      <section className="border-t bg-white py-10">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-4 text-xl font-bold">
+            TNS vs assimilé salarié : impact sur votre mutuelle
+          </h2>
+          <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-gray-100">
                 <th className="border p-2 text-left">Statut</th>
@@ -153,13 +251,50 @@ export default function Page() {
               </tr>
             </thead>
             <tbody>
-              <tr><td className="border p-2">SARL gérant majoritaire</td><td className="border p-2">TNS</td><td className="border p-2">✅ OUI (régime réel)</td><td className="border p-2">Madelin individuelle</td></tr>
-              <tr><td className="border p-2">EI / EURL</td><td className="border p-2">TNS</td><td className="border p-2">✅ OUI (régime réel)</td><td className="border p-2">Madelin individuelle</td></tr>
-              <tr><td className="border p-2">Profession libérale BNC</td><td className="border p-2">TNS</td><td className="border p-2">✅ OUI</td><td className="border p-2">Madelin individuelle</td></tr>
-              <tr><td className="border p-2">Auto-entrepreneur micro-fiscal</td><td className="border p-2">TNS</td><td className="border p-2">❌ NON</td><td className="border p-2">Mutuelle individuelle non-Madelin</td></tr>
-              <tr><td className="border p-2">SASU / SAS président</td><td className="border p-2">Assimilé salarié</td><td className="border p-2">❌ NON</td><td className="border p-2">Régime collectif (déductible 100% résultat)</td></tr>
-              <tr><td className="border p-2">SARL gérant minoritaire</td><td className="border p-2">Assimilé salarié</td><td className="border p-2">❌ NON</td><td className="border p-2">Régime collectif</td></tr>
-              <tr><td className="border p-2">Salarié employeur</td><td className="border p-2">Salarié</td><td className="border p-2">❌</td><td className="border p-2">Mutuelle collective ANI 2013 obligatoire (50% employeur)</td></tr>
+              <tr>
+                <td className="border p-2">SARL gérant majoritaire</td>
+                <td className="border p-2">TNS</td>
+                <td className="border p-2">✅ OUI (régime réel)</td>
+                <td className="border p-2">Madelin individuelle</td>
+              </tr>
+              <tr>
+                <td className="border p-2">EI / EURL</td>
+                <td className="border p-2">TNS</td>
+                <td className="border p-2">✅ OUI (régime réel)</td>
+                <td className="border p-2">Madelin individuelle</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Profession libérale BNC</td>
+                <td className="border p-2">TNS</td>
+                <td className="border p-2">✅ OUI</td>
+                <td className="border p-2">Madelin individuelle</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Auto-entrepreneur micro-fiscal</td>
+                <td className="border p-2">TNS</td>
+                <td className="border p-2">❌ NON</td>
+                <td className="border p-2">Mutuelle individuelle non-Madelin</td>
+              </tr>
+              <tr>
+                <td className="border p-2">SASU / SAS président</td>
+                <td className="border p-2">Assimilé salarié</td>
+                <td className="border p-2">❌ NON</td>
+                <td className="border p-2">Régime collectif (déductible 100% résultat)</td>
+              </tr>
+              <tr>
+                <td className="border p-2">SARL gérant minoritaire</td>
+                <td className="border p-2">Assimilé salarié</td>
+                <td className="border p-2">❌ NON</td>
+                <td className="border p-2">Régime collectif</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Salarié employeur</td>
+                <td className="border p-2">Salarié</td>
+                <td className="border p-2">❌</td>
+                <td className="border p-2">
+                  Mutuelle collective ANI 2013 obligatoire (50% employeur)
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -167,12 +302,11 @@ export default function Page() {
 
       {/* JSON-LD */}
       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+        {...jsonLdScriptProps(
+          {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Comparateur mutuelle pro — Assurance Pro',
+            name: 'Comparateur mutuelle pro — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Any',
@@ -182,9 +316,10 @@ export default function Page() {
               priceCurrency: 'EUR',
             },
             description:
-              "Comparateur mutuelle pro gratuit en 2 minutes. 6 mutuelles comparées (PRO BTP, April, MMA, Generali, Aon, Harmonie). TNS Madelin + dirigeant + BTP.",
-          }),
-        }}
+              'Comparateur mutuelle pro gratuit en 2 minutes. 6 mutuelles comparées (PRO BTP, April, MMA, Generali, Aon, Harmonie). TNS Madelin + dirigeant + BTP.',
+          },
+          nonce
+        )}
       />
     </main>
   )

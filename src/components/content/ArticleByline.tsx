@@ -55,7 +55,7 @@ function PersonLink({ person, prefix }: { person: BylinePerson; prefix: string }
     <span className="text-sm text-gray-600">
       {prefix}{' '}
       {person.slug ? (
-        <Link href={`/equipe/${person.slug}`} className="hover:text-blue-700 hover:underline">
+        <Link href={`/equipe/${person.slug}`} className="hover:text-primary-700 hover:underline">
           {display}
         </Link>
       ) : (
@@ -108,7 +108,7 @@ export function ArticleByline({
         Publié le <strong className="font-semibold">{formatDate(datePublished)}</strong>
       </time>
 
-      {showUpdate && (
+      {showUpdate && dateModified && (
         <>
           <span className="text-gray-300" aria-hidden="true">
             ·
@@ -118,7 +118,7 @@ export function ArticleByline({
               ↻
             </span>
             <span>
-              Mis à jour le <strong className="font-semibold">{formatDate(dateModified!)}</strong>
+              Mis à jour le <strong className="font-semibold">{formatDate(dateModified)}</strong>
             </span>
           </time>
         </>

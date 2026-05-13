@@ -1,5 +1,5 @@
 /**
- * Schema.org JSON-LD pour Assurance Pro (cabinet de courtage ORIAS).
+ * Schema.org JSON-LD pour Vivos Assurance (cabinet de courtage ORIAS).
  * Trois schémas exportés :
  * - getOrganizationSchema : InsuranceAgency (E-E-A-T critique YMYL)
  * - getWebsiteSchema : WebSite + SearchAction
@@ -75,7 +75,7 @@ export function getWebsiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: SITE_NAME,
-    alternateName: ['assurance-pro.fr'],
+    alternateName: ['vivos-assurance.fr'],
     url: SITE_URL,
     publisher: { '@id': `${SITE_URL}#organization` },
   }
@@ -244,7 +244,7 @@ export function getDefinedTermSchema(params: {
       ? {
           inDefinedTermSet: {
             '@type': 'DefinedTermSet',
-            name: 'Glossaire Assurance Pro',
+            name: 'Glossaire Vivos Assurance',
             url: params.inDefinedTermSet,
           },
         }
@@ -266,4 +266,134 @@ export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
       }
     }),
   }
+}
+
+/**
+ * Schema.org Review (avis individuel) + AggregateRating.
+ *
+ * Source : avis Trustpilot ISO 20488 vérifiés (norme NF Service).
+ * Génère rich snippet ★★★★☆ en SERP Google + visible dans LLM context.
+ *
+ * Convention : ne JAMAIS injecter d'avis non-vérifiés (CGU Google AdWords +
+ * réglementation DGCCRF avis trompeurs depuis 2024).
+ */
+export interface VerifiedReview {
+  /** Identifiant unique de l'avis (Trustpilot review id) */
+  id: string
+  /** Auteur (anonymisé : prénom + initiale OK) */
+  author: string
+  /** Note 1-5 */
+  rating: 1 | 2 | 3 | 4 | 5
+  /** Texte de l'avis (déjà filtré DGCCRF) */
+  text: string
+  /** Date publication ISO YYYY-MM-DD */
+  datePublished: string
+  /** Ville auteur (optionnelle, anonymisation) */
+  city?: string
+  /** ISO 20488 vérifié */
+  iso20488: boolean
+}
+
+/**
+ * Génère un schema Review unitaire.
+ */
+export function getReviewSchema(params: {
+  review: VerifiedReview
+  itemReviewedName: string
+  itemReviewedType?: 'Service' | 'Product' | 'InsuranceAgency' | 'Organization'
+}) {
+  const itemType = params.itemReviewedType ?? 'Service'
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    '@id': `${SITE_URL}#review-${params.review.id}`,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: params.review.rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    name: `Avis ${params.review.rating}/5 — ${params.itemReviewedName}`,
+    reviewBody: params.review.text,
+    datePublished: params.review.datePublished,
+    author: {
+      '@type': 'Person',
+      name: params.review.author,
+      ...(params.review.city
+        ? { address: { '@type': 'PostalAddress', addressLocality: params.review.city } }
+        : {}),
+    },
+    publisher: { '@id': `${SITE_URL}#organization` },
+    itemReviewed: {
+      '@type': itemType,
+      name: params.itemReviewedName,
+      ...(itemType === 'InsuranceAgency' || itemType === 'Organization'
+        ? { '@id': `${SITE_URL}#organization` }
+        : {}),
+    },
+  }
+}
+
+/**
+ * Génère un AggregateRating à partir d'une collection d'avis vérifiés.
+ * Retourne null si moins de 3 avis (Google requirement).
+ */
+export function getAggregateRatingSchema(params: {
+  reviews: VerifiedReview[]
+  itemReviewedName: string
+  itemReviewedType?: 'Service' | 'Product' | 'InsuranceAgency' | 'Organization'
+}): Record<string, unknown> | null {
+  const validReviews = params.reviews.filter((r) => r.iso20488)
+  if (validReviews.length < 3) return null
+
+  const totalRating = validReviews.reduce((sum, r) => sum + r.rating, 0)
+  const avg = totalRating / validReviews.length
+  const itemType = params.itemReviewedType ?? 'Service'
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AggregateRating',
+    ratingValue: avg.toFixed(1),
+    reviewCount: validReviews.length,
+    bestRating: 5,
+    worstRating: 1,
+    itemReviewed: {
+      '@type': itemType,
+      name: params.itemReviewedName,
+      ...(itemType === 'InsuranceAgency' || itemType === 'Organization'
+        ? { '@id': `${SITE_URL}#organization` }
+        : {}),
+    },
+  }
+}
+
+/**
+ * Génère le combo Review[] + AggregateRating prêt à injecter.
+ * Pattern recommandé pour pages services avec avis (Google AdWords friendly).
+ */
+export function getReviewsBlockSchema(params: {
+  reviews: VerifiedReview[]
+  itemReviewedName: string
+  itemReviewedType?: 'Service' | 'Product' | 'InsuranceAgency' | 'Organization'
+  maxReviews?: number
+}): Array<Record<string, unknown>> {
+  const schemas: Array<Record<string, unknown>> = []
+  const validReviews = params.reviews.filter((r) => r.iso20488)
+  if (validReviews.length === 0) return schemas
+
+  const max = params.maxReviews ?? 8
+  for (const review of validReviews.slice(0, max)) {
+    schemas.push(
+      getReviewSchema({
+        review,
+        itemReviewedName: params.itemReviewedName,
+        itemReviewedType: params.itemReviewedType,
+      })
+    )
+  }
+
+  const aggregate = getAggregateRatingSchema(params)
+  if (aggregate) schemas.push(aggregate)
+
+  return schemas
 }

@@ -14,14 +14,14 @@ const newsletterSchema = z.object({
 })
 
 const CONSENT_TEXT_FR =
-  "J'accepte de recevoir la newsletter mensuelle d'Assurance Pro et je peux me désinscrire à tout moment."
+  "J'accepte de recevoir la newsletter mensuelle d'Vivos Assurance et je peux me désinscrire à tout moment."
 
 const WELCOME_HTML = `
 <!doctype html>
 <html lang="fr">
   <body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;padding:24px;color:#0f172a">
     <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:8px;padding:24px;border:1px solid #e2e8f0">
-      <h1 style="font-size:20px;margin:0 0 12px">Bienvenue dans la newsletter Assurance Pro</h1>
+      <h1 style="font-size:20px;margin:0 0 12px">Bienvenue dans la newsletter Vivos Assurance</h1>
       <p>Merci pour votre inscription. Vous recevrez chaque mois&nbsp;:</p>
       <ul>
         <li>Actualités réglementaires (ACPR, DDA, Loi Spinetta, Madelin&hellip;)</li>
@@ -30,7 +30,7 @@ const WELCOME_HTML = `
       </ul>
       <p style="font-size:12px;color:#64748b;margin-top:24px">
         Pour vous désinscrire, répondez simplement à cet email avec « STOP ».
-        <br>Politique RGPD&nbsp;: <a href="https://assurance-pro.fr/confidentialite" style="color:#1d4ed8">assurance-pro.fr/confidentialite</a>
+        <br>Politique RGPD&nbsp;: <a href="https://vivos-assurance.fr/confidentialite" style="color:#1d4ed8">vivos-assurance.fr/confidentialite</a>
       </p>
     </div>
   </body>
@@ -74,13 +74,16 @@ export async function POST(request: Request) {
         source: 'site_web',
       })
     } catch (err) {
-      logger.error({ err, email: crypto.createHash('sha256').update(email).digest('hex').slice(0, 12) }, 'newsletter consent record failed')
+      logger.error(
+        { err, email: crypto.createHash('sha256').update(email).digest('hex').slice(0, 12) },
+        'newsletter consent record failed'
+      )
       return NextResponse.json({ error: 'Persistence indisponible.' }, { status: 500 })
     }
 
     void sendEmail({
       to: email,
-      subject: 'Bienvenue dans la newsletter Assurance Pro',
+      subject: 'Bienvenue dans la newsletter Vivos Assurance',
       html: WELCOME_HTML,
     }).catch((err) => logger.error({ err }, 'newsletter welcome email failed'))
 

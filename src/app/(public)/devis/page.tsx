@@ -1,35 +1,44 @@
 /**
- * Page /devis — Formulaire devis assurance pro 3 étapes
- * Supporte le pré-remplissage par :
- * - Query params simples (?garantie=...&ville=...) en provenance du site
- * - Token JWT cross-domain (?token=...) signé par ServicesArtisans
+ * Page /devis — bascule selon IS_PRE_ORIAS :
+ *  - Mode soft : formulaire de préinscription email (liste d'attente lancement)
+ *  - Mode full : DevisAssuranceForm 3 étapes (avec prefill cross-domain)
  */
 
 import type { Metadata } from 'next'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
+import { DevisSoftView } from '@/components/assurance/DevisSoftView'
 import { verifyCrossDomainToken } from '@/lib/integration/cross-domain-jwt'
 import { SITE_URL } from '@/lib/seo/config'
+import { IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const dynamic = 'force-dynamic'
 
+const FULL_TITLE = 'Devis assurance pro gratuit en 2 minutes'
+const FULL_DESC =
+  'Recevez votre devis assurance professionnelle personnalisé en moins de 24 heures. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Sans engagement, sans frais courtage.'
+
+const SOFT_TITLE = 'Préinscription — Soyez prévenu(e) du lancement'
+const SOFT_DESC =
+  "Cabinet en cours d'immatriculation ORIAS. Rejoignez la liste d'attente pour être informé(e) dès l'ouverture commerciale et bénéficier d'un accompagnement personnalisé."
+
+const PAGE_TITLE = IS_PRE_ORIAS ? SOFT_TITLE : FULL_TITLE
+const PAGE_DESC = IS_PRE_ORIAS ? SOFT_DESC : FULL_DESC
+
 export const metadata: Metadata = {
-  title: 'Devis assurance pro gratuit en 2 minutes | Assurance Pro',
-  description:
-    'Recevez votre devis assurance professionnelle personnalisé en moins de 24 heures. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Sans engagement, sans frais courtage.',
+  title: PAGE_TITLE,
+  description: PAGE_DESC,
   alternates: { canonical: `${SITE_URL}/devis` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Devis assurance pro gratuit en 2 minutes | Assurance Pro',
-    description:
-      'Recevez votre devis assurance professionnelle personnalisé en moins de 24 heures. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Sans engagement, sans frais courtage.',
+    title: PAGE_TITLE,
+    description: PAGE_DESC,
     url: `${SITE_URL}/devis`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Devis assurance pro gratuit en 2 minutes | Assurance Pro',
-    description:
-      'Recevez votre devis assurance professionnelle personnalisé en moins de 24 heures. Décennale, RC Pro, Multirisque, Mutuelle TNS, VTC. Sans engagement, sans frais courtage.',
+    title: PAGE_TITLE,
+    description: PAGE_DESC,
   },
 }
 
@@ -58,9 +67,6 @@ const VALID_STATUT = new Set([
   'profession_liberale',
 ])
 
-// Allowlist regex — Latin + accented letters, digits, spaces, dashes, apostrophes, dots, commas.
-// Defends against XSS payloads in fields rendered later in HTML emails.
-// Limited to Latin-1 Supplement to avoid TS target=es5 \p{} restriction.
 const NAME_RE = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9 '\-.,]{1,80}$/
 const PHONE_RE = /^[\d +.\-()]{6,30}$/
 
@@ -88,10 +94,24 @@ function sanitizePrefill(raw: PrefillRaw): PrefillRaw {
   return out
 }
 
+const GARANTIE_TO_VERTICAL: Record<string, string> = {
+  decennale: 'decennale',
+  'assurance-decennale': 'decennale',
+  'rc-pro': 'rc_pro',
+  rc_pro: 'rc_pro',
+  'multirisque-pro': 'multirisque',
+  multirisque: 'multirisque',
+  'mutuelle-pro': 'mutuelle',
+  mutuelle: 'mutuelle',
+  'assurance-vtc': 'vtc',
+  vtc: 'vtc',
+  'cyber-assurance': 'cyber',
+  cyber: 'cyber',
+}
+
 export default async function DevisPage({
   searchParams,
 }: {
-  // Next.js 15 : Promise désormais.
   searchParams: Promise<Record<string, string | string[] | undefined>>
 }) {
   const params = await searchParams
@@ -100,7 +120,13 @@ export default async function DevisPage({
     return Array.isArray(v) ? v[0] : v
   }
 
-  // 1) Cross-domain JWT priorité
+  if (IS_PRE_ORIAS) {
+    const garantie = get('garantie') ?? get('vertical')
+    const defaultVertical = garantie ? GARANTIE_TO_VERTICAL[garantie] : undefined
+    return <DevisSoftView defaultVertical={defaultVertical} />
+  }
+
+  // Mode full commercial — devis form classique
   let prefill: PrefillRaw = {}
   let crossDomainSource: string | null = null
   const token = get('token')
@@ -128,7 +154,6 @@ export default async function DevisPage({
     }
   }
 
-  // 2) Query params simples (en complément du token, sans écraser)
   const queryPrefill: PrefillRaw = {
     garantie_code: get('garantie'),
     metier_code: get('metier'),
@@ -150,7 +175,7 @@ export default async function DevisPage({
             Comparé sur 10+ assureurs partenaires. Sans engagement. Réponse sous 24&nbsp;heures.
           </p>
           {crossDomainSource && (
-            <p className="mt-3 inline-block rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-700">
+            <p className="mt-3 inline-block rounded-full bg-primary-50 px-3 py-1 text-sm text-primary-700">
               Connexion sécurisée depuis ServicesArtisans — formulaire pré-rempli
             </p>
           )}

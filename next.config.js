@@ -11,7 +11,13 @@ const SECURITY_HEADERS = [
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   { key: 'X-Frame-Options', value: 'DENY' },
   { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
-  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(self), payment=(self)' },
+  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(self), payment=(self), interest-cohort=()' },
+  // Cross-origin isolation (Mozilla Observatory A+)
+  { key: 'Cross-Origin-Opener-Policy', value: 'same-origin-allow-popups' },
+  { key: 'Cross-Origin-Resource-Policy', value: 'same-site' },
+  // Browser feature opt-out
+  { key: 'X-Permitted-Cross-Domain-Policies', value: 'none' },
+  { key: 'Origin-Agent-Cluster', value: '?1' },
 ]
 
 const SUPABASE_HOST = (() => {
@@ -34,7 +40,7 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     remotePatterns: [
-      { protocol: 'https', hostname: 'assurance-pro.fr' },
+      { protocol: 'https', hostname: 'vivos-assurance.fr' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       ...(SUPABASE_HOST ? [{ protocol: 'https', hostname: SUPABASE_HOST }] : []),
       ...(process.env.NODE_ENV !== 'production'
@@ -55,7 +61,6 @@ const nextConfig = {
 
   experimental: {
     optimizePackageImports: ['lucide-react', '@supabase/supabase-js', 'date-fns', 'zod'],
-    instrumentationHook: true,
   },
 
   async headers() {
@@ -92,12 +97,24 @@ const nextConfig = {
       { source: '/conseil', destination: '/notre-processus-conseil', permanent: true },
       { source: '/devis-gratuit', destination: '/devis', permanent: true },
       { source: '/demande-devis', destination: '/devis', permanent: true },
+      // Aliases métiers courts → fiche RC Pro complète
+      { source: '/freelance-it', destination: '/rc-pro/freelance-it', permanent: true },
+      { source: '/freelance', destination: '/rc-pro/freelance-it', permanent: true },
+      { source: '/consultant', destination: '/rc-pro/consultant', permanent: true },
+      { source: '/agence-web', destination: '/rc-pro/agence-web', permanent: true },
+      { source: '/coach', destination: '/rc-pro/coach-sportif', permanent: true },
+      { source: '/coach-professionnel', destination: '/rc-pro/coach-sportif', permanent: true },
+      { source: '/coiffeur', destination: '/rc-pro/coiffeur', permanent: true },
+      { source: '/photographe', destination: '/rc-pro/photographe', permanent: true },
+      { source: '/expert-comptable', destination: '/rc-pro/expert-comptable', permanent: true },
+      { source: '/decennale', destination: '/assurance-decennale', permanent: true },
+      { source: '/garantie-decennale', destination: '/assurance-decennale', permanent: true },
     ]
   },
 
   env: {
     NEXT_PUBLIC_SITE_URL:
-      process.env.NEXT_PUBLIC_SITE_URL || 'https://assurance-pro.fr',
+      process.env.NEXT_PUBLIC_SITE_URL || 'https://vivos-assurance.fr',
   },
 }
 
@@ -116,5 +133,11 @@ module.exports = withSentryConfig(withBundleAnalyzer(nextConfig), {
   authToken: process.env.SENTRY_AUTH_TOKEN,
   widenClientFileUpload: true,
   hideSourceMaps: true,
-  // disableLogger deprecated → utiliser webpack.treeshake.removeDebugLogging dans Next 15+
+  // Désactive l'auto-instrumentation App Router qui casse les imports
+  // de composants externes en dev sur Next 15.5+ (voir audit 2026-05).
+  webpack: {
+    autoInstrumentServerFunctions: false,
+    autoInstrumentAppDirectory: false,
+    autoInstrumentMiddleware: false,
+  },
 })

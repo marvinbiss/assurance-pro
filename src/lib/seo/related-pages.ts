@@ -1,15 +1,20 @@
 /**
  * Maillage interne — Référentiel des pages connexes par cluster sémantique
  *
- * Pattern Hub & Spoke :
+ * Pattern Hub & Spoke world-class :
  * - HUB = pilier principal (/rc-pro, /assurance-decennale, /cyber-assurance, etc.)
- * - SPOKES = sous-niches (rc-pro/[metier], assurance-decennale/[metier])
- * - SIBLINGS = pages au même niveau sémantique (cousins)
+ * - SPOKES = sous-niches auto-générées depuis la data (50+ métiers décennale,
+ *   30+ professions RC Pro, top villes)
+ * - SIBLINGS = pages au même niveau sémantique (cousins cross-cluster)
  * - TOOLS = outils transactionnels associés (calculateurs + devis)
+ * - GUIDES = guides juridiques approfondis
  *
- * Chaque cluster expose les liens contextuels les plus pertinents pour
- * maximiser le link juice et le pages/session.
+ * Densité cible : 20-30 liens contextuels par page pour maximiser link juice.
  */
+
+import { DECENNALE_METIERS } from '@/lib/data/decennale-metiers'
+import { RC_PRO_PROFESSIONS } from '@/lib/data/rc-pro-professions'
+import { VILLES_TOP100 } from '@/lib/data/villes-top100'
 
 export interface RelatedLink {
   label: string
@@ -28,6 +33,54 @@ export interface RelatedCluster {
 }
 
 /* ============================================================
+   AUTO-GENERATED SPOKES depuis la data métier/profession.
+   ============================================================ */
+
+/** Spokes décennale auto-générés depuis DECENNALE_METIERS (50+ entrées). */
+const DECENNALE_AUTO_SPOKES: RelatedLink[] = Object.values(DECENNALE_METIERS).map((m) => ({
+  label: `Décennale ${m.name}`,
+  href: `/assurance-decennale/${m.slug}`,
+  type: 'spoke',
+}))
+
+/** Spokes RC Pro auto-générés depuis RC_PRO_PROFESSIONS (30+ entrées). */
+const RC_PRO_AUTO_SPOKES: RelatedLink[] = Object.values(RC_PRO_PROFESSIONS).map((p) => ({
+  label: `RC Pro ${p.name}`,
+  href: `/rc-pro/${p.slug}`,
+  type: 'spoke',
+}))
+
+/** Top 12 villes par densité artisans BTP (cross-link décennale ville). */
+const TOP_VILLES_DECENNALE: RelatedLink[] = [...VILLES_TOP100]
+  .sort((a, b) => b.artisansBtpEstime - a.artisansBtpEstime)
+  .slice(0, 12)
+  .map((v) => ({
+    label: `Décennale ${v.nom}`,
+    href: `/assurance-decennale/${v.slug}`,
+    type: 'spoke',
+  }))
+
+/** Top 12 villes par densité freelances (cross-link RC Pro ville). */
+const TOP_VILLES_RC_PRO: RelatedLink[] = [...VILLES_TOP100]
+  .sort((a, b) => b.freelancesEstime - a.freelancesEstime)
+  .slice(0, 12)
+  .map((v) => ({
+    label: `RC Pro ${v.nom}`,
+    href: `/rc-pro/${v.slug}`,
+    type: 'spoke',
+  }))
+
+/** Top 8 villes par densité commerces (cross-link multirisque ville). */
+const TOP_VILLES_MULTIRISQUE: RelatedLink[] = [...VILLES_TOP100]
+  .sort((a, b) => b.freelancesEstime - a.freelancesEstime)
+  .slice(0, 8)
+  .map((v) => ({
+    label: `Multirisque pro ${v.nom}`,
+    href: `/multirisque-pro/${v.slug}`,
+    type: 'spoke',
+  }))
+
+/* ============================================================
    CLUSTER 1 : RC PRO
    ============================================================ */
 export const RC_PRO_CLUSTER: RelatedCluster = {
@@ -38,26 +91,8 @@ export const RC_PRO_CLUSTER: RelatedCluster = {
     description: 'Toutes les professions concernées par la responsabilité civile professionnelle',
     type: 'hub',
   },
-  spokes: [
-    { label: 'RC Pro auto-entrepreneur', href: '/rc-pro/auto-entrepreneur', type: 'spoke' },
-    { label: 'RC Pro SASU', href: '/rc-pro/sasu', type: 'spoke' },
-    { label: 'RC Pro informatique / freelance IT', href: '/rc-pro/informatique', type: 'spoke' },
-    { label: 'RC Pro consultant', href: '/rc-pro/consultant', type: 'spoke' },
-    { label: 'RC Pro agent immobilier', href: '/rc-pro/immobilier', type: 'spoke' },
-    { label: 'RC Pro expert-comptable', href: '/rc-pro/expert-comptable', type: 'spoke' },
-    { label: 'RC Pro santé paramédical', href: '/rc-pro/sante-paramedical', type: 'spoke' },
-    { label: 'RC Pro coach sportif', href: '/rc-pro/coach-sportif', type: 'spoke' },
-    { label: 'RC Pro formateur', href: '/rc-pro/formateur', type: 'spoke' },
-    { label: 'RC Pro photographe', href: '/rc-pro/photographe', type: 'spoke' },
-    { label: 'RC Pro coiffeur', href: '/rc-pro/coiffeur', type: 'spoke' },
-    { label: 'RC Pro esthétique', href: '/rc-pro/esthetique', type: 'spoke' },
-    { label: 'RC Pro VTC', href: '/rc-pro/vtc', type: 'spoke' },
-    {
-      label: 'RC Pro transport marchandises',
-      href: '/rc-pro/transport-marchandises',
-      type: 'spoke',
-    },
-  ],
+  /** Spokes = TOUTES les professions de la data (30+) + top villes RC Pro */
+  spokes: [...RC_PRO_AUTO_SPOKES, ...TOP_VILLES_RC_PRO],
   tools: [
     {
       label: 'Calculateur tarif RC Pro 2026',
@@ -102,47 +137,8 @@ export const DECENNALE_CLUSTER: RelatedCluster = {
     description: '37 métiers BTP couverts par la décennale obligatoire',
     type: 'hub',
   },
-  spokes: [
-    {
-      label: 'Décennale auto-entrepreneur BTP',
-      href: '/assurance-decennale/auto-entrepreneur',
-      type: 'spoke',
-    },
-    {
-      label: 'Décennale micro-entreprise',
-      href: '/assurance-decennale/micro-entreprise',
-      type: 'spoke',
-    },
-    {
-      label: 'Décennale plombier-chauffagiste',
-      href: '/assurance-decennale/plombier',
-      type: 'spoke',
-    },
-    { label: 'Décennale électricien BTP', href: '/assurance-decennale/electricien', type: 'spoke' },
-    { label: 'Décennale maçon gros œuvre', href: '/assurance-decennale/macon', type: 'spoke' },
-    {
-      label: 'Décennale couvreur-zingueur',
-      href: '/assurance-decennale/couvreur-zingueur',
-      type: 'spoke',
-    },
-    { label: 'Décennale carreleur', href: '/assurance-decennale/carreleur', type: 'spoke' },
-    {
-      label: 'Décennale peintre-plaquiste',
-      href: '/assurance-decennale/peintre-plaquiste',
-      type: 'spoke',
-    },
-    { label: 'Décennale charpentier', href: '/assurance-decennale/charpentier', type: 'spoke' },
-    {
-      label: "Décennale maître d'œuvre",
-      href: '/assurance-decennale/maitre-oeuvre',
-      type: 'spoke',
-    },
-    {
-      label: 'Décennale RGE photovoltaïque',
-      href: '/assurance-decennale/photovoltaique',
-      type: 'spoke',
-    },
-  ],
+  /** Spokes = TOUS les métiers BTP de la data (50+) + top villes BTP */
+  spokes: [...DECENNALE_AUTO_SPOKES, ...TOP_VILLES_DECENNALE],
   tools: [
     {
       label: 'Calculateur tarif décennale 2026',
@@ -233,6 +229,8 @@ export const LOCAUX_CLUSTER: RelatedCluster = {
       type: 'spoke',
     },
     { label: 'Assurance locaux entreprise', href: '/assurance-locaux-entreprise', type: 'spoke' },
+    /* Top villes multirisque (cross-link géographique) */
+    ...TOP_VILLES_MULTIRISQUE,
   ],
   tools: [
     {
@@ -362,7 +360,31 @@ const SLUG_TO_CLUSTER: Record<string, RelatedCluster> = {
 }
 
 export function getRelatedCluster(slug: string): RelatedCluster | null {
-  return SLUG_TO_CLUSTER[slug] ?? null
+  /* Lookup direct */
+  const direct = SLUG_TO_CLUSTER[slug]
+  if (direct) return direct
+
+  /* Auto-routing : tout ce qui commence par assurance-decennale/ → DECENNALE_CLUSTER */
+  if (slug.startsWith('assurance-decennale/')) return DECENNALE_CLUSTER
+  if (slug.startsWith('rc-pro/')) return RC_PRO_CLUSTER
+  if (slug.startsWith('multirisque-pro/')) return LOCAUX_CLUSTER
+  if (slug.startsWith('mutuelle-pro/')) return MUTUELLE_CLUSTER
+  if (slug.startsWith('cyber-assurance/')) return CYBER_CLUSTER
+  if (slug.startsWith('assurance-vtc/')) return VTC_CLUSTER
+
+  /* Routes pSEO programmatiques */
+  if (slug.startsWith('prix/') || slug.startsWith('tarif/') || slug.startsWith('guide/')) {
+    /* Le 2e segment = garantie code (decennale, rc-pro, cyber, etc.) */
+    const garantie = slug.split('/')[1] ?? ''
+    if (garantie === 'decennale' || garantie === 'assurance-decennale') return DECENNALE_CLUSTER
+    if (garantie === 'rc-pro' || garantie === 'rc_pro') return RC_PRO_CLUSTER
+    if (garantie === 'cyber-assurance' || garantie === 'cyber') return CYBER_CLUSTER
+    if (garantie === 'multirisque-pro' || garantie === 'multirisque') return LOCAUX_CLUSTER
+    if (garantie === 'mutuelle-pro' || garantie === 'mutuelle') return MUTUELLE_CLUSTER
+    if (garantie === 'assurance-vtc' || garantie === 'vtc') return VTC_CLUSTER
+  }
+
+  return null
 }
 
 /**

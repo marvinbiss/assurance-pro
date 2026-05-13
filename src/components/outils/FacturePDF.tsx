@@ -18,7 +18,12 @@ const styles = StyleSheet.create({
   destinataire: { width: '45%', borderLeft: '1px solid #d1d5db', paddingLeft: 12 },
   block: { marginBottom: 4 },
   bold: { fontWeight: 'bold' },
-  factureMeta: { backgroundColor: '#f3f4f6', padding: 10, marginVertical: 16, borderLeft: '3px solid #1e40af' },
+  factureMeta: {
+    backgroundColor: '#f3f4f6',
+    padding: 10,
+    marginVertical: 16,
+    borderLeft: '3px solid #1e40af',
+  },
   table: { marginVertical: 16 },
   tableRow: { flexDirection: 'row', borderBottom: '1px solid #e5e7eb', padding: 6 },
   tableHeader: { backgroundColor: '#1e40af', color: 'white', fontWeight: 'bold' },
@@ -108,14 +113,18 @@ export function FacturePDF({ data }: { data: FactureData }) {
             <Text style={[styles.bold, { marginBottom: 4 }]}>FACTURÉ À</Text>
             <Text style={styles.block}>{data.destinataireNom}</Text>
             <Text style={styles.block}>{data.destinataireAdresse}</Text>
-            {data.destinataireSiret && <Text style={styles.block}>SIRET : {data.destinataireSiret}</Text>}
+            {data.destinataireSiret && (
+              <Text style={styles.block}>SIRET : {data.destinataireSiret}</Text>
+            )}
             {data.destinataireTva && <Text style={styles.block}>TVA : {data.destinataireTva}</Text>}
           </View>
         </View>
 
         {/* Méta facture */}
         <View style={styles.factureMeta}>
-          <Text style={[styles.bold, { fontSize: 13, marginBottom: 4 }]}>FACTURE N° {data.numeroFacture}</Text>
+          <Text style={[styles.bold, { fontSize: 13, marginBottom: 4 }]}>
+            FACTURE N° {data.numeroFacture}
+          </Text>
           <Text>Date d&apos;émission : {data.dateFacture}</Text>
           <Text>Date d&apos;échéance : {data.dateEcheance}</Text>
         </View>
@@ -158,17 +167,17 @@ export function FacturePDF({ data }: { data: FactureData }) {
         <View style={styles.legalSection}>
           <Text style={[styles.bold, { marginBottom: 4 }]}>MENTIONS LÉGALES OBLIGATOIRES</Text>
           <Text>
-            • Conditions de paiement : {data.conditionsPaiement || '30 jours fin de mois (Art. L. 441-10 C. com.)'}
+            • Conditions de paiement :{' '}
+            {data.conditionsPaiement || '30 jours fin de mois (Art. L. 441-10 C. com.)'}
           </Text>
           <Text>
-            • Pénalités de retard : taux BCE +10 points (Loi LME 2008) appliquées dès le lendemain de l&apos;échéance, sans rappel préalable
+            • Pénalités de retard : taux BCE +10 points (Loi LME 2008) appliquées dès le lendemain
+            de l&apos;échéance, sans rappel préalable
           </Text>
           <Text>
             • Indemnité forfaitaire pour frais de recouvrement : 40 € (Art. D. 441-5 C. com.)
           </Text>
-          <Text>
-            • Pas d&apos;escompte pour paiement anticipé
-          </Text>
+          <Text>• Pas d&apos;escompte pour paiement anticipé</Text>
           {data.mentionTva && <Text>• {data.mentionTva}</Text>}
           {data.emetteurAssureur && (
             <Text>
@@ -179,7 +188,10 @@ export function FacturePDF({ data }: { data: FactureData }) {
         </View>
 
         <View style={styles.footer} fixed>
-          <Text>Facture générée par Assurance Pro (https://assurance-pro.fr) — Modèle conforme art. L. 441-9 C. com.</Text>
+          <Text>
+            Facture générée par Vivos Assurance (https://vivos-assurance.fr) — Modèle conforme art.
+            L. 441-9 C. com.
+          </Text>
         </View>
       </Page>
     </Document>

@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
+import { ShieldCheck } from 'lucide-react'
+import { PageHero } from '@/components/layout/PageHero'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Normes et conformité | Assurance Pro',
+  title: 'Normes et conformité',
   description:
     'Conformité ORIAS, ACPR, CSCA, RGPD, DDA. Normes et obligations légales du courtier en assurance.',
   alternates: { canonical: `${SITE_URL}/normes` },
   openGraph: {
-    title: 'Normes et conformité | Assurance Pro',
+    title: 'Normes et conformité',
     description:
       'Conformité ORIAS, ACPR, CSCA, RGPD, DDA. Normes et obligations légales du courtier en assurance.',
     url: `${SITE_URL}/normes`,
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Normes et conformité | Assurance Pro',
+    title: 'Normes et conformité',
     description:
       'Conformité ORIAS, ACPR, CSCA, RGPD, DDA. Normes et obligations légales du courtier en assurance.',
   },
@@ -104,30 +106,42 @@ const NORMES: Norme[] = [
 
 export default function NormesPage() {
   return (
-    <main className="min-h-screen bg-white py-12">
-      <div className="container mx-auto max-w-4xl px-4">
-        <header className="mb-10">
-          <h1 className="mb-3 text-3xl font-bold md:text-4xl">Normes et conformité</h1>
-          <p className="text-lg text-gray-600">
-            Notre cabinet de courtage ORIAS opère dans le strict respect du cadre légal et
-            réglementaire français et européen.
-          </p>
-        </header>
+    <main className="min-h-screen bg-sand-50">
+      <PageHero
+        breadcrumbs={[{ label: 'Normes' }]}
+        eyebrow="Conformité ACPR · ORIAS"
+        EyebrowIcon={ShieldCheck}
+        title="Normes et conformité"
+        description="Référentiel des normes et obligations légales respectées par le cabinet (ORIAS, ACPR, DDA, RGPD)."
+        size="sm"
+      />
 
+      <div className="container mx-auto max-w-4xl px-4 py-14">
         <section className="mb-10">
-          <h2 className="mb-4 text-2xl font-bold">Cadre légal applicable</h2>
-          <div className="space-y-4">
+          <h2 className="mb-6 font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+            Cadre légal applicable
+          </h2>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {NORMES.map((n) => (
-              <article key={n.title} className="border-l-4 border-blue-600 py-2 pl-4">
-                <h3 className="text-lg font-bold">{n.title}</h3>
-                <p className="text-sm italic text-gray-500">{n.reference}</p>
-                <p className="mt-1 text-gray-700">{n.description}</p>
+              <article
+                key={n.title}
+                className="group relative overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-premium"
+              >
+                <span
+                  className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary-500 to-primary-700 opacity-60 transition-opacity group-hover:opacity-100"
+                  aria-hidden="true"
+                />
+                <h3 className="font-heading text-base font-extrabold tracking-tight text-charcoal-900">
+                  {n.title}
+                </h3>
+                <p className="mt-1 text-xs italic text-charcoal-500">{n.reference}</p>
+                <p className="mt-2 text-sm leading-relaxed text-charcoal-700">{n.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="mb-10 rounded-lg bg-blue-50 p-6">
+        <section className="mb-10 rounded-lg bg-primary-50 p-6">
           <h2 className="mb-4 text-xl font-bold">Notre conformité</h2>
           <ul className="space-y-2">
             <li>✅ Immatriculation ORIAS active (vérifiable sur orias.fr)</li>
@@ -155,7 +169,7 @@ export default function NormesPage() {
                   href="https://acpr.banque-france.fr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-700 underline"
+                  className="text-primary-700 underline"
                 >
                   acpr.banque-france.fr
                 </a>
@@ -169,7 +183,7 @@ export default function NormesPage() {
                   href="https://www.orias.fr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-700 underline"
+                  className="text-primary-700 underline"
                 >
                   orias.fr
                 </a>
@@ -183,7 +197,7 @@ export default function NormesPage() {
                   href="https://www.cnil.fr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-700 underline"
+                  className="text-primary-700 underline"
                 >
                   cnil.fr
                 </a>
@@ -198,7 +212,7 @@ export default function NormesPage() {
                   href="https://www.mediation-assurance.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-700 underline"
+                  className="text-primary-700 underline"
                 >
                   mediation-assurance.org
                 </a>

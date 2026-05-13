@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Merci — Demande reçue | Assurance Pro',
+  title: 'Merci — Demande reçue',
   description:
     'Votre demande de devis a bien été reçue. Un courtier ORIAS vous recontactera dans les délais SLA.',
   robots: { index: false, follow: true },
   openGraph: {
-    title: 'Merci — Demande reçue | Assurance Pro',
+    title: 'Merci — Demande reçue',
     description:
       'Votre demande de devis a bien été reçue. Un courtier ORIAS vous recontactera dans les délais SLA.',
     url: `${SITE_URL}/devis/merci`,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Merci — Demande reçue | Assurance Pro',
+    title: 'Merci — Demande reçue',
     description:
       'Votre demande de devis a bien été reçue. Un courtier ORIAS vous recontactera dans les délais SLA.',
   },
@@ -72,17 +72,17 @@ export default async function MerciPage({
           </div>
         </div>
 
-        <div className="mb-6 rounded-lg border border-blue-100 bg-blue-50 p-5">
-          <h2 className="mb-3 font-semibold text-blue-900">Prochaines étapes</h2>
-          <ol className="space-y-3 text-sm text-blue-900">
+        <div className="mb-6 rounded-lg border border-primary-100 bg-primary-50 p-5">
+          <h2 className="mb-3 font-semibold text-primary-900">Prochaines étapes</h2>
+          <ol className="space-y-3 text-sm text-primary-900">
             <li className="flex gap-3">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-xs font-bold text-white">
+              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-700 text-xs font-bold text-white">
                 1
               </span>
               <span>Email de confirmation reçu (vérifiez aussi vos spams).</span>
             </li>
             <li className="flex gap-3">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-xs font-bold text-white">
+              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-700 text-xs font-bold text-white">
                 2
               </span>
               <span>
@@ -91,7 +91,7 @@ export default async function MerciPage({
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-xs font-bold text-white">
+              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-700 text-xs font-bold text-white">
                 3
               </span>
               <span>
@@ -103,7 +103,7 @@ export default async function MerciPage({
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-xs font-bold text-white">
+              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-700 text-xs font-bold text-white">
                 4
               </span>
               <span>
@@ -111,7 +111,7 @@ export default async function MerciPage({
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-xs font-bold text-white">
+              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-700 text-xs font-bold text-white">
                 5
               </span>
               <span>Souscription en ligne — attestation délivrée sous 24h.</span>
@@ -125,8 +125,8 @@ export default async function MerciPage({
             Téléphone : <strong>01 XX XX XX XX</strong> (lundi-vendredi 9h-18h)
             <br />
             Email :{' '}
-            <a href="mailto:contact@assurance-pro.fr" className="underline">
-              contact@assurance-pro.fr
+            <a href="mailto:contact@vivos-assurance.fr" className="underline">
+              contact@vivos-assurance.fr
             </a>
           </p>
         </div>
@@ -153,7 +153,7 @@ export default async function MerciPage({
           </Link>
           <Link
             href="/"
-            className="rounded-lg bg-blue-700 px-5 py-2.5 text-center font-semibold text-white hover:bg-blue-800"
+            className="rounded-lg bg-primary-700 px-5 py-2.5 text-center font-semibold text-white hover:bg-primary-800"
           >
             ← Retour à l&apos;accueil
           </Link>

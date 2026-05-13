@@ -19,9 +19,12 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { CalculateurTarifMutuellePro } from '@/components/outils/CalculateurTarifMutuellePro'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
+import { headers } from 'next/headers'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
@@ -31,93 +34,116 @@ const SLUG = 'outils/calculateur-tarif-mutuelle-pro'
 export const metadata: Metadata = {
   title: 'Calculateur tarif mutuelle pro 2026 — TNS Madelin & Loi ANI (gratuit)',
   description:
-    "Calculez votre tarif mutuelle santé pro en 30 secondes. TNS Madelin (individuel) ou Loi ANI (collective entreprise). 8 mutuelles comparées : Pro BTP, Apicil, Malakoff Humanis, Harmonie Mutuelle, AG2R, Allianz, Generali, Klesia. 4 niveaux garantie. Devis officiel 24h.",
+    'Calculez votre tarif mutuelle santé pro en 30 secondes. TNS Madelin (individuel) ou Loi ANI (collective entreprise). 8 mutuelles comparées : Pro BTP, Apicil, Malakoff Humanis, Harmonie Mutuelle, AG2R, Allianz, Generali, Klesia. 4 niveaux garantie. Devis officiel 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: 'Calculateur tarif mutuelle pro 2026 — TNS & Loi ANI',
-    description: "Estimation tarif mutuelle pro en 30 secondes. 8 organismes comparés. Devis officiel 24h.",
+    description:
+      'Estimation tarif mutuelle pro en 30 secondes. 8 organismes comparés. Devis officiel 24h.',
     url: `${SITE_URL}/${SLUG}`,
     type: 'website',
   },
   robots: { index: true, follow: true },
 }
 
-export default function Page() {
+export default async function Page() {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <main className="min-h-screen bg-white">
-      <header className="bg-gradient-to-br from-emerald-700 to-teal-900 text-white py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <nav aria-label="Fil d'Ariane" className="text-sm opacity-80 mb-4">
-            <a href="/" className="hover:underline">Accueil</a>{' '}/{' '}
-            <a href="/mutuelle-pro-btp" className="hover:underline">Mutuelle pro</a>{' '}/{' '}
-            <span>Calculateur tarif</span>
+      <header className="bg-gradient-to-br from-emerald-700 to-teal-900 py-12 text-white">
+        <div className="container mx-auto max-w-4xl px-4">
+          <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
+            <Link href="/" className="hover:underline">
+              Accueil
+            </Link>{' '}
+            /{' '}
+            <Link href="/mutuelle-pro-btp" className="hover:underline">
+              Mutuelle pro
+            </Link>{' '}
+            / <span>Calculateur tarif</span>
           </nav>
-          <span className="inline-block mb-4 px-3 py-1 bg-green-500/90 text-white rounded-full text-sm font-semibold">
+          <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ TNS Madelin + Loi ANI — Estimation 30 secondes
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+          <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">
             Calculateur tarif mutuelle pro 2026
           </h1>
-          <p className="text-lg md:text-xl opacity-95 mb-6 max-w-3xl">
+          <p className="mb-6 max-w-3xl text-lg opacity-95 md:text-xl">
             Estimez immédiatement votre tarif mutuelle santé professionnelle :{' '}
             <strong>TNS Madelin individuel</strong> (auto-entrepreneur, profession libérale,
             dirigeant TNS) ou <strong>Loi ANI collective</strong> (entreprise ≥1 salarié — 50%
             employeur obligatoire). Calcul basé sur barèmes 2026 de 8 mutuelles partenaires.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-            <div className="bg-white/10 rounded p-3"><strong>⏱ 30 secondes</strong><br />Estimation immédiate</div>
-            <div className="bg-white/10 rounded p-3"><strong>📊 8 mutuelles</strong><br />Pro BTP, Apicil, Malakoff…</div>
-            <div className="bg-white/10 rounded p-3"><strong>⚖️ Loi ANI</strong><br />Calcul part employeur</div>
-            <div className="bg-white/10 rounded p-3"><strong>🆓 Gratuit</strong><br />Sans inscription</div>
+          <div className="grid grid-cols-2 gap-4 text-sm md:grid-cols-4">
+            <div className="rounded bg-white/10 p-3">
+              <strong>⏱ 30 secondes</strong>
+              <br />
+              Estimation immédiate
+            </div>
+            <div className="rounded bg-white/10 p-3">
+              <strong>📊 8 mutuelles</strong>
+              <br />
+              Pro BTP, Apicil, Malakoff…
+            </div>
+            <div className="rounded bg-white/10 p-3">
+              <strong>⚖️ Loi ANI</strong>
+              <br />
+              Calcul part employeur
+            </div>
+            <div className="rounded bg-white/10 p-3">
+              <strong>🆓 Gratuit</strong>
+              <br />
+              Sans inscription
+            </div>
           </div>
         </div>
       </header>
 
       <section className="py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-2xl font-bold mb-2">Renseignez votre profil</h2>
-          <p className="text-gray-600 mb-6">
-            Le calcul est <strong>100% côté navigateur</strong> — vos données ne sont pas envoyées
-            à nos serveurs. Estimation indicative basée sur barèmes mutualisés DREES 2024 + grilles
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-2 text-2xl font-bold">Renseignez votre profil</h2>
+          <p className="mb-6 text-gray-600">
+            Le calcul est <strong>100% côté navigateur</strong> — vos données ne sont pas envoyées à
+            nos serveurs. Estimation indicative basée sur barèmes mutualisés DREES 2024 + grilles
             2026 partenaires (Pro BTP, Apicil, Malakoff Humanis, Harmonie Mutuelle, AG2R La
             Mondiale, Allianz, Generali, Klesia).
           </p>
-          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
             <CalculateurTarifMutuellePro />
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-2xl font-bold mb-4">Comprendre les 4 niveaux de couverture</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-white border-l-4 border-gray-400 p-4 rounded-r">
-              <h3 className="font-bold mb-1">Socle ANI minimal — 32 €/mois</h3>
+      <section className="bg-gray-50 py-12">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-4 text-2xl font-bold">Comprendre les 4 niveaux de couverture</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-r border-l-4 border-gray-400 bg-white p-4">
+              <h3 className="mb-1 font-bold">Socle ANI minimal — 32 €/mois</h3>
               <p className="text-sm">
                 Couverture obligatoire Loi ANI (art. R. 911-3 CSS). Remboursement 100% Base Sécurité
                 sociale + 100% santé sur lunettes/dentaire de classe A. Aucun dépassement honoraires
                 couvert. <strong>Adapté</strong> : salariés 25-35 ans en bonne santé sans famille.
               </p>
             </div>
-            <div className="bg-white border-l-4 border-emerald-500 p-4 rounded-r">
-              <h3 className="font-bold mb-1">Standard — 58 €/mois (recommandée)</h3>
+            <div className="rounded-r border-l-4 border-emerald-500 bg-white p-4">
+              <h3 className="mb-1 font-bold">Standard — 58 €/mois (recommandée)</h3>
               <p className="text-sm">
                 125% BR consultations + dentaire 200% (couronne 600€) + optique 350€/équipement.
                 Hospitalisation chambre particulière. <strong>Adapté</strong> : 80% des
                 travailleurs/familles avec besoins santé courants.
               </p>
             </div>
-            <div className="bg-white border-l-4 border-teal-500 p-4 rounded-r">
-              <h3 className="font-bold mb-1">Confort — 92 €/mois</h3>
+            <div className="rounded-r border-l-4 border-teal-500 bg-white p-4">
+              <h3 className="mb-1 font-bold">Confort — 92 €/mois</h3>
               <p className="text-sm">
                 200% BR + médecines douces (ostéo, étiopathie, sophrologie) + chambre particulière
                 100% + dentaire 300%. <strong>Adapté</strong> : familles avec enfants, dirigeants
                 TNS exposés au stress, professions libérales.
               </p>
             </div>
-            <div className="bg-white border-l-4 border-cyan-700 p-4 rounded-r">
-              <h3 className="font-bold mb-1">Premium — 145 €/mois</h3>
+            <div className="rounded-r border-l-4 border-cyan-700 bg-white p-4">
+              <h3 className="mb-1 font-bold">Premium — 145 €/mois</h3>
               <p className="text-sm">
                 300% BR + remboursement intégral lunettes/dentaire/implants/orthodontie adulte +
                 assistance internationale. <strong>Adapté</strong> : dirigeants 50+ ans, professions
@@ -129,9 +155,11 @@ export default function Page() {
       </section>
 
       <section className="py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-2xl font-bold mb-4">Loi ANI vs TNS Madelin — Quelles différences ?</h2>
-          <table className="w-full text-sm border-collapse bg-white">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-4 text-2xl font-bold">
+            Loi ANI vs TNS Madelin — Quelles différences ?
+          </h2>
+          <table className="w-full border-collapse bg-white text-sm">
             <thead>
               <tr className="bg-emerald-50">
                 <th className="border p-2 text-left">Critère</th>
@@ -141,33 +169,55 @@ export default function Page() {
             </thead>
             <tbody>
               <tr>
-                <td className="border p-2"><strong>Cible</strong></td>
-                <td className="border p-2">Travailleurs non-salariés (AE, EI, EURL gérant majoritaire, prof. libérale)</td>
+                <td className="border p-2">
+                  <strong>Cible</strong>
+                </td>
+                <td className="border p-2">
+                  Travailleurs non-salariés (AE, EI, EURL gérant majoritaire, prof. libérale)
+                </td>
                 <td className="border p-2">Tous salariés du privé (depuis 1er janvier 2016)</td>
               </tr>
               <tr>
-                <td className="border p-2"><strong>Obligation</strong></td>
+                <td className="border p-2">
+                  <strong>Obligation</strong>
+                </td>
                 <td className="border p-2">FACULTATIVE (mais fiscalement intéressante)</td>
-                <td className="border p-2">OBLIGATOIRE pour l&apos;entreprise (art. L. 911-7 CSS)</td>
+                <td className="border p-2">
+                  OBLIGATOIRE pour l&apos;entreprise (art. L. 911-7 CSS)
+                </td>
               </tr>
               <tr>
-                <td className="border p-2"><strong>Cotisation</strong></td>
+                <td className="border p-2">
+                  <strong>Cotisation</strong>
+                </td>
                 <td className="border p-2">100% à charge du TNS</td>
                 <td className="border p-2">50% mini employeur + 50% maxi salarié</td>
               </tr>
               <tr>
-                <td className="border p-2"><strong>Avantage fiscal</strong></td>
-                <td className="border p-2">Cotisations déductibles BIC/BNC (loi Madelin art. 154 bis CGI)</td>
-                <td className="border p-2">Part employeur charge déductible IS, part salarié déductible IR</td>
+                <td className="border p-2">
+                  <strong>Avantage fiscal</strong>
+                </td>
+                <td className="border p-2">
+                  Cotisations déductibles BIC/BNC (loi Madelin art. 154 bis CGI)
+                </td>
+                <td className="border p-2">
+                  Part employeur charge déductible IS, part salarié déductible IR
+                </td>
               </tr>
               <tr>
-                <td className="border p-2"><strong>Plafond déduction</strong></td>
+                <td className="border p-2">
+                  <strong>Plafond déduction</strong>
+                </td>
                 <td className="border p-2">3,75% PASS + 7% PASS (≈ 7 200 €/an 2026)</td>
                 <td className="border p-2">5% PASS + 2% rémunération (≈ 4 000 €/an 2026)</td>
               </tr>
               <tr>
-                <td className="border p-2"><strong>Tarif moyen 2026</strong></td>
-                <td className="border p-2">68 €/mois adulte (+18% vs salarié — pas de couverture employeur)</td>
+                <td className="border p-2">
+                  <strong>Tarif moyen 2026</strong>
+                </td>
+                <td className="border p-2">
+                  68 €/mois adulte (+18% vs salarié — pas de couverture employeur)
+                </td>
                 <td className="border p-2">58 €/mois adulte référence</td>
               </tr>
             </tbody>
@@ -175,13 +225,15 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-8 bg-amber-50 border-y border-amber-200">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-xl font-bold mb-3 text-amber-900">⚠️ Estimation indicative — pas un devis officiel</h2>
+      <section className="border-y border-amber-200 bg-amber-50 py-8">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-3 text-xl font-bold text-amber-900">
+            ⚠️ Estimation indicative — pas un devis officiel
+          </h2>
           <p className="text-sm">
-            Cette estimation a une <strong>valeur indicative uniquement</strong> et n&apos;engage pas
-            les organismes (Recommandation ACPR 2024-R-02). Le tarif réel peut varier ±15% selon :
-            antécédents santé déclarés, garanties optionnelles (médecines douces, dentaire
+            Cette estimation a une <strong>valeur indicative uniquement</strong> et n&apos;engage
+            pas les organismes (Recommandation ACPR 2024-R-02). Le tarif réel peut varier ±15% selon
+            : antécédents santé déclarés, garanties optionnelles (médecines douces, dentaire
             implantologie, optique premium), réseau de soins partenaire, ancienneté contrat.
             <br />
             <br />
@@ -192,36 +244,35 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-emerald-600 to-teal-700 text-white">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Prêt à comparer 8 mutuelles ?</h2>
-          <p className="text-lg opacity-95 mb-6 max-w-2xl mx-auto">
+      <section className="bg-gradient-to-br from-emerald-600 to-teal-700 py-12 text-white">
+        <div className="container mx-auto max-w-4xl px-4 text-center">
+          <h2 className="mb-3 text-2xl font-bold md:text-3xl">Prêt à comparer 8 mutuelles ?</h2>
+          <p className="mx-auto mb-6 max-w-2xl text-lg opacity-95">
             Notre cabinet ORIAS vous transmet sous <strong>24h ouvrées</strong> 3 à 5 propositions
             officielles parmi nos 8 mutuelles santé partenaires. Adhésion en ligne, attestation
             mutuelle téléchargeable dans les 24h.
           </p>
-          <a
+          <Link
             href="/outils/comparateur-mutuelle-pro"
-            className="inline-block bg-white text-emerald-700 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition shadow-lg"
+            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-emerald-700 shadow-lg transition hover:bg-gray-100"
           >
             → Comparateur officiel mutuelle pro (2 min, ORIAS)
-          </a>
+          </Link>
         </div>
       </section>
 
       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+        {...jsonLdScriptProps(
+          {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Calculateur tarif mutuelle pro 2026 — Assurance Pro',
+            name: 'Calculateur tarif mutuelle pro 2026 — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Any',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
             description:
-              "Calculateur interactif tarif mutuelle santé pro 2026. Double cible TNS Madelin + Loi ANI collective. 5 coefficients publics ACPR. 8 mutuelles comparées.",
+              'Calculateur interactif tarif mutuelle santé pro 2026. Double cible TNS Madelin + Loi ANI collective. 5 coefficients publics ACPR. 8 mutuelles comparées.',
             featureList: [
               'Calcul instantané 100% client-side (RGPD)',
               'Double mode : TNS Madelin individuel / Loi ANI collective',
@@ -229,8 +280,9 @@ export default function Page() {
               'Barèmes 2026 réels 8 mutuelles partenaires',
               '4 niveaux garantie (socle ANI / standard / confort / premium)',
             ],
-          }),
-        }}
+          },
+          nonce
+        )}
       />
       <StickyConversionBar
         ctaText="→ Comparer 8 mutuelles 24h"

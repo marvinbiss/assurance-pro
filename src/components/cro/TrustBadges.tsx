@@ -80,13 +80,13 @@ export function TrustBadges({ variant = 'default', className = '' }: TrustBadges
         {badges.slice(0, 6).map((b) => (
           <div
             key={b.label}
-            className="flex items-center gap-2 rounded border border-blue-100 bg-blue-50 p-2"
+            className="flex items-center gap-2 rounded border border-primary-100 bg-primary-50 p-2"
           >
             <span aria-hidden="true" className="text-lg">
               {b.icon}
             </span>
             <div>
-              <p className="text-xs font-semibold text-blue-900">{b.label}</p>
+              <p className="text-xs font-semibold text-primary-900">{b.label}</p>
               <p className="text-xs text-gray-600">{b.detail}</p>
             </div>
           </div>

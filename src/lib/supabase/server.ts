@@ -11,31 +11,27 @@ export async function createClient() {
     )
   }
 
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
 
-  return createServerClient(
-    supabaseUrl,
-    supabaseKey,
-    {
-      cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value
-        },
-        set(name: string, value: string, options: CookieOptions) {
-          try {
-            cookieStore.set({ name, value, ...options })
-          } catch {
-            // Cookie writes throw inside Server Components — safe to ignore.
-          }
-        },
-        remove(name: string, options: CookieOptions) {
-          try {
-            cookieStore.set({ name, value: '', ...options })
-          } catch {
-            // Cookie writes throw inside Server Components — safe to ignore.
-          }
-        },
+  return createServerClient(supabaseUrl, supabaseKey, {
+    cookies: {
+      get(name: string) {
+        return cookieStore.get(name)?.value
       },
-    }
-  )
+      set(name: string, value: string, options: CookieOptions) {
+        try {
+          cookieStore.set({ name, value, ...options })
+        } catch {
+          // Cookie writes throw inside Server Components — safe to ignore.
+        }
+      },
+      remove(name: string, options: CookieOptions) {
+        try {
+          cookieStore.set({ name, value: '', ...options })
+        } catch {
+          // Cookie writes throw inside Server Components — safe to ignore.
+        }
+      },
+    },
+  })
 }

@@ -72,11 +72,11 @@ export function TableOfContents({ items, title = 'Sommaire', className = '' }: P
     <>
       {/* Mobile : sommaire dépliable en haut de page */}
       <details
-        className={`my-4 rounded-lg border border-blue-200 bg-blue-50 p-4 md:hidden ${className}`}
+        className={`my-4 rounded-lg border border-primary-200 bg-primary-50 p-4 md:hidden ${className}`}
         open={mobileOpen}
         onToggle={(e) => setMobileOpen((e.target as HTMLDetailsElement).open)}
       >
-        <summary className="cursor-pointer font-bold text-blue-900">
+        <summary className="cursor-pointer font-bold text-primary-900">
           📑 {title} ({items.length} sections)
         </summary>
         <ol className="mt-3 space-y-2 text-sm">
@@ -84,7 +84,7 @@ export function TableOfContents({ items, title = 'Sommaire', className = '' }: P
             <li key={item.id} className={item.level === 3 ? 'pl-4' : ''}>
               <button
                 onClick={() => scrollTo(item.id)}
-                className="text-left text-blue-700 hover:underline"
+                className="text-left text-primary-700 hover:underline"
               >
                 {i + 1}. {item.label}
               </button>
@@ -108,8 +108,8 @@ export function TableOfContents({ items, title = 'Sommaire', className = '' }: P
                   onClick={() => scrollTo(item.id)}
                   className={`-ml-[2px] border-l-2 py-1 pl-3 text-left transition ${
                     isActive
-                      ? 'border-blue-700 font-semibold text-blue-900'
-                      : 'border-transparent text-gray-600 hover:border-blue-300 hover:text-blue-700'
+                      ? 'border-primary-700 font-semibold text-primary-900'
+                      : 'border-transparent text-gray-600 hover:border-primary-300 hover:text-primary-700'
                   }`}
                 >
                   {i + 1}. {item.label}

@@ -14,17 +14,19 @@ export function generateStaticParams(): Params[] {
   return getVilleSlugs().map((slug) => ({ slug }))
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params
   const v = getVille(params.slug)
   if (!v) return {}
   return {
-    title: `Cyber assurance ${v.nom} (${v.departementCode}) — TPE/PME RGPD | Assurance Pro`,
+    title: `Cyber assurance ${v.nom} (${v.departementCode}) — TPE/PME RGPD`,
     description: `Cyber assurance pour les TPE/PME de ${v.nom}. Couverture rançongiciels, fuite de données, sanctions CNIL, perte d'exploitation. À partir de ${CONFIG.priceFrom}. Devis gratuit ORIAS.`,
     alternates: { canonical: `${SITE_URL}/${CONFIG.garantieSlug}/${v.slug}` },
   }
 }
 
-export default function Page({ params }: { params: Params }) {
+export default async function Page(props: { params: Promise<Params> }) {
+  const params = await props.params
   const ville = getVille(params.slug)
   if (!ville) notFound()
   return <GarantieVilleTemplate ville={ville} config={CONFIG} />

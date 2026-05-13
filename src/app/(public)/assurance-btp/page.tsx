@@ -13,6 +13,7 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
@@ -20,12 +21,13 @@ export const revalidate = 86400
 
 const SLUG = 'assurance-btp'
 const TITLE = 'Assurance BTP — Toutes garanties (décennale, RC, TRC, DO) 2026'
-const TAGLINE = "Le hub assurance BTP : décennale, RC pro travaux, multirisque chantier, dommages-ouvrage, TRC, garantie financière. 8 assureurs comparés. Conseil ORIAS spécialisé."
+const TAGLINE =
+  'Le hub assurance BTP : décennale, RC pro travaux, multirisque chantier, dommages-ouvrage, TRC, garantie financière. 8 assureurs comparés. Conseil ORIAS spécialisé.'
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Assurance Pro`,
+  title: `${TITLE}`,
   description:
-    "Assurance BTP : décennale obligatoire (Loi Spinetta), RC pro travaux, multirisque chantier, dommages-ouvrage, TRC (Tous Risques Chantier), garantie financière, biennale. Comparatif 8 assureurs spécialisés (SMABTP, MAAF Pro, Allianz Pro, AXA Pro). Devis gratuit ORIAS sous 24h.",
+    'Assurance BTP : décennale obligatoire (Loi Spinetta), RC pro travaux, multirisque chantier, dommages-ouvrage, TRC (Tous Risques Chantier), garantie financière, biennale. Comparatif 8 assureurs spécialisés (SMABTP, MAAF Pro, Allianz Pro, AXA Pro). Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -40,17 +42,33 @@ export default function Page() {
       legalReference="Loi Spinetta du 4 janvier 1978 + Code des assurances L. 241-1 / L. 242-1 + Code civil 1792"
       isObligatoire={true}
       benefits={[
-        { icon: '🏗️', title: '8 garanties BTP', desc: 'Décennale, RC pro travaux, multirisque, DO, TRC, garantie financière, biennale, GPA' },
-        { icon: '⚖️', title: 'Décennale OBLIGATOIRE', desc: 'Loi Spinetta — sanctions absence : 75 000€ + 6 mois prison + interdiction d\'exercer' },
-        { icon: '💰', title: '980 € à 25 000 €/an', desc: 'AE peintre : 980€/an. SARL maçonnerie 10 salariés : 18-25k€/an' },
-        { icon: '🛡️', title: 'Pack négocié', desc: '8 assureurs spécialisés (SMABTP leader, MAAF Pro, Allianz Pro BTP, AXA Pro)' },
+        {
+          icon: '🏗️',
+          title: '8 garanties BTP',
+          desc: 'Décennale, RC pro travaux, multirisque, DO, TRC, garantie financière, biennale, GPA',
+        },
+        {
+          icon: '⚖️',
+          title: 'Décennale OBLIGATOIRE',
+          desc: "Loi Spinetta — sanctions absence : 75 000€ + 6 mois prison + interdiction d'exercer",
+        },
+        {
+          icon: '💰',
+          title: '980 € à 25 000 €/an',
+          desc: 'AE peintre : 980€/an. SARL maçonnerie 10 salariés : 18-25k€/an',
+        },
+        {
+          icon: '🛡️',
+          title: 'Pack négocié',
+          desc: '8 assureurs spécialisés (SMABTP leader, MAAF Pro, Allianz Pro BTP, AXA Pro)',
+        },
       ]}
       sections={[
         {
-          h2: 'Les 8 garanties d\'assurance BTP : à quoi servent-elles ?',
+          h2: "Les 8 garanties d'assurance BTP : à quoi servent-elles ?",
           body: (
             <>
-              <table className="w-full text-sm border-collapse">
+              <table className="w-full border-collapse text-sm">
                 <thead>
                   <tr className="bg-gray-100">
                     <th className="border p-2 text-left">Garantie</th>
@@ -59,20 +77,89 @@ export default function Page() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td className="border p-2"><strong>Décennale</strong></td><td className="border p-2">✅ OUI (Loi Spinetta)</td><td className="border p-2">Dommages structurels 10 ans après réception</td></tr>
-                  <tr><td className="border p-2"><strong>RC Pro travaux</strong></td><td className="border p-2">⚠️ Recommandée</td><td className="border p-2">Dommages causés à un tiers PENDANT le chantier</td></tr>
-                  <tr><td className="border p-2"><strong>Multirisque pro BTP</strong></td><td className="border p-2">⚠️ Bail commercial</td><td className="border p-2">Locaux + atelier + matériel + outillage</td></tr>
-                  <tr><td className="border p-2"><strong>Dommages-ouvrage (DO)</strong></td><td className="border p-2">✅ OUI maître d&apos;ouvrage</td><td className="border p-2">Pré-financement réparation sinistres décennaux</td></tr>
-                  <tr><td className="border p-2"><strong>Tous Risques Chantier (TRC)</strong></td><td className="border p-2">⚠️ Recommandée gros chantier</td><td className="border p-2">Dommages au CHANTIER lui-même (pendant les travaux)</td></tr>
-                  <tr><td className="border p-2"><strong>Garantie financière BTP</strong></td><td className="border p-2">⚠️ Cautionnement marché public</td><td className="border p-2">Cautionnement bancaire pour répondre aux appels d&apos;offres publics</td></tr>
-                  <tr><td className="border p-2"><strong>Garantie biennale</strong></td><td className="border p-2">✅ Obligation légale (art. 1792-3)</td><td className="border p-2">Équipements DISSOCIABLES 2 ans (chauffage, volets)</td></tr>
-                  <tr><td className="border p-2"><strong>Garantie parfait achèvement</strong></td><td className="border p-2">✅ Obligation légale (art. 1792-6)</td><td className="border p-2">TOUS désordres signalés dans l&apos;année post-réception</td></tr>
+                  <tr>
+                    <td className="border p-2">
+                      <strong>Décennale</strong>
+                    </td>
+                    <td className="border p-2">✅ OUI (Loi Spinetta)</td>
+                    <td className="border p-2">Dommages structurels 10 ans après réception</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">
+                      <strong>RC Pro travaux</strong>
+                    </td>
+                    <td className="border p-2">⚠️ Recommandée</td>
+                    <td className="border p-2">Dommages causés à un tiers PENDANT le chantier</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">
+                      <strong>Multirisque pro BTP</strong>
+                    </td>
+                    <td className="border p-2">⚠️ Bail commercial</td>
+                    <td className="border p-2">Locaux + atelier + matériel + outillage</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">
+                      <strong>Dommages-ouvrage (DO)</strong>
+                    </td>
+                    <td className="border p-2">✅ OUI maître d&apos;ouvrage</td>
+                    <td className="border p-2">Pré-financement réparation sinistres décennaux</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">
+                      <strong>Tous Risques Chantier (TRC)</strong>
+                    </td>
+                    <td className="border p-2">⚠️ Recommandée gros chantier</td>
+                    <td className="border p-2">
+                      Dommages au CHANTIER lui-même (pendant les travaux)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">
+                      <strong>Garantie financière BTP</strong>
+                    </td>
+                    <td className="border p-2">⚠️ Cautionnement marché public</td>
+                    <td className="border p-2">
+                      Cautionnement bancaire pour répondre aux appels d&apos;offres publics
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">
+                      <strong>Garantie biennale</strong>
+                    </td>
+                    <td className="border p-2">✅ Obligation légale (art. 1792-3)</td>
+                    <td className="border p-2">
+                      Équipements DISSOCIABLES 2 ans (chauffage, volets)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">
+                      <strong>Garantie parfait achèvement</strong>
+                    </td>
+                    <td className="border p-2">✅ Obligation légale (art. 1792-6)</td>
+                    <td className="border p-2">
+                      TOUS désordres signalés dans l&apos;année post-réception
+                    </td>
+                  </tr>
                 </tbody>
               </table>
               <p className="mt-3 text-xs italic">
-                Pour aller plus loin : <a href="/guides/parfait-achevement" className="text-blue-600 underline">Guide GPA</a>,
-                <a href="/guides/dommages-ouvrage" className="text-blue-600 underline ml-1">Guide DO</a>,
-                <a href="/guides/attestation-decennale" className="text-blue-600 underline ml-1">Attestation décennale</a>.
+                Pour aller plus loin :{' '}
+                <Link href="/guides/parfait-achevement" className="text-primary-600 underline">
+                  Guide GPA
+                </Link>
+                ,
+                <Link href="/guides/dommages-ouvrage" className="ml-1 text-primary-600 underline">
+                  Guide DO
+                </Link>
+                ,
+                <Link
+                  href="/guides/attestation-decennale"
+                  className="ml-1 text-primary-600 underline"
+                >
+                  Attestation décennale
+                </Link>
+                .
               </p>
             </>
           ),
@@ -81,7 +168,7 @@ export default function Page() {
           h2: 'Tarifs assurance BTP 2026 par profil',
           body: (
             <>
-              <table className="w-full text-sm border-collapse">
+              <table className="w-full border-collapse text-sm">
                 <thead>
                   <tr className="bg-gray-100">
                     <th className="border p-2 text-left">Profil BTP</th>
@@ -89,17 +176,50 @@ export default function Page() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td className="border p-2">AE peintre / plaquiste solo</td><td className="border p-2 text-right">980 € – 1 480 €</td></tr>
-                  <tr><td className="border p-2">AE plombier / électricien solo</td><td className="border p-2 text-right">1 280 € – 1 980 €</td></tr>
-                  <tr><td className="border p-2">AE maçon / charpentier solo</td><td className="border p-2 text-right">1 580 € – 2 380 €</td></tr>
-                  <tr><td className="border p-2">AE couvreur-zingueur</td><td className="border p-2 text-right">1 880 € – 2 680 €</td></tr>
-                  <tr><td className="border p-2">SARL multi-services BTP 3 salariés + camion</td><td className="border p-2 text-right">3 800 € – 6 200 €</td></tr>
-                  <tr><td className="border p-2">SARL maçonnerie 10 salariés + 2 camions</td><td className="border p-2 text-right">12 000 € – 18 000 €</td></tr>
-                  <tr><td className="border p-2">SARL CMI (maisons individuelles) 5 salariés</td><td className="border p-2 text-right">8 800 € – 14 000 €</td></tr>
-                  <tr><td className="border p-2">SARL RGE photovoltaïque 5 salariés</td><td className="border p-2 text-right">9 200 € – 16 000 €</td></tr>
-                  <tr><td className="border p-2">PME désamianteur SS3 8 salariés</td><td className="border p-2 text-right">15 000 € – 25 000 €</td></tr>
-                  <tr><td className="border p-2">Architecte DPLG indépendant (RC architecte 8 M€)</td><td className="border p-2 text-right">2 800 € – 5 800 €</td></tr>
-                  <tr><td className="border p-2">Maître d&apos;œuvre (MOE) indépendant</td><td className="border p-2 text-right">1 800 € – 3 800 €</td></tr>
+                  <tr>
+                    <td className="border p-2">AE peintre / plaquiste solo</td>
+                    <td className="border p-2 text-right">980 € – 1 480 €</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">AE plombier / électricien solo</td>
+                    <td className="border p-2 text-right">1 280 € – 1 980 €</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">AE maçon / charpentier solo</td>
+                    <td className="border p-2 text-right">1 580 € – 2 380 €</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">AE couvreur-zingueur</td>
+                    <td className="border p-2 text-right">1 880 € – 2 680 €</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">SARL multi-services BTP 3 salariés + camion</td>
+                    <td className="border p-2 text-right">3 800 € – 6 200 €</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">SARL maçonnerie 10 salariés + 2 camions</td>
+                    <td className="border p-2 text-right">12 000 € – 18 000 €</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">SARL CMI (maisons individuelles) 5 salariés</td>
+                    <td className="border p-2 text-right">8 800 € – 14 000 €</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">SARL RGE photovoltaïque 5 salariés</td>
+                    <td className="border p-2 text-right">9 200 € – 16 000 €</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">PME désamianteur SS3 8 salariés</td>
+                    <td className="border p-2 text-right">15 000 € – 25 000 €</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">Architecte DPLG indépendant (RC architecte 8 M€)</td>
+                    <td className="border p-2 text-right">2 800 € – 5 800 €</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-2">Maître d&apos;œuvre (MOE) indépendant</td>
+                    <td className="border p-2 text-right">1 800 € – 3 800 €</td>
+                  </tr>
                 </tbody>
               </table>
             </>
@@ -111,38 +231,110 @@ export default function Page() {
             <>
               <h3>Garanties BTP individuelles</h3>
               <ul>
-                <li><a href="/assurance-decennale" className="text-blue-600 underline">Pilier décennale</a> — Loi Spinetta + 37 métiers BTP</li>
-                <li><a href="/assurance-decennale/auto-entrepreneur" className="text-blue-600 underline">Décennale auto-entrepreneur BTP</a> — pack AE</li>
-                <li><a href="/assurance-artisan" className="text-blue-600 underline">Pack artisan complet</a> — décennale + RC + véhicule</li>
+                <li>
+                  <Link href="/assurance-decennale" className="text-primary-600 underline">
+                    Pilier décennale
+                  </Link>{' '}
+                  — Loi Spinetta + 37 métiers BTP
+                </li>
+                <li>
+                  <Link
+                    href="/assurance-decennale/auto-entrepreneur"
+                    className="text-primary-600 underline"
+                  >
+                    Décennale auto-entrepreneur BTP
+                  </Link>{' '}
+                  — pack AE
+                </li>
+                <li>
+                  <Link href="/assurance-artisan" className="text-primary-600 underline">
+                    Pack artisan complet
+                  </Link>{' '}
+                  — décennale + RC + véhicule
+                </li>
               </ul>
               <h3>Mutuelle et prévoyance BTP</h3>
               <ul>
-                <li><a href="/mutuelle-pro-btp" className="text-blue-600 underline">Mutuelle pro BTP</a> — comparatif PRO BTP, April, Harmonie</li>
-                <li><a href="/prevoyance-tns" className="text-blue-600 underline">Prévoyance TNS</a> — IJ + invalidité + capital décès</li>
+                <li>
+                  <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
+                    Mutuelle pro BTP
+                  </Link>{' '}
+                  — comparatif PRO BTP, April, Harmonie
+                </li>
+                <li>
+                  <Link href="/prevoyance-tns" className="text-primary-600 underline">
+                    Prévoyance TNS
+                  </Link>{' '}
+                  — IJ + invalidité + capital décès
+                </li>
               </ul>
               <h3>Locaux, véhicules et chantiers</h3>
               <ul>
-                <li><a href="/assurance-voiture-professionnelle" className="text-blue-600 underline">Véhicule pro / utilitaire</a></li>
-                <li><a href="/assurance-bureau" className="text-blue-600 underline">Multirisque local pro</a></li>
+                <li>
+                  <Link
+                    href="/assurance-voiture-professionnelle"
+                    className="text-primary-600 underline"
+                  >
+                    Véhicule pro / utilitaire
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/assurance-bureau" className="text-primary-600 underline">
+                    Multirisque local pro
+                  </Link>
+                </li>
               </ul>
               <h3>Guides juridiques BTP</h3>
               <ul>
-                <li><a href="/guides/attestation-decennale" className="text-blue-600 underline">Guide attestation décennale</a></li>
-                <li><a href="/guides/dommages-ouvrage" className="text-blue-600 underline">Guide dommages-ouvrage</a></li>
-                <li><a href="/guides/parfait-achevement" className="text-blue-600 underline">Guide garantie parfait achèvement</a></li>
+                <li>
+                  <Link href="/guides/attestation-decennale" className="text-primary-600 underline">
+                    Guide attestation décennale
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/guides/dommages-ouvrage" className="text-primary-600 underline">
+                    Guide dommages-ouvrage
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/guides/parfait-achevement" className="text-primary-600 underline">
+                    Guide garantie parfait achèvement
+                  </Link>
+                </li>
               </ul>
             </>
           ),
         },
       ]}
       faq={[
-        { q: 'Quelles assurances sont obligatoires en BTP ?', a: "Décennale (Loi Spinetta — TOUS artisans BTP), garantie biennale (art. 1792-3 C. civ.), garantie parfait achèvement (art. 1792-6 C. civ.). Pour le maître d'ouvrage : dommages-ouvrage (L. 242-1 C. assur.). Pour les marchés publics : garantie financière (cautionnement bancaire). RC Pro travaux et multirisque pro non obligatoires stricto sensu mais EXIGÉES par 100% des donneurs d'ordre B2B." },
-        { q: 'Combien coûte l\'assurance d\'un artisan BTP ?', a: "Pack complet (décennale + RC + véhicule pro) : démarre à 980€/an pour AE peintre solo, 1 280-1 980€/an pour AE plombier/électricien, 1 580-2 380€/an pour AE maçon/charpentier, 1 880-2 680€/an pour couvreur-zingueur. SARL avec salariés : 3 800-25 000€/an selon métier et taille." },
-        { q: 'SMABTP ou autre assureur BTP ?', a: "SMABTP (Société Mutuelle d'Assurance du Bâtiment et des Travaux Publics) est l'assureur historique du secteur BTP en France, choisi par défaut par 50% des entreprises BTP. Mais NOTRE CABINET compare systématiquement avec MAAF Pro, Allianz Pro BTP, AXA Pro BTP, Hiscox, April Pro, Generali Pro, Wakam — économies typiques 15-30% pour des garanties équivalentes." },
-        { q: 'Quelle différence entre décennale et tous risques chantier (TRC) ?', a: "DÉCENNALE = couvre les dommages affectant la solidité de l'ouvrage 10 ANS APRÈS RÉCEPTION (responsabilité de l'artisan envers le maître d'ouvrage). TRC (Tous Risques Chantier) = couvre les dommages survenant AU CHANTIER LUI-MÊME PENDANT les travaux (incendie, vol matériel, effondrement partiel). Souvent souscrite par le maître d'ouvrage pour les gros chantiers." },
-        { q: 'RGE photovoltaïque : assurance plus chère ?', a: "OUI — +30 à +60% vs un électricien BTP standard. Justification : sinistralité AQC élevée (9,2% sur les installations PV — incendies onduleurs, défauts d'étanchéité toiture). Tarif type 2026 : 1 880-3 200€/an pour AE RGE PV, 9 200-16 000€/an pour SARL 5 salariés. Garantie obligatoire pour conserver le label RGE et bénéficier de la prime à l'autoconsommation." },
-        { q: 'Désamianteur SS3 : combien coûte l\'assurance ?', a: "Pack complet pour PME désamianteur SS3 (8 salariés) : 15 000-25 000€/an. Justification : risques majorés (santé travailleurs, pollution, responsabilité tiers exposés à l'amiante), obligations réglementaires renforcées (formation, EPI, plan de retrait). Garanties spécifiques requises : RC Pro amiante, garantie subséquente longue (jusqu'à 30 ans post-cessation), couverture des frais de dépollution." },
-        { q: 'Combien de temps pour un devis assurance BTP ?', a: "Devis personnalisé via notre formulaire : 24-48h ouvrées avec 3-5 propositions de nos assureurs partenaires BTP (SMABTP, MAAF Pro, Allianz Pro BTP, AXA Pro, Hiscox, April Pro). Souscription : 24-48h. Effet du contrat : possible dès le 1er du mois suivant ou immédiat (procédure express +120€) pour démarrage chantier urgent." },
+        {
+          q: 'Quelles assurances sont obligatoires en BTP ?',
+          a: "Décennale (Loi Spinetta — TOUS artisans BTP), garantie biennale (art. 1792-3 C. civ.), garantie parfait achèvement (art. 1792-6 C. civ.). Pour le maître d'ouvrage : dommages-ouvrage (L. 242-1 C. assur.). Pour les marchés publics : garantie financière (cautionnement bancaire). RC Pro travaux et multirisque pro non obligatoires stricto sensu mais EXIGÉES par 100% des donneurs d'ordre B2B.",
+        },
+        {
+          q: "Combien coûte l'assurance d'un artisan BTP ?",
+          a: 'Pack complet (décennale + RC + véhicule pro) : démarre à 980€/an pour AE peintre solo, 1 280-1 980€/an pour AE plombier/électricien, 1 580-2 380€/an pour AE maçon/charpentier, 1 880-2 680€/an pour couvreur-zingueur. SARL avec salariés : 3 800-25 000€/an selon métier et taille.',
+        },
+        {
+          q: 'SMABTP ou autre assureur BTP ?',
+          a: "SMABTP (Société Mutuelle d'Assurance du Bâtiment et des Travaux Publics) est l'assureur historique du secteur BTP en France, choisi par défaut par 50% des entreprises BTP. Mais NOTRE CABINET compare systématiquement avec MAAF Pro, Allianz Pro BTP, AXA Pro BTP, Hiscox, April Pro, Generali Pro, Wakam — économies typiques 15-30% pour des garanties équivalentes.",
+        },
+        {
+          q: 'Quelle différence entre décennale et tous risques chantier (TRC) ?',
+          a: "DÉCENNALE = couvre les dommages affectant la solidité de l'ouvrage 10 ANS APRÈS RÉCEPTION (responsabilité de l'artisan envers le maître d'ouvrage). TRC (Tous Risques Chantier) = couvre les dommages survenant AU CHANTIER LUI-MÊME PENDANT les travaux (incendie, vol matériel, effondrement partiel). Souvent souscrite par le maître d'ouvrage pour les gros chantiers.",
+        },
+        {
+          q: 'RGE photovoltaïque : assurance plus chère ?',
+          a: "OUI — +30 à +60% vs un électricien BTP standard. Justification : sinistralité AQC élevée (9,2% sur les installations PV — incendies onduleurs, défauts d'étanchéité toiture). Tarif type 2026 : 1 880-3 200€/an pour AE RGE PV, 9 200-16 000€/an pour SARL 5 salariés. Garantie obligatoire pour conserver le label RGE et bénéficier de la prime à l'autoconsommation.",
+        },
+        {
+          q: "Désamianteur SS3 : combien coûte l'assurance ?",
+          a: "Pack complet pour PME désamianteur SS3 (8 salariés) : 15 000-25 000€/an. Justification : risques majorés (santé travailleurs, pollution, responsabilité tiers exposés à l'amiante), obligations réglementaires renforcées (formation, EPI, plan de retrait). Garanties spécifiques requises : RC Pro amiante, garantie subséquente longue (jusqu'à 30 ans post-cessation), couverture des frais de dépollution.",
+        },
+        {
+          q: 'Combien de temps pour un devis assurance BTP ?',
+          a: 'Devis personnalisé via notre formulaire : 24-48h ouvrées avec 3-5 propositions de nos assureurs partenaires BTP (SMABTP, MAAF Pro, Allianz Pro BTP, AXA Pro, Hiscox, April Pro). Souscription : 24-48h. Effet du contrat : possible dès le 1er du mois suivant ou immédiat (procédure express +120€) pour démarrage chantier urgent.',
+        },
       ]}
     />
   )

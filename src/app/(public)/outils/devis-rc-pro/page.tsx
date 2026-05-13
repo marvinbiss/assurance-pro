@@ -18,8 +18,11 @@
  */
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 import { SITE_URL } from '@/lib/seo/config'
+import { headers } from 'next/headers'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
@@ -27,55 +30,78 @@ export const revalidate = 86400
 const SLUG = 'outils/devis-rc-pro'
 
 export const metadata: Metadata = {
-  title: 'Devis RC Pro 2026 — Comparateur 8 assureurs en 2 minutes | Assurance Pro',
+  title: 'Devis RC Pro 2026 — Comparateur 8 assureurs en 2 minutes',
   description:
-    "Devis RC Pro gratuit en 2 minutes : comparatif 8 assureurs (Hiscox, AXA Pro, Allianz Pro, MMA Pro, MAAF Pro, April Pro, Generali, Wakam). Tarifs 89-2 800€/an. Conseil ORIAS sous 24h. Sans engagement.",
+    'Devis RC Pro gratuit en 2 minutes : comparatif 8 assureurs (Hiscox, AXA Pro, Allianz Pro, MMA Pro, MAAF Pro, April Pro, Generali, Wakam). Tarifs 89-2 800€/an. Conseil ORIAS sous 24h. Sans engagement.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: 'Devis RC Pro 2026 — Comparateur 8 assureurs gratuit',
-    description: "Devis RC Pro en 2 minutes. 8 assureurs comparés. Tarifs négociés. Conseil ORIAS sous 24h.",
+    description:
+      'Devis RC Pro en 2 minutes. 8 assureurs comparés. Tarifs négociés. Conseil ORIAS sous 24h.',
     url: `${SITE_URL}/${SLUG}`,
     type: 'website',
   },
   robots: { index: true, follow: true },
 }
 
-export default function Page() {
+export default async function Page() {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <main className="min-h-screen bg-white">
       {/* HERO */}
-      <header className="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <nav aria-label="Fil d'Ariane" className="text-sm opacity-80 mb-4">
-            <a href="/" className="hover:underline">Accueil</a>{' '}/{' '}
-            <a href="/responsabilite-civile-professionnelle" className="hover:underline">RC Pro</a>{' '}/{' '}
-            <span>Devis RC Pro</span>
+      <header className="bg-gradient-to-br from-blue-700 to-blue-900 py-12 text-white">
+        <div className="container mx-auto max-w-4xl px-4">
+          <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
+            <Link href="/" className="hover:underline">
+              Accueil
+            </Link>{' '}
+            /{' '}
+            <Link href="/responsabilite-civile-professionnelle" className="hover:underline">
+              RC Pro
+            </Link>{' '}
+            / <span>Devis RC Pro</span>
           </nav>
-          <span className="inline-block mb-4 px-3 py-1 bg-green-500/90 text-white rounded-full text-sm font-semibold">
+          <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ Devis gratuit en 2 minutes
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+          <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">
             Devis RC Pro 2026 — Comparateur 8 assureurs
           </h1>
-          <p className="text-lg md:text-xl opacity-95 mb-6 max-w-3xl">
-            Recevez sous 24h ouvrées 3-5 propositions personnalisées de nos 8 assureurs
-            partenaires (Hiscox, AXA Pro, Allianz Pro, MMA, MAAF, April Pro, Generali, Wakam).
-            Économies typiques 15-30% vs souscription directe. Conseil ORIAS sans engagement.
+          <p className="mb-6 max-w-3xl text-lg opacity-95 md:text-xl">
+            Recevez sous 24h ouvrées 3-5 propositions personnalisées de nos 8 assureurs partenaires
+            (Hiscox, AXA Pro, Allianz Pro, MMA, MAAF, April Pro, Generali, Wakam). Économies
+            typiques 15-30% vs souscription directe. Conseil ORIAS sans engagement.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-            <div className="bg-white/10 rounded p-3"><strong>⏱ 2 minutes</strong><br />Formulaire</div>
-            <div className="bg-white/10 rounded p-3"><strong>📧 24h</strong><br />Devis personnalisés</div>
-            <div className="bg-white/10 rounded p-3"><strong>💰 -15-30%</strong><br />vs direct</div>
-            <div className="bg-white/10 rounded p-3"><strong>🆓 Gratuit</strong><br />ORIAS</div>
+          <div className="grid grid-cols-2 gap-4 text-sm md:grid-cols-4">
+            <div className="rounded bg-white/10 p-3">
+              <strong>⏱ 2 minutes</strong>
+              <br />
+              Formulaire
+            </div>
+            <div className="rounded bg-white/10 p-3">
+              <strong>📧 24h</strong>
+              <br />
+              Devis personnalisés
+            </div>
+            <div className="rounded bg-white/10 p-3">
+              <strong>💰 -15-30%</strong>
+              <br />
+              vs direct
+            </div>
+            <div className="rounded bg-white/10 p-3">
+              <strong>🆓 Gratuit</strong>
+              <br />
+              ORIAS
+            </div>
           </div>
         </div>
       </header>
 
       {/* TARIFS RÉFÉRENCE */}
-      <section className="py-10 bg-gray-50 border-b">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-2xl font-bold mb-4">Tarifs RC Pro 2026 par profil</h2>
-          <table className="w-full text-sm border-collapse">
+      <section className="border-b bg-gray-50 py-10">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-4 text-2xl font-bold">Tarifs RC Pro 2026 par profil</h2>
+          <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-white">
                 <th className="border p-2 text-left">Profil</th>
@@ -84,55 +110,93 @@ export default function Page() {
               </tr>
             </thead>
             <tbody>
-              <tr><td className="border p-2">Freelance digital sans antécédent</td><td className="border p-2 text-right">1,5 M€</td><td className="border p-2 text-right">89 € – 180 €</td></tr>
-              <tr><td className="border p-2">Auto-entrepreneur services</td><td className="border p-2 text-right">1,5 M€</td><td className="border p-2 text-right">220 € – 380 €</td></tr>
-              <tr><td className="border p-2">Consultant management senior</td><td className="border p-2 text-right">5 M€</td><td className="border p-2 text-right">980 € – 1 480 €</td></tr>
-              <tr><td className="border p-2">Freelance IT / DevOps</td><td className="border p-2 text-right">5 M€</td><td className="border p-2 text-right">780 € – 1 280 €</td></tr>
-              <tr><td className="border p-2">Cabinet expertise comptable</td><td className="border p-2 text-right">2,5 M€</td><td className="border p-2 text-right">1 200 € – 2 800 €</td></tr>
-              <tr><td className="border p-2">CGP / CIF agréé ACPR</td><td className="border p-2 text-right">5 M€ obl.</td><td className="border p-2 text-right">1 800 € – 3 800 €</td></tr>
+              <tr>
+                <td className="border p-2">Freelance digital sans antécédent</td>
+                <td className="border p-2 text-right">1,5 M€</td>
+                <td className="border p-2 text-right">89 € – 180 €</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Auto-entrepreneur services</td>
+                <td className="border p-2 text-right">1,5 M€</td>
+                <td className="border p-2 text-right">220 € – 380 €</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Consultant management senior</td>
+                <td className="border p-2 text-right">5 M€</td>
+                <td className="border p-2 text-right">980 € – 1 480 €</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Freelance IT / DevOps</td>
+                <td className="border p-2 text-right">5 M€</td>
+                <td className="border p-2 text-right">780 € – 1 280 €</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Cabinet expertise comptable</td>
+                <td className="border p-2 text-right">2,5 M€</td>
+                <td className="border p-2 text-right">1 200 € – 2 800 €</td>
+              </tr>
+              <tr>
+                <td className="border p-2">CGP / CIF agréé ACPR</td>
+                <td className="border p-2 text-right">5 M€ obl.</td>
+                <td className="border p-2 text-right">1 800 € – 3 800 €</td>
+              </tr>
             </tbody>
           </table>
-          <p className="text-xs text-gray-600 italic mt-2">
-            Tarifs indicatifs. Devis personnalisé selon votre profil exact (métier, CA, antécédents).
+          <p className="mt-2 text-xs italic text-gray-600">
+            Tarifs indicatifs. Devis personnalisé selon votre profil exact (métier, CA,
+            antécédents).
           </p>
         </div>
       </section>
 
       {/* FORMULAIRE — pré-rempli garantie_code='rc-pro' */}
       <section className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-2xl font-bold mb-2">Démarrer mon devis RC Pro</h2>
-          <p className="text-gray-600 mb-6">
+        <div className="container mx-auto max-w-3xl px-4">
+          <h2 className="mb-2 text-2xl font-bold">Démarrer mon devis RC Pro</h2>
+          <p className="mb-6 text-gray-600">
             3 étapes — 2 minutes. Vos données sont transmises uniquement aux 3-5 assureurs
-            sélectionnés pour votre profil. Conformité RGPD + ACPR 2024-R-03 (devoir de conseil tracé).
+            sélectionnés pour votre profil. Conformité RGPD + ACPR 2024-R-03 (devoir de conseil
+            tracé).
           </p>
           <DevisAssuranceForm prefill={{ garantie_code: 'rc-pro' }} />
         </div>
       </section>
 
       {/* TRUST FOOTER */}
-      <section className="py-10 bg-blue-50 border-t">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-xl font-bold mb-4">Pourquoi passer par notre cabinet ORIAS ?</h2>
-          <ul className="grid md:grid-cols-2 gap-3 text-sm">
-            <li>⚖️ <strong>Indépendance</strong> : 8 assureurs comparés, pas de mandat exclusif</li>
-            <li>🆓 <strong>Service gratuit</strong> : rémunération par commission assureur, pas par vous</li>
-            <li>🛡️ <strong>Conformité ACPR/DDA</strong> : devoir de conseil tracé (Reco 2024-R-03)</li>
-            <li>⚡ <strong>Réactivité 24h</strong> : 3-5 propositions sous 24h ouvrées</li>
-            <li>💰 <strong>Économie 15-30%</strong> vs souscription directe</li>
-            <li>📞 <strong>Suivi sinistres</strong> : interlocuteur dédié à vie</li>
+      <section className="border-t bg-primary-50 py-10">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-4 text-xl font-bold">Pourquoi passer par notre cabinet ORIAS ?</h2>
+          <ul className="grid gap-3 text-sm md:grid-cols-2">
+            <li>
+              ⚖️ <strong>Indépendance</strong> : 8 assureurs comparés, pas de mandat exclusif
+            </li>
+            <li>
+              🆓 <strong>Service gratuit</strong> : rémunération par commission assureur, pas par
+              vous
+            </li>
+            <li>
+              🛡️ <strong>Conformité ACPR/DDA</strong> : devoir de conseil tracé (Reco 2024-R-03)
+            </li>
+            <li>
+              ⚡ <strong>Réactivité 24h</strong> : 3-5 propositions sous 24h ouvrées
+            </li>
+            <li>
+              💰 <strong>Économie 15-30%</strong> vs souscription directe
+            </li>
+            <li>
+              📞 <strong>Suivi sinistres</strong> : interlocuteur dédié à vie
+            </li>
           </ul>
         </div>
       </section>
 
       {/* JSON-LD WebApplication */}
       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+        {...jsonLdScriptProps(
+          {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'Devis RC Pro — Assurance Pro',
+            name: 'Devis RC Pro — Vivos Assurance',
             url: `${SITE_URL}/${SLUG}`,
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Any',
@@ -142,9 +206,10 @@ export default function Page() {
               priceCurrency: 'EUR',
             },
             description:
-              "Devis RC Pro gratuit en 2 minutes. Comparateur 8 assureurs (Hiscox, AXA Pro, Allianz, MMA, MAAF, April, Generali, Wakam).",
-          }),
-        }}
+              'Devis RC Pro gratuit en 2 minutes. Comparateur 8 assureurs (Hiscox, AXA Pro, Allianz, MMA, MAAF, April, Generali, Wakam).',
+          },
+          nonce
+        )}
       />
     </main>
   )

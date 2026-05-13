@@ -1,5 +1,5 @@
 /**
- * Professional Logger - Assurance Pro
+ * Professional Logger - Vivos Assurance
  * Centralized logging with environment-aware output
  */
 

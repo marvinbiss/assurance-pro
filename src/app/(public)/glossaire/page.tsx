@@ -1,22 +1,26 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { ArrowRight, Sparkles, BookOpen, Hash, Link2, Search, ShieldCheck } from 'lucide-react'
 import { SITE_URL } from '@/lib/seo/config'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 
 export const metadata: Metadata = {
-  title: "Glossaire de l'assurance pro — Définitions claires | Assurance Pro",
+  title: "Glossaire de l'assurance pro — 40+ définitions claires",
   description:
-    "Glossaire de l'assurance professionnelle : 40+ définitions claires (décennale, RC Pro, DDA, Loi Spinetta, Madelin, IPID, ACPR, ORIAS...).",
+    "Glossaire complet de l'assurance professionnelle : décennale, RC Pro, DDA, Loi Spinetta, Madelin, IPID, ACPR, ORIAS... 40+ définitions rédigées par nos courtiers ORIAS.",
   alternates: { canonical: `${SITE_URL}/glossaire` },
   openGraph: {
-    title: 'Glossaire de l\\',
-    description: 'Glossaire de l\\',
+    title: "Glossaire de l'assurance pro — 40+ définitions claires",
+    description:
+      "40+ définitions claires de l'assurance professionnelle, rédigées par nos courtiers ORIAS.",
     url: `${SITE_URL}/glossaire`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Glossaire de l\\',
-    description: 'Glossaire de l\\',
+    title: "Glossaire de l'assurance pro — 40+ définitions claires",
+    description:
+      "40+ définitions claires de l'assurance professionnelle, rédigées par nos courtiers ORIAS.",
   },
 }
 
@@ -255,78 +259,192 @@ const TERMS: Term[] = [
   },
 ]
 
-const ALPHABET = Array.from(new Set(TERMS.map((t) => t.term[0]?.toUpperCase())))
+function firstLetter(term: string): string {
+  return term[0]?.toUpperCase() ?? '#'
+}
+
+const ALPHABET = Array.from(new Set(TERMS.map((t) => firstLetter(t.term))))
   .filter(Boolean)
   .sort()
 
+const TERMS_BY_LETTER = ALPHABET.map((letter) => ({
+  letter,
+  items: TERMS.filter((t) => firstLetter(t.term) === letter),
+}))
+
 export default function GlossairePage() {
   return (
-    <main className="min-h-screen bg-white py-12">
-      <div className="container mx-auto max-w-4xl px-4">
-        <header className="mb-10">
-          <h1 className="mb-3 text-3xl font-bold md:text-4xl">Glossaire de l&apos;assurance pro</h1>
-          <p className="text-lg text-gray-600">
-            {TERMS.length}+ définitions claires pour comprendre l&apos;assurance professionnelle
-            française.
-          </p>
-        </header>
+    <main className="min-h-screen bg-sand-50">
+      <BreadcrumbSchema items={[{ label: 'Glossaire' }]} />
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
+        <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />
+        <div
+          className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-secondary-400/25 blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-primary-700/40 blur-3xl"
+          aria-hidden="true"
+        />
 
-        <nav
-          className="mb-10 flex flex-wrap gap-2 border-y py-4"
-          aria-label="Navigation alphabétique"
-        >
-          {ALPHABET.map((letter) => (
-            <a
-              key={letter}
-              href={`#letter-${letter}`}
-              className="rounded bg-blue-50 px-3 py-1 font-semibold text-blue-700 hover:bg-blue-100"
-            >
-              {letter}
-            </a>
-          ))}
-        </nav>
-
-        <div className="space-y-6">
-          {TERMS.map((t) => (
-            <article
-              key={t.term}
-              id={`letter-${t.term[0]?.toUpperCase()}`}
-              className="border-l-4 border-blue-600 py-2 pl-4"
-            >
-              <h2 className="mb-2 text-lg font-bold">{t.term}</h2>
-              <p className="leading-relaxed text-gray-700">{t.definition}</p>
-              {t.related && t.related.length > 0
-                ? (() => {
-                    const related = t.related
-                    return (
-                      <p className="mt-2 text-xs text-gray-500">
-                        Voir aussi&nbsp;:{' '}
-                        {related.map((r, i) => (
-                          <span key={r}>
-                            <em>{r}</em>
-                            {i < related.length - 1 ? ', ' : ''}
-                          </span>
-                        ))}
-                      </p>
-                    )
-                  })()
-                : null}
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-12 rounded-lg bg-blue-50 p-8 text-center">
-          <h2 className="mb-3 text-xl font-bold">Une question sur un terme&nbsp;?</h2>
-          <p className="mb-6 text-gray-700">
-            Notre équipe ORIAS est disponible pour vous expliquer les subtilités de votre contrat.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block rounded bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800"
+        <div className="container relative mx-auto max-w-6xl px-4">
+          <nav
+            aria-label="Fil d'Ariane"
+            className="mb-6 flex items-center gap-2 text-sm text-white/70"
           >
-            Nous contacter →
-          </Link>
+            <Link href="/" className="transition-colors hover:text-white">
+              Accueil
+            </Link>
+            <span aria-hidden="true">›</span>
+            <span className="text-white">Glossaire</span>
+          </nav>
+
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
+            <BookOpen className="h-3.5 w-3.5 text-secondary-300" strokeWidth={2.4} />
+            Référentiel terminologique
+          </span>
+          <h1 className="font-display-premium mb-5 max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
+            Glossaire de
+            <br />
+            <span className="text-secondary-200">l&apos;assurance pro</span>
+          </h1>
+          <p className="max-w-2xl text-lg text-white/85 md:text-xl">
+            {TERMS.length}+ définitions claires et sourcées (Code des assurances, ACPR, DDA, Loi
+            Spinetta&hellip;) rédigées par nos courtiers ORIAS.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/75">
+            <span className="inline-flex items-center gap-1.5">
+              <Hash className="h-4 w-4 text-secondary-300" strokeWidth={2.4} />
+              {TERMS.length} termes
+            </span>
+            <span className="hidden text-white/30 sm:inline">·</span>
+            <span className="inline-flex items-center gap-1.5">
+              <Search className="h-4 w-4 text-secondary-300" strokeWidth={2.4} />
+              {ALPHABET.length} lettres
+            </span>
+            <span className="hidden text-white/30 sm:inline">·</span>
+            <span className="inline-flex items-center gap-1.5">
+              <ShieldCheck className="h-4 w-4 text-secondary-300" strokeWidth={2.4} />
+              Sources Légifrance &amp; ACPR
+            </span>
+          </div>
         </div>
+      </section>
+
+      {/* Nav alphabétique sticky */}
+      <section className="sticky top-[68px] z-30 border-b border-charcoal-100 bg-white/95 py-4 backdrop-blur-md">
+        <div className="container mx-auto max-w-6xl px-4">
+          <nav aria-label="Navigation alphabétique" className="flex flex-wrap items-center gap-1.5">
+            <span className="mr-1 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
+              Index&nbsp;:
+            </span>
+            {ALPHABET.map((letter) => (
+              <a
+                key={letter}
+                href={`#letter-${letter}`}
+                className="inline-flex h-8 min-w-[2rem] items-center justify-center rounded-lg border border-charcoal-200 bg-white px-2 text-sm font-extrabold text-charcoal-800 transition-all hover:-translate-y-0.5 hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700"
+              >
+                {letter}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </section>
+
+      <div className="container mx-auto max-w-6xl px-4 py-14">
+        {/* Termes groupés par lettre */}
+        <div className="space-y-12">
+          {TERMS_BY_LETTER.map(({ letter, items }) => (
+            <section key={letter} id={`letter-${letter}`} className="scroll-mt-40">
+              <div className="mb-6 flex items-center gap-4">
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 font-heading text-2xl font-extrabold text-white shadow-glow-clay">
+                  {letter}
+                </span>
+                <div className="flex-1">
+                  <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900">
+                    Termes en {letter}
+                  </h2>
+                  <p className="text-sm text-charcoal-500">
+                    {items.length} terme{items.length > 1 ? 's' : ''}
+                  </p>
+                </div>
+                <div className="hidden h-px flex-1 bg-gradient-to-r from-charcoal-200 to-transparent md:block" />
+              </div>
+
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                {items.map((t) => (
+                  <article
+                    key={t.term}
+                    className="group relative overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-premium"
+                  >
+                    <span
+                      className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary-500 to-primary-700 opacity-60 transition-opacity group-hover:opacity-100"
+                      aria-hidden="true"
+                    />
+                    <h3 className="mb-2 font-heading text-base font-extrabold leading-tight tracking-tight text-charcoal-900 md:text-lg">
+                      {t.term}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-charcoal-700">{t.definition}</p>
+                    {t.related &&
+                      t.related.length > 0 &&
+                      (() => {
+                        const related = t.related
+                        return (
+                          <div className="mt-4 flex flex-wrap items-center gap-1.5 border-t border-charcoal-100 pt-3">
+                            <span className="inline-flex items-center gap-1 text-[10px] font-extrabold uppercase tracking-wider text-charcoal-500">
+                              <Link2 className="h-3 w-3" strokeWidth={2.4} />
+                              Voir aussi
+                            </span>
+                            {related.map((r) => (
+                              <span
+                                key={r}
+                                className="inline-flex items-center rounded-full bg-primary-50 px-2 py-0.5 text-[11px] font-bold text-primary-700"
+                              >
+                                {r}
+                              </span>
+                            ))}
+                          </div>
+                        )
+                      })()}
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        {/* CTA contact */}
+        <section className="relative mt-16 overflow-hidden rounded-3xl bg-charcoal-900 p-10 text-white shadow-premium-lg md:p-14">
+          <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-95" />
+          <div
+            className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-secondary-400/30 blur-3xl"
+            aria-hidden="true"
+          />
+          <div className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-[1fr_auto]">
+            <div>
+              <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider backdrop-blur-sm">
+                <Sparkles className="h-3 w-3 text-secondary-300" />
+                Conseil personnalisé
+              </span>
+              <h2 className="mb-2 font-heading text-3xl font-extrabold tracking-display md:text-4xl">
+                Une question sur un terme&nbsp;?
+              </h2>
+              <p className="max-w-xl text-base text-white/85 md:text-lg">
+                Notre équipe ORIAS vous explique les subtilités d&apos;un contrat ou d&apos;une
+                clause, gratuitement et sans engagement.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 text-base font-extrabold text-primary-700 shadow-premium transition-all hover:-translate-y-0.5"
+            >
+              Nous contacter
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </section>
       </div>
     </main>
   )

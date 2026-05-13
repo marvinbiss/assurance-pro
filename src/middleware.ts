@@ -1,9 +1,14 @@
 import { type NextRequest, NextResponse } from 'next/server'
-import { checkRateLimit, getRateLimitConfig, getRateLimitKey, getClientIp } from '@/lib/rate-limiter'
+import {
+  checkRateLimit,
+  getRateLimitConfig,
+  getRateLimitKey,
+  getClientIp,
+} from '@/lib/rate-limiter'
 import { logger } from '@/lib/logger'
 
 /**
- * Middleware Assurance Pro — concerns hot-path uniquement.
+ * Middleware Vivos Assurance — concerns hot-path uniquement.
  *
  * Responsabilités (single source of truth) :
  * - URL canonicalization (https, non-www, no trailing slash, lowercase, strip tracking params)
@@ -36,7 +41,7 @@ function addCspHeaders(response: NextResponse, nonce: string): NextResponse {
 
 function getCanonicalRedirect(request: NextRequest): string | null {
   const url = request.nextUrl
-  const host = request.headers.get('host') || 'assurance-pro.fr'
+  const host = request.headers.get('host') || 'vivos-assurance.fr'
   let canonicalHost = host
   let pathname = url.pathname
   let needsRedirect = false
@@ -53,7 +58,15 @@ function getCanonicalRedirect(request: NextRequest): string | null {
     needsRedirect = true
   }
 
-  const trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'gclid']
+  const trackingParams = [
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_term',
+    'utm_content',
+    'fbclid',
+    'gclid',
+  ]
   const hasTracking = trackingParams.some((p) => url.searchParams.has(p))
   let search = url.search
   if (hasTracking) {

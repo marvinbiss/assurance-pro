@@ -3,14 +3,14 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Multirisque Professionnelle — Local, stock, exploitation | Assurance Pro',
+  title: 'Multirisque Professionnelle — Local, stock, exploitation',
   description:
     "Comparez votre Multirisque Pro auprès de 10 assureurs. Local commercial, atelier, bureau, stock. Vol, incendie, dégâts des eaux, perte d'exploitation.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/multirisque-pro`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/multirisque-pro`,
   },
   openGraph: {
-    title: 'Multirisque Professionnelle — Local, stock, exploitation | Assurance Pro',
+    title: 'Multirisque Professionnelle — Local, stock, exploitation',
     description:
       'Comparez votre Multirisque Pro auprès de 10 assureurs. Local commercial, atelier, bureau, stock. Vol, incendie, dégâts des eaux, perte d\\',
     url: `${SITE_URL}/multirisque-pro`,

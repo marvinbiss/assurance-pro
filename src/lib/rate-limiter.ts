@@ -1,5 +1,5 @@
 /**
- * Rate Limiter Service - Assurance Pro
+ * Rate Limiter Service - Vivos Assurance
  * Uses Redis (Upstash) for distributed rate limiting in production
  * Falls back to in-memory for development
  */
@@ -8,8 +8,8 @@ import { logger } from './logger'
 
 // Types
 interface RateLimitConfig {
-  window: number    // Time window in milliseconds
-  max: number       // Maximum requests in window
+  window: number // Time window in milliseconds
+  max: number // Maximum requests in window
   failOpen?: boolean // If true, allow requests when Redis is unavailable (default: false = fail-close)
 }
 
@@ -44,7 +44,7 @@ class UpstashRateLimiter {
     const response = await fetch(`${this.baseUrl}`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${this.token}`,
+        Authorization: `Bearer ${this.token}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(command),
@@ -78,7 +78,7 @@ class UpstashRateLimiter {
         await this.redisCommand(cmd)
       }
 
-      const count = await this.redisCommand(['ZCARD', windowKey]) as number
+      const count = (await this.redisCommand(['ZCARD', windowKey])) as number
       await this.redisCommand(['PEXPIRE', windowKey, String(windowMs)])
 
       const allowed = count <= config.max
@@ -149,7 +149,7 @@ class MemoryRateLimiter {
     return {
       allowed: true,
       remaining: config.max - record.count,
-      resetTime: record.resetTime
+      resetTime: record.resetTime,
     }
   }
 }
@@ -173,15 +173,15 @@ function getRateLimiter(): UpstashRateLimiter | MemoryRateLimiter {
 
 // Configurations alignées sur les routes courtage existantes uniquement.
 const RATE_LIMITS_INTERNAL = {
-  api: { window: 60 * 1000, max: 60 },                        // général
-  devis: { window: 60 * 1000, max: 10 },                      // /api/devis-assurance
-  reclamation: { window: 300 * 1000, max: 3 },                // /api/reclamation (anti-spam)
-  contact: { window: 300 * 1000, max: 3 },                    // /api/contact (sends email)
-  newsletter: { window: 300 * 1000, max: 3 },                 // /api/newsletter (sends email)
-  gdpr: { window: 300 * 1000, max: 5 },                       // /api/gdpr/* (DB export/delete)
-  admin: { window: 60 * 1000, max: 30 },                      // /api/admin/*
-  cron: { window: 60 * 1000, max: 10, failOpen: true },       // /api/cron/* (fail-open)
-  webhook: { window: 60 * 1000, max: 200, failOpen: true },   // /api/revalidate, indexnow callbacks
+  api: { window: 60 * 1000, max: 60 }, // général
+  devis: { window: 60 * 1000, max: 10 }, // /api/devis-assurance
+  reclamation: { window: 300 * 1000, max: 3 }, // /api/reclamation (anti-spam)
+  contact: { window: 300 * 1000, max: 3 }, // /api/contact (sends email)
+  newsletter: { window: 300 * 1000, max: 3 }, // /api/newsletter (sends email)
+  gdpr: { window: 300 * 1000, max: 5 }, // /api/gdpr/* (DB export/delete)
+  admin: { window: 60 * 1000, max: 30 }, // /api/admin/*
+  cron: { window: 60 * 1000, max: 10, failOpen: true }, // /api/cron/* (fail-open)
+  webhook: { window: 60 * 1000, max: 200, failOpen: true }, // /api/revalidate, indexnow callbacks
   default: { window: 60 * 1000, max: 100 },
 } as const satisfies Record<string, RateLimitConfig>
 
@@ -230,13 +230,34 @@ export async function checkRateLimit(
 }
 
 /**
- * Utility to extract IP from request headers
+ * Extract trusted client IP — résiste au spoofing X-Forwarded-For.
+ *
+ * Priorité :
+ *   1. x-vercel-forwarded-for  → set par Vercel edge proxy, NON spoofable
+ *   2. cf-connecting-ip        → set par Cloudflare, NON spoofable derrière CF
+ *   3. x-forwarded-for[0]      → fallback dev/self-hosted (peut être spoofé)
+ *
+ * Note : x-forwarded-for est ignoré en production sur Vercel pour empêcher
+ * le bypass de rate limits. En dev local sans proxy, fallback dégradé OK.
  */
 export function getClientIp(headers: Headers): string {
-  return headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    headers.get('x-real-ip') ||
-    headers.get('cf-connecting-ip') ||  // Cloudflare
-    'unknown'
+  // Vercel edge proxy — header le plus sûr, set après edge auth
+  const vercelIp = headers.get('x-vercel-forwarded-for')?.split(',')[0]?.trim()
+  if (vercelIp) return vercelIp
+
+  // Cloudflare proxy
+  const cfIp = headers.get('cf-connecting-ip')
+  if (cfIp) return cfIp
+
+  // Production : ne JAMAIS faire confiance à x-forwarded-for sans proxy connu
+  if (process.env.NODE_ENV === 'production' && !process.env.TRUST_PROXY) {
+    return 'unknown'
+  }
+
+  // Dev / self-hosted : fallback x-forwarded-for puis x-real-ip
+  return (
+    headers.get('x-forwarded-for')?.split(',')[0]?.trim() || headers.get('x-real-ip') || 'unknown'
+  )
 }
 
 export default {

@@ -18,7 +18,13 @@ const CATEGORY_LABELS: Record<string, string> = {
   autre: 'Autre',
 }
 
-export function reclamationAckTemplate({ ticket, prenom, nom, objet, categorie }: ReclamationAckParams): {
+export function reclamationAckTemplate({
+  ticket,
+  prenom,
+  nom,
+  objet,
+  categorie,
+}: ReclamationAckParams): {
   subject: string
   html: string
 } {
@@ -57,8 +63,8 @@ export function reclamationAckTemplate({ ticket, prenom, nom, objet, categorie }
         — TSA 50110, 75441 Paris cedex 09.
       </p>
       <p style="margin-top:24px;color:#475569;font-size:13px">
-        Service Réclamations — Assurance Pro<br>
-        <a href="mailto:reclamations@assurance-pro.fr" style="color:#1d4ed8">reclamations@assurance-pro.fr</a>
+        Service Réclamations — Vivos Assurance<br>
+        <a href="mailto:reclamations@vivos-assurance.fr" style="color:#1d4ed8">reclamations@vivos-assurance.fr</a>
       </p>
     </div>
   </body>
@@ -78,7 +84,9 @@ export function reclamationInternalNotificationTemplate({
     .filter(([, v]) => v && String(v).trim() !== '')
     .map(
       ([k, v]) =>
-        `<tr><td style="padding:4px 12px 4px 0;color:#64748b;vertical-align:top">${k}</td><td style="white-space:pre-wrap">${String(v)
+        `<tr><td style="padding:4px 12px 4px 0;color:#64748b;vertical-align:top">${k}</td><td style="white-space:pre-wrap">${String(
+          v
+        )
           .replace(/&/g, '&amp;')
           .replace(/</g, '&lt;')
           .replace(/>/g, '&gt;')}</td></tr>`

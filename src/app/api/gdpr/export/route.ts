@@ -13,7 +13,12 @@ import { checkRateLimit, getClientIp } from '@/lib/rate-limiter'
 import { logger } from '@/lib/logger'
 import { captureApiException } from '@/lib/observability/sentry'
 import { SITE_URL } from '@/lib/seo/config'
-import { signGdprToken, verifyGdprToken, hashEmail, GDPR_TOKEN_TTL_MINUTES } from '@/lib/security/gdpr-token'
+import {
+  signGdprToken,
+  verifyGdprToken,
+  hashEmail,
+  GDPR_TOKEN_TTL_MINUTES,
+} from '@/lib/security/gdpr-token'
 import { esc } from '@/lib/email/templates/_html'
 
 export const dynamic = 'force-dynamic'
@@ -22,7 +27,6 @@ const PostSchema = z.object({
   email: z.string().email().max(254),
   consent: z.literal(true),
 })
-
 
 // Colonnes PII destinées à l'export (principe de minimisation art. 5.1.c).
 // Les champs internes (status, scoring interne, signature_hash, etc.) sont exclus
@@ -132,20 +136,21 @@ export async function POST(req: NextRequest) {
   const url = `${SITE_URL}/api/gdpr/export?token=${encodeURIComponent(token)}`
   void sendEmail({
     to: email,
-    subject: '[Assurance Pro] Confirmer l\'export de vos données',
+    subject: "[Vivos Assurance] Confirmer l'export de vos données",
     html: `
       <p>Bonjour,</p>
       <p>Vous avez demandé un export de vos données personnelles
       (RGPD art. 15 — droit d'accès) pour l'adresse <strong>${safeEmail}</strong>.</p>
       <p>Pour télécharger l'export JSON (lien valable 1 heure)&nbsp;:</p>
       <p><a href="${url}">${url}</a></p>
-      <p>— Service DPO Assurance Pro</p>
+      <p>— Service DPO Vivos Assurance</p>
     `,
   }).catch((err) => logger.error({ err }, 'gdpr-export confirmation email failed'))
 
   return NextResponse.json({
     ok: true,
-    message: 'Email de confirmation envoyé. Cliquez sur le lien dans l\'heure pour récupérer vos données.',
+    message:
+      "Email de confirmation envoyé. Cliquez sur le lien dans l'heure pour récupérer vos données.",
   })
 }
 
@@ -171,7 +176,10 @@ export async function GET(req: NextRequest) {
       logger.warn({ tokenHash: tokenHash.slice(0, 12) }, 'gdpr-export replay rejected')
       return NextResponse.json({ error: 'Lien déjà utilisé.' }, { status: 400 })
     }
-    logger.error({ err: replayErr, tokenHash: tokenHash.slice(0, 12) }, 'gdpr-export consume insert failed')
+    logger.error(
+      { err: replayErr, tokenHash: tokenHash.slice(0, 12) },
+      'gdpr-export consume insert failed'
+    )
     return NextResponse.json({ error: 'Service indisponible.' }, { status: 500 })
   }
 
@@ -179,12 +187,15 @@ export async function GET(req: NextRequest) {
     const [leadsRes, reclamationsRes, newsletterRes] = await Promise.all([
       admin.from('leads').select(LEAD_EXPORT_COLUMNS.join(',')).eq('contact_email', email),
       admin.from('reclamations').select(RECLAMATION_EXPORT_COLUMNS.join(',')).eq('email', email),
-      admin.from('newsletter_subscribers').select(NEWSLETTER_EXPORT_COLUMNS.join(',')).eq('email', email),
+      admin
+        .from('newsletter_subscribers')
+        .select(NEWSLETTER_EXPORT_COLUMNS.join(','))
+        .eq('email', email),
     ])
 
-    const leads = ((leadsRes.data ?? []) as unknown) as Record<string, unknown>[]
-    const reclamations = ((reclamationsRes.data ?? []) as unknown) as Record<string, unknown>[]
-    const newsletter = ((newsletterRes.data ?? []) as unknown) as Record<string, unknown>[]
+    const leads = (leadsRes.data ?? []) as unknown as Record<string, unknown>[]
+    const reclamations = (reclamationsRes.data ?? []) as unknown as Record<string, unknown>[]
+    const newsletter = (newsletterRes.data ?? []) as unknown as Record<string, unknown>[]
 
     const conseilLeadIds = leads
       .map((l) => (typeof l.id === 'string' ? l.id : null))
@@ -196,7 +207,7 @@ export async function GET(req: NextRequest) {
         .from('conseil_records')
         .select(CONSEIL_EXPORT_COLUMNS.join(','))
         .in('lead_id', conseilLeadIds)
-      conseilRecords = ((data ?? []) as unknown) as Record<string, unknown>[]
+      conseilRecords = (data ?? []) as unknown as Record<string, unknown>[]
     }
 
     // Retire `id` interne du payload exposé à l'utilisateur.
@@ -231,7 +242,11 @@ export async function GET(req: NextRequest) {
     })
   } catch (err) {
     logger.error({ err }, 'gdpr-export retrieval failed')
-    captureApiException(err, { route: 'api/gdpr/export', category: 'gdpr', extra: { stage: 'retrieval' } })
-    return NextResponse.json({ error: 'Erreur lors de l\'export.' }, { status: 500 })
+    captureApiException(err, {
+      route: 'api/gdpr/export',
+      category: 'gdpr',
+      extra: { stage: 'retrieval' },
+    })
+    return NextResponse.json({ error: "Erreur lors de l'export." }, { status: 500 })
   }
 }

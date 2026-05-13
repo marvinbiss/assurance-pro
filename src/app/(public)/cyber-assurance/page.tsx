@@ -3,14 +3,14 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Cyber Assurance Pro — Ransomware, RGPD breach | Assurance Pro',
+  title: 'Cyber Vivos Assurance — Ransomware, RGPD breach',
   description:
     "Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu'à 5M€.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://assurance-pro.fr'}/cyber-assurance`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/cyber-assurance`,
   },
   openGraph: {
-    title: 'Cyber Assurance Pro — Ransomware, RGPD breach | Assurance Pro',
+    title: 'Cyber Vivos Assurance — Ransomware, RGPD breach',
     description:
       'Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu\\',
     url: `${SITE_URL}/cyber-assurance`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cyber Assurance Pro — Ransomware, RGPD breach | Assurance Pro',
+    title: 'Cyber Vivos Assurance — Ransomware, RGPD breach',
     description:
       'Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu\\',
   },
@@ -28,7 +28,7 @@ export default function CyberAssurancePage() {
   return (
     <PilierLayout
       slug="cyber-assurance"
-      title="Cyber Assurance Pro"
+      title="Cyber Vivos Assurance"
       tagline="La seule assurance qui couvre les attaques informatiques, ransomware, fuites de données et notification RGPD. Indispensable en 2026."
       legalReference="RGPD art. 32 + Directive NIS 2"
       intro="Avec 1 entreprise sur 5 victime d'une cyberattaque en France en 2025 (source ANSSI), la cyber assurance n'est plus un luxe mais une nécessité. Elle couvre les conséquences financières d'un ransomware, d'une fuite de données personnelles, d'une attaque par déni de service (DDoS), d'une fraude au président. Notre cabinet ORIAS travaille avec les leaders du marché (Hiscox, Stello, Coalition, AIG, Beazley) pour construire votre couverture sur-mesure."
