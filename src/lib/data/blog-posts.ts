@@ -432,14 +432,16 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
 
 import { BLOG_POSTS_BATCH_2 } from './blog-posts-batch2'
 import { BLOG_POSTS_BATCH_2_EXTENDED } from './blog-posts-batch2-extended'
+import { BLOG_POSTS_BATCH_3 } from './blog-posts-batch3'
 
-/** Tous les articles fusionnés (batch 1 + batch 2 + extensions étoffées).
- *  L'ordre du spread garantit que les versions étoffées (batch2-extended)
- *  ÉCRASENT les versions courtes (batch2) pour les slugs communs. */
+/** Tous les articles fusionnés (batch 1 + batch 2 + extensions étoffées + batch 3).
+ *  L'ordre du spread garantit que les versions étoffées ÉCRASENT les versions
+ *  courtes pour les slugs communs (batch 2-extended et batch 3 prioritaires). */
 const ALL_POSTS: Record<string, BlogPost> = {
   ...BLOG_POSTS,
   ...BLOG_POSTS_BATCH_2,
   ...BLOG_POSTS_BATCH_2_EXTENDED,
+  ...BLOG_POSTS_BATCH_3,
 }
 
 export function getPost(slug: string): BlogPost | undefined {
