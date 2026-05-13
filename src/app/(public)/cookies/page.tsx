@@ -141,7 +141,7 @@ export default function CookiesPage() {
             <button
               type="button"
               data-cookie-consent-reopen
-              className="not-prose inline-block rounded bg-blue-700 px-4 py-2 font-semibold text-white"
+              className="not-prose inline-block rounded bg-primary-500 px-5 py-2.5 font-bold text-white shadow-cta transition-all hover:-translate-y-0.5 hover:bg-primary-600"
             >
               Modifier mes préférences cookies
             </button>

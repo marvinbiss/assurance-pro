@@ -97,6 +97,18 @@ const nextConfig = {
       { source: '/conseil', destination: '/notre-processus-conseil', permanent: true },
       { source: '/devis-gratuit', destination: '/devis', permanent: true },
       { source: '/demande-devis', destination: '/devis', permanent: true },
+      // Aliases métiers courts → fiche RC Pro complète
+      { source: '/freelance-it', destination: '/rc-pro/freelance-it', permanent: true },
+      { source: '/freelance', destination: '/rc-pro/freelance-it', permanent: true },
+      { source: '/consultant', destination: '/rc-pro/consultant', permanent: true },
+      { source: '/agence-web', destination: '/rc-pro/agence-web', permanent: true },
+      { source: '/coach', destination: '/rc-pro/coach-sportif', permanent: true },
+      { source: '/coach-professionnel', destination: '/rc-pro/coach-sportif', permanent: true },
+      { source: '/coiffeur', destination: '/rc-pro/coiffeur', permanent: true },
+      { source: '/photographe', destination: '/rc-pro/photographe', permanent: true },
+      { source: '/expert-comptable', destination: '/rc-pro/expert-comptable', permanent: true },
+      { source: '/decennale', destination: '/assurance-decennale', permanent: true },
+      { source: '/garantie-decennale', destination: '/assurance-decennale', permanent: true },
     ]
   },
 

@@ -6,7 +6,11 @@
 
 import * as Sentry from '@sentry/nextjs'
 
-const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN ?? process.env.SENTRY_DSN
+const rawDsn = process.env.NEXT_PUBLIC_SENTRY_DSN ?? process.env.SENTRY_DSN
+// Détecte les valeurs placeholder (ex: "https://...@sentry.io/...") pour éviter
+// l'init Sentry en dev qui pollue le HMR et masque les erreurs réelles.
+const isPlaceholder = !rawDsn || rawDsn.includes('...') || rawDsn.includes('XXX')
+const dsn = isPlaceholder ? undefined : rawDsn
 
 if (dsn) {
   Sentry.init({

@@ -19,16 +19,31 @@ function enableClarity() {
   if (typeof window !== 'undefined' && !(window as unknown as Record<string, unknown>).clarity) {
     const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID
     if (clarityId) {
-      ;(function (c: Window & Record<string, unknown>, l: Document, a: string, r: string, i: string) {
-        c[a] = c[a] || function (...args: unknown[]) {
-          ;((c[a] as Record<string, unknown[]>).q = (c[a] as Record<string, unknown[]>).q || []).push(args)
-        }
+      ;(function (
+        c: Window & Record<string, unknown>,
+        l: Document,
+        a: string,
+        r: string,
+        i: string
+      ) {
+        c[a] =
+          c[a] ||
+          function (...args: unknown[]) {
+            ;((c[a] as Record<string, unknown[]>).q =
+              (c[a] as Record<string, unknown[]>).q || []).push(args)
+          }
         const t = l.createElement(r) as HTMLScriptElement
         t.async = true
         t.src = 'https://www.clarity.ms/tag/' + i
         const y = l.getElementsByTagName(r)[0]
         y?.parentNode?.insertBefore(t, y)
-      })(window as unknown as Window & Record<string, unknown>, document, 'clarity', 'script', clarityId)
+      })(
+        window as unknown as Window & Record<string, unknown>,
+        document,
+        'clarity',
+        'script',
+        clarityId
+      )
     }
   }
 }
@@ -155,34 +170,47 @@ export default function CookieConsent() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
-        className="fixed bottom-20 md:bottom-0 left-0 right-0 z-50 p-4 md:p-6"
+        className="fixed bottom-20 left-0 right-0 z-50 p-4 md:bottom-0 md:p-6"
       >
-        <div className="mx-auto max-w-4xl rounded-2xl bg-white shadow-2xl border border-gray-100" role="dialog" aria-label="Gestion des cookies" aria-modal="false">
+        <div
+          className="mx-auto max-w-4xl rounded-2xl border border-gray-100 bg-white shadow-2xl"
+          role="dialog"
+          aria-label="Gestion des cookies"
+          aria-modal="false"
+        >
           <div className="p-6">
             {/* Header */}
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100">
-                  <svg className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-50">
+                  <svg
+                    className="h-5 w-5 text-primary-700"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
                   </svg>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">
                     Nous respectons votre vie privée
                   </h3>
-                  <p className="text-sm text-gray-500">
-                    Conformité RGPD
-                  </p>
+                  <p className="text-sm text-gray-500">Conformité RGPD</p>
                 </div>
               </div>
             </div>
 
             {/* Main content */}
             <div className="mt-4">
-              <p className="text-gray-600 text-sm">
-                Nous utilisons des cookies pour améliorer votre expérience, analyser le trafic et personnaliser le contenu.
-                Vous pouvez choisir les cookies que vous acceptez.
+              <p className="text-sm text-gray-600">
+                Nous utilisons des cookies pour améliorer votre expérience, analyser le trafic et
+                personnaliser le contenu. Vous pouvez choisir les cookies que vous acceptez.
               </p>
             </div>
 
@@ -208,7 +236,7 @@ export default function CookieConsent() {
                         type="checkbox"
                         checked={true}
                         disabled
-                        className="h-5 w-5 rounded text-blue-600"
+                        className="h-5 w-5 rounded text-primary-600"
                       />
                       <span className="ml-2 text-xs text-gray-400">Requis</span>
                     </div>
@@ -231,7 +259,7 @@ export default function CookieConsent() {
                         }
                         className="peer sr-only"
                       />
-                      <div className="peer h-6 w-11 rounded-full bg-gray-300 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full"></div>
+                      <div className="peer h-6 w-11 rounded-full bg-gray-300 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary-500 peer-checked:after:translate-x-full"></div>
                     </label>
                   </div>
 
@@ -252,7 +280,7 @@ export default function CookieConsent() {
                         }
                         className="peer sr-only"
                       />
-                      <div className="peer h-6 w-11 rounded-full bg-gray-300 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full"></div>
+                      <div className="peer h-6 w-11 rounded-full bg-gray-300 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary-500 peer-checked:after:translate-x-full"></div>
                     </label>
                   </div>
 
@@ -273,7 +301,7 @@ export default function CookieConsent() {
                         }
                         className="peer sr-only"
                       />
-                      <div className="peer h-6 w-11 rounded-full bg-gray-300 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full"></div>
+                      <div className="peer h-6 w-11 rounded-full bg-gray-300 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary-500 peer-checked:after:translate-x-full"></div>
                     </label>
                   </div>
                 </motion.div>
@@ -286,27 +314,27 @@ export default function CookieConsent() {
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <button
                 onClick={acceptAll}
-                className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
+                className="rounded-lg bg-primary-500 px-6 py-2.5 text-sm font-bold text-white shadow-cta transition-colors hover:-translate-y-0.5 hover:bg-primary-600"
               >
                 Tout accepter
               </button>
               <button
                 onClick={acceptNecessaryOnly}
-                className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
+                className="rounded-lg bg-primary-500 px-6 py-2.5 text-sm font-bold text-white shadow-cta transition-colors hover:-translate-y-0.5 hover:bg-primary-600"
               >
                 Refuser tout
               </button>
               {showDetails ? (
                 <button
                   onClick={saveCustomPreferences}
-                  className="rounded-lg border border-blue-300 bg-blue-50 px-6 py-2.5 text-sm font-medium text-blue-700 hover:bg-blue-100 transition-colors"
+                  className="rounded-lg border border-charcoal-200 bg-sand-50 px-6 py-2.5 text-sm font-medium text-primary-700 transition-colors hover:bg-sand-100"
                 >
                   Enregistrer mes choix
                 </button>
               ) : (
                 <button
                   onClick={() => setShowDetails(true)}
-                  className="text-sm font-medium text-gray-600 hover:text-gray-900 underline"
+                  className="text-sm font-medium text-gray-600 underline hover:text-gray-900"
                 >
                   Personnaliser
                 </button>
@@ -315,10 +343,10 @@ export default function CookieConsent() {
 
             {/* Links */}
             <div className="mt-4 flex gap-4 text-xs text-gray-500">
-              <Link href="/confidentialite" className="hover:text-blue-600 hover:underline">
+              <Link href="/confidentialite" className="hover:text-primary-700 hover:underline">
                 Politique de confidentialité
               </Link>
-              <Link href="/mentions-legales" className="hover:text-blue-600 hover:underline">
+              <Link href="/mentions-legales" className="hover:text-primary-700 hover:underline">
                 Mentions légales
               </Link>
             </div>

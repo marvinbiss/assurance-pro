@@ -60,75 +60,152 @@ export function ReclamationForm() {
   if (state.status === 'success') {
     return (
       <div className="rounded-lg border border-green-200 bg-green-50 p-6">
-        <h2 className="text-xl font-bold text-green-800 mb-2">Réclamation enregistrée</h2>
-        <p className="text-sm text-green-900 mb-1">
+        <h2 className="mb-2 text-xl font-bold text-green-800">Réclamation enregistrée</h2>
+        <p className="mb-1 text-sm text-green-900">
           Votre numéro de dossier : <strong className="font-mono">{state.ticket}</strong>
         </p>
-        <p className="text-sm text-green-900 mb-3">
-          Conformément à la <strong>Recommandation ACPR 2024-R-02</strong>, nous accuserons réception de
-          votre réclamation sous <strong>10 jours ouvrés</strong> et nous vous répondrons sur le fond
-          sous <strong>2 mois maximum</strong>.
+        <p className="mb-3 text-sm text-green-900">
+          Conformément à la <strong>Recommandation ACPR 2024-R-02</strong>, nous accuserons
+          réception de votre réclamation sous <strong>10 jours ouvrés</strong> et nous vous
+          répondrons sur le fond sous <strong>2 mois maximum</strong>.
         </p>
         <p className="text-xs text-green-800">
-          Un email de confirmation vous a été envoyé. En cas de désaccord persistant, vous pourrez saisir
-          le Médiateur de l&apos;Assurance.
+          Un email de confirmation vous a été envoyé. En cas de désaccord persistant, vous pourrez
+          saisir le Médiateur de l&apos;Assurance.
         </p>
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+    >
       <fieldset disabled={state.status === 'submitting'} className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <div>
-            <label htmlFor="civilite" className="block text-sm font-semibold text-gray-700 mb-1">Civilité</label>
-            <select id="civilite" name="civilite" required className="w-full border border-gray-300 rounded px-3 py-2 text-sm">
+            <label htmlFor="civilite" className="mb-1 block text-sm font-semibold text-gray-700">
+              Civilité
+            </label>
+            <select
+              id="civilite"
+              name="civilite"
+              required
+              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            >
               <option value="M.">M.</option>
               <option value="Mme">Mme</option>
             </select>
           </div>
           <div>
-            <label htmlFor="prenom" className="block text-sm font-semibold text-gray-700 mb-1">Prénom *</label>
-            <input id="prenom" name="prenom" type="text" required className="w-full border border-gray-300 rounded px-3 py-2 text-sm" />
+            <label htmlFor="prenom" className="mb-1 block text-sm font-semibold text-gray-700">
+              Prénom *
+            </label>
+            <input
+              id="prenom"
+              name="prenom"
+              type="text"
+              required
+              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            />
           </div>
           <div>
-            <label htmlFor="nom" className="block text-sm font-semibold text-gray-700 mb-1">Nom *</label>
-            <input id="nom" name="nom" type="text" required className="w-full border border-gray-300 rounded px-3 py-2 text-sm" />
+            <label htmlFor="nom" className="mb-1 block text-sm font-semibold text-gray-700">
+              Nom *
+            </label>
+            <input
+              id="nom"
+              name="nom"
+              type="text"
+              required
+              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">Email *</label>
-            <input id="email" name="email" type="email" required autoComplete="email" className="w-full border border-gray-300 rounded px-3 py-2 text-sm" />
+            <label htmlFor="email" className="mb-1 block text-sm font-semibold text-gray-700">
+              Email *
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            />
           </div>
           <div>
-            <label htmlFor="telephone" className="block text-sm font-semibold text-gray-700 mb-1">Téléphone</label>
-            <input id="telephone" name="telephone" type="tel" autoComplete="tel" className="w-full border border-gray-300 rounded px-3 py-2 text-sm" />
+            <label htmlFor="telephone" className="mb-1 block text-sm font-semibold text-gray-700">
+              Téléphone
+            </label>
+            <input
+              id="telephone"
+              name="telephone"
+              type="tel"
+              autoComplete="tel"
+              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            />
           </div>
         </div>
 
         <div>
-          <label htmlFor="societe" className="block text-sm font-semibold text-gray-700 mb-1">Raison sociale (si professionnel)</label>
-          <input id="societe" name="societe" type="text" className="w-full border border-gray-300 rounded px-3 py-2 text-sm" />
+          <label htmlFor="societe" className="mb-1 block text-sm font-semibold text-gray-700">
+            Raison sociale (si professionnel)
+          </label>
+          <input
+            id="societe"
+            name="societe"
+            type="text"
+            className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+          />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label htmlFor="contrat" className="block text-sm font-semibold text-gray-700 mb-1">N° de contrat</label>
-            <input id="contrat" name="contrat" type="text" className="w-full border border-gray-300 rounded px-3 py-2 text-sm" />
+            <label htmlFor="contrat" className="mb-1 block text-sm font-semibold text-gray-700">
+              N° de contrat
+            </label>
+            <input
+              id="contrat"
+              name="contrat"
+              type="text"
+              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            />
           </div>
           <div>
-            <label htmlFor="sinistre_ref" className="block text-sm font-semibold text-gray-700 mb-1">Référence sinistre</label>
-            <input id="sinistre_ref" name="sinistre_ref" type="text" className="w-full border border-gray-300 rounded px-3 py-2 text-sm" />
+            <label
+              htmlFor="sinistre_ref"
+              className="mb-1 block text-sm font-semibold text-gray-700"
+            >
+              Référence sinistre
+            </label>
+            <input
+              id="sinistre_ref"
+              name="sinistre_ref"
+              type="text"
+              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            />
           </div>
         </div>
 
         <div>
-          <label htmlFor="categorie" className="block text-sm font-semibold text-gray-700 mb-1">Catégorie *</label>
-          <select id="categorie" name="categorie" required defaultValue="" className="w-full border border-gray-300 rounded px-3 py-2 text-sm">
-            <option value="" disabled>— Choisir —</option>
+          <label htmlFor="categorie" className="mb-1 block text-sm font-semibold text-gray-700">
+            Catégorie *
+          </label>
+          <select
+            id="categorie"
+            name="categorie"
+            required
+            defaultValue=""
+            className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+          >
+            <option value="" disabled>
+              — Choisir —
+            </option>
             <option value="conseil">Devoir de conseil</option>
             <option value="souscription">Souscription / Tarif</option>
             <option value="sinistre">Gestion sinistre</option>
@@ -140,19 +217,30 @@ export function ReclamationForm() {
         </div>
 
         <div>
-          <label htmlFor="objet" className="block text-sm font-semibold text-gray-700 mb-1">Objet *</label>
-          <input id="objet" name="objet" type="text" required maxLength={200} className="w-full border border-gray-300 rounded px-3 py-2 text-sm" />
+          <label htmlFor="objet" className="mb-1 block text-sm font-semibold text-gray-700">
+            Objet *
+          </label>
+          <input
+            id="objet"
+            name="objet"
+            type="text"
+            required
+            maxLength={200}
+            className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+          />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">Message *</label>
+          <label htmlFor="message" className="mb-1 block text-sm font-semibold text-gray-700">
+            Message *
+          </label>
           <textarea
             id="message"
             name="message"
             required
             rows={6}
             maxLength={4000}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
             placeholder="Décrivez précisément les faits, dates, échanges déjà eus, et la résolution attendue."
           />
         </div>
@@ -162,19 +250,25 @@ export function ReclamationForm() {
           <span>
             J&apos;accepte le traitement de mes données dans le cadre du suivi de ma réclamation
             (base légale : intérêt légitime + obligation réglementaire ACPR). Conservation 5 ans.
-            <a href="/confidentialite" className="text-blue-700 hover:underline ml-1">En savoir plus</a>.
+            <a
+              href="/confidentialite"
+              className="ml-1 font-semibold text-primary-700 underline-offset-2 hover:underline"
+            >
+              En savoir plus
+            </a>
+            .
           </span>
         </label>
 
         {state.status === 'error' && state.message && (
-          <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded px-3 py-2">
+          <p className="rounded border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
             {state.message}
           </p>
         )}
 
         <button
           type="submit"
-          className="w-full md:w-auto px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded font-semibold disabled:opacity-50"
+          className="w-full rounded-xl bg-primary-500 px-6 py-3 font-bold text-white shadow-cta transition-all hover:-translate-y-0.5 hover:bg-primary-600 disabled:opacity-50 md:w-auto"
         >
           {state.status === 'submitting' ? 'Envoi…' : 'Envoyer ma réclamation'}
         </button>

@@ -75,7 +75,7 @@ export default function MediationPage() {
             <strong>la Médiation de l\'Assurance</strong>.
           </p>
 
-          <div className="not-prose my-6 rounded-lg bg-blue-50 p-6">
+          <div className="not-prose my-6 rounded-lg border border-charcoal-100 bg-sand-50 p-6">
             <h3 className="mb-3 text-xl font-bold">La Médiation de l\'Assurance</h3>
             <ul className="list-none space-y-2 pl-0">
               <li>
@@ -87,7 +87,7 @@ export default function MediationPage() {
                   href="https://www.mediation-assurance.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-700 underline"
+                  className="font-semibold text-primary-700 underline"
                 >
                   www.mediation-assurance.org
                 </a>
