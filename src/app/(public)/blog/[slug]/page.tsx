@@ -163,19 +163,23 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
 
   const pageUrl = `${SITE_URL}/blog/${post.slug}`
 
-  // Extraire la section FAQ (id "faq") pour générer le schema FAQPage
+  // Extraire la section FAQ (id "faq") pour générer le schema FAQPage.
+  // Les Q&A peuvent être dans list.items OU dans paragraphs (selon l'article).
   const faqSection = post.body.find((s) => s.id === 'faq')
-  const faqItems =
-    faqSection?.list?.items
-      .map((raw) => {
-        const cleaned = raw.replace(/\*\*/g, '')
-        const qEnd = cleaned.indexOf('?')
-        if (qEnd === -1) return null
-        const q = cleaned.slice(0, qEnd + 1).trim()
-        const a = cleaned.slice(qEnd + 1).trim()
-        return q && a ? { q, a } : null
-      })
-      .filter((x): x is { q: string; a: string } => x !== null) ?? []
+  const rawFaqItems: string[] = [
+    ...(faqSection?.list?.items ?? []),
+    ...(faqSection?.paragraphs ?? []),
+  ]
+  const faqItems = rawFaqItems
+    .map((raw) => {
+      const cleaned = raw.replace(/\*\*/g, '')
+      const qEnd = cleaned.indexOf('?')
+      if (qEnd === -1) return null
+      const q = cleaned.slice(0, qEnd + 1).trim()
+      const a = cleaned.slice(qEnd + 1).trim()
+      return q && a ? { q, a } : null
+    })
+    .filter((x): x is { q: string; a: string } => x !== null)
 
   const articleSchema = {
     '@context': 'https://schema.org',
