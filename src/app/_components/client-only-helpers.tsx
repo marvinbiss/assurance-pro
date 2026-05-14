@@ -14,6 +14,13 @@ const ChatWidget = dynamic(
   () => import('@/components/chat/ChatWidget').then((mod) => ({ default: mod.ChatWidget })),
   { ssr: false }
 )
+const NewsletterBanner = dynamic(
+  () =>
+    import('@/components/marketing/NewsletterBanner').then((mod) => ({
+      default: mod.NewsletterBanner,
+    })),
+  { ssr: false }
+)
 
 export function ClientOnlyWebVitals() {
   return <WebVitals />
@@ -27,6 +34,7 @@ export function ClientOnlyFooterHelpers() {
     <>
       <ServiceWorkerRegistration />
       <CookieConsent />
+      <NewsletterBanner />
       <ChatWidget />
     </>
   )

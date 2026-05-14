@@ -6,7 +6,6 @@ import './globals.css'
 import Header from '@/components/Header'
 import { PreOriasBanner } from '@/components/PreOriasBanner'
 import Footer from '@/components/Footer'
-import { NewsletterBanner } from '@/components/marketing/NewsletterBanner'
 import { TrackingScripts } from '@/components/TrackingScripts'
 import { getOrganizationSchema, getWebsiteSchema } from '@/lib/seo/jsonld'
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
@@ -182,7 +181,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <main id="main-content" tabIndex={-1} className="outline-none">
           {children}
         </main>
-        <NewsletterBanner />
         <Footer />
         <ClientOnlyFooterHelpers />
       </body>

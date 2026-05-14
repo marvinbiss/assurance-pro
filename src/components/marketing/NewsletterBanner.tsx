@@ -1,3 +1,5 @@
+'use client'
+
 import { Sparkles } from 'lucide-react'
 import { NewsletterForm } from './NewsletterForm'
 
@@ -5,7 +7,7 @@ import { NewsletterForm } from './NewsletterForm'
  * Bannière newsletter — section pleine largeur insérée juste avant le footer
  * pour capturer les emails des visiteurs avant le launch ORIAS.
  *
- * Server Component (la form interne est Client).
+ * Marqué Client pour éviter un bug Next 15 RSC → CC en composition layout.
  */
 export function NewsletterBanner() {
   return (
