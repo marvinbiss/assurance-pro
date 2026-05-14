@@ -1,22 +1,62 @@
 {
-  "name": "Vivos Assurance",
+  "name": "Vivos Assurance — Courtier ORIAS",
   "short_name": "Vivos",
   "description": "Courtier ORIAS spécialiste assurance professionnelle multi-vertical (BTP, RC Pro, Cyber, Mutuelle TNS, VTC).",
   "start_url": "/",
+  "id": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
   "background_color": "#fdfaf7",
   "theme_color": "#E86B4B",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "fr-FR",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/favicon.ico",
       "sizes": "any",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/opengraph-image",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
-  "categories": ["business", "finance"],
+  "shortcuts": [
+    {
+      "name": "Devis gratuit",
+      "short_name": "Devis",
+      "description": "Demander un devis assurance pro personnalisé",
+      "url": "/devis",
+      "icons": [{ "src": "/favicon.ico", "sizes": "any" }]
+    },
+    {
+      "name": "Simulateur de prime",
+      "short_name": "Simulateur",
+      "description": "Estimer votre prime d'assurance pro en 2 min",
+      "url": "/simulateur",
+      "icons": [{ "src": "/favicon.ico", "sizes": "any" }]
+    },
+    {
+      "name": "Ressources gratuites",
+      "short_name": "Ressources",
+      "description": "Guides et modèles assurance pro",
+      "url": "/ressources",
+      "icons": [{ "src": "/favicon.ico", "sizes": "any" }]
+    },
+    {
+      "name": "Blog & guides",
+      "short_name": "Blog",
+      "description": "Décryptages réglementaires et guides pratiques",
+      "url": "/blog",
+      "icons": [{ "src": "/favicon.ico", "sizes": "any" }]
+    }
+  ],
+  "categories": ["business", "finance", "productivity"],
   "related_applications": [],
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "screenshots": []
 }
