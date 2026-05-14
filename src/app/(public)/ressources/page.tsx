@@ -12,6 +12,7 @@ import {
   Download,
 } from 'lucide-react'
 import { PageHero } from '@/components/layout/PageHero'
+import { Stagger, StaggerItem } from '@/components/ui/FadeIn'
 import { SITE_URL } from '@/lib/seo/config'
 import { getAllRessources, type Ressource } from '@/lib/data/ressources'
 
@@ -52,9 +53,9 @@ const CATEGORY_LABELS: Record<Ressource['category'], string> = {
 
 const CATEGORY_GRADIENTS: Record<Ressource['category'], string> = {
   btp: 'from-orange-500 to-orange-700',
-  'rc-pro': 'from-blue-500 to-blue-700',
+  'rc-pro': 'from-charcoal-700 to-charcoal-900',
   reglementation: 'from-purple-500 to-purple-700',
-  fiscalite: 'from-emerald-500 to-emerald-700',
+  fiscalite: 'from-secondary-500 to-secondary-700',
   sinistre: 'from-red-500 to-red-700',
 }
 
@@ -100,11 +101,11 @@ export default function RessourcesPage() {
             </h2>
           </header>
 
-          <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <Stagger className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {ressources.map((r) => {
               const Icon = ICONS[r.icon]
               return (
-                <li key={r.slug}>
+                <StaggerItem key={r.slug}>
                   <Link
                     href={`/ressources/${r.slug}`}
                     className="group flex h-full flex-col overflow-hidden rounded-3xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-premium"
@@ -155,10 +156,10 @@ export default function RessourcesPage() {
                       </div>
                     </div>
                   </Link>
-                </li>
+                </StaggerItem>
               )
             })}
-          </ul>
+          </Stagger>
         </section>
       </div>
     </main>
