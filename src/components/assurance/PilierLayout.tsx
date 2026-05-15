@@ -18,8 +18,8 @@ import {
   AlertCircle,
   Scale,
   Award,
-  Zap,
 } from 'lucide-react'
+import { DevisCTASection } from '@/components/premium'
 import {
   getBreadcrumbSchema,
   getServiceSchema,
@@ -321,71 +321,17 @@ export async function PilierLayout({
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════════
-          CTA FINAL — gradient terra + glow + dual CTA
-          ═══════════════════════════════════════════════════════════════════ */}
-      <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
-        <div className="absolute inset-0 bg-gradient-terra opacity-95" aria-hidden="true" />
-        <div
-          className="pointer-events-none absolute -right-20 -top-20 h-[400px] w-[400px] rounded-full bg-secondary-400/40 blur-[120px]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-20 -left-20 h-[400px] w-[400px] rounded-full bg-primary-700/30 blur-[120px]"
-          aria-hidden="true"
-        />
-
-        <div className="container relative mx-auto max-w-4xl px-4 text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-            <Zap className="h-3.5 w-3.5" />
-            Recontact sous 24h ouvrées
-          </div>
-
-          <h2 className="mb-6 font-heading text-4xl font-extrabold leading-tight tracking-display md:text-5xl">
-            Prêt à comparer
-            <br />
-            <span className="text-secondary-200">
-              votre {title.split(' ')[0]?.toLowerCase() ?? 'assurance'} ?
-            </span>
-          </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
-            {IS_PRE_ORIAS
-              ? "Cabinet en cours d'immatriculation ORIAS. Rejoignez la liste pour être prévenu(e) dès l'ouverture commerciale."
-              : 'Devis gratuit, sans engagement. Notre courtier ORIAS vous recontacte avec 3 offres personnalisées en moins de 24 heures.'}
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href={`/devis?garantie=${slug}`}
-              className="group inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-extrabold text-primary-700 shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-premium-lg"
-            >
-              {CTA_TEXTS.start}
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/5 px-7 py-4 font-semibold backdrop-blur-sm transition-all hover:bg-white/15"
-            >
-              Parler à un conseiller
-            </Link>
-          </div>
-
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/85">
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              Sans engagement
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              0€ frais de courtage
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              Conformité ACPR
-            </span>
-          </div>
-        </div>
-      </section>
+      {/* CTA FINAL — DESIGN.md Atelier Premium (grain + premium-terra shadow) */}
+      <DevisCTASection
+        title={`Prêt à comparer votre ${title.split(' ')[0]?.toLowerCase() ?? 'assurance'} ?`}
+        subtitle={
+          IS_PRE_ORIAS
+            ? "Cabinet en cours d'immatriculation ORIAS. Rejoignez la liste pour être prévenu(e) dès l'ouverture commerciale."
+            : 'Devis gratuit, sans engagement. Notre courtier ORIAS vous recontacte avec 3 offres personnalisées en moins de 24 heures.'
+        }
+        primaryCta={{ label: CTA_TEXTS.start, href: `/devis?garantie=${slug}` }}
+        secondaryCta={{ label: 'Parler à un conseiller', href: '/contact' }}
+      />
 
       {/* Schemas JSON-LD — safe escape + nonce CSP */}
       <script {...jsonLdScriptProps(getFAQPageSchema(faq), nonce)} />
