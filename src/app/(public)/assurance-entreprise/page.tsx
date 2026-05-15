@@ -41,7 +41,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance entreprise : pack global TPE/PME/ETI (RC pro, multirisque locaux, mutuelle collective ANI, prévoyance dirigeants, cyber, flotte automobile). Tarifs négociés à partir de 980 €/an pour TPE 5 salariés. Devis gratuit ORIAS sous 24h.',
+    'Assurance entreprise TPE/PME : pack RC + multirisque + mutuelle ANI + cyber + flotte. Tarifs dès 980€/an. Comparatif ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,

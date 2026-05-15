@@ -37,14 +37,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'responsabilite-civile-professionnelle'
-const TITLE = 'Responsabilité civile professionnelle — Guide complet 2026 (RCP / RC Pro)'
+const TITLE = 'Responsabilité Civile Pro 2026 — Guide tarifs + comparatif'
 const TAGLINE =
   "Tout savoir sur la responsabilité civile professionnelle (RCP) : définition juridique, métiers concernés, plafonds recommandés, tarifs 2026 et différence avec l'assurance décennale."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Responsabilité Civile Professionnelle (RCP / RC Pro) : définition juridique, 21 métiers réglementés, plafonds recommandés (1,5 M€ standard, 5 M€ conseil financier), tarifs 2026, distinction avec décennale et cyber. Guide expert ORIAS.',
+    'RCP / RC Pro 2026 : 21 métiers obligatoires, plafonds 1,5-5 M€, tarifs négociés ORIAS. Comparatif 5 assureurs. Devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,

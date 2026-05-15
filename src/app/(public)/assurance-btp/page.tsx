@@ -28,7 +28,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance BTP : décennale obligatoire (Loi Spinetta), RC pro travaux, multirisque chantier, dommages-ouvrage, TRC (Tous Risques Chantier), garantie financière, biennale. Comparatif 8 assureurs spécialisés (SMABTP, MAAF Pro, Allianz Pro, AXA Pro). Devis gratuit ORIAS sous 24h.',
+    'Assurance BTP 2026 : décennale + RC pro + multirisque + DO + TRC. Comparatif 5 assureurs (SMABTP, Hiscox, April). Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,

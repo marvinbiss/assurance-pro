@@ -488,6 +488,20 @@ export async function PilierLayout({
         </div>
       </section>
 
+      {/* Disclaimer DDA L.521-4 Code des assurances — conformité ACPR/YMYL piliers */}
+      <section aria-label="Mentions précontractuelles" className="bg-sand-100 py-6">
+        <div className="container mx-auto max-w-5xl px-4 text-xs leading-relaxed text-charcoal-600">
+          <p>
+            <strong className="text-charcoal-800">Information précontractuelle —</strong> Ce contenu
+            est informatif et ne constitue pas un conseil personnalisé au sens de l&apos;article
+            L.&nbsp;521-4 du Code des assurances. Pour un conseil adapté à votre situation, un
+            courtier ORIAS vous recontactera après réception de votre demande de devis. Aucune
+            commission n&apos;est facturée à nos clients ; nous sommes rémunérés par les compagnies
+            d&apos;assurance partenaires. Conformité DDA &amp; ACPR.
+          </p>
+        </div>
+      </section>
+
       {/* CTA FINAL — DESIGN.md Atelier Premium (grain + premium-terra shadow) */}
       <DevisCTASection
         title={`Prêt à comparer votre ${title.split(' ')[0]?.toLowerCase() ?? 'assurance'} ?`}

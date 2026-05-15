@@ -33,14 +33,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'assurance-professionnelle'
-const TITLE = 'Assurance professionnelle — Guide complet 2026 (toutes garanties)'
+const TITLE = 'Assurance pro 2026 — Guide complet 6 garanties + tarifs'
 const TAGLINE =
   'Le guide de référence pour choisir vos assurances professionnelles : RC Pro, décennale, multirisque, mutuelle, prévoyance, cyber. Comparatif assureurs et tarifs 2026.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance professionnelle : guide complet 2026 (RC Pro, décennale, multirisque pro, mutuelle TNS, prévoyance Madelin, cyber). Comparatif 8 assureurs (Allianz, AXA, MMA, MAAF, Hiscox, April, Generali, Wakam). Tarifs négociés. Devis gratuit ORIAS sous 24h.',
+    'Assurance pro 2026 : RC Pro + décennale + multirisque + mutuelle + cyber. Comparatif 8 assureurs ORIAS. Devis 24h sans engagement.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
