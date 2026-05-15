@@ -18,7 +18,40 @@ import {
   AlertCircle,
   Scale,
   Award,
+  Wallet,
+  Zap,
+  ClipboardList,
+  Wrench,
+  Hammer,
+  Briefcase,
+  Clock,
+  Target,
+  Rocket,
 } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+
+const EMOJI_ICON_MAP: Record<string, LucideIcon> = {
+  '⚖️': Scale,
+  '⚖': Scale,
+  '💰': Wallet,
+  '⚡': Zap,
+  '🛡️': ShieldCheck,
+  '🛡': ShieldCheck,
+  '🏆': Award,
+  '📋': ClipboardList,
+  '📜': ClipboardList,
+  '🔧': Wrench,
+  '🛠️': Hammer,
+  '🛠': Hammer,
+  '⚠️': AlertCircle,
+  '⚠': AlertCircle,
+  '✅': CheckCircle2,
+  '⏱️': Clock,
+  '⏱': Clock,
+  '🎯': Target,
+  '💼': Briefcase,
+  '🚀': Rocket,
+}
 import { DevisCTASection } from '@/components/premium'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { ParallaxLayer } from '@/components/motion/ParallaxLayer'
@@ -198,15 +231,15 @@ export async function PilierLayout({
                         className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 transition-opacity group-hover:opacity-100"
                         aria-hidden="true"
                       />
-                      {b.icon ? (
-                        <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-xl text-white shadow-soft transition-transform group-hover:scale-110">
-                          {b.icon}
-                        </div>
-                      ) : (
-                        <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-soft">
-                          <CheckCircle2 className="h-5 w-5" strokeWidth={2.4} />
-                        </div>
-                      )}
+                      {(() => {
+                        const MappedIcon = b.icon ? EMOJI_ICON_MAP[b.icon] : null
+                        const IconCmp = MappedIcon ?? CheckCircle2
+                        return (
+                          <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-soft transition-transform group-hover:scale-110">
+                            <IconCmp className="h-5 w-5" strokeWidth={2.4} aria-hidden />
+                          </div>
+                        )
+                      })()}
                       <h3 className="mb-2 font-heading text-base font-bold text-charcoal-900">
                         {b.title}
                       </h3>
