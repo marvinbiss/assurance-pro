@@ -15,6 +15,9 @@ export const metadata: Metadata = {
       'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
     url: `${SITE_URL}/assurance-decennale`,
     type: 'website',
+    images: [
+      { url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: 'Vivos Assurance' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

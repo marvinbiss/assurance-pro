@@ -16,6 +16,9 @@ export const metadata: Metadata = {
       'Comparez votre assurance VTC ou taxi auprès des spécialistes (Wakam, Hiscox, Stello). Auto-entrepreneur, SARL, plateformes Uber/Bolt. Devis en 2 min.',
     url: `${SITE_URL}/assurance-vtc`,
     type: 'website',
+    images: [
+      { url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: 'Vivos Assurance' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

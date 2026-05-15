@@ -10,6 +10,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -29,6 +34,9 @@ export const metadata: Metadata = {
     description: TAGLINE,
     url: `${SITE_URL}/${SLUG}`,
     type: 'website',
+    images: [
+      { url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: 'Vivos Assurance' },
+    ],
   },
 }
 
@@ -41,6 +49,9 @@ export default function Page() {
       intro="La mutuelle pro BTP est la complémentaire santé spécialisée pour les professionnels du Bâtiment et des Travaux Publics : artisans, conjoints collaborateurs, salariés et dirigeants. Elle couvre les frais médicaux non pris en charge par l'Assurance Maladie obligatoire (Sécurité sociale + régime des artisans), avec des garanties calibrées sur la sinistralité spécifique au secteur (accidents du travail BTP fréquents, hospitalisation, optique, dentaire, médecines douces). Les contrats les plus connus sont PRO BTP (le régime historique de la branche), April Pro Santé, Harmonie Mutuelle BTP, Aon Santé Pro et MMA Mutuelle Pro."
       legalReference="Loi Madelin (art. 154 bis CGI) pour les TNS — déductibilité fiscale possible"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🏥',

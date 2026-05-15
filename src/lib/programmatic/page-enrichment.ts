@@ -114,6 +114,7 @@ export interface StatSectorielle {
  *   }
  */
 export async function getPageEnrichment(pageSlug: string): Promise<PageEnrichmentRow | null> {
+  if (process.env.NEXT_BUILD_SKIP_DB === '1') return null
   return Sentry.startSpan(
     { op: 'db.rpc', name: 'rpc.get_page_enrichment', attributes: { 'page.slug': pageSlug } },
     async () => {
@@ -150,6 +151,12 @@ export async function getPageEnrichment(pageSlug: string): Promise<PageEnrichmen
 export function getPageEnrichmentResult(
   pageSlug: PageSlug
 ): ResultAsync<PageEnrichmentRow, DomainError> {
+  if (process.env.NEXT_BUILD_SKIP_DB === '1') {
+    return ResultAsync.fromPromise(
+      Promise.reject(notFoundError('Page', pageSlug)),
+      (e) => e as DomainError
+    )
+  }
   return ResultAsync.fromPromise(
     Sentry.startSpan(
       {
@@ -196,6 +203,7 @@ export async function getEligibleSlugsForTemplate(
   minYield = 15,
   limit = 5820
 ): Promise<string[]> {
+  if (process.env.NEXT_BUILD_SKIP_DB === '1') return []
   return Sentry.startSpan(
     {
       op: 'db.rpc',
@@ -226,6 +234,7 @@ export async function getEligibleSlugsForTemplate(
  * Récupère le nombre total de pages eligible (utile pour monitoring/dashboard).
  */
 export async function countEligiblePages(template?: PageTemplate): Promise<number> {
+  if (process.env.NEXT_BUILD_SKIP_DB === '1') return 0
   const supabase = createAdminClient()
   const { data, error } = await supabase.rpc('count_eligible_pages', {
     p_template: template ?? null,

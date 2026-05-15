@@ -27,6 +27,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -41,7 +46,13 @@ export const metadata: Metadata = {
   description:
     'Responsabilité Civile Professionnelle (RCP / RC Pro) : définition juridique, 21 métiers réglementés, plafonds recommandés (1,5 M€ standard, 5 M€ conseil financier), tarifs 2026, distinction avec décennale et cyber. Guide expert ORIAS.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
-  openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
+  openGraph: {
+    title: TITLE,
+    description: TAGLINE,
+    url: `${SITE_URL}/${SLUG}`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: TITLE }],
+  },
 }
 
 export default function Page() {
@@ -53,6 +64,10 @@ export default function Page() {
       intro="La Responsabilité Civile Professionnelle (RCP — souvent appelée RC Pro) est la garantie d'assurance qui couvre les conséquences pécuniaires de la responsabilité civile du professionnel envers les tiers (clients, fournisseurs, passants) en cas de dommages corporels, matériels ou immatériels causés dans l'exercice de son activité. Régie par l'article L. 113-1 du Code des assurances et par les codes spécifiques aux professions réglementées (santé, juridique, BTP, conseil financier, transport, sport, sécurité), elle est légalement obligatoire pour 21 métiers et fortement recommandée pour TOUS les professionnels et entreprises. Sans RCP, le patrimoine personnel du chef d'entreprise reste exposé en cas de sinistre — un seul dossier client litigieux peut atteindre 100 000 à 1 500 000 € de dommages et intérêts. Cette page détaille la définition juridique exacte, les plafonds recommandés par activité (1,5 M€ standard, 5 M€ conseil financier homologué), les tarifs 2026, et distingue la RCP de l'assurance décennale (BTP) et de la cyber assurance (data breach)."
       legalReference="Article L. 113-1 du Code des assurances + obligations métier (L. 1142-2 santé, L. 511-1 BTP, L. 6321-1 transport)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚖️',

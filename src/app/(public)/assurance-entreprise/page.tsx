@@ -43,7 +43,13 @@ export const metadata: Metadata = {
   description:
     'Assurance entreprise : pack global TPE/PME/ETI (RC pro, multirisque locaux, mutuelle collective ANI, prévoyance dirigeants, cyber, flotte automobile). Tarifs négociés à partir de 980 €/an pour TPE 5 salariés. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
-  openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
+  openGraph: {
+    title: TITLE,
+    description: TAGLINE,
+    url: `${SITE_URL}/${SLUG}`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: TITLE }],
+  },
 }
 
 export default function Page() {

@@ -15,6 +15,9 @@ export const metadata: Metadata = {
       'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
     url: `${SITE_URL}/rc-pro`,
     type: 'website',
+    images: [
+      { url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: 'Vivos Assurance' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

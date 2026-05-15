@@ -42,7 +42,13 @@ export const metadata: Metadata = {
   description:
     'Assurance professionnelle : guide complet 2026 (RC Pro, décennale, multirisque pro, mutuelle TNS, prévoyance Madelin, cyber). Comparatif 8 assureurs (Allianz, AXA, MMA, MAAF, Hiscox, April, Generali, Wakam). Tarifs négociés. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
-  openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
+  openGraph: {
+    title: TITLE,
+    description: TAGLINE,
+    url: `${SITE_URL}/${SLUG}`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: TITLE }],
+  },
 }
 
 export default function Page() {

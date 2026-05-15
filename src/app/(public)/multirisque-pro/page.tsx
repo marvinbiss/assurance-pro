@@ -1,5 +1,10 @@
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
@@ -15,6 +20,9 @@ export const metadata: Metadata = {
       'Comparez votre Multirisque Pro auprès de 10 assureurs. Local commercial, atelier, bureau, stock. Vol, incendie, dégâts des eaux, perte d\\',
     url: `${SITE_URL}/multirisque-pro`,
     type: 'website',
+    images: [
+      { url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: 'Vivos Assurance' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -31,6 +39,10 @@ export default function MultirisqueProPage() {
       title="Multirisque Professionnelle"
       tagline="Protégez vos locaux, votre matériel, votre stock et votre activité contre tous les risques (vol, incendie, dégâts des eaux, perte d'exploitation)."
       legalReference="Code des assurances — Livre 1er Titre 2"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       intro="La Multirisque Professionnelle (MRP) est un contrat tout-en-un qui assure à la fois vos locaux professionnels, leur contenu (mobilier, matériel, stocks), et votre activité elle-même via la garantie perte d'exploitation. C'est l'assurance de référence pour les commerces, ateliers, bureaux, restaurants, cabinets de profession libérale. Notre cabinet ORIAS compare 10 assureurs partenaires pour vous proposer la meilleure couverture adaptée à votre activité."
       benefits={[
         { icon: '🏢', title: 'Local + contenu', desc: 'Murs, mobilier, stock, matériel' },
