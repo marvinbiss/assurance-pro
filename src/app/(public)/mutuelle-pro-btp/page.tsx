@@ -278,32 +278,76 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: 'Quelle est la différence entre PRO BTP et une mutuelle BTP classique ?',
-          a: 'PRO BTP est un Groupe paritaire de protection sociale (GPS) créé par les partenaires sociaux du Bâtiment en 1993. Il couple mutuelle, prévoyance, retraite et action sociale en un seul opérateur. Les autres mutuelles BTP (April, Harmonie, Aon, MMA) sont des assureurs ou mutuelles classiques avec une offre dédiée au BTP — souvent plus modulables mais sans le volet retraite.',
+          q: "Que se passe-t-il pour ma santé si je n'ai pas de mutuelle BTP ?",
+          a: "La Sécu rembourse mal le BTP : 70% des frais médicaux courants, mais quasi rien sur l'optique (lunettes ~30 €/2 ans), le dentaire (1 prothèse = 800-1500 € à votre charge), les dépassements d'honoraires. Une hospitalisation = 1 200-3 000 € de reste à charge sans mutuelle.",
         },
         {
-          q: 'Combien coûte la mutuelle PRO BTP pour un artisan ?',
-          a: "Pour un artisan TNS de 35 ans en formule Madelin Confort, la cotisation mensuelle PRO BTP démarre autour de 42 €. Elle augmente avec l'âge (~+1,5 %/an), la composition du foyer (+~50 € par adulte ajouté, +~25 € par enfant) et le niveau de garanties choisi (jusqu'à 130 € en formule Premium famille).",
+          q: 'La mutuelle BTP est-elle obligatoire pour un artisan TNS ?',
+          a: 'Non. La mutuelle est obligatoire UNIQUEMENT pour les salariés du BTP (ANI 2013, effet 1er janvier 2016 — employeur prend en charge 50% minimum). Pour les artisans TNS, dirigeants, conjoints collaborateurs : facultative, mais fortement recommandée vu les coups durs du métier (accidents, hospitalisation).',
         },
         {
-          q: 'La mutuelle pro BTP est-elle obligatoire ?',
-          a: "Pour les SALARIÉS du BTP, oui : depuis l'ANI 2013 et la loi de sécurisation de l'emploi (effet 1er janvier 2016), tout employeur du BTP doit proposer une complémentaire santé collective avec au moins 50 % de prise en charge. Pour les ARTISANS TNS et dirigeants, elle reste facultative — mais fortement recommandée car la Sécu seule rembourse mal sur l'optique, le dentaire et le dépassement d'honoraires.",
+          q: 'Que se passe-t-il si je ne mets pas de complémentaire pour mes salariés BTP ?',
+          a: 'URSSAF + Inspection du travail peuvent vous sanctionner : amende administrative + rappel des cotisations sur 3 ans + redressement Convention Collective. La loi ANI impose une couverture minimum (panier de soins décret 2014-1025) avec 50% pris en charge employeur, sous peine de redressement social.',
         },
         {
-          q: 'Comment résilier sa mutuelle pro BTP ?',
-          a: "Depuis la loi du 14 juillet 2019 (résiliation infra-annuelle), vous pouvez résilier votre mutuelle santé à tout moment après la 1re année d'engagement, sans frais ni motif. Lettre recommandée ou notification dans votre espace adhérent. Le nouvel assureur peut effectuer la résiliation pour vous (mandat).",
+          q: "Suis-je obligé de prendre PRO BTP en tant qu'artisan du Bâtiment ?",
+          a: "Non. PRO BTP est l'opérateur historique de la branche mais aucune obligation légale ne vous y rattache. Vous pouvez choisir April Pro Santé, Harmonie BTP, Aon Santé Pro, MMA Mutuelle Pro, Allianz Santé Pro ou Generali — selon vos garanties et votre budget. Notre cabinet compare 8 offres pour vous.",
         },
         {
-          q: 'Les indépendants peuvent-ils déduire fiscalement leur mutuelle BTP ?',
-          a: 'Oui, sous conditions : être TNS (EI, EURL, gérant majoritaire SARL), souscrire un contrat étiqueté Madelin, et être à jour des cotisations sociales obligatoires. Plafond 2026 : ~5 800 €/an pour 60 k€ de bénéfice. Les auto-entrepreneurs au régime micro-fiscal NE peuvent PAS déduire (ils sont sous le régime du versement forfaitaire libératoire).',
+          q: 'Suis-je couvert dès le 1er jour ou y a-t-il des délais de carence ?',
+          a: "Oui pour les soins courants (consultations, pharmacie, hospitalisation urgente) : couverture immédiate dès la date d'effet du contrat. Délais de carence classiques : 3 mois sur optique, 6 mois sur dentaire prothétique, 9-12 mois sur orthodontie adulte. À négocier ou contourner via le 1er du mois suivant.",
         },
         {
-          q: 'Mutuelle famille ou contrat individuel pour un artisan BTP ?',
-          a: "Si conjoint et enfants, le contrat famille est presque toujours plus avantageux que 2-3 contrats individuels (économie typique 15-25 %). Vérifiez toutefois que les garanties dentaires/optiques sont au niveau souhaité pour CHAQUE bénéficiaire, et que le contrat couvre bien les soins des enfants au-delà de 16 ans (prolongation jusqu'à 26 ans en cas d'études).",
+          q: 'Mes enfants sont-ils couverts par ma mutuelle pro BTP ?',
+          a: "Oui en formule famille jusqu'à 21 ans automatiquement, prolongeable jusqu'à 26 ans si étudiant/apprenti. Vérifier les plafonds enfants (orthodontie souvent plafonnée à 1 000-2 000 €/an, parfois inférieure aux besoins réels). Ajout d'un enfant = ~25 €/mois supplémentaires en moyenne.",
         },
         {
-          q: 'Combien de temps pour obtenir un devis mutuelle pro BTP ?',
-          a: 'Via notre formulaire, vous recevez un comparatif personnalisé sous 24h ouvrées avec 3 à 5 propositions adaptées à votre profil. La souscription effective prend ensuite 48-72h (signature électronique + transmission carte tiers payant). Effet du contrat possible dès le 1er du mois suivant.',
+          q: 'Suis-je couvert pour les médecines douces (ostéo, kiné, acupuncture) ?',
+          a: 'Oui en formule Confort ou Premium : forfait annuel 150-400 €/an pour ostéopathie, chiropractie, étiopathie, acupuncture. Les artisans BTP ont souvent un fort besoin (TMS lombaires, épaules) — vérifier le nombre de séances remboursées (4 à 8/an) et le montant par séance (30-50 €).',
+        },
+        {
+          q: 'Mon conjoint collaborateur peut-il être ajouté à ma mutuelle Madelin ?',
+          a: "Oui s'il a le statut officiel de « conjoint collaborateur » (immatriculé au RCS ou CMA). Sa cotisation est aussi déductible en Madelin si elle figure sur le contrat à votre nom. Ajout = +50 à +95 €/mois selon âge et formule. Vérifier que ses soins sont rattachés à son propre n° de Sécu.",
+        },
+        {
+          q: 'Combien ça coûte vraiment une mutuelle BTP en 2026 ?',
+          a: "Artisan TNS solo 35 ans en formule Confort Madelin : 38-62 €/mois. Famille (artisan + conjoint + 2 enfants) : 145-210 €/mois. Dirigeant SARL/SAS 45 ans Cadre Premium : 95-180 €/mois. Salarié BTP en collectif : ~50% pris en charge employeur. Tarifs progressifs avec l'âge (~+1,5%/an).",
+        },
+        {
+          q: 'Mon assureur peut-il augmenter ma cotisation chaque année ?',
+          a: "Oui, légalement. Hausses fréquentes : +3 à +8%/an liées à l'inflation médicale, l'âge (+1,5%/an), et l'évolution du régime obligatoire. L'assureur doit vous notifier l'augmentation par écrit 2 mois avant échéance. Vous pouvez résilier dans les 30 jours suivant la notification sans frais.",
+        },
+        {
+          q: 'Puis-je résilier ma mutuelle BTP à tout moment ?',
+          a: "Oui : depuis la loi du 14 juillet 2019 (résiliation infra-annuelle), résiliation possible à tout moment après 1 an d'engagement, sans frais ni motif. Lettre recommandée ou notification dans votre espace adhérent. Mieux : le nouvel assureur peut résilier pour vous (mandat de résiliation).",
+        },
+        {
+          q: 'Puis-je déduire ma mutuelle BTP de mes impôts (Loi Madelin) ?',
+          a: 'Oui si TNS (EI, EURL, gérant majoritaire SARL) + contrat étiqueté « Madelin » + à jour des cotisations sociales obligatoires. Plafond 2026 : 3,75% du PASS (1 626 €) + 7% du bénéfice imposable, dans la limite de 3% de 8 PASS (10 405 €). Auto-entrepreneur au micro-fiscal : NON déductible.',
+        },
+        {
+          q: 'Combien de temps pour recevoir mon devis mutuelle BTP ?',
+          a: 'Via notre formulaire : comparatif personnalisé sous 24h ouvrées avec 3-5 propositions adaptées à votre profil (PRO BTP, April Pro, Harmonie BTP, Aon, MMA). Souscription effective ensuite : 48-72h (signature électronique + transmission carte tiers payant). Effet possible dès le 1er du mois suivant.',
+        },
+        {
+          q: "Combien de temps pour être remboursé d'une dépense de santé ?",
+          a: 'Avec la carte tiers payant : 0 € à avancer chez 95% des médecins, pharmaciens, opticiens. Sans tiers payant : remboursement assureur sous 3-7 jours après réception de la facture (PRO BTP, Harmonie : 3-5 jours en moyenne). Optique/dentaire avec devis préalable : ~10-15 jours.',
+        },
+        {
+          q: 'Quelle différence entre PRO BTP et une mutuelle BTP classique ?',
+          a: 'PRO BTP est un Groupe paritaire de protection sociale (GPS) créé par les partenaires sociaux du Bâtiment en 1993. Couple mutuelle + prévoyance + retraite + action sociale en un seul opérateur. Les autres (April, Harmonie, Aon, MMA) sont assureurs/mutuelles classiques avec offre dédiée BTP — plus modulables mais sans volet retraite intégré.',
+        },
+        {
+          q: 'Faut-il prendre mutuelle + prévoyance ou seulement la mutuelle ?',
+          a: 'Les deux, sans hésiter. La mutuelle gère le quotidien (frais médicaux), la prévoyance gère les coups durs (arrêt de travail, invalidité, décès). Pour un artisan BTP : prévoyance est ENCORE plus critique que la mutuelle (accidents fréquents). La Loi Madelin couvre les deux dans le même plafond annuel.',
+        },
+        {
+          q: "Suis-je couvert pour l'hospitalisation et la chambre particulière ?",
+          a: "Oui en formule Confort ou Premium : forfait journalier hospitalier intégralement remboursé (20 €/jour), chambre particulière 60-90 €/jour, dépassements honoraires médecins (signataires OPTAM) jusqu'à 300-400% BR. Vérifier le plafond annuel hospi (souvent illimité en Premium, plafonné en Confort).",
+        },
+        {
+          q: 'Que faire si mon employeur BTP ne propose pas de mutuelle collective ?',
+          a: "Mettre l'employeur en demeure par lettre recommandée de respecter l'ANI 2013. Sans suite sous 30 jours : saisir l'Inspection du travail et/ou le Conseil de Prud'hommes. Pendant ce temps, souscrire une mutuelle individuelle Madelin de notre cabinet — le remboursement employeur sera rétroactif.",
         },
       ]}
     />

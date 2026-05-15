@@ -6,6 +6,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import { PreOriasBanner } from '@/components/PreOriasBanner'
 import Footer from '@/components/Footer'
+import { StickyMobileCta } from '@/components/premium'
 import { TrackingScripts } from '@/components/TrackingScripts'
 import { getOrganizationSchema, getWebsiteSchema } from '@/lib/seo/jsonld'
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
@@ -186,6 +187,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </main>
         <Footer />
         <ClientOnlyFooterHelpers />
+        <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
       </body>
     </html>
   )

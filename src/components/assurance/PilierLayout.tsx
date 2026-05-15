@@ -52,10 +52,19 @@ const EMOJI_ICON_MAP: Record<string, LucideIcon> = {
   '💼': Briefcase,
   '🚀': Rocket,
 }
-import { DevisCTASection } from '@/components/premium'
+import {
+  ComparatifAssureursTable,
+  DevisCTASection,
+  ExpertBio,
+  SocialProofHero,
+  TarifCalculator,
+  TrustBadgesAcpr,
+} from '@/components/premium'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { ParallaxLayer } from '@/components/motion/ParallaxLayer'
 import { TiltCard } from '@/components/motion/TiltCard'
+
+type CalculatorGarantie = 'decennale' | 'rc-pro' | 'multirisque-pro' | 'cyber'
 import {
   getBreadcrumbSchema,
   getServiceSchema,
@@ -111,6 +120,28 @@ export interface PilierProps {
   legalReference?: string
   /** Garantie obligatoire ? */
   isObligatoire?: boolean
+  /** Stats social proof hero (4 max) */
+  socialProofStats?: readonly { value: string; label: string }[]
+  /** Calculateur tarif inline */
+  calculatorGarantie?: CalculatorGarantie
+  /** Expert bio courtier */
+  expertBio?: {
+    name: string
+    role: string
+    bio: string
+    orias?: string
+    linkedin?: string
+    avatar?: string
+  }
+  /** Comparatif assureurs table */
+  comparatifRows?: readonly {
+    assureur: string
+    color: string
+    prix: string
+    plafond: string
+    delai: string
+    recommande?: boolean
+  }[]
 }
 
 export async function PilierLayout({
@@ -124,6 +155,10 @@ export async function PilierLayout({
   relatedMetiers,
   legalReference,
   isObligatoire,
+  socialProofStats,
+  calculatorGarantie,
+  expertBio,
+  comparatifRows,
 }: PilierProps) {
   const nonce = (await headers()).get('x-nonce') ?? undefined
 
@@ -213,8 +248,20 @@ export async function PilierLayout({
               <span className="text-white">{legalReference}</span>
             </div>
           ) : null}
+
+          {/* Trust badges ORIAS / ACPR / DDA — différenciateur YMYL anti-FR-norm */}
+          <TrustBadgesAcpr orias={process.env.NEXT_PUBLIC_ORIAS_NUMBER} className="mt-6" />
         </div>
       </section>
+
+      {/* Social proof stats band (sand-50 sous hero) */}
+      {socialProofStats && socialProofStats.length > 0 ? (
+        <section className="border-y border-sand-300 bg-sand-50 py-10 md:py-12">
+          <div className="container mx-auto max-w-6xl px-4">
+            <SocialProofHero stats={socialProofStats} />
+          </div>
+        </section>
+      ) : null}
 
       {/* ═══════════════════════════════════════════════════════════════════
           BÉNÉFICES — Cards avec icons gradient
@@ -268,6 +315,50 @@ export async function PilierLayout({
         </div>
       </section>
 
+      {/* Calculateur tarif inline (premium conversion) */}
+      {calculatorGarantie ? (
+        <section className="bg-sand-50 py-16 md:py-20">
+          <div className="container mx-auto max-w-4xl px-4">
+            <RevealOnScroll>
+              <div className="mb-8 text-center">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-700">
+                  Estimation instantanée
+                </div>
+                <h2
+                  className="font-heading text-3xl font-medium leading-tight tracking-tight text-charcoal-900 md:text-4xl"
+                  style={{ fontFamily: 'var(--font-heading), Fraunces, serif' }}
+                >
+                  Combien va vous coûter votre assurance ?
+                </h2>
+              </div>
+              <TarifCalculator garantie={calculatorGarantie} />
+            </RevealOnScroll>
+          </div>
+        </section>
+      ) : null}
+
+      {/* Comparatif assureurs table */}
+      {comparatifRows && comparatifRows.length > 0 ? (
+        <section className="bg-white py-16 md:py-20">
+          <div className="container mx-auto max-w-5xl px-4">
+            <RevealOnScroll>
+              <div className="mb-8 text-center">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-secondary-800">
+                  Comparatif 2026
+                </div>
+                <h2
+                  className="font-heading text-3xl font-medium leading-tight tracking-tight text-charcoal-900 md:text-4xl"
+                  style={{ fontFamily: 'var(--font-heading), Fraunces, serif' }}
+                >
+                  Nos assureurs partenaires comparés
+                </h2>
+              </div>
+              <ComparatifAssureursTable rows={comparatifRows} />
+            </RevealOnScroll>
+          </div>
+        </section>
+      ) : null}
+
       {/* ═══════════════════════════════════════════════════════════════════
           SECTIONS — Alternance sand / white pour rythme visuel
           ═══════════════════════════════════════════════════════════════════ */}
@@ -296,6 +387,28 @@ export async function PilierLayout({
           </div>
         </section>
       ))}
+
+      {/* Expert bio courtier — E-E-A-T YMYL signal */}
+      {expertBio ? (
+        <section className="bg-sand-50 py-16 md:py-20">
+          <div className="container mx-auto max-w-4xl px-4">
+            <RevealOnScroll>
+              <div className="mb-8">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-700">
+                  Votre interlocuteur
+                </div>
+                <h2
+                  className="font-heading text-3xl font-medium leading-tight tracking-tight text-charcoal-900 md:text-4xl"
+                  style={{ fontFamily: 'var(--font-heading), Fraunces, serif' }}
+                >
+                  Un courtier ORIAS qui connaît votre métier
+                </h2>
+              </div>
+              <ExpertBio {...expertBio} />
+            </RevealOnScroll>
+          </div>
+        </section>
+      ) : null}
 
       {/* ═══════════════════════════════════════════════════════════════════
           RELATED MÉTIERS — Grid links premium
