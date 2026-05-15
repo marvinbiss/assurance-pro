@@ -25,10 +25,10 @@ import {
   Star,
   TrendingDown,
   Award,
-  Quote,
 } from 'lucide-react'
 import { TrustBadgesRow } from '@/components/conversion/TrustBadgesRow'
 import { MockOfferCard } from '@/components/home/MockOfferCard'
+import { DevisCTASection, EditorialProcessSteps, EditorialTestimonial } from '@/components/premium'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const metadata: Metadata = {
@@ -79,7 +79,7 @@ const VERTICALS: readonly Vertical[] = [
     desc: 'Consultants, freelances, services aux entreprises, agences digitales, coachs.',
     href: '/rc-pro',
     Icon: Briefcase,
-    accent: 'from-secondary-500 to-secondary-700',
+    accent: 'from-charcoal-700 to-charcoal-900',
     badge: '#1 marché',
     metric: '32 professions',
     image:
@@ -104,7 +104,7 @@ const VERTICALS: readonly Vertical[] = [
     desc: 'Travailleurs non-salariés, dirigeants, freelances. Loi Madelin déductible.',
     href: '/mutuelle-pro',
     Icon: Heart,
-    accent: 'from-rose-500 to-rose-700',
+    accent: 'from-accent-500 to-accent-700',
     badge: 'Madelin',
     metric: '8 mutuelles comparées',
     span: 'md:col-span-2',
@@ -118,7 +118,7 @@ const VERTICALS: readonly Vertical[] = [
     desc: 'Chauffeur privé, location avec chauffeur, plateformes Uber / Bolt / Heetch.',
     href: '/assurance-vtc',
     Icon: Car,
-    accent: 'from-indigo-500 to-indigo-700',
+    accent: 'from-primary-500 to-primary-700',
     metric: 'AE ou SARL',
     image:
       'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80&fm=webp&auto=format&fit=crop',
@@ -505,33 +505,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Steps */}
-          <div className="relative grid grid-cols-1 gap-12 md:grid-cols-3">
-            {/* Ligne décorative */}
-            <div
-              className="absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-transparent via-primary-200 to-transparent md:block"
-              aria-hidden="true"
-            />
-
-            {PROCESS_STEPS.map((s) => (
-              <div key={s.n} className="relative text-center md:text-left">
-                {/* Step number + icon */}
-                <div className="relative z-10 mb-5 flex justify-center md:justify-start">
-                  <div className="group relative">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-glow-clay transition-transform duration-300 hover:scale-110">
-                      <s.Icon className="h-6 w-6" strokeWidth={2.2} />
-                    </div>
-                    <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white font-heading text-xs font-extrabold text-primary-700 shadow-soft ring-2 ring-primary-100">
-                      {s.n}
-                    </div>
-                  </div>
-                </div>
-
-                <h3 className="mb-3 font-heading text-xl font-bold text-charcoal-900">{s.title}</h3>
-                <p className="leading-relaxed text-charcoal-600">{s.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Steps — Editorial asymétrique (DESIGN.md Atelier Premium) */}
+          <EditorialProcessSteps steps={PROCESS_STEPS} />
         </div>
       </section>
 
@@ -552,56 +527,18 @@ export default function HomePage() {
             </h2>
           </div>
 
+          {/* Témoignages éditoriaux Fraunces — DESIGN.md anti-pattern stock photos */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {TESTIMONIALS.map((t) => (
-              <article
+              <EditorialTestimonial
                 key={t.author}
-                className="group relative flex h-full flex-col rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-              >
-                {/* Quote icon décoratif */}
-                <Quote
-                  className="absolute right-6 top-6 h-8 w-8 text-primary-200 transition-colors group-hover:text-primary-300"
-                  strokeWidth={1.5}
-                  aria-hidden="true"
-                />
-
-                {/* Rating étoiles */}
-                <div className="mb-4 flex items-center gap-0.5">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-secondary-400 text-secondary-400"
-                      aria-hidden="true"
-                    />
-                  ))}
-                </div>
-
-                <p className="mb-6 flex-1 text-base italic leading-relaxed text-charcoal-700">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-
-                {/* Author + avatar + metric */}
-                <footer className="flex items-center justify-between gap-3 border-t border-charcoal-100 pt-5">
-                  <div className="flex items-center gap-3">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={t.avatar}
-                      alt={t.author}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-11 w-11 rounded-full object-cover ring-2 ring-primary-100"
-                    />
-                    <div className="leading-tight">
-                      <div className="font-bold text-charcoal-900">{t.author}</div>
-                      <div className="text-[11px] text-charcoal-500">{t.role}</div>
-                      <div className="text-[11px] text-charcoal-400">{t.city}</div>
-                    </div>
-                  </div>
-                  <div className="flex-shrink-0 rounded-lg bg-accent-50 px-3 py-1.5 text-xs font-extrabold text-accent-700">
-                    {t.metric}
-                  </div>
-                </footer>
-              </article>
+                quote={t.quote}
+                author={t.author}
+                role={t.role}
+                city={t.city}
+                rating={t.rating}
+                metric={t.metric}
+              />
             ))}
           </div>
         </div>
@@ -653,70 +590,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════════
-          CTA FINAL — gradient terra + glow
-          ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
-        <div className="absolute inset-0 bg-gradient-terra opacity-95" aria-hidden="true" />
-        <div
-          className="pointer-events-none absolute -right-20 -top-20 h-[400px] w-[400px] rounded-full bg-secondary-400/40 blur-[120px]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-20 -left-20 h-[400px] w-[400px] rounded-full bg-primary-700/30 blur-[120px]"
-          aria-hidden="true"
-        />
-
-        <div className="container relative mx-auto max-w-4xl px-4 text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-            <Zap className="h-3.5 w-3.5" />
-            Recontact sous 24h ouvrées
-          </div>
-
-          <h2 className="mb-6 font-heading text-4xl font-extrabold leading-tight tracking-display md:text-6xl">
-            Prêt à comparer
-            <br />
-            votre assurance pro ?
-          </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
-            {IS_PRE_ORIAS
-              ? "Cabinet en cours d'immatriculation ORIAS. Rejoignez la liste d'attente pour être prévenu(e) dès l'ouverture commerciale."
-              : 'Devis gratuit, sans engagement. Notre courtier ORIAS vous recontacte avec 3 offres personnalisées en moins de 24 heures.'}
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/devis"
-              className="group inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-extrabold text-primary-700 shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-premium-lg"
-            >
-              {CTA_TEXTS.start}
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/5 px-7 py-4 font-semibold backdrop-blur-sm transition-all hover:bg-white/15"
-            >
-              Parler à un conseiller
-            </Link>
-          </div>
-
-          {/* Trust micro-row */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/85">
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              Sans engagement
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              0€ frais de courtage
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              Conformité ACPR garantie
-            </span>
-          </div>
-        </div>
-      </section>
+      {/* CTA FINAL — DESIGN.md Atelier Premium (grain + premium-terra shadow) */}
+      <DevisCTASection
+        title="Prêt à comparer votre assurance pro ?"
+        subtitle={
+          IS_PRE_ORIAS
+            ? "Cabinet en cours d'immatriculation ORIAS. Rejoignez la liste d'attente pour être prévenu(e) dès l'ouverture commerciale."
+            : 'Devis gratuit, sans engagement. Notre courtier ORIAS vous recontacte avec 3 offres personnalisées en moins de 24 heures.'
+        }
+        primaryCta={{ label: CTA_TEXTS.start, href: '/devis' }}
+        secondaryCta={{ label: 'Parler à un conseiller', href: '/contact' }}
+      />
 
       {/* ═══════════════════════════════════════════════════════════════════
           DDA Disclaimer — mention légale
