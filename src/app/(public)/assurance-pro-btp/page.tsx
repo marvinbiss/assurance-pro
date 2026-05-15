@@ -5,6 +5,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +31,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Le pack assurance pro BTP regroupe les 5 assurances clés pour exercer en toute sérénité dans le Bâtiment et les Travaux Publics : 1) Décennale obligatoire (Loi Spinetta), 2) RC Pro complémentaire, 3) Multirisque pro (local, stock, perte d'exploitation), 4) Mutuelle santé pro BTP, 5) Flotte véhicule utilitaire. Souscrire en pack = économies de 15-25% vs assurances séparées + gestion centralisée + 1 seul interlocuteur ORIAS."
       legalReference="Loi Spinetta + art. 1792 Code civil + ANI 2013 + art. L. 124-3 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

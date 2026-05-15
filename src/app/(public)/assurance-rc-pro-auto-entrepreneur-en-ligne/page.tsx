@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Auto-entrepreneur : souscrire votre RC Pro 100% en ligne en 5 minutes — parcours conçu spécifiquement pour AE/micro-entreprise avec interface simplifiée (saisie minimale), tarifs adaptés (95€-450€/an selon activité) et attestation téléchargeable immédiate. Cette page guide pas à pas le freelance / artisan AE à travers le parcours digital, avec recommandations par type d'activité."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Loi Spinetta si BTP"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🏠',

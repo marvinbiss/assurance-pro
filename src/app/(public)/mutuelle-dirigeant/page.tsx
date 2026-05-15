@@ -5,6 +5,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +31,8 @@ export default function Page() {
       intro="La mutuelle dirigeant désigne la complémentaire santé adaptée aux dirigeants ASSIMILÉS SALARIÉS (président SASU/SAS, gérant minoritaire SARL). Particularité : ils relèvent du régime général de la Sécurité Sociale (vs régime TNS pour gérant majoritaire SARL/EURL/EI). Conséquence : ÉLIGIBILITÉ aux contrats collectifs d'entreprise (mutuelle ANI 2013, déductible 100% du résultat de la société) MAIS NON ÉLIGIBILITÉ à la Loi Madelin (réservée aux TNS). Avantages : garanties souvent supérieures aux contrats individuels (optique premium, dentaire renforcé, médecines douces, hospitalisation 400% BR), déduction 100% du résultat (pas plafond Madelin), tarifs négociés grâce à la mutualisation collective. Tarifs 2026 : 80-220€/mois selon profil et garanties choisies."
       legalReference="Loi 14 juin 2013 (ANI mutuelle) + Code général des impôts (charges déductibles)"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '👔',

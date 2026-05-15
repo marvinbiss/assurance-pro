@@ -6,6 +6,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +32,9 @@ export default function Page() {
       intro="L'assurance auto professionnelle est OBLIGATOIRE pour tout véhicule utilisé à des fins professionnelles en France (art. L. 211-1 du Code des assurances). Elle est DISTINCTE de l'assurance auto personnelle car les risques pro sont différents : kilométrage plus élevé (~25-50 000 km/an vs 12 000 perso), trajets professionnels (visites client, livraison, chantier), véhicule souvent stationné en zone urbaine dense, transport occasionnel de matériel. Ne PAS déclarer l'usage pro sur une assurance auto perso = NULLITÉ du contrat en cas de sinistre (art. L. 113-9 C. assur.). Tarifs 2026 : 480-2 800 €/an pour véhicule unique selon profil. 6 assureurs partenaires (MMA Pro Auto, AXA Pro Auto, Allianz Pro Auto, Generali, MAIF Pro, MACIF Pro)."
       legalReference="Art. L. 211-1 C. assur. (obligation) + L. 113-9 (nullité fausse déclaration usage)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '⚖️',

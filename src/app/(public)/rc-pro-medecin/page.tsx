@@ -2,6 +2,11 @@ import type { Metadata } from 'next'
 import { SITE_URL } from '@/lib/seo/config'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 export const metadata: Metadata = {
   title: 'RC Pro Médecin / Praticien santé',
   description:
@@ -32,6 +37,10 @@ export default function RcProMedecinPage() {
       tagline="L'assurance professionnelle obligatoire pour tout praticien de santé — Loi Kouchner du 4 mars 2002."
       legalReference="Loi 2002-303 du 4 mars 2002 (Loi Kouchner) + art. L. 1142-2 CSP"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       intro="Tout professionnel de santé exerçant à titre libéral est tenu de souscrire une RC Pro médicale couvrant les conséquences pécuniaires de sa responsabilité civile pouvant être engagée dans l'exercice de son art. Cette obligation s'applique aux médecins, infirmiers libéraux, kinésithérapeutes, ostéopathes, sage-femmes, psychologues, dentistes, podologues, orthophonistes et autres professionnels paramédicaux. Notre cabinet ORIAS compare les contrats des assureurs spécialistes du secteur médical (MACSF, Generali, Allianz, Hiscox)."
       benefits={[
         { icon: '⚕️', title: 'Conforme Loi Kouchner', desc: 'RC obligatoire L. 1142-2' },

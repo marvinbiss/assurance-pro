@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Souscrire votre assurance RC Pro 100% en ligne en moins de 5 minutes : 2 assureurs digitaux purs proposent un parcours sans contact physique, sans rendez-vous, avec attestation téléchargeable immédiatement après paiement. Hiscox et Stello sont les leaders du segment en ligne pour AE/freelance. Cette page détaille le parcours pas à pas et compare les 2 offres."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💻',

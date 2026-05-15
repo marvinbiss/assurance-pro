@@ -6,6 +6,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +36,10 @@ export default function Page() {
       intro="La micro-entreprise de prestation de services (régime BNC — Bénéfice Non Commercial) couvre les freelances et consultants : développeur web, designer, rédacteur, traducteur, photographe, formateur, coach, conseil. Plafond CA 2026 : 77 700€ HT/an (au-delà : bascule au régime réel obligatoire). La RC Pro est EXIGÉE par 78% des plateformes B2B (Malt, Crème de la Crème, ComeUp Pro, Upwork) à l'inscription. Pack standard : RC Pro 1,5-3 M€ + cyber assurance (si manipulation données client) + protection juridique. Tarifs 2026 accessibles : 220-580€/an. Cette page renvoie vers nos piliers spécialisés selon votre métier."
       legalReference="Loi 9 août 2016 (statut micro-entrepreneur) + Code des assurances L. 113-1"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💼',

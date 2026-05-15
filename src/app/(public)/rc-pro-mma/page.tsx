@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="MMA (Mutuelles du Mans Assurance) est l'un des assureurs paritaires historiques français (fondé en 1828), membre du groupe Covéa avec MAAF et GMF. MMA Pro propose une RC Pro couvrant tous secteurs (services, BTP, commerce, médical) avec un bon équilibre prix/garanties pour SARL/SAS PME (100-500k€ CA). Cette page analyse l'offre MMA RC Pro, ses points forts/faibles, et la compare avec Hiscox, Allianz Pro, AXA Pro, Generali."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🏛️',

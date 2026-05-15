@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Souscrire votre assurance responsabilité civile professionnelle (RC Pro) 100% en ligne — variante longue formelle du KW. Cette page propose un parcours digital complet pour AE, freelance, SARL, SAS : comparateur 5 assureurs leaders, souscription en 5 min, attestation téléchargeable immédiate. Adapté tous secteurs : services intellectuels, BTP, libéral, immobilier, mobilité, e-commerce."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💼',

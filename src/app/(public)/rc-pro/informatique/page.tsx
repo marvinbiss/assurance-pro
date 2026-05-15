@@ -22,6 +22,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -48,6 +53,10 @@ export default function Page() {
       intro="L'assurance responsabilité civile professionnelle dédiée aux métiers de l'informatique couvre les conséquences pécuniaires d'une erreur, d'une négligence ou d'un défaut de prestation causant un dommage à un client : bug critique en production, perte de données, faille de sécurité non détectée, dépassement de délai entraînant un préjudice client, mauvaise architecture causant une indisponibilité prolongée, intégration buggée. Le secteur IT cumule les risques : un seul incident sur un système critique d'un grand client peut atteindre 500 k€ à 5 M€ de dommages et intérêts (perte de chiffre d'affaires du client, sanctions RGPD, frais de remédiation). C'est pour cette raison que les plafonds standards de RC Pro (1,5 M€) sont INSUFFISANTS pour les métiers IT — il faut viser 5 à 10 M€ minimum, particulièrement pour les freelances DevOps, cybersécurité, ESN gérant des systèmes bancaires/santé, et conseil en architecture cloud. Cette page détaille les plafonds adaptés par profil IT, l'articulation RC Pro / Cyber assurance, les tarifs 2026 et les exclusions spécifiques au secteur."
       legalReference="Article L. 113-1 du Code des assurances + RGPD art. 82 (responsabilité du sous-traitant)"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💻',

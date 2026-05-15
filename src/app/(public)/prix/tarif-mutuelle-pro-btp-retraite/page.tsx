@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,8 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Tarif Mutuelle Pro BTP pour retraités : grille progressive par âge en 2026, vérifiée sur cas réels. Le tarif augmente avec l'âge selon la règle RIA (60% maximum Action Logement Services). Cette page détaille les fourchettes par tranche d'âge, par formule (S2P2 à S4P4) et par situation familiale (isolé / conjoint / famille élargie)."
       legalReference="art. L. 911-1 et suivants Code sécurité sociale + RIA"
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '👴',

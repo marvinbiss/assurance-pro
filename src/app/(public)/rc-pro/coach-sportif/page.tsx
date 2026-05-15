@@ -5,6 +5,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +35,10 @@ export default function Page() {
       intro="La RC Pro coach sportif est LÉGALEMENT OBLIGATOIRE en France selon l'article L. 321-7 du Code du sport, pour TOUT éducateur sportif (coach personnel, prof yoga/pilates/crossfit, moniteur de fitness, coach running). Sanction absence : retrait de la carte professionnelle d'éducateur sportif + interdiction d'exercer + sanctions pénales. Elle couvre les sinistres typiques du métier : blessure du client pendant la séance (faux mouvement, surentraînement, mauvaise consigne), malaise cardiaque (prévention par questionnaire de santé obligatoire avant 1re séance), dommages au matériel de la salle/du domicile client (mur fissuré, miroir cassé). Tarifs 2026 accessibles : 220-580€/an pour un coach indépendant. Conditions cumulatives : carte professionnelle d'éducateur sportif + diplôme reconnu (BPJEPS, DEUST, DEJEPS) + RC Pro en cours de validité."
       legalReference="Article L. 321-7 du Code du sport + L. 212-1 (qualification éducateur sportif)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🏋️',

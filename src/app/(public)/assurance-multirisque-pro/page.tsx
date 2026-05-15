@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="L'assurance multirisque professionnelle (MRP) est le contrat qui regroupe en un seul package la protection de vos locaux (commerce, atelier, bureau, entrepôt), votre matériel professionnel, votre stock de marchandises, votre mobilier, et la perte d'exploitation associée. Elle est la base de la protection patrimoniale de toute entreprise disposant d'un local — fortement recommandée pour TPE/PME et exigée par certains bailleurs commerciaux."
       legalReference="art. L. 121-2 et s. C. assur. + clauses contractuelles bail commercial"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🏢',

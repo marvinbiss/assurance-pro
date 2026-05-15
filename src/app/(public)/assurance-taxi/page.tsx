@@ -19,6 +19,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -45,6 +46,9 @@ export default function Page() {
       intro="L'assurance taxi est un pack professionnel obligatoire (Code des transports + Code des assurances) qui combine l'assurance du véhicule (responsabilité civile circulation tous risques pro), la responsabilité civile professionnelle vis-à-vis des passagers, la couverture de la licence ADS (Autorisation De Stationnement, valeur 50 000 à 250 000 € selon ville), les garanties spécifiques aux artisans-taxis (perte d'exploitation pendant arrêt de travail, immobilisation du véhicule, vol de la valise) et les garanties propres aux conducteurs salariés ou locataires-gérants. Les tarifs 2026 démarrent à 1 280 € HT/an pour un artisan-taxi province exerçant 200 jours/an, jusqu'à 3 800 € HT/an pour un taxi parisien (G7, G7 Pro, Tax'Up) ou un véhicule haut de gamme. Cette page distingue les obligations propres aux taxis vs VTC, détaille les tarifs par profil et les pièges à éviter (sous-déclaration km annuels, exclusion garantie vol valise)."
       legalReference="Code des transports L. 3120-1 et s. + Code des assurances L. 211-1 (RC obligatoire)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '🚖',

@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="Le maçon — qu'il pratique la maçonnerie traditionnelle (parpaings, briques), le béton armé (coffrage + ferraillage), ou la pierre sèche (rare et spécialisé) — est soumis à la décennale (Loi Spinetta). La maçonnerie représente 12% des sinistres décennaux BTP, avec des sinistres typiques : fissures structurelles, défauts de fondations, mauvais dimensionnement poutres. Cette page détaille les 3 spécialisations, les tarifs et les leviers de réduction de prime."
       legalReference="Loi Spinetta + art. 1792 Code civil + DTU 20.1 (maçonnerie) + DTU 21 (béton armé)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🧱',

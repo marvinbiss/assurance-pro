@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La Responsabilité Civile Professionnelle pour les auto-entrepreneurs (et micro-entrepreneurs) est obligatoire pour certaines professions réglementées et fortement recommandée pour TOUTES les activités. Sinistre moyen AE : 5-30k€ (casse client, conseil erroné, blessure visiteur). Sans RC Pro, le patrimoine personnel de l'AE est intégralement exposé (vs responsabilité limitée d'une SARL/SAS). Cette page détaille les obligations par profession, les tarifs marché et les meilleures offres 2026."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + obligations sectorielles (Loi Spinetta BTP, Loi Hoguet immo, etc.)"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚖️',

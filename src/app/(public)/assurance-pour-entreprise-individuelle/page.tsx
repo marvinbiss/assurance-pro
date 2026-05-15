@@ -7,6 +7,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +37,10 @@ export default function Page() {
       intro="L'assurance pour entreprise individuelle (EI) est le pack adapté aux entrepreneurs individuels au RÉGIME RÉEL d'imposition (vs micro-fiscal AE). Avantage majeur : pleine éligibilité à la Loi Madelin pour la mutuelle santé et la prévoyance (déduction du bénéfice imposable jusqu'à ~5 800€/an pour 60k€ de bénéfice). Depuis la Loi du 14 février 2022 (effet 15 mai 2022), l'EI bénéficie aussi d'une PROTECTION DU PATRIMOINE PERSONNEL renforcée — séparation automatique du patrimoine pro et perso, sans démarche déclarative (vs ancienne EIRL supprimée). Le pack standard combine 5 garanties : RC pro adaptée au métier, multirisque local pro (si applicable), mutuelle TNS Madelin, prévoyance Madelin, protection juridique. Tarifs 2026 : 380-2 800 €/an selon métier et taille."
       legalReference="Loi du 14 février 2022 (protection patrimoine EI) + Loi Madelin (art. 154 bis CGI)"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🛡️',

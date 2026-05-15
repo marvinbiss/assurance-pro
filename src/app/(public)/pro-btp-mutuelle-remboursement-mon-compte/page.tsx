@@ -6,6 +6,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +31,8 @@ export default function Page() {
       title={TITLE}
       tagline={TAGLINE}
       intro="L'espace adhérent PRO BTP centralise vos remboursements, attestations, mises à jour de bénéficiaires et téléchargements (carte tiers payant, attestation Madelin, justificatifs fiscaux). Ce guide pratique détaille pas à pas la connexion, les démarches de remboursement (télétransmission automatique + envois manuels), les délais standards (7 jours ouvrés), les solutions en cas de retard, et les alternatives si vous n'êtes pas satisfait de PRO BTP."
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '🔐',

@@ -11,6 +11,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -36,6 +41,10 @@ export default function Page() {
       intro="La RC Pro consultant / conseil n'est pas légalement obligatoire (sauf consultants en management certifié OPQCM), mais elle est FORTEMENT RECOMMANDÉE pour tout consultant indépendant, coach professionnel, expert en stratégie, ou conseiller en organisation. Sinistralité ACPR 2024 : 1,2% (faible) MAIS sinistres lourds en cas de recours client (recommandation stratégique erronée entraînant perte chiffre d'affaires). Tarifs 2026 ultra-compétitifs : 90-280 €/an pour AE, 380-1 200 €/an pour EURL/SARL avec salariés. Pack RC Pro + cyber + protection juridique recommandé pour 200-450€/an total."
       legalReference="Art. 1147 C. civ. (responsabilité contractuelle) + 1382-1383 (responsabilité délictuelle)"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💼',

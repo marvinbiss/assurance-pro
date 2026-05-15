@@ -8,6 +8,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -39,6 +44,10 @@ export default function Page() {
       intro="L'assurance homme-clé (ou « key-person insurance ») est une garantie souscrite par une entreprise sur la tête d'une personne dont la disparition ou l'incapacité de travail aurait un impact financier majeur sur l'activité : dirigeant fondateur, directeur commercial qui apporte 60% du CA, CTO seul détenteur de l'expertise technique critique, médecin associé d'une SELARL, avocat associé d'un cabinet... En cas de décès ou d'invalidité de la personne assurée, l'entreprise reçoit un capital ou une rente lui permettant de compenser la perte de chiffre d'affaires, de financer un recrutement de remplacement, de rembourser un emprunt bancaire ou de stabiliser sa trésorerie. Contrairement à l'assurance vie ou prévoyance individuelle, le bénéficiaire est l'entreprise (et non la famille). Cette page détaille le mécanisme, les tarifs 2026, la fiscalité (charges déductibles, capital imposable) et les pièges classiques."
       legalReference="Article 39 du CGI (charges déductibles) + jurisprudence Cass. com. 1995"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '👨‍💼',

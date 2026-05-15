@@ -18,6 +18,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -44,6 +49,10 @@ export default function Page() {
       intro="L'assurance commerce est une multirisque pro spécifiquement calibrée pour les commerçants : boutiques, magasins de détail, commerces alimentaires, prêt-à-porter, bijouterie, fleuriste, opticien, librairie, esthéticienne, coiffeur, pressing, tabac-presse, ainsi que les commerces ambulants (food trucks, marchés, foires). Elle couvre les principaux risques : incendie, vol avec effraction, vandalisme, dégâts des eaux, événements climatiques, bris de glace (vitrine), responsabilité civile vis-à-vis des clients (chute, intoxication non-alimentaire, casse de vêtement), pertes d'exploitation pendant la durée de fermeture suite à sinistre, et marchandises stockées. Les tarifs 2026 démarrent à 380 € HT/an pour une boutique 50 m² en province jusqu'à 2 800 €/an pour une bijouterie centre-ville Paris. Cette page détaille les garanties indispensables par type de commerce, les tarifs réels et les pièges à éviter (sous-évaluation du stock, exclusion vol nuit sans alarme NF)."
       legalReference="Article 1733 C. civ. (bail commercial) + clauses standard MRP commerçant"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🏪',

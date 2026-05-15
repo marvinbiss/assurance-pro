@@ -117,7 +117,7 @@ export function ConfigurateurGaranties({
                 aria-label={`${isOn ? 'Désactiver' : 'Activer'} ${g.name}`}
                 disabled={locked}
                 onClick={() => toggle(g.id, locked)}
-                className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full border transition-colors duration-200 ease-enter focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70 ${
+                className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full border transition-colors duration-200 ease-enter before:absolute before:-inset-x-2 before:-inset-y-2 before:content-[''] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70 ${
                   isOn ? 'border-accent-500 bg-accent-500' : 'border-sand-400 bg-sand-200'
                 }`}
               >

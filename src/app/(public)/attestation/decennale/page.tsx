@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="L'attestation décennale est le document obligatoire (Loi Spinetta + art. 1792 Code civil) que tout constructeur BTP doit fournir au maître d'ouvrage AVANT le démarrage du chantier. Sans cette attestation, le maître d'ouvrage peut bloquer le chantier, et le notaire bloquera la vente immobilière. Cette page détaille le modèle officiel, les 10 mentions obligatoires, et les démarches d'obtention rapide chez les 5 assureurs spécialisés BTP."
       legalReference="Loi Spinetta + art. 1792 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="L'attestation Responsabilité Civile Professionnelle est le document officiel délivré par l'assureur qui prouve la souscription d'une RC Pro en cours de validité. Elle est requise pour : signature contrats B2B grand compte, renouvellement cartes professionnelles (Carte T immobilier, VTC, inscription Ordres), candidature appels d'offres publics, conventions de courtage, et audit acquéreur en cas de cession. Cette page détaille le modèle officiel, les mentions obligatoires (conformes Code des assurances), et les démarches rapides d'obtention."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + arrêté 6 décembre 2022"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '📋',

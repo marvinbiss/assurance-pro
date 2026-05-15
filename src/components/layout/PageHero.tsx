@@ -98,18 +98,23 @@ export function PageHero({
             <Link href="/" className="transition-colors hover:text-white">
               Accueil
             </Link>
-            {breadcrumbs.map((b, i) => (
-              <span key={`${b.label}-${i}`} className="flex items-center gap-2">
-                <span aria-hidden="true">›</span>
-                {b.href ? (
-                  <Link href={b.href} className="transition-colors hover:text-white">
-                    {b.label}
-                  </Link>
-                ) : (
-                  <span className="text-white">{b.label}</span>
-                )}
-              </span>
-            ))}
+            {breadcrumbs.map((b, i) => {
+              const isLast = i === breadcrumbs.length - 1
+              return (
+                <span key={`${b.label}-${i}`} className="flex items-center gap-2">
+                  <span aria-hidden="true">›</span>
+                  {b.href && !isLast ? (
+                    <Link href={b.href} className="transition-colors hover:text-white">
+                      {b.label}
+                    </Link>
+                  ) : (
+                    <span className="text-white" aria-current={isLast ? 'page' : undefined}>
+                      {b.label}
+                    </span>
+                  )}
+                </span>
+              )
+            })}
           </nav>
         )}
 

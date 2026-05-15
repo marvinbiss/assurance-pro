@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="Quelle est l'assurance décennale LA moins chère sur le marché en 2026 ? Le classement varie selon votre métier BTP, votre statut juridique (AE/SARL/SAS) et votre CA. Cette page fournit le classement précis VÉRIFIÉ pour chaque profil typique, basé sur les fourchettes tarifaires réelles 2026 des 5 assureurs leaders : April Pro BTP, SMABTP, Allianz Pro BTP, MMA Pro BTP, AXA Pro BTP."
       legalReference="Loi Spinetta + art. 1792 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🥇',

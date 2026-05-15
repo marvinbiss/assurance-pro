@@ -6,6 +6,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +32,9 @@ export default function Page() {
       intro="La RC Pro VTC est la garantie OBLIGATOIRE pour tout chauffeur VTC en France (Code des transports L. 3120-1). Elle couvre la responsabilité civile professionnelle du chauffeur envers ses passagers ET les tiers (autres véhicules, piétons, infrastructure) en cas de sinistre survenu pendant la prestation de transport. Le plafond corporel est ILLIMITÉ par obligation légale. Distincte de l'assurance VTC COMPLÈTE qui inclut aussi la multirisque véhicule (vol, incendie, vandalisme) et la couverture personnelle du chauffeur, la RC Pro VTC est le SOCLE LÉGAL minimum. Tarifs 2026 : 380-980 €/an pour la RC Pro VTC seule (vs 650-1 400 €/an pour le pack VTC complet). Cette page renvoie vers notre pilier complet /assurance-vtc."
       legalReference="Article L. 3120-1 du Code des transports + L. 211-1 C. assur. (RC obligatoire)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '🚗',

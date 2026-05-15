@@ -13,6 +13,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -38,6 +39,9 @@ export default function Page() {
       intro="La RC Pro est OBLIGATOIRE pour tout transporteur de marchandises (transport routier, déménagement, livraison professionnelle, coursier urbain) en France et à l'international (Convention CMR Genève 19 mai 1956 + art. L. 132-1 C. transp.). Elle couvre la responsabilité du transporteur en cas de perte, vol, détérioration ou retard sur les marchandises confiées. Plafonds règlementaires : Convention CMR = 8,33 DTS/kg (≈10€/kg en 2026), Code transport national = 23€/kg pour transports < 3T et 14€/kg pour transports > 3T. Au-delà, les clients peuvent souscrire une garantie 'ad valorem' complémentaire. Tarifs 2026 : 380-1 800 €/an pour AE/EI coursier-livraison, 5 200-12 000 €/an pour SARL flotte 5 véhicules."
       legalReference="Convention CMR (Genève 19/05/1956) + art. L. 132-1 C. transp. + Décret 2017-1198 (LOTI)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '⚖️',

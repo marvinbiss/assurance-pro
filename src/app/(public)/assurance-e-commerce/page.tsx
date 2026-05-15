@@ -9,6 +9,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -35,6 +40,10 @@ export default function Page() {
       intro="L'assurance e-commerce désigne le pack de garanties indispensables à toute activité de vente en ligne (boutique Shopify, WooCommerce, Magento, marketplace Amazon/Etsy/Cdiscount, dropshipping, pure player digital). Elle se distingue de l'assurance commerce traditionnelle par la prédominance des risques cyber (breach RGPD, fraude au paiement, ransomware sur le back-office), des risques produit (responsabilité civile produit en cas de défaut), des risques marchandises (stockage en entrepôt + transport vers le client), et des risques juridiques transverses (litige client B2C, droit de rétractation, garantie légale de conformité). Le pack standard combine 5 garanties : RC pro produits (1,5-3 M€), cyber assurance RGPD (200-1 M€), assurance marchandises stockées + transportées, RC client + responsabilité livraison, et protection juridique B2C. Les tarifs 2026 démarrent à 380 € HT/an pour un AE e-commerce solo (CA &lt; 30k€) jusqu'à 8 800 € HT/an pour une PME e-commerce 5 salariés avec entrepôt."
       legalReference="Code de la consommation + RGPD + LCEN art. 6-III + Loi Hamon (rétractation 14 jours)"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🛒',

@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Vous découvrez que des travaux ont été réalisés sans décennale (constructeur disparu, défaut administratif, exercice illégal) ? Cette page explique les conséquences réelles pour vous (propriétaire ou acheteur), les recours possibles, et les options de régularisation a posteriori."
       legalReference="art. 1792 Code civil + art. L. 243-3 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚠️',

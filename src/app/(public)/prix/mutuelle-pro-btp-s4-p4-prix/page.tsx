@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,8 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La formule PRO BTP S4 P4 est le niveau premium de la mutuelle PRO BTP : couverture étendue hospitalisation, dentaire, optique, médecines douces. Idéale pour dirigeants BTP, artisans avec famille nombreuse, ou seniors avec besoins santé importants."
       legalReference="Loi Madelin TNS + ANI 2013 salariés"
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '🏥',

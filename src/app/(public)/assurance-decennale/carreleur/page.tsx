@@ -7,6 +7,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +33,10 @@ export default function Page() {
       intro="L'assurance décennale carreleur est OBLIGATOIRE pour tout artisan carreleur en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 6,5%. Sinistres principaux : fissures carrelage 1-3 ans après pose (défaut joints dilatation, chape mal réalisée), défauts d'étanchéité salle de bain (SPEC — Système de Protection à l'Eau sous Carrelage), désolidarisation des éléments. Tarifs 2026 : 560-920 €/an pour AE, 5 800-12 000 €/an pour SARL avec 5 salariés."
       legalReference="Loi Spinetta + DTU 52.1 (revêtements de sol scellés) + DTU 52.2 (collés)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

@@ -12,6 +12,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -38,6 +39,8 @@ export default function Page() {
       intro="L'assurance santé entreprise (ou mutuelle collective d'entreprise) est OBLIGATOIRE pour TOUS les employeurs du secteur privé en France depuis l'Accord National Interprofessionnel (ANI) du 11 janvier 2013, transcrit dans la loi du 14 juin 2013 (effet 1er janvier 2016). L'employeur doit obligatoirement proposer un contrat collectif de complémentaire santé à TOUS les salariés, prendre en charge AU MINIMUM 50% de la cotisation et garantir AU MINIMUM le « panier de soins » défini par le décret 2014-1025 (consultations, médicaments, dentaire, optique 100% Santé, hospitalisation). L'absence de mise en place expose l'employeur à : redressement URSSAF (rappel des cotisations sociales sur les frais médicaux que les salariés ont dû payer eux-mêmes), dommages-intérêts versés aux salariés non-couverts, refus de l'inspection du travail. Le tarif moyen pour une PME 20 salariés démarre à 1 800 € HT/an de prise en charge employeur. Cette page détaille les obligations exactes, les exemptions possibles, les tarifs 2026 et compare 6 assureurs santé collective."
       legalReference="ANI du 11 janvier 2013 + Loi du 14 juin 2013 + Décret 2014-1025 (panier minimum)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '⚖️',

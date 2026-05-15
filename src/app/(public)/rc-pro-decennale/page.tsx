@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="La RC Pro et la Décennale sont les 2 assurances essentielles pour les professionnels du BTP, mais elles ne couvrent PAS les mêmes risques. Beaucoup d'artisans confondent les 2, ou pensent qu'elles sont interchangeables. Cette page clarifie les différences exactes : la RC Pro couvre les dommages causés à des tiers PENDANT l'activité, la Décennale couvre les défauts d'ouvrage 10 ANS APRÈS RÉCEPTION. Les 2 sont complémentaires et souvent souscrites en pack."
       legalReference="RC Pro : art. L. 124-3 + L. 121-2 • Décennale : Loi Spinetta + art. 1792 Code civil"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🔧',

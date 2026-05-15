@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La RC Pro informatique couvre les professionnels du numérique (freelance développeur, ESN, agence web, consultant IT, cybersécurité, hébergeur) contre les dommages causés à des clients dans le cadre de prestations : bug critique, perte de données, retard de livraison majeur, faille de sécurité non détectée, conseil erroné. Le CPC élevé (500-1 300€ selon spé) reflète la valeur client : 1 sinistre peut coûter 30 000€-2M€."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Loi 78-17 (RGPD)"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💻',

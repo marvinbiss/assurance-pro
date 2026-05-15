@@ -14,6 +14,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -40,6 +41,9 @@ export default function Page() {
       intro="L'assurance flotte automobile est un contrat mutualisé qui couvre l'ensemble des véhicules professionnels d'une même entreprise dans une seule police. Ouverte à partir de 4 véhicules (seuil standard chez la majorité des assureurs), elle permet d'économiser 20 à 30% par rapport à des contrats individuels grâce à la mutualisation des risques, simplifie la gestion (1 interlocuteur, 1 échéance, ajout/retrait sans avenant complexe) et offre un reporting consolidé pour suivre la sinistralité interne. Les flottes peuvent être hétérogènes : utilitaires, voitures de fonction, camions, deux-roues, véhicules spéciaux (frigorifiques, ADR). Les tarifs 2026 démarrent à 580 € HT/véhicule pour une flotte de 10 utilitaires standards jusqu'à 2 800 € HT/véhicule pour une flotte mixte avec poids lourds ADR. Cette page distingue l'assurance flotte du contrat véhicule individuel et présente les bonnes pratiques de gestion."
       legalReference="Article L. 211-1 du Code des assurances + Code de la route"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '🚐',

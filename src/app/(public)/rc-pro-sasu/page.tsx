@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La SASU (Société par Actions Simplifiée Unipersonnelle) est un statut juridique populaire pour les entrepreneurs individuels souhaitant une responsabilité limitée + flexibilité de gestion. Sa RC Pro a des spécificités vs AE/SARL : couverture société + dirigeant personne morale, statut assimilé salarié (vs TNS), plafonds standards plus élevés, et possibilité d'ajouter une RC Mandataire Social pour le président."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + art. L. 227-1 et s. Code de commerce"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🏢',

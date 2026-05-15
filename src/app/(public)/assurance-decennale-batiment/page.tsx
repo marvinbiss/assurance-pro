@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="L'assurance décennale bâtiment couvre l'ensemble des 52 métiers BTP intervenant sur la construction, rénovation ou transformation d'un ouvrage immobilier. Elle est obligatoire (Loi Spinetta) pour tout constructeur — gros œuvre (maçon, charpentier), second œuvre (plombier, électricien), finitions (peintre, carreleur), équipements techniques (PAC, photovoltaïque). Cette page propose une vue exhaustive des métiers couverts, des tarifs et des spécificités par corps d'état."
       legalReference="Loi Spinetta + art. 1792 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

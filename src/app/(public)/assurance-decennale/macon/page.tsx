@@ -8,6 +8,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -33,6 +34,10 @@ export default function Page() {
       intro="L'assurance décennale maçon gros œuvre est OBLIGATOIRE pour tout artisan maçon en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 11,4% — 4e métier le plus sinistré du BTP, principalement sur les fissures structurelles (apparition 3-7 ans après réception), défauts de fondations, dalles béton fissurées et murs porteurs sous-dimensionnés. Sinistre moyen : 28 500 € (le plus élevé du BTP après les charpentiers). Tarifs 2026 : 720-1 380 €/an pour un AE (CA <50k€), 7 800-15 000 €/an pour SARL avec 5 salariés."
       legalReference="Loi Spinetta — art. L. 241-1 C. assur. + DTU 20.1 (maçonnerie béton)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

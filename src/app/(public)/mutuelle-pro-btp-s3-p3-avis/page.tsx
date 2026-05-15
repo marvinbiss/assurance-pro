@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -26,6 +27,8 @@ export default function Page() {
       title={TITLE}
       tagline={TAGLINE}
       intro="La mutuelle PRO BTP propose 4 niveaux de garanties (S1 économique → S4 premium) déclinés en sous-formules P1 à P4 (modules options). La formule S3 P3 correspond au niveau intermédiaire renforcé : couverture solide hospitalisation, dentaire, optique et médecines douces, à un tarif intermédiaire (65-140€/mois selon âge). Cette page détaille les garanties exactes, donne des retours d'adhérents et compare avec les alternatives privées (April Pro Santé S3 équivalent, Harmonie Mutuelle BTP, MMA Mutuelle Pro)."
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '🏥',

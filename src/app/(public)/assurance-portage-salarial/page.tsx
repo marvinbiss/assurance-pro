@@ -6,6 +6,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +36,10 @@ export default function Page() {
       intro="Le portage salarial est un statut hybride : le freelance porté est SALARIÉ de la société de portage (régime général SS, couverture chômage, mutuelle collective obligatoire ANI 2013) tout en exerçant son activité comme un indépendant chez ses clients. La société de portage souscrit traditionnellement une RC PRO COLLECTIVE qui couvre tous ses portés — MAIS le plafond standard est souvent 1,5 M€ par sinistre, INSUFFISANT pour les freelances IT seniors, conseil financier, ou ayant des clients institutionnels (grands groupes, ETI, collectivités) qui exigent 5-10 M€. Cette page détaille la couverture standard du portage, les insuffisances classiques et comment souscrire une RC Pro complémentaire individuelle (+580-1 200€/an pour passer à 5 M€)."
       legalReference="Convention collective portage salarial 2017 + Code du travail L. 1254-1 et s."
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '👔',

@@ -18,6 +18,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -49,6 +54,10 @@ export default function Page() {
       intro="L'assurance restaurant est un pack multirisque professionnel spécifiquement conçu pour les établissements de restauration : restaurants traditionnels, brasseries, bistrots, pizzerias, food trucks, restaurants rapides (kebab, sushi), traiteurs, gîtes-restaurants. Elle combine la couverture multirisque du local (incendie cuisine, vol, dégâts des eaux, événements climatiques) avec une RC pro spécifique au métier (intoxication alimentaire, allergies alimentaires non signalées, casse de matériel client) et une garantie pertes d'exploitation calibrée sur la saisonnalité du secteur. Les tarifs 2026 démarrent à 680 € HT/an pour un restaurant traditionnel de 40 couverts en province et peuvent monter à 3 200 €/an pour une brasserie parisienne avec licence IV (alcool fort) et terrasse. Cette page détaille les garanties indispensables, les obligations légales (HACCP, licences débit de boissons), les tarifs par profil et les pièges à éviter (sous-déclaration du chiffre d'affaires, exclusion intoxication alimentaire massive)."
       legalReference="Article 1733 C. civ. (bail commercial) + Loi du 9 juillet 1991 (HACCP) + arrêté du 8 octobre 2013 (licences)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🍽️',

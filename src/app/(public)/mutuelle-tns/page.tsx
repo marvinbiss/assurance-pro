@@ -8,6 +8,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -39,6 +40,8 @@ export default function Page() {
       intro="La mutuelle TNS (Travailleur Non Salarié) est la complémentaire santé spécifiquement conçue pour les indépendants : artisans, commerçants, professions libérales, gérants majoritaires de SARL, entrepreneurs individuels et auto-entrepreneurs (sous conditions). Sa particularité fiscale majeure : les cotisations sont déductibles du bénéfice imposable au titre de la Loi Madelin (article 154 bis du CGI), ce qui peut représenter jusqu'à 5 800€/an d'économie fiscale pour un TNS dégageant 60 k€ de bénéfice. Cette page compare les principales mutuelles TNS distribuées en France (April Pro, MMA Pro, Generali Pro, Aon Santé Pro, Allianz Pro, Harmonie Mutuelle), détaille le mécanisme Madelin et liste les pièges à éviter."
       legalReference="Article 154 bis du CGI — Loi Madelin du 11 février 1994"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '💰',

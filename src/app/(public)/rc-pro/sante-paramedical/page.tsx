@@ -7,6 +7,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +37,10 @@ export default function Page() {
       intro="La RC Pro est OBLIGATOIRE pour TOUTES les professions de santé en exercice libéral en France (art. L. 1142-2 du Code de la Santé Publique — Loi Kouchner du 4 mars 2002), y compris : kinésithérapeutes, infirmiers libéraux, ostéopathes (art. 75 Loi 2002-303), sages-femmes, orthophonistes, pédicures-podologues, ergothérapeutes, psychomotriciens, manipulateurs radio. Sanctions absence : 45 000€ d'amende + 5 ans d'emprisonnement (art. L. 1142-25 CSP) + radiation Ordre. Sinistralité ACPR 2024 : 2,7% — recours principalement sur dommages corporels patient (chute lors d'une séance, mauvaise manipulation, défaut conseil thérapeutique). Tarifs 2026 : 220-680 €/an pour libéral solo, 1 800-4 500 €/an pour cabinet SCM avec 3-5 praticiens."
       legalReference="Art. L. 1142-2 CSP (Loi Kouchner) + sanctions L. 1142-25 + Code déontologie ordres professionnels"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚖️',

@@ -5,6 +5,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +32,9 @@ export default function Page() {
       intro="Tout chauffeur VTC immatriculé au registre EVTC doit obligatoirement souscrire une Responsabilité Civile Professionnelle (RC Pro) en complément de l'assurance automobile transport de personnes. Cette obligation découle du décret 2014-371 du 26 mars 2014 et du Code des transports (art. R. 3122-3). Ce guide détaille l'obligation, les plafonds minimaux, les garanties complémentaires utiles (perte d'exploitation, protection juridique, assistance) et les meilleurs tarifs marché 2026 pour les VTC AE, SARL et plateformes Uber/Bolt/Heetch."
       legalReference="Décret 2014-371 + Code des transports art. R. 3122-3 + L. 124-3 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '🚕',

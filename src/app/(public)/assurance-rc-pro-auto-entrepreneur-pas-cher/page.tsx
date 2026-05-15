@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Comment trouver une RC Pro auto-entrepreneur PAS CHÈRE sans sacrifier la couverture ? Le best price 2026 vérifié est Hiscox à 95€/an pour AE services intellectuels (consultant, freelance IT, designer) avec un plafond 1M€ et postériorité 10 ans (unique sur le marché). Stello, challenger 100% digital, propose 90€/an. Cette page liste les 6 leviers d'économies, les 4 pièges des contrats low-cost et le classement précis par activité."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🥇',

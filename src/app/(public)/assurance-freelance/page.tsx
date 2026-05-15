@@ -20,6 +20,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -46,6 +51,10 @@ export default function Page() {
       intro="L'assurance freelance désigne l'ensemble des garanties indispensables à un travailleur indépendant exerçant à son compte, quel que soit son statut juridique : auto-entrepreneur (micro-entrepreneur), entrepreneur individuel (EI), EURL, SASU, ou en portage salarial. Le pack standard freelance combine 4 garanties principales : la RC Pro (responsabilité civile professionnelle vis-à-vis des clients — exigée par 78% des plateformes B2B et indispensable pour signer avec des clients institutionnels), la mutuelle santé TNS (Loi Madelin déductible si régime réel), la prévoyance TNS (IJ + invalidité + capital décès — critique car la Sécu verse mal pour les indépendants), et la cyber assurance (de plus en plus exigée par les grands comptes). Selon votre métier (digital, conseil, créatif, formation, coaching), les plafonds RC Pro à viser varient de 1,5 M€ (freelance digital low-risk) à 10 M€ (freelance IT systèmes critiques, conseil financier homologué). Cette page présente le pack adapté à chaque type de freelance et compare les 6 assureurs spécialisés (Hiscox, April Pro, Wakam, Stello, AXA Pro Freelance, Allianz Pro)."
       legalReference="Code des assurances + Loi Madelin (TNS) + Code de la consommation B2C / B2B"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💼',

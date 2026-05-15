@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La Matmut (Mutuelle Assurance des Travailleurs Mutualistes) est un assureur mutualiste français créé en 1961, devenu un acteur important du marché des particuliers et des TPE/PME. Son offre RC Pro est moins spécialisée que celle des leaders du segment (Hiscox, Allianz Pro) mais reste pertinente pour les pros déjà clients de la Matmut pour leurs autres assurances (auto, habitation), grâce au pack multi-contrats."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🤝',

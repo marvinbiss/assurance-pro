@@ -4,6 +4,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +33,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La Responsabilité Civile Professionnelle informatique est l'assurance la plus stratégique pour les pros du numérique : freelance dev, consultant IT, agence web, ESN, cybersécurité, hébergeur, data scientist. Le CPC Google Ads le plus élevé du marché assurance pro (1 300€) reflète la valeur client : un sinistre informatique peut coûter de 30k€ à 5M€+ (bug critique production, fuite de données, violation RGPD). Ce guide complet détaille les obligations, plafonds, exclusions cachées et bonnes pratiques pour choisir sa RC Pro IT."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Loi 78-17 RGPD + RGPD européen"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💻',

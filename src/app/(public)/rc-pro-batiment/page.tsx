@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La RC Pro bâtiment est l'assurance complémentaire de la Décennale pour les professionnels BTP. Elle couvre les dommages causés à des tiers PENDANT le chantier (avant la réception), contrairement à la Décennale qui couvre les défauts d'ouvrage 10 ANS APRÈS RÉCEPTION. Sinistres typiques RC Pro bâtiment : chute échelle sur voiture client, casse matériel client lors intervention, blessure visiteur chantier, dégât voisinage. Indispensable en complément de la Décennale."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🔧',

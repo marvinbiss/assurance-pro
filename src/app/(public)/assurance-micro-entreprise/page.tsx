@@ -18,6 +18,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -44,6 +49,10 @@ export default function Page() {
       intro="L'assurance micro-entreprise désigne l'ensemble des contrats adaptés aux structures de petite taille : micro-entrepreneurs (anciennement auto-entrepreneurs, dénomination légale depuis 2016), entrepreneurs individuels (EI) et TPE de moins de 10 salariés en EURL, SARL, SASU ou SAS. Sa particularité : les assureurs proposent des packs SIMPLIFIÉS et MOINS CHERS que pour les PME (formulaire de souscription allégé, plafonds calibrés sur le CA, gestion 100% digitale possible). Le tarif d'un pack RC Pro + multirisque démarre à 220 € HT/an pour un freelance solo, jusqu'à 1 200 € HT/an pour une TPE 5 salariés en local. Cette page détaille les garanties indispensables par profil micro-entreprise (digital, services, commerce, BTP), les tarifs 2026 et la fiscalité Madelin pour les TNS au régime réel."
       legalReference="Code des assurances + statut micro-entrepreneur (Loi 9 août 2016) + Loi Madelin (art. 154 bis CGI)"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚡',

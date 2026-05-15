@@ -8,6 +8,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -33,6 +34,10 @@ export default function Page() {
       intro="L'assurance décennale maître d'œuvre est OBLIGATOIRE pour tout maître d'œuvre en France (Loi Spinetta — art. L. 241-1 C. assur.). Le maître d'œuvre (MdŒ) cumule 3 responsabilités : (1) conception du projet, (2) supervision du chantier, (3) coordination des corps d'état. Sa décennale couvre donc un périmètre étendu : ses propres fautes ET les fautes des sous-traitants qu'il a sélectionnés (responsabilité solidaire art. 1792-4 C. civ.). Sinistralité moyenne MdŒ : 8,7%. Tarifs 2026 : 1 280-3 200 €/an pour MdŒ indépendant (CA 80-180k€), 8 500-22 000 €/an pour SARL agence MdŒ avec salariés."
       legalReference="Loi Spinetta art. L. 241-1 + 1792-4 C. civ. (solidarité sous-traitants) + Loi MOP 1985"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

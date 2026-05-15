@@ -14,6 +14,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -39,6 +40,10 @@ export default function Page() {
       intro="L'assurance décennale plombier-chauffagiste est OBLIGATOIRE pour tout artisan plombier en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 7,2% — 3e métier le plus sinistré du BTP, principalement à cause des dégâts des eaux encastrés (canalisations enrobées dans le béton dont la fuite n'est pas détectable avant 2-5 ans), des malfaçons sur chaudières gaz et plancher chauffant. Tarifs 2026 : 540-980 €/an pour un AE (CA <50k€), 5 800-12 000 €/an pour SARL avec 5 salariés. Cette page détaille les spécificités."
       legalReference="Loi Spinetta — art. L. 241-1 C. assur. + arrêté 23 janvier 2024 (mentions attestation)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

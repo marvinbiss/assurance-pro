@@ -13,6 +13,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -38,6 +39,10 @@ export default function Page() {
       intro="L'assurance décennale électricien BTP est OBLIGATOIRE pour tout artisan électricien en France (Loi Spinetta — art. L. 241-1 C. assur.). Elle couvre 10 ans après réception les défauts d'installation électrique (courts-circuits, incendies tableau, défauts conformité NF C 15-100, mauvaise mise à la terre). Sinistralité AQC SYCODÉS 2024 : 5,8% — sinistres lourds car risque incendie majeur (40% des incendies domestiques d'origine électrique). Tarifs 2026 : 490-880 €/an pour un AE (CA <50k€), 5 200-11 000 €/an pour SARL avec 5 salariés."
       legalReference="Loi Spinetta — art. L. 241-1 C. assur. + NF C 15-100 (norme installations électriques)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

@@ -8,6 +8,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -33,6 +34,10 @@ export default function Page() {
       intro="L'assurance décennale couvreur-zingueur est OBLIGATOIRE pour tout artisan couvreur en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 13,2% — TOP 1 du BTP, principalement à cause des défauts d'étanchéité toiture (infiltrations apparaissant 1-3 ans après pose), des malfaçons sur zinc/chéneaux, et des défauts d'isolation thermique en sous-toiture. Sinistre moyen : 24 800 € (3e plus élevé BTP). Tarifs 2026 majorés : 820-1 540 €/an pour un AE, 9 200-17 000 €/an pour SARL avec 5 salariés."
       legalReference="Loi Spinetta — art. L. 241-1 C. assur. + DTU 40 (couverture)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

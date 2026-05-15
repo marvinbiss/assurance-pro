@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,8 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Tarifs PRO BTP Mutuelle 2026 par âge et formule (S1 économique à S4 haut de gamme). Cette page liste les fourchettes précises par tranche d'âge et par niveau, permettant de comparer rapidement avec les alternatives privées (April Pro Santé S3 équivalent à -15-25%)."
       legalReference="Loi Madelin (TNS — déductibilité fiscale) + ANI 2013 (salariés)"
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '💰',

@@ -7,6 +7,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +37,10 @@ export default function Page() {
       intro="L'assurance SASU est le pack adapté à la SASU (Société par Actions Simplifiée Unipersonnelle) — forme juridique très populaire pour freelances seniors et consultants à fort CA. Particularité fiscale et sociale : le PRÉSIDENT de SASU est ASSIMILÉ SALARIÉ (vs gérant majoritaire SARL ou EI qui sont TNS). Conséquence pour l'assurance : ÉLIGIBILITÉ aux contrats COLLECTIFS d'entreprise (mutuelle ANI 2013, prévoyance collective) MAIS NON ÉLIGIBILITÉ à la Loi Madelin (réservée aux TNS). Le pack standard SASU combine 5 garanties : RC Pro adaptée au métier (3-10 M€), multirisque local (si applicable), mutuelle collective (président + salariés éventuels), RC Mandataire Social (RCMS) pour le président, cyber assurance. Tarifs 2026 : 580-2 800 €/an. Cette page distingue SASU des autres statuts et liste les piliers connexes."
       legalReference="Code de commerce L. 227-1 et s. + Code de la sécurité sociale (régime salarié)"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '👔',

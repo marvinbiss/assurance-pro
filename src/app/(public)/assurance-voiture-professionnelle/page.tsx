@@ -17,6 +17,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -43,6 +44,9 @@ export default function Page() {
       intro="L'assurance voiture professionnelle (ou « assurance auto pro ») couvre l'ensemble des véhicules utilisés à des fins professionnelles : véhicule personnel utilisé pour des déplacements pro (auto-mission), utilitaire dédié à l'entreprise, véhicule de fonction, flotte automobile, taxi et VTC, camion et poids lourd. La RC circulation est légalement obligatoire (Code des assurances L. 211-1, sanctions 75 000 € + 6 mois prison), mais les véhicules pro nécessitent en plus des garanties spécifiques : RC professionnelle dans le véhicule (passagers professionnels, livraisons, prestation client), garantie marchandises transportées, bris de matériel embarqué, garantie conducteur étendue, véhicule de remplacement 24h/24. Les tarifs 2026 démarrent à 580 € HT/an pour un véhicule auto-mission solo jusqu'à 12 000 € HT/an pour une flotte de 10 utilitaires en BTP. Cette page détaille les obligations selon l'usage (auto-mission vs flotte vs VTC), les tarifs par profil et les pièges à éviter (sous-déclaration km, exclusion usage pro)."
       legalReference="Article L. 211-1 du Code des assurances + L. 421-9 (FGAO) + Code des transports L. 3120-1 (transport public)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '🚗',

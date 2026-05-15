@@ -2,6 +2,11 @@
  * Prix — "rc pro prix" (200 vol, KD 3, CPC 300€)
  */
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { buildPageMetadata } from '@/lib/seo/page-metadata'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Combien coûte vraiment une RC Pro en 2026 ? Cette page synthétique répond à la question prix avec les fourchettes vérifiées par profil : auto-entrepreneur dès 95€/an chez Hiscox, SARL services à partir de 350€/an, SAS PME 1 500-5 000€/an, professions à risque (BTP, médical, libéral réglementé) jusqu'à 10-15 000€/an. Détail des 6 leviers d'économies et des 4 pièges à éviter."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         { icon: '💰', title: 'Dès 95€/an AE', desc: 'Hiscox best price AE services intellectuels' },
         { icon: '📊', title: 'Grilles par profil', desc: 'AE, SARL, SAS PME, libéral réglementé' },

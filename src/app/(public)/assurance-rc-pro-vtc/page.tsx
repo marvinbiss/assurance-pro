@@ -5,6 +5,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +31,9 @@ export default function Page() {
       intro="L'assurance RC Pro VTC est obligatoire pour tout chauffeur immatriculé EVTC. Ce guide pratique détaille le processus de souscription en ligne en 5 minutes, les pièces nécessaires, les comparatifs détaillés des 4 principaux assureurs (Wakam, Stello, Hiscox, AXA) et les garanties complémentaires utiles (assistance, perte d'exploitation, protection juridique)."
       legalReference="Décret 2014-371 + Code transports R. 3122-3"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '⚡',

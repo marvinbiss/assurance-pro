@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="L'assurance Tous Risques Chantier (TRC) est une assurance temporaire qui couvre les dommages matériels survenant DURANT la construction d'un ouvrage : vol de matériaux, incendie, vandalisme, intempéries exceptionnelles, casse engins. Elle n'est pas obligatoire (contrairement à la décennale) mais fortement recommandée pour les chantiers significatifs (> 100k€), souvent imposée par les maîtres d'ouvrage publics et les banques finançant la construction."
       legalReference="Pas d'obligation légale (contrat facultatif) — souvent exigée par MO publics et banques"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

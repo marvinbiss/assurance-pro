@@ -5,6 +5,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +35,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Une RC Pro pas chère ne doit pas signifier mal couverte. Cette page détaille les 6 leviers réels pour réduire votre prime (sans sacrifier les garanties critiques), les fourchettes de prix marché 2026 par profession, et les 4 pièges fréquents des contrats low-cost qui peuvent coûter cher en cas de sinistre."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💰',

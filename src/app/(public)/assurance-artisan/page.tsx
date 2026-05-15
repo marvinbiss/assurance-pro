@@ -27,6 +27,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -53,6 +54,10 @@ export default function Page() {
       intro="L'assurance artisan désigne l'ensemble des contrats indispensables à l'exercice d'une activité artisanale en France : décennale Loi Spinetta (obligatoire pour les artisans BTP), RC Pro (responsabilité civile professionnelle envers les clients), multirisque atelier/véhicule pro, mutuelle santé TNS et prévoyance Madelin. Selon le métier, certaines garanties sont légalement obligatoires (décennale BTP, RC santé) et d'autres sont fortement recommandées. Le tarif d'un pack complet 2026 démarre à 980 € HT/an pour un artisan AE peintre province (RC + décennale couplées) jusqu'à 5 800 €/an pour un artisan SARL maçonnerie/couverture avec véhicule pro et 3 salariés. Cette page récapitule par TYPE D'ARTISAN les garanties indispensables, les tarifs réels et redirige vers nos pages-piliers spécialisées (décennale auto-entrepreneur, mutuelle pro BTP, prévoyance TNS, etc.)."
       legalReference="Loi Spinetta (L. 241-1 C. assur.) + Loi Madelin (art. 154 bis CGI) + Code artisanat"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

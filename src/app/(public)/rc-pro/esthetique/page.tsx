@@ -5,6 +5,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +35,10 @@ export default function Page() {
       intro="La RC Pro esthéticienne est OBLIGATOIRE pour tout praticien effectuant des ACTES ESTHÉTIQUES INVASIFS : épilation à la cire chaude (brûlures fréquentes), épilation laser (qualifiée d'acte médical depuis 2020 — SEUL UN MÉDECIN PEUT LA PRATIQUER LÉGALEMENT), soins du visage avec produits cosmétiques actifs, micro-needling, peelings chimiques, pose de prothèses ongulaires (allergies acrylates), modelages corporels invasifs. Couvre les sinistres typiques : brûlures cuir/peau, allergies cosmétiques sévères (œdème de Quincke), blessures coupantes (manucure), infections (matériel mal stérilisé). Tarifs 2026 : 280-880€/an selon profil. Cette page vise esthéticiennes en institut, à domicile, prothésistes ongulaires et masseurs bien-être (NB : massage thérapeutique = acte médical réservé kinésithérapeutes)."
       legalReference="Code des assurances L. 113-1 + Code de la santé publique (actes invasifs)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💆',

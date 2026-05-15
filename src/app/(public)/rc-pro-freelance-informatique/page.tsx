@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Le freelance informatique (développeur, consultant IT, designer UX/UI, data scientist, cybersécurité, DevOps) est exposé à des sinistres spécifiques au numérique : bug critique en production, retard livraison majeur, faille sécurité non détectée, perte de données client, conseil architecture erroné. La RC Pro freelance informatique est l'assurance indispensable, fortement complétée par une cyber-assurance pour les profils gérant des données sensibles."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Loi 78-17 RGPD"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💻',

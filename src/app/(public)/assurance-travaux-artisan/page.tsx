@@ -6,6 +6,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +32,10 @@ export default function Page() {
       intro="L'assurance travaux artisan désigne le pack standard d'assurances nécessaires à un artisan BTP réalisant des chantiers de construction, rénovation ou aménagement. Elle combine 5 garanties : (1) décennale OBLIGATOIRE Loi Spinetta — couvre les dommages affectant la solidité de l'ouvrage 10 ans après réception, (2) RC pro travaux — couvre les dommages causés AUX TIERS PENDANT le chantier (voisin, passant, client), (3) TRC (Tous Risques Chantier) recommandée pour gros chantiers — couvre les dommages AU CHANTIER LUI-MÊME, (4) garantie outillage embarqué — couvre l'outillage transporté + matériel sur chantier, (5) véhicule pro avec garantie marchandises. Tarifs 2026 : 980-2 800€/an selon métier et taille. Cette page renvoie vers nos piliers spécialisés."
       legalReference="Loi Spinetta + Code des assurances + DTU"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

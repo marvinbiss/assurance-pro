@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,9 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Le convoyage professionnel — qu'il s'agisse de véhicules (auto, moto, camion, bateau), d'animaux (chevaux, NAC, bovins) ou de personnes (chauffeur privé, VTC haut de gamme) — implique des risques spécifiques nécessitant une RC Pro adaptée. Cette page détaille les obligations, les garanties recommandées et les pièges à éviter pour les convoyeurs indépendants ou en société."
       legalReference="art. L. 124-3 + L. 121-2 + L. 211-1 C. assur. + Code transports"
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '🚗',

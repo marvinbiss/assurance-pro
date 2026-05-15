@@ -203,8 +203,12 @@ export async function PilierLayout({
             <Link href="/" className="transition-colors hover:text-white">
               Accueil
             </Link>
-            <span className="text-white/40">/</span>
-            <span className="text-white/95">{prettifySegment(slug.split('/')[0] ?? '')}</span>
+            <span className="text-white/40" aria-hidden="true">
+              /
+            </span>
+            <span className="text-white/95" aria-current="page">
+              {prettifySegment(slug.split('/')[0] ?? '')}
+            </span>
           </nav>
 
           {/* Badge obligatoire */}

@@ -18,6 +18,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -44,6 +49,10 @@ export default function Page() {
       intro="L'assurance médecin libéral est un ensemble de garanties spécifiquement adaptées à l'exercice de la médecine en cabinet privé : RC Pro médicale obligatoire (Loi Kouchner du 4 mars 2002, art. L. 1142-2 du Code de la santé publique), multirisque du cabinet (incendie, vol, dégâts des eaux du local + matériel médical), mutuelle santé TNS déductible Loi Madelin, prévoyance (IJ + invalidité + capital décès), cyber assurance critique (vol de données patients, RGPD santé), et auto-mission pour les visites à domicile. Ces garanties s'appliquent aux médecins généralistes, spécialistes (cardio, dermato, ophtalmo, gynéco, ORL, psychiatre, gastro, endocrino), médecins remplaçants, médecins en SELARL ou SCM, et internes/jeunes installés. Le pack complet 2026 démarre à 2 200 € HT/an pour un médecin généraliste solo en province jusqu'à 7 800 € HT/an pour un cardiologue interventionniste à Paris. Cette page distingue clairement les garanties OBLIGATOIRES (RC médicale Kouchner) des garanties RECOMMANDÉES (cyber, prévoyance) et compare les 4 assureurs spécialistes santé."
       legalReference="Loi Kouchner du 4 mars 2002 + Article L. 1142-2 du Code de la santé publique + Loi Madelin"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚕️',

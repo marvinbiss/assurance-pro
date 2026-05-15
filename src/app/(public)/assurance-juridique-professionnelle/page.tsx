@@ -7,6 +7,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +37,10 @@ export default function Page() {
       intro="L'assurance juridique professionnelle (souvent appelée Protection Juridique Pro ou PJ pro) prend en charge les frais d'avocat, d'huissier, d'expert et de procédure d'une entreprise confrontée à un litige : impayé client, conflit fournisseur, litige bail commercial, contentieux salarié, contrôle URSSAF, infraction routière, procédure pénale du dirigeant. Elle inclut un service de conseil juridique téléphonique illimité 7j/7 (avocats, juristes spécialisés). C'est l'une des assurances avec le meilleur rapport coût/protection : 1 entreprise sur 3 connaît un litige juridique majeur dans ses 5 premières années (INSEE 2024), et un seul litige (ex : contestation licenciement à 12 000€) compense 5 à 20 ans de cotisations PJ. Tarifs 2026 : 280-1 800 €/an selon taille."
       legalReference="Articles L. 127-1 et suivants du Code des assurances"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚖️',

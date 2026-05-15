@@ -14,6 +14,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -40,6 +41,10 @@ export default function Page() {
       intro="L'assurance dommages-ouvrage (DO) est OBLIGATOIRE pour tout maître d'ouvrage faisant réaliser des travaux de construction (article L. 242-1 du Code des assurances, Loi Spinetta du 4 janvier 1978) : particulier construisant sa maison individuelle, promoteur immobilier, copropriété, syndic faisant des travaux de gros œuvre, vendeur immobilier d'un bien neuf. Elle doit être souscrite AVANT le démarrage du chantier (avant la déclaration d'ouverture en mairie pour les CMI). Son rôle : pré-financer immédiatement la réparation des sinistres relevant de la garantie décennale (10 ans après réception), sans attendre la résolution juridique sur l'identité du responsable. Prix moyen 2026 : 2 à 5% du coût total HT des travaux (versement unique à la signature). Cette page est dédiée à la SOUSCRIPTION et au DEVIS DO. Pour comprendre la mécanique juridique en détail, voir notre /guides/dommages-ouvrage."
       legalReference="Article L. 242-1 du Code des assurances + Loi Spinetta du 4 janvier 1978"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="La garantie décennale plomberie s'applique aux plombiers, plombiers-chauffagistes, climaticiens, et spécialistes sanitaires intervenant sur la structure d'un bâtiment (installations encastrées, chauffage central, sanitaires intégrés). Elle couvre pendant 10 ans à compter de la réception les défauts qui affectent la solidité de l'ouvrage ou le rendent impropre à sa destination — particulièrement les infiltrations encastrées et défauts d'étanchéité plomberie."
       legalReference="Loi Spinetta + art. 1792 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🔧',

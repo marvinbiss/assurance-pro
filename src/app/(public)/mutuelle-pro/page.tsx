@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
@@ -31,6 +32,8 @@ export default function MutuelleProPage() {
       title="Mutuelle TNS / Pro — Loi Madelin"
       tagline="Une couverture santé adaptée aux travailleurs non-salariés et dirigeants. Cotisations 100% déductibles fiscalement (Loi Madelin)."
       legalReference="Loi Madelin du 11 février 1994 — art. 154 bis CGI"
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       intro="La mutuelle TNS (Travailleurs Non-Salariés) couvre les frais de santé non remboursés par la Sécurité sociale pour les indépendants, dirigeants, professions libérales et auto-entrepreneurs. Grâce à la Loi Madelin, vos cotisations sont entièrement déductibles de votre revenu imposable, ce qui réduit votre facture de 30 à 45% selon votre tranche d'imposition. Notre cabinet ORIAS compare 8 mutuelles partenaires pour trouver la couverture optimale au meilleur tarif."
       benefits={[
         { icon: '💸', title: 'Déductible Madelin', desc: "30-45% d'économies fiscales" },

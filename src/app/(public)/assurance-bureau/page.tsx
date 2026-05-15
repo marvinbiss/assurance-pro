@@ -16,6 +16,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -47,6 +52,10 @@ export default function Page() {
       intro="L'assurance bureau professionnel est une multirisque pro adaptée au format de local le plus répandu pour les TPE, PME, indépendants en local séparé, agences (web, communication, immobilière), cabinets (avocats, comptables, conseil) et espaces de coworking. Elle couvre les principaux risques pour un local sans clientèle reçue de masse ni stock significatif : incendie, vol, dégâts des eaux, événements climatiques, bris de glace, ainsi que l'équipement informatique (postes de travail, serveurs, écrans, périphériques) qui représente souvent l'essentiel de la valeur du contenu. Les tarifs 2026 démarrent à 220 € HT/an pour un bureau indépendant de 30 m² jusqu'à 1 200 € HT/an pour un cabinet de 200 m² avec serveur informatique. Distincte de l'assurance local commercial (qui cible les commerces avec vitrine et stock) et de la multirisque pro générique (qui couvre tous secteurs sans spécialisation), l'assurance bureau optimise la prime pour ce profil de risque modéré."
       legalReference="Article 1733 du Code civil (bail commercial) + clauses standard MRP bureaux"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '💼',

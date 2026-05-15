@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La RC Pro micro-entreprise est essentielle pour TOUT auto-entrepreneur ou EI en régime micro : elle protège votre patrimoine personnel contre les sinistres causés à des clients dans votre activité. Sans RC Pro, le micro-entrepreneur engage sa responsabilité personnelle illimitée (vs responsabilité limitée d'une SARL/SAS). Sinistre moyen micro-entreprise : 5-30k€ — sortie de poche directe sans RC Pro."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🛡️',

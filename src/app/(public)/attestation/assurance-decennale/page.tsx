@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="L'attestation assurance décennale est le document officiel délivré par l'assureur agréé ACPR qui prouve la souscription d'une garantie décennale conforme à la Loi Spinetta. Indispensable pour : 1) Présenter au maître d'ouvrage AVANT démarrage chantier (obligation Loi Spinetta), 2) Justifier conformité aux notaires lors vente immobilière (vérification systématique des constructeurs &lt; 10 ans), 3) Candidater aux marchés publics BTP. Cette page détaille l'usage, la valeur juridique et les démarches."
       legalReference="Loi Spinetta + art. 1792 et 1792-1 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

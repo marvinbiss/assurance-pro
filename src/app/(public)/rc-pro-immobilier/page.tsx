@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +33,10 @@ export default function Page() {
       intro="La RC Pro Immobilier est obligatoire pour tout professionnel exerçant une activité encadrée par la Loi Hoguet (loi 70-9 du 2 janvier 1970) : agent immobilier, mandataire, syndic de copropriété, gestionnaire locatif, expert immobilier. Elle couvre les dommages causés à des tiers (clients, partenaires) dans le cadre de transactions, gestion ou conseils — avec un plafond légal minimum de 305 000€ (transactions) et 305 000€ (gestion immobilière)."
       legalReference="Loi Hoguet (art. 49 loi 70-9) + décret 72-678 + art. L. 124-3 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚖️',

@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="L'attestation décennale au format PDF est le standard d'échange entre constructeur, maître d'ouvrage, notaire et administration. Format A4 imprimable, taille 50-200 Ko, généralement protégé contre la modification (PDF signé électroniquement chez les grands assureurs). Cette page détaille les caractéristiques techniques du PDF par assureur, les bonnes pratiques de conservation et les différences de présentation."
       legalReference="Loi Spinetta + art. 1792 Code civil + eIDAS pour signatures électroniques"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '📄',
