@@ -20,6 +20,9 @@ import {
   Award,
 } from 'lucide-react'
 import { DevisCTASection } from '@/components/premium'
+import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
+import { ParallaxLayer } from '@/components/motion/ParallaxLayer'
+import { TiltCard } from '@/components/motion/TiltCard'
 import {
   getBreadcrumbSchema,
   getServiceSchema,
@@ -102,15 +105,21 @@ export async function PilierLayout({
           className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90"
           aria-hidden="true"
         />
-        {/* Radial blobs decoratifs */}
-        <div
+        {/* Radial blobs decoratifs — parallax scroll + mouse */}
+        <ParallaxLayer
+          speed={0.22}
+          mouseInfluence={0.45}
           className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] rounded-full bg-secondary-500/30 blur-[140px]"
-          aria-hidden="true"
-        />
-        <div
+        >
+          <span aria-hidden className="block h-full w-full" />
+        </ParallaxLayer>
+        <ParallaxLayer
+          speed={-0.15}
+          mouseInfluence={0.3}
           className="pointer-events-none absolute -bottom-32 -right-32 h-[400px] w-[400px] rounded-full bg-primary-400/30 blur-[120px]"
-          aria-hidden="true"
-        />
+        >
+          <span aria-hidden className="block h-full w-full" />
+        </ParallaxLayer>
         <div className="absolute inset-0 bg-hero-pattern opacity-30" aria-hidden="true" />
 
         <div className="container relative mx-auto max-w-5xl px-4">
@@ -182,29 +191,29 @@ export async function PilierLayout({
           <div className="container mx-auto max-w-6xl px-4">
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {benefits.map((b, idx) => (
-                <div
-                  key={b.title}
-                  style={{ animationDelay: `${idx * 80}ms` }}
-                  className="mount-fade-up group relative overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-                >
-                  <div
-                    className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 transition-opacity group-hover:opacity-100"
-                    aria-hidden="true"
-                  />
-                  {b.icon ? (
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-xl text-white shadow-soft transition-transform group-hover:scale-110">
-                      {b.icon}
+                <RevealOnScroll key={b.title} delay={idx * 80} translateY={28}>
+                  <TiltCard maxTilt={4} glowColor="rgba(232, 107, 75, 0.12)">
+                    <div className="group relative h-full overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft transition-[box-shadow] duration-300 hover:shadow-card-hover">
+                      <div
+                        className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 transition-opacity group-hover:opacity-100"
+                        aria-hidden="true"
+                      />
+                      {b.icon ? (
+                        <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-xl text-white shadow-soft transition-transform group-hover:scale-110">
+                          {b.icon}
+                        </div>
+                      ) : (
+                        <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-soft">
+                          <CheckCircle2 className="h-5 w-5" strokeWidth={2.4} />
+                        </div>
+                      )}
+                      <h3 className="mb-2 font-heading text-base font-bold text-charcoal-900">
+                        {b.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed text-charcoal-600">{b.desc}</p>
                     </div>
-                  ) : (
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-soft">
-                      <CheckCircle2 className="h-5 w-5" strokeWidth={2.4} />
-                    </div>
-                  )}
-                  <h3 className="mb-2 font-heading text-base font-bold text-charcoal-900">
-                    {b.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-charcoal-600">{b.desc}</p>
-                </div>
+                  </TiltCard>
+                </RevealOnScroll>
               ))}
             </div>
           </div>
@@ -235,18 +244,22 @@ export async function PilierLayout({
           className={`py-16 md:py-20 ${idx % 2 === 0 ? 'bg-sand-50' : 'bg-white'}`}
         >
           <div className="container mx-auto max-w-4xl px-4">
-            <div className="mb-8 flex items-start gap-4">
-              <span
-                className="mt-2 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 font-heading text-base font-extrabold text-white shadow-glow-clay"
-                aria-hidden="true"
-              >
-                {idx + 1}
-              </span>
-              <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-display text-charcoal-900 md:text-4xl">
-                {s.h2}
-              </h2>
-            </div>
-            <div className="pilier-prose prose prose-lg max-w-none text-charcoal-700">{s.body}</div>
+            <RevealOnScroll translateY={28}>
+              <div className="mb-8 flex items-start gap-4">
+                <span
+                  className="mt-2 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 font-heading text-base font-extrabold text-white shadow-glow-clay"
+                  aria-hidden="true"
+                >
+                  {idx + 1}
+                </span>
+                <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-display text-charcoal-900 md:text-4xl">
+                  {s.h2}
+                </h2>
+              </div>
+              <div className="pilier-prose prose prose-lg max-w-none text-charcoal-700">
+                {s.body}
+              </div>
+            </RevealOnScroll>
           </div>
         </section>
       ))}
