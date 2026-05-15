@@ -52,17 +52,12 @@ const EMOJI_ICON_MAP: Record<string, LucideIcon> = {
   '💼': Briefcase,
   '🚀': Rocket,
 }
-import {
-  ComparatifAssureursTable,
-  DevisCTASection,
-  ExpertBio,
-  SocialProofHero,
-  TarifCalculator,
-  TrustBadgesAcpr,
-} from '@/components/premium'
+import { ExpertBio, SocialProofHero, TrustBadgesAcpr } from '@/components/premium'
+// Below-fold heavy sections — lazy-loaded to keep First Load JS small.
+import { ComparatifAssureursTable, DevisCTASection, TarifCalculator } from './pilier-sections-lazy'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
-import { ParallaxLayer } from '@/components/motion/ParallaxLayer'
-import { TiltCard } from '@/components/motion/TiltCard'
+import { ParallaxLayer } from '@/components/motion/dynamic/ParallaxLayerDynamic'
+import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
 
 type CalculatorGarantie = 'decennale' | 'rc-pro' | 'multirisque-pro' | 'cyber'
 import {

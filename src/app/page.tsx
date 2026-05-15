@@ -27,6 +27,7 @@ import {
 import { TrustBadgesRow } from '@/components/conversion/TrustBadgesRow'
 import { MockOfferCard } from '@/components/home/MockOfferCard'
 import { DevisCTASection, EditorialProcessSteps, EditorialTestimonial } from '@/components/premium'
+import { IllustrationForMetier } from '@/components/premium/illustrations'
 import { CountUp } from '@/components/motion/CountUp'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
@@ -50,14 +51,17 @@ interface Vertical {
   badge?: string
   metric: string
   span?: string
-  image: string
+  /** Slug du métier — passé au dispatcher IllustrationForMetier */
+  metierSlug: string
+  /** Aria-label décrivant l'illustration line-art */
   imageAlt: string
+  /** @deprecated Conservé pour migration future, non utilisé (anti-pattern DESIGN.md stock photo) */
+  image?: string
 }
 
-// Photos Unsplash optimisées (WebP + auto-format + crop).
-// next.config.js whitelist images.unsplash.com via remotePatterns.
-// On utilise <img> HTML standard (pas next/image) pour éviter le bug
-// Sentry RSC wrapping vs lazy hydration sur Next 15.5.18.
+// Illustrations SVG sur-mesure line-art monoline (DESIGN.md Atelier Premium).
+// Remplace les anciennes photos Unsplash (anti-pattern #stock photo).
+// Dispatch via IllustrationForMetier({ slug }) — voir src/components/premium/illustrations/.
 const VERTICALS: readonly Vertical[] = [
   {
     code: 'decennale',
@@ -69,9 +73,8 @@ const VERTICALS: readonly Vertical[] = [
     badge: 'Loi Spinetta',
     metric: '52 métiers BTP',
     span: 'md:col-span-2',
-    image:
-      'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Artisan BTP en chantier — décennale obligatoire Loi Spinetta',
+    metierSlug: 'macon',
+    imageAlt: 'Illustration artisan maçon BTP — décennale obligatoire Loi Spinetta',
   },
   {
     code: 'rc-pro',
@@ -82,9 +85,8 @@ const VERTICALS: readonly Vertical[] = [
     accent: 'from-charcoal-700 to-charcoal-900',
     badge: '#1 marché',
     metric: '32 professions',
-    image:
-      'https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=800&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Consultante freelance en réunion stratégique',
+    metierSlug: 'consultant',
+    imageAlt: 'Illustration consultant freelance en réunion stratégique',
   },
   {
     code: 'multirisque-pro',
@@ -94,9 +96,8 @@ const VERTICALS: readonly Vertical[] = [
     Icon: Building2,
     accent: 'from-accent-500 to-accent-700',
     metric: '30 secteurs',
-    image:
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Bureau professionnel moderne et lumineux',
+    metierSlug: 'restaurateur',
+    imageAlt: 'Illustration local commercial / restaurant professionnel',
   },
   {
     code: 'mutuelle-pro',
@@ -108,9 +109,8 @@ const VERTICALS: readonly Vertical[] = [
     badge: 'Madelin',
     metric: '8 mutuelles comparées',
     span: 'md:col-span-2',
-    image:
-      'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=1200&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Médecin examinant un dossier patient',
+    metierSlug: 'medecin',
+    imageAlt: 'Illustration médecin examinant un dossier patient',
   },
   {
     code: 'assurance-vtc',
@@ -120,9 +120,9 @@ const VERTICALS: readonly Vertical[] = [
     Icon: Car,
     accent: 'from-primary-500 to-primary-700',
     metric: 'AE ou SARL',
-    image:
-      'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Chauffeur VTC au volant de son véhicule',
+    // Pas d'illustration VTC dédiée — fallback consultant (profil indépendant).
+    metierSlug: 'consultant',
+    imageAlt: 'Illustration chauffeur VTC indépendant',
   },
   {
     code: 'cyber-assurance',
@@ -133,9 +133,8 @@ const VERTICALS: readonly Vertical[] = [
     accent: 'from-charcoal-700 to-charcoal-900',
     badge: "Jusqu'à 5M€",
     metric: 'Couverture étendue',
-    image:
-      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Centre de données et serveurs cybersécurité',
+    metierSlug: 'freelance-it',
+    imageAlt: 'Illustration freelance IT / cybersécurité — protection données',
   },
 ] as const
 
@@ -434,19 +433,17 @@ export default function HomePage() {
                   href={v.href}
                   className={`mount-fade-up group relative flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover`}
                 >
-                  {/* Photo header — aspect 16/9 */}
-                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-charcoal-100">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={v.image}
-                      alt={v.imageAlt}
-                      loading="lazy"
-                      decoding="async"
-                      className="bento-card-img absolute inset-0 h-full w-full object-cover"
+                  {/* Illustration SVG sur-mesure — aspect 16/9 (DESIGN.md Atelier Premium) */}
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-sand-100">
+                    <IllustrationForMetier
+                      slug={v.metierSlug}
+                      accent="primary"
+                      className="absolute inset-0 h-full w-full p-8"
+                      ariaLabel={v.imageAlt}
                     />
-                    {/* Overlay gradient pour lisibilité */}
+                    {/* Overlay gradient bas pour lisibilité icon + badge sur line-art clair */}
                     <div
-                      className="absolute inset-0 bg-gradient-to-t from-charcoal-900/75 via-charcoal-900/15 to-transparent"
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-900/65 via-charcoal-900/0 to-transparent"
                       aria-hidden="true"
                     />
                     {/* Icon + badge overlay bottom */}

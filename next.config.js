@@ -47,7 +47,7 @@ const nextConfig = {
         ? [{ protocol: 'http', hostname: 'localhost' }]
         : []),
     ],
-    minimumCacheTTL: 60 * 60 * 24 * 30,
+    minimumCacheTTL: 60 * 60 * 24 * 365,
     // SVG remote n'est jamais servi en prod ; laisser à false élimine un vecteur XSS.
     dangerouslyAllowSVG: false,
   },

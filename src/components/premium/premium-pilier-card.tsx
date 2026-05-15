@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { PremiumBadge } from './premium-badge'
-import { TiltCard } from '@/components/motion/TiltCard'
+import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
+import { IllustrationForMetier } from './illustrations'
 
 interface PremiumPilierCardProps {
   title: string
@@ -15,6 +16,12 @@ interface PremiumPilierCardProps {
   ctaLabel?: string
   variant?: 'standard' | 'featured'
   className?: string
+  /**
+   * Slug métier optionnel. Si fourni, affiche l'illustration SVG sur-mesure
+   * (line-art monoline) à la place du Lucide Icon. Backward-compat: en
+   * l'absence de slug, fallback sur l'Icon Lucide.
+   */
+  metierSlug?: string
 }
 
 export function PremiumPilierCard({
@@ -28,6 +35,7 @@ export function PremiumPilierCard({
   ctaLabel = 'Devis 2 min',
   variant = 'standard',
   className = '',
+  metierSlug,
 }: PremiumPilierCardProps) {
   const isFeatured = variant === 'featured'
 
@@ -46,9 +54,20 @@ export function PremiumPilierCard({
           </div>
         )}
 
-        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-600 transition-colors duration-200 group-hover:bg-primary-100">
-          <Icon className="h-6 w-6" aria-hidden />
-        </div>
+        {metierSlug ? (
+          <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-xl bg-sand-50 text-primary-600 transition-colors duration-200 group-hover:bg-sand-100">
+            <IllustrationForMetier
+              slug={metierSlug}
+              accent="primary"
+              className="h-full w-full p-2"
+              ariaLabel={`Illustration ${title}`}
+            />
+          </div>
+        ) : (
+          <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-600 transition-colors duration-200 group-hover:bg-primary-100">
+            <Icon className="h-6 w-6" aria-hidden />
+          </div>
+        )}
 
         <h3 className="mb-2 font-heading text-2xl font-semibold leading-tight text-charcoal-900">
           {title}

@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2, Clock, ShieldCheck } from 'lucide-react'
 import { GrainOverlay } from './grain-overlay'
-import { MagneticButton } from '@/components/motion/MagneticButton'
-import { ParallaxLayer } from '@/components/motion/ParallaxLayer'
+import { MagneticButton } from '@/components/motion/dynamic/MagneticButtonDynamic'
+import { ParallaxLayer } from '@/components/motion/dynamic/ParallaxLayerDynamic'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 
 interface DevisCTASectionProps {

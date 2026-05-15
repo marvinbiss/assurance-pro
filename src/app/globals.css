@@ -450,6 +450,22 @@ img {
   height: auto;
 }
 
+/* Skip rendering of off-screen images/SVGs until scrolled into view.
+   Reduces initial paint work without affecting LCP (the LCP image
+   uses loading="eager" and is excluded by the data-saver rule). */
+img,
+svg {
+  content-visibility: auto;
+}
+
+/* Data-saver: respect prefers-reduced-data — hide non-eager images
+   for users on metered connections. eager images (hero/LCP) still load. */
+@media (prefers-reduced-data: reduce) {
+  img:not([loading='eager']) {
+    display: none;
+  }
+}
+
 /* Smooth font rendering */
 * {
   -webkit-font-smoothing: antialiased;
