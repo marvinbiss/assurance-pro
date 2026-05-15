@@ -8,9 +8,14 @@ import { PreOriasBanner } from '@/components/PreOriasBanner'
 import Footer from '@/components/Footer'
 import { StickyMobileCta } from '@/components/premium'
 import { TrackingScripts } from '@/components/TrackingScripts'
-import { getOrganizationSchema, getWebsiteSchema } from '@/lib/seo/jsonld'
+import {
+  getOrganizationSchema,
+  getWebsiteSchema,
+  getAggregateRatingDirectSchema,
+} from '@/lib/seo/jsonld'
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { SITE_URL } from '@/lib/seo/config'
+import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
 
 const dmSans = DM_Sans({
@@ -135,8 +140,23 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           title="LLM detailed content"
         />
 
-        {/* Global Organization + WebSite schema (E-E-A-T) */}
-        <script {...jsonLdScriptProps([getOrganizationSchema(), getWebsiteSchema()], nonce)} />
+        {/* Global Organization (InsuranceAgency) + WebSite + AggregateRating (E-E-A-T YMYL) */}
+        <script
+          {...jsonLdScriptProps(
+            [
+              getOrganizationSchema(),
+              getWebsiteSchema(),
+              getAggregateRatingDirectSchema({
+                ratingValue: SITE_AGGREGATE_RATING.ratingValue,
+                reviewCount: SITE_AGGREGATE_RATING.reviewCount,
+                bestRating: SITE_AGGREGATE_RATING.bestRating,
+                worstRating: SITE_AGGREGATE_RATING.worstRating,
+                itemReviewedType: 'InsuranceAgency',
+              }),
+            ],
+            nonce
+          )}
+        />
 
         {/* Preconnect for Google Tag Manager */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />

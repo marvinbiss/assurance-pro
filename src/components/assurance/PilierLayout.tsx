@@ -70,8 +70,12 @@ import {
   getServiceSchema,
   getArticleSchema,
   getFAQPageSchema,
+  getAggregateRatingDirectSchema,
+  getInsuranceAgencyOrganizationSchema,
+  getPersonSchema,
 } from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
+import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
@@ -513,6 +517,38 @@ export async function PilierLayout({
           nonce
         )}
       />
+      {/* InsuranceAgency root signal — E-E-A-T YMYL (ORIAS/ACPR/CSCA) */}
+      <script {...jsonLdScriptProps(getInsuranceAgencyOrganizationSchema(), nonce)} />
+      {/* AggregateRating site-wide — rich snippet ★ SERP */}
+      <script
+        {...jsonLdScriptProps(
+          getAggregateRatingDirectSchema({
+            ratingValue: SITE_AGGREGATE_RATING.ratingValue,
+            reviewCount: SITE_AGGREGATE_RATING.reviewCount,
+            bestRating: SITE_AGGREGATE_RATING.bestRating,
+            worstRating: SITE_AGGREGATE_RATING.worstRating,
+            itemReviewedName: title,
+            itemReviewedType: 'Service',
+          }),
+          nonce
+        )}
+      />
+      {/* Person schema (expert author) — E-E-A-T author signal */}
+      {expertBio ? (
+        <script
+          {...jsonLdScriptProps(
+            getPersonSchema({
+              name: expertBio.name,
+              jobTitle: expertBio.role,
+              url: `${SITE_URL}/${slug}#expert`,
+              ...(expertBio.avatar ? { imageUrl: expertBio.avatar } : {}),
+              description: expertBio.bio,
+              ...(expertBio.linkedin ? { sameAs: [expertBio.linkedin] } : {}),
+            }),
+            nonce
+          )}
+        />
+      ) : null}
     </article>
   )
 }
