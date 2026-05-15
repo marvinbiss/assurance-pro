@@ -15,6 +15,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -41,6 +42,10 @@ export default function Page() {
       intro="L'assurance BTP désigne l'ensemble des garanties qu'une entreprise du Bâtiment et des Travaux Publics doit ou peut souscrire pour sécuriser son activité. Ce pilier-hub couvre 8 garanties spécifiques au secteur : la décennale obligatoire (Loi Spinetta), la RC Pro travaux (responsabilité civile pendant le chantier), la multirisque pro BTP (locaux, atelier, matériel), les dommages-ouvrage (DO — pour les maîtres d'ouvrage), la Tous Risques Chantier (TRC), la garantie financière BTP (cautionnement), la garantie biennale (équipements dissociables 2 ans), et la garantie de parfait achèvement (1 an). Selon votre métier (gros œuvre, second œuvre, finitions, RGE, MOE), votre statut juridique (AE, EI, SARL, SAS) et la taille de l'entreprise, le pack BTP varie de 980 € HT/an pour un AE peintre solo jusqu'à 25 000 € HT/an pour une PME maçonnerie 10 salariés. Cette page récapitule les obligations légales et redirige vers nos pages-piliers spécialisées."
       legalReference="Loi Spinetta du 4 janvier 1978 + Code des assurances L. 241-1 / L. 242-1 + Code civil 1792"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

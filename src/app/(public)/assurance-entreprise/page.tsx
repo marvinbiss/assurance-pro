@@ -24,6 +24,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -50,6 +55,10 @@ export default function Page() {
       intro="L'assurance entreprise désigne l'ensemble des garanties qu'une société (TPE, PME, ETI) doit ou peut souscrire pour sécuriser son activité, son patrimoine, ses dirigeants et ses salariés. Elle se décompose en 7 grandes briques : RC entreprise (responsabilité civile envers tiers), multirisque locaux/matériel/stock, mutuelle santé collective (obligation ANI 2013 pour tous les employeurs), prévoyance collective ou dirigeants, RC mandataire social (RCMS pour les dirigeants SARL/SAS), cyber assurance et flotte automobile. Selon la taille (effectif, CA), le secteur d'activité et le statut juridique (SARL, SAS, SA, SCI), certaines garanties sont OBLIGATOIRES (mutuelle salariés, RC selon métier réglementé, multirisque bail commercial) et d'autres FORTEMENT RECOMMANDÉES (cyber, RCMS, prévoyance dirigeants). Le tarif d'un pack complet 2026 démarre à 980 € HT/an pour une TPE 5 salariés en bureau jusqu'à 25 000 € HT/an pour une PME 50 personnes en site industriel. Cette page récapitule par TAILLE D'ENTREPRISE les garanties indispensables et redirige vers nos pages-piliers spécialisées."
       legalReference="Code des assurances + Loi 14/06/2013 (ANI mutuelle) + Loi Sapin II (RCMS) + RGPD"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🏢',

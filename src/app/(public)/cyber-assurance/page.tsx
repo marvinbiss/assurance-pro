@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_CYBER, EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
@@ -31,6 +32,10 @@ export default function CyberAssurancePage() {
       title="Cyber Vivos Assurance"
       tagline="La seule assurance qui couvre les attaques informatiques, ransomware, fuites de données et notification RGPD. Indispensable en 2026."
       legalReference="RGPD art. 32 + Directive NIS 2"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="cyber"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_CYBER}
       intro="Avec 1 entreprise sur 5 victime d'une cyberattaque en France en 2025 (source ANSSI), la cyber assurance n'est plus un luxe mais une nécessité. Elle couvre les conséquences financières d'un ransomware, d'une fuite de données personnelles, d'une attaque par déni de service (DDoS), d'une fraude au président. Notre cabinet ORIAS travaille avec les leaders du marché (Hiscox, Stello, Coalition, AIG, Beazley) pour construire votre couverture sur-mesure."
       benefits={[
         { icon: '🔒', title: 'Ransomware couvert', desc: 'Rançon + restauration' },

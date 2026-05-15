@@ -23,6 +23,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -49,6 +54,9 @@ export default function Page() {
       intro="L'assurance professionnelle désigne l'ensemble des garanties qu'un entrepreneur, indépendant, profession libérale, artisan, commerçant ou dirigeant doit ou peut souscrire pour exercer son activité en sécurité. Elle se décompose en 6 grandes familles : la responsabilité civile professionnelle (RC Pro / RCP — couvre les dommages causés aux tiers), la décennale BTP (Loi Spinetta, obligatoire pour les artisans du Bâtiment), la multirisque pro (locaux, vol, incendie, dégâts des eaux), la mutuelle santé TNS (Loi Madelin déductible), la prévoyance (IJ + invalidité + capital décès) et la cyber assurance (de plus en plus critique avec la digitalisation). Selon votre métier, statut juridique et taille d'entreprise, certaines garanties sont légalement obligatoires (décennale BTP, RC Pro santé/juridique/conseil financier) et d'autres sont fortement recommandées. Cette page-pilier vous oriente vers le bon contrat selon votre profil et compare les 8 principaux assureurs distribués en France."
       legalReference="Code des assurances + Loi Spinetta + Loi Madelin + ACPR + DDA"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🛡️',

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
@@ -32,6 +33,9 @@ export default function AssuranceVtcPage() {
       tagline="L'assurance auto pro spécifique à votre activité de transport de personnes. Conforme aux exigences Uber, Bolt, Heetch et licence VTC."
       legalReference="art. L. 211-1 C. assur. + Loi Grandguillaume 2014"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       intro="L'activité de chauffeur VTC ou taxi nécessite une assurance auto SPÉCIFIQUE qui couvre le transport rémunéré de personnes (l'assurance auto particulier ne suffit PAS). Notre cabinet ORIAS travaille avec les spécialistes du marché (Wakam, Hiscox, Stello, Allianz Pro) pour vous obtenir le meilleur tarif quel que soit votre statut (auto-entrepreneur, SARL, EI) ou votre plateforme (Uber, Bolt, Heetch, location avec chauffeur)."
       benefits={[
         { icon: '🚗', title: 'Conforme licence VTC', desc: 'Carte pro acceptée' },
