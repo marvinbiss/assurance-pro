@@ -397,31 +397,75 @@ export default function Page() {
       faq={[
         {
           q: 'Quelles assurances professionnelles sont obligatoires en France ?',
-          a: 'Décennale (artisans BTP — Loi Spinetta), RC Pro santé (médecins, paramédicaux), RC Pro juridique (avocats, notaires, experts-comptables), RC Pro conseil financier (CGP, CIF, IOBSP — homologation ACPR), RC Pro transport (VTC, taxi), RC Pro sport encadré (coach, moniteur), multirisque local (locataire bail commercial), mutuelle salariés (employeurs), auto pro (RC circulation).',
+          a: 'Décennale (artisans BTP — Loi Spinetta, art. L. 241-1 C. assur.), RC Pro santé (médecins, paramédicaux — art. L. 1142-2 CSP), RC Pro juridique (avocats, notaires, experts-comptables — codes de déontologie), RC Pro conseil financier (CGP, CIF, IOBSP — art. L. 541-3 CMF), RC Pro transport (VTC, taxi — art. L. 3120-1), RC Pro sport encadré (coach — art. L. 321-7), multirisque local (bail commercial), mutuelle salariés (ANI 2013), auto pro (L. 211-1).',
+        },
+        {
+          q: "Que se passe-t-il si je n'ai pas l'assurance pro obligatoire pour mon métier ?",
+          a: "Sanctions cumulées selon le métier : artisan BTP sans décennale = 75 000€ amende + 6 mois prison + interdiction d'exercer (Loi Spinetta). Professionnel santé sans RC = exclusion ordre + responsabilité personnelle illimitée. Conseil financier sans RC ACPR = radiation ORIAS. Employeur sans mutuelle ANI = redressement URSSAF + dommages-intérêts salariés (jusqu'à 6 mois de salaire/personne).",
+        },
+        {
+          q: "Suis-je obligé d'avoir une RC Pro si je suis auto-entrepreneur ?",
+          a: "Obligatoire pour 21 métiers réglementés (BTP, santé, juridique, conseil financier, transport, sport encadré). Pour les AE non-réglementés (digital, marketing, formation, e-commerce), pas d'obligation LÉGALE mais OBLIGATION CONTRACTUELLE dans 78% des appels d'offres B2B : les donneurs d'ordre exigent une attestation RC Pro avant tout contrat.",
+        },
+        {
+          q: 'Quelle est la différence entre RC Pro et RC Exploitation ?',
+          a: "RC EXPLOITATION : dommages causés à un tiers PENDANT l'exploitation (un client glisse dans votre boutique, le café renversé sur le laptop d'un visiteur). RC PROFESSIONNELLE : dommages causés par une FAUTE PROFESSIONNELLE (erreur de conseil, retard de livraison, défaut de prestation). Les deux sont souvent souscrites ensemble dans un pack « RC pro complète » à 200-800€/an pour une TPE.",
         },
         {
           q: 'Quelle assurance pro choisir pour un auto-entrepreneur ?',
           a: 'Pour un AE digital/freelance non-réglementé : RC Pro (89-180€/an) suffit légalement, mais souscrire en plus une mutuelle Madelin (au régime réel) + prévoyance Madelin est fortement recommandé. Pour un AE BTP : décennale OBLIGATOIRE + RC Pro travaux + véhicule pro. Pour un AE VTC/taxi : pack VTC/taxi spécialisé OBLIGATOIRE.',
         },
         {
+          q: "Suis-je couvert par ma RC Pro si je travaille pour un client à l'étranger ?",
+          a: 'Pas automatiquement. Vérifiez la « clause territoriale » de votre contrat : la plupart des RC Pro couvrent UE/EEE par défaut, mais excluent USA/Canada (sinistralité élevée). Extension monde entier (hors USA/Canada) : +15-30% de prime. Extension USA/Canada : +50-100% du fait des indemnités américaines (class actions, dommages punitifs). Indispensable pour SaaS exportateurs.',
+        },
+        {
+          q: 'Suis-je couvert si je commets une erreur dans mon conseil/prestation ?',
+          a: "OUI via la garantie « faute professionnelle » incluse dans la RC Pro. Couvre les conséquences pécuniaires d'une erreur, omission ou négligence professionnelle (mauvais conseil, retard de livraison, défaut de qualité). Plafonds typiques : 150 000€ pour AE digital à 10M€ pour CGP/CIF. Franchise classique : 500-3 000€ selon CA. Hiscox et Allianz Pro sont leaders sur ce risque.",
+        },
+        {
+          q: 'Que couvre la garantie « dommages aux biens confiés » ?',
+          a: "Couvre les biens du client que vous avez en garde, prêt ou dépôt dans le cadre de votre activité (matériel informatique en réparation, vêtements chez le pressing, voiture chez le garagiste, chevaux chez l'éleveur). Plafonds typiques : 30 000-150 000€. Indispensable pour : garage auto, pressing, photographe (matériel client), informaticien (data client), gardien chiens.",
+        },
+        {
           q: 'Combien coûte une assurance professionnelle complète ?',
-          a: 'Pour un AE freelance digital : 200-500€/an pour RC Pro + mutuelle individuelle. Pour un artisan BTP solo : 980-2 380€/an pour pack décennale + RC + auto. Pour une TPE 5 salariés : 2 800-5 800€/an pour pack complet (RC + multirisque + auto + mutuelle collective). Pour une PME 20 salariés : 8 000-25 000€/an.',
+          a: 'Pour un AE freelance digital : 200-500€/an pour RC Pro + mutuelle individuelle. Pour un artisan BTP solo : 980-2 380€/an pour pack décennale + RC + auto. Pour une TPE 5 salariés : 2 800-5 800€/an pour pack complet (RC + multirisque + auto + mutuelle collective). Pour une PME 20 salariés : 8 000-25 000€/an. Pour une ETI 100 salariés : 18-45 000€/an.',
+        },
+        {
+          q: 'Quel plafond de garantie RC Pro choisir ?',
+          a: "Règle empirique : plafond = 3 à 5 fois le sinistre maximum prévisible de votre activité. AE digital/freelance : 150 000-1 M€. PME services : 1-5 M€. Conseil IT critique : 5-10 M€. CGP/CIF : 5 M€ MINIMUM imposé par l'ACPR (art. L. 541-3 CMF). Architectes DPLG : 8 M€ recommandé. Au-delà de 10 M€, structuration en garantie principale + excess layers.",
+        },
+        {
+          q: 'Puis-je résilier mon assurance pro à tout moment ?',
+          a: "OUI après 1 an grâce à la loi Hamon (art. L. 113-15-2 C. assur.) : résiliation à tout moment sans frais, préavis 1 mois. Avant 1 an, résiliation uniquement à l'échéance annuelle (préavis 2 mois — loi Chatel art. L. 113-15-1) ou cas spécifiques (cessation d'activité, changement de statut juridique, déménagement professionnel >50km).",
         },
         {
           q: 'Comment comparer les assurances professionnelles ?',
-          a: 'Méthode : (1) lister les garanties obligatoires de votre métier, (2) définir les plafonds adaptés (RC Pro 1,5 à 10 M€), (3) demander des devis sur EXACTEMENT le même cahier des charges (couverture identique, franchises identiques), (4) comparer prime + qualité service sinistres (avis Trustpilot). Notre cabinet automatise cette comparaison sur 8 assureurs en 24h.',
-        },
-        {
-          q: 'Cyber assurance : utile pour mon entreprise ?',
-          a: "OUI pour 95% des entreprises en 2026. Coût moyen d'un sinistre cyber pour une TPE/PME : 25 000-80 000€ (notification CNIL, rétablissement, perte exploitation, frais juridiques RGPD). Tarif cyber : 80-280€/an pour TPE. ROI évident dès qu'on stocke des données clients (RGPD).",
-        },
-        {
-          q: "Mutuelle d'entreprise : obligation pour quels employeurs ?",
-          a: "Depuis l'ANI 2013 et la loi de sécurisation de l'emploi (effet 1er janvier 2016), TOUS les employeurs du secteur privé doivent proposer une mutuelle santé collective avec MINIMUM 50% de prise en charge employeur. L'absence de mise en place expose à : redressement URSSAF + dommages-intérêts aux salariés non-couverts.",
+          a: 'Méthode : (1) lister les garanties obligatoires de votre métier, (2) définir les plafonds adaptés (RC Pro 1,5 à 10 M€), (3) demander des devis sur EXACTEMENT le même cahier des charges (couverture identique, franchises identiques), (4) comparer prime + qualité service sinistres (avis Trustpilot, délai moyen indemnisation), (5) vérifier les exclusions. Notre cabinet automatise cette comparaison sur 8 assureurs en 24h.',
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance professionnelle ?',
-          a: 'Devis personnalisé via notre formulaire : 24h ouvrées avec 3-5 propositions de nos 8 assureurs partenaires. Souscription : 24-48h. Effet du contrat : possible dès le 1er du mois suivant ou immédiat (procédure express +120€) pour démarrage urgent.',
+          a: 'Devis personnalisé via notre formulaire : 24h ouvrées avec 3-5 propositions de nos 8 assureurs partenaires (Allianz Pro, AXA Pro, MMA, MAAF, Hiscox, April, Generali, Wakam). Souscription : 24-48h après réception des justificatifs. Effet du contrat : possible dès le 1er du mois suivant ou immédiat (procédure express +120€) pour démarrage urgent.',
+        },
+        {
+          q: "Quel délai pour obtenir une attestation d'assurance pro ?",
+          a: "Attestation provisoire : immédiate après paiement de la première prime (24-48h en moyenne). Attestation définitive : 5-10 jours ouvrés. Procédure express : attestation sous 4h ouvrées moyennant +120€ (utile pour signature urgente d'un appel d'offres ou démarrage de chantier). Tous nos contrats incluent l'attestation téléchargeable en ligne 24/7 via espace client.",
+        },
+        {
+          q: 'Cyber assurance : utile pour mon entreprise ?',
+          a: "OUI pour 95% des entreprises en 2026. Coût moyen d'un sinistre cyber pour une TPE/PME : 25 000-80 000€ (notification CNIL, rétablissement, perte exploitation, frais juridiques RGPD art. 33). Tarif cyber : 80-280€/an pour TPE. ROI évident dès qu'on stocke des données clients. Directive NIS 2 renforce les obligations depuis octobre 2024 pour 15 000+ entités essentielles/importantes.",
+        },
+        {
+          q: "Mutuelle d'entreprise : obligation pour quels employeurs ?",
+          a: "Depuis l'ANI 2013 et la loi de sécurisation de l'emploi (effet 1er janvier 2016), TOUS les employeurs du secteur privé doivent proposer une mutuelle santé collective avec MINIMUM 50% de prise en charge employeur. Contrat conforme au « panier de soins » minimum (décret 2014-1025). L'absence de mise en place expose à : redressement URSSAF + dommages-intérêts aux salariés non-couverts.",
+        },
+        {
+          q: "Suis-je couvert si je change d'activité en cours de contrat ?",
+          a: "OUI à condition de DÉCLARER le changement à votre assureur sous 15 jours (art. L. 113-2 C. assur.). Conséquences : avenant au contrat avec ajustement de prime, éventuelle suppression de garanties devenues inutiles ou ajout de nouvelles. Non-déclaration = nullité du contrat (art. L. 113-8) ou réduction proportionnelle de l'indemnité (art. L. 113-9). Toujours déclarer même un changement mineur.",
+        },
+        {
+          q: 'Que se passe-t-il si je ne déclare pas un sinistre dans les délais ?',
+          a: "Délais légaux art. L. 113-2 C. assur. : 5 jours ouvrés pour sinistre courant, 2 jours pour vol, 24h pour mortalité du bétail, 10 jours pour catastrophe naturelle. Hors délai = l'assureur peut invoquer la déchéance de garantie SI il prouve un préjudice causé par le retard. Bonne pratique : déclarer même en cas de doute (sans réserve sur la nature du sinistre).",
         },
       ]}
     />

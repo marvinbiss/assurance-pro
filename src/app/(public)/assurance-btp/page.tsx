@@ -320,31 +320,75 @@ export default function Page() {
       faq={[
         {
           q: 'Quelles assurances sont obligatoires en BTP ?',
-          a: "Décennale (Loi Spinetta — TOUS artisans BTP), garantie biennale (art. 1792-3 C. civ.), garantie parfait achèvement (art. 1792-6 C. civ.). Pour le maître d'ouvrage : dommages-ouvrage (L. 242-1 C. assur.). Pour les marchés publics : garantie financière (cautionnement bancaire). RC Pro travaux et multirisque pro non obligatoires stricto sensu mais EXIGÉES par 100% des donneurs d'ordre B2B.",
+          a: "Décennale (Loi Spinetta — TOUS artisans BTP, art. L. 241-1 C. assur.), garantie biennale (art. 1792-3 C. civ. — équipements dissociables 2 ans), garantie parfait achèvement (art. 1792-6 C. civ. — 1 an post-réception). Pour le maître d'ouvrage : dommages-ouvrage (L. 242-1 C. assur.). Pour marchés publics : garantie financière (cautionnement bancaire). RC Pro travaux EXIGÉE par 100% des donneurs d'ordre B2B.",
+        },
+        {
+          q: "Que se passe-t-il si je n'ai pas de décennale en tant qu'artisan BTP ?",
+          a: "Sanctions cumulées art. L. 243-3 C. assur. + L. 1142-1 CSP : amende jusqu'à 75 000€, peine de 6 mois de prison, interdiction d'exercer, mise en demeure de l'ordre des architectes, exclusion des chantiers, responsabilité personnelle ILLIMITÉE sur 10 ans (responsabilité présumée art. 1792 C. civ.). Sinistre médian décennal : 45 000€, jusqu'à 800k€ pour effondrement structurel.",
+        },
+        {
+          q: "Suis-je obligé d'avoir une attestation décennale avant chaque chantier ?",
+          a: "OUI, art. L. 241-2 C. assur. : l'artisan doit pouvoir justifier de sa décennale AVANT ouverture de chantier (date d'effet du contrat antérieure à la DROC — Déclaration Réglementaire d'Ouverture de Chantier). Le maître d'ouvrage et le donneur d'ordre principal exigent l'attestation nominative mentionnant le chantier, la nature des travaux et la période de couverture. Sans attestation = chantier non démarrable.",
+        },
+        {
+          q: 'Suis-je couvert pour un sinistre survenu 9 ans après la fin du chantier ?',
+          a: "OUI si le sinistre relève de la décennale (atteinte à la solidité de l'ouvrage ou impropriété à destination — art. 1792 C. civ.) ET que vous étiez assuré AU MOMENT de la réception des travaux (date de la base de garantie). La décennale est une « assurance à la base reclam » : c'est l'assureur de l'année de la réception qui paie, même si vous avez changé d'assureur depuis.",
+        },
+        {
+          q: 'Suis-je couvert si je sous-traite une partie du chantier ?',
+          a: "OUI mais sous conditions. Vous restez responsable solidairement vis-à-vis du maître d'ouvrage (art. 1792 C. civ.). Votre décennale couvre les travaux exécutés par vos sous-traitants SI : (1) vous avez vérifié leur attestation décennale en cours de validité, (2) vous avez les autorisations contractuelles, (3) la nature des travaux figure dans votre déclaration d'activité.",
+        },
+        {
+          q: 'Que couvre la garantie « tous risques chantier » (TRC) ?',
+          a: "Dommages survenant AU CHANTIER LUI-MÊME PENDANT les travaux : incendie, vol de matériel, vandalisme, effondrement partiel, dégâts des eaux, tempête, catastrophes naturelles. Souvent souscrite par le maître d'ouvrage pour les gros chantiers (>200 k€). Distincte de la décennale (post-réception). Plafonds typiques : valeur de l'ouvrage à reconstruire + 20% (TVA, frais de démolition).",
+        },
+        {
+          q: 'Quelle différence entre décennale et tous risques chantier (TRC) ?',
+          a: "DÉCENNALE = couvre les dommages affectant la solidité de l'ouvrage 10 ANS APRÈS RÉCEPTION (responsabilité de l'artisan envers le maître d'ouvrage, art. 1792 C. civ.). TRC (Tous Risques Chantier) = couvre les dommages survenant AU CHANTIER LUI-MÊME PENDANT les travaux. Souvent souscrite par le maître d'ouvrage pour les gros chantiers. Les deux sont complémentaires et non substituables.",
+        },
+        {
+          q: "L'assurance dommages-ouvrage (DO) est-elle vraiment obligatoire ?",
+          a: "OUI pour TOUT maître d'ouvrage (particulier ou pro) qui fait construire un ouvrage relevant de la décennale (art. L. 242-1 C. assur.). Objectif : pré-financer la réparation des sinistres décennaux SANS attendre la recherche de responsabilité. Sanctions absence : impossibilité de revendre dans les 10 ans (notaire refuse), responsabilité personnelle illimitée, amende 75 000€ pour pro.",
         },
         {
           q: "Combien coûte l'assurance d'un artisan BTP ?",
-          a: 'Pack complet (décennale + RC + véhicule pro) : démarre à 980€/an pour AE peintre solo, 1 280-1 980€/an pour AE plombier/électricien, 1 580-2 380€/an pour AE maçon/charpentier, 1 880-2 680€/an pour couvreur-zingueur. SARL avec salariés : 3 800-25 000€/an selon métier et taille.',
+          a: 'Pack complet (décennale + RC + véhicule pro) : démarre à 980€/an pour AE peintre solo, 1 280-1 980€/an pour AE plombier/électricien, 1 580-2 380€/an pour AE maçon/charpentier, 1 880-2 680€/an pour couvreur-zingueur. SARL avec salariés : 3 800-25 000€/an selon métier et taille. Variables : sinistralité métier (couvreur > maçon > plombier), zone, CA, ancienneté.',
+        },
+        {
+          q: 'RGE photovoltaïque : assurance plus chère ?',
+          a: "OUI — +30 à +60% vs un électricien BTP standard. Justification : sinistralité AQC élevée (9,2% sur les installations PV — incendies onduleurs, défauts d'étanchéité toiture). Tarif type 2026 : 1 880-3 200€/an pour AE RGE PV, 9 200-16 000€/an pour SARL 5 salariés. Garantie obligatoire pour conserver le label RGE et bénéficier de la prime à l'autoconsommation (article L. 314-1-1 Code énergie).",
+        },
+        {
+          q: "Désamianteur SS3 : combien coûte l'assurance ?",
+          a: "Pack complet pour PME désamianteur SS3 (8 salariés) : 15 000-25 000€/an. Justification : risques majorés (santé travailleurs, pollution, responsabilité tiers exposés à l'amiante — art. L. 4412-1 C. travail), obligations réglementaires renforcées (formation, EPI, plan de retrait — décret 2012-639). Garanties spécifiques : RC Pro amiante, garantie subséquente longue (jusqu'à 30 ans post-cessation).",
+        },
+        {
+          q: 'Puis-je résilier ma décennale à tout moment ?',
+          a: "OUI après 1 an grâce à la loi Hamon (art. L. 113-15-2 C. assur.) : résiliation à tout moment sans frais, préavis 1 mois. ATTENTION : nouvelle décennale OBLIGATOIRE avant prise d'effet de la résiliation pour éviter une rupture de couverture (sanction Loi Spinetta). Les contrats avec « clause de reprise du passé » garantissent la continuité sur les chantiers antérieurs (essentiel).",
         },
         {
           q: 'SMABTP ou autre assureur BTP ?',
           a: "SMABTP (Société Mutuelle d'Assurance du Bâtiment et des Travaux Publics) est l'assureur historique du secteur BTP en France, choisi par défaut par 50% des entreprises BTP. Mais NOTRE CABINET compare systématiquement avec MAAF Pro, Allianz Pro BTP, AXA Pro BTP, Hiscox, April Pro, Generali Pro, Wakam — économies typiques 15-30% pour des garanties équivalentes.",
         },
         {
-          q: 'Quelle différence entre décennale et tous risques chantier (TRC) ?',
-          a: "DÉCENNALE = couvre les dommages affectant la solidité de l'ouvrage 10 ANS APRÈS RÉCEPTION (responsabilité de l'artisan envers le maître d'ouvrage). TRC (Tous Risques Chantier) = couvre les dommages survenant AU CHANTIER LUI-MÊME PENDANT les travaux (incendie, vol matériel, effondrement partiel). Souvent souscrite par le maître d'ouvrage pour les gros chantiers.",
-        },
-        {
-          q: 'RGE photovoltaïque : assurance plus chère ?',
-          a: "OUI — +30 à +60% vs un électricien BTP standard. Justification : sinistralité AQC élevée (9,2% sur les installations PV — incendies onduleurs, défauts d'étanchéité toiture). Tarif type 2026 : 1 880-3 200€/an pour AE RGE PV, 9 200-16 000€/an pour SARL 5 salariés. Garantie obligatoire pour conserver le label RGE et bénéficier de la prime à l'autoconsommation.",
-        },
-        {
-          q: "Désamianteur SS3 : combien coûte l'assurance ?",
-          a: "Pack complet pour PME désamianteur SS3 (8 salariés) : 15 000-25 000€/an. Justification : risques majorés (santé travailleurs, pollution, responsabilité tiers exposés à l'amiante), obligations réglementaires renforcées (formation, EPI, plan de retrait). Garanties spécifiques requises : RC Pro amiante, garantie subséquente longue (jusqu'à 30 ans post-cessation), couverture des frais de dépollution.",
-        },
-        {
           q: 'Combien de temps pour un devis assurance BTP ?',
-          a: 'Devis personnalisé via notre formulaire : 24-48h ouvrées avec 3-5 propositions de nos assureurs partenaires BTP (SMABTP, MAAF Pro, Allianz Pro BTP, AXA Pro, Hiscox, April Pro). Souscription : 24-48h. Effet du contrat : possible dès le 1er du mois suivant ou immédiat (procédure express +120€) pour démarrage chantier urgent.',
+          a: 'Devis personnalisé via notre formulaire : 24-48h ouvrées avec 3-5 propositions de nos assureurs partenaires BTP (SMABTP, MAAF Pro, Allianz Pro BTP, AXA Pro, Hiscox, April Pro). Souscription : 24-48h. Effet du contrat : possible dès le 1er du mois suivant ou immédiat (procédure express +120€) pour démarrage chantier urgent. Attestation décennale nominative émise sous 48h.',
+        },
+        {
+          q: "Quel délai pour obtenir l'attestation décennale nominative pour un chantier ?",
+          a: "Attestation générale : émise sous 48h après souscription. Attestation NOMINATIVE par chantier (exigée par maître d'ouvrage public ou architecte) : 24-72h ouvrées sur demande, avec mention de l'adresse du chantier, nature des travaux, période de couverture. Procédure express : 4h ouvrées moyennant +120€. Toutes nos attestations sont téléchargeables 24/7 via l'espace client.",
+        },
+        {
+          q: 'Que se passe-t-il en cas de sinistre décennal pendant les 10 ans ?',
+          a: "Procédure art. L. 242-2 C. assur. : (1) déclaration sinistre au DO (dommages-ouvrage) sous 5 jours, (2) expertise contradictoire dans les 60 jours, (3) le DO pré-finance la réparation, (4) le DO se retourne contre les assureurs décennaux des artisans responsables (subrogation). Le DO indemnise SANS attendre la recherche de responsabilité = paiement rapide pour le maître d'ouvrage.",
+        },
+        {
+          q: 'Je travaille en autoconstruction (CCMI) : suis-je concerné par la décennale ?',
+          a: "Si vous êtes le constructeur (CMI = Constructeur de Maisons Individuelles, loi du 19/12/1990) : OUI, décennale OBLIGATOIRE + garantie de livraison (art. L. 231-1 CCH) + garantie de remboursement + assurance dommages-ouvrage. Si vous êtes le particulier qui auto-construit : pas de décennale (vous êtes votre propre client) mais responsabilité décennale envers l'acquéreur en cas de revente sous 10 ans.",
+        },
+        {
+          q: 'Suis-je couvert si un sous-traitant non-déclaré cause un sinistre ?',
+          a: "NON. Le sous-traitant non-déclaré n'est pas couvert par votre décennale. Vous restez solidairement responsable vis-à-vis du maître d'ouvrage (art. 1792 C. civ.) mais votre assureur peut refuser la prise en charge (fausse déclaration intentionnelle, art. L. 113-8 C. assur.). Bonne pratique : déclarer TOUS les sous-traitants à l'assureur + exiger leur attestation décennale.",
         },
       ]}
     />
