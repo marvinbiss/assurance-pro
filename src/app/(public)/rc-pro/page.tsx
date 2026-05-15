@@ -28,12 +28,13 @@ const PROFESSIONS_RC_PRO = [
   { name: 'Consultant', slug: 'consultant' },
   { name: 'Freelance IT', slug: 'freelance-it' },
   { name: 'Agence web', slug: 'agence-web' },
-  { name: 'Designer', slug: 'designer-graphique' },
   { name: 'Photographe', slug: 'photographe' },
-  { name: 'Coach pro', slug: 'coach-professionnel' },
   { name: 'Formateur', slug: 'formateur' },
   { name: 'Community manager', slug: 'community-manager' },
-  { name: 'Traducteur', slug: 'traducteur' },
+  { name: 'Expert-comptable', slug: 'expert-comptable' },
+  { name: 'Coach sportif', slug: 'coach-sportif' },
+  { name: 'Coiffeur', slug: 'coiffeur' },
+  { name: 'Informatique', slug: 'informatique' },
   { name: 'Auto-entrepreneur', slug: 'auto-entrepreneur' },
 ]
 

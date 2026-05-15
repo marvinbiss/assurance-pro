@@ -316,7 +316,7 @@ export async function PilierLayout({
               {relatedMetiers.map((m) => (
                 <Link
                   key={m.slug}
-                  href={`/${m.slug}`}
+                  href={`/${slug}/${m.slug}`}
                   className="group flex items-center justify-between gap-2 rounded-xl border border-charcoal-100 bg-white px-4 py-3.5 text-sm font-semibold text-charcoal-800 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-200 hover:bg-sand-50 hover:text-primary-700"
                 >
                   <span>{m.name}</span>

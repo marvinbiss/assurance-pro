@@ -140,6 +140,23 @@ const nextConfig = {
       { source: '/sante-paramedical', destination: '/rc-pro/sante-paramedical', permanent: true },
       { source: '/paramedical', destination: '/rc-pro/sante-paramedical', permanent: true },
       { source: '/transport-marchandises', destination: '/rc-pro/transport-marchandises', permanent: true },
+      // Aliases métiers décennale slugs longs (sitemap.ts mismatch vs dirs)
+      { source: '/charpentier-bois', destination: '/assurance-decennale/charpentier-bois', permanent: true },
+      { source: '/etancheur', destination: '/assurance-decennale/etancheur', permanent: true },
+      { source: '/étancheur', destination: '/assurance-decennale/etancheur', permanent: true },
+      { source: '/facadier-ite', destination: '/assurance-decennale/facadier-ite', permanent: true },
+      { source: '/façadier', destination: '/assurance-decennale/facadier-ite', permanent: true },
+      { source: '/facadier', destination: '/assurance-decennale/facadier-ite', permanent: true },
+      { source: '/installateur-photovoltaique', destination: '/assurance-decennale/installateur-photovoltaique', permanent: true },
+      { source: '/menuisier', destination: '/assurance-decennale/menuisier-interieur', permanent: true },
+      { source: '/menuisier-interieur', destination: '/assurance-decennale/menuisier-interieur', permanent: true },
+      { source: '/plaquiste-platrier', destination: '/assurance-decennale/plaquiste-platrier', permanent: true },
+      { source: '/platrier', destination: '/assurance-decennale/plaquiste-platrier', permanent: true },
+      // Aliases métiers RC Pro complémentaires (sitemap slugs)
+      { source: '/community-manager', destination: '/rc-pro/community-manager', permanent: true },
+      { source: '/designer-graphique', destination: '/rc-pro', permanent: false },
+      { source: '/designer', destination: '/rc-pro', permanent: false },
+      { source: '/traducteur', destination: '/rc-pro', permanent: false },
       // Hub dirs sans page.tsx → redirect vers contenus existants similaires
       { source: '/attestation', destination: '/attestation/decennale', permanent: false },
       { source: '/comparateur', destination: '/comparateur-assurance-professionnelle', permanent: false },
