@@ -1109,6 +1109,85 @@ li {
   }
 }
 
+/* Btn shine — micro-interaction premium (effet "polish luxe")
+   Ajoute un reflet animé qui traverse le bouton au hover */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.btn-shine:hover::before {
+  transform: translateX(100%);
+}
+.btn-shine > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Card luminescence — border lumineux au hover */
+.card-lumi {
+  position: relative;
+  isolation: isolate;
+}
+.card-lumi::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    transparent 30%,
+    rgba(232, 107, 75, 0.6) 50%,
+    transparent 70%
+  );
+  mask:
+    linear-gradient(white, white) content-box,
+    linear-gradient(white, white);
+  -webkit-mask:
+    linear-gradient(white, white) content-box,
+    linear-gradient(white, white);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.card-lumi:hover::before {
+  opacity: 1;
+}
+
+/* Drop cap éditorial — premier paragraphe avec capitale ornementale
+   Inspiration : NYT Magazine, Vogue. À appliquer sélectivement sur articles. */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  line-height: 0.9;
+  font-weight: 700;
+  margin: 0.1em 0.1em 0 0;
+  color: var(--brand-primary-dark);
+  font-variation-settings:
+    'opsz' 144,
+    'SOFT' 100,
+    'wght' 800;
+}
+
 /* Marquee horizontal — défilement continu (logos partenaires)
    Inspiration Magic UI marquee */
 .marquee {

@@ -620,24 +620,33 @@ export default function HomePage() {
             leur service sinistres.
           </p>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
-            {ASSUREURS.map((p) => (
-              <div
-                key={p.name}
-                className="group flex items-center gap-3 rounded-xl border border-charcoal-100 bg-white px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-charcoal-200 hover:shadow-soft"
-                title={p.name}
-              >
-                {/* Mark stylé avec couleur officielle assureur */}
-                <span
-                  className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg font-heading text-sm font-extrabold text-white transition-transform group-hover:scale-110"
-                  style={{ backgroundColor: p.color }}
-                  aria-hidden="true"
-                >
-                  {p.initials}
-                </span>
-                <span className="font-heading text-sm font-bold text-charcoal-800 transition-colors group-hover:text-charcoal-900">
-                  {p.name}
-                </span>
+          {/* Marquee infini — défilement seamless type Vercel/Stripe */}
+          <div
+            className="marquee"
+            style={{ '--marquee-duration': '40s', '--marquee-gap': '2rem' } as React.CSSProperties}
+            role="marquee"
+            aria-label="Logos assureurs partenaires"
+          >
+            {[0, 1].map((dup) => (
+              <div key={dup} className="marquee__track" aria-hidden={dup === 1}>
+                {ASSUREURS.map((p) => (
+                  <div
+                    key={`${dup}-${p.name}`}
+                    className="group flex flex-shrink-0 items-center gap-3 rounded-xl border border-charcoal-100 bg-white px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-charcoal-200 hover:shadow-soft"
+                    title={p.name}
+                  >
+                    <span
+                      className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg font-heading text-sm font-extrabold text-white transition-transform group-hover:scale-110"
+                      style={{ backgroundColor: p.color }}
+                      aria-hidden="true"
+                    >
+                      {p.initials}
+                    </span>
+                    <span className="font-heading text-sm font-bold text-charcoal-800 transition-colors group-hover:text-charcoal-900">
+                      {p.name}
+                    </span>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
