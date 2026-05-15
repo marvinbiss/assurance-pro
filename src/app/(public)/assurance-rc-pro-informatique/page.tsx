@@ -4,6 +4,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +33,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Guide pratique pour souscrire votre assurance RC Pro informatique : critères de choix, comparatif des 5 principaux assureurs spécialisés (Hiscox leader IT, Stello digital pure, Allianz Pro, MMA, AXA), avantages de la cyber-assurance combinée, et démarches de souscription en ligne en 5 minutes."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Loi 78-17 (RGPD)"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚡',

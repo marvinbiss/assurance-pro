@@ -5,6 +5,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +35,10 @@ export default function Page() {
       intro="L'assurance association loi 1901 est le pack standard pour structures associatives à but non lucratif (associations sportives, culturelles, sociales, humanitaires, syndicats professionnels). Particularité : la responsabilité des dirigeants BÉNÉVOLES peut être engagée personnellement en cas de faute de gestion (Cass. 1re civ., 1996) — d'où l'importance de la RC Mandataire Social bénévole. Le pack standard combine 4 garanties : (1) RC pro association — couvre les dommages causés aux adhérents (chute en activité, blessure pendant compétition sportive, incident en camp colonie) et aux tiers, (2) multirisque local (si association a un siège ou local d'activité), (3) RC dirigeants bénévoles (faute de gestion) — INDISPENSABLE depuis jurisprudence 1996, (4) protection juridique association (litige adhérent, contentieux subvention). Tarifs 2026 : 280-1 480 €/an selon taille et activité."
       legalReference="Loi 1901 + Code des assurances + Jurisprudence Cass. 1re civ. 1996 (RC dirigeants bénévoles)"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🤝',

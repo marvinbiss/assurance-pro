@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="Contrairement à une idée reçue, PRO BTP (institution paritaire) ne propose PAS directement d'assurance décennale BTP. PRO BTP est spécialisée en mutuelle santé et retraite complémentaire pour le BTP. Pour la décennale, les artisans BTP doivent passer par : SMABTP (institution paritaire dédiée à l'assurance BTP), IRP Auto BTP (mutualiste BTP), April Pro BTP (privé), ou les grands assureurs (Allianz Pro BTP, MMA Pro BTP, AXA Pro BTP). Cette page clarifie qui fait quoi dans la galaxie PRO BTP."
       legalReference="Loi Spinetta + art. 1792 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

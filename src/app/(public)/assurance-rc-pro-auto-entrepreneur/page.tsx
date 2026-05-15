@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Souscrire une assurance RC Pro pour votre activité d'auto-entrepreneur (ou micro-entrepreneur) est une démarche simplifiée : pas besoin de Kbis, pas besoin de bilan, juste un SIRET valide et une attestation d'activité ACOSS. Cette page détaille les pièces nécessaires, le comparatif des 5 assureurs leaders (Hiscox, Stello, Allianz Pro, MMA Pro, April Pro BTP) et les démarches de souscription en ligne en 5 minutes."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚡',

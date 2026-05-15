@@ -6,6 +6,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +36,10 @@ export default function Page() {
       intro="L'assurance consultant indépendant désigne le pack standard pour un consultant exerçant en cabinet personnel : conseil management, marketing, RH, finance, IT, transformation digitale, stratégie. Particularité du métier : interventions chez des CLIENTS INSTITUTIONNELS (grands groupes, ETI, collectivités) qui exigent des plafonds RC Pro élevés (3-5 M€ minimum, parfois 10 M€) et des certifications spécifiques (ISO 9001, ISO 27001 pour conseil IT). Le pack standard combine 5 garanties : RC Pro 3-5 M€ (couvre les conséquences d'un mauvais conseil ou d'une recommandation erronée), mutuelle TNS Madelin (régime réel), prévoyance Madelin (IJ + invalidité — critique car revenu dépendant de la présence physique), cyber assurance (manipulation données client) et protection juridique (litige client, contrôle URSSAF). Les tarifs 2026 démarrent à 880 € HT/an pour un consultant junior solo jusqu'à 4 800 € HT/an pour un consultant senior IT/finance."
       legalReference="Code des assurances + Loi Madelin + RGPD (manipulation données client)"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💼',

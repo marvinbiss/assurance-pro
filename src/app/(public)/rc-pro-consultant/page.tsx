@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La RC Pro consultant est l'assurance professionnelle indispensable pour tout consultant indépendant ou cabinet de conseil : management/stratégie, marketing, RH, finance/business, IT, formation, coaching. Elle couvre les dommages causés à un client en cas d'erreur de conseil, faute de gestion, retard de livraison majeur ou conseil financier inadapté. Sinistre moyen consultant : 30-80k€ (correction projet, perte CA client, dommages moraux)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💡',

@@ -6,6 +6,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +36,10 @@ export default function Page() {
       intro="La RC Pro photographe couvre les sinistres typiques du métier : perte de fichiers numériques (carte SD défectueuse, disque dur crashé, vol équipement avec photos non sauvegardées), casse de matériel client (vase, décoration de mariage), droit à l'image (publication non autorisée), retard de livraison sur événement (non-respect contractuel mariage), erreur de cadrage majeure non rattrapable. Pour les photographes mariage, le risque #1 est la PERTE DE FICHIERS — un mariage non livré peut générer 8 000-50 000€ de dommages-intérêts. Tarifs 2026 : 280-680€/an pour AE photographe, 580-1 480€/an pour SARL studio avec 1-3 salariés. Cette page distingue les profils et détaille les garanties indispensables."
       legalReference="Code des assurances L. 113-1 + Code civil (responsabilité contractuelle) + RGPD (droit à l'image)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '📷',

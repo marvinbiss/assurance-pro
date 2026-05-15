@@ -6,6 +6,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +32,10 @@ export default function Page() {
       intro="L'assurance décennale photovoltaïque est OBLIGATOIRE pour tout installateur de panneaux solaires en France (Loi Spinetta — art. L. 241-1 C. assur.) et CONDITIONNE le maintien de la qualification RGE (Reconnu Garant Environnement) qui est elle-même requise pour permettre aux clients de bénéficier de la prime à l'autoconsommation et de MaPrimeRénov'. Sinistralité AQC SYCODÉS 2024 : 9,2% (3e métier le plus sinistré du BTP) — principalement liée aux incendies d'onduleurs, aux défauts d'étanchéité de toiture (passage de câbles), et aux malfaçons sur les fixations (arrachements lors de tempêtes). Tarifs 2026 majorés de 30-90% vs un électricien BTP standard : 880-1 680 €/an pour un AE, 9 200-16 000 €/an pour SARL 5 salariés. Cette page détaille les spécificités."
       legalReference="Loi Spinetta (L. 241-1 C. assur.) + Décret RGE (qualification Qualibat / Qualit'EnR)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '☀️',

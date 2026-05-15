@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La garantie décennale est un mécanisme légal complexe impliquant 4 acteurs (constructeur, maître d'ouvrage, assureur, expert) et plusieurs étapes : souscription avant chantier, attestation au MO, déclaration de sinistre, expertise, indemnisation. Cette page démystifie le fonctionnement réel de la décennale et explique chaque étape avec délais et obligations légales."
       legalReference="Loi Spinetta + art. 1792 Code civil + art. L. 241-1 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '1️⃣',

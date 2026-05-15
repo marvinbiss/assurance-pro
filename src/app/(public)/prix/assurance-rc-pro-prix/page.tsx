@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Comparatif détaillé des prix RC Pro 2026 entre les 5 assureurs leaders : Hiscox, Stello, Allianz Pro, MMA Pro, AXA Pro. Cette page met en regard les tarifs précis observés pour chaque combinaison activité × statut, vous permettant d'identifier rapidement le best price pour votre profil."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🆚',

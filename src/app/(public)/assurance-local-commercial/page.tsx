@@ -20,6 +20,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -51,6 +56,10 @@ export default function Page() {
       intro="L'assurance local commercial (souvent appelée multirisque commerciale ou MRP — Multirisque Professionnelle) est une garantie qui couvre votre lieu d'exploitation contre les principaux risques : incendie, dégâts des eaux, vol, vandalisme, événements climatiques, bris de glace, ainsi que votre responsabilité civile vis-à-vis des tiers (clients, voisins, fournisseurs). Elle est généralement obligatoire de fait : la clause d'assurance figure dans 100% des baux commerciaux signés en France (art. 1733 et 1719 du Code civil — obligation du locataire envers le bailleur). Le tarif moyen pour un local de 80 m² en zone urbaine démarre à 280 € HT/an pour une couverture standard, jusqu'à 1 800 €/an pour un commerce avec stock important ou activité sensible (bijouterie, électronique). Cette page détaille les garanties indispensables, les options à activer selon votre activité (commerce, restaurant, bureau, atelier), les tarifs 2026 par profil et les pièges à éviter (sous-évaluation du contenu, exclusion vol par effraction la nuit)."
       legalReference="Article 1733 et 1719 du Code civil + Loi du 6 juillet 1989 + Loi Pinel 2014 (baux commerciaux)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🏢',

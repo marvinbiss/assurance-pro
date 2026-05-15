@@ -7,6 +7,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +33,10 @@ export default function Page() {
       intro="L'assurance décennale charpentier est OBLIGATOIRE pour tout artisan charpentier-bois ou charpentier-métallier en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 10,1% — 5e métier le plus sinistré du BTP. Sinistres principaux : malfaçons sur charpente traditionnelle (poutres, chevrons, pannes), défauts fermettes industrielles (calcul charges, contreventement), ossature bois (MOB) mal dimensionnée, traitement xylophages insuffisant, ferrures de jonction défaillantes. Tarifs 2026 : 690-1 320 €/an pour AE (CA <50k€), 7 200-14 800 €/an pour SARL avec 5 salariés."
       legalReference="Loi Spinetta + DTU 31.1 (charpente bois) + Eurocode 5 (calcul structures bois)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

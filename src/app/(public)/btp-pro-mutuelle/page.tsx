@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,8 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Les mutuelles santé dédiées aux professionnels du Bâtiment et des Travaux Publics se distinguent par des garanties calibrées sur la sinistralité spécifique au secteur : accidents du travail fréquents (chutes, écrasement, blessures outillage), exposition produits (amiante, plomb, peinture), médecines douces utiles (ostéo, kiné), hospitalisation. Cette page compare les 4 leaders du segment (PRO BTP, April Pro Santé, Harmonie Mutuelle BTP, MMA Mutuelle Pro) avec tarifs précis et critères de choix par profil."
       legalReference="Loi Madelin (art. 154 bis CGI) pour TNS + ANI 2013 pour salariés"
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '🏗️',

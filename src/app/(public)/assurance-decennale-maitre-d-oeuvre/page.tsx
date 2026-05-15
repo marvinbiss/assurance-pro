@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="Le maître d'œuvre (MOE), le bureau d'études techniques (BET), l'architecte DPLG/ENSA et l'économiste de la construction sont des constructeurs au sens de la Loi Spinetta (art. 1792-1 Code civil). Ils sont donc soumis à l'obligation décennale comme les artisans BTP, mais avec des spécificités : responsabilité de conception (vs exécution), plafonds élevés requis (jusqu'à 5M€), et risques aggravés en cas de coordination défaillante entre corps d'état."
       legalReference="Loi Spinetta + art. 1792-1 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

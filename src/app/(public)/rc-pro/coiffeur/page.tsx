@@ -6,6 +6,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +36,10 @@ export default function Page() {
       intro="La RC Pro coiffeur couvre les dommages causés aux clients dans le cadre de l'activité de coiffure : brûlures du cuir chevelu (mauvaise utilisation du fer, eau trop chaude), allergies aux produits de coloration ou de décoloration (test allergique non effectué), casse d'objets personnels du client (lunettes, portable posé sur le meuble), chute en salon (sol glissant). Pour les professions réglementées (coiffeurs ayant le Brevet Professionnel coiffure, obligation Code de la santé publique pour les actes invasifs comme l'épilation à la cire chaude), la RC Pro est OBLIGATOIRE. Pour les coiffeurs à domicile : extension assurance habitation pro indispensable. Tarifs 2026 : 220-580€/an pour AE coiffeur à domicile, 580-1 200€/an pour salon avec 1-3 salariés."
       legalReference="Code des assurances L. 113-1 + Code de la santé publique (actes invasifs)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '✂️',

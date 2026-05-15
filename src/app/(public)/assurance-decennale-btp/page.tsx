@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="L'assurance décennale BTP est obligatoire pour tous les professionnels du Bâtiment et des Travaux Publics intervenant sur la structure ou les éléments faisant corps d'un ouvrage (Loi Spinetta 1978 + art. 1792 Code civil). Elle couvre pendant 10 ans à compter de la réception les dommages affectant la solidité de l'ouvrage ou le rendant impropre à sa destination. 52 métiers BTP sont concernés : du gros œuvre (maçon, charpentier) au second œuvre (plombier, électricien) en passant par les finitions (peintre, carreleur)."
       legalReference="Loi Spinetta 1978 + art. 1792 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

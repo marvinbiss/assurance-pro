@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,9 @@ export default function Page() {
       intro="L'assurance Responsabilité Civile Professionnelle (RC Pro) est imposée légalement à tout chauffeur VTC inscrit au registre EVTC (décret 2014-371 du 26 mars 2014 + Code des transports R. 3122-3). Elle se distingue de l'assurance automobile classique : la RC Pro VTC couvre les dommages causés aux passagers et tiers dans l'exercice professionnel, tandis que l'assurance auto couvre le véhicule lui-même."
       legalReference="Décret 2014-371 + Code des transports R. 3122-3 + art. L. 124-3 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '⚖️',

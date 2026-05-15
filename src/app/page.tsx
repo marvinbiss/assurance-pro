@@ -18,17 +18,18 @@ import {
   Heart,
   Car,
   Lock,
-  CheckCircle2,
   Clock,
   Users,
-  Zap,
   Star,
   TrendingDown,
   Award,
-  Quote,
 } from 'lucide-react'
 import { TrustBadgesRow } from '@/components/conversion/TrustBadgesRow'
 import { MockOfferCard } from '@/components/home/MockOfferCard'
+import { DevisCTASection, EditorialProcessSteps, EditorialTestimonial } from '@/components/premium'
+import { IllustrationForMetier } from '@/components/premium/illustrations'
+import { CountUp } from '@/components/motion/CountUp'
+import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const metadata: Metadata = {
@@ -50,14 +51,17 @@ interface Vertical {
   badge?: string
   metric: string
   span?: string
-  image: string
+  /** Slug du métier — passé au dispatcher IllustrationForMetier */
+  metierSlug: string
+  /** Aria-label décrivant l'illustration line-art */
   imageAlt: string
+  /** @deprecated Conservé pour migration future, non utilisé (anti-pattern DESIGN.md stock photo) */
+  image?: string
 }
 
-// Photos Unsplash optimisées (WebP + auto-format + crop).
-// next.config.js whitelist images.unsplash.com via remotePatterns.
-// On utilise <img> HTML standard (pas next/image) pour éviter le bug
-// Sentry RSC wrapping vs lazy hydration sur Next 15.5.18.
+// Illustrations SVG sur-mesure line-art monoline (DESIGN.md Atelier Premium).
+// Remplace les anciennes photos Unsplash (anti-pattern #stock photo).
+// Dispatch via IllustrationForMetier({ slug }) — voir src/components/premium/illustrations/.
 const VERTICALS: readonly Vertical[] = [
   {
     code: 'decennale',
@@ -69,9 +73,8 @@ const VERTICALS: readonly Vertical[] = [
     badge: 'Loi Spinetta',
     metric: '52 métiers BTP',
     span: 'md:col-span-2',
-    image:
-      'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Artisan BTP en chantier — décennale obligatoire Loi Spinetta',
+    metierSlug: 'macon',
+    imageAlt: 'Illustration artisan maçon BTP — décennale obligatoire Loi Spinetta',
   },
   {
     code: 'rc-pro',
@@ -79,12 +82,11 @@ const VERTICALS: readonly Vertical[] = [
     desc: 'Consultants, freelances, services aux entreprises, agences digitales, coachs.',
     href: '/rc-pro',
     Icon: Briefcase,
-    accent: 'from-secondary-500 to-secondary-700',
+    accent: 'from-charcoal-700 to-charcoal-900',
     badge: '#1 marché',
     metric: '32 professions',
-    image:
-      'https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=800&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Consultante freelance en réunion stratégique',
+    metierSlug: 'consultant',
+    imageAlt: 'Illustration consultant freelance en réunion stratégique',
   },
   {
     code: 'multirisque-pro',
@@ -94,9 +96,8 @@ const VERTICALS: readonly Vertical[] = [
     Icon: Building2,
     accent: 'from-accent-500 to-accent-700',
     metric: '30 secteurs',
-    image:
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Bureau professionnel moderne et lumineux',
+    metierSlug: 'restaurateur',
+    imageAlt: 'Illustration local commercial / restaurant professionnel',
   },
   {
     code: 'mutuelle-pro',
@@ -104,13 +105,12 @@ const VERTICALS: readonly Vertical[] = [
     desc: 'Travailleurs non-salariés, dirigeants, freelances. Loi Madelin déductible.',
     href: '/mutuelle-pro',
     Icon: Heart,
-    accent: 'from-rose-500 to-rose-700',
+    accent: 'from-accent-500 to-accent-700',
     badge: 'Madelin',
     metric: '8 mutuelles comparées',
     span: 'md:col-span-2',
-    image:
-      'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=1200&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Médecin examinant un dossier patient',
+    metierSlug: 'medecin',
+    imageAlt: 'Illustration médecin examinant un dossier patient',
   },
   {
     code: 'assurance-vtc',
@@ -118,11 +118,11 @@ const VERTICALS: readonly Vertical[] = [
     desc: 'Chauffeur privé, location avec chauffeur, plateformes Uber / Bolt / Heetch.',
     href: '/assurance-vtc',
     Icon: Car,
-    accent: 'from-indigo-500 to-indigo-700',
+    accent: 'from-primary-500 to-primary-700',
     metric: 'AE ou SARL',
-    image:
-      'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Chauffeur VTC au volant de son véhicule',
+    // Pas d'illustration VTC dédiée — fallback consultant (profil indépendant).
+    metierSlug: 'consultant',
+    imageAlt: 'Illustration chauffeur VTC indépendant',
   },
   {
     code: 'cyber-assurance',
@@ -133,17 +133,16 @@ const VERTICALS: readonly Vertical[] = [
     accent: 'from-charcoal-700 to-charcoal-900',
     badge: "Jusqu'à 5M€",
     metric: 'Couverture étendue',
-    image:
-      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80&fm=webp&auto=format&fit=crop',
-    imageAlt: 'Centre de données et serveurs cybersécurité',
+    metierSlug: 'freelance-it',
+    imageAlt: 'Illustration freelance IT / cybersécurité — protection données',
   },
 ] as const
 
 const TRUST_INDICATORS = [
-  { value: '10+', label: 'Assureurs partenaires', Icon: Users },
-  { value: '17', label: 'Verticaux couverts', Icon: ShieldCheck },
-  { value: '24h', label: 'Attestation délivrée', Icon: Clock },
-  { value: '0€', label: 'Frais de courtage', Icon: TrendingDown },
+  { value: 10, suffix: '+', label: 'Assureurs partenaires', Icon: Users },
+  { value: 17, suffix: '', label: 'Verticaux couverts', Icon: ShieldCheck },
+  { value: 24, suffix: 'h', label: 'Attestation délivrée', Icon: Clock },
+  { value: 0, suffix: '€', label: 'Frais de courtage', Icon: TrendingDown },
 ] as const
 
 const PROCESS_STEPS = [
@@ -151,19 +150,16 @@ const PROCESS_STEPS = [
     n: '01',
     title: 'Décrivez votre activité',
     desc: 'Quelques questions ciblées pour qualifier votre profil et vos besoins. 2 minutes chrono, aucune obligation.',
-    Icon: Sparkles,
   },
   {
     n: '02',
     title: 'Comparaison négociée',
     desc: 'Notre équipe interroge nos 10 assureurs partenaires et négocie le meilleur tarif. Réponse sous 24h ouvrées.',
-    Icon: Zap,
   },
   {
     n: '03',
     title: 'Souscription & attestation',
     desc: "Vous choisissez l'offre. Attestation officielle délivrée sous 24h après signature électronique.",
-    Icon: CheckCircle2,
   },
 ] as const
 
@@ -230,7 +226,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           HERO — gradient hero warm animé + radial blobs + trust signals
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
+      <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
         {/* Mesh gradient background — animé subtilement */}
         <div
           className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90"
@@ -380,16 +376,18 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Trust indicators row */}
+          {/* Trust indicators row — count-up animés */}
           <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md md:grid-cols-4">
-            {TRUST_INDICATORS.map((t) => (
-              <div key={t.label} className="bg-charcoal-900/30 px-5 py-5 backdrop-blur-md">
-                <t.Icon className="mb-2 h-5 w-5 text-secondary-300" strokeWidth={2.2} />
-                <div className="font-heading text-3xl font-extrabold tracking-tight md:text-4xl">
-                  {t.value}
+            {TRUST_INDICATORS.map((t, i) => (
+              <RevealOnScroll key={t.label} delay={i * 80}>
+                <div className="bg-charcoal-900/30 px-5 py-5 backdrop-blur-md">
+                  <t.Icon className="mb-2 h-5 w-5 text-secondary-300" strokeWidth={2.2} />
+                  <div className="font-heading text-3xl font-extrabold tabular-nums tracking-tight md:text-4xl">
+                    <CountUp value={t.value} suffix={t.suffix} duration={1600} />
+                  </div>
+                  <div className="mt-1 text-xs font-medium text-white/75 md:text-sm">{t.label}</div>
                 </div>
-                <div className="mt-1 text-xs font-medium text-white/75 md:text-sm">{t.label}</div>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
@@ -404,83 +402,90 @@ export default function HomePage() {
       <section id="verticaux" className="relative bg-sand-50 py-20 md:py-28">
         <div className="container mx-auto max-w-6xl px-4">
           {/* Eyebrow + heading */}
-          <div className="mb-14 max-w-2xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-700">
-              <Sparkles className="h-3.5 w-3.5" />
-              17 verticaux couverts
+          <RevealOnScroll translateY={28}>
+            <div className="mb-14 max-w-2xl">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-700">
+                <Sparkles className="h-3.5 w-3.5" />
+                17 verticaux couverts
+              </div>
+              <h2 className="mb-4 font-heading text-4xl font-extrabold leading-tight tracking-display text-charcoal-900 md:text-5xl">
+                Une assurance adaptée
+                <br />
+                <span className="text-primary-600">à votre métier</span>
+              </h2>
+              <p className="text-lg text-charcoal-600">
+                Notre cabinet intervient sur l'ensemble des verticaux professionnels en France
+                métropolitaine, des artisans BTP aux ESN cyber.
+              </p>
             </div>
-            <h2 className="mb-4 font-heading text-4xl font-extrabold leading-tight tracking-display text-charcoal-900 md:text-5xl">
-              Une assurance adaptée
-              <br />
-              <span className="text-primary-600">à votre métier</span>
-            </h2>
-            <p className="text-lg text-charcoal-600">
-              Notre cabinet intervient sur l'ensemble des verticaux professionnels en France
-              métropolitaine, des artisans BTP aux ESN cyber.
-            </p>
-          </div>
+          </RevealOnScroll>
 
-          {/* Bento grid asymétrique avec photos pros — mount cascade */}
+          {/* Bento grid asymétrique avec photos pros — mount cascade + reveal au scroll */}
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {VERTICALS.map((v, idx) => (
-              <Link
+              <RevealOnScroll
                 key={v.code}
-                href={v.href}
-                style={{ animationDelay: `${idx * 80}ms` }}
-                className={`mount-fade-up group relative flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${v.span ?? ''}`}
+                delay={idx * 70}
+                translateY={32}
+                className={v.span ?? ''}
               >
-                {/* Photo header — aspect 16/9 */}
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-charcoal-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={v.image}
-                    alt={v.imageAlt}
-                    loading="lazy"
-                    decoding="async"
-                    className="bento-card-img absolute inset-0 h-full w-full object-cover"
-                  />
-                  {/* Overlay gradient pour lisibilité */}
+                <Link
+                  href={v.href}
+                  className={`mount-fade-up group relative flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover`}
+                >
+                  {/* Illustration SVG sur-mesure — aspect 16/9 (DESIGN.md Atelier Premium) */}
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-sand-100">
+                    <IllustrationForMetier
+                      slug={v.metierSlug}
+                      accent="primary"
+                      className="absolute inset-0 h-full w-full p-8"
+                      ariaLabel={v.imageAlt}
+                    />
+                    {/* Overlay gradient bas pour lisibilité icon + badge sur line-art clair */}
+                    <div
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-900/65 via-charcoal-900/0 to-transparent"
+                      aria-hidden="true"
+                    />
+                    {/* Icon + badge overlay bottom */}
+                    <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+                      <div
+                        className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${v.accent} text-white shadow-card-hover ring-2 ring-white/40 transition-transform duration-300 group-hover:scale-110`}
+                      >
+                        <v.Icon className="h-5 w-5" strokeWidth={2.2} />
+                      </div>
+                      {v.badge && (
+                        <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-900 backdrop-blur-sm">
+                          {v.badge}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Glow on hover */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-charcoal-900/75 via-charcoal-900/15 to-transparent"
+                    className={`pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${v.accent} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-25`}
                     aria-hidden="true"
                   />
-                  {/* Icon + badge overlay bottom */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
-                    <div
-                      className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${v.accent} text-white shadow-card-hover ring-2 ring-white/40 transition-transform duration-300 group-hover:scale-110`}
-                    >
-                      <v.Icon className="h-5 w-5" strokeWidth={2.2} />
-                    </div>
-                    {v.badge && (
-                      <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-900 backdrop-blur-sm">
-                        {v.badge}
+
+                  {/* Content */}
+                  <div className="relative flex flex-1 flex-col p-6">
+                    <h3 className="mb-2 font-heading text-2xl font-bold text-charcoal-900">
+                      {v.title}
+                    </h3>
+                    <p className="mb-5 flex-1 text-sm leading-relaxed text-charcoal-600">
+                      {v.desc}
+                    </p>
+
+                    <div className="flex items-center justify-between border-t border-charcoal-100 pt-4">
+                      <span className="text-xs font-semibold text-charcoal-500">{v.metric}</span>
+                      <span className="inline-flex items-center gap-1 text-sm font-bold text-primary-600 transition-transform group-hover:translate-x-1">
+                        Découvrir
+                        <ArrowRight className="h-4 w-4" />
                       </span>
-                    )}
+                    </div>
                   </div>
-                </div>
-
-                {/* Glow on hover */}
-                <div
-                  className={`pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${v.accent} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-25`}
-                  aria-hidden="true"
-                />
-
-                {/* Content */}
-                <div className="relative flex flex-1 flex-col p-6">
-                  <h3 className="mb-2 font-heading text-2xl font-bold text-charcoal-900">
-                    {v.title}
-                  </h3>
-                  <p className="mb-5 flex-1 text-sm leading-relaxed text-charcoal-600">{v.desc}</p>
-
-                  <div className="flex items-center justify-between border-t border-charcoal-100 pt-4">
-                    <span className="text-xs font-semibold text-charcoal-500">{v.metric}</span>
-                    <span className="inline-flex items-center gap-1 text-sm font-bold text-primary-600 transition-transform group-hover:translate-x-1">
-                      Découvrir
-                      <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
@@ -505,33 +510,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Steps */}
-          <div className="relative grid grid-cols-1 gap-12 md:grid-cols-3">
-            {/* Ligne décorative */}
-            <div
-              className="absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-transparent via-primary-200 to-transparent md:block"
-              aria-hidden="true"
-            />
-
-            {PROCESS_STEPS.map((s) => (
-              <div key={s.n} className="relative text-center md:text-left">
-                {/* Step number + icon */}
-                <div className="relative z-10 mb-5 flex justify-center md:justify-start">
-                  <div className="group relative">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-glow-clay transition-transform duration-300 hover:scale-110">
-                      <s.Icon className="h-6 w-6" strokeWidth={2.2} />
-                    </div>
-                    <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white font-heading text-xs font-extrabold text-primary-700 shadow-soft ring-2 ring-primary-100">
-                      {s.n}
-                    </div>
-                  </div>
-                </div>
-
-                <h3 className="mb-3 font-heading text-xl font-bold text-charcoal-900">{s.title}</h3>
-                <p className="leading-relaxed text-charcoal-600">{s.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Steps — Editorial asymétrique (DESIGN.md Atelier Premium) */}
+          <EditorialProcessSteps steps={PROCESS_STEPS} />
         </div>
       </section>
 
@@ -552,56 +532,19 @@ export default function HomePage() {
             </h2>
           </div>
 
+          {/* Témoignages éditoriaux Fraunces — DESIGN.md anti-pattern stock photos */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {TESTIMONIALS.map((t) => (
-              <article
-                key={t.author}
-                className="group relative flex h-full flex-col rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-              >
-                {/* Quote icon décoratif */}
-                <Quote
-                  className="absolute right-6 top-6 h-8 w-8 text-primary-200 transition-colors group-hover:text-primary-300"
-                  strokeWidth={1.5}
-                  aria-hidden="true"
+            {TESTIMONIALS.map((t, i) => (
+              <RevealOnScroll key={t.author} delay={i * 120} translateY={36}>
+                <EditorialTestimonial
+                  quote={t.quote}
+                  author={t.author}
+                  role={t.role}
+                  city={t.city}
+                  rating={t.rating}
+                  metric={t.metric}
                 />
-
-                {/* Rating étoiles */}
-                <div className="mb-4 flex items-center gap-0.5">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-secondary-400 text-secondary-400"
-                      aria-hidden="true"
-                    />
-                  ))}
-                </div>
-
-                <p className="mb-6 flex-1 text-base italic leading-relaxed text-charcoal-700">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-
-                {/* Author + avatar + metric */}
-                <footer className="flex items-center justify-between gap-3 border-t border-charcoal-100 pt-5">
-                  <div className="flex items-center gap-3">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={t.avatar}
-                      alt={t.author}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-11 w-11 rounded-full object-cover ring-2 ring-primary-100"
-                    />
-                    <div className="leading-tight">
-                      <div className="font-bold text-charcoal-900">{t.author}</div>
-                      <div className="text-[11px] text-charcoal-500">{t.role}</div>
-                      <div className="text-[11px] text-charcoal-400">{t.city}</div>
-                    </div>
-                  </div>
-                  <div className="flex-shrink-0 rounded-lg bg-accent-50 px-3 py-1.5 text-xs font-extrabold text-accent-700">
-                    {t.metric}
-                  </div>
-                </footer>
-              </article>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
@@ -620,94 +563,50 @@ export default function HomePage() {
             leur service sinistres.
           </p>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
-            {ASSUREURS.map((p) => (
-              <div
-                key={p.name}
-                className="group flex items-center gap-3 rounded-xl border border-charcoal-100 bg-white px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-charcoal-200 hover:shadow-soft"
-                title={p.name}
-              >
-                {/* Mark stylé avec couleur officielle assureur */}
-                <span
-                  className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg font-heading text-sm font-extrabold text-white transition-transform group-hover:scale-110"
-                  style={{ backgroundColor: p.color }}
-                  aria-hidden="true"
-                >
-                  {p.initials}
-                </span>
-                <span className="font-heading text-sm font-bold text-charcoal-800 transition-colors group-hover:text-charcoal-900">
-                  {p.name}
-                </span>
+          {/* Marquee infini — défilement seamless type Vercel/Stripe */}
+          <div
+            className="marquee"
+            style={{ '--marquee-duration': '40s', '--marquee-gap': '2rem' } as React.CSSProperties}
+            role="marquee"
+            aria-label="Logos assureurs partenaires"
+          >
+            {[0, 1].map((dup) => (
+              <div key={dup} className="marquee__track" aria-hidden={dup === 1}>
+                {ASSUREURS.map((p) => (
+                  <div
+                    key={`${dup}-${p.name}`}
+                    className="group flex flex-shrink-0 items-center gap-3 rounded-xl border border-charcoal-100 bg-white px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-charcoal-200 hover:shadow-soft"
+                    title={p.name}
+                  >
+                    <span
+                      className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg font-heading text-sm font-extrabold text-white transition-transform group-hover:scale-110"
+                      style={{ backgroundColor: p.color }}
+                      aria-hidden="true"
+                    >
+                      {p.initials}
+                    </span>
+                    <span className="font-heading text-sm font-bold text-charcoal-800 transition-colors group-hover:text-charcoal-900">
+                      {p.name}
+                    </span>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════════
-          CTA FINAL — gradient terra + glow
-          ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
-        <div className="absolute inset-0 bg-gradient-terra opacity-95" aria-hidden="true" />
-        <div
-          className="pointer-events-none absolute -right-20 -top-20 h-[400px] w-[400px] rounded-full bg-secondary-400/40 blur-[120px]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-20 -left-20 h-[400px] w-[400px] rounded-full bg-primary-700/30 blur-[120px]"
-          aria-hidden="true"
-        />
-
-        <div className="container relative mx-auto max-w-4xl px-4 text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-            <Zap className="h-3.5 w-3.5" />
-            Recontact sous 24h ouvrées
-          </div>
-
-          <h2 className="mb-6 font-heading text-4xl font-extrabold leading-tight tracking-display md:text-6xl">
-            Prêt à comparer
-            <br />
-            votre assurance pro ?
-          </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
-            {IS_PRE_ORIAS
-              ? "Cabinet en cours d'immatriculation ORIAS. Rejoignez la liste d'attente pour être prévenu(e) dès l'ouverture commerciale."
-              : 'Devis gratuit, sans engagement. Notre courtier ORIAS vous recontacte avec 3 offres personnalisées en moins de 24 heures.'}
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/devis"
-              className="group inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-extrabold text-primary-700 shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-premium-lg"
-            >
-              {CTA_TEXTS.start}
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/5 px-7 py-4 font-semibold backdrop-blur-sm transition-all hover:bg-white/15"
-            >
-              Parler à un conseiller
-            </Link>
-          </div>
-
-          {/* Trust micro-row */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/85">
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              Sans engagement
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              0€ frais de courtage
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              Conformité ACPR garantie
-            </span>
-          </div>
-        </div>
-      </section>
+      {/* CTA FINAL — DESIGN.md Atelier Premium (grain + premium-terra shadow) */}
+      <DevisCTASection
+        title="Prêt à comparer votre assurance pro ?"
+        subtitle={
+          IS_PRE_ORIAS
+            ? "Cabinet en cours d'immatriculation ORIAS. Rejoignez la liste d'attente pour être prévenu(e) dès l'ouverture commerciale."
+            : 'Devis gratuit, sans engagement. Notre courtier ORIAS vous recontacte avec 3 offres personnalisées en moins de 24 heures.'
+        }
+        primaryCta={{ label: CTA_TEXTS.start, href: '/devis' }}
+        secondaryCta={{ label: 'Parler à un conseiller', href: '/contact' }}
+      />
 
       {/* ═══════════════════════════════════════════════════════════════════
           DDA Disclaimer — mention légale

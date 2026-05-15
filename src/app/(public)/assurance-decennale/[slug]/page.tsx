@@ -8,6 +8,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { DECENNALE_METIERS } from '@/lib/data/decennale-metiers'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { DecennaleVilleTemplate } from '@/components/assurance/DecennaleVilleTemplate'
 import { decennaleStaticSlugs, resolveDecennaleSlug } from '@/lib/seo/garantie-slug-dispatcher'
 import { SITE_URL } from '@/lib/seo/config'
@@ -58,6 +59,10 @@ export default async function DecennaleSlugPage(props: { params: Promise<Params>
         tagline={m.tagline}
         legalReference="Loi Spinetta — art. L. 241-1 du Code des assurances + art. 1792 C. civ."
         isObligatoire={true}
+        socialProofStats={STATS_DEFAULT}
+        calculatorGarantie="decennale"
+        expertBio={EXPERT_BTP}
+        comparatifRows={COMPARATIF_BTP}
         intro={m.intro}
         benefits={[
           {

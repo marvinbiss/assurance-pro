@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="Le plombier — qu'il soit auto-entrepreneur, gérant de SARL ou en SAS BTP — est obligatoirement soumis à la décennale (Loi Spinetta + art. 1792 Code civil). La plomberie représente 18% des sinistres décennaux BTP (2e poste après couverture 24%), avec des sinistres typiques fréquents : fuites canalisations encastrées, défauts d'étanchéité douche, plomberie chauffage central défaillante. Cette page détaille spécifiquement les obligations, tarifs et risques propres au métier de plombier."
       legalReference="Loi Spinetta + art. 1792 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🔧',

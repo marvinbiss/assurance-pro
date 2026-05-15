@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,8 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La formule S3 P3 de Mutuelle Pro BTP est le niveau intermédiaire : couverture renforcée sur soins courants (S3) + dentaire/optique (P3). Tarif vérifié 2026 : 35-55€/mois pour un actif salarié BTP, 50-75€/mois pour un retraité BTP. Cette page détaille la grille tarifaire par profil et compare avec les formules S2P2 (-15€) et S4P4 (+20€)."
       legalReference="art. L. 911-1 et suivants Code sécurité sociale + ANI 11/01/2013"
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         { icon: '💰', title: 'Prix 35-55€/mois actif', desc: 'Formule milieu de gamme accessible' },
         {

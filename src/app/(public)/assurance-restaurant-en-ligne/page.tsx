@@ -6,6 +6,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +36,10 @@ export default function Page() {
       intro="L'assurance restaurant en ligne désigne la souscription 100% digitale d'un pack assurances complet pour restaurateurs/traiteurs/bars/HCR : multirisque restaurant (incendie, dégâts des eaux, vol, vandalisme), RC Pro intoxications alimentaires, perte d'exploitation, dommages électroménager (frigos pro, fours, chaudières), bris de glace vitrines. Souscription 100% en ligne en 10 minutes pour les profils standards (restaurant traditionnel, snack, brasserie). Tarifs 2026 : 480-2 800 €/an pour restaurant standard <100m², 3 200-12 000 €/an pour restaurant SARL avec terrasse + cuisine ouverte. 6 assureurs HCR spécialisés (MMA Pro Resto, AXA Pro HCR, Allianz Pro Resto, Generali, Hiscox Pro, MAAF Pro)."
       legalReference="Code conso art. L. 412-1 (sécurité alimentaire) + arrêté HACCP + RC Pro tutélée Convention HCR"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🌐',

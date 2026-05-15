@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="Le terrassement et les travaux publics (TP) sont les activités BTP les plus risquées en décennale : risques d'effondrement, glissement de terrain, instabilité du sol, défaut de portance des fondations. Un sinistre terrassement peut coûter 200k€-2M€ (reprise complète fondations + dommages collatéraux structure). Les tarifs reflètent ces risques : 2-3× supérieurs à un peintre. Cette page détaille les obligations, garanties spécifiques et leviers de réduction de prime pour terrassier TP."
       legalReference="Loi Spinetta + art. 1792 Code civil + DTU 12 (Terrassements)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🚜',

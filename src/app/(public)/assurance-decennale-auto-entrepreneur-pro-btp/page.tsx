@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="L'auto-entrepreneur BTP a besoin de 2 assurances principales : 1) la décennale (obligatoire Loi Spinetta) souscrite via April Pro BTP, SMABTP ou Allianz Pro BTP, et 2) la mutuelle PRO BTP TNS (recommandée, déductible Madelin) souscrite via PRO BTP, April Pro Santé ou Harmonie BTP. Cette page détaille le pack complet pour AE BTP — coût total annuel et optimisations possibles."
       legalReference="Décennale : Loi Spinetta + art. 1792 • Mutuelle TNS : Loi Madelin art. 154 bis CGI"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

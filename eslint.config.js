@@ -50,6 +50,19 @@ export default tseslint.config(
     },
   },
   {
+    // Test files: relax non-null-assertion — common idiom in test fixtures
+    // where setup guarantees the value exists. Production code keeps strict rule.
+    files: [
+      '**/*.test.{ts,tsx}',
+      '**/*.spec.{ts,tsx}',
+      'e2e/**/*.{ts,tsx}',
+      '**/__tests__/**/*.{ts,tsx}',
+    ],
+    rules: {
+      '@typescript-eslint/no-non-null-assertion': 'off',
+    },
+  },
+  {
     ignores: [
       'node_modules/**',
       '.next/**',

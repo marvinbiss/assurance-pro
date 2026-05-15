@@ -6,6 +6,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +36,10 @@ export default function Page() {
       intro="L'assurance mission professionnelle (souvent appelée « auto-mission collaborateur ») couvre les déplacements professionnels effectués par vos SALARIÉS avec leur véhicule PERSONNEL : RDV client, formation, congrès, intervention sur site. Pour l'employeur : 2 options. Option 1 — exiger que chaque salarié déclare son auto-mission à son assureur perso (mais difficile à contrôler + responsabilité employeur si défaut). Option 2 — souscrire une assurance MISSION COLLECTIVE qui couvre TOUS les déplacements pro de TOUS les salariés sur leur véhicule perso (~480-1 800€/an pour PME 10 salariés). Cette dernière option est PROFESSIONNELLEMENT RECOMMANDÉE car protège la responsabilité de l'employeur en cas de sinistre causé par un salarié en mission, sans dépendre des assurances individuelles. Tarifs 2026 : 480 €/an pour PME 5 salariés jusqu'à 4 800 €/an pour ETI 100 salariés. Cette page distingue auto-mission individuelle vs collective et détaille la responsabilité employeur."
       legalReference="Code du travail (responsabilité employeur) + Code des assurances L. 211-1 + Convention collective"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🚗',

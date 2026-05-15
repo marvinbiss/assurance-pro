@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Barème détaillé du tarif assurance RC Pro 2026 : structure de prix décomposée en tarif de base (déterminé par profil) + options à la carte + ajustements paramétriques. Cette page explique combien coûte chaque option (cyber, protection juridique, dommages aux biens) et comment chaque levier (franchise, plafond, postériorité) modifie le tarif final."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🧮',

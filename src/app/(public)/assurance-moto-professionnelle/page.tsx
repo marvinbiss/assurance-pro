@@ -6,6 +6,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +32,9 @@ export default function Page() {
       intro="L'assurance moto professionnelle couvre les 2 roues motorisés (scooter, moto, mobylette électrique, vélo cargo électrique) utilisés pour une activité professionnelle : livraison repas (Uber Eats, Deliveroo, Just Eat, Stuart), taxi-moto parisien, coursier B2B, commercial nomade urbain, artisan en intervention rapide. Le tarif RC Pro 2 roues est généralement plus élevé que pour une voiture (sinistralité corporelle conducteur 5x supérieure) mais reste accessible : 680-1 580 €/an selon profil. Le pack standard combine : RC pro circulation (passagers + tiers), tous risques (vol, incendie, vandalisme), équipement obligatoire (casque, gants, chaussures), garantie conducteur étendue (capital décès/invalidité majoré 2 roues), assistance 0 km. Cette page distingue les 4 profils types et détaille les tarifs."
       legalReference="Article L. 211-1 du Code des assurances + Code de la route 2 roues"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '🛵',

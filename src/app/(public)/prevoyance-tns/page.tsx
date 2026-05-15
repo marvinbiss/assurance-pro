@@ -21,6 +21,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -47,6 +48,8 @@ export default function Page() {
       intro="La prévoyance TNS est l'assurance qui protège un Travailleur Non Salarié (artisan, commerçant, profession libérale, gérant majoritaire) contre les conséquences financières d'un arrêt de travail (maladie, accident), d'une invalidité ou d'un décès. Pour un TNS, le régime obligatoire de Sécurité Sociale verse des indemnités journalières (IJ) très inférieures à celles d'un salarié — typiquement 22 à 65 €/jour selon le revenu — et seulement après 3 jours de carence. Pour un artisan dégageant 50 k€ de bénéfice annuel, la perte de revenu en cas d'arrêt prolongé peut atteindre 80% du revenu habituel. La prévoyance privée comble ce gap : indemnités journalières dès J0, rente invalidité jusqu'à 70% du revenu, capital décès jusqu'à 8 ans de revenus pour la famille. Conformément à la Loi Madelin (art. 154 bis CGI), les cotisations sont déductibles du bénéfice imposable. Cette page distingue la prévoyance TNS de la mutuelle santé (page dédiée /mutuelle-tns), détaille les garanties indispensables, les tarifs 2026 par profil et compare les principaux contrats."
       legalReference="Article 154 bis du CGI — Loi Madelin du 11 février 1994"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '🩹',

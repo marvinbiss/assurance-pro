@@ -6,6 +6,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +36,9 @@ export default function Page() {
       intro="Un courtier en assurance professionnelle est un INTERMÉDIAIRE INDÉPENDANT qui compare plusieurs assureurs pour vous proposer le contrat le mieux adapté à votre profil. Contrairement à un agent général (mandataire EXCLUSIF d'UN assureur) ou à un mandataire d'intermédiaire (sous-mandataire), le courtier ORIAS travaille SANS LIEN D'EXCLUSIVITÉ et représente VOS INTÉRÊTS. Il est rémunéré par une COMMISSION versée par l'assureur après souscription (vous ne payez rien). Notre cabinet est inscrit ORIAS catégorie I (courtier), compare 8 assureurs distribués en France et applique la Recommandation ACPR 2024-R-03 (devoir de conseil tracé). Cette page présente notre identité, notre méthode et nos valeurs."
       legalReference="ORIAS Catégorie I (Courtier) + DDA + Recommandation ACPR 2024-R-03"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚖️',

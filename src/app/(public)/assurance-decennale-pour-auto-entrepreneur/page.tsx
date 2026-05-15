@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="Souscrire une décennale POUR un auto-entrepreneur est plus simple qu'une SARL : pas de Kbis requis, pas de bilan, juste un SIRET valide + attestation ACOSS + CNI + RIB. Le délai de souscription en ligne est de 24h ouvrées avec April Pro BTP (le best price AE). Cette page détaille spécifiquement les démarches pour AE, les pièces nécessaires et les tarifs par métier BTP."
       legalReference="Loi Spinetta + art. 1792 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '📄',

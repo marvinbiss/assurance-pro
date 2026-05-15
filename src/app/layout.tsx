@@ -1,15 +1,21 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { headers } from 'next/headers'
-import { DM_Sans, Sora } from 'next/font/google'
+import { DM_Sans, Fraunces } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import { PreOriasBanner } from '@/components/PreOriasBanner'
 import Footer from '@/components/Footer'
+import { StickyMobileCta } from '@/components/premium'
 import { TrackingScripts } from '@/components/TrackingScripts'
-import { getOrganizationSchema, getWebsiteSchema } from '@/lib/seo/jsonld'
+import {
+  getOrganizationSchema,
+  getWebsiteSchema,
+  getAggregateRatingDirectSchema,
+} from '@/lib/seo/jsonld'
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { SITE_URL } from '@/lib/seo/config'
+import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
 
 const dmSans = DM_Sans({
@@ -19,11 +25,14 @@ const dmSans = DM_Sans({
   adjustFontFallback: true,
 })
 
-const sora = Sora({
+// Fraunces — variable serif éditoriale premium (axes opsz + SOFT + wght continu)
+// Élève instantanément le brand vers "Editorial Luxury Artisanal"
+const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-heading',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
+  style: ['normal'],
+  axes: ['opsz', 'SOFT'],
   adjustFontFallback: true,
 })
 
@@ -116,7 +125,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
-    <html lang="fr" className={`scroll-smooth ${dmSans.variable} ${sora.variable}`}>
+    <html lang="fr" className={`scroll-smooth ${dmSans.variable} ${fraunces.variable}`}>
       <head>
         {/* PWA Meta Tags (apple-mobile-web-app, mobile-web-app-capable, theme-color handled by metadata/viewport exports) */}
         <meta name="msapplication-TileColor" content="#E86B4B" />
@@ -131,8 +140,23 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           title="LLM detailed content"
         />
 
-        {/* Global Organization + WebSite schema (E-E-A-T) */}
-        <script {...jsonLdScriptProps([getOrganizationSchema(), getWebsiteSchema()], nonce)} />
+        {/* Global Organization (InsuranceAgency) + WebSite + AggregateRating (E-E-A-T YMYL) */}
+        <script
+          {...jsonLdScriptProps(
+            [
+              getOrganizationSchema(),
+              getWebsiteSchema(),
+              getAggregateRatingDirectSchema({
+                ratingValue: SITE_AGGREGATE_RATING.ratingValue,
+                reviewCount: SITE_AGGREGATE_RATING.reviewCount,
+                bestRating: SITE_AGGREGATE_RATING.bestRating,
+                worstRating: SITE_AGGREGATE_RATING.worstRating,
+                itemReviewedType: 'InsuranceAgency',
+              }),
+            ],
+            nonce
+          )}
+        />
 
         {/* Preconnect for Google Tag Manager */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -183,6 +207,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </main>
         <Footer />
         <ClientOnlyFooterHelpers />
+        <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
       </body>
     </html>
   )

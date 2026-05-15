@@ -15,6 +15,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -41,6 +46,10 @@ export default function Page() {
       intro="L'assurance locaux entreprise est la multirisque professionnelle qui couvre les locaux d'exploitation d'une entreprise : siège social, ateliers de production, entrepôts de stockage, dépôts logistiques, agences secondaires, locaux annexes. Elle se distingue des contrats spécifiques commerce ou bureau en couvrant les configurations multi-sites, les locaux de grande surface (>500 m²) et les sites industriels avec stocks et matériel pro de forte valeur. Les garanties principales : incendie + foudre + explosion, vol par effraction, vandalisme, dégâts des eaux, événements climatiques (tempête, grêle, neige), bris de glace, RC exploitation envers les tiers, et pertes d'exploitation pendant la durée d'indisponibilité du local. Les tarifs 2026 démarrent à 480 € HT/an pour un petit local annexe (40 m²) jusqu'à 25 000 € HT/an pour un site industriel multi-sites."
       legalReference="Article 1733 du Code civil (bail commercial) + clauses standard MRP"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🏢',

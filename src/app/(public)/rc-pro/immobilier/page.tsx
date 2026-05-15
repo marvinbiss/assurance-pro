@@ -13,6 +13,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -38,6 +43,10 @@ export default function Page() {
       intro="La RC Pro est OBLIGATOIRE pour tout agent immobilier ou mandataire en France (Loi Hoguet — art. 49 Loi n° 70-9 du 2 janvier 1970 + art. 4 Décret n° 72-678 du 20 juillet 1972). Sans RC Pro valide : retrait immédiat de la carte professionnelle T (transaction) ou G (gestion locative) par la CCI, amende 7 500€, interdiction d'exercer. Sinistralité ACPR 2024 : 4,1% (mandats vente, défauts conseil, erreurs estimation, vices procuration). Tarifs 2026 : 280-920 €/an pour AE/EI mandataire, 1 800-4 200 €/an pour SARL avec agence."
       legalReference="Loi Hoguet — art. 49 L. 70-9 du 2 janvier 1970 + art. 4 Décret 72-678"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚖️',

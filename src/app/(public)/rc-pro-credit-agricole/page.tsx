@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Le Crédit Agricole propose une RC Pro via Pacifica, sa filiale assurance créée en 1990 (groupe Crédit Agricole Assurances). L'offre cible principalement les pros déjà clients du Crédit Agricole pour leurs services bancaires (compte pro, prêt, terminal de paiement), avec une logique de bancassurance et de pack global. Cette page analyse l'offre Pacifica RC Pro, ses points forts/faibles et la compare aux spécialistes pro (MMA, Hiscox, Allianz Pro)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🏦',

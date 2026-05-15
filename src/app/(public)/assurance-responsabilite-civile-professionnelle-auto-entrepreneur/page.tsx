@@ -4,6 +4,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +33,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="L'assurance Responsabilité Civile Professionnelle pour les auto-entrepreneurs est l'investissement le plus stratégique de votre activité — pour quelques euros par jour, vous protégez votre patrimoine personnel contre des sinistres pouvant atteindre 30k€+. Ce guide complet détaille les démarches en ligne (5 minutes), les pièces nécessaires (SIRET + ACOSS suffisent), et le comparatif rigoureux des 4 leaders du segment AE."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🚀',

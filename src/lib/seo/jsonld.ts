@@ -397,3 +397,109 @@ export function getReviewsBlockSchema(params: {
 
   return schemas
 }
+
+/**
+ * Schema.org AggregateRating — variante "direct params" (stats site déjà agrégés).
+ *
+ * Use case : injecter une note moyenne consolidée (Trustpilot synthèse) sur
+ * toutes les pages piliers, sans avoir à charger la collection complète des
+ * Review individuels. Conforme `schema.org/AggregateRating`.
+ *
+ * À privilégier sur les pages où l'on veut le rich snippet ★ sans le poids
+ * du payload Review[] complet. Le composant `getReviewsBlockSchema` reste
+ * la voie pour Review + Aggregate ensemble.
+ */
+export function getAggregateRatingDirectSchema(params: {
+  ratingValue: number
+  reviewCount: number
+  bestRating?: number
+  worstRating?: number
+  itemReviewedName?: string
+  itemReviewedType?: 'Service' | 'Product' | 'InsuranceAgency' | 'Organization'
+}): Record<string, unknown> {
+  const itemType = params.itemReviewedType ?? 'InsuranceAgency'
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AggregateRating',
+    ratingValue: params.ratingValue.toFixed(1),
+    reviewCount: params.reviewCount,
+    bestRating: params.bestRating ?? 5,
+    worstRating: params.worstRating ?? 1,
+    itemReviewed: {
+      '@type': itemType,
+      name: params.itemReviewedName ?? SITE_NAME,
+      '@id': `${SITE_URL}#organization`,
+    },
+  }
+}
+
+/**
+ * Schema.org Offer — pricing offer attaché à un Product ou Service.
+ *
+ * Compatible `schema.org/Offer`. `availability` doit être une URL Schema.org
+ * (ex : `https://schema.org/InStock`). `priceValidUntil` au format ISO `YYYY-MM-DD`.
+ */
+export function getOfferSchema(params: {
+  price: number | string
+  priceCurrency?: string
+  priceValidUntil?: string
+  availability?: string
+  url: string
+  name?: string
+}): Record<string, unknown> {
+  return {
+    '@type': 'Offer',
+    price: typeof params.price === 'number' ? params.price.toFixed(2) : params.price,
+    priceCurrency: params.priceCurrency ?? 'EUR',
+    availability: params.availability ?? 'https://schema.org/InStock',
+    url: params.url,
+    ...(params.priceValidUntil ? { priceValidUntil: params.priceValidUntil } : {}),
+    ...(params.name ? { name: params.name } : {}),
+    seller: { '@id': `${SITE_URL}#organization` },
+  }
+}
+
+/**
+ * Schema.org Product — schema combiné Product (avec brand + offers + rating).
+ *
+ * Utilisé pour les piliers présentés en "produit assurance" (formules
+ * packagées). Combine Product avec offers (Offer[]) et aggregateRating
+ * (AggregateRating) pour SERP rich snippet complet.
+ */
+export function getProductSchema(params: {
+  name: string
+  description: string
+  url: string
+  brand?: string
+  offers?: Record<string, unknown> | Array<Record<string, unknown>>
+  aggregateRating?: Record<string, unknown>
+  image?: string
+  category?: string
+}): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: params.name,
+    description: params.description,
+    url: params.url,
+    brand: {
+      '@type': 'Brand',
+      name: params.brand ?? SITE_NAME,
+    },
+    ...(params.image ? { image: params.image } : {}),
+    ...(params.category ? { category: params.category } : {}),
+    ...(params.offers ? { offers: params.offers } : {}),
+    ...(params.aggregateRating ? { aggregateRating: params.aggregateRating } : {}),
+  }
+}
+
+/**
+ * Schema.org InsuranceAgency — alias explicite vers `getOrganizationSchema`.
+ *
+ * `getOrganizationSchema()` retourne déjà un node `InsuranceAgency` complet
+ * (identifier ORIAS, knowsAbout, areaServed France, contactPoint, etc.).
+ * Cet alias rend l'intention explicite à l'appel (E-E-A-T YMYL signal).
+ */
+export function getInsuranceAgencyOrganizationSchema(): Record<string, unknown> {
+  return getOrganizationSchema()
+}

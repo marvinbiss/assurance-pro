@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -26,6 +27,8 @@ export default function Page() {
       title={TITLE}
       tagline={TAGLINE}
       intro="Le remboursement PRO BTP fonctionne en 2 cas principaux : télétransmission automatique pour les professionnels conventionnés Sécu (carte vitale + tiers payant), ou envoi manuel de facture acquittée pour les frais hors télétransmission. Ce guide détaille les délais standards (3-7 jours ouvrés pour télétransmission, 7-10 jours pour papier), les pièces nécessaires, et la procédure exacte en cas de retard ou de refus."
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '⚡',

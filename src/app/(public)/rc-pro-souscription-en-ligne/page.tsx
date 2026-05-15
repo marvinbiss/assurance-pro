@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Process complet de souscription RC Pro 100% en ligne : 6 étapes digitales orchestrées (devis, comparaison, saisie infos, paiement, attestation, confirmation) pour souscrire en 5 minutes. KW à 800€ CPC Google Ads — l'un des MONEY KW les plus chers du marché, reflet de la valeur client. Cette page détaille chaque étape et compare les 3 leaders digital pure (Hiscox, Stello, April Pro BTP)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Loi Hamon"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🔄',

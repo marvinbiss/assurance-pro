@@ -4,6 +4,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +33,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="MMA (Mutuelles du Mans Assurance, groupe Covéa) propose une RC Pro accessible via 2 canaux principaux : son réseau de 1 500+ agences physiques en France (idéal si vous préférez contact courtier direct) ou en ligne via mma.fr. Cette page détaille les démarches de souscription, les avantages du pack multi-contrats MMA, et les outils en ligne disponibles dans l'espace adhérent."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🏛️',

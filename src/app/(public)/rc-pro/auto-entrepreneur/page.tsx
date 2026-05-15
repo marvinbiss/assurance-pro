@@ -12,6 +12,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -43,6 +48,10 @@ export default function Page() {
       intro="La RC Pro (Responsabilité Civile Professionnelle) auto-entrepreneur couvre les dommages corporels, matériels ou immatériels que vous causez à un tiers (client, fournisseur, passant) dans le cadre de votre activité. Elle est légalement obligatoire pour 21 métiers réglementés (BTP, santé, droit, conseil financier, transport...) mais fortement recommandée pour TOUS les auto-entrepreneurs. Les tarifs démarrent à 89 € HT/an pour un freelance digital sans antécédent, et peuvent monter à 800-1 200 €/an pour un consultant IT à fort chiffre d'affaires. Cette page détaille les obligations par métier, les tarifs 2026 par activité et les pièges à éviter (sous-déclaration de CA, exclusion de garantie cyber, absence d'indemnisation après cessation)."
       legalReference="Article L. 113-1 du Code des assurances + obligations métier (L. 241-1 BTP, L. 1142-2 santé, L. 6321-1 transport...)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚖️',

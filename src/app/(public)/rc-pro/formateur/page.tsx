@@ -5,6 +5,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +35,10 @@ export default function Page() {
       intro="La RC Pro formateur couvre l'activité de formation professionnelle indépendante : formateur en présentiel, formateur en distanciel (e-learning, classes virtuelles), organisme de formation enregistré (déclaration auprès de la DREETS + référencement Qualiopi pour mobiliser les financements OPCO/CPF). Sinistres typiques : RC pédagogique (formation jugée inadaptée par le commanditaire OPCO/CPF, demande de remboursement), casse de matériel dans salle louée (vidéoprojecteur, mobilier), dommages causés à un stagiaire (chute, allergie déjeuner inclus dans la formation), litige avec stagiaire mécontent (mauvaise évaluation, certification non délivrée). Conformité QUALIOPI obligatoire depuis 2022 pour percevoir des financements OPCO. Tarifs 2026 : 220-580€/an pour formateur indépendant solo, 580-1 200€/an pour organisme de formation 3-5 salariés."
       legalReference="Code des assurances L. 113-1 + Code du travail L. 6313-1 (formation pro) + Décret Qualiopi 2019-565"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🎓',

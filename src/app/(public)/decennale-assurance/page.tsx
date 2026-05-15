@@ -5,6 +5,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +32,10 @@ export default function Page() {
       intro="La décennale assurance (officiellement &quot;garantie décennale&quot;) est l'assurance obligatoire pour tout constructeur intervenant sur la structure d'un ouvrage immobilier en France. Elle découle de la Loi Spinetta du 4 janvier 1978 (art. 1792 Code civil) et engage votre responsabilité pendant 10 ans à compter de la réception des travaux. Cette page détaille le périmètre exact (qui est concerné, quels travaux), la durée, le plafond Spinetta, le coût, et la différence cruciale avec la Dommages-Ouvrage (DO) du maître d'ouvrage."
       legalReference="Loi Spinetta 1978 + art. 1792 et 1792-2 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

@@ -13,6 +13,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -39,6 +40,9 @@ export default function Page() {
       intro="L'assurance auto entreprise couvre les véhicules détenus directement par une société (SARL, SAS, SCI à objet commercial, EURL) — carte grise au nom de la personne morale. Distincte de l'auto-mission (véhicule personnel utilisé pour le pro) et de l'assurance flotte (≥ 4 véhicules), elle s'applique principalement aux : véhicules de fonction mis à disposition d'un salarié (usage pro + perso), voiture de direction (dirigeant + déplacements clients), véhicule utilitaire isolé (1-3 véhicules), voiture de société (CG société, usage exclusivement pro). Les garanties standard combinent la RC professionnelle circulation, la garantie tous risques (vol, incendie, vandalisme, bris de glace), la garantie conducteur étendue et le véhicule de remplacement. Les tarifs 2026 démarrent à 680 € HT/an pour un véhicule de fonction province jusqu'à 2 200 € HT/an pour un véhicule haut de gamme parisien à usage mixte intensif. Cette page distingue les usages, détaille les tarifs et compare 6 assureurs."
       legalReference="Article L. 211-1 du Code des assurances + Code général des impôts (avantage en nature)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '🚙',

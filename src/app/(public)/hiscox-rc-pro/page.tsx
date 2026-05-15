@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Hiscox est un groupe d'assurance britannique présent en France depuis 1993, spécialisé dans les RC Pro pour les services intellectuels (consultants, freelances, agences digitales, IT, professions libérales). Reconnu pour ses plafonds élevés (1-10M€), sa postériorité de 10 ans (exceptionnelle), et son service de gestion sinistres rapide. Tarifs compétitifs sur les profils AE / freelances jeunes. Cette page analyse l'offre Hiscox RC Pro, ses points forts/faibles, et la compare avec Stello, Allianz Pro, MMA Pro."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🛡️',

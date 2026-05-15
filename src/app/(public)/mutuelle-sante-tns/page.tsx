@@ -7,6 +7,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +33,8 @@ export default function Page() {
       intro="La mutuelle santé TNS (Travailleur Non Salarié) est la complémentaire santé spécialisée pour les indépendants : artisans, commerçants, professions libérales, gérants majoritaires de SARL, EI, EURL. Elle couvre les frais médicaux non pris en charge par l'Assurance Maladie obligatoire (Sécu artisans-commerçants régime général unifié depuis 2020) : consultations spécialistes, dépassements d'honoraires, optique, dentaire, hospitalisation, médecines douces. Sa particularité fiscale : éligible Loi Madelin (art. 154 bis CGI) — cotisations DÉDUCTIBLES du bénéfice imposable au régime réel. Cette page distingue mutuelle santé TNS pure de notre pilier <a href='/mutuelle-tns' class='text-primary-600 underline'>/mutuelle-tns</a> qui couvre santé + prévoyance combinées."
       legalReference="Article 154 bis du CGI (Loi Madelin) + Code de la Sécurité Sociale"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '💰',

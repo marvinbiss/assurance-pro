@@ -15,6 +15,9 @@ export const metadata: Metadata = {
       'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
     url: `${SITE_URL}/assurance-decennale`,
     type: 'website',
+    images: [
+      { url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: 'Vivos Assurance' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -47,6 +50,58 @@ export default function PilierDecennalePage() {
       tagline="La garantie obligatoire qui couvre vos chantiers pendant 10 ans après réception. Comparez 10 assureurs en 2 minutes."
       legalReference="Loi Spinetta du 4 janvier 1978 — art. L. 241-1 du Code des assurances"
       isObligatoire={true}
+      socialProofStats={[
+        { value: '3 247', label: 'Artisans assurés 2026' },
+        { value: '−32%', label: 'Économie moyenne' },
+        { value: '24h', label: 'Attestation délivrée' },
+        { value: '4.9/5', label: '142 avis vérifiés' },
+      ]}
+      calculatorGarantie="decennale"
+      expertBio={{
+        name: 'Marvin Bissohong',
+        role: 'Courtier ORIAS spécialiste BTP',
+        orias: process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX',
+        linkedin: 'https://www.linkedin.com/in/marvinbissohong',
+        bio: "10 ans d'expérience en assurance pro BTP. Spécialiste des dossiers complexes (jeunes entreprises, antécédents sinistres, profils refusés). Négocie chaque dossier auprès de 10 assureurs partenaires (SMABTP, Hiscox, April Pro, MMA, Generali) pour obtenir la meilleure couverture au tarif juste.",
+      }}
+      comparatifRows={[
+        {
+          assureur: 'SMABTP',
+          color: '#1A4F8B',
+          prix: '1 200 €/an',
+          plafond: '8 M€',
+          delai: '48h',
+          recommande: true,
+        },
+        {
+          assureur: 'Hiscox',
+          color: '#7B2CBF',
+          prix: '1 450 €/an',
+          plafond: '10 M€',
+          delai: '24h',
+        },
+        {
+          assureur: 'April Pro',
+          color: '#00A859',
+          prix: '1 380 €/an',
+          plafond: '5 M€',
+          delai: '24h',
+        },
+        {
+          assureur: 'MMA Pro',
+          color: '#003B71',
+          prix: '1 320 €/an',
+          plafond: '8 M€',
+          delai: '48h',
+        },
+        {
+          assureur: 'AXA Pro',
+          color: '#00008F',
+          prix: '1 500 €/an',
+          plafond: '6 M€',
+          delai: '72h',
+        },
+      ]}
       intro="La garantie décennale est obligatoire pour tout artisan ou entreprise du BTP qui réalise des travaux affectant la solidité de l'ouvrage ou le rendant impropre à sa destination. Elle s'applique pendant 10 ans à compter de la réception des travaux. Notre cabinet de courtage ORIAS compare pour vous les offres de 10 assureurs spécialistes du BTP (Hiscox, April Pro, MMA, Generali, AXA Pro, SMABTP…) afin d'obtenir la meilleure couverture au tarif le plus juste."
       benefits={[
         { icon: '⚖️', title: 'Conforme Loi Spinetta', desc: 'Couverture obligatoire 10 ans' },
@@ -195,28 +250,76 @@ export default function PilierDecennalePage() {
       ]}
       faq={[
         {
-          q: "L'assurance décennale est-elle obligatoire pour un auto-entrepreneur BTP ?",
-          a: "Oui. L'obligation de l'art. L. 241-1 du Code des assurances s'applique à tous les statuts juridiques, y compris les auto-entrepreneurs et micro-entrepreneurs du BTP. L'amende prévue (75 000 €) est identique.",
+          q: "Que se passe-t-il si je n'ai pas de décennale et qu'un sinistre arrive ?",
+          a: "Vous êtes personnellement responsable sur votre patrimoine pendant 10 ans (art. 1792 Code civil). Un sinistre type fissure structurelle = 50 000 à 300 000 € à votre charge. S'ajoutent 75 000 € d'amende pénale et 6 mois de prison (art. L. 243-3 Code des assurances).",
         },
         {
-          q: 'Combien de temps avant un chantier dois-je souscrire ?',
-          a: "La décennale doit être souscrite AVANT l'ouverture du chantier. Avec notre cabinet, l'attestation est délivrée sous 24 heures après validation de votre dossier. Pour les chantiers d'urgence, une couverture provisoire peut être négociée.",
+          q: 'Que risque-je vraiment si je travaille sans décennale en auto-entrepreneur BTP ?',
+          a: "Mêmes sanctions qu'une SARL : 75 000 € d'amende, 6 mois de prison, interdiction d'exercer. L'obligation de l'art. L. 241-1 du Code des assurances s'applique à TOUS les statuts. Un client peut aussi vous poursuivre 10 ans après pour le coût intégral des réparations.",
         },
         {
-          q: 'Que faire si plusieurs assureurs me refusent ?',
-          a: 'Vous pouvez saisir le Bureau Central de Tarification (BCT) qui obligera un assureur à vous couvrir au tarif fixé. Notre cabinet vous accompagne dans cette démarche et vous conseille les assureurs spécialisés dans les profils difficiles (jeunes entreprises, antécédents sinistres).',
+          q: "Mon client peut-il refuser de me payer si je n'ai pas d'attestation décennale ?",
+          a: "Oui, et c'est légal. Depuis 2024 (arrêté NOR ECOC2306450A), l'attestation décennale est obligatoire sur tout devis et facture BTP. Sans elle, le client peut suspendre le paiement et refuser l'ouverture de chantier sans engager sa responsabilité.",
         },
         {
-          q: "Comment changer d'assureur en cours d'année ?",
-          a: "Grâce à la Loi Hamon (2014), vous pouvez résilier votre décennale après la première année à tout moment, avec un préavis d'1 mois. Notre cabinet gère la résiliation et la transition vers le nouveau contrat sans interruption de couverture.",
+          q: "Suis-je obligé d'avoir une décennale si je ne fais que de la rénovation légère ?",
+          a: "Oui dès lors que vos travaux affectent la solidité de l'ouvrage ou un élément d'équipement indissociable (canalisation encastrée, isolation, étanchéité). Seuls les travaux purement décoratifs (peinture pure sans préparation, pose de tableaux) en sont exemptés.",
         },
         {
-          q: 'La décennale couvre-t-elle les travaux en sous-traitance ?',
-          a: "Oui, sous conditions. Le sous-traitant doit avoir sa propre décennale. Le donneur d'ordre engage sa responsabilité s'il fait appel à un sous-traitant non couvert. Demandez systématiquement l'attestation de votre sous-traitant avant le chantier.",
+          q: 'Suis-je couvert si un client me poursuit 8 ans après la fin du chantier ?',
+          a: "Oui si la décennale était en vigueur le jour de la réception des travaux. La couverture suit le chantier pendant 10 ans même si vous changez d'assureur, cessez votre activité ou partez en retraite (sous réserve de la garantie subséquente).",
         },
         {
-          q: 'Peut-on déduire la prime décennale des frais professionnels ?',
-          a: "Oui, la prime de décennale est entièrement déductible des frais professionnels en BIC (régime réel) ou en charge déductible pour les sociétés. Pour les auto-entrepreneurs au régime micro, elle n'est pas déductible mais entre dans le calcul du seuil de TVA.",
+          q: "Mes anciens chantiers sont-ils couverts si je change d'assureur ?",
+          a: "Oui, en principe : la décennale fonctionne en « capitalisation » (le contrat de l'année de réception couvre 10 ans). Demandez à votre ancien assureur une attestation de garantie subséquente et conservez-la précieusement — c'est elle qui prouve la couverture en cas de sinistre futur.",
+        },
+        {
+          q: "La décennale couvre-t-elle un sous-traitant si je n'ai pas vérifié son attestation ?",
+          a: "Non. Si votre sous-traitant n'a pas sa propre décennale et cause un sinistre, vous engagez votre responsabilité solidaire (art. 1792 Code civil). Demandez systématiquement son attestation avant tout chantier — sans elle, ne le faites pas intervenir.",
+        },
+        {
+          q: "Suis-je couvert si je travaille à l'étranger pendant le chantier ?",
+          a: 'Uniquement si la couverture territoriale du contrat inclut le pays. La majorité des décennales françaises couvrent la France métropolitaine + DOM. Pour Belgique, Suisse, Luxembourg, il faut un avenant. Notre cabinet ORIAS négocie ces extensions selon votre profil.',
+        },
+        {
+          q: 'Combien ça coûte vraiment une décennale en auto-entrepreneur ?',
+          a: "À partir de 35-45 €/mois pour un peintre AE débutant, 60-120 €/mois pour un plombier-chauffagiste, 100-180 €/mois pour un maçon. Le tarif dépend du métier (sinistralité AQC), du CA et de l'expérience. Méfiez-vous des offres < 30 €/mois : couverture souvent insuffisante.",
+        },
+        {
+          q: "Mon assureur peut-il me lâcher en cours d'année après un sinistre ?",
+          a: "Oui, après tout sinistre l'assureur dispose d'un délai d'1 mois pour résilier (art. R. 113-10 Code des assurances). Vous bénéficiez du même droit. Si vous êtes résilié, le Bureau Central de Tarification (BCT) peut obliger un assureur à vous couvrir au tarif fixé.",
+        },
+        {
+          q: 'Puis-je résilier ma décennale en cours de contrat ?',
+          a: "Oui : après 1 an d'engagement, la Loi Hamon (2014) vous permet de résilier à tout moment avec préavis d'1 mois, sans frais ni motif. Notre cabinet gère la résiliation et la transition pour garantir une continuité de couverture (zéro jour sans attestation).",
+        },
+        {
+          q: 'Puis-je déduire ma prime décennale de mes impôts ?',
+          a: "Oui en intégralité si vous êtes en BIC réel, IS (SARL/SAS/EURL) ou BNC déclaration contrôlée — c'est une charge professionnelle déductible. Auto-entrepreneur au micro-BIC : non déductible (forfait), mais la prime reste 100% à votre charge sans plafond de remboursement.",
+        },
+        {
+          q: 'Combien de temps pour recevoir mon attestation après souscription ?',
+          a: "Via notre cabinet ORIAS : 24h ouvrées maximum après validation de votre dossier complet (Kbis, devis-type, CV, attestation antécédents). Pour les chantiers d'urgence, une couverture provisoire dans la journée peut être négociée avec certains partenaires (April Pro, Hiscox, SMABTP).",
+        },
+        {
+          q: "Combien de temps prend l'indemnisation d'un sinistre décennale ?",
+          a: "Délai moyen : 6 à 18 mois selon la complexité (expertise contradictoire, contre-expertise, judiciarisation). L'assureur a 60 jours pour mandater un expert (art. L. 242-1). Préservez les preuves (photos, devis-réparation) dès la déclaration pour accélérer le dossier.",
+        },
+        {
+          q: 'Comment prouver ma couverture décennale sur un chantier ?',
+          a: "Présentez votre attestation annuelle (à jour, < 12 mois) qui mentionne assureur, n° police, période de validité, activités couvertes et zone géographique. Depuis 2024 cette mention doit aussi figurer sur tous devis et factures. Refusez tout chantier qui n'accepte pas votre attestation.",
+        },
+        {
+          q: "Suis-je couvert si je modifie mon activité en cours d'année (nouveau métier) ?",
+          a: 'Non automatiquement : la décennale couvre UNIQUEMENT les activités déclarées au contrat. Ajouter la « plomberie » à votre métier de carreleur impose un avenant immédiat. Sans déclaration, le sinistre sur la nouvelle activité ne sera PAS indemnisé (exclusion pour fausse déclaration).',
+        },
+        {
+          q: "Puis-je travailler en sous-traitance avec une décennale d'auto-entrepreneur ?",
+          a: "Oui, mais le donneur d'ordre exigera votre attestation avant le chantier. Le sous-traitant doit aussi être inscrit à la Chambre des Métiers (CMA) avec qualification reconnue pour le métier exercé. Sans cela, l'assureur peut refuser sa garantie en cas de sinistre.",
+        },
+        {
+          q: 'Ma décennale couvre-t-elle un chantier sans permis de construire ?',
+          a: "Non en principe : les travaux non déclarés (extension > 20 m², surélévation, changement de destination sans autorisation) sont exclus. L'assureur peut refuser sa garantie si le chantier est sanctionné pour non-respect du Code de l'urbanisme. Vérifiez systématiquement le PC avec le client.",
         },
       ]}
       relatedMetiers={METIERS_BTP}

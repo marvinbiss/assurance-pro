@@ -8,6 +8,11 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { RC_PRO_PROFESSIONS } from '@/lib/data/rc-pro-professions'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { RcProVilleTemplate } from '@/components/assurance/RcProVilleTemplate'
 import { rcProStaticSlugs, resolveRcProSlug } from '@/lib/seo/garantie-slug-dispatcher'
 import { SITE_URL } from '@/lib/seo/config'
@@ -64,6 +69,10 @@ export default async function RcProSlugPage(props: { params: Promise<Params> }) 
       title={`RC Pro ${p.name}`}
       tagline={p.tagline}
       legalReference={p.referenceLegale ?? 'art. L. 124-3 et L. 121-2 du Code des assurances'}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       isObligatoire={p.obligatoire}
       intro={p.intro}
       benefits={[

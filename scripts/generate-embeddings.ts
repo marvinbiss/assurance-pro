@@ -118,6 +118,95 @@ async function collectStaticPages(): Promise<PageDoc[]> {
   return docs
 }
 
+// ─── Collecte des articles blog (lib/data/blog-posts*.ts) ────────────────────
+
+/**
+ * Extrait grossièrement les BlogPost depuis les batches blog en parsant les
+ * strings TypeScript via regex. Pas idéal mais évite d'avoir à compiler le TS
+ * dans le script. Pour chaque article on génère un PageDoc avec slug `blog/<slug>`
+ * et content = title + description + tous les paragraphes/items concaténés.
+ */
+async function collectBlogPosts(): Promise<PageDoc[]> {
+  const dataDir = join(process.cwd(), 'src/lib/data')
+  const files = (await readdir(dataDir)).filter(
+    (f) =>
+      (f === 'blog-posts.ts' ||
+        f.startsWith('blog-posts-batch') ||
+        f === 'blog-posts-extensions.ts') &&
+      f.endsWith('.ts') &&
+      !f.endsWith('.test.ts')
+  )
+
+  const docs: PageDoc[] = []
+  const seenSlugs = new Set<string>()
+
+  for (const file of files) {
+    const src = await readFile(join(dataDir, file), 'utf8')
+
+    // Pattern : '<slug>': { ... }  — au début de chaque article (indent 2 espaces)
+    const slugRegex = /^ {2}'([a-z0-9-]+)':\s*\{/gm
+    const starts: Array<{ slug: string; pos: number }> = []
+    for (const m of src.matchAll(slugRegex)) {
+      if (m.index !== undefined) starts.push({ slug: m[1] ?? '', pos: m.index })
+    }
+
+    for (let i = 0; i < starts.length; i++) {
+      const start = starts[i]!
+      const next = starts[i + 1]
+      const block = src.slice(start.pos, next ? next.pos : start.pos + 30_000)
+
+      if (seenSlugs.has(start.slug)) continue
+      seenSlugs.add(start.slug)
+
+      // Extract title (premier title: ou title:)
+      const titleMatch = block.match(/title:\s*['"`]([^'"`]+)['"`]/)
+      // Extract description (premier description: même multi-ligne)
+      const descMatch =
+        block.match(/description:\s*['"`]([^'"`]+)['"`]/) ||
+        block.match(/description:\s*\n\s*['"`]([^'"`]+)['"`]/)
+
+      const title = titleMatch?.[1] ?? start.slug
+      const description = descMatch?.[1] ?? ''
+
+      // Extract paragraphs (toutes les strings dans des arrays paragraphs: [...])
+      const paragraphs: string[] = []
+      const paragraphsRegex = /paragraphs:\s*\[([\s\S]*?)\]/g
+      for (const pm of block.matchAll(paragraphsRegex)) {
+        const inner = pm[1] ?? ''
+        for (const sm of inner.matchAll(/['"`]([^'"`]{30,2000})['"`]/g)) {
+          if (sm[1]) paragraphs.push(sm[1])
+        }
+      }
+
+      // Extract list items (strings dans items: [...])
+      const items: string[] = []
+      const itemsRegex = /items:\s*\[([\s\S]*?)\]/g
+      for (const im of block.matchAll(itemsRegex)) {
+        const inner = im[1] ?? ''
+        for (const sm of inner.matchAll(/['"`]([^'"`]{20,500})['"`]/g)) {
+          if (sm[1]) items.push(sm[1])
+        }
+      }
+
+      const allText = [description, ...paragraphs, ...items]
+        .map((s) => s.replace(/\\'/g, "'").replace(/\*\*/g, ''))
+        .join(' ')
+        .trim()
+
+      if (allText.length < 200) continue
+
+      docs.push({
+        slug: `blog/${start.slug}`,
+        title,
+        tagline: description,
+        content: `${title}\n${description}\n\n${allText}`.slice(0, 12_000),
+      })
+    }
+  }
+
+  return docs
+}
+
 // ─── Embed + upsert ──────────────────────────────────────────────────────────
 
 async function embedAndUpsert(doc: PageDoc): Promise<void> {
@@ -148,11 +237,18 @@ async function embedAndUpsert(doc: PageDoc): Promise<void> {
 
 async function main(): Promise<void> {
   console.log('🔍 Discovering pages…')
-  const docs = await collectStaticPages()
-  console.log(`📄 Found ${docs.length} static pages`)
+  const staticDocs = await collectStaticPages()
+  console.log(`📄 Found ${staticDocs.length} static pages`)
+
+  console.log('📝 Discovering blog posts…')
+  const blogDocs = await collectBlogPosts()
+  console.log(`📰 Found ${blogDocs.length} blog posts`)
+
+  const docs = [...staticDocs, ...blogDocs]
+  console.log(`📚 Total documents to embed: ${docs.length}`)
 
   const queue = limit > 0 ? docs.slice(0, limit) : docs
-  console.log(`🧮 Processing ${queue.length} pages (concurrency=3)…`)
+  console.log(`🧮 Processing ${queue.length} documents (concurrency=3)…`)
 
   let ok = 0
   let failed = 0

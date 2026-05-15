@@ -2,6 +2,11 @@ import type { Metadata } from 'next'
 import { SITE_URL } from '@/lib/seo/config'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 export const metadata: Metadata = {
   title: 'RC Pro Avocat — Comparez les contrats CNB',
   description:
@@ -30,6 +35,10 @@ export default function RcProAvocatPage() {
       tagline="L'assurance professionnelle obligatoire pour avocats — conforme aux exigences du Conseil National des Barreaux."
       legalReference="art. 27 Loi 1971 + Décret 1991-1197 + Règlement Intérieur National"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       intro="L'avocat est tenu par la loi et par le règlement intérieur de chaque barreau de souscrire une assurance de responsabilité civile professionnelle couvrant l'ensemble de son activité. La couverture minimale est généralement fixée à 1,5M€ par sinistre. Notre cabinet ORIAS travaille avec les assureurs spécialisés du secteur juridique (Allianz, Generali, Hiscox, Covéa) pour proposer des contrats sur-mesure adaptés à la spécialité (affaires, pénal, famille, fiscaliste…) et au mode d'exercice (collaborateur, associé, indépendant)."
       benefits={[
         { icon: '⚖️', title: 'Conforme RIN', desc: 'Reconnu par le CNB' },

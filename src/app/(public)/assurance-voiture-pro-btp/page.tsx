@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +28,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="L'assurance voiture pro BTP est une déclinaison spécifique de l'assurance automobile destinée aux véhicules utilitaires (camionnettes, fourgons, camions légers) utilisés par les artisans et entreprises du Bâtiment. Elle intègre des spécificités essentielles : transport de matériaux (sable, ciment, ferraille), couverture de l'outillage professionnel embarqué, et flexibilité multi-conducteurs (compagnons, apprentis)."
       legalReference="art. L. 211-1 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🚐',

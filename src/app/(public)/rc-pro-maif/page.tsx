@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La MAIF (Mutuelle Assurance des Instituteurs de France) est un assureur mutualiste français créé en 1934 par les enseignants, désormais ouvert à tous mais conservant une forte spécialisation dans le secteur associatif, l'économie sociale et solidaire (ESS), les professions libérales (enseignants, médico-social, culture) et les associations sportives. Sa RC Pro est moins agressive sur les pros services commerciaux purs, mais excellente pour les structures à but non lucratif et les pros &quot;à vocation sociale&quot;. Cette page analyse l'offre MAIF RC Pro et la compare avec MMA, Hiscox, Allianz Pro."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Loi 1901 (associations)"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🎓',

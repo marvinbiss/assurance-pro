@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La micro-entreprise regroupe en réalité 3 statuts différents : 1) Auto-entrepreneur (AE) — le plus connu, 2) Entreprise Individuelle (EI) en régime micro, 3) EURL en option régime micro (rare). La RC Pro est identique fiscalement pour ces 3 statuts (déductibilité possible si Madelin TNS). Cette page clarifie les distinctions, détaille les tarifs et oriente vers les meilleurs assureurs selon activité."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + art. 50-0 CGI (régime micro)"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '📋',

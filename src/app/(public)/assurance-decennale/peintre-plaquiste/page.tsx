@@ -7,6 +7,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +33,10 @@ export default function Page() {
       intro="L'assurance décennale peintre-plaquiste est OBLIGATOIRE pour tout artisan peintre, plaquiste ou poseur de cloisons sèches en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 3,1% — LA PLUS FAIBLE du BTP, ce qui explique des tarifs très compétitifs (480-760 €/an pour AE). Sinistres principaux : défauts cloisons sèches BA13/BA15 (jeux, fissures jonctions), défauts d'isolation thermique/phonique entre cloisons. Tarifs 2026 : 480-760 €/an pour AE (CA <50k€), 4 800-9 200 €/an pour SARL avec 5 salariés."
       legalReference="Loi Spinetta + DTU 25.41 (plâtrerie) + DTU 59.1 (peinture)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

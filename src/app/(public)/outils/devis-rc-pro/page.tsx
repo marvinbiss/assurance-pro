@@ -49,7 +49,7 @@ export default async function Page() {
   return (
     <main className="min-h-screen bg-white">
       {/* HERO */}
-      <header className="bg-gradient-to-br from-blue-700 to-blue-900 py-12 text-white">
+      <header className="bg-gradient-to-br from-charcoal-900 via-primary-700 to-primary-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
             <Link href="/" className="hover:underline">

@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Stello est un assureur français challenger spécialisé dans les mobilités professionnelles et les services digitaux, créé en 2019. Son positionnement : 100% en ligne, souscription en 5 minutes, contrats modulaires, tarifs compétitifs sur AE freelance et chauffeurs VTC. Cette page analyse l'offre Stello RC Pro, ses points forts (digital pur, prix, contrat 2-en-1 auto+RC Pro pour VTC), ses limites, et la compare avec les leaders du segment (Hiscox, Wakam, Allianz Pro)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + décret 2014-371 (VTC)"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💻',

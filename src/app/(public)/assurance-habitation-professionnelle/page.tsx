@@ -5,6 +5,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +35,10 @@ export default function Page() {
       intro="L'assurance habitation professionnelle est l'extension de votre contrat habitation classique pour couvrir une activité professionnelle exercée à votre DOMICILE : freelance, consultant, professions libérales (médecin remplaçant, avocat à domicile, kiné, ostéo), artisans réparateurs (couture, retouches, bijouterie atelier), enseignants/coachs particuliers, e-commerce stocké à domicile. Particularité critique : votre assurance HABITATION CLASSIQUE (MAAF, MAIF, MMA, Allianz, AXA Habitation) NE COUVRE PAS l'activité professionnelle — équipement pro, visiteurs business, stock pro stocké chez vous, RC pro. Sans extension, un sinistre est REJETÉ pour « usage non déclaré » (art. L. 113-2 C. assur.). 2 options : extension habitation (+80-150€/an) pour activité légère sans visiteur, ou contrat pro à domicile dédié (220-380€/an) pour activité avec visiteurs ou stock significatif. Cette page détaille les 2 options et leurs limites."
       legalReference="Article L. 113-2 du Code des assurances + Code de la consommation (visiteurs business)"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '🏡',

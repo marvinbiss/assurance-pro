@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="La MACIF (Mutuelle Assurance des Commerçants et Industriels de France) est un assureur mutualiste français créé en 1960, regroupant 5 millions de sociétaires. Son offre RC Pro cible principalement les commerçants, artisans et professions libérales, avec une approche mutualiste sans actionnaires. Cette page analyse l'offre MACIF RC Pro, ses points forts/faibles, et la compare aux autres mutualistes (MAIF, Matmut) et aux spécialistes pro (MMA, Hiscox)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🤝',

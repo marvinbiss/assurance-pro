@@ -14,6 +14,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -40,6 +41,9 @@ export default function Page() {
       intro="L'assurance transport de marchandises est l'ensemble des garanties indispensables à toute entreprise de transport routier (TPE artisan transporteur, PME, grands comptes), de logistique, de messagerie ou de livraison express. Elle se décompose en 3 briques principales : RC Pro transporteur (responsabilité du transporteur en cas de perte/avarie/retard de la marchandise — encadrée par la convention CMR pour le transport international et la LOTI pour le national), garantie facultés (assurance des marchandises transportées tous risques — perte, vol, accident, événements climatiques), et garantie contractuelle CMR/LOTI (limitations de responsabilité réglementaires : 8,33 DTS/kg en CMR international, indemnité forfaitaire en LOTI national). Les tarifs 2026 démarrent à 1 480 € HT/an pour un artisan-transporteur solo avec 1 utilitaire jusqu'à 25 000 € HT/an pour une flotte de 10 poids lourds spécialisés (frigorifique, ADR matières dangereuses). Cette page détaille les obligations légales, les plafonds CMR/LOTI, les tarifs par profil et l'articulation avec l'assurance véhicule pro."
       legalReference="Convention CMR (transport international) + Loi LOTI (transport national) + Code des transports"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_AUTO}
       benefits={[
         {
           icon: '🚛',

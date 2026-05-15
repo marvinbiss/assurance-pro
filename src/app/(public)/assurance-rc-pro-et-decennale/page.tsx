@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="Pour les professionnels du BTP, souscrire l'assurance RC Pro et la Décennale ensemble chez le même assureur (pack combiné) est la meilleure stratégie : économies de 15-25% sur les primes, gestion centralisée avec 1 seul interlocuteur, et cohérence des couvertures (pas de zone grise entre les 2 contrats). Cette page compare les 5 assureurs BTP proposant des packs RC Pro + Décennale, avec tarifs précis et calcul d'économies réelles."
       legalReference="RC Pro : art. L. 124-3 + L. 121-2 • Décennale : Loi Spinetta + art. 1792 Code civil"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '📦',

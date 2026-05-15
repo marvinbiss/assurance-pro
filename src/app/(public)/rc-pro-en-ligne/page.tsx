@@ -2,6 +2,11 @@
  * Souscription — "rc pro en ligne" (700 vol, KD 22, CPC 600€)
  */
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { buildPageMetadata } from '@/lib/seo/page-metadata'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="RC Pro 100% en ligne : KW à 700 vol/mois Ahrefs et 600€ CPC Google Ads — l'un des MONEY KW les plus stratégiques du marché. Cette page compare les 5 assureurs leaders en parallèle (Hiscox, Stello, Allianz Pro, MMA Pro, AXA Pro) et propose un parcours souscription en 5 minutes avec attestation immédiate. Couvre AE, SARL, SAS PME pour tous secteurs (services, BTP, libéral, immobilier, mobilité)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '🆚',

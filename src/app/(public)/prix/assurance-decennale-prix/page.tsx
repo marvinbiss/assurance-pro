@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="Prix assurance décennale BTP 2026 vérifiés par métier et statut juridique. Données basées sur l'analyse de 1 000+ devis traités par notre courtier ORIAS partenaire chez les 5 assureurs spécialisés BTP (April Pro, SMABTP, Allianz Pro, MMA Pro BTP, AXA Pro BTP)."
       legalReference="Loi Spinetta + art. 1792 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         { icon: '📊', title: 'Prix vérifiés 2026', desc: 'Basés sur 1 000+ devis réels traités' },
         {

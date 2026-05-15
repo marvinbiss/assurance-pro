@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +33,10 @@ export default function Page() {
       intro="L'agent immobilier titulaire de la Carte T (Transactions) délivrée par la CCI doit obligatoirement détenir une RC Pro conforme aux exigences de la Loi Hoguet (art. 49 loi 70-9 + décret 72-678). Cette page détaille les obligations spécifiques aux agents Carte T : plafond légal minimum, attestation à présenter à la CCI tous les 3 ans (renouvellement carte), responsabilités couvertes et erreurs fréquentes à éviter."
       legalReference="Loi Hoguet (art. 49 loi 70-9) + décret 72-678 art. 50 + art. L. 124-3 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '📋',

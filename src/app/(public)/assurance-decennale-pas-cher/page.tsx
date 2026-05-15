@@ -5,6 +5,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +32,10 @@ export default function Page() {
       intro="La garantie décennale est obligatoire pour tous les constructeurs (Loi Spinetta 1978, art. 1792 Code civil) — mais son coût varie de 950€/an à 8 000€/an+ selon votre métier, statut, sinistralité et assureur choisi. Cette page détaille les 7 leviers concrets pour réduire significativement votre prime décennale sans sacrifier la conformité ni les garanties critiques."
       legalReference="Loi Spinetta 1978 + art. 1792 Code civil + art. L. 241-1 Code assurances"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '💰',

@@ -7,6 +7,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +33,8 @@ export default function Page() {
       intro="L'assurance santé professionnelle (mutuelle TNS) est la complémentaire santé spécialisée pour les Travailleurs Non Salariés (TNS) : artisans, commerçants, professions libérales, gérants majoritaires de SARL, EI, EURL. Sa particularité : cotisations DÉDUCTIBLES du bénéfice imposable au titre de la Loi Madelin (article 154 bis CGI), pouvant représenter jusqu'à ~5 800€/an d'économie fiscale pour un TNS dégageant 60 k€ de bénéfice. Distincte de l'assurance santé d'entreprise (mutuelle COLLECTIVE pour SALARIÉS), elle s'adresse au DIRIGEANT et au PRO INDÉPENDANT lui-même. Tarifs 2026 : 32-220 €/mois selon profil. Cette page renvoie vers nos piliers spécialisés selon votre métier."
       legalReference="Article 154 bis du CGI — Loi Madelin du 11 février 1994"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '💰',

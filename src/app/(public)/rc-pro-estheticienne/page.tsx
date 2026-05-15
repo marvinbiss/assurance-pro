@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="L'esthéticienne — qu'elle exerce à domicile ou en institut de beauté — doit obligatoirement avoir une RC Pro pour exercer (CAP esthétique + déclaration d'activité). Cette assurance couvre les dommages corporels (allergies, brûlures, réactions cutanées) et matériels causés aux clients lors des soins (épilation, manucure, modelage, prothèses ongulaires, soins visage). Sinistre moyen : 3-15k€ (allergies graves, brûlures épilation laser sans qualification)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Code de la santé publique (cosmétiques, dispositifs médicaux)"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '💆',

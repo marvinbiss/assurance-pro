@@ -5,6 +5,11 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -30,6 +35,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Avant de souscrire une RC Pro, il est crucial de comprendre ce qu'elle couvre vraiment, les pièges à éviter (exclusions cachées, plafonds insuffisants, antériorité limitée) et comment choisir entre les assureurs spécialisés. Ce guide ORIAS détaille les 7 critères de décision, les plafonds recommandés par activité et les erreurs fréquentes à éviter."
       legalReference="art. L. 124-3 + L. 121-2 + Code de la consommation art. L. 113-2 et s."
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚡',

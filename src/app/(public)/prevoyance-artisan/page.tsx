@@ -7,6 +7,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +33,8 @@ export default function Page() {
       intro="La prévoyance artisan est calibrée sur les risques spécifiques du secteur BTP : sinistralité corporelle élevée (chutes de hauteur, dorsalgies, troubles musculo-squelettiques), risque cardiovasculaire (efforts physiques intenses), risque vibrations (outils électriques portatifs), risque chimique (peintures, isolants). Pour un artisan TNS solo, un arrêt de travail = revenus à zéro (la Sécu artisans verse seulement 22-65€/jour après 3 jours de carence). Sans prévoyance privée, l'asphyxie financière est rapide (charges fixes 1 800-3 200€/mois entre matériel, véhicule pro, assurances, logement). Le pack standard combine : IJ dès J0 (typiquement 100-200€/jour), rente invalidité 70% du revenu, capital décès 4-8 ans de revenus pour la famille, garantie agression chantier (vol matériel, agression sur site). Conformément à la Loi Madelin, cotisations déductibles BNC pour les TNS au régime réel. Tarifs 2026 : 128-380€/mois selon profil."
       legalReference="Article 154 bis du CGI (Loi Madelin) + Code des assurances"
       isObligatoire={false}
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '🩹',

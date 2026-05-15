@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="La décennale n'est pas obligatoire pour TOUS les travaux : la Loi Spinetta (art. 1792 Code civil) définit précisément le périmètre des ouvrages concernés. Cette page liste exhaustivement les travaux soumis à décennale et ceux qui en sont exclus, avec les zones grises qui posent question."
       legalReference="art. 1792 et 1792-2 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

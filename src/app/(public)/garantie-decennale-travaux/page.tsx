@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="La garantie décennale s'applique à des travaux précisément définis par la Loi Spinetta (art. 1792 et 1792-2 Code civil) : tout ouvrage immobilier dont la solidité ou la destination peut être affectée pendant 10 ans après réception. Cette page liste exhaustivement les travaux concernés vs ceux exclus, avec les critères de distinction objectifs (test d'indissociabilité, impact sur destination)."
       legalReference="Loi Spinetta + art. 1792, 1792-1 et 1792-2 Code civil"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '🏗️',

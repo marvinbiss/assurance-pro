@@ -6,6 +6,7 @@
 
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +32,8 @@ export default function Page() {
       tagline={TAGLINE}
       intro="PRO BTP est l'institution paritaire historique du Bâtiment et des Travaux Publics, qui propose une mutuelle santé spécifique aux salariés, artisans et dirigeants de la branche depuis 1944. Cette page fait le tour de l'offre mutuelle PRO BTP : niveaux de garanties S1 à S4, tarifs par tranche d'âge, fonctionnalités de l'espace adhérent, et — surtout — comparatif honnête avec les alternatives privées (April Pro Santé, Harmonie Mutuelle BTP, MMA Mutuelle Pro) qui peuvent être plus avantageuses selon votre profil TNS."
       legalReference="Régime obligatoire ANI 2013 (salariés) + Loi Madelin (TNS, art. 154 bis CGI)"
+      socialProofStats={STATS_DEFAULT}
+      expertBio={EXPERT_DEFAULT}
       benefits={[
         {
           icon: '🏗️',

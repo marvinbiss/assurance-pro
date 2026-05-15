@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="L'attestation d'assurance RC Pro est un document officiel délivré par votre assureur qui prouve que votre Responsabilité Civile Professionnelle est en cours de validité. Indispensable pour : 1) Présenter aux clients B2B avant signature de contrat, 2) Justifier conformité auprès des donneurs d'ordre, 3) Renouveler une carte professionnelle (Carte T agent immobilier, Carte VTC, etc.). Cette page détaille les mentions obligatoires, le modèle type, et les démarches d'obtention rapide."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + arrêté 6 décembre 2022 (cliquabilité ORIAS)"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '📄',

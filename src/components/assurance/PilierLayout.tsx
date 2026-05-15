@@ -18,15 +18,59 @@ import {
   AlertCircle,
   Scale,
   Award,
+  Wallet,
   Zap,
+  ClipboardList,
+  Wrench,
+  Hammer,
+  Briefcase,
+  Clock,
+  Target,
+  Rocket,
 } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+
+const EMOJI_ICON_MAP: Record<string, LucideIcon> = {
+  '⚖️': Scale,
+  '⚖': Scale,
+  '💰': Wallet,
+  '⚡': Zap,
+  '🛡️': ShieldCheck,
+  '🛡': ShieldCheck,
+  '🏆': Award,
+  '📋': ClipboardList,
+  '📜': ClipboardList,
+  '🔧': Wrench,
+  '🛠️': Hammer,
+  '🛠': Hammer,
+  '⚠️': AlertCircle,
+  '⚠': AlertCircle,
+  '✅': CheckCircle2,
+  '⏱️': Clock,
+  '⏱': Clock,
+  '🎯': Target,
+  '💼': Briefcase,
+  '🚀': Rocket,
+}
+import { ExpertBio, SocialProofHero, TrustBadgesAcpr } from '@/components/premium'
+// Below-fold heavy sections — lazy-loaded to keep First Load JS small.
+import { ComparatifAssureursTable, DevisCTASection, TarifCalculator } from './pilier-sections-lazy'
+import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
+import { ParallaxLayer } from '@/components/motion/dynamic/ParallaxLayerDynamic'
+import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
+
+type CalculatorGarantie = 'decennale' | 'rc-pro' | 'multirisque-pro' | 'cyber'
 import {
   getBreadcrumbSchema,
   getServiceSchema,
   getArticleSchema,
   getFAQPageSchema,
+  getAggregateRatingDirectSchema,
+  getInsuranceAgencyOrganizationSchema,
+  getPersonSchema,
 } from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
+import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
@@ -75,6 +119,28 @@ export interface PilierProps {
   legalReference?: string
   /** Garantie obligatoire ? */
   isObligatoire?: boolean
+  /** Stats social proof hero (4 max) */
+  socialProofStats?: readonly { value: string; label: string }[]
+  /** Calculateur tarif inline */
+  calculatorGarantie?: CalculatorGarantie
+  /** Expert bio courtier */
+  expertBio?: {
+    name: string
+    role: string
+    bio: string
+    orias?: string
+    linkedin?: string
+    avatar?: string
+  }
+  /** Comparatif assureurs table */
+  comparatifRows?: readonly {
+    assureur: string
+    color: string
+    prix: string
+    plafond: string
+    delai: string
+    recommande?: boolean
+  }[]
 }
 
 export async function PilierLayout({
@@ -88,6 +154,10 @@ export async function PilierLayout({
   relatedMetiers,
   legalReference,
   isObligatoire,
+  socialProofStats,
+  calculatorGarantie,
+  expertBio,
+  comparatifRows,
 }: PilierProps) {
   const nonce = (await headers()).get('x-nonce') ?? undefined
 
@@ -96,21 +166,27 @@ export async function PilierLayout({
       {/* ═══════════════════════════════════════════════════════════════════
           HERO — gradient terra + breadcrumb + CTAs + legal ref
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
+      <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
         {/* Mesh gradient animé */}
         <div
           className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90"
           aria-hidden="true"
         />
-        {/* Radial blobs decoratifs */}
-        <div
+        {/* Radial blobs decoratifs — parallax scroll + mouse */}
+        <ParallaxLayer
+          speed={0.22}
+          mouseInfluence={0.45}
           className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] rounded-full bg-secondary-500/30 blur-[140px]"
-          aria-hidden="true"
-        />
-        <div
+        >
+          <span aria-hidden className="block h-full w-full" />
+        </ParallaxLayer>
+        <ParallaxLayer
+          speed={-0.15}
+          mouseInfluence={0.3}
           className="pointer-events-none absolute -bottom-32 -right-32 h-[400px] w-[400px] rounded-full bg-primary-400/30 blur-[120px]"
-          aria-hidden="true"
-        />
+        >
+          <span aria-hidden className="block h-full w-full" />
+        </ParallaxLayer>
         <div className="absolute inset-0 bg-hero-pattern opacity-30" aria-hidden="true" />
 
         <div className="container relative mx-auto max-w-5xl px-4">
@@ -122,8 +198,12 @@ export async function PilierLayout({
             <Link href="/" className="transition-colors hover:text-white">
               Accueil
             </Link>
-            <span className="text-white/40">/</span>
-            <span className="text-white/95">{prettifySegment(slug.split('/')[0] ?? '')}</span>
+            <span className="text-white/40" aria-hidden="true">
+              /
+            </span>
+            <span className="text-white/95" aria-current="page">
+              {prettifySegment(slug.split('/')[0] ?? '')}
+            </span>
           </nav>
 
           {/* Badge obligatoire */}
@@ -171,8 +251,20 @@ export async function PilierLayout({
               <span className="text-white">{legalReference}</span>
             </div>
           ) : null}
+
+          {/* Trust badges ORIAS / ACPR / DDA — différenciateur YMYL anti-FR-norm */}
+          <TrustBadgesAcpr orias={process.env.NEXT_PUBLIC_ORIAS_NUMBER} className="mt-6" />
         </div>
       </section>
+
+      {/* Social proof stats band (sand-50 sous hero) */}
+      {socialProofStats && socialProofStats.length > 0 ? (
+        <section className="border-y border-sand-300 bg-sand-50 py-10 md:py-12">
+          <div className="container mx-auto max-w-6xl px-4">
+            <SocialProofHero stats={socialProofStats} />
+          </div>
+        </section>
+      ) : null}
 
       {/* ═══════════════════════════════════════════════════════════════════
           BÉNÉFICES — Cards avec icons gradient
@@ -182,29 +274,29 @@ export async function PilierLayout({
           <div className="container mx-auto max-w-6xl px-4">
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {benefits.map((b, idx) => (
-                <div
-                  key={b.title}
-                  style={{ animationDelay: `${idx * 80}ms` }}
-                  className="mount-fade-up group relative overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-                >
-                  <div
-                    className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 transition-opacity group-hover:opacity-100"
-                    aria-hidden="true"
-                  />
-                  {b.icon ? (
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-xl text-white shadow-soft transition-transform group-hover:scale-110">
-                      {b.icon}
+                <RevealOnScroll key={b.title} delay={idx * 80} translateY={28}>
+                  <TiltCard maxTilt={4} glowColor="rgba(232, 107, 75, 0.12)">
+                    <div className="group relative h-full overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft transition-[box-shadow] duration-300 hover:shadow-card-hover">
+                      <div
+                        className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 transition-opacity group-hover:opacity-100"
+                        aria-hidden="true"
+                      />
+                      {(() => {
+                        const MappedIcon = b.icon ? EMOJI_ICON_MAP[b.icon] : null
+                        const IconCmp = MappedIcon ?? CheckCircle2
+                        return (
+                          <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-soft transition-transform group-hover:scale-110">
+                            <IconCmp className="h-5 w-5" strokeWidth={2.4} aria-hidden />
+                          </div>
+                        )
+                      })()}
+                      <h3 className="mb-2 font-heading text-base font-bold text-charcoal-900">
+                        {b.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed text-charcoal-600">{b.desc}</p>
                     </div>
-                  ) : (
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-soft">
-                      <CheckCircle2 className="h-5 w-5" strokeWidth={2.4} />
-                    </div>
-                  )}
-                  <h3 className="mb-2 font-heading text-base font-bold text-charcoal-900">
-                    {b.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-charcoal-600">{b.desc}</p>
-                </div>
+                  </TiltCard>
+                </RevealOnScroll>
               ))}
             </div>
           </div>
@@ -226,6 +318,50 @@ export async function PilierLayout({
         </div>
       </section>
 
+      {/* Calculateur tarif inline (premium conversion) */}
+      {calculatorGarantie ? (
+        <section className="bg-sand-50 py-16 md:py-20">
+          <div className="container mx-auto max-w-4xl px-4">
+            <RevealOnScroll>
+              <div className="mb-8 text-center">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-700">
+                  Estimation instantanée
+                </div>
+                <h2
+                  className="font-heading text-3xl font-medium leading-tight tracking-tight text-charcoal-900 md:text-4xl"
+                  style={{ fontFamily: 'var(--font-heading), Fraunces, serif' }}
+                >
+                  Combien va vous coûter votre assurance ?
+                </h2>
+              </div>
+              <TarifCalculator garantie={calculatorGarantie} />
+            </RevealOnScroll>
+          </div>
+        </section>
+      ) : null}
+
+      {/* Comparatif assureurs table */}
+      {comparatifRows && comparatifRows.length > 0 ? (
+        <section className="bg-white py-16 md:py-20">
+          <div className="container mx-auto max-w-5xl px-4">
+            <RevealOnScroll>
+              <div className="mb-8 text-center">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-secondary-800">
+                  Comparatif 2026
+                </div>
+                <h2
+                  className="font-heading text-3xl font-medium leading-tight tracking-tight text-charcoal-900 md:text-4xl"
+                  style={{ fontFamily: 'var(--font-heading), Fraunces, serif' }}
+                >
+                  Nos assureurs partenaires comparés
+                </h2>
+              </div>
+              <ComparatifAssureursTable rows={comparatifRows} />
+            </RevealOnScroll>
+          </div>
+        </section>
+      ) : null}
+
       {/* ═══════════════════════════════════════════════════════════════════
           SECTIONS — Alternance sand / white pour rythme visuel
           ═══════════════════════════════════════════════════════════════════ */}
@@ -235,21 +371,47 @@ export async function PilierLayout({
           className={`py-16 md:py-20 ${idx % 2 === 0 ? 'bg-sand-50' : 'bg-white'}`}
         >
           <div className="container mx-auto max-w-4xl px-4">
-            <div className="mb-8 flex items-start gap-4">
-              <span
-                className="mt-2 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 font-heading text-base font-extrabold text-white shadow-glow-clay"
-                aria-hidden="true"
-              >
-                {idx + 1}
-              </span>
-              <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-display text-charcoal-900 md:text-4xl">
-                {s.h2}
-              </h2>
-            </div>
-            <div className="pilier-prose prose prose-lg max-w-none text-charcoal-700">{s.body}</div>
+            <RevealOnScroll translateY={28}>
+              <div className="mb-8 flex items-start gap-4">
+                <span
+                  className="mt-2 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 font-heading text-base font-extrabold text-white shadow-glow-clay"
+                  aria-hidden="true"
+                >
+                  {idx + 1}
+                </span>
+                <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-display text-charcoal-900 md:text-4xl">
+                  {s.h2}
+                </h2>
+              </div>
+              <div className="pilier-prose prose prose-lg max-w-none text-charcoal-700">
+                {s.body}
+              </div>
+            </RevealOnScroll>
           </div>
         </section>
       ))}
+
+      {/* Expert bio courtier — E-E-A-T YMYL signal */}
+      {expertBio ? (
+        <section className="bg-sand-50 py-16 md:py-20">
+          <div className="container mx-auto max-w-4xl px-4">
+            <RevealOnScroll>
+              <div className="mb-8">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-700">
+                  Votre interlocuteur
+                </div>
+                <h2
+                  className="font-heading text-3xl font-medium leading-tight tracking-tight text-charcoal-900 md:text-4xl"
+                  style={{ fontFamily: 'var(--font-heading), Fraunces, serif' }}
+                >
+                  Un courtier ORIAS qui connaît votre métier
+                </h2>
+              </div>
+              <ExpertBio {...expertBio} />
+            </RevealOnScroll>
+          </div>
+        </section>
+      ) : null}
 
       {/* ═══════════════════════════════════════════════════════════════════
           RELATED MÉTIERS — Grid links premium
@@ -270,7 +432,7 @@ export async function PilierLayout({
               {relatedMetiers.map((m) => (
                 <Link
                   key={m.slug}
-                  href={`/${m.slug}`}
+                  href={`/${slug}/${m.slug}`}
                   className="group flex items-center justify-between gap-2 rounded-xl border border-charcoal-100 bg-white px-4 py-3.5 text-sm font-semibold text-charcoal-800 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-200 hover:bg-sand-50 hover:text-primary-700"
                 >
                   <span>{m.name}</span>
@@ -321,71 +483,31 @@ export async function PilierLayout({
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════════
-          CTA FINAL — gradient terra + glow + dual CTA
-          ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
-        <div className="absolute inset-0 bg-gradient-terra opacity-95" aria-hidden="true" />
-        <div
-          className="pointer-events-none absolute -right-20 -top-20 h-[400px] w-[400px] rounded-full bg-secondary-400/40 blur-[120px]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-20 -left-20 h-[400px] w-[400px] rounded-full bg-primary-700/30 blur-[120px]"
-          aria-hidden="true"
-        />
-
-        <div className="container relative mx-auto max-w-4xl px-4 text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-            <Zap className="h-3.5 w-3.5" />
-            Recontact sous 24h ouvrées
-          </div>
-
-          <h2 className="mb-6 font-heading text-4xl font-extrabold leading-tight tracking-display md:text-5xl">
-            Prêt à comparer
-            <br />
-            <span className="text-secondary-200">
-              votre {title.split(' ')[0]?.toLowerCase() ?? 'assurance'} ?
-            </span>
-          </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
-            {IS_PRE_ORIAS
-              ? "Cabinet en cours d'immatriculation ORIAS. Rejoignez la liste pour être prévenu(e) dès l'ouverture commerciale."
-              : 'Devis gratuit, sans engagement. Notre courtier ORIAS vous recontacte avec 3 offres personnalisées en moins de 24 heures.'}
+      {/* Disclaimer DDA L.521-4 Code des assurances — conformité ACPR/YMYL piliers */}
+      <section aria-label="Mentions précontractuelles" className="bg-sand-100 py-6">
+        <div className="container mx-auto max-w-5xl px-4 text-xs leading-relaxed text-charcoal-600">
+          <p>
+            <strong className="text-charcoal-800">Information précontractuelle —</strong> Ce contenu
+            est informatif et ne constitue pas un conseil personnalisé au sens de l&apos;article
+            L.&nbsp;521-4 du Code des assurances. Pour un conseil adapté à votre situation, un
+            courtier ORIAS vous recontactera après réception de votre demande de devis. Aucune
+            commission n&apos;est facturée à nos clients ; nous sommes rémunérés par les compagnies
+            d&apos;assurance partenaires. Conformité DDA &amp; ACPR.
           </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href={`/devis?garantie=${slug}`}
-              className="group inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-extrabold text-primary-700 shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-premium-lg"
-            >
-              {CTA_TEXTS.start}
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/5 px-7 py-4 font-semibold backdrop-blur-sm transition-all hover:bg-white/15"
-            >
-              Parler à un conseiller
-            </Link>
-          </div>
-
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/85">
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              Sans engagement
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              0€ frais de courtage
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-secondary-300" strokeWidth={2.5} />
-              Conformité ACPR
-            </span>
-          </div>
         </div>
       </section>
+
+      {/* CTA FINAL — DESIGN.md Atelier Premium (grain + premium-terra shadow) */}
+      <DevisCTASection
+        title={`Prêt à comparer votre ${title.split(' ')[0]?.toLowerCase() ?? 'assurance'} ?`}
+        subtitle={
+          IS_PRE_ORIAS
+            ? "Cabinet en cours d'immatriculation ORIAS. Rejoignez la liste pour être prévenu(e) dès l'ouverture commerciale."
+            : 'Devis gratuit, sans engagement. Notre courtier ORIAS vous recontacte avec 3 offres personnalisées en moins de 24 heures.'
+        }
+        primaryCta={{ label: CTA_TEXTS.start, href: `/devis?garantie=${slug}` }}
+        secondaryCta={{ label: 'Parler à un conseiller', href: '/contact' }}
+      />
 
       {/* Schemas JSON-LD — safe escape + nonce CSP */}
       <script {...jsonLdScriptProps(getFAQPageSchema(faq), nonce)} />
@@ -408,6 +530,38 @@ export async function PilierLayout({
           nonce
         )}
       />
+      {/* InsuranceAgency root signal — E-E-A-T YMYL (ORIAS/ACPR/CSCA) */}
+      <script {...jsonLdScriptProps(getInsuranceAgencyOrganizationSchema(), nonce)} />
+      {/* AggregateRating site-wide — rich snippet ★ SERP */}
+      <script
+        {...jsonLdScriptProps(
+          getAggregateRatingDirectSchema({
+            ratingValue: SITE_AGGREGATE_RATING.ratingValue,
+            reviewCount: SITE_AGGREGATE_RATING.reviewCount,
+            bestRating: SITE_AGGREGATE_RATING.bestRating,
+            worstRating: SITE_AGGREGATE_RATING.worstRating,
+            itemReviewedName: title,
+            itemReviewedType: 'Service',
+          }),
+          nonce
+        )}
+      />
+      {/* Person schema (expert author) — E-E-A-T author signal */}
+      {expertBio ? (
+        <script
+          {...jsonLdScriptProps(
+            getPersonSchema({
+              name: expertBio.name,
+              jobTitle: expertBio.role,
+              url: `${SITE_URL}/${slug}#expert`,
+              ...(expertBio.avatar ? { imageUrl: expertBio.avatar } : {}),
+              description: expertBio.bio,
+              ...(expertBio.linkedin ? { sameAs: [expertBio.linkedin] } : {}),
+            }),
+            nonce
+          )}
+        />
+      ) : null}
     </article>
   )
 }

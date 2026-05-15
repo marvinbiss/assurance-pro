@@ -6,6 +6,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_MULTIRISQUE,
+  EXPERT_DEFAULT,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -31,6 +36,10 @@ export default function Page() {
       intro="La question des assurances OBLIGATOIRES pour une entreprise française génère beaucoup de confusion : selon votre métier, statut juridique et taille, certaines garanties sont légalement OBLIGATOIRES (sanctions pénales en cas d'absence) et d'autres sont CONTRACTUELLEMENT OBLIGATOIRES (clause bail commercial, exigence client). Cette page liste exhaustivement toutes les assurances obligatoires en France métropolitaine en 2026, avec les références légales précises et les sanctions encourues. Elle sert de checklist pour vérifier votre conformité et éviter les sanctions URSSAF, ACPR, Inspection du travail, ou poursuites pénales."
       legalReference="Code des assurances + ANI 2013 + Code de la santé publique + Code des transports"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="multirisque-pro"
+      expertBio={EXPERT_DEFAULT}
+      comparatifRows={COMPARATIF_MULTIRISQUE}
       benefits={[
         {
           icon: '⚖️',

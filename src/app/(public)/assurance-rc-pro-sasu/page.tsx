@@ -4,6 +4,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +33,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Guide pratique pour souscrire votre RC Pro SASU (Société par Actions Simplifiée Unipersonnelle) : démarches de souscription pas à pas, pièces nécessaires, comparatif détaillé des 5 assureurs leaders (Hiscox, Stello, Allianz Pro, MMA Pro, AXA Pro), critères de choix selon activité, et bonnes pratiques pour optimiser votre couverture."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + art. L. 227-1 et s. Code de commerce"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '📋',

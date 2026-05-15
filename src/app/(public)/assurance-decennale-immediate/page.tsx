@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="Vous devez démarrer un chantier dans 24-48h et n'avez pas encore votre décennale ? La souscription d'une décennale immédiate est possible chez plusieurs assureurs (April Pro, Hiscox, Allianz Pro, MMA, AXA Pro) — sous réserve de fournir rapidement les pièces nécessaires. Cette page détaille les démarches express, les conditions pour obtenir une attestation en 24-48h, et les pièges à éviter (tarification d'urgence majorée, exclusions étendues, contrats provisoires)."
       legalReference="Loi Spinetta + art. 1792 Code civil"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚡',

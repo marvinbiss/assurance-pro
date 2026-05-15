@@ -3,6 +3,7 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -28,6 +29,10 @@ export default function Page() {
       intro="L'assurance décennale est obligatoire en France depuis la Loi Spinetta du 4 janvier 1978 (art. 1792-1 Code civil + art. L. 241-1 Code des assurances). Tout constructeur — au sens large (artisan, entreprise BTP, architecte, maître d'œuvre, CMI, promoteur, sous-traitant) — qui réalise des travaux susceptibles d'affecter la solidité ou la destination d'un ouvrage doit obligatoirement souscrire une décennale AVANT le démarrage du chantier. Cette page détaille qui est concerné, les exceptions, les sanctions et les vérifications à effectuer."
       legalReference="Loi Spinetta 1978 + art. 1792-1 Code civil + art. L. 241-1 et L. 243-3 C. assur."
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

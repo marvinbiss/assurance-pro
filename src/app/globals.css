@@ -450,6 +450,22 @@ img {
   height: auto;
 }
 
+/* Skip rendering of off-screen images/SVGs until scrolled into view.
+   Reduces initial paint work without affecting LCP (the LCP image
+   uses loading="eager" and is excluded by the data-saver rule). */
+img,
+svg {
+  content-visibility: auto;
+}
+
+/* Data-saver: respect prefers-reduced-data — hide non-eager images
+   for users on metered connections. eager images (hero/LCP) still load. */
+@media (prefers-reduced-data: reduce) {
+  img:not([loading='eager']) {
+    display: none;
+  }
+}
+
 /* Smooth font rendering */
 * {
   -webkit-font-smoothing: antialiased;
@@ -1011,6 +1027,213 @@ img {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tous les H1/H2/H3 : text-wrap: balance pour éviter les veuves typo
+   (signe immédiat de qualité éditoriale — coût zéro) */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Fraunces variable axes — optical sizing dynamique premium */
+.font-heading,
+[class*='font-heading'] {
+  font-variation-settings:
+    'opsz' 144,
+    'SOFT' 30,
+    'wght' 700;
+  letter-spacing: -0.025em;
+}
+/* H1 hero : optical sizing maximal + soft maximal pour gros titres éditoriaux */
+h1.font-heading,
+h1[class*='font-heading'] {
+  font-variation-settings:
+    'opsz' 144,
+    'SOFT' 100,
+    'wght' 800;
+  letter-spacing: -0.035em;
+}
+/* H2 : optical sizing intermédiaire */
+h2.font-heading,
+h2[class*='font-heading'] {
+  font-variation-settings:
+    'opsz' 96,
+    'SOFT' 50,
+    'wght' 700;
+  letter-spacing: -0.03em;
+}
+
+/* Paragraphes longs : text-wrap: pretty (meilleure répartition lignes) */
+p,
+li {
+  text-wrap: pretty;
+}
+
+/* Noise texture overlay réutilisable (atmosphère premium) */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* Aurora background — gradient mesh animé pour hero premium
+   Inspiration Magic UI aurora-background, version CSS pure */
+.aurora-bg {
+  position: relative;
+  background: #1c1917;
+  overflow: hidden;
+}
+.aurora-bg::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  background:
+    radial-gradient(at 30% 20%, #c24b2a 0px, transparent 50%),
+    radial-gradient(at 75% 30%, #e8960a 0px, transparent 50%),
+    radial-gradient(at 60% 80%, #a33e22 0px, transparent 50%),
+    radial-gradient(at 20% 90%, #e86b4b 0px, transparent 50%);
+  opacity: 0.55;
+  filter: blur(60px);
+  animation: aurora-drift 25s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes aurora-drift {
+  0% {
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-5%, 5%) rotate(3deg);
+  }
+  100% {
+    transform: translate(5%, -3%) rotate(-2deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurora-bg::before {
+    animation: none;
+  }
+}
+
+/* Btn shine — micro-interaction premium (effet "polish luxe")
+   Ajoute un reflet animé qui traverse le bouton au hover */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.btn-shine:hover::before {
+  transform: translateX(100%);
+}
+.btn-shine > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Card luminescence — border lumineux au hover */
+.card-lumi {
+  position: relative;
+  isolation: isolate;
+}
+.card-lumi::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    transparent 30%,
+    rgba(232, 107, 75, 0.6) 50%,
+    transparent 70%
+  );
+  mask:
+    linear-gradient(white, white) content-box,
+    linear-gradient(white, white);
+  -webkit-mask:
+    linear-gradient(white, white) content-box,
+    linear-gradient(white, white);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.card-lumi:hover::before {
+  opacity: 1;
+}
+
+/* Drop cap éditorial — premier paragraphe avec capitale ornementale
+   Inspiration : NYT Magazine, Vogue. À appliquer sélectivement sur articles. */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  line-height: 0.9;
+  font-weight: 700;
+  margin: 0.1em 0.1em 0 0;
+  color: var(--brand-primary-dark);
+  font-variation-settings:
+    'opsz' 144,
+    'SOFT' 100,
+    'wght' 800;
+}
+
+/* Marquee horizontal — défilement continu (logos partenaires)
+   Inspiration Magic UI marquee */
+.marquee {
+  --marquee-duration: 30s;
+  --marquee-gap: 3rem;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--marquee-gap);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.marquee__track {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--marquee-gap);
+  animation: marquee-scroll var(--marquee-duration) linear infinite;
+  min-width: 100%;
+}
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--marquee-gap)));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+  }
 }
 
 /* Smooth scroll behavior */

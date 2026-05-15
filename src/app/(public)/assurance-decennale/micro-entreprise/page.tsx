@@ -7,6 +7,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +33,10 @@ export default function Page() {
       intro="L'assurance décennale est OBLIGATOIRE pour TOUS les micro-entrepreneurs (= auto-entrepreneurs, dénomination légale depuis 2016) du BTP, sans exception : maçons, plombiers, électriciens, peintres, couvreurs, carreleurs, menuisiers, charpentiers. Imposée par la Loi Spinetta du 4 janvier 1978 (article L. 241-1 du Code des assurances), elle couvre pendant 10 ans à compter de la réception des travaux les dommages compromettant la solidité de l'ouvrage. Sans elle : 75 000€ d'amende + 6 mois de prison + interdiction d'exercer (art. L. 243-3 C. assur.). Pour les micro-entreprises : tarifs préférentiels « jeune installé » + procédure simplifiée + attestation 24h. Cette page est une variante terminologique de notre pilier complet <a href='/assurance-decennale/auto-entrepreneur' class='text-primary-600 underline'>/assurance-decennale/auto-entrepreneur</a> qui couvre les mêmes garanties (micro-entrepreneur = auto-entrepreneur, même statut juridique)."
       legalReference="Loi Spinetta — Article L. 241-1 du Code des assurances"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="decennale"
+      expertBio={EXPERT_BTP}
+      comparatifRows={COMPARATIF_BTP}
       benefits={[
         {
           icon: '⚖️',

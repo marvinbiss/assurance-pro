@@ -3,6 +3,11 @@
  */
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -27,6 +32,10 @@ export default function Page() {
       tagline={TAGLINE}
       intro="Comment souscrire votre RC Pro 100% en ligne en 2026 ? Guide pas à pas pour AE, freelance, SARL, SAS : préparer documents requis, comparer 5 assureurs leaders, faire le bon choix, souscrire en 5 min, recevoir attestation immédiate. Cette page synthétise méthodologie + pièges à éviter + recommandations par profil."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Loi Hamon (rétractation 14j)"
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '📚',

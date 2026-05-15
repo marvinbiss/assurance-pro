@@ -7,6 +7,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
@@ -32,6 +37,10 @@ export default function Page() {
       intro="La RC Pro est OBLIGATOIRE pour tout expert-comptable inscrit à l'Ordre (Ordonnance n° 45-2138 du 19 septembre 1945, art. 17 + Décret n° 2012-432 du 30 mars 2012). Plafond minimum imposé par l'Ordre : 600 000€ par sinistre + 1 200 000€ par année. Sinistralité 2024 : 3,8% — recours principalement liés aux erreurs de déclarations fiscales (TVA, IS, IR), aux défauts de conseil patrimonial, aux mauvaises évaluations de bilan, et aux recours URSSAF/DGFiP suite à mauvaise application barèmes. Tarifs 2026 : 420-1 280 €/an pour expert-comptable indépendant (CA 80-180k€), 8 500-22 000 €/an pour cabinet SARL avec 5 salariés."
       legalReference="Ordonnance 1945 art. 17 + Décret 2012-432 + Code de déontologie des experts-comptables"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚖️',

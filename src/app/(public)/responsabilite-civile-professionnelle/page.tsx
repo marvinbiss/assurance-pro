@@ -27,21 +27,32 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
+import {
+  COMPARATIF_SERVICES,
+  EXPERT_SERVICES,
+  STATS_DEFAULT,
+} from '@/lib/data/pilier-premium-defaults'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 
 const SLUG = 'responsabilite-civile-professionnelle'
-const TITLE = 'Responsabilité civile professionnelle — Guide complet 2026 (RCP / RC Pro)'
+const TITLE = 'Responsabilité Civile Pro 2026 — Guide tarifs + comparatif'
 const TAGLINE =
   "Tout savoir sur la responsabilité civile professionnelle (RCP) : définition juridique, métiers concernés, plafonds recommandés, tarifs 2026 et différence avec l'assurance décennale."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Responsabilité Civile Professionnelle (RCP / RC Pro) : définition juridique, 21 métiers réglementés, plafonds recommandés (1,5 M€ standard, 5 M€ conseil financier), tarifs 2026, distinction avec décennale et cyber. Guide expert ORIAS.',
+    'RCP / RC Pro 2026 : 21 métiers obligatoires, plafonds 1,5-5 M€, tarifs négociés ORIAS. Comparatif 5 assureurs. Devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
-  openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
+  openGraph: {
+    title: TITLE,
+    description: TAGLINE,
+    url: `${SITE_URL}/${SLUG}`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: TITLE }],
+  },
 }
 
 export default function Page() {
@@ -53,6 +64,10 @@ export default function Page() {
       intro="La Responsabilité Civile Professionnelle (RCP — souvent appelée RC Pro) est la garantie d'assurance qui couvre les conséquences pécuniaires de la responsabilité civile du professionnel envers les tiers (clients, fournisseurs, passants) en cas de dommages corporels, matériels ou immatériels causés dans l'exercice de son activité. Régie par l'article L. 113-1 du Code des assurances et par les codes spécifiques aux professions réglementées (santé, juridique, BTP, conseil financier, transport, sport, sécurité), elle est légalement obligatoire pour 21 métiers et fortement recommandée pour TOUS les professionnels et entreprises. Sans RCP, le patrimoine personnel du chef d'entreprise reste exposé en cas de sinistre — un seul dossier client litigieux peut atteindre 100 000 à 1 500 000 € de dommages et intérêts. Cette page détaille la définition juridique exacte, les plafonds recommandés par activité (1,5 M€ standard, 5 M€ conseil financier homologué), les tarifs 2026, et distingue la RCP de l'assurance décennale (BTP) et de la cyber assurance (data breach)."
       legalReference="Article L. 113-1 du Code des assurances + obligations métier (L. 1142-2 santé, L. 511-1 BTP, L. 6321-1 transport)"
       isObligatoire={true}
+      socialProofStats={STATS_DEFAULT}
+      calculatorGarantie="rc-pro"
+      expertBio={EXPERT_SERVICES}
+      comparatifRows={COMPARATIF_SERVICES}
       benefits={[
         {
           icon: '⚖️',
@@ -261,32 +276,76 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: 'La responsabilité civile professionnelle est-elle obligatoire ?',
-          a: 'Légalement obligatoire pour 21 métiers réglementés : BTP (Loi Spinetta + RC travaux), santé (L. 1142-2), juridique (avocat, notaire, expert-comptable), conseil financier (CGP, CIF, IOBSP — homologation ACPR), transport (VTC, taxi, LVC), sport encadré, esthétique invasive, sécurité privée. Pour les autres : pas obligatoire mais EXIGÉE par 78% des plateformes B2B et tous les clients institutionnels.',
+          q: "Que se passe-t-il si je n'ai pas de RCP et qu'un client engage ma responsabilité ?",
+          a: "Action directe de la victime contre vous (art. L. 124-3 Code des assurances). Sans assureur, c'est votre patrimoine personnel qui répond — auto-entrepreneur, EI : biens privés saisissables. Dossier moyen : 30 000 à 250 000 €. Profession réglementée : sanction pénale + radiation possible (avocat, médecin, CGP).",
         },
         {
-          q: 'Quel plafond de RCP choisir pour mon activité ?',
-          a: 'Standard 1,5 M€/sinistre + 3 M€/an pour la majorité des activités. Conseil IT à fort impact : 5 M€ minimum. Conseil financier (CGP/CIF) : 5 M€ obligatoire ACPR. Médecin/paramédical : 8 M€ obligatoire (L. 1142-2 CSP). Architecte : 8 M€ obligatoire (Loi MOP). Plafond trop bas = exposition patrimoine personnel en cas de sinistre majeur.',
+          q: "Suis-je obligé d'avoir une RCP pour mon activité ?",
+          a: 'Légalement OBLIGATOIRE pour 21 métiers réglementés : BTP (Loi Spinetta), santé (L. 1142-2 CSP), juridique (avocat, notaire, expert-comptable), conseil financier (CGP, CIF, IOBSP — homologation ACPR), transport (VTC, taxi), sport encadré, esthétique invasive, sécurité privée. Pour les autres : non obligatoire mais EXIGÉE par 78% des plateformes B2B.',
         },
         {
-          q: 'Combien coûte une RCP en 2026 ?',
-          a: "Démarre à 89€/an pour un freelance digital sans antécédent. Médiane : 180-340€/an. Plafond pratique : 1 200-3 800€/an pour cabinet d'expertise comptable, 5 800€/an pour CGP/CIF agréé ACPR. Variables : métier, CA déclaré, plafonds choisis, antécédents sinistres, territoire couvert (France métro vs UE vs monde).",
+          q: "Que risque ma profession réglementée si je n'ai pas de RCP ?",
+          a: "Avocat : radiation par le Conseil National + sanction disciplinaire. Médecin : suspension par le Conseil de l'Ordre + amende pénale. CGP/CIF/IOBSP : retrait d'agrément ACPR (impossibilité d'exercer). Expert-comptable : sanction Ordre des Experts-Comptables. La RCP est une condition d'inscription au tableau.",
         },
         {
-          q: 'Différence entre RCP et RC Exploitation ?',
-          a: 'RCP = dommages causés à un tiers PENDANT la prestation professionnelle (erreur consultant, faute médicale). RC EXPLOITATION = dommages causés à un tiers EN DEHORS de la prestation (visiteur qui glisse dans vos locaux, livreur blessé). Les 2 sont souvent regroupées dans un même contrat « RC Pro complète » ou « MRP » pour les professionnels avec local.',
+          q: "Mon client B2B peut-il m'imposer une RCP avec plafond élevé ?",
+          a: "Oui, c'est une pratique standard en B2B et marchés publics. Les contrats avec grands comptes exigent souvent 2-5 M€ par sinistre, parfois 10 M€ pour l'IT critique. Notre cabinet ORIAS négocie les avenants nécessaires en 48h pour répondre à une exigence client avant signature de mission.",
         },
         {
-          q: 'La RCP couvre-t-elle les cyberattaques ?',
-          a: "Pas systématiquement. La RCP standard couvre les dommages causés à un tiers MAIS les conséquences d'une cyberattaque (perte de données client, ransomware, breach RGPD) relèvent généralement d'une garantie CYBER ASSURANCE distincte. Certains contrats RCP haut de gamme intègrent un volet cyber limité (50-200 k€) — à vérifier explicitement à la souscription.",
+          q: 'Suis-je couvert si un client me réclame 5 ans après une mission ?',
+          a: "Oui si votre contrat fonctionne en « base réclamation » avec garantie subséquente active (standard 5 ans, jusqu'à 10 ans). Si vous avez résilié sans garantie subséquente, le sinistre n'est PAS couvert. Vérifiez TOUJOURS la durée de subséquente avant toute résiliation ou changement d'assureur.",
         },
         {
           q: 'Mon assureur peut-il refuser un sinistre RCP ?',
-          a: 'Oui, dans 4 cas principaux : (1) faute intentionnelle (toujours exclue par ordre public), (2) sinistre antérieur à la souscription sans clause de rétroactivité, (3) activité non déclarée à la souscription, (4) plafond annuel cumulé déjà épuisé. Pour limiter les refus : déclarer TOUTES vos activités, activer la rétroactivité, augmenter le plafond annuel si plusieurs sinistres potentiels.',
+          a: 'Oui dans 4 cas : (1) faute intentionnelle (toujours exclue par ordre public art. L. 113-1), (2) sinistre antérieur à la souscription sans clause de rétroactivité, (3) activité non déclarée à la souscription, (4) plafond annuel cumulé déjà épuisé. Déclarez TOUTES vos activités et activez la rétroactivité.',
         },
         {
-          q: 'Combien de temps pour obtenir un devis RCP ?',
-          a: 'Devis personnalisé via notre formulaire : 24h ouvrées avec 3-5 propositions de nos 8 partenaires (Hiscox, April Pro, MMA, AXA Pro, Allianz Pro, Generali, Wakam, Stello). Souscription : 24-48h. Effet du contrat : possible dès le 1er du mois suivant ou immédiat (procédure express +120€).',
+          q: 'La RCP couvre-t-elle une cyberattaque ou fuite de données client ?',
+          a: "Pas systématiquement. La RCP standard couvre les dommages causés à un tiers MAIS une cyberattaque (perte de données, ransomware, breach RGPD) relève d'une garantie CYBER ASSURANCE distincte. Certains contrats RCP premium incluent un volet cyber limité (50-200 k€) — à vérifier explicitement à la souscription.",
+        },
+        {
+          q: 'Suis-je couvert pour les missions effectuées avant la souscription ?',
+          a: "Uniquement avec une clause de rétroactivité (« reprise du passé »). Standard sans option : non couvert. Notre cabinet négocie une rétroactivité 1 à 5 ans avec Hiscox, April Pro, Stello — indispensable si vous régularisez tardivement votre RCP ou changez d'assureur après plusieurs années d'activité.",
+        },
+        {
+          q: 'Combien ça coûte vraiment une RCP en 2026 ?',
+          a: "Démarre à 89 €/an pour un freelance digital sans antécédent (plafond 1,5 M€). Médiane : 180-340 €/an. Cabinet d'expertise comptable : 1 200-3 800 €/an. CGP/CIF agréé ACPR : 2 800-5 800 €/an. Variables : métier, CA déclaré, plafonds choisis, antécédents, territoire (France/UE/monde).",
+        },
+        {
+          q: 'Quel plafond de RCP choisir pour ne pas être sous-couvert ?',
+          a: 'Standard 1,5 M€/sinistre + 3 M€/an pour la majorité des activités. Conseil IT à fort impact : 5 M€ minimum. Conseil financier (CGP/CIF) : 5 M€ obligatoire ACPR. Médecin/paramédical : 8 M€ obligatoire (L. 1142-2). Architecte : 8 M€ obligatoire (Loi MOP). Plafond trop bas = exposition patrimoine personnel.',
+        },
+        {
+          q: 'Mon assureur peut-il me résilier après un sinistre ?',
+          a: "Oui, après tout sinistre l'assureur dispose d'un délai d'1 mois pour résilier (art. R. 113-10 Code des assurances). Vous bénéficiez du même droit. Si vous êtes résilié, notre cabinet ORIAS vous oriente vers des assureurs spécialisés profils difficiles (Wakam, Stello, Hiscox segments spécifiques).",
+        },
+        {
+          q: 'Puis-je résilier ma RCP à tout moment ?',
+          a: "Oui, après 1 an d'engagement vous pouvez résilier à tout moment sans frais ni motif (Loi Hamon 2014, art. L. 113-15-2 Code des assurances). Préavis 1 mois. ATTENTION : conservez la « garantie subséquente » 5 ans minimum pour couvrir les réclamations sur missions anciennes — non négociable.",
+        },
+        {
+          q: 'Puis-je déduire ma prime RCP de mes impôts ?',
+          a: 'Oui en intégralité si vous êtes en BIC réel, BNC déclaration contrôlée ou IS (SARL/SAS/EURL) — charge professionnelle déductible 100%. Auto-entrepreneur au micro-BIC/BNC : non déductible (régime forfaitaire), mais la prime reste 100% à votre charge sans franchise ni plafond de remboursement.',
+        },
+        {
+          q: 'Combien de temps pour obtenir mon attestation RCP ?',
+          a: 'Via notre formulaire : devis personnalisé sous 24h ouvrées avec 3-5 propositions de nos 8 partenaires (Hiscox, April Pro, MMA, AXA Pro, Allianz Pro, Generali, Wakam, Stello). Souscription : 24-48h. Effet contrat : possible dès le 1er du mois suivant ou immédiat (procédure express +120 €).',
+        },
+        {
+          q: "Combien de temps prend l'indemnisation d'un sinistre RCP ?",
+          a: "Délai moyen : 3 à 12 mois selon la complexité (expertise contradictoire, judiciarisation). L'assureur a 30 jours pour proposer une indemnisation après expertise. Préservez TOUTES les preuves dès la mise en cause : e-mails, contrats, livrables, devis, échanges WhatsApp/Slack. Pas d'accord direct avec le client sans avis assureur.",
+        },
+        {
+          q: 'Différence entre RCP et RC Exploitation : laquelle me faut-il ?',
+          a: 'RCP = dommages causés à un tiers PENDANT la prestation professionnelle (erreur consultant, faute médicale, audit erroné). RC Exploitation = dommages causés EN DEHORS de la prestation (visiteur qui glisse dans vos locaux, livreur blessé). Les 2 souvent regroupées dans un contrat « RC Pro complète » ou « Multirisque Pro ».',
+        },
+        {
+          q: 'Différence entre RCP et assurance décennale BTP ?',
+          a: "La RCP couvre les dommages causés à un tiers PENDANT la prestation (chute d'outil, dégât sur chantier). La DÉCENNALE couvre les désordres affectant la solidité de l'ouvrage 10 ANS APRÈS RÉCEPTION (Loi Spinetta + art. 1792 Code civil). Pour un artisan BTP : les 2 sont OBLIGATOIRES (RC travaux + décennale).",
+        },
+        {
+          q: 'La RCP couvre-t-elle aussi le dirigeant pour faute de gestion ?',
+          a: "Non. La RCP couvre l'exercice professionnel de l'entreprise envers les clients/tiers. Pour la faute de gestion du dirigeant (art. L. 223-22 Code de commerce SARL, L. 225-251 SAS), il faut une RC Mandataire Social (D&O) distincte. Indispensable pour les SAS/SARL > 5 salariés ou avec investisseurs.",
         },
       ]}
     />
