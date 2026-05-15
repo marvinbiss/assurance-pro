@@ -230,7 +230,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           HERO — gradient hero warm animé + radial blobs + trust signals
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
+      <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
         {/* Mesh gradient background — animé subtilement */}
         <div
           className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90"

@@ -96,7 +96,7 @@ export async function PilierLayout({
       {/* ═══════════════════════════════════════════════════════════════════
           HERO — gradient terra + breadcrumb + CTAs + legal ref
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
+      <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
         {/* Mesh gradient animé */}
         <div
           className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90"
@@ -324,7 +324,7 @@ export async function PilierLayout({
       {/* ═══════════════════════════════════════════════════════════════════
           CTA FINAL — gradient terra + glow + dual CTA
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
+      <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
         <div className="absolute inset-0 bg-gradient-terra opacity-95" aria-hidden="true" />
         <div
           className="pointer-events-none absolute -right-20 -top-20 h-[400px] w-[400px] rounded-full bg-secondary-400/40 blur-[120px]"

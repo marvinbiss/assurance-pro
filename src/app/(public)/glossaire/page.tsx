@@ -277,7 +277,7 @@ export default function GlossairePage() {
     <main className="min-h-screen bg-sand-50">
       <BreadcrumbSchema items={[{ label: 'Glossaire' }]} />
       {/* Hero */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
+      <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
         <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />
         <div
           className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-secondary-400/25 blur-3xl"

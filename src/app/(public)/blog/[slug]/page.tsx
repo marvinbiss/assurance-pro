@@ -247,7 +247,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
       />
 
       {/* Hero — fil d'Ariane + meta + titre + auteur */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-14 text-white md:py-20">
+      <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-14 text-white md:py-20">
         <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />
         <div
           className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-secondary-400/25 blur-3xl"

@@ -1021,6 +1021,34 @@ h3 {
   text-wrap: balance;
 }
 
+/* Fraunces variable axes — optical sizing dynamique premium */
+.font-heading,
+[class*='font-heading'] {
+  font-variation-settings:
+    'opsz' 144,
+    'SOFT' 30,
+    'wght' 700;
+  letter-spacing: -0.025em;
+}
+/* H1 hero : optical sizing maximal + soft maximal pour gros titres éditoriaux */
+h1.font-heading,
+h1[class*='font-heading'] {
+  font-variation-settings:
+    'opsz' 144,
+    'SOFT' 100,
+    'wght' 800;
+  letter-spacing: -0.035em;
+}
+/* H2 : optical sizing intermédiaire */
+h2.font-heading,
+h2[class*='font-heading'] {
+  font-variation-settings:
+    'opsz' 96,
+    'SOFT' 50,
+    'wght' 700;
+  letter-spacing: -0.03em;
+}
+
 /* Paragraphes longs : text-wrap: pretty (meilleure répartition lignes) */
 p,
 li {

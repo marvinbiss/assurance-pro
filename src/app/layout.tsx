@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { headers } from 'next/headers'
-import { DM_Sans, Sora } from 'next/font/google'
+import { DM_Sans, Fraunces } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import { PreOriasBanner } from '@/components/PreOriasBanner'
@@ -19,11 +19,14 @@ const dmSans = DM_Sans({
   adjustFontFallback: true,
 })
 
-const sora = Sora({
+// Fraunces — variable serif éditoriale premium (axes opsz + SOFT + wght continu)
+// Élève instantanément le brand vers "Editorial Luxury Artisanal"
+const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-heading',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
+  style: ['normal'],
+  axes: ['opsz', 'SOFT'],
   adjustFontFallback: true,
 })
 
@@ -116,7 +119,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
-    <html lang="fr" className={`scroll-smooth ${dmSans.variable} ${sora.variable}`}>
+    <html lang="fr" className={`scroll-smooth ${dmSans.variable} ${fraunces.variable}`}>
       <head>
         {/* PWA Meta Tags (apple-mobile-web-app, mobile-web-app-capable, theme-color handled by metadata/viewport exports) */}
         <meta name="msapplication-TileColor" content="#E86B4B" />

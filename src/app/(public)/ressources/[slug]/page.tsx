@@ -101,7 +101,7 @@ export default async function RessourcePage(props: { params: Promise<Params> }) 
       <script {...jsonLdScriptProps(schema, nonce)} />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-charcoal-900 py-14 text-white md:py-20 print:hidden">
+      <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-14 text-white md:py-20 print:hidden">
         <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />
         <div className="container relative mx-auto max-w-4xl px-4">
           <nav
