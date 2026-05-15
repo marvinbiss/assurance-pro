@@ -122,6 +122,8 @@ module.exports = {
         'card-hover': '0 20px 40px -12px rgba(28, 25, 23, 0.1), 0 8px 20px -8px rgba(232, 107, 75, 0.08)',
         'cta': '0 4px 14px 0 rgba(232, 107, 75, 0.3)',
         'cta-hover': '0 8px 25px 0 rgba(212, 85, 58, 0.4)',
+        // DESIGN.md --shadow-premium terracotta-tinted for hero CTAs
+        'premium-terra': '0 20px 40px -12px rgba(232, 107, 75, 0.18)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -232,6 +234,11 @@ module.exports = {
         '400': '400ms',
       },
       transitionTimingFunction: {
+        // DESIGN.md easing aliases — Atelier Premium
+        'enter': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'exit': 'cubic-bezier(0.7, 0, 0.84, 0)',
+        'move': 'cubic-bezier(0.65, 0, 0.35, 1)',
+        // Legacy aliases kept for compat
         'premium': 'cubic-bezier(0.16, 1, 0.3, 1)',
         'bounce-in': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
         'bounce-sm': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
