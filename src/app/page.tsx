@@ -18,10 +18,8 @@ import {
   Heart,
   Car,
   Lock,
-  CheckCircle2,
   Clock,
   Users,
-  Zap,
   Star,
   TrendingDown,
   Award,
@@ -153,19 +151,16 @@ const PROCESS_STEPS = [
     n: '01',
     title: 'Décrivez votre activité',
     desc: 'Quelques questions ciblées pour qualifier votre profil et vos besoins. 2 minutes chrono, aucune obligation.',
-    Icon: Sparkles,
   },
   {
     n: '02',
     title: 'Comparaison négociée',
     desc: 'Notre équipe interroge nos 10 assureurs partenaires et négocie le meilleur tarif. Réponse sous 24h ouvrées.',
-    Icon: Zap,
   },
   {
     n: '03',
     title: 'Souscription & attestation',
     desc: "Vous choisissez l'offre. Attestation officielle délivrée sous 24h après signature électronique.",
-    Icon: CheckCircle2,
   },
 ] as const
 

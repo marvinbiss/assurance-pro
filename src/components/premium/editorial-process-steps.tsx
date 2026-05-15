@@ -1,13 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import type { LucideIcon } from 'lucide-react'
 
 interface ProcessStep {
   n: string
   title: string
   desc: string
-  Icon?: LucideIcon
 }
 
 interface EditorialProcessStepsProps {
@@ -115,12 +113,9 @@ export function EditorialProcessSteps({ steps, className = '' }: EditorialProces
             </span>
 
             <div className="md:mb-6 md:flex-1">
-              <div className="mb-3 flex items-center gap-3">
-                {step.Icon && <step.Icon className="h-5 w-5 text-primary-600" aria-hidden />}
-                <h3 className="font-heading text-2xl font-semibold text-charcoal-900 md:text-3xl">
-                  {step.title}
-                </h3>
-              </div>
+              <h3 className="mb-3 font-heading text-2xl font-semibold text-charcoal-900 md:text-3xl">
+                {step.title}
+              </h3>
               <p className="max-w-md text-base leading-relaxed text-charcoal-700 md:text-lg">
                 {step.desc}
               </p>
