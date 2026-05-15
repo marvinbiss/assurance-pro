@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { ArrowRight, ShieldCheck } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { GrainOverlay } from './grain-overlay'
+import { MagneticButton } from '@/components/motion/MagneticButton'
+import { ParallaxLayer } from '@/components/motion/ParallaxLayer'
 
 interface PremiumHeroProps {
   eyebrow?: string
@@ -32,8 +34,20 @@ export function PremiumHero({
     >
       <GrainOverlay opacity={0.04} />
 
-      <div className="pointer-events-none absolute -left-32 top-0 h-[400px] w-[400px] rounded-full bg-primary-100/40 blur-[100px]" />
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-[360px] w-[360px] rounded-full bg-secondary-100/30 blur-[100px]" />
+      <ParallaxLayer
+        speed={0.18}
+        mouseInfluence={0.4}
+        className="pointer-events-none absolute -left-32 top-0 h-[400px] w-[400px] rounded-full bg-primary-100/40 blur-[100px]"
+      >
+        <span aria-hidden className="block h-full w-full" />
+      </ParallaxLayer>
+      <ParallaxLayer
+        speed={-0.12}
+        mouseInfluence={0.25}
+        className="pointer-events-none absolute -right-32 bottom-0 h-[360px] w-[360px] rounded-full bg-secondary-100/30 blur-[100px]"
+      >
+        <span aria-hidden className="block h-full w-full" />
+      </ParallaxLayer>
 
       <div className="container relative mx-auto max-w-7xl px-6 lg:px-12">
         <div className={isPilier ? 'max-w-3xl' : 'max-w-4xl'}>
@@ -63,16 +77,18 @@ export function PremiumHero({
           </p>
 
           <div className="mb-8 flex flex-wrap items-center gap-3">
-            <Link
-              href={primaryCta.href}
-              className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-semibold text-white shadow-cta transition-all duration-200 ease-enter hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
-            >
-              {primaryCta.label}
-              <ArrowRight
-                className="h-5 w-5 transition-transform duration-200 ease-enter group-hover:translate-x-1"
-                aria-hidden
-              />
-            </Link>
+            <MagneticButton strength={0.25}>
+              <Link
+                href={primaryCta.href}
+                className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-semibold text-white shadow-cta transition-[background,box-shadow] duration-200 ease-enter hover:bg-primary-600 hover:shadow-cta-hover"
+              >
+                {primaryCta.label}
+                <ArrowRight
+                  className="h-5 w-5 transition-transform duration-200 ease-enter group-hover:translate-x-1"
+                  aria-hidden
+                />
+              </Link>
+            </MagneticButton>
             {secondaryCta && (
               <Link
                 href={secondaryCta.href}

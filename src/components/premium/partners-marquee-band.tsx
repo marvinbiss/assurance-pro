@@ -8,19 +8,24 @@ interface PartnersMarqueeBandProps {
   partners: readonly Partner[]
   label?: string
   className?: string
+  speed?: 'slow' | 'normal' | 'fast'
 }
+
+const DURATIONS = { slow: '60s', normal: '40s', fast: '25s' } as const
 
 export function PartnersMarqueeBand({
   partners,
   label = 'Partenaires assureurs',
   className = '',
+  speed = 'normal',
 }: PartnersMarqueeBandProps) {
   const doubled = [...partners, ...partners]
+  const duration = DURATIONS[speed]
 
   return (
     <section
       aria-label={label}
-      className={`relative overflow-hidden border-y border-sand-300 bg-sand-50 py-8 ${className}`}
+      className={`group/marquee relative overflow-hidden border-y border-sand-300 bg-sand-50 py-8 ${className}`}
     >
       <div className="mb-4 text-center">
         <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-charcoal-500">
@@ -29,13 +34,13 @@ export function PartnersMarqueeBand({
       </div>
 
       <div
-        className="marquee-track flex gap-12"
-        style={{ animation: 'marquee 40s linear infinite' }}
+        className="marquee-track flex gap-12 group-hover/marquee:[animation-play-state:paused]"
+        style={{ animation: `marquee ${duration} linear infinite`, animationPlayState: 'running' }}
       >
         {doubled.map((p, i) => (
           <div
             key={`${p.name}-${i}`}
-            className="flex shrink-0 items-center gap-3 rounded-full border border-sand-300 bg-white px-5 py-2.5 transition-all duration-200 hover:border-sand-500 hover:shadow-soft"
+            className="flex shrink-0 items-center gap-3 rounded-full border border-sand-300 bg-white px-5 py-2.5 transition-[border-color,box-shadow,transform] duration-200 ease-enter hover:-translate-y-0.5 hover:border-sand-500 hover:shadow-soft"
             style={{ borderLeftColor: p.color, borderLeftWidth: 3 }}
           >
             <span
