@@ -34,6 +34,7 @@ import { HeroParallax } from '@/components/motion/hero-parallax'
 import { FadeInUp } from '@/components/motion/fade-in-up'
 import { StaggerChildren, StaggerItem } from '@/components/motion/stagger-children'
 import { ShareButton } from '@/components/blog/client/share-button'
+import { MagneticCta } from '@/components/motion/magnetic-cta'
 import { getCoverForCategory } from '@/lib/data/blog-covers'
 import { getAuthorByName } from '@/lib/data/blog-authors'
 
@@ -540,13 +541,15 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
                     motivé conforme art. L. 521-4 du Code des assurances.
                   </p>
                 </div>
-                <Link
-                  href="/devis"
-                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-sm font-extrabold text-primary-700 shadow-premium transition-all hover:-translate-y-0.5"
-                >
-                  Demander un devis
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                <MagneticCta>
+                  <Link
+                    href="/devis"
+                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-sm font-extrabold text-primary-700 shadow-premium transition-all hover:-translate-y-0.5"
+                  >
+                    Demander un devis
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </MagneticCta>
               </div>
             </section>
           </div>

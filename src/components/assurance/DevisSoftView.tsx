@@ -10,7 +10,7 @@ interface DevisSoftViewProps {
 
 export function DevisSoftView({ defaultVertical }: DevisSoftViewProps) {
   return (
-    <main className="min-h-screen bg-sand-50 py-12 md:py-20">
+    <main className="min-h-screen bg-sand-50 py-12 dark:bg-charcoal-900 md:py-20">
       <div className="container mx-auto max-w-3xl px-4">
         <header className="mb-10 text-center">
           <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-700">
