@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
+import { getCoverForCategory } from '@/lib/data/blog-covers'
 import {
   ArrowRight,
   Calendar,
@@ -139,7 +141,7 @@ export default function BlogPage() {
             <Sparkles className="h-3.5 w-3.5 text-secondary-300" strokeWidth={2.4} />
             Blog &amp; insights ORIAS
           </span>
-          <h1 className="font-display-premium mb-5 max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
+          <h1 className="mb-5 max-w-3xl font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
             Décryptages, guides
             <br />
             <span className="text-secondary-200">&amp; analyses de marché</span>
@@ -213,28 +215,35 @@ export default function BlogPage() {
               className="group block overflow-hidden rounded-3xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-premium"
             >
               <div className="grid grid-cols-1 lg:grid-cols-5">
-                {/* Cover gradient avec icon */}
-                <div
-                  className={`relative aspect-[16/9] overflow-hidden bg-gradient-to-br ${featuredConfig.gradient} p-8 lg:col-span-2 lg:aspect-auto`}
-                >
+                {/* Cover image éditoriale */}
+                <div className="relative aspect-[16/9] overflow-hidden lg:col-span-2 lg:aspect-auto">
+                  <Image
+                    src={(featured.coverImage ?? getCoverForCategory(featured.category)).src}
+                    alt={(featured.coverImage ?? getCoverForCategory(featured.category)).alt}
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 480px, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                   <div
-                    className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/20 blur-3xl"
+                    className={`pointer-events-none absolute inset-0 bg-gradient-to-tr ${featuredConfig.gradient} opacity-50 mix-blend-multiply`}
                     aria-hidden="true"
                   />
                   <div
-                    className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-black/20 blur-3xl"
+                    className="absolute inset-0 bg-gradient-to-t from-charcoal-950/60 via-transparent"
                     aria-hidden="true"
                   />
-                  <div className="relative flex h-full flex-col justify-between text-white">
-                    <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider backdrop-blur-sm">
-                      <Sparkles className="h-3 w-3" />À la une
+                  <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
+                    <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-white/30 bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider backdrop-blur-sm">
+                      <Sparkles className="h-3 w-3" aria-hidden="true" />À la une
                     </span>
                     <div>
                       <featuredConfig.Icon
-                        className="mb-3 h-12 w-12 text-white/90"
+                        className="mb-3 h-10 w-10 text-white drop-shadow-lg"
                         strokeWidth={1.8}
+                        aria-hidden="true"
                       />
-                      <div className="text-xs font-bold uppercase tracking-wider text-white/85">
+                      <div className="text-xs font-bold uppercase tracking-wider text-white drop-shadow">
                         {featured.category}
                       </div>
                     </div>
@@ -307,26 +316,34 @@ export default function BlogPage() {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {rest.map((post) => {
                 const config = configForCategory(post.category)
+                const cover = post.coverImage ?? getCoverForCategory(post.category)
                 return (
                   <article key={post.slug} className="group">
                     <Link
                       href={`/blog/${post.slug}`}
                       className="flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-charcoal-200 hover:shadow-premium"
                     >
-                      {/* Cover gradient */}
-                      <div
-                        className={`relative aspect-[16/9] overflow-hidden bg-gradient-to-br ${config.gradient} p-5`}
-                      >
+                      {/* Cover image */}
+                      <div className="relative aspect-[16/9] overflow-hidden">
+                        <Image
+                          src={cover.src}
+                          alt={cover.alt}
+                          width={800}
+                          height={450}
+                          sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
                         <div
-                          className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/20 blur-2xl"
+                          className={`pointer-events-none absolute inset-0 bg-gradient-to-tr ${config.gradient} opacity-55 mix-blend-multiply`}
                           aria-hidden="true"
                         />
-                        <div className="relative flex h-full items-end justify-between text-white">
+                        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-4 text-white">
                           <config.Icon
-                            className="h-10 w-10 text-white/90 transition-transform group-hover:scale-110"
+                            className="h-9 w-9 text-white drop-shadow-lg transition-transform group-hover:scale-110"
                             strokeWidth={1.8}
+                            aria-hidden="true"
                           />
-                          <span className="inline-flex items-center gap-1 rounded-full border border-white/30 bg-white/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-charcoal-800 backdrop-blur-sm">
                             {post.category}
                           </span>
                         </div>

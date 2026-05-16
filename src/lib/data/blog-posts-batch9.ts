@@ -308,6 +308,13 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
     publishedAt: '2026-07-10',
     updatedAt: '2026-07-10',
     readTime: '11 min',
+    lead: "41 % des PME françaises ont subi une attaque cyber en 2024 — coût moyen 178 000 €. La cyber assurance n'est plus une option : c'est la dernière ligne de défense face à un risque qui explose chaque année.",
+    keyTakeaways: [
+      "Coût moyen d'une attaque PME en 2024 : 178 000 € (ANSSI)",
+      "Sanctions CNIL jusqu'à 20 M€ ou 4 % du CA mondial",
+      '7 garanties indispensables : ransomware, RGPD, fraude au président, perte exploitation, frais notification, e-réputation, expertise forensique',
+      'Tarifs PME 20-100 salariés : 1 500 à 8 000 €/an selon CA et secteur',
+    ],
     sources: [
       LEGIFRANCE('Loi Informatique et Libertés (RGPD)', 'jorf/id/JORFTEXT000037085952'),
       { label: 'CNIL — sanctions 2024', url: 'https://www.cnil.fr/' },
@@ -337,18 +344,44 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
       {
         id: 'sinistralite',
         h2: '2. Sinistralité cyber 2024 (rapport AMRAE)',
-        paragraphs: ['Chiffres clés sinistralité cyber 2024 :'],
-        list: {
-          items: [
-            '**Nombre attaques déclarées** : 12 800 (vs 8 900 en 2023, +44 %)',
-            '**Coût moyen sinistre PME** : 178 000 €',
-            '**Coût moyen sinistre ETI** : 1,8 M€',
-            '**Coût moyen sinistre groupe (GE)** : 8,5 M€',
-            "**Taux de paiement de rançons** : 38 % des cas (en baisse depuis 2022 grâce à l'ANSSI)",
-            '**Délai moyen de récupération** : 23 jours (PME), 18 jours (ETI)',
-            '**Sinistres RGPD/CNIL** : 850 sanctions en 2024 (vs 420 en 2023)',
-          ],
-        },
+        paragraphs: [],
+        blocks: [
+          {
+            kind: 'prose',
+            text: 'Le rapport AMRAE 2024 chiffre une explosion historique des sinistres cyber en France. Les PME absorbent le choc de plein fouet :',
+          },
+          {
+            kind: 'keyFigures',
+            items: [
+              { value: '12 800', label: 'attaques déclarées 2024', source: 'AMRAE' },
+              { value: '+44 %', label: 'vs 2023', source: 'AMRAE' },
+              { value: '178 k€', label: 'coût moyen PME', source: 'AMRAE' },
+              { value: '23 j', label: 'délai récupération', source: 'AMRAE' },
+            ],
+          },
+          {
+            kind: 'list',
+            variant: 'check',
+            items: [
+              'Coût moyen sinistre ETI : 1,8 M€',
+              'Coût moyen sinistre groupe (GE) : 8,5 M€',
+              "Taux de paiement de rançons : 38 % des cas (en baisse depuis 2022 grâce à l'ANSSI)",
+              'Sinistres RGPD/CNIL : 850 sanctions en 2024 (vs 420 en 2023)',
+            ],
+          },
+          {
+            kind: 'callout',
+            tone: 'warning',
+            title: 'Tendance 2025',
+            text: "Les attaques ciblant les sous-traitants BTP ont triplé en 2024. Si vous êtes prestataire d'un grand groupe, votre exposition est désormais maximale.",
+          },
+          {
+            kind: 'pullQuote',
+            text: "Aucune PME française ne peut plus se considérer comme une cible négligeable. La question n'est plus 'si' mais 'quand'.",
+            attribution: 'Rapport ANSSI 2024',
+            sourceUrl: 'https://www.ssi.gouv.fr/',
+          },
+        ],
       },
       {
         id: 'garanties',

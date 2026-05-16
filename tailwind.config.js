@@ -95,6 +95,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-dm-sans)', 'DM Sans', 'system-ui', '-apple-system', 'sans-serif'],
         heading: ['var(--font-heading)', 'Sora', 'DM Sans', 'system-ui', 'sans-serif'],
+        'display-premium': ['var(--font-fraunces)', 'Fraunces', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       fontSize: {

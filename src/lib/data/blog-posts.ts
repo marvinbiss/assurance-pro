@@ -4,6 +4,10 @@
  * Le corps est en JSX léger (string interpolation côté template).
  */
 
+import type { BlogBlock, BlogAuthor, BlogCoverImage } from './blog-blocks'
+
+export type { BlogBlock, BlogAuthor, BlogCoverImage } from './blog-blocks'
+
 export interface BlogPost {
   slug: string
   title: string
@@ -13,6 +17,8 @@ export interface BlogPost {
   author: string
   authorRole: string
   authorOrias?: string
+  authorObj?: BlogAuthor
+  coverImage?: BlogCoverImage
   publishedAt: string
   updatedAt: string
   readTime: string
@@ -20,6 +26,8 @@ export interface BlogPost {
   sources: Array<{ label: string; url: string }>
   toc: Array<{ id: string; title: string }>
   body: BlogSection[]
+  lead?: string
+  keyTakeaways?: string[]
 }
 
 export interface BlogSection {
@@ -28,6 +36,7 @@ export interface BlogSection {
   paragraphs: string[]
   list?: { ordered?: boolean; items: string[] }
   callout?: { tone: 'info' | 'warning' | 'success'; text: string }
+  blocks?: BlogBlock[]
 }
 
 export const BLOG_POSTS: Record<string, BlogPost> = {

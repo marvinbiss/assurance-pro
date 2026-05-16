@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
@@ -18,11 +19,19 @@ import {
   BookOpen,
   List,
   Link2,
+  PenLine,
 } from 'lucide-react'
 import { getPost, getPostSlugs, getAllPosts, getCategorySlug } from '@/lib/data/blog-posts'
 import { SITE_URL } from '@/lib/seo/config'
 import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
+import { BlockRenderer } from '@/components/blog/block-renderer'
+import { AuthorBio } from '@/components/blog/blocks/author-bio'
+import { KeyTakeaways } from '@/components/blog/blocks/key-takeaways'
+import { TocSticky } from '@/components/blog/client/toc-sticky'
+import { ReadingProgress } from '@/components/blog/client/reading-progress'
+import { getCoverForCategory } from '@/lib/data/blog-covers'
+import { getAuthorByName } from '@/lib/data/blog-authors'
 
 type Params = { slug: string }
 
@@ -163,6 +172,15 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
 
   const pageUrl = `${SITE_URL}/blog/${post.slug}`
 
+  const cover = post.coverImage ?? getCoverForCategory(post.category)
+  const authorData = post.authorObj ?? getAuthorByName(post.author)
+  const updatedRecently = (() => {
+    if (!post.updatedAt || !post.publishedAt) return false
+    const pub = new Date(post.publishedAt).getTime()
+    const upd = new Date(post.updatedAt).getTime()
+    return Number.isFinite(pub) && Number.isFinite(upd) && upd - pub > 30 * 24 * 60 * 60 * 1000
+  })()
+
   // Extraire la section FAQ (id "faq") pour générer le schema FAQPage.
   // Les Q&A peuvent être dans list.items OU dans paragraphs (selon l'article).
   const faqSection = post.body.find((s) => s.id === 'faq')
@@ -236,6 +254,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
 
   return (
     <main className="min-h-screen bg-sand-50">
+      <ReadingProgress />
       <script {...jsonLdScriptProps(articleSchema, nonce)} />
       {faqSchema && <script {...jsonLdScriptProps(faqSchema, nonce)} />}
       <BreadcrumbSchema
@@ -246,9 +265,19 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
         ]}
       />
 
-      {/* Hero — fil d'Ariane + meta + titre + auteur */}
+      {/* Hero — cover image + fil d'Ariane + meta + titre + auteur */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-14 text-white md:py-20">
-        <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />
+        <div className="absolute inset-0">
+          <Image
+            src={cover.src}
+            alt={cover.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-30"
+          />
+        </div>
+        <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-85" />
         <div
           className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-secondary-400/25 blur-3xl"
           aria-hidden="true"
@@ -287,7 +316,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
             {post.category}
           </Link>
 
-          <h1 className="font-display-premium mb-5 font-heading text-3xl font-extrabold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl">
+          <h1 className="mb-5 font-display-premium font-heading text-3xl font-extrabold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl">
             {post.title}
           </h1>
           <p className="mb-7 max-w-3xl text-lg text-white/85 md:text-xl">{post.description}</p>
@@ -314,6 +343,12 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
                 <Clock className="h-4 w-4 text-secondary-300" strokeWidth={2.4} />
                 {post.readTime} de lecture
               </span>
+              {updatedRecently && (
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary-400/20 px-2.5 py-0.5 text-xs font-extrabold uppercase tracking-wider text-secondary-200">
+                  <PenLine className="h-3 w-3" strokeWidth={2.6} />
+                  Mis à jour le <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time>
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -346,77 +381,107 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
               </ol>
             </aside>
 
-            <article className="prose prose-charcoal prose-headings:font-heading prose-headings:tracking-tight prose-p:text-[17px] prose-p:leading-[1.75] prose-p:text-charcoal-700 prose-a:font-semibold prose-a:text-primary-700 prose-a:no-underline prose-a:underline-offset-4 hover:prose-a:underline prose-strong:font-bold prose-strong:text-charcoal-900 prose-li:my-2 prose-li:text-charcoal-700 prose-li:text-[17px] prose-li:leading-relaxed max-w-none [&_section:first-child_p:first-of-type:first-letter]:float-left [&_section:first-child_p:first-of-type:first-letter]:mr-3 [&_section:first-child_p:first-of-type:first-letter]:font-heading [&_section:first-child_p:first-of-type:first-letter]:text-[64px] [&_section:first-child_p:first-of-type:first-letter]:font-extrabold [&_section:first-child_p:first-of-type:first-letter]:leading-[0.85] [&_section:first-child_p:first-of-type:first-letter]:text-primary-700">
+            {post.lead && (
+              <p className="mb-8 font-display-premium text-xl leading-relaxed text-charcoal-800 first-letter:float-left first-letter:mr-3 first-letter:font-display-premium first-letter:text-[72px] first-letter:font-extrabold first-letter:leading-[0.85] first-letter:text-primary-700 md:text-2xl">
+                {post.lead}
+              </p>
+            )}
+            {post.keyTakeaways && post.keyTakeaways.length > 0 && (
+              <KeyTakeaways points={post.keyTakeaways} />
+            )}
+
+            <article className="max-w-none">
               {post.body.map((section, sectionIdx) => (
                 <section
                   key={section.id}
                   id={section.id}
                   className={`scroll-mt-24 ${sectionIdx > 0 ? 'mt-16 border-t border-charcoal-100 pt-12 md:mt-20 md:pt-14' : ''}`}
                 >
-                  <h2 className="!mb-6 !mt-0 flex items-start gap-4 !text-2xl !font-extrabold !leading-tight !text-charcoal-900 md:!text-3xl">
-                    <span className="mt-1 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 text-sm font-extrabold text-white shadow-soft md:h-10 md:w-10 md:text-base">
+                  <h2 className="mb-6 mt-0 flex items-start gap-4 text-2xl font-extrabold leading-tight text-charcoal-900 md:text-3xl">
+                    <span
+                      aria-hidden="true"
+                      className="mt-1 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 text-sm font-extrabold text-white shadow-soft md:h-10 md:w-10 md:text-base"
+                    >
                       {String(sectionIdx + 1).padStart(2, '0')}
                     </span>
-                    <span className="flex-1">{section.h2}</span>
+                    <span className="flex-1 font-heading tracking-tight">{section.h2}</span>
                   </h2>
-                  {section.paragraphs.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                  {section.list &&
-                    (section.list.ordered ? (
-                      <ol className="!my-6 !list-none !space-y-3 !pl-0">
-                        {section.list.items.map((item, i) => (
-                          <li
-                            key={i}
-                            className="!my-0 flex items-start gap-3 rounded-xl border border-charcoal-100 bg-white/60 p-4"
-                          >
-                            <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-50 text-xs font-extrabold text-primary-700">
-                              {i + 1}
-                            </span>
-                            <span className="flex-1 leading-relaxed">{item}</span>
-                          </li>
+
+                  {section.blocks && section.blocks.length > 0 ? (
+                    section.blocks.map((b, i) => <BlockRenderer key={i} block={b} />)
+                  ) : (
+                    <>
+                      {section.paragraphs.map((p, i) => (
+                        <p key={i} className="my-5 text-[17px] leading-[1.75] text-charcoal-700">
+                          {p}
+                        </p>
+                      ))}
+                      {section.list &&
+                        (section.list.ordered ? (
+                          <ol role="list" className="my-6 list-none space-y-3 pl-0">
+                            {section.list.items.map((item, i) => (
+                              <li
+                                key={i}
+                                className="flex items-start gap-3 rounded-xl border border-charcoal-100 bg-white/60 p-4"
+                              >
+                                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-50 text-xs font-extrabold text-primary-700">
+                                  {i + 1}
+                                </span>
+                                <span className="flex-1 leading-relaxed text-charcoal-700">
+                                  {item}
+                                </span>
+                              </li>
+                            ))}
+                          </ol>
+                        ) : (
+                          <ul role="list" className="my-6 list-none space-y-2.5 pl-0">
+                            {section.list.items.map((item, i) => (
+                              <li key={i} className="flex items-start gap-3">
+                                <CheckCircle2
+                                  className="mt-1 h-4 w-4 flex-shrink-0 text-secondary-600"
+                                  strokeWidth={2.6}
+                                  aria-hidden="true"
+                                />
+                                <span className="flex-1 leading-relaxed text-charcoal-700">
+                                  {item}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
                         ))}
-                      </ol>
-                    ) : (
-                      <ul className="!my-6 !list-none !space-y-2.5 !pl-0">
-                        {section.list.items.map((item, i) => (
-                          <li key={i} className="!my-0 flex items-start gap-3">
-                            <CheckCircle2
-                              className="mt-1 h-4 w-4 flex-shrink-0 text-secondary-600"
-                              strokeWidth={2.6}
-                            />
-                            <span className="flex-1 leading-relaxed">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ))}
-                  {section.callout &&
-                    (() => {
-                      const callout = section.callout
-                      const theme = CALLOUT_THEMES[callout.tone]
-                      return (
-                        <div
-                          className={`not-prose my-6 flex gap-4 rounded-2xl border p-5 ${theme.container}`}
-                        >
-                          <div
-                            className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl ${theme.iconBg}`}
-                          >
-                            <theme.Icon className="h-5 w-5" strokeWidth={2.2} />
-                          </div>
-                          <div className="flex-1">
-                            <div className="mb-1 text-xs font-extrabold uppercase tracking-wider text-charcoal-700">
-                              {theme.title}
+                      {section.callout &&
+                        (() => {
+                          const callout = section.callout
+                          const theme = CALLOUT_THEMES[callout.tone]
+                          return (
+                            <div
+                              className={`my-6 flex gap-4 rounded-2xl border p-5 ${theme.container}`}
+                            >
+                              <div
+                                className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl ${theme.iconBg}`}
+                                aria-hidden="true"
+                              >
+                                <theme.Icon className="h-5 w-5" strokeWidth={2.2} />
+                              </div>
+                              <div className="flex-1">
+                                <div className="mb-1 text-xs font-extrabold uppercase tracking-wider text-charcoal-700">
+                                  {theme.title}
+                                </div>
+                                <p className="m-0 text-sm leading-relaxed text-charcoal-800">
+                                  {callout.text}
+                                </p>
+                              </div>
                             </div>
-                            <p className="m-0 text-sm leading-relaxed text-charcoal-800">
-                              {callout.text}
-                            </p>
-                          </div>
-                        </div>
-                      )
-                    })()}
+                          )
+                        })()}
+                    </>
+                  )}
                 </section>
               ))}
             </article>
+
+            {/* Author bio */}
+            <AuthorBio {...authorData} />
 
             {/* Sources */}
             <section className="mt-12 rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft">
@@ -479,30 +544,10 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
             </section>
           </div>
 
-          {/* Sidebar TOC desktop sticky */}
+          {/* Sidebar TOC desktop sticky (scroll-spy client) */}
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-5">
-              <div className="rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft">
-                <p className="mb-4 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
-                  <List className="h-3.5 w-3.5" strokeWidth={2.4} />
-                  Sommaire
-                </p>
-                <ol className="space-y-2.5 text-sm">
-                  {post.toc.map((item, i) => (
-                    <li key={item.id}>
-                      <a
-                        href={`#${item.id}`}
-                        className="group flex items-start gap-2.5 text-charcoal-700 transition-colors hover:text-primary-700"
-                      >
-                        <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary-50 text-[10px] font-bold text-primary-700 group-hover:bg-primary-100">
-                          {i + 1}
-                        </span>
-                        <span className="font-semibold leading-snug">{item.title}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ol>
-              </div>
+              <TocSticky items={post.toc} />
 
               <div
                 className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${config.gradient} p-6 text-white shadow-soft`}
@@ -512,19 +557,32 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
                   aria-hidden="true"
                 />
                 <div className="relative">
-                  <config.Icon className="mb-3 h-8 w-8 text-white/90" strokeWidth={1.8} />
+                  <config.Icon
+                    className="mb-3 h-8 w-8 text-white/90"
+                    strokeWidth={1.8}
+                    aria-hidden="true"
+                  />
                   <p className="mb-1 text-[11px] font-bold uppercase tracking-wider text-white/80">
-                    Garantie associée
+                    Devis personnalisé
                   </p>
-                  <p className="mb-4 font-heading text-lg font-extrabold leading-tight">
-                    {post.category}
+                  <p className="mb-2 font-heading text-lg font-extrabold leading-tight">
+                    Réponse sous 24h
+                  </p>
+                  <p className="mb-4 text-xs text-white/80">
+                    Courtier ORIAS dédié · conseil motivé art. L. 521-4
                   </p>
                   <Link
-                    href={`/blog/categorie/${categorySlug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-white/95 underline-offset-4 hover:underline"
+                    href={`/devis?vertical=${encodeURIComponent(categorySlug)}`}
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-extrabold text-primary-700 shadow-soft transition-transform hover:-translate-y-0.5"
                   >
-                    Voir tous les articles
-                    <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.4} />
+                    Demander un devis
+                    <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
+                  <Link
+                    href={`/blog/categorie/${categorySlug}`}
+                    className="mt-3 block text-[11px] font-bold uppercase tracking-wider text-white/80 underline-offset-4 hover:underline"
+                  >
+                    Tous les articles {post.category} →
                   </Link>
                 </div>
               </div>
@@ -548,23 +606,40 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
               {related.map((p) => {
                 const rConfig = configForCategory(p.category)
+                const rCover = p.coverImage ?? getCoverForCategory(p.category)
+                const ageMs = Date.now() - new Date(p.publishedAt).getTime()
+                const isFresh =
+                  Number.isFinite(ageMs) && ageMs > 0 && ageMs < 14 * 24 * 60 * 60 * 1000
                 return (
                   <Link
                     key={p.slug}
                     href={`/blog/${p.slug}`}
                     className="group flex flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-premium"
                   >
-                    <div
-                      className={`relative aspect-[16/9] bg-gradient-to-br ${rConfig.gradient} p-4`}
-                    >
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      <Image
+                        src={rCover.src}
+                        alt={rCover.alt}
+                        width={800}
+                        height={450}
+                        sizes="(min-width: 1024px) 280px, (min-width: 768px) 50vw, 100vw"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                       <div
-                        className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-white/20 blur-2xl"
+                        className={`pointer-events-none absolute inset-0 bg-gradient-to-tr ${rConfig.gradient} opacity-60 mix-blend-multiply`}
                         aria-hidden="true"
                       />
-                      <rConfig.Icon
-                        className="relative h-9 w-9 text-white/95 transition-transform group-hover:scale-110"
-                        strokeWidth={1.8}
-                      />
+                      <div className="absolute left-3 top-3 flex items-center gap-2">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-white/90 px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider text-charcoal-800 backdrop-blur-sm">
+                          <rConfig.Icon className="h-3 w-3" strokeWidth={2.4} aria-hidden="true" />
+                          {p.category}
+                        </span>
+                        {isFresh && (
+                          <span className="inline-flex items-center rounded-full bg-secondary-400 px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider text-secondary-950">
+                            Nouveau
+                          </span>
+                        )}
+                      </div>
                     </div>
                     <div className="flex flex-1 flex-col p-5">
                       <time
@@ -578,7 +653,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
                       </h3>
                       <span className="mt-auto inline-flex items-center gap-1 text-xs font-bold text-primary-700 transition-transform group-hover:translate-x-0.5">
                         Lire
-                        <ArrowRight className="h-3 w-3" strokeWidth={2.4} />
+                        <ArrowRight className="h-3 w-3" strokeWidth={2.4} aria-hidden="true" />
                       </span>
                     </div>
                   </Link>
