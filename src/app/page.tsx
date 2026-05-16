@@ -31,6 +31,7 @@ import { IllustrationForMetier } from '@/components/premium/illustrations'
 import { CountUp } from '@/components/motion/CountUp'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { MagneticCta } from '@/components/motion/magnetic-cta'
+import { HeroSceneLazy } from '@/components/three/hero-scene-lazy'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const metadata: Metadata = {
@@ -243,6 +244,11 @@ export default function HomePage() {
           className="pointer-events-none absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-primary-400/30 blur-[120px]"
           aria-hidden="true"
         />
+
+        {/* 3D scene (lazy, desktop only) */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 opacity-80 lg:block">
+          <HeroSceneLazy />
+        </div>
 
         {/* Hero pattern subtle */}
         <div className="absolute inset-0 bg-hero-pattern opacity-30" aria-hidden="true" />
