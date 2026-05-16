@@ -346,24 +346,47 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
               </ol>
             </aside>
 
-            <article className="prose prose-charcoal prose-headings:font-heading prose-headings:tracking-tight prose-h2:mt-12 prose-h2:scroll-mt-24 prose-h2:text-2xl prose-h2:font-extrabold prose-h2:text-charcoal-900 prose-p:text-base prose-p:leading-relaxed prose-p:text-charcoal-700 prose-a:font-semibold prose-a:text-primary-700 prose-a:no-underline prose-a:underline-offset-4 hover:prose-a:underline prose-strong:font-bold prose-strong:text-charcoal-900 prose-ul:my-4 prose-ol:my-4 prose-li:my-1 prose-li:text-charcoal-700 md:prose-h2:text-3xl max-w-none">
-              {post.body.map((section) => (
-                <section key={section.id} id={section.id} className="scroll-mt-24">
-                  <h2>{section.h2}</h2>
+            <article className="prose prose-charcoal prose-headings:font-heading prose-headings:tracking-tight prose-p:text-[17px] prose-p:leading-[1.75] prose-p:text-charcoal-700 prose-a:font-semibold prose-a:text-primary-700 prose-a:no-underline prose-a:underline-offset-4 hover:prose-a:underline prose-strong:font-bold prose-strong:text-charcoal-900 prose-li:my-2 prose-li:text-charcoal-700 prose-li:text-[17px] prose-li:leading-relaxed max-w-none [&_section:first-child_p:first-of-type:first-letter]:float-left [&_section:first-child_p:first-of-type:first-letter]:mr-3 [&_section:first-child_p:first-of-type:first-letter]:font-heading [&_section:first-child_p:first-of-type:first-letter]:text-[64px] [&_section:first-child_p:first-of-type:first-letter]:font-extrabold [&_section:first-child_p:first-of-type:first-letter]:leading-[0.85] [&_section:first-child_p:first-of-type:first-letter]:text-primary-700">
+              {post.body.map((section, sectionIdx) => (
+                <section
+                  key={section.id}
+                  id={section.id}
+                  className={`scroll-mt-24 ${sectionIdx > 0 ? 'mt-16 border-t border-charcoal-100 pt-12 md:mt-20 md:pt-14' : ''}`}
+                >
+                  <h2 className="!mb-6 !mt-0 flex items-start gap-4 !text-2xl !font-extrabold !leading-tight !text-charcoal-900 md:!text-3xl">
+                    <span className="mt-1 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 text-sm font-extrabold text-white shadow-soft md:h-10 md:w-10 md:text-base">
+                      {String(sectionIdx + 1).padStart(2, '0')}
+                    </span>
+                    <span className="flex-1">{section.h2}</span>
+                  </h2>
                   {section.paragraphs.map((p, i) => (
                     <p key={i}>{p}</p>
                   ))}
                   {section.list &&
                     (section.list.ordered ? (
-                      <ol>
+                      <ol className="!my-6 !list-none !space-y-3 !pl-0">
                         {section.list.items.map((item, i) => (
-                          <li key={i}>{item}</li>
+                          <li
+                            key={i}
+                            className="!my-0 flex items-start gap-3 rounded-xl border border-charcoal-100 bg-white/60 p-4"
+                          >
+                            <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-50 text-xs font-extrabold text-primary-700">
+                              {i + 1}
+                            </span>
+                            <span className="flex-1 leading-relaxed">{item}</span>
+                          </li>
                         ))}
                       </ol>
                     ) : (
-                      <ul>
+                      <ul className="!my-6 !list-none !space-y-2.5 !pl-0">
                         {section.list.items.map((item, i) => (
-                          <li key={i}>{item}</li>
+                          <li key={i} className="!my-0 flex items-start gap-3">
+                            <CheckCircle2
+                              className="mt-1 h-4 w-4 flex-shrink-0 text-secondary-600"
+                              strokeWidth={2.6}
+                            />
+                            <span className="flex-1 leading-relaxed">{item}</span>
+                          </li>
                         ))}
                       </ul>
                     ))}

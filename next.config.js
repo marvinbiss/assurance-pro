@@ -152,6 +152,9 @@ const nextConfig = {
       { source: '/menuisier-interieur', destination: '/assurance-decennale/menuisier-interieur', permanent: true },
       { source: '/plaquiste-platrier', destination: '/assurance-decennale/plaquiste-platrier', permanent: true },
       { source: '/platrier', destination: '/assurance-decennale/plaquiste-platrier', permanent: true },
+      // 404 catch — anciens chemins métier/métier imbriqués (ex: multi-services-btp/carreleur)
+      { source: '/assurance-decennale/multi-services-btp/:metier', destination: '/assurance-decennale/:metier', permanent: true },
+      { source: '/assurance-decennale/:parent/:child', destination: '/assurance-decennale/:child', permanent: true },
       // Aliases métiers RC Pro complémentaires (sitemap slugs)
       { source: '/community-manager', destination: '/rc-pro/community-manager', permanent: true },
       { source: '/designer-graphique', destination: '/rc-pro', permanent: false },
