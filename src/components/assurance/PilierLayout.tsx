@@ -56,6 +56,7 @@ import { ExpertBio, SocialProofHero, TrustBadgesAcpr } from '@/components/premiu
 // Below-fold heavy sections — lazy-loaded to keep First Load JS small.
 import { ComparatifAssureursTable, DevisCTASection, TarifCalculator } from './pilier-sections-lazy'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
+import { MagneticCta } from '@/components/motion/magnetic-cta'
 import { ParallaxLayer } from '@/components/motion/dynamic/ParallaxLayerDynamic'
 import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
 
@@ -228,13 +229,15 @@ export async function PilierLayout({
 
           {/* CTAs */}
           <div className="mb-10 flex flex-wrap gap-3">
-            <Link
-              href={`/devis?garantie=${slug}`}
-              className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
-            >
-              {CTA_TEXTS.primary}
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
+            <MagneticCta>
+              <Link
+                href={`/devis?garantie=${slug}`}
+                className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
+              >
+                {CTA_TEXTS.primary}
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </MagneticCta>
             <a
               href="#faq"
               className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"

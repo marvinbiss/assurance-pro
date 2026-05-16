@@ -30,6 +30,7 @@ import { DevisCTASection, EditorialProcessSteps, EditorialTestimonial } from '@/
 import { IllustrationForMetier } from '@/components/premium/illustrations'
 import { CountUp } from '@/components/motion/CountUp'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
+import { MagneticCta } from '@/components/motion/magnetic-cta'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const metadata: Metadata = {
@@ -275,13 +276,15 @@ export default function HomePage() {
 
               {/* CTAs */}
               <div className="mb-10 flex flex-wrap gap-3">
-                <Link
-                  href="/devis"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
-                >
-                  {CTA_TEXTS.primary}
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
+                <MagneticCta>
+                  <Link
+                    href="/devis"
+                    className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
+                  >
+                    {CTA_TEXTS.primary}
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </MagneticCta>
                 <a
                   href="#verticaux"
                   className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
