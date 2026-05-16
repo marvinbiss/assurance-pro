@@ -8,7 +8,7 @@ export function KeyTakeaways({ points }: KeyTakeawaysProps) {
   return (
     <aside
       aria-labelledby="key-takeaways-heading"
-      className="my-8 rounded-2xl border-l-4 border-accent-500 bg-accent-50/50 p-7"
+      className="my-8 rounded-2xl border-l-4 border-accent-500 bg-accent-50/50 p-7 dark:border-accent-400 dark:bg-accent-950/40"
     >
       <h3
         id="key-takeaways-heading"

@@ -10,7 +10,7 @@ export function KeyFiguresGrid({ items }: KeyFiguresGridProps) {
       {items.map((item, i) => (
         <figure
           key={i}
-          className="rounded-2xl bg-sand-100 p-6 text-center transition-transform hover:-translate-y-0.5"
+          className="rounded-2xl bg-sand-100 p-6 text-center transition-transform hover:-translate-y-0.5 dark:bg-charcoal-900"
         >
           <div className="font-display-premium text-4xl font-extrabold tabular-nums leading-none tracking-tight text-primary-700 md:text-5xl">
             {item.value}

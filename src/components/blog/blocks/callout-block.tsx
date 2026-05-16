@@ -13,8 +13,8 @@ const THEMES: Record<
 > = {
   info: {
     Icon: Info,
-    container: 'border-accent-200 bg-accent-50/60',
-    iconBg: 'bg-accent-100 text-accent-700',
+    container: 'border-accent-200 bg-accent-50/60 dark:border-accent-800 dark:bg-accent-950/40',
+    iconBg: 'bg-accent-100 text-accent-700 dark:bg-accent-900 dark:text-accent-200',
     defaultTitle: 'À noter',
   },
   warning: {

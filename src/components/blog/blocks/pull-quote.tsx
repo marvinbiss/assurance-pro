@@ -8,17 +8,17 @@ export interface PullQuoteProps {
 
 export function PullQuote({ text, attribution, sourceUrl }: PullQuoteProps) {
   return (
-    <blockquote className="relative my-12 border-l-4 border-primary-400 px-8 py-6">
+    <blockquote className="relative my-12 border-l-4 border-primary-400 px-8 py-6 dark:border-primary-500">
       <Quote
-        className="absolute -left-4 top-2 h-7 w-7 -rotate-12 text-primary-200"
+        className="absolute -left-4 top-2 h-7 w-7 -rotate-12 text-primary-200 dark:text-primary-700"
         aria-hidden="true"
         strokeWidth={2}
       />
-      <p className="font-display-premium text-2xl font-medium italic leading-snug text-charcoal-900 md:text-3xl">
+      <p className="font-display-premium text-2xl font-medium italic leading-snug text-charcoal-900 dark:text-white md:text-3xl">
         “{text}”
       </p>
       {attribution && (
-        <footer className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-charcoal-500">
+        <footer className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-charcoal-500 dark:text-charcoal-400">
           <span aria-hidden="true">—</span>
           {sourceUrl ? (
             <a

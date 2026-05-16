@@ -3,6 +3,66 @@
 @tailwind utilities;
 
 /* ===========================================
+   Print stylesheet — premium editorial
+   =========================================== */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  header,
+  footer,
+  nav[aria-label="Fil d'Ariane"],
+  aside.sticky,
+  [data-print='hide'],
+  button,
+  .noise-overlay,
+  [aria-label='Progression de lecture'],
+  [aria-label='Changer de thème'],
+  [aria-label*='Activer le mode'] {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+  article,
+  section {
+    page-break-inside: avoid;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+    color: #000 !important;
+  }
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.85em;
+    color: #555;
+  }
+  a[href^='#']::after,
+  a[href^='mailto:']::after {
+    content: '';
+  }
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  .shadow-soft,
+  .shadow-premium,
+  .shadow-premium-lg {
+    box-shadow: none !important;
+  }
+  pre,
+  blockquote,
+  table {
+    page-break-inside: avoid;
+  }
+}
+
+/* ===========================================
    Assurance Pro — Brand CSS Variables
    =========================================== */
 

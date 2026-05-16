@@ -20,37 +20,47 @@ export default function Error({
   }, [error])
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
-      <div className="w-full max-w-md text-center">
-        <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-red-100">
-          <AlertTriangle className="h-10 w-10 text-red-600" />
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+      <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
+        <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-85" />
+        <div className="container relative mx-auto max-w-3xl px-4 text-center">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-red-500/20 ring-4 ring-red-400/30 backdrop-blur-sm">
+            <AlertTriangle className="h-8 w-8 text-red-300" strokeWidth={2.4} aria-hidden="true" />
+          </div>
+          <p className="mb-2 font-display-premium text-5xl font-extrabold tabular-nums tracking-tight text-secondary-300 md:text-7xl">
+            500
+          </p>
+          <h1 className="mb-4 font-display-premium font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
+            Erreur inattendue
+          </h1>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-white/85">
+            Notre équipe technique a été notifiée via Sentry. Réessayez dans un instant — ou revenez
+            à l&apos;accueil.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => reset()}
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-extrabold text-primary-700 shadow-premium transition-all hover:-translate-y-0.5"
+            >
+              <RefreshCw className="h-4 w-4" strokeWidth={2.4} aria-hidden="true" />
+              Réessayer
+            </button>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3 text-sm font-extrabold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+            >
+              <Home className="h-4 w-4" strokeWidth={2.4} aria-hidden="true" />
+              Accueil
+            </Link>
+          </div>
+          {error.digest && (
+            <p className="mt-8 font-mono text-xs text-white/50">
+              Code incident : <span className="text-white/80">{error.digest}</span>
+            </p>
+          )}
         </div>
-        <h1 className="mb-4 font-heading text-3xl font-bold tracking-tight text-gray-900">
-          Oups ! Une erreur est survenue
-        </h1>
-        <p className="mb-8 text-gray-600">
-          Nous nous excusons pour ce désagrément. Notre équipe technique a été notifiée.
-        </p>
-
-        <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <button
-            onClick={() => reset()}
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-700"
-          >
-            <RefreshCw className="h-5 w-5" />
-            Réessayer
-          </button>
-          <Link
-            href="/"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-700 transition-colors hover:bg-gray-50"
-          >
-            <Home className="h-5 w-5" />
-            Retour à l'accueil
-          </Link>
-        </div>
-
-        {error.digest && <p className="mt-8 text-sm text-gray-400">Code erreur : {error.digest}</p>}
-      </div>
-    </div>
+      </section>
+    </main>
   )
 }

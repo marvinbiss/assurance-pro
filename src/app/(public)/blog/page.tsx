@@ -18,6 +18,7 @@ import {
 import { getAllPosts, getAllCategories, getCategorySlug } from '@/lib/data/blog-posts'
 import { SITE_URL } from '@/lib/seo/config'
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
+import { NewsletterForm } from '@/components/blog/client/newsletter-form'
 
 export const metadata: Metadata = {
   title: 'Blog — Insights & guides assurance pro',
@@ -430,16 +431,7 @@ export default function BlogPage() {
             </div>
 
             <div className="relative">
-              <Link
-                href="/devis"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary-500 px-7 py-5 text-base font-extrabold text-white shadow-cta transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
-              >
-                Rejoindre la newsletter
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <p className="mt-3 text-center text-[11px] text-white/60">
-                RGPD &middot; consentement explicite &middot; hébergement UE
-              </p>
+              <NewsletterForm />
             </div>
           </div>
         </section>

@@ -9,7 +9,7 @@ export function AuthorBio({ name, role, avatar, oriasN, linkedinUrl, bio }: Auth
   return (
     <section
       aria-labelledby="author-bio-heading"
-      className="mt-16 overflow-hidden rounded-3xl bg-sand-100 p-8 md:p-10"
+      className="mt-16 overflow-hidden rounded-3xl bg-sand-100 p-8 dark:bg-charcoal-900 md:p-10"
     >
       <h2 id="author-bio-heading" className="sr-only">
         À propos de l’auteur
