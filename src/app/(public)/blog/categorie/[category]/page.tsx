@@ -161,8 +161,14 @@ export default async function BlogCategoryPage(props: { params: Promise<Params> 
               <div className="grid grid-cols-1 lg:grid-cols-5">
                 <div className="relative aspect-[16/9] overflow-hidden lg:col-span-2 lg:aspect-auto">
                   <Image
-                    src={(featured.coverImage ?? getCoverForCategory(featured.category)).src}
-                    alt={(featured.coverImage ?? getCoverForCategory(featured.category)).alt}
+                    src={
+                      (featured.coverImage ?? getCoverForCategory(featured.category, featured.slug))
+                        .src
+                    }
+                    alt={
+                      (featured.coverImage ?? getCoverForCategory(featured.category, featured.slug))
+                        .alt
+                    }
                     fill
                     sizes="(min-width: 1024px) 480px, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -227,7 +233,7 @@ export default async function BlogCategoryPage(props: { params: Promise<Params> 
             </header>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {rest.map((p) => {
-                const pCover = p.coverImage ?? getCoverForCategory(p.category)
+                const pCover = p.coverImage ?? getCoverForCategory(p.category, p.slug)
                 return (
                   <Link
                     key={p.slug}

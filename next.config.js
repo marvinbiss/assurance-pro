@@ -60,7 +60,7 @@ const nextConfig = {
   staticPageGenerationTimeout: 600,
 
   experimental: {
-    optimizePackageImports: ['lucide-react', '@supabase/supabase-js', 'date-fns', 'zod'],
+    optimizePackageImports: ['lucide-react', '@supabase/supabase-js', 'date-fns', 'zod', 'motion'],
   },
 
   async headers() {

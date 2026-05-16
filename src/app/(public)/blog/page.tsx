@@ -218,8 +218,14 @@ export default function BlogPage() {
                 {/* Cover image éditoriale */}
                 <div className="relative aspect-[16/9] overflow-hidden lg:col-span-2 lg:aspect-auto">
                   <Image
-                    src={(featured.coverImage ?? getCoverForCategory(featured.category)).src}
-                    alt={(featured.coverImage ?? getCoverForCategory(featured.category)).alt}
+                    src={
+                      (featured.coverImage ?? getCoverForCategory(featured.category, featured.slug))
+                        .src
+                    }
+                    alt={
+                      (featured.coverImage ?? getCoverForCategory(featured.category, featured.slug))
+                        .alt
+                    }
                     fill
                     priority
                     sizes="(min-width: 1024px) 480px, 100vw"
@@ -316,7 +322,7 @@ export default function BlogPage() {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {rest.map((post) => {
                 const config = configForCategory(post.category)
-                const cover = post.coverImage ?? getCoverForCategory(post.category)
+                const cover = post.coverImage ?? getCoverForCategory(post.category, post.slug)
                 return (
                   <article key={post.slug} className="group">
                     <Link

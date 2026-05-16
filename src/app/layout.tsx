@@ -17,6 +17,8 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
+import { ThemeProvider } from '@/components/theme/theme-provider'
+import { ThemeToggle } from '@/components/theme/theme-toggle'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -125,7 +127,11 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
-    <html lang="fr" className={`scroll-smooth ${dmSans.variable} ${fraunces.variable}`}>
+    <html
+      lang="fr"
+      suppressHydrationWarning
+      className={`scroll-smooth ${dmSans.variable} ${fraunces.variable}`}
+    >
       <head>
         {/* PWA Meta Tags (apple-mobile-web-app, mobile-web-app-capable, theme-color handled by metadata/viewport exports) */}
         <meta name="msapplication-TileColor" content="#E86B4B" />
@@ -174,7 +180,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
-      <body className="bg-sand-50 font-sans text-charcoal-900 antialiased">
+      <body className="bg-sand-50 font-sans text-charcoal-900 antialiased dark:bg-charcoal-950 dark:text-charcoal-100">
         {/*
          * Google Consent Mode v2 — 'denied' par défaut.
          * Aucun pixel ne se déclenche tant que l'utilisateur n'a pas
@@ -200,14 +206,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           Aller au contenu principal
         </a>
-        <PreOriasBanner />
-        <Header />
-        <main id="main-content" tabIndex={-1} className="outline-none">
-          {children}
-        </main>
-        <Footer />
-        <ClientOnlyFooterHelpers />
-        <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
+        <ThemeProvider>
+          <PreOriasBanner />
+          <Header />
+          <main id="main-content" tabIndex={-1} className="outline-none">
+            {children}
+          </main>
+          <Footer />
+          <ClientOnlyFooterHelpers />
+          <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
+          <ThemeToggle />
+        </ThemeProvider>
       </body>
     </html>
   )

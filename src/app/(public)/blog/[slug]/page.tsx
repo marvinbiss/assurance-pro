@@ -30,6 +30,9 @@ import { AuthorBio } from '@/components/blog/blocks/author-bio'
 import { KeyTakeaways } from '@/components/blog/blocks/key-takeaways'
 import { TocSticky } from '@/components/blog/client/toc-sticky'
 import { ReadingProgress } from '@/components/blog/client/reading-progress'
+import { HeroParallax } from '@/components/motion/hero-parallax'
+import { FadeInUp } from '@/components/motion/fade-in-up'
+import { StaggerChildren, StaggerItem } from '@/components/motion/stagger-children'
 import { getCoverForCategory } from '@/lib/data/blog-covers'
 import { getAuthorByName } from '@/lib/data/blog-authors'
 
@@ -172,7 +175,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
 
   const pageUrl = `${SITE_URL}/blog/${post.slug}`
 
-  const cover = post.coverImage ?? getCoverForCategory(post.category)
+  const cover = post.coverImage ?? getCoverForCategory(post.category, post.slug)
   const authorData = post.authorObj ?? getAuthorByName(post.author)
   const updatedRecently = (() => {
     if (!post.updatedAt || !post.publishedAt) return false
@@ -253,7 +256,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
       : null
 
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <ReadingProgress />
       <script {...jsonLdScriptProps(articleSchema, nonce)} />
       {faqSchema && <script {...jsonLdScriptProps(faqSchema, nonce)} />}
@@ -265,18 +268,9 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
         ]}
       />
 
-      {/* Hero — cover image + fil d'Ariane + meta + titre + auteur */}
+      {/* Hero — cover image parallax + fil d'Ariane + meta + titre + auteur */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-14 text-white md:py-20">
-        <div className="absolute inset-0">
-          <Image
-            src={cover.src}
-            alt={cover.alt}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover opacity-30"
-          />
-        </div>
+        <HeroParallax src={cover.src} alt={cover.alt} opacity={0.3} />
         <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-85" />
         <div
           className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-secondary-400/25 blur-3xl"
@@ -359,7 +353,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
           {/* Corps de l'article */}
           <div>
             {/* TOC sticky mobile inline */}
-            <aside className="mb-10 rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft lg:hidden">
+            <aside className="mb-10 rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft dark:border-charcoal-800 dark:bg-charcoal-900 lg:hidden">
               <p className="mb-3 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
                 <List className="h-3.5 w-3.5" strokeWidth={2.4} />
                 Sommaire
@@ -387,7 +381,9 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
               </p>
             )}
             {post.keyTakeaways && post.keyTakeaways.length > 0 && (
-              <KeyTakeaways points={post.keyTakeaways} />
+              <FadeInUp>
+                <KeyTakeaways points={post.keyTakeaways} />
+              </FadeInUp>
             )}
 
             <article className="max-w-none">
@@ -481,10 +477,12 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
             </article>
 
             {/* Author bio */}
-            <AuthorBio {...authorData} />
+            <FadeInUp>
+              <AuthorBio {...authorData} />
+            </FadeInUp>
 
             {/* Sources */}
-            <section className="mt-12 rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft">
+            <section className="mt-12 rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft dark:border-charcoal-800 dark:bg-charcoal-900">
               <h2 className="mb-4 inline-flex items-center gap-2 font-heading text-lg font-extrabold tracking-tight text-charcoal-900">
                 <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary-50">
                   <Link2 className="h-4 w-4 text-primary-700" strokeWidth={2.4} />
@@ -603,63 +601,68 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
               </h2>
             </header>
 
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+            <StaggerChildren className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
               {related.map((p) => {
                 const rConfig = configForCategory(p.category)
-                const rCover = p.coverImage ?? getCoverForCategory(p.category)
+                const rCover = p.coverImage ?? getCoverForCategory(p.category, p.slug)
                 const ageMs = Date.now() - new Date(p.publishedAt).getTime()
                 const isFresh =
                   Number.isFinite(ageMs) && ageMs > 0 && ageMs < 14 * 24 * 60 * 60 * 1000
                 return (
-                  <Link
-                    key={p.slug}
-                    href={`/blog/${p.slug}`}
-                    className="group flex flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-premium"
-                  >
-                    <div className="relative aspect-[16/9] overflow-hidden">
-                      <Image
-                        src={rCover.src}
-                        alt={rCover.alt}
-                        width={800}
-                        height={450}
-                        sizes="(min-width: 1024px) 280px, (min-width: 768px) 50vw, 100vw"
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div
-                        className={`pointer-events-none absolute inset-0 bg-gradient-to-tr ${rConfig.gradient} opacity-60 mix-blend-multiply`}
-                        aria-hidden="true"
-                      />
-                      <div className="absolute left-3 top-3 flex items-center gap-2">
-                        <span className="inline-flex items-center gap-1 rounded-full bg-white/90 px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider text-charcoal-800 backdrop-blur-sm">
-                          <rConfig.Icon className="h-3 w-3" strokeWidth={2.4} aria-hidden="true" />
-                          {p.category}
-                        </span>
-                        {isFresh && (
-                          <span className="inline-flex items-center rounded-full bg-secondary-400 px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider text-secondary-950">
-                            Nouveau
+                  <StaggerItem key={p.slug}>
+                    <Link
+                      href={`/blog/${p.slug}`}
+                      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-premium"
+                    >
+                      <div className="relative aspect-[16/9] overflow-hidden">
+                        <Image
+                          src={rCover.src}
+                          alt={rCover.alt}
+                          width={800}
+                          height={450}
+                          sizes="(min-width: 1024px) 280px, (min-width: 768px) 50vw, 100vw"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div
+                          className={`pointer-events-none absolute inset-0 bg-gradient-to-tr ${rConfig.gradient} opacity-60 mix-blend-multiply`}
+                          aria-hidden="true"
+                        />
+                        <div className="absolute left-3 top-3 flex items-center gap-2">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-white/90 px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider text-charcoal-800 backdrop-blur-sm">
+                            <rConfig.Icon
+                              className="h-3 w-3"
+                              strokeWidth={2.4}
+                              aria-hidden="true"
+                            />
+                            {p.category}
                           </span>
-                        )}
+                          {isFresh && (
+                            <span className="inline-flex items-center rounded-full bg-secondary-400 px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider text-secondary-950">
+                              Nouveau
+                            </span>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex flex-1 flex-col p-5">
-                      <time
-                        dateTime={p.publishedAt}
-                        className="mb-2 text-[11px] font-semibold text-charcoal-500"
-                      >
-                        {formatDate(p.publishedAt)} · {p.readTime}
-                      </time>
-                      <h3 className="mb-3 line-clamp-3 font-heading text-sm font-extrabold leading-snug tracking-tight text-charcoal-900 transition-colors group-hover:text-primary-700">
-                        {p.title}
-                      </h3>
-                      <span className="mt-auto inline-flex items-center gap-1 text-xs font-bold text-primary-700 transition-transform group-hover:translate-x-0.5">
-                        Lire
-                        <ArrowRight className="h-3 w-3" strokeWidth={2.4} aria-hidden="true" />
-                      </span>
-                    </div>
-                  </Link>
+                      <div className="flex flex-1 flex-col p-5">
+                        <time
+                          dateTime={p.publishedAt}
+                          className="mb-2 text-[11px] font-semibold text-charcoal-500"
+                        >
+                          {formatDate(p.publishedAt)} · {p.readTime}
+                        </time>
+                        <h3 className="mb-3 line-clamp-3 font-heading text-sm font-extrabold leading-snug tracking-tight text-charcoal-900 transition-colors group-hover:text-primary-700">
+                          {p.title}
+                        </h3>
+                        <span className="mt-auto inline-flex items-center gap-1 text-xs font-bold text-primary-700 transition-transform group-hover:translate-x-0.5">
+                          Lire
+                          <ArrowRight className="h-3 w-3" strokeWidth={2.4} aria-hidden="true" />
+                        </span>
+                      </div>
+                    </Link>
+                  </StaggerItem>
                 )
               })}
-            </div>
+            </StaggerChildren>
           </section>
         )}
       </div>
