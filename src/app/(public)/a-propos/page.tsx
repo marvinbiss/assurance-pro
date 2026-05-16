@@ -44,7 +44,7 @@ export default function AProposPage() {
   const oriasFormatted = formatOriasDisplay(ORIAS.replace(/\s/g, '') || '07000000')
 
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Cabinet' }, { label: 'À propos' }]}
         eyebrow="Cabinet ORIAS &middot; Indépendant"

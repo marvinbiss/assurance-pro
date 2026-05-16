@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function SelectionPage() {
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Cabinet' }, { label: 'Sélection assureurs' }]}
         eyebrow="Méthodologie publique"

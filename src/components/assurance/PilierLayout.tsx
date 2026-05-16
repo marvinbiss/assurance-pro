@@ -162,7 +162,7 @@ export async function PilierLayout({
   const nonce = (await headers()).get('x-nonce') ?? undefined
 
   return (
-    <article className="min-h-screen">
+    <article className="min-h-screen dark:bg-charcoal-950">
       {/* ═══════════════════════════════════════════════════════════════════
           HERO — gradient terra + breadcrumb + CTAs + legal ref
           ═══════════════════════════════════════════════════════════════════ */}
@@ -220,7 +220,7 @@ export async function PilierLayout({
           )}
 
           {/* H1 typographie display premium */}
-          <h1 className="font-display-premium mb-6 max-w-4xl font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[4.5rem]">
+          <h1 className="mb-6 max-w-4xl font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[4.5rem]">
             {title}
           </h1>
 
@@ -259,7 +259,7 @@ export async function PilierLayout({
 
       {/* Social proof stats band (sand-50 sous hero) */}
       {socialProofStats && socialProofStats.length > 0 ? (
-        <section className="border-y border-sand-300 bg-sand-50 py-10 md:py-12">
+        <section className="border-y border-sand-300 bg-sand-50 py-10 dark:bg-charcoal-900 md:py-12">
           <div className="container mx-auto max-w-6xl px-4">
             <SocialProofHero stats={socialProofStats} />
           </div>

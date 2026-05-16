@@ -112,13 +112,15 @@ export default function HeaderClient() {
 
   // Header toujours glassmorph + charcoal text (lisible sur tous fonds).
   // Au scroll : ajoute shadow + border pour profondeur supplémentaire.
-  const navColor = 'text-charcoal-700'
+  const navColor = 'text-charcoal-700 dark:text-charcoal-200'
   const navHover = 'hover:text-primary-700'
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b bg-white/90 backdrop-blur-xl transition-all duration-300 ${
-        scrolled ? 'border-charcoal-100/80 shadow-soft' : 'border-charcoal-100/40'
+      className={`sticky top-0 z-50 border-b bg-white/90 backdrop-blur-xl transition-all duration-300 dark:bg-charcoal-950/85 ${
+        scrolled
+          ? 'border-charcoal-100/80 shadow-soft dark:border-charcoal-800/80'
+          : 'border-charcoal-100/40 dark:border-charcoal-900/40'
       }`}
     >
       <div className="container mx-auto max-w-7xl px-4">
@@ -155,7 +157,7 @@ export default function HeaderClient() {
 
               {verticalsOpen && (
                 <div className="absolute left-1/2 top-full -translate-x-1/2 pt-4">
-                  <div className="w-[760px] overflow-hidden rounded-3xl border border-charcoal-100 bg-white shadow-premium-lg">
+                  <div className="w-[760px] overflow-hidden rounded-3xl border border-charcoal-100 bg-white shadow-premium-lg dark:border-charcoal-800 dark:bg-charcoal-900">
                     <div className="grid grid-cols-3">
                       {/* Colonne 1+2 : Liens catégories */}
                       <div className="col-span-2 grid grid-cols-2 gap-1 p-4">

@@ -274,7 +274,7 @@ const TERMS_BY_LETTER = ALPHABET.map((letter) => ({
 
 export default function GlossairePage() {
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <BreadcrumbSchema items={[{ label: 'Glossaire' }]} />
       {/* Hero */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
@@ -304,7 +304,7 @@ export default function GlossairePage() {
             <BookOpen className="h-3.5 w-3.5 text-secondary-300" strokeWidth={2.4} />
             Référentiel terminologique
           </span>
-          <h1 className="font-display-premium mb-5 max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
+          <h1 className="mb-5 max-w-3xl font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
             Glossaire de
             <br />
             <span className="text-secondary-200">l&apos;assurance pro</span>

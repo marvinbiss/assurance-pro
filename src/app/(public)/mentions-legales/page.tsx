@@ -35,7 +35,7 @@ export default function MentionsLegalesPage() {
   const tva = process.env.NEXT_PUBLIC_LEGAL_TVA ?? 'FRXX XXX XXX XXX'
 
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Mentions légales' }]}
         eyebrow="Information légale obligatoire"

@@ -29,7 +29,7 @@ export default function FicPage() {
   const address = process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'
 
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'FIC (DDA)' }]}
         eyebrow="Fiche d'Information Cabinet · DDA"

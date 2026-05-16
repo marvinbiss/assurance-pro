@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       {/* Hero */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
         <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />
@@ -68,7 +68,7 @@ export default function ContactPage() {
             <Sparkles className="h-3.5 w-3.5 text-secondary-300" strokeWidth={2.4} />
             Cabinet ORIAS &middot; Réponse sous 24 h
           </span>
-          <h1 className="font-display-premium mb-5 max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
+          <h1 className="mb-5 max-w-3xl font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
             Parlons de votre
             <br />
             <span className="text-secondary-200">situation pro.</span>

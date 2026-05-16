@@ -258,7 +258,7 @@ export default function HomePage() {
               </div>
 
               {/* H1 typographie display premium */}
-              <h1 className="font-display-premium mb-6 font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[5rem]">
+              <h1 className="mb-6 font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[5rem]">
                 Votre assurance pro,
                 <br />
                 <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent">
@@ -399,7 +399,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           VERTICALES — Bento box asymétrique
           ═══════════════════════════════════════════════════════════════════ */}
-      <section id="verticaux" className="relative bg-sand-50 py-20 md:py-28">
+      <section id="verticaux" className="relative bg-sand-50 py-20 dark:bg-charcoal-950 md:py-28">
         <div className="container mx-auto max-w-6xl px-4">
           {/* Eyebrow + heading */}
           <RevealOnScroll translateY={28}>
@@ -518,7 +518,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           TESTIMONIALS — Cards avec quote + rating + metric
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-sand-100 py-20 md:py-28">
+      <section className="relative overflow-hidden bg-sand-100 py-20 dark:bg-charcoal-900 md:py-28">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="mb-14 max-w-2xl">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-secondary-800">

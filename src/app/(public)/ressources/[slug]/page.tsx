@@ -97,7 +97,7 @@ export default async function RessourcePage(props: { params: Promise<Params> }) 
   }
 
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <script {...jsonLdScriptProps(schema, nonce)} />
 
       {/* Hero */}
@@ -116,7 +116,7 @@ export default async function RessourcePage(props: { params: Promise<Params> }) 
               Ressources
             </Link>
           </nav>
-          <h1 className="font-display-premium mb-5 font-heading text-3xl font-extrabold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl">
+          <h1 className="mb-5 font-display-premium font-heading text-3xl font-extrabold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl">
             {r.title}
           </h1>
           <p className="mb-7 max-w-3xl text-lg text-white/85 md:text-xl">{r.description}</p>

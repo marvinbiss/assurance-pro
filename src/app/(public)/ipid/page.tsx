@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function IpidIndexPage() {
   const products = Object.values(IPID_PRODUCTS)
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'IPID' }]}
         eyebrow="Documents d'Information Produit · DDA art. 20-8"
