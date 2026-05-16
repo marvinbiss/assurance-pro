@@ -19,6 +19,7 @@ import { getAllPosts, getAllCategories, getCategorySlug } from '@/lib/data/blog-
 import { SITE_URL } from '@/lib/seo/config'
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 import { NewsletterForm } from '@/components/blog/client/newsletter-form'
+import { BlogSearch } from '@/components/blog/client/blog-search'
 
 export const metadata: Metadata = {
   title: 'Blog — Insights & guides assurance pro',
@@ -167,8 +168,23 @@ export default function BlogPage() {
         </div>
       </section>
 
+      {/* Search */}
+      <section className="border-b border-charcoal-100 bg-white py-6 dark:border-charcoal-800 dark:bg-charcoal-950">
+        <div className="container mx-auto max-w-3xl px-4">
+          <BlogSearch
+            items={posts.map((p) => ({
+              slug: p.slug,
+              title: p.title,
+              description: p.description,
+              category: p.category,
+              tags: p.tags,
+            }))}
+          />
+        </div>
+      </section>
+
       {/* Filtres catégories */}
-      <section className="border-b border-charcoal-100 bg-white py-6">
+      <section className="border-b border-charcoal-100 bg-white py-6 dark:border-charcoal-800 dark:bg-charcoal-950">
         <div className="container mx-auto max-w-6xl px-4">
           <nav aria-label="Catégories" className="flex flex-wrap items-center gap-2">
             <span className="mr-2 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">

@@ -33,6 +33,7 @@ import { ReadingProgress } from '@/components/blog/client/reading-progress'
 import { HeroParallax } from '@/components/motion/hero-parallax'
 import { FadeInUp } from '@/components/motion/fade-in-up'
 import { StaggerChildren, StaggerItem } from '@/components/motion/stagger-children'
+import { ShareButton } from '@/components/blog/client/share-button'
 import { getCoverForCategory } from '@/lib/data/blog-covers'
 import { getAuthorByName } from '@/lib/data/blog-authors'
 
@@ -475,6 +476,14 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
                 </section>
               ))}
             </article>
+
+            {/* Share */}
+            <div className="mt-10 flex items-center justify-between gap-4 border-t border-charcoal-100 pt-6 dark:border-charcoal-800">
+              <p className="text-sm font-bold text-charcoal-600 dark:text-charcoal-400">
+                Article utile ? Partagez-le.
+              </p>
+              <ShareButton title={post.title} url={pageUrl} />
+            </div>
 
             {/* Author bio */}
             <FadeInUp>

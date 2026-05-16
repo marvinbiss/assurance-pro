@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, BookOpen, Linkedin, ShieldCheck } from 'lucide-react'
+import { SvgAvatar } from '@/components/blog/blocks/svg-avatar'
 import { SITE_URL } from '@/lib/seo/config'
 import { AUTHORS } from '@/lib/data/blog-authors'
 import { getAllPosts } from '@/lib/data/blog-posts'
@@ -78,12 +79,11 @@ export default async function AuthorPage(props: { params: Promise<Params> }) {
           </nav>
 
           <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
-            <div
-              aria-hidden="true"
-              className="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-primary-800 text-3xl font-extrabold text-white shadow-premium ring-4 ring-white/20"
-            >
-              {author.name.charAt(0)}
-            </div>
+            <SvgAvatar
+              name={author.name}
+              size={96}
+              className="h-24 w-24 flex-shrink-0 rounded-full shadow-premium ring-4 ring-white/20"
+            />
             <div>
               <h1 className="mb-2 font-display-premium font-heading text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
                 {author.name}

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Linkedin, ShieldCheck } from 'lucide-react'
 import type { BlogAuthor } from '@/lib/data/blog-blocks'
+import { SvgAvatar } from './svg-avatar'
 
 export type AuthorBioProps = BlogAuthor
 
@@ -24,18 +25,17 @@ export function AuthorBio({ name, role, avatar, oriasN, linkedinUrl, bio }: Auth
             className="h-24 w-24 flex-shrink-0 rounded-full object-cover shadow-soft ring-2 ring-sand-300"
           />
         ) : (
-          <div
-            aria-hidden="true"
-            className="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-primary-800 text-3xl font-extrabold text-white shadow-soft ring-2 ring-sand-300"
-          >
-            {name.charAt(0)}
-          </div>
+          <SvgAvatar
+            name={name}
+            size={96}
+            className="h-24 w-24 flex-shrink-0 rounded-full shadow-soft ring-2 ring-sand-300 dark:ring-charcoal-700"
+          />
         )}
         <div className="flex-1">
-          <p className="m-0 font-heading text-xl font-extrabold tracking-tight text-charcoal-900">
+          <p className="m-0 font-heading text-xl font-extrabold tracking-tight text-charcoal-900 dark:text-white">
             {name}
           </p>
-          <p className="m-0 mt-1 text-xs font-bold uppercase tracking-wider text-charcoal-600">
+          <p className="m-0 mt-1 text-xs font-bold uppercase tracking-wider text-charcoal-600 dark:text-charcoal-400">
             {role}
           </p>
           <div className="mt-3 flex flex-wrap items-center gap-3">
@@ -57,7 +57,11 @@ export function AuthorBio({ name, role, avatar, oriasN, linkedinUrl, bio }: Auth
               </Link>
             )}
           </div>
-          {bio && <p className="mt-4 text-[15px] leading-relaxed text-charcoal-700">{bio}</p>}
+          {bio && (
+            <p className="mt-4 text-[15px] leading-relaxed text-charcoal-700 dark:text-charcoal-300">
+              {bio}
+            </p>
+          )}
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Award } from 'lucide-react'
+import { SvgAvatar } from './svg-avatar'
 
 export interface ExpertQuoteProps {
   expertName: string
@@ -21,12 +22,7 @@ export function ExpertQuote({ expertName, expertRole, expertAvatar, quote }: Exp
             className="h-14 w-14 rounded-full object-cover ring-2 ring-secondary-200"
           />
         ) : (
-          <div
-            aria-hidden="true"
-            className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-secondary-500 to-secondary-700 text-lg font-extrabold text-white shadow-soft"
-          >
-            {expertName.charAt(0)}
-          </div>
+          <SvgAvatar name={expertName} size={56} className="h-14 w-14 rounded-full shadow-soft" />
         )}
         <div className="flex-1">
           <div className="flex items-center gap-2">

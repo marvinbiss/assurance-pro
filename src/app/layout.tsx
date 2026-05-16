@@ -19,6 +19,7 @@ import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
+import { ScrollToTop } from '@/components/ui/scroll-to-top'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -216,6 +217,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <ClientOnlyFooterHelpers />
           <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
           <ThemeToggle />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
