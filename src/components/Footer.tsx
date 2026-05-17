@@ -110,9 +110,12 @@ export default function Footer() {
               <VivosLogo size="lg" variant="light" />
             </Link>
 
+            <p className="mb-3 max-w-sm font-display-premium text-base italic leading-snug text-charcoal-100">
+              L&apos;assurance pro qui tient ses promesses.
+            </p>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-charcoal-400">
-              Cabinet de courtage indépendant spécialiste de l'assurance professionnelle. 17
-              verticaux couverts. 10+ assureurs partenaires.
+              Cabinet de courtage indépendant ORIAS — pour les pros qui veulent être vraiment
+              protégés. 17 verticaux, 10+ assureurs partenaires, zéro frais de courtage.
             </p>
 
             <ul className="space-y-2.5 text-sm">
