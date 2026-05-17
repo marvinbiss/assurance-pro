@@ -131,7 +131,7 @@ module.exports = {
         'gradient-primary': 'linear-gradient(135deg, #E86B4B 0%, #C24B2A 100%)',
         'gradient-secondary': 'linear-gradient(135deg, #e8960a 0%, #c97308 100%)',
         'gradient-hero': 'linear-gradient(135deg, #1C1917 0%, #302C28 50%, #45403B 100%)',
-        'gradient-hero-warm': 'linear-gradient(135deg, #6B2916 0%, #C24B2A 50%, #E86B4B 100%)',
+        'gradient-hero-warm': 'linear-gradient(135deg, #060F20 0%, #142C55 50%, #2B4D85 100%)',
         'gradient-premium': 'linear-gradient(135deg, #e8960a 0%, #f2b523 50%, #e8960a 100%)',
         'gradient-premium-gold': 'linear-gradient(135deg, #c97308 0%, #e8960a 25%, #f2b523 50%, #e8960a 75%, #c97308 100%)',
         'gradient-terra': 'linear-gradient(135deg, #C24B2A 0%, #E86B4B 50%, #EF9171 100%)',

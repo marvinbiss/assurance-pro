@@ -91,7 +91,7 @@ function ConnectedNet({ count = 80 }: { count?: number }) {
     const geom = new BufferGeometry()
     geom.setAttribute('position', new BufferAttribute(posArr, 3))
     const mat = new LineBasicMaterial({
-      color: new Color('#E86B4B'),
+      color: new Color('#2B4D85'),
       transparent: true,
       opacity: 0.35,
       blending: AdditiveBlending,
@@ -135,7 +135,7 @@ function WireShield() {
 
   return (
     <lineSegments ref={ref as never} geometry={geometry}>
-      <lineBasicMaterial color="#E8960A" transparent opacity={0.85} />
+      <lineBasicMaterial color="#B8975A" transparent opacity={0.85} />
     </lineSegments>
   )
 }
@@ -153,7 +153,7 @@ function GlowCore() {
   return (
     <mesh ref={ref}>
       <icosahedronGeometry args={[0.7, 1]} />
-      <meshBasicMaterial color="#E86B4B" transparent opacity={0.55} blending={AdditiveBlending} />
+      <meshBasicMaterial color="#2B4D85" transparent opacity={0.55} blending={AdditiveBlending} />
     </mesh>
   )
 }
@@ -173,8 +173,8 @@ export function HeroScene({ className }: HeroSceneProps) {
       >
         <fog attach="fog" args={['#0f0e0c', 6, 14]} />
         <ambientLight intensity={0.5} />
-        <pointLight position={[3, 3, 3]} intensity={1.5} color="#E8960A" />
-        <pointLight position={[-3, -2, 2]} intensity={0.8} color="#E86B4B" />
+        <pointLight position={[3, 3, 3]} intensity={1.5} color="#B8975A" />
+        <pointLight position={[-3, -2, 2]} intensity={0.8} color="#2B4D85" />
 
         <ParticleField count={1800} />
         <ConnectedNet count={70} />

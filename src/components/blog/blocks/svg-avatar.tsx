@@ -16,11 +16,11 @@ function hash(s: string): number {
 }
 
 const GRADIENTS: Array<[string, string]> = [
-  ['#E86B4B', '#C24B2A'], // terracotta
-  ['#E8960A', '#C97308'], // honey
+  ['#2B4D85', '#142C55'], // navy
+  ['#B8975A', '#7E6638'], // antique gold
   ['#3D8B68', '#2A6650'], // forest
-  ['#7C6FE0', '#5A4FB8'], // indigo
-  ['#D9436A', '#A52E50'], // rose
+  ['#5071A1', '#1B3A6D'], // navy lighter
+  ['#9C7F48', '#534327'], // gold deep
   ['#0F766E', '#0A5450'], // teal
 ]
 

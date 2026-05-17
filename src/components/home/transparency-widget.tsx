@@ -5,8 +5,8 @@
  */
 
 const ALLOCATIONS = [
-  { label: 'Sinistres + provisions assureur', pct: 87, color: '#E86B4B' },
-  { label: 'Frais de gestion compagnie', pct: 8, color: '#E8960A' },
+  { label: 'Sinistres + provisions assureur', pct: 87, color: '#2B4D85' },
+  { label: 'Frais de gestion compagnie', pct: 8, color: '#B8975A' },
   { label: 'Courtage Vivos (rémunéré par l’assureur)', pct: 5, color: '#3D8B68' },
 ] as const
 

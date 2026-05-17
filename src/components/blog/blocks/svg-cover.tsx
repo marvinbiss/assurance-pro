@@ -24,13 +24,13 @@ interface Palette {
 }
 
 const PALETTES: Record<string, Palette> = {
-  btp: { bg: '#2A1810', fg: '#E86B4B', accent: '#F5A572', highlight: '#FBE5D1' },
-  'rc-pro': { bg: '#1A2332', fg: '#E8960A', accent: '#F2B523', highlight: '#FBE6B5' },
+  btp: { bg: '#060F20', fg: '#2B4D85', accent: '#5071A1', highlight: '#D7DFEC' },
+  'rc-pro': { bg: '#0E2040', fg: '#B8975A', accent: '#DCC067', highlight: '#F5EDD0' },
   cyber: { bg: '#0A0E1A', fg: '#3D8B68', accent: '#55A882', highlight: '#A8D8C0' },
-  'mutuelle-tns': { bg: '#1F1224', fg: '#D9436A', accent: '#E8678A', highlight: '#FBD3DD' },
-  reglementation: { bg: '#1A1A28', fg: '#7C6FE0', accent: '#A294F0', highlight: '#DCD5F8' },
-  sinistre: { bg: '#291611', fg: '#C24B2A', accent: '#E86B4B', highlight: '#FBE5D1' },
-  default: { bg: '#1F1A12', fg: '#E86B4B', accent: '#E8960A', highlight: '#FBE5D1' },
+  'mutuelle-tns': { bg: '#142C55', fg: '#B8975A', accent: '#DCC067', highlight: '#F5EDD0' },
+  reglementation: { bg: '#0E2040', fg: '#5071A1', accent: '#7E96BD', highlight: '#D7DFEC' },
+  sinistre: { bg: '#0E2040', fg: '#2B4D85', accent: '#5071A1', highlight: '#D7DFEC' },
+  default: { bg: '#060F20', fg: '#2B4D85', accent: '#B8975A', highlight: '#D7DFEC' },
 }
 
 const DEFAULT_PALETTE = PALETTES.default as Palette

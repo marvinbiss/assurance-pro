@@ -16,18 +16,22 @@ export const metadata: Metadata = {
 }
 
 const COLORS = [
-  { name: 'Terracotta Primary', hex: '#E86B4B', usage: 'CTA, hero, accent principal' },
-  { name: 'Terracotta Deep', hex: '#C24B2A', usage: 'Hover, gradients, ombres' },
-  { name: 'Honey Secondary', hex: '#E8960A', usage: 'Accent éditorial, awards, premium' },
-  { name: 'Honey Bright', hex: '#F2B523', usage: 'Highlights, badges' },
-  { name: 'Charcoal 950', hex: '#0F0E0C', usage: 'Hero backgrounds, dark surfaces' },
+  { name: 'Midnight Navy', hex: '#2B4D85', usage: 'CTA, hero, accent principal' },
+  { name: 'Navy Deep', hex: '#142C55', usage: 'Hover, gradients, ombres' },
+  { name: 'Antique Gold', hex: '#B8975A', usage: 'Accent éditorial, awards, premium' },
+  { name: 'Gold Bright', hex: '#DCC067', usage: 'Highlights, badges' },
+  { name: 'Charcoal 950', hex: '#060F20', usage: 'Hero backgrounds, dark surfaces' },
   { name: 'Sand 50', hex: '#FDFAF7', usage: 'Page backgrounds light' },
 ] as const
 
 const TYPOGRAPHY = [
-  { family: 'Fraunces', usage: 'Display, drop caps, pull quotes', weight: 'Variable 100-900' },
-  { family: 'Sora', usage: 'Headings, eyebrows, badges', weight: '400, 600, 700, 800' },
-  { family: 'DM Sans', usage: 'Body, UI, micro-copy', weight: '400, 500, 700' },
+  {
+    family: 'Playfair Display',
+    usage: 'Display, titres hero, pull quotes',
+    weight: '400, 600, 700, 800, 900',
+  },
+  { family: 'Inter', usage: 'Headings, body, UI, micro-copy', weight: '400, 500, 600, 700, 800' },
+  { family: 'JetBrains Mono', usage: 'Code, métadonnées techniques', weight: '400, 500' },
 ] as const
 
 export default function PressePage() {
