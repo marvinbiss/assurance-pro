@@ -18,6 +18,7 @@ import { SITE_URL } from '@/lib/seo/config'
 import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
 import { ScrollToTop } from '@/components/ui/scroll-to-top'
+import { CursorTrail } from '@/components/motion/cursor-trail'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -210,6 +211,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ClientOnlyFooterHelpers />
         <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
         <ScrollToTop />
+        <CursorTrail />
       </body>
     </html>
   )
