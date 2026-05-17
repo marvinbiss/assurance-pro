@@ -16,7 +16,7 @@ export function ChatButton() {
     <>
       {open && (
         <div
-          className="fixed bottom-32 right-5 z-40 w-72 overflow-hidden rounded-2xl border border-charcoal-200 bg-white shadow-premium-lg"
+          className="fixed bottom-24 right-5 z-40 hidden w-72 overflow-hidden rounded-2xl border border-charcoal-200 bg-white shadow-premium-lg md:block"
           role="dialog"
           aria-label="Contact rapide"
         >
@@ -92,7 +92,7 @@ export function ChatButton() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? 'Fermer chat' : 'Ouvrir chat courtier'}
-        className="fixed bottom-32 right-5 z-30 inline-flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-premium-lg ring-4 ring-white/40 transition-all hover:-translate-y-0.5 hover:from-primary-600 hover:to-primary-800 sm:right-6 md:bottom-24"
+        className="fixed bottom-6 right-6 z-30 hidden h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-premium-lg ring-4 ring-white/40 transition-all hover:-translate-y-0.5 hover:from-primary-600 hover:to-primary-800 md:inline-flex"
       >
         {open ? (
           <X className="h-6 w-6" strokeWidth={2.4} aria-hidden="true" />
