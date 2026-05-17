@@ -36,18 +36,45 @@ export function DevisSoftView({ defaultVertical }: DevisSoftViewProps) {
       </div>
       <div className="container mx-auto max-w-3xl px-4">
         <header className="mb-10 text-center">
-          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-700">
-            <Sparkles className="h-3.5 w-3.5" strokeWidth={2.4} />
-            Soft launch &middot; Préinscription
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary-200 bg-secondary-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-secondary-800">
+            <Sparkles className="h-3.5 w-3.5" strokeWidth={2.4} aria-hidden="true" />
+            Pré-réservation prioritaire
           </span>
-          <h1 className="mb-4 font-heading text-3xl font-extrabold tracking-tight text-charcoal-900 md:text-5xl">
-            Soyez informé(e) dès le lancement
+          <h1 className="mb-4 font-display-premium font-heading text-3xl font-extrabold tracking-tight text-charcoal-900 md:text-5xl">
+            Réservez votre tarif négocié
           </h1>
           <p className="mx-auto max-w-2xl text-base text-charcoal-600 md:text-lg">
-            Notre cabinet est <strong>en cours d&apos;immatriculation au registre ORIAS</strong>.
-            Ouverture commerciale prévue {ORIAS_EXPECTED_DATE}. Laissez-nous votre email pour être
-            prévenu(e) en priorité et accéder à votre devis personnalisé dès l&apos;ouverture.
+            Cabinet en cours d&apos;immatriculation ORIAS — ouverture {ORIAS_EXPECTED_DATE}.
+            Pré-réservez votre place : vous serez parmi les premiers à recevoir{' '}
+            <strong className="text-charcoal-900">3 devis personnalisés sous 24 h</strong> dès
+            l&apos;ouverture commerciale.
           </p>
+          <ul className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-semibold text-charcoal-700">
+            <li className="inline-flex items-center gap-1.5">
+              <ShieldCheck
+                className="h-3.5 w-3.5 text-secondary-600"
+                strokeWidth={2.4}
+                aria-hidden="true"
+              />
+              Place prioritaire le jour J
+            </li>
+            <li className="inline-flex items-center gap-1.5">
+              <ShieldCheck
+                className="h-3.5 w-3.5 text-secondary-600"
+                strokeWidth={2.4}
+                aria-hidden="true"
+              />
+              −32 % vs marché en moyenne
+            </li>
+            <li className="inline-flex items-center gap-1.5">
+              <ShieldCheck
+                className="h-3.5 w-3.5 text-secondary-600"
+                strokeWidth={2.4}
+                aria-hidden="true"
+              />
+              Sans engagement
+            </li>
+          </ul>
         </header>
 
         <div className="rounded-3xl border border-charcoal-100 bg-white p-6 shadow-soft md:p-10">
