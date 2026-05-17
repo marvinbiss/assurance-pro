@@ -244,8 +244,8 @@ export default function HomePage() {
           aria-hidden="true"
         />
 
-        {/* 3D scene (lazy, desktop only) */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 opacity-80 lg:block">
+        {/* 3D scene (lazy, full-bleed desktop, low-opacity background) */}
+        <div className="pointer-events-none absolute inset-0 hidden opacity-60 mix-blend-screen lg:block">
           <HeroSceneLazy />
         </div>
 
