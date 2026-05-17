@@ -10,8 +10,10 @@ import {
   Sparkles,
   Headphones,
 } from 'lucide-react'
+import Image from 'next/image'
 import { MANIFESTO, BRAND, BRAND_PROMISES } from '@/lib/brand/brand-voice'
 import { BrandOrnament } from '@/components/brand/brand-ornament'
+import { HERO_PHOTOS } from '@/lib/data/photo-library'
 
 const PROMISE_ICONS = {
   ShieldCheck,
@@ -116,6 +118,29 @@ export default function AProposPage() {
               </article>
             )
           })}
+        </div>
+      </section>
+
+      {/* Image team / office full-bleed */}
+      <section className="container mx-auto max-w-5xl px-4 pt-10">
+        <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl shadow-premium">
+          <Image
+            src={HERO_PHOTOS.equipe.src}
+            alt={HERO_PHOTOS.equipe.alt}
+            fill
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-charcoal-950/10 to-transparent"
+            aria-hidden="true"
+          />
+          <div className="absolute bottom-6 left-6 right-6 text-white">
+            <p className="font-display-premium text-xl italic leading-snug md:text-2xl">
+              « Vivos signifie les vivants. C&apos;est la promesse d&apos;une assurance qui suit
+              votre activité — pas l&apos;inverse. »
+            </p>
+          </div>
         </div>
       </section>
 

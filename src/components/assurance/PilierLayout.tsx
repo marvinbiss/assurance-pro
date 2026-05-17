@@ -55,8 +55,19 @@ const EMOJI_ICON_MAP: Record<string, LucideIcon> = {
 import { ExpertBio, SocialProofHero, TrustBadgesAcpr } from '@/components/premium'
 // Below-fold heavy sections — lazy-loaded to keep First Load JS small.
 import { ComparatifAssureursTable, DevisCTASection, TarifCalculator } from './pilier-sections-lazy'
+import Image from 'next/image'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { MagneticCta } from '@/components/motion/magnetic-cta'
+import { HERO_PHOTOS } from '@/lib/data/photo-library'
+
+function pickHeroPhoto(slug: string): { src: string; alt: string } {
+  const s = slug.toLowerCase()
+  if (s.includes('decennale') || s.includes('btp') || s.includes('artisan'))
+    return HERO_PHOTOS.chantier
+  if (s.includes('mutuelle') || s.includes('sante')) return HERO_PHOTOS.conseil
+  if (s.includes('equipe') || s.includes('collectif')) return HERO_PHOTOS.equipe
+  return HERO_PHOTOS.bureau
+}
 import { ParallaxLayer } from '@/components/motion/dynamic/ParallaxLayerDynamic'
 import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
 
@@ -168,9 +179,23 @@ export async function PilierLayout({
           HERO — gradient terra + breadcrumb + CTAs + legal ref
           ═══════════════════════════════════════════════════════════════════ */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
+        {/* Cover photo background — priority for LCP */}
+        {(() => {
+          const photo = pickHeroPhoto(slug)
+          return (
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover opacity-25"
+            />
+          )
+        })()}
         {/* Mesh gradient animé */}
         <div
-          className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90"
+          className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-80"
           aria-hidden="true"
         />
         {/* Radial blobs decoratifs — parallax scroll + mouse */}

@@ -6,6 +6,7 @@
  * gradients premium, lucide icons cohérentes, bento boxes asymétriques.
  */
 
+import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import {
@@ -230,8 +231,17 @@ export default function HomePage() {
           HERO — gradient hero warm animé + radial blobs + trust signals
           ═══════════════════════════════════════════════════════════════════ */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
-        {/* Mesh gradient shader animé — GPU only, 18s loop */}
-        <div className="mesh-shader opacity-90" aria-hidden="true" />
+        {/* Cover photo full-bleed warm */}
+        <Image
+          src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=72&auto=format&fit=crop"
+          alt="Bureau professionnel — courtage assurance"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-20"
+        />
+        {/* Mesh gradient shader animé — GPU only */}
+        <div className="mesh-shader opacity-80" aria-hidden="true" />
 
         {/* Radial blobs decoratifs */}
         <div
