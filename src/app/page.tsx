@@ -258,15 +258,16 @@ export default function HomePage() {
               </div>
 
               {/* H1 typographie display premium */}
-              <h1 className="mb-6 font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[5rem]">
-                Votre assurance pro,
+              <h1 className="mb-4 font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[5rem]">
+                L&apos;assurance pro
                 <br />
                 <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent">
-                  comparée et négociée
+                  qui tient ses promesses.
                 </span>
-                <br />
-                en 2 minutes.
               </h1>
+              <p className="mb-6 max-w-xl text-base font-medium uppercase tracking-wider text-white/70">
+                Conseil motivé · Garanties négociées · Sinistre accompagné
+              </p>
 
               <p className="mb-10 max-w-xl text-lg text-white/85 md:text-xl">
                 Décennale, RC&nbsp;Pro, Multirisque, Mutuelle&nbsp;TNS, VTC, Cyber. Recevez 3 devis
