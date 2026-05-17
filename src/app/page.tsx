@@ -29,6 +29,8 @@ import {
 import { TrustBadgesRow } from '@/components/conversion/TrustBadgesRow'
 import { TrustWidget } from '@/components/trust/trust-widget'
 import { MockOfferCard } from '@/components/home/MockOfferCard'
+import { BigStatsBlock } from '@/components/home/big-stats-block'
+import { TransparencyWidget } from '@/components/home/transparency-widget'
 import { DevisCTASection, EditorialProcessSteps, EditorialTestimonial } from '@/components/premium'
 import { IllustrationForMetier } from '@/components/premium/illustrations'
 import { CountUp } from '@/components/motion/CountUp'
@@ -526,6 +528,12 @@ export default function HomePage() {
           <EditorialProcessSteps steps={PROCESS_STEPS} />
         </div>
       </section>
+
+      {/* BIG STATS BLOCK — Alan/Lemonade XL style */}
+      <BigStatsBlock />
+
+      {/* TRANSPARENCY WIDGET — Lemonade-style "où va votre cotisation" donut */}
+      <TransparencyWidget />
 
       {/* ═══════════════════════════════════════════════════════════════════
           TESTIMONIALS — Cards avec quote + rating + metric
