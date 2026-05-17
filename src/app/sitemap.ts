@@ -227,15 +227,35 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
 
 async function getProgrammaticEntries(now: Date): Promise<MetadataRoute.Sitemap> {
   try {
-    const [prixSlugs, comparateurSlugs, guideSlugs, devisSlugs, tarifSlugs] = await Promise.all([
+    // Live Supabase (dev/prod avec env vars DB configurées)
+    const [prixLive, comparateurLive, guideLive, devisLive, tarifLive] = await Promise.all([
       getEligibleSlugsForTemplate('prix_garantie_ville_statut', 15),
       getEligibleSlugsForTemplate('comparateur_garantie_ville', 15),
       getEligibleSlugsForTemplate('guide_metier_ville', 15),
-      // 'devis' réutilise template prix_garantie_ville_statut côté DB
-      // mais filtre par préfixe slug. Si pas distinct, on dérive.
       getEligibleSlugsForTemplate('prix_garantie_ville_statut', 15),
       getEligibleSlugsForTemplate('tarif', 15),
     ])
+
+    // Fallback snapshot committé (build CI sans DB env, 5832 slugs garantis)
+    const { PSEO_SLUGS_SNAPSHOT } = await import('@/lib/data/pseo-slugs-snapshot')
+    const prixSlugs =
+      prixLive.length > 0
+        ? prixLive
+        : (PSEO_SLUGS_SNAPSHOT.prix_garantie_ville_statut as readonly string[])
+    const comparateurSlugs =
+      comparateurLive.length > 0
+        ? comparateurLive
+        : (PSEO_SLUGS_SNAPSHOT.comparateur_garantie_ville as readonly string[])
+    const guideSlugs =
+      guideLive.length > 0
+        ? guideLive
+        : (PSEO_SLUGS_SNAPSHOT.guide_metier_ville as readonly string[])
+    const devisSlugs =
+      devisLive.length > 0
+        ? devisLive
+        : (PSEO_SLUGS_SNAPSHOT.prix_garantie_ville_statut as readonly string[])
+    const tarifSlugs =
+      tarifLive.length > 0 ? tarifLive : (PSEO_SLUGS_SNAPSHOT.tarif as readonly string[])
 
     return [
       ...prixSlugs
