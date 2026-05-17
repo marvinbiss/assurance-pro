@@ -35,6 +35,7 @@ import { FadeInUp } from '@/components/motion/fade-in-up'
 import { StaggerChildren, StaggerItem } from '@/components/motion/stagger-children'
 import { ShareButton } from '@/components/blog/client/share-button'
 import { MagneticCta } from '@/components/motion/magnetic-cta'
+import { BrandOrnament } from '@/components/brand/brand-ornament'
 import { getCoverForCategory } from '@/lib/data/blog-covers'
 import { getAuthorByName } from '@/lib/data/blog-authors'
 
@@ -484,6 +485,11 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
                 Article utile ? Partagez-le.
               </p>
               <ShareButton title={post.title} url={pageUrl} />
+            </div>
+
+            {/* Brand ornament divider */}
+            <div className="my-12 flex justify-center">
+              <BrandOrnament variant="horizontal" />
             </div>
 
             {/* Author bio */}
