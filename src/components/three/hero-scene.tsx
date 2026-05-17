@@ -77,9 +77,11 @@ function ConnectedNet({ count = 80 }: { count?: number }) {
     const positions: number[] = []
     const maxDist = 1.6
     for (let i = 0; i < pts.length; i++) {
+      const pi = pts[i]
+      if (!pi) continue
       for (let j = i + 1; j < pts.length; j++) {
-        const pi = pts[i]!
-        const pj = pts[j]!
+        const pj = pts[j]
+        if (!pj) continue
         if (pi.distanceTo(pj) < maxDist) {
           positions.push(pi.x, pi.y, pi.z, pj.x, pj.y, pj.z)
         }

@@ -13,8 +13,10 @@ import {
 } from 'lucide-react'
 import { SITE_URL } from '@/lib/seo/config'
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
+import Image from 'next/image'
 import { BRAND_VOICE } from '@/lib/brand/brand-voice'
 import { BrandOrnament } from '@/components/brand/brand-ornament'
+import { HERO_PHOTOS } from '@/lib/data/photo-library'
 
 export const metadata: Metadata = {
   title: 'Méthodologie éditoriale — sources, fact-checking, mise à jour',
@@ -89,7 +91,15 @@ export default function MethodologiePage() {
       <BreadcrumbSchema items={[{ label: 'Méthodologie éditoriale' }]} />
 
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
-        <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />
+        <Image
+          src={HERO_PHOTOS.bureau.src}
+          alt={HERO_PHOTOS.bureau.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-20"
+        />
+        <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-80" />
         <div className="container relative mx-auto max-w-4xl px-4">
           <nav
             aria-label="Fil d'Ariane"
