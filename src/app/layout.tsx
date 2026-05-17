@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { headers } from 'next/headers'
-import { DM_Sans, Fraunces } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import { PreOriasBanner } from '@/components/PreOriasBanner'
@@ -20,21 +20,20 @@ import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/
 import { CursorTrail } from '@/components/motion/cursor-trail'
 import { ChatButton } from '@/components/ui/chat-button'
 
-const dmSans = DM_Sans({
+// Inter — sans-serif corporate universel (Hiscox, AXA, Stripe-grade).
+const dmSans = Inter({
   subsets: ['latin'],
   variable: '--font-dm-sans',
   display: 'swap',
   adjustFontFallback: true,
 })
 
-// Fraunces — variable serif éditoriale premium (axes opsz + SOFT + wght continu)
-// Élève instantanément le brand vers "Editorial Luxury Artisanal"
-const fraunces = Fraunces({
+// Playfair Display — serif éditorial classique (signal trust YMYL premium).
+const fraunces = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-heading',
   display: 'swap',
   style: ['normal'],
-  axes: ['opsz', 'SOFT'],
   adjustFontFallback: true,
 })
 
