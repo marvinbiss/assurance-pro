@@ -18,7 +18,6 @@ import { SITE_URL } from '@/lib/seo/config'
 import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
 import { CursorTrail } from '@/components/motion/cursor-trail'
-import { ChatButton } from '@/components/ui/chat-button'
 
 // Inter — sans-serif corporate universel (Hiscox, AXA, Stripe-grade).
 const dmSans = Inter({
@@ -209,7 +208,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Footer />
         <ClientOnlyFooterHelpers />
         <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
-        <ChatButton />
         <CursorTrail />
       </body>
     </html>
