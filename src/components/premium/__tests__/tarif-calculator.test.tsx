@@ -30,7 +30,7 @@ describe('TarifCalculator', () => {
     expect(screen.getByText(/Décennale BTP — votre fourchette annuelle/i)).toBeInTheDocument()
   })
 
-  it('rend les 4 garanties supportées', () => {
+  it('rend les 4 garanties classiques avec select métier', () => {
     const garanties: Array<'decennale' | 'rc-pro' | 'multirisque-pro' | 'cyber'> = [
       'decennale',
       'rc-pro',
@@ -39,10 +39,53 @@ describe('TarifCalculator', () => {
     ]
     for (const g of garanties) {
       const { unmount } = render(<TarifCalculator garantie={g} />)
-      // Les labels Garantie sont uniques par mode
       expect(screen.getByLabelText(/Sélection du métier/i)).toBeInTheDocument()
       unmount()
     }
+  })
+
+  it('rend la verticale mutuelle-pro avec champs spécifiques (âge, niveau, ayants droit)', () => {
+    render(<TarifCalculator garantie="mutuelle-pro" />)
+    expect(screen.getByText(/Mutuelle TNS \/ Pro — votre fourchette annuelle/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/Âge en années/i)).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Niveau de couverture/i })).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Ayants droit/i })).toBeInTheDocument()
+  })
+
+  it('rend la verticale vtc avec champs spécifiques (zone, permis, véhicule, plateforme)', () => {
+    render(<TarifCalculator garantie="vtc" />)
+    expect(
+      screen.getByText(/Assurance VTC \/ Taxi — votre fourchette annuelle/i)
+    ).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Zone d'exploitation/i })).toBeInTheDocument()
+    expect(screen.getByLabelText(/Ancienneté du permis B en années/i)).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Catégorie véhicule/i })).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Mode d'exploitation/i })).toBeInTheDocument()
+  })
+
+  it('rend la verticale multirisque-pro avec surface + valeur contenu', () => {
+    render(<TarifCalculator garantie="multirisque-pro" />)
+    expect(screen.getByLabelText(/Surface du local en mètres carrés/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/Valeur du contenu en euros/i)).toBeInTheDocument()
+  })
+
+  it('rend la verticale cyber avec toggle données sensibles', () => {
+    render(<TarifCalculator garantie="cyber" />)
+    expect(screen.getByText(/Données sensibles/i)).toBeInTheDocument()
+  })
+
+  it('rend la verticale décennale avec ancienneté + sinistralité', () => {
+    render(<TarifCalculator garantie="decennale" />)
+    expect(screen.getByRole('radiogroup', { name: /Ancienneté entreprise/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('radiogroup', { name: /Sinistralité 24 derniers mois/i })
+    ).toBeInTheDocument()
+  })
+
+  it('rend la verticale rc-pro avec effectif + activité sensible', () => {
+    render(<TarifCalculator garantie="rc-pro" />)
+    expect(screen.getByLabelText(/Nombre de salariés/i)).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Type de mission/i })).toBeInTheDocument()
   })
 
   it('affiche un range "min → max" en euros avec /an', () => {

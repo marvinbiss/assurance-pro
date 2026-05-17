@@ -71,11 +71,19 @@ function pickHeroPhoto(slug: string): { src: string; alt: string } {
 import { ParallaxLayer } from '@/components/motion/dynamic/ParallaxLayerDynamic'
 import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
 
-type CalculatorGarantie = 'decennale' | 'rc-pro' | 'multirisque-pro' | 'cyber'
+type CalculatorGarantie =
+  | 'decennale'
+  | 'rc-pro'
+  | 'multirisque-pro'
+  | 'cyber'
+  | 'mutuelle-pro'
+  | 'vtc'
 
 /**
  * Auto-dispatch garantie depuis slug si non fournie explicitement par la page.
  * Couvre les 66 pages PilierLayout sans calculatorGarantie= explicite.
+ *
+ * Ordre des tests = priorité de match (spécifique → générique).
  */
 function inferCalculatorGarantie(slug: string): CalculatorGarantie {
   const s = slug.toLowerCase()
@@ -85,17 +93,23 @@ function inferCalculatorGarantie(slug: string): CalculatorGarantie {
   if (s.includes('cyber') || s.includes('rgpd') || s.includes('ransomware')) {
     return 'cyber'
   }
+  if (s.includes('vtc') || s.includes('taxi') || s.includes('chauffeur')) {
+    return 'vtc'
+  }
+  if (
+    s.includes('mutuelle') ||
+    s.includes('madelin') ||
+    s.includes('sante') ||
+    s.includes('prevoyance') ||
+    s.includes('tns')
+  ) {
+    return 'mutuelle-pro'
+  }
   if (
     s.includes('multirisque') ||
-    s.includes('mutuelle') ||
-    s.includes('sante') ||
-    s.includes('madelin') ||
-    s.includes('prevoyance') ||
     s.includes('local') ||
     s.includes('flotte') ||
     s.includes('auto') ||
-    s.includes('vtc') ||
-    s.includes('taxi') ||
     s.includes('transport') ||
     s.includes('moto')
   ) {
