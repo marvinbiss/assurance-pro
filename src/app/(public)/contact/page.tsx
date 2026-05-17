@@ -118,7 +118,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {/* Téléphone */}
             <a
-              href="tel:+33651858930"
+              href="tel:+33182885127"
               className="group relative flex flex-col overflow-hidden rounded-3xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-premium"
             >
               <span
@@ -132,7 +132,7 @@ export default function ContactPage() {
                 Téléphone
               </p>
               <p className="mb-2 font-heading text-2xl font-extrabold tabular-nums tracking-tight text-charcoal-900">
-                06 51 85 89 30
+                01 82 88 51 27
               </p>
               <p className="mb-5 flex-1 text-sm text-charcoal-600">
                 Conseiller ORIAS dédié. Lundi–vendredi 9h–19h. Sans engagement.
@@ -363,7 +363,8 @@ export default function ContactPage() {
                   Adresse du cabinet
                 </p>
                 <p className="font-heading text-lg font-extrabold text-charcoal-900">
-                  {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'}
+                  {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ??
+                    "Cabinet en Île-de-France (adresse précise publiée à l'attribution ORIAS)"}
                 </p>
                 <p className="mt-1 text-sm text-charcoal-600">Sur rendez-vous uniquement.</p>
               </div>

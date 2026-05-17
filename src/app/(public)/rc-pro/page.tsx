@@ -59,7 +59,7 @@ export default function PilierRcProPage() {
       expertBio={{
         name: 'Marvin Bissohong',
         role: 'Courtier ORIAS spécialiste services pros',
-        orias: process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX',
+        orias: process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution",
         linkedin: 'https://www.linkedin.com/in/marvinbissohong',
         bio: "10 ans d'expérience en assurance professionnelle services. Conseille consultants, freelances IT, agences digitales, coachs, formateurs. Négocie 10 assureurs partenaires (Hiscox, April Pro, Stello, Wakam, AXA Pro) pour décrocher la meilleure couverture sans frais cachés.",
       }}

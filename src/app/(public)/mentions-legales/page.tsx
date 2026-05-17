@@ -26,12 +26,14 @@ export const metadata: Metadata = {
 }
 
 export default function MentionsLegalesPage() {
-  const orias = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
+  const orias = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"
   const editor = process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Vivos Assurance SAS'
-  const siret = process.env.NEXT_PUBLIC_LEGAL_SIRET ?? 'XXX XXX XXX 00000'
+  const siret = process.env.NEXT_PUBLIC_LEGAL_SIRET ?? "En cours d'attribution"
   const rcs = process.env.NEXT_PUBLIC_LEGAL_RCS ?? 'RCS Paris'
   const capital = process.env.NEXT_PUBLIC_LEGAL_CAPITAL ?? '10 000 €'
-  const address = process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'
+  const address =
+    process.env.NEXT_PUBLIC_LEGAL_ADDRESS ??
+    "Cabinet en Île-de-France (adresse précise publiée à l'attribution ORIAS)"
   const tva = process.env.NEXT_PUBLIC_LEGAL_TVA ?? 'FRXX XXX XXX XXX'
 
   return (

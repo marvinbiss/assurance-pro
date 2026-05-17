@@ -54,7 +54,7 @@ export default function OfflinePage() {
 
         <p className="mt-8 inline-flex items-center gap-1.5 text-xs text-charcoal-500">
           <MessageCircle className="h-3.5 w-3.5" strokeWidth={2.4} />
-          Besoin d&apos;aide ? Rappelez-vous au 06 51 85 89 30 (sans connexion Internet)
+          Besoin d&apos;aide ? Rappelez-vous au 01 82 88 51 27 (sans connexion Internet)
         </p>
       </div>
     </main>

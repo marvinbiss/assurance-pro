@@ -44,8 +44,8 @@ export default function CgvPage() {
           <h2>1. Présentation du cabinet</h2>
           <p>
             Vivos Assurance est un cabinet de courtage en assurance immatriculé à l\'ORIAS sous le
-            numéro {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'} (catégorie : Courtier en
-            Assurance, type b), consultable sur{' '}
+            numéro {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"} (catégorie :
+            Courtier en Assurance, type b), consultable sur{' '}
             <a href="https://www.orias.fr" target="_blank" rel="noopener noreferrer">
               www.orias.fr
             </a>

@@ -60,7 +60,7 @@ export default function PilierDecennalePage() {
       expertBio={{
         name: 'Marvin Bissohong',
         role: 'Courtier ORIAS spécialiste BTP',
-        orias: process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX',
+        orias: process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution",
         linkedin: 'https://www.linkedin.com/in/marvinbissohong',
         bio: "10 ans d'expérience en assurance pro BTP. Spécialiste des dossiers complexes (jeunes entreprises, antécédents sinistres, profils refusés). Négocie chaque dossier auprès de 10 assureurs partenaires (SMABTP, Hiscox, April Pro, MMA, Generali) pour obtenir la meilleure couverture au tarif juste.",
       }}

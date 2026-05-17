@@ -258,7 +258,7 @@ export default function HomePage() {
               {/* Eyebrow ORIAS pill */}
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
                 <ShieldCheck className="h-3.5 w-3.5" />
-                ORIAS n° {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'}
+                ORIAS n° {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"}
                 <span className="ml-1 text-secondary-300">· ACPR · CSCA</span>
               </div>
 

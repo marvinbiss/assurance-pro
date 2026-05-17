@@ -69,7 +69,7 @@ export function leadConfirmationTemplate({
 
       <p style="font-size:11px;color:#94a3b8;line-height:1.5">
         Vivos Assurance — Courtier en assurance immatriculé ORIAS sous le n° ${
-          process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
+          process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"
         }.
         Soumis au contrôle de l&apos;ACPR. Pour toute réclamation&nbsp;:
         <a href="https://vivos-assurance.fr/reclamation" style="color:#1d4ed8">vivos-assurance.fr/reclamation</a>.

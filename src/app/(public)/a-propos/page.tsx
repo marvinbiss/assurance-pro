@@ -24,7 +24,7 @@ import { buildOriasFicheUrl, formatOriasDisplay, buildOriasRegistryUrl } from '@
 import { SITE_URL } from '@/lib/seo/config'
 import { PageHero } from '@/components/layout/PageHero'
 
-const ORIAS = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
+const ORIAS = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"
 
 const PARTENAIRES = [
   'Hiscox',

@@ -24,9 +24,11 @@ export const metadata: Metadata = {
 }
 
 export default function FicPage() {
-  const orias = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
+  const orias = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"
   const editor = process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Vivos Assurance SAS'
-  const address = process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'
+  const address =
+    process.env.NEXT_PUBLIC_LEGAL_ADDRESS ??
+    "Cabinet en Île-de-France (adresse précise publiée à l'attribution ORIAS)"
 
   return (
     <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">

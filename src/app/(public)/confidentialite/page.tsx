@@ -50,7 +50,8 @@ export default function ConfidentialitePage() {
           <h2>1. Responsable du traitement</h2>
           <p>
             Le responsable du traitement est <strong>Vivos Assurance</strong>, immatriculé à
-            l\'ORIAS sous le numéro {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'}.
+            l\'ORIAS sous le numéro{' '}
+            {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"}.
           </p>
           <p>
             <strong>Délégué à la Protection des Données (DPO)</strong> :{' '}

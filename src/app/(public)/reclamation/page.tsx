@@ -181,7 +181,8 @@ export default function ReclamationPage() {
             <span>
               Service Réclamations — Vivos Assurance
               <br />
-              {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'}
+              {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ??
+                "Cabinet en Île-de-France (adresse précise publiée à l'attribution ORIAS)"}
             </span>
           </p>
         </section>

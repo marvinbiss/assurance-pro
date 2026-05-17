@@ -29,7 +29,7 @@ export const EQUIPE: Record<string, MembreEquipe> = {
     prenom: 'Direction',
     nom: 'Cabinet',
     poste: 'Directeur du cabinet — Courtier responsable',
-    oriasNumber: process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX',
+    oriasNumber: process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution",
     emailPro: 'direction@vivos-assurance.fr',
     bio: "Directeur du cabinet Vivos Assurance et courtier responsable au sens des articles L. 511-1 et suivants du Code des assurances. Représente le cabinet auprès de l'ACPR et de l'ORIAS. Garant de la conformité des recommandations délivrées et de la traçabilité du devoir de conseil (art. L. 521-4).",
     expertises: [
