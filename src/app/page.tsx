@@ -27,6 +27,7 @@ import {
   Award,
 } from 'lucide-react'
 import { TrustBadgesRow } from '@/components/conversion/TrustBadgesRow'
+import { TrustWidget } from '@/components/trust/trust-widget'
 import { MockOfferCard } from '@/components/home/MockOfferCard'
 import { DevisCTASection, EditorialProcessSteps, EditorialTestimonial } from '@/components/premium'
 import { IllustrationForMetier } from '@/components/premium/illustrations'
@@ -270,6 +271,10 @@ export default function HomePage() {
               <p className="mb-6 max-w-xl text-base font-medium uppercase tracking-wider text-white/70">
                 Conseil motivé · Garanties négociées · Sinistre accompagné
               </p>
+
+              <div className="mb-6">
+                <TrustWidget variant="card" />
+              </div>
 
               <p className="mb-10 max-w-xl text-lg text-white/85 md:text-xl">
                 Décennale, RC&nbsp;Pro, Multirisque, Mutuelle&nbsp;TNS, VTC, Cyber. Recevez 3 devis
