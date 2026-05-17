@@ -13,6 +13,8 @@ import {
 } from 'lucide-react'
 import { SITE_URL } from '@/lib/seo/config'
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
+import { BRAND_VOICE } from '@/lib/brand/brand-voice'
+import { BrandOrnament } from '@/components/brand/brand-ornament'
 
 export const metadata: Metadata = {
   title: 'Méthodologie éditoriale — sources, fact-checking, mise à jour',
@@ -185,6 +187,57 @@ export default function MethodologiePage() {
             </li>
           ))}
         </ol>
+      </section>
+
+      {/* Voix éditoriale charter */}
+      <section className="container mx-auto max-w-4xl px-4 py-16">
+        <div className="mb-8 flex justify-center">
+          <BrandOrnament variant="minimal" />
+        </div>
+        <header className="mb-8 text-center">
+          <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+            <ScrollText className="h-3.5 w-3.5" strokeWidth={2.4} aria-hidden="true" />
+            Voix éditoriale
+          </span>
+          <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+            Comment nous écrivons
+          </h2>
+        </header>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-secondary-200 bg-secondary-50/50 p-7">
+            <p className="mb-4 text-xs font-extrabold uppercase tracking-wider text-secondary-800">
+              Nous faisons
+            </p>
+            <ul className="space-y-2.5">
+              {BRAND_VOICE.do.map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-charcoal-800">
+                  <CheckCircle2
+                    className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
+                    strokeWidth={2.6}
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-charcoal-200 bg-charcoal-50/60 p-7">
+            <p className="mb-4 text-xs font-extrabold uppercase tracking-wider text-charcoal-700">
+              Nous évitons
+            </p>
+            <ul className="space-y-2.5">
+              {BRAND_VOICE.dont.map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-charcoal-700">
+                  <span
+                    className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-charcoal-400"
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section className="container mx-auto max-w-4xl px-4 py-16">
