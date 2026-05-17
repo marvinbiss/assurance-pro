@@ -3,6 +3,57 @@
 @tailwind utilities;
 
 /* ===========================================
+   Mesh gradient shader animé — GPU only
+   =========================================== */
+.mesh-shader {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(at 18% 22%, #e86b4b 0%, transparent 45%),
+    radial-gradient(at 78% 10%, #e8960a 0%, transparent 40%),
+    radial-gradient(at 88% 78%, #c24b2a 0%, transparent 38%),
+    radial-gradient(at 10% 82%, #c97308 0%, transparent 40%),
+    radial-gradient(at 50% 50%, #1c1917 0%, #0f0e0c 70%);
+  filter: saturate(115%);
+  animation: meshDrift 18s ease-in-out infinite alternate;
+  will-change: background-position, filter;
+}
+@keyframes meshDrift {
+  0% {
+    background-position:
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      50% 50%;
+    filter: saturate(115%) hue-rotate(0deg);
+  }
+  50% {
+    background-position:
+      15% 10%,
+      80% 15%,
+      85% 90%,
+      10% 90%,
+      50% 50%;
+    filter: saturate(125%) hue-rotate(-6deg);
+  }
+  100% {
+    background-position:
+      0% 15%,
+      100% 5%,
+      95% 100%,
+      5% 95%,
+      50% 50%;
+    filter: saturate(118%) hue-rotate(4deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mesh-shader {
+    animation: none;
+  }
+}
+
+/* ===========================================
    View Transitions API (Next 15 experimental)
    =========================================== */
 @media (prefers-reduced-motion: no-preference) {
