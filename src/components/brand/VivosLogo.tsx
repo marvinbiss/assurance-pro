@@ -110,3 +110,48 @@ function VivosMark({ size = 36 }: { size?: number }) {
  * Export utilitaire : juste le mark sans wordmark.
  */
 export { VivosMark }
+
+/**
+ * VivosMarkFlat — Variant flat monochrome (footer dark, favicon, watermark).
+ * Pas de gradient ni de fond, juste le V + arc en couleur unique.
+ */
+export function VivosMarkFlat({
+  size = 36,
+  color = 'currentColor',
+  className,
+}: {
+  size?: number
+  color?: string
+  className?: string
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Vivos"
+      role="img"
+      className={className}
+    >
+      {/* Arc protecteur */}
+      <path
+        d="M 10 22 Q 32 6, 54 22"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        fill="none"
+      />
+      {/* V */}
+      <path
+        d="M 16 26 L 32 54 L 48 26"
+        stroke={color}
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </svg>
+  )
+}
