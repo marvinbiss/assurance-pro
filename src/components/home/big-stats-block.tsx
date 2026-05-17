@@ -27,7 +27,7 @@ const STATS = [
 
 export function BigStatsBlock() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-28 md:py-40">
       <div className="container mx-auto max-w-6xl px-4">
         <header className="mb-12 max-w-2xl">
           <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-secondary-50 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-secondary-800">

@@ -116,7 +116,7 @@ export function RelatedPagesSection({
   return (
     <section
       aria-label="Pages connexes"
-      className="border-t border-charcoal-100 bg-white py-16 md:py-20"
+      className="border-t border-charcoal-100 bg-white py-24 md:py-32"
     >
       <div className="container mx-auto max-w-6xl px-4">
         {/* Header section */}

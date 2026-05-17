@@ -27,7 +27,6 @@ import {
   Award,
 } from 'lucide-react'
 import { TrustBadgesRow } from '@/components/conversion/TrustBadgesRow'
-import { TrustWidget } from '@/components/trust/trust-widget'
 import { MockOfferCard } from '@/components/home/MockOfferCard'
 import { BigStatsBlock } from '@/components/home/big-stats-block'
 import { TransparencyWidget } from '@/components/home/transparency-widget'
@@ -37,7 +36,6 @@ import { CountUp } from '@/components/motion/CountUp'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { MagneticCta } from '@/components/motion/magnetic-cta'
 import { ScrollProgressSection } from '@/components/motion/scroll-progress-section'
-import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const metadata: Metadata = {
@@ -262,21 +260,15 @@ export default function HomePage() {
                 <span className="ml-1 text-secondary-300">· ACPR · CSCA</span>
               </div>
 
-              {/* H1 typographie display premium */}
-              <h1 className="mb-4 font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[5rem]">
+              {/* H1 typographie display premium XL — sobre, sans gradient */}
+              <h1 className="mb-6 font-display-premium font-heading text-5xl font-medium leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[6.5rem]">
                 L&apos;assurance pro
                 <br />
-                <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent">
-                  qui tient ses promesses.
-                </span>
+                <span className="italic text-secondary-200">qui tient ses promesses.</span>
               </h1>
-              <p className="mb-6 max-w-xl text-base font-medium uppercase tracking-wider text-white/70">
-                Conseil motivé · Garanties négociées · Sinistre accompagné
+              <p className="mb-10 max-w-xl text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
+                Conseil motivé &middot; Garanties négociées &middot; Sinistre accompagné
               </p>
-
-              <div className="mb-6">
-                <TrustWidget variant="card" />
-              </div>
 
               <p className="mb-10 max-w-xl text-lg text-white/85 md:text-xl">
                 Décennale, RC&nbsp;Pro, Multirisque, Mutuelle&nbsp;TNS, VTC, Cyber. Recevez 3 devis
@@ -441,64 +433,62 @@ export default function HomePage() {
                 translateY={32}
                 className={v.span ?? ''}
               >
-                <TiltCard maxTilt={6} glow className="h-full">
-                  <Link
-                    href={v.href}
-                    className={`mount-fade-up group relative flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover`}
-                  >
-                    {/* Illustration SVG sur-mesure — aspect 16/9 (DESIGN.md Atelier Premium) */}
-                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-sand-100">
-                      <IllustrationForMetier
-                        slug={v.metierSlug}
-                        accent="primary"
-                        className="absolute inset-0 h-full w-full p-8"
-                        ariaLabel={v.imageAlt}
-                      />
-                      {/* Overlay gradient bas pour lisibilité icon + badge sur line-art clair */}
-                      <div
-                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-900/65 via-charcoal-900/0 to-transparent"
-                        aria-hidden="true"
-                      />
-                      {/* Icon + badge overlay bottom */}
-                      <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
-                        <div
-                          className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${v.accent} text-white shadow-card-hover ring-2 ring-white/40 transition-transform duration-300 group-hover:scale-110`}
-                        >
-                          <v.Icon className="h-5 w-5" strokeWidth={2.2} />
-                        </div>
-                        {v.badge && (
-                          <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-900 backdrop-blur-sm">
-                            {v.badge}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Glow on hover */}
+                <Link
+                  href={v.href}
+                  className={`mount-fade-up group relative flex h-full flex-col overflow-hidden rounded-2xl border border-sand-300 bg-white transition-all duration-500 hover:-translate-y-0.5 hover:border-primary-200`}
+                >
+                  {/* Illustration SVG sur-mesure — aspect 16/9 (DESIGN.md Atelier Premium) */}
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-sand-100">
+                    <IllustrationForMetier
+                      slug={v.metierSlug}
+                      accent="primary"
+                      className="absolute inset-0 h-full w-full p-8"
+                      ariaLabel={v.imageAlt}
+                    />
+                    {/* Overlay gradient bas pour lisibilité icon + badge sur line-art clair */}
                     <div
-                      className={`pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${v.accent} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-25`}
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-900/65 via-charcoal-900/0 to-transparent"
                       aria-hidden="true"
                     />
-
-                    {/* Content */}
-                    <div className="relative flex flex-1 flex-col p-6">
-                      <h3 className="mb-2 font-heading text-2xl font-bold text-charcoal-900">
-                        {v.title}
-                      </h3>
-                      <p className="mb-5 flex-1 text-sm leading-relaxed text-charcoal-600">
-                        {v.desc}
-                      </p>
-
-                      <div className="flex items-center justify-between border-t border-charcoal-100 pt-4">
-                        <span className="text-xs font-semibold text-charcoal-500">{v.metric}</span>
-                        <span className="inline-flex items-center gap-1 text-sm font-bold text-primary-600 transition-transform group-hover:translate-x-1">
-                          Découvrir
-                          <ArrowRight className="h-4 w-4" />
-                        </span>
+                    {/* Icon + badge overlay bottom */}
+                    <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+                      <div
+                        className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${v.accent} text-white shadow-card-hover ring-2 ring-white/40 transition-transform duration-300 group-hover:scale-110`}
+                      >
+                        <v.Icon className="h-5 w-5" strokeWidth={2.2} />
                       </div>
+                      {v.badge && (
+                        <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-900 backdrop-blur-sm">
+                          {v.badge}
+                        </span>
+                      )}
                     </div>
-                  </Link>
-                </TiltCard>
+                  </div>
+
+                  {/* Glow on hover */}
+                  <div
+                    className={`pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${v.accent} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-25`}
+                    aria-hidden="true"
+                  />
+
+                  {/* Content */}
+                  <div className="relative flex flex-1 flex-col p-6">
+                    <h3 className="mb-2 font-heading text-2xl font-bold text-charcoal-900">
+                      {v.title}
+                    </h3>
+                    <p className="mb-5 flex-1 text-sm leading-relaxed text-charcoal-600">
+                      {v.desc}
+                    </p>
+
+                    <div className="flex items-center justify-between border-t border-charcoal-100 pt-4">
+                      <span className="text-xs font-semibold text-charcoal-500">{v.metric}</span>
+                      <span className="inline-flex items-center gap-1 text-sm font-bold text-primary-600 transition-transform group-hover:translate-x-1">
+                        Découvrir
+                        <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               </RevealOnScroll>
             ))}
           </div>
@@ -508,7 +498,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           PROCESS — 3 étapes timeline
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-white py-20 md:py-28">
+      <section className="relative bg-white py-28 md:py-40">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="mb-14 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-700">
@@ -573,7 +563,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           PARTENAIRES — Logos grayscale → color hover
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white py-24 md:py-32">
         <div className="container mx-auto max-w-5xl px-4 text-center">
           <h2 className="mb-3 font-heading text-2xl font-bold text-charcoal-900 md:text-3xl">
             Nos partenaires assureurs
@@ -617,7 +607,7 @@ export default function HomePage() {
       </section>
 
       {/* SPLIT IMAGE + TEXT — humanise marque (avant CTA final) */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-white py-28 md:py-40">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-premium">

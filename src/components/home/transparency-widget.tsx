@@ -32,7 +32,7 @@ export function TransparencyWidget() {
   })
 
   return (
-    <section className="bg-sand-50 py-20 md:py-28">
+    <section className="bg-sand-50 py-28 md:py-40">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1.2fr]">
           <div className="flex justify-center">

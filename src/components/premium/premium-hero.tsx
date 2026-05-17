@@ -30,7 +30,7 @@ export function PremiumHero({
 
   return (
     <section
-      className={`relative overflow-hidden ${isPilier ? 'bg-sand-50 py-16 md:py-24' : 'bg-sand-50 py-20 md:py-28'} ${className}`}
+      className={`relative overflow-hidden ${isPilier ? 'bg-sand-50 py-16 md:py-24' : 'bg-sand-50 py-28 md:py-40'} ${className}`}
     >
       <GrainOverlay opacity={0.04} />
 

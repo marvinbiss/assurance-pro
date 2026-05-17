@@ -43,7 +43,7 @@ interface PageHeroProps {
 const SIZE_CLASSES: Record<Required<PageHeroProps>['size'], string> = {
   sm: 'py-12 md:py-16',
   md: 'py-16 md:py-24',
-  lg: 'py-20 md:py-28',
+  lg: 'py-28 md:py-40',
 }
 
 function buildBreadcrumbSchema(breadcrumbs: BreadcrumbItem[]) {
@@ -125,7 +125,7 @@ export function PageHero({
           </span>
         )}
 
-        <h1 className="font-display-premium mb-5 max-w-4xl font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
+        <h1 className="mb-5 max-w-4xl font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
           {title}
         </h1>
 
