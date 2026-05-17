@@ -335,7 +335,7 @@ export async function PilierLayout({
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {benefits.map((b, idx) => (
                 <RevealOnScroll key={b.title} delay={idx * 80} translateY={28}>
-                  <TiltCard maxTilt={4} glowColor="rgba(232, 107, 75, 0.12)">
+                  <TiltCard maxTilt={4} glowColor="rgba(43, 77, 133, 0.12)">
                     <div className="group relative h-full overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft transition-[box-shadow] duration-300 hover:shadow-card-hover">
                       <div
                         className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 transition-opacity group-hover:opacity-100"

@@ -9,7 +9,7 @@ interface PremiumBadgeProps {
 
 const VARIANTS = {
   honey:
-    'bg-secondary-50 text-secondary-700 border-secondary-300 shadow-[0_2px_8px_rgba(232,150,10,0.15)]',
+    'bg-secondary-50 text-secondary-700 border-secondary-300 shadow-[0_2px_8px_rgba(184,151,90,0.15)]',
   forest: 'bg-accent-50 text-accent-700 border-accent-300',
   outline: 'bg-white/80 text-charcoal-800 border-charcoal-200 backdrop-blur-sm',
 } as const
