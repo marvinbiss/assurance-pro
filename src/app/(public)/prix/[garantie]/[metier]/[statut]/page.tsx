@@ -59,10 +59,17 @@ type Params = {
 // ────────────────────────────────────────────────────────────────────────────
 
 export async function generateStaticParams() {
-  const slugs = await getEligibleSlugsForTemplate('prix_garantie_ville_statut', 15)
+  // Tentative live Supabase (dev/prod avec DB)
+  const liveSlugs = await getEligibleSlugsForTemplate('prix_garantie_ville_statut', 15)
 
-  // Slugs au format "prix/[garantie]/[metier]/[statut]"
-  return slugs
+  // Fallback snapshot pré-généré (CI build sans DB, prod sans env var)
+  const { PSEO_SLUGS_SNAPSHOT } = await import('@/lib/data/pseo-slugs-snapshot')
+  const snapshotSlugs = PSEO_SLUGS_SNAPSHOT.prix_garantie_ville_statut as readonly string[]
+
+  // Union (live prioritaire, snapshot fallback)
+  const allSlugs = liveSlugs.length > 0 ? liveSlugs : snapshotSlugs
+
+  return [...allSlugs]
     .filter((s) => s.startsWith('prix/'))
     .map((slug) => {
       const [, garantie, metier, statut] = slug.split('/')
