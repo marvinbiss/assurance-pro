@@ -78,43 +78,58 @@ type CalculatorGarantie =
   | 'cyber'
   | 'mutuelle-pro'
   | 'vtc'
+  | 'flotte-auto'
+  | 'dommages-ouvrage'
+  | 'tous-risques-chantier'
+  | 'transport-marchandises'
+  | 'moto-pro'
+  | 'prevoyance'
+  | 'protection-juridique'
+  | 'homme-cle'
 
 /**
  * Auto-dispatch garantie depuis slug si non fournie explicitement par la page.
- * Couvre les 66 pages PilierLayout sans calculatorGarantie= explicite.
+ * Couvre les 130+ pages PilierLayout sans calculatorGarantie= explicite.
  *
  * Ordre des tests = priorité de match (spécifique → générique).
+ * Les patterns longs/composés DOIVENT être testés avant les patterns courts.
  */
 function inferCalculatorGarantie(slug: string): CalculatorGarantie {
   const s = slug.toLowerCase()
-  if (s.includes('decennale') || s.includes('spinetta') || s.includes('garantie-dommage')) {
-    return 'decennale'
+
+  // ----- Patterns composés / longs (priorité haute) -----
+  if (s.includes('dommages-ouvrage') || s.includes('dommage-ouvrage')) return 'dommages-ouvrage'
+  if (s.includes('tous-risques-chantier') || s.includes('trc-chantier')) {
+    return 'tous-risques-chantier'
   }
-  if (s.includes('cyber') || s.includes('rgpd') || s.includes('ransomware')) {
-    return 'cyber'
+  if (s.includes('transport-marchandises') || s.includes('marchandises-transport')) {
+    return 'transport-marchandises'
   }
-  if (s.includes('vtc') || s.includes('taxi') || s.includes('chauffeur')) {
-    return 'vtc'
+  if (s.includes('homme-cle') || s.includes('hommecle') || s.includes('homme-clef')) {
+    return 'homme-cle'
   }
-  if (
-    s.includes('mutuelle') ||
-    s.includes('madelin') ||
-    s.includes('sante') ||
-    s.includes('prevoyance') ||
-    s.includes('tns')
-  ) {
+  if (s.includes('protection-juridique') || s.includes('juridique-pro')) {
+    return 'protection-juridique'
+  }
+  if (s.includes('flotte') || s.includes('voiture-pro') || s.includes('auto-professionnelle')) {
+    return 'flotte-auto'
+  }
+  if (s.includes('moto-pro') || s.includes('moto-professionnelle') || s.includes('coursier')) {
+    return 'moto-pro'
+  }
+  if (s.includes('prevoyance')) return 'prevoyance'
+
+  // ----- Patterns spécifiques -----
+  if (s.includes('decennale') || s.includes('spinetta')) return 'decennale'
+  if (s.includes('cyber') || s.includes('rgpd') || s.includes('ransomware')) return 'cyber'
+  if (s.includes('vtc') || s.includes('taxi') || s.includes('chauffeur')) return 'vtc'
+  if (s.includes('mutuelle') || s.includes('madelin') || s.includes('sante') || s.includes('tns')) {
     return 'mutuelle-pro'
   }
-  if (
-    s.includes('multirisque') ||
-    s.includes('local') ||
-    s.includes('flotte') ||
-    s.includes('auto') ||
-    s.includes('transport') ||
-    s.includes('moto')
-  ) {
+  if (s.includes('multirisque') || s.includes('local') || s.includes('commerce')) {
     return 'multirisque-pro'
   }
+
   // Default fallback : RC Pro couvre la majorité (consultants, freelances, services pros).
   return 'rc-pro'
 }

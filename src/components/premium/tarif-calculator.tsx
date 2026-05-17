@@ -25,7 +25,21 @@ import { useId, useMemo, useState } from 'react'
 import { ArrowRight, Calculator, TrendingDown } from 'lucide-react'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 
-export type Garantie = 'decennale' | 'rc-pro' | 'multirisque-pro' | 'cyber' | 'mutuelle-pro' | 'vtc'
+export type Garantie =
+  | 'decennale'
+  | 'rc-pro'
+  | 'multirisque-pro'
+  | 'cyber'
+  | 'mutuelle-pro'
+  | 'vtc'
+  | 'flotte-auto'
+  | 'dommages-ouvrage'
+  | 'tous-risques-chantier'
+  | 'transport-marchandises'
+  | 'moto-pro'
+  | 'prevoyance'
+  | 'protection-juridique'
+  | 'homme-cle'
 
 type Statut = 'auto-entrepreneur' | 'sarl' | 'sas'
 
@@ -120,6 +134,14 @@ const GARANTIE_LABELS: Readonly<Record<Garantie, string>> = {
   cyber: 'Cyber-assurance',
   'mutuelle-pro': 'Mutuelle TNS / Pro',
   vtc: 'Assurance VTC / Taxi',
+  'flotte-auto': 'Flotte automobile pro',
+  'dommages-ouvrage': 'Dommages-ouvrage (DO)',
+  'tous-risques-chantier': 'Tous Risques Chantier (TRC)',
+  'transport-marchandises': 'Transport de marchandises',
+  'moto-pro': 'Moto professionnelle',
+  prevoyance: 'Prévoyance TNS / dirigeant',
+  'protection-juridique': 'Protection juridique pro',
+  'homme-cle': 'Assurance Homme-clé',
 }
 
 // ---------------------------------------------------------------------------
@@ -155,8 +177,28 @@ function formatEuros(n: number): string {
 }
 
 function formatCaShort(n: number): string {
+  if (n >= 1_000_000) {
+    const m = n / 1_000_000
+    return `${m % 1 === 0 ? m.toFixed(0) : m.toFixed(1)} M€`
+  }
   if (n >= 1000) return `${Math.round(n / 1000)} k€`
   return `${n} €`
+}
+
+/**
+ * Détermine step adaptatif pour un slider CA selon max.
+ * Maintient ~50-100 crans utiles.
+ */
+function caStep(maxCa: number): number {
+  if (maxCa <= 500_000) return 10_000
+  if (maxCa <= 2_000_000) return 25_000
+  if (maxCa <= 5_000_000) return 50_000
+  return 100_000
+}
+
+/** Génère ticks 3-pts pour slider CA [0, mid, max]. */
+function caTicks(maxCa: number): readonly [string, string, string] {
+  return ['0 €', formatCaShort(maxCa / 2), formatCaShort(maxCa)]
 }
 
 // ---------------------------------------------------------------------------
@@ -667,6 +709,7 @@ function StatutField({
 
 function DecennaleFields({ ids }: { ids: Record<string, string> }) {
   const f = useDecennaleForm()
+  const MAX_CA = 2_000_000
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
@@ -684,11 +727,11 @@ function DecennaleFields({ ids }: { ids: Record<string, string> }) {
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
           min={0}
-          max={500_000}
-          step={10_000}
+          max={MAX_CA}
+          step={caStep(MAX_CA)}
           onChange={f.setCa}
           display={formatCaShort(f.ca)}
-          ticks={['0 €', '250 k€', '500 k€']}
+          ticks={caTicks(MAX_CA)}
         />
         <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
         <RadioGroupField<Anciennete>
@@ -724,6 +767,7 @@ function DecennaleFields({ ids }: { ids: Record<string, string> }) {
 
 function RcProFields({ ids }: { ids: Record<string, string> }) {
   const f = useRcProForm()
+  const MAX_CA = 2_000_000
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
@@ -741,11 +785,11 @@ function RcProFields({ ids }: { ids: Record<string, string> }) {
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
           min={0}
-          max={500_000}
-          step={10_000}
+          max={MAX_CA}
+          step={caStep(MAX_CA)}
           onChange={f.setCa}
           display={formatCaShort(f.ca)}
-          ticks={['0 €', '250 k€', '500 k€']}
+          ticks={caTicks(MAX_CA)}
         />
         <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
         <SliderField
@@ -811,11 +855,11 @@ function MultirisqueFields({ ids }: { ids: Record<string, string> }) {
           ariaLabel="Valeur du contenu en euros"
           value={f.contenu}
           min={5_000}
-          max={500_000}
-          step={5_000}
+          max={5_000_000}
+          step={50_000}
           onChange={f.setContenu}
           display={formatCaShort(f.contenu)}
-          ticks={['5 k€', '250 k€', '500 k€']}
+          ticks={['5 k€', '2,5 M€', '5 M€']}
         />
         <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
       </div>
@@ -829,6 +873,7 @@ function MultirisqueFields({ ids }: { ids: Record<string, string> }) {
 
 function CyberFields({ ids }: { ids: Record<string, string> }) {
   const f = useCyberForm()
+  const MAX_CA = 10_000_000
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
@@ -846,11 +891,11 @@ function CyberFields({ ids }: { ids: Record<string, string> }) {
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
           min={0}
-          max={500_000}
-          step={10_000}
+          max={MAX_CA}
+          step={caStep(MAX_CA)}
           onChange={f.setCa}
           display={formatCaShort(f.ca)}
-          ticks={['0 €', '250 k€', '500 k€']}
+          ticks={caTicks(MAX_CA)}
         />
         <SliderField
           id={ids.effectif!}
@@ -995,6 +1040,786 @@ function VtcFields({ ids }: { ids: Record<string, string> }) {
 }
 
 // ---------------------------------------------------------------------------
+// ---- FLOTTE AUTO -----------------------------------------------------------
+// ---------------------------------------------------------------------------
+
+type FlotteType = 'berline' | 'utilitaire' | 'mixte' | 'pl'
+type BonusMalus = 'bonus' | 'reference' | 'malus'
+
+const FLOTTE_BASE_PER_VEHICULE: Record<FlotteType, number> = {
+  berline: 720,
+  utilitaire: 880,
+  mixte: 820,
+  pl: 2400,
+}
+const BONUS_MALUS_MOD: Record<BonusMalus, number> = {
+  bonus: 0.78,
+  reference: 1.0,
+  malus: 1.38,
+}
+
+function nbVehiculesDiscount(n: number): number {
+  // remise flotte sous-linéaire : 1 = 1.0, 5 = 0.92, 20 = 0.82, 50 = 0.74
+  return Math.max(0.7, 1 - 0.07 * Math.log10(Math.max(n, 1) + 1))
+}
+
+function useFlotteForm() {
+  const [nbVehicules, setNbVehicules] = useState<number>(3)
+  const [typeVehicule, setTypeVehicule] = useState<FlotteType>('utilitaire')
+  const [bonus, setBonus] = useState<BonusMalus>('reference')
+
+  const range = useMemo<Range>(() => {
+    const perVeh = FLOTTE_BASE_PER_VEHICULE[typeVehicule]
+    const mid = perVeh * nbVehicules * nbVehiculesDiscount(nbVehicules) * BONUS_MALUS_MOD[bonus]
+    return spreadRange(mid, 0.28)
+  }, [nbVehicules, typeVehicule, bonus])
+
+  return {
+    nbVehicules,
+    setNbVehicules,
+    typeVehicule,
+    setTypeVehicule,
+    bonus,
+    setBonus,
+    range,
+  }
+}
+
+function FlotteFields({ ids }: { ids: Record<string, string> }) {
+  const f = useFlotteForm()
+  return (
+    <>
+      <div className="grid gap-5 md:grid-cols-2">
+        <SliderField
+          id={ids.nbVehicules!}
+          label="Nombre de véhicules"
+          ariaLabel="Nombre de véhicules dans la flotte"
+          value={f.nbVehicules}
+          min={1}
+          max={150}
+          step={1}
+          onChange={f.setNbVehicules}
+          display={`${f.nbVehicules} véhicule${f.nbVehicules > 1 ? 's' : ''}`}
+          ticks={['1', '75', '150+']}
+        />
+        <RadioGroupField<FlotteType>
+          id={ids.typeVehicule!}
+          label="Type de véhicules"
+          value={f.typeVehicule}
+          options={[
+            { value: 'berline', label: 'Berlines / VP' },
+            { value: 'utilitaire', label: 'Utilitaires (VUL)' },
+            { value: 'mixte', label: 'Mixte VP/VUL' },
+            { value: 'pl', label: 'Poids lourds (>3,5 t)' },
+          ]}
+          onChange={f.setTypeVehicule}
+          cols={4}
+        />
+        <RadioGroupField<BonusMalus>
+          id={ids.bonus!}
+          label="Bonus-malus moyen flotte"
+          value={f.bonus}
+          options={[
+            { value: 'bonus', label: 'Bonus (< 0,80)' },
+            { value: 'reference', label: 'Référence (1,00)' },
+            { value: 'malus', label: 'Malus (> 1,20)' },
+          ]}
+          onChange={f.setBonus}
+        />
+      </div>
+      <ResultBlock
+        range={f.range}
+        hint="Flotte auto pro — usage professionnel obligatoire (art. L. 211-1 C. assur.)."
+      />
+    </>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// ---- DOMMAGES-OUVRAGE ------------------------------------------------------
+// ---------------------------------------------------------------------------
+
+type TypeOuvrage = 'maison-neuve' | 'extension' | 'renovation-lourde' | 'collectif'
+type Maitrise = 'particulier' | 'maitre-oeuvre' | 'architecte'
+
+const OUVRAGE_FACTOR: Record<TypeOuvrage, number> = {
+  'maison-neuve': 0.034, // % du coût travaux
+  extension: 0.029,
+  'renovation-lourde': 0.041,
+  collectif: 0.048,
+}
+const MAITRISE_MOD: Record<Maitrise, number> = {
+  particulier: 1.15,
+  'maitre-oeuvre': 1.0,
+  architecte: 0.92,
+}
+
+function useDoForm() {
+  const [coutTravaux, setCoutTravaux] = useState<number>(180_000)
+  const [typeOuvrage, setTypeOuvrage] = useState<TypeOuvrage>('maison-neuve')
+  const [maitrise, setMaitrise] = useState<Maitrise>('maitre-oeuvre')
+
+  const range = useMemo<Range>(() => {
+    const mid = coutTravaux * OUVRAGE_FACTOR[typeOuvrage] * MAITRISE_MOD[maitrise]
+    return spreadRange(mid, 0.22)
+  }, [coutTravaux, typeOuvrage, maitrise])
+
+  return {
+    coutTravaux,
+    setCoutTravaux,
+    typeOuvrage,
+    setTypeOuvrage,
+    maitrise,
+    setMaitrise,
+    range,
+  }
+}
+
+function DoFields({ ids }: { ids: Record<string, string> }) {
+  const f = useDoForm()
+  const MAX = 3_000_000
+  return (
+    <>
+      <div className="grid gap-5 md:grid-cols-2">
+        <SliderField
+          id={ids.cout!}
+          label="Coût total des travaux TTC"
+          ariaLabel="Coût total des travaux en euros"
+          value={f.coutTravaux}
+          min={50_000}
+          max={MAX}
+          step={caStep(MAX)}
+          onChange={f.setCoutTravaux}
+          display={formatCaShort(f.coutTravaux)}
+          ticks={['50 k€', '1,5 M€', '3 M€']}
+        />
+        <RadioGroupField<TypeOuvrage>
+          id={ids.typeOuvrage!}
+          label="Type d'ouvrage"
+          value={f.typeOuvrage}
+          options={[
+            { value: 'maison-neuve', label: 'Maison neuve' },
+            { value: 'extension', label: 'Extension / surélévation' },
+            { value: 'renovation-lourde', label: 'Rénovation lourde' },
+            { value: 'collectif', label: 'Immeuble collectif' },
+          ]}
+          onChange={f.setTypeOuvrage}
+          cols={4}
+        />
+        <RadioGroupField<Maitrise>
+          id={ids.maitrise!}
+          label="Maîtrise d'ouvrage"
+          value={f.maitrise}
+          options={[
+            { value: 'particulier', label: 'Particulier (auto-construction)' },
+            { value: 'maitre-oeuvre', label: 'Maître d’œuvre' },
+            { value: 'architecte', label: 'Architecte DPLG' },
+          ]}
+          onChange={f.setMaitrise}
+        />
+      </div>
+      <ResultBlock
+        range={f.range}
+        hint="DO obligatoire avant ouverture chantier — Loi Spinetta art. L. 242-1 C. assur."
+      />
+    </>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// ---- TOUS RISQUES CHANTIER -------------------------------------------------
+// ---------------------------------------------------------------------------
+
+type ComplexiteChantier = 'standard' | 'technique' | 'tres-technique'
+
+const COMPLEXITE_MOD: Record<ComplexiteChantier, number> = {
+  standard: 1.0,
+  technique: 1.25,
+  'tres-technique': 1.55,
+}
+
+function dureeChantierMod(mois: number): number {
+  // 6 mois = 1.0, 12 = 1.35, 24 = 1.75, 36+ = 2.0
+  return 0.6 + 0.4 * Math.pow(Math.max(mois, 1) / 6, 0.6)
+}
+
+function useTrcForm() {
+  const [coutChantier, setCoutChantier] = useState<number>(500_000)
+  const [duree, setDuree] = useState<number>(12)
+  const [complexite, setComplexite] = useState<ComplexiteChantier>('standard')
+
+  const range = useMemo<Range>(() => {
+    // Base TRC ~0,4% coût chantier × durée × complexité
+    const mid = coutChantier * 0.004 * dureeChantierMod(duree) * COMPLEXITE_MOD[complexite]
+    return spreadRange(mid, 0.26)
+  }, [coutChantier, duree, complexite])
+
+  return {
+    coutChantier,
+    setCoutChantier,
+    duree,
+    setDuree,
+    complexite,
+    setComplexite,
+    range,
+  }
+}
+
+function TrcFields({ ids }: { ids: Record<string, string> }) {
+  const f = useTrcForm()
+  const MAX = 10_000_000
+  return (
+    <>
+      <div className="grid gap-5 md:grid-cols-2">
+        <SliderField
+          id={ids.coutChantier!}
+          label="Coût total du chantier TTC"
+          ariaLabel="Coût total du chantier en euros"
+          value={f.coutChantier}
+          min={50_000}
+          max={MAX}
+          step={caStep(MAX)}
+          onChange={f.setCoutChantier}
+          display={formatCaShort(f.coutChantier)}
+          ticks={['50 k€', '5 M€', '10 M€']}
+        />
+        <SliderField
+          id={ids.duree!}
+          label="Durée du chantier (mois)"
+          ariaLabel="Durée du chantier en mois"
+          value={f.duree}
+          min={1}
+          max={48}
+          step={1}
+          onChange={f.setDuree}
+          display={`${f.duree} mois`}
+          ticks={['1', '24', '48']}
+        />
+        <RadioGroupField<ComplexiteChantier>
+          id={ids.complexite!}
+          label="Complexité technique"
+          value={f.complexite}
+          options={[
+            { value: 'standard', label: 'Standard' },
+            { value: 'technique', label: 'Technique (charpente / VRD)' },
+            { value: 'tres-technique', label: 'Très technique (ouvrage d’art)' },
+          ]}
+          onChange={f.setComplexite}
+        />
+      </div>
+      <ResultBlock
+        range={f.range}
+        hint="TRC — couvre dommages matériels durant exécution (effondrement, incendie, vol)."
+      />
+    </>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// ---- TRANSPORT MARCHANDISES ------------------------------------------------
+// ---------------------------------------------------------------------------
+
+type TypeMarchandises = 'standard' | 'refrigeree' | 'fragile-electro' | 'matiere-dangereuse'
+type ZoneTransport = 'national' | 'europe' | 'international'
+
+const MARCH_BASE_PER_VEH: Record<TypeMarchandises, number> = {
+  standard: 1200,
+  refrigeree: 1850,
+  'fragile-electro': 2100,
+  'matiere-dangereuse': 3400,
+}
+const ZONE_TRANSPORT_MOD: Record<ZoneTransport, number> = {
+  national: 1.0,
+  europe: 1.28,
+  international: 1.65,
+}
+
+function valeurConvoiMod(eur: number): number {
+  // 10k = 1.0, 50k = 1.4, 200k = 2.1
+  return 0.7 + 0.3 * Math.pow(Math.max(eur, 5_000) / 10_000, 0.5)
+}
+
+function useTransportForm() {
+  const [nbVehicules, setNbVehicules] = useState<number>(2)
+  const [typeMarch, setTypeMarch] = useState<TypeMarchandises>('standard')
+  const [zone, setZone] = useState<ZoneTransport>('national')
+  const [valeurConvoi, setValeurConvoi] = useState<number>(25_000)
+
+  const range = useMemo<Range>(() => {
+    const mid =
+      MARCH_BASE_PER_VEH[typeMarch] *
+      nbVehicules *
+      nbVehiculesDiscount(nbVehicules) *
+      ZONE_TRANSPORT_MOD[zone] *
+      valeurConvoiMod(valeurConvoi)
+    return spreadRange(mid, 0.3)
+  }, [nbVehicules, typeMarch, zone, valeurConvoi])
+
+  return {
+    nbVehicules,
+    setNbVehicules,
+    typeMarch,
+    setTypeMarch,
+    zone,
+    setZone,
+    valeurConvoi,
+    setValeurConvoi,
+    range,
+  }
+}
+
+function TransportFields({ ids }: { ids: Record<string, string> }) {
+  const f = useTransportForm()
+  return (
+    <>
+      <div className="grid gap-5 md:grid-cols-2">
+        <SliderField
+          id={ids.nbVehicules!}
+          label="Nombre de véhicules"
+          ariaLabel="Nombre de véhicules transport"
+          value={f.nbVehicules}
+          min={1}
+          max={100}
+          step={1}
+          onChange={f.setNbVehicules}
+          display={`${f.nbVehicules} véhicule${f.nbVehicules > 1 ? 's' : ''}`}
+          ticks={['1', '50', '100']}
+        />
+        <SliderField
+          id={ids.valeurConvoi!}
+          label="Valeur moyenne par convoi"
+          ariaLabel="Valeur moyenne du convoi en euros"
+          value={f.valeurConvoi}
+          min={5_000}
+          max={500_000}
+          step={5_000}
+          onChange={f.setValeurConvoi}
+          display={formatCaShort(f.valeurConvoi)}
+          ticks={['5 k€', '250 k€', '500 k€+']}
+        />
+        <RadioGroupField<TypeMarchandises>
+          id={ids.typeMarch!}
+          label="Type de marchandises"
+          value={f.typeMarch}
+          options={[
+            { value: 'standard', label: 'Standard / palettisé' },
+            { value: 'refrigeree', label: 'Réfrigérée / sous T°' },
+            { value: 'fragile-electro', label: 'Fragile / électronique' },
+            { value: 'matiere-dangereuse', label: 'Matières dangereuses (ADR)' },
+          ]}
+          onChange={f.setTypeMarch}
+          cols={4}
+        />
+        <RadioGroupField<ZoneTransport>
+          id={ids.zone!}
+          label="Zone géographique"
+          value={f.zone}
+          options={[
+            { value: 'national', label: 'France' },
+            { value: 'europe', label: 'Europe' },
+            { value: 'international', label: 'International' },
+          ]}
+          onChange={f.setZone}
+        />
+      </div>
+      <ResultBlock
+        range={f.range}
+        hint="Police marchandises transportées — clauses CMR (art. 17 Convention CMR)."
+      />
+    </>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// ---- MOTO PRO --------------------------------------------------------------
+// ---------------------------------------------------------------------------
+
+type UsageMoto = 'livraison' | 'coursier' | 'location' | 'demo-revente'
+type Cylindree = 'moins-125' | '125-500' | '500-1000' | 'plus-1000'
+
+const MOTO_BASE: Record<Cylindree, number> = {
+  'moins-125': 580,
+  '125-500': 920,
+  '500-1000': 1380,
+  'plus-1000': 1850,
+}
+const USAGE_MOTO_MOD: Record<UsageMoto, number> = {
+  livraison: 1.45,
+  coursier: 1.7,
+  location: 1.35,
+  'demo-revente': 1.1,
+}
+
+function useMotoProForm() {
+  const [cylindree, setCylindree] = useState<Cylindree>('125-500')
+  const [usage, setUsage] = useState<UsageMoto>('livraison')
+  const [permis, setPermis] = useState<number>(6)
+  const [zone, setZone] = useState<ZoneVtc>('grande-ville')
+
+  const range = useMemo<Range>(() => {
+    const mid =
+      (MOTO_BASE[cylindree] *
+        USAGE_MOTO_MOD[usage] *
+        permisMultiplier(permis) *
+        // Réutilise ZONE_BASE comme proxy zone-risque (Paris+50%, IDF+25%, etc.)
+        ZONE_BASE[zone]) /
+      ZONE_BASE['grande-ville']
+    return spreadRange(mid, 0.28)
+  }, [cylindree, usage, permis, zone])
+
+  return { cylindree, setCylindree, usage, setUsage, permis, setPermis, zone, setZone, range }
+}
+
+function MotoProFields({ ids }: { ids: Record<string, string> }) {
+  const f = useMotoProForm()
+  return (
+    <>
+      <div className="grid gap-5 md:grid-cols-2">
+        <RadioGroupField<Cylindree>
+          id={ids.cylindree!}
+          label="Cylindrée"
+          value={f.cylindree}
+          options={[
+            { value: 'moins-125', label: '< 125 cm³' },
+            { value: '125-500', label: '125 — 500 cm³' },
+            { value: '500-1000', label: '500 — 1000 cm³' },
+            { value: 'plus-1000', label: '> 1000 cm³' },
+          ]}
+          onChange={f.setCylindree}
+          cols={4}
+        />
+        <RadioGroupField<UsageMoto>
+          id={ids.usage!}
+          label="Usage professionnel"
+          value={f.usage}
+          options={[
+            { value: 'livraison', label: 'Livraison repas / colis' },
+            { value: 'coursier', label: 'Coursier urbain' },
+            { value: 'location', label: 'Location à des tiers' },
+            { value: 'demo-revente', label: 'Démo / revente' },
+          ]}
+          onChange={f.setUsage}
+          cols={4}
+        />
+        <SliderField
+          id={ids.permis!}
+          label="Ancienneté permis (années)"
+          ariaLabel="Ancienneté du permis A en années"
+          value={f.permis}
+          min={2}
+          max={40}
+          step={1}
+          onChange={f.setPermis}
+          display={`${f.permis} an${f.permis > 1 ? 's' : ''}`}
+          ticks={['2', '20', '40']}
+        />
+        <RadioGroupField<ZoneVtc>
+          id={ids.zone!}
+          label="Zone d'exploitation"
+          value={f.zone}
+          options={[
+            { value: 'paris', label: 'Paris intra-muros' },
+            { value: 'idf', label: 'Île-de-France' },
+            { value: 'grande-ville', label: 'Grande ville' },
+            { value: 'regions', label: 'Régions' },
+          ]}
+          onChange={f.setZone}
+          cols={4}
+        />
+      </div>
+      <ResultBlock
+        range={f.range}
+        hint="Moto pro — usage à titre onéreux (livraison, coursier). Garantie RC + dommages obligatoires."
+      />
+    </>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// ---- PRÉVOYANCE TNS --------------------------------------------------------
+// ---------------------------------------------------------------------------
+
+type NiveauPrevoyance = 'ij' | 'ij-invalidite' | 'ij-inval-deces'
+
+const PREV_NIVEAU_MOD: Record<NiveauPrevoyance, number> = {
+  ij: 1.0,
+  'ij-invalidite': 1.65,
+  'ij-inval-deces': 2.2,
+}
+
+function usePrevoyanceForm() {
+  const [revenuMensuel, setRevenuMensuel] = useState<number>(4_000)
+  const [age, setAge] = useState<number>(40)
+  const [niveau, setNiveau] = useState<NiveauPrevoyance>('ij-invalidite')
+  const [statut, setStatut] = useState<Statut>('sarl')
+
+  const range = useMemo<Range>(() => {
+    // Base ~2,5% du revenu annuel pour IJ base
+    const baseAnnuel = revenuMensuel * 12 * 0.025
+    const mid = baseAnnuel * ageMultiplier(age) * PREV_NIVEAU_MOD[niveau] * STATUT_MODIFIER[statut]
+    return spreadRange(mid, 0.24)
+  }, [revenuMensuel, age, niveau, statut])
+
+  return {
+    revenuMensuel,
+    setRevenuMensuel,
+    age,
+    setAge,
+    niveau,
+    setNiveau,
+    statut,
+    setStatut,
+    range,
+  }
+}
+
+function PrevoyanceFields({ ids }: { ids: Record<string, string> }) {
+  const f = usePrevoyanceForm()
+  return (
+    <>
+      <div className="grid gap-5 md:grid-cols-2">
+        <SliderField
+          id={ids.revenu!}
+          label="Revenu mensuel net à protéger"
+          ariaLabel="Revenu mensuel en euros"
+          value={f.revenuMensuel}
+          min={1_500}
+          max={20_000}
+          step={250}
+          onChange={f.setRevenuMensuel}
+          display={`${f.revenuMensuel.toLocaleString('fr-FR')} €`}
+          ticks={['1,5 k€', '10 k€', '20 k€+']}
+        />
+        <SliderField
+          id={ids.age!}
+          label="Âge du dirigeant"
+          ariaLabel="Âge en années"
+          value={f.age}
+          min={20}
+          max={70}
+          step={1}
+          onChange={f.setAge}
+          display={`${f.age} ans`}
+          ticks={['20', '45', '70']}
+        />
+        <RadioGroupField<NiveauPrevoyance>
+          id={ids.niveau!}
+          label="Niveau de couverture"
+          value={f.niveau}
+          options={[
+            { value: 'ij', label: 'IJ seules' },
+            { value: 'ij-invalidite', label: 'IJ + Invalidité' },
+            { value: 'ij-inval-deces', label: 'IJ + Inval. + Décès' },
+          ]}
+          onChange={f.setNiveau}
+        />
+        <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
+      </div>
+      <ResultBlock
+        range={f.range}
+        hint="Prévoyance TNS — déductible Loi Madelin (art. 154 bis CGI)."
+      />
+    </>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// ---- PROTECTION JURIDIQUE PRO ----------------------------------------------
+// ---------------------------------------------------------------------------
+
+type SecteurPJ = 'commerce-services' | 'btp' | 'sante' | 'professions-libe'
+
+const PJ_BASE: Record<SecteurPJ, number> = {
+  'commerce-services': 240,
+  btp: 380,
+  sante: 320,
+  'professions-libe': 290,
+}
+
+type LitigesPj = '0' | '1-2' | '3plus'
+const LITIGES_PJ_MOD: Record<LitigesPj, number> = {
+  '0': 1.0,
+  '1-2': 1.25,
+  '3plus': 1.6,
+}
+
+function usePjForm() {
+  const [secteur, setSecteur] = useState<SecteurPJ>('commerce-services')
+  const [ca, setCa] = useState<number>(150_000)
+  const [litiges, setLitiges] = useState<LitigesPj>('0')
+  const [statut, setStatut] = useState<Statut>('sarl')
+
+  const range = useMemo<Range>(() => {
+    const mid =
+      PJ_BASE[secteur] * caMultiplier(ca) * LITIGES_PJ_MOD[litiges] * STATUT_MODIFIER[statut]
+    return spreadRange(mid, 0.28)
+  }, [secteur, ca, litiges, statut])
+
+  return { secteur, setSecteur, ca, setCa, litiges, setLitiges, statut, setStatut, range }
+}
+
+function PjFields({ ids }: { ids: Record<string, string> }) {
+  const f = usePjForm()
+  const MAX_CA = 5_000_000
+  return (
+    <>
+      <div className="grid gap-5 md:grid-cols-2">
+        <RadioGroupField<SecteurPJ>
+          id={ids.secteur!}
+          label="Secteur d'activité"
+          value={f.secteur}
+          options={[
+            { value: 'commerce-services', label: 'Commerce / services' },
+            { value: 'btp', label: 'BTP / artisanat' },
+            { value: 'sante', label: 'Santé / paramédical' },
+            { value: 'professions-libe', label: 'Professions libérales' },
+          ]}
+          onChange={f.setSecteur}
+          cols={4}
+        />
+        <SliderField
+          id={ids.ca!}
+          label="Chiffre d'affaires annuel"
+          ariaLabel="Chiffre d'affaires annuel en euros"
+          value={f.ca}
+          min={0}
+          max={MAX_CA}
+          step={caStep(MAX_CA)}
+          onChange={f.setCa}
+          display={formatCaShort(f.ca)}
+          ticks={caTicks(MAX_CA)}
+        />
+        <RadioGroupField<LitigesPj>
+          id={ids.litiges!}
+          label="Litiges 24 derniers mois"
+          value={f.litiges}
+          options={[
+            { value: '0', label: '0 litige' },
+            { value: '1-2', label: '1 à 2 litiges' },
+            { value: '3plus', label: '3 ou plus' },
+          ]}
+          onChange={f.setLitiges}
+        />
+        <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
+      </div>
+      <ResultBlock
+        range={f.range}
+        hint="Protection juridique pro — prise en charge frais d'avocat, expertise, médiation."
+      />
+    </>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// ---- HOMME-CLÉ -------------------------------------------------------------
+// ---------------------------------------------------------------------------
+
+type SecteurHc = 'tech-saas' | 'services-conseil' | 'industrie' | 'commerce-distrib'
+
+const HC_FACTOR_PER_100K: Record<SecteurHc, number> = {
+  'tech-saas': 0.45, // % du capital assuré par tranche 100k€
+  'services-conseil': 0.38,
+  industrie: 0.35,
+  'commerce-distrib': 0.32,
+}
+
+function useHcForm() {
+  const [ca, setCa] = useState<number>(500_000)
+  const [capital, setCapital] = useState<number>(500_000)
+  const [nbDirigeants, setNbDirigeants] = useState<number>(1)
+  const [secteur, setSecteur] = useState<SecteurHc>('services-conseil')
+
+  const range = useMemo<Range>(() => {
+    // Base = capital × factor × nbDirigeants × caMul léger
+    const mid =
+      (capital / 100_000) *
+      HC_FACTOR_PER_100K[secteur] *
+      100 *
+      nbDirigeants *
+      caMultiplier(ca) *
+      0.7
+    return spreadRange(mid, 0.3)
+  }, [ca, capital, nbDirigeants, secteur])
+
+  return {
+    ca,
+    setCa,
+    capital,
+    setCapital,
+    nbDirigeants,
+    setNbDirigeants,
+    secteur,
+    setSecteur,
+    range,
+  }
+}
+
+function HcFields({ ids }: { ids: Record<string, string> }) {
+  const f = useHcForm()
+  const MAX_CA = 10_000_000
+  const MAX_CAP = 5_000_000
+  return (
+    <>
+      <div className="grid gap-5 md:grid-cols-2">
+        <SliderField
+          id={ids.capital!}
+          label="Capital assuré par homme-clé"
+          ariaLabel="Capital assuré en euros"
+          value={f.capital}
+          min={100_000}
+          max={MAX_CAP}
+          step={caStep(MAX_CAP)}
+          onChange={f.setCapital}
+          display={formatCaShort(f.capital)}
+          ticks={['100 k€', '2,5 M€', '5 M€']}
+        />
+        <SliderField
+          id={ids.ca!}
+          label="Chiffre d'affaires entreprise"
+          ariaLabel="Chiffre d'affaires annuel entreprise en euros"
+          value={f.ca}
+          min={0}
+          max={MAX_CA}
+          step={caStep(MAX_CA)}
+          onChange={f.setCa}
+          display={formatCaShort(f.ca)}
+          ticks={caTicks(MAX_CA)}
+        />
+        <SliderField
+          id={ids.nbDirigeants!}
+          label="Nombre d'hommes-clés à couvrir"
+          ariaLabel="Nombre d'hommes-clés"
+          value={f.nbDirigeants}
+          min={1}
+          max={5}
+          step={1}
+          onChange={f.setNbDirigeants}
+          display={`${f.nbDirigeants} personne${f.nbDirigeants > 1 ? 's' : ''}`}
+          ticks={['1', '3', '5']}
+        />
+        <RadioGroupField<SecteurHc>
+          id={ids.secteurHc!}
+          label="Secteur d'activité"
+          value={f.secteur}
+          options={[
+            { value: 'tech-saas', label: 'Tech / SaaS' },
+            { value: 'services-conseil', label: 'Services / conseil' },
+            { value: 'industrie', label: 'Industrie' },
+            { value: 'commerce-distrib', label: 'Commerce / distribution' },
+          ]}
+          onChange={f.setSecteur}
+          cols={4}
+        />
+      </div>
+      <ResultBlock
+        range={f.range}
+        hint="Homme-clé — indemnise pertes d'exploitation suite à disparition / incapacité du dirigeant."
+      />
+    </>
+  )
+}
+
+// ---------------------------------------------------------------------------
 // Result block (shared)
 // ---------------------------------------------------------------------------
 
@@ -1063,6 +1888,25 @@ export function TarifCalculator({ garantie, className = '' }: TarifCalculatorPro
       permis: `${reactId}-permis`,
       vehicule: `${reactId}-vehicule`,
       plateforme: `${reactId}-plateforme`,
+      nbVehicules: `${reactId}-nbVehicules`,
+      typeVehicule: `${reactId}-typeVehicule`,
+      bonus: `${reactId}-bonus`,
+      cout: `${reactId}-cout`,
+      typeOuvrage: `${reactId}-typeOuvrage`,
+      maitrise: `${reactId}-maitrise`,
+      coutChantier: `${reactId}-coutChantier`,
+      duree: `${reactId}-duree`,
+      complexite: `${reactId}-complexite`,
+      typeMarch: `${reactId}-typeMarch`,
+      valeurConvoi: `${reactId}-valeurConvoi`,
+      cylindree: `${reactId}-cylindree`,
+      usage: `${reactId}-usage`,
+      revenu: `${reactId}-revenu`,
+      secteur: `${reactId}-secteur`,
+      litiges: `${reactId}-litiges`,
+      capital: `${reactId}-capital`,
+      nbDirigeants: `${reactId}-nbDirigeants`,
+      secteurHc: `${reactId}-secteurHc`,
     }),
     [reactId]
   )
@@ -1099,6 +1943,14 @@ export function TarifCalculator({ garantie, className = '' }: TarifCalculatorPro
         {garantie === 'cyber' && <CyberFields ids={ids} />}
         {garantie === 'mutuelle-pro' && <MutuelleFields ids={ids} />}
         {garantie === 'vtc' && <VtcFields ids={ids} />}
+        {garantie === 'flotte-auto' && <FlotteFields ids={ids} />}
+        {garantie === 'dommages-ouvrage' && <DoFields ids={ids} />}
+        {garantie === 'tous-risques-chantier' && <TrcFields ids={ids} />}
+        {garantie === 'transport-marchandises' && <TransportFields ids={ids} />}
+        {garantie === 'moto-pro' && <MotoProFields ids={ids} />}
+        {garantie === 'prevoyance' && <PrevoyanceFields ids={ids} />}
+        {garantie === 'protection-juridique' && <PjFields ids={ids} />}
+        {garantie === 'homme-cle' && <HcFields ids={ids} />}
       </section>
     </RevealOnScroll>
   )

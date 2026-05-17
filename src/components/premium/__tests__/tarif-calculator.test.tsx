@@ -153,4 +153,85 @@ describe('TarifCalculator', () => {
     expect(screen.getByLabelText(/Statut SARL/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/Statut SAS/i)).toBeInTheDocument()
   })
+
+  // --- Verticales additionnelles (8 nouvelles) -----------------------------
+
+  it('rend flotte-auto avec nb véhicules + type véhicule + bonus-malus', () => {
+    render(<TarifCalculator garantie="flotte-auto" />)
+    expect(screen.getByLabelText(/Nombre de véhicules dans la flotte/i)).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Type de véhicules/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('radiogroup', { name: /Bonus-malus moyen flotte/i })
+    ).toBeInTheDocument()
+  })
+
+  it('rend dommages-ouvrage avec coût travaux + type ouvrage + maîtrise', () => {
+    render(<TarifCalculator garantie="dommages-ouvrage" />)
+    expect(screen.getByLabelText(/Coût total des travaux en euros/i)).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Type d'ouvrage/i })).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Maîtrise d'ouvrage/i })).toBeInTheDocument()
+  })
+
+  it('rend tous-risques-chantier avec coût + durée + complexité', () => {
+    render(<TarifCalculator garantie="tous-risques-chantier" />)
+    expect(screen.getByLabelText(/Coût total du chantier en euros/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/Durée du chantier en mois/i)).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Complexité technique/i })).toBeInTheDocument()
+  })
+
+  it('rend transport-marchandises avec nb véhicules + type march. + zone + valeur', () => {
+    render(<TarifCalculator garantie="transport-marchandises" />)
+    expect(screen.getByLabelText(/Nombre de véhicules transport/i)).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Type de marchandises/i })).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Zone géographique/i })).toBeInTheDocument()
+    expect(screen.getByLabelText(/Valeur moyenne du convoi en euros/i)).toBeInTheDocument()
+  })
+
+  it('rend moto-pro avec cylindrée + usage + permis + zone', () => {
+    render(<TarifCalculator garantie="moto-pro" />)
+    expect(screen.getByRole('radiogroup', { name: /Cylindrée/i })).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Usage professionnel/i })).toBeInTheDocument()
+    expect(screen.getByLabelText(/Ancienneté du permis A en années/i)).toBeInTheDocument()
+  })
+
+  it('rend prevoyance avec revenu mensuel + âge + niveau couverture', () => {
+    render(<TarifCalculator garantie="prevoyance" />)
+    expect(screen.getByLabelText(/Revenu mensuel en euros/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/Âge en années/i)).toBeInTheDocument()
+    expect(screen.getByRole('radiogroup', { name: /Niveau de couverture/i })).toBeInTheDocument()
+  })
+
+  it('rend protection-juridique avec secteur + CA + litiges', () => {
+    render(<TarifCalculator garantie="protection-juridique" />)
+    expect(screen.getByRole('radiogroup', { name: /Secteur d'activité/i })).toBeInTheDocument()
+    expect(screen.getByLabelText(/Chiffre d'affaires annuel en euros/i)).toBeInTheDocument()
+    expect(
+      screen.getByRole('radiogroup', { name: /Litiges 24 derniers mois/i })
+    ).toBeInTheDocument()
+  })
+
+  it('rend homme-cle avec capital + CA + nb dirigeants + secteur', () => {
+    render(<TarifCalculator garantie="homme-cle" />)
+    expect(screen.getByLabelText(/Capital assuré en euros/i)).toBeInTheDocument()
+    expect(
+      screen.getByLabelText(/Chiffre d'affaires annuel entreprise en euros/i)
+    ).toBeInTheDocument()
+    expect(screen.getByLabelText(/Nombre d'hommes-clés/i)).toBeInTheDocument()
+  })
+
+  // --- CA caps (>500k€ doit être possible) ---------------------------------
+
+  it('décennale: slider CA accepte 1 500 000 € (au-delà ancienne limite 500k)', () => {
+    render(<TarifCalculator garantie="decennale" />)
+    const slider = screen.getByLabelText(/Chiffre d'affaires annuel en euros/i) as HTMLInputElement
+    fireEvent.change(slider, { target: { value: '1500000' } })
+    expect(Number(slider.value)).toBe(1_500_000)
+  })
+
+  it("cyber: slider CA accepte 8 000 000 € (PME tech jusqu'à 10M)", () => {
+    render(<TarifCalculator garantie="cyber" />)
+    const slider = screen.getByLabelText(/Chiffre d'affaires annuel en euros/i) as HTMLInputElement
+    fireEvent.change(slider, { target: { value: '8000000' } })
+    expect(Number(slider.value)).toBe(8_000_000)
+  })
 })
