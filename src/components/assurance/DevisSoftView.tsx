@@ -1,8 +1,10 @@
 'use client'
 
+import Image from 'next/image'
 import { ShieldCheck, Sparkles } from 'lucide-react'
 import { PreinscriptionForm } from '@/components/assurance/PreinscriptionForm'
 import { ORIAS_EXPECTED_DATE } from '@/lib/config/pre-orias'
+import { PAGE_PHOTOS } from '@/lib/data/photo-library'
 
 interface DevisSoftViewProps {
   defaultVertical?: string
@@ -11,6 +13,27 @@ interface DevisSoftViewProps {
 export function DevisSoftView({ defaultVertical }: DevisSoftViewProps) {
   return (
     <main className="min-h-screen bg-sand-50 py-12 dark:bg-charcoal-900 md:py-20">
+      <div className="container mx-auto mb-10 max-w-5xl px-4">
+        <div className="relative aspect-[21/9] overflow-hidden rounded-3xl shadow-premium">
+          <Image
+            src={PAGE_PHOTOS.devisConfiance.src}
+            alt={PAGE_PHOTOS.devisConfiance.alt}
+            fill
+            priority
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-charcoal-950/20 to-transparent"
+            aria-hidden="true"
+          />
+          <div className="absolute bottom-6 left-6 right-6 text-white">
+            <p className="font-display-premium text-lg italic md:text-xl">
+              « Un courtier ORIAS dédié vous accompagne — pas un script. »
+            </p>
+          </div>
+        </div>
+      </div>
       <div className="container mx-auto max-w-3xl px-4">
         <header className="mb-10 text-center">
           <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-700">

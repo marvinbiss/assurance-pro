@@ -52,3 +52,41 @@ export const STEP_PHOTOS = {
     alt: 'Signature électronique de contrat assurance',
   },
 } as const satisfies Record<string, BrandPhoto>
+
+// Photos pages secondaires : équipe, contact, devis, presse.
+export const PAGE_PHOTOS = {
+  equipeGrid: [
+    {
+      src: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=72&auto=format&fit=crop&crop=faces',
+      alt: 'Femme courtière sourire',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=72&auto=format&fit=crop&crop=faces',
+      alt: 'Homme courtier en costume',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=72&auto=format&fit=crop&crop=faces',
+      alt: 'Conseillère assurance souriante',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=600&q=72&auto=format&fit=crop&crop=faces',
+      alt: 'Courtier ORIAS expérimenté',
+    },
+  ],
+  contact: {
+    src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600&q=72&auto=format&fit=crop',
+    alt: 'Bureau de courtage Vivos — Paris',
+  },
+  devisConfiance: {
+    src: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1600&q=72&auto=format&fit=crop',
+    alt: 'Conseillère ORIAS en consultation client',
+  },
+  presseBureau: {
+    src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=72&auto=format&fit=crop',
+    alt: 'Espace de travail moderne Vivos Assurance',
+  },
+  ctaFinal: {
+    src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=72&auto=format&fit=crop',
+    alt: 'Documents contrat assurance et stylo signature',
+  },
+} as const

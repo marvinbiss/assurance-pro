@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
+import { PAGE_PHOTOS } from '@/lib/data/photo-library'
 import { ArrowRight, Download, Mail, Palette, Phone, Type } from 'lucide-react'
 import { SITE_URL } from '@/lib/seo/config'
 import { BRAND, MANIFESTO } from '@/lib/brand/brand-voice'
@@ -34,7 +36,15 @@ export default function PressePage() {
       <BreadcrumbSchema items={[{ label: 'Espace presse' }]} />
 
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
-        <div className="mesh-shader opacity-85" aria-hidden="true" />
+        <Image
+          src={PAGE_PHOTOS.presseBureau.src}
+          alt={PAGE_PHOTOS.presseBureau.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-20"
+        />
+        <div className="mesh-shader opacity-75" aria-hidden="true" />
         <div className="container relative mx-auto max-w-4xl px-4">
           <nav
             aria-label="Fil d'Ariane"

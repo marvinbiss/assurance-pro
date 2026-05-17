@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Users, Award, CheckCircle2, ShieldCheck } from 'lucide-react'
 import { EQUIPE } from '@/lib/data/equipe'
 import { SITE_URL } from '@/lib/seo/config'
 import { PageHero } from '@/components/layout/PageHero'
+import { PAGE_PHOTOS } from '@/lib/data/photo-library'
 
 export const metadata: Metadata = {
   title: "L'équipe — Courtiers ORIAS Vivos Assurance",
@@ -75,54 +77,67 @@ export default function EquipePage() {
           </header>
 
           <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {membres.map((m) => (
-              <li
-                key={m.slug}
-                className="group relative overflow-hidden rounded-3xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-premium"
-              >
-                <span
-                  className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 transition-opacity group-hover:opacity-100"
-                  aria-hidden="true"
-                />
-                <div className="mb-5 flex items-start gap-4">
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 font-heading text-lg font-extrabold text-white shadow-glow-clay">
-                    {m.prenom.charAt(0)}
-                    {m.nom.charAt(0)}
-                  </div>
-                  <div className="flex-1 leading-tight">
-                    <h3 className="mb-1 font-heading text-lg font-extrabold tracking-tight text-charcoal-900">
-                      <Link
-                        href={`/equipe/${m.slug}`}
-                        className="transition-colors group-hover:text-primary-700"
-                      >
-                        {m.prenom} {m.nom}
-                      </Link>
-                    </h3>
-                    <p className="text-sm font-semibold text-charcoal-500">{m.poste}</p>
-                  </div>
-                </div>
-                <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-charcoal-600">
-                  {m.bio}
-                </p>
-                <div className="mb-5 flex flex-wrap gap-1.5">
-                  {m.expertises.slice(0, 3).map((e) => (
-                    <span
-                      key={e}
-                      className="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-[11px] font-bold text-primary-700"
-                    >
-                      {e}
-                    </span>
-                  ))}
-                </div>
-                <Link
-                  href={`/equipe/${m.slug}`}
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-primary-700 transition-transform group-hover:translate-x-0.5"
+            {membres.map((m, idx) => {
+              const photo = PAGE_PHOTOS.equipeGrid[idx % PAGE_PHOTOS.equipeGrid.length]
+              return (
+                <li
+                  key={m.slug}
+                  className="group relative overflow-hidden rounded-3xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-premium"
                 >
-                  Voir le profil
-                  <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.4} />
-                </Link>
-              </li>
-            ))}
+                  <span
+                    className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 transition-opacity group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
+                  <div className="mb-5 flex items-start gap-4">
+                    {photo ? (
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        width={56}
+                        height={56}
+                        className="h-14 w-14 flex-shrink-0 rounded-2xl object-cover shadow-glow-clay ring-2 ring-primary-200"
+                      />
+                    ) : (
+                      <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 font-heading text-lg font-extrabold text-white shadow-glow-clay">
+                        {m.prenom.charAt(0)}
+                        {m.nom.charAt(0)}
+                      </div>
+                    )}
+                    <div className="flex-1 leading-tight">
+                      <h3 className="mb-1 font-heading text-lg font-extrabold tracking-tight text-charcoal-900">
+                        <Link
+                          href={`/equipe/${m.slug}`}
+                          className="transition-colors group-hover:text-primary-700"
+                        >
+                          {m.prenom} {m.nom}
+                        </Link>
+                      </h3>
+                      <p className="text-sm font-semibold text-charcoal-500">{m.poste}</p>
+                    </div>
+                  </div>
+                  <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-charcoal-600">
+                    {m.bio}
+                  </p>
+                  <div className="mb-5 flex flex-wrap gap-1.5">
+                    {m.expertises.slice(0, 3).map((e) => (
+                      <span
+                        key={e}
+                        className="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-[11px] font-bold text-primary-700"
+                      >
+                        {e}
+                      </span>
+                    ))}
+                  </div>
+                  <Link
+                    href={`/equipe/${m.slug}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-primary-700 transition-transform group-hover:translate-x-0.5"
+                  >
+                    Voir le profil
+                    <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.4} />
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </section>
 

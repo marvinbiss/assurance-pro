@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
+import { PAGE_PHOTOS } from '@/lib/data/photo-library'
 import {
   ArrowRight,
   Sparkles,
@@ -42,7 +44,15 @@ export default function ContactPage() {
     <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       {/* Hero */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
-        <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />
+        <Image
+          src={PAGE_PHOTOS.contact.src}
+          alt={PAGE_PHOTOS.contact.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-25"
+        />
+        <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-80" />
         <div
           className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-secondary-400/25 blur-3xl"
           aria-hidden="true"
