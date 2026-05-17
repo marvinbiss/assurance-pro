@@ -1,6 +1,23 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Award, Building2, ShieldCheck, Scale, Mail, Sparkles } from 'lucide-react'
+import {
+  ArrowRight,
+  Award,
+  Building2,
+  ShieldCheck,
+  Scale,
+  Mail,
+  Sparkles,
+  Headphones,
+} from 'lucide-react'
+import { MANIFESTO, BRAND, BRAND_PROMISES } from '@/lib/brand/brand-voice'
+import { BrandOrnament } from '@/components/brand/brand-ornament'
+
+const PROMISE_ICONS = {
+  ShieldCheck,
+  Scale,
+  Headphones,
+} as const
 import { buildOriasFicheUrl, formatOriasDisplay, buildOriasRegistryUrl } from '@/lib/api/orias'
 import { SITE_URL } from '@/lib/seo/config'
 import { PageHero } from '@/components/layout/PageHero'
@@ -69,6 +86,38 @@ export default function AProposPage() {
           { Icon: Scale, label: 'RCP renforcée 5 M€' },
         ]}
       />
+
+      {/* Brand manifesto + 3 promises */}
+      <section className="container mx-auto max-w-5xl px-4 pt-14">
+        <div className="mb-10 flex justify-center">
+          <BrandOrnament variant="arc" />
+        </div>
+        <p className="mx-auto mb-4 max-w-3xl text-center font-display-premium text-2xl italic leading-snug text-charcoal-900 md:text-3xl">
+          « {MANIFESTO.hero} »
+        </p>
+        <p className="mx-auto mb-12 max-w-2xl text-center text-base leading-relaxed text-charcoal-600">
+          {BRAND.taglineLong}
+        </p>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {BRAND_PROMISES.map((promise) => {
+            const Icon = PROMISE_ICONS[promise.Icon as keyof typeof PROMISE_ICONS]
+            return (
+              <article
+                key={promise.title}
+                className="rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft"
+              >
+                <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-soft">
+                  <Icon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
+                </span>
+                <h3 className="mb-2 font-heading text-lg font-extrabold tracking-tight text-charcoal-900">
+                  {promise.title}
+                </h3>
+                <p className="m-0 text-sm leading-relaxed text-charcoal-700">{promise.body}</p>
+              </article>
+            )
+          })}
+        </div>
+      </section>
 
       <div className="container mx-auto max-w-4xl px-4 py-14">
         <article className="pilier-prose prose prose-lg max-w-none text-charcoal-700">
