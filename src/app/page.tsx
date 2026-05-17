@@ -31,7 +31,6 @@ import { IllustrationForMetier } from '@/components/premium/illustrations'
 import { CountUp } from '@/components/motion/CountUp'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { MagneticCta } from '@/components/motion/magnetic-cta'
-import { HeroSceneLazy } from '@/components/three/hero-scene-lazy'
 import { ScrollProgressSection } from '@/components/motion/scroll-progress-section'
 import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
@@ -243,11 +242,6 @@ export default function HomePage() {
           className="pointer-events-none absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-primary-400/30 blur-[120px]"
           aria-hidden="true"
         />
-
-        {/* 3D scene (lazy, full-bleed desktop, low-opacity background) */}
-        <div className="pointer-events-none absolute inset-0 hidden opacity-60 mix-blend-screen lg:block">
-          <HeroSceneLazy />
-        </div>
 
         {/* Hero pattern subtle */}
         <div className="absolute inset-0 bg-hero-pattern opacity-30" aria-hidden="true" />
