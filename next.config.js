@@ -170,6 +170,82 @@ const nextConfig = {
       { source: '/tarif', destination: '/comparateur-assurance-professionnelle', permanent: false },
       { source: '/guide', destination: '/guides/attestation-decennale', permanent: false },
       { source: '/guides', destination: '/guides/attestation-decennale', permanent: false },
+
+      // ────────────────────────────────────────────────────────────────────
+      // Anti-cannibalisation SEO — 301 vers winner pour groupes doublons.
+      // Audit Ahrefs 2026-05-17 : 80+ pages identifiées avec même intent.
+      // ────────────────────────────────────────────────────────────────────
+      // Décennale auto-entrepreneur
+      { source: '/assurance-decennale-pour-auto-entrepreneur', destination: '/assurance-decennale-auto-entrepreneur', permanent: true },
+
+      // RC Pro × MMA
+      { source: '/mma-assurance-rc-pro', destination: '/rc-pro-mma', permanent: true },
+      { source: '/assurance-rc-pro-mma', destination: '/rc-pro-mma', permanent: true },
+
+      // RC Pro × auto-entrepreneur (5 variants → 1 winner)
+      { source: '/assurance-rc-pro-auto-entrepreneur', destination: '/rc-pro-auto-entrepreneur', permanent: true },
+      { source: '/responsabilite-civile-professionnelle-auto-entrepreneur', destination: '/rc-pro-auto-entrepreneur', permanent: true },
+      { source: '/assurance-rc-pro-auto-entrepreneur-en-ligne', destination: '/rc-pro-auto-entrepreneur', permanent: true },
+      { source: '/assurance-rc-pro-auto-entrepreneur-pas-cher', destination: '/rc-pro-auto-entrepreneur', permanent: true },
+      { source: '/assurance-responsabilite-civile-professionnelle-auto-entrepreneur', destination: '/rc-pro-auto-entrepreneur', permanent: true },
+
+      // Mutuelle BTP (3 inversions → 1 winner)
+      { source: '/btp-pro-mutuelle', destination: '/mutuelle-pro-btp', permanent: true },
+      { source: '/pro-btp-mutuelle', destination: '/mutuelle-pro-btp', permanent: true },
+
+      // Mutuelle TNS
+      { source: '/mutuelle-sante-tns', destination: '/mutuelle-tns', permanent: true },
+
+      // Décennale "moins cher" (3 variants → 1 winner)
+      { source: '/assurance-decennale-moins-cher', destination: '/assurance-decennale-pas-cher', permanent: true },
+      { source: '/assurance-decennale-la-moins-chere', destination: '/assurance-decennale-pas-cher', permanent: true },
+
+      // RC Pro + Décennale combo (3 variants → 1 winner)
+      { source: '/rc-pro-decennale', destination: '/rc-pro-et-decennale', permanent: true },
+      { source: '/assurance-rc-pro-et-decennale', destination: '/rc-pro-et-decennale', permanent: true },
+
+      // RC Pro × VTC (3 variants → 1 winner)
+      { source: '/assurance-rc-pro-vtc', destination: '/rc-pro-vtc', permanent: true },
+      { source: '/assurance-responsabilite-civile-professionnelle-vtc', destination: '/rc-pro-vtc', permanent: true },
+
+      // RC Pro × Informatique (4 variants → 1 winner)
+      { source: '/assurance-rc-pro-informatique', destination: '/rc-pro-informatique', permanent: true },
+      { source: '/responsabilite-civile-professionnelle-informatique', destination: '/rc-pro-informatique', permanent: true },
+      { source: '/rc-pro-freelance-informatique', destination: '/rc-pro-informatique', permanent: true },
+
+      // RC Pro racine (3 variantes synonymes → pilier principal)
+      { source: '/rc-pro-assurance', destination: '/rc-pro', permanent: true },
+      { source: '/assurance-rc-pro', destination: '/rc-pro', permanent: true },
+
+      // Décennale variantes BTP / inversions
+      { source: '/decennale-assurance', destination: '/assurance-decennale', permanent: true },
+      { source: '/garantie-decennale-travaux', destination: '/assurance-decennale', permanent: true },
+      { source: '/assurance-decennale-batiment', destination: '/assurance-decennale-btp', permanent: true },
+
+      // Variantes en-ligne (synonymes funnel)
+      { source: '/rc-pro-en-ligne', destination: '/rc-pro', permanent: true },
+      { source: '/assurance-rc-pro-en-ligne', destination: '/rc-pro', permanent: true },
+      { source: '/rc-pro-souscription-en-ligne', destination: '/devis', permanent: true },
+      { source: '/souscrire-rc-pro-en-ligne', destination: '/devis', permanent: true },
+      { source: '/assurance-responsabilite-civile-professionnelle-en-ligne', destination: '/rc-pro', permanent: true },
+
+      // Decennale métier (page racine vs dispatcher dynamique = doublon)
+      { source: '/assurance-decennale-plombier', destination: '/assurance-decennale/plombier', permanent: true },
+      { source: '/assurance-decennale-maconnerie', destination: '/assurance-decennale/macon', permanent: true },
+      { source: '/assurance-decennale-maitre-d-oeuvre', destination: '/assurance-decennale/maitre-oeuvre', permanent: true },
+      { source: '/assurance-decennale-terrassement', destination: '/assurance-decennale', permanent: true },
+
+      // RC Pro × marques assureurs (concurrentielles, garder seule version courte)
+      { source: '/rc-pro-credit-agricole', destination: '/rc-pro', permanent: true },
+      { source: '/rc-pro-macif', destination: '/rc-pro', permanent: true },
+      { source: '/rc-pro-maif', destination: '/rc-pro', permanent: true },
+      { source: '/rc-pro-matmut', destination: '/rc-pro', permanent: true },
+      { source: '/stello-rc-pro', destination: '/rc-pro', permanent: true },
+      { source: '/hiscox-rc-pro', destination: '/rc-pro', permanent: true },
+
+      // RC Pro micro/sasu (variantes statut)
+      { source: '/assurance-rc-pro-micro-entreprise', destination: '/rc-pro-micro-entreprise', permanent: true },
+      { source: '/assurance-rc-pro-sasu', destination: '/rc-pro-sasu', permanent: true },
     ]
   },
 
