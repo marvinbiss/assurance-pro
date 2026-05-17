@@ -32,6 +32,7 @@ import { CountUp } from '@/components/motion/CountUp'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { MagneticCta } from '@/components/motion/magnetic-cta'
 import { HeroSceneLazy } from '@/components/three/hero-scene-lazy'
+import { ScrollProgressSection } from '@/components/motion/scroll-progress-section'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const metadata: Metadata = {
@@ -409,7 +410,7 @@ export default function HomePage() {
           VERTICALES — Bento box asymétrique
           ═══════════════════════════════════════════════════════════════════ */}
       <section id="verticaux" className="relative bg-sand-50 py-20 dark:bg-charcoal-950 md:py-28">
-        <div className="container mx-auto max-w-6xl px-4">
+        <ScrollProgressSection className="container mx-auto max-w-6xl px-4">
           {/* Eyebrow + heading */}
           <RevealOnScroll translateY={28}>
             <div className="mb-14 max-w-2xl">
@@ -497,7 +498,7 @@ export default function HomePage() {
               </RevealOnScroll>
             ))}
           </div>
-        </div>
+        </ScrollProgressSection>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
