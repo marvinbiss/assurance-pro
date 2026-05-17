@@ -70,13 +70,13 @@ function VivosMark({ size = 36 }: { size?: number }) {
     >
       <defs>
         <linearGradient id={`${uid}-bg`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#E86B4B" />
-          <stop offset="50%" stopColor="#D4553A" />
-          <stop offset="100%" stopColor="#A33E22" />
+          <stop offset="0%" stopColor="#2B4D85" />
+          <stop offset="50%" stopColor="#1B3A6D" />
+          <stop offset="100%" stopColor="#0E2040" />
         </linearGradient>
         <linearGradient id={`${uid}-accent`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#f2b523" />
-          <stop offset="100%" stopColor="#e8960a" />
+          <stop offset="0%" stopColor="#DCC067" />
+          <stop offset="100%" stopColor="#B8975A" />
         </linearGradient>
         <linearGradient id={`${uid}-v`} x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="#FFFFFF" stopOpacity="1" />

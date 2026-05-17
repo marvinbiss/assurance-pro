@@ -46,8 +46,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#E86B4B' },
-    { media: '(prefers-color-scheme: dark)', color: '#C24B2A' },
+    { media: '(prefers-color-scheme: light)', color: '#2B4D85' },
+    { media: '(prefers-color-scheme: dark)', color: '#142C55' },
   ],
   colorScheme: 'light',
 }
@@ -129,7 +129,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="fr" className={`scroll-smooth ${dmSans.variable} ${fraunces.variable}`}>
       <head>
         {/* PWA Meta Tags (apple-mobile-web-app, mobile-web-app-capable, theme-color handled by metadata/viewport exports) */}
-        <meta name="msapplication-TileColor" content="#E86B4B" />
+        <meta name="msapplication-TileColor" content="#2B4D85" />
         <meta name="msapplication-tap-highlight" content="no" />
 
         {/* LLM discovery — llms.txt (GEO/AEO optimization) */}
