@@ -17,7 +17,6 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
-import { ScrollToTop } from '@/components/ui/scroll-to-top'
 import { CursorTrail } from '@/components/motion/cursor-trail'
 import { ChatButton } from '@/components/ui/chat-button'
 
@@ -211,7 +210,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Footer />
         <ClientOnlyFooterHelpers />
         <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
-        <ScrollToTop />
         <ChatButton />
         <CursorTrail />
       </body>
