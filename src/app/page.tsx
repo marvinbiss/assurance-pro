@@ -33,6 +33,7 @@ import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { MagneticCta } from '@/components/motion/magnetic-cta'
 import { HeroSceneLazy } from '@/components/three/hero-scene-lazy'
 import { ScrollProgressSection } from '@/components/motion/scroll-progress-section'
+import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const metadata: Metadata = {
@@ -436,62 +437,64 @@ export default function HomePage() {
                 translateY={32}
                 className={v.span ?? ''}
               >
-                <Link
-                  href={v.href}
-                  className={`mount-fade-up group relative flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover`}
-                >
-                  {/* Illustration SVG sur-mesure — aspect 16/9 (DESIGN.md Atelier Premium) */}
-                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-sand-100">
-                    <IllustrationForMetier
-                      slug={v.metierSlug}
-                      accent="primary"
-                      className="absolute inset-0 h-full w-full p-8"
-                      ariaLabel={v.imageAlt}
-                    />
-                    {/* Overlay gradient bas pour lisibilité icon + badge sur line-art clair */}
+                <TiltCard maxTilt={6} glow className="h-full">
+                  <Link
+                    href={v.href}
+                    className={`mount-fade-up group relative flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover`}
+                  >
+                    {/* Illustration SVG sur-mesure — aspect 16/9 (DESIGN.md Atelier Premium) */}
+                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-sand-100">
+                      <IllustrationForMetier
+                        slug={v.metierSlug}
+                        accent="primary"
+                        className="absolute inset-0 h-full w-full p-8"
+                        ariaLabel={v.imageAlt}
+                      />
+                      {/* Overlay gradient bas pour lisibilité icon + badge sur line-art clair */}
+                      <div
+                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-900/65 via-charcoal-900/0 to-transparent"
+                        aria-hidden="true"
+                      />
+                      {/* Icon + badge overlay bottom */}
+                      <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+                        <div
+                          className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${v.accent} text-white shadow-card-hover ring-2 ring-white/40 transition-transform duration-300 group-hover:scale-110`}
+                        >
+                          <v.Icon className="h-5 w-5" strokeWidth={2.2} />
+                        </div>
+                        {v.badge && (
+                          <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-900 backdrop-blur-sm">
+                            {v.badge}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Glow on hover */}
                     <div
-                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-900/65 via-charcoal-900/0 to-transparent"
+                      className={`pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${v.accent} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-25`}
                       aria-hidden="true"
                     />
-                    {/* Icon + badge overlay bottom */}
-                    <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
-                      <div
-                        className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${v.accent} text-white shadow-card-hover ring-2 ring-white/40 transition-transform duration-300 group-hover:scale-110`}
-                      >
-                        <v.Icon className="h-5 w-5" strokeWidth={2.2} />
-                      </div>
-                      {v.badge && (
-                        <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-900 backdrop-blur-sm">
-                          {v.badge}
+
+                    {/* Content */}
+                    <div className="relative flex flex-1 flex-col p-6">
+                      <h3 className="mb-2 font-heading text-2xl font-bold text-charcoal-900">
+                        {v.title}
+                      </h3>
+                      <p className="mb-5 flex-1 text-sm leading-relaxed text-charcoal-600">
+                        {v.desc}
+                      </p>
+
+                      <div className="flex items-center justify-between border-t border-charcoal-100 pt-4">
+                        <span className="text-xs font-semibold text-charcoal-500">{v.metric}</span>
+                        <span className="inline-flex items-center gap-1 text-sm font-bold text-primary-600 transition-transform group-hover:translate-x-1">
+                          Découvrir
+                          <ArrowRight className="h-4 w-4" />
                         </span>
-                      )}
+                      </div>
                     </div>
-                  </div>
-
-                  {/* Glow on hover */}
-                  <div
-                    className={`pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${v.accent} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-25`}
-                    aria-hidden="true"
-                  />
-
-                  {/* Content */}
-                  <div className="relative flex flex-1 flex-col p-6">
-                    <h3 className="mb-2 font-heading text-2xl font-bold text-charcoal-900">
-                      {v.title}
-                    </h3>
-                    <p className="mb-5 flex-1 text-sm leading-relaxed text-charcoal-600">
-                      {v.desc}
-                    </p>
-
-                    <div className="flex items-center justify-between border-t border-charcoal-100 pt-4">
-                      <span className="text-xs font-semibold text-charcoal-500">{v.metric}</span>
-                      <span className="inline-flex items-center gap-1 text-sm font-bold text-primary-600 transition-transform group-hover:translate-x-1">
-                        Découvrir
-                        <ArrowRight className="h-4 w-4" />
-                      </span>
-                    </div>
-                  </div>
-                </Link>
+                  </Link>
+                </TiltCard>
               </RevealOnScroll>
             ))}
           </div>
