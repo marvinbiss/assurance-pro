@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { useInView, useMotionValue, useSpring, useReducedMotion } from 'framer-motion'
+import { useInView, useMotionValue, useSpring, useReducedMotion } from 'motion/react'
 
 /**
  * NumberTicker — compteur animé qui s'incrémente à la première vue.

@@ -9,7 +9,7 @@
  * Auto-hidden si reduced-motion (juste barre statique invisible).
  */
 
-import { motion, useScroll, useSpring, useReducedMotion } from 'framer-motion'
+import { motion, useScroll, useSpring, useReducedMotion } from 'motion/react'
 
 export default function ScrollProgressBar() {
   const { scrollYProgress } = useScroll()

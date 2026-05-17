@@ -16,7 +16,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react'
-import { useInView, useReducedMotion, animate } from 'framer-motion'
+import { useInView, useReducedMotion, animate } from 'motion/react'
 
 interface AnimatedCounterProps {
   value: number
