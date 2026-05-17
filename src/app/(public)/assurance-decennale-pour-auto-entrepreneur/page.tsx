@@ -10,12 +10,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-decennale-pour-auto-entrepreneur'
 const TITLE = 'Assurance Décennale Pour Auto Entrepreneur — Démarches simplifiées'
 const TAGLINE =
-  "Souscrire une décennale en tant qu'auto-entrepreneur BTP : pièces (SIRET + ACOSS), démarches simplifiées, tarifs April Pro best price 950-3 500€/an."
+  "Souscrire une décennale en tant qu'auto-entrepreneur BTP : pièces (SIRET + ACOSS), démarches simplifiées, tarifs April Pro best price 950-3 500€ par an."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale pour auto-entrepreneur BTP : démarches en ligne 24h. SIRET + ACOSS + CNI suffisent. April Pro best price 950€/an peintre, 1 400€/an plombier.',
+    'Décennale pour auto-entrepreneur BTP : démarches en ligne 24h. SIRET + ACOSS + CNI suffisent. April Pro best price 950€ par an peintre, 1 400€ par an plombier.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -46,7 +46,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '950-3 500€/an selon métier',
+          title: '950-3 500€ par an selon métier',
           desc: 'Peintre AE 950€ • Plombier 1 400€ • Maçon 1 800€ • Couvreur 2 500€',
         },
         {
@@ -64,18 +64,18 @@ export default function Page() {
                 <strong>SIRET valide</strong> (vérifié Insee.fr — &lt; 3 mois)
               </li>
               <li>
-                <strong>Attestation ACOSS / URSSAF</strong> (téléchargeable
+                <strong>Attestation ACOSS — URSSAF</strong> (téléchargeable
                 autoentrepreneur.urssaf.fr)
               </li>
               <li>
                 <strong>CNI ou passeport recto-verso</strong>
               </li>
               <li>
-                <strong>Justificatif activité BTP</strong> : CAP/BEP/diplôme BTP OU expérience
+                <strong>Justificatif activité BTP</strong> : CAP, BEP ou diplôme BTP OU expérience
                 professionnelle 3 ans+ (CV + attestations employeurs précédents)
               </li>
               <li>
-                <strong>Qualifications RGE/Qualibat</strong> (optionnel — donne -5-10% prime)
+                <strong>Qualifications RGE ou Qualibat</strong> (optionnel — donne -5-10% prime)
               </li>
               <li>
                 <strong>CA prévisionnel 12 mois</strong> (estimation honnête)
@@ -130,35 +130,35 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Peintre AE</strong> : 950-1 400€/an (le moins risqué — sinistralité
+                <strong>Peintre AE</strong> : 950-1 400€ par an (le moins risqué — sinistralité
                 finitions 6% AQC)
               </li>
               <li>
-                <strong>Plâtrier AE</strong> : 1 100-1 600€/an
+                <strong>Plâtrier AE</strong> : 1 100-1 600€ par an
               </li>
               <li>
-                <strong>Carreleur AE</strong> : 1 200-1 700€/an
+                <strong>Carreleur AE</strong> : 1 200-1 700€ par an
               </li>
               <li>
-                <strong>Plombier AE</strong> : 1 400-2 100€/an (18% sinistralité AQC)
+                <strong>Plombier AE</strong> : 1 400-2 100€ par an (18% sinistralité AQC)
               </li>
               <li>
-                <strong>Plombier-chauffagiste AE</strong> : 1 600-2 500€/an
+                <strong>Plombier-chauffagiste AE</strong> : 1 600-2 500€ par an
               </li>
               <li>
-                <strong>Électricien AE</strong> : 1 500-2 200€/an
+                <strong>Électricien AE</strong> : 1 500-2 200€ par an
               </li>
               <li>
-                <strong>Maçon AE traditionnel</strong> : 1 800-2 800€/an (12% sinistralité)
+                <strong>Maçon AE traditionnel</strong> : 1 800-2 800€ par an (12% sinistralité)
               </li>
               <li>
-                <strong>Couvreur AE</strong> : 2 200-3 500€/an (24% sinistralité — top BTP)
+                <strong>Couvreur AE</strong> : 2 200-3 500€ par an (24% sinistralité — top BTP)
               </li>
               <li>
-                <strong>Charpentier AE</strong> : 2 400-3 800€/an
+                <strong>Charpentier AE</strong> : 2 400-3 800€ par an
               </li>
               <li>
-                <strong>Multi-services BTP AE</strong> : 2 200-3 500€/an (pack 5-10 métiers)
+                <strong>Multi-services BTP AE</strong> : 2 200-3 500€ par an (pack 5-10 métiers)
               </li>
             </ul>
           ),
@@ -167,7 +167,7 @@ export default function Page() {
       faq={[
         {
           q: 'Souscrire une décennale AE sans expérience préalable possible ?',
-          a: "April Pro et Allianz Pro acceptent débutants AE BTP avec CAP/BEP/diplôme. SMABTP et MMA exigent généralement 1-3 ans d'expérience minimum. Sans diplôme ET sans expérience : refus probable de tous les assureurs (formation à valider d'abord).",
+          a: "April Pro et Allianz Pro acceptent débutants AE BTP avec CAP, BEP ou diplôme. SMABTP et MMA exigent généralement 1-3 ans d'expérience minimum. Sans diplôme ET sans expérience : refus probable de tous les assureurs (formation à valider d'abord).",
         },
         {
           q: 'Quel est le délai minimum pour avoir une décennale AE ?',
@@ -175,11 +175,11 @@ export default function Page() {
         },
         {
           q: "Tarif décennale AE BTP plus cher qu'une SARL ?",
-          a: 'NON, plus cher pour SARL : la prime décennale est proportionnelle au CA déclaré (plafonné 77 700€ services / 188 700€ vente pour AE), donc AE souvent moins chère que SARL équivalente. Mais plafond couverture identique 1M€ minimum.',
+          a: 'NON, plus cher pour SARL : la prime décennale est proportionnelle au CA déclaré (plafonné 77 700€ services — 188 700€ vente pour AE), donc AE souvent moins chère que SARL équivalente. Mais plafond couverture identique 1M€ minimum.',
         },
         {
           q: 'Comment trouver le moins cher pour décennale AE peintre ?',
-          a: 'April Pro BTP à 950€/an est le best price marché vérifié pour peintre AE débutant. En-dessous de 800€/an : SUSPECT (assureur non-agréé ACPR, plafond &lt; 500k€, exclusions étendues). Vérifier toujours sur Refassu ACPR avant signature.',
+          a: 'April Pro BTP à 950€ par an est le best price marché vérifié pour peintre AE débutant. En-dessous de 800€ par an : SUSPECT (assureur non-agréé ACPR, plafond &lt; 500k€, exclusions étendues). Vérifier toujours sur Refassu ACPR avant signature.',
         },
       ]}
       relatedMetiers={[

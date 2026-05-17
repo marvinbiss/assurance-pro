@@ -15,7 +15,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro vs Décennale : différences exactes (périmètre, durée, plafond). Pack combiné recommandé BTP. Tarif AE pack 2 500-3 500€/an. April Pro, SMABTP comparatif.',
+    'RC Pro vs Décennale : différences exactes (périmètre, durée, plafond). Pack combiné recommandé BTP. Tarif AE pack 2 500-3 500€ par an. April Pro, SMABTP comparatif.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -37,7 +37,7 @@ export default function Page() {
         {
           icon: '🔧',
           title: 'RC Pro = pendant activité',
-          desc: 'Dommages causés à tiers durant prestation/exécution travaux',
+          desc: 'Dommages causés à tiers durant prestation ou exécution travaux',
         },
         {
           icon: '🏗️',
@@ -51,8 +51,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '2 500-3 500€/an pack AE',
-          desc: 'AE BTP combiné RC Pro + Décennale chez April Pro / SMABTP',
+          title: '2 500-3 500€ par an pack AE',
+          desc: 'AE BTP combiné RC Pro + Décennale chez April Pro — SMABTP',
         },
       ]}
       sections={[
@@ -109,7 +109,7 @@ export default function Page() {
                   <strong>Renouvellement simplifié</strong> : 1 contrat, 1 prime annuelle
                 </li>
                 <li>
-                  <strong>Évolution facile</strong> : ajustements simultanés selon CA/activité
+                  <strong>Évolution facile</strong> : ajustements simultanés selon CA ou activité
                 </li>
               </ul>
               <p>Tarifs typiques pack AE BTP :</p>
@@ -164,7 +164,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte le pack RC Pro + Décennale BTP ?',
-          a: 'AE peintre : 1 050-1 400€/an pack. AE plombier : 1 800-2 500€/an. AE maçon : 2 500-3 500€/an. SARL BTP : 4 000-7 500€/an pack. Économie -15-25% vs souscriptions séparées chez même assureur.',
+          a: 'AE peintre : 1 050-1 400€ par an pack. AE plombier : 1 800-2 500€ par an. AE maçon : 2 500-3 500€ par an. SARL BTP : 4 000-7 500€ par an pack. Économie -15-25% vs souscriptions séparées chez même assureur.',
         },
         {
           q: 'Quel assureur pour pack RC Pro + Décennale ?',

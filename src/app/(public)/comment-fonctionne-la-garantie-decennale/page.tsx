@@ -51,7 +51,7 @@ export default function Page() {
         {
           icon: '4️⃣',
           title: 'Expertise + indemnisation',
-          desc: 'Expert mandaté → rapport → indemnisation MO/constructeur',
+          desc: 'Expert mandaté → rapport → indemnisation MO ou constructeur',
         },
       ]}
       sections={[

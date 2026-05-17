@@ -7,15 +7,15 @@ import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-default
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'prix/tarif-mutuelle-pro-btp-retraite'
+const SLUG = 'prix / tarif-mutuelle-pro-btp-retraite'
 const TITLE = 'Tarif Mutuelle Pro BTP Retraite — Grilles 2026 par âge'
 const TAGLINE =
-  'Tarif Mutuelle Pro BTP retraite 2026 : 50€/mois à 60 ans, 75€ à 70 ans, 110€ à 80 ans, 140€+ à 85 ans. Anticiper budget santé retraite BTP.'
+  'Tarif Mutuelle Pro BTP retraite 2026 : 50€ par mois à 60 ans, 75€ à 70 ans, 110€ à 80 ans, 140€+ à 85 ans. Anticiper budget santé retraite BTP.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Tarif Mutuelle Pro BTP retraite 2026 par âge : 60 ans 50€/mois, 70 ans 75€, 80 ans 110€, 85 ans 140€+. Anticiper budget santé retraite.',
+    'Tarif Mutuelle Pro BTP retraite 2026 par âge : 60 ans 50€ par mois, 70 ans 75€, 80 ans 110€, 85 ans 140€+. Anticiper budget santé retraite.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -26,7 +26,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Tarif Mutuelle Pro BTP pour retraités : grille progressive par âge en 2026, vérifiée sur cas réels. Le tarif augmente avec l'âge selon la règle RIA (60% maximum Action Logement Services). Cette page détaille les fourchettes par tranche d'âge, par formule (S2P2 à S4P4) et par situation familiale (isolé / conjoint / famille élargie)."
+      intro="Tarif Mutuelle Pro BTP pour retraités : grille progressive par âge en 2026, vérifiée sur cas réels. Le tarif augmente avec l'âge selon la règle RIA (60% maximum Action Logement Services). Cette page détaille les fourchettes par tranche d'âge, par formule (S2P2 à S4P4) et par situation familiale (isolé — conjoint — famille élargie)."
       legalReference="art. L. 911-1 et suivants Code sécurité sociale + RIA"
       socialProofStats={STATS_DEFAULT}
       expertBio={EXPERT_DEFAULT}
@@ -39,7 +39,7 @@ export default function Page() {
         {
           icon: '📋',
           title: 'Par formule S2P2-S4P4',
-          desc: 'Du basique au haut de gamme avec dentaire/optique renforcés',
+          desc: 'Du basique au haut de gamme avec dentaire ou optique renforcés',
         },
         {
           icon: '💑',
@@ -58,22 +58,23 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>60-65 ans</strong> : 50-60€/mois isolé / 90-105€ couple
+                <strong>60-65 ans</strong> : 50-60€ par mois isolé ou 90-105€ couple
               </li>
               <li>
-                <strong>65-70 ans</strong> : 60-75€/mois isolé / 105-130€ couple
+                <strong>65-70 ans</strong> : 60-75€ par mois isolé ou 105-130€ couple
               </li>
               <li>
-                <strong>70-75 ans</strong> : 75-95€/mois isolé / 130-160€ couple
+                <strong>70-75 ans</strong> : 75-95€ par mois isolé ou 130-160€ couple
               </li>
               <li>
-                <strong>75-80 ans</strong> : 95-115€/mois isolé / 160-195€ couple
+                <strong>75-80 ans</strong> : 95-115€ par mois isolé ou 160-195€ couple
               </li>
               <li>
-                <strong>80-85 ans</strong> : 115-140€/mois isolé / 195-235€ couple
+                <strong>80-85 ans</strong> : 115-140€ par mois isolé ou 195-235€ couple
               </li>
               <li>
-                <strong>85+ ans</strong> : 140-180€/mois isolé / 235-300€ couple (selon assureur)
+                <strong>85+ ans</strong> : 140-180€ par mois isolé ou 235-300€ couple (selon
+                assureur)
               </li>
             </ul>
           ),
@@ -83,22 +84,23 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>S1 P1 (basique)</strong> : 50-65€/mois — minimum légal, peu de renforts
+                <strong>S1 P1 (basique)</strong> : 50-65€ par mois — minimum légal, peu de renforts
               </li>
               <li>
-                <strong>S2 P2 (intermédiaire)</strong> : 65-85€/mois — base + 1 renfort dentaire OU
-                optique
+                <strong>S2 P2 (intermédiaire)</strong> : 65-85€ par mois — base + 1 renfort dentaire
+                OU optique
               </li>
               <li>
-                <strong>S3 P3 (équilibré)</strong> : 75-95€/mois ⭐ recommandé majorité retraités
+                <strong>S3 P3 (équilibré)</strong> : 75-95€ par mois ⭐ recommandé majorité
+                retraités
               </li>
               <li>
-                <strong>S4 P4 (haut de gamme)</strong> : 95-125€/mois — dentaire 500% + optique 400€
-                + médecines douces 400€
+                <strong>S4 P4 (haut de gamme)</strong> : 95-125€ par mois — dentaire 500% + optique
+                400€ + médecines douces 400€
               </li>
               <li>
-                <strong>S5 P5 (premium)</strong> : 120-160€/mois — chambre particulière 80€/j +
-                tiers-payant étendu
+                <strong>S5 P5 (premium)</strong> : 120-160€ par mois — chambre particulière 80€ par
+                jour + tiers-payant étendu
               </li>
             </ul>
           ),
@@ -113,7 +115,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Choisir formule selon besoins réels</strong> : pas systématiquement haut de
-                gamme. S3 P3 suffit si pas de gros soins dentaires/optiques prévus
+                gamme. S3 P3 suffit si pas de gros soins dentaires ou optiques prévus
               </li>
               <li>
                 <strong>Bilan annuel</strong> : revoir formule chaque année selon évolution santé
@@ -137,11 +139,11 @@ export default function Page() {
       faq={[
         {
           q: 'Pourquoi mutuelle retraite plus chère qu&apos;actif ?',
-          a: 'Sinistralité augmente avec âge (besoins médicaux croissants) : actif moyen consomme 1 500€/an santé, retraité 70 ans = 4 500€/an, 80 ans = 8 000€/an. Tarif reflète cette sinistralité. Règle RIA limite hausse à 60% maximum ALS (sinon abusif).',
+          a: 'Sinistralité augmente avec âge (besoins médicaux croissants) : actif moyen consomme 1 500€ par an santé, retraité 70 ans = 4 500€ par an, 80 ans = 8 000€ par an. Tarif reflète cette sinistralité. Règle RIA limite hausse à 60% maximum ALS (sinon abusif).',
         },
         {
           q: 'Pension retraite BTP couvre-t-elle mutuelle ?',
-          a: 'NON. Pension retraite CNRACL/BTP = revenu de remplacement uniquement. Mutuelle santé = dépense supplémentaire à budgétiser (50-180€/mois). Prévoir 600-2 000€/an pour mutuelle pendant retraite (20-25 ans).',
+          a: 'NON. Pension retraite CNRACL ou BTP = revenu de remplacement uniquement. Mutuelle santé = dépense supplémentaire à budgétiser (50-180€ par mois). Prévoir 600-2 000€ par an pour mutuelle pendant retraite (20-25 ans).',
         },
         {
           q: 'Changer mutuelle à la retraite ?',

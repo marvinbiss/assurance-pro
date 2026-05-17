@@ -10,7 +10,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/avocat-specialise-assurance'
+const SLUG = 'guides / avocat-specialise-assurance'
 const TITLE = 'Avocat spécialisé en assurance — Comment trouver et choisir 2026'
 const TAGLINE =
   'Le guide pour trouver et choisir un avocat spécialisé en droit des assurances : annuaire officiel, critères de choix, honoraires, alternatives gratuites.'
@@ -18,7 +18,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Guide avocat spécialisé en assurance : trouver via avocat.fr (mention de spécialisation), critères de choix (barreau, expérience, honoraires), tarifs 200-450€/h. Alternatives gratuites : médiation + PJ Pro. Conseil ORIAS sous 24h.',
+    'Guide avocat spécialisé en assurance : trouver via avocat.fr (mention de spécialisation), critères de choix (barreau, expérience, honoraires), tarifs 200-450€ par heure. Alternatives gratuites : médiation + PJ Pro. Conseil ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'article' },
 }
@@ -40,7 +40,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'Honoraires 200-450€/h',
+          title: 'Honoraires 200-450€ par heure',
           desc: 'Forfait possible sur dossiers complexes (1 500-5 000€ TTC)',
         },
         {
@@ -51,7 +51,7 @@ export default function Page() {
         {
           icon: '🛡️',
           title: 'PJ Pro = frais couverts',
-          desc: "Si vous avez une PJ Pro : frais avocat pris en charge jusqu'à 30 000€/litige",
+          desc: "Si vous avez une PJ Pro : frais avocat pris en charge jusqu'à 30 000€ par litige",
         },
       ]}
       sections={[
@@ -75,7 +75,7 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Recommandations bouche-à-oreille</strong> de pairs ayant eu litiges
-                  similaires (forums pros, associations sectorielles FFB/CAPEB)
+                  similaires (forums pros, associations sectorielles FFB ou CAPEB)
                 </li>
                 <li>
                   <strong>Avis Google + Trustpilot</strong> + vérification des affaires gagnées
@@ -143,7 +143,7 @@ export default function Page() {
                   >
                     Protection juridique pro
                   </Link>{' '}
-                  — couvre les frais avocat jusqu&apos;à 30 000€/litige
+                  — couvre les frais avocat jusqu&apos;à 30 000€ par litige
                 </li>
               </ul>
             </>
@@ -165,7 +165,7 @@ export default function Page() {
         },
         {
           q: 'PJ Pro couvre-t-elle les frais avocat ?',
-          a: "OUI dans 100% des contrats PJ Pro standards : frais d'avocat couverts jusqu'à 30 000€/litige (50-100k€ en formule étendue). Tarif PJ Pro : 280-1 800€/an. ROI évident dès 1er litige. Voir <a href='/protection-juridique-professionnelle' class='text-primary-600 underline'>/protection-juridique-professionnelle</a>.",
+          a: "OUI dans 100% des contrats PJ Pro standards : frais d'avocat couverts jusqu'à 30 000€ par litige (50-100k€ en formule étendue). Tarif PJ Pro : 280-1 800€ par an. ROI évident dès 1er litige. Voir <a href='/protection-juridique-professionnelle' class='text-primary-600 underline'>/protection-juridique-professionnelle</a>.",
         },
       ]}
     />

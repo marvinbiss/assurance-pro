@@ -20,7 +20,7 @@ const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
 const skip = !url || !anon
 const skipReason =
-  'Variables Supabase absentes (NEXT_PUBLIC_SUPABASE_URL/NEXT_PUBLIC_SUPABASE_ANON_KEY) — tests RLS désactivés.'
+  'Variables Supabase absentes (NEXT_PUBLIC_SUPABASE_URL ou NEXT_PUBLIC_SUPABASE_ANON_KEY) — tests RLS désactivés.'
 
 describe.skipIf(skip)('RLS lockdown (migration 009)', () => {
   // Lazy init via beforeAll : `describe.skipIf` n'empêche pas l'évaluation du
@@ -72,7 +72,7 @@ describe.skipIf(skip)('RLS lockdown (migration 009)', () => {
   // RLS sur tables PII : un appel select sur app.profiles via le schema public
   // n'est pas accessible (pas exposé en API REST). On teste plutôt qu'aucune
   // RPC sensible n'est exposée sans authentification.
-  it('RPC sensible persist_lead_atomic n\'est pas appelable sans service role', async () => {
+  it('RPC sensible persist_lead_atomic n’est pas appelable sans service role', async () => {
     const { error } = await anonClient.rpc('persist_lead_atomic', {})
     expect(error).not.toBeNull()
     // L'erreur peut être : permission denied, function not found, ou validation.

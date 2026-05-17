@@ -15,7 +15,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance voiture pro BTP : utilitaires (Trafic 800-1 500€/an, Master 1 200-2 200€/an), transport matériaux inclus, outillage embarqué. Comparatif Allianz, MMA, AXA.',
+    'Assurance voiture pro BTP : utilitaires (Trafic 800-1 500€ par an, Master 1 200-2 200€ par an), transport matériaux inclus, outillage embarqué. Comparatif Allianz, MMA, AXA.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -50,7 +50,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '800-2 500€/an',
+          title: '800-2 500€ par an',
           desc: 'Trafic 800-1 500€ • Master 1 200-2 200€ • Camionnette 19T 2 000-2 500€',
         },
       ]}
@@ -64,15 +64,15 @@ export default function Page() {
                 au contrat
               </li>
               <li>
-                <strong>Outillage embarqué</strong> : couverture vol/dégât outillage à bord (forfait
-                5-15k€)
+                <strong>Outillage embarqué</strong> : couverture vol ou dégât outillage à bord
+                (forfait 5-15k€)
               </li>
               <li>
                 <strong>Multi-conducteurs</strong> : compagnons, apprentis autorisés à conduire
                 (sous conditions)
               </li>
               <li>
-                <strong>Stationnement chantier</strong> : couverture vol/vandalisme zones non
+                <strong>Stationnement chantier</strong> : couverture vol ou vandalisme zones non
                 sécurisées
               </li>
               <li>
@@ -92,25 +92,25 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Berlingo / Kangoo (petit utilitaire)</strong> : 650-1 100€/an
+                <strong>Berlingo — Kangoo (petit utilitaire)</strong> : 650-1 100€ par an
               </li>
               <li>
-                <strong>Trafic / Vivaro (moyen utilitaire)</strong> : 800-1 500€/an
+                <strong>Trafic — Vivaro (moyen utilitaire)</strong> : 800-1 500€ par an
               </li>
               <li>
-                <strong>Boxer / Movano / Jumper (gros utilitaire)</strong> : 1 100-1 800€/an
+                <strong>Boxer — Movano — Jumper (gros utilitaire)</strong> : 1 100-1 800€ par an
               </li>
               <li>
-                <strong>Master / Daily / Sprinter (extra-large)</strong> : 1 300-2 200€/an
+                <strong>Master — Daily — Sprinter (extra-large)</strong> : 1 300-2 200€ par an
               </li>
               <li>
-                <strong>Camion 7.5T benne</strong> : 1 800-2 800€/an
+                <strong>Camion 7.5T benne</strong> : 1 800-2 800€ par an
               </li>
               <li>
-                <strong>Camion 19T benne/grue</strong> : 2 500-4 500€/an
+                <strong>Camion 19T benne ou grue</strong> : 2 500-4 500€ par an
               </li>
               <li>
-                <strong>Camion-grue spécialisé</strong> : 3 500-6 000€/an
+                <strong>Camion-grue spécialisé</strong> : 3 500-6 000€ par an
               </li>
             </ul>
           ),
@@ -131,7 +131,7 @@ export default function Page() {
                 <strong>Augmenter franchise</strong> : passer de 500€ à 1 500€ = -15-20% prime auto.
               </li>
               <li>
-                <strong>Telematics / boîtier</strong> : -10-20% si conduite vertueuse trackée
+                <strong>Telematics — boîtier</strong> : -10-20% si conduite vertueuse trackée
                 (Allianz Pro, MMA proposent).
               </li>
               <li>
@@ -149,7 +149,7 @@ export default function Page() {
         },
         {
           q: 'Tarif assurance Trafic pro BTP en 2026 ?',
-          a: 'Trafic standard pour artisan AE : 800-1 200€/an chez Allianz Pro ou MMA. Avec transport matériaux + outillage embarqué : 1 100-1 500€/an. En Île-de-France : prime +15-25%.',
+          a: 'Trafic standard pour artisan AE : 800-1 200€ par an chez Allianz Pro ou MMA. Avec transport matériaux + outillage embarqué : 1 100-1 500€ par an. En Île-de-France : prime +15-25%.',
         },
         {
           q: 'Quel assureur recommandé pour flotte BTP ?',

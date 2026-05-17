@@ -26,7 +26,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance e-commerce : pack RC pro produits + cyber assurance (breach RGPD, fraude paiement) + assurance marchandises stockées + responsabilité livraison. Tous statuts (AE, EI, SARL, SAS). Tarifs à partir de 380€/an. Devis ORIAS sous 24h.',
+    'Assurance e-commerce : pack RC pro produits + cyber assurance (breach RGPD, fraude paiement) + assurance marchandises stockées + responsabilité livraison. Tous statuts (AE, EI, SARL, SAS). Tarifs à partir de 380€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -37,7 +37,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance e-commerce désigne le pack de garanties indispensables à toute activité de vente en ligne (boutique Shopify, WooCommerce, Magento, marketplace Amazon/Etsy/Cdiscount, dropshipping, pure player digital). Elle se distingue de l'assurance commerce traditionnelle par la prédominance des risques cyber (breach RGPD, fraude au paiement, ransomware sur le back-office), des risques produit (responsabilité civile produit en cas de défaut), des risques marchandises (stockage en entrepôt + transport vers le client), et des risques juridiques transverses (litige client B2C, droit de rétractation, garantie légale de conformité). Le pack standard combine 5 garanties : RC pro produits (1,5-3 M€), cyber assurance RGPD (200-1 M€), assurance marchandises stockées + transportées, RC client + responsabilité livraison, et protection juridique B2C. Les tarifs 2026 démarrent à 380 € HT/an pour un AE e-commerce solo (CA &lt; 30k€) jusqu'à 8 800 € HT/an pour une PME e-commerce 5 salariés avec entrepôt."
+      intro="L'assurance e-commerce désigne le pack de garanties indispensables à toute activité de vente en ligne (boutique Shopify, WooCommerce, Magento, marketplace Amazon, Etsy ou Cdiscount, dropshipping, pure player digital). Elle se distingue de l'assurance commerce traditionnelle par la prédominance des risques cyber (breach RGPD, fraude au paiement, ransomware sur le back-office), des risques produit (responsabilité civile produit en cas de défaut), des risques marchandises (stockage en entrepôt + transport vers le client), et des risques juridiques transverses (litige client B2C, droit de rétractation, garantie légale de conformité). Le pack standard combine 5 garanties : RC pro produits (1,5-3 M€), cyber assurance RGPD (200-1 M€), assurance marchandises stockées + transportées, RC client + responsabilité livraison, et protection juridique B2C. Les tarifs 2026 démarrent à 380 € HT par an pour un AE e-commerce solo (CA &lt; 30k€) jusqu'à 8 800 € HT par an pour une PME e-commerce 5 salariés avec entrepôt."
       legalReference="Code de la consommation + RGPD + LCEN art. 6-III + Loi Hamon (rétractation 14 jours)"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -62,8 +62,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 380 €/an',
-          desc: 'AE e-commerce solo. PME 5 salariés avec entrepôt : 4 800-8 800 €/an',
+          title: 'À partir de 380 € par an',
+          desc: 'AE e-commerce solo. PME 5 salariés avec entrepôt : 4 800-8 800 € par an',
         },
       ]}
       sections={[
@@ -137,9 +137,9 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables : CA, type de produits (alimentaire/cosmétique/électronique majorés),
-                volume commandes/mois, présence stock physique, multi-pays UE/monde, certifications
-                (PCI-DSS, ISO 27001).
+                Variables : CA, type de produits (alimentaire, cosmétique ou électronique majorés),
+                volume commandes par mois, présence stock physique, multi-pays UE ou monde,
+                certifications (PCI-DSS, ISO 27001).
               </p>
             </>
           ),
@@ -194,15 +194,15 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'un e-commerce en 2026 ?",
-          a: 'Démarre à 380€/an pour AE e-commerce solo CA < 30k€ (pack base). Médiane marché : 680-1 100€/an pour EI CA 30-77k€. PME 5 salariés avec entrepôt : 4 800-8 800€/an. Pure player CA 1M€+ multi-pays : 8 800-18 000€/an. Variables : type de produits, volume commandes, présence stock, multi-pays.',
+          a: 'Démarre à 380€ par an pour AE e-commerce solo CA < 30k€ (pack base). Médiane marché : 680-1 100€ par an pour EI CA 30-77k€. PME 5 salariés avec entrepôt : 4 800-8 800€ par an. Pure player CA 1M€+ multi-pays : 8 800-18 000€ par an. Variables : type de produits, volume commandes, présence stock, multi-pays.',
         },
         {
           q: 'Cyber assurance : indispensable pour un e-commerce ?',
-          a: 'OUI absolument — TOP risque du e-commerce 2026. Coût moyen sinistre cyber e-commerce : 80 000-300 000€ (notification CNIL 72h, frais juridiques RGPD, perte exploitation, restauration de données, communication crise). Cyber dédiée : 200-1 200€/an supplémentaires selon CA. ROI évident dès le 1er incident.',
+          a: 'OUI absolument — TOP risque du e-commerce 2026. Coût moyen sinistre cyber e-commerce : 80 000-300 000€ (notification CNIL 72h, frais juridiques RGPD, perte exploitation, restauration de données, communication crise). Cyber dédiée : 200-1 200€ par an supplémentaires selon CA. ROI évident dès le 1er incident.',
         },
         {
           q: 'Dropshipping : assurance différente ?',
-          a: "OUI plus simple car pas de stock physique. Pack standard dropshipping : 280-680€/an. Couvre RC produits (responsabilité revendeur même sans stock), cyber RGPD, litiges client. À NÉGLIGER ABSOLUMENT : la responsabilité produit n'est PAS transférée au fournisseur (Aliexpress, etc.) — c'est VOUS qui répondez devant le client final en France.",
+          a: "OUI plus simple car pas de stock physique. Pack standard dropshipping : 280-680€ par an. Couvre RC produits (responsabilité revendeur même sans stock), cyber RGPD, litiges client. À NÉGLIGER ABSOLUMENT : la responsabilité produit n'est PAS transférée au fournisseur (Aliexpress, etc.) — c'est VOUS qui répondez devant le client final en France.",
         },
         {
           q: 'Marketplace (Amazon, Etsy, Cdiscount) : qui assure quoi ?',
@@ -210,7 +210,7 @@ export default function Page() {
         },
         {
           q: 'RGPD pour e-commerce : quelles obligations ?',
-          a: "Notification CNIL sous 72h en cas de breach, notification individuelle aux clients concernés si risque élevé, registre des traitements (art. 30), DPO si traitement massif, mentions RGPD claires sur le site, droit d'accès/suppression/portabilité. Sanctions : jusqu'à 4% CA mondial OU 20 M€. Cyber assurance dédiée e-commerce inclut généralement les frais de mise en conformité post-incident.",
+          a: "Notification CNIL sous 72h en cas de breach, notification individuelle aux clients concernés si risque élevé, registre des traitements (art. 30), DPO si traitement massif, mentions RGPD claires sur le site, droit d'accès, suppression ou portabilité. Sanctions : jusqu'à 4% CA mondial OU 20 M€. Cyber assurance dédiée e-commerce inclut généralement les frais de mise en conformité post-incident.",
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance e-commerce ?',

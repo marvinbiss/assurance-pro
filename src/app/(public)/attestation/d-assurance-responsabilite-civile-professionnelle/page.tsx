@@ -11,7 +11,7 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'attestation/d-assurance-responsabilite-civile-professionnelle'
+const SLUG = 'attestation / d-assurance-responsabilite-civile-professionnelle'
 const TITLE = "Attestation d'Assurance Responsabilité Civile Professionnelle — Guide complet"
 const TAGLINE =
   "Guide complet de l'attestation d'assurance RC Pro : utilité, valeur juridique, mentions obligatoires, démarches express et modèles types par profession."
@@ -45,12 +45,12 @@ export default function Page() {
         {
           icon: '⚡',
           title: 'Express 24h',
-          desc: 'Hiscox/Stello immédiat • April Pro 24h • autres 24-72h',
+          desc: 'Hiscox ou Stello immédiat • April Pro 24h • autres 24-72h',
         },
         {
           icon: '🌍',
           title: 'Tous secteurs',
-          desc: 'Services intellectuels, BTP, médical, immobilier, taxi/VTC',
+          desc: 'Services intellectuels, BTP, médical, immobilier, taxi ou VTC',
         },
         {
           icon: '✅',
@@ -151,7 +151,7 @@ export default function Page() {
                 <strong>Renouveler 1 mois avant échéance</strong> (éviter rupture couverture)
               </li>
               <li>
-                <strong>Conserver historique 10 ans</strong> (postériorité Hiscox / 5 ans autres)
+                <strong>Conserver historique 10 ans</strong> (postériorité Hiscox ou 5 ans autres)
               </li>
               <li>
                 <strong>Mettre à jour si activité évolue</strong> (nouveau métier, nouveau
@@ -176,7 +176,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une attestation supplémentaire ?',
-          a: 'Standard annuelle : gratuite (incluse). Attestation nominative client : gratuite ou 50-150€ selon assureur. Attestation pour Ordre/CCI : gratuite. Attestation rétroactive (sinistre antérieur) : variable, à négocier.',
+          a: 'Standard annuelle : gratuite (incluse). Attestation nominative client : gratuite ou 50-150€ selon assureur. Attestation pour Ordre ou CCI : gratuite. Attestation rétroactive (sinistre antérieur) : variable, à négocier.',
         },
       ]}
       relatedMetiers={[

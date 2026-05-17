@@ -27,7 +27,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Protection juridique professionnelle : prise en charge frais avocat (jusqu'à 30 000€/litige), conseil juridique illimité 7j/7, défense pénale dirigeant, recouvrement créances impayées, litiges fournisseurs/bailleur/salariés. Tarifs négociés à partir de 280 €/an. Devis gratuit ORIAS sous 24h.",
+    "Protection juridique professionnelle : prise en charge frais avocat (jusqu'à 30 000€ par litige), conseil juridique illimité 7j/7, défense pénale dirigeant, recouvrement créances impayées, litiges fournisseurs, bailleur ou salariés. Tarifs négociés à partir de 280 € par an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -38,7 +38,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance protection juridique professionnelle (PJ pro) prend en charge les frais d'avocat, d'huissier, d'expert et les frais de procédure d'une entreprise confrontée à un litige juridique : impayé client, conflit fournisseur, litige bail commercial, contentieux salarié, contrôle fiscal/URSSAF, infraction routière, procédure pénale du dirigeant. Elle inclut généralement un service de conseil juridique téléphonique illimité 7j/7 (avocats, juristes spécialisés) et permet de bénéficier de tarifs négociés sur les prestations d'avocats du réseau de l'assureur. Les plafonds standards 2026 : 30 000 € par litige, 50 000 € par an cumulé, sous-limite 6 000 € pour la défense pénale du dirigeant. Les tarifs démarrent à 280 € HT/an pour une PJ Pro de base (TPE solo) jusqu'à 1 800 € HT/an pour PME 50 salariés avec sous-limite étendue. Cette page détaille les couvertures, exclusions et le ROI typique d'une PJ pro."
+      intro="L'assurance protection juridique professionnelle (PJ pro) prend en charge les frais d'avocat, d'huissier, d'expert et les frais de procédure d'une entreprise confrontée à un litige juridique : impayé client, conflit fournisseur, litige bail commercial, contentieux salarié, contrôle fiscal ou URSSAF, infraction routière, procédure pénale du dirigeant. Elle inclut généralement un service de conseil juridique téléphonique illimité 7j/7 (avocats, juristes spécialisés) et permet de bénéficier de tarifs négociés sur les prestations d'avocats du réseau de l'assureur. Les plafonds standards 2026 : 30 000 € par litige, 50 000 € par an cumulé, sous-limite 6 000 € pour la défense pénale du dirigeant. Les tarifs démarrent à 280 € HT par an pour une PJ Pro de base (TPE solo) jusqu'à 1 800 € HT par an pour PME 50 salariés avec sous-limite étendue. Cette page détaille les couvertures, exclusions et le ROI typique d'une PJ pro."
       legalReference="Articles L. 127-1 et suivants du Code des assurances + RGPD article 82 (recours)"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -48,7 +48,7 @@ export default function Page() {
       benefits={[
         {
           icon: '⚖️',
-          title: 'Frais avocat 30k€/litige',
+          title: 'Frais avocat 30k€ par litige',
           desc: 'Plafond standard. Recouvrement créances + défense pénale + conseil illimité',
         },
         {
@@ -63,8 +63,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 280 €/an',
-          desc: 'TPE solo. PME 20 salariés : 680-980€/an. PME 50 salariés : 1 200-1 800€/an',
+          title: 'À partir de 280 € par an',
+          desc: 'TPE solo. PME 20 salariés : 680-980€ par an. PME 50 salariés : 1 200-1 800€ par an',
         },
       ]}
       sections={[
@@ -88,7 +88,7 @@ export default function Page() {
                   intellectuelle, concurrence déloyale
                 </li>
                 <li>
-                  <strong>Contrôle fiscal / URSSAF / inspection du travail</strong> : assistance et
+                  <strong>Contrôle fiscal — URSSAF — inspection du travail</strong> : assistance et
                   défense lors des contrôles administratifs
                 </li>
                 <li>
@@ -109,7 +109,7 @@ export default function Page() {
                 <li>Litiges RGPD (sanctions CNIL, plaintes utilisateurs)</li>
                 <li>Cyber attaques (recours contre l&apos;agresseur, défense en cas de plainte)</li>
                 <li>Défense lors de procédures collectives (sauvegarde, redressement)</li>
-                <li>Litiges internationaux (UE / hors UE)</li>
+                <li>Litiges internationaux (UE — hors UE)</li>
                 <li>Médiation et arbitrage</li>
               </ul>
             </>
@@ -123,7 +123,7 @@ export default function Page() {
                 <thead>
                   <tr className="bg-gray-100">
                     <th className="border p-2 text-left">Profil</th>
-                    <th className="border p-2 text-right">Plafond / litige</th>
+                    <th className="border p-2 text-right">Plafond — litige</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>
                 </thead>
@@ -158,7 +158,7 @@ export default function Page() {
               <p className="mt-2 text-xs italic text-gray-600">
                 Variables : CA, secteur d&apos;activité (BTP / restauration / services à forte
                 sinistralité contentieuse majorés), antécédents litiges, plafond et sous-limites
-                choisis. Souvent en option +30€/mois sur un contrat multirisque pro existant.
+                choisis. Souvent en option +30€ par mois sur un contrat multirisque pro existant.
               </p>
             </>
           ),
@@ -212,14 +212,14 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-3">
-                <strong>Pour une TPE 5 salariés à 580 €/an de PJ</strong>, UN seul litige couvert
-                (ex : licenciement contesté à 12 000 €) compense ~20 ANS de cotisations. ROI
+                <strong>Pour une TPE 5 salariés à 580 € par an de PJ</strong>, UN seul litige
+                couvert (ex : licenciement contesté à 12 000 €) compense ~20 ANS de cotisations. ROI
                 EXTRÊMEMENT POSITIF en cas d&apos;activation.
               </p>
               <p>
                 <strong>Statistiques INSEE 2024</strong> : 1 entreprise sur 3 connaît au moins 1
                 litige juridique majeur dans ses 5 premières années. La PJ pro est l&apos;une des
-                assurances avec le meilleur ratio coût/protection.
+                assurances avec le meilleur ratio coût ou protection.
               </p>
             </>
           ),
@@ -249,7 +249,7 @@ export default function Page() {
                       <strong>PJ Pro</strong>
                     </td>
                     <td className="border p-2">
-                      Frais d&apos;avocat / procédure pour DÉFENDRE vos intérêts (en demande ou en
+                      Frais d&apos;avocat ou procédure pour DÉFENDRE vos intérêts (en demande ou en
                       défense)
                     </td>
                   </tr>
@@ -278,15 +278,15 @@ export default function Page() {
       faq={[
         {
           q: "L'assurance protection juridique professionnelle est-elle obligatoire ?",
-          a: "Non — pas légalement obligatoire. MAIS fortement recommandée : 1 entreprise sur 3 connaît au moins 1 litige juridique majeur dans ses 5 premières années (INSEE 2024). Coût moyen d'un litige : 5 000-30 000€ d'avocat. Tarif PJ pro : 280-1 800€/an selon taille. ROI évident dès le 1er litige couvert.",
+          a: "Non — pas légalement obligatoire. MAIS fortement recommandée : 1 entreprise sur 3 connaît au moins 1 litige juridique majeur dans ses 5 premières années (INSEE 2024). Coût moyen d'un litige : 5 000-30 000€ d'avocat. Tarif PJ pro : 280-1 800€ par an selon taille. ROI évident dès le 1er litige couvert.",
         },
         {
           q: 'Combien coûte une PJ pro pour une TPE en 2026 ?',
-          a: 'Démarre à 280€/an pour TPE solo (freelance, AE, EI) avec plafond 15 000€/litige. TPE 5 salariés : 480-780€/an avec plafond 30 000€. PME 25 salariés : 680-980€/an. Souvent disponible en option +30€/mois sur un contrat multirisque pro existant — économies vs contrat séparé.',
+          a: 'Démarre à 280€ par an pour TPE solo (freelance, AE, EI) avec plafond 15 000€ par litige. TPE 5 salariés : 480-780€ par an avec plafond 30 000€. PME 25 salariés : 680-980€ par an. Souvent disponible en option +30€ par mois sur un contrat multirisque pro existant — économies vs contrat séparé.',
         },
         {
           q: 'Que couvre exactement la PJ pro ?',
-          a: 'Frais avocat + procédure + huissier + expert pour : litiges contractuels (fournisseur, client, bail commercial), recouvrement créances impayées, défense en cas de contrôle fiscal/URSSAF/inspection travail, contentieux salariés (licenciement, rupture conventionnelle), défense pénale du dirigeant (sous-limite 6-15k€), conseil juridique téléphonique illimité 7j/7.',
+          a: 'Frais avocat + procédure + huissier + expert pour : litiges contractuels (fournisseur, client, bail commercial), recouvrement créances impayées, défense en cas de contrôle fiscal, URSSAF ou inspection travail, contentieux salariés (licenciement, rupture conventionnelle), défense pénale du dirigeant (sous-limite 6-15k€), conseil juridique téléphonique illimité 7j/7.',
         },
         {
           q: 'PJ pro vs RC pro : différence ?',
@@ -298,7 +298,7 @@ export default function Page() {
         },
         {
           q: 'Comment choisir le plafond PJ pro ?',
-          a: "Standard 30 000€/litige + 50 000€/an cumulé pour TPE/PME jusqu'à 25 salariés. Au-delà : 50 000€/litige + 100 000€/an. Pour secteurs à forte sinistralité contentieuse (BTP, restauration, prestations IT à forts montants) : opter pour plafond étendu 50-100k€/litige. Sous-limite défense pénale dirigeant : 6 000-15 000€ standard, à étendre si activité à risque (transport ADR, BTP gros chantier).",
+          a: "Standard 30 000€ par litige + 50 000€ par an cumulé pour TPE ou PME jusqu'à 25 salariés. Au-delà : 50 000€ par litige + 100 000€ par an. Pour secteurs à forte sinistralité contentieuse (BTP, restauration, prestations IT à forts montants) : opter pour plafond étendu 50-100k€ par litige. Sous-limite défense pénale dirigeant : 6 000-15 000€ standard, à étendre si activité à risque (transport ADR, BTP gros chantier).",
         },
         {
           q: 'Combien de temps pour obtenir un devis PJ pro ?',

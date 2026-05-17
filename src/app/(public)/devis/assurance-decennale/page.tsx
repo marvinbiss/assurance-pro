@@ -6,7 +6,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'devis/assurance-decennale'
+const SLUG = 'devis / assurance-decennale'
 const TITLE = 'Devis Assurance Décennale — Comparatif 5 assureurs BTP, 24h'
 const TAGLINE =
   'Devis assurance décennale GRATUIT en 5 min. Comparatif April Pro, SMABTP, Allianz, MMA, AXA. Tous métiers BTP, AE et SARL. Attestation sous 24h.'
@@ -14,7 +14,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Devis décennale gratuit. April Pro best price 950€/an peintre AE, 2 500€/an maçon SARL. Comparatif 5 assureurs BTP. Attestation Loi Spinetta sous 24h.',
+    'Devis décennale gratuit. April Pro best price 950€ par an peintre AE, 2 500€ par an maçon SARL. Comparatif 5 assureurs BTP. Attestation Loi Spinetta sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -56,7 +56,7 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Économies réelles -15-25%</strong> : la prime décennale varie ×1.5-2 entre
-                April Pro / SMABTP / Allianz Pro pour profil équivalent
+                April Pro ou SMABTP ou Allianz Pro pour profil équivalent
               </li>
               <li>
                 <strong>Garanties harmonisées</strong> : assureurs proposent des couvertures
@@ -81,28 +81,28 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Auto-entrepreneur peintre</strong> : 950-1 400€/an (April Pro best)
+                <strong>Auto-entrepreneur peintre</strong> : 950-1 400€ par an (April Pro best)
               </li>
               <li>
-                <strong>AE plombier</strong> : 1 400-2 100€/an
+                <strong>AE plombier</strong> : 1 400-2 100€ par an
               </li>
               <li>
-                <strong>AE maçon</strong> : 1 800-2 800€/an
+                <strong>AE maçon</strong> : 1 800-2 800€ par an
               </li>
               <li>
-                <strong>AE couvreur</strong> : 2 200-3 500€/an
+                <strong>AE couvreur</strong> : 2 200-3 500€ par an
               </li>
               <li>
-                <strong>SARL plomberie 3 salariés</strong> : 2 200-3 500€/an
+                <strong>SARL plomberie 3 salariés</strong> : 2 200-3 500€ par an
               </li>
               <li>
-                <strong>SARL maçonnerie 5 salariés</strong> : 3 500-5 500€/an
+                <strong>SARL maçonnerie 5 salariés</strong> : 3 500-5 500€ par an
               </li>
               <li>
-                <strong>SAS BTP PME 10 salariés</strong> : 5 500-12 000€/an
+                <strong>SAS BTP PME 10 salariés</strong> : 5 500-12 000€ par an
               </li>
               <li>
-                <strong>SAS gros œuvre 30 salariés</strong> : 12 000-30 000€/an
+                <strong>SAS gros œuvre 30 salariés</strong> : 12 000-30 000€ par an
               </li>
             </ul>
           ),

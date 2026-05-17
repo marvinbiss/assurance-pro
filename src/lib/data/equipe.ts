@@ -34,14 +34,14 @@ export const EQUIPE: Record<string, MembreEquipe> = {
     bio: "Directeur du cabinet Vivos Assurance et courtier responsable au sens des articles L. 511-1 et suivants du Code des assurances. Représente le cabinet auprès de l'ACPR et de l'ORIAS. Garant de la conformité des recommandations délivrées et de la traçabilité du devoir de conseil (art. L. 521-4).",
     expertises: [
       'Direction de cabinet de courtage indépendant',
-      'Conformité ACPR / ORIAS / DDA',
+      'Conformité ACPR — ORIAS — DDA',
       'Négociation grandes lignes décennale et RC Pro',
       'Architecture de programmes multi-assureurs',
     ],
     formations: [
-      'Master 2 Assurance ou équivalent (ITB / ENASS / ESA)',
+      'Master 2 Assurance ou équivalent (ITB — ENASS — ESA)',
       'Capacité professionnelle Niveau I — IAS (art. R. 512-9)',
-      'Formation continue ACPR — 15h/an minimum',
+      'Formation continue ACPR — 15h par an minimum',
     ],
     experiences: [
       '+10 ans en courtage indépendant',
@@ -61,7 +61,7 @@ export const EQUIPE: Record<string, MembreEquipe> = {
       'Garantie décennale Loi Spinetta',
       'Dommages-ouvrage et TRC',
       'Profils difficiles (sinistralité, jeune entreprise)',
-      'Mention obligatoire devis/factures (réforme 2024)',
+      'Mention obligatoire devis ou factures (réforme 2024)',
       'Recours BCT (Bureau Central de Tarification)',
     ],
     formations: ['IAS Niveau I', 'Spécialisation décennale AQC'],
@@ -80,7 +80,7 @@ export const EQUIPE: Record<string, MembreEquipe> = {
     poste: 'Responsable pôle Services — RC Pro, freelances, professions réglementées',
     bio: 'Pôle dédié aux freelances, consultants, agences digitales et professions réglementées (avocats, médecins, experts-comptables, architectes). Architecture programmes RC Pro (claims-made, garantie subséquente, plafonds 500k€ – 5M€), protection juridique, cyber. Maîtrise approfondie du devoir de conseil DDA pour les profils premium.',
     expertises: [
-      'RC Pro consultants / freelances IT',
+      'RC Pro consultants — freelances IT',
       'RC Pro professions réglementées (avocat, médecin, expert-comptable)',
       'Cyber assurance et fuite de données',
       'Garantie subséquente longue (5 à 10 ans)',
@@ -99,7 +99,7 @@ export const EQUIPE: Record<string, MembreEquipe> = {
     slug: 'pole-sante-prevoyance',
     prenom: 'Pôle',
     nom: 'Santé & Prévoyance',
-    poste: 'Responsable pôle Santé/Prévoyance — TNS Madelin',
+    poste: 'Responsable pôle Santé ou Prévoyance — TNS Madelin',
     bio: 'Pôle dédié à la mutuelle santé pro, prévoyance dirigeant TNS, retraite Madelin. Conseil fiscal Madelin (art. 154 bis CGI), arbitrage entre contrats santé responsables et solidaires, optimisation Madelin pour gérants TNS, EI, AE et professions libérales.',
     expertises: [
       'Mutuelle TNS Madelin (Loi 1994)',
@@ -110,7 +110,7 @@ export const EQUIPE: Record<string, MembreEquipe> = {
     ],
     formations: ['IAS Niveau I', 'Spécialisation Madelin'],
     experiences: [
-      '+6 ans courtage santé/prévoyance pro',
+      '+6 ans courtage santé ou prévoyance pro',
       'Travail conjoint avec experts-comptables partenaires',
     ],
     certifications: ['IAS Niveau I'],

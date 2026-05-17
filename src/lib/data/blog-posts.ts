@@ -99,7 +99,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
         list: {
           items: [
             "Nom de l'assureur",
-            'Numéro du contrat / police',
+            'Numéro du contrat — police',
             'Période de validité',
             'Zone géographique couverte',
             'Activités couvertes',
@@ -112,7 +112,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
         paragraphs: [
           "L'ACPR a publié en 2024 deux recommandations qui durcissent les obligations des distributeurs :",
           'La Recommandation 2024-R-02 (réclamations) impose un accusé de réception sous 10 jours ouvrés et une réponse au fond sous 2 mois maximum.',
-          'La Recommandation 2024-R-03 (devoir de conseil) impose une traçabilité écrite et immuable du conseil délivré : exigences/besoins, motivation du choix, alternatives examinées.',
+          'La Recommandation 2024-R-03 (devoir de conseil) impose une traçabilité écrite et immuable du conseil délivré : exigences ou besoins, motivation du choix, alternatives examinées.',
         ],
       },
       {
@@ -123,11 +123,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Couverture / étanchéité — 28 % des sinistres',
-            'Maçonnerie / fissures structurelles — 22 %',
-            'Plomberie / dégâts des eaux — 14 %',
-            'Électricité / mise aux normes — 9 %',
-            'Façade / ITE — 8 %',
+            'Couverture — étanchéité — 28 % des sinistres',
+            'Maçonnerie — fissures structurelles — 22 %',
+            'Plomberie — dégâts des eaux — 14 %',
+            'Électricité — mise aux normes — 9 %',
+            'Façade — ITE — 8 %',
           ],
         },
       },
@@ -139,7 +139,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
           ordered: true,
           items: [
             "Vérifier que l'attestation est à jour et conforme (zones, activités déclarées, plafonds).",
-            'Mettre à jour vos modèles de devis/factures pour intégrer le pavé décennale obligatoire.',
+            'Mettre à jour vos modèles de devis ou factures pour intégrer le pavé décennale obligatoire.',
             'Conserver les écrits du courtier (recommandation motivée DDA art. L. 521-4) pour preuve en cas de contrôle ACPR.',
           ],
         },
@@ -199,7 +199,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
             'Sanctions pénales (toujours exclues)',
             "Activités non déclarées (exclues — d'où l'importance de bien décrire votre activité)",
             'Cyber-attaques (souvent exclues sauf option dédiée — voir §5)',
-            'Sinistres aux USA / Canada (souvent exclus sauf option internationale)',
+            'Sinistres aux USA — Canada (souvent exclus sauf option internationale)',
           ],
         },
       },
@@ -240,10 +240,10 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     title: "Mutuelle TNS Madelin : comment économiser 30-45% d'impôts",
     description:
       'Plafond 2026, calcul de la déduction, exemple chiffré pour un consultant freelance. Optimisation fiscale Madelin pas à pas.',
-    category: 'Mutuelle / TNS',
+    category: 'Mutuelle — TNS',
     tags: ['mutuelle', 'madelin', 'tns', 'fiscalite'],
     author: 'Cabinet Vivos Assurance',
-    authorRole: 'Courtier ORIAS — pôle Santé / Prévoyance',
+    authorRole: 'Courtier ORIAS — pôle Santé — Prévoyance',
     publishedAt: '2026-03-20',
     updatedAt: '2026-03-20',
     readTime: '6 min',
@@ -274,7 +274,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
         list: {
           items: [
             'Entrepreneurs Individuels (EI)',
-            'Gérants majoritaires de SARL / EURL',
+            'Gérants majoritaires de SARL — EURL',
             'Auto-entrepreneurs (forfait spécifique)',
             'Professions libérales (BNC ou BIC)',
           ],
@@ -288,7 +288,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Santé : 7 % PASS + 3,75 % bénéfice imposable, dans la limite de 3 % de 8 PASS (~11 130 €/an)',
+            'Santé : 7 % PASS + 3,75 % bénéfice imposable, dans la limite de 3 % de 8 PASS (~11 130 € par an)',
             'Prévoyance : 1,75 % PASS + 1,87 % bénéfice imposable',
             'Retraite : 10 % bénéfice imposable + 15 % de la fraction comprise entre 1 et 8 PASS',
           ],
@@ -369,7 +369,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
         id: 'menace',
         h2: '1. État de la menace en France',
         paragraphs: [
-          "D'après l'ANSSI, 1 entreprise française sur 5 a subi une cyber-attaque en 2025. Les rançongiciels (ransomwares) restent la principale menace pour les TPE/PME, suivis des fuites de données et du phishing ciblé (BEC).",
+          "D'après l'ANSSI, 1 entreprise française sur 5 a subi une cyber-attaque en 2025. Les rançongiciels (ransomwares) restent la principale menace pour les TPE ou PME, suivis des fuites de données et du phishing ciblé (BEC).",
           'Les secteurs les plus touchés : santé, collectivités, industrie, services aux entreprises.',
         ],
       },
@@ -393,7 +393,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
         paragraphs: ['Un contrat cyber complet doit couvrir :'],
         list: {
           items: [
-            'Frais de gestion de crise (forensic, communication, notification CNIL/clients)',
+            'Frais de gestion de crise (forensic, communication, notification CNIL ou clients)',
             "Pertes d'exploitation suite à arrêt SI",
             'Frais de restauration des données',
             'RC en cas de fuite de données tiers',
@@ -425,7 +425,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
           items: [
             'MFA (authentification multi-facteurs) sur les comptes admin et accès distants',
             'Sauvegardes hors-ligne testées (3-2-1)',
-            'EDR / antivirus de nouvelle génération',
+            'EDR — antivirus de nouvelle génération',
             "Plan de continuité d'activité (PCA) documenté",
             'Sensibilisation collaborateurs (formation phishing annuelle)',
           ],

@@ -38,14 +38,14 @@ export default function MediationPage() {
       <div className="container mx-auto max-w-3xl px-4 py-14">
         <article className="pilier-prose prose prose-lg max-w-none text-charcoal-700">
           <p className="text-lg">
-            Notre cabinet de courtage ORIAS s\'engage à traiter chaque réclamation avec rigueur et
+            Notre cabinet de courtage ORIAS s’engage à traiter chaque réclamation avec rigueur et
             célérité, conformément à la{' '}
             <strong>Recommandation ACPR 2024-R-02 du 2 juillet 2024</strong>.
           </p>
 
           <h2>1. Procédure interne (1ʳᵉ étape)</h2>
           <p>
-            En cas de désaccord ou d\'insatisfaction, nous vous invitons à nous contacter en premier
+            En cas de désaccord ou d’insatisfaction, nous vous invitons à nous contacter en premier
             lieu via notre service réclamations dédié :
           </p>
           <ul>
@@ -64,19 +64,19 @@ export default function MediationPage() {
             <li>
               <strong>Réponse sur le fond</strong> sous 2 mois maximum
             </li>
-            <li>Information à chaque étape de l\'avancement</li>
+            <li>Information à chaque étape de l’avancement</li>
             <li>Tentative de résolution amiable systématique</li>
           </ul>
 
           <h2>2. Médiation externe (2ᵉ étape)</h2>
           <p>
-            En cas de désaccord persistant après la procédure interne (ou si vous n\'obtenez pas de
+            En cas de désaccord persistant après la procédure interne (ou si vous n’obtenez pas de
             réponse dans les 2 mois), vous pouvez saisir gratuitement{' '}
-            <strong>la Médiation de l\'Assurance</strong>.
+            <strong>la Médiation de l’Assurance</strong>.
           </p>
 
           <div className="not-prose my-6 rounded-lg border border-charcoal-100 bg-sand-50 p-6">
-            <h3 className="mb-3 text-xl font-bold">La Médiation de l\'Assurance</h3>
+            <h3 className="mb-3 text-xl font-bold">La Médiation de l’Assurance</h3>
             <ul className="list-none space-y-2 pl-0">
               <li>
                 📨 <strong>Adresse :</strong> TSA 50110, 75441 Paris cedex 09
@@ -106,18 +106,16 @@ export default function MediationPage() {
 
           <h3>Conditions de saisine du Médiateur</h3>
           <ul>
-            <li>Vous avez d\'abord tenté un recours auprès de notre cabinet</li>
-            <li>Le litige n\'est pas encore porté devant un tribunal</li>
+            <li>Vous avez d’abord tenté un recours auprès de notre cabinet</li>
+            <li>Le litige n’est pas encore porté devant un tribunal</li>
             <li>Le litige date de moins de 2 ans</li>
-            <li>
-              Le litige porte sur l\'exécution ou l\'interprétation d\'un contrat d\'assurance
-            </li>
+            <li>Le litige porte sur l’exécution / l’interprétation d’un contrat d’assurance</li>
           </ul>
 
           <h2>3. Recours judiciaire (dernier recours)</h2>
           <p>
-            Si la médiation n\'aboutit pas, vous conservez le droit d\'intenter une action devant
-            les tribunaux français compétents.
+            Si la médiation n’aboutit pas, vous conservez le droit d’intenter une action devant les
+            tribunaux français compétents.
           </p>
 
           <h2>4. Autres recours</h2>

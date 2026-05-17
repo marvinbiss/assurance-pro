@@ -10,12 +10,12 @@ export const revalidate = 86400
 const SLUG = 'garantie-decennale-travaux'
 const TITLE = 'Garantie Décennale Travaux — Périmètre légal et exclusions'
 const TAGLINE =
-  'Quels travaux sont vraiment couverts par la décennale ? Loi Spinetta art. 1792 : structure + clos/couvert + équipements indissociables. Liste exhaustive.'
+  'Quels travaux sont vraiment couverts par la décennale ? Loi Spinetta art. 1792 : structure + clos ou couvert + équipements indissociables. Liste exhaustive.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Garantie décennale travaux : périmètre légal Loi Spinetta. Structure (maçonnerie, charpente), clos/couvert (toiture, façade), équipements indissociables. Exclusions claires.',
+    'Garantie décennale travaux : périmètre légal Loi Spinetta. Structure (maçonnerie, charpente), clos ou couvert (toiture, façade), équipements indissociables. Exclusions claires.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -119,7 +119,7 @@ export default function Page() {
                 <strong>Menuiseries extérieures</strong> : portes, fenêtres, baies vitrées
               </li>
               <li>
-                <strong>Plomberie encastrée</strong> : canalisations dans murs/dalle
+                <strong>Plomberie encastrée</strong> : canalisations dans murs ou dalle
               </li>
               <li>
                 <strong>Chauffage central</strong> : chaudière fixe, PAC, plancher chauffant
@@ -200,7 +200,7 @@ export default function Page() {
         },
         {
           q: 'Et la cuisine équipée ?',
-          a: 'Mobilier non-scellé (caissons amovibles, électroménager intégré démontable) : EXCLU décennale. Plomberie/électricité encastrée alimentant la cuisine : COUVERTE décennale. Plan de travail scellé : zone grise selon montage.',
+          a: 'Mobilier non-scellé (caissons amovibles, électroménager intégré démontable) : EXCLU décennale. Plomberie ou électricité encastrée alimentant la cuisine : COUVERTE décennale. Plan de travail scellé : zone grise selon montage.',
         },
         {
           q: 'Les panneaux photovoltaïques sont-ils couverts ?',

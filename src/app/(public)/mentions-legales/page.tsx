@@ -115,8 +115,8 @@ export default function MentionsLegalesPage() {
             Conformément aux articles L. 512-6 et L. 512-7 du Code des assurances, le cabinet
             dispose d&apos;une <strong>Garantie Financière</strong> et d&apos;une{' '}
             <strong>RCP</strong> auprès d&apos;un assureur agréé. Plafonds :{' '}
-            <strong>5 000 000 € par sinistre / 7 500 000 € par année</strong>
-            (au-delà du minimum légal de 1 850 000 € / 2 500 000 €).
+            <strong>5 000 000 € par sinistre — 7 500 000 € par année</strong>
+            (au-delà du minimum légal de 1 850 000 € ou 2 500 000 €).
           </p>
 
           <h2>7. Adhésion à une association professionnelle agréée</h2>

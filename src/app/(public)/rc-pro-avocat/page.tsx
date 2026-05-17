@@ -54,11 +54,11 @@ export default function RcProAvocatPage() {
               <p>
                 Le décret du 27 novembre 1991 (art. 205) impose à tout avocat une assurance RC Pro
                 couvrant les conséquences pécuniaires de la responsabilité civile encourue dans
-                l\'exercice de la profession. Le Règlement Intérieur National (RIN) précise les
-                minima de couverture, généralement 1,5M€ par sinistre et 6M€ par année d\'assurance.
+                l’exercice de la profession. Le Règlement Intérieur National (RIN) précise les
+                minima de couverture, généralement 1,5M€ par sinistre et 6M€ par année d’assurance.
               </p>
               <p>
-                Le défaut d\'assurance entraîne suspension du droit d\'exercer et poursuites
+                Le défaut d’assurance entraîne suspension du droit d’exercer et poursuites
                 disciplinaires devant le conseil de discipline du barreau.
               </p>
             </>
@@ -88,7 +88,7 @@ export default function RcProAvocatPage() {
                 <strong>Reprise du passé</strong>&nbsp;: faits antérieurs à la souscription
               </li>
               <li>
-                <strong>Garantie subséquente</strong>&nbsp;: 5-10 ans après cessation d\'activité
+                <strong>Garantie subséquente</strong>&nbsp;: 5-10 ans après cessation d’activité
               </li>
             </ul>
           ),
@@ -107,23 +107,23 @@ export default function RcProAvocatPage() {
               <tbody>
                 <tr>
                   <td className="border p-2">Avocat collaborateur</td>
-                  <td className="border p-2 text-right">600-1 200€/an</td>
-                  <td className="border p-2 text-right">1 200-2 200€/an</td>
+                  <td className="border p-2 text-right">600-1 200€ par an</td>
+                  <td className="border p-2 text-right">1 200-2 200€ par an</td>
                 </tr>
                 <tr>
                   <td className="border p-2">Avocat associé (cabinet 5-10 pers.)</td>
-                  <td className="border p-2 text-right">1 200-2 500€/an</td>
-                  <td className="border p-2 text-right">2 500-4 500€/an</td>
+                  <td className="border p-2 text-right">1 200-2 500€ par an</td>
+                  <td className="border p-2 text-right">2 500-4 500€ par an</td>
                 </tr>
                 <tr>
-                  <td className="border p-2">Avocat fiscaliste / affaires</td>
-                  <td className="border p-2 text-right">1 800-3 500€/an</td>
-                  <td className="border p-2 text-right">3 500-7 000€/an</td>
+                  <td className="border p-2">Avocat fiscaliste — affaires</td>
+                  <td className="border p-2 text-right">1 800-3 500€ par an</td>
+                  <td className="border p-2 text-right">3 500-7 000€ par an</td>
                 </tr>
                 <tr>
-                  <td className="border p-2">Cabinet d\'affaires international</td>
+                  <td className="border p-2">Cabinet d’affaires international</td>
                   <td className="border p-2 text-right">N/A</td>
-                  <td className="border p-2 text-right">8 000-25 000€/an</td>
+                  <td className="border p-2 text-right">8 000-25 000€ par an</td>
                 </tr>
               </tbody>
             </table>
@@ -141,7 +141,7 @@ export default function RcProAvocatPage() {
         },
         {
           q: 'Reprise du passé : pourquoi est-ce critique ?',
-          a: 'Les sinistres en RC Pro avocat émergent souvent des années après le conseil/intervention initial. La reprise du passé garantit que vous êtes couvert pour des faits antérieurs à la souscription du contrat actuel.',
+          a: 'Les sinistres en RC Pro avocat émergent souvent des années après le conseil ou intervention initial. La reprise du passé garantit que vous êtes couvert pour des faits antérieurs à la souscription du contrat actuel.',
         },
         {
           q: "Et après ma cessation d'activité ?",

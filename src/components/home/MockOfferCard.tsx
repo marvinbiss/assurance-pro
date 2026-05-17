@@ -44,7 +44,7 @@ export function MockOfferCard({ name, tag, price, recommended = false }: MockOff
           }`}
         >
           <span className="text-2xl">{price}</span>
-          <span className="text-xs opacity-70">/an</span>
+          <span className="text-xs opacity-70"> par an</span>
         </div>
       </div>
       {recommended && (

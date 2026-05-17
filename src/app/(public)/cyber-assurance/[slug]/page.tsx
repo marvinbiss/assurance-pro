@@ -19,8 +19,8 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   const v = getVille(params.slug)
   if (!v) return {}
   return {
-    title: `Cyber assurance ${v.nom} (${v.departementCode}) — TPE/PME RGPD`,
-    description: `Cyber assurance pour les TPE/PME de ${v.nom}. Couverture rançongiciels, fuite de données, sanctions CNIL, perte d'exploitation. À partir de ${CONFIG.priceFrom}. Devis gratuit ORIAS.`,
+    title: `Cyber assurance ${v.nom} (${v.departementCode}) — TPE / PME RGPD`,
+    description: `Cyber assurance pour les TPE / PME de ${v.nom}. Couverture rançongiciels, fuite de données, sanctions CNIL, perte d'exploitation. À partir de ${CONFIG.priceFrom}. Devis gratuit ORIAS.`,
     alternates: { canonical: `${SITE_URL}/${CONFIG.garantieSlug}/${v.slug}` },
   }
 }

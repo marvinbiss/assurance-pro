@@ -12,14 +12,14 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-decennale/charpentier'
-const TITLE = 'Décennale charpentier 2026 — Tarifs 690-1 320€/an AE (charpente bois/métal)'
+const TITLE = 'Décennale charpentier 2026 — Tarifs 690-1 320€ par an AE (charpente bois / métal)'
 const TAGLINE =
-  'La décennale obligatoire pour charpentier : couverture spécifique charpente traditionnelle/industrielle, fermettes, ossature bois, structures porteuses. Sinistralité AQC 10,1%.'
+  'La décennale obligatoire pour charpentier : couverture spécifique charpente traditionnelle ou industrielle, fermettes, ossature bois, structures porteuses. Sinistralité AQC 10,1%.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale charpentier 2026 : OBLIGATOIRE Loi Spinetta. Couverture charpente traditionnelle/industrielle bois, fermettes, ossature bois (MOB), traitement xylophages, ferrures. Sinistralité AQC 10,1%. Tarifs 690-1 320€/an AE, 7 200-14 800€/an SARL 5 sal.',
+    'Décennale charpentier 2026 : OBLIGATOIRE Loi Spinetta. Couverture charpente traditionnelle ou industrielle bois, fermettes, ossature bois (MOB), traitement xylophages, ferrures. Sinistralité AQC 10,1%. Tarifs 690-1 320€ par an AE, 7 200-14 800€ par an SARL 5 sal.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance décennale charpentier est OBLIGATOIRE pour tout artisan charpentier-bois ou charpentier-métallier en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 10,1% — 5e métier le plus sinistré du BTP. Sinistres principaux : malfaçons sur charpente traditionnelle (poutres, chevrons, pannes), défauts fermettes industrielles (calcul charges, contreventement), ossature bois (MOB) mal dimensionnée, traitement xylophages insuffisant, ferrures de jonction défaillantes. Tarifs 2026 : 690-1 320 €/an pour AE (CA <50k€), 7 200-14 800 €/an pour SARL avec 5 salariés."
+      intro="L'assurance décennale charpentier est OBLIGATOIRE pour tout artisan charpentier-bois ou charpentier-métallier en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 10,1% — 5e métier le plus sinistré du BTP. Sinistres principaux : malfaçons sur charpente traditionnelle (poutres, chevrons, pannes), défauts fermettes industrielles (calcul charges, contreventement), ossature bois (MOB) mal dimensionnée, traitement xylophages insuffisant, ferrures de jonction défaillantes. Tarifs 2026 : 690-1 320 € par an pour AE (CA <50k€), 7 200-14 800 € par an pour SARL avec 5 salariés."
       legalReference="Loi Spinetta + DTU 31.1 (charpente bois) + Eurocode 5 (calcul structures bois)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -46,17 +46,17 @@ export default function Page() {
         {
           icon: '🪵',
           title: 'Charpente bois + MOB',
-          desc: 'Couverture traditionnelle, fermettes industrielles, ossature bois (MOB), poteaux/poutres',
+          desc: 'Couverture traditionnelle, fermettes industrielles, ossature bois (MOB), poteaux ou poutres',
         },
         {
           icon: '🔩',
           title: 'Ferrures + traitement',
-          desc: 'Ferrures jonction métalliques + traitement xylophages (insectes/champignons) obligatoire',
+          desc: 'Ferrures jonction métalliques + traitement xylophages (insectes ou champignons) obligatoire',
         },
         {
           icon: '💰',
-          title: '690-1 320 €/an AE',
-          desc: 'AE charpentier CA <50k€. SARL 5 sal : 7 200-14 800€/an. Tarif majoré +40% vs peintre',
+          title: '690-1 320 € par an AE',
+          desc: 'AE charpentier CA <50k€. SARL 5 sal : 7 200-14 800€ par an. Tarif majoré +40% vs peintre',
         },
       ]}
       sections={[
@@ -84,8 +84,8 @@ export default function Page() {
                 </li>
               </ul>
               <p className="mt-3 border-l-4 border-amber-500 bg-amber-50 p-3">
-                <strong>Sinistre moyen 2024</strong> : 32 800 € (4e plus élevé BTP après
-                architectes/MdŒ/maçons). Coût élevé car charpente = élément structurel — sinistre =
+                <strong>Sinistre moyen 2024</strong> : 32 800 € (4e plus élevé BTP après architectes
+                ou MdŒ/maçons). Coût élevé car charpente = élément structurel — sinistre =
                 renforcement ou remplacement complet.
               </p>
             </div>
@@ -131,15 +131,15 @@ export default function Page() {
       faq={[
         {
           q: 'Charpentier-bois ET charpentier-métallier : même décennale ?',
-          a: "Non. Charpentier-bois et charpentier-métallier sont des métiers différents avec sinistralités différentes. Bois : AQC 10,1%, tarif 690-1 320€/an AE. Métal : AQC 7,8%, tarif 540-1 080€/an AE. Si vous faites les 2, prendre une décennale 'charpentier multi-matériaux' (sur-prime +15-25%).",
+          a: "Non. Charpentier-bois et charpentier-métallier sont des métiers différents avec sinistralités différentes. Bois : AQC 10,1%, tarif 690-1 320€ par an AE. Métal : AQC 7,8%, tarif 540-1 080€ par an AE. Si vous faites les 2, prendre une décennale 'charpentier multi-matériaux' (sur-prime +15-25%).",
         },
         {
           q: 'MOB (Maison Ossature Bois) : décennale spécifique ?',
-          a: "OUI souvent. La MOB cumule charpente + ossature murs + souvent isolation. Plusieurs assureurs proposent une décennale dédiée 'constructeur MOB' (April Pro Bois, SMABTP MOB). Tarif sur-prime +20-40% vs charpente traditionnelle, mais couverture complète y compris pare-pluie/pare-vapeur.",
+          a: "OUI souvent. La MOB cumule charpente + ossature murs + souvent isolation. Plusieurs assureurs proposent une décennale dédiée 'constructeur MOB' (April Pro Bois, SMABTP MOB). Tarif sur-prime +20-40% vs charpente traditionnelle, mais couverture complète y compris pare-pluie ou pare-vapeur.",
         },
         {
           q: 'Tarif décennale charpentier 2026 ?',
-          a: 'AE charpentier-bois (CA <50k€) : 690-1 320 €/an. EURL/SASU : 880-1 580 €/an. SARL 5 salariés : 7 200-14 800 €/an. SAS 10+ salariés : 14 800-24 000 €/an. Variables : type charpente (traditionnelle/MOB/fermettes), zone (région à termites Sud-Ouest +10%).',
+          a: 'AE charpentier-bois (CA <50k€) : 690-1 320 € par an. EURL ou SASU : 880-1 580 € par an. SARL 5 salariés : 7 200-14 800 € par an. SAS 10+ salariés : 14 800-24 000 € par an. Variables : type charpente (traditionnelle, MOB ou fermettes), zone (région à termites Sud-Ouest +10%).',
         },
         {
           q: 'Termites obligatoirement traités ?',

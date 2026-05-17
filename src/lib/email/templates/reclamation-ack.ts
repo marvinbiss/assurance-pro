@@ -10,10 +10,10 @@ import { esc, escSubject } from './_html'
 
 const CATEGORY_LABELS: Record<string, string> = {
   conseil: 'Devoir de conseil',
-  souscription: 'Souscription / Tarif',
+  souscription: 'Souscription — Tarif',
   sinistre: 'Gestion sinistre',
   resiliation: 'Résiliation',
-  facturation: 'Facturation / Cotisation',
+  facturation: 'Facturation — Cotisation',
   rgpd: 'Données personnelles (RGPD)',
   autre: 'Autre',
 }

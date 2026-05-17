@@ -17,7 +17,7 @@ import { TarifCalculator } from '../tarif-calculator'
 function extractPriceFromText(text: string | null): number {
   if (!text) return NaN
   // Format "1 200 € → 1 800 €/an" — récupérer 1er nombre
-  const cleaned = text.replace(/\s/g, '').replace(/[€/an→]/g, ' ')
+  const cleaned = text.replace(/\s/g, '').replace(/[€ par an→]/g, ' ')
   const match = cleaned.match(/\d+/g)
   if (!match || match.length === 0) return NaN
   return Number(match[0])
@@ -46,7 +46,7 @@ describe('TarifCalculator', () => {
 
   it('rend la verticale mutuelle-pro avec champs spécifiques (âge, niveau, ayants droit)', () => {
     render(<TarifCalculator garantie="mutuelle-pro" />)
-    expect(screen.getByText(/Mutuelle TNS \/ Pro — votre fourchette annuelle/i)).toBeInTheDocument()
+    expect(screen.getByText(/Mutuelle TNS — Pro — votre fourchette annuelle/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/Âge en années/i)).toBeInTheDocument()
     expect(screen.getByRole('radiogroup', { name: /Niveau de couverture/i })).toBeInTheDocument()
     expect(screen.getByRole('radiogroup', { name: /Ayants droit/i })).toBeInTheDocument()
@@ -55,7 +55,7 @@ describe('TarifCalculator', () => {
   it('rend la verticale vtc avec champs spécifiques (zone, permis, véhicule, plateforme)', () => {
     render(<TarifCalculator garantie="vtc" />)
     expect(
-      screen.getByText(/Assurance VTC \/ Taxi — votre fourchette annuelle/i)
+      screen.getByText(/Assurance VTC — Taxi — votre fourchette annuelle/i)
     ).toBeInTheDocument()
     expect(screen.getByRole('radiogroup', { name: /Zone d'exploitation/i })).toBeInTheDocument()
     expect(screen.getByLabelText(/Ancienneté du permis B en années/i)).toBeInTheDocument()
@@ -88,13 +88,13 @@ describe('TarifCalculator', () => {
     expect(screen.getByRole('radiogroup', { name: /Type de mission/i })).toBeInTheDocument()
   })
 
-  it('affiche un range "min → max" en euros avec /an', () => {
+  it('affiche un range "min → max" en euros avec par an', () => {
     render(<TarifCalculator garantie="rc-pro" />)
     // Le résultat est rendu dans un élément aria-live="polite"
     const result = document.querySelector('[aria-live="polite"]')
     expect(result).not.toBeNull()
     expect(result?.textContent).toMatch(/€/)
-    expect(result?.textContent).toMatch(/\/an/)
+    expect(result?.textContent).toMatch(/par an/)
   })
 
   it('le slider CA modifie le résultat (calcul recalculé)', () => {

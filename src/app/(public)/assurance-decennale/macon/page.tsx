@@ -13,14 +13,14 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-decennale/macon'
-const TITLE = 'Décennale maçon gros œuvre 2026 — Tarifs 720-1 380€/an AE'
+const TITLE = 'Décennale maçon gros œuvre 2026 — Tarifs 720-1 380€ par an AE'
 const TAGLINE =
   'La décennale obligatoire pour maçon gros œuvre : couverture spécifique fissures structurelles, fondations, dalles, murs porteurs. Sinistralité AQC 11,4% (top 4 BTP). Tarifs 2026 négociés.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale maçon 2026 : OBLIGATOIRE Loi Spinetta. Couverture fissures structurelles (top sinistre AQC 11,4%), fondations, dalles béton, murs porteurs. Tarifs 720-1 380€/an AE, 7 800-15 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
+    'Décennale maçon 2026 : OBLIGATOIRE Loi Spinetta. Couverture fissures structurelles (top sinistre AQC 11,4%), fondations, dalles béton, murs porteurs. Tarifs 720-1 380€ par an AE, 7 800-15 000€ par an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -31,7 +31,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance décennale maçon gros œuvre est OBLIGATOIRE pour tout artisan maçon en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 11,4% — 4e métier le plus sinistré du BTP, principalement sur les fissures structurelles (apparition 3-7 ans après réception), défauts de fondations, dalles béton fissurées et murs porteurs sous-dimensionnés. Sinistre moyen : 28 500 € (le plus élevé du BTP après les charpentiers). Tarifs 2026 : 720-1 380 €/an pour un AE (CA <50k€), 7 800-15 000 €/an pour SARL avec 5 salariés."
+      intro="L'assurance décennale maçon gros œuvre est OBLIGATOIRE pour tout artisan maçon en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 11,4% — 4e métier le plus sinistré du BTP, principalement sur les fissures structurelles (apparition 3-7 ans après réception), défauts de fondations, dalles béton fissurées et murs porteurs sous-dimensionnés. Sinistre moyen : 28 500 € (le plus élevé du BTP après les charpentiers). Tarifs 2026 : 720-1 380 € par an pour un AE (CA <50k€), 7 800-15 000 € par an pour SARL avec 5 salariés."
       legalReference="Loi Spinetta — art. L. 241-1 C. assur. + DTU 20.1 (maçonnerie béton)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -56,8 +56,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '720-1 380 €/an AE',
-          desc: 'AE maçon CA <50k€. SARL 5 sal : 7 800-15 000€/an. Tarif majoré +30% vs peintre',
+          title: '720-1 380 € par an AE',
+          desc: 'AE maçon CA <50k€. SARL 5 sal : 7 800-15 000€ par an. Tarif majoré +30% vs peintre',
         },
       ]}
       sections={[
@@ -130,7 +130,7 @@ export default function Page() {
       faq={[
         {
           q: 'Décennale maçon obligatoire ?',
-          a: "OUI absolument. Loi Spinetta s'applique à tous les artisans réalisant des ouvrages immobiliers (maçonnerie = ouvrage par excellence). Sanctions absence : 75 000 € + 6 mois prison + interdiction d'exercer + responsabilité civile/pénale personnelle.",
+          a: "OUI absolument. Loi Spinetta s'applique à tous les artisans réalisant des ouvrages immobiliers (maçonnerie = ouvrage par excellence). Sanctions absence : 75 000 € + 6 mois prison + interdiction d'exercer + responsabilité civile ou pénale personnelle.",
         },
         {
           q: 'Pourquoi tarif maçon plus élevé ?',
@@ -142,7 +142,7 @@ export default function Page() {
         },
         {
           q: 'Tarif décennale maçon 2026 ?',
-          a: 'AE maçon (CA <50k€) : 720-1 380 €/an. EI : 760-1 450 €/an. EURL/SASU : 980-1 880 €/an. SARL 5 salariés : 7 800-15 000 €/an. SAS 10 salariés : 15 000-24 000 €/an.',
+          a: 'AE maçon (CA <50k€) : 720-1 380 € par an. EI : 760-1 450 € par an. EURL ou SASU : 980-1 880 € par an. SARL 5 salariés : 7 800-15 000 € par an. SAS 10 salariés : 15 000-24 000 € par an.',
         },
       ]}
     />

@@ -4,14 +4,14 @@ import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-default
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Mutuelle TNS / Pro Madelin — Comparez 8 mutuelles',
+  title: 'Mutuelle TNS — Pro Madelin — Comparez 8 mutuelles',
   description:
     'Comparez votre mutuelle santé pro auprès de 8 mutuelles. TNS, dirigeants, freelances. Loi Madelin déductible.',
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/mutuelle-pro`,
   },
   openGraph: {
-    title: 'Mutuelle TNS / Pro Madelin — Comparez 8 mutuelles',
+    title: 'Mutuelle TNS — Pro Madelin — Comparez 8 mutuelles',
     description:
       'Comparez votre mutuelle santé pro auprès de 8 mutuelles. TNS, dirigeants, freelances. Loi Madelin déductible.',
     url: `${SITE_URL}/mutuelle-pro`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mutuelle TNS / Pro Madelin — Comparez 8 mutuelles',
+    title: 'Mutuelle TNS — Pro Madelin — Comparez 8 mutuelles',
     description:
       'Comparez votre mutuelle santé pro auprès de 8 mutuelles. TNS, dirigeants, freelances. Loi Madelin déductible.',
   },
@@ -29,7 +29,7 @@ export default function MutuelleProPage() {
   return (
     <PilierLayout
       slug="mutuelle-pro"
-      title="Mutuelle TNS / Pro — Loi Madelin"
+      title="Mutuelle TNS — Pro — Loi Madelin"
       tagline="Une couverture santé adaptée aux travailleurs non-salariés et dirigeants. Cotisations 100% déductibles fiscalement (Loi Madelin)."
       legalReference="Loi Madelin du 11 février 1994 — art. 154 bis CGI"
       socialProofStats={STATS_DEFAULT}
@@ -47,9 +47,9 @@ export default function MutuelleProPage() {
           body: (
             <ul>
               <li>Auto-entrepreneurs (micro-entrepreneurs)</li>
-              <li>Entrepreneurs Individuels (EI), EURL en BIC/BNC</li>
+              <li>Entrepreneurs Individuels (EI), EURL en BIC ou BNC</li>
               <li>Gérants majoritaires de SARL</li>
-              <li>Présidents non rémunérés de SAS / SASU</li>
+              <li>Présidents non rémunérés de SAS — SASU</li>
               <li>Professions libérales (médecins, avocats, consultants…)</li>
               <li>Conjoints collaborateurs</li>
             </ul>
@@ -89,8 +89,8 @@ export default function MutuelleProPage() {
                 <tr>
                   <td className="border p-2">Médecines douces</td>
                   <td className="border p-2 text-right">—</td>
-                  <td className="border p-2 text-right">200€/an</td>
-                  <td className="border p-2 text-right">400€/an</td>
+                  <td className="border p-2 text-right">200€ par an</td>
+                  <td className="border p-2 text-right">400€ par an</td>
                 </tr>
                 <tr>
                   <td className="border p-2">Cotisation mensuelle (40 ans)</td>
@@ -110,14 +110,14 @@ export default function MutuelleProPage() {
               <ul>
                 <li>
                   <strong>3,75% du PASS</strong> (1 743€ en 2026) + <strong>7% du PASS</strong> (3
-                  254€) si bénéfice imposable, soit <strong>4 997€/an maximum</strong>
+                  254€) si bénéfice imposable, soit <strong>4 997€ par an maximum</strong>
                 </li>
               </ul>
               <p>
-                <strong>Exemple chiffré</strong>&nbsp;: vous cotisez 1 800€/an pour votre mutuelle
-                TNS. Avec un taux marginal d\'imposition (TMI) de 30%, vous économisez{' '}
-                <strong>540€ d\'impôts</strong>. Votre coût réel net est donc de 1 260€/an, soit
-                105€/mois.
+                <strong>Exemple chiffré</strong>&nbsp;: vous cotisez 1 800€ par an pour votre
+                mutuelle TNS. Avec un taux marginal d’imposition (TMI) de 30%, vous économisez{' '}
+                <strong>540€ d’impôts</strong>. Votre coût réel net est donc de 1 260€ par an, soit
+                105€ par mois.
               </p>
             </>
           ),
@@ -130,7 +130,7 @@ export default function MutuelleProPage() {
         },
         {
           q: 'Auto-entrepreneur : Madelin est-il intéressant ?',
-          a: 'Pour les AE en micro, la Loi Madelin n\'est PAS applicable car vous êtes au régime micro-fiscal (pas de bénéfice imposable). Mieux vaut une mutuelle "santé indépendant" non-Madelin, souvent moins chère.',
+          a: 'Pour les AE en micro, la Loi Madelin n’est PAS applicable car vous êtes au régime micro-fiscal (pas de bénéfice imposable). Mieux vaut une mutuelle "santé indépendant" non-Madelin, souvent moins chère.',
         },
         {
           q: 'Puis-je inclure ma famille ?',

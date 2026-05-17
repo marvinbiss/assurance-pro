@@ -86,13 +86,17 @@ export function scoreLead(input: LeadInput): LeadScore {
       breakdown.push({ factor: 'revenue', weight: 20, reason: 'CA > 1M€ (SAS PME)' })
       score += 20
     } else if (ca >= 300_000) {
-      breakdown.push({ factor: 'revenue', weight: 15, reason: 'CA 300k-1M€ (SARL/SAS établie)' })
+      breakdown.push({ factor: 'revenue', weight: 15, reason: 'CA 300k-1M€ (SARL ou SAS établie)' })
       score += 15
     } else if (ca >= 100_000) {
-      breakdown.push({ factor: 'revenue', weight: 10, reason: 'CA 100-300k€ (SARL/EURL active)' })
+      breakdown.push({
+        factor: 'revenue',
+        weight: 10,
+        reason: 'CA 100-300k€ (SARL ou EURL active)',
+      })
       score += 10
     } else if (ca >= 30_000) {
-      breakdown.push({ factor: 'revenue', weight: 5, reason: 'CA 30-100k€ (AE/EURL débutant)' })
+      breakdown.push({ factor: 'revenue', weight: 5, reason: 'CA 30-100k€ (AE ou EURL débutant)' })
       score += 5
     } else {
       breakdown.push({ factor: 'revenue', weight: 0, reason: 'CA < 30k€ (low ticket)' })
@@ -108,13 +112,13 @@ export function scoreLead(input: LeadInput): LeadScore {
     breakdown.push({ factor: 'legalStatus', weight: 8, reason: 'SARL multi-associés' })
     score += 8
   } else if (legal.includes('sasu') || legal.includes('eurl')) {
-    breakdown.push({ factor: 'legalStatus', weight: 5, reason: 'SASU/EURL (small business)' })
+    breakdown.push({ factor: 'legalStatus', weight: 5, reason: 'SASU ou EURL (small business)' })
     score += 5
   } else if (legal.includes('ae') || legal.includes('micro')) {
     breakdown.push({
       factor: 'legalStatus',
       weight: 2,
-      reason: 'AE / micro-entreprise (low ticket)',
+      reason: 'AE — micro-entreprise (low ticket)',
     })
     score += 2
   }
@@ -145,7 +149,7 @@ export function scoreLead(input: LeadInput): LeadScore {
       breakdown.push({ factor: 'employees', weight: 12, reason: '20+ salariés (PME)' })
       score += 12
     } else if (input.employeeCount >= 5) {
-      breakdown.push({ factor: 'employees', weight: 6, reason: '5-19 salariés (TPE/PME)' })
+      breakdown.push({ factor: 'employees', weight: 6, reason: '5-19 salariés (TPE ou PME)' })
       score += 6
     }
   }

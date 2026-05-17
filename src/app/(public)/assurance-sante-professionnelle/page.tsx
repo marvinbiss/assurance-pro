@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-sante-professionnelle'
 const TITLE = 'Assurance santé professionnelle — Mutuelle pour indépendants 2026'
 const TAGLINE =
-  "L'assurance santé pour les professionnels indépendants : mutuelle TNS Madelin, panier optique/dentaire renforcé, médecines douces, hospitalisation. Conseil ORIAS."
+  "L'assurance santé pour les professionnels indépendants : mutuelle TNS Madelin, panier optique ou dentaire renforcé, médecines douces, hospitalisation. Conseil ORIAS."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Assurance santé professionnelle pour indépendants : mutuelle TNS Madelin déductible, optique 100% Santé+, dentaire renforcé, médecines douces, hospitalisation jusqu'à 400% BR. Comparatif April, MMA, Generali, Aon. Tarifs 32-220€/mois. Devis ORIAS sous 24h.",
+    "Assurance santé professionnelle pour indépendants : mutuelle TNS Madelin déductible, optique 100% Santé+, dentaire renforcé, médecines douces, hospitalisation jusqu'à 400% BR. Comparatif April, MMA, Generali, Aon. Tarifs 32-220€ par mois. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance santé professionnelle (mutuelle TNS) est la complémentaire santé spécialisée pour les Travailleurs Non Salariés (TNS) : artisans, commerçants, professions libérales, gérants majoritaires de SARL, EI, EURL. Sa particularité : cotisations DÉDUCTIBLES du bénéfice imposable au titre de la Loi Madelin (article 154 bis CGI), pouvant représenter jusqu'à ~5 800€/an d'économie fiscale pour un TNS dégageant 60 k€ de bénéfice. Distincte de l'assurance santé d'entreprise (mutuelle COLLECTIVE pour SALARIÉS), elle s'adresse au DIRIGEANT et au PRO INDÉPENDANT lui-même. Tarifs 2026 : 32-220 €/mois selon profil. Cette page renvoie vers nos piliers spécialisés selon votre métier."
+      intro="L'assurance santé professionnelle (mutuelle TNS) est la complémentaire santé spécialisée pour les Travailleurs Non Salariés (TNS) : artisans, commerçants, professions libérales, gérants majoritaires de SARL, EI, EURL. Sa particularité : cotisations DÉDUCTIBLES du bénéfice imposable au titre de la Loi Madelin (article 154 bis CGI), pouvant représenter jusqu'à ~5 800€ par an d'économie fiscale pour un TNS dégageant 60 k€ de bénéfice. Distincte de l'assurance santé d'entreprise (mutuelle COLLECTIVE pour SALARIÉS), elle s'adresse au DIRIGEANT et au PRO INDÉPENDANT lui-même. Tarifs 2026 : 32-220 € par mois selon profil. Cette page renvoie vers nos piliers spécialisés selon votre métier."
       legalReference="Article 154 bis du CGI — Loi Madelin du 11 février 1994"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -39,7 +39,7 @@ export default function Page() {
         {
           icon: '💰',
           title: 'Madelin déductible',
-          desc: "Jusqu'à 5 800€/an déduits du bénéfice (60k€ bénéfice). Économie nette ~1 750€/an",
+          desc: "Jusqu'à 5 800€ par an déduits du bénéfice (60k€ bénéfice). Économie nette ~1 750€ par an",
         },
         {
           icon: '🩺',
@@ -73,7 +73,7 @@ export default function Page() {
                   <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                     Mutuelle pro BTP
                   </Link>{' '}
-                  — comparatif PRO BTP, April BTP, Harmonie BTP (16k vol/mois)
+                  — comparatif PRO BTP, April BTP, Harmonie BTP (16k vol par mois)
                 </li>
                 <li>
                   <Link href="/assurance-sante-entreprise" className="text-primary-600 underline">
@@ -105,7 +105,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une mutuelle TNS en 2026 ?',
-          a: "32-220€/mois selon profil. Voir notre pilier complet <a href='/mutuelle-tns' class='text-primary-600 underline'>/mutuelle-tns</a> avec tableau de tarifs détaillé par profil (artisan, consultant, profession libérale, dirigeant).",
+          a: "32-220€ par mois selon profil. Voir notre pilier complet <a href='/mutuelle-tns' class='text-primary-600 underline'>/mutuelle-tns</a> avec tableau de tarifs détaillé par profil (artisan, consultant, profession libérale, dirigeant).",
         },
         {
           q: 'Plus de détails ?',

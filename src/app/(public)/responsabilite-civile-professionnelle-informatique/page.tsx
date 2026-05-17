@@ -20,7 +20,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Responsabilité Civile Professionnelle informatique : guide expert pour pros IT. Plafond 1-10M€, postériorité 10 ans, cyber-assurance combinée. Tarifs 95-15 000€/an.',
+    'Responsabilité Civile Professionnelle informatique : guide expert pour pros IT. Plafond 1-10M€, postériorité 10 ans, cyber-assurance combinée. Tarifs 95-15 000€ par an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -51,7 +51,7 @@ export default function Page() {
         {
           icon: '🛡️',
           title: 'Plafond 1-10M€',
-          desc: 'AE 1M€ • SARL/SAS 2-5M€ • ESN PME 5-10M€ • cybersécurité spé 10M€+',
+          desc: 'AE 1M€ • SARL ou SAS 2-5M€ • ESN PME 5-10M€ • cybersécurité spé 10M€+',
         },
         {
           icon: '⏰',
@@ -65,8 +65,8 @@ export default function Page() {
           body: (
             <>
               <p>
-                La RC Pro informatique génère <strong>1 300€/clic Google Ads</strong> — le CPC le
-                plus élevé du marché assurance pro. Raisons :
+                La RC Pro informatique génère <strong>1 300€ par clic Google Ads</strong> — le CPC
+                le plus élevé du marché assurance pro. Raisons :
               </p>
               <ul>
                 <li>
@@ -84,8 +84,8 @@ export default function Page() {
                   friction
                 </li>
                 <li>
-                  <strong>Volume modéré mais qualifié</strong> : 100 recherches/mois mais quasi-100%
-                  intent commercial fort
+                  <strong>Volume modéré mais qualifié</strong> : 100 recherches par mois mais
+                  quasi-100% intent commercial fort
                 </li>
               </ul>
             </>
@@ -96,8 +96,8 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Développement</strong> : web (frontend + backend), mobile, embarqué, IA/ML,
-                jeux vidéo
+                <strong>Développement</strong> : web (frontend + backend), mobile, embarqué, IA ou
+                ML, jeux vidéo
               </li>
               <li>
                 <strong>Conseil IT</strong> : architecture SI, transformation digitale, audit,
@@ -117,13 +117,13 @@ export default function Page() {
                 <strong>Agence web</strong> : sites e-commerce, sites vitrines, refonte, SEO, ads
               </li>
               <li>
-                <strong>Design</strong> : UX/UI, design system, prototypage
+                <strong>Design</strong> : UX ou UI, design system, prototypage
               </li>
               <li>
                 <strong>Formation IT</strong> : bootcamps, formations sur-mesure, certifications
               </li>
               <li>
-                <strong>ESN / SSII</strong> : prestations multi-clients, régie, forfait
+                <strong>ESN — SSII</strong> : prestations multi-clients, régie, forfait
               </li>
             </ul>
           ),
@@ -145,11 +145,11 @@ export default function Page() {
                 assuré).
               </li>
               <li>
-                <strong>Code open source mal licencié</strong> : si vous utilisez GPL/AGPL sans
+                <strong>Code open source mal licencié</strong> : si vous utilisez GPL ou AGPL sans
                 respecter conditions → exclusion possible.
               </li>
               <li>
-                <strong>Données médicales / financières spécifiques</strong> : extensions dédiées
+                <strong>Données médicales — financières spécifiques</strong> : extensions dédiées
                 requises (souvent activité réglementée).
               </li>
               <li>
@@ -168,12 +168,12 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Hiscox</strong> : leader services intellectuels IT. Best price AE
-                (95-220€/an), postériorité 10 ans (unique), plafond jusqu&apos;à 10M€.
-                Cyber-assurance combinée excellente.
+                <strong>Hiscox</strong> : leader services intellectuels IT. Best price AE (95-220€
+                par an), postériorité 10 ans (unique), plafond jusqu&apos;à 10M€. Cyber-assurance
+                combinée excellente.
               </li>
               <li>
-                <strong>Stello</strong> : challenger digital pure. Best AE (90-200€/an), 100%
+                <strong>Stello</strong> : challenger digital pure. Best AE (90-200€ par an), 100%
                 online, postériorité 5 ans. Cyber-assurance limitée.
               </li>
               <li>
@@ -182,11 +182,11 @@ export default function Page() {
               </li>
               <li>
                 <strong>Allianz Pro</strong> : couverture large multi-secteurs, postériorité 5 ans.
-                Bon rapport prix/garanties SARL/SAS.
+                Bon rapport prix ou garanties SARL ou SAS.
               </li>
               <li>
                 <strong>Beazley</strong> : spécialiste cybersécurité haut de gamme. Pour ESN /
-                hébergeurs / data players avec besoins 5M€+. Cher mais best of class.
+                hébergeurs ou data players avec besoins 5M€+. Cher mais best of class.
               </li>
             </ul>
           ),
@@ -195,11 +195,11 @@ export default function Page() {
       faq={[
         {
           q: 'Pourquoi la RC Pro IT a-t-elle le CPC le plus élevé en France ?',
-          a: 'Combinaison : 1) Sinistres potentiellement catastrophiques (30k-5M€ par incident), 2) Marché ultra-concurrentiel (50+ assureurs), 3) LTV client élevée (renouvellements + cyber-assurance combinée), 4) Pros IT décident vite (conversion forte). CPC Google Ads atteint 1 300€/clic.',
+          a: 'Combinaison : 1) Sinistres potentiellement catastrophiques (30k-5M€ par incident), 2) Marché ultra-concurrentiel (50+ assureurs), 3) LTV client élevée (renouvellements + cyber-assurance combinée), 4) Pros IT décident vite (conversion forte). CPC Google Ads atteint 1 300€ par clic.',
         },
         {
           q: 'Quelle est la meilleure RC Pro pour un freelance dev ?',
-          a: 'Hiscox = best pour AE dev (95-180€/an, postériorité 10 ans, plafond 1M€). Stello = challenger digital pure 100% en ligne (90-200€/an, postériorité 5 ans). Pour SARL/SAS &gt; 100k€ CA : Allianz Pro ou Generali Pro souvent mieux placés.',
+          a: 'Hiscox = best pour AE dev (95-180€ par an, postériorité 10 ans, plafond 1M€). Stello = challenger digital pure 100% en ligne (90-200€ par an, postériorité 5 ans). Pour SARL ou SAS &gt; 100k€ CA : Allianz Pro ou Generali Pro souvent mieux placés.',
         },
         {
           q: 'Cyber-assurance vraiment indispensable pour un pro IT ?',
@@ -207,7 +207,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une RC Pro pour une ESN de 20 consultants ?',
-          a: 'ESN moyenne (20 consultants, CA 2-5M€) : 2 500-8 000€/an RC Pro chez Hiscox ou Allianz Pro, plafond 3-5M€. Ajouter cyber-assurance : +2 000-10 000€/an. Pack global négocié : -15-25% via courtier ORIAS spécialisé IT.',
+          a: 'ESN moyenne (20 consultants, CA 2-5M€) : 2 500-8 000€ par an RC Pro chez Hiscox ou Allianz Pro, plafond 3-5M€. Ajouter cyber-assurance : +2 000-10 000€ par an. Pack global négocié : -15-25% via courtier ORIAS spécialisé IT.',
         },
       ]}
       relatedMetiers={[

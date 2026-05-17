@@ -89,8 +89,8 @@ export default function Page() {
                 en ligne avancée, tarif compétitif &gt;5 véhicules.
               </li>
               <li>
-                <strong>MMA Flotte BTP</strong> : spécialiste BTP également, bon rapport
-                prix/services pour SARL/SAS 3-15 véhicules.
+                <strong>MMA Flotte BTP</strong> : spécialiste BTP également, bon rapport prix ou
+                services pour SARL ou SAS 3-15 véhicules.
               </li>
               <li>
                 <strong>AXA Flotte Pro</strong> : couverture étendue, assistance haut de gamme,
@@ -112,11 +112,11 @@ export default function Page() {
                 moyen (vs N comptes individuels)
               </li>
               <li>
-                <strong>Telematics / boîtier</strong> : -10-20% prime si conduite vertueuse trackée
+                <strong>Telematics — boîtier</strong> : -10-20% prime si conduite vertueuse trackée
               </li>
               <li>
-                <strong>Augmenter franchise par sinistre</strong> : -15-20% prime à 1 500-3
-                000€/sinistre
+                <strong>Augmenter franchise par sinistre</strong> : -15-20% prime à 1 500-3 000€ par
+                sinistre
               </li>
               <li>
                 <strong>Pack BTP global</strong> : mutuelle + auto + décennale + multirisque =

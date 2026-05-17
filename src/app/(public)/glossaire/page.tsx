@@ -51,7 +51,7 @@ const TERMS: Term[] = [
   {
     term: 'Auto-entrepreneur (micro-entrepreneur)',
     definition:
-      "Statut juridique simplifié permettant d'exercer une activité indépendante. L'obligation de souscription d'assurance pro (décennale, RC Pro selon métier) s'applique aussi à l'auto-entrepreneur. Plafond CA 2026 : 77 700 € (services) / 188 700 € (vente).",
+      "Statut juridique simplifié permettant d'exercer une activité indépendante. L'obligation de souscription d'assurance pro (décennale, RC Pro selon métier) s'applique aussi à l'auto-entrepreneur. Plafond CA 2026 : 77 700 € (services) — 188 700 € (vente).",
     related: ['Loi Madelin'],
   },
   {
@@ -87,7 +87,7 @@ const TERMS: Term[] = [
   {
     term: 'Devoir de conseil (DDA art. L. 521-4)',
     definition:
-      'Obligation pour le courtier de recueillir les exigences et besoins du client AVANT toute souscription, et de formuler une recommandation personnalisée motivée par écrit. La Reco ACPR 2024-R-03 (applicable 31/12/2025) durcit la traçabilité.',
+      'Obligation pour le courtier de recueillir les exigences et besoins du client AVANT toute souscription, et de formuler une recommandation personnalisée motivée par écrit. La Reco ACPR 2024-R-03 (applicable 31 décembre 2025) durcit la traçabilité.',
     related: ['DDA'],
   },
   {
@@ -136,13 +136,13 @@ const TERMS: Term[] = [
   {
     term: 'Loi Madelin',
     definition:
-      'Loi du 11 février 1994 (art. 154 bis CGI) permettant aux TNS (travailleurs non salariés) de déduire fiscalement les cotisations de mutuelle, prévoyance et retraite. Plafond 2026 : 4 997 €/an.',
+      'Loi du 11 février 1994 (art. 154 bis CGI) permettant aux TNS (travailleurs non salariés) de déduire fiscalement les cotisations de mutuelle, prévoyance et retraite. Plafond 2026 : 4 997 € par an.',
     related: ['Mutuelle TNS'],
   },
   {
     term: 'Loi Naegelen',
     definition:
-      'Loi du 24 juillet 2020 + décret 2022-34. Encadre le démarchage téléphonique : autorisé uniquement lundi-vendredi 10h-13h et 14h-20h, max 4 appels/mois/personne, intégration Bloctel obligatoire.',
+      'Loi du 24 juillet 2020 + décret 2022-34. Encadre le démarchage téléphonique : autorisé uniquement lundi-vendredi 10h-13h et 14h-20h, max 4 appels par mois par personne, intégration Bloctel obligatoire.',
   },
   {
     term: 'Loi Spinetta',
@@ -174,7 +174,7 @@ const TERMS: Term[] = [
   {
     term: 'ORIAS',
     definition:
-      'Registre Unique des Intermédiaires en Assurance, Banque et Finance. Tout courtier en assurance doit y être immatriculé (art. L. 512-1 C. assur.). Vérifiable sur orias.fr. Cliquabilité obligatoire sur les sites courtiers (arrêté 6/12/2022).',
+      'Registre Unique des Intermédiaires en Assurance, Banque et Finance. Tout courtier en assurance doit y être immatriculé (art. L. 512-1 C. assur.). Vérifiable sur orias.fr. Cliquabilité obligatoire sur les sites courtiers (arrêté 6 décembre 2022).',
     related: ['ACPR', 'CSCA'],
   },
   {
@@ -185,7 +185,7 @@ const TERMS: Term[] = [
   {
     term: "Prime d'assurance",
     definition:
-      "Cotisation versée par l'assuré à l'assureur en contrepartie de la couverture. Calculée selon le risque, le profil, les garanties choisies. Payable en une fois (annuelle) ou fractionnée (mensuelle / trimestrielle).",
+      "Cotisation versée par l'assuré à l'assureur en contrepartie de la couverture. Calculée selon le risque, le profil, les garanties choisies. Payable en une fois (annuelle) ou fractionnée (mensuelle — trimestrielle).",
   },
   {
     term: 'Profession réglementée',
@@ -198,9 +198,9 @@ const TERMS: Term[] = [
       "Reçu fiscal délivré par l'assureur après paiement de la prime, attestant que la couverture est active pour la période. Document à conserver pour la déduction fiscale (BIC, BNC).",
   },
   {
-    term: 'Ratio S/P (Sinistres/Primes)',
+    term: 'Ratio S/P (Sinistres ou Primes)',
     definition:
-      "Indicateur calculé par les assureurs : montant des sinistres payés / primes encaissées. Si > 100%, l'assureur est en perte. Détermine le tarif applicable l'année suivante (surprime, refus).",
+      "Indicateur calculé par les assureurs : montant des sinistres payés — primes encaissées. Si > 100%, l'assureur est en perte. Détermine le tarif applicable l'année suivante (surprime, refus).",
   },
   {
     term: 'RC Exploitation',
@@ -216,7 +216,7 @@ const TERMS: Term[] = [
   {
     term: 'RCP renforcée (courtier)',
     definition:
-      "Responsabilité Civile Professionnelle obligatoire pour les courtiers ORIAS (art. L. 512-6 C. assur.). Plafond minimum 1,85M€ par sinistre / 2,5M€ par an. Notre cabinet est doté d'une RCP renforcée 5M€/7,5M€.",
+      "Responsabilité Civile Professionnelle obligatoire pour les courtiers ORIAS (art. L. 512-6 C. assur.). Plafond minimum 1,85M€ par sinistre — 2,5M€ par an. Notre cabinet est doté d'une RCP renforcée 5M€ ou 7,5M€.",
   },
   {
     term: 'Réception (des travaux)',
@@ -227,13 +227,13 @@ const TERMS: Term[] = [
   {
     term: 'Recommandation ACPR 2024-R-02',
     definition:
-      'Recommandation du 2 juillet 2024 sur le traitement des réclamations. Applicable au 31/12/2025. Impose accusé réception 10 jours, réponse fond 2 mois, registre + reporting interne mensuel.',
+      'Recommandation du 2 juillet 2024 sur le traitement des réclamations. Applicable au 31 décembre 2025. Impose accusé réception 10 jours, réponse fond 2 mois, registre + reporting interne mensuel.',
     related: ['ACPR'],
   },
   {
     term: 'Recommandation ACPR 2024-R-03',
     definition:
-      'Recommandation du 21 novembre 2024 sur le recueil des informations relatives au client (devoir de conseil DDA). Applicable au 31/12/2025. Durcit la traçabilité du conseil personnalisé.',
+      'Recommandation du 21 novembre 2024 sur le recueil des informations relatives au client (devoir de conseil DDA). Applicable au 31 décembre 2025. Durcit la traçabilité du conseil personnalisé.',
     related: ['DDA', 'Devoir de conseil'],
   },
   {

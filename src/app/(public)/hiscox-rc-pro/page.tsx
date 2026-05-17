@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'hiscox-rc-pro'
 const TITLE = 'Hiscox RC Pro — Avis, garanties, tarifs et alternatives 2026'
 const TAGLINE =
-  'Hiscox est l&apos;un des leaders RC Pro en France pour les pros services intellectuels. Analyse des garanties, tarifs 95-1 200€/an et comparatif avec Stello, Allianz Pro, MMA.'
+  'Hiscox est l&apos;un des leaders RC Pro en France pour les pros services intellectuels. Analyse des garanties, tarifs 95-1 200€ par an et comparatif avec Stello, Allianz Pro, MMA.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Hiscox RC Pro : leader assurance pros services intellectuels. Plafond 1-5M€, postériorité 10 ans, tarif 95€/an (AE freelance) à 1 200€/an (SARL). Comparatif honnête.',
+    'Hiscox RC Pro : leader assurance pros services intellectuels. Plafond 1-5M€, postériorité 10 ans, tarif 95€ par an (AE freelance) à 1 200€ par an (SARL). Comparatif honnête.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Hiscox est un groupe d'assurance britannique présent en France depuis 1993, spécialisé dans les RC Pro pour les services intellectuels (consultants, freelances, agences digitales, IT, professions libérales). Reconnu pour ses plafonds élevés (1-10M€), sa postériorité de 10 ans (exceptionnelle), et son service de gestion sinistres rapide. Tarifs compétitifs sur les profils AE / freelances jeunes. Cette page analyse l'offre Hiscox RC Pro, ses points forts/faibles, et la compare avec Stello, Allianz Pro, MMA Pro."
+      intro="Hiscox est un groupe d'assurance britannique présent en France depuis 1993, spécialisé dans les RC Pro pour les services intellectuels (consultants, freelances, agences digitales, IT, professions libérales). Reconnu pour ses plafonds élevés (1-10M€), sa postériorité de 10 ans (exceptionnelle), et son service de gestion sinistres rapide. Tarifs compétitifs sur les profils AE — freelances jeunes. Cette page analyse l'offre Hiscox RC Pro, ses points forts ou faibles, et la compare avec Stello, Allianz Pro, MMA Pro."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -49,7 +49,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '95-1 200€/an',
+          title: '95-1 200€ par an',
           desc: 'AE freelance services 95-180€ • SARL services 350-800€ • PME 800-1 200€',
         },
         {
@@ -85,7 +85,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Tarif compétitif AE freelance</strong> : best price avec Stello sur ce
-                segment (95-180€/an).
+                segment (95-180€ par an).
               </li>
             </ul>
           ),
@@ -95,8 +95,8 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Tarifs élevés sur PME/grandes structures</strong> : à partir de SARL avec CA
-                &gt; 200k€, Hiscox devient plus cher que MMA Pro ou Generali Pro (+15-25%).
+                <strong>Tarifs élevés sur PME ou grandes structures</strong> : à partir de SARL avec
+                CA &gt; 200k€, Hiscox devient plus cher que MMA Pro ou Generali Pro (+15-25%).
               </li>
               <li>
                 <strong>Pas de couverture BTP</strong> : Hiscox ne fait pas de décennale ni de RC
@@ -126,16 +126,17 @@ export default function Page() {
                 de plafonds élevés et postériorité 10 ans. Cher sur PME.
               </li>
               <li>
-                <strong>Stello</strong> : challenger pure-digital. Best price sur AE/freelance
-                (90-160€/an). Garanties similaires Hiscox sur services intellectuels.
+                <strong>Stello</strong> : challenger pure-digital. Best price sur AE ou freelance
+                (90-160€ par an). Garanties similaires Hiscox sur services intellectuels.
               </li>
               <li>
                 <strong>Allianz Pro</strong> : couverture la plus large (BTP + services +
-                agriculture), bon rapport prix/services sur SARL/SAS. Postériorité 5 ans (limite).
+                agriculture), bon rapport prix ou services sur SARL ou SAS. Postériorité 5 ans
+                (limite).
               </li>
               <li>
-                <strong>MMA Pro</strong> : équilibré, fort sur SARL/SAS PME. Pas le meilleur AE mais
-                excellent à partir de CA 100k€.
+                <strong>MMA Pro</strong> : équilibré, fort sur SARL ou SAS PME. Pas le meilleur AE
+                mais excellent à partir de CA 100k€.
               </li>
               <li>
                 <strong>AXA Pro</strong> : couverture solide, assistance haut de gamme, mais prime
@@ -148,11 +149,11 @@ export default function Page() {
       faq={[
         {
           q: 'Hiscox est-il fiable pour un freelance ?',
-          a: 'Oui. Notation S&P A+ (excellente solidité), 30 ans présence France, leader services intellectuels. Réputation forte sur gestion sinistres rapide. Recommandé pour AE/freelances services.',
+          a: 'Oui. Notation S&P A+ (excellente solidité), 30 ans présence France, leader services intellectuels. Réputation forte sur gestion sinistres rapide. Recommandé pour AE ou freelances services.',
         },
         {
           q: 'Quel tarif Hiscox RC Pro pour un consultant freelance ?',
-          a: 'AE freelance services intellectuels (consultant, IT, designer) avec CA &lt; 80k€ : 95-180€/an avec plafond 1M€. SARL/SASU même métier avec CA 100-300k€ : 350-700€/an avec plafond 2M€.',
+          a: 'AE freelance services intellectuels (consultant, IT, designer) avec CA &lt; 80k€ : 95-180€ par an avec plafond 1M€. SARL ou SASU même métier avec CA 100-300k€ : 350-700€ par an avec plafond 2M€.',
         },
         {
           q: 'Hiscox couvre-t-il le BTP ?',

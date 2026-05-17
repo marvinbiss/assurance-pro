@@ -20,7 +20,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance RC Pro auto-entrepreneur : guide souscription complet. Hiscox 95€/an services, April Pro 250€/an BTP. Pièces nécessaires + démarches 5 min.',
+    'Assurance RC Pro auto-entrepreneur : guide souscription complet. Hiscox 95€ par an services, April Pro 250€ par an BTP. Pièces nécessaires + démarches 5 min.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -50,7 +50,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'Dès 95€/an',
+          title: 'Dès 95€ par an',
           desc: 'Best price Hiscox AE services intellectuels CA &lt; 80k€',
         },
         {
@@ -95,22 +95,23 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Hiscox</strong> : 🥇 leader services intellectuels AE. Tarif 95-220€/an.
+                <strong>Hiscox</strong> : 🥇 leader services intellectuels AE. Tarif 95-220€ par an.
                 Plafond 1M€. <strong>Postériorité 10 ans (unique)</strong>. Souscription 100% en
                 ligne. Solidité A+.
               </li>
               <li>
-                <strong>Stello</strong> : challenger 100% digital pure. Tarif 90-200€/an. Plafond
-                1.5M€ max. Postériorité 5 ans. App mobile native. Solidité A-.
+                <strong>Stello</strong> : challenger 100% digital pure. Tarif 90-200€ par an.
+                Plafond 1.5M€ max. Postériorité 5 ans. App mobile native. Solidité A-.
               </li>
               <li>
                 <strong>Allianz Pro</strong> : couverture la plus large (services + BTP +
-                agriculture). Tarif AE 180-380€/an. Postériorité 5 ans. Solidité A+. Réseau
+                agriculture). Tarif AE 180-380€ par an. Postériorité 5 ans. Solidité A+. Réseau
                 d&apos;agences.
               </li>
               <li>
                 <strong>April Pro BTP</strong> : 🥇 leader AE BTP en complément décennale. Tarif RC
-                Pro 250-450€/an + décennale 950-2 800€/an. Souscription en ligne 24h. Solidité A.
+                Pro 250-450€ par an + décennale 950-2 800€ par an. Souscription en ligne 24h.
+                Solidité A.
               </li>
             </ul>
           ),
@@ -120,36 +121,39 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Consultant business AE</strong> (CA 40k€) : Hiscox 95-150€/an (plafond 1M€)
+                <strong>Consultant business AE</strong> (CA 40k€) : Hiscox 95-150€ par an (plafond
+                1M€)
               </li>
               <li>
-                <strong>Freelance dev AE</strong> (CA 60k€) : Hiscox 130-200€/an + cyber-assurance
-                combinée +150€/an
+                <strong>Freelance dev AE</strong> (CA 60k€) : Hiscox 130-200€ par an +
+                cyber-assurance combinée +150€ par an
               </li>
               <li>
-                <strong>Designer / photographe AE</strong> : Hiscox 120-220€/an
+                <strong>Designer — photographe AE</strong> : Hiscox 120-220€ par an
               </li>
               <li>
-                <strong>Coach sportif AE à domicile</strong> : Allianz Pro 220-350€/an (risque
+                <strong>Coach sportif AE à domicile</strong> : Allianz Pro 220-350€ par an (risque
                 corporel)
               </li>
               <li>
-                <strong>Esthéticienne AE à domicile</strong> : Allianz Pro 200-350€/an (allergies,
-                brûlures)
+                <strong>Esthéticienne AE à domicile</strong> : Allianz Pro 200-350€ par an
+                (allergies, brûlures)
               </li>
               <li>
-                <strong>Plombier AE BTP</strong> : April Pro 300-450€/an RC Pro + 1 400-2 100€/an
-                décennale = pack 1 700-2 550€/an
+                <strong>Plombier AE BTP</strong> : April Pro 300-450€ par an RC Pro + 1 400-2 100€
+                par an décennale = pack 1 700-2 550€ par an
               </li>
               <li>
-                <strong>Maçon AE BTP</strong> : April Pro 400-500€/an RC Pro + 1 800-2 800€/an
-                décennale = pack 2 200-3 300€/an
+                <strong>Maçon AE BTP</strong> : April Pro 400-500€ par an RC Pro + 1 800-2 800€ par
+                an décennale = pack 2 200-3 300€ par an
               </li>
               <li>
-                <strong>VTC AE</strong> : Wakam ou Stello 280-450€/an RC Pro VTC + auto VTC séparée
+                <strong>VTC AE</strong> : Wakam / Stello 280-450€ par an RC Pro VTC + auto VTC
+                séparée
               </li>
               <li>
-                <strong>Restauration ambulante AE</strong> : Allianz Pro Restauration 350-700€/an
+                <strong>Restauration ambulante AE</strong> : Allianz Pro Restauration 350-700€ par
+                an
               </li>
             </ul>
           ),
@@ -158,7 +162,7 @@ export default function Page() {
       faq={[
         {
           q: 'Délai entre souscription et attestation RC Pro AE ?',
-          a: 'Chez Hiscox / Stello : immédiat après paiement (téléchargement espace adhérent). Chez Allianz Pro / MMA / AXA : 24-48h ouvrées. Chez April Pro BTP : 24h ouvrées. Urgence chantier ? Choisir Hiscox ou Stello.',
+          a: 'Chez Hiscox — Stello : immédiat après paiement (téléchargement espace adhérent). Chez Allianz Pro — MMA — AXA : 24-48h ouvrées. Chez April Pro BTP : 24h ouvrées. Urgence chantier ? Choisir Hiscox ou Stello.',
         },
         {
           q: "Quelle est l'assurance RC Pro AE la plus complète ?",
@@ -166,11 +170,11 @@ export default function Page() {
         },
         {
           q: 'RC Pro AE déductible des impôts ?',
-          a: 'OUI pour artisans/EI en TNS au régime réel ou simplifié (déductible Madelin art. 154 bis CGI). Pas pour AE en versement libératoire (régime simplifié forfaitaire). Économie fiscale 22-45% de la prime selon TMI.',
+          a: 'OUI pour artisans ou EI en TNS au régime réel ou simplifié (déductible Madelin art. 154 bis CGI). Pas pour AE en versement libératoire (régime simplifié forfaitaire). Économie fiscale 22-45% de la prime selon TMI.',
         },
         {
           q: 'Peut-on souscrire une RC Pro avant immatriculation AE ?',
-          a: 'Non. Attendre votre SIRET officiel (1-2 semaines après déclaration ACOSS/URSSAF). En attendant : démarrer activité après réception SIRET + souscription RC Pro immédiate. Délai total démarrage activité : 2-3 semaines.',
+          a: 'Non. Attendre votre SIRET officiel (1-2 semaines après déclaration ACOSS ou URSSAF). En attendant : démarrer activité après réception SIRET + souscription RC Pro immédiate. Délai total démarrage activité : 2-3 semaines.',
         },
       ]}
       relatedMetiers={[

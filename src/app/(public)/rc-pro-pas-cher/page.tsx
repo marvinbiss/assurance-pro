@@ -15,14 +15,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'rc-pro-pas-cher'
-const TITLE = 'RC Pro pas chère — Tarifs 2026 dès 95€/an, 6 leviers d&apos;économies'
+const TITLE = 'RC Pro pas chère — Tarifs 2026 dès 95€ par an, 6 leviers d&apos;économies'
 const TAGLINE =
   'Trouver une RC Pro pas chère sans risquer un défaut de couverture : 6 leviers concrets pour réduire votre prime, fourchettes par profession et pièges à éviter.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "RC Pro pas chère : tarif à partir de 95€/an (AE freelance services), 180€/an (SARL). 6 leviers d'économies, pièges des contrats low-cost, comparatif Hiscox / Stello / Allianz.",
+    "RC Pro pas chère : tarif à partir de 95€ par an (AE freelance services), 180€ par an (SARL). 6 leviers d'économies, pièges des contrats low-cost, comparatif Hiscox — Stello — Allianz.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -42,7 +42,7 @@ export default function Page() {
       benefits={[
         {
           icon: '💰',
-          title: 'Dès 95€/an',
+          title: 'Dès 95€ par an',
           desc: 'Auto-entrepreneur services intellectuels (freelance, consultant)',
         },
         {
@@ -102,29 +102,29 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <strong>Consultant / freelance IT</strong> : 95-180€/an
+                  <strong>Consultant — freelance IT</strong> : 95-180€ par an
                 </li>
                 <li>
-                  <strong>Coach / formateur</strong> : 120-250€/an
+                  <strong>Coach — formateur</strong> : 120-250€ par an
                 </li>
                 <li>
-                  <strong>Designer / photographe</strong> : 130-280€/an
+                  <strong>Designer — photographe</strong> : 130-280€ par an
                 </li>
                 <li>
-                  <strong>Agence web / communication</strong> : 180-400€/an
+                  <strong>Agence web — communication</strong> : 180-400€ par an
                 </li>
                 <li>
-                  <strong>Esthéticienne / coiffeur à domicile</strong> : 150-300€/an
+                  <strong>Esthéticienne — coiffeur à domicile</strong> : 150-300€ par an
                 </li>
                 <li>
-                  <strong>Professeur de yoga / coach sportif</strong> : 200-400€/an (risque
+                  <strong>Professeur de yoga — coach sportif</strong> : 200-400€ par an (risque
                   corporel)
                 </li>
                 <li>
-                  <strong>BTP (en complément décennale)</strong> : 250-450€/an
+                  <strong>BTP (en complément décennale)</strong> : 250-450€ par an
                 </li>
                 <li>
-                  <strong>Médecin / paramédical</strong> : 800-2 500€/an (réglementaire)
+                  <strong>Médecin — paramédical</strong> : 800-2 500€ par an (réglementaire)
                 </li>
               </ul>
             </>
@@ -161,11 +161,11 @@ export default function Page() {
       faq={[
         {
           q: 'Quelle est la RC Pro la moins chère pour un freelance ?',
-          a: 'Pour un freelance services intellectuels (consultant, IT, designer, rédacteur), CA < 50k€ : Hiscox et Stello offrent souvent 95-180€/an avec 500k€-1M€ de plafond et postériorité 5-10 ans. Allianz Pro et AXA sont plus chers (~200-400€/an) avec services annexes.',
+          a: 'Pour un freelance services intellectuels (consultant, IT, designer, rédacteur), CA < 50k€ : Hiscox et Stello offrent souvent 95-180€ par an avec 500k€-1M€ de plafond et postériorité 5-10 ans. Allianz Pro et AXA sont plus chers (~200-400€ par an) avec services annexes.',
         },
         {
-          q: 'Peut-on avoir une RC Pro à moins de 100€/an ?',
-          a: 'Oui pour un auto-entrepreneur services intellectuels (consultant, freelance IT) avec CA < 30k€ et 500k€ de plafond. En-dessous de 80€/an = suspicion de couverture insuffisante ou exclusions étendues.',
+          q: 'Peut-on avoir une RC Pro à moins de 100€ par an ?',
+          a: 'Oui pour un auto-entrepreneur services intellectuels (consultant, freelance IT) avec CA < 30k€ et 500k€ de plafond. En-dessous de 80€ par an = suspicion de couverture insuffisante ou exclusions étendues.',
         },
         {
           q: 'Comment réduire ma prime RC Pro de 30% ?',
@@ -173,7 +173,7 @@ export default function Page() {
         },
         {
           q: 'Le moins cher est-il toujours le mieux ?',
-          a: 'Non. La RC Pro est un produit asymétrique : économie de 100€/an vs sinistre potentiel de 50 000-200 000€. Privilégier le rapport prix/garanties/postériorité plutôt que le prix seul. Un courtier ORIAS peut équilibrer pour vous.',
+          a: 'Non. La RC Pro est un produit asymétrique : économie de 100€ par an vs sinistre potentiel de 50 000-200 000€. Privilégier le rapport prix, garanties ou postériorité plutôt que le prix seul. Un courtier ORIAS peut équilibrer pour vous.',
         },
       ]}
       relatedMetiers={[

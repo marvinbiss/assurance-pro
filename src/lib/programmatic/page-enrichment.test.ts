@@ -72,7 +72,7 @@ describe('buildPageTitle', () => {
     expect(t).toContain('RC Pro')
     expect(t).toContain('Plombier')
     expect(t).toContain('Paris')
-    expect(t).toContain('Tarif 89-320€/an')
+    expect(t).toContain('Tarif 89-320€ par an')
     expect(t).toContain('Vivos Assurance')
   })
 
@@ -99,7 +99,7 @@ describe('buildPageDescription', () => {
     expect(d).toContain('1 234')
     expect(d).toContain('Plombier')
     expect(d).toContain('Paris')
-    expect(d).toContain('89€/an')
+    expect(d).toContain('89€ par an')
     expect(d).toContain('145€')
     expect(d).toContain('2.3%')
     expect(d).toContain('AQC SYCODÉS')

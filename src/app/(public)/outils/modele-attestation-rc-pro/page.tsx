@@ -26,7 +26,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/modele-attestation-rc-pro'
+const SLUG = 'outils / modele-attestation-rc-pro'
 
 export const metadata: Metadata = {
   title: 'Modèle attestation RC Pro PDF — Générateur gratuit 2026',
@@ -54,11 +54,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/guides/attestation-rc-pro" className="hover:underline">
               Guide attestation RC Pro
             </Link>{' '}
-            / <span>Modèle PDF</span>
+            › <span>Modèle PDF</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ 100% gratuit, sans inscription
@@ -165,7 +165,7 @@ export default async function Page() {
               ✓ <strong>Talent.io</strong> (tech freelance)
             </li>
             <li>
-              ✓ <strong>Codeur.com</strong> (dev/design)
+              ✓ <strong>Codeur.com</strong> (dev ou design)
             </li>
           </ul>
           <p className="mt-4 text-sm">
@@ -185,7 +185,7 @@ export default async function Page() {
           </h2>
           <p className="mx-auto mb-6 max-w-2xl text-lg opacity-95">
             Notre cabinet ORIAS vous transmet sous <strong>24h ouvrées</strong> 3 à 5 propositions
-            de nos 8 assureurs partenaires. Tarifs RC Pro à partir de <strong>89 €/an</strong>.
+            de nos 8 assureurs partenaires. Tarifs RC Pro à partir de <strong>89 € par an</strong>.
             Attestation conforme arrêté 23 janvier 2024 téléchargeable dans les 24h suivant la
             souscription.
           </p>

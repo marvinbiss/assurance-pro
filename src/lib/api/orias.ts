@@ -78,7 +78,7 @@ export function normalizeOriasNumber(oriasNumber: string): string {
  */
 export function buildOriasFicheUrl(oriasNumber: string): string {
   const normalized = normalizeOriasNumber(oriasNumber)
-  return `${ORIAS_BASE_URL}/intermediaire/welcome?orias=${normalized}`
+  return `${ORIAS_BASE_URL}/intermediaire / welcome?orias=${normalized}`
 }
 
 /**

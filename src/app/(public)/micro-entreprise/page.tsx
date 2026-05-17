@@ -22,7 +22,7 @@ export default function MicroEntreprisePage() {
           Icon: Hammer,
           accent: 'primary',
           title: 'Décennale micro-entrepreneur BTP',
-          desc: '52 métiers BTP éligibles. Tarifs à partir de 35€/mois selon métier et CA. Attestation 24h, conforme Loi Spinetta.',
+          desc: '52 métiers BTP éligibles. Tarifs à partir de 35€ par mois selon métier et CA. Attestation 24h, conforme Loi Spinetta.',
           bullet: 'Obligation Loi Spinetta — applicable tous statuts y compris micro',
         },
         {

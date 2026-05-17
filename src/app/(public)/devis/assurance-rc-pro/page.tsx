@@ -6,7 +6,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'devis/assurance-rc-pro'
+const SLUG = 'devis / assurance-rc-pro'
 const TITLE = 'Devis Assurance RC Pro — Comparatif gratuit 5 leaders'
 const TAGLINE =
   'Demande de devis assurance RC Pro gratuit : comparatif Hiscox, Stello, Allianz Pro, MMA, AXA. Tous métiers et statuts. Attestation immédiate.'
@@ -14,7 +14,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Devis assurance RC Pro gratuit 5 min : 5 assureurs comparés. Hiscox 95€/an best AE, Allianz 280€ SARL, MMA 600€ PME. Attestation immédiate.',
+    'Devis assurance RC Pro gratuit 5 min : 5 assureurs comparés. Hiscox 95€ par an best AE, Allianz 280€ SARL, MMA 600€ PME. Attestation immédiate.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -58,7 +58,7 @@ export default function Page() {
                 <strong>Plafond par sinistre</strong> : 500k€-10M€ selon profil
               </li>
               <li>
-                <strong>Plafond annuel cumulé</strong> : limite totale tous sinistres / an
+                <strong>Plafond annuel cumulé</strong> : limite totale tous sinistres ou an
               </li>
               <li>
                 <strong>Postériorité (subséquente)</strong> : 5 ans standard, 10 ans Hiscox unique
@@ -117,27 +117,27 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Sébastien, consultant freelance</strong> (AE CA 60k€) → Hiscox 145€/an
+                <strong>Sébastien, consultant freelance</strong> (AE CA 60k€) → Hiscox 145€ par an
                 plafond 1M€ postériorité 10 ans
               </li>
               <li>
-                <strong>Marie, photographe</strong> (AE CA 35k€) → Hiscox 180€/an plafond 1M€
+                <strong>Marie, photographe</strong> (AE CA 35k€) → Hiscox 180€ par an plafond 1M€
               </li>
               <li>
-                <strong>Yves, agence web SAS</strong> (CA 250k€) → Hiscox 850€/an plafond 2M€ +
-                cyber +400€/an
+                <strong>Yves, agence web SAS</strong> (CA 250k€) → Hiscox 850€ par an plafond 2M€ +
+                cyber +400€ par an
               </li>
               <li>
-                <strong>Sophie, esthéticienne à domicile</strong> (AE CA 45k€) → Allianz Pro 240€/an
-                plafond 1M€
+                <strong>Sophie, esthéticienne à domicile</strong> (AE CA 45k€) → Allianz Pro 240€
+                par an plafond 1M€
               </li>
               <li>
-                <strong>Marc, agent immobilier</strong> (Carte T SARL) → Allianz Pro 1 200€/an
+                <strong>Marc, agent immobilier</strong> (Carte T SARL) → Allianz Pro 1 200€ par an
                 plafond 1.5M€ (Hoguet)
               </li>
               <li>
-                <strong>Karim, plombier AE</strong> (CA 70k€) → April Pro 350€/an RC Pro + 1 700€/an
-                décennale = 2 050€/an pack
+                <strong>Karim, plombier AE</strong> (CA 70k€) → April Pro 350€ par an RC Pro + 1
+                700€ par an décennale = 2 050€ par an pack
               </li>
             </ul>
           ),
@@ -158,7 +158,7 @@ export default function Page() {
         },
         {
           q: 'Peut-on négocier le devis ?',
-          a: 'Chez Hiscox/Stello : tarifs automatiques pas négociables. Chez Allianz Pro / MMA / AXA : marges possibles selon profil (-5-15%) via courtier ORIAS. Toujours demander si réduction possible avant signature.',
+          a: 'Chez Hiscox ou Stello : tarifs automatiques pas négociables. Chez Allianz Pro — MMA — AXA : marges possibles selon profil (-5-15%) via courtier ORIAS. Toujours demander si réduction possible avant signature.',
         },
       ]}
       relatedMetiers={[

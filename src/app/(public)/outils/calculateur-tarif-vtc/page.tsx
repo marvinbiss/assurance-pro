@@ -28,7 +28,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/calculateur-tarif-vtc'
+const SLUG = 'outils / calculateur-tarif-vtc'
 
 export const metadata: Metadata = {
   title: 'Calculateur tarif assurance VTC 2026 — Estimation immédiate (gratuit)',
@@ -55,14 +55,14 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/assurance-vtc" className="hover:underline">
               Assurance VTC
             </Link>{' '}
-            / <span>Calculateur tarif</span>
+            › <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-red-500/90 px-3 py-1 text-sm font-semibold text-white">
-            ⚠️ OBLIGATION LÉGALE — Loi LOTI / Art. L. 3122-1 C. transp.
+            ⚠️ OBLIGATION LÉGALE — Loi LOTI ou Art. L. 3122-1 C. transp.
           </span>
           <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">
             Calculateur tarif assurance VTC 2026
@@ -155,7 +155,7 @@ export default async function Page() {
           <h2 className="mb-4 text-2xl font-bold">Comment réduire votre tarif VTC ?</h2>
           <div className="grid gap-4 text-sm md:grid-cols-2">
             <div className="rounded-r border-l-4 border-violet-500 bg-white p-4">
-              <h3 className="mb-1 font-bold">1. Choisir un véhicule électrique/hybride</h3>
+              <h3 className="mb-1 font-bold">1. Choisir un véhicule électrique ou hybride</h3>
               <p>
                 Bonus écologique assureurs : -8% (électrique) à -5% (hybride). Tesla Model 3,
                 Hyundai Ioniq 5, BMW i4 sont les véhicules les plus assurés pour VTC en 2026.
@@ -171,8 +171,8 @@ export default async function Page() {
             <div className="rounded-r border-l-4 border-violet-500 bg-white p-4">
               <h3 className="mb-1 font-bold">3. Choisir « tiers + » au lieu de « tous risques »</h3>
               <p>
-                Si véhicule de plus de 7 ans : passer en tiers + (vol/incendie/bris glace) économise
-                25-30% vs tous risques sans perte significative de protection.
+                Si véhicule de plus de 7 ans : passer en tiers + (vol, incendie ou bris glace)
+                économise 25-30% vs tous risques sans perte significative de protection.
               </p>
             </div>
             <div className="rounded-r border-l-4 border-violet-500 bg-white p-4">
@@ -234,7 +234,7 @@ export default async function Page() {
               '7 coefficients tarifaires publics (ACPR 2024-R-02)',
               'Barèmes 2026 réels 6 assureurs spécialisés',
               '5 statuts juridiques + 5 zones + 4 formules',
-              'Bonus véhicule électrique / hybride intégré',
+              'Bonus véhicule électrique — hybride intégré',
             ],
           },
           nonce

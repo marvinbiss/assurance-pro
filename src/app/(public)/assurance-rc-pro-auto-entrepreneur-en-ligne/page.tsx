@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-rc-pro-auto-entrepreneur-en-ligne'
 const TITLE = 'Assurance RC Pro Auto-Entrepreneur En Ligne — Souscription 5 min'
 const TAGLINE =
-  'Assurance RC Pro auto-entrepreneur 100% en ligne. Hiscox 95€/an best price. Souscription 5 min, attestation immédiate. Sans rendez-vous.'
+  'Assurance RC Pro auto-entrepreneur 100% en ligne. Hiscox 95€ par an best price. Souscription 5 min, attestation immédiate. Sans rendez-vous.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro auto-entrepreneur en ligne : Hiscox 95€/an, Stello 90€/an. Souscription 5 min, attestation immédiate PDF. Adapté freelance services + BTP.',
+    'RC Pro auto-entrepreneur en ligne : Hiscox 95€ par an, Stello 90€ par an. Souscription 5 min, attestation immédiate PDF. Adapté freelance services + BTP.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Auto-entrepreneur : souscrire votre RC Pro 100% en ligne en 5 minutes — parcours conçu spécifiquement pour AE/micro-entreprise avec interface simplifiée (saisie minimale), tarifs adaptés (95€-450€/an selon activité) et attestation téléchargeable immédiate. Cette page guide pas à pas le freelance / artisan AE à travers le parcours digital, avec recommandations par type d'activité."
+      intro="Auto-entrepreneur : souscrire votre RC Pro 100% en ligne en 5 minutes — parcours conçu spécifiquement pour AE ou micro-entreprise avec interface simplifiée (saisie minimale), tarifs adaptés (95€-450€ par an selon activité) et attestation téléchargeable immédiate. Cette page guide pas à pas le freelance — artisan AE à travers le parcours digital, avec recommandations par type d'activité."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Loi Spinetta si BTP"
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -44,13 +44,13 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'Best price 95€/an',
+          title: 'Best price 95€ par an',
           desc: 'Hiscox AE services intellectuels — plafond 1M€ inclus',
         },
         {
           icon: '📱',
           title: 'Mobile-friendly',
-          desc: 'Souscription possible smartphone Hiscox/Stello',
+          desc: 'Souscription possible smartphone Hiscox ou Stello',
         },
         {
           icon: '⚡',
@@ -65,24 +65,24 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Hiscox</strong> 🥇 : best AE services intellectuels (consultant, IT,
-                designer, photographe). 95-220€/an. Plafond 1M€. Postériorité 10 ans (unique). Pure
-                digital.
+                designer, photographe). 95-220€ par an. Plafond 1M€. Postériorité 10 ans (unique).
+                Pure digital.
               </li>
               <li>
-                <strong>Stello</strong> 🥈 : challenger 100% digital. 90-200€/an AE services. App
-                mobile native. Postériorité 5 ans.
+                <strong>Stello</strong> 🥈 : challenger 100% digital. 90-200€ par an AE services.
+                App mobile native. Postériorité 5 ans.
               </li>
               <li>
                 <strong>April Pro BTP</strong> : best AE BTP (plombier, peintre, maçon,
-                électricien). 250-450€/an RC Pro + décennale combinée.
+                électricien). 250-450€ par an RC Pro + décennale combinée.
               </li>
               <li>
                 <strong>Allianz Pro</strong> : multi-activités. AE coach, esthéticienne, services
-                personnes. 180-380€/an.
+                personnes. 180-380€ par an.
               </li>
               <li>
-                <strong>Wakam</strong> : spécialiste mobilité AE VTC, livreur. 280-450€/an (2-en-1
-                auto+RC).
+                <strong>Wakam</strong> : spécialiste mobilité AE VTC, livreur. 280-450€ par an
+                (2-en-1 auto+RC).
               </li>
             </ul>
           ),
@@ -121,35 +121,36 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Consultant IT freelance</strong> : 🥇 Hiscox 95-180€/an (best +
+                <strong>Consultant IT freelance</strong> : 🥇 Hiscox 95-180€ par an (best +
                 cyber-assurance option)
               </li>
               <li>
-                <strong>Designer / photographe AE</strong> : 🥇 Hiscox 120-220€/an
+                <strong>Designer — photographe AE</strong> : 🥇 Hiscox 120-220€ par an
               </li>
               <li>
-                <strong>Coach professionnel / formateur AE</strong> : 🥇 Hiscox 150-280€/an
+                <strong>Coach professionnel — formateur AE</strong> : 🥇 Hiscox 150-280€ par an
               </li>
               <li>
-                <strong>Coach sportif AE</strong> : 🥇 Allianz Pro 220-380€/an (couverture
+                <strong>Coach sportif AE</strong> : 🥇 Allianz Pro 220-380€ par an (couverture
                 corporelle)
               </li>
               <li>
-                <strong>Esthéticienne / praticien bien-être AE</strong> : 🥇 Allianz Pro 180-320€/an
+                <strong>Esthéticienne — praticien bien-être AE</strong> : 🥇 Allianz Pro 180-320€
+                par an
               </li>
               <li>
-                <strong>Plombier AE BTP</strong> : 🥇 April Pro 300-450€/an RC Pro + 1 400€/an
+                <strong>Plombier AE BTP</strong> : 🥇 April Pro 300-450€ par an RC Pro + 1 400€ par
+                an décennale
+              </li>
+              <li>
+                <strong>Peintre AE BTP</strong> : 🥇 April Pro 250-350€ par an RC Pro + 950€ par an
                 décennale
               </li>
               <li>
-                <strong>Peintre AE BTP</strong> : 🥇 April Pro 250-350€/an RC Pro + 950€/an
-                décennale
+                <strong>VTC AE</strong> : 🥇 Wakam / Stello 280-450€ par an (2-en-1)
               </li>
               <li>
-                <strong>VTC AE</strong> : 🥇 Wakam ou Stello 280-450€/an (2-en-1)
-              </li>
-              <li>
-                <strong>Boutique e-commerce AE</strong> : 🥇 Hiscox 200-350€/an
+                <strong>Boutique e-commerce AE</strong> : 🥇 Hiscox 200-350€ par an
               </li>
             </ul>
           ),
@@ -162,11 +163,11 @@ export default function Page() {
         },
         {
           q: 'Tarifs AE plus bas qu&apos;en SARL ?',
-          a: 'OUI : AE = -50-70% vs SARL équivalente. Raisons : 1) CA limité (77 700€/188 700€ selon activité). 2) Responsabilité limitée au patrimoine pro déclaré. 3) Statut récent dématérialisé = parcours optimisé.',
+          a: 'OUI : AE = -50-70% vs SARL équivalente. Raisons : 1) CA limité (77 700€ ou 188 700€ selon activité). 2) Responsabilité limitée au patrimoine pro déclaré. 3) Statut récent dématérialisé = parcours optimisé.',
         },
         {
           q: 'Démarrage activité aujourd&apos;hui : couvert demain ?',
-          a: 'OUI chez Hiscox/Stello : effet immédiat ou date au choix dans 30 jours. Attestation téléchargeable dès paiement. Cas BTP : 24-48h ouvrées (vérifications expérience). Cas spécifiques (médical) : 48-72h (validation diplôme Ordre).',
+          a: 'OUI chez Hiscox ou Stello : effet immédiat ou date au choix dans 30 jours. Attestation téléchargeable dès paiement. Cas BTP : 24-48h ouvrées (vérifications expérience). Cas spécifiques (médical) : 48-72h (validation diplôme Ordre).',
         },
       ]}
       relatedMetiers={[

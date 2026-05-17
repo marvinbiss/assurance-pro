@@ -181,7 +181,7 @@ function PrixCell({
       >
         {Math.round(value).toLocaleString('fr-FR')}
         <span className="text-xl">€</span>
-        <span className="ml-1 text-base font-normal text-charcoal-500">/an</span>
+        <span className="ml-1 text-base font-normal text-charcoal-500"> par an</span>
       </div>
     </div>
   )
@@ -195,7 +195,7 @@ function TrustSources({ enrichment }: { enrichment: PageEnrichmentRow }) {
   if (enrichment.jurisprudence_refs?.length > 0) sources.push('Légifrance')
   if (enrichment.assureurs_top3_jsonb?.length > 0) sources.push('Pappers')
   if (enrichment.avis_top_jsonb?.length > 0) sources.push('Trustpilot ISO 20488')
-  if (enrichment.stats_sectorielles_jsonb?.length > 0) sources.push('FFA/FFB/CAPEB')
+  if (enrichment.stats_sectorielles_jsonb?.length > 0) sources.push('FFA, FFB / CAPEB')
 
   if (sources.length === 0) return null
   return (

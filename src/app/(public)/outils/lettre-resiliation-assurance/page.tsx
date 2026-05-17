@@ -25,7 +25,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/lettre-resiliation-assurance'
+const SLUG = 'outils / lettre-resiliation-assurance'
 
 export const metadata: Metadata = {
   title: 'Lettre de résiliation assurance pro PDF — Loi Hamon 2026',
@@ -53,11 +53,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/guides/resiliation-assurance-professionnelle" className="hover:underline">
               Guide résiliation
             </Link>{' '}
-            / <span>Lettre PDF</span>
+            › <span>Lettre PDF</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ Loi Hamon — sans frais, sans motif

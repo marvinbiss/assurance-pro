@@ -43,7 +43,7 @@ export default function CgvPage() {
 
           <h2>1. Présentation du cabinet</h2>
           <p>
-            Vivos Assurance est un cabinet de courtage en assurance immatriculé à l\'ORIAS sous le
+            Vivos Assurance est un cabinet de courtage en assurance immatriculé à l’ORIAS sous le
             numéro {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"} (catégorie :
             Courtier en Assurance, type b), consultable sur{' '}
             <a href="https://www.orias.fr" target="_blank" rel="noopener noreferrer">
@@ -52,22 +52,22 @@ export default function CgvPage() {
             .
           </p>
           <p>
-            Le cabinet est soumis au contrôle de l\'Autorité de Contrôle Prudentiel et de Résolution
+            Le cabinet est soumis au contrôle de l’Autorité de Contrôle Prudentiel et de Résolution
             (ACPR), 4 Place de Budapest, CS 92459, 75436 PARIS CEDEX 09.
           </p>
 
-          <h2>2. Périmètre de l\'activité</h2>
+          <h2>2. Périmètre de l’activité</h2>
           <p>
-            Notre cabinet a pour activité l\'intermédiation en assurance professionnelle (courtage).
-            Nous proposons la distribution de contrats d\'assurance souscrits auprès de nos
-            compagnies d\'assurance partenaires, dans les domaines suivants :
+            Notre cabinet a pour activité l’intermédiation en assurance professionnelle (courtage).
+            Nous proposons la distribution de contrats d’assurance souscrits auprès de nos
+            compagnies d’assurance partenaires, dans les domaines suivants :
           </p>
           <ul>
             <li>Garantie décennale BTP</li>
             <li>Responsabilité Civile Professionnelle (RC Pro)</li>
             <li>Multirisque professionnelle</li>
-            <li>Mutuelle santé pro / TNS Madelin</li>
-            <li>Prévoyance dirigeant / TNS</li>
+            <li>Mutuelle santé pro — TNS Madelin</li>
+            <li>Prévoyance dirigeant — TNS</li>
             <li>Cyber assurance</li>
             <li>Flotte automobile professionnelle</li>
             <li>Tous risques chantier (TRC)</li>
@@ -76,12 +76,12 @@ export default function CgvPage() {
 
           <h2>3. Rémunération du courtier</h2>
           <p>
-            Conformément à l\'article L. 521-2 du Code des assurances (DDA), notre cabinet est
-            rémunéré exclusivement par les commissions versées par les compagnies d\'assurance
+            Conformément à l’article L. 521-2 du Code des assurances (DDA), notre cabinet est
+            rémunéré exclusivement par les commissions versées par les compagnies d’assurance
             partenaires lors de la souscription et tout au long de la durée du contrat.
           </p>
           <p>
-            <strong>Aucun frais de courtage n\'est facturé à nos clients.</strong> Le détail de la
+            <strong>Aucun frais de courtage n’est facturé à nos clients.</strong> Le détail de la
             rémunération peut être communiqué sur simple demande écrite avant souscription.
           </p>
 
@@ -99,18 +99,17 @@ export default function CgvPage() {
 
           <h2>5. Indépendance et impartialité</h2>
           <p>
-            Notre cabinet est <strong>indépendant</strong> et n\'a aucun lien capitalistique avec
-            les compagnies d\'assurance distribuées. Nous n\'avons d\'obligation contractuelle de
-            placement avec aucune compagnie en particulier. Notre analyse est fondée sur l\'intérêt
-            du client.
+            Notre cabinet est <strong>indépendant</strong> et n’a aucun lien capitalistique avec les
+            compagnies d’assurance distribuées. Nous n’avons d’obligation contractuelle de placement
+            avec aucune compagnie en particulier. Notre analyse est fondée sur l’intérêt du client.
           </p>
 
           <h2>6. Réclamations</h2>
           <p>
             Toute réclamation peut être adressée à{' '}
             <a href="mailto:reclamations@vivos-assurance.fr">reclamations@vivos-assurance.fr</a>.
-            Conformément à la Recommandation ACPR 2024-R-02 (applicable au 31/12/2025), nous nous
-            engageons à :
+            Conformément à la Recommandation ACPR 2024-R-02 (applicable au 31 décembre 2025), nous
+            nous engageons à :
           </p>
           <ul>
             <li>Accuser réception de toute réclamation sous 10 jours ouvrés</li>
@@ -119,7 +118,7 @@ export default function CgvPage() {
           </ul>
           <p>
             En cas de désaccord persistant, vous pouvez saisir{' '}
-            <strong>le Médiateur de l\'Assurance</strong> : TSA 50110, 75441 Paris cedex 09 —{' '}
+            <strong>le Médiateur de l’Assurance</strong> : TSA 50110, 75441 Paris cedex 09 —{' '}
             <a href="https://www.mediation-assurance.org" target="_blank" rel="noopener noreferrer">
               www.mediation-assurance.org
             </a>
@@ -128,10 +127,10 @@ export default function CgvPage() {
 
           <h2>7. Garantie financière et RCP</h2>
           <p>
-            Notre cabinet dispose d\'une <strong>Garantie Financière</strong> et d\'une{' '}
+            Notre cabinet dispose d’une <strong>Garantie Financière</strong> et d’une{' '}
             <strong>Responsabilité Civile Professionnelle</strong> conformes aux articles L. 512-6
-            et L. 512-7 du Code des assurances. Plafond minimum : 1 850 000 € par sinistre / 2 500
-            000 € par année. Notre couverture effective est de 5 M€/7,5 M€.
+            et L. 512-7 du Code des assurances. Plafond minimum : 1 850 000 € par sinistre ou 2 500
+            000 € par année. Notre couverture effective est de 5 M€ ou 7,5 M€.
           </p>
 
           <h2>8. Protection des données personnelles (RGPD)</h2>
@@ -143,14 +142,14 @@ export default function CgvPage() {
           <p>
             Les présentes Conditions Générales de Service sont régies par le droit français. Tout
             litige relatif à leur exécution relève de la compétence des tribunaux français, après
-            tentative de conciliation amiable et saisine du Médiateur de l\'Assurance.
+            tentative de conciliation amiable et saisine du Médiateur de l’Assurance.
           </p>
 
           <h2>10. Adhésion à une association agréée</h2>
           <p>
             Notre cabinet est membre de la{' '}
-            <strong>Chambre Syndicale des Courtiers d\'Assurances (CSCA)</strong>, association
-            professionnelle agréée au titre de l\'article L. 513-3 du Code des assurances.
+            <strong>Chambre Syndicale des Courtiers d’Assurances (CSCA)</strong>, association
+            professionnelle agréée au titre de l’article L. 513-3 du Code des assurances.
           </p>
         </article>
       </div>

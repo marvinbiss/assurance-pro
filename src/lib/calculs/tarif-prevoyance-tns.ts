@@ -31,7 +31,7 @@ export interface PrevoyanceInput {
   statut: Statut
   profession: Profession
   age: number
-  revenus: number /* € HT/an — base déclaration sociale */
+  revenus: number /* € HT par an — base déclaration sociale */
   formule: Formule
   fumeur: boolean
   capitalDeces: number /* € — capital versé bénéficiaires en cas décès */
@@ -40,9 +40,9 @@ export interface PrevoyanceInput {
 export interface PrevoyanceResultat {
   cotisationMensuelle: number
   cotisationAnnuelle: number
-  ijQuotidienneCouverte: number /* € versés/jour en cas arrêt maladie */
+  ijQuotidienneCouverte: number /* € versés par jour en cas arrêt maladie */
   capitalDecesEffectif: number
-  rentesInvaliditeMensuelle: number /* € versés/mois si invalidité totale */
+  rentesInvaliditeMensuelle: number /* € versés par mois si invalidité totale */
   deductibiliteMadelin: number /* € déductibles fiscalement */
   detail: {
     base: number
@@ -54,7 +54,10 @@ export interface PrevoyanceResultat {
   }
 }
 
-const TARIF_BASE_FORMULE: Record<Formule, { perAdulte: number; ijPourcentage: number; capitalMultiplicateur: number }> = {
+const TARIF_BASE_FORMULE: Record<
+  Formule,
+  { perAdulte: number; ijPourcentage: number; capitalMultiplicateur: number }
+> = {
   essentielle: { perAdulte: 38, ijPourcentage: 60, capitalMultiplicateur: 0.5 },
   standard: { perAdulte: 78, ijPourcentage: 80, capitalMultiplicateur: 1.0 },
   confort: { perAdulte: 142, ijPourcentage: 90, capitalMultiplicateur: 2.0 },
@@ -63,13 +66,13 @@ const TARIF_BASE_FORMULE: Record<Formule, { perAdulte: number; ijPourcentage: nu
 
 const COEF_PROFESSION: Record<Profession, number> = {
   commerçant: 1.0,
-  'artisan-btp': 1.18, /* sur-prime risque corporel chantier */
-  'profession-liberale-medicale': 1.32, /* sur-prime exposition risque pro */
-  'profession-liberale-juridique': 0.92, /* sous-prime profession sédentaire */
-  'profession-liberale-conseil': 0.88, /* la plus faible — bureautique */
-  agriculteur: 1.42, /* sur-prime maximale risque corporel */
+  'artisan-btp': 1.18 /* sur-prime risque corporel chantier */,
+  'profession-liberale-medicale': 1.32 /* sur-prime exposition risque pro */,
+  'profession-liberale-juridique': 0.92 /* sous-prime profession sédentaire */,
+  'profession-liberale-conseil': 0.88 /* la plus faible — bureautique */,
+  agriculteur: 1.42 /* sur-prime maximale risque corporel */,
   'agent-commercial': 1.05,
-  'taxi-vtc': 1.28, /* sur-prime risque routier */
+  'taxi-vtc': 1.28 /* sur-prime risque routier */,
 }
 
 function coefAge(age: number): number {
@@ -118,7 +121,10 @@ export function calculerPrevoyance(input: PrevoyanceInput): PrevoyanceResultat {
   const cotAnnee = cotMois * 12
 
   const ijQuot = Math.round((input.revenus / 365) * (formule.ijPourcentage / 100))
-  const capitalDeces = Math.max(input.capitalDeces, Math.round(input.revenus * formule.capitalMultiplicateur))
+  const capitalDeces = Math.max(
+    input.capitalDeces,
+    Math.round(input.revenus * formule.capitalMultiplicateur)
+  )
   const renteInvalidite = Math.round((input.revenus / 12) * (formule.ijPourcentage / 100))
   const deductibilite = calculDeductibilite(cotAnnee, input.revenus)
 
@@ -141,11 +147,11 @@ export function calculerPrevoyance(input: PrevoyanceInput): PrevoyanceResultat {
 }
 
 export const STATUT_LABELS: Record<Statut, string> = {
-  'auto-entrepreneur': 'Auto-entrepreneur (micro-BIC/BNC)',
+  'auto-entrepreneur': 'Auto-entrepreneur (micro-BIC ou BNC)',
   ei: 'Entreprise individuelle (EI réel)',
   eurl: 'EURL gérant majoritaire',
   'sasu-tns': 'SASU président TNS (rare)',
-  'gerant-majoritaire': 'Gérant majoritaire SARL/SELARL',
+  'gerant-majoritaire': 'Gérant majoritaire SARL ou SELARL',
 }
 
 export const PROFESSION_LABELS: Record<Profession, string> = {
@@ -156,12 +162,12 @@ export const PROFESSION_LABELS: Record<Profession, string> = {
   'profession-liberale-conseil': 'Profession libérale conseil (consultant, expert-comptable)',
   agriculteur: 'Agriculteur (MSA)',
   'agent-commercial': 'Agent commercial',
-  'taxi-vtc': 'Taxi / VTC',
+  'taxi-vtc': 'Taxi — VTC',
 }
 
 export const FORMULE_LABELS: Record<Formule, string> = {
-  essentielle: 'Essentielle (38 €/mois — IJ 60%, capital 0,5× revenus)',
-  standard: 'Standard (78 €/mois — IJ 80%, capital 1× revenus) — recommandée',
-  confort: 'Confort (142 €/mois — IJ 90%, capital 2× revenus + médecines douces)',
-  premium: 'Premium (218 €/mois — IJ 100%, capital 3,5× revenus + assistance internationale)',
+  essentielle: 'Essentielle (38 € par mois — IJ 60%, capital 0,5× revenus)',
+  standard: 'Standard (78 € par mois — IJ 80%, capital 1× revenus) — recommandée',
+  confort: 'Confort (142 € par mois — IJ 90%, capital 2× revenus + médecines douces)',
+  premium: 'Premium (218 € par mois — IJ 100%, capital 3,5× revenus + assistance internationale)',
 }

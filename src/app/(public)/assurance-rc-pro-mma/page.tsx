@@ -15,12 +15,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-rc-pro-mma'
 const TITLE = 'Assurance RC Pro MMA — Comparatif tarifs et garanties détaillés'
 const TAGLINE =
-  "Analyse approfondie de l'assurance RC Pro MMA : garanties par formule, fourchettes tarifaires précises, comparaison avec MAAF/GMF (groupe Covéa) et concurrents."
+  "Analyse approfondie de l'assurance RC Pro MMA : garanties par formule, fourchettes tarifaires précises, comparaison avec MAAF ou GMF (groupe Covéa) et concurrents."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance RC Pro MMA : tarifs détaillés par profil (AE 250-450€, SARL 600-1 200€, SAS PME 1 200-2 500€). Comparatif MMA vs MAAF/GMF vs Allianz/Hiscox/Generali.',
+    'Assurance RC Pro MMA : tarifs détaillés par profil (AE 250-450€, SARL 600-1 200€, SAS PME 1 200-2 500€). Comparatif MMA vs MAAF ou GMF vs Allianz, Hiscox ou Generali.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -65,18 +65,18 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Formule Essentielle</strong> : plafond 500k€/sinistre, franchise 800€,
-                postériorité 5 ans. Idéal AE/freelance débutant. Tarif AE : 250-380€/an.
+                <strong>Formule Essentielle</strong> : plafond 500k€ par sinistre, franchise 800€,
+                postériorité 5 ans. Idéal AE ou freelance débutant. Tarif AE : 250-380€ par an.
               </li>
               <li>
-                <strong>Formule Equilibre</strong> : plafond 1M€/sinistre, franchise 500€,
-                postériorité 5 ans, RC Exploitation incluse. Idéal SARL/SAS PME. Tarif : 600-1
-                200€/an.
+                <strong>Formule Equilibre</strong> : plafond 1M€ par sinistre, franchise 500€,
+                postériorité 5 ans, RC Exploitation incluse. Idéal SARL ou SAS PME. Tarif : 600-1
+                200€ par an.
               </li>
               <li>
-                <strong>Formule Premium</strong> : plafond 3M€/sinistre, franchise 300€,
+                <strong>Formule Premium</strong> : plafond 3M€ par sinistre, franchise 300€,
                 postériorité 5 ans, RC Exploitation + cyber basique + protection juridique. Idéal
-                PME établie. Tarif : 1 500-2 500€/an.
+                PME établie. Tarif : 1 500-2 500€ par an.
               </li>
             </ul>
           ),
@@ -91,8 +91,8 @@ export default function Page() {
               <ul>
                 <li>
                   <strong>MMA Pro</strong> : pôle dédié{' '}
-                  <strong>entreprises et professionnels</strong> du groupe. Force sur SARL/SAS PME,
-                  BTP, services. RC Pro complète disponible.{' '}
+                  <strong>entreprises et professionnels</strong> du groupe. Force sur SARL ou SAS
+                  PME, BTP, services. RC Pro complète disponible.{' '}
                   <strong>C&apos;est elle qu&apos;il faut viser pour pro.</strong>
                 </li>
                 <li>
@@ -117,16 +117,16 @@ export default function Page() {
                 inclus plus de garanties. Hiscox meilleur sur postériorité (10 ans vs 5 ans).
               </li>
               <li>
-                <strong>vs Allianz Pro</strong> : équivalents sur SARL/SAS. Allianz Pro plus large
-                (couvre agriculture, plus de secteurs). Tarifs similaires.
+                <strong>vs Allianz Pro</strong> : équivalents sur SARL ou SAS. Allianz Pro plus
+                large (couvre agriculture, plus de secteurs). Tarifs similaires.
               </li>
               <li>
                 <strong>vs Generali Pro</strong> : MMA plus de réseau agences (1 500 vs 1 200).
                 Generali plus fort cyber-assurance combinée.
               </li>
               <li>
-                <strong>vs April Pro</strong> : April Pro leader BTP/artisans, MMA plus généraliste.
-                April moins cher AE BTP.
+                <strong>vs April Pro</strong> : April Pro leader BTP ou artisans, MMA plus
+                généraliste. April moins cher AE BTP.
               </li>
               <li>
                 <strong>vs AXA Pro</strong> : AXA prime +20% vs MMA pour services équivalents. AXA
@@ -139,15 +139,15 @@ export default function Page() {
       faq={[
         {
           q: 'Quel tarif RC Pro MMA pour un consultant indépendant ?',
-          a: 'AE consultant CA &lt; 80k€ avec formule Essentielle : 250-380€/an. Avec formule Equilibre (recommandée si CA &gt; 50k€) : 380-550€/an. Hiscox/Stello restent 30-50% moins chers sur ce segment précis.',
+          a: 'AE consultant CA &lt; 80k€ avec formule Essentielle : 250-380€ par an. Avec formule Equilibre (recommandée si CA &gt; 50k€) : 380-550€ par an. Hiscox ou Stello restent 30-50% moins chers sur ce segment précis.',
         },
         {
           q: 'MAAF et MMA : différence pour un freelance ?',
-          a: 'MAAF Pro AE : 280-450€/an, formule basique limitée. MMA Pro AE : 250-380€/an formule Essentielle, plus extensible avec options. À profils égaux, MMA est généralement légèrement moins chère et plus complète.',
+          a: 'MAAF Pro AE : 280-450€ par an, formule basique limitée. MMA Pro AE : 250-380€ par an formule Essentielle, plus extensible avec options. À profils égaux, MMA est généralement légèrement moins chère et plus complète.',
         },
         {
           q: 'MMA propose-t-elle une cyber-assurance ?',
-          a: 'Oui, en option dans la formule Premium ou en standalone. Cyber basique : +200-500€/an AE. Cyber étendue : +800-2 500€/an SARL/SAS. Pour activités à risque (cybersécurité, hébergeur), Hiscox ou Generali sont plus spécialisés.',
+          a: 'Oui, en option dans la formule Premium ou en standalone. Cyber basique : +200-500€ par an AE. Cyber étendue : +800-2 500€ par an SARL ou SAS. Pour activités à risque (cybersécurité, hébergeur), Hiscox ou Generali sont plus spécialisés.',
         },
         {
           q: 'Comment basculer de MAAF Pro à MMA Pro ?',

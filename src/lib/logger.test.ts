@@ -44,7 +44,7 @@ describe('logger', () => {
     expect(output).toBeTruthy()
   })
 
-  it('api.request / success / error helpers fonctionnent', async () => {
+  it('api.request — success — error helpers fonctionnent', async () => {
     const { logger } = await import('./logger')
     logger.api.request('/api/test', 'GET')
     logger.api.success('/api/test')

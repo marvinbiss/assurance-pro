@@ -125,7 +125,7 @@ export default async function SimulateurPage() {
             environ 500 dossiers, ainsi que sur les benchmarks AQC SYCODÉS et FFA. Le tarif
             définitif ne peut être donné qu&apos;après souscription effective auprès d&apos;un
             assureur agréé ACPR, qui prendra en compte tous les critères individuels (zone
-            géographique, ancienneté, certifications RGE/Qualibat, antécédents détaillés,
+            géographique, ancienneté, certifications RGE ou Qualibat, antécédents détaillés,
             sous-traitance, plafonds spécifiques).
           </p>
           <p>

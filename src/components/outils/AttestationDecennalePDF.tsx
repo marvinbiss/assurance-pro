@@ -203,7 +203,7 @@ export function AttestationDecennalePDF({ data }: { data: AttestationData }) {
             valable juridiquement. Seule une attestation émise et signée par votre assureur réel a
             une valeur opposable aux tiers (clients, maîtres d&apos;ouvrage, administration). Pour
             obtenir une attestation conforme et opposable : souscrivez une décennale chez un
-            courtier ORIAS sous 24h sur https://vivos-assurance.fr/devis
+            courtier ORIAS sous 24h sur https://vivos-assurance.fr ou devis
           </Text>
         </View>
 

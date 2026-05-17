@@ -156,11 +156,11 @@ export function CalculateurTarifMutuellePro() {
       <div className="mt-6 rounded-lg border-2 border-emerald-300 bg-gradient-to-br from-emerald-50 to-teal-50 p-6">
         <p className="mb-2 text-sm text-gray-600">Estimation tarif mutuelle santé pro 2026</p>
         <p className="mb-2 text-4xl font-extrabold text-emerald-900 md:text-5xl">
-          {r.tarifMensuelTotal.toLocaleString('fr-FR')} €<span className="text-2xl">/mois</span>
+          {r.tarifMensuelTotal.toLocaleString('fr-FR')} €<span className="text-2xl"> par mois</span>
         </p>
         <p className="text-sm text-gray-700">
-          Soit <strong>{r.tarifAnnuelTotal.toLocaleString('fr-FR')} €/an</strong> pour le foyer (
-          {r.tarifMensuelParAdulte} €/mois par adulte). Estimation basée sur barèmes 2026 des 8
+          Soit <strong>{r.tarifAnnuelTotal.toLocaleString('fr-FR')} € par an</strong> pour le foyer
+          ({r.tarifMensuelParAdulte} € par mois par adulte). Estimation basée sur barèmes 2026 des 8
           mutuelles santé partenaires (Pro BTP, Apicil, Malakoff Humanis, Harmonie Mutuelle, AG2R La
           Mondiale, Allianz, Generali, Klesia).
         </p>
@@ -168,18 +168,18 @@ export function CalculateurTarifMutuellePro() {
         {isCollective && (
           <div className="mt-4 rounded border border-emerald-200 bg-white p-4">
             <p className="mb-2 text-sm font-semibold text-emerald-900">
-              Loi ANI — Répartition employeur / salarié obligatoire
+              Loi ANI — Répartition employeur ou salarié obligatoire
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               <div className="rounded bg-emerald-100 p-3">
                 <p className="text-xs text-gray-600">Part employeur (50% mini légal)</p>
                 <p className="text-xl font-bold text-emerald-900">
-                  {r.partEmployeurMensuelle} €/mois
+                  {r.partEmployeurMensuelle} € par mois
                 </p>
               </div>
               <div className="rounded bg-gray-50 p-3">
                 <p className="text-xs text-gray-600">Part salarié (prélevée bulletin)</p>
-                <p className="text-xl font-bold">{r.partSalarieMensuelle} €/mois</p>
+                <p className="text-xl font-bold">{r.partSalarieMensuelle} € par mois</p>
               </div>
             </div>
             <p className="mt-2 text-xs italic text-gray-600">
@@ -193,7 +193,7 @@ export function CalculateurTarifMutuellePro() {
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
-              Tarif base formule : <strong>{r.detail.base} €/mois/adulte</strong>
+              Tarif base formule : <strong>{r.detail.base} € par mois par adulte</strong>
             </li>
             <li>Coef âge : ×{r.detail.coefAge.toFixed(2)} (DREES 2024)</li>
             <li>Coef régime social : ×{r.detail.coefRegime.toFixed(2)}</li>

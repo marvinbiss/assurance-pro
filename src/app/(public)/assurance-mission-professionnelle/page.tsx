@@ -22,7 +22,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance mission professionnelle : couverture des déplacements pro de vos salariés avec leur véhicule personnel (auto-mission). RC employeur + garantie tous risques mission. Tarifs 480-1 800€/an. Devis ORIAS sous 24h.',
+    'Assurance mission professionnelle : couverture des déplacements pro de vos salariés avec leur véhicule personnel (auto-mission). RC employeur + garantie tous risques mission. Tarifs 480-1 800€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -33,7 +33,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance mission professionnelle (souvent appelée « auto-mission collaborateur ») couvre les déplacements professionnels effectués par vos SALARIÉS avec leur véhicule PERSONNEL : RDV client, formation, congrès, intervention sur site. Pour l'employeur : 2 options. Option 1 — exiger que chaque salarié déclare son auto-mission à son assureur perso (mais difficile à contrôler + responsabilité employeur si défaut). Option 2 — souscrire une assurance MISSION COLLECTIVE qui couvre TOUS les déplacements pro de TOUS les salariés sur leur véhicule perso (~480-1 800€/an pour PME 10 salariés). Cette dernière option est PROFESSIONNELLEMENT RECOMMANDÉE car protège la responsabilité de l'employeur en cas de sinistre causé par un salarié en mission, sans dépendre des assurances individuelles. Tarifs 2026 : 480 €/an pour PME 5 salariés jusqu'à 4 800 €/an pour ETI 100 salariés. Cette page distingue auto-mission individuelle vs collective et détaille la responsabilité employeur."
+      intro="L'assurance mission professionnelle (souvent appelée « auto-mission collaborateur ») couvre les déplacements professionnels effectués par vos SALARIÉS avec leur véhicule PERSONNEL : RDV client, formation, congrès, intervention sur site. Pour l'employeur : 2 options. Option 1 — exiger que chaque salarié déclare son auto-mission à son assureur perso (mais difficile à contrôler + responsabilité employeur si défaut). Option 2 — souscrire une assurance MISSION COLLECTIVE qui couvre TOUS les déplacements pro de TOUS les salariés sur leur véhicule perso (~480-1 800€ par an pour PME 10 salariés). Cette dernière option est PROFESSIONNELLEMENT RECOMMANDÉE car protège la responsabilité de l'employeur en cas de sinistre causé par un salarié en mission, sans dépendre des assurances individuelles. Tarifs 2026 : 480 € par an pour PME 5 salariés jusqu'à 4 800 € par an pour ETI 100 salariés. Cette page distingue auto-mission individuelle vs collective et détaille la responsabilité employeur."
       legalReference="Code du travail (responsabilité employeur) + Code des assurances L. 211-1 + Convention collective"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -58,8 +58,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 480 €/an',
-          desc: 'PME 5 salariés. PME 20 salariés : 980-1 800€/an. ETI 100 salariés : 3 800-4 800€/an',
+          title: 'À partir de 480 € par an',
+          desc: 'PME 5 salariés. PME 20 salariés : 980-1 800€ par an. ETI 100 salariés : 3 800-4 800€ par an',
         },
       ]}
       sections={[
@@ -80,8 +80,8 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>Coût</strong>
                     </td>
-                    <td className="border p-2">+80-150€/an payés par chaque salarié</td>
-                    <td className="border p-2">480-4 800€/an payés par l&apos;employeur</td>
+                    <td className="border p-2">+80-150€ par an payés par chaque salarié</td>
+                    <td className="border p-2">480-4 800€ par an payés par l&apos;employeur</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -102,7 +102,7 @@ export default function Page() {
                       <strong>Avantage en nature salarié</strong>
                     </td>
                     <td className="border p-2">Aucun</td>
-                    <td className="border p-2">Possible (à déclarer ~10€/mois)</td>
+                    <td className="border p-2">Possible (à déclarer ~10€ par mois)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -161,11 +161,11 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une assurance mission collective ?',
-          a: '480-780€/an pour PME 5 salariés (déplacements occasionnels). 680-1 200€/an pour PME 10 salariés (déplacements réguliers). 1 800-2 800€/an pour PME 50 salariés (force de vente). 3 800-4 800€/an pour ETI 100 salariés multi-sites. Variables : fréquence des déplacements, profil conducteurs, kilométrage cumulé estimé.',
+          a: '480-780€ par an pour PME 5 salariés (déplacements occasionnels). 680-1 200€ par an pour PME 10 salariés (déplacements réguliers). 1 800-2 800€ par an pour PME 50 salariés (force de vente). 3 800-4 800€ par an pour ETI 100 salariés multi-sites. Variables : fréquence des déplacements, profil conducteurs, kilométrage cumulé estimé.',
         },
         {
           q: 'Différence avec auto-mission individuelle du salarié ?',
-          a: "AUTO-MISSION INDIVIDUELLE = chaque salarié déclare son usage pro à son assureur perso (+80-150€/an payés par le salarié). Difficile à contrôler par l'employeur, responsabilité de l'employeur engagée si défaut. ASSURANCE MISSION COLLECTIVE = contrat unique souscrit par l'employeur qui couvre TOUS les salariés. Contrôle total + responsabilité employeur couverte.",
+          a: "AUTO-MISSION INDIVIDUELLE = chaque salarié déclare son usage pro à son assureur perso (+80-150€ par an payés par le salarié). Difficile à contrôler par l'employeur, responsabilité de l'employeur engagée si défaut. ASSURANCE MISSION COLLECTIVE = contrat unique souscrit par l'employeur qui couvre TOUS les salariés. Contrôle total + responsabilité employeur couverte.",
         },
         {
           q: 'Mon salarié a un sinistre en mission : qui paie ?',

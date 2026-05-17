@@ -14,13 +14,28 @@
  *           × Coef(antécédents) × Coef(formule) × Coef(véhicule)
  */
 
-export type Profil = 'auto-entrepreneur-solo' | 'eurl-solo' | 'sasu-solo' | 'sarl-flotte' | 'sas-flotte'
+export type Profil =
+  | 'auto-entrepreneur-solo'
+  | 'eurl-solo'
+  | 'sasu-solo'
+  | 'sarl-flotte'
+  | 'sas-flotte'
 
-export type Zone = 'paris-petite-couronne' | 'idf-grande-couronne' | 'lyon-marseille' | 'metropole' | 'station'
+export type Zone =
+  | 'paris-petite-couronne'
+  | 'idf-grande-couronne'
+  | 'lyon-marseille'
+  | 'metropole'
+  | 'station'
 
 export type Formule = 'tiers' | 'tiers-plus' | 'tous-risques' | 'tous-risques-premium'
 
-export type Vehicule = 'berline-classique' | 'berline-haut-gamme' | 'van-7places' | 'electrique' | 'hybride'
+export type Vehicule =
+  | 'berline-classique'
+  | 'berline-haut-gamme'
+  | 'van-7places'
+  | 'electrique'
+  | 'hybride'
 
 export type Antecedents = 'aucun' | '1-corporel' | '2-materiels' | 'malus' | 'resilie'
 
@@ -55,30 +70,30 @@ const TARIF_BASE_PROFIL: Record<Profil, { bas: number; haut: number }> = {
   'auto-entrepreneur-solo': { bas: 1200, haut: 2800 },
   'eurl-solo': { bas: 1340, haut: 3100 },
   'sasu-solo': { bas: 1380, haut: 3180 },
-  'sarl-flotte': { bas: 1850, haut: 4200 }, /* par véhicule */
-  'sas-flotte': { bas: 1920, haut: 4380 }, /* par véhicule */
+  'sarl-flotte': { bas: 1850, haut: 4200 } /* par véhicule */,
+  'sas-flotte': { bas: 1920, haut: 4380 } /* par véhicule */,
 }
 
 const COEF_ZONE: Record<Zone, number> = {
-  'paris-petite-couronne': 1.45, /* densité trafic + sinistralité maximale */
+  'paris-petite-couronne': 1.45 /* densité trafic + sinistralité maximale */,
   'idf-grande-couronne': 1.22,
   'lyon-marseille': 1.18,
   metropole: 1.0,
-  station: 0.92, /* stations de ski/balnéaires = saisonnier moins sinistré */
+  station: 0.92 /* stations de ski ou balnéaires = saisonnier moins sinistré */,
 }
 
 const COEF_FORMULE: Record<Formule, number> = {
   tiers: 1.0,
-  'tiers-plus': 1.18, /* + bris glace + vol + incendie */
+  'tiers-plus': 1.18 /* + bris glace + vol + incendie */,
   'tous-risques': 1.42,
-  'tous-risques-premium': 1.65, /* + véhicule de remplacement + assistance 24/7 */
+  'tous-risques-premium': 1.65 /* + véhicule de remplacement + assistance 24/7 */,
 }
 
 const COEF_VEHICULE: Record<Vehicule, number> = {
   'berline-classique': 1.0,
   'berline-haut-gamme': 1.32,
   'van-7places': 1.18,
-  electrique: 0.92, /* bonus écologique assureurs */
+  electrique: 0.92 /* bonus écologique assureurs */,
   hybride: 0.95,
 }
 
@@ -87,7 +102,7 @@ const COEF_ANTECEDENTS: Record<Antecedents, number> = {
   '2-materiels': 1.32,
   '1-corporel': 1.65,
   malus: 1.85,
-  resilie: 2.4, /* assurance résiliée pour sinistralité = quasi-inassurable hors marché spécialisé */
+  resilie: 2.4 /* assurance résiliée pour sinistralité = quasi-inassurable hors marché spécialisé */,
 }
 
 function coefAge(age: number): number {
@@ -161,9 +176,9 @@ export const PROFIL_LABELS: Record<Profil, string> = {
 export const ZONE_LABELS: Record<Zone, string> = {
   'paris-petite-couronne': 'Paris + petite couronne (75/92/93/94)',
   'idf-grande-couronne': 'Île-de-France grande couronne (77/78/91/95)',
-  'lyon-marseille': 'Lyon / Marseille / autres grandes métropoles',
+  'lyon-marseille': 'Lyon — Marseille — autres grandes métropoles',
   metropole: 'Métropole standard (autres villes)',
-  station: 'Stations de ski / balnéaires (saisonnier)',
+  station: 'Stations de ski — balnéaires (saisonnier)',
 }
 
 export const FORMULE_LABELS: Record<Formule, string> = {
@@ -176,9 +191,9 @@ export const FORMULE_LABELS: Record<Formule, string> = {
 export const VEHICULE_LABELS: Record<Vehicule, string> = {
   'berline-classique': 'Berline classique (Peugeot 508, Mercedes Classe E…)',
   'berline-haut-gamme': 'Berline haut de gamme (Mercedes Classe S, BMW Série 7, Audi A8)',
-  'van-7places': 'Van / minibus 7 places',
+  'van-7places': 'Van — minibus 7 places',
   electrique: 'Véhicule 100% électrique (Tesla, Hyundai Ioniq…)',
-  hybride: 'Véhicule hybride / hybride rechargeable',
+  hybride: 'Véhicule hybride — hybride rechargeable',
 }
 
 export const ANTECEDENTS_LABELS: Record<Antecedents, string> = {

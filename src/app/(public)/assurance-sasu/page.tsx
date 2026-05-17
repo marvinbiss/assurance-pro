@@ -23,7 +23,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance SASU : RC pro adaptée + multirisque local + mutuelle COLLECTIVE (président assimilé salarié, vs Madelin TNS) + RCMS dirigeant + cyber. Tarifs 580-2 800€/an. Devis ORIAS sous 24h.',
+    'Assurance SASU : RC pro adaptée + multirisque local + mutuelle COLLECTIVE (président assimilé salarié, vs Madelin TNS) + RCMS dirigeant + cyber. Tarifs 580-2 800€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -34,7 +34,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance SASU est le pack adapté à la SASU (Société par Actions Simplifiée Unipersonnelle) — forme juridique très populaire pour freelances seniors et consultants à fort CA. Particularité fiscale et sociale : le PRÉSIDENT de SASU est ASSIMILÉ SALARIÉ (vs gérant majoritaire SARL ou EI qui sont TNS). Conséquence pour l'assurance : ÉLIGIBILITÉ aux contrats COLLECTIFS d'entreprise (mutuelle ANI 2013, prévoyance collective) MAIS NON ÉLIGIBILITÉ à la Loi Madelin (réservée aux TNS). Le pack standard SASU combine 5 garanties : RC Pro adaptée au métier (3-10 M€), multirisque local (si applicable), mutuelle collective (président + salariés éventuels), RC Mandataire Social (RCMS) pour le président, cyber assurance. Tarifs 2026 : 580-2 800 €/an. Cette page distingue SASU des autres statuts et liste les piliers connexes."
+      intro="L'assurance SASU est le pack adapté à la SASU (Société par Actions Simplifiée Unipersonnelle) — forme juridique très populaire pour freelances seniors et consultants à fort CA. Particularité fiscale et sociale : le PRÉSIDENT de SASU est ASSIMILÉ SALARIÉ (vs gérant majoritaire SARL ou EI qui sont TNS). Conséquence pour l'assurance : ÉLIGIBILITÉ aux contrats COLLECTIFS d'entreprise (mutuelle ANI 2013, prévoyance collective) MAIS NON ÉLIGIBILITÉ à la Loi Madelin (réservée aux TNS). Le pack standard SASU combine 5 garanties : RC Pro adaptée au métier (3-10 M€), multirisque local (si applicable), mutuelle collective (président + salariés éventuels), RC Mandataire Social (RCMS) pour le président, cyber assurance. Tarifs 2026 : 580-2 800 € par an. Cette page distingue SASU des autres statuts et liste les piliers connexes."
       legalReference="Code de commerce L. 227-1 et s. + Code de la sécurité sociale (régime salarié)"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -45,7 +45,7 @@ export default function Page() {
         {
           icon: '👔',
           title: 'Président assimilé salarié',
-          desc: 'Régime social SALARIÉ (vs TNS pour SARL gérant majoritaire / EI / EURL)',
+          desc: 'Régime social SALARIÉ (vs TNS pour SARL gérant majoritaire — EI — EURL)',
         },
         {
           icon: '🏥',
@@ -59,8 +59,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 580 €/an',
-          desc: 'Pack RC pro + cyber. Pack complet avec mutuelle + RCMS : 1 800-2 800€/an',
+          title: 'À partir de 580 € par an',
+          desc: 'Pack RC pro + cyber. Pack complet avec mutuelle + RCMS : 1 800-2 800€ par an',
         },
       ]}
       sections={[
@@ -105,7 +105,7 @@ export default function Page() {
                     <td className="border p-2">Collective ANI possible</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">EI / EURL</td>
+                    <td className="border p-2">EI — EURL</td>
                     <td className="border p-2">TNS</td>
                     <td className="border p-2">✅ OUI</td>
                     <td className="border p-2">Mutuelle TNS Madelin individuelle</td>
@@ -122,13 +122,13 @@ export default function Page() {
           ),
         },
         {
-          h2: "Quand choisir SASU plutôt qu'EI / EURL ?",
+          h2: "Quand choisir SASU plutôt qu'EI — EURL ?",
           body: (
             <>
               <p>Choix SASU pertinent quand :</p>
               <ul>
                 <li>
-                  Bénéfice élevé (&gt; 80-100 k€/an) — l&apos;assimilation salariée devient
+                  Bénéfice élevé (&gt; 80-100 k€ par an) — l&apos;assimilation salariée devient
                   avantageuse fiscalement
                 </li>
                 <li>
@@ -194,15 +194,15 @@ export default function Page() {
         },
         {
           q: "SASU : combien coûte l'assurance complète en 2026 ?",
-          a: 'Pack RC pro + cyber : 580-1 200€/an. Pack complet (RC + mutuelle collective + RCMS + cyber) : 1 800-2 800€/an. Variables : métier, plafond RC, présence salariés, secteur.',
+          a: 'Pack RC pro + cyber : 580-1 200€ par an. Pack complet (RC + mutuelle collective + RCMS + cyber) : 1 800-2 800€ par an. Variables : métier, plafond RC, présence salariés, secteur.',
         },
         {
           q: 'RCMS pour président SASU : utile ?',
-          a: 'OUI fortement recommandée. La RC Mandataire Social (D&O) couvre la responsabilité PERSONNELLE du président en cas de faute de gestion (poursuite par associés futurs, URSSAF, créanciers). Sinistre type : 50-500 k€. Tarif : 600-1 800€/an pour SASU. Indispensable si levée de fonds prévue.',
+          a: 'OUI fortement recommandée. La RC Mandataire Social (D&O) couvre la responsabilité PERSONNELLE du président en cas de faute de gestion (poursuite par associés futurs, URSSAF, créanciers). Sinistre type : 50-500 k€. Tarif : 600-1 800€ par an pour SASU. Indispensable si levée de fonds prévue.',
         },
         {
           q: 'Mutuelle collective pour SASU avec 1 seul dirigeant ?',
-          a: 'OUI possible et avantageux fiscalement vs mutuelle individuelle. Le président SASU peut souscrire un contrat collectif « 1 personne » comme employeur de lui-même. Coût optimisé + déductible 100% du résultat (vs Madelin 5 800€/an plafond pour TNS).',
+          a: 'OUI possible et avantageux fiscalement vs mutuelle individuelle. Le président SASU peut souscrire un contrat collectif « 1 personne » comme employeur de lui-même. Coût optimisé + déductible 100% du résultat (vs Madelin 5 800€ par an plafond pour TNS).',
         },
         {
           q: 'Combien de temps pour un devis SASU ?',

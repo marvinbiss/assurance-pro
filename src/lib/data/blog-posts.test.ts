@@ -43,7 +43,7 @@ describe('blog-posts data', () => {
   })
 
   it('categorySlug normalizes accents and slashes', () => {
-    expect(getCategorySlug('Mutuelle / TNS')).toBe('mutuelle-tns')
+    expect(getCategorySlug('Mutuelle — TNS')).toBe('mutuelle-tns')
     expect(getCategorySlug('RC Pro')).toBe('rc-pro')
     expect(getCategorySlug('BTP')).toBe('btp')
   })

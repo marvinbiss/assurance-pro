@@ -53,7 +53,7 @@ export function TrustWidget({
               {rating.toFixed(1)}
             </span>
             <span className="text-xs font-bold uppercase tracking-wider text-charcoal-500">
-              / 5
+              sur 5
             </span>
           </div>
           {stars}

@@ -53,7 +53,7 @@ export default function PilierRcProPage() {
         { value: '2 100', label: 'Pros assurés 2026' },
         { value: '5 M€', label: 'Couverture max' },
         { value: '24h', label: 'Attestation' },
-        { value: '4.9/5', label: '142 avis vérifiés' },
+        { value: '4,9 sur 5', label: '142 avis vérifiés' },
       ]}
       calculatorGarantie="rc-pro"
       expertBio={{
@@ -67,7 +67,7 @@ export default function PilierRcProPage() {
         {
           assureur: 'Hiscox',
           color: '#7B2CBF',
-          prix: '380 €/an',
+          prix: '380 € par an',
           plafond: '5 M€',
           delai: '24h',
           recommande: true,
@@ -75,26 +75,38 @@ export default function PilierRcProPage() {
         {
           assureur: 'April Pro',
           color: '#00A859',
-          prix: '420 €/an',
+          prix: '420 € par an',
           plafond: '2 M€',
           delai: '24h',
         },
         {
           assureur: 'Stello',
           color: '#0F172A',
-          prix: '350 €/an',
+          prix: '350 € par an',
           plafond: '1.5 M€',
           delai: 'incluse',
         },
-        { assureur: 'Wakam', color: '#FF6B35', prix: '395 €/an', plafond: '2 M€', delai: '48h' },
-        { assureur: 'AXA Pro', color: '#00008F', prix: '510 €/an', plafond: '3 M€', delai: '72h' },
+        {
+          assureur: 'Wakam',
+          color: '#FF6B35',
+          prix: '395 € par an',
+          plafond: '2 M€',
+          delai: '48h',
+        },
+        {
+          assureur: 'AXA Pro',
+          color: '#00008F',
+          prix: '510 € par an',
+          plafond: '3 M€',
+          delai: '72h',
+        },
       ]}
       intro="La RC Pro (Responsabilité Civile Professionnelle) couvre les dommages corporels, matériels et immatériels que vous pourriez causer à vos clients ou à des tiers dans l'exercice de votre activité professionnelle. Elle est obligatoire pour certaines professions réglementées (avocats, médecins, agents immobiliers) et fortement recommandée pour toutes les autres. Notre cabinet ORIAS compare 10 assureurs partenaires (Hiscox, April Pro, Stello, Wakam, AXA Pro…) pour vous proposer la meilleure couverture au tarif le plus adapté."
       benefits={[
         { icon: '🛡️', title: "Jusqu'à 5M€ de couverture", desc: 'Plafonds élevés disponibles' },
         { icon: '💼', title: '32 professions couvertes', desc: 'Spécialiste services pros' },
         { icon: '⚡', title: 'Souscription en ligne', desc: 'Attestation immédiate' },
-        { icon: '💰', title: 'À partir de 12€/mois', desc: 'Pour les auto-entrepreneurs' },
+        { icon: '💰', title: 'À partir de 12€ par mois', desc: 'Pour les auto-entrepreneurs' },
       ]}
       sections={[
         {
@@ -110,11 +122,11 @@ export default function PilierRcProPage() {
                 <li>Les experts-comptables, commissaires aux comptes</li>
                 <li>Les agents immobiliers, syndics, administrateurs de biens</li>
                 <li>Les agences de voyages, intermédiaires en assurance, IOBSP</li>
-                <li>Les architectes, maîtres d\'œuvre, géomètres</li>
+                <li>Les architectes, maîtres d’œuvre, géomètres</li>
               </ul>
               <p>
                 Elle est <strong>fortement recommandée</strong> (et exigée par certains clients ou
-                appels d\'offres) pour&nbsp;:
+                appels d’offres) pour&nbsp;:
               </p>
               <ul>
                 <li>Consultants, freelances, indépendants</li>
@@ -143,8 +155,8 @@ export default function PilierRcProPage() {
                 </li>
                 <li>
                   <strong>Dommages immatériels</strong>&nbsp;: pertes financières causées par votre
-                  faute ou négligence (perte d\'exploitation, perte de chiffre d\'affaires, manque à
-                  gagner). C\'est la <em>garantie reine</em> pour les consultants et freelances.
+                  faute ou négligence (perte d’exploitation, perte de chiffre d’affaires, manque à
+                  gagner). C’est la <em>garantie reine</em> pour les consultants et freelances.
                 </li>
               </ul>
               <p className="my-4 border-l-4 border-yellow-400 bg-yellow-50 p-4 text-sm">
@@ -168,7 +180,7 @@ export default function PilierRcProPage() {
                   <tr className="bg-gray-100">
                     <th className="border border-gray-300 p-2 text-left">Profession</th>
                     <th className="border border-gray-300 p-2 text-right">Auto-ent.</th>
-                    <th className="border border-gray-300 p-2 text-right">SARL/SAS</th>
+                    <th className="border border-gray-300 p-2 text-right">SARL ou SAS</th>
                     <th className="border border-gray-300 p-2 text-right">CA &gt;500k</th>
                   </tr>
                 </thead>
@@ -216,7 +228,7 @@ export default function PilierRcProPage() {
         },
         {
           q: "Suis-je obligé d'avoir une RC Pro en auto-entrepreneur ?",
-          a: 'Pour les professions réglementées (avocat, médecin, expert-comptable, agent immobilier, CGP/CIF, IOBSP) : OUI, obligatoire dès le statut AE, sanctions pénales + radiation possible. Pour les autres (consultant, freelance, coach, photographe) : non obligatoire mais EXIGÉE par 78% des plateformes B2B et grands comptes.',
+          a: 'Pour les professions réglementées (avocat, médecin, expert-comptable, agent immobilier, CGP ou CIF, IOBSP) : OUI, obligatoire dès le statut AE, sanctions pénales + radiation possible. Pour les autres (consultant, freelance, coach, photographe) : non obligatoire mais EXIGÉE par 78% des plateformes B2B et grands comptes.',
         },
         {
           q: 'Que risque-je si je donne un mauvais conseil à un client ?',
@@ -240,15 +252,15 @@ export default function PilierRcProPage() {
         },
         {
           q: 'La RC Pro couvre-t-elle une cyberattaque sur mes données client ?',
-          a: "Pas systématiquement. Une fuite de données client (RGPD), ransomware ou phishing relèvent d'une garantie CYBER ASSURANCE distincte. Certains contrats RC Pro premium incluent un volet cyber limité (50-200 k€). À vérifier explicitement à la souscription si vous manipulez des données sensibles.",
+          a: "Pas systématiquement. Une fuite de données client (RGPD), ransomware / phishing relèvent d'une garantie CYBER ASSURANCE distincte. Certains contrats RC Pro premium incluent un volet cyber limité (50-200 k€). À vérifier explicitement à la souscription si vous manipulez des données sensibles.",
         },
         {
           q: 'Combien ça coûte vraiment une RC Pro en auto-entrepreneur ?',
-          a: 'À partir de 89-180 €/an pour un consultant ou freelance digital sans antécédent. 144-288 €/an pour un coach ou formateur. 200-380 €/an pour une agence web. Les tarifs < 8 €/mois sont souvent insuffisants (plafonds < 500 k€). Plafond recommandé : 1,5 M€/sinistre minimum.',
+          a: 'À partir de 89-180 € par an pour un consultant ou freelance digital sans antécédent. 144-288 € par an pour un coach ou formateur. 200-380 € par an pour une agence web. Les tarifs < 8 € par mois sont souvent insuffisants (plafonds < 500 k€). Plafond recommandé : 1,5 M€ par sinistre minimum.',
         },
         {
           q: 'Quel plafond de garantie choisir pour ne pas être sous-couvert ?',
-          a: 'Standard : 1,5 M€/sinistre + 3 M€/an pour la plupart des activités. Conseil IT / DevOps : 5 M€ minimum (clients grands comptes). Conseil financier (CGP/CIF/IOBSP) : 5 M€ obligatoire ACPR. Avocat : 5 M€ obligatoire Conseil National. Plafond trop bas = exposition de votre patrimoine personnel.',
+          a: 'Standard : 1,5 M€ par sinistre + 3 M€ par an pour la plupart des activités. Conseil IT — DevOps : 5 M€ minimum (clients grands comptes). Conseil financier (CGP, CIF ou IOBSP) : 5 M€ obligatoire ACPR. Avocat : 5 M€ obligatoire Conseil National. Plafond trop bas = exposition de votre patrimoine personnel.',
         },
         {
           q: 'Mon assureur peut-il refuser un sinistre RC Pro ?',
@@ -260,7 +272,7 @@ export default function PilierRcProPage() {
         },
         {
           q: 'Puis-je déduire ma prime RC Pro de mes impôts ?',
-          a: 'Oui en intégralité si vous êtes en BIC réel, BNC déclaration contrôlée ou IS (SARL/SAS/EURL) — charge professionnelle déductible. Auto-entrepreneur au micro-BIC/BNC : non déductible (régime forfaitaire), mais la prime reste 100 % à votre charge sans franchise.',
+          a: 'Oui en intégralité si vous êtes en BIC réel, BNC déclaration contrôlée ou IS (SARL, SAS ou EURL) — charge professionnelle déductible. Auto-entrepreneur au micro-BIC ou BNC : non déductible (régime forfaitaire), mais la prime reste 100 % à votre charge sans franchise.',
         },
         {
           q: 'Combien de temps pour recevoir mon attestation RC Pro ?',
@@ -276,7 +288,7 @@ export default function PilierRcProPage() {
         },
         {
           q: "Suis-je couvert si je travaille avec des clients aux USA ou à l'étranger ?",
-          a: "Uniquement si votre contrat inclut la couverture territoriale concernée. Standard : France + UE. Pour USA/Canada (régime juridique très exposé), il faut un avenant spécifique (coût +30 à +80%). Sans extension, un sinistre US n'est PAS indemnisé même si le client paie en euros.",
+          a: "Uniquement si votre contrat inclut la couverture territoriale concernée. Standard : France + UE. Pour USA ou Canada (régime juridique très exposé), il faut un avenant spécifique (coût +30 à +80%). Sans extension, un sinistre US n'est PAS indemnisé même si le client paie en euros.",
         },
         {
           q: "Une SASU ou SARL doit-elle souscrire une RC Pro même si l'activité n'y oblige pas ?",

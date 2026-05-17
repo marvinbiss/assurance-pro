@@ -67,7 +67,7 @@ export default function Page() {
                 <strong>Étape 1 — Saisie profil</strong> (2 min) :
                 <ul>
                   <li>Statut juridique (AE, SARL, SAS)</li>
-                  <li>Activité (liste déroulante NAF/APE)</li>
+                  <li>Activité (liste déroulante NAF ou APE)</li>
                   <li>Chiffre d&apos;affaires prévisionnel</li>
                   <li>Antécédents sinistres 3-5 ans</li>
                   <li>Options souhaitées (cyber, juridique, dommages biens)</li>
@@ -100,7 +100,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Étape 5 — E-signature</strong> (30 sec) : signature qualifiée eIDAS via
-                DocuSign/Universign
+                DocuSign / Universign
               </li>
               <li>
                 <strong>Étape 6 — Téléchargement</strong> (immédiat) : attestation PDF + contrat
@@ -149,8 +149,8 @@ export default function Page() {
                 effectif. Attestation immédiate. UX éprouvée 30 ans.
               </li>
               <li>
-                <strong>Stello</strong> : process 6 étapes optimisées mobile. App native
-                iOS/Android. Attestation immédiate. UX moderne 2026.
+                <strong>Stello</strong> : process 6 étapes optimisées mobile. App native iOS ou
+                Android. Attestation immédiate. UX moderne 2026.
               </li>
               <li>
                 <strong>April Pro BTP</strong> : process 7 étapes (vérifications décennale 24-48h).
@@ -163,7 +163,7 @@ export default function Page() {
       faq={[
         {
           q: 'Pourquoi CPC à 800€ sur ce KW ?',
-          a: 'Combinaison : 1) Intent souscription forte (proche conversion). 2) LTV client élevée (RC Pro annuelle + cyber + cross-sell). 3) Concurrence forte 50+ assureurs. 4) Volume modéré (90/mois) = enchères agressives par clic. CPC Google Ads = 800€/clic en 2026.',
+          a: 'Combinaison : 1) Intent souscription forte (proche conversion). 2) LTV client élevée (RC Pro annuelle + cyber + cross-sell). 3) Concurrence forte 50+ assureurs. 4) Volume modéré (90 par mois) = enchères agressives par clic. CPC Google Ads = 800€ par clic en 2026.',
         },
         {
           q: 'Process aussi sûr qu&apos;en agence ?',

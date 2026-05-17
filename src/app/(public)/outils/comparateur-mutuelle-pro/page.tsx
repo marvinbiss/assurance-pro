@@ -28,12 +28,12 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/comparateur-mutuelle-pro'
+const SLUG = 'outils / comparateur-mutuelle-pro'
 
 export const metadata: Metadata = {
   title: 'Comparateur mutuelle pro 2026 — TNS, BTP, dirigeant',
   description:
-    'Comparateur mutuelle pro gratuit en 2 minutes : TNS Madelin déductible, mutuelle pro BTP (16k recherches/mois), mutuelle dirigeant SASU/SAS. 6 assureurs comparés (PRO BTP, April Pro, MMA, Generali, Aon, Harmonie). Devis ORIAS sous 24h.',
+    'Comparateur mutuelle pro gratuit en 2 minutes : TNS Madelin déductible, mutuelle pro BTP (16k recherches par mois), mutuelle dirigeant SASU ou SAS. 6 assureurs comparés (PRO BTP, April Pro, MMA, Generali, Aon, Harmonie). Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: 'Comparateur mutuelle pro 2026 — TNS Madelin + BTP + dirigeant',
@@ -56,14 +56,14 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/mutuelle-pro" className="hover:underline">
               Mutuelle pro
             </Link>{' '}
-            / <span>Comparateur mutuelle pro</span>
+            › <span>Comparateur mutuelle pro</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-amber-500/90 px-3 py-1 text-sm font-semibold text-white">
-            ✓ Madelin déductible (TNS) — économie ~1 750 €/an
+            ✓ Madelin déductible (TNS) — économie ~1 750 € par an
           </span>
           <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">
             Comparateur mutuelle pro 2026
@@ -74,9 +74,9 @@ export default async function Page() {
               {' '}
               PRO BTP, April Pro Santé, MMA Pro, Generali, Aon, Harmonie Mutuelle Pro
             </strong>
-            . Tarifs négociés à partir de <strong>32 €/mois</strong> (formule TNS de base)
+            . Tarifs négociés à partir de <strong>32 € par mois</strong> (formule TNS de base)
             jusqu&apos;à
-            <strong> 280 €/mois</strong> (haut de gamme famille). Conseil ORIAS sous 24h.
+            <strong> 280 € par mois</strong> (haut de gamme famille). Conseil ORIAS sous 24h.
           </p>
           <div className="grid grid-cols-2 gap-4 text-sm md:grid-cols-4">
             <div className="rounded bg-white/10 p-3">
@@ -132,7 +132,7 @@ export default async function Page() {
                 <td className="border p-2 text-right">68 € – 110 €</td>
               </tr>
               <tr>
-                <td className="border p-2">Dirigeant SASU/SAS 45 ans (assimilé salarié)</td>
+                <td className="border p-2">Dirigeant SASU ou SAS 45 ans (assimilé salarié)</td>
                 <td className="border p-2">Régime collectif 1 personne</td>
                 <td className="border p-2 text-right">95 € – 180 €</td>
               </tr>
@@ -150,8 +150,8 @@ export default async function Page() {
           </table>
           <p className="mt-2 text-xs italic text-gray-600">
             Loi Madelin (art. 154 bis CGI) : pour TNS au régime réel, cotisations mutuelle +
-            prévoyance déductibles dans plafond commun ~5 800 €/an pour 60 k€ de bénéfice (économie
-            d&apos;impôt nette ~1 750 €/an à TMI 30%).
+            prévoyance déductibles dans plafond commun ~5 800 € par an pour 60 k€ de bénéfice
+            (économie d&apos;impôt nette ~1 750 € par an à TMI 30%).
           </p>
         </div>
       </section>
@@ -204,7 +204,7 @@ export default async function Page() {
                 <td className="border p-2">
                   <strong>MMA Pro Santé</strong>
                 </td>
-                <td className="border p-2">TPE / PME locales</td>
+                <td className="border p-2">TPE — PME locales</td>
                 <td className="border p-2">Réseau agences physique fort, conseiller dédié</td>
               </tr>
               <tr>
@@ -227,7 +227,7 @@ export default async function Page() {
                 <td className="border p-2">
                   <strong>Harmonie Mutuelle Pro</strong>
                 </td>
-                <td className="border p-2">Mutualiste TPE/PME</td>
+                <td className="border p-2">Mutualiste TPE ou PME</td>
                 <td className="border p-2">Sans actionnaire, prix attractifs entrée gamme</td>
               </tr>
             </tbody>
@@ -258,7 +258,7 @@ export default async function Page() {
                 <td className="border p-2">Madelin individuelle</td>
               </tr>
               <tr>
-                <td className="border p-2">EI / EURL</td>
+                <td className="border p-2">EI — EURL</td>
                 <td className="border p-2">TNS</td>
                 <td className="border p-2">✅ OUI (régime réel)</td>
                 <td className="border p-2">Madelin individuelle</td>
@@ -276,7 +276,7 @@ export default async function Page() {
                 <td className="border p-2">Mutuelle individuelle non-Madelin</td>
               </tr>
               <tr>
-                <td className="border p-2">SASU / SAS président</td>
+                <td className="border p-2">SASU — SAS président</td>
                 <td className="border p-2">Assimilé salarié</td>
                 <td className="border p-2">❌ NON</td>
                 <td className="border p-2">Régime collectif (déductible 100% résultat)</td>

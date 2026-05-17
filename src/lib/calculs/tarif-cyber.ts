@@ -23,13 +23,7 @@ export type Secteur =
   | 'transport-logistique'
   | 'collectivite-public'
 
-export type DonneesVolume =
-  | 'aucune'
-  | 'moins-1k'
-  | '1k-10k'
-  | '10k-100k'
-  | '100k-1m'
-  | 'plus-1m'
+export type DonneesVolume = 'aucune' | 'moins-1k' | '1k-10k' | '10k-100k' | '100k-1m' | 'plus-1m'
 
 export type MaturiteCyber = 'aucune' | 'basique' | 'avancee' | 'iso27001'
 
@@ -61,14 +55,26 @@ export interface CyberResultat {
 
 const TARIF_BASE_SECTEUR: Record<Secteur, { bas: number; haut: number; risqueRgpd: string }> = {
   'tpe-services': { bas: 380, haut: 1280, risqueRgpd: 'Modéré (peu de données client sensibles)' },
-  'pme-services': { bas: 1280, haut: 4800, risqueRgpd: 'Élevé (volume données + processus métier)' },
+  'pme-services': {
+    bas: 1280,
+    haut: 4800,
+    risqueRgpd: 'Élevé (volume données + processus métier)',
+  },
   ecommerce: { bas: 980, haut: 3200, risqueRgpd: 'TRÈS élevé (données paiement + RGPD strict)' },
   'sante-medical': { bas: 1480, haut: 5800, risqueRgpd: 'MAXIMUM (RGPD art. 9 — données santé)' },
   'finance-fintech': { bas: 2280, haut: 8500, risqueRgpd: 'MAXIMUM (RGPD + DORA + ACPR)' },
-  'industriel-manuf': { bas: 1180, haut: 4200, risqueRgpd: 'Élevé (OT + IT, propriété intellectuelle)' },
+  'industriel-manuf': {
+    bas: 1180,
+    haut: 4200,
+    risqueRgpd: 'Élevé (OT + IT, propriété intellectuelle)',
+  },
   'btp-immobilier': { bas: 580, haut: 2280, risqueRgpd: 'Modéré (données chantiers + clients)' },
   'transport-logistique': { bas: 880, haut: 3500, risqueRgpd: 'Élevé (données livraison + GPS)' },
-  'collectivite-public': { bas: 1880, haut: 6800, risqueRgpd: 'TRÈS élevé (données citoyens + LPM 2018)' },
+  'collectivite-public': {
+    bas: 1880,
+    haut: 6800,
+    risqueRgpd: 'TRÈS élevé (données citoyens + LPM 2018)',
+  },
 }
 
 const COEF_DONNEES: Record<DonneesVolume, number> = {
@@ -81,10 +87,10 @@ const COEF_DONNEES: Record<DonneesVolume, number> = {
 }
 
 const COEF_MATURITE: Record<MaturiteCyber, number> = {
-  aucune: 1.42, /* sur-prime — risque maximal */
-  basique: 1.15, /* antivirus + sauvegardes */
-  avancee: 1.0,  /* SOC + EDR + sensibilisation */
-  iso27001: 0.78, /* certification = rabais maximum */
+  aucune: 1.42 /* sur-prime — risque maximal */,
+  basique: 1.15 /* antivirus + sauvegardes */,
+  avancee: 1.0 /* SOC + EDR + sensibilisation */,
+  iso27001: 0.78 /* certification = rabais maximum */,
 }
 
 const COEF_PLAFOND: Record<Plafond, number> = {
@@ -130,20 +136,27 @@ export function calculerCyber(input: CyberInput): CyberResultat {
     fourchetteBasse: basse,
     fourchetteHaute: haute,
     fourchetteMediane: mediane,
-    detail: { base: baseM, coefCA: cCA, coefDonnees: cDon, coefMaturite: cMat, coefPlafond: cPl, coefFranchise: cFr },
+    detail: {
+      base: baseM,
+      coefCA: cCA,
+      coefDonnees: cDon,
+      coefMaturite: cMat,
+      coefPlafond: cPl,
+      coefFranchise: cFr,
+    },
   }
 }
 
 export const SECTEUR_LABELS: Record<Secteur, string> = {
   'tpe-services': 'TPE services (1-9 salariés)',
   'pme-services': 'PME services (10-249 salariés)',
-  ecommerce: 'E-commerce / vente en ligne',
-  'sante-medical': 'Santé / médical (RGPD art. 9)',
-  'finance-fintech': 'Finance / fintech (DORA + ACPR)',
-  'industriel-manuf': 'Industriel / manufacturier',
-  'btp-immobilier': 'BTP / immobilier',
-  'transport-logistique': 'Transport / logistique',
-  'collectivite-public': 'Collectivité publique / OIV (LPM 2018)',
+  ecommerce: 'E-commerce — vente en ligne',
+  'sante-medical': 'Santé — médical (RGPD art. 9)',
+  'finance-fintech': 'Finance — fintech (DORA + ACPR)',
+  'industriel-manuf': 'Industriel — manufacturier',
+  'btp-immobilier': 'BTP — immobilier',
+  'transport-logistique': 'Transport — logistique',
+  'collectivite-public': 'Collectivité publique — OIV (LPM 2018)',
 }
 
 export const DONNEES_LABELS: Record<DonneesVolume, string> = {
@@ -159,7 +172,7 @@ export const MATURITE_LABELS: Record<MaturiteCyber, string> = {
   aucune: 'Aucune (pas de mesures spécifiques)',
   basique: 'Basique (antivirus + sauvegardes)',
   avancee: 'Avancée (SOC + EDR + sensibilisation collaborateurs)',
-  iso27001: 'ISO 27001 / SecNumCloud (certification ANSSI)',
+  iso27001: 'ISO 27001 — SecNumCloud (certification ANSSI)',
 }
 
 export const PLAFOND_LABELS: Record<Plafond, string> = {
@@ -167,8 +180,8 @@ export const PLAFOND_LABELS: Record<Plafond, string> = {
   500000: '500 000 € (TPE 1-9 sal — standard)',
   1000000: '1 000 000 € (PME 10-50 sal — recommandé)',
   3000000: '3 000 000 € (PME 50-249 sal)',
-  5000000: '5 000 000 € (ETI / risque élevé)',
-  10000000: '10 000 000 € (grand compte / OIV)',
+  5000000: '5 000 000 € (ETI — risque élevé)',
+  10000000: '10 000 000 € (grand compte — OIV)',
 }
 
 export function getRisqueRGPD(secteur: Secteur): string {

@@ -16,7 +16,7 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 
-const SLUG = 'guides/tous-risques-chantier'
+const SLUG = 'guides / tous-risques-chantier'
 const TITLE = 'Tous Risques Chantier (TRC) — Guide complet 2026'
 const TAGLINE =
   "Tout savoir sur l'assurance Tous Risques Chantier : couvertures pendant les travaux, prix moyen 0,2-0,5% du coût HT, distinction avec décennale et DO. Guide expert."
@@ -47,7 +47,7 @@ export default function Page() {
         {
           icon: '🔥',
           title: 'Incendie + vol matériel',
-          desc: 'Vol matériel/matériaux stockés, incendie partiel, vandalisme nocturne',
+          desc: 'Vol matériel ou matériaux stockés, incendie partiel, vandalisme nocturne',
         },
         {
           icon: '🌪️',
@@ -73,7 +73,7 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Vol</strong> de matériel + matériaux + équipements stockés sur le chantier
-                  (avec/sans effraction)
+                  (avec ou sans effraction)
                 </li>
                 <li>
                   <strong>Vandalisme</strong> et dégradations volontaires
@@ -143,7 +143,7 @@ export default function Page() {
                       Dommages causés AUX TIERS (voisin, passant, client)
                     </td>
                     <td className="border p-2">PENDANT les travaux</td>
-                    <td className="border p-2">Artisan / entreprise BTP</td>
+                    <td className="border p-2">Artisan — entreprise BTP</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -151,7 +151,7 @@ export default function Page() {
                     </td>
                     <td className="border p-2">Dommages affectant SOLIDITÉ ouvrage</td>
                     <td className="border p-2">10 ANS APRÈS RÉCEPTION</td>
-                    <td className="border p-2">Artisan / entreprise BTP (Loi Spinetta)</td>
+                    <td className="border p-2">Artisan — entreprise BTP (Loi Spinetta)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -210,7 +210,7 @@ export default function Page() {
                     <td className="border p-2 text-right">30 000 € – 75 000 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Chantier industriel / hospitalier</td>
+                    <td className="border p-2">Chantier industriel — hospitalier</td>
                     <td className="border p-2 text-right">30 000 000 €</td>
                     <td className="border p-2 text-right">75 000 € – 150 000 €</td>
                   </tr>
@@ -255,7 +255,9 @@ export default function Page() {
               </ul>
               <p>La TRC est MOINS pertinente pour :</p>
               <ul>
-                <li>Petits travaux (rénovation simple, finition) où le coût/bénéfice est faible</li>
+                <li>
+                  Petits travaux (rénovation simple, finition) où le coût ou bénéfice est faible
+                </li>
                 <li>Chantiers très courts (&lt; 3 mois) avec stockage minimal</li>
                 <li>Travaux d&apos;entretien sans risque structurel</li>
               </ul>
@@ -287,7 +289,7 @@ export default function Page() {
         },
         {
           q: 'TRC : quelles exclusions classiques ?',
-          a: "Exclusions classiques : faute intentionnelle (toujours exclue), désordres décennaux (couverts par la décennale, pas la TRC), usure normale, défauts de conception (couverts par la RC pro de l'architecte/MOE), pertes financières indirectes du maître d'ouvrage (sauf option), guerre/émeute/terrorisme, sinistres causés par non-respect des règles de l'art (DTU).",
+          a: "Exclusions classiques : faute intentionnelle (toujours exclue), désordres décennaux (couverts par la décennale, pas la TRC), usure normale, défauts de conception (couverts par la RC pro de l'architecte ou MOE), pertes financières indirectes du maître d'ouvrage (sauf option), guerre, émeute ou terrorisme, sinistres causés par non-respect des règles de l'art (DTU).",
         },
         {
           q: 'Combien de temps pour obtenir un devis TRC ?',

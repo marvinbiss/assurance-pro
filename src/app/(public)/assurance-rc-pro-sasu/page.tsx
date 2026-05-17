@@ -15,12 +15,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-rc-pro-sasu'
 const TITLE = 'Assurance RC Pro SASU — Souscription, démarches, comparatif'
 const TAGLINE =
-  'Souscrire une RC Pro pour votre SASU : pièces nécessaires (K-bis, SIRET), comparatif 5 assureurs, tarifs 350-1 500€/an. Guide souscription en ligne.'
+  'Souscrire une RC Pro pour votre SASU : pièces nécessaires (K-bis, SIRET), comparatif 5 assureurs, tarifs 350-1 500€ par an. Guide souscription en ligne.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance RC Pro SASU : guide souscription. Pièces (K-bis, SIRET, RIB), comparatif Hiscox/Stello/Allianz/MMA. Plafond 1-3M€ recommandé. Tarif 350-1 500€/an.',
+    'Assurance RC Pro SASU : guide souscription. Pièces (K-bis, SIRET, RIB), comparatif Hiscox, Stello, Allianz ou MMA. Plafond 1-3M€ recommandé. Tarif 350-1 500€ par an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -50,7 +50,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '350-1 500€/an',
+          title: '350-1 500€ par an',
           desc: 'SASU services intellectuels 350-550€ • PME 800-1 500€',
         },
         {
@@ -103,24 +103,24 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Hiscox</strong> : leader services intellectuels (consultant, IT, marketing).
-                Plafond jusqu&apos;à 10M€. Postériorité 10 ans. Tarif SASU CA &lt; 100k€ :
-                350-500€/an. Souscription en ligne.
+                Plafond jusqu&apos;à 10M€. Postériorité 10 ans. Tarif SASU CA &lt; 100k€ : 350-500€
+                par an. Souscription en ligne.
               </li>
               <li>
-                <strong>Stello</strong> : challenger 100% digital. Tarif similaire Hiscox AE/SASU
-                petite (350-450€/an). Postériorité 5 ans. Plafond max 1.5M€.
+                <strong>Stello</strong> : challenger 100% digital. Tarif similaire Hiscox AE ou SASU
+                petite (350-450€ par an). Postériorité 5 ans. Plafond max 1.5M€.
               </li>
               <li>
                 <strong>Allianz Pro</strong> : couverture la plus large (services + BTP +
-                agriculture). Tarif SASU services : 400-700€/an. Postériorité 5 ans.
+                agriculture). Tarif SASU services : 400-700€ par an. Postériorité 5 ans.
               </li>
               <li>
                 <strong>MMA Pro</strong> : équilibré, réseau 1 500+ agences. Pack multi-contrats
-                avantageux. Tarif SASU : 380-650€/an.
+                avantageux. Tarif SASU : 380-650€ par an.
               </li>
               <li>
                 <strong>AXA Pro</strong> : couverture premium, assistance haut de gamme. Prime
-                +20-25% vs Hiscox équivalent. Tarif SASU : 450-800€/an.
+                +20-25% vs Hiscox équivalent. Tarif SASU : 450-800€ par an.
               </li>
             </ul>
           ),
@@ -130,18 +130,18 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>SASU consultant management/stratégie</strong> : Hiscox best price +
+                <strong>SASU consultant management ou stratégie</strong> : Hiscox best price +
                 postériorité 10 ans
               </li>
               <li>
-                <strong>SASU freelance dev / IT</strong> : Hiscox ou Stello (digital pure)
+                <strong>SASU freelance dev — IT</strong> : Hiscox ou Stello (digital pure)
               </li>
               <li>
-                <strong>SASU agence web / communication</strong> : Hiscox ou Generali Pro (cyber
+                <strong>SASU agence web — communication</strong> : Hiscox ou Generali Pro (cyber
                 combinée)
               </li>
               <li>
-                <strong>SASU coach / formation</strong> : Hiscox ou MAIF Pro (selon profil
+                <strong>SASU coach — formation</strong> : Hiscox ou MAIF Pro (selon profil
                 &quot;commercial&quot; vs &quot;ESS&quot;)
               </li>
               <li>
@@ -153,10 +153,10 @@ export default function Page() {
                 profession (Ordre dédié)
               </li>
               <li>
-                <strong>SASU e-commerce / dropshipping</strong> : Hiscox + cyber-assurance combinée
+                <strong>SASU e-commerce — dropshipping</strong> : Hiscox + cyber-assurance combinée
               </li>
               <li>
-                <strong>SASU restauration / commerce</strong> : Allianz Pro Commerce, MMA Pro
+                <strong>SASU restauration — commerce</strong> : Allianz Pro Commerce, MMA Pro
                 Commerce
               </li>
             </ul>
@@ -178,7 +178,7 @@ export default function Page() {
         },
         {
           q: 'Souscription RC Pro avant immatriculation SASU possible ?',
-          a: 'Non. Attendre Kbis officiel (1-2 semaines après dépôt INPI/greffe). En attente : RC Pro provisoire personnelle (1-3 mois) chez certains assureurs (rare). Sinon, démarrer activité après immatriculation + RC Pro souscrite.',
+          a: 'Non. Attendre Kbis officiel (1-2 semaines après dépôt INPI ou greffe). En attente : RC Pro provisoire personnelle (1-3 mois) chez certains assureurs (rare). Sinon, démarrer activité après immatriculation + RC Pro souscrite.',
         },
       ]}
       relatedMetiers={[

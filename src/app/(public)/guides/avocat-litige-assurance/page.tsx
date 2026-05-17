@@ -20,7 +20,7 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 
-const SLUG = 'guides/avocat-litige-assurance'
+const SLUG = 'guides / avocat-litige-assurance'
 const TITLE = 'Avocat litige assurance — Guide 2026 (refus indemnisation, recours)'
 const TAGLINE =
   "Comment trouver et choisir un avocat spécialisé en droit des assurances : refus d'indemnisation, mauvaise foi, mise en demeure, expertise judiciaire. Conseil ORIAS."
@@ -39,7 +39,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Faire appel à un avocat pour un litige avec votre assureur est parfois nécessaire : refus d'indemnisation après sinistre, application abusive d'une exclusion, application de la règle proportionnelle injustifiée, lenteur dans le traitement, sous-évaluation de l'expertise, application de la déchéance pour fausse déclaration prétendue. Cette page explique quand engager un avocat, comment le choisir (spécialité droit des assurances, barreau de proximité, honoraires), les alternatives moins coûteuses (médiateur de l'assurance, PJ Pro, association de consommateurs), la procédure type et les coûts à anticiper. Important : 70% des litiges assurés/assureur se résolvent en MÉDIATION sans aller en justice. La voie judiciaire (avec avocat) est à privilégier pour les sinistres > 10 000 € et les refus d'indemnisation manifestement abusifs."
+      intro="Faire appel à un avocat pour un litige avec votre assureur est parfois nécessaire : refus d'indemnisation après sinistre, application abusive d'une exclusion, application de la règle proportionnelle injustifiée, lenteur dans le traitement, sous-évaluation de l'expertise, application de la déchéance pour fausse déclaration prétendue. Cette page explique quand engager un avocat, comment le choisir (spécialité droit des assurances, barreau de proximité, honoraires), les alternatives moins coûteuses (médiateur de l'assurance, PJ Pro, association de consommateurs), la procédure type et les coûts à anticiper. Important : 70% des litiges assurés ou assureur se résolvent en MÉDIATION sans aller en justice. La voie judiciaire (avec avocat) est à privilégier pour les sinistres > 10 000 € et les refus d'indemnisation manifestement abusifs."
       legalReference="Articles L. 113-1 et suivants du Code des assurances + Code de la consommation"
       isObligatoire={false}
       benefits={[
@@ -55,13 +55,13 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'Honoraires 200-450 €/h',
+          title: 'Honoraires 200-450 € par heure',
           desc: 'Forfait possible (1 500-5 000 €) selon complexité du dossier',
         },
         {
           icon: '🛡️',
           title: 'PJ Pro = défense gratuite',
-          desc: 'Si vous avez une <Link href="/protection-juridique-professionnelle" className="underline">PJ pro</Link>, frais avocat pris en charge jusqu\'à 30 000€',
+          desc: 'Si vous avez une <Link href="/protection-juridique-professionnelle" className="underline">PJ pro</Link>, frais avocat pris en charge jusqu’à 30 000€',
         },
       ]}
       sections={[
@@ -123,16 +123,16 @@ export default function Page() {
                 , votre assureur PJ prend en charge :
               </p>
               <ul>
-                <li>Frais avocat (jusqu&apos;à 30 000 €/litige standard, 50-100k€ étendu)</li>
+                <li>Frais avocat (jusqu&apos;à 30 000 € par litige standard, 50-100k€ étendu)</li>
                 <li>Frais d&apos;huissier + d&apos;expert</li>
                 <li>Frais de procédure</li>
                 <li>Conseil juridique téléphonique illimité 7j/7</li>
               </ul>
               <p>
-                Tarif PJ Pro : 280-1 800 €/an selon taille entreprise. ROI évident dès le 1er
+                Tarif PJ Pro : 280-1 800 € par an selon taille entreprise. ROI évident dès le 1er
                 litige.
               </p>
-              <h3>3. Association de consommateurs / fédération pro</h3>
+              <h3>3. Association de consommateurs — fédération pro</h3>
               <p>
                 UFC-Que Choisir, CLCV, Fédération de votre métier (FFB, CAPEB, FNAIM) —
                 accompagnement souvent gratuit pour les adhérents. Moins efficace pour les sinistres
@@ -223,7 +223,7 @@ export default function Page() {
               <ol>
                 <li>
                   <strong>Constitution du dossier</strong> (1 mois) : tous les échanges écrits avec
-                  l&apos;assureur, contrat d&apos;origine + conditions générales/particulières,
+                  l&apos;assureur, contrat d&apos;origine + conditions générales ou particulières,
                   attestation du sinistre, expertises, factures, photos, témoignages
                 </li>
                 <li>
@@ -231,8 +231,8 @@ export default function Page() {
                   art. 750-1 CPC)
                 </li>
                 <li>
-                  <strong>Mise en demeure</strong> par l&apos;avocat à l&apos;assureur (LR/AR — 30
-                  jours pour répondre)
+                  <strong>Mise en demeure</strong> par l&apos;avocat à l&apos;assureur (LR ou AR —
+                  30 jours pour répondre)
                 </li>
                 <li>
                   <strong>Référé-expertise</strong> si désaccord persistant sur évaluation :
@@ -271,7 +271,7 @@ export default function Page() {
         },
         {
           q: "PJ Pro : couvre-t-elle les frais d'avocat pour litige avec mon assureur ?",
-          a: "OUI dans 100% des contrats PJ Pro standards : frais d'avocat + huissier + expert + procédure couverts jusqu'à 30 000€/litige (50-100k€ en formule étendue). Conseil juridique téléphonique illimité 7j/7. ROI évident dès 1er litige (1 litige = 5-20 ans de cotisations PJ couvertes). Voir <a href='/protection-juridique-professionnelle' class='text-primary-600 underline'>/protection-juridique-professionnelle</a>.",
+          a: "OUI dans 100% des contrats PJ Pro standards : frais d'avocat + huissier + expert + procédure couverts jusqu'à 30 000€ par litige (50-100k€ en formule étendue). Conseil juridique téléphonique illimité 7j/7. ROI évident dès 1er litige (1 litige = 5-20 ans de cotisations PJ couvertes). Voir <a href='/protection-juridique-professionnelle' class='text-primary-600 underline'>/protection-juridique-professionnelle</a>.",
         },
         {
           q: "Médiateur de l'Assurance : comment le saisir ?",

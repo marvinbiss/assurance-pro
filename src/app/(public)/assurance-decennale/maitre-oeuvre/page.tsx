@@ -13,14 +13,14 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-decennale/maitre-oeuvre'
-const TITLE = "Décennale maître d'œuvre 2026 — Tarifs 1 280-3 200€/an (responsabilité étendue)"
+const TITLE = "Décennale maître d'œuvre 2026 — Tarifs 1 280-3 200€ par an (responsabilité étendue)"
 const TAGLINE =
   "La décennale obligatoire pour maîtres d'œuvre : couverture spécifique conception + supervision chantier + coordination corps d'état. Responsabilité étendue aux fautes des sous-traitants."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Décennale maître d'œuvre 2026 : OBLIGATOIRE Loi Spinetta. Couverture conception + supervision chantier + coordination 8-15 corps d'état + recours sous-traitants. Tarifs 1 280-3 200€/an indépendant, 8 500-22 000€/an SARL. Devis ORIAS sous 24h.",
+    "Décennale maître d'œuvre 2026 : OBLIGATOIRE Loi Spinetta. Couverture conception + supervision chantier + coordination 8-15 corps d'état + recours sous-traitants. Tarifs 1 280-3 200€ par an indépendant, 8 500-22 000€ par an SARL. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -31,7 +31,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance décennale maître d'œuvre est OBLIGATOIRE pour tout maître d'œuvre en France (Loi Spinetta — art. L. 241-1 C. assur.). Le maître d'œuvre (MdŒ) cumule 3 responsabilités : (1) conception du projet, (2) supervision du chantier, (3) coordination des corps d'état. Sa décennale couvre donc un périmètre étendu : ses propres fautes ET les fautes des sous-traitants qu'il a sélectionnés (responsabilité solidaire art. 1792-4 C. civ.). Sinistralité moyenne MdŒ : 8,7%. Tarifs 2026 : 1 280-3 200 €/an pour MdŒ indépendant (CA 80-180k€), 8 500-22 000 €/an pour SARL agence MdŒ avec salariés."
+      intro="L'assurance décennale maître d'œuvre est OBLIGATOIRE pour tout maître d'œuvre en France (Loi Spinetta — art. L. 241-1 C. assur.). Le maître d'œuvre (MdŒ) cumule 3 responsabilités : (1) conception du projet, (2) supervision du chantier, (3) coordination des corps d'état. Sa décennale couvre donc un périmètre étendu : ses propres fautes ET les fautes des sous-traitants qu'il a sélectionnés (responsabilité solidaire art. 1792-4 C. civ.). Sinistralité moyenne MdŒ : 8,7%. Tarifs 2026 : 1 280-3 200 € par an pour MdŒ indépendant (CA 80-180k€), 8 500-22 000 € par an pour SARL agence MdŒ avec salariés."
       legalReference="Loi Spinetta art. L. 241-1 + 1792-4 C. civ. (solidarité sous-traitants) + Loi MOP 1985"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -56,8 +56,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '1 280-3 200 €/an indépendant',
-          desc: 'MdŒ indépendant CA 80-180k€. Agence SARL 5 sal : 8 500-22 000€/an. Plus cher que artisans simples',
+          title: '1 280-3 200 € par an indépendant',
+          desc: 'MdŒ indépendant CA 80-180k€. Agence SARL 5 sal : 8 500-22 000€ par an. Plus cher que artisans simples',
         },
       ]}
       sections={[
@@ -124,8 +124,8 @@ export default function Page() {
                   </tr>
                   <tr>
                     <td className="border p-2">Tarif décennale 2026</td>
-                    <td className="border p-2">1 280-3 200 €/an indépendant</td>
-                    <td className="border p-2">1 800-4 500 €/an (MAF)</td>
+                    <td className="border p-2">1 280-3 200 € par an indépendant</td>
+                    <td className="border p-2">1 800-4 500 € par an (MAF)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">Solidarité sous-traitants</td>
@@ -176,19 +176,19 @@ export default function Page() {
       faq={[
         {
           q: 'MdŒ : décennale obligatoire ?',
-          a: "OUI absolument (Loi Spinetta art. L. 241-1 C. assur.). Le maître d'œuvre est qualifié de constructeur (art. 1792-1 C. civ.) au même titre que les artisans BTP. Sanctions absence : 75 000 € + 6 mois prison + interdiction d'exercer + responsabilité civile/pénale personnelle.",
+          a: "OUI absolument (Loi Spinetta art. L. 241-1 C. assur.). Le maître d'œuvre est qualifié de constructeur (art. 1792-1 C. civ.) au même titre que les artisans BTP. Sanctions absence : 75 000 € + 6 mois prison + interdiction d'exercer + responsabilité civile ou pénale personnelle.",
         },
         {
           q: 'Plafond garantie MdŒ recommandé ?',
-          a: "<strong>2 000 000€ minimum</strong> car cumul de responsabilités (conception + supervision + solidarité sous-traitants). Pour projets >1M€ ou marchés publics : <strong>5 000 000€</strong>. Pour projets industriels/tertiaires complexes : <strong>10 000 000€</strong>. Notre cabinet ORIAS travaille avec SMABTP MdŒ, MAF et April BTP qui couvrent jusqu'à 10M€.",
+          a: "<strong>2 000 000€ minimum</strong> car cumul de responsabilités (conception + supervision + solidarité sous-traitants). Pour projets >1M€ ou marchés publics : <strong>5 000 000€</strong>. Pour projets industriels ou tertiaires complexes : <strong>10 000 000€</strong>. Notre cabinet ORIAS travaille avec SMABTP MdŒ, MAF et April BTP qui couvrent jusqu'à 10M€.",
         },
         {
           q: 'Solidarité sous-traitants : comment me protéger ?',
-          a: "3 leviers : (1) <strong>Vérifier l&apos;attestation décennale</strong> de chaque sous-traitant AVANT signature, (2) <strong>Inclure une clause de recours subrogatoire</strong> dans vos contrats sous-traitance, (3) <strong>Souscrire la garantie 'sous-traitance étendue'</strong> qui couvre les défaillances assureurs sous-traitants (option +200-450€/an).",
+          a: "3 leviers : (1) <strong>Vérifier l&apos;attestation décennale</strong> de chaque sous-traitant AVANT signature, (2) <strong>Inclure une clause de recours subrogatoire</strong> dans vos contrats sous-traitance, (3) <strong>Souscrire la garantie 'sous-traitance étendue'</strong> qui couvre les défaillances assureurs sous-traitants (option +200-450€ par an).",
         },
         {
           q: 'Tarif décennale MdŒ 2026 ?',
-          a: 'MdŒ indépendant (CA 80-180k€) : 1 280-3 200 €/an. EURL/SASU MdŒ : 1 580-3 800 €/an. SARL agence MdŒ 5 salariés : 8 500-22 000 €/an. SAS 10+ salariés : 22 000-48 000 €/an. Variables : type projets (résidentiel/tertiaire/industriel), zone, plafond, antécédents.',
+          a: 'MdŒ indépendant (CA 80-180k€) : 1 280-3 200 € par an. EURL ou SASU MdŒ : 1 580-3 800 € par an. SARL agence MdŒ 5 salariés : 8 500-22 000 € par an. SAS 10+ salariés : 22 000-48 000 € par an. Variables : type projets (résidentiel, tertiaire ou industriel), zone, plafond, antécédents.',
         },
       ]}
     />

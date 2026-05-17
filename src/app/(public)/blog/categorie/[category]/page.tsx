@@ -52,7 +52,7 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   return {
     title: `Blog ${cat.name} — Analyses ORIAS Vivos Assurance`,
     description: `Articles sourcés (Légifrance, ACPR, AQC, FFA) sur ${cat.name}. Conseils motivés par courtiers ORIAS spécialistes.`,
-    alternates: { canonical: `${SITE_URL}/blog/categorie/${cat.slug}` },
+    alternates: { canonical: `${SITE_URL}/blog / categorie/${cat.slug}` },
   }
 }
 

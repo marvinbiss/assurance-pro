@@ -23,10 +23,10 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 
-const SLUG = 'guides/parfait-achevement'
+const SLUG = 'guides / parfait-achevement'
 const TITLE = 'Garantie de parfait achèvement (GPA) — 1 an, mécanisme, différence décennale'
 const TAGLINE =
-  "La GPA oblige l'entrepreneur à réparer pendant 1 an tous les désordres signalés à la réception ou apparus dans l'année. Guide complet 2026 : déclenchement, exemples, recours."
+  "La GPA oblige l'entrepreneur à réparer pendant 1 an tous les désordres signalés à la réception / apparus dans l'année. Guide complet 2026 : déclenchement, exemples, recours."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -197,7 +197,7 @@ export default function Page() {
                   <strong>Lettre recommandée AR à l&apos;entrepreneur</strong> dans le délai de 1 an
                   post-réception, mentionnant :
                   <ul>
-                    <li>Référence du contrat / devis / facture initial</li>
+                    <li>Référence du contrat — devis — facture initial</li>
                     <li>Date de réception des travaux + référence du PV</li>
                     <li>Description précise du désordre + photos</li>
                     <li>Mise en demeure de procéder à la réparation sous 30 jours</li>
@@ -211,7 +211,7 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>En cas de refus ou d&apos;absence de réponse</strong> : assignation devant
-                  le tribunal judiciaire (anciennement TI/TGI selon montant) — le maître
+                  le tribunal judiciaire (anciennement TI ou TGI selon montant) — le maître
                   d&apos;ouvrage peut faire exécuter les travaux par un autre artisan aux frais de
                   l&apos;entrepreneur défaillant
                 </li>
@@ -279,7 +279,7 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Pour les désordres GPA pure</strong> (non décennaux) : risque réel de
-                  non-récupération si pas de RC pro travaux ou si l&apos;assurance refuse
+                  non-récupération si pas de RC pro travaux/si l&apos;assurance refuse
                 </li>
               </ul>
               <p>

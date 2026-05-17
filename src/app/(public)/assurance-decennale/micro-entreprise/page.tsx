@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-decennale/micro-entreprise'
 const TITLE = 'Décennale micro-entreprise BTP — Tarifs 2026, Loi Spinetta'
 const TAGLINE =
-  'La décennale obligatoire pour les micro-entreprises BTP : Loi Spinetta, tarifs négociés à partir de 480€/an, attestation 24h, conseil ORIAS spécialisé artisans.'
+  'La décennale obligatoire pour les micro-entreprises BTP : Loi Spinetta, tarifs négociés à partir de 480€ par an, attestation 24h, conseil ORIAS spécialisé artisans.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale micro-entreprise BTP : OBLIGATOIRE Loi Spinetta. Tarifs 480-1 540€/an selon métier. Attestation 24h. 8 assureurs comparés (Hiscox, April Pro, SMABTP, MMA, AXA Pro, Wakam, Stello, Generali). Devis gratuit ORIAS sous 24h.',
+    'Décennale micro-entreprise BTP : OBLIGATOIRE Loi Spinetta. Tarifs 480-1 540€ par an selon métier. Attestation 24h. 8 assureurs comparés (Hiscox, April Pro, SMABTP, MMA, AXA Pro, Wakam, Stello, Generali). Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -45,8 +45,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 480 €/an',
-          desc: 'Micro-entreprise BTP peintre/plaquiste. Couvreur : 820-1 540€/an',
+          title: 'À partir de 480 € par an',
+          desc: 'Micro-entreprise BTP peintre ou plaquiste. Couvreur : 820-1 540€ par an',
         },
         {
           icon: '⚡',
@@ -105,7 +105,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte la décennale pour une micro-entreprise BTP ?',
-          a: "Démarre à 480€/an pour un peintre/plaquiste. Médiane marché : 640-1 080€/an pour plombier/électricien. Plafond pratique : 1 540€/an pour couvreur-zingueur. Variables : métier, CA prévisionnel, antécédents. Voir tarifs détaillés par métier sur <a href='/assurance-decennale/auto-entrepreneur' class='text-primary-600 underline'>/assurance-decennale/auto-entrepreneur</a>.",
+          a: "Démarre à 480€ par an pour un peintre/plaquiste. Médiane marché : 640-1 080€ par an pour plombier/électricien. Plafond pratique : 1 540€ par an pour couvreur-zingueur. Variables : métier, CA prévisionnel, antécédents. Voir tarifs détaillés par métier sur <a href='/assurance-decennale/auto-entrepreneur' class='text-primary-600 underline'>/assurance-decennale/auto-entrepreneur</a>.",
         },
         {
           q: "Combien de temps pour obtenir l'attestation ?",

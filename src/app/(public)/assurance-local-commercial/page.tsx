@@ -32,12 +32,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-local-commercial'
 const TITLE = 'Assurance local commercial — Tarifs 2026, garanties et obligations'
 const TAGLINE =
-  "Assurance multirisque pour locaux commerciaux : couverture incendie, vol, dégâts des eaux, perte d'exploitation, RC exploitation. Tarifs négociés à partir de 280 €/an."
+  "Assurance multirisque pour locaux commerciaux : couverture incendie, vol, dégâts des eaux, perte d'exploitation, RC exploitation. Tarifs négociés à partir de 280 € par an."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Assurance local commercial obligatoire (clause bail commercial) : couverture incendie, dégâts des eaux, vol, vandalisme, RC exploitation, perte d'exploitation. Tarifs négociés à partir de 280 €/an HT. Devis gratuit ORIAS sous 24h.",
+    "Assurance local commercial obligatoire (clause bail commercial) : couverture incendie, dégâts des eaux, vol, vandalisme, RC exploitation, perte d'exploitation. Tarifs négociés à partir de 280 € par an HT. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
@@ -53,7 +53,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance local commercial (souvent appelée multirisque commerciale ou MRP — Multirisque Professionnelle) est une garantie qui couvre votre lieu d'exploitation contre les principaux risques : incendie, dégâts des eaux, vol, vandalisme, événements climatiques, bris de glace, ainsi que votre responsabilité civile vis-à-vis des tiers (clients, voisins, fournisseurs). Elle est généralement obligatoire de fait : la clause d'assurance figure dans 100% des baux commerciaux signés en France (art. 1733 et 1719 du Code civil — obligation du locataire envers le bailleur). Le tarif moyen pour un local de 80 m² en zone urbaine démarre à 280 € HT/an pour une couverture standard, jusqu'à 1 800 €/an pour un commerce avec stock important ou activité sensible (bijouterie, électronique). Cette page détaille les garanties indispensables, les options à activer selon votre activité (commerce, restaurant, bureau, atelier), les tarifs 2026 par profil et les pièges à éviter (sous-évaluation du contenu, exclusion vol par effraction la nuit)."
+      intro="L'assurance local commercial (souvent appelée multirisque commerciale ou MRP — Multirisque Professionnelle) est une garantie qui couvre votre lieu d'exploitation contre les principaux risques : incendie, dégâts des eaux, vol, vandalisme, événements climatiques, bris de glace, ainsi que votre responsabilité civile vis-à-vis des tiers (clients, voisins, fournisseurs). Elle est généralement obligatoire de fait : la clause d'assurance figure dans 100% des baux commerciaux signés en France (art. 1733 et 1719 du Code civil — obligation du locataire envers le bailleur). Le tarif moyen pour un local de 80 m² en zone urbaine démarre à 280 € HT par an pour une couverture standard, jusqu'à 1 800 € par an pour un commerce avec stock important ou activité sensible (bijouterie, électronique). Cette page détaille les garanties indispensables, les options à activer selon votre activité (commerce, restaurant, bureau, atelier), les tarifs 2026 par profil et les pièges à éviter (sous-évaluation du contenu, exclusion vol par effraction la nuit)."
       legalReference="Article 1733 et 1719 du Code civil + Loi du 6 juillet 1989 + Loi Pinel 2014 (baux commerciaux)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -68,7 +68,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 280 €/an',
+          title: 'À partir de 280 € par an',
           desc: 'Local 80 m² en zone urbaine, couverture standard. Variables : surface, valeur stock, zone',
         },
         {
@@ -136,27 +136,27 @@ export default function Page() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border p-2">Bureau / coworking (TPE, conseil, freelance)</td>
+                    <td className="border p-2">Bureau — coworking (TPE, conseil, freelance)</td>
                     <td className="border p-2 text-right">40 m²</td>
                     <td className="border p-2 text-right">280 € – 480 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Boutique vêtements / accessoires</td>
+                    <td className="border p-2">Boutique vêtements — accessoires</td>
                     <td className="border p-2 text-right">80 m²</td>
                     <td className="border p-2 text-right">450 € – 780 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Restaurant / brasserie (40 couverts)</td>
+                    <td className="border p-2">Restaurant — brasserie (40 couverts)</td>
                     <td className="border p-2 text-right">120 m²</td>
                     <td className="border p-2 text-right">680 € – 1 200 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Coiffeur / salon esthétique</td>
+                    <td className="border p-2">Coiffeur — salon esthétique</td>
                     <td className="border p-2 text-right">60 m²</td>
                     <td className="border p-2 text-right">380 € – 620 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Bijouterie / horlogerie (stock haute valeur)</td>
+                    <td className="border p-2">Bijouterie — horlogerie (stock haute valeur)</td>
                     <td className="border p-2 text-right">60 m²</td>
                     <td className="border p-2 text-right">980 € – 1 800 €</td>
                   </tr>
@@ -166,12 +166,12 @@ export default function Page() {
                     <td className="border p-2 text-right">580 € – 980 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Entrepôt / stockage</td>
+                    <td className="border p-2">Entrepôt — stockage</td>
                     <td className="border p-2 text-right">300 m²</td>
                     <td className="border p-2 text-right">820 € – 1 540 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Boulangerie / pâtisserie / traiteur</td>
+                    <td className="border p-2">Boulangerie — pâtisserie — traiteur</td>
                     <td className="border p-2 text-right">100 m²</td>
                     <td className="border p-2 text-right">680 € – 1 100 €</td>
                   </tr>
@@ -179,10 +179,9 @@ export default function Page() {
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
                 Variables qui font monter la prime : zone à risque incendie (centre-ville
-                historique), stock haute valeur (&gt; 50 k€), absence de système
-                d&apos;alarme/vidéosurveillance, ancienneté du local, antécédents sinistres.
-                Réduction possible : -10 à -25% avec alarme certifiée NF + porte blindée +
-                télésurveillance.
+                historique), stock haute valeur (&gt; 50 k€), absence de système d&apos;alarme ou
+                vidéosurveillance, ancienneté du local, antécédents sinistres. Réduction possible :
+                -10 à -25% avec alarme certifiée NF + porte blindée + télésurveillance.
               </p>
             </>
           ),
@@ -228,7 +227,7 @@ export default function Page() {
                 <li>Bris de matériel pro (frigo, four, machine outil)</li>
                 <li>Marchandises transportées (livraison à domicile)</li>
                 <li>Cyber pro (e-commerce, click-and-collect, base clients)</li>
-                <li>Protection juridique (litiges fournisseurs / bailleur / clients)</li>
+                <li>Protection juridique (litiges fournisseurs — bailleur — clients)</li>
               </ul>
             </>
           ),
@@ -250,7 +249,7 @@ export default function Page() {
                   valeur de remplacement réelle.
                 </li>
                 <li>
-                  <strong>Oublier de déclarer le télétravail / l&apos;e-commerce</strong> qui
+                  <strong>Oublier de déclarer le télétravail — l&apos;e-commerce</strong> qui
                   modifient l&apos;exposition au risque (ex: fréquence de présence dans le local,
                   stock additionnel).
                 </li>
@@ -277,7 +276,7 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'un local commercial de 80 m² ?",
-          a: "Démarre à 450€/an pour une boutique vêtements en province, jusqu'à 1 800€/an pour une bijouterie en centre-ville Paris. Médiane marché : 580-820€/an. Variables : surface, valeur du stock, zone géographique, présence d'alarme/vidéosurveillance, antécédents sinistres.",
+          a: "Démarre à 450€ par an pour une boutique vêtements en province, jusqu'à 1 800€ par an pour une bijouterie en centre-ville Paris. Médiane marché : 580-820€ par an. Variables : surface, valeur du stock, zone géographique, présence d'alarme ou vidéosurveillance, antécédents sinistres.",
         },
         {
           q: 'Quelle est la différence entre assurance local commercial et multirisque pro (MRP) ?',
@@ -293,7 +292,7 @@ export default function Page() {
         },
         {
           q: 'Comment résilier mon assurance local commercial ?',
-          a: "Depuis la loi Hamon (15/03/2014), résiliation infra-annuelle possible après 1 an d'engagement, sans frais ni motif. Lettre recommandée AR ou notification sur l'espace assuré. Délai d'effet : 1 mois après la réception. Le nouvel assureur peut faire la démarche pour vous (mandat). Cas particulier : changement de propriétaire ou cession du fonds de commerce permettent une résiliation immédiate.",
+          a: "Depuis la loi Hamon (15 mars 2014), résiliation infra-annuelle possible après 1 an d'engagement, sans frais ni motif. Lettre recommandée AR ou notification sur l'espace assuré. Délai d'effet : 1 mois après la réception. Le nouvel assureur peut faire la démarche pour vous (mandat). Cas particulier : changement de propriétaire ou cession du fonds de commerce permettent une résiliation immédiate.",
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance local commercial ?',

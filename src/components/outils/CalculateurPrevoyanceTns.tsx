@@ -148,10 +148,11 @@ export function CalculateurPrevoyanceTns() {
           Estimation cotisation prévoyance TNS Madelin 2026
         </p>
         <p className="mb-2 text-4xl font-extrabold text-amber-900 md:text-5xl">
-          {r.cotisationMensuelle.toLocaleString('fr-FR')} €<span className="text-2xl">/mois</span>
+          {r.cotisationMensuelle.toLocaleString('fr-FR')} €
+          <span className="text-2xl"> par mois</span>
         </p>
         <p className="text-sm text-gray-700">
-          Soit <strong>{r.cotisationAnnuelle.toLocaleString('fr-FR')} €/an</strong>. Couverture
+          Soit <strong>{r.cotisationAnnuelle.toLocaleString('fr-FR')} € par an</strong>. Couverture
           basée sur barèmes 2026 de 7 assureurs partenaires (Generali, MMA Pro, AXA Pro, Allianz,
           Pro BTP, Apicil, Swisslife).
         </p>
@@ -161,12 +162,14 @@ export function CalculateurPrevoyanceTns() {
           <div className="grid grid-cols-2 gap-3 text-sm md:grid-cols-3">
             <div className="rounded bg-amber-100 p-3">
               <p className="text-xs text-gray-600">IJ arrêt maladie</p>
-              <p className="text-lg font-bold text-amber-900">{r.ijQuotidienneCouverte} €/jour</p>
+              <p className="text-lg font-bold text-amber-900">
+                {r.ijQuotidienneCouverte} € par jour
+              </p>
             </div>
             <div className="rounded bg-amber-100 p-3">
               <p className="text-xs text-gray-600">Rente invalidité totale</p>
               <p className="text-lg font-bold text-amber-900">
-                {r.rentesInvaliditeMensuelle.toLocaleString('fr-FR')} €/mois
+                {r.rentesInvaliditeMensuelle.toLocaleString('fr-FR')} € par mois
               </p>
             </div>
             <div className="rounded bg-amber-100 p-3">
@@ -184,15 +187,17 @@ export function CalculateurPrevoyanceTns() {
           </p>
           <p className="text-sm">
             Cotisation déductible fiscalement :{' '}
-            <strong>{r.deductibiliteMadelin.toLocaleString('fr-FR')} €/an</strong> (sur{' '}
+            <strong>{r.deductibiliteMadelin.toLocaleString('fr-FR')} € par an</strong> (sur{' '}
             {r.cotisationAnnuelle.toLocaleString('fr-FR')} € versés). Économie nette TMI 30% :{' '}
-            <strong>{Math.round(r.deductibiliteMadelin * 0.3).toLocaleString('fr-FR')} €/an</strong>
+            <strong>
+              {Math.round(r.deductibiliteMadelin * 0.3).toLocaleString('fr-FR')} € par an
+            </strong>
             . Coût réel après déduction :{' '}
             <strong>
               {(r.cotisationAnnuelle - Math.round(r.deductibiliteMadelin * 0.3)).toLocaleString(
                 'fr-FR'
               )}{' '}
-              €/an
+              € par an
             </strong>
             .
           </p>
@@ -202,7 +207,7 @@ export function CalculateurPrevoyanceTns() {
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
-              Tarif base formule : <strong>{r.detail.base} €/mois</strong>
+              Tarif base formule : <strong>{r.detail.base} € par mois</strong>
             </li>
             <li>Coef âge : ×{r.detail.coefAge.toFixed(2)}</li>
             <li>Coef profession : ×{r.detail.coefProfession.toFixed(2)}</li>
@@ -222,7 +227,7 @@ export function CalculateurPrevoyanceTns() {
       <p className="text-xs italic text-gray-500">
         ⚠️ Estimation <strong>indicative</strong>. Tarif réel variable ±20% selon : questionnaire
         santé détaillé (antécédents médicaux 5 ans), pratiques sportives à risque (parapente,
-        plongée, moto sport), zone géographique (DOM/Corse). Conformité ACPR 2024-R-02.
+        plongée, moto sport), zone géographique (DOM ou Corse). Conformité ACPR 2024-R-02.
       </p>
     </div>
   )

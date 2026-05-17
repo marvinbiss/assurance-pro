@@ -13,7 +13,7 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'rc-pro/formateur'
+const SLUG = 'rc-pro / formateur'
 const TITLE = 'RC Pro formateur — Tarifs 2026 (formateur indépendant, organisme formation)'
 const TAGLINE =
   "L'assurance RC pro pour formateurs indépendants : RC pédagogique, casse matériel salle, dommages stagiaires. Tarifs accessibles. Conseil ORIAS."
@@ -21,7 +21,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro formateur indépendant : couvre RC pédagogique (formation inadaptée), casse matériel salle louée, dommages stagiaires. Conformité Qualiopi (audit qualité formation). Tarifs 220-580€/an. Devis ORIAS sous 24h.',
+    'RC Pro formateur indépendant : couvre RC pédagogique (formation inadaptée), casse matériel salle louée, dommages stagiaires. Conformité Qualiopi (audit qualité formation). Tarifs 220-580€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -32,7 +32,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro formateur couvre l'activité de formation professionnelle indépendante : formateur en présentiel, formateur en distanciel (e-learning, classes virtuelles), organisme de formation enregistré (déclaration auprès de la DREETS + référencement Qualiopi pour mobiliser les financements OPCO/CPF). Sinistres typiques : RC pédagogique (formation jugée inadaptée par le commanditaire OPCO/CPF, demande de remboursement), casse de matériel dans salle louée (vidéoprojecteur, mobilier), dommages causés à un stagiaire (chute, allergie déjeuner inclus dans la formation), litige avec stagiaire mécontent (mauvaise évaluation, certification non délivrée). Conformité QUALIOPI obligatoire depuis 2022 pour percevoir des financements OPCO. Tarifs 2026 : 220-580€/an pour formateur indépendant solo, 580-1 200€/an pour organisme de formation 3-5 salariés."
+      intro="La RC Pro formateur couvre l'activité de formation professionnelle indépendante : formateur en présentiel, formateur en distanciel (e-learning, classes virtuelles), organisme de formation enregistré (déclaration auprès de la DREETS + référencement Qualiopi pour mobiliser les financements OPCO ou CPF). Sinistres typiques : RC pédagogique (formation jugée inadaptée par le commanditaire OPCO ou CPF, demande de remboursement), casse de matériel dans salle louée (vidéoprojecteur, mobilier), dommages causés à un stagiaire (chute, allergie déjeuner inclus dans la formation), litige avec stagiaire mécontent (mauvaise évaluation, certification non délivrée). Conformité QUALIOPI obligatoire depuis 2022 pour percevoir des financements OPCO. Tarifs 2026 : 220-580€ par an pour formateur indépendant solo, 580-1 200€ par an pour organisme de formation 3-5 salariés."
       legalReference="Code des assurances L. 113-1 + Code du travail L. 6313-1 (formation pro) + Décret Qualiopi 2019-565"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -43,7 +43,7 @@ export default function Page() {
         {
           icon: '🎓',
           title: 'RC pédagogique',
-          desc: 'Formation jugée inadaptée par OPCO/CPF — remboursement exigé du commanditaire',
+          desc: 'Formation jugée inadaptée par OPCO ou CPF — remboursement exigé du commanditaire',
         },
         {
           icon: '📺',
@@ -57,8 +57,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 220 €/an',
-          desc: 'Formateur indépendant solo. Organisme 3-5 salariés : 580-1 200€/an',
+          title: 'À partir de 220 € par an',
+          desc: 'Formateur indépendant solo. Organisme 3-5 salariés : 580-1 200€ par an',
         },
       ]}
       sections={[
@@ -81,7 +81,7 @@ export default function Page() {
                     <td className="border p-2 text-right">220 € – 380 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">AE formateur IT / digital</td>
+                    <td className="border p-2">AE formateur IT — digital</td>
                     <td className="border p-2 text-right">280 € – 480 €</td>
                   </tr>
                   <tr>
@@ -132,11 +132,11 @@ export default function Page() {
         },
         {
           q: 'Combien coûte la RC Pro formateur en 2026 ?',
-          a: 'AE formateur soft skills : 220-380€/an. AE formateur IT/digital : 280-480€/an. AE formateur métiers à risque : 380-680€/an. EI organisme formation 1 salarié : 480-780€/an. SARL 3-5 salariés : 680-1 200€/an.',
+          a: 'AE formateur soft skills : 220-380€ par an. AE formateur IT ou digital : 280-480€ par an. AE formateur métiers à risque : 380-680€ par an. EI organisme formation 1 salarié : 480-780€ par an. SARL 3-5 salariés : 680-1 200€ par an.',
         },
         {
           q: 'Qualiopi : RC Pro requise ?',
-          a: "OUI obligatoire — l'auditeur Qualiopi vérifie la souscription d'une RC Pro en cours de validité comme l'un des critères de certification. Sans RC Pro = pas de Qualiopi = pas de financement OPCO/CPF/Pôle Emploi.",
+          a: "OUI obligatoire — l'auditeur Qualiopi vérifie la souscription d'une RC Pro en cours de validité comme l'un des critères de certification. Sans RC Pro = pas de Qualiopi = pas de financement OPCO, CPF ou Pôle Emploi.",
         },
       ]}
     />

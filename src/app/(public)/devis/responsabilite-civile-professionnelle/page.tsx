@@ -6,15 +6,15 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'devis/responsabilite-civile-professionnelle'
+const SLUG = 'devis / responsabilite-civile-professionnelle'
 const TITLE = 'Devis Responsabilité Civile Professionnelle — Comparatif 5 assureurs'
 const TAGLINE =
-  'Devis RC Pro GRATUIT en 5 min : Hiscox, Stello, Allianz Pro, MMA, AXA comparés. Tarifs 95-2 500€/an selon profil. Attestation immédiate.'
+  'Devis RC Pro GRATUIT en 5 min : Hiscox, Stello, Allianz Pro, MMA, AXA comparés. Tarifs 95-2 500€ par an selon profil. Attestation immédiate.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Devis RC Pro gratuit. Hiscox 95€/an AE services, Allianz 280€/an SARL, MMA 600€/an PME. Comparatif 5 assureurs spécialisés. Attestation immédiate.',
+    'Devis RC Pro gratuit. Hiscox 95€ par an AE services, Allianz 280€ par an SARL, MMA 600€ par an PME. Comparatif 5 assureurs spécialisés. Attestation immédiate.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -25,7 +25,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Demande de devis Responsabilité Civile Professionnelle GRATUITE en 5 minutes. Notre courtier ORIAS partenaire compare en temps réel les 5 assureurs leaders RC Pro (Hiscox, Stello, Allianz Pro, MMA Pro, AXA Pro) pour vous proposer le meilleur tarif selon votre activité, statut juridique, CA et besoins spécifiques (cyber-assurance, protection juridique). Attestation téléchargeable immédiatement chez Hiscox/Stello."
+      intro="Demande de devis Responsabilité Civile Professionnelle GRATUITE en 5 minutes. Notre courtier ORIAS partenaire compare en temps réel les 5 assureurs leaders RC Pro (Hiscox, Stello, Allianz Pro, MMA Pro, AXA Pro) pour vous proposer le meilleur tarif selon votre activité, statut juridique, CA et besoins spécifiques (cyber-assurance, protection juridique). Attestation téléchargeable immédiatement chez Hiscox ou Stello."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
       benefits={[
         {
@@ -46,7 +46,7 @@ export default function Page() {
         {
           icon: '📋',
           title: 'Attestation immédiate',
-          desc: 'Téléchargeable après souscription (Hiscox/Stello)',
+          desc: 'Téléchargeable après souscription (Hiscox ou Stello)',
         },
       ]}
       sections={[
@@ -55,7 +55,7 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Auto-entrepreneurs / micro-entrepreneurs</strong> services intellectuels
+                <strong>Auto-entrepreneurs — micro-entrepreneurs</strong> services intellectuels
                 (consultant, IT, designer)
               </li>
               <li>
@@ -63,7 +63,7 @@ export default function Page() {
                 coaching, formation)
               </li>
               <li>
-                <strong>SARL / SAS / SASU</strong> services et commerce (CA &lt; 5M€)
+                <strong>SARL — SAS — SASU</strong> services et commerce (CA &lt; 5M€)
               </li>
               <li>
                 <strong>Professions libérales</strong> (médical, juridique, immobilier)
@@ -85,31 +85,31 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>AE freelance services intellectuels</strong> : 95-220€/an (Hiscox best)
+                <strong>AE freelance services intellectuels</strong> : 95-220€ par an (Hiscox best)
               </li>
               <li>
-                <strong>AE coach / formateur</strong> : 150-300€/an
+                <strong>AE coach — formateur</strong> : 150-300€ par an
               </li>
               <li>
-                <strong>AE esthéticienne à domicile</strong> : 180-350€/an
+                <strong>AE esthéticienne à domicile</strong> : 180-350€ par an
               </li>
               <li>
-                <strong>AE BTP (+ décennale)</strong> : 250-450€/an
+                <strong>AE BTP (+ décennale)</strong> : 250-450€ par an
               </li>
               <li>
-                <strong>SARL services CA 100-300k€</strong> : 350-900€/an
+                <strong>SARL services CA 100-300k€</strong> : 350-900€ par an
               </li>
               <li>
-                <strong>SAS PME CA 300k-1M€</strong> : 800-1 500€/an
+                <strong>SAS PME CA 300k-1M€</strong> : 800-1 500€ par an
               </li>
               <li>
-                <strong>Agent immobilier Carte T</strong> : 350-1 800€/an
+                <strong>Agent immobilier Carte T</strong> : 350-1 800€ par an
               </li>
               <li>
-                <strong>Médical / paramédical</strong> : 800-2 500€/an (réglementaire)
+                <strong>Médical — paramédical</strong> : 800-2 500€ par an (réglementaire)
               </li>
               <li>
-                <strong>Avocat</strong> : 500-1 500€/an (Ordre minimum)
+                <strong>Avocat</strong> : 500-1 500€ par an (Ordre minimum)
               </li>
             </ul>
           ),
@@ -130,8 +130,8 @@ export default function Page() {
                 plus haute
               </li>
               <li>
-                <strong>Cyber-assurance combinée</strong> : indispensable si activité IT/digital ou
-                données client
+                <strong>Cyber-assurance combinée</strong> : indispensable si activité IT ou digital
+                ou données client
               </li>
               <li>
                 <strong>Exclusions clés</strong> : lire attentivement (cyber-attaques, données
@@ -144,11 +144,11 @@ export default function Page() {
       faq={[
         {
           q: 'RC Pro la moins chère pour un freelance ?',
-          a: 'Hiscox = best price global AE/freelance services intellectuels (95-220€/an). Stello = challenger 100% digital (90-200€/an). Pour AE BTP : April Pro 250-450€/an (en complément décennale).',
+          a: 'Hiscox = best price global AE ou freelance services intellectuels (95-220€ par an). Stello = challenger 100% digital (90-200€ par an). Pour AE BTP : April Pro 250-450€ par an (en complément décennale).',
         },
         {
           q: 'Délai entre devis et attestation ?',
-          a: 'Hiscox / Stello : attestation immédiate après paiement (téléchargement espace adhérent). Allianz Pro / MMA / AXA : 24-48h ouvrées. Notre courtier ORIAS facilite démarches.',
+          a: 'Hiscox — Stello : attestation immédiate après paiement (téléchargement espace adhérent). Allianz Pro — MMA — AXA : 24-48h ouvrées. Notre courtier ORIAS facilite démarches.',
         },
         {
           q: 'Plafond minimum pour une RC Pro AE ?',
@@ -156,7 +156,7 @@ export default function Page() {
         },
         {
           q: 'Cyber-assurance vraiment indispensable ?',
-          a: 'OUI quasi-systématiquement pour pros IT, agences digitales, e-commerce, gestionnaires données client. La RC Pro standard EXCLUT les cyber-attaques contre votre propre infrastructure. Coût combiné : +150-2 000€/an selon profil.',
+          a: 'OUI quasi-systématiquement pour pros IT, agences digitales, e-commerce, gestionnaires données client. La RC Pro standard EXCLUT les cyber-attaques contre votre propre infrastructure. Coût combiné : +150-2 000€ par an selon profil.',
         },
       ]}
       relatedMetiers={[

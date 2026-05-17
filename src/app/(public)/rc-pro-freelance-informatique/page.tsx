@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'rc-pro-freelance-informatique'
 const TITLE = 'RC Pro Freelance Informatique — Dev, consultant, agence web, cyber'
 const TAGLINE =
-  'RC Pro spécifique pour freelance IT (dev, consultant, agence web, cybersécurité, data) : sinistres typiques, plafond recommandé, comparatif Hiscox / Stello.'
+  'RC Pro spécifique pour freelance IT (dev, consultant, agence web, cybersécurité, data) : sinistres typiques, plafond recommandé, comparatif Hiscox — Stello.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro freelance informatique : tarif AE dev 95-220€/an, consultant IT 180-350€/an. Cyber-assurance combinée recommandée. Hiscox best price, Stello digital pur.',
+    'RC Pro freelance informatique : tarif AE dev 95-220€ par an, consultant IT 180-350€ par an. Cyber-assurance combinée recommandée. Hiscox best price, Stello digital pur.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Le freelance informatique (développeur, consultant IT, designer UX/UI, data scientist, cybersécurité, DevOps) est exposé à des sinistres spécifiques au numérique : bug critique en production, retard livraison majeur, faille sécurité non détectée, perte de données client, conseil architecture erroné. La RC Pro freelance informatique est l'assurance indispensable, fortement complétée par une cyber-assurance pour les profils gérant des données sensibles."
+      intro="Le freelance informatique (développeur, consultant IT, designer UX ou UI, data scientist, cybersécurité, DevOps) est exposé à des sinistres spécifiques au numérique : bug critique en production, retard livraison majeur, faille sécurité non détectée, perte de données client, conseil architecture erroné. La RC Pro freelance informatique est l'assurance indispensable, fortement complétée par une cyber-assurance pour les profils gérant des données sensibles."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + Loi 78-17 RGPD"
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -45,17 +45,17 @@ export default function Page() {
         {
           icon: '🔐',
           title: 'Cyber-assurance combinée',
-          desc: 'Recommandée si données client : +150-400€/an AE',
+          desc: 'Recommandée si données client : +150-400€ par an AE',
         },
         {
           icon: '💰',
-          title: '95-450€/an',
+          title: '95-450€ par an',
           desc: 'Dev AE 95-220€ • Consultant IT 180-350€ • Agence web SAS 350-450€',
         },
         {
           icon: '🛡️',
           title: 'Plafond 1M€ standard',
-          desc: 'Suffisant pour AE CA &lt; 80k€. SARL/SAS : 2-3M€ recommandés',
+          desc: 'Suffisant pour AE CA &lt; 80k€. SARL ou SAS : 2-3M€ recommandés',
         },
       ]}
       sections={[
@@ -119,9 +119,9 @@ export default function Page() {
                 <li>Freelance IT gérant données client (hébergement, SaaS, code)</li>
                 <li>Consultant cybersécurité (paradoxe : exposé +++ même si pro du sujet)</li>
                 <li>Développeur full-stack avec accès production client</li>
-                <li>Data scientist / DPO externe</li>
+                <li>Data scientist — DPO externe</li>
               </ul>
-              <p>Coût additionnel : +150-400€/an AE, +500-2 000€/an SARL/SAS.</p>
+              <p>Coût additionnel : +150-400€ par an AE, +500-2 000€ par an SARL ou SAS.</p>
             </>
           ),
         },
@@ -130,31 +130,31 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Dev freelance AE (CA &lt; 50k€)</strong> : 95-150€/an, plafond 1M€
+                <strong>Dev freelance AE (CA &lt; 50k€)</strong> : 95-150€ par an, plafond 1M€
               </li>
               <li>
-                <strong>Dev freelance AE (CA 50-80k€)</strong> : 130-220€/an
+                <strong>Dev freelance AE (CA 50-80k€)</strong> : 130-220€ par an
               </li>
               <li>
-                <strong>Consultant IT freelance AE (CA &lt; 80k€)</strong> : 180-350€/an
+                <strong>Consultant IT freelance AE (CA &lt; 80k€)</strong> : 180-350€ par an
               </li>
               <li>
-                <strong>Designer UX/UI freelance AE</strong> : 120-250€/an
+                <strong>Designer UX ou UI freelance AE</strong> : 120-250€ par an
               </li>
               <li>
-                <strong>Data scientist freelance AE</strong> : 200-400€/an (risque RGPD)
+                <strong>Data scientist freelance AE</strong> : 200-400€ par an (risque RGPD)
               </li>
               <li>
-                <strong>DevOps freelance AE</strong> : 180-350€/an
+                <strong>DevOps freelance AE</strong> : 180-350€ par an
               </li>
               <li>
-                <strong>Consultant cybersécurité AE</strong> : 280-500€/an (risque accru)
+                <strong>Consultant cybersécurité AE</strong> : 280-500€ par an (risque accru)
               </li>
               <li>
-                <strong>SASU/EURL IT (CA 100-300k€)</strong> : 450-900€/an + cyber +500€
+                <strong>SASU ou EURL IT (CA 100-300k€)</strong> : 450-900€ par an + cyber +500€
               </li>
               <li>
-                <strong>Agence web SAS (CA 300k-1M€)</strong> : 800-1 500€/an + cyber +1 000€
+                <strong>Agence web SAS (CA 300k-1M€)</strong> : 800-1 500€ par an + cyber +1 000€
               </li>
             </ul>
           ),
@@ -163,19 +163,19 @@ export default function Page() {
       faq={[
         {
           q: 'Hiscox ou Stello pour un dev freelance ?',
-          a: 'AE dev freelance CA &lt; 80k€ : 1) Hiscox = best price 95-180€/an, postériorité 10 ans (unique). 2) Stello = digital pur, contrat 100% en ligne, prix similaire (90-200€/an), postériorité 5 ans. Hiscox gagne sur postériorité.',
+          a: 'AE dev freelance CA &lt; 80k€ : 1) Hiscox = best price 95-180€ par an, postériorité 10 ans (unique). 2) Stello = digital pur, contrat 100% en ligne, prix similaire (90-200€ par an), postériorité 5 ans. Hiscox gagne sur postériorité.',
         },
         {
           q: 'Faut-il forcément une cyber-assurance ?',
-          a: 'Recommandé fortement si : vous hébergez/traitez données client, vous gérez des sites e-commerce, vous faites de la cybersécurité (paradoxalement très exposé), vous avez subi tentative phishing/intrusion. Pour pure prestation conseil sans données : optionnelle.',
+          a: 'Recommandé fortement si : vous hébergez ou traitez données client, vous gérez des sites e-commerce, vous faites de la cybersécurité (paradoxalement très exposé), vous avez subi tentative phishing ou intrusion. Pour pure prestation conseil sans données : optionnelle.',
         },
         {
           q: 'Quelle RC Pro pour un consultant cybersécurité ?',
-          a: 'Tarif AE consultant cybersécurité : 280-500€/an (vs 95-220€ dev classique) car risque accru. Cyber-assurance combinée OBLIGATOIRE pour ce profil : +400-800€/an. Hiscox et Generali sont leaders sur ce segment.',
+          a: 'Tarif AE consultant cybersécurité : 280-500€ par an (vs 95-220€ dev classique) car risque accru. Cyber-assurance combinée OBLIGATOIRE pour ce profil : +400-800€ par an. Hiscox et Generali sont leaders sur ce segment.',
         },
         {
           q: 'Combien coûte une RC Pro pour une agence web ?',
-          a: 'Agence web SAS 5-10 personnes (CA 300k-1M€) : 800-1 500€/an RC Pro + 800-1 500€/an cyber. Pack global = 1 600-3 000€/an. Notre courtier ORIAS compare Hiscox, Stello, Generali, Allianz Pro sur ce profil.',
+          a: 'Agence web SAS 5-10 personnes (CA 300k-1M€) : 800-1 500€ par an RC Pro + 800-1 500€ par an cyber. Pack global = 1 600-3 000€ par an. Notre courtier ORIAS compare Hiscox, Stello, Generali, Allianz Pro sur ce profil.',
         },
       ]}
       relatedMetiers={[

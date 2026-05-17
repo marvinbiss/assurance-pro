@@ -36,7 +36,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/calculateur-tarif-decennale'
+const SLUG = 'outils / calculateur-tarif-decennale'
 
 export const metadata: Metadata = {
   title: 'Calculateur tarif décennale 2026 — Estimation immédiate par métier (gratuit)',
@@ -64,11 +64,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/assurance-decennale" className="hover:underline">
               Décennale
             </Link>{' '}
-            / <span>Calculateur tarif</span>
+            › <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ Estimation gratuite en 30 secondes
@@ -145,7 +145,7 @@ export default async function Page() {
                 <td className="border p-2">
                   <strong>Métier</strong>
                 </td>
-                <td className="border p-2">Tarif base 480-1 680 €/an (peintre → RGE PV)</td>
+                <td className="border p-2">Tarif base 480-1 680 € par an (peintre → RGE PV)</td>
                 <td className="border p-2">Sinistralité AQC SYCODÉS 2024</td>
               </tr>
               <tr>
@@ -181,7 +181,7 @@ export default async function Page() {
                   <strong>Franchise</strong>
                 </td>
                 <td className="border p-2">Coef ×1,12 (600€) à ×0,85 (5000€)</td>
-                <td className="border p-2">Arbitrage assureur/assuré</td>
+                <td className="border p-2">Arbitrage assureur ou assuré</td>
               </tr>
               <tr>
                 <td className="border p-2">
@@ -255,7 +255,7 @@ export default async function Page() {
           <div className="space-y-5">
             <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
-                Pourquoi tant d&apos;écart entre 480 € et 16 000 €/an ?
+                Pourquoi tant d&apos;écart entre 480 € et 16 000 € par an ?
               </summary>
               <p className="mt-2 text-sm">
                 L&apos;écart vient de 3 facteurs principaux : (1) le métier — un peintre AE en CA
@@ -299,7 +299,7 @@ export default async function Page() {
               </summary>
               <p className="mt-2 text-sm">
                 OUI à 100%. La cotisation décennale est une charge professionnelle déductible (CGI
-                art. 39-1). Pour un AE : déductible du CA déclaré. Pour EURL/SARL/SAS : charge
+                art. 39-1). Pour un AE : déductible du CA déclaré. Pour EURL, SARL ou SAS : charge
                 déductible du résultat fiscal IS. Économie réelle : 15-25% du tarif brut selon votre
                 TMI (taux marginal d&apos;imposition).
               </p>
@@ -356,7 +356,7 @@ export default async function Page() {
             mainEntity: [
               {
                 '@type': 'Question',
-                name: "Pourquoi tant d'écart entre 480 € et 16 000 €/an ?",
+                name: "Pourquoi tant d'écart entre 480 € et 16 000 € par an ?",
                 acceptedAnswer: {
                   '@type': 'Answer',
                   text: "L'écart vient de 3 facteurs : (1) le métier (peintre 480€ vs couvreur 12 000€), (2) la sinistralité AQC SYCODÉS (couvreur 13,2% vs peintre 3,1%), (3) l'effectif salarié qui multiplie par 2-5× le tarif. 8 coefficients appliqués pour votre profil exact.",
@@ -383,7 +383,7 @@ export default async function Page() {
                 name: 'Tarif décennale : déductible fiscalement ?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'OUI à 100% (CGI art. 39-1). Pour AE déductible du CA. Pour EURL/SARL/SAS charge déductible IS. Économie réelle 15-25% du tarif brut selon TMI.',
+                  text: 'OUI à 100% (CGI art. 39-1). Pour AE déductible du CA. Pour EURL, SARL ou SAS charge déductible IS. Économie réelle 15-25% du tarif brut selon TMI.',
                 },
               },
               {

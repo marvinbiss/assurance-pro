@@ -11,15 +11,15 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'prix/assurance-rc-pro-prix'
+const SLUG = 'prix / assurance-rc-pro-prix'
 const TITLE = 'Assurance RC Pro Prix — Comparatif tarifs 2026 par activité'
 const TAGLINE =
-  'Comparatif détaillé des prix assurance RC Pro 2026. Hiscox 95€/an AE services. Allianz 280€/an SARL. MMA 600€/an PME. 5 assureurs en parallèle.'
+  'Comparatif détaillé des prix assurance RC Pro 2026. Hiscox 95€ par an AE services. Allianz 280€ par an SARL. MMA 600€ par an PME. 5 assureurs en parallèle.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Prix RC Pro comparatif 2026 : 5 assureurs en parallèle (Hiscox, Stello, Allianz Pro, MMA, AXA). Tarifs AE 95€, SARL 350€, SAS 1200€/an.',
+    'Prix RC Pro comparatif 2026 : 5 assureurs en parallèle (Hiscox, Stello, Allianz Pro, MMA, AXA). Tarifs AE 95€, SARL 350€, SAS 1200€ par an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -66,65 +66,65 @@ export default function Page() {
               <li>
                 <strong>Consultant freelance services</strong> :
                 <ul>
-                  <li>🥇 Hiscox 95-180€/an • 🥈 Stello 90-170€/an</li>
-                  <li>Allianz Pro 180-280€/an • MMA Pro 250-380€/an</li>
+                  <li>🥇 Hiscox 95-180€ par an • 🥈 Stello 90-170€ par an</li>
+                  <li>Allianz Pro 180-280€ par an • MMA Pro 250-380€ par an</li>
                 </ul>
               </li>
               <li>
-                <strong>Designer / photographe</strong> :
+                <strong>Designer — photographe</strong> :
                 <ul>
-                  <li>🥇 Hiscox 120-220€/an • 🥈 Stello 110-200€/an</li>
-                  <li>Allianz Pro 200-320€/an</li>
+                  <li>🥇 Hiscox 120-220€ par an • 🥈 Stello 110-200€ par an</li>
+                  <li>Allianz Pro 200-320€ par an</li>
                 </ul>
               </li>
               <li>
-                <strong>Coach / formateur</strong> :
+                <strong>Coach — formateur</strong> :
                 <ul>
-                  <li>🥇 Allianz Pro 150-300€/an (couverture corporelle adaptée)</li>
-                  <li>Hiscox 180-320€/an</li>
+                  <li>🥇 Allianz Pro 150-300€ par an (couverture corporelle adaptée)</li>
+                  <li>Hiscox 180-320€ par an</li>
                 </ul>
               </li>
               <li>
                 <strong>Coach sportif</strong> :
                 <ul>
-                  <li>🥇 Allianz Pro 220-380€/an (couverture corporelle dédiée)</li>
-                  <li>MMA Pro 250-400€/an</li>
+                  <li>🥇 Allianz Pro 220-380€ par an (couverture corporelle dédiée)</li>
+                  <li>MMA Pro 250-400€ par an</li>
                 </ul>
               </li>
               <li>
                 <strong>BTP en + décennale</strong> :
                 <ul>
-                  <li>🥇 April Pro BTP 250-450€/an RC Pro</li>
-                  <li>SMABTP 350-550€/an</li>
+                  <li>🥇 April Pro BTP 250-450€ par an RC Pro</li>
+                  <li>SMABTP 350-550€ par an</li>
                 </ul>
               </li>
             </ul>
           ),
         },
         {
-          h2: 'Comparatif prix par activité SARL/SAS',
+          h2: 'Comparatif prix par activité SARL ou SAS',
           body: (
             <ul>
               <li>
                 <strong>SARL services CA 100-300k€</strong> :
                 <ul>
-                  <li>🥇 Hiscox 600-1 000€/an • Allianz Pro 700-1 200€/an</li>
-                  <li>MMA Pro 750-1 200€/an • AXA Pro 900-1 500€/an</li>
+                  <li>🥇 Hiscox 600-1 000€ par an • Allianz Pro 700-1 200€ par an</li>
+                  <li>MMA Pro 750-1 200€ par an • AXA Pro 900-1 500€ par an</li>
                 </ul>
               </li>
               <li>
                 <strong>SAS PME services CA 500k-1M€</strong> :
                 <ul>
-                  <li>🥇 Allianz Pro 1 500-2 500€/an • Hiscox 1 600-2 800€/an</li>
-                  <li>MMA Pro 1 600-2 600€/an • AXA Pro 1 900-3 200€/an</li>
+                  <li>🥇 Allianz Pro 1 500-2 500€ par an • Hiscox 1 600-2 800€ par an</li>
+                  <li>MMA Pro 1 600-2 600€ par an • AXA Pro 1 900-3 200€ par an</li>
                 </ul>
               </li>
               <li>
                 <strong>SARL BTP 5 salariés</strong> :
                 <ul>
-                  <li>🥇 April Pro BTP 600-1 200€/an RC Pro (+ décennale)</li>
-                  <li>SMABTP 750-1 400€/an</li>
-                  <li>MMA Pro BTP 800-1 500€/an</li>
+                  <li>🥇 April Pro BTP 600-1 200€ par an RC Pro (+ décennale)</li>
+                  <li>SMABTP 750-1 400€ par an</li>
+                  <li>MMA Pro BTP 800-1 500€ par an</li>
                 </ul>
               </li>
             </ul>
@@ -139,7 +139,7 @@ export default function Page() {
                 Pro spé BTP, Allianz Pro multi-secteurs
               </li>
               <li>
-                <strong>Modèle de distribution</strong> : digital pure (Hiscox/Stello) -15% vs
+                <strong>Modèle de distribution</strong> : digital pure (Hiscox ou Stello) -15% vs
                 agences traditionnelles
               </li>
               <li>
@@ -147,8 +147,8 @@ export default function Page() {
                 groupes traditionnels
               </li>
               <li>
-                <strong>Sinistralité passée</strong> : assureur ajuste prime selon ratio
-                sinistre/prime historique
+                <strong>Sinistralité passée</strong> : assureur ajuste prime selon ratio sinistre ou
+                prime historique
               </li>
               <li>
                 <strong>Plafond proposé</strong> : 1M€ standard, 2-3M€ +20-30%
@@ -163,7 +163,7 @@ export default function Page() {
       faq={[
         {
           q: 'Hiscox vraiment le moins cher partout ?',
-          a: 'NON. Hiscox best price AE services intellectuels uniquement. Pour AE BTP : April Pro best. Pour SARL services : Allianz Pro/MMA souvent mieux placés. Pour SAS PME : varie selon profil. Comparer toujours 3-5 assureurs.',
+          a: 'NON. Hiscox best price AE services intellectuels uniquement. Pour AE BTP : April Pro best. Pour SARL services : Allianz Pro ou MMA souvent mieux placés. Pour SAS PME : varie selon profil. Comparer toujours 3-5 assureurs.',
         },
         {
           q: 'Prix Stello vs Hiscox : qui gagne ?',

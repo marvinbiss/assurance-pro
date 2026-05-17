@@ -21,7 +21,7 @@ describe('GET /api/health', () => {
     vi.clearAllMocks()
   })
 
-  it('retourne JSON avec status healthy/degraded/unhealthy', async () => {
+  it('retourne JSON avec status healthy, degraded / unhealthy', async () => {
     const response = await GET()
     const body = await response.json()
     expect(['healthy', 'degraded', 'unhealthy']).toContain(body.status)
@@ -47,7 +47,7 @@ describe('GET /api/health', () => {
     expect(response.headers.get('Cache-Control')).toContain('no-store')
   })
 
-  it('status 200 ou 503 (jamais 500)', async () => {
+  it('status 200 / 503 (jamais 500)', async () => {
     const response = await GET()
     expect([200, 503]).toContain(response.status)
   })

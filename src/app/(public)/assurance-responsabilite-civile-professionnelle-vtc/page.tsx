@@ -15,7 +15,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Professionnelle VTC : obligation légale décret 2014-371, plafond mini 1.5M€ corporel. Tarifs 280-650€/an (AE), 450-1 200€/an (SARL). 4 assureurs comparés.',
+    'RC Professionnelle VTC : obligation légale décret 2014-371, plafond mini 1.5M€ corporel. Tarifs 280-650€ par an (AE), 450-1 200€ par an (SARL). 4 assureurs comparés.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -45,7 +45,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '280-1 200€/an',
+          title: '280-1 200€ par an',
           desc: 'AE débutant 280-450€ • Expérimenté 350-550€ • SARL 450-1 200€',
         },
         {
@@ -113,12 +113,12 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Protection juridique</strong> : litiges clients (réclamations Uber/Bolt),
-                administration (PV), accidents. +60-120€/an.
+                <strong>Protection juridique</strong> : litiges clients (réclamations Uber ou Bolt),
+                administration (PV), accidents. +60-120€ par an.
               </li>
               <li>
                 <strong>Perte d&apos;exploitation</strong> : indemnité journalière si véhicule
-                immobilisé. +80-180€/an, idéal si activité full-time.
+                immobilisé. +80-180€ par an, idéal si activité full-time.
               </li>
               <li>
                 <strong>Assistance véhicule professionnel</strong> : remorquage + véhicule de
@@ -142,11 +142,11 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une RC Pro VTC en 2026 ?',
-          a: 'AE débutant (1ère année) : 280-450€/an. AE expérimenté (3+ ans) : 350-550€/an. SARL/EURL : 450-900€/an. Flotte multi-chauffeurs : 250-450€/an/chauffeur. Activité haut de gamme : 600-1 200€/an.',
+          a: 'AE débutant (1ère année) : 280-450€ par an. AE expérimenté (3+ ans) : 350-550€ par an. SARL ou EURL : 450-900€ par an. Flotte multi-chauffeurs : 250-450€ par an par chauffeur. Activité haut de gamme : 600-1 200€ par an.',
         },
         {
           q: 'Wakam ou Stello pour un VTC débutant ?',
-          a: 'Wakam = leader VTC France, tarif compétitif sur AE (280-350€/an). Stello = challenger pure-digital, contrat 2-en-1 (auto + RC Pro), bon rapport prix/garanties (350-450€/an). À profil égal, comparer les 2.',
+          a: 'Wakam = leader VTC France, tarif compétitif sur AE (280-350€ par an). Stello = challenger pure-digital, contrat 2-en-1 (auto + RC Pro), bon rapport prix ou garanties (350-450€ par an). À profil égal, comparer les 2.',
         },
         {
           q: 'Peut-on exercer en VTC sans RC Pro ?',

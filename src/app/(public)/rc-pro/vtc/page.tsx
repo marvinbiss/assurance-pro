@@ -10,7 +10,7 @@ import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pili
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'rc-pro/vtc'
+const SLUG = 'rc-pro / vtc'
 const TITLE = 'RC Pro VTC — Tarifs 2026 (RC chauffeur, plafond illimité, passagers)'
 const TAGLINE =
   "L'assurance RC pro spécifique VTC : RC chauffeur passagers + RC tiers + plafond corporel illimité. Obligation Code des transports."
@@ -18,7 +18,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "RC Pro VTC OBLIGATOIRE (Code des transports L. 3120-1) : couvre passagers + tiers + véhicule. Plafond corporel illimité. Distinct de l'assurance VTC complète (multirisque + ADS). Tarifs 380-980€/an. Devis ORIAS sous 24h.",
+    "RC Pro VTC OBLIGATOIRE (Code des transports L. 3120-1) : couvre passagers + tiers + véhicule. Plafond corporel illimité. Distinct de l'assurance VTC complète (multirisque + ADS). Tarifs 380-980€ par an. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -29,7 +29,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro VTC est la garantie OBLIGATOIRE pour tout chauffeur VTC en France (Code des transports L. 3120-1). Elle couvre la responsabilité civile professionnelle du chauffeur envers ses passagers ET les tiers (autres véhicules, piétons, infrastructure) en cas de sinistre survenu pendant la prestation de transport. Le plafond corporel est ILLIMITÉ par obligation légale. Distincte de l'assurance VTC COMPLÈTE qui inclut aussi la multirisque véhicule (vol, incendie, vandalisme) et la couverture personnelle du chauffeur, la RC Pro VTC est le SOCLE LÉGAL minimum. Tarifs 2026 : 380-980 €/an pour la RC Pro VTC seule (vs 650-1 400 €/an pour le pack VTC complet). Cette page renvoie vers notre pilier complet /assurance-vtc."
+      intro="La RC Pro VTC est la garantie OBLIGATOIRE pour tout chauffeur VTC en France (Code des transports L. 3120-1). Elle couvre la responsabilité civile professionnelle du chauffeur envers ses passagers ET les tiers (autres véhicules, piétons, infrastructure) en cas de sinistre survenu pendant la prestation de transport. Le plafond corporel est ILLIMITÉ par obligation légale. Distincte de l'assurance VTC COMPLÈTE qui inclut aussi la multirisque véhicule (vol, incendie, vandalisme) et la couverture personnelle du chauffeur, la RC Pro VTC est le SOCLE LÉGAL minimum. Tarifs 2026 : 380-980 € par an pour la RC Pro VTC seule (vs 650-1 400 € par an pour le pack VTC complet). Cette page renvoie vers notre pilier complet /assurance-vtc."
       legalReference="Article L. 3120-1 du Code des transports + L. 211-1 C. assur. (RC obligatoire)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -53,8 +53,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 380 €/an',
-          desc: 'RC Pro VTC seule. Pack VTC complet (RC + multirisque + ADS-licence) : 650-1 400€/an',
+          title: 'À partir de 380 € par an',
+          desc: 'RC Pro VTC seule. Pack VTC complet (RC + multirisque + ADS-licence) : 650-1 400€ par an',
         },
       ]}
       sections={[
@@ -94,7 +94,7 @@ export default function Page() {
                     <td className="border p-2">✅</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Garantie conducteur (capital décès/IJ)</td>
+                    <td className="border p-2">Garantie conducteur (capital décès ou IJ)</td>
                     <td className="border p-2">❌</td>
                     <td className="border p-2">✅</td>
                   </tr>
@@ -108,10 +108,10 @@ export default function Page() {
                       <strong>Tarif 2026</strong>
                     </td>
                     <td className="border p-2">
-                      <strong>380-980€/an</strong>
+                      <strong>380-980€ par an</strong>
                     </td>
                     <td className="border p-2">
-                      <strong>650-1 400€/an</strong>
+                      <strong>650-1 400€ par an</strong>
                     </td>
                   </tr>
                 </tbody>
@@ -134,7 +134,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte la RC Pro VTC en 2026 ?',
-          a: '380-980€/an pour la RC Pro VTC seule. Pack VTC complet (RC + multirisque + ADS) : 650-1 400€/an. Variables : km annuels, antécédents, ancienneté permis, zone géographique.',
+          a: '380-980€ par an pour la RC Pro VTC seule. Pack VTC complet (RC + multirisque + ADS) : 650-1 400€ par an. Variables : km annuels, antécédents, ancienneté permis, zone géographique.',
         },
         {
           q: 'RC Pro VTC vs assurance véhicule particulier ?',

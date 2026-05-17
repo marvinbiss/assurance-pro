@@ -10,12 +10,12 @@ export const revalidate = 86400
 const SLUG = 'rc-pro-batiment'
 const TITLE = 'RC Pro Bâtiment — Complément Décennale BTP, garanties et tarifs'
 const TAGLINE =
-  'La RC Pro bâtiment couvre les dommages causés à tiers pendant le chantier BTP (avant réception). Complément essentiel de la décennale. Tarifs AE 250-700€/an.'
+  'La RC Pro bâtiment couvre les dommages causés à tiers pendant le chantier BTP (avant réception). Complément essentiel de la décennale. Tarifs AE 250-700€ par an.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro bâtiment : protection PENDANT chantier (vs Décennale après réception). Tarif AE 250-700€/an, SARL 500-1 500€/an. Pack RC Pro + Décennale = -15-25%.',
+    'RC Pro bâtiment : protection PENDANT chantier (vs Décennale après réception). Tarif AE 250-700€ par an, SARL 500-1 500€ par an. Pack RC Pro + Décennale = -15-25%.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -45,13 +45,13 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '250-1 500€/an',
+          title: '250-1 500€ par an',
           desc: 'AE 250-700€ • SARL 500-1 500€ — selon métier et CA',
         },
         {
           icon: '📦',
           title: 'Pack RC Pro + Décennale',
-          desc: 'Souscription combinée chez April Pro / SMABTP = -15-25%',
+          desc: 'Souscription combinée chez April Pro — SMABTP = -15-25%',
         },
       ]}
       sections={[
@@ -118,7 +118,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Sans RC Pro</strong> : ces sinistres tombent sur votre patrimoine personnel
-                (AE) ou patrimoine dirigeant (SARL/SAS en cas faute gestion).
+                (AE) ou patrimoine dirigeant (SARL ou SAS en cas faute gestion).
               </li>
             </ul>
           ),
@@ -128,34 +128,34 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Peintre AE</strong> : 250-400€/an (en complément décennale)
+                <strong>Peintre AE</strong> : 250-400€ par an (en complément décennale)
               </li>
               <li>
-                <strong>Plâtrier AE</strong> : 280-450€/an
+                <strong>Plâtrier AE</strong> : 280-450€ par an
               </li>
               <li>
-                <strong>Carreleur AE</strong> : 300-500€/an
+                <strong>Carreleur AE</strong> : 300-500€ par an
               </li>
               <li>
-                <strong>Plombier AE</strong> : 400-650€/an
+                <strong>Plombier AE</strong> : 400-650€ par an
               </li>
               <li>
-                <strong>Électricien AE</strong> : 450-700€/an
+                <strong>Électricien AE</strong> : 450-700€ par an
               </li>
               <li>
-                <strong>Maçon AE</strong> : 500-800€/an
+                <strong>Maçon AE</strong> : 500-800€ par an
               </li>
               <li>
-                <strong>Couvreur AE</strong> : 600-1 000€/an (risque chute haute)
+                <strong>Couvreur AE</strong> : 600-1 000€ par an (risque chute haute)
               </li>
               <li>
-                <strong>Multi-services BTP AE</strong> : 600-1 200€/an
+                <strong>Multi-services BTP AE</strong> : 600-1 200€ par an
               </li>
               <li>
-                <strong>SARL BTP 3 salariés</strong> : 800-1 500€/an
+                <strong>SARL BTP 3 salariés</strong> : 800-1 500€ par an
               </li>
               <li>
-                <strong>SAS BTP PME 10 salariés</strong> : 1 500-3 500€/an
+                <strong>SAS BTP PME 10 salariés</strong> : 1 500-3 500€ par an
               </li>
             </ul>
           ),
@@ -164,11 +164,11 @@ export default function Page() {
       faq={[
         {
           q: 'RC Pro bâtiment est-elle obligatoire ?',
-          a: 'Pas strictement obligatoire par la loi (vs Décennale obligatoire Spinetta). MAIS fortement recommandée : sans RC Pro, les sinistres pendant chantier tombent sur votre patrimoine perso. Pour un AE peintre : prime 250-400€/an vs sinistre potentiel 5-50k€. ROI évident.',
+          a: 'Pas strictement obligatoire par la loi (vs Décennale obligatoire Spinetta). MAIS fortement recommandée : sans RC Pro, les sinistres pendant chantier tombent sur votre patrimoine perso. Pour un AE peintre : prime 250-400€ par an vs sinistre potentiel 5-50k€. ROI évident.',
         },
         {
           q: 'Différence RC Pro et RC Exploitation pour BTP ?',
-          a: "RC Pro = couvre dommages liés à votre PRESTATION (erreur, malfaçon, conseil). RC Exploitation = couvre dommages causés à tiers SUR votre site/lieu d'activité (visiteur qui glisse, public sur chantier). Les 2 sont souvent incluses dans la même police RC Pro Bâtiment (vérifier conditions générales).",
+          a: "RC Pro = couvre dommages liés à votre PRESTATION (erreur, malfaçon, conseil). RC Exploitation = couvre dommages causés à tiers SUR votre site ou lieu d'activité (visiteur qui glisse, public sur chantier). Les 2 sont souvent incluses dans la même police RC Pro Bâtiment (vérifier conditions générales).",
         },
         {
           q: 'Pack RC Pro Bâtiment + Décennale = combien d&apos;économies ?',

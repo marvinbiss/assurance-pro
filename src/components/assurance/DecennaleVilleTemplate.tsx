@@ -61,7 +61,7 @@ export function DecennaleVilleTemplate({ ville }: { ville: VilleData }) {
             label="Artisans BTP"
             value={`~${ville.artisansBtpEstime.toLocaleString('fr-FR')}`}
           />
-          <Stat icon="💰" label="À partir de" value="480€/an" />
+          <Stat icon="💰" label="À partir de" value="480€ par an" />
         </div>
 
         <section className="prose prose-lg mb-10 max-w-none">

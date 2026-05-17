@@ -49,9 +49,8 @@ export default function ConfidentialitePage() {
 
           <h2>1. Responsable du traitement</h2>
           <p>
-            Le responsable du traitement est <strong>Vivos Assurance</strong>, immatriculé à
-            l\'ORIAS sous le numéro{' '}
-            {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"}.
+            Le responsable du traitement est <strong>Vivos Assurance</strong>, immatriculé à l’ORIAS
+            sous le numéro {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"}.
           </p>
           <p>
             <strong>Délégué à la Protection des Données (DPO)</strong> :{' '}
@@ -59,7 +58,7 @@ export default function ConfidentialitePage() {
           </p>
 
           <h2>2. Données collectées</h2>
-          <h3>Finalité 1 : établissement d\'un devis</h3>
+          <h3>Finalité 1 : établissement d’un devis</h3>
           <ul>
             <li>Identité : nom, prénom, civilité</li>
             <li>Coordonnées : email, téléphone, adresse postale</li>
@@ -95,7 +94,7 @@ export default function ConfidentialitePage() {
           <h2>4. Destinataires</h2>
           <ul>
             <li>Nos équipes habilitées (courtiers ORIAS, services support)</li>
-            <li>Nos compagnies d\'assurance partenaires (lors de l\'envoi de demandes de devis)</li>
+            <li>Nos compagnies d’assurance partenaires (lors de l’envoi de demandes de devis)</li>
             <li>Nos prestataires techniques (hébergement, CRM, email transactionnel)</li>
             <li>Autorités habilitées (ACPR, CNIL, fisc) sur demande légale</li>
           </ul>
@@ -129,17 +128,17 @@ export default function ConfidentialitePage() {
           <h2>6. Vos droits (art. 15-22 RGPD)</h2>
           <ul>
             <li>
-              <strong>Droit d\'accès</strong> à vos données personnelles
+              <strong>Droit d’accès</strong> à vos données personnelles
             </li>
             <li>
-              <strong>Droit de rectification</strong> en cas d\'inexactitude
+              <strong>Droit de rectification</strong> en cas d’inexactitude
             </li>
             <li>
-              <strong>Droit à l\'effacement</strong> (sous réserve des obligations légales de
+              <strong>Droit à l’effacement</strong> (sous réserve des obligations légales de
               conservation)
             </li>
             <li>
-              <strong>Droit d\'opposition</strong> au traitement
+              <strong>Droit d’opposition</strong> au traitement
             </li>
             <li>
               <strong>Droit à la limitation</strong> du traitement
@@ -171,7 +170,7 @@ export default function ConfidentialitePage() {
           <p>Nous mettons en œuvre les mesures techniques et organisationnelles appropriées :</p>
           <ul>
             <li>Chiffrement TLS pour toutes les communications</li>
-            <li>Hébergement sur serveurs sécurisés en France/UE (RGPD-compliant)</li>
+            <li>Hébergement sur serveurs sécurisés en France ou UE (RGPD-compliant)</li>
             <li>Authentification multi-facteurs pour les accès admin</li>
             <li>Sauvegardes quotidiennes chiffrées</li>
             <li>Sensibilisation et formation régulière du personnel</li>
@@ -193,7 +192,7 @@ export default function ConfidentialitePage() {
               <strong>Cookies essentiels</strong> (toujours actifs) : session, sécurité, préférences
             </li>
             <li>
-              <strong>Cookies de mesure d\'audience</strong> (sur consentement) : Google Analytics 4
+              <strong>Cookies de mesure d’audience</strong> (sur consentement) : Google Analytics 4
             </li>
             <li>
               <strong>Cookies marketing</strong> (sur consentement) : Meta Pixel, retargeting
@@ -202,9 +201,9 @@ export default function ConfidentialitePage() {
 
           <h2>9. Profilage automatisé</h2>
           <p>
-            Notre cabinet utilise un algorithme de scoring lead (segmentation HOT/WARM/COLD) pour
-            prioriser les rappels commerciaux. Ce profilage n\'a pas d\'impact juridique sur vous :
-            il sert uniquement à ajuster le délai de notre rappel. Vous pouvez vous opposer à ce
+            Notre cabinet utilise un algorithme de scoring lead (segmentation HOT, WARM ou COLD)
+            pour prioriser les rappels commerciaux. Ce profilage n’a pas d’impact juridique sur vous
+            : il sert uniquement à ajuster le délai de notre rappel. Vous pouvez vous opposer à ce
             profilage à tout moment via notre DPO.
           </p>
 

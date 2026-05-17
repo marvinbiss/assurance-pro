@@ -14,27 +14,27 @@ export const HERO_PHOTOS = {
   bureau: {
     src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=72&auto=format&fit=crop',
     alt: 'Professionnel en bureau moderne — courtage assurance',
-    credit: 'Charles Forerunner / Unsplash',
+    credit: 'Charles Forerunner — Unsplash',
   },
   chantier: {
     src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=72&auto=format&fit=crop',
     alt: 'Artisan BTP sur chantier — décennale',
-    credit: 'Josh Olalde / Unsplash',
+    credit: 'Josh Olalde — Unsplash',
   },
   poignee: {
     src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=72&auto=format&fit=crop',
     alt: 'Poignée de main signature contrat',
-    credit: 'Cytonn Photography / Unsplash',
+    credit: 'Cytonn Photography — Unsplash',
   },
   equipe: {
     src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=72&auto=format&fit=crop',
     alt: 'Équipe de courtage en réunion',
-    credit: 'Annie Spratt / Unsplash',
+    credit: 'Annie Spratt — Unsplash',
   },
   conseil: {
     src: 'https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=1600&q=72&auto=format&fit=crop',
     alt: 'Conseil personnalisé en cabinet',
-    credit: 'LinkedIn Sales Solutions / Unsplash',
+    credit: 'LinkedIn Sales Solutions — Unsplash',
   },
 } as const satisfies Record<string, BrandPhoto>
 

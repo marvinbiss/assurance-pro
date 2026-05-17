@@ -223,7 +223,7 @@ function PrixCard({
       >
         {Math.round(value).toLocaleString('fr-FR')}
         <span className="text-xl">€</span>
-        <span className="ml-1 text-base font-normal text-charcoal-500">/an</span>
+        <span className="ml-1 text-base font-normal text-charcoal-500"> par an</span>
       </div>
     </div>
   )
@@ -275,7 +275,7 @@ function DataTrustSignals({ enrichment }: { enrichment: PageEnrichmentRow }) {
               className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
               strokeWidth={2.4}
             />
-            <span>Solidité assureurs : Pappers (S&amp;P/Moody&apos;s)</span>
+            <span>Solidité assureurs : Pappers (S&amp;P ou Moody&apos;s)</span>
           </li>
         )}
         {enrichment.avis_top_jsonb?.length > 0 && (
@@ -293,7 +293,7 @@ function DataTrustSignals({ enrichment }: { enrichment: PageEnrichmentRow }) {
               className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-700"
               strokeWidth={2.4}
             />
-            <span>Stats : FFA / FFB / CAPEB / Mutualité Française</span>
+            <span>Stats : FFA — FFB — CAPEB — Mutualité Française</span>
           </li>
         )}
       </ul>
@@ -320,7 +320,7 @@ function PrixContextBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
           Le tarif médian observé pour {enrichment.garantie_label} appliqué aux{' '}
           {enrichment.metier_nom}s sous statut {enrichment.statut_label}
           {enrichment.ville_nom && ` à ${enrichment.ville_nom}`} s&apos;établit à{' '}
-          <strong>{Math.round(enrichment.prix_med_eur).toLocaleString('fr-FR')}€/an</strong>.
+          <strong>{Math.round(enrichment.prix_med_eur).toLocaleString('fr-FR')}€ par an</strong>.
         </p>
         {enrichment.sinistralite_pct && (
           <p>
@@ -406,7 +406,7 @@ function ComparatifAssureurs({ enrichment }: { enrichment: PageEnrichmentRow }) 
                     )}
                   </td>
                   <td className="px-5 py-3.5 text-right font-extrabold tabular-nums text-primary-700">
-                    {a.prix_indicatif_min ? `${a.prix_indicatif_min}€/an min` : 'Sur devis'}
+                    {a.prix_indicatif_min ? `${a.prix_indicatif_min}€ par an min` : 'Sur devis'}
                   </td>
                 </tr>
               ))}

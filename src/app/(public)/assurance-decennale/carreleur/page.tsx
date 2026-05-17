@@ -12,14 +12,14 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-decennale/carreleur'
-const TITLE = 'Décennale carreleur 2026 — Tarifs 560-920€/an AE'
+const TITLE = 'Décennale carreleur 2026 — Tarifs 560-920€ par an AE'
 const TAGLINE =
   'La décennale obligatoire pour carreleur : couverture spécifique fissures carrelage, défauts pose chape, étanchéité salle de bain. Sinistralité AQC 6,5%.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale carreleur 2026 : OBLIGATOIRE Loi Spinetta. Couverture fissures carrelage (sol/mur), défauts pose chape, étanchéité salle de bain (SPEC), désolidarisation. Sinistralité AQC 6,5%. Tarifs 560-920€/an AE, 5 800-12 000€/an SARL 5 sal. Devis ORIAS sous 24h.',
+    'Décennale carreleur 2026 : OBLIGATOIRE Loi Spinetta. Couverture fissures carrelage (sol ou mur), défauts pose chape, étanchéité salle de bain (SPEC), désolidarisation. Sinistralité AQC 6,5%. Tarifs 560-920€ par an AE, 5 800-12 000€ par an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance décennale carreleur est OBLIGATOIRE pour tout artisan carreleur en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 6,5%. Sinistres principaux : fissures carrelage 1-3 ans après pose (défaut joints dilatation, chape mal réalisée), défauts d'étanchéité salle de bain (SPEC — Système de Protection à l'Eau sous Carrelage), désolidarisation des éléments. Tarifs 2026 : 560-920 €/an pour AE, 5 800-12 000 €/an pour SARL avec 5 salariés."
+      intro="L'assurance décennale carreleur est OBLIGATOIRE pour tout artisan carreleur en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 6,5%. Sinistres principaux : fissures carrelage 1-3 ans après pose (défaut joints dilatation, chape mal réalisée), défauts d'étanchéité salle de bain (SPEC — Système de Protection à l'Eau sous Carrelage), désolidarisation des éléments. Tarifs 2026 : 560-920 € par an pour AE, 5 800-12 000 € par an pour SARL avec 5 salariés."
       legalReference="Loi Spinetta + DTU 52.1 (revêtements de sol scellés) + DTU 52.2 (collés)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -51,12 +51,12 @@ export default function Page() {
         {
           icon: '💧',
           title: 'Étanchéité SPEC salle de bain',
-          desc: 'Couverture spécifique Système Protection Eau sous Carrelage (NF DTU 52.1/52.2)',
+          desc: 'Couverture spécifique Système Protection Eau sous Carrelage (NF DTU 52,1 sur 52.2)',
         },
         {
           icon: '💰',
-          title: '560-920 €/an AE',
-          desc: 'AE carreleur CA <50k€. SARL 5 sal : 5 800-12 000€/an. Tarif modéré dans le BTP',
+          title: '560-920 € par an AE',
+          desc: 'AE carreleur CA <50k€. SARL 5 sal : 5 800-12 000€ par an. Tarif modéré dans le BTP',
         },
       ]}
       sections={[
@@ -79,7 +79,7 @@ export default function Page() {
                   ans
                 </li>
                 <li>
-                  <strong>Défauts pose mosaïque/grand format (12%)</strong> — décollement
+                  <strong>Défauts pose mosaïque ou grand format (12%)</strong> — décollement
                 </li>
               </ul>
               <p className="mt-3 border-l-4 border-amber-500 bg-amber-50 p-3">
@@ -125,15 +125,15 @@ export default function Page() {
         },
         {
           q: 'SPEC obligatoire en salle de bain ?',
-          a: "OUI depuis NF DTU 52.1/52.2 + NF DTU 43.5 (murs salles de bain). Le Système de Protection à l'Eau sous Carrelage (SPEC) doit être conforme et posé selon les règles. Défaut SPEC = sinistre couvert décennalement (1ère cause salle de bain).",
+          a: "OUI depuis NF DTU 52,1 sur 52.2 + NF DTU 43.5 (murs salles de bain). Le Système de Protection à l'Eau sous Carrelage (SPEC) doit être conforme et posé selon les règles. Défaut SPEC = sinistre couvert décennalement (1ère cause salle de bain).",
         },
         {
           q: 'Tarif décennale carreleur 2026 ?',
-          a: 'AE carreleur : 560-920 €/an. EURL/SASU : 720-1 100 €/an. SARL 5 salariés : 5 800-12 000 €/an. SAS 10+ salariés : 12 000-18 500 €/an. Variables : antécédents, ancienneté, présence carrelage grand format (sur-prime +10%).',
+          a: 'AE carreleur : 560-920 € par an. EURL ou SASU : 720-1 100 € par an. SARL 5 salariés : 5 800-12 000 € par an. SAS 10+ salariés : 12 000-18 500 € par an. Variables : antécédents, ancienneté, présence carrelage grand format (sur-prime +10%).',
         },
         {
           q: 'Carrelage extérieur (terrasse) couvert ?',
-          a: "OUI mais avec attention. Carrelage terrasse extérieure subit cycles gel/dégel + UV. Vérifier que votre contrat couvre l'extérieur (souvent inclus mais parfois exclu pour carreleurs spécialisés intérieur). Sur-prime extérieur : +30-80€/an.",
+          a: "OUI mais avec attention. Carrelage terrasse extérieure subit cycles gel ou dégel + UV. Vérifier que votre contrat couvre l'extérieur (souvent inclus mais parfois exclu pour carreleurs spécialisés intérieur). Sur-prime extérieur : +30-80€ par an.",
         },
       ]}
     />

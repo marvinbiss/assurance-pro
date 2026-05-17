@@ -7,7 +7,7 @@ import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-pre
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'attestation/assurance-decennale'
+const SLUG = 'attestation / assurance-decennale'
 const TITLE = 'Attestation Assurance Décennale — Obtenir + utiliser 2026'
 const TAGLINE =
   "Tout sur l'attestation assurance décennale : à qui présenter, valeur juridique 10 ans, démarches d'obtention express, vérification authenticité MO."
@@ -73,7 +73,7 @@ export default function Page() {
                 construction
               </li>
               <li>
-                <strong>Donneur d&apos;ordre / promoteur</strong> : conformité contractuelle
+                <strong>Donneur d&apos;ordre — promoteur</strong> : conformité contractuelle
               </li>
               <li>
                 <strong>Sous-traitant</strong> : si vous êtes donneur d&apos;ordre (vérifier
@@ -113,7 +113,7 @@ export default function Page() {
                 (métier Qualibat exact)
               </li>
               <li>
-                <strong>Plafond suffisant</strong> : 1M€ minimum AE, 2-3M€ recommandé SARL/SAS
+                <strong>Plafond suffisant</strong> : 1M€ minimum AE, 2-3M€ recommandé SARL ou SAS
               </li>
               <li>
                 <strong>Cachet ou signature électronique</strong> : présent (sinon doute
@@ -121,7 +121,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Numéro ORIAS courtier</strong> (si applicable) : cliquable sur orias.fr
-                (arrêté 6/12/2022)
+                (arrêté 6 décembre 2022)
               </li>
               <li>
                 <strong>Téléphone assureur</strong> : appeler en cas de doute pour confirmer
@@ -161,7 +161,7 @@ export default function Page() {
       faq={[
         {
           q: 'Combien de temps avant chantier doit-on avoir attestation décennale ?',
-          a: 'AVANT démarrage chantier (Loi Spinetta — sans délai minimum mais ATTENTION : démarrer chantier sans attestation = exercice illégal art. L. 243-3 C. assur., 75k€ amende + 6 mois prison). Idéalement attestation présentée à signature devis/contrat.',
+          a: 'AVANT démarrage chantier (Loi Spinetta — sans délai minimum mais ATTENTION : démarrer chantier sans attestation = exercice illégal art. L. 243-3 C. assur., 75k€ amende + 6 mois prison). Idéalement attestation présentée à signature devis ou contrat.',
         },
         {
           q: 'Comment vérifier authenticité attestation décennale fournisseur ?',
@@ -169,7 +169,7 @@ export default function Page() {
         },
         {
           q: "Faux d'attestation décennale : risques ?",
-          a: 'Falsification document : 3 ans prison + 45 000€ amende (art. 441-1 Code pénal). Usage de faux : idem. + Responsabilité civile illimitée 10 ans sur sinistres. + Radiation Qualibat/RGE possible. Mauvaise idée — toujours présenter attestation authentique.',
+          a: 'Falsification document : 3 ans prison + 45 000€ amende (art. 441-1 Code pénal). Usage de faux : idem. + Responsabilité civile illimitée 10 ans sur sinistres. + Radiation Qualibat ou RGE possible. Mauvaise idée — toujours présenter attestation authentique.',
         },
         {
           q: "L'attestation suit-elle le bien immobilier ?",

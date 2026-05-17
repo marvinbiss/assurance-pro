@@ -7,7 +7,7 @@ import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-pre
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'attestation/decennale-pdf'
+const SLUG = 'attestation / decennale-pdf'
 const TITLE = 'Attestation Décennale PDF — Format, téléchargement, modèles 2026'
 const TAGLINE =
   "Tout sur le format PDF de l'attestation décennale : taille, qualité, sécurité, modèles par assureur (April Pro, SMABTP, Allianz Pro, MMA, AXA)."
@@ -51,7 +51,7 @@ export default function Page() {
         {
           icon: '📲',
           title: 'Compatibility universelle',
-          desc: 'Ouvrable iOS/Android/Windows/Mac, imprimable couleur/N&amp;B',
+          desc: 'Ouvrable iOS, Android, Windows ou Mac, imprimable couleur ou N&amp;B',
         },
       ]}
       sections={[
@@ -76,14 +76,14 @@ export default function Page() {
                 simple cachet
               </li>
               <li>
-                <strong>Protection</strong> : généralement protégé contre modification (PDF/A-2 ou
-                PDF signé)
+                <strong>Protection</strong> : généralement protégé contre modification (PDF ou A-2
+                ou PDF signé)
               </li>
               <li>
                 <strong>Métadonnées</strong> : auteur (assureur), date création, validité
               </li>
               <li>
-                <strong>Polices</strong> : Helvetica/Arial (standard universel)
+                <strong>Polices</strong> : Helvetica ou Arial (standard universel)
               </li>
             </ul>
           ),

@@ -15,7 +15,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Pack assurance RC Pro et Décennale BTP : économies -15-25% vs souscriptions séparées. Tarif AE pack 1 200-3 500€/an. April Pro, SMABTP, Allianz, MMA, AXA.',
+    'Pack assurance RC Pro et Décennale BTP : économies -15-25% vs souscriptions séparées. Tarif AE pack 1 200-3 500€ par an. April Pro, SMABTP, Allianz, MMA, AXA.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -97,7 +97,7 @@ export default function Page() {
             <ul>
               <li>
                 <strong>April Pro BTP</strong> : <strong>leader pack BTP</strong>, remise -15-20%,
-                souscription 100% en ligne, attestation 24h. Best price AE/SARL.
+                souscription 100% en ligne, attestation 24h. Best price AE ou SARL.
               </li>
               <li>
                 <strong>SMABTP</strong> : institution paritaire BTP, pack global, remise -15%.
@@ -108,7 +108,7 @@ export default function Page() {
                 possible, remise -10-15%. Bon réseau d&apos;agences.
               </li>
               <li>
-                <strong>MMA Pro BTP</strong> : équilibré SARL/SAS, réseau 1 500+ agences. Remise
+                <strong>MMA Pro BTP</strong> : équilibré SARL ou SAS, réseau 1 500+ agences. Remise
                 pack -10-15%.
               </li>
               <li>
@@ -124,7 +124,7 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Économies tarifaires</strong> : 15-25% selon assureur et profil, soit 200-3
-                500€/an d&apos;économie selon ampleur
+                500€ par an d&apos;économie selon ampleur
               </li>
               <li>
                 <strong>Gestion centralisée</strong> : 1 interlocuteur courtier, 1 contrat, 1 prime
@@ -132,7 +132,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Pas de zone grise</strong> : assureur unique gère les sinistres mixtes RC
-                Pro/Décennale
+                Pro ou Décennale
               </li>
               <li>
                 <strong>Couvertures cohérentes</strong> : plafonds + exclusions harmonisés entre les
@@ -157,7 +157,7 @@ export default function Page() {
       faq={[
         {
           q: "Combien d'économies sur un pack RC Pro + Décennale ?",
-          a: 'Économies typiques : -12% à -20% selon profil. AE peintre : -150€/an. SARL plomberie : -600€/an. SAS BTP PME 10 salariés : -1 800€/an. Sur 10 ans (durée standard contrats) : économies cumulées 1 500-18 000€.',
+          a: 'Économies typiques : -12% à -20% selon profil. AE peintre : -150€ par an. SARL plomberie : -600€ par an. SAS BTP PME 10 salariés : -1 800€ par an. Sur 10 ans (durée standard contrats) : économies cumulées 1 500-18 000€.',
         },
         {
           q: 'Peut-on changer 1 contrat du pack sans toucher l&apos;autre ?',

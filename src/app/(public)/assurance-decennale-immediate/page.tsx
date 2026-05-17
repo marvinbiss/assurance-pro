@@ -42,12 +42,12 @@ export default function Page() {
         {
           icon: '🏗️',
           title: 'Démarrage chantier urgent',
-          desc: 'Idéal si MO/notaire/promoteur exige attestation rapide',
+          desc: 'Idéal si MO, notaire ou promoteur exige attestation rapide',
         },
         {
           icon: '💰',
           title: 'Tarif standard (pas de majoration urgence)',
-          desc: 'Prix identiques à souscription normale chez April Pro / Hiscox',
+          desc: 'Prix identiques à souscription normale chez April Pro — Hiscox',
         },
         {
           icon: '🔒',
@@ -91,15 +91,16 @@ export default function Page() {
                 <strong>SIRET valide</strong> (vérifié Insee.fr — &lt; 3 mois)
               </li>
               <li>
-                <strong>K-bis pour SARL/SAS</strong> ou <strong>attestation ACOSS pour AE</strong>
+                <strong>K-bis pour SARL ou SAS</strong> ou{' '}
+                <strong>attestation ACOSS pour AE</strong>
               </li>
               <li>
                 <strong>Justificatif d&apos;identité dirigeant</strong> (CNI ou passeport
                 recto-verso)
               </li>
               <li>
-                <strong>Justificatif activité BTP</strong> : CAP, BEP, diplôme, qualifications
-                RGE/Qualibat, expérience BTP (3 ans+ recommandé)
+                <strong>Justificatif activité BTP</strong> : CAP, BEP, diplôme, qualifications RGE
+                ou Qualibat, expérience BTP (3 ans+ recommandé)
               </li>
               <li>
                 <strong>CA prévisionnel 12 mois</strong> + ventilation par métier déclaré
@@ -112,7 +113,7 @@ export default function Page() {
                 <strong>RIB</strong> pour paiement (annuel ou mensuel)
               </li>
               <li>
-                <strong>Description chantier en cours / prévu</strong> (montant + nature travaux)
+                <strong>Description chantier en cours — prévu</strong> (montant + nature travaux)
               </li>
             </ol>
           ),
@@ -130,8 +131,8 @@ export default function Page() {
                 sous-traitance, travaux spéciaux (RGE PV), travaux outre-mer.
               </li>
               <li>
-                <strong>Plafond insuffisant</strong> : vérifier plafond standard 1M€ AE, 2M€
-                SARL/SAS. Pas en-dessous.
+                <strong>Plafond insuffisant</strong> : vérifier plafond standard 1M€ AE, 2M€ SARL ou
+                SAS. Pas en-dessous.
               </li>
               <li>
                 <strong>Contrat provisoire</strong> : certains assureurs émettent attestation

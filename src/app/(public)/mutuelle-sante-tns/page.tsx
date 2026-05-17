@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'mutuelle-sante-tns'
 const TITLE = 'Mutuelle santé TNS — Loi Madelin 2026, comparatif Madelin santé'
 const TAGLINE =
-  'La mutuelle santé pour Travailleurs Non Salariés (TNS) : remboursements optique/dentaire renforcés, hospitalisation, médecines douces. Loi Madelin déductible.'
+  'La mutuelle santé pour Travailleurs Non Salariés (TNS) : remboursements optique ou dentaire renforcés, hospitalisation, médecines douces. Loi Madelin déductible.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Mutuelle santé TNS Loi Madelin : remboursements optique/dentaire, hospitalisation 100-400% BR, médecines douces. Comparatif April Pro Santé, MMA Pro, Generali, Aon. Tarifs 32-180€/mois. Devis ORIAS sous 24h.',
+    'Mutuelle santé TNS Loi Madelin : remboursements optique ou dentaire, hospitalisation 100-400% BR, médecines douces. Comparatif April Pro Santé, MMA Pro, Generali, Aon. Tarifs 32-180€ par mois. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -39,7 +39,7 @@ export default function Page() {
         {
           icon: '💰',
           title: 'Madelin déductible',
-          desc: 'Cotisations déductibles du bénéfice imposable au régime réel (économie ~1 750€/an pour 60k€)',
+          desc: 'Cotisations déductibles du bénéfice imposable au régime réel (économie ~1 750€ par an pour 60k€)',
         },
         {
           icon: '🩺',
@@ -49,7 +49,7 @@ export default function Page() {
         {
           icon: '🦷',
           title: 'Dentaire renforcé',
-          desc: "Implants, couronnes, orthodontie adulte (forfait jusqu'à 1 800€/an)",
+          desc: "Implants, couronnes, orthodontie adulte (forfait jusqu'à 1 800€ par an)",
         },
         {
           icon: '🏥',
@@ -95,11 +95,11 @@ export default function Page() {
       faq={[
         {
           q: 'Mutuelle santé TNS : Madelin déductible ?',
-          a: "OUI au régime réel d'imposition. Plafond annuel commun santé + prévoyance Madelin : 3,75% du PASS + 7% du bénéfice imposable. Pour 60k€ de bénéfice : ~5 826€/an déductibles. Économie d'impôt nette ~1 750€/an à TMI 30%.",
+          a: "OUI au régime réel d'imposition. Plafond annuel commun santé + prévoyance Madelin : 3,75% du PASS + 7% du bénéfice imposable. Pour 60k€ de bénéfice : ~5 826€ par an déductibles. Économie d'impôt nette ~1 750€ par an à TMI 30%.",
         },
         {
           q: 'Combien coûte une mutuelle santé TNS en 2026 ?',
-          a: "32-180€/mois selon profil. Voir <a href='/mutuelle-tns' class='text-primary-600 underline'>/mutuelle-tns</a> pour tableau détaillé par profil (consultant, artisan, profession libérale, dirigeant).",
+          a: "32-180€ par mois selon profil. Voir <a href='/mutuelle-tns' class='text-primary-600 underline'>/mutuelle-tns</a> pour tableau détaillé par profil (consultant, artisan, profession libérale, dirigeant).",
         },
         {
           q: 'Quelle différence avec /mutuelle-tns ?',

@@ -23,7 +23,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Assurance juridique professionnelle : prise en charge frais avocat (jusqu'à 30 000€/litige), conseil juridique illimité 7j/7, défense pénale dirigeant, recouvrement impayés. Tarifs 280-1 800€/an. Devis gratuit ORIAS sous 24h.",
+    "Assurance juridique professionnelle : prise en charge frais avocat (jusqu'à 30 000€ par litige), conseil juridique illimité 7j/7, défense pénale dirigeant, recouvrement impayés. Tarifs 280-1 800€ par an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -34,7 +34,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance juridique professionnelle (souvent appelée Protection Juridique Pro ou PJ pro) prend en charge les frais d'avocat, d'huissier, d'expert et de procédure d'une entreprise confrontée à un litige : impayé client, conflit fournisseur, litige bail commercial, contentieux salarié, contrôle URSSAF, infraction routière, procédure pénale du dirigeant. Elle inclut un service de conseil juridique téléphonique illimité 7j/7 (avocats, juristes spécialisés). C'est l'une des assurances avec le meilleur rapport coût/protection : 1 entreprise sur 3 connaît un litige juridique majeur dans ses 5 premières années (INSEE 2024), et un seul litige (ex : contestation licenciement à 12 000€) compense 5 à 20 ans de cotisations PJ. Tarifs 2026 : 280-1 800 €/an selon taille."
+      intro="L'assurance juridique professionnelle (souvent appelée Protection Juridique Pro ou PJ pro) prend en charge les frais d'avocat, d'huissier, d'expert et de procédure d'une entreprise confrontée à un litige : impayé client, conflit fournisseur, litige bail commercial, contentieux salarié, contrôle URSSAF, infraction routière, procédure pénale du dirigeant. Elle inclut un service de conseil juridique téléphonique illimité 7j/7 (avocats, juristes spécialisés). C'est l'une des assurances avec le meilleur rapport coût ou protection : 1 entreprise sur 3 connaît un litige juridique majeur dans ses 5 premières années (INSEE 2024), et un seul litige (ex : contestation licenciement à 12 000€) compense 5 à 20 ans de cotisations PJ. Tarifs 2026 : 280-1 800 € par an selon taille."
       legalReference="Articles L. 127-1 et suivants du Code des assurances"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -44,7 +44,7 @@ export default function Page() {
       benefits={[
         {
           icon: '⚖️',
-          title: 'Frais avocat 30k€/litige',
+          title: 'Frais avocat 30k€ par litige',
           desc: 'Plafond standard. Recouvrement créances + défense pénale + conseil illimité',
         },
         {
@@ -59,8 +59,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 280 €/an',
-          desc: 'TPE solo. PME 25 salariés : 680-980€/an. PME 50 salariés : 1 200-1 800€/an',
+          title: 'À partir de 280 € par an',
+          desc: 'TPE solo. PME 25 salariés : 680-980€ par an. PME 50 salariés : 1 200-1 800€ par an',
         },
       ]}
       sections={[
@@ -88,7 +88,7 @@ export default function Page() {
               <p>
                 Voir aussi notre guide pratique{' '}
                 <Link href="/guides/avocat-litige-assurance" className="text-primary-600 underline">
-                  /guides/avocat-litige-assurance
+                  /guides ou avocat-litige-assurance
                 </Link>{' '}
                 pour les cas où vous êtes en conflit avec votre propre assureur.
               </p>
@@ -103,11 +103,11 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une assurance juridique pro ?',
-          a: '280€/an pour TPE solo (plafond 15 000€/litige). 480-780€/an pour TPE 5 salariés (plafond 30 000€). 680-980€/an pour PME 25 salariés. 1 200-1 800€/an pour PME 50 salariés (plafond 50 000€). Souvent disponible en option +30€/mois sur un contrat multirisque pro existant.',
+          a: '280€ par an pour TPE solo (plafond 15 000€ par litige). 480-780€ par an pour TPE 5 salariés (plafond 30 000€). 680-980€ par an pour PME 25 salariés. 1 200-1 800€ par an pour PME 50 salariés (plafond 50 000€). Souvent disponible en option +30€ par mois sur un contrat multirisque pro existant.',
         },
         {
           q: 'Quand est-elle utile ?',
-          a: "Pour TOUT litige juridique entreprise : impayé client B2B, conflit fournisseur, litige bail commercial, contestation licenciement aux prud'hommes, contrôle fiscal/URSSAF, infraction routière disputée, procédure pénale du dirigeant. 1 entreprise sur 3 connaît un litige majeur dans ses 5 premières années (INSEE 2024).",
+          a: "Pour TOUT litige juridique entreprise : impayé client B2B, conflit fournisseur, litige bail commercial, contestation licenciement aux prud'hommes, contrôle fiscal ou URSSAF, infraction routière disputée, procédure pénale du dirigeant. 1 entreprise sur 3 connaît un litige majeur dans ses 5 premières années (INSEE 2024).",
         },
         {
           q: 'Plus de détails ?',

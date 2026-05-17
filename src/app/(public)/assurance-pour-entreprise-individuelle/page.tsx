@@ -23,7 +23,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance entreprise individuelle (EI) : RC pro adaptée + multirisque local pro + mutuelle TNS Madelin + prévoyance Madelin + protection juridique. Tarifs 380-2 800€/an. Devis gratuit ORIAS sous 24h.',
+    'Assurance entreprise individuelle (EI) : RC pro adaptée + multirisque local pro + mutuelle TNS Madelin + prévoyance Madelin + protection juridique. Tarifs 380-2 800€ par an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -34,7 +34,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance pour entreprise individuelle (EI) est le pack adapté aux entrepreneurs individuels au RÉGIME RÉEL d'imposition (vs micro-fiscal AE). Avantage majeur : pleine éligibilité à la Loi Madelin pour la mutuelle santé et la prévoyance (déduction du bénéfice imposable jusqu'à ~5 800€/an pour 60k€ de bénéfice). Depuis la Loi du 14 février 2022 (effet 15 mai 2022), l'EI bénéficie aussi d'une PROTECTION DU PATRIMOINE PERSONNEL renforcée — séparation automatique du patrimoine pro et perso, sans démarche déclarative (vs ancienne EIRL supprimée). Le pack standard combine 5 garanties : RC pro adaptée au métier, multirisque local pro (si applicable), mutuelle TNS Madelin, prévoyance Madelin, protection juridique. Tarifs 2026 : 380-2 800 €/an selon métier et taille."
+      intro="L'assurance pour entreprise individuelle (EI) est le pack adapté aux entrepreneurs individuels au RÉGIME RÉEL d'imposition (vs micro-fiscal AE). Avantage majeur : pleine éligibilité à la Loi Madelin pour la mutuelle santé et la prévoyance (déduction du bénéfice imposable jusqu'à ~5 800€ par an pour 60k€ de bénéfice). Depuis la Loi du 14 février 2022 (effet 15 mai 2022), l'EI bénéficie aussi d'une PROTECTION DU PATRIMOINE PERSONNEL renforcée — séparation automatique du patrimoine pro et perso, sans démarche déclarative (vs ancienne EIRL supprimée). Le pack standard combine 5 garanties : RC pro adaptée au métier, multirisque local pro (si applicable), mutuelle TNS Madelin, prévoyance Madelin, protection juridique. Tarifs 2026 : 380-2 800 € par an selon métier et taille."
       legalReference="Loi du 14 février 2022 (protection patrimoine EI) + Loi Madelin (art. 154 bis CGI)"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -45,7 +45,7 @@ export default function Page() {
         {
           icon: '🛡️',
           title: 'Patrimoine perso protégé',
-          desc: 'Loi 14 février 2022 : séparation automatique pro/perso, sans démarche EIRL',
+          desc: 'Loi 14 février 2022 : séparation automatique pro ou perso, sans démarche EIRL',
         },
         {
           icon: '💰',
@@ -59,13 +59,13 @@ export default function Page() {
         },
         {
           icon: '💸',
-          title: 'À partir de 380 €/an',
-          desc: 'EI freelance digital. EI artisan BTP : 1 280-2 800€/an',
+          title: 'À partir de 380 € par an',
+          desc: 'EI freelance digital. EI artisan BTP : 1 280-2 800€ par an',
         },
       ]}
       sections={[
         {
-          h2: "EI vs AE / Micro-entrepreneur : différence pour l'assurance",
+          h2: "EI vs AE — Micro-entrepreneur : différence pour l'assurance",
           body: (
             <>
               <table className="w-full border-collapse text-sm">
@@ -82,7 +82,7 @@ export default function Page() {
                       <strong>Plafond CA</strong>
                     </td>
                     <td className="border p-2">Aucun</td>
-                    <td className="border p-2">77 700 € (BNC) / 188 700 € (BIC vente)</td>
+                    <td className="border p-2">77 700 € (BNC) — 188 700 € (BIC vente)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -102,8 +102,8 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>Comptabilité</strong>
                     </td>
-                    <td className="border p-2">Obligatoire (~80-150€/mois)</td>
-                    <td className="border p-2">Simple registre achats/recettes</td>
+                    <td className="border p-2">Obligatoire (~80-150€ par mois)</td>
+                    <td className="border p-2">Simple registre achats ou recettes</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -126,7 +126,7 @@ export default function Page() {
                   <Link href="/assurance-micro-entreprise" className="text-primary-600 underline">
                     Assurance micro-entreprise
                   </Link>{' '}
-                  — pour AE / micro-entrepreneurs
+                  — pour AE ou micro-entrepreneurs
                 </li>
                 <li>
                   <Link href="/mutuelle-tns" className="text-primary-600 underline">
@@ -160,15 +160,15 @@ export default function Page() {
       faq={[
         {
           q: 'EI vs AE : quel est le meilleur statut ?',
-          a: "EI plus avantageux fiscalement dès que le bénéfice dépasse ~30k€/an (Madelin déductible + charges réelles déductibles). AE plus simple administrativement (pas de comptabilité). Pour basculer AE → EI : option auprès du SIE avant 31/12 de l'année N pour application en N+1.",
+          a: "EI plus avantageux fiscalement dès que le bénéfice dépasse ~30k€ par an (Madelin déductible + charges réelles déductibles). AE plus simple administrativement (pas de comptabilité). Pour basculer AE → EI : option auprès du SIE avant 31/12 de l'année N pour application en N+1.",
         },
         {
           q: "Combien coûte l'assurance d'une EI en 2026 ?",
-          a: '380-580€/an pour EI freelance digital. 1 280-2 800€/an pour EI artisan BTP avec décennale. 880-1 480€/an pour EI consultant ou profession libérale. Variables : métier, CA, plafond RC choisi.',
+          a: '380-580€ par an pour EI freelance digital. 1 280-2 800€ par an pour EI artisan BTP avec décennale. 880-1 480€ par an pour EI consultant ou profession libérale. Variables : métier, CA, plafond RC choisi.',
         },
         {
           q: "Madelin EI : combien d'économie d'impôt ?",
-          a: 'Plafond commun santé + prévoyance Madelin : 3,75% du PASS + 7% du bénéfice (limite 3% × 8 PASS). Pour EI à 60k€ : ~5 826€/an déductibles. À TMI 30% : économie ~1 750€/an + économie cotisations sociales (~24%).',
+          a: 'Plafond commun santé + prévoyance Madelin : 3,75% du PASS + 7% du bénéfice (limite 3% × 8 PASS). Pour EI à 60k€ : ~5 826€ par an déductibles. À TMI 30% : économie ~1 750€ par an + économie cotisations sociales (~24%).',
         },
         {
           q: 'Loi 14 février 2022 EI : changement majeur ?',

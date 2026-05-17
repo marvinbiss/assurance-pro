@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'responsabilite-civile-professionnelle-auto-entrepreneur'
 const TITLE = 'Responsabilité Civile Professionnelle Auto-Entrepreneur — Guide 2026'
 const TAGLINE =
-  'La RC Pro pour AE/micro-entrepreneur est obligatoire pour certaines professions (médical, BTP, immobilier) et fortement recommandée pour toutes. Tarif 95-450€/an.'
+  'La RC Pro pour AE ou micro-entrepreneur est obligatoire pour certaines professions (médical, BTP, immobilier) et fortement recommandée pour toutes. Tarif 95-450€ par an.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro auto-entrepreneur : obligation par profession + tarifs 95-450€/an. Hiscox best price AE freelance 95€/an. Comparatif 5 assureurs + cyber combinée IT.',
+    'RC Pro auto-entrepreneur : obligation par profession + tarifs 95-450€ par an. Hiscox best price AE freelance 95€ par an. Comparatif 5 assureurs + cyber combinée IT.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La Responsabilité Civile Professionnelle pour les auto-entrepreneurs (et micro-entrepreneurs) est obligatoire pour certaines professions réglementées et fortement recommandée pour TOUTES les activités. Sinistre moyen AE : 5-30k€ (casse client, conseil erroné, blessure visiteur). Sans RC Pro, le patrimoine personnel de l'AE est intégralement exposé (vs responsabilité limitée d'une SARL/SAS). Cette page détaille les obligations par profession, les tarifs marché et les meilleures offres 2026."
+      intro="La Responsabilité Civile Professionnelle pour les auto-entrepreneurs (et micro-entrepreneurs) est obligatoire pour certaines professions réglementées et fortement recommandée pour TOUTES les activités. Sinistre moyen AE : 5-30k€ (casse client, conseil erroné, blessure visiteur). Sans RC Pro, le patrimoine personnel de l'AE est intégralement exposé (vs responsabilité limitée d'une SARL ou SAS). Cette page détaille les obligations par profession, les tarifs marché et les meilleures offres 2026."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + obligations sectorielles (Loi Spinetta BTP, Loi Hoguet immo, etc.)"
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -49,7 +49,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '95-450€/an',
+          title: '95-450€ par an',
           desc: 'Hiscox 95-220€ services intellectuels • BTP 250-450€ (en + décennale)',
         },
         {
@@ -69,7 +69,7 @@ export default function Page() {
               <ul>
                 <li>Professions médicales (médecin, infirmier, kiné, ostéopathe, sage-femme)</li>
                 <li>Professions juridiques (avocat, notaire, huissier, expert-comptable)</li>
-                <li>Agents immobiliers (Loi Hoguet — carte T/G)</li>
+                <li>Agents immobiliers (Loi Hoguet — carte T ou G)</li>
                 <li>BTP (en complément décennale Spinetta)</li>
                 <li>Auto-écoles, ambulanciers, taxis, VTC (décret 2014-371)</li>
                 <li>Conseillers en investissements financiers (CIF — AMF)</li>
@@ -93,37 +93,37 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Consultant / freelance IT</strong> : 95-220€/an (Hiscox best price)
+                <strong>Consultant — freelance IT</strong> : 95-220€ par an (Hiscox best price)
               </li>
               <li>
-                <strong>Designer / photographe</strong> : 120-250€/an
+                <strong>Designer — photographe</strong> : 120-250€ par an
               </li>
               <li>
-                <strong>Coach professionnel / formateur</strong> : 150-300€/an
+                <strong>Coach professionnel — formateur</strong> : 150-300€ par an
               </li>
               <li>
-                <strong>Coach sportif / yoga</strong> : 200-400€/an (risque corporel)
+                <strong>Coach sportif — yoga</strong> : 200-400€ par an (risque corporel)
               </li>
               <li>
-                <strong>Esthéticienne / coiffeur à domicile</strong> : 180-350€/an
+                <strong>Esthéticienne — coiffeur à domicile</strong> : 180-350€ par an
               </li>
               <li>
-                <strong>Prothésiste ongulaire</strong> : 200-400€/an
+                <strong>Prothésiste ongulaire</strong> : 200-400€ par an
               </li>
               <li>
-                <strong>BTP (en complément décennale)</strong> : 250-450€/an
+                <strong>BTP (en complément décennale)</strong> : 250-450€ par an
               </li>
               <li>
-                <strong>Auto-école / ambulancier / taxi</strong> : 400-800€/an
+                <strong>Auto-école — ambulancier — taxi</strong> : 400-800€ par an
               </li>
               <li>
-                <strong>Médical libéral</strong> : 800-2 500€/an (réglementaire)
+                <strong>Médical libéral</strong> : 800-2 500€ par an (réglementaire)
               </li>
               <li>
-                <strong>Avocat</strong> : 500-1 500€/an (Ordre minimum)
+                <strong>Avocat</strong> : 500-1 500€ par an (Ordre minimum)
               </li>
               <li>
-                <strong>Agent immobilier mandataire</strong> : 350-600€/an (Hoguet)
+                <strong>Agent immobilier mandataire</strong> : 350-600€ par an (Hoguet)
               </li>
             </ul>
           ),
@@ -149,8 +149,8 @@ export default function Page() {
                 trésorerie
               </li>
               <li>
-                <strong>Cyber-assurance combinée</strong> : indispensable si activité IT/digital ou
-                données client
+                <strong>Cyber-assurance combinée</strong> : indispensable si activité IT ou digital
+                ou données client
               </li>
             </ol>
           ),
@@ -159,15 +159,15 @@ export default function Page() {
       faq={[
         {
           q: 'Un auto-entrepreneur doit-il OBLIGATOIREMENT avoir une RC Pro ?',
-          a: 'Cela dépend de votre activité. OBLIGATOIRE pour : médical, juridique, immobilier, BTP, auto-école, ambulancier, taxi/VTC, CIF. FORTEMENT RECOMMANDÉE pour toutes les autres activités B2B où votre conseil/prestation peut causer un préjudice client (consultant, IT, marketing, formation, etc.).',
+          a: 'Cela dépend de votre activité. OBLIGATOIRE pour : médical, juridique, immobilier, BTP, auto-école, ambulancier, taxi ou VTC, CIF. FORTEMENT RECOMMANDÉE pour toutes les autres activités B2B où votre conseil ou prestation peut causer un préjudice client (consultant, IT, marketing, formation, etc.).',
         },
         {
           q: 'Quelle est la RC Pro AE la moins chère ?',
-          a: 'Pour AE freelance services intellectuels (consultant, IT, designer) CA &lt; 80k€ : Hiscox 95-220€/an ou Stello 90-200€/an avec plafond 1M€. Pour AE BTP en complément décennale : 250-450€/an chez April Pro BTP.',
+          a: 'Pour AE freelance services intellectuels (consultant, IT, designer) CA &lt; 80k€ : Hiscox 95-220€ par an ou Stello 90-200€ par an avec plafond 1M€. Pour AE BTP en complément décennale : 250-450€ par an chez April Pro BTP.',
         },
         {
           q: 'Combien coûte une RC Pro pour un AE freelance débutant ?',
-          a: 'AE services intellectuels CA &lt; 30k€ : 95-150€/an chez Hiscox (plafond 500k€-1M€). AE coach sportif : 200-300€/an. AE esthéticienne à domicile : 180-280€/an. AE BTP : 250-400€/an.',
+          a: 'AE services intellectuels CA &lt; 30k€ : 95-150€ par an chez Hiscox (plafond 500k€-1M€). AE coach sportif : 200-300€ par an. AE esthéticienne à domicile : 180-280€ par an. AE BTP : 250-400€ par an.',
         },
         {
           q: 'Que risque-t-on sans RC Pro AE ?',

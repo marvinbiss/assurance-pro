@@ -18,7 +18,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale assurance : obligation Loi Spinetta pour 52 métiers BTP, durée 10 ans à réception, plafond illimité Spinetta. Coût 950-8 000€/an. Comparatif avec Dommages-Ouvrage.',
+    'Décennale assurance : obligation Loi Spinetta pour 52 métiers BTP, durée 10 ans à réception, plafond illimité Spinetta. Coût 950-8 000€ par an. Comparatif avec Dommages-Ouvrage.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -101,7 +101,7 @@ export default function Page() {
                 <li>Constructeurs de Maisons Individuelles (CMI)</li>
                 <li>Promoteurs immobiliers</li>
                 <li>Sous-traitants en lien direct avec le maître d&apos;ouvrage</li>
-                <li>Auto-entrepreneurs / micro-entrepreneurs BTP (obligation identique)</li>
+                <li>Auto-entrepreneurs — micro-entrepreneurs BTP (obligation identique)</li>
                 <li>Bureaux d&apos;études techniques (BET) intervenant dans la conception</li>
               </ul>
             </>
@@ -116,8 +116,8 @@ export default function Page() {
               </p>
               <ul>
                 <li>
-                  <strong>Décennale</strong> = souscrite par le <em>constructeur</em> (vous,
-                  artisan/entreprise BTP). Couvre votre responsabilité de 10 ans.
+                  <strong>Décennale</strong> = souscrite par le <em>constructeur</em> (vous, artisan
+                  / entreprise BTP). Couvre votre responsabilité de 10 ans.
                 </li>
                 <li>
                   <strong>Dommages-Ouvrage (DO)</strong> = souscrite par le{' '}
@@ -137,7 +137,7 @@ export default function Page() {
       faq={[
         {
           q: 'Combien coûte une décennale par an ?',
-          a: 'Pour un auto-entrepreneur peintre : 950-1 400€/an. Pour un maçon SARL : 2 500-5 000€/an. Pour un multi-services BTP SAS : 3 500-8 000€/an+. La prime dépend du métier (risque), statut, CA déclaré et sinistralité.',
+          a: 'Pour un auto-entrepreneur peintre : 950-1 400€ par an. Pour un maçon SARL : 2 500-5 000€ par an. Pour un multi-services BTP SAS : 3 500-8 000€ par an+. La prime dépend du métier (risque), statut, CA déclaré et sinistralité.',
         },
         {
           q: 'La décennale est-elle obligatoire pour un auto-entrepreneur ?',

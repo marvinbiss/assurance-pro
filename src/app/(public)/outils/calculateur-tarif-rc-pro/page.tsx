@@ -37,7 +37,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/calculateur-tarif-rc-pro'
+const SLUG = 'outils / calculateur-tarif-rc-pro'
 
 export const metadata: Metadata = {
   title: 'Calculateur tarif RC Pro 2026 — Estimation immédiate par secteur (gratuit)',
@@ -65,11 +65,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/rc-pro" className="hover:underline">
               RC Pro
             </Link>{' '}
-            / <span>Calculateur tarif</span>
+            › <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ Estimation gratuite en 30 secondes
@@ -147,7 +147,7 @@ export default async function Page() {
                   <strong>Secteur d&apos;activité</strong>
                 </td>
                 <td className="border p-2">
-                  Tarif base 90-4 200 €/an (consultant → médecin libéral)
+                  Tarif base 90-4 200 € par an (consultant → médecin libéral)
                 </td>
                 <td className="border p-2">Sinistralité ACPR + AMRAE 2024</td>
               </tr>
@@ -184,7 +184,7 @@ export default async function Page() {
                   <strong>Franchise</strong>
                 </td>
                 <td className="border p-2">Coef ×1,15 (300€) à ×0,85 (5000€)</td>
-                <td className="border p-2">Arbitrage assureur/assuré</td>
+                <td className="border p-2">Arbitrage assureur ou assuré</td>
               </tr>
               <tr>
                 <td className="border p-2">
@@ -228,32 +228,32 @@ export default async function Page() {
             </thead>
             <tbody>
               <tr>
-                <td className="border p-2">Consultant / conseil</td>
+                <td className="border p-2">Consultant — conseil</td>
                 <td className="border p-2 text-right">90 € – 280 €</td>
                 <td className="border p-2">1,2 %</td>
               </tr>
               <tr>
-                <td className="border p-2">Photographe / graphiste</td>
+                <td className="border p-2">Photographe — graphiste</td>
                 <td className="border p-2 text-right">110 € – 290 €</td>
                 <td className="border p-2">1,3 %</td>
               </tr>
               <tr>
-                <td className="border p-2">Marketing / communication</td>
+                <td className="border p-2">Marketing — communication</td>
                 <td className="border p-2 text-right">110 € – 320 €</td>
                 <td className="border p-2">1,8 %</td>
               </tr>
               <tr>
-                <td className="border p-2">Formateur / coach</td>
+                <td className="border p-2">Formateur — coach</td>
                 <td className="border p-2 text-right">130 € – 380 €</td>
                 <td className="border p-2">1,5 %</td>
               </tr>
               <tr>
-                <td className="border p-2">Informatique / SaaS</td>
+                <td className="border p-2">Informatique — SaaS</td>
                 <td className="border p-2 text-right">180 € – 480 €</td>
                 <td className="border p-2">2,1 % (RGPD)</td>
               </tr>
               <tr>
-                <td className="border p-2">Esthétique / bien-être</td>
+                <td className="border p-2">Esthétique — bien-être</td>
                 <td className="border p-2 text-right">180 € – 540 €</td>
                 <td className="border p-2">2,2 %</td>
               </tr>
@@ -273,17 +273,17 @@ export default async function Page() {
                 <td className="border p-2">4,1 %</td>
               </tr>
               <tr>
-                <td className="border p-2">Restaurateur / traiteur</td>
+                <td className="border p-2">Restaurateur — traiteur</td>
                 <td className="border p-2 text-right">320 € – 980 €</td>
                 <td className="border p-2">4,8 %</td>
               </tr>
               <tr>
-                <td className="border p-2">Avocat / juridique</td>
+                <td className="border p-2">Avocat — juridique</td>
                 <td className="border p-2 text-right">380 € – 1 180 €</td>
                 <td className="border p-2">3,2 %</td>
               </tr>
               <tr>
-                <td className="border p-2">VTC / transport</td>
+                <td className="border p-2">VTC — transport</td>
                 <td className="border p-2 text-right">380 € – 1 180 €</td>
                 <td className="border p-2">4,5 %</td>
               </tr>
@@ -300,7 +300,7 @@ export default async function Page() {
             </tbody>
           </table>
           <p className="mt-2 text-xs italic text-gray-600">
-            Sources : ACPR + AMRAE 2024 + barèmes 2026 nos 8 assureurs partenaires. Pour SARL/SAS
+            Sources : ACPR + AMRAE 2024 + barèmes 2026 nos 8 assureurs partenaires. Pour SARL ou SAS
             avec salariés, multiplier par 1,5-4 selon effectif et CA.
           </p>
         </div>
@@ -352,7 +352,7 @@ export default async function Page() {
           <div className="space-y-5">
             <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
               <summary className="cursor-pointer font-semibold">
-                Pourquoi tant d&apos;écart entre 90 € et 12 000 €/an ?
+                Pourquoi tant d&apos;écart entre 90 € et 12 000 € par an ?
               </summary>
               <p className="mt-2 text-sm">
                 L&apos;écart vient de 3 facteurs : (1) le secteur — un consultant AE en CA 30k€ paye
@@ -369,8 +369,8 @@ export default async function Page() {
               <p className="mt-2 text-sm">
                 <strong>OBLIGATOIRE</strong> pour les professions réglementées : avocats (art. 27
                 Loi 1971), experts-comptables (art. 17 Ord. 1945), agents immobiliers (Loi Hoguet),
-                médecins (art. L. 1142-2 CSP), kinés/infirmiers, architectes, notaires, courtiers,
-                CGP/CIF, agents de voyage, taxis/VTC, transport marchandises.{' '}
+                médecins (art. L. 1142-2 CSP), kinés ou infirmiers, architectes, notaires,
+                courtiers, CGP ou CIF, agents de voyage, taxis ou VTC, transport marchandises.{' '}
                 <strong>Fortement recommandée</strong> (mais non obligatoire) pour : consultants,
                 IT, marketing, photographes, formateurs, commerces. Sans RC Pro et en cas de
                 sinistre = patrimoine personnel engagé.
@@ -396,8 +396,9 @@ export default async function Page() {
               </summary>
               <p className="mt-2 text-sm">
                 OUI à 100%. La cotisation RC Pro est une charge professionnelle déductible (CGI art.
-                39-1). Pour AE : déductible du CA déclaré. Pour EURL/SARL/SAS : charge déductible du
-                résultat fiscal IS. Économie réelle : 15-25% du tarif brut selon votre TMI.
+                39-1). Pour AE : déductible du CA déclaré. Pour EURL, SARL ou SAS : charge
+                déductible du résultat fiscal IS. Économie réelle : 15-25% du tarif brut selon votre
+                TMI.
               </p>
             </details>
             <details className="rounded-r border-l-4 border-primary-500 bg-primary-50 p-4">
@@ -450,7 +451,7 @@ export default async function Page() {
             mainEntity: [
               {
                 '@type': 'Question',
-                name: "Pourquoi tant d'écart entre 90 € et 12 000 €/an ?",
+                name: "Pourquoi tant d'écart entre 90 € et 12 000 € par an ?",
                 acceptedAnswer: {
                   '@type': 'Answer',
                   text: "L'écart vient de 3 facteurs : (1) le secteur (consultant 90€ vs médecin 8 000€), (2) la sinistralité ACPR (médecin 5,1% vs consultant 1,2%), (3) le plafond garantie de 150k€ à 5M€. 7 coefficients appliqués pour votre profil exact.",
@@ -477,7 +478,7 @@ export default async function Page() {
                 name: 'RC Pro : déductible fiscalement ?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'OUI à 100% (CGI art. 39-1). Pour AE déductible du CA. Pour EURL/SARL/SAS charge déductible IS. Économie réelle 15-25% du tarif brut selon TMI.',
+                  text: 'OUI à 100% (CGI art. 39-1). Pour AE déductible du CA. Pour EURL, SARL ou SAS charge déductible IS. Économie réelle 15-25% du tarif brut selon TMI.',
                 },
               },
               {

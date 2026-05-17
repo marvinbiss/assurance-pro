@@ -34,16 +34,16 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'rc-pro-medecin', priority: 0.85, changeFrequency: 'monthly' },
 
   // Sprint 1 KPMG — piliers data-driven (Ahrefs vol >= 100, KD <= 30)
-  { path: 'mutuelle-pro-btp', priority: 0.95, changeFrequency: 'weekly' }, // 16 000 vol/mois
-  { path: 'mutuelle-tns', priority: 0.9, changeFrequency: 'weekly' }, // 1 400 vol/mois
-  { path: 'rc-pro/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' }, // 1 900 vol/mois
-  { path: 'assurance-decennale/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' }, // 800 vol/mois
-  { path: 'assurance-homme-cle', priority: 0.85, changeFrequency: 'weekly' }, // 1 100 vol/mois
+  { path: 'mutuelle-pro-btp', priority: 0.95, changeFrequency: 'weekly' }, // 16 000 vol par mois
+  { path: 'mutuelle-tns', priority: 0.9, changeFrequency: 'weekly' }, // 1 400 vol par mois
+  { path: 'rc-pro/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' }, // 1 900 vol par mois
+  { path: 'assurance-decennale/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' }, // 800 vol par mois
+  { path: 'assurance-homme-cle', priority: 0.85, changeFrequency: 'weekly' }, // 1 100 vol par mois
 
   // Sprint 1 KPMG — guides juridiques (long-tail concentré + concurrents validés)
   { path: 'guides/attestation-decennale', priority: 0.85, changeFrequency: 'monthly' }, // 600 vol KD 1 (famille 1 800)
   { path: 'guides/dommages-ouvrage', priority: 0.85, changeFrequency: 'monthly' }, // 400 vol (famille 1 200)
-  { path: 'guides/parfait-achevement', priority: 0.8, changeFrequency: 'monthly' }, // april capte 1 052 vis/mois
+  { path: 'guides/parfait-achevement', priority: 0.8, changeFrequency: 'monthly' }, // april capte 1 052 vis par mois
 
   // Sprint 1 KPMG — 3 piliers verticaux à fort CPC (KD 0-1, 78-99% marché vacant)
   { path: 'assurance-local-commercial', priority: 0.9, changeFrequency: 'weekly' }, // 800 vol KD 0 CPC 600€ (famille 1 550)

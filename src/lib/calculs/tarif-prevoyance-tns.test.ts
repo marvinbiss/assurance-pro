@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { calculerPrevoyance } from './tarif-prevoyance-tns'
 
 describe('Calculateur prévoyance TNS Madelin', () => {
-  it('Consultant 40 ans CA 60k formule standard ≈ 78€/mois base', () => {
+  it('Consultant 40 ans CA 60k formule standard ≈ 78€ par mois base', () => {
     const r = calculerPrevoyance({
       statut: 'auto-entrepreneur',
       profession: 'profession-liberale-conseil',

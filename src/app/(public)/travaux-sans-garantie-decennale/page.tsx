@@ -83,7 +83,7 @@ export default function Page() {
           ),
         },
         {
-          h2: 'Conséquences pour le propriétaire / acheteur',
+          h2: 'Conséquences pour le propriétaire — acheteur',
           body: (
             <>
               <p>
@@ -159,7 +159,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une DO rétroactive ?',
-          a: 'Pour maison individuelle de 100-150m² : 3 000-8 000€ (selon ancienneté travaux + sinistralité passée). Possible jusqu&apos;à 5 ans après réception chez certains assureurs (Allianz, MMA). Au-delà : très difficile / impossible.',
+          a: 'Pour maison individuelle de 100-150m² : 3 000-8 000€ (selon ancienneté travaux + sinistralité passée). Possible jusqu&apos;à 5 ans après réception chez certains assureurs (Allianz, MMA). Au-delà : très difficile — impossible.',
         },
       ]}
       relatedMetiers={[

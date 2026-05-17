@@ -32,7 +32,7 @@ describe('ComparateurRcPro — UI', () => {
     expect(screen.getAllByText(/Tarif compétitif/i).length).toBeGreaterThan(0)
   })
 
-  it('CTA principal pointe vers /outils/devis-rc-pro', () => {
+  it('CTA principal pointe vers /outils / devis-rc-pro', () => {
     render(<ComparateurRcPro />)
     const cta = screen.getByRole('link', { name: /Recevoir 3 devis personnalisés/i })
     expect(cta.getAttribute('href')).toBe('/outils/devis-rc-pro')

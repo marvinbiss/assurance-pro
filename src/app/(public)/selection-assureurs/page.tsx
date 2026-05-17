@@ -68,7 +68,7 @@ export default function SelectionPage() {
             <li>Délai moyen d&apos;ouverture du dossier sinistre (objectif &lt; 5 jours)</li>
             <li>Délai moyen d&apos;indemnisation (objectif &lt; 60 jours)</li>
             <li>Taux de litiges en médiation (objectif &lt; 2 %)</li>
-            <li>Note de satisfaction client post-sinistre (objectif &gt; 4 / 5)</li>
+            <li>Note de satisfaction client post-sinistre (objectif &gt; 4 — 5)</li>
           </ul>
           <p>
             Un partenaire dont les indicateurs se dégradent significativement (deux trimestres
@@ -82,7 +82,7 @@ export default function SelectionPage() {
           <ul>
             <li>SMABTP, Allianz Pro, MAAF — décennale BTP</li>
             <li>Hiscox, AXA Pro — RC Pro et professions réglementées</li>
-            <li>April Pro — santé/prévoyance TNS Madelin</li>
+            <li>April Pro — santé ou prévoyance TNS Madelin</li>
             <li>Wakam, Stello — auto pro et VTC</li>
             <li>MMA, Generali — multirisque pro et grandes lignes</li>
           </ul>

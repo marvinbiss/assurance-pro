@@ -118,7 +118,7 @@ export default function PlanDuSitePage() {
                   href="/mutuelle-pro"
                   className="font-semibold text-primary-700 underline-offset-2 hover:underline"
                 >
-                  Mutuelle pro / TNS Madelin
+                  Mutuelle pro ou TNS Madelin
                 </Link>
               </li>
               <li>
@@ -126,7 +126,7 @@ export default function PlanDuSitePage() {
                   href="/assurance-vtc"
                   className="font-semibold text-primary-700 underline-offset-2 hover:underline"
                 >
-                  Assurance VTC / Taxi
+                  Assurance VTC ou Taxi
                 </Link>
               </li>
               <li>

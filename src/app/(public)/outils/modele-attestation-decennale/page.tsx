@@ -34,7 +34,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/modele-attestation-decennale'
+const SLUG = 'outils / modele-attestation-decennale'
 
 export const metadata: Metadata = {
   title: 'Modèle attestation décennale PDF — Générateur gratuit 2026',
@@ -62,11 +62,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/guides/attestation-decennale" className="hover:underline">
               Guide attestation
             </Link>{' '}
-            / <span>Modèle PDF</span>
+            › <span>Modèle PDF</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ 100% gratuit, sans inscription
@@ -169,8 +169,8 @@ export default async function Page() {
               »)
             </li>
             <li>
-              <strong>Activités professionnelles couvertes</strong> (codes NAF, nomenclature
-              FFB/CAPEB)
+              <strong>Activités professionnelles couvertes</strong> (codes NAF, nomenclature FFB ou
+              CAPEB)
             </li>
             <li>
               <strong>Zone géographique de couverture</strong> (France métropolitaine, DOM, UE,
@@ -191,7 +191,7 @@ export default async function Page() {
               2024-R-02)
             </li>
             <li>
-              <strong>Date d&apos;établissement</strong> + signature/cachet de l&apos;assureur
+              <strong>Date d&apos;établissement</strong> + signature ou cachet de l&apos;assureur
             </li>
           </ol>
           <p className="mt-4 text-sm">
@@ -212,8 +212,8 @@ export default async function Page() {
           <p className="mx-auto mb-6 max-w-2xl text-lg opacity-95">
             Notre cabinet ORIAS vous transmet sous <strong>24h ouvrées</strong> 3 à 5 propositions
             de nos 8 assureurs partenaires BTP. Tarifs négociés à partir de{' '}
-            <strong>480 €/an</strong>. Attestation conforme arrêté 23 janvier 2024 téléchargeable
-            dans les 24h suivant la souscription.
+            <strong>480 € par an</strong>. Attestation conforme arrêté 23 janvier 2024
+            téléchargeable dans les 24h suivant la souscription.
           </p>
           <Link
             href="/outils/devis-assurance-decennale"

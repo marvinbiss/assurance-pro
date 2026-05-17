@@ -19,7 +19,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Multirisque pro : protection locaux + stock + perte d'exploitation. Tarifs à partir de 380€/an (commerce TPE), 850€/an (PME). Comparatif Allianz, AXA, MMA, Generali, Hiscox.",
+    "Multirisque pro : protection locaux + stock + perte d'exploitation. Tarifs à partir de 380€ par an (commerce TPE), 850€ par an (PME). Comparatif Allianz, AXA, MMA, Generali, Hiscox.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance multirisque professionnelle (MRP) est le contrat qui regroupe en un seul package la protection de vos locaux (commerce, atelier, bureau, entrepôt), votre matériel professionnel, votre stock de marchandises, votre mobilier, et la perte d'exploitation associée. Elle est la base de la protection patrimoniale de toute entreprise disposant d'un local — fortement recommandée pour TPE/PME et exigée par certains bailleurs commerciaux."
+      intro="L'assurance multirisque professionnelle (MRP) est le contrat qui regroupe en un seul package la protection de vos locaux (commerce, atelier, bureau, entrepôt), votre matériel professionnel, votre stock de marchandises, votre mobilier, et la perte d'exploitation associée. Elle est la base de la protection patrimoniale de toute entreprise disposant d'un local — fortement recommandée pour TPE ou PME et exigée par certains bailleurs commerciaux."
       legalReference="art. L. 121-2 et s. C. assur. + clauses contractuelles bail commercial"
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="multirisque-pro"
@@ -54,8 +54,8 @@ export default function Page() {
         },
         {
           icon: '⚡',
-          title: 'À partir de 380€/an',
-          desc: 'TPE commerce. PME : 850€+/an selon CA et surface',
+          title: 'À partir de 380€ par an',
+          desc: 'TPE commerce. PME : 850€+ par an selon CA et surface',
         },
       ]}
       sections={[
@@ -66,7 +66,7 @@ export default function Page() {
               <p>Les garanties standards d&apos;une MRP :</p>
               <ul>
                 <li>
-                  <strong>Incendie / explosion</strong> : indemnisation locaux + contenu
+                  <strong>Incendie — explosion</strong> : indemnisation locaux + contenu
                 </li>
                 <li>
                   <strong>Dégâts des eaux</strong> : fuites, infiltrations, refoulement égouts
@@ -78,7 +78,7 @@ export default function Page() {
                   <strong>Bris de glaces</strong> : vitrines, enseignes, fenêtres
                 </li>
                 <li>
-                  <strong>Tempête / catastrophes naturelles</strong> : grêle, neige, inondations
+                  <strong>Tempête — catastrophes naturelles</strong> : grêle, neige, inondations
                   (CatNat)
                 </li>
                 <li>
@@ -98,20 +98,20 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Auto-entrepreneur sans local</strong> : 150-300€/an (couverture matériel pro
-                uniquement)
+                <strong>Auto-entrepreneur sans local</strong> : 150-300€ par an (couverture matériel
+                pro uniquement)
               </li>
               <li>
-                <strong>Commerce TPE</strong> (boutique 30-80m²) : 380-650€/an
+                <strong>Commerce TPE</strong> (boutique 30-80m²) : 380-650€ par an
               </li>
               <li>
-                <strong>Restaurant TPE</strong> : 800-1 500€/an (risque incendie cuisine)
+                <strong>Restaurant TPE</strong> : 800-1 500€ par an (risque incendie cuisine)
               </li>
               <li>
-                <strong>PME 5-20 salariés</strong> : 850-2 800€/an selon CA et surfaces
+                <strong>PME 5-20 salariés</strong> : 850-2 800€ par an selon CA et surfaces
               </li>
               <li>
-                <strong>Industriel / entrepôt</strong> : 2 500-15 000€/an
+                <strong>Industriel — entrepôt</strong> : 2 500-15 000€ par an
               </li>
             </ul>
           ),
@@ -146,7 +146,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une multirisque pro pour un restaurant ?',
-          a: 'Restaurant traditionnel TPE : 800-1 500€/an. Restauration rapide / pizzeria : 600-1 100€/an. Restaurant haut de gamme avec terrasse : 1 200-2 500€/an. La sinistralité incendie cuisine impacte fortement la prime.',
+          a: 'Restaurant traditionnel TPE : 800-1 500€ par an. Restauration rapide — pizzeria : 600-1 100€ par an. Restaurant haut de gamme avec terrasse : 1 200-2 500€ par an. La sinistralité incendie cuisine impacte fortement la prime.',
         },
         {
           q: 'Ai-je besoin d&apos;une perte d&apos;exploitation ?',
@@ -154,7 +154,7 @@ export default function Page() {
         },
         {
           q: 'La multirisque pro couvre-t-elle le cyber ?',
-          a: 'Non. Les attaques informatiques (ransomware, vol données) nécessitent une cyber-assurance dédiée (ajout 200-1 500€/an selon profil).',
+          a: 'Non. Les attaques informatiques (ransomware, vol données) nécessitent une cyber-assurance dédiée (ajout 200-1 500€ par an selon profil).',
         },
       ]}
       relatedMetiers={[

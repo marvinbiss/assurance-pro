@@ -10,12 +10,12 @@ export const revalidate = 86400
 const SLUG = 'garantie-decennale-plomberie'
 const TITLE = 'Garantie Décennale Plomberie — Tarifs, garanties, sinistralité'
 const TAGLINE =
-  'La décennale plomberie couvre les défauts d&apos;étanchéité, fuites encastrées et installations chauffage central. Tarifs plombier AE 1 400€/an, SARL 2 200€/an.'
+  'La décennale plomberie couvre les défauts d&apos;étanchéité, fuites encastrées et installations chauffage central. Tarifs plombier AE 1 400€ par an, SARL 2 200€ par an.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale plomberie : obligation Loi Spinetta. Plombier AE 1 400-2 100€/an, plombier-chauffagiste 1 600-2 500€/an, SARL plomberie 1 800-3 500€/an. Sinistralité 18% AQC.',
+    'Décennale plomberie : obligation Loi Spinetta. Plombier AE 1 400-2 100€ par an, plombier-chauffagiste 1 600-2 500€ par an, SARL plomberie 1 800-3 500€ par an. Sinistralité 18% AQC.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -42,11 +42,11 @@ export default function Page() {
         {
           icon: '💧',
           title: 'Infiltrations encastrées',
-          desc: 'Fuites canalisations dans murs/dalle (sinistre fréquent)',
+          desc: 'Fuites canalisations dans murs ou dalle (sinistre fréquent)',
         },
         {
           icon: '💰',
-          title: '1 400-3 500€/an',
+          title: '1 400-3 500€ par an',
           desc: 'AE 1 400-2 100€ • Plombier-chauffagiste AE 1 600-2 500€ • SARL 1 800-3 500€',
         },
         {
@@ -72,7 +72,7 @@ export default function Page() {
                 <strong>Plombier-chauffagiste</strong> : combinaison des 2 (le plus fréquent)
               </li>
               <li>
-                <strong>Climaticien / frigoriste</strong> : PAC air-air et air-eau, climatiseurs
+                <strong>Climaticien — frigoriste</strong> : PAC air-air et air-eau, climatiseurs
                 encastrés
               </li>
               <li>
@@ -124,26 +124,26 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Plombier AE</strong> : 1 400-2 100€/an (plafond 1M€)
+                <strong>Plombier AE</strong> : 1 400-2 100€ par an (plafond 1M€)
               </li>
               <li>
-                <strong>Plombier-chauffagiste AE</strong> : 1 600-2 500€/an
+                <strong>Plombier-chauffagiste AE</strong> : 1 600-2 500€ par an
               </li>
               <li>
-                <strong>Climaticien-frigoriste AE</strong> : 1 800-2 800€/an (risque PAC haut)
+                <strong>Climaticien-frigoriste AE</strong> : 1 800-2 800€ par an (risque PAC haut)
               </li>
               <li>
-                <strong>Spécialiste PAC RGE AE</strong> : 1 900-3 200€/an (qualification spé
+                <strong>Spécialiste PAC RGE AE</strong> : 1 900-3 200€ par an (qualification spé
                 requise)
               </li>
               <li>
-                <strong>SARL plomberie (1-5 salariés)</strong> : 1 800-3 500€/an
+                <strong>SARL plomberie (1-5 salariés)</strong> : 1 800-3 500€ par an
               </li>
               <li>
-                <strong>SARL plomberie-chauffage (3-10 salariés)</strong> : 2 500-5 000€/an
+                <strong>SARL plomberie-chauffage (3-10 salariés)</strong> : 2 500-5 000€ par an
               </li>
               <li>
-                <strong>SAS PME CVC (10-30 salariés)</strong> : 4 000-9 000€/an
+                <strong>SAS PME CVC (10-30 salariés)</strong> : 4 000-9 000€ par an
               </li>
             </ul>
           ),
@@ -156,7 +156,7 @@ export default function Page() {
         },
         {
           q: 'Tarif décennale pour un plombier-chauffagiste débutant ?',
-          a: 'AE plombier-chauffagiste 1ère année : 1 600-2 500€/an. Tarif négociable -10-20% via courtier ORIAS spécialisé BTP. Qualification Qualibat ou RGE peut donner -5-10% supplémentaire.',
+          a: 'AE plombier-chauffagiste 1ère année : 1 600-2 500€ par an. Tarif négociable -10-20% via courtier ORIAS spécialisé BTP. Qualification Qualibat ou RGE peut donner -5-10% supplémentaire.',
         },
         {
           q: 'La décennale couvre-t-elle la pose PAC ?',

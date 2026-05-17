@@ -40,7 +40,7 @@ export type Plafond = 150000 | 500000 | 1000000 | 2000000 | 5000000
 
 export interface TarifInput {
   secteur: Secteur
-  ca: number /* € HT/an */
+  ca: number /* € HT par an */
   formeJuridique: FormeJuridique
   effectif: number
   antecedents: Antecedents
@@ -66,7 +66,11 @@ export interface TarifResultat {
 }
 
 const TARIF_BASE_SECTEUR: Record<Secteur, { bas: number; haut: number; sinistralite: string }> = {
-  'consultant-conseil': { bas: 90, haut: 280, sinistralite: '1,2 % (faible mais sinistres lourds)' },
+  'consultant-conseil': {
+    bas: 90,
+    haut: 280,
+    sinistralite: '1,2 % (faible mais sinistres lourds)',
+  },
   'informatique-saas': { bas: 180, haut: 480, sinistralite: '2,1 % (RGPD + breach data)' },
   'marketing-communication': { bas: 110, haut: 320, sinistralite: '1,8 %' },
   'avocat-juridique': { bas: 380, haut: 1180, sinistralite: '3,2 % (responsabilité morale)' },
@@ -99,8 +103,8 @@ const COEF_ANTECEDENTS: Record<Antecedents, number> = {
 }
 
 const COEF_PLAFOND: Record<Plafond, number> = {
-  150000: 0.78, /* plafond mini — sous-prime */
-  500000: 1.0, /* référence marché */
+  150000: 0.78 /* plafond mini — sous-prime */,
+  500000: 1.0 /* référence marché */,
   1000000: 1.18,
   2000000: 1.42,
   5000000: 1.85,
@@ -173,20 +177,20 @@ export function calculerTarif(input: TarifInput): TarifResultat {
 }
 
 export const SECTEUR_LABELS: Record<Secteur, string> = {
-  'consultant-conseil': 'Consultant / conseil',
-  'informatique-saas': 'Informatique / SaaS / freelance IT',
-  'marketing-communication': 'Marketing / communication / agence',
-  'avocat-juridique': 'Avocat / juridique',
+  'consultant-conseil': 'Consultant — conseil',
+  'informatique-saas': 'Informatique — SaaS — freelance IT',
+  'marketing-communication': 'Marketing — communication — agence',
+  'avocat-juridique': 'Avocat — juridique',
   'expert-comptable': 'Expert-comptable',
   'medecin-liberal': 'Médecin libéral',
   'sante-paramedical': 'Santé paramédical (kiné, infirmier)',
-  'esthetique-bien-etre': 'Esthétique / bien-être / spa',
-  'immobilier-agent': 'Agent immobilier / mandataire',
-  'formateur-coach': 'Formateur / coach professionnel',
-  'photographe-graphiste': 'Photographe / graphiste',
-  'restaurateur-traiteur': 'Restaurateur / traiteur',
+  'esthetique-bien-etre': 'Esthétique — bien-être — spa',
+  'immobilier-agent': 'Agent immobilier — mandataire',
+  'formateur-coach': 'Formateur — coach professionnel',
+  'photographe-graphiste': 'Photographe — graphiste',
+  'restaurateur-traiteur': 'Restaurateur — traiteur',
   'commerce-detail': 'Commerce de détail',
-  'transport-vtc': 'Transport / VTC',
+  'transport-vtc': 'Transport — VTC',
 }
 
 export const FORME_LABELS: Record<FormeJuridique, string> = {
@@ -209,8 +213,8 @@ export const PLAFOND_LABELS: Record<Plafond, string> = {
   150000: '150 000 € (plafond mini — déconseillé > AE)',
   500000: '500 000 € (standard marché TPE)',
   1000000: '1 000 000 € (recommandé PME)',
-  2000000: '2 000 000 € (PME sensible / contrats publics)',
-  5000000: '5 000 000 € (ETI / risque maximum)',
+  2000000: '2 000 000 € (PME sensible — contrats publics)',
+  5000000: '5 000 000 € (ETI — risque maximum)',
 }
 
 export function getSinistralite(secteur: Secteur): string {

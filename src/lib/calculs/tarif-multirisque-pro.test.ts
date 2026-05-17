@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { calculerMultirisque } from './tarif-multirisque-pro'
 
 describe('Calculateur multirisque pro', () => {
-  it('Bureau locataire 100m² CA 500k = ~500-2000€/an', () => {
+  it('Bureau locataire 100m² CA 500k = ~500-2000€ par an', () => {
     const r = calculerMultirisque({
       typeLocaux: 'bureau',
       surface: 100,
@@ -112,11 +112,11 @@ describe('Calculateur multirisque pro', () => {
       pertesExploitation: false,
       zone: 'metropole',
     })
-    expect(ess.garanties.find((g) => g.nom === 'Vol / vandalisme')?.couvert).toBe(false)
-    expect(std.garanties.find((g) => g.nom === 'Vol / vandalisme')?.couvert).toBe(true)
+    expect(ess.garanties.find((g) => g.nom === 'Vol — vandalisme')?.couvert).toBe(false)
+    expect(std.garanties.find((g) => g.nom === 'Vol — vandalisme')?.couvert).toBe(true)
   })
 
-  it('Zone Paris/IDF (×1.22) > métropole', () => {
+  it('Zone Paris / IDF (×1.22) > métropole', () => {
     const metro = calculerMultirisque({
       typeLocaux: 'bureau',
       surface: 100,
@@ -140,7 +140,7 @@ describe('Calculateur multirisque pro', () => {
     expect(paris.cotisationAnnuelle).toBeGreaterThan(metro.cotisationAnnuelle * 1.18)
   })
 
-  it('Cotisation mensuelle = annuelle / 12', () => {
+  it('Cotisation mensuelle = annuelle — 12', () => {
     const r = calculerMultirisque({
       typeLocaux: 'bureau',
       surface: 100,

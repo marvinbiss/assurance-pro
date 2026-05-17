@@ -35,7 +35,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance médecin libéral : RC Pro médicale 8M€ (Loi Kouchner), multirisque cabinet, mutuelle TNS Madelin déductible, prévoyance, cyber RGPD données patients. Pack 2 200-4 800€/an. Comparatif MACSF, Generali, Allianz, Hiscox. Devis ORIAS sous 24h.',
+    'Assurance médecin libéral : RC Pro médicale 8M€ (Loi Kouchner), multirisque cabinet, mutuelle TNS Madelin déductible, prévoyance, cyber RGPD données patients. Pack 2 200-4 800€ par an. Comparatif MACSF, Generali, Allianz, Hiscox. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -46,7 +46,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance médecin libéral est un ensemble de garanties spécifiquement adaptées à l'exercice de la médecine en cabinet privé : RC Pro médicale obligatoire (Loi Kouchner du 4 mars 2002, art. L. 1142-2 du Code de la santé publique), multirisque du cabinet (incendie, vol, dégâts des eaux du local + matériel médical), mutuelle santé TNS déductible Loi Madelin, prévoyance (IJ + invalidité + capital décès), cyber assurance critique (vol de données patients, RGPD santé), et auto-mission pour les visites à domicile. Ces garanties s'appliquent aux médecins généralistes, spécialistes (cardio, dermato, ophtalmo, gynéco, ORL, psychiatre, gastro, endocrino), médecins remplaçants, médecins en SELARL ou SCM, et internes/jeunes installés. Le pack complet 2026 démarre à 2 200 € HT/an pour un médecin généraliste solo en province jusqu'à 7 800 € HT/an pour un cardiologue interventionniste à Paris. Cette page distingue clairement les garanties OBLIGATOIRES (RC médicale Kouchner) des garanties RECOMMANDÉES (cyber, prévoyance) et compare les 4 assureurs spécialistes santé."
+      intro="L'assurance médecin libéral est un ensemble de garanties spécifiquement adaptées à l'exercice de la médecine en cabinet privé : RC Pro médicale obligatoire (Loi Kouchner du 4 mars 2002, art. L. 1142-2 du Code de la santé publique), multirisque du cabinet (incendie, vol, dégâts des eaux du local + matériel médical), mutuelle santé TNS déductible Loi Madelin, prévoyance (IJ + invalidité + capital décès), cyber assurance critique (vol de données patients, RGPD santé), et auto-mission pour les visites à domicile. Ces garanties s'appliquent aux médecins généralistes, spécialistes (cardio, dermato, ophtalmo, gynéco, ORL, psychiatre, gastro, endocrino), médecins remplaçants, médecins en SELARL / SCM, et internes / jeunes installés. Le pack complet 2026 démarre à 2 200 € HT par an pour un médecin généraliste solo en province jusqu'à 7 800 € HT par an pour un cardiologue interventionniste à Paris. Cette page distingue clairement les garanties OBLIGATOIRES (RC médicale Kouchner) des garanties RECOMMANDÉES (cyber, prévoyance) et compare les 4 assureurs spécialistes santé."
       legalReference="Loi Kouchner du 4 mars 2002 + Article L. 1142-2 du Code de la santé publique + Loi Madelin"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -67,12 +67,12 @@ export default function Page() {
         {
           icon: '🔒',
           title: 'Cyber RGPD santé',
-          desc: 'CRITIQUE : vol/fuite de données de santé = sanctions CNIL aggravées (RGPD art. 9)',
+          desc: 'CRITIQUE : vol ou fuite de données de santé = sanctions CNIL aggravées (RGPD art. 9)',
         },
         {
           icon: '💰',
           title: 'Madelin déductible',
-          desc: 'Mutuelle + prévoyance déductibles BNC (économie ~2 000€/an pour 75k€ de bénéfice)',
+          desc: 'Mutuelle + prévoyance déductibles BNC (économie ~2 000€ par an pour 75k€ de bénéfice)',
         },
       ]}
       sections={[
@@ -82,9 +82,9 @@ export default function Page() {
             <>
               <ol>
                 <li>
-                  <strong>RC Pro médicale (OBLIGATOIRE Loi Kouchner)</strong> — plafond 8
-                  M€/sinistre standard pour médecin généraliste, jusqu&apos;à 15 M€ pour spécialités
-                  à risque (chirurgie, anesthésie, gynéco-obstétrique). Voir{' '}
+                  <strong>RC Pro médicale (OBLIGATOIRE Loi Kouchner)</strong> — plafond 8 M€ par
+                  sinistre standard pour médecin généraliste, jusqu&apos;à 15 M€ pour spécialités à
+                  risque (chirurgie, anesthésie, gynéco-obstétrique). Voir{' '}
                   <Link href="/rc-pro-medecin" className="text-primary-600 underline">
                     /rc-pro-medecin
                   </Link>
@@ -172,7 +172,7 @@ export default function Page() {
                     <td className="border p-2 text-right">8 200 € – 14 000 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Psychiatre / psychanalyste</td>
+                    <td className="border p-2">Psychiatre — psychanalyste</td>
                     <td className="border p-2 text-right">8 M€</td>
                     <td className="border p-2 text-right">1 800 € – 3 200 €</td>
                   </tr>
@@ -224,7 +224,7 @@ export default function Page() {
               <p>
                 Coût moyen 2026 d&apos;un sinistre cyber dans un cabinet médical :{' '}
                 <strong>80 000 à 300 000 €</strong>. Tarif d&apos;une cyber assurance santé dédiée :
-                400-1 200 €/an. ROI évident dès le 1er incident.
+                400-1 200 € par an. ROI évident dès le 1er incident.
               </p>
               <p>
                 <strong>Bonnes pratiques cybersécurité cabinet médical</strong> : hébergeur agréé
@@ -255,11 +255,11 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Modulation par jour de remplacement</strong> possible chez certains
-                  assureurs (alternative au forfait annuel pour les moins de 80 jours/an)
+                  assureurs (alternative au forfait annuel pour les moins de 80 jours par an)
                 </li>
                 <li>
                   <strong>Pack starter</strong> RC + multirisque + mutuelle TNS de base : 980-1 800
-                  €/an pour les 2 premières années
+                  € par an pour les 2 premières années
                 </li>
               </ul>
             </>
@@ -269,11 +269,11 @@ export default function Page() {
       faq={[
         {
           q: 'Quelles assurances sont obligatoires pour un médecin libéral ?',
-          a: "RC Pro médicale (Loi Kouchner du 4 mars 2002, art. L. 1142-2 CSP) — OBLIGATION ABSOLUE dès le 1er jour d'exercice. Sanction absence : radiation du Conseil de l'Ordre + interdiction d'exercer. Plafond minimum 8 M€/sinistre standard, 15 M€ pour spécialités à risque. Assurance véhicule pro (RC circulation) si visites à domicile.",
+          a: "RC Pro médicale (Loi Kouchner du 4 mars 2002, art. L. 1142-2 CSP) — OBLIGATION ABSOLUE dès le 1er jour d'exercice. Sanction absence : radiation du Conseil de l'Ordre + interdiction d'exercer. Plafond minimum 8 M€ par sinistre standard, 15 M€ pour spécialités à risque. Assurance véhicule pro (RC circulation) si visites à domicile.",
         },
         {
           q: "Combien coûte l'assurance d'un médecin généraliste en 2026 ?",
-          a: 'Pack complet (RC Pro + multirisque cabinet + cyber + auto-mission) : démarre à 2 200€/an pour médecin généraliste solo en province sans antécédent. Médiane marché : 2 800-3 800€/an. Cardiologue interventionniste : 5 800-7 800€/an. Gynéco-obstétricien : 6 800-12 000€/an (sinistralité plus élevée). Anesthésiste : 8 200-14 000€/an.',
+          a: 'Pack complet (RC Pro + multirisque cabinet + cyber + auto-mission) : démarre à 2 200€ par an pour médecin généraliste solo en province sans antécédent. Médiane marché : 2 800-3 800€ par an. Cardiologue interventionniste : 5 800-7 800€ par an. Gynéco-obstétricien : 6 800-12 000€ par an (sinistralité plus élevée). Anesthésiste : 8 200-14 000€ par an.',
         },
         {
           q: 'MACSF ou autre assureur : que choisir ?',
@@ -281,15 +281,15 @@ export default function Page() {
         },
         {
           q: 'Cyber assurance : utile pour un médecin libéral ?',
-          a: "OUI fortement recommandée. Les données de santé sont classées « données sensibles » par le RGPD (article 9) — sanctions CNIL aggravées en cas de breach (jusqu'à 20 M€). Coût moyen sinistre cyber cabinet médical : 80-300 k€. Tarif cyber assurance santé : 400-1 200€/an. ROI évident dès le 1er incident.",
+          a: "OUI fortement recommandée. Les données de santé sont classées « données sensibles » par le RGPD (article 9) — sanctions CNIL aggravées en cas de breach (jusqu'à 20 M€). Coût moyen sinistre cyber cabinet médical : 80-300 k€. Tarif cyber assurance santé : 400-1 200€ par an. ROI évident dès le 1er incident.",
         },
         {
           q: "Loi Madelin : économie d'impôt pour médecin libéral ?",
-          a: "Plafond annuel commun santé + prévoyance Madelin pour un médecin BNC dégageant 80 k€ de bénéfice : ~6 626€/an déductibles. À TMI 41% : économie d'impôt nette ~2 700€/an + économie cotisations sociales (~24%). Pour un cardiologue à 150 k€ de bénéfice : plafond ~10 305€/an, économie ~4 200€/an d'impôts.",
+          a: "Plafond annuel commun santé + prévoyance Madelin pour un médecin BNC dégageant 80 k€ de bénéfice : ~6 626€ par an déductibles. À TMI 41% : économie d'impôt nette ~2 700€ par an + économie cotisations sociales (~24%). Pour un cardiologue à 150 k€ de bénéfice : plafond ~10 305€ par an, économie ~4 200€ par an d'impôts.",
         },
         {
           q: 'Médecin remplaçant : tarif préférentiel ?',
-          a: 'Oui, -30 à -50% vs médecin installé. Offres « Jeune installé » MACSF / Generali / Allianz : pack starter 980-1 800€/an pour les 2 premières années (vs 2 200-3 800€ médecin installé). Modulation par jour de remplacement disponible chez certains assureurs (alternative au forfait annuel pour < 80 jours/an de remplacement).',
+          a: 'Oui, -30 à -50% vs médecin installé. Offres « Jeune installé » MACSF — Generali — Allianz : pack starter 980-1 800€ par an pour les 2 premières années (vs 2 200-3 800€ médecin installé). Modulation par jour de remplacement disponible chez certains assureurs (alternative au forfait annuel pour < 80 jours par an de remplacement).',
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance médecin ?',

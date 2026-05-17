@@ -19,7 +19,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance RC Pro en ligne 100% digital. Hiscox 95€/an + Stello 90€/an. Souscription 5 min, attestation immédiate. Sans rendez-vous.',
+    'Assurance RC Pro en ligne 100% digital. Hiscox 95€ par an + Stello 90€ par an. Souscription 5 min, attestation immédiate. Sans rendez-vous.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Souscrire votre assurance RC Pro 100% en ligne en moins de 5 minutes : 2 assureurs digitaux purs proposent un parcours sans contact physique, sans rendez-vous, avec attestation téléchargeable immédiatement après paiement. Hiscox et Stello sont les leaders du segment en ligne pour AE/freelance. Cette page détaille le parcours pas à pas et compare les 2 offres."
+      intro="Souscrire votre assurance RC Pro 100% en ligne en moins de 5 minutes : 2 assureurs digitaux purs proposent un parcours sans contact physique, sans rendez-vous, avec attestation téléchargeable immédiatement après paiement. Hiscox et Stello sont les leaders du segment en ligne pour AE ou freelance. Cette page détaille le parcours pas à pas et compare les 2 offres."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -65,20 +65,20 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Hiscox</strong> 🥇 : Britannique 30 ans présent France. Best AE services
-                intellectuels (95-220€/an). Postériorité 10 ans incluse (unique). A+ S&amp;P.
+                intellectuels (95-220€ par an). Postériorité 10 ans incluse (unique). A+ S&amp;P.
                 Plafond 1-10M€.
               </li>
               <li>
                 <strong>Stello</strong> 🥈 : Challenger français 2019. 100% digital pure, app mobile
-                native. AE 90-200€/an. Postériorité 5 ans. Contrat 2-en-1 VTC.
+                native. AE 90-200€ par an. Postériorité 5 ans. Contrat 2-en-1 VTC.
               </li>
               <li>
-                <strong>April Pro BTP</strong> : Spécialiste BTP en ligne. AE BTP 250-450€/an RC +
-                décennale combinée.
+                <strong>April Pro BTP</strong> : Spécialiste BTP en ligne. AE BTP 250-450€ par an RC
+                + décennale combinée.
               </li>
               <li>
-                <strong>Allianz Pro</strong> : En ligne mais finalisation téléphone fréquente.
-                SARL/SAS 600-2 800€/an.
+                <strong>Allianz Pro</strong> : En ligne mais finalisation téléphone fréquente. SARL
+                ou SAS 600-2 800€ par an.
               </li>
               <li>
                 <strong>Generali Pro</strong> : Programme Vitality digital. Multi-secteurs.
@@ -99,8 +99,8 @@ export default function Page() {
                 postériorité, options affichés
               </li>
               <li>
-                <strong>Étape 3 — Saisie infos</strong> (1 min) : SIRET, identité, ACOSS/Kbis, RIB
-                pour prélèvement
+                <strong>Étape 3 — Saisie infos</strong> (1 min) : SIRET, identité, ACOSS ou Kbis,
+                RIB pour prélèvement
               </li>
               <li>
                 <strong>Étape 4 — Paiement sécurisé</strong> (30 sec) : CB ou prélèvement, annuel ou
@@ -153,15 +153,15 @@ export default function Page() {
         },
         {
           q: 'Pour quel profil en ligne adapté ?',
-          a: 'IDÉAL : AE/freelance services intellectuels (consultant, IT, designer), SASU services, VTC débutant. À ÉVITER : SAS PME avec besoins complexes (multi-corps BTP, profession libérale réglementée) où conseil humain ajoute de la valeur.',
+          a: 'IDÉAL : AE ou freelance services intellectuels (consultant, IT, designer), SASU services, VTC débutant. À ÉVITER : SAS PME avec besoins complexes (multi-corps BTP, profession libérale réglementée) où conseil humain ajoute de la valeur.',
         },
         {
           q: 'Délai attestation après paiement ?',
-          a: 'Immédiat (téléchargement direct espace adhérent) chez Hiscox et Stello. Allianz Pro / MMA : 24h ouvrées en ligne. April Pro BTP : 24h ouvrées. AXA Pro : 48-72h.',
+          a: 'Immédiat (téléchargement direct espace adhérent) chez Hiscox et Stello. Allianz Pro — MMA : 24h ouvrées en ligne. April Pro BTP : 24h ouvrées. AXA Pro : 48-72h.',
         },
         {
           q: 'Erreur saisie après souscription ?',
-          a: 'Possibilité modification 14 jours (délai rétractation Loi Hamon). Espace adhérent ou support email. Modification SIRET / activité gratuite. Modification plafond/franchise = avenant tarifé.',
+          a: 'Possibilité modification 14 jours (délai rétractation Loi Hamon). Espace adhérent ou support email. Modification SIRET — activité gratuite. Modification plafond ou franchise = avenant tarifé.',
         },
       ]}
       relatedMetiers={[

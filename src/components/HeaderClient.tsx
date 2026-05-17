@@ -62,7 +62,7 @@ const VERTICALS_NAV = [
     sub: 'Loi Madelin déductible',
   },
   {
-    label: 'VTC / Taxi',
+    label: 'VTC — Taxi',
     href: '/assurance-vtc',
     Icon: Car,
     color: 'text-indigo-600 bg-indigo-50',
@@ -76,14 +76,14 @@ const VERTICALS_NAV = [
     sub: 'Ransomware, RGPD, data',
   },
   {
-    label: 'Avocats / Libéral',
+    label: 'Avocats — Libéral',
     href: '/rc-pro-avocat',
     Icon: Scale,
     color: 'text-violet-600 bg-violet-50',
     sub: 'Professions réglementées',
   },
   {
-    label: 'Médical / Santé',
+    label: 'Médical — Santé',
     href: '/rc-pro-medecin',
     Icon: Stethoscope,
     color: 'text-rose-700 bg-rose-50',

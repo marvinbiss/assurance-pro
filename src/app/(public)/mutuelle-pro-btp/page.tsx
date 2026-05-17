@@ -27,7 +27,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Mutuelle pro BTP : comparatif des contrats PRO BTP, April Pro, Harmonie BTP. Tarifs négociés à partir de 38€/mois (formule Madelin TNS). Couverture optique, dentaire, hospitalisation. Devis gratuit sous 24h.',
+    'Mutuelle pro BTP : comparatif des contrats PRO BTP, April Pro, Harmonie BTP. Tarifs négociés à partir de 38€ par mois (formule Madelin TNS). Couverture optique, dentaire, hospitalisation. Devis gratuit sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
@@ -61,12 +61,12 @@ export default function Page() {
         {
           icon: '🦷',
           title: 'Dentaire renforcé',
-          desc: "Implants, couronnes, orthodontie adulte. Forfait annuel jusqu'à 1 800€/an",
+          desc: "Implants, couronnes, orthodontie adulte. Forfait annuel jusqu'à 1 800€ par an",
         },
         {
           icon: '👓',
           title: 'Optique 100% santé +',
-          desc: "Verres complexes, lentilles, chirurgie réfractive. Forfait jusqu'à 600€/2 ans",
+          desc: "Verres complexes, lentilles, chirurgie réfractive. Forfait jusqu'à 600€ par 2 ans",
         },
         {
           icon: '💼',
@@ -148,7 +148,7 @@ export default function Page() {
                     <td className="border p-2 text-right">145 € – 210 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Dirigeant SARL/SAS, 45 ans</td>
+                    <td className="border p-2">Dirigeant SARL ou SAS, 45 ans</td>
                     <td className="border p-2">Cadre Premium</td>
                     <td className="border p-2 text-right">95 € – 180 €</td>
                   </tr>
@@ -181,7 +181,7 @@ export default function Page() {
                 <strong>Plafond de déduction 2026</strong> : 3,75% du PASS (1 626 €) + 7% du
                 bénéfice imposable, dans la limite de 3% de 8 PASS (10 405 €). Pour un artisan
                 dégageant 60 k€ de bénéfice, le plafond Madelin santé tourne autour de{' '}
-                <strong>5 826 €/an</strong>.
+                <strong>5 826 € par an</strong>.
               </p>
               <p>
                 Conditions cumulatives à respecter : être à jour de ses cotisations sociales
@@ -290,7 +290,7 @@ export default function Page() {
       faq={[
         {
           q: "Que se passe-t-il pour ma santé si je n'ai pas de mutuelle BTP ?",
-          a: "La Sécu rembourse mal le BTP : 70% des frais médicaux courants, mais quasi rien sur l'optique (lunettes ~30 €/2 ans), le dentaire (1 prothèse = 800-1500 € à votre charge), les dépassements d'honoraires. Une hospitalisation = 1 200-3 000 € de reste à charge sans mutuelle.",
+          a: "La Sécu rembourse mal le BTP : 70% des frais médicaux courants, mais quasi rien sur l'optique (lunettes ~30 € par 2 ans), le dentaire (1 prothèse = 800-1500 € à votre charge), les dépassements d'honoraires. Une hospitalisation = 1 200-3 000 € de reste à charge sans mutuelle.",
         },
         {
           q: 'La mutuelle BTP est-elle obligatoire pour un artisan TNS ?',
@@ -305,32 +305,32 @@ export default function Page() {
           a: "Non. PRO BTP est l'opérateur historique de la branche mais aucune obligation légale ne vous y rattache. Vous pouvez choisir April Pro Santé, Harmonie BTP, Aon Santé Pro, MMA Mutuelle Pro, Allianz Santé Pro ou Generali — selon vos garanties et votre budget. Notre cabinet compare 8 offres pour vous.",
         },
         {
-          q: 'Suis-je couvert dès le 1er jour ou y a-t-il des délais de carence ?',
+          q: 'Suis-je couvert dès le 1er jour/y a-t-il des délais de carence ?',
           a: "Oui pour les soins courants (consultations, pharmacie, hospitalisation urgente) : couverture immédiate dès la date d'effet du contrat. Délais de carence classiques : 3 mois sur optique, 6 mois sur dentaire prothétique, 9-12 mois sur orthodontie adulte. À négocier ou contourner via le 1er du mois suivant.",
         },
         {
           q: 'Mes enfants sont-ils couverts par ma mutuelle pro BTP ?',
-          a: "Oui en formule famille jusqu'à 21 ans automatiquement, prolongeable jusqu'à 26 ans si étudiant/apprenti. Vérifier les plafonds enfants (orthodontie souvent plafonnée à 1 000-2 000 €/an, parfois inférieure aux besoins réels). Ajout d'un enfant = ~25 €/mois supplémentaires en moyenne.",
+          a: "Oui en formule famille jusqu'à 21 ans automatiquement, prolongeable jusqu'à 26 ans si étudiant ou apprenti. Vérifier les plafonds enfants (orthodontie souvent plafonnée à 1 000-2 000 € par an, parfois inférieure aux besoins réels). Ajout d'un enfant = ~25 € par mois supplémentaires en moyenne.",
         },
         {
           q: 'Suis-je couvert pour les médecines douces (ostéo, kiné, acupuncture) ?',
-          a: 'Oui en formule Confort ou Premium : forfait annuel 150-400 €/an pour ostéopathie, chiropractie, étiopathie, acupuncture. Les artisans BTP ont souvent un fort besoin (TMS lombaires, épaules) — vérifier le nombre de séances remboursées (4 à 8/an) et le montant par séance (30-50 €).',
+          a: 'Oui en formule Confort ou Premium : forfait annuel 150-400 € par an pour ostéopathie, chiropractie, étiopathie, acupuncture. Les artisans BTP ont souvent un fort besoin (TMS lombaires, épaules) — vérifier le nombre de séances remboursées (4 à 8 par an) et le montant par séance (30-50 €).',
         },
         {
           q: 'Mon conjoint collaborateur peut-il être ajouté à ma mutuelle Madelin ?',
-          a: "Oui s'il a le statut officiel de « conjoint collaborateur » (immatriculé au RCS ou CMA). Sa cotisation est aussi déductible en Madelin si elle figure sur le contrat à votre nom. Ajout = +50 à +95 €/mois selon âge et formule. Vérifier que ses soins sont rattachés à son propre n° de Sécu.",
+          a: "Oui s'il a le statut officiel de « conjoint collaborateur » (immatriculé au RCS ou CMA). Sa cotisation est aussi déductible en Madelin si elle figure sur le contrat à votre nom. Ajout = +50 à +95 € par mois selon âge et formule. Vérifier que ses soins sont rattachés à son propre n° de Sécu.",
         },
         {
           q: 'Combien ça coûte vraiment une mutuelle BTP en 2026 ?',
-          a: "Artisan TNS solo 35 ans en formule Confort Madelin : 38-62 €/mois. Famille (artisan + conjoint + 2 enfants) : 145-210 €/mois. Dirigeant SARL/SAS 45 ans Cadre Premium : 95-180 €/mois. Salarié BTP en collectif : ~50% pris en charge employeur. Tarifs progressifs avec l'âge (~+1,5%/an).",
+          a: "Artisan TNS solo 35 ans en formule Confort Madelin : 38-62 € par mois. Famille (artisan + conjoint + 2 enfants) : 145-210 € par mois. Dirigeant SARL ou SAS 45 ans Cadre Premium : 95-180 € par mois. Salarié BTP en collectif : ~50% pris en charge employeur. Tarifs progressifs avec l'âge (~+1,5% par an).",
         },
         {
           q: 'Mon assureur peut-il augmenter ma cotisation chaque année ?',
-          a: "Oui, légalement. Hausses fréquentes : +3 à +8%/an liées à l'inflation médicale, l'âge (+1,5%/an), et l'évolution du régime obligatoire. L'assureur doit vous notifier l'augmentation par écrit 2 mois avant échéance. Vous pouvez résilier dans les 30 jours suivant la notification sans frais.",
+          a: "Oui, légalement. Hausses fréquentes : +3 à +8% par an liées à l'inflation médicale, l'âge (+1,5% par an), et l'évolution du régime obligatoire. L'assureur doit vous notifier l'augmentation par écrit 2 mois avant échéance. Vous pouvez résilier dans les 30 jours suivant la notification sans frais.",
         },
         {
           q: 'Puis-je résilier ma mutuelle BTP à tout moment ?',
-          a: "Oui : depuis la loi du 14 juillet 2019 (résiliation infra-annuelle), résiliation possible à tout moment après 1 an d'engagement, sans frais ni motif. Lettre recommandée ou notification dans votre espace adhérent. Mieux : le nouvel assureur peut résilier pour vous (mandat de résiliation).",
+          a: "Oui : depuis la loi du 14 juillet 2019 (résiliation infra-annuelle), résiliation possible à tout moment après 1 an d'engagement, sans frais ni motif. Lettre recommandée / notification dans votre espace adhérent. Mieux : le nouvel assureur peut résilier pour vous (mandat de résiliation).",
         },
         {
           q: 'Puis-je déduire ma mutuelle BTP de mes impôts (Loi Madelin) ?',
@@ -342,11 +342,11 @@ export default function Page() {
         },
         {
           q: "Combien de temps pour être remboursé d'une dépense de santé ?",
-          a: 'Avec la carte tiers payant : 0 € à avancer chez 95% des médecins, pharmaciens, opticiens. Sans tiers payant : remboursement assureur sous 3-7 jours après réception de la facture (PRO BTP, Harmonie : 3-5 jours en moyenne). Optique/dentaire avec devis préalable : ~10-15 jours.',
+          a: 'Avec la carte tiers payant : 0 € à avancer chez 95% des médecins, pharmaciens, opticiens. Sans tiers payant : remboursement assureur sous 3-7 jours après réception de la facture (PRO BTP, Harmonie : 3-5 jours en moyenne). Optique ou dentaire avec devis préalable : ~10-15 jours.',
         },
         {
           q: 'Quelle différence entre PRO BTP et une mutuelle BTP classique ?',
-          a: 'PRO BTP est un Groupe paritaire de protection sociale (GPS) créé par les partenaires sociaux du Bâtiment en 1993. Couple mutuelle + prévoyance + retraite + action sociale en un seul opérateur. Les autres (April, Harmonie, Aon, MMA) sont assureurs/mutuelles classiques avec offre dédiée BTP — plus modulables mais sans volet retraite intégré.',
+          a: 'PRO BTP est un Groupe paritaire de protection sociale (GPS) créé par les partenaires sociaux du Bâtiment en 1993. Couple mutuelle + prévoyance + retraite + action sociale en un seul opérateur. Les autres (April, Harmonie, Aon, MMA) sont assureurs / mutuelles classiques avec offre dédiée BTP — plus modulables mais sans volet retraite intégré.',
         },
         {
           q: 'Faut-il prendre mutuelle + prévoyance ou seulement la mutuelle ?',
@@ -354,11 +354,11 @@ export default function Page() {
         },
         {
           q: "Suis-je couvert pour l'hospitalisation et la chambre particulière ?",
-          a: "Oui en formule Confort ou Premium : forfait journalier hospitalier intégralement remboursé (20 €/jour), chambre particulière 60-90 €/jour, dépassements honoraires médecins (signataires OPTAM) jusqu'à 300-400% BR. Vérifier le plafond annuel hospi (souvent illimité en Premium, plafonné en Confort).",
+          a: "Oui en formule Confort ou Premium : forfait journalier hospitalier intégralement remboursé (20 € par jour), chambre particulière 60-90 € par jour, dépassements honoraires médecins (signataires OPTAM) jusqu'à 300-400% BR. Vérifier le plafond annuel hospi (souvent illimité en Premium, plafonné en Confort).",
         },
         {
           q: 'Que faire si mon employeur BTP ne propose pas de mutuelle collective ?',
-          a: "Mettre l'employeur en demeure par lettre recommandée de respecter l'ANI 2013. Sans suite sous 30 jours : saisir l'Inspection du travail et/ou le Conseil de Prud'hommes. Pendant ce temps, souscrire une mutuelle individuelle Madelin de notre cabinet — le remboursement employeur sera rétroactif.",
+          a: "Mettre l'employeur en demeure par lettre recommandée de respecter l'ANI 2013. Sans suite sous 30 jours : saisir l'Inspection du travail et ou ou le Conseil de Prud'hommes. Pendant ce temps, souscrire une mutuelle individuelle Madelin de notre cabinet — le remboursement employeur sera rétroactif.",
         },
       ]}
     />

@@ -9,7 +9,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/meilleure-mutuelle-tns'
+const SLUG = 'guides / meilleure-mutuelle-tns'
 const TITLE = 'Meilleure mutuelle TNS 2026 — Comparatif 7 organismes (avis cabinet)'
 const TAGLINE =
   'Quelle est la meilleure mutuelle santé pour Travailleur Non Salarié en 2026 ? Comparatif honnête de 7 organismes : Apicil, Pro BTP, Malakoff Humanis, AG2R, Allianz, Generali, MAAF Pro.'
@@ -17,7 +17,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Meilleure mutuelle TNS 2026 : comparatif 7 organismes (Apicil, Pro BTP, Malakoff Humanis, AG2R La Mondiale, Allianz, Generali, MAAF Pro). Avis cabinet ORIAS basé sur 800+ adhésions 2024-2025. Tarifs 32-145€/mois adulte. Loi Madelin déductible.',
+    'Meilleure mutuelle TNS 2026 : comparatif 7 organismes (Apicil, Pro BTP, Malakoff Humanis, AG2R La Mondiale, Allianz, Generali, MAAF Pro). Avis cabinet ORIAS basé sur 800+ adhésions 2024-2025. Tarifs 32-145€ par mois adulte. Loi Madelin déductible.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'article' },
 }
@@ -28,7 +28,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Choisir la meilleure mutuelle TNS (Travailleur Non Salarié) en 2026 dépend principalement de 4 critères : (1) votre profession et son taux de sinistralité santé, (2) votre âge et composition foyer, (3) votre niveau de couverture souhaité (essentiel/standard/confort/premium), (4) votre stratégie fiscale Loi Madelin. Notre cabinet ORIAS a accompagné 800+ adhésions TNS en 2024-2025 chez 7 organismes partenaires (Apicil, Pro BTP, Malakoff Humanis, AG2R La Mondiale, Allianz, Generali, MAAF Pro). Cette page synthétise notre retour d'expérience honnête : qui excelle pour qui, qui est à éviter selon votre profil. Tarifs 2026 : 32 €/mois adulte (socle minimum) à 145 €/mois (premium tous risques)."
+      intro="Choisir la meilleure mutuelle TNS (Travailleur Non Salarié) en 2026 dépend principalement de 4 critères : (1) votre profession et son taux de sinistralité santé, (2) votre âge et composition foyer, (3) votre niveau de couverture souhaité (essentiel, standard, confort ou premium), (4) votre stratégie fiscale Loi Madelin. Notre cabinet ORIAS a accompagné 800+ adhésions TNS en 2024-2025 chez 7 organismes partenaires (Apicil, Pro BTP, Malakoff Humanis, AG2R La Mondiale, Allianz, Generali, MAAF Pro). Cette page synthétise notre retour d'expérience honnête : qui excelle pour qui, qui est à éviter selon votre profil. Tarifs 2026 : 32 € par mois adulte (socle minimum) à 145 € par mois (premium tous risques)."
       legalReference="Loi Madelin (CGI art. 154 bis) — déductibilité 3,75% PASS + 7% au-delà"
       isObligatoire={false}
       benefits={[
@@ -50,7 +50,7 @@ export default function Page() {
         {
           icon: '🎯',
           title: 'Recommandation par métier',
-          desc: 'TNS BTP / médecin / consultant / commerçant — chacun son organisme optimal',
+          desc: 'TNS BTP — médecin — consultant — commerçant — chacun son organisme optimal',
         },
       ]}
       sections={[
@@ -90,7 +90,7 @@ export default function Page() {
                   </tr>
                   <tr>
                     <td className="border p-2">
-                      <strong>Consultant / IT freelance</strong>
+                      <strong>Consultant — IT freelance</strong>
                     </td>
                     <td className="border p-2">
                       <strong>AG2R La Mondiale</strong>
@@ -140,13 +140,13 @@ export default function Page() {
               <h3 className="mb-2 font-bold">Apicil ⭐⭐⭐⭐⭐</h3>
               <p className="mb-3 text-sm">
                 Spécialiste prévoyance + mutuelle TNS depuis 1938. Force : couverture pro santé
-                exhaustive (kiné/ostéo/médecines douces dès formule standard). Faiblesse : tarif
+                exhaustive (kiné, ostéo ou médecines douces dès formule standard). Faiblesse : tarif
                 premium pour familles 3+ enfants.
               </p>
               <h3 className="mb-2 font-bold">Pro BTP ⭐⭐⭐⭐⭐ (uniquement BTP)</h3>
               <p className="mb-3 text-sm">
                 Mutualiste sectoriel BTP. Force : connaissance fine des risques BTP, tarif
-                compétitif artisans. Limite : réservé profils BTP (refus consultants/professions
+                compétitif artisans. Limite : réservé profils BTP (refus consultants ou professions
                 libérales).
               </p>
               <h3 className="mb-2 font-bold">Malakoff Humanis ⭐⭐⭐⭐</h3>
@@ -157,8 +157,9 @@ export default function Page() {
               </p>
               <h3 className="mb-2 font-bold">AG2R La Mondiale ⭐⭐⭐⭐</h3>
               <p className="mb-3 text-sm">
-                Force : excellent rapport qualité/prix pour consultants/IT freelances, prévoyance
-                complémentaire intégrable. Faiblesse : moins fort sur médecines douces que Apicil.
+                Force : excellent rapport qualité ou prix pour consultants ou IT freelances,
+                prévoyance complémentaire intégrable. Faiblesse : moins fort sur médecines douces
+                que Apicil.
               </p>
               <h3 className="mb-2 font-bold">Allianz Pro ⭐⭐⭐⭐</h3>
               <p className="mb-3 text-sm">
@@ -174,7 +175,7 @@ export default function Page() {
               <p className="mb-3 text-sm">
                 Force : réseau d&apos;agences physiques dense (utile commerçants), tarifs
                 compétitifs profils standards. Faiblesse : couverture pro santé moins exhaustive que
-                Apicil/Pro BTP.
+                Apicil ou Pro BTP.
               </p>
             </div>
           ),
@@ -223,7 +224,7 @@ export default function Page() {
         },
         {
           q: 'Pro BTP : ouvert aux non-BTP ?',
-          a: 'NON, Pro BTP est un mutualiste sectoriel réservé aux entreprises et indépendants du BTP (codes NAF 41-43 + métiers connexes architectes, géomètres). Si vous êtes consultant, médecin, commerçant : choisir Apicil/Malakoff/AG2R/Generali à la place.',
+          a: 'NON, Pro BTP est un mutualiste sectoriel réservé aux entreprises et indépendants du BTP (codes NAF 41-43 + métiers connexes architectes, géomètres). Si vous êtes consultant, médecin, commerçant : choisir Apicil, Malakoff ou AG2R ou Generali à la place.',
         },
         {
           q: 'Comment économiser sur ma mutuelle TNS ?',
@@ -231,7 +232,7 @@ export default function Page() {
         },
         {
           q: 'Tarif moyen mutuelle TNS 2026 ?',
-          a: 'Référence adulte 40 ans non-fumeur, métropole, formule standard : <strong>78 €/mois</strong>. Variations : profil consultant (-15%) à BTP (+18%) à médecin libéral (+32%). Famille 2 adultes + 2 enfants : multiplier par 2,55 (gratuité partielle enfants chez la plupart des organismes).',
+          a: 'Référence adulte 40 ans non-fumeur, métropole, formule standard : <strong>78 € par mois</strong>. Variations : profil consultant (-15%) à BTP (+18%) à médecin libéral (+32%). Famille 2 adultes + 2 enfants : multiplier par 2,55 (gratuité partielle enfants chez la plupart des organismes).',
         },
       ]}
     />

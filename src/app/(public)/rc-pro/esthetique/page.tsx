@@ -13,7 +13,7 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'rc-pro/esthetique'
+const SLUG = 'rc-pro / esthetique'
 const TITLE = 'RC Pro esthéticienne — Tarifs 2026 (institut, à domicile, prothésiste)'
 const TAGLINE =
   "L'assurance RC pro pour esthéticiennes : institut beauté, esthétique à domicile, prothésiste ongulaire, masseur bien-être. Couverture brûlure, allergie, blessure."
@@ -21,7 +21,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro esthéticienne OBLIGATOIRE pour actes invasifs (épilation cire chaude, soins visage, prothèses ongulaires). Couverture brûlures, allergies cosmétiques, blessures. Tarifs 280-880€/an. Devis ORIAS sous 24h.',
+    'RC Pro esthéticienne OBLIGATOIRE pour actes invasifs (épilation cire chaude, soins visage, prothèses ongulaires). Couverture brûlures, allergies cosmétiques, blessures. Tarifs 280-880€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -32,7 +32,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro esthéticienne est OBLIGATOIRE pour tout praticien effectuant des ACTES ESTHÉTIQUES INVASIFS : épilation à la cire chaude (brûlures fréquentes), épilation laser (qualifiée d'acte médical depuis 2020 — SEUL UN MÉDECIN PEUT LA PRATIQUER LÉGALEMENT), soins du visage avec produits cosmétiques actifs, micro-needling, peelings chimiques, pose de prothèses ongulaires (allergies acrylates), modelages corporels invasifs. Couvre les sinistres typiques : brûlures cuir/peau, allergies cosmétiques sévères (œdème de Quincke), blessures coupantes (manucure), infections (matériel mal stérilisé). Tarifs 2026 : 280-880€/an selon profil. Cette page vise esthéticiennes en institut, à domicile, prothésistes ongulaires et masseurs bien-être (NB : massage thérapeutique = acte médical réservé kinésithérapeutes)."
+      intro="La RC Pro esthéticienne est OBLIGATOIRE pour tout praticien effectuant des ACTES ESTHÉTIQUES INVASIFS : épilation à la cire chaude (brûlures fréquentes), épilation laser (qualifiée d'acte médical depuis 2020 — SEUL UN MÉDECIN PEUT LA PRATIQUER LÉGALEMENT), soins du visage avec produits cosmétiques actifs, micro-needling, peelings chimiques, pose de prothèses ongulaires (allergies acrylates), modelages corporels invasifs. Couvre les sinistres typiques : brûlures cuir ou peau, allergies cosmétiques sévères (œdème de Quincke), blessures coupantes (manucure), infections (matériel mal stérilisé). Tarifs 2026 : 280-880€ par an selon profil. Cette page vise esthéticiennes en institut, à domicile, prothésistes ongulaires et masseurs bien-être (NB : massage thérapeutique = acte médical réservé kinésithérapeutes)."
       legalReference="Code des assurances L. 113-1 + Code de la santé publique (actes invasifs)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -57,8 +57,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 280 €/an',
-          desc: 'AE esthéticienne à domicile. Institut beauté 80m² : 580-880€/an',
+          title: 'À partir de 280 € par an',
+          desc: 'AE esthéticienne à domicile. Institut beauté 80m² : 580-880€ par an',
         },
       ]}
       sections={[
@@ -91,7 +91,7 @@ export default function Page() {
                     <td className="border p-2 text-right">680 € – 1 100 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Spa / institut haut de gamme Paris</td>
+                    <td className="border p-2">Spa — institut haut de gamme Paris</td>
                     <td className="border p-2 text-right">1 200 € – 2 200 €</td>
                   </tr>
                 </tbody>
@@ -111,7 +111,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte la RC Pro esthéticienne en 2026 ?',
-          a: 'AE à domicile : 280-480€/an. Institut solo : 480-720€/an. Institut 3 salariées : 680-1 100€/an. Spa Paris : 1 200-2 200€/an. Variables : actes pratiqués (épilation cire majoré), surface, salariées, antécédents.',
+          a: 'AE à domicile : 280-480€ par an. Institut solo : 480-720€ par an. Institut 3 salariées : 680-1 100€ par an. Spa Paris : 1 200-2 200€ par an. Variables : actes pratiqués (épilation cire majoré), surface, salariées, antécédents.',
         },
       ]}
     />

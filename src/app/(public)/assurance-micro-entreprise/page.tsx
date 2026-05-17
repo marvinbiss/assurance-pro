@@ -35,7 +35,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance micro-entreprise : pack adapté aux TPE et micro-entrepreneurs (RC Pro, multirisque local, mutuelle TNS, prévoyance Madelin). Tarifs négociés à partir de 220 €/an. Comparatif 8 assureurs. Devis gratuit ORIAS sous 24h.',
+    'Assurance micro-entreprise : pack adapté aux TPE et micro-entrepreneurs (RC Pro, multirisque local, mutuelle TNS, prévoyance Madelin). Tarifs négociés à partir de 220 € par an. Comparatif 8 assureurs. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -46,7 +46,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance micro-entreprise désigne l'ensemble des contrats adaptés aux structures de petite taille : micro-entrepreneurs (anciennement auto-entrepreneurs, dénomination légale depuis 2016), entrepreneurs individuels (EI) et TPE de moins de 10 salariés en EURL, SARL, SASU ou SAS. Sa particularité : les assureurs proposent des packs SIMPLIFIÉS et MOINS CHERS que pour les PME (formulaire de souscription allégé, plafonds calibrés sur le CA, gestion 100% digitale possible). Le tarif d'un pack RC Pro + multirisque démarre à 220 € HT/an pour un freelance solo, jusqu'à 1 200 € HT/an pour une TPE 5 salariés en local. Cette page détaille les garanties indispensables par profil micro-entreprise (digital, services, commerce, BTP), les tarifs 2026 et la fiscalité Madelin pour les TNS au régime réel."
+      intro="L'assurance micro-entreprise désigne l'ensemble des contrats adaptés aux structures de petite taille : micro-entrepreneurs (anciennement auto-entrepreneurs, dénomination légale depuis 2016), entrepreneurs individuels (EI) et TPE de moins de 10 salariés en EURL, SARL, SASU ou SAS. Sa particularité : les assureurs proposent des packs SIMPLIFIÉS et MOINS CHERS que pour les PME (formulaire de souscription allégé, plafonds calibrés sur le CA, gestion 100% digitale possible). Le tarif d'un pack RC Pro + multirisque démarre à 220 € HT par an pour un freelance solo, jusqu'à 1 200 € HT par an pour une TPE 5 salariés en local. Cette page détaille les garanties indispensables par profil micro-entreprise (digital, services, commerce, BTP), les tarifs 2026 et la fiscalité Madelin pour les TNS au régime réel."
       legalReference="Code des assurances + statut micro-entrepreneur (Loi 9 août 2016) + Loi Madelin (art. 154 bis CGI)"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -61,8 +61,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 220 €/an',
-          desc: 'Pack RC Pro + multirisque pour freelance solo. TPE 5 salariés : 980-1 480€/an',
+          title: 'À partir de 220 € par an',
+          desc: 'Pack RC Pro + multirisque pour freelance solo. TPE 5 salariés : 980-1 480€ par an',
         },
         {
           icon: '📋',
@@ -86,7 +86,7 @@ export default function Page() {
                     <th className="border p-2 text-left">Statut</th>
                     <th className="border p-2 text-left">RC Pro</th>
                     <th className="border p-2 text-left">Multirisque local</th>
-                    <th className="border p-2 text-left">Mutuelle / Prévoyance</th>
+                    <th className="border p-2 text-left">Mutuelle — Prévoyance</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -172,7 +172,7 @@ export default function Page() {
                     <td className="border p-2 text-right">320 € – 580 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Esthéticienne / coiffeur à domicile</td>
+                    <td className="border p-2">Esthéticienne — coiffeur à domicile</td>
                     <td className="border p-2 text-right">280 € – 480 €</td>
                   </tr>
                   <tr>
@@ -210,7 +210,7 @@ export default function Page() {
                 <strong>basculer au régime réel d&apos;imposition</strong>.
               </p>
               <p>
-                Démarche pertinente dès que votre bénéfice dépasse <strong>~30 k€/an</strong> :
+                Démarche pertinente dès que votre bénéfice dépasse <strong>~30 k€ par an</strong> :
               </p>
               <ul>
                 <li>
@@ -218,12 +218,12 @@ export default function Page() {
                   Entreprise) avant le 31/12 de l&apos;année N pour application en N+1
                 </li>
                 <li>
-                  <strong>Coût additionnel</strong> : comptable obligatoire (~80-150€/mois pour
+                  <strong>Coût additionnel</strong> : comptable obligatoire (~80-150€ par mois pour
                   micro-comptabilité simplifiée)
                 </li>
                 <li>
-                  <strong>Économie d&apos;impôts</strong> : ~1 200-1 800€/an pour 50k€ de bénéfice
-                  (Madelin santé+prévoyance ~5 800€ déductibles + frais réels)
+                  <strong>Économie d&apos;impôts</strong> : ~1 200-1 800€ par an pour 50k€ de
+                  bénéfice (Madelin santé+prévoyance ~5 800€ déductibles + frais réels)
                 </li>
                 <li>
                   <strong>ROI</strong> : positif dès 30 k€ de bénéfice, fortement positif au-delà de
@@ -300,7 +300,7 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'une micro-entreprise ?",
-          a: 'Démarre à 220€/an pour un freelance digital solo (RC Pro 1,5 M€). Médiane marché : 280-480€/an pour un solo. TPE 5 salariés en boutique : 980-1 480€/an pour pack complet RC + multirisque + mutuelle collective. Variables : métier, statut juridique, présence local pro, nombre de salariés.',
+          a: 'Démarre à 220€ par an pour un freelance digital solo (RC Pro 1,5 M€). Médiane marché : 280-480€ par an pour un solo. TPE 5 salariés en boutique : 980-1 480€ par an pour pack complet RC + multirisque + mutuelle collective. Variables : métier, statut juridique, présence local pro, nombre de salariés.',
         },
         {
           q: 'Différence entre micro-entrepreneur et auto-entrepreneur ?',
@@ -308,7 +308,7 @@ export default function Page() {
         },
         {
           q: 'Micro-entrepreneur : peut-on déduire ses assurances Madelin ?',
-          a: "PAS au régime micro-fiscal classique (versement libératoire). OUI au régime réel d'imposition (option à activer auprès du SIE avant 31/12 de l'année N). Démarche pertinente dès 30 k€/an de bénéfice — économie d'impôts ~1 200-1 800€/an pour 50k€ de bénéfice.",
+          a: "PAS au régime micro-fiscal classique (versement libératoire). OUI au régime réel d'imposition (option à activer auprès du SIE avant 31/12 de l'année N). Démarche pertinente dès 30 k€ par an de bénéfice — économie d'impôts ~1 200-1 800€ par an pour 50k€ de bénéfice.",
         },
         {
           q: 'TPE 5 salariés : quelle mutuelle obligatoire ?',

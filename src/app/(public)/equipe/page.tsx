@@ -11,18 +11,18 @@ import { InlineCta } from '@/components/cta/inline-cta'
 export const metadata: Metadata = {
   title: "L'équipe — Courtiers ORIAS Vivos Assurance",
   description:
-    "Découvrez l'équipe du cabinet de courtage ORIAS Vivos Assurance : direction, pôles BTP, RC Pro, Santé/Prévoyance. Expertise certifiée IAS Niveau I.",
+    "Découvrez l'équipe du cabinet de courtage ORIAS Vivos Assurance : direction, pôles BTP, RC Pro, Santé ou Prévoyance. Expertise certifiée IAS Niveau I.",
   alternates: { canonical: `${SITE_URL}/equipe` },
   openGraph: {
     title: "L'équipe — Courtiers ORIAS Vivos Assurance",
-    description: "Découvrez l'équipe : direction, pôles BTP, RC Pro, Santé/Prévoyance.",
+    description: "Découvrez l'équipe : direction, pôles BTP, RC Pro, Santé ou Prévoyance.",
     url: `${SITE_URL}/equipe`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: "L'équipe — Courtiers ORIAS",
-    description: 'Direction, pôles BTP, RC Pro, Santé/Prévoyance. Expertise IAS Niveau I.',
+    description: 'Direction, pôles BTP, RC Pro, Santé ou Prévoyance. Expertise IAS Niveau I.',
   },
 }
 
@@ -31,8 +31,8 @@ const ENGAGEMENTS = [
   "Analyse impartiale d'un nombre suffisant de contrats (art. L. 521-4 II)",
   'Recommandation écrite motivée pour chaque souscription',
   'Aucun frais de courtage facturé au client',
-  'Réclamations traitées sous 10 j / réponse fond sous 2 mois (ACPR 2024-R-02)',
-  'Adhésion CSCA et formation continue annuelle ACPR (15 h/an minimum)',
+  'Réclamations traitées sous 10 j — réponse fond sous 2 mois (ACPR 2024-R-02)',
+  'Adhésion CSCA et formation continue annuelle ACPR (15 h par an minimum)',
 ] as const
 
 export default function EquipePage() {
@@ -60,7 +60,7 @@ export default function EquipePage() {
         meta={[
           { Icon: Users, label: `${membres.length} courtiers ORIAS` },
           { Icon: Award, label: 'IAS Niveau I certifié' },
-          { Icon: ShieldCheck, label: 'CSCA · Formation 15h/an' },
+          { Icon: ShieldCheck, label: 'CSCA · Formation 15h par an' },
         ]}
       />
 

@@ -8,14 +8,14 @@ import {
   STATS_DEFAULT,
 } from '@/lib/data/pilier-premium-defaults'
 export const metadata: Metadata = {
-  title: 'RC Pro Médecin / Praticien santé',
+  title: 'RC Pro Médecin — Praticien santé',
   description:
     'RC Pro médicale obligatoire (Loi Kouchner). Médecins, infirmiers, kinés, ostéopathes, sage-femmes. Comparaison sur 6 assureurs spécialistes.',
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/rc-pro-medecin`,
   },
   openGraph: {
-    title: 'RC Pro Médecin / Praticien santé',
+    title: 'RC Pro Médecin — Praticien santé',
     description:
       'RC Pro médicale obligatoire (Loi Kouchner). Médecins, infirmiers, kinés, ostéopathes, sage-femmes. Comparaison sur 6 assureurs spécialistes.',
     url: `${SITE_URL}/rc-pro-medecin`,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RC Pro Médecin / Praticien santé',
+    title: 'RC Pro Médecin — Praticien santé',
     description:
       'RC Pro médicale obligatoire (Loi Kouchner). Médecins, infirmiers, kinés, ostéopathes, sage-femmes. Comparaison sur 6 assureurs spécialistes.',
   },
@@ -33,7 +33,7 @@ export default function RcProMedecinPage() {
   return (
     <PilierLayout
       slug="rc-pro-medecin"
-      title="RC Pro Médecin / Praticien santé"
+      title="RC Pro Médecin — Praticien santé"
       tagline="L'assurance professionnelle obligatoire pour tout praticien de santé — Loi Kouchner du 4 mars 2002."
       legalReference="Loi 2002-303 du 4 mars 2002 (Loi Kouchner) + art. L. 1142-2 CSP"
       isObligatoire={true}
@@ -63,12 +63,12 @@ export default function RcProMedecinPage() {
                   Médecin spécialiste (cardio, derma, ophtalmo, gynéco, ORL, psychiatre, gastro,
                   endocrino, etc.)
                 </li>
-                <li>Infirmier libéral / IDEL</li>
+                <li>Infirmier libéral — IDEL</li>
                 <li>Kinésithérapeute</li>
-                <li>Ostéopathe / chiropracteur</li>
+                <li>Ostéopathe — chiropracteur</li>
                 <li>Sage-femme</li>
-                <li>Dentiste / orthodontiste / chirurgien dentiste</li>
-                <li>Psychologue / psychothérapeute</li>
+                <li>Dentiste — orthodontiste — chirurgien dentiste</li>
+                <li>Psychologue — psychothérapeute</li>
                 <li>Pharmacien</li>
                 <li>Médecin remplaçant</li>
                 <li>Ergothérapeute, podologue, orthophoniste, diététicien, sophrologue</li>
@@ -89,39 +89,39 @@ export default function RcProMedecinPage() {
               <tbody>
                 <tr>
                   <td className="border p-2">Médecin généraliste</td>
-                  <td className="border p-2 text-right">800-1 600€/an</td>
+                  <td className="border p-2 text-right">800-1 600€ par an</td>
                 </tr>
                 <tr>
                   <td className="border p-2">Médecin spécialiste (consultation)</td>
-                  <td className="border p-2 text-right">1 500-3 500€/an</td>
+                  <td className="border p-2 text-right">1 500-3 500€ par an</td>
                 </tr>
                 <tr>
                   <td className="border p-2">Chirurgien</td>
-                  <td className="border p-2 text-right">8 000-25 000€/an</td>
+                  <td className="border p-2 text-right">8 000-25 000€ par an</td>
                 </tr>
                 <tr>
                   <td className="border p-2">Gynécologue obstétricien</td>
-                  <td className="border p-2 text-right">15 000-45 000€/an</td>
+                  <td className="border p-2 text-right">15 000-45 000€ par an</td>
                 </tr>
                 <tr>
                   <td className="border p-2">Infirmier libéral</td>
-                  <td className="border p-2 text-right">200-400€/an</td>
+                  <td className="border p-2 text-right">200-400€ par an</td>
                 </tr>
                 <tr>
                   <td className="border p-2">Kinésithérapeute</td>
-                  <td className="border p-2 text-right">280-550€/an</td>
+                  <td className="border p-2 text-right">280-550€ par an</td>
                 </tr>
                 <tr>
                   <td className="border p-2">Ostéopathe</td>
-                  <td className="border p-2 text-right">220-450€/an</td>
+                  <td className="border p-2 text-right">220-450€ par an</td>
                 </tr>
                 <tr>
                   <td className="border p-2">Sage-femme libérale</td>
-                  <td className="border p-2 text-right">450-900€/an</td>
+                  <td className="border p-2 text-right">450-900€ par an</td>
                 </tr>
                 <tr>
                   <td className="border p-2">Psychologue</td>
-                  <td className="border p-2 text-right">180-380€/an</td>
+                  <td className="border p-2 text-right">180-380€ par an</td>
                 </tr>
               </tbody>
             </table>

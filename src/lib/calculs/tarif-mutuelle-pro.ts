@@ -14,10 +14,10 @@
  */
 
 export type Formule =
-  | 'minimale-ani' /* socle Loi ANI 100% BR + opto/dentaire mini */
-  | 'standard'     /* 125% BR + dentaire 200% + optique 350€ */
-  | 'confort'      /* 200% BR + médecines douces + chambre particulière */
-  | 'premium'      /* 300% BR + remboursement integral 100% santé+ */
+  | 'minimale-ani' /* socle Loi ANI 100% BR + opto ou dentaire mini */
+  | 'standard' /* 125% BR + dentaire 200% + optique 350€ */
+  | 'confort' /* 200% BR + médecines douces + chambre particulière */
+  | 'premium' /* 300% BR + remboursement integral 100% santé+ */
 
 export type Regime = 'general-salarie' | 'tns-madelin' | 'agricole-msa' | 'alsace-moselle'
 
@@ -58,24 +58,31 @@ const TARIF_BASE_FORMULE: Record<Formule, { perAdulte: number; description: stri
 
 const COEF_REGIME: Record<Regime, number> = {
   'general-salarie': 1.0,
-  'tns-madelin': 1.18, /* sur-prime TNS — pas de couverture employeur */
-  'agricole-msa': 0.94, /* MSA mutualisée */
-  'alsace-moselle': 0.78, /* régime local Alsace-Moselle = remboursement supérieur SS */
+  'tns-madelin': 1.18 /* sur-prime TNS — pas de couverture employeur */,
+  'agricole-msa': 0.94 /* MSA mutualisée */,
+  'alsace-moselle': 0.78 /* régime local Alsace-Moselle = remboursement supérieur SS */,
 }
 
 const COEF_ZONE: Record<Zone, number> = {
   metropole: 1.0,
   corse: 1.05,
   dom: 1.18,
-  idf: 1.22, /* Île-de-France = sur-prime densité praticiens + dépassements honoraires */
+  idf: 1.22 /* Île-de-France = sur-prime densité praticiens + dépassements honoraires */,
 }
 
-const COMPOSITION_PARTS: Record<Composition, { adultes: number; enfants: number; coefGlobal: number }> = {
+const COMPOSITION_PARTS: Record<
+  Composition,
+  { adultes: number; enfants: number; coefGlobal: number }
+> = {
   isole: { adultes: 1, enfants: 0, coefGlobal: 1.0 },
-  duo: { adultes: 2, enfants: 0, coefGlobal: 1.85 }, /* duo = -7,5% vs 2× isolé */
+  duo: { adultes: 2, enfants: 0, coefGlobal: 1.85 } /* duo = -7,5% vs 2× isolé */,
   'famille-1enfant': { adultes: 2, enfants: 1, coefGlobal: 2.25 },
-  'famille-2enfants': { adultes: 2, enfants: 2, coefGlobal: 2.55 }, /* gratuité 2e enfant souvent */
-  'famille-3plus': { adultes: 2, enfants: 3, coefGlobal: 2.75 }, /* gratuité enfants 3+ très souvent */
+  'famille-2enfants': { adultes: 2, enfants: 2, coefGlobal: 2.55 } /* gratuité 2e enfant souvent */,
+  'famille-3plus': {
+    adultes: 2,
+    enfants: 3,
+    coefGlobal: 2.75,
+  } /* gratuité enfants 3+ très souvent */,
 }
 
 function coefAge(age: number): number {
@@ -125,15 +132,15 @@ export function calculerMutuelle(input: MutuelleInput): MutuelleResultat {
 }
 
 export const FORMULE_LABELS: Record<Formule, string> = {
-  'minimale-ani': 'Socle ANI minimal (32 €/mois adulte ref)',
-  standard: 'Standard (58 €/mois — recommandée)',
-  confort: 'Confort (92 €/mois — médecines douces)',
-  premium: 'Premium (145 €/mois — remboursement intégral)',
+  'minimale-ani': 'Socle ANI minimal (32 € par mois adulte ref)',
+  standard: 'Standard (58 € par mois — recommandée)',
+  confort: 'Confort (92 € par mois — médecines douces)',
+  premium: 'Premium (145 € par mois — remboursement intégral)',
 }
 
 export const REGIME_LABELS: Record<Regime, string> = {
   'general-salarie': 'Régime général (salariés, dirigeants assimilés)',
-  'tns-madelin': 'TNS / Travailleur non-salarié (Madelin)',
+  'tns-madelin': 'TNS — Travailleur non-salarié (Madelin)',
   'agricole-msa': 'Régime agricole (MSA)',
   'alsace-moselle': 'Alsace-Moselle (régime local)',
 }

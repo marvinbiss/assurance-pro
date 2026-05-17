@@ -6,15 +6,15 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'devis/garantie-decennale'
+const SLUG = 'devis / garantie-decennale'
 const TITLE = 'Devis Garantie Décennale — Comparatif 5 assureurs BTP, 24h'
 const TAGLINE =
-  'Devis garantie décennale GRATUIT en 5 min. April Pro best price AE 950€/an. Comparatif SMABTP, Allianz, MMA, AXA. Attestation Loi Spinetta 24h.'
+  'Devis garantie décennale GRATUIT en 5 min. April Pro best price AE 950€ par an. Comparatif SMABTP, Allianz, MMA, AXA. Attestation Loi Spinetta 24h.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Devis garantie décennale gratuit. April Pro 950€/an peintre, 1 400€/an plombier. SMABTP, Allianz, MMA, AXA comparés. Attestation conforme 24h.',
+    'Devis garantie décennale gratuit. April Pro 950€ par an peintre, 1 400€ par an plombier. SMABTP, Allianz, MMA, AXA comparés. Attestation conforme 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -37,7 +37,7 @@ export default function Page() {
         {
           icon: '💰',
           title: 'April Pro best price',
-          desc: 'AE peintre 950€/an, plombier 1 400€/an, maçon 1 800€/an',
+          desc: 'AE peintre 950€ par an, plombier 1 400€ par an, maçon 1 800€ par an',
         },
         {
           icon: '⚡',
@@ -60,13 +60,13 @@ export default function Page() {
                 couvreur, etc.
               </li>
               <li>
-                <strong>SARL / EURL BTP</strong> 1-15 salariés
+                <strong>SARL — EURL BTP</strong> 1-15 salariés
               </li>
               <li>
                 <strong>SAS BTP PME</strong> 15-50 salariés
               </li>
               <li>
-                <strong>Architectes DPLG / maîtres d&apos;œuvre</strong> (décennale conception)
+                <strong>Architectes DPLG — maîtres d&apos;œuvre</strong> (décennale conception)
               </li>
               <li>
                 <strong>BET techniques</strong>
@@ -81,7 +81,7 @@ export default function Page() {
                 <strong>Sous-traitants BTP</strong>
               </li>
               <li>
-                <strong>Foreurs géothermie / spécialistes RGE</strong>
+                <strong>Foreurs géothermie — spécialistes RGE</strong>
               </li>
             </ul>
           ),
@@ -91,34 +91,34 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Peintre AE</strong> : 950-1 400€/an
+                <strong>Peintre AE</strong> : 950-1 400€ par an
               </li>
               <li>
-                <strong>Plâtrier / carreleur AE</strong> : 1 100-1 700€/an
+                <strong>Plâtrier — carreleur AE</strong> : 1 100-1 700€ par an
               </li>
               <li>
-                <strong>Plombier / électricien AE</strong> : 1 400-2 200€/an
+                <strong>Plombier — électricien AE</strong> : 1 400-2 200€ par an
               </li>
               <li>
-                <strong>Maçon AE</strong> : 1 800-2 800€/an
+                <strong>Maçon AE</strong> : 1 800-2 800€ par an
               </li>
               <li>
-                <strong>Couvreur / charpentier AE</strong> : 2 200-3 800€/an
+                <strong>Couvreur — charpentier AE</strong> : 2 200-3 800€ par an
               </li>
               <li>
-                <strong>Terrassier / TP AE</strong> : 2 800-4 500€/an
+                <strong>Terrassier — TP AE</strong> : 2 800-4 500€ par an
               </li>
               <li>
-                <strong>Multi-services BTP AE</strong> : 2 200-3 500€/an
+                <strong>Multi-services BTP AE</strong> : 2 200-3 500€ par an
               </li>
               <li>
-                <strong>SARL plomberie 3 salariés</strong> : 2 200-3 500€/an
+                <strong>SARL plomberie 3 salariés</strong> : 2 200-3 500€ par an
               </li>
               <li>
-                <strong>SAS BTP gros œuvre 30 salariés</strong> : 12 000-30 000€/an+
+                <strong>SAS BTP gros œuvre 30 salariés</strong> : 12 000-30 000€ par an+
               </li>
               <li>
-                <strong>Architecte DPLG libéral</strong> : 2 500-5 000€/an
+                <strong>Architecte DPLG libéral</strong> : 2 500-5 000€ par an
               </li>
             </ul>
           ),
@@ -136,8 +136,8 @@ export default function Page() {
               <li>Comparer offres : tarif + plafond + franchise + exclusions clés</li>
               <li>Choisir l&apos;offre adaptée</li>
               <li>
-                Souscription en ligne avec upload pièces (SIRET, ACOSS/Kbis, CNI, RIB, justificatifs
-                activité)
+                Souscription en ligne avec upload pièces (SIRET, ACOSS ou Kbis, CNI, RIB,
+                justificatifs activité)
               </li>
               <li>Attestation conforme téléchargeable sous 24h chez April Pro</li>
               <li>Présentation attestation au maître d&apos;ouvrage AVANT démarrage chantier</li>
@@ -152,11 +152,11 @@ export default function Page() {
         },
         {
           q: 'Décennale la moins chère pour un peintre AE ?',
-          a: 'April Pro BTP à 950€/an (plafond 1M€, postériorité 10 ans). Best price marché vérifié 2026. En-dessous = SUSPECT (assureur non-agréé ACPR ou exclusions étendues).',
+          a: 'April Pro BTP à 950€ par an (plafond 1M€, postériorité 10 ans). Best price marché vérifié 2026. En-dessous = SUSPECT (assureur non-agréé ACPR ou exclusions étendues).',
         },
         {
           q: 'Délai attestation décennale après souscription ?',
-          a: 'April Pro : 24h ouvrées (le plus rapide). Allianz Pro / MMA Pro BTP : 48h. SMABTP / AXA Pro BTP : 48-72h. Délai dépend de la complexité dossier et heure de souscription.',
+          a: 'April Pro : 24h ouvrées (le plus rapide). Allianz Pro — MMA Pro BTP : 48h. SMABTP — AXA Pro BTP : 48-72h. Délai dépend de la complexité dossier et heure de souscription.',
         },
         {
           q: 'Garantie décennale en ligne possible ?',

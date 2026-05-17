@@ -30,12 +30,12 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/comparateur-rc-pro'
+const SLUG = 'outils / comparateur-rc-pro'
 
 export const metadata: Metadata = {
   title: 'Comparateur RC Pro 2026 — 8 assureurs comparés en ligne (gratuit)',
   description:
-    'Comparateur RC Pro 2026 : 8 assureurs comparés (Hiscox, MMA Pro, AXA Pro, Allianz, Generali, MAIF Pro, Wakam, April). Tri par secteur + priorité (tarif/rapidité/plafond). Recommandation cabinet ORIAS sous 24h. Gratuit, sans inscription.',
+    'Comparateur RC Pro 2026 : 8 assureurs comparés (Hiscox, MMA Pro, AXA Pro, Allianz, Generali, MAIF Pro, Wakam, April). Tri par secteur + priorité (tarif, rapidité ou plafond). Recommandation cabinet ORIAS sous 24h. Gratuit, sans inscription.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: 'Comparateur RC Pro 2026 — 8 assureurs en ligne',
@@ -56,11 +56,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/rc-pro" className="hover:underline">
               RC Pro
             </Link>{' '}
-            / <span>Comparateur 8 assureurs</span>
+            › <span>Comparateur 8 assureurs</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ 8 assureurs comparés — Tri intelligent par secteur
@@ -71,7 +71,7 @@ export default async function Page() {
           <p className="mb-6 max-w-3xl text-lg opacity-95 md:text-xl">
             Comparez en ligne <strong>8 assureurs RC Pro</strong> partenaires de notre cabinet ORIAS
             : Hiscox, MMA Pro, AXA Pro, Allianz Pro, Generali, MAIF Pro, Wakam, April Pro. Tri
-            intelligent par secteur d&apos;activité + priorité (tarif compétitif / rapidité /
+            intelligent par secteur d&apos;activité + priorité (tarif compétitif ou rapidité /
             plafonds élevés). Notes attribuées sur base d&apos;expertise terrain 2024-2025.
           </p>
           <div className="grid grid-cols-2 gap-4 text-sm md:grid-cols-4">
@@ -122,7 +122,7 @@ export default async function Page() {
               <h3 className="mb-2 font-bold">📊 Note globale /5</h3>
               <p>
                 Synthèse de l&apos;expertise terrain de notre cabinet ORIAS sur 2024-2025 (1 200+
-                devis émis sur 8 assureurs). Critères pondérés : tarif/couverture, qualité
+                devis émis sur 8 assureurs). Critères pondérés : tarif ou couverture, qualité
                 souscription, gestion sinistres, service client, réputation marché.
               </p>
             </div>
@@ -236,7 +236,7 @@ export default async function Page() {
             featureList: [
               'Comparatif 8 assureurs (Hiscox, MMA, AXA, Allianz, Generali, MAIF, Wakam, April)',
               "Tri intelligent par secteur d'activité",
-              'Tri par priorité (tarif / rapidité / plafonds)',
+              'Tri par priorité (tarif — rapidité — plafonds)',
               'Notes /5 cabinet ORIAS expertise terrain',
               'Funnel direct devis officiel ORIAS sous 24h',
             ],

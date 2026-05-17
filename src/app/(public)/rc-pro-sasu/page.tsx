@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'rc-pro-sasu'
 const TITLE = 'RC Pro SASU — Statut juridique, garanties et tarifs 2026'
 const TAGLINE =
-  'La SASU (Société par Actions Simplifiée Unipersonnelle) impose une RC Pro pour son dirigeant. Spécificités statut, plafonds recommandés, tarifs 350-1 500€/an.'
+  'La SASU (Société par Actions Simplifiée Unipersonnelle) impose une RC Pro pour son dirigeant. Spécificités statut, plafonds recommandés, tarifs 350-1 500€ par an.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro SASU : couvre activité société + dirigeant personne morale. Tarif 350-1 500€/an. Spécificités vs SARL/AE. Recommandé plafond 1-2M€ + cyber-assurance.',
+    'RC Pro SASU : couvre activité société + dirigeant personne morale. Tarif 350-1 500€ par an. Spécificités vs SARL ou AE. Recommandé plafond 1-2M€ + cyber-assurance.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La SASU (Société par Actions Simplifiée Unipersonnelle) est un statut juridique populaire pour les entrepreneurs individuels souhaitant une responsabilité limitée + flexibilité de gestion. Sa RC Pro a des spécificités vs AE/SARL : couverture société + dirigeant personne morale, statut assimilé salarié (vs TNS), plafonds standards plus élevés, et possibilité d'ajouter une RC Mandataire Social pour le président."
+      intro="La SASU (Société par Actions Simplifiée Unipersonnelle) est un statut juridique populaire pour les entrepreneurs individuels souhaitant une responsabilité limitée + flexibilité de gestion. Sa RC Pro a des spécificités vs AE ou SARL : couverture société + dirigeant personne morale, statut assimilé salarié (vs TNS), plafonds standards plus élevés, et possibilité d'ajouter une RC Mandataire Social pour le président."
       legalReference="art. L. 124-3 + L. 121-2 C. assur. + art. L. 227-1 et s. Code de commerce"
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -54,13 +54,13 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '350-1 500€/an',
+          title: '350-1 500€ par an',
           desc: 'SASU débutante 350-500€ • SASU établie 600-900€ • SASU PME 900-1 500€',
         },
       ]}
       sections={[
         {
-          h2: 'Spécificités RC Pro SASU vs AE/SARL',
+          h2: 'Spécificités RC Pro SASU vs AE ou SARL',
           body: (
             <ul>
               <li>
@@ -90,16 +90,16 @@ export default function Page() {
               </li>
               <li>
                 <strong>RC Mandataire Social (RCMS) optionnelle</strong> : couvre le président SASU
-                contre actions personnelles (faute de gestion, abus pouvoir). +250-800€/an.
+                contre actions personnelles (faute de gestion, abus pouvoir). +250-800€ par an.
                 Recommandé pour SASU &gt; 100k€ CA.
               </li>
               <li>
-                <strong>Cyber-assurance combinée</strong> : recommandée si activité IT/digital,
-                données client. +200-1 500€/an.
+                <strong>Cyber-assurance combinée</strong> : recommandée si activité IT ou digital,
+                données client. +200-1 500€ par an.
               </li>
               <li>
                 <strong>Protection juridique</strong> : litiges clients, fournisseurs,
-                prud&apos;hommes. +60-150€/an.
+                prud&apos;hommes. +60-150€ par an.
               </li>
               <li>
                 <strong>Multirisque pro</strong> : si local commercial ou stockage matériel.
@@ -117,25 +117,25 @@ export default function Page() {
             <ul>
               <li>
                 <strong>SASU services intellectuels (consultant, IT, marketing)</strong> CA &lt;
-                80k€ : 350-550€/an
+                80k€ : 350-550€ par an
               </li>
               <li>
-                <strong>SASU services intellectuels CA 80-300k€</strong> : 550-1 000€/an
+                <strong>SASU services intellectuels CA 80-300k€</strong> : 550-1 000€ par an
               </li>
               <li>
-                <strong>SASU agence web/communication</strong> : 600-1 200€/an
+                <strong>SASU agence web ou communication</strong> : 600-1 200€ par an
               </li>
               <li>
-                <strong>SASU e-commerce / marketplace</strong> : 800-1 800€/an (risque produits)
+                <strong>SASU e-commerce — marketplace</strong> : 800-1 800€ par an (risque produits)
               </li>
               <li>
-                <strong>SASU formation/coaching</strong> : 450-900€/an
+                <strong>SASU formation / coaching</strong> : 450-900€ par an
               </li>
               <li>
-                <strong>SASU BTP (en complément décennale)</strong> : 600-1 500€/an
+                <strong>SASU BTP (en complément décennale)</strong> : 600-1 500€ par an
               </li>
               <li>
-                <strong>SASU professions libérales</strong> (avocat, expert) : 1 000-5 000€/an+
+                <strong>SASU professions libérales</strong> (avocat, expert) : 1 000-5 000€ par an+
                 (selon spé)
               </li>
             </ul>
@@ -153,7 +153,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une RC Pro pour SASU débutante ?',
-          a: 'SASU consultant services intellectuels (CA prévisionnel &lt; 100k€) : 350-550€/an chez Hiscox, Stello ou Allianz Pro. Plafond standard 1-2M€. Ajouter RC Mandataire Social : +250-500€/an.',
+          a: 'SASU consultant services intellectuels (CA prévisionnel &lt; 100k€) : 350-550€ par an chez Hiscox, Stello ou Allianz Pro. Plafond standard 1-2M€. Ajouter RC Mandataire Social : +250-500€ par an.',
         },
         {
           q: 'SASU vs AE : impact sur la RC Pro ?',

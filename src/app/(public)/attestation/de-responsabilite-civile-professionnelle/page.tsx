@@ -11,7 +11,7 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'attestation/de-responsabilite-civile-professionnelle'
+const SLUG = 'attestation / de-responsabilite-civile-professionnelle'
 const TITLE = 'Attestation de Responsabilité Civile Professionnelle — Obtenir + utiliser'
 const TAGLINE =
   "Tout savoir sur l'attestation de RC Pro : à quoi sert, qui doit la fournir, valeur juridique, validité et démarches d'obtention rapide."
@@ -137,7 +137,7 @@ export default function Page() {
                 contrat + mot de passe)
               </li>
               <li>
-                <strong>Onglet &quot;Documents&quot; / &quot;Attestations&quot;</strong>
+                <strong>Onglet &quot;Documents&quot; — &quot;Attestations&quot;</strong>
               </li>
               <li>
                 <strong>Téléchargement PDF</strong> immédiat (Hiscox, Stello, Allianz Pro)

@@ -25,7 +25,7 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 
-const SLUG = 'guides/attestation-rc-pro'
+const SLUG = 'guides / attestation-rc-pro'
 const TITLE = 'Attestation RC Pro — Modèle, mentions obligatoires, délai 2026'
 const TAGLINE =
   "Tout savoir sur l'attestation de responsabilité civile professionnelle : mentions légales, modèle PDF, délais d'obtention, sanctions absence et différence avec l'attestation décennale."
@@ -44,7 +44,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'attestation de responsabilité civile professionnelle (RC Pro) est le document officiel qui prouve qu'un professionnel — auto-entrepreneur, freelance, profession libérale, agence, ESN, SELARL, SARL/SAS — a souscrit la garantie obligatoire (ou recommandée) couvrant les dommages corporels, matériels ou immatériels qu'il pourrait causer à un tiers (client, fournisseur, passant) dans l'exercice de son activité. Elle est légalement obligatoire pour 21 métiers réglementés (BTP, santé, juridique, conseil financier, transport, sport, esthétique invasive, sécurité privée) et exigée par 78% des plateformes B2B (Malt, Crème de la Crème, Upwork, Comeup Pro) à l'inscription d'un freelance. Cette page détaille les mentions obligatoires, fournit un modèle PDF de référence, distingue l'attestation RC Pro de l'attestation décennale (sujet de confusion fréquent en BTP) et explique comment l'obtenir en 24h."
+      intro="L'attestation de responsabilité civile professionnelle (RC Pro) est le document officiel qui prouve qu'un professionnel — auto-entrepreneur, freelance, profession libérale, agence, ESN, SELARL, SARL ou SAS — a souscrit la garantie obligatoire (ou recommandée) couvrant les dommages corporels, matériels ou immatériels qu'il pourrait causer à un tiers (client, fournisseur, passant) dans l'exercice de son activité. Elle est légalement obligatoire pour 21 métiers réglementés (BTP, santé, juridique, conseil financier, transport, sport, esthétique invasive, sécurité privée) et exigée par 78% des plateformes B2B (Malt, Crème de la Crème, Upwork, Comeup Pro) à l'inscription d'un freelance. Cette page détaille les mentions obligatoires, fournit un modèle PDF de référence, distingue l'attestation RC Pro de l'attestation décennale (sujet de confusion fréquent en BTP) et explique comment l'obtenir en 24h."
       legalReference="Code des assurances L. 113-1 + obligations métier (L. 1142-2 santé, L. 6321-1 transport, L. 511-1 BTP)"
       isObligatoire={true}
       benefits={[
@@ -136,7 +136,8 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Plafonds de garantie</strong> par sinistre + plafond annuel cumulé
-                  (recommandé minimum 1,5 M€/sinistre, 3 M€/an pour la majorité des activités)
+                  (recommandé minimum 1,5 M€ par sinistre, 3 M€ par an pour la majorité des
+                  activités)
                 </li>
                 <li>
                   <strong>Zone géographique de couverture</strong> (France métropolitaine, DOM, UE,
@@ -161,7 +162,7 @@ export default function Page() {
             <>
               <p>
                 Pour un artisan BTP, ce sont 2 documents distincts qui doivent figurer sur chaque
-                devis/facture :
+                devis ou facture :
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
@@ -202,7 +203,7 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>Plafond standard</strong>
                     </td>
-                    <td className="border p-2">1,5 M€ / sinistre</td>
+                    <td className="border p-2">1,5 M€ — sinistre</td>
                     <td className="border p-2">Coût travaux + dommages (jusqu&apos;à 8-15 M€)</td>
                   </tr>
                 </tbody>
@@ -280,7 +281,7 @@ export default function Page() {
               </ul>
               <h3>
                 Métiers non réglementés (consulting, freelance digital, photographe, formation hors
-                sport/santé)
+                sport ou santé)
               </h3>
               <p>Pas de sanction pénale stricto sensu. MAIS :</p>
               <ul>
@@ -310,7 +311,7 @@ export default function Page() {
       faq={[
         {
           q: "Tous les professionnels ont-ils l'obligation de souscrire une RC Pro ?",
-          a: 'Légalement obligatoire pour 21 métiers réglementés : BTP (Loi Spinetta + RC travaux), santé, juridique, conseil financier (CGP, CIF, IOBSP), transport (VTC, taxi, LVC), sport encadré, esthétique invasive, sécurité privée. Pour les autres (consulting, freelance digital, formation hors sport/santé) : pas obligatoire mais EXIGÉE par 78% des plateformes B2B et 100% des clients institutionnels. Dans la pratique, indispensable pour 95% des freelances/indépendants.',
+          a: 'Légalement obligatoire pour 21 métiers réglementés : BTP (Loi Spinetta + RC travaux), santé, juridique, conseil financier (CGP, CIF, IOBSP), transport (VTC, taxi, LVC), sport encadré, esthétique invasive, sécurité privée. Pour les autres (consulting, freelance digital, formation hors sport ou santé) : pas obligatoire mais EXIGÉE par 78% des plateformes B2B et 100% des clients institutionnels. Dans la pratique, indispensable pour 95% des freelances ou indépendants.',
         },
         {
           q: 'Que doit obligatoirement contenir une attestation RC Pro en 2026 ?',

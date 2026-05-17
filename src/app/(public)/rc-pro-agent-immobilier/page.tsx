@@ -19,7 +19,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro agent immobilier Carte T : obligation Loi Hoguet, plafond minimum 305 000€. Tarif 350-1 800€/an selon CA et agence. Présentation CCI lors renouvellement carte T.',
+    'RC Pro agent immobilier Carte T : obligation Loi Hoguet, plafond minimum 305 000€. Tarif 350-1 800€ par an selon CA et agence. Présentation CCI lors renouvellement carte T.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -50,7 +50,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '350-1 800€/an',
+          title: '350-1 800€ par an',
           desc: 'Indépendant 350-600€ • Agence TPE 800-1 800€ selon CA',
         },
         {
@@ -97,7 +97,7 @@ export default function Page() {
                 préjudiciable
               </li>
               <li>
-                <strong>Erreur de conseil urbanisme</strong> : POS/PLU non vérifié, terrain non
+                <strong>Erreur de conseil urbanisme</strong> : POS ou PLU non vérifié, terrain non
                 constructible
               </li>
               <li>
@@ -151,7 +151,7 @@ export default function Page() {
         },
         {
           q: 'Quel plafond RC Pro recommandé pour un mandataire indépendant ?',
-          a: '305 000€ minimum légal pour démarrer. Recommandé 1M€ dès que vous traitez biens > 500k€ (transactions immobilier moyen Paris/IDF, biens commerciaux). Pour activité résidence luxe : 2-5M€.',
+          a: '305 000€ minimum légal pour démarrer. Recommandé 1M€ dès que vous traitez biens > 500k€ (transactions immobilier moyen Paris ou IDF, biens commerciaux). Pour activité résidence luxe : 2-5M€.',
         },
         {
           q: 'Comment trouver un assureur Carte T rapidement ?',

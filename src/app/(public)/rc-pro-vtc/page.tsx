@@ -13,12 +13,12 @@ export const revalidate = 86400
 const SLUG = 'rc-pro-vtc'
 const TITLE = 'RC Pro VTC — Obligation légale, tarifs et garanties 2026'
 const TAGLINE =
-  'La Responsabilité Civile Professionnelle est obligatoire pour tout chauffeur VTC en France (LOTI / décret 2014). Tarifs Wakam, Hiscox, Stello + souscription en ligne sous 24h.'
+  'La Responsabilité Civile Professionnelle est obligatoire pour tout chauffeur VTC en France (LOTI — décret 2014). Tarifs Wakam, Hiscox, Stello + souscription en ligne sous 24h.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro VTC : obligation légale décret 2014, plafond 1.5M€ corporel + 1M€ matériel, tarif à partir de 280€/an. Comparatif Wakam, Stello, Hiscox, AXA. Attestation immédiate.',
+    'RC Pro VTC : obligation légale décret 2014, plafond 1.5M€ corporel + 1M€ matériel, tarif à partir de 280€ par an. Comparatif Wakam, Stello, Hiscox, AXA. Attestation immédiate.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -29,7 +29,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Tout chauffeur VTC immatriculé au registre EVTC doit obligatoirement souscrire une Responsabilité Civile Professionnelle (RC Pro) en complément de l'assurance automobile transport de personnes. Cette obligation découle du décret 2014-371 du 26 mars 2014 et du Code des transports (art. R. 3122-3). Ce guide détaille l'obligation, les plafonds minimaux, les garanties complémentaires utiles (perte d'exploitation, protection juridique, assistance) et les meilleurs tarifs marché 2026 pour les VTC AE, SARL et plateformes Uber/Bolt/Heetch."
+      intro="Tout chauffeur VTC immatriculé au registre EVTC doit obligatoirement souscrire une Responsabilité Civile Professionnelle (RC Pro) en complément de l'assurance automobile transport de personnes. Cette obligation découle du décret 2014-371 du 26 mars 2014 et du Code des transports (art. R. 3122-3). Ce guide détaille l'obligation, les plafonds minimaux, les garanties complémentaires utiles (perte d'exploitation, protection juridique, assistance) et les meilleurs tarifs marché 2026 pour les VTC AE, SARL et plateformes Uber, Bolt ou Heetch."
       legalReference="Décret 2014-371 + Code des transports art. R. 3122-3 + L. 124-3 C. assur."
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -48,8 +48,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'Tarif 280-650€/an',
-          desc: 'Auto-entrepreneur VTC. SARL/SAS : 450-1 200€/an selon CA',
+          title: 'Tarif 280-650€ par an',
+          desc: 'Auto-entrepreneur VTC. SARL ou SAS : 450-1 200€ par an selon CA',
         },
         {
           icon: '⚡',
@@ -101,27 +101,29 @@ export default function Page() {
               <p>Fourchettes de prix marché agrégées :</p>
               <ul>
                 <li>
-                  <strong>Auto-entrepreneur débutant</strong> (1ère année, &lt; 20k€ CA) :
-                  280-450€/an
+                  <strong>Auto-entrepreneur débutant</strong> (1ère année, &lt; 20k€ CA) : 280-450€
+                  par an
                 </li>
                 <li>
-                  <strong>Auto-entrepreneur expérimenté</strong> (3+ ans, 30-70k€ CA) : 350-550€/an
+                  <strong>Auto-entrepreneur expérimenté</strong> (3+ ans, 30-70k€ CA) : 350-550€ par
+                  an
                 </li>
                 <li>
-                  <strong>SARL / EURL VTC</strong> : 450-900€/an
+                  <strong>SARL — EURL VTC</strong> : 450-900€ par an
                 </li>
                 <li>
-                  <strong>Flotte multi-chauffeurs</strong> (3-10 véhicules) : 250-450€/an/chauffeur
+                  <strong>Flotte multi-chauffeurs</strong> (3-10 véhicules) : 250-450€ par an par
+                  chauffeur
                 </li>
                 <li>
                   <strong>Activité haut de gamme</strong> (limousine, mariage, événementiel) : 600-1
-                  200€/an
+                  200€ par an
                 </li>
               </ul>
               <p>
                 <strong>Facteurs de prime impactants</strong> : ancienneté permis B, sinistralité 36
                 mois, type de véhicule (berline classique vs van VIP), kilométrage annuel, zone
-                d&apos;exploitation (Paris/RP = prime +15-25%).
+                d&apos;exploitation (Paris ou RP = prime +15-25%).
               </p>
             </>
           ),
@@ -148,7 +150,7 @@ export default function Page() {
                   prime souvent plus élevée mais services premium inclus.
                 </li>
                 <li>
-                  <strong>MMA</strong> : alternative équilibrée, bon rapport prix/garanties.
+                  <strong>MMA</strong> : alternative équilibrée, bon rapport prix ou garanties.
                 </li>
               </ul>
             </>
@@ -162,7 +164,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une RC Pro VTC pour un débutant ?',
-          a: 'Pour un auto-entrepreneur VTC qui démarre, comptez 280-450€/an chez Wakam ou Stello (les plus compétitifs sur ce segment). Le tarif augmente si vous exercez en Île-de-France (+15-25%) ou si votre véhicule est haut de gamme.',
+          a: 'Pour un auto-entrepreneur VTC qui démarre, comptez 280-450€ par an chez Wakam ou Stello (les plus compétitifs sur ce segment). Le tarif augmente si vous exercez en Île-de-France (+15-25%)/si votre véhicule est haut de gamme.',
         },
         {
           q: 'Puis-je faire du transport de personnes sans RC Pro VTC ?',

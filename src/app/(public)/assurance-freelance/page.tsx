@@ -37,7 +37,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance freelance : RC Pro adaptée (3 à 10 M€), mutuelle TNS Madelin, prévoyance dès J0, cyber assurance. Tous statuts (EI, EURL, SASU, AE, portage salarial). Tarifs négociés à partir de 220 €/an. Devis gratuit ORIAS sous 24h.',
+    'Assurance freelance : RC Pro adaptée (3 à 10 M€), mutuelle TNS Madelin, prévoyance dès J0, cyber assurance. Tous statuts (EI, EURL, SASU, AE, portage salarial). Tarifs négociés à partir de 220 € par an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -49,7 +49,7 @@ export default function Page() {
       title={TITLE}
       tagline={TAGLINE}
       intro="L'assurance freelance désigne l'ensemble des garanties indispensables à un travailleur indépendant exerçant à son compte, quel que soit son statut juridique : auto-entrepreneur (micro-entrepreneur), entrepreneur individuel (EI), EURL, SASU, ou en portage salarial. Le pack standard freelance combine 4 garanties principales : la RC Pro (responsabilité civile professionnelle vis-à-vis des clients — exigée par 78% des plateformes B2B et indispensable pour signer avec des clients institutionnels), la mutuelle santé TNS (Loi Madelin déductible si régime réel), la prévoyance TNS (IJ + invalidité + capital décès — critique car la Sécu verse mal pour les indépendants), et la cyber assurance (de plus en plus exigée par les grands comptes). Selon votre métier (digital, conseil, créatif, formation, coaching), les plafonds RC Pro à viser varient de 1,5 M€ (freelance digital low-risk) à 10 M€ (freelance IT systèmes critiques, conseil financier homologué). Cette page présente le pack adapté à chaque type de freelance et compare les 6 assureurs spécialisés (Hiscox, April Pro, Wakam, Stello, AXA Pro Freelance, Allianz Pro)."
-      legalReference="Code des assurances + Loi Madelin (TNS) + Code de la consommation B2C / B2B"
+      legalReference="Code des assurances + Loi Madelin (TNS) + Code de la consommation B2C — B2B"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -64,12 +64,12 @@ export default function Page() {
         {
           icon: '🛡️',
           title: 'RC Pro 1,5 à 10 M€',
-          desc: 'Plafond adapté au métier : 1,5 M€ standard, 5 M€ IT/conseil financier, 10 M€ cybersécurité',
+          desc: 'Plafond adapté au métier : 1,5 M€ standard, 5 M€ IT ou conseil financier, 10 M€ cybersécurité',
         },
         {
           icon: '💰',
-          title: 'À partir de 220 €/an',
-          desc: 'Pack RC Pro de base pour freelance digital. Pack complet (RC + mutuelle + prévoyance) : 480-980€/an',
+          title: 'À partir de 220 € par an',
+          desc: 'Pack RC Pro de base pour freelance digital. Pack complet (RC + mutuelle + prévoyance) : 480-980€ par an',
         },
         {
           icon: '⚡',
@@ -113,7 +113,7 @@ export default function Page() {
                     <td className="border p-2">❌ NON</td>
                     <td className="border p-2">
                       <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
-                        /rc-pro/auto-entrepreneur
+                        /rc-pro ou auto-entrepreneur
                       </Link>
                     </td>
                   </tr>
@@ -128,7 +128,7 @@ export default function Page() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border p-2">EI / EURL gérant unique</td>
+                    <td className="border p-2">EI — EURL gérant unique</td>
                     <td className="border p-2">TNS</td>
                     <td className="border p-2">✅ OUI</td>
                     <td className="border p-2">
@@ -178,47 +178,47 @@ export default function Page() {
                     <td className="border p-2 text-right">680 € – 1 100 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Freelance dev senior / fullstack</td>
+                    <td className="border p-2">Freelance dev senior — fullstack</td>
                     <td className="border p-2 text-right">380 € – 580 €</td>
                     <td className="border p-2 text-right">980 € – 1 480 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Freelance DevOps / SRE</td>
+                    <td className="border p-2">Freelance DevOps — SRE</td>
                     <td className="border p-2 text-right">580 € – 980 €</td>
                     <td className="border p-2 text-right">1 280 € – 2 200 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Consultant management / marketing</td>
+                    <td className="border p-2">Consultant management — marketing</td>
                     <td className="border p-2 text-right">280 € – 480 €</td>
                     <td className="border p-2 text-right">820 € – 1 380 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Designer graphique / UX/UI</td>
+                    <td className="border p-2">Designer graphique — UX ou UI</td>
                     <td className="border p-2 text-right">220 € – 380 €</td>
                     <td className="border p-2 text-right">680 € – 1 100 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Photographe / vidéaste</td>
+                    <td className="border p-2">Photographe — vidéaste</td>
                     <td className="border p-2 text-right">280 € – 480 €</td>
                     <td className="border p-2 text-right">780 € – 1 280 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Coach / formateur indépendant</td>
+                    <td className="border p-2">Coach — formateur indépendant</td>
                     <td className="border p-2 text-right">220 € – 420 €</td>
                     <td className="border p-2 text-right">680 € – 1 200 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Rédacteur web / copywriter</td>
+                    <td className="border p-2">Rédacteur web — copywriter</td>
                     <td className="border p-2 text-right">220 € – 320 €</td>
                     <td className="border p-2 text-right">580 € – 980 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Traducteur / interprète</td>
+                    <td className="border p-2">Traducteur — interprète</td>
                     <td className="border p-2 text-right">220 € – 380 €</td>
                     <td className="border p-2 text-right">680 € – 1 100 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Community manager / SEO/SEA</td>
+                    <td className="border p-2">Community manager — SEO ou SEA</td>
                     <td className="border p-2 text-right">220 € – 380 €</td>
                     <td className="border p-2 text-right">680 € – 1 100 €</td>
                   </tr>
@@ -226,7 +226,7 @@ export default function Page() {
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
                 Pack complet = RC Pro + mutuelle TNS Madelin (entrée de gamme) + prévoyance TNS (IJ
-                100€/jour). Ne comprend pas la cyber assurance (+200-400€/an option) ni le
+                100€ par jour). Ne comprend pas la cyber assurance (+200-400€ par an option) ni le
                 multirisque bureau si applicable.
               </p>
             </>
@@ -256,14 +256,14 @@ export default function Page() {
                 <li>RC Pro plafond 3-5 M€ (si clients institutionnels)</li>
                 <li>Cyber assurance si manipulation de données client</li>
               </ul>
-              <h3>Maturité (3+ ans, CA &gt; 77 k€ — bascule SASU/EURL)</h3>
+              <h3>Maturité (3+ ans, CA &gt; 77 k€ — bascule SASU ou EURL)</h3>
               <ul>
                 <li>
                   Pack complet : RC Pro 5-10 M€ + multirisque bureau + prévoyance + mutuelle + cyber
                 </li>
-                <li>RCMS si SASU/SARL avec engagement passé sur dossiers complexes</li>
+                <li>RCMS si SASU ou SARL avec engagement passé sur dossiers complexes</li>
                 <li>Garantie homme-clé si dépendance forte à votre personne</li>
-                <li>Protection juridique pour litiges client/URSSAF</li>
+                <li>Protection juridique pour litiges client ou URSSAF</li>
               </ul>
             </>
           ),
@@ -277,7 +277,7 @@ export default function Page() {
                   <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     RC Pro auto-entrepreneur
                   </Link>{' '}
-                  — pour AE / micro-entrepreneurs
+                  — pour AE ou micro-entrepreneurs
                 </li>
                 <li>
                   <Link href="/rc-pro/informatique" className="text-primary-600 underline">
@@ -299,7 +299,7 @@ export default function Page() {
                 </li>
                 <li>
                   <Link href="/assurance-bureau" className="text-primary-600 underline">
-                    Assurance bureau / coworking
+                    Assurance bureau ou coworking
                   </Link>{' '}
                   — si local pro
                 </li>
@@ -317,7 +317,7 @@ export default function Page() {
       faq={[
         {
           q: "Un freelance a-t-il besoin d'une assurance ?",
-          a: "OUI — la RC Pro est exigée par 78% des plateformes B2B (Malt, Crème de la Crème, Comeup Pro, Upwork) à l'inscription. Sans elle, accès limité aux missions B2B. Au-delà du contractuel : un seul sinistre client peut détruire votre activité (responsabilité personnelle illimitée sans RC Pro). Tarif accessible : 220-580€/an pour la RC Pro seule.",
+          a: "OUI — la RC Pro est exigée par 78% des plateformes B2B (Malt, Crème de la Crème, Comeup Pro, Upwork) à l'inscription. Sans elle, accès limité aux missions B2B. Au-delà du contractuel : un seul sinistre client peut détruire votre activité (responsabilité personnelle illimitée sans RC Pro). Tarif accessible : 220-580€ par an pour la RC Pro seule.",
         },
         {
           q: 'Différence entre freelance et auto-entrepreneur côté assurance ?',
@@ -325,7 +325,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une assurance freelance complète ?',
-          a: 'Démarre à 680€/an pour pack RC + mutuelle + prévoyance pour freelance digital junior. Médiane marché : 980-1 480€/an pour freelance senior. Variables : métier (IT > conseil > créatif), CA déclaré, plafond RC choisi (1,5 à 10 M€), stade de carrière, options (cyber, multirisque bureau).',
+          a: 'Démarre à 680€ par an pour pack RC + mutuelle + prévoyance pour freelance digital junior. Médiane marché : 980-1 480€ par an pour freelance senior. Variables : métier (IT > conseil > créatif), CA déclaré, plafond RC choisi (1,5 à 10 M€), stade de carrière, options (cyber, multirisque bureau).',
         },
         {
           q: 'Puis-je déduire mes assurances freelance fiscalement ?',
@@ -333,11 +333,11 @@ export default function Page() {
         },
         {
           q: 'Cyber assurance : utile pour un freelance ?',
-          a: "OUI dès que vous manipulez des données client (90% des freelances en 2026 : CRM, base prospects, code client, design propriétaire). Coût moyen sinistre cyber freelance : 25 000-80 000€ (notification CNIL, frais juridiques, perte d'exploitation). Cyber assurance dédiée : 200-400€/an supplémentaires. ROI évident dès le 1er incident.",
+          a: "OUI dès que vous manipulez des données client (90% des freelances en 2026 : CRM, base prospects, code client, design propriétaire). Coût moyen sinistre cyber freelance : 25 000-80 000€ (notification CNIL, frais juridiques, perte d'exploitation). Cyber assurance dédiée : 200-400€ par an supplémentaires. ROI évident dès le 1er incident.",
         },
         {
           q: 'Plateforme B2B : quelle attestation RC Pro fournir ?',
-          a: "Une attestation RC Pro CONFORME 2026 (arrêté du 23 janvier 2024) avec : plafond minimum 1,5 M€/sinistre, activité couverte clairement libellée, période de validité précise, mention assureur + n° police. Pas de validité minimale exigée par les plateformes (acceptable dès le 1er jour du contrat). Pour modèle conforme : voir <a href='/guides/attestation-rc-pro' class='text-primary-600 underline'>/guides/attestation-rc-pro</a>.",
+          a: "Une attestation RC Pro CONFORME 2026 (arrêté du 23 janvier 2024) avec : plafond minimum 1,5 M€ par sinistre, activité couverte clairement libellée, période de validité précise, mention assureur + n° police. Pas de validité minimale exigée par les plateformes (acceptable dès le 1er jour du contrat). Pour modèle conforme : voir <a href='/guides/attestation-rc-pro' class='text-primary-600 underline'>/guides/attestation-rc-pro</a>.",
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance freelance ?',

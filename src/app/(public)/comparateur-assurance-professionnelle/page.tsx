@@ -28,7 +28,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Comparer 3-5 assureurs avant de souscrire est l'étape CRITIQUE pour optimiser le rapport coût/protection de votre assurance professionnelle. Notre cabinet ORIAS compare systématiquement 8 assureurs distribués en France métropolitaine sur EXACTEMENT le même cahier des charges (couverture identique, plafonds identiques, franchises identiques) — économies typiques 15-30% pour des garanties équivalentes ou supérieures. Cette page présente le comparatif détaillé des 8 assureurs (Allianz Pro, AXA Pro, MMA Pro, MAAF Pro, Hiscox, April Pro, Generali Pro, Wakam), leurs spécialités sectorielles, les critères de choix prioritaires et la procédure de devis comparatif gratuit en 24h."
+      intro="Comparer 3-5 assureurs avant de souscrire est l'étape CRITIQUE pour optimiser le rapport coût ou protection de votre assurance professionnelle. Notre cabinet ORIAS compare systématiquement 8 assureurs distribués en France métropolitaine sur EXACTEMENT le même cahier des charges (couverture identique, plafonds identiques, franchises identiques) — économies typiques 15-30% pour des garanties équivalentes ou supérieures. Cette page présente le comparatif détaillé des 8 assureurs (Allianz Pro, AXA Pro, MMA Pro, MAAF Pro, Hiscox, April Pro, Generali Pro, Wakam), leurs spécialités sectorielles, les critères de choix prioritaires et la procédure de devis comparatif gratuit en 24h."
       legalReference="Recommandation ACPR 2024-R-03 (devoir de conseil tracé du courtier ORIAS)"
       isObligatoire={false}
       benefits={[
@@ -40,7 +40,7 @@ export default function Page() {
         {
           icon: '💰',
           title: 'Économie 15-30%',
-          desc: 'Typique vs souscription directe sans comparatif (assureur connu / par défaut)',
+          desc: 'Typique vs souscription directe sans comparatif (assureur connu — par défaut)',
         },
         {
           icon: '⏱️',
@@ -81,7 +81,7 @@ export default function Page() {
                       <strong>AXA Pro</strong>
                     </td>
                     <td className="border p-2">
-                      Tarifs compétitifs PME, gestion en ligne, BTP / taxi
+                      Tarifs compétitifs PME, gestion en ligne, BTP ou taxi
                     </td>
                     <td className="border p-2">Service client par téléphone variable</td>
                   </tr>
@@ -98,7 +98,7 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>MAAF Pro</strong>
                     </td>
-                    <td className="border p-2">Mutualiste, prix attractifs TPE / PME</td>
+                    <td className="border p-2">Mutualiste, prix attractifs TPE — PME</td>
                     <td className="border p-2">Garanties standard (peu de premium)</td>
                   </tr>
                   <tr>
@@ -115,7 +115,7 @@ export default function Page() {
                       <strong>April Pro</strong>
                     </td>
                     <td className="border p-2">
-                      Modulaire à la carte, app mobile, BTP / santé TNS
+                      Modulaire à la carte, app mobile, BTP ou santé TNS
                     </td>
                     <td className="border p-2">
                       Pas de spécialisation profonde sur certains secteurs
@@ -133,7 +133,7 @@ export default function Page() {
                       <strong>Wakam</strong>
                     </td>
                     <td className="border p-2">
-                      100% digital, devis 6h, VTC / mobilité / e-commerce
+                      100% digital, devis 6h, VTC ou mobilité ou e-commerce
                     </td>
                     <td className="border p-2">Pas de réseau physique</td>
                   </tr>
@@ -152,8 +152,8 @@ export default function Page() {
                   exclusions) — sinon comparaison faussée
                 </li>
                 <li>
-                  <strong>Spécialité sectorielle</strong> de l&apos;assureur (Hiscox = freelance/IT,
-                  SMABTP = BTP, MACSF = santé, Wakam = mobilité)
+                  <strong>Spécialité sectorielle</strong> de l&apos;assureur (Hiscox = freelance ou
+                  IT, SMABTP = BTP, MACSF = santé, Wakam = mobilité)
                 </li>
                 <li>
                   <strong>Qualité du service sinistres</strong> : avis Trustpilot, délai moyen
@@ -183,7 +183,7 @@ export default function Page() {
         },
         {
           q: 'Quel est le meilleur assureur professionnel en 2026 ?',
-          a: "Aucun « meilleur » dans l'absolu — dépend du métier : freelance / IT → Hiscox. BTP → SMABTP / MAAF Pro. Santé → MACSF. Restauration → Generali. VTC / mobilité → Wakam. PME multi-secteurs → Allianz Pro / AXA Pro. Notre comparateur identifie le meilleur pour VOTRE profil exact.",
+          a: "Aucun « meilleur » dans l'absolu — dépend du métier : freelance — IT → Hiscox. BTP → SMABTP — MAAF Pro. Santé → MACSF. Restauration → Generali. VTC — mobilité → Wakam. PME multi-secteurs → Allianz Pro — AXA Pro. Notre comparateur identifie le meilleur pour VOTRE profil exact.",
         },
         {
           q: 'Comparer plusieurs devis : méthode ?',

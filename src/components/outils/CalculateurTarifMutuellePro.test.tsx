@@ -13,8 +13,8 @@ describe('CalculateurTarifMutuellePro — UI', () => {
 
   it('affiche tarif mensuel + annuel', () => {
     render(<CalculateurTarifMutuellePro />)
-    expect(screen.getAllByText(/€\/mois/i).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/€\/an/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/€ par mois/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/€ par an/i).length).toBeGreaterThan(0)
   })
 
   it('Loi ANI : effectif >= 1 affiche part employeur', () => {

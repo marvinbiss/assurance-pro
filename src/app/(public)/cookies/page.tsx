@@ -125,7 +125,7 @@ export default function CookiesPage() {
             <tbody>
               <tr>
                 <td>Meta Pixel</td>
-                <td>Mesure conversion campagnes Facebook/Instagram</td>
+                <td>Mesure conversion campagnes Facebook ou Instagram</td>
                 <td>90 jours</td>
                 <td>Meta Platforms Ireland Ltd</td>
               </tr>

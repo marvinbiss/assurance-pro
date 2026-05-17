@@ -70,49 +70,49 @@ const METIERS_DECENNALE: readonly MetierOption[] = [
   { value: 'menuisier', label: 'Menuisier', base: 1050, spread: 0.3 },
   { value: 'carreleur', label: 'Carreleur', base: 950, spread: 0.32 },
   { value: 'platrier', label: 'Plâtrier-plaquiste', base: 850, spread: 0.3 },
-  { value: 'terrassier', label: 'Terrassier / VRD', base: 1600, spread: 0.3 },
+  { value: 'terrassier', label: 'Terrassier — VRD', base: 1600, spread: 0.3 },
   { value: 'charpentier', label: 'Charpentier', base: 1800, spread: 0.28 },
-  { value: 'chauffagiste', label: 'Chauffagiste / clim', base: 1200, spread: 0.3 },
+  { value: 'chauffagiste', label: 'Chauffagiste — clim', base: 1200, spread: 0.3 },
   { value: 'paysagiste', label: 'Paysagiste avec gros œuvre', base: 950, spread: 0.32 },
 ] as const
 
 const METIERS_RC_PRO: readonly MetierOption[] = [
   { value: 'consultant', label: 'Consultant indépendant', base: 320, spread: 0.4 },
-  { value: 'freelance-it', label: 'Freelance IT / dev', base: 420, spread: 0.42 },
-  { value: 'agence-web', label: 'Agence web / digitale', base: 580, spread: 0.4 },
-  { value: 'coach', label: 'Coach / formateur', base: 280, spread: 0.4 },
-  { value: 'graphiste', label: 'Graphiste / designer', base: 260, spread: 0.4 },
-  { value: 'photographe', label: 'Photographe / vidéaste', base: 340, spread: 0.4 },
-  { value: 'avocat-conseil', label: 'Avocat / conseil juridique', base: 720, spread: 0.35 },
-  { value: 'comptable', label: 'Comptable / expert-comptable', base: 650, spread: 0.35 },
+  { value: 'freelance-it', label: 'Freelance IT — dev', base: 420, spread: 0.42 },
+  { value: 'agence-web', label: 'Agence web — digitale', base: 580, spread: 0.4 },
+  { value: 'coach', label: 'Coach — formateur', base: 280, spread: 0.4 },
+  { value: 'graphiste', label: 'Graphiste — designer', base: 260, spread: 0.4 },
+  { value: 'photographe', label: 'Photographe — vidéaste', base: 340, spread: 0.4 },
+  { value: 'avocat-conseil', label: 'Avocat — conseil juridique', base: 720, spread: 0.35 },
+  { value: 'comptable', label: 'Comptable — expert-comptable', base: 650, spread: 0.35 },
   { value: 'architecte-interieur', label: 'Architecte d’intérieur', base: 480, spread: 0.38 },
-  { value: 'redacteur', label: 'Rédacteur / traducteur', base: 220, spread: 0.4 },
+  { value: 'redacteur', label: 'Rédacteur — traducteur', base: 220, spread: 0.4 },
 ] as const
 
 const METIERS_MULTIRISQUE: readonly MetierOption[] = [
   { value: 'commerce-detail', label: 'Commerce de détail', base: 540, spread: 0.35 },
-  { value: 'restaurant', label: 'Restaurant / brasserie', base: 980, spread: 0.32 },
-  { value: 'salon-coiffure', label: 'Salon coiffure / esthétique', base: 460, spread: 0.35 },
-  { value: 'bureau-services', label: 'Bureau / activité de services', base: 380, spread: 0.36 },
+  { value: 'restaurant', label: 'Restaurant — brasserie', base: 980, spread: 0.32 },
+  { value: 'salon-coiffure', label: 'Salon coiffure — esthétique', base: 460, spread: 0.35 },
+  { value: 'bureau-services', label: 'Bureau — activité de services', base: 380, spread: 0.36 },
   { value: 'atelier-artisan', label: 'Atelier artisan', base: 620, spread: 0.34 },
-  { value: 'cabinet-medical', label: 'Cabinet médical / paramédical', base: 540, spread: 0.33 },
-  { value: 'boulangerie', label: 'Boulangerie / pâtisserie', base: 880, spread: 0.32 },
+  { value: 'cabinet-medical', label: 'Cabinet médical — paramédical', base: 540, spread: 0.33 },
+  { value: 'boulangerie', label: 'Boulangerie — pâtisserie', base: 880, spread: 0.32 },
   { value: 'garage-auto', label: 'Garage automobile', base: 1180, spread: 0.3 },
-  { value: 'pharmacie', label: 'Pharmacie / officine', base: 1320, spread: 0.28 },
+  { value: 'pharmacie', label: 'Pharmacie — officine', base: 1320, spread: 0.28 },
   { value: 'hotel', label: 'Hôtellerie', base: 1450, spread: 0.3 },
 ] as const
 
 const METIERS_CYBER: readonly MetierOption[] = [
   { value: 'tpe-services', label: 'TPE services (<10 salariés)', base: 480, spread: 0.4 },
   { value: 'pme-services', label: 'PME services (10-50)', base: 1200, spread: 0.38 },
-  { value: 'ecommerce', label: 'E-commerce / marketplace', base: 1450, spread: 0.4 },
-  { value: 'editeur-saas', label: 'Éditeur SaaS / tech', base: 1800, spread: 0.38 },
-  { value: 'cabinet-conseil', label: 'Cabinet conseil / audit', base: 920, spread: 0.36 },
-  { value: 'sante', label: 'Acteur santé / cabinet', base: 1650, spread: 0.35 },
-  { value: 'industrie-pme', label: 'Industrie / PME production', base: 1380, spread: 0.36 },
-  { value: 'media-agence', label: 'Média / agence', base: 780, spread: 0.38 },
-  { value: 'finance-courtage', label: 'Finance / courtage', base: 2100, spread: 0.34 },
-  { value: 'association', label: 'Association / ESS', base: 360, spread: 0.4 },
+  { value: 'ecommerce', label: 'E-commerce — marketplace', base: 1450, spread: 0.4 },
+  { value: 'editeur-saas', label: 'Éditeur SaaS — tech', base: 1800, spread: 0.38 },
+  { value: 'cabinet-conseil', label: 'Cabinet conseil — audit', base: 920, spread: 0.36 },
+  { value: 'sante', label: 'Acteur santé — cabinet', base: 1650, spread: 0.35 },
+  { value: 'industrie-pme', label: 'Industrie — PME production', base: 1380, spread: 0.36 },
+  { value: 'media-agence', label: 'Média — agence', base: 780, spread: 0.38 },
+  { value: 'finance-courtage', label: 'Finance — courtage', base: 2100, spread: 0.34 },
+  { value: 'association', label: 'Association — ESS', base: 360, spread: 0.4 },
 ] as const
 
 const STATUT_MODIFIER: Readonly<Record<Statut, number>> = {
@@ -124,7 +124,7 @@ const STATUT_MODIFIER: Readonly<Record<Statut, number>> = {
 const STATUTS: readonly { readonly value: Statut; readonly label: string }[] = [
   { value: 'auto-entrepreneur', label: 'Auto-entrepreneur' },
   { value: 'sarl', label: 'SARL' },
-  { value: 'sas', label: 'SAS / SASU' },
+  { value: 'sas', label: 'SAS — SASU' },
 ] as const
 
 const GARANTIE_LABELS: Readonly<Record<Garantie, string>> = {
@@ -132,14 +132,14 @@ const GARANTIE_LABELS: Readonly<Record<Garantie, string>> = {
   'rc-pro': 'RC Pro',
   'multirisque-pro': 'Multirisque Pro',
   cyber: 'Cyber-assurance',
-  'mutuelle-pro': 'Mutuelle TNS / Pro',
-  vtc: 'Assurance VTC / Taxi',
+  'mutuelle-pro': 'Mutuelle TNS — Pro',
+  vtc: 'Assurance VTC — Taxi',
   'flotte-auto': 'Flotte automobile pro',
   'dommages-ouvrage': 'Dommages-ouvrage (DO)',
   'tous-risques-chantier': 'Tous Risques Chantier (TRC)',
   'transport-marchandises': 'Transport de marchandises',
   'moto-pro': 'Moto professionnelle',
-  prevoyance: 'Prévoyance TNS / dirigeant',
+  prevoyance: 'Prévoyance TNS — dirigeant',
   'protection-juridique': 'Protection juridique pro',
   'homme-cle': 'Assurance Homme-clé',
 }
@@ -810,7 +810,7 @@ function RcProFields({ ids }: { ids: Record<string, string> }) {
           value={f.activite}
           options={[
             { value: 'standard', label: 'Standard' },
-            { value: 'sensible', label: 'Sensible (finance / santé / juridique)' },
+            { value: 'sensible', label: 'Sensible (finance — santé — juridique)' },
           ]}
           onChange={f.setActivite}
           cols={2}
@@ -1013,8 +1013,8 @@ function VtcFields({ ids }: { ids: Record<string, string> }) {
           value={f.vehicule}
           options={[
             { value: 'standard', label: 'Standard (berline)' },
-            { value: 'premium', label: 'Premium / luxe' },
-            { value: 'van', label: 'Van / 6+ places' },
+            { value: 'premium', label: 'Premium — luxe' },
+            { value: 'van', label: 'Van — 6+ places' },
           ]}
           onChange={f.setVehicule}
         />
@@ -1023,7 +1023,7 @@ function VtcFields({ ids }: { ids: Record<string, string> }) {
           label="Mode d'exploitation"
           value={f.plateforme}
           options={[
-            { value: 'uber-bolt', label: 'VTC plateformes (Uber / Bolt)' },
+            { value: 'uber-bolt', label: 'VTC plateformes (Uber — Bolt)' },
             { value: 'taxi', label: 'Taxi traditionnel (licence ADS)' },
           ]}
           onChange={f.setPlateforme}
@@ -1033,7 +1033,7 @@ function VtcFields({ ids }: { ids: Record<string, string> }) {
       </div>
       <ResultBlock
         range={f.range}
-        hint="Assurance VTC / taxi — usage transport public de personnes (art. R. 211-3 C. assur.)."
+        hint="Assurance VTC — taxi — usage transport public de personnes (art. R. 211-3 C. assur.)."
       />
     </>
   )
@@ -1107,9 +1107,9 @@ function FlotteFields({ ids }: { ids: Record<string, string> }) {
           label="Type de véhicules"
           value={f.typeVehicule}
           options={[
-            { value: 'berline', label: 'Berlines / VP' },
+            { value: 'berline', label: 'Berlines — VP' },
             { value: 'utilitaire', label: 'Utilitaires (VUL)' },
-            { value: 'mixte', label: 'Mixte VP/VUL' },
+            { value: 'mixte', label: 'Mixte VP ou VUL' },
             { value: 'pl', label: 'Poids lourds (>3,5 t)' },
           ]}
           onChange={f.setTypeVehicule}
@@ -1199,7 +1199,7 @@ function DoFields({ ids }: { ids: Record<string, string> }) {
           value={f.typeOuvrage}
           options={[
             { value: 'maison-neuve', label: 'Maison neuve' },
-            { value: 'extension', label: 'Extension / surélévation' },
+            { value: 'extension', label: 'Extension — surélévation' },
             { value: 'renovation-lourde', label: 'Rénovation lourde' },
             { value: 'collectif', label: 'Immeuble collectif' },
           ]}
@@ -1301,7 +1301,7 @@ function TrcFields({ ids }: { ids: Record<string, string> }) {
           value={f.complexite}
           options={[
             { value: 'standard', label: 'Standard' },
-            { value: 'technique', label: 'Technique (charpente / VRD)' },
+            { value: 'technique', label: 'Technique (charpente — VRD)' },
             { value: 'tres-technique', label: 'Très technique (ouvrage d’art)' },
           ]}
           onChange={f.setComplexite}
@@ -1402,9 +1402,9 @@ function TransportFields({ ids }: { ids: Record<string, string> }) {
           label="Type de marchandises"
           value={f.typeMarch}
           options={[
-            { value: 'standard', label: 'Standard / palettisé' },
-            { value: 'refrigeree', label: 'Réfrigérée / sous T°' },
-            { value: 'fragile-electro', label: 'Fragile / électronique' },
+            { value: 'standard', label: 'Standard — palettisé' },
+            { value: 'refrigeree', label: 'Réfrigérée — sous T°' },
+            { value: 'fragile-electro', label: 'Fragile — électronique' },
             { value: 'matiere-dangereuse', label: 'Matières dangereuses (ADR)' },
           ]}
           onChange={f.setTypeMarch}
@@ -1493,10 +1493,10 @@ function MotoProFields({ ids }: { ids: Record<string, string> }) {
           label="Usage professionnel"
           value={f.usage}
           options={[
-            { value: 'livraison', label: 'Livraison repas / colis' },
+            { value: 'livraison', label: 'Livraison repas — colis' },
             { value: 'coursier', label: 'Coursier urbain' },
             { value: 'location', label: 'Location à des tiers' },
-            { value: 'demo-revente', label: 'Démo / revente' },
+            { value: 'demo-revente', label: 'Démo — revente' },
           ]}
           onChange={f.setUsage}
           cols={4}
@@ -1669,9 +1669,9 @@ function PjFields({ ids }: { ids: Record<string, string> }) {
           label="Secteur d'activité"
           value={f.secteur}
           options={[
-            { value: 'commerce-services', label: 'Commerce / services' },
-            { value: 'btp', label: 'BTP / artisanat' },
-            { value: 'sante', label: 'Santé / paramédical' },
+            { value: 'commerce-services', label: 'Commerce — services' },
+            { value: 'btp', label: 'BTP — artisanat' },
+            { value: 'sante', label: 'Santé — paramédical' },
             { value: 'professions-libe', label: 'Professions libérales' },
           ]}
           onChange={f.setSecteur}
@@ -1802,10 +1802,10 @@ function HcFields({ ids }: { ids: Record<string, string> }) {
           label="Secteur d'activité"
           value={f.secteur}
           options={[
-            { value: 'tech-saas', label: 'Tech / SaaS' },
-            { value: 'services-conseil', label: 'Services / conseil' },
+            { value: 'tech-saas', label: 'Tech — SaaS' },
+            { value: 'services-conseil', label: 'Services — conseil' },
             { value: 'industrie', label: 'Industrie' },
-            { value: 'commerce-distrib', label: 'Commerce / distribution' },
+            { value: 'commerce-distrib', label: 'Commerce — distribution' },
           ]}
           onChange={f.setSecteur}
           cols={4}
@@ -1813,7 +1813,7 @@ function HcFields({ ids }: { ids: Record<string, string> }) {
       </div>
       <ResultBlock
         range={f.range}
-        hint="Homme-clé — indemnise pertes d'exploitation suite à disparition / incapacité du dirigeant."
+        hint="Homme-clé — indemnise pertes d'exploitation suite à disparition — incapacité du dirigeant."
       />
     </>
   )
@@ -1840,7 +1840,7 @@ function ResultBlock({ range, hint }: { range: Range; hint: string }) {
         <span className="mx-2 text-charcoal-400">→</span>
         {formatEuros(range.max)}
         <span className="font-body ml-1 align-baseline text-base font-normal text-charcoal-600">
-          /an
+          par an
         </span>
       </p>
       <p className="mt-2 flex items-start gap-1.5 text-xs leading-relaxed text-charcoal-600">

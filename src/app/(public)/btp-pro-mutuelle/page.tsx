@@ -15,7 +15,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'BTP Pro Mutuelle : comparatif PRO BTP S1-S4, April Pro Santé, Harmonie Mutuelle BTP, MMA Mutuelle Pro. Tarifs 38-180€/mois. Madelin déductible TNS. Devis 24h.',
+    'BTP Pro Mutuelle : comparatif PRO BTP S1-S4, April Pro Santé, Harmonie Mutuelle BTP, MMA Mutuelle Pro. Tarifs 38-180€ par mois. Madelin déductible TNS. Devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -39,7 +39,7 @@ export default function Page() {
         {
           icon: '💼',
           title: 'Madelin déductible TNS',
-          desc: 'Cotisations déductibles du résultat imposable pour artisans/EI/EURL',
+          desc: 'Cotisations déductibles du résultat imposable pour artisans, EI ou EURL',
         },
         {
           icon: '🤝',
@@ -48,7 +48,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '38-180€/mois',
+          title: '38-180€ par mois',
           desc: 'AE débutant 38-65€ • Artisan TNS 65-120€ • Dirigeant SARL 95-180€',
         },
       ]}
@@ -59,22 +59,22 @@ export default function Page() {
             <ul>
               <li>
                 <strong>PRO BTP</strong> : institution paritaire historique (1944), 1.5M+ adhérents.
-                4 formules S1-S4 + pack P1-P4. Tarif S3 typique : 65-140€/mois. Services annexes
+                4 formules S1-S4 + pack P1-P4. Tarif S3 typique : 65-140€ par mois. Services annexes
                 (retraite, vacances, logement social).
               </li>
               <li>
                 <strong>April Pro Santé</strong> : assureur privé (groupe APRIL coté en bourse).
                 Best price sur profils TNS jeunes (-15-25% vs PRO BTP S3). Tarif S3 équivalent :
-                55-110€/mois. Souscription 100% en ligne possible.
+                55-110€ par mois. Souscription 100% en ligne possible.
               </li>
               <li>
                 <strong>Harmonie Mutuelle BTP</strong> : groupe VYV (mutualiste). Alternative
-                paritaire à PRO BTP, services proches. Tarif S3 : 60-125€/mois. Forfait orthodontie
-                souvent meilleur (1 200€/an vs 800€ PRO BTP).
+                paritaire à PRO BTP, services proches. Tarif S3 : 60-125€ par mois. Forfait
+                orthodontie souvent meilleur (1 200€ par an vs 800€ PRO BTP).
               </li>
               <li>
                 <strong>MMA Mutuelle Pro</strong> : groupe Covéa. Flexibilité formules + bonne
-                couverture optique/dentaire. Tarif Niveau 3 : 70-130€/mois. Pack RC Pro + MMA
+                couverture optique ou dentaire. Tarif Niveau 3 : 70-130€ par mois. Pack RC Pro + MMA
                 Mutuelle = -15-25%.
               </li>
             </ul>
@@ -93,12 +93,12 @@ export default function Page() {
                 BTP (forfait ortho enfants meilleur) ou PRO BTP S3.
               </li>
               <li>
-                <strong>Dirigeant SARL/SAS BTP (5+ salariés)</strong> : Contrat collectif ANI 2013
-                obligatoire. PRO BTP collectif ou MMA Pro collectif.
+                <strong>Dirigeant SARL ou SAS BTP (5+ salariés)</strong> : Contrat collectif ANI
+                2013 obligatoire. PRO BTP collectif ou MMA Pro collectif.
               </li>
               <li>
-                <strong>Auto-entrepreneur BTP solo</strong> : April Pro Santé formule basique
-                38-55€/mois.
+                <strong>Auto-entrepreneur BTP solo</strong> : April Pro Santé formule basique 38-55€
+                par mois.
               </li>
               <li>
                 <strong>Pré-retraité ou retraité BTP</strong> : PRO BTP retraite (offre dédiée
@@ -131,7 +131,7 @@ export default function Page() {
                 <strong>Optique</strong> : protection lunettes spéciales (chantiers poussiéreux)
               </li>
               <li>
-                <strong>Dentaire renforcé</strong> : forfait 1 200€+/an pour soins préventifs et
+                <strong>Dentaire renforcé</strong> : forfait 1 200€+ par an pour soins préventifs et
                 prothèses
               </li>
               <li>
@@ -148,7 +148,7 @@ export default function Page() {
       faq={[
         {
           q: 'PRO BTP ou April Pro Santé : lequel choisir ?',
-          a: 'Pour TNS jeune (25-45 ans) sans besoins santé importants : April Pro Santé S3 (55-110€/mois, -15-25% vs PRO BTP). Pour artisan attaché à institution paritaire BTP + besoins services annexes (retraite, vacances) : PRO BTP S3.',
+          a: 'Pour TNS jeune (25-45 ans) sans besoins santé importants : April Pro Santé S3 (55-110€ par mois, -15-25% vs PRO BTP). Pour artisan attaché à institution paritaire BTP + besoins services annexes (retraite, vacances) : PRO BTP S3.',
         },
         {
           q: 'Mutuelle BTP obligatoire pour les salariés ?',
@@ -160,7 +160,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une mutuelle BTP pour un artisan ?',
-          a: 'Formule basique S1 ou Niveau 1 : 38-65€/mois. Standard S2-S3 : 65-120€/mois. Premium S4 ou Niveau 4 (couverture étendue famille) : 120-180€/mois. Madelin déductible TNS.',
+          a: 'Formule basique S1 ou Niveau 1 : 38-65€ par mois. Standard S2-S3 : 65-120€ par mois. Premium S4 ou Niveau 4 (couverture étendue famille) : 120-180€ par mois. Madelin déductible TNS.',
         },
       ]}
       relatedMetiers={[

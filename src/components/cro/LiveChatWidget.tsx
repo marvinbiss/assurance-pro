@@ -66,7 +66,7 @@ export function LiveChatWidget({
       w.CRISP_WEBSITE_ID = websiteId
 
       const script = document.createElement('script')
-      script.src = 'https://client.crisp.chat/l.js'
+      script.src = 'https:/ par client.crisp.chat/l.js'
       script.async = true
       document.head.appendChild(script)
     }, delayMs)

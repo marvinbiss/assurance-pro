@@ -32,7 +32,7 @@ export async function subscribeNewsletter(formData: FormData): Promise<Newslette
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL
     const key = process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     if (url && key) {
-      const res = await fetch(`${url}/rest/v1/newsletter_subscribers`, {
+      const res = await fetch(`${url}/rest / v1/newsletter_subscribers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

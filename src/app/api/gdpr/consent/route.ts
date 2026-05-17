@@ -116,7 +116,7 @@ export async function POST(request: Request) {
   } catch (error) {
     logger.error('GDPR consent error:', error)
     captureApiException(error, {
-      route: 'api/gdpr/consent',
+      route: 'api, gdpr ou consent',
       category: 'gdpr',
       extra: { method: 'POST' },
     })
@@ -169,7 +169,7 @@ export async function GET(_request: Request) {
   } catch (error) {
     logger.error('GDPR consent fetch error:', error)
     captureApiException(error, {
-      route: 'api/gdpr/consent',
+      route: 'api, gdpr ou consent',
       category: 'gdpr',
       extra: { method: 'GET' },
     })

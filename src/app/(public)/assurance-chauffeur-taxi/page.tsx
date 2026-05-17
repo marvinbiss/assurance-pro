@@ -28,7 +28,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance chauffeur de taxi : mutuelle santé adaptée (longues stations assises, stress urbain), prévoyance IJ dès J0, garantie invalidité, protection juridique conducteur, garantie agression. Tarifs 480-1 280 €/an. Devis gratuit ORIAS sous 24h.',
+    'Assurance chauffeur de taxi : mutuelle santé adaptée (longues stations assises, stress urbain), prévoyance IJ dès J0, garantie invalidité, protection juridique conducteur, garantie agression. Tarifs 480-1 280 € par an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -39,7 +39,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance chauffeur de taxi désigne l'ensemble des garanties PERSONNELLES dont a besoin un chauffeur (artisan ou salarié) au-delà de l'assurance véhicule pro et de la RC pro chauffeur. Spécifiquement adaptée aux risques du métier : longues stations assises (problèmes lombaires, troubles vasculaires), stress urbain et nocturne (cardiovasculaire), risque d'agression dans les zones sensibles (Paris IDF, grandes métropoles), arrêts de travail = revenus à zéro pour les artisans-taxis solo. Le pack standard combine : mutuelle santé adaptée (forfait kiné/ostéo renforcé, médecines douces), prévoyance IJ dès J0 (compense la perte de revenu), garantie invalidité, protection juridique conducteur (défense en cas de litige client/contrôle), garantie agression (capital décès/invalidité majoré en cas d'agression). Les tarifs 2026 démarrent à 480 € HT/an pour un chauffeur salarié province jusqu'à 1 280 € HT/an pour un artisan-taxi parisien avec couverture étendue. Cette page est complémentaire à /assurance-taxi (qui couvre le véhicule + ADS + RC pro)."
+      intro="L'assurance chauffeur de taxi désigne l'ensemble des garanties PERSONNELLES dont a besoin un chauffeur (artisan ou salarié) au-delà de l'assurance véhicule pro et de la RC pro chauffeur. Spécifiquement adaptée aux risques du métier : longues stations assises (problèmes lombaires, troubles vasculaires), stress urbain et nocturne (cardiovasculaire), risque d'agression dans les zones sensibles (Paris IDF, grandes métropoles), arrêts de travail = revenus à zéro pour les artisans-taxis solo. Le pack standard combine : mutuelle santé adaptée (forfait kiné ou ostéo renforcé, médecines douces), prévoyance IJ dès J0 (compense la perte de revenu), garantie invalidité, protection juridique conducteur (défense en cas de litige client ou contrôle), garantie agression (capital décès ou invalidité majoré en cas d'agression). Les tarifs 2026 démarrent à 480 € HT par an pour un chauffeur salarié province jusqu'à 1 280 € HT par an pour un artisan-taxi parisien avec couverture étendue. Cette page est complémentaire à /assurance-taxi (qui couvre le véhicule + ADS + RC pro)."
       legalReference="Loi Madelin (TNS) + Code de la santé publique + Code des transports"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -49,7 +49,7 @@ export default function Page() {
         {
           icon: '🩺',
           title: 'Mutuelle adaptée',
-          desc: 'Forfait kiné/ostéo renforcé, médecines douces, lombaires, vasculaires (risques métier)',
+          desc: 'Forfait kiné ou ostéo renforcé, médecines douces, lombaires, vasculaires (risques métier)',
         },
         {
           icon: '⚡',
@@ -59,7 +59,7 @@ export default function Page() {
         {
           icon: '🚨',
           title: 'Garantie agression',
-          desc: "Capital décès/invalidité majoré (×2) en cas d'agression dans le cadre du métier",
+          desc: "Capital décès ou invalidité majoré (×2) en cas d'agression dans le cadre du métier",
         },
         {
           icon: '⚖️',
@@ -92,12 +92,12 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Risque accident professionnel</strong> : la conduite intensive multiplie
-                  le risque de sinistre matériel/corporel par 3 vs un usage perso
+                  le risque de sinistre matériel ou corporel par 3 vs un usage perso
                 </li>
                 <li>
                   <strong>Pour les ARTISANS-TAXIS solo</strong> : un arrêt de travail = revenus à
-                  zéro. Sans prévoyance, asphyxie financière rapide (charges fixes = 1 800-3
-                  200€/mois entre ADS, véhicule, assurance pro, mutuelle).
+                  zéro. Sans prévoyance, asphyxie financière rapide (charges fixes = 1 800-3 200€
+                  par mois entre ADS, véhicule, assurance pro, mutuelle).
                 </li>
               </ul>
             </>
@@ -112,7 +112,8 @@ export default function Page() {
                   <strong>Mutuelle santé adaptée</strong> :
                   <ul>
                     <li>
-                      Forfait kinésithérapie/ostéopathie RENFORCÉ (4-8 séances/an au lieu de 2-4)
+                      Forfait kinésithérapie ou ostéopathie RENFORCÉ (4-8 séances par an au lieu de
+                      2-4)
                     </li>
                     <li>Médecines douces (acupuncture, sophrologie) pour la gestion du stress</li>
                     <li>Bilan cardiovasculaire annuel pris en charge</li>
@@ -134,9 +135,9 @@ export default function Page() {
                   de l&apos;intégrité physique
                 </li>
                 <li>
-                  <strong>Garantie agression</strong> : capital décès/invalidité MAJORÉ (×2) si le
-                  sinistre survient dans le cadre d&apos;une agression au travail. Indemnisation des
-                  frais psychologiques post-traumatiques (consultations, traitement).
+                  <strong>Garantie agression</strong> : capital décès ou invalidité MAJORÉ (×2) si
+                  le sinistre survient dans le cadre d&apos;une agression au travail. Indemnisation
+                  des frais psychologiques post-traumatiques (consultations, traitement).
                 </li>
                 <li>
                   <strong>Protection juridique conducteur</strong> : défense en cas de litige client
@@ -186,8 +187,8 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables : âge (~+1,5%/an), antécédents médicaux, niveau d&apos;IJ choisi (50 à
-                200€/jour), couverture famille, zone géographique (Paris +20-30% pour le risque
+                Variables : âge (~+1,5% par an), antécédents médicaux, niveau d&apos;IJ choisi (50 à
+                200€ par jour), couverture famille, zone géographique (Paris +20-30% pour le risque
                 d&apos;agression). Madelin déductible UNIQUEMENT au régime réel d&apos;imposition.
               </p>
             </>
@@ -229,14 +230,14 @@ export default function Page() {
                       <strong>/assurance-chauffeur-taxi</strong> (cette page)
                     </td>
                     <td className="border p-2">
-                      Mutuelle santé adaptée + prévoyance IJ/invalidité + garantie agression +
+                      Mutuelle santé adaptée + prévoyance IJ ou invalidité + garantie agression +
                       protection juridique CONDUCTEUR
                     </td>
                   </tr>
                 </tbody>
               </table>
               <p className="mt-3">
-                <strong>Pack complet artisan-taxi 2026</strong> : ~3 000-5 000 €/an (assurance
+                <strong>Pack complet artisan-taxi 2026</strong> : ~3 000-5 000 € par an (assurance
                 véhicule + ADS + RC pro chauffeur + mutuelle + prévoyance + garantie agression + PJ
                 conducteur). Notre cabinet propose un « Pack Taxi 360° » négocié avec AXA Pro Taxi
                 et MMA Pro Mobilité.
@@ -252,15 +253,15 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'un chauffeur de taxi en 2026 ?",
-          a: "Démarre à 480€/an pour chauffeur salarié province (50% employeur). Médiane marché : 680-1 080€/an pour artisan-taxi province solo. Parisien : 880-1 280€/an. Variables : âge, antécédents médicaux, niveau d'IJ choisi, zone géographique, couverture famille.",
+          a: "Démarre à 480€ par an pour chauffeur salarié province (50% employeur). Médiane marché : 680-1 080€ par an pour artisan-taxi province solo. Parisien : 880-1 280€ par an. Variables : âge, antécédents médicaux, niveau d'IJ choisi, zone géographique, couverture famille.",
         },
         {
           q: 'Garantie agression : utile vraiment pour un chauffeur ?',
-          a: "OUI — 1 chauffeur de taxi sur 5 est victime d'agression au cours de sa carrière (FNDT 2024). Plus élevé pour les courses nocturnes et les zones périurbaines. La garantie agression VERSE UN CAPITAL MAJORÉ (×2) en cas de décès/invalidité dûs à une agression dans le cadre du métier + indemnisation des frais psychologiques post-traumatiques. Coût modeste : ~50-120€/an supplémentaire.",
+          a: "OUI — 1 chauffeur de taxi sur 5 est victime d'agression au cours de sa carrière (FNDT 2024). Plus élevé pour les courses nocturnes et les zones périurbaines. La garantie agression VERSE UN CAPITAL MAJORÉ (×2) en cas de décès ou invalidité dûs à une agression dans le cadre du métier + indemnisation des frais psychologiques post-traumatiques. Coût modeste : ~50-120€ par an supplémentaire.",
         },
         {
           q: 'Différence entre assurance taxi et assurance chauffeur de taxi ?',
-          a: 'ASSURANCE TAXI = couverture VÉHICULE + ADS + RC pro chauffeur (passagers + tiers). ASSURANCE CHAUFFEUR DE TAXI = couverture PERSONNELLE (mutuelle santé adaptée + prévoyance IJ + invalidité + garantie agression + PJ conducteur). Les 2 sont complémentaires. Pack complet artisan-taxi : ~3 000-5 000€/an.',
+          a: 'ASSURANCE TAXI = couverture VÉHICULE + ADS + RC pro chauffeur (passagers + tiers). ASSURANCE CHAUFFEUR DE TAXI = couverture PERSONNELLE (mutuelle santé adaptée + prévoyance IJ + invalidité + garantie agression + PJ conducteur). Les 2 sont complémentaires. Pack complet artisan-taxi : ~3 000-5 000€ par an.',
         },
         {
           q: 'Madelin pour chauffeur de taxi : possible ?',
@@ -268,7 +269,7 @@ export default function Page() {
         },
         {
           q: 'Chauffeur remplaçant à la journée : assurance modulable ?',
-          a: 'OUI — certains assureurs (Wakam Mobility, Stello Pro) proposent une tarification par jour de remplacement (~3-5€/jour). Alternative au forfait annuel pour les chauffeurs effectuant moins de 80 jours de remplacement par an. Pratique pour les jeunes chauffeurs en démarrage ou les retraités complétant leurs revenus.',
+          a: 'OUI — certains assureurs (Wakam Mobility, Stello Pro) proposent une tarification par jour de remplacement (~3-5€ par jour). Alternative au forfait annuel pour les chauffeurs effectuant moins de 80 jours de remplacement par an. Pratique pour les jeunes chauffeurs en démarrage ou les retraités complétant leurs revenus.',
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance chauffeur de taxi ?',

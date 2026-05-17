@@ -15,7 +15,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale obligatoire pour quels travaux ? Loi Spinetta art. 1792 : structure + clos/couvert + équipements indissociables. Exclusions : mobilier, décoration, équipements dissociables.',
+    'Décennale obligatoire pour quels travaux ? Loi Spinetta art. 1792 : structure + clos ou couvert + équipements indissociables. Exclusions : mobilier, décoration, équipements dissociables.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -36,7 +36,7 @@ export default function Page() {
       benefits={[
         {
           icon: '🏗️',
-          title: 'Structure + clos/couvert',
+          title: 'Structure + clos ou couvert',
           desc: 'Tout ce qui affecte solidité ou destination de l&apos;ouvrage',
         },
         {
@@ -81,7 +81,7 @@ export default function Page() {
                 <strong>Second œuvre et équipements indissociables</strong> :
               </p>
               <ul>
-                <li>Plomberie encastrée (canalisations dans murs/dalle)</li>
+                <li>Plomberie encastrée (canalisations dans murs ou dalle)</li>
                 <li>Chauffage central (PAC, chaudière fixe, plancher chauffant)</li>
                 <li>Électricité fixe (gainage encastré, tableau, prises murales)</li>
                 <li>Isolation thermique (ITE, ITI)</li>
@@ -143,7 +143,7 @@ export default function Page() {
                 <strong>Véranda</strong> : décennale OUI (ouvrage attaché au bâti)
               </li>
               <li>
-                <strong>Insert / poêle bois</strong> : décennale OUI si fixé au conduit principal
+                <strong>Insert — poêle bois</strong> : décennale OUI si fixé au conduit principal
               </li>
               <li>
                 <strong>Pergola fixée</strong> : décennale OUI ; pergola mobile = non
@@ -155,7 +155,7 @@ export default function Page() {
       faq={[
         {
           q: 'Un peintre doit-il avoir une décennale ?',
-          a: 'OUI pour les travaux de peinture extérieure (façade — relève clos/couvert). NON obligatoire pour peinture intérieure seule (relève parfait achèvement 1 an). En pratique, la plupart des peintres prennent décennale + RC Pro pour couvrir tous les cas.',
+          a: 'OUI pour les travaux de peinture extérieure (façade — relève clos ou couvert). NON obligatoire pour peinture intérieure seule (relève parfait achèvement 1 an). En pratique, la plupart des peintres prennent décennale + RC Pro pour couvrir tous les cas.',
         },
         {
           q: 'La décennale couvre-t-elle une cuisine équipée ?',

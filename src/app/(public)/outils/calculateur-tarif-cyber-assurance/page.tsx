@@ -23,7 +23,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/calculateur-tarif-cyber-assurance'
+const SLUG = 'outils / calculateur-tarif-cyber-assurance'
 
 export const metadata: Metadata = {
   title: 'Calculateur tarif cyber assurance 2026 — Estimation immédiate (gratuit)',
@@ -49,11 +49,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/cyber-assurance" className="hover:underline">
               Cyber assurance
             </Link>{' '}
-            / <span>Calculateur tarif</span>
+            › <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-red-500/90 px-3 py-1 text-sm font-semibold text-white">
             ⚠️ 1 entreprise sur 4 subit une cyberattaque (ANSSI)
@@ -113,7 +113,7 @@ export default async function Page() {
               <h3 className="mb-2 font-bold">🛡️ Pertes financières directes</h3>
               <ul className="space-y-1">
                 <li>• Rançon ransomware (selon contrat)</li>
-                <li>• Fraude au virement (FOVI / arnaque président)</li>
+                <li>• Fraude au virement (FOVI — arnaque président)</li>
                 <li>• Détournement données bancaires</li>
                 <li>• Perte d&apos;exploitation post-attaque</li>
               </ul>
@@ -122,7 +122,7 @@ export default async function Page() {
               <h3 className="mb-2 font-bold">⚖️ Responsabilité civile cyber</h3>
               <ul className="space-y-1">
                 <li>• Recours clients suite breach</li>
-                <li>• Recours partenaires/fournisseurs</li>
+                <li>• Recours partenaires ou fournisseurs</li>
                 <li>• Atteinte propriété intellectuelle</li>
                 <li>• Diffusion contenu illégal involontaire</li>
               </ul>

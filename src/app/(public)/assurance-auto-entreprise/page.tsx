@@ -26,7 +26,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance auto entreprise : véhicule de société (carte grise au nom de la SARL/SAS/SCI), véhicule de fonction salarié, voiture direction. RC pro + tous risques + conducteur étendue. Tarifs 680-1 480€/an. Comparatif 6 assureurs. Devis ORIAS sous 24h.',
+    'Assurance auto entreprise : véhicule de société (carte grise au nom de la SARL, SAS ou SCI), véhicule de fonction salarié, voiture direction. RC pro + tous risques + conducteur étendue. Tarifs 680-1 480€ par an. Comparatif 6 assureurs. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -37,7 +37,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance auto entreprise couvre les véhicules détenus directement par une société (SARL, SAS, SCI à objet commercial, EURL) — carte grise au nom de la personne morale. Distincte de l'auto-mission (véhicule personnel utilisé pour le pro) et de l'assurance flotte (≥ 4 véhicules), elle s'applique principalement aux : véhicules de fonction mis à disposition d'un salarié (usage pro + perso), voiture de direction (dirigeant + déplacements clients), véhicule utilitaire isolé (1-3 véhicules), voiture de société (CG société, usage exclusivement pro). Les garanties standard combinent la RC professionnelle circulation, la garantie tous risques (vol, incendie, vandalisme, bris de glace), la garantie conducteur étendue et le véhicule de remplacement. Les tarifs 2026 démarrent à 680 € HT/an pour un véhicule de fonction province jusqu'à 2 200 € HT/an pour un véhicule haut de gamme parisien à usage mixte intensif. Cette page distingue les usages, détaille les tarifs et compare 6 assureurs."
+      intro="L'assurance auto entreprise couvre les véhicules détenus directement par une société (SARL, SAS, SCI à objet commercial, EURL) — carte grise au nom de la personne morale. Distincte de l'auto-mission (véhicule personnel utilisé pour le pro) et de l'assurance flotte (≥ 4 véhicules), elle s'applique principalement aux : véhicules de fonction mis à disposition d'un salarié (usage pro + perso), voiture de direction (dirigeant + déplacements clients), véhicule utilitaire isolé (1-3 véhicules), voiture de société (CG société, usage exclusivement pro). Les garanties standard combinent la RC professionnelle circulation, la garantie tous risques (vol, incendie, vandalisme, bris de glace), la garantie conducteur étendue et le véhicule de remplacement. Les tarifs 2026 démarrent à 680 € HT par an pour un véhicule de fonction province jusqu'à 2 200 € HT par an pour un véhicule haut de gamme parisien à usage mixte intensif. Cette page distingue les usages, détaille les tarifs et compare 6 assureurs."
       legalReference="Article L. 211-1 du Code des assurances + Code général des impôts (avantage en nature)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -57,12 +57,12 @@ export default function Page() {
         {
           icon: '🛡️',
           title: 'Tous risques + conducteur',
-          desc: 'Vol, incendie, vandalisme, bris glace + capital décès/invalidité conducteur',
+          desc: 'Vol, incendie, vandalisme, bris glace + capital décès ou invalidité conducteur',
         },
         {
           icon: '💰',
-          title: 'À partir de 680 €/an',
-          desc: 'Véhicule de fonction province. Haut de gamme Paris : 1 480-2 200€/an',
+          title: 'À partir de 680 € par an',
+          desc: 'Véhicule de fonction province. Haut de gamme Paris : 1 480-2 200€ par an',
         },
       ]}
       sections={[
@@ -84,7 +84,7 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>Auto-mission</strong>
                     </td>
-                    <td className="border p-2">Salarié / dirigeant (perso)</td>
+                    <td className="border p-2">Salarié — dirigeant (perso)</td>
                     <td className="border p-2">Lui-même + occasionnel pro</td>
                     <td className="border p-2">
                       <Link
@@ -188,9 +188,9 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables : km annuels (forfait 15k / 25k / 40k+), antécédents conducteur(s), profil
-                (jeune permis, dirigeant expérimenté), zone (Paris IDF +20-40%), modèle haut de
-                gamme.
+                Variables : km annuels (forfait 15k ou 25k ou 40k+), antécédents conducteur(s),
+                profil (jeune permis, dirigeant expérimenté), zone (Paris IDF +20-40%), modèle haut
+                de gamme.
               </p>
             </>
           ),
@@ -214,19 +214,19 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Véhicule de remplacement</strong> 24h/24 pendant immobilisation pour
-                  réparation/sinistre
+                  réparation par sinistre
                 </li>
                 <li>
                   <strong>Assistance 0 km</strong> : panne, dépannage, remorquage depuis
-                  l&apos;adresse pro/perso
+                  l&apos;adresse pro ou perso
                 </li>
                 <li>
                   <strong>Garantie « auto-partage »</strong> si plusieurs salariés utilisent le
                   véhicule
                 </li>
                 <li>
-                  <strong>Garantie « expatriation temporaire »</strong> si déplacements
-                  UE/internationaux fréquents
+                  <strong>Garantie « expatriation temporaire »</strong> si déplacements UE ou
+                  internationaux fréquents
                 </li>
               </ol>
               <p>Optionnel pour véhicules de fonction haut de gamme :</p>
@@ -276,15 +276,15 @@ export default function Page() {
       faq={[
         {
           q: 'Quelle différence entre auto-mission, véhicule de fonction et véhicule de société ?',
-          a: "AUTO-MISSION : véhicule PERSONNEL utilisé OCCASIONNELLEMENT pour le pro (option +80-150€/an sur l'auto perso). VÉHICULE DE FONCTION : véhicule SOCIÉTÉ mis à disposition PERMANENT d'un salarié (usage pro + perso, génère un avantage en nature imposable). VÉHICULE DE SOCIÉTÉ : véhicule SOCIÉTÉ utilisé par tous les salariés autorisés UNIQUEMENT pour le pro (pas d'avantage en nature).",
+          a: "AUTO-MISSION : véhicule PERSONNEL utilisé OCCASIONNELLEMENT pour le pro (option +80-150€ par an sur l'auto perso). VÉHICULE DE FONCTION : véhicule SOCIÉTÉ mis à disposition PERMANENT d'un salarié (usage pro + perso, génère un avantage en nature imposable). VÉHICULE DE SOCIÉTÉ : véhicule SOCIÉTÉ utilisé par tous les salariés autorisés UNIQUEMENT pour le pro (pas d'avantage en nature).",
         },
         {
           q: "Combien coûte l'assurance d'un véhicule de fonction citadine en 2026 ?",
-          a: '680-980€/an pour une citadine (Clio, 208) en province. 880-1 280€/an pour une berline moyenne (308, Mégane). 1 280-1 880€/an pour une berline cadre (Audi A4, BMW Série 3) en Paris. Variables : km annuels, antécédents, profil conducteur, zone géographique.',
+          a: '680-980€ par an pour une citadine (Clio, 208) en province. 880-1 280€ par an pour une berline moyenne (308, Mégane). 1 280-1 880€ par an pour une berline cadre (Audi A4, BMW Série 3) en Paris. Variables : km annuels, antécédents, profil conducteur, zone géographique.',
         },
         {
           q: 'Voiture électrique de fonction : assurance plus chère ?',
-          a: "Pas systématiquement. Tarif moyen 1 100-1 800€/an pour Tesla Model 3 / Polestar. Inclus généralement : assurance batterie (composant le plus cher du véhicule électrique, 8 000-15 000€), assistance recharge spécifique, dépannage électrique. Les véhicules électriques bénéficient aussi d'EXONÉRATION de la nouvelle taxe CO₂ qui remplace la TVS.",
+          a: "Pas systématiquement. Tarif moyen 1 100-1 800€ par an pour Tesla Model 3 — Polestar. Inclus généralement : assurance batterie (composant le plus cher du véhicule électrique, 8 000-15 000€), assistance recharge spécifique, dépannage électrique. Les véhicules électriques bénéficient aussi d'EXONÉRATION de la nouvelle taxe CO₂ qui remplace la TVS.",
         },
         {
           q: 'Avantage en nature véhicule de fonction : comment ça marche ?',
@@ -292,7 +292,7 @@ export default function Page() {
         },
         {
           q: "Véhicule de société : qui est responsable en cas d'accident ?",
-          a: "RC PRO de la société pour les dommages aux tiers (passagers, autres véhicules, infrastructure). Si conducteur salarié sous l'emprise d'alcool/stupéfiants ou commettant une faute lourde personnelle : responsabilité personnelle pénale du conducteur engagée + recours possible de l'assureur. Pour le dirigeant : responsabilité personnelle si conduite sans permis valide ou en infraction délibérée.",
+          a: "RC PRO de la société pour les dommages aux tiers (passagers, autres véhicules, infrastructure). Si conducteur salarié sous l'emprise d'alcool ou stupéfiants ou commettant une faute lourde personnelle : responsabilité personnelle pénale du conducteur engagée + recours possible de l'assureur. Pour le dirigeant : responsabilité personnelle si conduite sans permis valide ou en infraction délibérée.",
         },
         {
           q: "Récupération TVA sur l'assurance véhicule entreprise ?",

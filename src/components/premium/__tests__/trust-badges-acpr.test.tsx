@@ -15,7 +15,7 @@ import { render, screen } from '@testing-library/react'
 import { TrustBadgesAcpr } from '../trust-badges-acpr'
 
 describe('TrustBadgesAcpr', () => {
-  it('rend les 3 badges ORIAS / ACPR / DDA', () => {
+  it('rend les 3 badges ORIAS — ACPR — DDA', () => {
     render(<TrustBadgesAcpr />)
     expect(screen.getByText(/ORIAS/i)).toBeInTheDocument()
     expect(screen.getByText(/ACPR Conformité/i)).toBeInTheDocument()

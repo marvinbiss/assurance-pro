@@ -20,7 +20,7 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 
-const SLUG = 'guides/devis-assurance-professionnelle'
+const SLUG = 'guides / devis-assurance-professionnelle'
 const TITLE = 'Devis assurance professionnelle — Procédure 24h et comparatif 2026'
 const TAGLINE =
   'Comment obtenir un devis assurance professionnelle gratuit, rapide et conforme : étapes, documents, comparatif assureurs, pièges à éviter. Conseil ORIAS sous 24h.'
@@ -76,7 +76,7 @@ export default function Page() {
                 <li>Statut juridique (AE, EI, EURL, SARL, SAS)</li>
                 <li>CA prévisionnel ou réalisé</li>
                 <li>Nombre de salariés (le cas échéant)</li>
-                <li>Présence d&apos;un local pro / véhicule pro</li>
+                <li>Présence d&apos;un local pro — véhicule pro</li>
                 <li>Antécédents sinistres 5 dernières années</li>
                 <li>Garanties souhaitées (RC, multirisque, cyber, mutuelle, prévoyance)</li>
               </ul>
@@ -120,8 +120,8 @@ export default function Page() {
               <h3>Pour TOUS les profils</h3>
               <ul>
                 <li>Extrait Kbis ou attestation INSEE (SIRET, code NAF)</li>
-                <li>CA réalisé année N-1 + estimation N (bilan ou liasse fiscale)</li>
-                <li>Pièce d&apos;identité du dirigeant / représentant légal</li>
+                <li>CA réalisé année N-1 + estimation N (bilan / liasse fiscale)</li>
+                <li>Pièce d&apos;identité du dirigeant — représentant légal</li>
               </ul>
               <h3>Pour les artisans BTP</h3>
               <ul>
@@ -132,7 +132,7 @@ export default function Page() {
               </ul>
               <h3>Pour les professions réglementées (santé, juridique, conseil financier)</h3>
               <ul>
-                <li>Diplôme professionnel + inscription à l&apos;Ordre / au registre</li>
+                <li>Diplôme professionnel + inscription à l&apos;Ordre — au registre</li>
                 <li>Carte professionnelle (CGP : carte CIF, médecin : RPPS)</li>
                 <li>Antécédents disciplinaires (le cas échéant)</li>
               </ul>
@@ -180,7 +180,8 @@ export default function Page() {
                 <li>
                   <strong>Négliger le service sinistres</strong> : un assureur low-cost avec
                   sinistre traité en 6 mois vs un assureur premium en 15 jours = différence majeure
-                  dans la pratique. Vérifier les avis Trustpilot / délai moyen d&apos;indemnisation.
+                  dans la pratique. Vérifier les avis Trustpilot ou délai moyen
+                  d&apos;indemnisation.
                 </li>
               </ol>
             </>
@@ -277,7 +278,7 @@ export default function Page() {
         },
         {
           q: 'Quels documents préparer pour le devis ?',
-          a: 'Tous profils : Kbis/SIRET, CA N-1 + estimation N. Artisans BTP : codes FFB activités + antécédents sinistres décennaux. Professions réglementées : diplôme + inscription Ordre + carte pro. Local pro : bail commercial + inventaire à valeur déclarée + photos. Véhicules pro : cartes grises + km annuels + antécédents accidents.',
+          a: 'Tous profils : Kbis ou SIRET, CA N-1 + estimation N. Artisans BTP : codes FFB activités + antécédents sinistres décennaux. Professions réglementées : diplôme + inscription Ordre + carte pro. Local pro : bail commercial + inventaire à valeur déclarée + photos. Véhicules pro : cartes grises + km annuels + antécédents accidents.',
         },
         {
           q: 'Comment comparer plusieurs devis ?',

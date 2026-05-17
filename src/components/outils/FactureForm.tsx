@@ -134,7 +134,7 @@ export function FactureForm() {
       <fieldset className="rounded-lg border border-gray-200 p-4">
         <legend className="px-2 text-sm font-semibold">1. Vos informations (émetteur)</legend>
         <div className="mt-2 grid gap-3 md:grid-cols-2">
-          <Field label="Raison sociale / Nom" required error={errors.emetteurNom}>
+          <Field label="Raison sociale — Nom" required error={errors.emetteurNom}>
             <input
               type="text"
               value={data.emetteurNom}
@@ -228,7 +228,7 @@ export function FactureForm() {
       <fieldset className="rounded-lg border border-gray-200 p-4">
         <legend className="px-2 text-sm font-semibold">2. Client (destinataire)</legend>
         <div className="mt-2 grid gap-3 md:grid-cols-2">
-          <Field label="Raison sociale / Nom" required error={errors.destinataireNom}>
+          <Field label="Raison sociale — Nom" required error={errors.destinataireNom}>
             <input
               type="text"
               value={data.destinataireNom}

@@ -20,8 +20,8 @@ export const metadata = buildPageMetadata({
   title: TITLE,
   tagline: TAGLINE,
   description:
-    'RC Pro en ligne : comparateur 5 assureurs leaders + souscription immédiate 5 min. Hiscox 95€/an, Stello 90€/an. Attestation téléchargeable PDF.',
-  price: 'dès 95€/an',
+    'RC Pro en ligne : comparateur 5 assureurs leaders + souscription immédiate 5 min. Hiscox 95€ par an, Stello 90€ par an. Attestation téléchargeable PDF.',
+  price: 'dès 95€ par an',
 })
 
 export default function Page() {
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="RC Pro 100% en ligne : KW à 700 vol/mois Ahrefs et 600€ CPC Google Ads — l'un des MONEY KW les plus stratégiques du marché. Cette page compare les 5 assureurs leaders en parallèle (Hiscox, Stello, Allianz Pro, MMA Pro, AXA Pro) et propose un parcours souscription en 5 minutes avec attestation immédiate. Couvre AE, SARL, SAS PME pour tous secteurs (services, BTP, libéral, immobilier, mobilité)."
+      intro="RC Pro 100% en ligne : KW à 700 vol par mois Ahrefs et 600€ CPC Google Ads — l'un des MONEY KW les plus stratégiques du marché. Cette page compare les 5 assureurs leaders en parallèle (Hiscox, Stello, Allianz Pro, MMA Pro, AXA Pro) et propose un parcours souscription en 5 minutes avec attestation immédiate. Couvre AE, SARL, SAS PME pour tous secteurs (services, BTP, libéral, immobilier, mobilité)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -72,11 +72,11 @@ export default function Page() {
                 physiques
               </li>
               <li>
-                <strong>Accessibilité 24/7</strong> : adapté freelance/AE qui démarrent activité
+                <strong>Accessibilité 24/7</strong> : adapté freelance ou AE qui démarrent activité
                 hors heures bureau
               </li>
               <li>
-                <strong>Comparaison transparente</strong> : tarifs/garanties affichés côte à côte
+                <strong>Comparaison transparente</strong> : tarifs ou garanties affichés côte à côte
                 (impossible en agence)
               </li>
               <li>
@@ -156,15 +156,15 @@ export default function Page() {
         },
         {
           q: 'CPC 600€ : pourquoi Google Ads coûte si cher ?',
-          a: 'Marché ultra-concurrentiel : 50+ assureurs ciblent ce segment via Ads. LTV client élevée (renouvellements + cross-sell cyber/auto/santé). Pros décident vite (conversion forte). Combinaison = enchères 600€/clic.',
+          a: 'Marché ultra-concurrentiel : 50+ assureurs ciblent ce segment via Ads. LTV client élevée (renouvellements + cross-sell cyber, auto ou santé). Pros décident vite (conversion forte). Combinaison = enchères 600€ par clic.',
         },
         {
           q: 'Mon dossier complexe possible en ligne ?',
-          a: 'Pour SAS PME multi-corps BTP ou libéral réglementé (avocat, expert-comptable, notaire) : conseillons formulaire courtier ORIAS plutôt que pure en ligne. Conseil humain ajoute valeur sur dossiers >5 000€/an primes.',
+          a: 'Pour SAS PME multi-corps BTP ou libéral réglementé (avocat, expert-comptable, notaire) : conseillons formulaire courtier ORIAS plutôt que pure en ligne. Conseil humain ajoute valeur sur dossiers >5 000€ par an primes.',
         },
         {
           q: 'Délai entre devis et attestation finale ?',
-          a: 'Immédiat chez Hiscox/Stello (pure digital). 24h chez Allianz/MMA (en ligne mais validation humaine). 48-72h chez AXA Pro / SAS PME complexes. Toujours attestation provisoire en attendant.',
+          a: 'Immédiat chez Hiscox ou Stello (pure digital). 24h chez Allianz ou MMA (en ligne mais validation humaine). 48-72h chez AXA Pro — SAS PME complexes. Toujours attestation provisoire en attendant.',
         },
       ]}
       relatedMetiers={[

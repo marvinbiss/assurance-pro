@@ -49,7 +49,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     slug: 'rc-pro-auto-entrepreneur-guide-2026',
     title: 'RC Pro auto-entrepreneur 2026 : guide complet (obligation, tarifs, démarches)',
     description:
-      "Tout ce qu'un auto-entrepreneur doit savoir sur la RC Pro en 2026 : obligation légale par métier, tarifs 90-280€/an, plafonds recommandés, démarches en 2 minutes.",
+      "Tout ce qu'un auto-entrepreneur doit savoir sur la RC Pro en 2026 : obligation légale par métier, tarifs 90-280€ par an, plafonds recommandés, démarches en 2 minutes.",
     category: 'RC Pro',
     tags: ['rc pro', 'auto-entrepreneur', 'micro-entreprise', 'tarifs 2026'],
     ...AUTHOR,
@@ -59,12 +59,12 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code des assurances art. L. 521-4 (devoir conseil)',
-        'codes/article_lc/LEGIARTI000036330029'
+        'codes ou article_lc ou LEGIARTI000036330029'
       ),
-      LEGIFRANCE('Loi 71-1130 (RC Pro avocats)', 'loda/id/JORFTEXT000000339276'),
+      LEGIFRANCE('Loi 71-1130 (RC Pro avocats)', 'loda, id ou JORFTEXT000000339276'),
       LEGIFRANCE(
         'Code de la santé publique art. L. 1142-2 (Loi Kouchner)',
-        'codes/article_lc/LEGIARTI000031929655'
+        'codes ou article_lc ou LEGIARTI000031929655'
       ),
       ACPR('Recommandation ACPR 2024-R-03 (devoir de conseil DDA)'),
       ORIAS,
@@ -73,7 +73,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
       { id: 'pourquoi', title: '1. Pourquoi la RC Pro est essentielle pour un auto-entrepreneur' },
       { id: 'obligation', title: '2. Obligation légale ou recommandation selon métier' },
       { id: 'risques-couverts', title: '3. Quels risques couvre la RC Pro pour un AE' },
-      { id: 'tarifs', title: '4. Combien coûte une RC Pro AE en 2026 (90-280€/an)' },
+      { id: 'tarifs', title: '4. Combien coûte une RC Pro AE en 2026 (90-280€ par an)' },
       { id: 'plafond', title: '5. Plafond de garantie recommandé selon CA' },
       { id: 'souscrire', title: '6. Étapes pour souscrire en 2 minutes' },
       { id: 'combinaisons', title: '7. RC Pro vs Multirisque vs Cyber : quelle combinaison' },
@@ -85,12 +85,12 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'pourquoi',
         h2: '1. Pourquoi la RC Pro est essentielle pour un auto-entrepreneur',
         paragraphs: [
-          'La Responsabilité Civile Professionnelle (RC Pro) couvre les dommages corporels, matériels et immatériels que votre activité peut causer à vos clients ou à des tiers. Pour un auto-entrepreneur, elle constitue le filet de sécurité indispensable face aux mises en cause qui peuvent menacer votre patrimoine personnel.',
-          "En 2026, 4,7 millions d'auto-entrepreneurs sont enregistrés en France selon l'INSEE. Un sinistre RC Pro non couvert moyenne 8 500€ (URSSAF 2024) — un coût souvent fatal pour un AE en démarrage. La RC Pro coûte 90-280€/an : un investissement minime au regard du risque évité.",
+          'La Responsabilité Civile Professionnelle (RC Pro) couvre les dommages corporels, matériels et immatériels que votre activité peut causer à vos clients / à des tiers. Pour un auto-entrepreneur, elle constitue le filet de sécurité indispensable face aux mises en cause qui peuvent menacer votre patrimoine personnel.',
+          "En 2026, 4,7 millions d'auto-entrepreneurs sont enregistrés en France selon l'INSEE. Un sinistre RC Pro non couvert moyenne 8 500€ (URSSAF 2024) — un coût souvent fatal pour un AE en démarrage. La RC Pro coûte 90-280€ par an : un investissement minime au regard du risque évité.",
         ],
         callout: {
           tone: 'warning',
-          text: "Sans RC Pro, votre patrimoine personnel n'est plus protégé par la séparation auto-entreprise / personne physique en cas de condamnation civile.",
+          text: "Sans RC Pro, votre patrimoine personnel n'est plus protégé par la séparation auto-entreprise — personne physique en cas de condamnation civile.",
         },
       },
       {
@@ -106,7 +106,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
             'Avocats : obligation art. 27 Loi 71-1130',
             'Agents immobiliers : obligation Loi Hoguet',
             'Experts-comptables : obligation Ordre national',
-            'Consultants / freelances IT : non obligatoire mais exigée B2B',
+            'Consultants — freelances IT : non obligatoire mais exigée B2B',
             'Coachs sportifs : obligation décret 1993-1101 si encadrement contre rémunération',
           ],
         },
@@ -135,13 +135,13 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Consultant / freelance IT (CA < 50 k€) : 90-180 €/an',
-            'Coach sportif AE : 120-220 €/an',
-            'Photographe AE : 140-240 €/an',
-            'Formateur AE : 100-180 €/an',
-            'Agent immobilier AE : 280-450 €/an (obligation + plafonds élevés)',
-            'Kinésithérapeute AE : 320-580 €/an (Loi Kouchner)',
-            'Auto-entrepreneur BTP (RC Pro + décennale incluse) : 800-2 ~200  €/an',
+            'Consultant — freelance IT (CA < 50 k€) : 90-180 € par an',
+            'Coach sportif AE : 120-220 € par an',
+            'Photographe AE : 140-240 € par an',
+            'Formateur AE : 100-180 € par an',
+            'Agent immobilier AE : 280-450 € par an (obligation + plafonds élevés)',
+            'Kinésithérapeute AE : 320-580 € par an (Loi Kouchner)',
+            'Auto-entrepreneur BTP (RC Pro + décennale incluse) : 800-2 ~200  € par an',
           ],
         },
         callout: {
@@ -159,7 +159,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
           items: [
             'CA < 30 k€ (démarrage) : plafond 500 k€-1 M€ par sinistre',
             'CA 30-77 k€ (croisière AE) : plafond 1-2 M€ par sinistre',
-            'CA proche plafond AE (services 77 700€ / vente 188 700€) : plafond 2-3 M€',
+            'CA proche plafond AE (services 77 700€ — vente 188 700€) : plafond 2-3 M€',
             'Activités à risque IT critique (cybersécurité, datacenter) : 3-5 M€ minimum',
             'Profession médicale : plafond 6,1 M€ minimum (art. R. 1142-4 CSP)',
           ],
@@ -176,7 +176,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'combinaisons',
         h2: '7. RC Pro vs Multirisque vs Cyber : quelle combinaison',
         paragraphs: [
-          'La RC Pro seule ne suffit pas pour tous les profils. Cas typiques 2026 : un freelance IT souscrit RC Pro + Cyber (combo 280-450 €/an). Un coach sportif avec salle souscrit RC Pro + Multirisque locaux (combo 320-480 €/an). Un AE BTP souscrit décennale + RC Pro Exploitation + Multirisque (combo 1 200-2 ~800  €/an).',
+          'La RC Pro seule ne suffit pas pour tous les profils. Cas typiques 2026 : un freelance IT souscrit RC Pro + Cyber (combo 280-450 € par an). Un coach sportif avec salle souscrit RC Pro + Multirisque locaux (combo 320-480 € par an). Un AE BTP souscrit décennale + RC Pro Exploitation + Multirisque (combo 1 200-2 ~800  € par an).',
         ],
       },
       {
@@ -201,7 +201,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         h2: 'FAQ — Questions fréquentes',
         paragraphs: [
           "**La RC Pro est-elle obligatoire pour un auto-entrepreneur ?** Pour les professions réglementées oui (médical, juridique, immobilier, etc.). Pour les autres, c'est fortement recommandé et souvent exigé par les clients B2B.",
-          '**Combien coûte une RC Pro AE en 2026 ?** De 90 à ~280  €/an pour la plupart des métiers de services. Les professions médicales paramédicales sont entre 320 et~ 580  €/an. Les AE BTP combinent RC Pro + décennale (800-2 ~200  €/an).',
+          '**Combien coûte une RC Pro AE en 2026 ?** De 90 à ~280  € par an pour la plupart des métiers de services. Les professions médicales paramédicales sont entre 320 et~ 580  € par an. Les AE BTP combinent RC Pro + décennale (800-2 ~200  € par an).',
           "**Quelle différence entre RC Pro et Multirisque Pro ?** La RC Pro couvre les dommages causés AUX TIERS dans l'exercice du métier. La Multirisque couvre VOS BIENS (locaux, matériel, stock). Les deux sont complémentaires.",
           '**Comment résilier ma RC Pro après 1 an (Loi Hamon) ?** Loi Hamon de 2014 : résiliation possible à tout moment après 1 an avec préavis 1 mois. Notre cabinet rédige la lettre de résiliation gratuitement et organise la bascule sans coupure de couverture.',
         ],
@@ -221,9 +221,12 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-05-14',
     readTime: '10 min',
     sources: [
-      LEGIFRANCE('Loi 78-12 du 4 janvier 1978 (Spinetta)', 'loda/id/JORFTEXT000000522321'),
-      LEGIFRANCE('Code des assurances art. L. 241-1', 'codes/article_lc/LEGIARTI000006794155'),
-      LEGIFRANCE('Code civil art. 1792', 'codes/article_lc/LEGIARTI000006442458'),
+      LEGIFRANCE('Loi 78-12 du 4 janvier 1978 (Spinetta)', 'loda, id ou JORFTEXT000000522321'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 241-1',
+        'codes ou article_lc ou LEGIARTI000006794155'
+      ),
+      LEGIFRANCE('Code civil art. 1792', 'codes ou article_lc ou LEGIARTI000006442458'),
       AQC,
       ORIAS,
     ],
@@ -277,14 +280,14 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
           items: [
             'Maçon (gros œuvre, fondations)',
             'Plombier-chauffagiste',
-            'Électricien BTP (courant fort/faible)',
+            'Électricien BTP (courant fort ou faible)',
             'Couvreur-zingueur',
             'Charpentier (bois et métal)',
             'Carreleur',
             'Peintre-plaquiste',
             'Menuisier (intérieur et extérieur)',
             'Étancheur (toitures-terrasses)',
-            "Maître d'œuvre / coordonnateur travaux",
+            "Maître d'œuvre — coordonnateur travaux",
             'Installateur RGE photovoltaïque',
             'Paysagiste avec travaux structurels',
           ],
@@ -298,15 +301,15 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Peintre AE : 1 200-1 ~800  €/an',
-            'Plombier AE : 1 400-2 ~100  €/an',
-            'Électricien AE : 1 500-2 ~200  €/an',
-            'Maçon AE : 1 600-2 ~400  €/an',
-            'Carreleur AE : 1 300-1 ~900  €/an',
-            'Couvreur AE : 1 800-2 ~600  €/an',
-            'Étancheur AE : 2 000-3 ~500  €/an (sinistralité 13,5%)',
-            'Photovoltaïque AE : 2 200-3 ~200  €/an',
-            "Maître d'œuvre AE : 1 800-2 ~800  €/an",
+            'Peintre AE : 1 200-1 ~800  € par an',
+            'Plombier AE : 1 400-2 ~100  € par an',
+            'Électricien AE : 1 500-2 ~200  € par an',
+            'Maçon AE : 1 600-2 ~400  € par an',
+            'Carreleur AE : 1 300-1 ~900  € par an',
+            'Couvreur AE : 1 800-2 ~600  € par an',
+            'Étancheur AE : 2 000-3 ~500  € par an (sinistralité 13,5%)',
+            'Photovoltaïque AE : 2 200-3 ~200  € par an',
+            "Maître d'œuvre AE : 1 800-2 ~800  € par an",
           ],
         },
       },
@@ -375,9 +378,9 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code des assurances — Livre V (intermédiation)',
-        'codes/section_lc/LEGITEXT000006073984/LEGISCTA000006154633'
+        'codes ou section_lc ou LEGITEXT000006073984/LEGISCTA000006154633'
       ),
-      LEGIFRANCE('Loi 2008-776 (modernisation économie — AE)', 'loda/id/JORFTEXT000019283050'),
+      LEGIFRANCE('Loi 2008-776 (modernisation économie — AE)', 'loda, id ou JORFTEXT000019283050'),
       ACPR('ACPR — guides pratiques courtier'),
     ],
     toc: [
@@ -401,35 +404,35 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'rc-pro',
         h2: '2. RC Pro : le minimum vital',
         paragraphs: [
-          'Couvre les dommages que votre activité cause aux tiers. Obligatoire pour les professions réglementées, fortement recommandée pour toutes les autres. Tarif 2026 : 90-280 €/an pour la plupart des AE de services.',
+          'Couvre les dommages que votre activité cause aux tiers. Obligatoire pour les professions réglementées, fortement recommandée pour toutes les autres. Tarif 2026 : 90-280 € par an pour la plupart des AE de services.',
         ],
       },
       {
         id: 'decennale',
         h2: '3. Décennale BTP : obligation légale',
         paragraphs: [
-          "Obligation absolue pour tout artisan BTP (Loi Spinetta). Couvre pendant 10 ans les dommages compromettant la solidité de l'ouvrage. Tarif 2026 : 1 200-2 ~600  €/an selon métier.",
+          "Obligation absolue pour tout artisan BTP (Loi Spinetta). Couvre pendant 10 ans les dommages compromettant la solidité de l'ouvrage. Tarif 2026 : 1 200-2 ~600  € par an selon métier.",
         ],
       },
       {
         id: 'multirisque',
         h2: '4. Multirisque pro : optionnelle mais cruciale',
         paragraphs: [
-          'Couvre vos locaux, matériel, stocks contre vol, incendie, dégâts des eaux. Incontournable si vous avez un local commercial, atelier, bureau. Tarif 2026 : 280-650 €/an selon surface et zone.',
+          'Couvre vos locaux, matériel, stocks contre vol, incendie, dégâts des eaux. Incontournable si vous avez un local commercial, atelier, bureau. Tarif 2026 : 280-650 € par an selon surface et zone.',
         ],
       },
       {
         id: 'mutuelle',
         h2: '5. Mutuelle TNS : protection sociale réduite',
         paragraphs: [
-          "L'AE relève du régime micro-social avec couverture maladie de base CPAM. Une mutuelle santé est indispensable. Attention : la déduction Loi Madelin n'est PAS applicable aux AE (régime micro-fiscal). Mieux vaut une mutuelle santé indépendant non-Madelin (40-90 €/mois).",
+          "L'AE relève du régime micro-social avec couverture maladie de base CPAM. Une mutuelle santé est indispensable. Attention : la déduction Loi Madelin n'est PAS applicable aux AE (régime micro-fiscal). Mieux vaut une mutuelle santé indépendant non-Madelin (40-90 € par mois).",
         ],
       },
       {
         id: 'cyber',
         h2: '6. Cyber : nouveau standard pour freelance digital',
         paragraphs: [
-          'Pour tout AE qui manipule des données clients (consultants IT, e-commerçants, agences digitales, freelances data). Coût attaque moyenne PME : 130 000 €. Tarif 2026 : 280-720 €/an.',
+          'Pour tout AE qui manipule des données clients (consultants IT, e-commerçants, agences digitales, freelances data). Coût attaque moyenne PME : 130 000 €. Tarif 2026 : 280-720 € par an.',
         ],
       },
       {
@@ -438,9 +441,9 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         paragraphs: ["Budget total annuel à anticiper pour 3 profils types d'AE en 2026 :"],
         list: {
           items: [
-            'Freelance IT consultant (CA 50 k€) : RC Pro 120 € + Cyber 320 € + Mutuelle 720 € = ~1 ~160  €/an',
-            'Coach sportif AE (CA 35 k€, sans salle) : RC Pro 180 € + Mutuelle 600 € = ~780 €/an',
-            'Plombier AE BTP (CA 60 k€) : Décennale 1 800 € + RC Pro Exploitation 280 € + Multirisque 420 € + Mutuelle 720 € = ~3 ~220  €/an',
+            'Freelance IT consultant (CA 50 k€) : RC Pro 120 € + Cyber 320 € + Mutuelle 720 € = ~1 ~160  € par an',
+            'Coach sportif AE (CA 35 k€, sans salle) : RC Pro 180 € + Mutuelle 600 € = ~780 € par an',
+            'Plombier AE BTP (CA 60 k€) : Décennale 1 800 € + RC Pro Exploitation 280 € + Multirisque 420 € + Mutuelle 720 € = ~3 ~220  € par an',
           ],
         },
       },
@@ -459,10 +462,10 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-05-16',
     readTime: '7 min',
     sources: [
-      LEGIFRANCE('Loi 2008-776 (AE/micro-entreprise)', 'loda/id/JORFTEXT000019283050'),
+      LEGIFRANCE('Loi 2008-776 (AE ou micro-entreprise)', 'loda, id ou JORFTEXT000019283050'),
       LEGIFRANCE(
         'Code général des impôts art. 50-0 (micro-BIC)',
-        'codes/article_lc/LEGIARTI000045400797'
+        'codes ou article_lc ou LEGIARTI000045400797'
       ),
       ACPR('ACPR — Pratiques de marché'),
     ],
@@ -504,8 +507,8 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
             'Médical paramédical : RC Pro OBLIGATOIRE (Loi Kouchner)',
             'Avocats : RC Pro OBLIGATOIRE (Loi 71-1130)',
             'Agents immobiliers : RC Pro OBLIGATOIRE (Loi Hoguet)',
-            'Consultants / freelances : RC Pro recommandée (souvent exigée B2B)',
-            'Commerce / restauration : Multirisque locaux fortement recommandée',
+            'Consultants — freelances : RC Pro recommandée (souvent exigée B2B)',
+            'Commerce — restauration : Multirisque locaux fortement recommandée',
           ],
         },
       },
@@ -524,11 +527,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Consultant marketing (CA 60 k€) : RC Pro 180 € + Cyber 320 € + Mutuelle santé 720 € =~ 1 220  €/an',
-            'Coach sportif (CA 35 k€, indoor) : RC Pro 220 € + Multirisque 380 € + Mutuelle 600 € =~ 1 200  €/an',
-            'Photographe événementiel (CA 45 k€) : RC Pro 240 € + Multirisque matériel 420 € + Mutuelle 720 € =~ 1 380  €/an',
-            'Plombier (CA 75 k€) : Décennale 1 900 € + RC Pro 280 € + Multirisque 480 € =~ 2 660  €/an',
-            'Esthéticienne à domicile (CA 30 k€) : RC Pro 320 € + Mutuelle 660 € =~ 980  €/an',
+            'Consultant marketing (CA 60 k€) : RC Pro 180 € + Cyber 320 € + Mutuelle santé 720 € =~ 1 220  € par an',
+            'Coach sportif (CA 35 k€, indoor) : RC Pro 220 € + Multirisque 380 € + Mutuelle 600 € =~ 1 200  € par an',
+            'Photographe événementiel (CA 45 k€) : RC Pro 240 € + Multirisque matériel 420 € + Mutuelle 720 € =~ 1 380  € par an',
+            'Plombier (CA 75 k€) : Décennale 1 900 € + RC Pro 280 € + Multirisque 480 € =~ 2 660  € par an',
+            'Esthéticienne à domicile (CA 30 k€) : RC Pro 320 € + Mutuelle 660 € =~ 980  € par an',
           ],
         },
       },
@@ -539,7 +542,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     slug: 'micro-entreprise-btp-assurances-2026',
     title: 'Micro-entreprise BTP : 4 assurances incontournables en 2026',
     description:
-      'Un artisan BTP en micro-entreprise doit gérer 4 assurances en 2026 : décennale (obligatoire), RC Pro exploitation, multirisque locaux et auto pro. Budget total 2 200-3 ~800  €/an.',
+      'Un artisan BTP en micro-entreprise doit gérer 4 assurances en 2026 : décennale (obligatoire), RC Pro exploitation, multirisque locaux et auto pro. Budget total 2 200-3 ~800  € par an.',
     category: 'BTP',
     tags: ['btp', 'micro-entreprise', 'auto-entrepreneur', 'décennale'],
     ...AUTHOR,
@@ -549,11 +552,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code des assurances art. L. 241-1 (Spinetta)',
-        'codes/article_lc/LEGIARTI000006794155'
+        'codes ou article_lc ou LEGIARTI000006794155'
       ),
       LEGIFRANCE(
         'Code des assurances art. L. 211-1 (auto pro)',
-        'codes/article_lc/LEGIARTI000006793965'
+        'codes ou article_lc ou LEGIARTI000006793965'
       ),
       AQC,
     ],
@@ -569,28 +572,28 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'decennale',
         h2: '1. Décennale : pilier obligatoire',
         paragraphs: [
-          'Sans décennale, vous ne pouvez légalement pas démarrer un chantier (Loi Spinetta). Tarif 2026 : 1 200-2 ~600  €/an pour un AE BTP selon métier et CA.',
+          'Sans décennale, vous ne pouvez légalement pas démarrer un chantier (Loi Spinetta). Tarif 2026 : 1 200-2 ~600  € par an pour un AE BTP selon métier et CA.',
         ],
       },
       {
         id: 'rc-pro',
         h2: '2. RC Pro Exploitation : protection complémentaire',
         paragraphs: [
-          'Couvre les dommages causés AVANT, PENDANT ou APRÈS le chantier MAIS hors malfaçon décennale. Exemple : un client glisse sur votre rallonge, un outil tombe sur sa voiture. Tarif 2026 : 220-380 €/an.',
+          'Couvre les dommages causés AVANT, PENDANT ou APRÈS le chantier MAIS hors malfaçon décennale. Exemple : un client glisse sur votre rallonge, un outil tombe sur sa voiture. Tarif 2026 : 220-380 € par an.',
         ],
       },
       {
         id: 'multirisque',
         h2: '3. Multirisque locaux : si atelier',
         paragraphs: [
-          'Si vous avez un atelier, dépôt de matériel ou véhicule utilitaire stationné en zone urbaine, la multirisque couvre vol, incendie, dégâts. Tarif 2026 : 380-680 €/an selon surface.',
+          'Si vous avez un atelier, dépôt de matériel ou véhicule utilitaire stationné en zone urbaine, la multirisque couvre vol, incendie, dégâts. Tarif 2026 : 380-680 € par an selon surface.',
         ],
       },
       {
         id: 'auto-pro',
         h2: '4. Assurance auto professionnelle',
         paragraphs: [
-          'Votre véhicule utilitaire doit être assuré en USAGE PRO (art. L. 211-1 + L. 113-9 C. assur.). Une auto pers déclarée en pro = nullité contrat en cas de sinistre. Tarif 2026 : 480-980 €/an pour un VUL standard.',
+          'Votre véhicule utilitaire doit être assuré en USAGE PRO (art. L. 211-1 + L. 113-9 C. assur.). Une auto pers déclarée en pro = nullité contrat en cas de sinistre. Tarif 2026 : 480-980 € par an pour un VUL standard.',
         ],
         callout: {
           tone: 'warning',
@@ -601,7 +604,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'budget',
         h2: '5. Budget total annuel',
         paragraphs: [
-          'Pour un AE BTP CA 60 k€ avec véhicule + petit atelier : budget total assurance pro = 2 280-4 ~640  €/an. Soit ~4-8% du CA. Notre cabinet négocie un pack regroupé qui réduit ce coût de 20-30% vs souscription assureur unique.',
+          'Pour un AE BTP CA 60 k€ avec véhicule + petit atelier : budget total assurance pro = 2 280-4 ~640  € par an. Soit ~4-8% du CA. Notre cabinet négocie un pack regroupé qui réduit ce coût de 20-30% vs souscription assureur unique.',
         ],
       },
     ],
@@ -621,9 +624,12 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code de commerce art. L. 223-1 à L. 223-43 (SARL)',
-        'codes/section_lc/LEGITEXT000005634379/LEGISCTA000006146043'
+        'codes ou section_lc ou LEGITEXT000005634379/LEGISCTA000006146043'
       ),
-      LEGIFRANCE('Code des assurances art. L. 521-4', 'codes/article_lc/LEGIARTI000036330029'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 521-4',
+        'codes ou article_lc ou LEGIARTI000036330029'
+      ),
     ],
     toc: [
       { id: 'panorama', title: '1. 5 statuts juridiques en 2026' },
@@ -637,7 +643,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'panorama',
         h2: '1. 5 statuts juridiques en 2026',
         paragraphs: [
-          "Les 5 principaux statuts pour exercer une activité pro en France : (1) Auto-entrepreneur / micro-entreprise, (2) Entreprise Individuelle (EI classique), (3) EURL (entreprise unipersonnelle à responsabilité limitée), (4) SARL, (5) SASU. Chacun impacte différemment les primes d'assurance.",
+          "Les 5 principaux statuts pour exercer une activité pro en France : (1) Auto-entrepreneur — micro-entreprise, (2) Entreprise Individuelle (EI classique), (3) EURL (entreprise unipersonnelle à responsabilité limitée), (4) SARL, (5) SASU. Chacun impacte différemment les primes d'assurance.",
         ],
       },
       {
@@ -648,16 +654,16 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'AE / micro :~ 180  €/an (tarif personne physique)',
-            'EI classique :~ 220  €/an (+22%)',
-            'EURL :~ 280  €/an (+55%)',
-            'SARL :~ 340  €/an (+89%)',
-            'SASU :~ 360  €/an (+100%)',
+            'AE — micro :~ 180  € par an (tarif personne physique)',
+            'EI classique :~ 220  € par an (+22%)',
+            'EURL :~ 280  € par an (+55%)',
+            'SARL :~ 340  € par an (+89%)',
+            'SASU :~ 360  € par an (+100%)',
           ],
         },
         callout: {
           tone: 'info',
-          text: "Le surcoût SARL/SASU s'explique par les plafonds de garantie plus élevés exigés (3-5 M€ vs 1 M€) et la responsabilité élargie aux dirigeants.",
+          text: "Le surcoût SARL ou SASU s'explique par les plafonds de garantie plus élevés exigés (3-5 M€ vs 1 M€) et la responsabilité élargie aux dirigeants.",
         },
       },
       {
@@ -668,9 +674,9 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'AE / EI :~ 1 900  €/an',
-            'SARL :~ 2 800  €/an (+47%)',
-            'SAS :~ 3 200  €/an (+68%)',
+            'AE — EI :~ 1 900  € par an',
+            'SARL :~ 2 800  € par an (+47%)',
+            'SAS :~ 3 200  € par an (+68%)',
           ],
         },
       },
@@ -678,14 +684,14 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'multirisque',
         h2: '4. Impact statut sur Multirisque',
         paragraphs: [
-          "L'écart est plus modéré sur la Multirisque (locaux + biens), où le tarif dépend surtout de la surface et de la valeur des biens couverts. Comptez +15-25% en SARL/SAS vs AE pour le même local.",
+          "L'écart est plus modéré sur la Multirisque (locaux + biens), où le tarif dépend surtout de la surface et de la valeur des biens couverts. Comptez +15-25% en SARL ou SAS vs AE pour le même local.",
         ],
       },
       {
         id: 'transition',
         h2: '5. Quand basculer de statut',
         paragraphs: [
-          'Notre cabinet recommande de basculer AE → SARL/SASU quand : (1) CA > 70 k€ services / 170 k€ vente (anticipation plafond), (2) vous embauchez un salarié, (3) vous achetez du matériel >20 k€ (besoin amortissement), (4) responsabilité civile élevée souhaitée (séparation patrimoine perso/pro). Comparez les devis assurance AVANT la transition pour éviter le pic tarifaire.',
+          'Notre cabinet recommande de basculer AE → SARL ou SASU quand : (1) CA > 70 k€ services — 170 k€ vente (anticipation plafond), (2) vous embauchez un salarié, (3) vous achetez du matériel >20 k€ (besoin amortissement), (4) responsabilité civile élevée souhaitée (séparation patrimoine perso ou pro). Comparez les devis assurance AVANT la transition pour éviter le pic tarifaire.',
         ],
       },
     ],
@@ -707,9 +713,18 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-05-19',
     readTime: '6 min',
     sources: [
-      LEGIFRANCE('Arrêté du 5 janvier 2016 (modèle attestation)', 'jorf/id/JORFTEXT000031816528'),
-      LEGIFRANCE('Arrêté du 6 décembre 2022 (cliquabilité ORIAS)', 'jorf/id/JORFTEXT000046718521'),
-      LEGIFRANCE('Code des assurances art. L. 243-2', 'codes/article_lc/LEGIARTI000006794216'),
+      LEGIFRANCE(
+        'Arrêté du 5 janvier 2016 (modèle attestation)',
+        'jorf, id ou JORFTEXT000031816528'
+      ),
+      LEGIFRANCE(
+        'Arrêté du 6 décembre 2022 (cliquabilité ORIAS)',
+        'jorf, id ou JORFTEXT000046718521'
+      ),
+      LEGIFRANCE(
+        'Code des assurances art. L. 243-2',
+        'codes ou article_lc ou LEGIARTI000006794216'
+      ),
       ORIAS,
     ],
     toc: [
@@ -806,8 +821,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-05-20',
     readTime: '5 min',
     sources: [
-      LEGIFRANCE('Code des assurances art. L. 521-2', 'codes/article_lc/LEGIARTI000036330033'),
-      LEGIFRANCE('Loi 71-1130 art. 27 (RC Pro avocats)', 'loda/id/JORFTEXT000000339276'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 521-2',
+        'codes ou article_lc ou LEGIARTI000036330033'
+      ),
+      LEGIFRANCE('Loi 71-1130 art. 27 (RC Pro avocats)', 'loda, id ou JORFTEXT000000339276'),
       ORIAS,
     ],
     toc: [
@@ -869,11 +887,14 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-05-21',
     readTime: '6 min',
     sources: [
-      LEGIFRANCE('Loi 2014-344 du 17 mars 2014 (Hamon)', 'loda/id/JORFTEXT000028738036'),
-      LEGIFRANCE('Code des assurances art. L. 113-15-2', 'codes/article_lc/LEGIARTI000028744931'),
+      LEGIFRANCE('Loi 2014-344 du 17 mars 2014 (Hamon)', 'loda, id ou JORFTEXT000028738036'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 113-15-2',
+        'codes ou article_lc ou LEGIARTI000028744931'
+      ),
       LEGIFRANCE(
         'Code des assurances art. L. 113-12 (Chatel)',
-        'codes/article_lc/LEGIARTI000006792516'
+        'codes ou article_lc ou LEGIARTI000006792516'
       ),
     ],
     toc: [
@@ -955,15 +976,21 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-05-22',
     readTime: '5 min',
     sources: [
-      LEGIFRANCE('Code des assurances art. L. 512-1', 'codes/article_lc/LEGIARTI000006793958'),
-      LEGIFRANCE('Arrêté du 6 décembre 2022 (cliquabilité ORIAS)', 'jorf/id/JORFTEXT000046718521'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 512-1',
+        'codes ou article_lc ou LEGIARTI000006793958'
+      ),
+      LEGIFRANCE(
+        'Arrêté du 6 décembre 2022 (cliquabilité ORIAS)',
+        'jorf, id ou JORFTEXT000046718521'
+      ),
       ORIAS,
       ACPR('ACPR — Doctrine intermédiation'),
     ],
     toc: [
       { id: 'orias', title: '1. ORIAS : le registre des intermédiaires' },
       { id: 'verifier', title: '2. Comment vérifier sur orias.fr' },
-      { id: 'difference', title: '3. Différences courtier / agent / mandataire' },
+      { id: 'difference', title: '3. Différences courtier — agent — mandataire' },
       { id: 'signaler', title: '4. Signaler un courtier non immatriculé' },
     ],
     body: [
@@ -983,7 +1010,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
           items: [
             'Aller sur www.orias.fr',
             'Entrer le numéro ORIAS du courtier (8 chiffres)',
-            'Consulter la fiche officielle : statut actif/suspendu/radié, catégorie, date immatriculation, activités habilitées',
+            'Consulter la fiche officielle : statut actif, suspendu ou radié, catégorie, date immatriculation, activités habilitées',
           ],
         },
         callout: {
@@ -993,7 +1020,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
       },
       {
         id: 'difference',
-        h2: '3. Différences courtier / agent / mandataire',
+        h2: '3. Différences courtier — agent — mandataire',
         paragraphs: ["L'ORIAS distingue 4 catégories d'intermédiaires :"],
         list: {
           items: [
@@ -1028,7 +1055,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code des assurances art. L. 521-2 (DDA information)',
-        'codes/article_lc/LEGIARTI000036330033'
+        'codes ou article_lc ou LEGIARTI000036330033'
       ),
       {
         label: 'Règlement UE 2017/1469 (format IPID)',
@@ -1115,7 +1142,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
       ACPR('Observatoire ACPR — tarifs assurance pro 2024'),
       LEGIFRANCE(
         'Code des assurances art. L. 113-1 (formation prime)',
-        'codes/article_lc/LEGIARTI000006792500'
+        'codes ou article_lc ou LEGIARTI000006792500'
       ),
     ],
     toc: [
@@ -1141,7 +1168,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
             "Chiffre d'affaires annuel (plus c'est haut, plus la prime monte)",
             "Ancienneté de l'entreprise (les <2 ans paient +20%)",
             'Antécédents sinistres (3-5 dernières années — variation ±50%)',
-            'Zone géographique (Paris/IDF +15%, zones cycloniques +30%)',
+            'Zone géographique (Paris ou IDF +15%, zones cycloniques +30%)',
             'Garanties choisies (plafonds, options, franchises)',
             'Effectif salarié (un salarié = +40% sur RC Pro)',
           ],
@@ -1155,16 +1182,16 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Décennale BTP : 1 200 - ~3 500  €/an selon métier et statut',
-            'RC Pro service (consultant, freelance, coach) : 90 - ~280  €/an',
-            'RC Pro professions réglementées (médical, juridique) : 320 - ~1 500  €/an',
-            'Multirisque pro (local commercial) : 380 - ~980  €/an selon surface',
-            'Mutuelle TNS Madelin : 720 - ~1 800  €/an selon couverture',
-            'Cyber assurance PME : 280 - ~1 200  €/an',
-            'Assurance VTC : 1 800 - ~3 200  €/an',
-            'Protection juridique pro : 180 - ~380  €/an',
-            'Assurance auto pro (VUL) : 480 - ~1 580  €/an',
-            'Flotte automobile (5 véhicules) : 5 200 - ~12 000  €/an',
+            'Décennale BTP : 1 200 - ~3 500  € par an selon métier et statut',
+            'RC Pro service (consultant, freelance, coach) : 90 - ~280  € par an',
+            'RC Pro professions réglementées (médical, juridique) : 320 - ~1 500  € par an',
+            'Multirisque pro (local commercial) : 380 - ~980  € par an selon surface',
+            'Mutuelle TNS Madelin : 720 - ~1 800  € par an selon couverture',
+            'Cyber assurance PME : 280 - ~1 200  € par an',
+            'Assurance VTC : 1 800 - ~3 200  € par an',
+            'Protection juridique pro : 180 - ~380  € par an',
+            'Assurance auto pro (VUL) : 480 - ~1 580  € par an',
+            'Flotte automobile (5 véhicules) : 5 200 - ~12 000  € par an',
           ],
         },
       },
@@ -1172,7 +1199,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'statut',
         h2: '3. AE vs SARL : impact tarifaire',
         paragraphs: [
-          "À activité identique, un AE consultant à 60 k€ CA paie~ 180  €/an de RC Pro. Le même consultant en SARL paie~ 340  €/an, soit +89%. Le différentiel s'explique par : plafonds garantie plus élevés (3 M€ vs 1 M€), responsabilité dirigeant élargie, et appétence assureur moindre sur les structures patrimoniales.",
+          "À activité identique, un AE consultant à 60 k€ CA paie~ 180  € par an de RC Pro. Le même consultant en SARL paie~ 340  € par an, soit +89%. Le différentiel s'explique par : plafonds garantie plus élevés (3 M€ vs 1 M€), responsabilité dirigeant élargie, et appétence assureur moindre sur les structures patrimoniales.",
         ],
       },
       {
@@ -1180,16 +1207,16 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         h2: '4. Top 10 métiers chers et bon marché',
         paragraphs: [
           'Les 5 métiers les moins chers en 2026 (RC Pro tout compris) :',
-          'Formateur indépendant : 90-180 €/an. Coach pro / business : 100-220 €/an. Photographe événementiel : 140-240 €/an. Web designer / freelance créatif : 120-240 €/an. Traducteur indépendant : 100-200 €/an.',
+          'Formateur indépendant : 90-180 € par an. Coach pro — business : 100-220 € par an. Photographe événementiel : 140-240 € par an. Web designer — freelance créatif : 120-240 € par an. Traducteur indépendant : 100-200 € par an.',
           'Les 5 métiers les plus chers (RC Pro + obligations spécifiques) :',
         ],
         list: {
           items: [
-            'Chirurgien libéral : 8 200-22 ~000  €/an (plafond 25 M€)',
-            'Avocat associé cabinet : 1 800-4 ~800  €/an',
-            'Notaire collaborateur : 1 100-3 ~200  €/an',
-            'Médecin spécialiste : 1 200-2 ~800  €/an',
-            'Expert-comptable : 380-2 ~200  €/an',
+            'Chirurgien libéral : 8 200-22 ~000  € par an (plafond 25 M€)',
+            'Avocat associé cabinet : 1 800-4 ~800  € par an',
+            'Notaire collaborateur : 1 100-3 ~200  € par an',
+            'Médecin spécialiste : 1 200-2 ~800  € par an',
+            'Expert-comptable : 380-2 ~200  € par an',
           ],
         },
       },
@@ -1231,7 +1258,10 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     readTime: '8 min',
     sources: [
       AQC,
-      LEGIFRANCE('Code des assurances art. L. 241-1', 'codes/article_lc/LEGIARTI000006794155'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 241-1',
+        'codes ou article_lc ou LEGIARTI000006794155'
+      ),
       { label: 'FFB Chiffres-clés du bâtiment 2024', url: 'https://www.ffbatiment.fr/' },
     ],
     toc: [
@@ -1246,22 +1276,22 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'tableau',
         h2: '1. Tableau récap 12 métiers × 4 statuts',
         paragraphs: [
-          'Tarifs annuels HT 2026 négociés en moyenne sur notre portefeuille (auto-entrepreneur / SARL CA 100 k€) :',
+          'Tarifs annuels HT 2026 négociés en moyenne sur notre portefeuille (auto-entrepreneur — SARL CA 100 k€) :',
         ],
         list: {
           items: [
-            'Peintre : 1 200-1 800 € AE / 1 800-2 600 € SARL',
-            'Carreleur : 1 300-1 900 € AE / 1 900-2 700 € SARL',
-            'Plombier-chauffagiste : 1 400-2 100 € AE / 2 100-3 000 € SARL',
-            'Électricien : 1 500-2 200 € AE / 2 200-3 100 € SARL',
-            'Maçon : 1 600-2 400 € AE / 2 400-3 400 € SARL',
-            'Menuisier intérieur : 1 400-2 100 € AE / 2 100-3 000 € SARL',
-            'Charpentier bois : 1 700-2 500 € AE / 2 500-3 600 € SARL',
-            'Couvreur-zingueur : 1 800-2 600 € AE / 2 600-3 700 € SARL',
-            'Charpentier métal : 2 000-2 900 € AE / 2 900-4 100 € SARL',
-            'Étancheur : 2 000-3 500 € AE / 3 500-5 000 € SARL',
-            'Photovoltaïque RGE : 2 200-3 200 € AE / 3 200-4 600 € SARL',
-            "Maître d'œuvre : 1 800-2 800 € AE / 2 800-4 000 € SARL",
+            'Peintre : 1 200-1 800 € AE — 1 800-2 600 € SARL',
+            'Carreleur : 1 300-1 900 € AE — 1 900-2 700 € SARL',
+            'Plombier-chauffagiste : 1 400-2 100 € AE — 2 100-3 000 € SARL',
+            'Électricien : 1 500-2 200 € AE — 2 200-3 100 € SARL',
+            'Maçon : 1 600-2 400 € AE — 2 400-3 400 € SARL',
+            'Menuisier intérieur : 1 400-2 100 € AE — 2 100-3 000 € SARL',
+            'Charpentier bois : 1 700-2 500 € AE — 2 500-3 600 € SARL',
+            'Couvreur-zingueur : 1 800-2 600 € AE — 2 600-3 700 € SARL',
+            'Charpentier métal : 2 000-2 900 € AE — 2 900-4 100 € SARL',
+            'Étancheur : 2 000-3 500 € AE — 3 500-5 000 € SARL',
+            'Photovoltaïque RGE : 2 200-3 200 € AE — 3 200-4 600 € SARL',
+            "Maître d'œuvre : 1 800-2 800 € AE — 2 800-4 000 € SARL",
           ],
         },
       },
@@ -1302,7 +1332,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'evolution',
         h2: '5. Évolution 2025-2026 : +4-7% inflation',
         paragraphs: [
-          "L'inflation tarifaire décennale moyenne 2026 vs 2025 est de +4 à 7% selon métier (source : observatoire FFA + portefeuille cabinet). Drivers : (1) inflation matériaux/main-d'œuvre (renchérissement des indemnisations), (2) re-tarification post-canicule 2023-2024, (3) hausses ré-assurance européenne.",
+          "L'inflation tarifaire décennale moyenne 2026 vs 2025 est de +4 à 7% selon métier (source : observatoire FFA + portefeuille cabinet). Drivers : (1) inflation matériaux ou main-d'œuvre (renchérissement des indemnisations), (2) re-tarification post-canicule 2023-2024, (3) hausses ré-assurance européenne.",
         ],
       },
     ],
@@ -1312,7 +1342,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     slug: 'tarif-rc-pro-2026-par-profession',
     title: 'Tarif RC Pro 2026 par profession : barème complet 30 métiers',
     description:
-      'Barème complet 2026 du tarif RC Pro par profession en France. 30 métiers analysés (consultant, médecin, avocat, agent immo, formateur…). Plafonds standards et écart AE/SARL/Grand compte.',
+      'Barème complet 2026 du tarif RC Pro par profession en France. 30 métiers analysés (consultant, médecin, avocat, agent immo, formateur…). Plafonds standards et écart AE, SARL / Grand compte.',
     category: 'RC Pro',
     tags: ['tarif rc pro', 'prix 2026', 'profession', 'barème'],
     ...AUTHOR,
@@ -1320,33 +1350,36 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-05-26',
     readTime: '9 min',
     sources: [
-      LEGIFRANCE('Code des assurances art. L. 113-1', 'codes/article_lc/LEGIARTI000006792500'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 113-1',
+        'codes ou article_lc ou LEGIARTI000006792500'
+      ),
       ACPR('ACPR — Observatoire RC Pro 2024'),
     ],
     toc: [
       { id: 'services', title: '1. Services aux entreprises (10 métiers)' },
       { id: 'medical', title: '2. Médical paramédical (8 métiers)' },
       { id: 'juridique', title: '3. Juridique réglementé (5 métiers)' },
-      { id: 'creatif', title: '4. Créatifs / freelances (7 métiers)' },
+      { id: 'creatif', title: '4. Créatifs — freelances (7 métiers)' },
       { id: 'plafond', title: '5. Plafond garantie standard par profession' },
     ],
     body: [
       {
         id: 'services',
         h2: '1. Services aux entreprises (10 métiers)',
-        paragraphs: ['Tarifs annuels HT 2026 (AE / SARL / Grand compte) :'],
+        paragraphs: ['Tarifs annuels HT 2026 (AE — SARL — Grand compte) :'],
         list: {
           items: [
-            'Consultant marketing : 180 / 340 / 850 €',
-            'Consultant management : 220 / 420 / 1 100 €',
-            'Coach business : 200 / 380 / 950 €',
-            'Formateur indépendant : 120 / 240 / 600 €',
-            'Expert-comptable : 380 / 720 / 2 200 €',
-            'Auditeur indépendant : 320 / 620 / 1 800 €',
-            'Gestion patrimoine (CGP) : 480 / 920 / 2 800 €',
-            'Recouvrement de créances : 280 / 540 / 1 350 €',
-            'Conseil en stratégie : 240 / 460 / 1 200 €',
-            'Coach sportif business : 180 / 340 / 850 €',
+            'Consultant marketing : 180 — 340 — 850 €',
+            'Consultant management : 220 — 420 — 1 100 €',
+            'Coach business : 200 — 380 — 950 €',
+            'Formateur indépendant : 120 — 240 — 600 €',
+            'Expert-comptable : 380 — 720 — 2 200 €',
+            'Auditeur indépendant : 320 — 620 — 1 800 €',
+            'Gestion patrimoine (CGP) : 480 — 920 — 2 800 €',
+            'Recouvrement de créances : 280 — 540 — 1 350 €',
+            'Conseil en stratégie : 240 — 460 — 1 200 €',
+            'Coach sportif business : 180 — 340 — 850 €',
           ],
         },
       },
@@ -1354,18 +1387,18 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'medical',
         h2: '2. Médical paramédical (8 métiers)',
         paragraphs: [
-          'Tarifs annuels HT 2026 (TNS libéral / cabinet SCM / clinique) — RC Pro OBLIGATOIRE (Loi Kouchner) :',
+          'Tarifs annuels HT 2026 (TNS libéral — cabinet SCM — clinique) — RC Pro OBLIGATOIRE (Loi Kouchner) :',
         ],
         list: {
           items: [
-            'Kinésithérapeute : 380 / 580 / 1 800 €',
-            'Infirmier libéral : 320 / 520 / 1 600 €',
-            'Ostéopathe : 580 / 920 / 2 800 €',
-            'Sage-femme libérale : 480 / 780 / 2 400 €',
-            'Diététicien-nutritionniste : 280 / 460 / 1 400 €',
-            'Psychologue : 240 / 420 / 1 200 €',
-            'Pédicure-podologue : 320 / 540 / 1 600 €',
-            'Audioprothésiste : 380 / 680 / 2 200 €',
+            'Kinésithérapeute : 380 — 580 — 1 800 €',
+            'Infirmier libéral : 320 — 520 — 1 600 €',
+            'Ostéopathe : 580 — 920 — 2 800 €',
+            'Sage-femme libérale : 480 — 780 — 2 400 €',
+            'Diététicien-nutritionniste : 280 — 460 — 1 400 €',
+            'Psychologue : 240 — 420 — 1 200 €',
+            'Pédicure-podologue : 320 — 540 — 1 600 €',
+            'Audioprothésiste : 380 — 680 — 2 200 €',
           ],
         },
       },
@@ -1375,24 +1408,24 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         paragraphs: ['RC Pro OBLIGATOIRE pour toutes ces professions. Tarifs 2026 :'],
         list: {
           items: [
-            'Avocat libéral : 720-1 ~800  €/an (plafond mini 1,5 M€)',
-            'Notaire (collaborateur) : 1 100-3 ~200  €/an',
-            'Huissier de justice : 980-2 ~400  €/an',
-            'Mandataire judiciaire : 1 200-2 ~800  €/an',
-            'Conseil en propriété industrielle : 580-1 ~400  €/an',
+            'Avocat libéral : 720-1 ~800  € par an (plafond mini 1,5 M€)',
+            'Notaire (collaborateur) : 1 100-3 ~200  € par an',
+            'Huissier de justice : 980-2 ~400  € par an',
+            'Mandataire judiciaire : 1 200-2 ~800  € par an',
+            'Conseil en propriété industrielle : 580-1 ~400  € par an',
           ],
         },
       },
       {
         id: 'creatif',
-        h2: '4. Créatifs / freelances (7 métiers)',
-        paragraphs: ['Tarifs annuels HT 2026 (AE / SARL) :'],
+        h2: '4. Créatifs — freelances (7 métiers)',
+        paragraphs: ['Tarifs annuels HT 2026 (AE — SARL) :'],
         list: {
           items: [
             'Web designer freelance : 120-240 €',
             'Développeur freelance IT : 180-420 €',
             'Photographe événementiel : 240-480 €',
-            'Vidéaste / motion designer : 220-440 €',
+            'Vidéaste — motion designer : 220-440 €',
             "Architecte d'intérieur : 380-720 €",
             'Designer graphique : 140-280 €',
             'Traducteur indépendant : 100-200 €',
@@ -1405,7 +1438,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         paragraphs: ['Plafonds 2026 minimums conseillés selon profession :'],
         list: {
           items: [
-            'Consultant / freelance : 1 M€ par sinistre',
+            'Consultant — freelance : 1 M€ par sinistre',
             'Profession médicale paramédicale : 6,1 M€ (R. 1142-4 CSP)',
             'Avocat libéral : 1,5 M€ minimum (Loi 71-1130)',
             'Agent immobilier : 110 k€ (Loi Hoguet)',
@@ -1421,7 +1454,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     slug: 'decennale-pas-chere-5-strategies-economies',
     title: 'Décennale pas chère : 5 stratégies de courtier pour économiser 30%',
     description:
-      '5 leviers concrets de courtier ORIAS pour obtenir une décennale moins chère en 2026 sans sacrifier la couverture. Cas concret maçon AE : 2 400 € →~ 1 600  €/an.',
+      '5 leviers concrets de courtier ORIAS pour obtenir une décennale moins chère en 2026 sans sacrifier la couverture. Cas concret maçon AE : 2 400 € →~ 1 600  € par an.',
     category: 'BTP',
     tags: ['décennale pas cher', 'économiser', 'courtier', 'btp'],
     ...AUTHOR,
@@ -1430,7 +1463,10 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     readTime: '7 min',
     sources: [
       AQC,
-      LEGIFRANCE('Code des assurances art. L. 113-1', 'codes/article_lc/LEGIARTI000006792500'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 113-1',
+        'codes ou article_lc ou LEGIARTI000006792500'
+      ),
     ],
     toc: [
       { id: 'lev-1', title: '1. Levier 1 — Franchise ajustée' },
@@ -1438,7 +1474,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
       { id: 'lev-3', title: '3. Levier 3 — Groupement par métier' },
       { id: 'lev-4', title: '4. Levier 4 — Historique sinistralité valorisé' },
       { id: 'lev-5', title: '5. Levier 5 — Courtage indépendant' },
-      { id: 'cas-pratique', title: '6. Cas pratique : maçon AE de 2 400 € à ~1 600  €/an' },
+      { id: 'cas-pratique', title: '6. Cas pratique : maçon AE de 2 400 € à ~1 600  € par an' },
     ],
     body: [
       {
@@ -1449,7 +1485,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         callout: {
           tone: 'info',
-          text: 'Économie type maçon : passer de franchise 0 → 1 000 € = -180 €/an sur la prime.',
+          text: 'Économie type maçon : passer de franchise 0 → 1 000 € = -180 € par an sur la prime.',
         },
       },
       {
@@ -1482,13 +1518,13 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
       },
       {
         id: 'cas-pratique',
-        h2: '6. Cas pratique : maçon AE de 2 400 € à ~1 600  €/an',
+        h2: '6. Cas pratique : maçon AE de 2 400 € à ~1 600  € par an',
         paragraphs: [
-          'Cas réel anonymisé : maçon AE 8 ans expérience, CA 60 k€, zone IDF, sans sinistre depuis 5 ans. Prime initiale assureur direct :~ 2 400  €/an. Après intervention de notre cabinet :~ 1 600  €/an. Économie :~ 800  €/an soit -33%.',
+          'Cas réel anonymisé : maçon AE 8 ans expérience, CA 60 k€, zone IDF, sans sinistre depuis 5 ans. Prime initiale assureur direct :~ 2 400  € par an. Après intervention de notre cabinet :~ 1 600  € par an. Économie :~ 800  € par an soit -33%.',
         ],
         list: {
           items: [
-            'Mise en concurrence 4 assureurs SMABTP/Allianz Pro/MMA/Generali : -250 €',
+            'Mise en concurrence 4 assureurs SMABTP ou Allianz Pro, MMA ou Generali : -250 €',
             'Plafond optimisé 5 M€ → 3 M€ : -180 €',
             'Franchise 0 € → 500 € : -120 €',
             'Bonus sinistralité 5 ans propre valorisé : -250 €',
@@ -1503,15 +1539,15 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     title: 'Mutuelle TNS Madelin 2026 : comparatif 7 organismes et économies fiscales',
     description:
       'Comparatif 2026 des 7 meilleures mutuelles TNS Madelin (Swiss Life, Allianz, MGEN, Generali, AXA, MMA, Aésio). Plafonds, économies fiscales selon TMI 30-45%, choix par profil.',
-    category: 'Mutuelle / TNS',
+    category: 'Mutuelle — TNS',
     tags: ['mutuelle tns', 'madelin', 'tns', 'fiscalité', 'comparatif'],
     ...AUTHOR,
     publishedAt: '2026-05-28',
     updatedAt: '2026-05-28',
     readTime: '8 min',
     sources: [
-      LEGIFRANCE('CGI art. 154 bis (Loi Madelin)', 'codes/article_lc/LEGIARTI000028441933'),
-      LEGIFRANCE('Loi 94-126 du 11 février 1994 (Madelin)', 'loda/id/JORFTEXT000000729294'),
+      LEGIFRANCE('CGI art. 154 bis (Loi Madelin)', 'codes ou article_lc ou LEGIARTI000028441933'),
+      LEGIFRANCE('Loi 94-126 du 11 février 1994 (Madelin)', 'loda, id ou JORFTEXT000000729294'),
       { label: 'URSSAF — PASS 2026', url: 'https://www.urssaf.fr/' },
     ],
     toc: [
@@ -1540,13 +1576,13 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         paragraphs: ['Notre comparatif 2026 sur la base de 7 critères :'],
         list: {
           items: [
-            'Swiss Life Pro : 78/100 — top optique/dentaire, leader marché',
+            'Swiss Life Pro : 78/100 — top optique ou dentaire, leader marché',
             'Allianz Pro Mutuelle : 75/100 — large réseau, accès tiers payant',
             'MGEN TNS : 73/100 — historiquement fonction publique, ouverte TNS',
             'Generali Pro Santé : 72/100 — bonne médecine douce',
             'AXA Pro Santé : 71/100 — réseau Itelis',
             'MMA Pro Santé : 70/100 — bonne hospi',
-            'Aésio (ex-Adréa) : 68/100 — économique, bon rapport qualité/prix',
+            'Aésio (ex-Adréa) : 68/100 — économique, bon rapport qualité ou prix',
           ],
         },
       },
@@ -1557,7 +1593,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         list: {
           ordered: true,
           items: [
-            'Cotisation mensuelle vs garanties (€/mois)',
+            'Cotisation mensuelle vs garanties (€ par mois)',
             'Plafond optique (lunettes, lentilles)',
             'Plafond dentaire (couronnes, orthodontie)',
             'Plafond hospitalisation (chambre particulière, dépassements)',
@@ -1577,14 +1613,14 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'economies',
         h2: '5. Économies fiscales selon TMI',
         paragraphs: [
-          "Économie d'impôts annuelle pour une cotisation Madelin de~ 3 000  €/an selon votre TMI :",
+          "Économie d'impôts annuelle pour une cotisation Madelin de~ 3 000  € par an selon votre TMI :",
         ],
         list: {
           items: [
-            'TMI 11% : économie~ 330  €/an',
-            'TMI 30% : économie~ 900  €/an',
-            'TMI 41% : économie~ 1 230  €/an',
-            'TMI 45% : économie~ 1 350  €/an',
+            'TMI 11% : économie~ 330  € par an',
+            'TMI 30% : économie~ 900  € par an',
+            'TMI 41% : économie~ 1 230  € par an',
+            'TMI 45% : économie~ 1 350  € par an',
           ],
         },
       },
@@ -1595,9 +1631,9 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         list: {
           items: [
             'TNS jeune (<35 ans, sans famille) : Aésio ou MMA — économique',
-            'TNS 35-50 famille : Allianz Pro ou Generali — meilleur rapport garanties/prix',
-            "TNS >50 ans : Swiss Life Pro — meilleur dentaire/optique pour cette tranche d'âge",
-            'TNS pratiquant médecine douce : Generali Pro Santé — large couverture ostéo/acupuncture',
+            'TNS 35-50 famille : Allianz Pro ou Generali — meilleur rapport garanties ou prix',
+            "TNS >50 ans : Swiss Life Pro — meilleur dentaire ou optique pour cette tranche d'âge",
+            'TNS pratiquant médecine douce : Generali Pro Santé — large couverture ostéo ou acupuncture',
             'TNS sportif amateur : AXA Pro Santé — couverture sport étendue',
           ],
         },
@@ -1642,9 +1678,9 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         list: {
           ordered: true,
           items: [
-            'Hiscox (4,6/5 Trustpilot, solidité 92/100) : leader RC Pro tech + consulting. Tarifeur instantané. Excellence sinistres. Prix premium.',
-            'April Pro (4,4/5, 85/100) : référence française BTP multi-vertical. Plateforme courtier mature. Tarifs très compétitifs BTP.',
-            'Allianz Pro (4,3/5, 96/100) : géant multi-pays, solide ETI et grands comptes. Réseau international.',
+            'Hiscox (4,6 sur 5 Trustpilot, solidité 92/100) : leader RC Pro tech + consulting. Tarifeur instantané. Excellence sinistres. Prix premium.',
+            'April Pro (4,4 sur 5, 85/100) : référence française BTP multi-vertical. Plateforme courtier mature. Tarifs très compétitifs BTP.',
+            'Allianz Pro (4,3 sur 5, 96/100) : géant multi-pays, solide ETI et grands comptes. Réseau international.',
           ],
         },
       },
@@ -1658,10 +1694,10 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
           items: [
             'SMABTP : LEADER décennale BTP, profondeur métier inégalée',
             'MMA Pro : top auto pro + flotte automobile',
-            'Generali Pro : santé/mutuelle TNS top 3',
+            'Generali Pro : santé ou mutuelle TNS top 3',
             'AXA Pro : équilibré tous segments, bon Madelin',
-            'MAAF Pro : référence collectivités/MJPM',
-            'Wakam : insurtech moderne, RC Pro freelance/digital',
+            'MAAF Pro : référence collectivités ou MJPM',
+            'Wakam : insurtech moderne, RC Pro freelance ou digital',
             'Stello : nouveau-né 2024, agressif sur tarifs AE',
           ],
         },
@@ -1702,10 +1738,13 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code des assurances art. L. 241-1 (décennale)',
-        'codes/article_lc/LEGIARTI000006794155'
+        'codes ou article_lc ou LEGIARTI000006794155'
       ),
-      LEGIFRANCE('Code des assurances art. L. 242-1 (DO)', 'codes/article_lc/LEGIARTI000006794216'),
-      LEGIFRANCE('Code civil art. 1792', 'codes/article_lc/LEGIARTI000006442458'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 242-1 (DO)',
+        'codes ou article_lc ou LEGIARTI000006794216'
+      ),
+      LEGIFRANCE('Code civil art. 1792', 'codes ou article_lc ou LEGIARTI000006442458'),
     ],
     toc: [
       { id: 'tableau', title: '1. Tableau récap 7 différences' },
@@ -1722,11 +1761,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         list: {
           ordered: true,
           items: [
-            "Souscripteur : décennale = artisan/constructeur. DO = maître d'ouvrage (le client final).",
+            "Souscripteur : décennale = artisan ou constructeur. DO = maître d'ouvrage (le client final).",
             'Durée : décennale = 10 ans après réception. DO = 10 ans + extension parfait achèvement.',
             'Indemnisation : décennale = procédure longue (1-3 ans). DO = pré-indemnisation rapide (60 j).',
             "Recours : décennale = recours contre l'artisan. DO = recours intercession DO contre l'artisan ensuite.",
-            'Prix : décennale = 1 200-3 ~500  €/an. DO = 1 à 5% du coût construction (one-shot).',
+            'Prix : décennale = 1 200-3 ~500  € par an. DO = 1 à 5% du coût construction (one-shot).',
             "Obligation : décennale OBLIGATOIRE pour artisan. DO OBLIGATOIRE pour maître d'ouvrage.",
             'Sinistre type : décennale = défaut structurel. DO = même mais indemnisation rapide client.',
           ],
@@ -1781,14 +1820,14 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-05-31',
     readTime: '9 min',
     sources: [
-      LEGIFRANCE('Loi 78-12 du 4 janvier 1978 (Spinetta)', 'loda/id/JORFTEXT000000522321'),
+      LEGIFRANCE('Loi 78-12 du 4 janvier 1978 (Spinetta)', 'loda, id ou JORFTEXT000000522321'),
       LEGIFRANCE(
         'Code des assurances art. L. 241-1 à L. 243-9',
-        'codes/section_lc/LEGITEXT000006073984/LEGISCTA000006154629'
+        'codes ou section_lc ou LEGITEXT000006073984/LEGISCTA000006154629'
       ),
       LEGIFRANCE(
         'Code civil art. 1792 à 1792-7',
-        'codes/section_lc/LEGITEXT000006070721/LEGISCTA000006136355'
+        'codes ou section_lc ou LEGITEXT000006070721/LEGISCTA000006136355'
       ),
     ],
     toc: [
@@ -1882,11 +1921,14 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-06-01',
     readTime: '7 min',
     sources: [
-      LEGIFRANCE('Loi 2014-344 (Hamon)', 'loda/id/JORFTEXT000028738036'),
-      LEGIFRANCE('Code des assurances art. L. 113-15-2', 'codes/article_lc/LEGIARTI000028744931'),
+      LEGIFRANCE('Loi 2014-344 (Hamon)', 'loda, id ou JORFTEXT000028738036'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 113-15-2',
+        'codes ou article_lc ou LEGIARTI000028744931'
+      ),
       LEGIFRANCE(
         'Code des assurances art. L. 113-12 (Chatel)',
-        'codes/article_lc/LEGIARTI000006792516'
+        'codes ou article_lc ou LEGIARTI000006792516'
       ),
     ],
     toc: [
@@ -1970,11 +2012,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code des assurances art. R. 250-1 à R. 250-9',
-        'codes/section_lc/LEGITEXT000006073984/LEGISCTA000006156706'
+        'codes ou section_lc ou LEGITEXT000006073984/LEGISCTA000006156706'
       ),
       LEGIFRANCE(
         'Code des assurances art. L. 212-1 (BCT)',
-        'codes/article_lc/LEGIARTI000006794021'
+        'codes ou article_lc ou LEGIARTI000006794021'
       ),
       {
         label: 'Bureau Central de Tarification — site officiel',
@@ -2034,7 +2076,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'tarifs',
         h2: '4. Tarifs imposés par le BCT',
         paragraphs: [
-          'Le BCT impose un tarif basé sur le profil de risque + sinistralité du métier. Ces tarifs sont souvent +30 à +50% supérieurs au marché car le BCT couvre des profils refusés (jeunes entreprises, antécédents sinistres, métiers à risque). Exemple : décennale étancheur via BCT = 4 500-6 ~000  €/an vs 2 000-3 ~500  €/an marché normal.',
+          'Le BCT impose un tarif basé sur le profil de risque + sinistralité du métier. Ces tarifs sont souvent +30 à +50% supérieurs au marché car le BCT couvre des profils refusés (jeunes entreprises, antécédents sinistres, métiers à risque). Exemple : décennale étancheur via BCT = 4 500-6 ~000  € par an vs 2 000-3 ~500  € par an marché normal.',
         ],
       },
       {
@@ -2045,7 +2087,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
           items: [
             'Activité non concernée par une obligation légale',
             'Refus pour motifs légitimes (fraude antérieure, sinistralité catastrophique)',
-            'Dossier incomplet ou délais non respectés',
+            'Dossier incomplet / délais non respectés',
             'Cas particulier : entreprise en redressement judiciaire (souvent refus)',
           ],
         },
@@ -2058,16 +2100,16 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     title: 'Loi Madelin TNS : optimisation fiscale 2026 (plafonds + cas pratiques)',
     description:
       'Guide complet 2026 de la Loi Madelin pour TNS. Plafonds (4 997 € santé + 2 935 € retraite), économies fiscales TMI 30/41/45%, cas pratiques 3 profils, comparatif PER.',
-    category: 'Mutuelle / TNS',
+    category: 'Mutuelle — TNS',
     tags: ['loi madelin', 'tns', 'optimisation fiscale', 'déduction'],
     ...AUTHOR,
     publishedAt: '2026-06-03',
     updatedAt: '2026-06-03',
     readTime: '8 min',
     sources: [
-      LEGIFRANCE('CGI art. 154 bis (Madelin)', 'codes/article_lc/LEGIARTI000028441933'),
-      LEGIFRANCE('Loi 94-126 du 11 février 1994', 'loda/id/JORFTEXT000000729294'),
-      LEGIFRANCE('Loi PACTE 2019 (PER)', 'loda/id/JORFTEXT000038496102'),
+      LEGIFRANCE('CGI art. 154 bis (Madelin)', 'codes ou article_lc ou LEGIARTI000028441933'),
+      LEGIFRANCE('Loi 94-126 du 11 février 1994', 'loda, id ou JORFTEXT000000729294'),
+      LEGIFRANCE('Loi PACTE 2019 (PER)', 'loda, id ou JORFTEXT000038496102'),
     ],
     toc: [
       { id: 'rappel', title: '1. Rappel mécanique Madelin' },
@@ -2096,22 +2138,24 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Santé + Prévoyance combinés : 3,75% PASS + 7% bénéfice (max 3% × 8 PASS) =~ 4 997  €/an',
-            'Retraite supplémentaire : 10% PASS + 25% bénéfice excédant le PASS =~ 2 935  €/an minimum',
-            'Total déductible théorique max combiné : ~12 000-15 ~000  €/an pour TNS bons revenus',
+            'Santé + Prévoyance combinés : 3,75% PASS + 7% bénéfice (max 3% × 8 PASS) =~ 4 997  € par an',
+            'Retraite supplémentaire : 10% PASS + 25% bénéfice excédant le PASS =~ 2 935  € par an minimum',
+            'Total déductible théorique max combiné : ~12 000-15 ~000  € par an pour TNS bons revenus',
           ],
         },
       },
       {
         id: 'tmi',
         h2: '3. Économies selon TMI',
-        paragraphs: ["Pour une cotisation Madelin de~ 5 000  €/an, économie d'impôts annuelle :"],
+        paragraphs: [
+          "Pour une cotisation Madelin de~ 5 000  € par an, économie d'impôts annuelle :",
+        ],
         list: {
           items: [
-            'TMI 11% : économie~ 550  €/an',
-            'TMI 30% : économie~ 1 500  €/an',
-            'TMI 41% : économie~ 2 050  €/an',
-            'TMI 45% : économie~ 2 250  €/an',
+            'TMI 11% : économie~ 550  € par an',
+            'TMI 30% : économie~ 1 500  € par an',
+            'TMI 41% : économie~ 2 050  € par an',
+            'TMI 45% : économie~ 2 250  € par an',
           ],
         },
       },
@@ -2121,9 +2165,9 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         paragraphs: ['Cas réels anonymisés issus de notre portefeuille 2024 :'],
         list: {
           items: [
-            'Artisan plombier EI (bénéfice 45 k€, TMI 30%) : Madelin~ 2 800  €/an = économie~ 840  €/an',
-            'Consultant SARL gérant majoritaire (bénéfice 80 k€, TMI 41%) : Madelin~ 5 200  €/an = économie~ 2 130  €/an',
-            'Médecin libéral EI (bénéfice 150 k€, TMI 45%) : Madelin~ 12 000  €/an = économie~ 5 400  €/an',
+            'Artisan plombier EI (bénéfice 45 k€, TMI 30%) : Madelin~ 2 800  € par an = économie~ 840  € par an',
+            'Consultant SARL gérant majoritaire (bénéfice 80 k€, TMI 41%) : Madelin~ 5 200  € par an = économie~ 2 130  € par an',
+            'Médecin libéral EI (bénéfice 150 k€, TMI 45%) : Madelin~ 12 000  € par an = économie~ 5 400  € par an',
           ],
         },
       },
@@ -2150,7 +2194,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     slug: 'recommandation-acpr-2024-r-02-reclamations-assurance',
     title: 'Recommandation ACPR 2024-R-02 : impact sur le traitement des réclamations',
     description:
-      'Décryptage 2026 de la Recommandation ACPR 2024-R-02 (applicable 31/12/2025). Délais 10 jours accusé + 2 mois fond, registre obligatoire, saisie médiateur, sanctions non-respect.',
+      'Décryptage 2026 de la Recommandation ACPR 2024-R-02 (applicable 31 décembre 2025). Délais 10 jours accusé + 2 mois fond, registre obligatoire, saisie médiateur, sanctions non-respect.',
     category: 'RC Pro',
     tags: ['acpr', 'réclamation', 'recommandation 2024', 'médiation'],
     ...AUTHOR,
@@ -2161,7 +2205,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
       ACPR('Recommandation ACPR 2024-R-02 du 2 juillet 2024'),
       LEGIFRANCE(
         'Code des assurances art. L. 612-29-1 (réclamation)',
-        'codes/article_lc/LEGIARTI000026807175'
+        'codes ou article_lc ou LEGIARTI000026807175'
       ),
       { label: "Médiateur de l'Assurance", url: 'https://www.mediation-assurance.org/' },
     ],
@@ -2177,13 +2221,13 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'apport',
         h2: '1. Apport de la Recommandation',
         paragraphs: [
-          'La Recommandation ACPR 2024-R-02 du 2 juillet 2024 (applicable au 31/12/2025) renforce les obligations des assureurs et intermédiaires en matière de traitement des réclamations. Objectif : harmoniser les pratiques et garantir aux clients un traitement équitable et rapide.',
+          'La Recommandation ACPR 2024-R-02 du 2 juillet 2024 (applicable au 31 décembre 2025) renforce les obligations des assureurs et intermédiaires en matière de traitement des réclamations. Objectif : harmoniser les pratiques et garantir aux clients un traitement équitable et rapide.',
         ],
       },
       {
         id: 'delais',
         h2: '2. Délais imposés (10 j + 2 mois)',
-        paragraphs: ['Délais incompressibles depuis le 31/12/2025 :'],
+        paragraphs: ['Délais incompressibles depuis le 31 décembre 2025 :'],
         list: {
           items: [
             'Accusé de réception sous 10 jours ouvrés à compter de la réception de la réclamation',
@@ -2236,7 +2280,10 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-06-05',
     readTime: '7 min',
     sources: [
-      LEGIFRANCE('Code des assurances art. L. 521-4', 'codes/article_lc/LEGIARTI000036330029'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 521-4',
+        'codes ou article_lc ou LEGIARTI000036330029'
+      ),
       {
         label: 'Directive UE 2016/97 (DDA)',
         url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016L0097',
@@ -2275,7 +2322,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'acpr-2024-r-03',
         h2: '3. Reco ACPR 2024-R-03',
         paragraphs: [
-          "La Recommandation ACPR 2024-R-03 du 21 novembre 2024 (applicable 31/12/2025) durcit la traçabilité du devoir de conseil. Chaque dossier doit être horodaté, hashé en SHA-256 (preuve d'intégrité immuable), conservé 10 ans minimum, et auditable à tout moment par l'ACPR.",
+          "La Recommandation ACPR 2024-R-03 du 21 novembre 2024 (applicable 31 décembre 2025) durcit la traçabilité du devoir de conseil. Chaque dossier doit être horodaté, hashé en SHA-256 (preuve d'intégrité immuable), conservé 10 ans minimum, et auditable à tout moment par l'ACPR.",
         ],
       },
       {
@@ -2314,11 +2361,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code des assurances art. L. 113-2 (déclaration sinistre)',
-        'codes/article_lc/LEGIARTI000006792498'
+        'codes ou article_lc ou LEGIARTI000006792498'
       ),
       LEGIFRANCE(
         'Code des assurances art. L. 242-1 (DO indemnisation)',
-        'codes/article_lc/LEGIARTI000006794216'
+        'codes ou article_lc ou LEGIARTI000006794216'
       ),
       AQC,
     ],
@@ -2412,7 +2459,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
       ACPR('Reco ACPR 2024-R-02 (réclamations)'),
       LEGIFRANCE(
         'Code des assurances art. L. 124-1 (RC Pro recours)',
-        'codes/article_lc/LEGIARTI000006793175'
+        'codes ou article_lc ou LEGIARTI000006793175'
       ),
       { label: "Médiateur de l'Assurance", url: 'https://www.mediation-assurance.org/' },
     ],
@@ -2466,7 +2513,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         },
         callout: {
           tone: 'info',
-          text: "Stratégie optimale : commencez toujours par les recours 1 et 2 (gratuits). Réservez avocat/tribunal aux cas où l'enjeu financier dépasse 5 000 € et le dossier est solide.",
+          text: "Stratégie optimale : commencez toujours par les recours 1 et 2 (gratuits). Réservez avocat ou tribunal aux cas où l'enjeu financier dépasse 5 000 € et le dossier est solide.",
         },
       },
     ],
@@ -2490,7 +2537,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
       },
       LEGIFRANCE(
         'Code de la consommation art. L. 612-1 (médiation conso)',
-        'codes/article_lc/LEGIARTI000032224862'
+        'codes ou article_lc ou LEGIARTI000032224862'
       ),
       ACPR('ACPR — Rapport médiation 2024'),
     ],
@@ -2653,7 +2700,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         id: 'causes',
         h2: '4. Top 5 causes par métier',
         paragraphs: [
-          'Étancheur : (1) infiltrations toitures-terrasses 48%, (2) décollement membrane 22%, (3) défauts relevés/acrotères 18%. Plombier : (1) fuites canalisations 41%, (2) défauts raccords sanitaires 26%, (3) installations chauffage 18%. Électricien : (1) défauts tableau 35%, (2) câblages non normés 28%, (3) interrupteurs/prises 18%.',
+          'Étancheur : (1) infiltrations toitures-terrasses 48%, (2) décollement membrane 22%, (3) défauts relevés ou acrotères 18%. Plombier : (1) fuites canalisations 41%, (2) défauts raccords sanitaires 26%, (3) installations chauffage 18%. Électricien : (1) défauts tableau 35%, (2) câblages non normés 28%, (3) interrupteurs ou prises 18%.',
         ],
       },
       {
@@ -2771,10 +2818,10 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         paragraphs: ['Tarifs annuels HT 2026 cyber assurance (plafond 250 k€) :'],
         list: {
           items: [
-            'TPE 1-9 salariés : 280-680 €/an',
-            'PME 10-49 salariés : 680-1 ~800  €/an',
-            'PME 50-99 salariés : 1 800-4 ~200  €/an',
-            'ETI 100+ salariés : 4 200-12 ~000  €/an (plafonds plus élevés)',
+            'TPE 1-9 salariés : 280-680 € par an',
+            'PME 10-49 salariés : 680-1 ~800  € par an',
+            'PME 50-99 salariés : 1 800-4 ~200  € par an',
+            'ETI 100+ salariés : 4 200-12 ~000  € par an (plafonds plus élevés)',
           ],
         },
       },
@@ -2793,12 +2840,18 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
     updatedAt: '2026-06-11',
     readTime: '8 min',
     sources: [
-      LEGIFRANCE('CGI art. 39 (déductibilité homme-clé)', 'codes/article_lc/LEGIARTI000044979340'),
+      LEGIFRANCE(
+        'CGI art. 39 (déductibilité homme-clé)',
+        'codes ou article_lc ou LEGIARTI000044979340'
+      ),
       {
         label: 'BOI-BIC-CHG-40-20 (homme-clé fiscalité)',
         url: 'https://bofip.impots.gouv.fr/bofip/3833-PGP.html',
       },
-      LEGIFRANCE('Code des assurances art. L. 132-1', 'codes/article_lc/LEGIARTI000006792733'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 132-1',
+        'codes ou article_lc ou LEGIARTI000006792733'
+      ),
     ],
     toc: [
       { id: 'definition', title: "1. Qu'est-ce qu'une assurance homme-clé" },
@@ -2851,11 +2904,11 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         paragraphs: ['Tarifs annuels HT 2026 pour un capital 500 k€ :'],
         list: {
           items: [
-            'Dirigeant 30 ans, non-fumeur, sans antécédent : 580-880 €/an',
-            'Dirigeant 40 ans : 980-1 ~580  €/an',
-            'Dirigeant 50 ans : 1 980-3 ~200  €/an',
-            'Dirigeant 60 ans : 4 200-6 ~800  €/an',
-            'Dirigeant 65 ans : 7 200-12 ~000  €/an',
+            'Dirigeant 30 ans, non-fumeur, sans antécédent : 580-880 € par an',
+            'Dirigeant 40 ans : 980-1 ~580  € par an',
+            'Dirigeant 50 ans : 1 980-3 ~200  € par an',
+            'Dirigeant 60 ans : 4 200-6 ~800  € par an',
+            'Dirigeant 65 ans : 7 200-12 ~000  € par an',
           ],
         },
         callout: {
@@ -2901,7 +2954,7 @@ export const BLOG_POSTS_BATCH_2: Record<string, BlogPost> = {
         },
         callout: {
           tone: 'success',
-          text: "KW 'assurance homme-clé' = 1 100 vol/mois avec KD 0 (gap concurrentiel énorme). Aucun courtier français n'a actuellement de page de référence sur ce sujet en 2026.",
+          text: "KW 'assurance homme-clé' = 1 100 vol par mois avec KD 0 (gap concurrentiel énorme). Aucun courtier français n'a actuellement de page de référence sur ce sujet en 2026.",
         },
       },
     ],

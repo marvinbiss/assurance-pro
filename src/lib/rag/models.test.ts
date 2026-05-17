@@ -8,7 +8,7 @@ describe('inferTier', () => {
     expect(inferTier('Devis rapide pour mon activité')).toBe('fast')
   })
 
-  it('returns premium for legal/jurisprudence questions', () => {
+  it('returns premium for legal / jurisprudence questions', () => {
     expect(inferTier('Quelle jurisprudence applicable à la garantie décennale ?')).toBe('premium')
     expect(inferTier('Article L. 241-1 du Code des assurances')).toBe('premium')
     expect(inferTier('Loi Spinetta : que prévoit-elle exactement ?')).toBe('premium')

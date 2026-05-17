@@ -3,7 +3,7 @@ import { calculerTarif, SECTEUR_LABELS, FORME_LABELS, getSinistralite } from './
 
 describe('Calculateur tarif RC Pro', () => {
   describe('calculerTarif - profils types', () => {
-    it('AE consultant CA 30k = tarif minimum (~90-280€/an)', () => {
+    it('AE consultant CA 30k = tarif minimum (~90-280€ par an)', () => {
       const r = calculerTarif({
         secteur: 'consultant-conseil',
         ca: 30000,

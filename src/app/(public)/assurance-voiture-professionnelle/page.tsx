@@ -30,7 +30,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance voiture professionnelle : RC pro circulation obligatoire + tous risques pro + marchandises transportées. Auto-mission, utilitaire, VTC, flotte. Tarifs négociés à partir de 580€/an. Devis gratuit ORIAS sous 24h.',
+    'Assurance voiture professionnelle : RC pro circulation obligatoire + tous risques pro + marchandises transportées. Auto-mission, utilitaire, VTC, flotte. Tarifs négociés à partir de 580€ par an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -41,7 +41,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance voiture professionnelle (ou « assurance auto pro ») couvre l'ensemble des véhicules utilisés à des fins professionnelles : véhicule personnel utilisé pour des déplacements pro (auto-mission), utilitaire dédié à l'entreprise, véhicule de fonction, flotte automobile, taxi et VTC, camion et poids lourd. La RC circulation est légalement obligatoire (Code des assurances L. 211-1, sanctions 75 000 € + 6 mois prison), mais les véhicules pro nécessitent en plus des garanties spécifiques : RC professionnelle dans le véhicule (passagers professionnels, livraisons, prestation client), garantie marchandises transportées, bris de matériel embarqué, garantie conducteur étendue, véhicule de remplacement 24h/24. Les tarifs 2026 démarrent à 580 € HT/an pour un véhicule auto-mission solo jusqu'à 12 000 € HT/an pour une flotte de 10 utilitaires en BTP. Cette page détaille les obligations selon l'usage (auto-mission vs flotte vs VTC), les tarifs par profil et les pièges à éviter (sous-déclaration km, exclusion usage pro)."
+      intro="L'assurance voiture professionnelle (ou « assurance auto pro ») couvre l'ensemble des véhicules utilisés à des fins professionnelles : véhicule personnel utilisé pour des déplacements pro (auto-mission), utilitaire dédié à l'entreprise, véhicule de fonction, flotte automobile, taxi et VTC, camion et poids lourd. La RC circulation est légalement obligatoire (Code des assurances L. 211-1, sanctions 75 000 € + 6 mois prison), mais les véhicules pro nécessitent en plus des garanties spécifiques : RC professionnelle dans le véhicule (passagers professionnels, livraisons, prestation client), garantie marchandises transportées, bris de matériel embarqué, garantie conducteur étendue, véhicule de remplacement 24h/24. Les tarifs 2026 démarrent à 580 € HT par an pour un véhicule auto-mission solo jusqu'à 12 000 € HT par an pour une flotte de 10 utilitaires en BTP. Cette page détaille les obligations selon l'usage (auto-mission vs flotte vs VTC), les tarifs par profil et les pièges à éviter (sous-déclaration km, exclusion usage pro)."
       legalReference="Article L. 211-1 du Code des assurances + L. 421-9 (FGAO) + Code des transports L. 3120-1 (transport public)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -61,12 +61,12 @@ export default function Page() {
         {
           icon: '🔄',
           title: 'Véhicule de remplacement',
-          desc: 'Mise à disposition 24h/24 pendant immobilisation pour réparation/sinistre',
+          desc: 'Mise à disposition 24h/24 pendant immobilisation pour réparation par sinistre',
         },
         {
           icon: '💰',
-          title: 'À partir de 580 €/an',
-          desc: 'Auto-mission solo. Flotte 10 utilitaires BTP : 8 000-12 000€/an',
+          title: 'À partir de 580 € par an',
+          desc: 'Auto-mission solo. Flotte 10 utilitaires BTP : 8 000-12 000€ par an',
         },
       ]}
       sections={[
@@ -91,8 +91,8 @@ export default function Page() {
                     <td className="border p-2">
                       Véhicule PERSO utilisé OCCASIONNELLEMENT pour le pro (RDV client, formation)
                     </td>
-                    <td className="border p-2">Extension auto perso (+~80-150€/an)</td>
-                    <td className="border p-2 text-right">+ 80-150 €/an</td>
+                    <td className="border p-2">Extension auto perso (+~80-150€ par an)</td>
+                    <td className="border p-2 text-right">+ 80-150 € par an</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -102,7 +102,7 @@ export default function Page() {
                       Véhicule PRO mis à dispo PERMANENT d&apos;un salarié (usage pro + perso)
                     </td>
                     <td className="border p-2">Auto pro tous risques + RC vie privée</td>
-                    <td className="border p-2 text-right">680 € – 1 480 €/an</td>
+                    <td className="border p-2 text-right">680 € – 1 480 € par an</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -112,7 +112,7 @@ export default function Page() {
                       Véhicule DÉDIÉ à l&apos;exploitation (camion artisan, fourgon livraison)
                     </td>
                     <td className="border p-2">Auto pro + marchandises</td>
-                    <td className="border p-2 text-right">880 € – 1 880 €/an</td>
+                    <td className="border p-2 text-right">880 € – 1 880 € par an</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -122,16 +122,16 @@ export default function Page() {
                       ≥ 4 véhicules ENTREPRISE (utilitaires + voitures cadres)
                     </td>
                     <td className="border p-2">Contrat flotte pro mutualisé</td>
-                    <td className="border p-2 text-right">580 €/véhicule (économie 20-30%)</td>
+                    <td className="border p-2 text-right">580 € par véhicule (économie 20-30%)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
-                      <strong>VTC / taxi</strong>
+                      <strong>VTC — taxi</strong>
                     </td>
                     <td className="border p-2">Transport public de personnes (carte VTC ou ADS)</td>
                     <td className="border p-2">RC pro chauffeur dédié</td>
                     <td className="border p-2 text-right">
-                      650 – 3 800 €/an (voir{' '}
+                      650 – 3 800 € par an (voir{' '}
                       <Link href="/assurance-vtc" className="text-primary-600 underline">
                         /assurance-vtc
                       </Link>{' '}
@@ -200,14 +200,14 @@ export default function Page() {
                 <li>
                   <strong>Sous-déclarer le kilométrage annuel</strong> : règle proportionnelle
                   appliquée en cas de sinistre. Exemple : forfait déclaré 10 000 km, réel 25 000 km
-                  → indemnisation 40% du préjudice. Pour les artisans : forfait pro 30 000 km/an
+                  → indemnisation 40% du préjudice. Pour les artisans : forfait pro 30 000 km par an
                   minimum recommandé.
                 </li>
                 <li>
                   <strong>Utiliser le véhicule en auto-mission sans option pro</strong> : un seul
                   accident causé pendant un déplacement client peut être REJETÉ par l&apos;assurance
-                  perso (« usage non déclaré »). Coût option auto-mission : ~80-150€/an. À ne pas
-                  négliger.
+                  perso (« usage non déclaré »). Coût option auto-mission : ~80-150€ par an. À ne
+                  pas négliger.
                 </li>
                 <li>
                   <strong>Oublier de déclarer les conducteurs occasionnels</strong> (apprenti,
@@ -250,14 +250,14 @@ export default function Page() {
                   sans avenant complexe
                 </li>
                 <li>
-                  <strong>Reporting consolidé</strong> mensuel/annuel pour suivre la sinistralité
+                  <strong>Reporting consolidé</strong> mensuel ou annuel pour suivre la sinistralité
                   interne
                 </li>
               </ul>
               <p>
-                <strong>Tarif moyen 2026</strong> : ~580€/véhicule pour une flotte de 10 utilitaires
-                (vs ~880€ en individuel) = économie ~3 000€/an. ROI immédiat à partir de 4
-                véhicules.
+                <strong>Tarif moyen 2026</strong> : ~580€ par véhicule pour une flotte de 10
+                utilitaires (vs ~880€ en individuel) = économie ~3 000€ par an. ROI immédiat à
+                partir de 4 véhicules.
               </p>
             </>
           ),
@@ -266,23 +266,23 @@ export default function Page() {
       faq={[
         {
           q: "L'assurance auto pro est-elle obligatoire ?",
-          a: "Oui — la RC circulation est obligatoire pour TOUT véhicule à moteur (Code des assurances L. 211-1). Sanctions absence : 75 000€ d'amende + 6 mois prison + immobilisation véhicule. Pour un usage professionnel, cette RC standard ne suffit pas — il faut une RC PROFESSIONNELLE adaptée à l'usage (auto-mission, utilitaire pro, VTC, flotte) qui couvre les passagers/marchandises/clients.",
+          a: "Oui — la RC circulation est obligatoire pour TOUT véhicule à moteur (Code des assurances L. 211-1). Sanctions absence : 75 000€ d'amende + 6 mois prison + immobilisation véhicule. Pour un usage professionnel, cette RC standard ne suffit pas — il faut une RC PROFESSIONNELLE adaptée à l'usage (auto-mission, utilitaire pro, VTC, flotte) qui couvre les passagers, marchandises ou clients.",
         },
         {
           q: 'Combien coûte une assurance voiture professionnelle ?',
-          a: "Démarre à +80-150€/an pour une option auto-mission (extension de l'auto perso). Véhicule de fonction : 680-1 480€/an. Utilitaire pro avec marchandises : 880-1 880€/an. Flotte de 10 utilitaires : ~580€/véhicule (économie 20-30% vs individuel). VTC : 650-1 400€/an. Taxi artisan : 1 280-3 800€/an.",
+          a: "Démarre à +80-150€ par an pour une option auto-mission (extension de l'auto perso). Véhicule de fonction : 680-1 480€ par an. Utilitaire pro avec marchandises : 880-1 880€ par an. Flotte de 10 utilitaires : ~580€ par véhicule (économie 20-30% vs individuel). VTC : 650-1 400€ par an. Taxi artisan : 1 280-3 800€ par an.",
         },
         {
           q: 'Quelle différence entre auto-mission et véhicule de fonction ?',
-          a: "AUTO-MISSION = véhicule PERSO utilisé OCCASIONNELLEMENT pour le pro (~30 jours/an max). Couverture via une OPTION sur l'assurance perso (+80-150€/an). VÉHICULE DE FONCTION = véhicule PRO mis à disposition PERMANENT d'un salarié (usage pro + perso). Couverture par un contrat AUTO PRO TOUS RISQUES + RC vie privée du conducteur (680-1 480€/an).",
+          a: "AUTO-MISSION = véhicule PERSO utilisé OCCASIONNELLEMENT pour le pro (~30 jours par an max). Couverture via une OPTION sur l'assurance perso (+80-150€ par an). VÉHICULE DE FONCTION = véhicule PRO mis à disposition PERMANENT d'un salarié (usage pro + perso). Couverture par un contrat AUTO PRO TOUS RISQUES + RC vie privée du conducteur (680-1 480€ par an).",
         },
         {
           q: 'Mon véhicule pro est volé : suis-je couvert ?',
-          a: 'Oui SI la garantie « vol » est souscrite (incluse dans tous les contrats auto pro tous risques). MAIS le vol des EFFETS PERSONNELS du conducteur (PC pro, GPS, terminal CB, téléphone pro) et des MARCHANDISES TRANSPORTÉES sont souvent EN OPTION séparée. À vérifier explicitement à la souscription — coût modeste (~50-150€/an) pour un risque réel.',
+          a: 'Oui SI la garantie « vol » est souscrite (incluse dans tous les contrats auto pro tous risques). MAIS le vol des EFFETS PERSONNELS du conducteur (PC pro, GPS, terminal CB, téléphone pro) et des MARCHANDISES TRANSPORTÉES sont souvent EN OPTION séparée. À vérifier explicitement à la souscription — coût modeste (~50-150€ par an) pour un risque réel.',
         },
         {
           q: "Comment fonctionne l'assurance flotte automobile ?",
-          a: "Contrat unique mutualisé pour 4+ véhicules d'une même entreprise. Avantages : économie 20-30% vs assurance individuelle, gestion centralisée des sinistres, tarification au km global de la flotte (et non par véhicule), ajout/retrait de véhicule simplifié, reporting consolidé mensuel. ROI positif dès 4 véhicules.",
+          a: "Contrat unique mutualisé pour 4+ véhicules d'une même entreprise. Avantages : économie 20-30% vs assurance individuelle, gestion centralisée des sinistres, tarification au km global de la flotte (et non par véhicule), ajout ou retrait de véhicule simplifié, reporting consolidé mensuel. ROI positif dès 4 véhicules.",
         },
         {
           q: 'Auto-mission : suis-je couvert si je transporte mon stock pour livrer un client ?',

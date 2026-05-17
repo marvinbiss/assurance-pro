@@ -19,7 +19,7 @@ describe('CalculateurTarifRcPro — UI', () => {
     expect(screen.getByText(/Médiane indicative/)).toBeInTheDocument()
   })
 
-  it('CTA pointe vers /outils/devis-rc-pro avec query params', () => {
+  it('CTA pointe vers /outils / devis-rc-pro avec query params', () => {
     render(<CalculateurTarifRcPro />)
     const cta = screen.getByRole('link', { name: /Recevoir mon devis officiel/i })
     expect(cta.getAttribute('href')).toContain('/outils/devis-rc-pro')

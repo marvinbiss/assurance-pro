@@ -19,12 +19,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-decennale/auto-entrepreneur'
 const TITLE = 'Assurance décennale auto-entrepreneur — Tarifs 2026 et obligation Loi Spinetta'
 const TAGLINE =
-  'La décennale obligatoire pour micro-entrepreneurs et auto-entrepreneurs du BTP. Tarifs négociés à partir de 480 €/an, attestation 24h, conseil ORIAS spécialisé artisans.'
+  'La décennale obligatoire pour micro-entrepreneurs et auto-entrepreneurs du BTP. Tarifs négociés à partir de 480 € par an, attestation 24h, conseil ORIAS spécialisé artisans.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance décennale auto-entrepreneur BTP : obligatoire (Loi Spinetta), tarifs négociés à partir de 480 €/an, attestation immédiate. 8 assureurs comparés (Hiscox, April, MMA, AXA Pro, SMABTP, Wakam, Stello, Generali). Devis gratuit ORIAS sous 24h.',
+    'Assurance décennale auto-entrepreneur BTP : obligatoire (Loi Spinetta), tarifs négociés à partir de 480 € par an, attestation immédiate. 8 assureurs comparés (Hiscox, April, MMA, AXA Pro, SMABTP, Wakam, Stello, Generali). Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
@@ -55,8 +55,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 480 €/an',
-          desc: 'AE BTP plomberie, électricité, peinture. Maçonnerie/couverture : 700-1 200€/an',
+          title: 'À partir de 480 € par an',
+          desc: 'AE BTP plomberie, électricité, peinture. Maçonnerie ou couverture : 700-1 200€ par an',
         },
         {
           icon: '⚡',
@@ -82,21 +82,22 @@ export default function Page() {
               <ul>
                 <li>Maçons (gros œuvre + finition)</li>
                 <li>
-                  Plombiers / chauffagistes (canalisations encastrées, chauffe-eau, chauffage
+                  Plombiers ou chauffagistes (canalisations encastrées, chauffe-eau, chauffage
                   central)
                 </li>
                 <li>Électriciens (tableau électrique, courant fort)</li>
-                <li>Couvreurs / zingueurs / étancheurs</li>
+                <li>Couvreurs — zingueurs — étancheurs</li>
                 <li>Peintres en bâtiment (façades extérieures, peintures techniques)</li>
                 <li>Carreleurs (sols + murs salles d&apos;eau)</li>
                 <li>Menuisiers extérieurs (portes, fenêtres, vérandas)</li>
                 <li>Charpentiers (bois, métallique)</li>
-                <li>Plaquistes / plâtriers (cloisons sèches)</li>
-                <li>Installateurs photovoltaïque / pompe à chaleur (RGE)</li>
+                <li>Plaquistes — plâtriers (cloisons sèches)</li>
+                <li>Installateurs photovoltaïque — pompe à chaleur (RGE)</li>
                 <li>Désamianteurs SS3/SS4</li>
                 <li>Pisciniers</li>
                 <li>
-                  Maîtres d&apos;œuvre / architectes / BET (responsabilité décennale du concepteur)
+                  Maîtres d&apos;œuvre ou architectes ou BET (responsabilité décennale du
+                  concepteur)
                 </li>
               </ul>
               <p>
@@ -166,7 +167,7 @@ export default function Page() {
                     <td className="border p-2">8,6 %</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Plaquiste / plâtrier</td>
+                    <td className="border p-2">Plaquiste — plâtrier</td>
                     <td className="border p-2 text-right">510 € – 820 €</td>
                     <td className="border p-2">3,8 %</td>
                   </tr>
@@ -178,9 +179,9 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Sources : AQC SYCODÉS 2024 + barèmes 2026 Hiscox / April Pro / SMABTP / MMA / AXA
-                Pro / Wakam / Stello / Generali. Tarifs majorés en cas d&apos;antécédent sinistre
-                (+30 à +80 % la 1re année).
+                Sources : AQC SYCODÉS 2024 + barèmes 2026 Hiscox ou April Pro ou SMABTP ou MMA ou
+                AXA Pro / Wakam / Stello / Generali. Tarifs majorés en cas d&apos;antécédent
+                sinistre (+30 à +80 % la 1re année).
               </p>
             </>
           ),
@@ -262,7 +263,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte la décennale pour un auto-entrepreneur en 2026 ?',
-          a: 'Démarre à 480 €/an pour un peintre AE sans antécédent. Médiane : 640-820 €/an pour un plombier ou électricien. Plafond pratique : 1 540 €/an pour un couvreur-zingueur AE. Tarif fonction du métier (sinistralité AQC), du CA prévisionnel, des antécédents et du label RGE éventuel.',
+          a: 'Démarre à 480 € par an pour un peintre AE sans antécédent. Médiane : 640-820 € par an pour un plombier ou électricien. Plafond pratique : 1 540 € par an pour un couvreur-zingueur AE. Tarif fonction du métier (sinistralité AQC), du CA prévisionnel, des antécédents et du label RGE éventuel.',
         },
         {
           q: 'Comment obtenir une attestation décennale en 24h ?',
@@ -270,7 +271,7 @@ export default function Page() {
         },
         {
           q: 'Que se passe-t-il à la cessation de mon auto-entreprise ?',
-          a: 'Vous devez activer la « garantie subséquente » qui maintient la décennale pendant 10 ans après la fin de votre activité (durée légale de la garantie). Sans elle, votre patrimoine personnel reste exposé en cas de sinistre tardif. Coût : ~50 à 200€/an selon métier (vs 540-1 540€ pour le contrat actif).',
+          a: 'Vous devez activer la « garantie subséquente » qui maintient la décennale pendant 10 ans après la fin de votre activité (durée légale de la garantie). Sans elle, votre patrimoine personnel reste exposé en cas de sinistre tardif. Coût : ~50 à 200€ par an selon métier (vs 540-1 540€ pour le contrat actif).',
         },
         {
           q: "Puis-je changer d'assureur décennale en cours de chantier ?",
@@ -282,7 +283,7 @@ export default function Page() {
         },
         {
           q: 'Auto-entrepreneur RGE photovoltaïque : la décennale est-elle plus chère ?',
-          a: "Oui, +40 à +90% vs un électricien classique. Tarif 2026 : 880 à 1 680 €/an. Raison : sinistralité AQC élevée (9,2 %) sur les installations PV — incendies dus aux onduleurs, défauts d'étanchéité de toiture, malfaçons sur les fixations. Garantie obligatoire pour conserver la qualification RGE et bénéficier de la prime à l'autoconsommation.",
+          a: "Oui, +40 à +90% vs un électricien classique. Tarif 2026 : 880 à 1 680 € par an. Raison : sinistralité AQC élevée (9,2 %) sur les installations PV — incendies dus aux onduleurs, défauts d'étanchéité de toiture, malfaçons sur les fixations. Garantie obligatoire pour conserver la qualification RGE et bénéficier de la prime à l'autoconsommation.",
         },
       ]}
     />

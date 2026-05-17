@@ -15,7 +15,7 @@ export default function SasuPage() {
   return (
     <DisambiguationPage
       statut="SASU"
-      intro="Le statut SASU (Société par Actions Simplifiée Unipersonnelle) impose les mêmes obligations qu'une SAS classique. Décennale pour activités BTP, RC Pro pour services/conseil. Selon les contrats clients, une multirisque pro peut aussi être exigée."
+      intro="Le statut SASU (Société par Actions Simplifiée Unipersonnelle) impose les mêmes obligations qu'une SAS classique. Décennale pour activités BTP, RC Pro pour services ou conseil. Selon les contrats clients, une multirisque pro peut aussi être exigée."
       options={[
         {
           href: '/assurance-rc-pro-sasu',

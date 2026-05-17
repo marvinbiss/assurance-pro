@@ -27,12 +27,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-taxi'
 const TITLE = 'Assurance taxi — Tarifs 2026, garanties artisan-taxi (ADS)'
 const TAGLINE =
-  "L'assurance professionnelle dédiée aux taxis : couverture véhicule, RC client, ADS-licence, marchandises transportées, perte d'exploitation. Tarifs négociés à partir de 1 280 €/an."
+  "L'assurance professionnelle dédiée aux taxis : couverture véhicule, RC client, ADS-licence, marchandises transportées, perte d'exploitation. Tarifs négociés à partir de 1 280 € par an."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Assurance taxi : pack véhicule pro + RC pro chauffeur, ADS-licence, perte d'exploitation, garanties artisan-taxi. Tarifs à partir de 1 280€/an. Comparatif 6 assureurs spécialisés (AXA, MMA, Allianz, Wakam, Stello). Devis ORIAS sous 24h.",
+    "Assurance taxi : pack véhicule pro + RC pro chauffeur, ADS-licence, perte d'exploitation, garanties artisan-taxi. Tarifs à partir de 1 280€ par an. Comparatif 6 assureurs spécialisés (AXA, MMA, Allianz, Wakam, Stello). Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -43,7 +43,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance taxi est un pack professionnel obligatoire (Code des transports + Code des assurances) qui combine l'assurance du véhicule (responsabilité civile circulation tous risques pro), la responsabilité civile professionnelle vis-à-vis des passagers, la couverture de la licence ADS (Autorisation De Stationnement, valeur 50 000 à 250 000 € selon ville), les garanties spécifiques aux artisans-taxis (perte d'exploitation pendant arrêt de travail, immobilisation du véhicule, vol de la valise) et les garanties propres aux conducteurs salariés ou locataires-gérants. Les tarifs 2026 démarrent à 1 280 € HT/an pour un artisan-taxi province exerçant 200 jours/an, jusqu'à 3 800 € HT/an pour un taxi parisien (G7, G7 Pro, Tax'Up) ou un véhicule haut de gamme. Cette page distingue les obligations propres aux taxis vs VTC, détaille les tarifs par profil et les pièges à éviter (sous-déclaration km annuels, exclusion garantie vol valise)."
+      intro="L'assurance taxi est un pack professionnel obligatoire (Code des transports + Code des assurances) qui combine l'assurance du véhicule (responsabilité civile circulation tous risques pro), la responsabilité civile professionnelle vis-à-vis des passagers, la couverture de la licence ADS (Autorisation De Stationnement, valeur 50 000 à 250 000 € selon ville), les garanties spécifiques aux artisans-taxis (perte d'exploitation pendant arrêt de travail, immobilisation du véhicule, vol de la valise) et les garanties propres aux conducteurs salariés ou locataires-gérants. Les tarifs 2026 démarrent à 1 280 € HT par an pour un artisan-taxi province exerçant 200 jours par an, jusqu'à 3 800 € HT par an pour un taxi parisien (G7, G7 Pro, Tax'Up) ou un véhicule haut de gamme. Cette page distingue les obligations propres aux taxis vs VTC, détaille les tarifs par profil et les pièges à éviter (sous-déclaration km annuels, exclusion garantie vol valise)."
       legalReference="Code des transports L. 3120-1 et s. + Code des assurances L. 211-1 (RC obligatoire)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -57,13 +57,13 @@ export default function Page() {
         },
         {
           icon: '🔑',
-          title: 'Garantie ADS / licence',
-          desc: "Indemnisation perte/vol licence (valeur 50-250k€ selon ville) — clé de l'activité",
+          title: 'Garantie ADS — licence',
+          desc: "Indemnisation perte ou vol licence (valeur 50-250k€ selon ville) — clé de l'activité",
         },
         {
           icon: '💰',
-          title: 'À partir de 1 280 €/an',
-          desc: 'Artisan-taxi province 200 jours/an. Paris : 2 200-3 800€/an',
+          title: 'À partir de 1 280 € par an',
+          desc: 'Artisan-taxi province 200 jours par an. Paris : 2 200-3 800€ par an',
         },
         {
           icon: '🛡️',
@@ -120,9 +120,9 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>Tarif assurance moyen 2026</strong>
                     </td>
-                    <td className="border p-2">1 280 – 3 800 €/an</td>
+                    <td className="border p-2">1 280 – 3 800 € par an</td>
                     <td className="border p-2">
-                      650 – 1 400 €/an (voir notre page /assurance-vtc)
+                      650 – 1 400 € par an (voir notre page /assurance-vtc)
                     </td>
                   </tr>
                 </tbody>
@@ -190,7 +190,7 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables : km annuels (forfait 30k / 50k / 80k+ km), antécédents accidentels 3
+                Variables : km annuels (forfait 30k ou 50k ou 80k+ km), antécédents accidentels 3
                 dernières années, ancienneté permis B + carte pro &gt; 3 ans (-15%), zone
                 géographique, modèle véhicule (Tesla Model S Paris : majoration +25%).
               </p>
@@ -207,8 +207,8 @@ export default function Page() {
                   véhicule. Plafond corporel ILLIMITÉ (obligation Code des assurances)
                 </li>
                 <li>
-                  <strong>Garantie ADS / licence</strong> — indemnise la valeur de remplacement de
-                  la licence en cas de perte/vol/destruction administrative. ADS Paris ~ 200k€,
+                  <strong>Garantie ADS — licence</strong> — indemnise la valeur de remplacement de
+                  la licence en cas de perte, vol ou destruction administrative. ADS Paris ~ 200k€,
                   Marseille ~ 160k€, Lyon ~ 120k€
                 </li>
                 <li>
@@ -233,7 +233,7 @@ export default function Page() {
                 <li>Garantie « véhicule de remplacement » 24h/24 (nécessaire si artisan solo)</li>
                 <li>Cyber pro (terminal CB, application réservation, base clients)</li>
                 <li>
-                  Garantie agression — capital décès/invalidité du chauffeur (taxis nocturnes
+                  Garantie agression — capital décès ou invalidité du chauffeur (taxis nocturnes
                   urbains)
                 </li>
               </ul>
@@ -246,8 +246,8 @@ export default function Page() {
             <>
               <p>
                 C&apos;est <strong>l&apos;erreur la plus coûteuse</strong> chez les taxis : déclarer
-                un forfait 30 000 km/an pour économiser sur la prime, alors qu&apos;on roule en
-                réalité 60 000 km/an. En cas de sinistre, l&apos;assureur applique :
+                un forfait 30 000 km par an pour économiser sur la prime, alors qu&apos;on roule en
+                réalité 60 000 km par an. En cas de sinistre, l&apos;assureur applique :
               </p>
               <ul>
                 <li>
@@ -279,19 +279,19 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une assurance taxi en 2026 ?',
-          a: 'Démarre à 1 280€/an pour un artisan-taxi province sans antécédent. Médiane : 1 680-2 480€/an. Paris : 2 200-3 800€/an. Variables : km annuels, antécédents accidentels, ancienneté carte pro, zone géographique, modèle véhicule (haut de gamme = +25-40%).',
+          a: 'Démarre à 1 280€ par an pour un artisan-taxi province sans antécédent. Médiane : 1 680-2 480€ par an. Paris : 2 200-3 800€ par an. Variables : km annuels, antécédents accidentels, ancienneté carte pro, zone géographique, modèle véhicule (haut de gamme = +25-40%).',
         },
         {
           q: "L'ADS est-elle assurable ?",
-          a: "OUI — garantie « ADS / Licence » indispensable pour les artisans-taxis. Indemnise la valeur de remplacement de la licence en cas de perte, vol ou destruction administrative. Coût garantie ADS : inclus dans les contrats spécialisés taxi. Sans cette garantie, perte d'une ADS = ruine personnelle (valeur 50-250k€ selon ville, 200k€ à Paris).",
+          a: "OUI — garantie « ADS — Licence » indispensable pour les artisans-taxis. Indemnise la valeur de remplacement de la licence en cas de perte, vol ou destruction administrative. Coût garantie ADS : inclus dans les contrats spécialisés taxi. Sans cette garantie, perte d'une ADS = ruine personnelle (valeur 50-250k€ selon ville, 200k€ à Paris).",
         },
         {
           q: 'Différence assurance taxi et assurance VTC ?',
-          a: "TAXI = artisan avec ADS (valeur 50-250k€), maraude autorisée, tarification réglementée. Assurance 1 280-3 800€/an. VTC = carte préfectorale gratuite, réservation préalable obligatoire, tarification libre. Assurance 650-1 400€/an. Les 2 statuts sont assurables avec un contrat « bi-statut » si vous exercez les 2 (~15-20% d'économie vs 2 contrats séparés).",
+          a: "TAXI = artisan avec ADS (valeur 50-250k€), maraude autorisée, tarification réglementée. Assurance 1 280-3 800€ par an. VTC = carte préfectorale gratuite, réservation préalable obligatoire, tarification libre. Assurance 650-1 400€ par an. Les 2 statuts sont assurables avec un contrat « bi-statut » si vous exercez les 2 (~15-20% d'économie vs 2 contrats séparés).",
         },
         {
           q: 'Mon taxi est volé pendant la nuit, suis-je couvert ?',
-          a: 'Oui si la garantie « vol » est souscrite (incluse dans tous les contrats taxi standards). MAIS le « vol des effets personnels du chauffeur » (téléphone, valise pro, portefeuille, terminal CB) est souvent EN OPTION. À vérifier explicitement à la souscription — coût modeste (~30-50€/an) pour un risque réel.',
+          a: 'Oui si la garantie « vol » est souscrite (incluse dans tous les contrats taxi standards). MAIS le « vol des effets personnels du chauffeur » (téléphone, valise pro, portefeuille, terminal CB) est souvent EN OPTION. À vérifier explicitement à la souscription — coût modeste (~30-50€ par an) pour un risque réel.',
         },
         {
           q: 'Locataire-gérant taxi : qui doit assurer le véhicule ?',

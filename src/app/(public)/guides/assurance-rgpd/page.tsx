@@ -9,7 +9,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/assurance-rgpd'
+const SLUG = 'guides / assurance-rgpd'
 const TITLE = 'Assurance RGPD — Couverture sanctions CNIL et breach 2026'
 const TAGLINE =
   "L'assurance RGPD pour entreprises : couverture sanctions CNIL (jusqu'à 4% CA mondial), notification breach 72h, frais juridiques. Cyber assurance dédiée."
@@ -17,7 +17,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance RGPD entreprise : couverture sanctions CNIL (4% CA mondial OU 20 M€), notification breach 72h, frais juridiques RGPD, communication crise, restauration données. Cyber assurance dédiée. Tarifs 200-2 800€/an. Devis ORIAS sous 24h.',
+    'Assurance RGPD entreprise : couverture sanctions CNIL (4% CA mondial OU 20 M€), notification breach 72h, frais juridiques RGPD, communication crise, restauration données. Cyber assurance dédiée. Tarifs 200-2 800€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'article' },
 }
@@ -28,7 +28,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance RGPD désigne la couverture spécifique des risques liés au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679, en vigueur depuis le 25 mai 2018). Elle est généralement intégrée à la CYBER ASSURANCE (vs un contrat dédié RGPD pur, qui n'existe pas en pratique). Cette assurance couvre 5 grands risques : (1) sanctions CNIL après contrôle ou plainte (jusqu'à 4% du CA mondial OU 20 M€), (2) frais de notification breach (sous 72h à la CNIL + notification individuelle aux personnes concernées si risque élevé), (3) frais juridiques RGPD (avocats, expertise forensique), (4) frais de communication de crise (gestion réputation post-incident), (5) frais de restauration des données. Coût moyen sinistre RGPD pour une PME en 2026 : 80 000-300 000€. Tarif cyber assurance avec volet RGPD : 200-2 800€/an selon taille. ROI évident dès le 1er incident."
+      intro="L'assurance RGPD désigne la couverture spécifique des risques liés au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679, en vigueur depuis le 25 mai 2018). Elle est généralement intégrée à la CYBER ASSURANCE (vs un contrat dédié RGPD pur, qui n'existe pas en pratique). Cette assurance couvre 5 grands risques : (1) sanctions CNIL après contrôle / plainte (jusqu'à 4% du CA mondial OU 20 M€), (2) frais de notification breach (sous 72h à la CNIL + notification individuelle aux personnes concernées si risque élevé), (3) frais juridiques RGPD (avocats, expertise forensique), (4) frais de communication de crise (gestion réputation post-incident), (5) frais de restauration des données. Coût moyen sinistre RGPD pour une PME en 2026 : 80 000-300 000€. Tarif cyber assurance avec volet RGPD : 200-2 800€ par an selon taille. ROI évident dès le 1er incident."
       legalReference="Règlement UE 2016/679 (RGPD) + Loi Informatique et Libertés modifiée (1978/2018)"
       isObligatoire={false}
       benefits={[
@@ -49,8 +49,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 200 €/an',
-          desc: 'TPE freelance. PME 50 salariés : 1 500-2 800€/an. ETI 100+ : 5 000-15 000€/an',
+          title: 'À partir de 200 € par an',
+          desc: 'TPE freelance. PME 50 salariés : 1 500-2 800€ par an. ETI 100+ : 5 000-15 000€ par an',
         },
       ]}
       sections={[
@@ -74,7 +74,7 @@ export default function Page() {
               <p>
                 Sanctions complémentaires : avertissement public CNIL, mise en demeure, restriction
                 temporaire ou définitive du traitement, retrait certification, plainte au pénal
-                (jusqu&apos;à 5 ans de prison pour le DPO/dirigeant en cas de fraude).
+                (jusqu&apos;à 5 ans de prison pour le DPO ou dirigeant en cas de fraude).
               </p>
             </>
           ),
@@ -159,7 +159,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une assurance RGPD pour une PME ?',
-          a: 'Démarre à 200€/an pour TPE freelance. 1 500-2 800€/an pour PME 50 salariés. 5 000-15 000€/an pour ETI 100+ salariés. Inclus dans la cyber assurance dédiée. Variables : volume de données traitées, secteur (santé/finance majoré), exposition internationale.',
+          a: 'Démarre à 200€ par an pour TPE freelance. 1 500-2 800€ par an pour PME 50 salariés. 5 000-15 000€ par an pour ETI 100+ salariés. Inclus dans la cyber assurance dédiée. Variables : volume de données traitées, secteur (santé ou finance majoré), exposition internationale.',
         },
         {
           q: 'Sanctions CNIL : quel maximum ?',

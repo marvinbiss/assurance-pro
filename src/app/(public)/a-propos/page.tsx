@@ -159,8 +159,8 @@ export default function AProposPage() {
             Notre cabinet est spécialisé dans l&apos;
             <strong>assurance professionnelle multi-vertical</strong> : artisans du BTP, professions
             libérales, services aux entreprises, restauration, commerce, médical, juridique,
-            transport (VTC/Taxi), e-commerce et cyber. Nous travaillons avec un panel de plus de 10
-            assureurs partenaires (Hiscox, April Pro, Allianz Pro, MMA, Generali, AXA Pro, MAAF,
+            transport (VTC ou Taxi), e-commerce et cyber. Nous travaillons avec un panel de plus de
+            10 assureurs partenaires (Hiscox, April Pro, Allianz Pro, MMA, Generali, AXA Pro, MAAF,
             SMABTP, Wakam, Stello&hellip;) afin de comparer pour vous les meilleures offres du
             marché.
           </p>

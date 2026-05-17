@@ -31,7 +31,7 @@ export default function AutoEntrepreneurPage() {
           accent: 'charcoal',
           title: 'RC Pro auto-entrepreneur',
           desc: "Consultant, freelance IT, coach, photographe, formateur, expert-comptable, agence digitale… Couvre dommages causés à vos clients dans l'exercice de votre activité.",
-          bullet: "Recommandée pour services pro — exigée par certains clients/donneurs d'ordre",
+          bullet: "Recommandée pour services pro — exigée par certains clients ou donneurs d'ordre",
         },
       ]}
     />

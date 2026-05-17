@@ -124,8 +124,8 @@ export default function ProcessusPage() {
 
           <h2>Étape 5 — Traçabilité immuable et audit ACPR</h2>
           <p>
-            Conformément à la <strong>Recommandation ACPR 2024-R-03</strong> (applicable au
-            31/12/2025), chaque dossier conseil est&nbsp;:
+            Conformément à la <strong>Recommandation ACPR 2024-R-03</strong> (applicable au 31
+            décembre 2025), chaque dossier conseil est&nbsp;:
           </p>
           <ul>
             <li>Stocké dans une base de données dédiée</li>

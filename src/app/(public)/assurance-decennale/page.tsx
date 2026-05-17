@@ -54,7 +54,7 @@ export default function PilierDecennalePage() {
         { value: '3 247', label: 'Artisans assurés 2026' },
         { value: '−32%', label: 'Économie moyenne' },
         { value: '24h', label: 'Attestation délivrée' },
-        { value: '4.9/5', label: '142 avis vérifiés' },
+        { value: '4,9 sur 5', label: '142 avis vérifiés' },
       ]}
       calculatorGarantie="decennale"
       expertBio={{
@@ -68,7 +68,7 @@ export default function PilierDecennalePage() {
         {
           assureur: 'SMABTP',
           color: '#1A4F8B',
-          prix: '1 200 €/an',
+          prix: '1 200 € par an',
           plafond: '8 M€',
           delai: '48h',
           recommande: true,
@@ -76,28 +76,28 @@ export default function PilierDecennalePage() {
         {
           assureur: 'Hiscox',
           color: '#7B2CBF',
-          prix: '1 450 €/an',
+          prix: '1 450 € par an',
           plafond: '10 M€',
           delai: '24h',
         },
         {
           assureur: 'April Pro',
           color: '#00A859',
-          prix: '1 380 €/an',
+          prix: '1 380 € par an',
           plafond: '5 M€',
           delai: '24h',
         },
         {
           assureur: 'MMA Pro',
           color: '#003B71',
-          prix: '1 320 €/an',
+          prix: '1 320 € par an',
           plafond: '8 M€',
           delai: '48h',
         },
         {
           assureur: 'AXA Pro',
           color: '#00008F',
-          prix: '1 500 €/an',
+          prix: '1 500 € par an',
           plafond: '6 M€',
           delai: '72h',
         },
@@ -115,21 +115,21 @@ export default function PilierDecennalePage() {
           body: (
             <>
               <p>
-                L\'obligation de souscription concerne tout professionnel intervenant dans la
-                construction d\'un ouvrage&nbsp;: artisans, entreprises générales, sous-traitants,
-                architectes, bureaux d\'études, maîtres d\'œuvre, constructeurs de maisons
+                L’obligation de souscription concerne tout professionnel intervenant dans la
+                construction d’un ouvrage&nbsp;: artisans, entreprises générales, sous-traitants,
+                architectes, bureaux d’études, maîtres d’œuvre, constructeurs de maisons
                 individuelles (CMI), promoteurs.
               </p>
               <p>
                 Cela englobe&nbsp;: les <strong>52 métiers BTP</strong> du gros œuvre et second
-                œuvre, les spécialistes de la couverture / étanchéité / charpente, les installateurs
-                RGE (photovoltaïque, pompes à chaleur), les paysagistes lorsqu\'ils réalisent des
-                ouvrages durs.
+                œuvre, les spécialistes de la couverture ou étanchéité ou charpente, les
+                installateurs RGE (photovoltaïque, pompes à chaleur), les paysagistes lorsqu’ils
+                réalisent des ouvrages durs.
               </p>
               <p className="my-4 border-l-4 border-primary-400 bg-primary-50 p-4 text-sm">
-                <strong>Auto-entrepreneurs&nbsp;:</strong> l\'obligation s\'applique aussi aux
+                <strong>Auto-entrepreneurs&nbsp;:</strong> l’obligation s’applique aussi aux
                 micro-entrepreneurs du BTP. Notre cabinet propose des contrats spécifiques adaptés
-                au statut AE avec primes à partir de 35€/mois selon le métier et le CA déclaré.
+                au statut AE avec primes à partir de 35€ par mois selon le métier et le CA déclaré.
               </p>
             </>
           ),
@@ -141,24 +141,24 @@ export default function PilierDecennalePage() {
               <p>La garantie décennale couvre les dommages qui&nbsp;:</p>
               <ul>
                 <li>
-                  compromettent la <strong>solidité de l\'ouvrage</strong>&nbsp;: fissures
+                  compromettent la <strong>solidité de l’ouvrage</strong>&nbsp;: fissures
                   structurelles, affaissement de fondations, effondrement, etc.
                 </li>
                 <li>
-                  rendent l\'ouvrage <strong>impropre à sa destination</strong>&nbsp;: infiltrations
-                  de toiture, défauts d\'étanchéité, dégâts des eaux encastrés, défauts d\'isolation
+                  rendent l’ouvrage <strong>impropre à sa destination</strong>&nbsp;: infiltrations
+                  de toiture, défauts d’étanchéité, dégâts des eaux encastrés, défauts d’isolation
                   phonique majeurs.
                 </li>
                 <li>
-                  affectent la <strong>solidité d\'un élément d\'équipement indissociable</strong>{' '}
+                  affectent la <strong>solidité d’un élément d’équipement indissociable</strong>{' '}
                   (canalisations encastrées, faux-plafonds, escalier intégré).
                 </li>
               </ul>
               <p>
-                Le tiers lésé (maître d\'ouvrage, particulier, copropriété) peut activer la garantie
-                pendant 10 ans à compter de la réception. La présomption de responsabilité de
-                l\'art. 1792 du Code civil signifie que c\'est à{' '}
-                <strong>l\'artisan de prouver l\'absence de faute</strong>, pas l\'inverse.
+                Le tiers lésé (maître d’ouvrage, particulier, copropriété) peut activer la garantie
+                pendant 10 ans à compter de la réception. La présomption de responsabilité de l’art.
+                1792 du Code civil signifie que c’est à{' '}
+                <strong>l’artisan de prouver l’absence de faute</strong>, pas l’inverse.
               </p>
             </>
           ),
@@ -168,8 +168,8 @@ export default function PilierDecennalePage() {
           body: (
             <>
               <p>
-                Le tarif annuel d\'une décennale dépend de plusieurs facteurs&nbsp;: votre métier
-                (sinistralité AQC), votre chiffre d\'affaires, votre statut juridique, vos
+                Le tarif annuel d’une décennale dépend de plusieurs facteurs&nbsp;: votre métier
+                (sinistralité AQC), votre chiffre d’affaires, votre statut juridique, vos
                 antécédents de sinistres, votre zone géographique et votre ancienneté.
               </p>
               <table className="my-4 w-full border-collapse text-sm">
@@ -216,7 +216,7 @@ export default function PilierDecennalePage() {
               </table>
               <p className="text-xs italic text-gray-600">
                 Tarif indicatif basé sur les données AQC SYCODÉS 2024 et les barèmes publics des
-                assureurs partenaires. Le tarif réel dépend de votre profil et fait l\'objet d\'un
+                assureurs partenaires. Le tarif réel dépend de votre profil et fait l’objet d’un
                 devis personnalisé.
               </p>
             </>
@@ -227,17 +227,17 @@ export default function PilierDecennalePage() {
           body: (
             <>
               <p>
-                L\'absence de garantie décennale est sanctionnée pénalement (art. L. 243-3 du Code
+                L’absence de garantie décennale est sanctionnée pénalement (art. L. 243-3 du Code
                 des assurances)&nbsp;:
               </p>
               <ul>
                 <li>
-                  <strong>75 000 € d\'amende</strong>
+                  <strong>75 000 € d’amende</strong>
                 </li>
                 <li>
-                  <strong>6 mois d\'emprisonnement</strong>
+                  <strong>6 mois d’emprisonnement</strong>
                 </li>
-                <li>Interdiction d\'exercer en tant qu\'artisan pour la durée fixée par le juge</li>
+                <li>Interdiction d’exercer en tant qu’artisan pour la durée fixée par le juge</li>
                 <li>Responsabilité civile et pénale personnelle en cas de sinistre</li>
               </ul>
               <p>
@@ -283,7 +283,7 @@ export default function PilierDecennalePage() {
         },
         {
           q: 'Combien ça coûte vraiment une décennale en auto-entrepreneur ?',
-          a: "À partir de 35-45 €/mois pour un peintre AE débutant, 60-120 €/mois pour un plombier-chauffagiste, 100-180 €/mois pour un maçon. Le tarif dépend du métier (sinistralité AQC), du CA et de l'expérience. Méfiez-vous des offres < 30 €/mois : couverture souvent insuffisante.",
+          a: "À partir de 35-45 € par mois pour un peintre AE débutant, 60-120 € par mois pour un plombier-chauffagiste, 100-180 € par mois pour un maçon. Le tarif dépend du métier (sinistralité AQC), du CA et de l'expérience. Méfiez-vous des offres < 30 € par mois : couverture souvent insuffisante.",
         },
         {
           q: "Mon assureur peut-il me lâcher en cours d'année après un sinistre ?",
@@ -295,7 +295,7 @@ export default function PilierDecennalePage() {
         },
         {
           q: 'Puis-je déduire ma prime décennale de mes impôts ?',
-          a: "Oui en intégralité si vous êtes en BIC réel, IS (SARL/SAS/EURL) ou BNC déclaration contrôlée — c'est une charge professionnelle déductible. Auto-entrepreneur au micro-BIC : non déductible (forfait), mais la prime reste 100% à votre charge sans plafond de remboursement.",
+          a: "Oui en intégralité si vous êtes en BIC réel, IS (SARL, SAS ou EURL) ou BNC déclaration contrôlée — c'est une charge professionnelle déductible. Auto-entrepreneur au micro-BIC : non déductible (forfait), mais la prime reste 100% à votre charge sans plafond de remboursement.",
         },
         {
           q: 'Combien de temps pour recevoir mon attestation après souscription ?',

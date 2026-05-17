@@ -45,8 +45,8 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance BTP désigne l'ensemble des garanties qu'une entreprise du Bâtiment et des Travaux Publics doit ou peut souscrire pour sécuriser son activité. Ce pilier-hub couvre 8 garanties spécifiques au secteur : la décennale obligatoire (Loi Spinetta), la RC Pro travaux (responsabilité civile pendant le chantier), la multirisque pro BTP (locaux, atelier, matériel), les dommages-ouvrage (DO — pour les maîtres d'ouvrage), la Tous Risques Chantier (TRC), la garantie financière BTP (cautionnement), la garantie biennale (équipements dissociables 2 ans), et la garantie de parfait achèvement (1 an). Selon votre métier (gros œuvre, second œuvre, finitions, RGE, MOE), votre statut juridique (AE, EI, SARL, SAS) et la taille de l'entreprise, le pack BTP varie de 980 € HT/an pour un AE peintre solo jusqu'à 25 000 € HT/an pour une PME maçonnerie 10 salariés. Cette page récapitule les obligations légales et redirige vers nos pages-piliers spécialisées."
-      legalReference="Loi Spinetta du 4 janvier 1978 + Code des assurances L. 241-1 / L. 242-1 + Code civil 1792"
+      intro="L'assurance BTP désigne l'ensemble des garanties qu'une entreprise du Bâtiment et des Travaux Publics doit ou peut souscrire pour sécuriser son activité. Ce pilier-hub couvre 8 garanties spécifiques au secteur : la décennale obligatoire (Loi Spinetta), la RC Pro travaux (responsabilité civile pendant le chantier), la multirisque pro BTP (locaux, atelier, matériel), les dommages-ouvrage (DO — pour les maîtres d'ouvrage), la Tous Risques Chantier (TRC), la garantie financière BTP (cautionnement), la garantie biennale (équipements dissociables 2 ans), et la garantie de parfait achèvement (1 an). Selon votre métier (gros œuvre, second œuvre, finitions, RGE, MOE), votre statut juridique (AE, EI, SARL, SAS) et la taille de l'entreprise, le pack BTP varie de 980 € HT par an pour un AE peintre solo jusqu'à 25 000 € HT par an pour une PME maçonnerie 10 salariés. Cette page récapitule les obligations légales et redirige vers nos pages-piliers spécialisées."
+      legalReference="Loi Spinetta du 4 janvier 1978 + Code des assurances L. 241-1 — L. 242-1 + Code civil 1792"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="decennale"
@@ -65,8 +65,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '980 € à 25 000 €/an',
-          desc: 'AE peintre : 980€/an. SARL maçonnerie 10 salariés : 18-25k€/an',
+          title: '980 € à 25 000 € par an',
+          desc: 'AE peintre : 980€ par an. SARL maçonnerie 10 salariés : 18-25k€ par an',
         },
         {
           icon: '🛡️',
@@ -188,15 +188,15 @@ export default function Page() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border p-2">AE peintre / plaquiste solo</td>
+                    <td className="border p-2">AE peintre — plaquiste solo</td>
                     <td className="border p-2 text-right">980 € – 1 480 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">AE plombier / électricien solo</td>
+                    <td className="border p-2">AE plombier — électricien solo</td>
                     <td className="border p-2 text-right">1 280 € – 1 980 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">AE maçon / charpentier solo</td>
+                    <td className="border p-2">AE maçon — charpentier solo</td>
                     <td className="border p-2 text-right">1 580 € – 2 380 €</td>
                   </tr>
                   <tr>
@@ -286,7 +286,7 @@ export default function Page() {
                     href="/assurance-voiture-professionnelle"
                     className="text-primary-600 underline"
                   >
-                    Véhicule pro / utilitaire
+                    Véhicule pro ou utilitaire
                   </Link>
                 </li>
                 <li>
@@ -352,15 +352,15 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'un artisan BTP ?",
-          a: 'Pack complet (décennale + RC + véhicule pro) : démarre à 980€/an pour AE peintre solo, 1 280-1 980€/an pour AE plombier/électricien, 1 580-2 380€/an pour AE maçon/charpentier, 1 880-2 680€/an pour couvreur-zingueur. SARL avec salariés : 3 800-25 000€/an selon métier et taille. Variables : sinistralité métier (couvreur > maçon > plombier), zone, CA, ancienneté.',
+          a: 'Pack complet (décennale + RC + véhicule pro) : démarre à 980€ par an pour AE peintre solo, 1 280-1 980€ par an pour AE plombier / électricien, 1 580-2 380€ par an pour AE maçon / charpentier, 1 880-2 680€ par an pour couvreur-zingueur. SARL avec salariés : 3 800-25 000€ par an selon métier et taille. Variables : sinistralité métier (couvreur > maçon > plombier), zone, CA, ancienneté.',
         },
         {
           q: 'RGE photovoltaïque : assurance plus chère ?',
-          a: "OUI — +30 à +60% vs un électricien BTP standard. Justification : sinistralité AQC élevée (9,2% sur les installations PV — incendies onduleurs, défauts d'étanchéité toiture). Tarif type 2026 : 1 880-3 200€/an pour AE RGE PV, 9 200-16 000€/an pour SARL 5 salariés. Garantie obligatoire pour conserver le label RGE et bénéficier de la prime à l'autoconsommation (article L. 314-1-1 Code énergie).",
+          a: "OUI — +30 à +60% vs un électricien BTP standard. Justification : sinistralité AQC élevée (9,2% sur les installations PV — incendies onduleurs, défauts d'étanchéité toiture). Tarif type 2026 : 1 880-3 200€ par an pour AE RGE PV, 9 200-16 000€ par an pour SARL 5 salariés. Garantie obligatoire pour conserver le label RGE et bénéficier de la prime à l'autoconsommation (article L. 314-1-1 Code énergie).",
         },
         {
           q: "Désamianteur SS3 : combien coûte l'assurance ?",
-          a: "Pack complet pour PME désamianteur SS3 (8 salariés) : 15 000-25 000€/an. Justification : risques majorés (santé travailleurs, pollution, responsabilité tiers exposés à l'amiante — art. L. 4412-1 C. travail), obligations réglementaires renforcées (formation, EPI, plan de retrait — décret 2012-639). Garanties spécifiques : RC Pro amiante, garantie subséquente longue (jusqu'à 30 ans post-cessation).",
+          a: "Pack complet pour PME désamianteur SS3 (8 salariés) : 15 000-25 000€ par an. Justification : risques majorés (santé travailleurs, pollution, responsabilité tiers exposés à l'amiante — art. L. 4412-1 C. travail), obligations réglementaires renforcées (formation, EPI, plan de retrait — décret 2012-639). Garanties spécifiques : RC Pro amiante, garantie subséquente longue (jusqu'à 30 ans post-cessation).",
         },
         {
           q: 'Puis-je résilier ma décennale à tout moment ?',
@@ -384,7 +384,7 @@ export default function Page() {
         },
         {
           q: 'Je travaille en autoconstruction (CCMI) : suis-je concerné par la décennale ?',
-          a: "Si vous êtes le constructeur (CMI = Constructeur de Maisons Individuelles, loi du 19/12/1990) : OUI, décennale OBLIGATOIRE + garantie de livraison (art. L. 231-1 CCH) + garantie de remboursement + assurance dommages-ouvrage. Si vous êtes le particulier qui auto-construit : pas de décennale (vous êtes votre propre client) mais responsabilité décennale envers l'acquéreur en cas de revente sous 10 ans.",
+          a: "Si vous êtes le constructeur (CMI = Constructeur de Maisons Individuelles, loi du 19 décembre 1990) : OUI, décennale OBLIGATOIRE + garantie de livraison (art. L. 231-1 CCH) + garantie de remboursement + assurance dommages-ouvrage. Si vous êtes le particulier qui auto-construit : pas de décennale (vous êtes votre propre client) mais responsabilité décennale envers l'acquéreur en cas de revente sous 10 ans.",
         },
         {
           q: 'Suis-je couvert si un sous-traitant non-déclaré cause un sinistre ?',

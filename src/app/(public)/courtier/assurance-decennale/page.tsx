@@ -6,7 +6,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'courtier/assurance-decennale'
+const SLUG = 'courtier / assurance-decennale'
 const TITLE = 'Courtier Assurance Décennale — Comparateur spécialiste BTP'
 const TAGLINE =
   'Courtier spécialiste assurance décennale : comparez April Pro BTP, SMABTP, Allianz Pro BTP, MMA Pro BTP. Économies -20-40% vs souscription directe.'
@@ -63,8 +63,8 @@ export default function Page() {
                 œuvre, finitions, structure, isolation)
               </li>
               <li>
-                <strong>Analyse risques métier</strong> : ajustement plafonds/franchises selon votre
-                activité spécifique
+                <strong>Analyse risques métier</strong> : ajustement plafonds ou franchises selon
+                votre activité spécifique
               </li>
               <li>
                 <strong>Conseil indépendant ORIAS</strong> : pas lié à un seul assureur
@@ -79,7 +79,7 @@ export default function Page() {
                 automatiquement
               </li>
               <li>
-                <strong>Bilan annuel gratuit</strong> : adaptation contrat évolution activité/CA
+                <strong>Bilan annuel gratuit</strong> : adaptation contrat évolution activité ou CA
               </li>
             </ol>
           ),
@@ -89,23 +89,23 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>April Pro BTP</strong> : leader décennale TPE/PME BTP. 950-25 000€/an selon
-                profil. Spécialiste artisans + PME 5-20 salariés.
+                <strong>April Pro BTP</strong> : leader décennale TPE ou PME BTP. 950-25 000€ par an
+                selon profil. Spécialiste artisans + PME 5-20 salariés.
               </li>
               <li>
-                <strong>SMABTP</strong> : paritaire BTP institutionnel. 1 200-30 000€/an. Solide
+                <strong>SMABTP</strong> : paritaire BTP institutionnel. 1 200-30 000€ par an. Solide
                 expertise sinistres. PME + grands chantiers.
               </li>
               <li>
-                <strong>Allianz Pro BTP</strong> : multi-secteurs. 1 100-28 000€/an. Bon rapport
-                prix/garanties.
+                <strong>Allianz Pro BTP</strong> : multi-secteurs. 1 100-28 000€ par an. Bon rapport
+                prix ou garanties.
               </li>
               <li>
-                <strong>MMA Pro BTP</strong> : réseau agences + en ligne. 1 050-26 000€/an. Conseil
-                personnalisé.
+                <strong>MMA Pro BTP</strong> : réseau agences + en ligne. 1 050-26 000€ par an.
+                Conseil personnalisé.
               </li>
               <li>
-                <strong>AXA Pro BTP</strong> : premium grands chantiers. 1 300-35 000€/an.
+                <strong>AXA Pro BTP</strong> : premium grands chantiers. 1 300-35 000€ par an.
                 Programmes fidélité.
               </li>
             </ul>
@@ -120,12 +120,12 @@ export default function Page() {
                 économies typiques -25-35%
               </li>
               <li>
-                <strong>SARL BTP 1-10 salariés</strong> : économies -20-40% sur primes 5 000-15
-                000€/an
+                <strong>SARL BTP 1-10 salariés</strong> : économies -20-40% sur primes 5 000-15 000€
+                par an
               </li>
               <li>
                 <strong>PME BTP 10-50 salariés</strong> : économies -15-30% sur primes 15 000-50
-                000€/an + expertise sinistres
+                000€ par an + expertise sinistres
               </li>
               <li>
                 <strong>Constructeurs maisons individuelles</strong> : critique pour CMI (Contrat
@@ -146,7 +146,7 @@ export default function Page() {
         },
         {
           q: 'Comment vérifier sérieux courtier ?',
-          a: '1) Numéro ORIAS obligatoire (vérifier sur orias.fr). 2) Carte professionnelle Loi Hoguet pour mandats. 3) Assurance RC Pro courtier valide. 4) Avis Trustpilot/Google &gt; 4.0. 5) Transparence commissions (légalement obligatoire depuis 2023).',
+          a: '1) Numéro ORIAS obligatoire (vérifier sur orias.fr). 2) Carte professionnelle Loi Hoguet pour mandats. 3) Assurance RC Pro courtier valide. 4) Avis Trustpilot ou Google &gt; 4.0. 5) Transparence commissions (légalement obligatoire depuis 2023).',
         },
         {
           q: 'Différence courtier vs agent général ?',

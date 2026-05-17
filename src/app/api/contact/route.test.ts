@@ -68,7 +68,7 @@ describe('POST /api/contact', () => {
     expect(response.status).toBe(400)
   })
 
-  it('accepte body valide (200 ou 500 si email mock fail)', async () => {
+  it('accepte body valide (200 / 500 si email mock fail)', async () => {
     const response = await POST(
       makeRequest({
         nom: 'Test User',

@@ -97,18 +97,19 @@ export default function Page() {
               <ul>
                 <li>
                   <strong>Auto-entrepreneur BTP solo</strong> (peintre, plâtrier, multi-services) :
-                  pack à partir de 1 800-2 800€/an (décennale + RC Pro + mutuelle TNS, sans flotte).
+                  pack à partir de 1 800-2 800€ par an (décennale + RC Pro + mutuelle TNS, sans
+                  flotte).
                 </li>
                 <li>
-                  <strong>SARL/EURL BTP (1-3 salariés)</strong> : pack 3 500-6 500€/an (décennale +
-                  RC Pro + multirisque + mutuelle collective + 1-2 véhicules).
+                  <strong>SARL ou EURL BTP (1-3 salariés)</strong> : pack 3 500-6 500€ par an
+                  (décennale + RC Pro + multirisque + mutuelle collective + 1-2 véhicules).
                 </li>
                 <li>
-                  <strong>SAS BTP moyenne entreprise (5-20 salariés)</strong> : pack 6 000-15
-                  000€/an avec flotte étendue + assurance dirigeant homme-clé.
+                  <strong>SAS BTP moyenne entreprise (5-20 salariés)</strong> : pack 6 000-15 000€
+                  par an avec flotte étendue + assurance dirigeant homme-clé.
                 </li>
                 <li>
-                  <strong>Multi-services BTP grosse structure</strong> : pack 12 000-35 000€/an+
+                  <strong>Multi-services BTP grosse structure</strong> : pack 12 000-35 000€ par an+
                   avec cyber-assurance + protection juridique + perte d&apos;exploitation étendue.
                 </li>
               </ul>
@@ -122,7 +123,8 @@ export default function Page() {
               <ul>
                 <li>
                   <strong>Économies tarifaires</strong> : remise paquet de 15-25% vs contrats
-                  séparés (en moyenne 1 500-3 000€/an d&apos;économie pour une SARL BTP standard).
+                  séparés (en moyenne 1 500-3 000€ par an d&apos;économie pour une SARL BTP
+                  standard).
                 </li>
                 <li>
                   <strong>Cohérence des couvertures</strong> : pas de zone grise entre décennale et
@@ -149,11 +151,11 @@ export default function Page() {
       faq={[
         {
           q: 'Combien coûte le pack complet assurance pro BTP ?',
-          a: 'Pour un auto-entrepreneur BTP solo : 1 800-2 800€/an. Pour une SARL BTP (1-3 salariés) : 3 500-6 500€/an. Pour une SAS BTP moyenne (5-20 salariés) : 6 000-15 000€/an. Tarifs incluant décennale + RC Pro + multirisque + mutuelle + flotte 1-2 véhicules.',
+          a: 'Pour un auto-entrepreneur BTP solo : 1 800-2 800€ par an. Pour une SARL BTP (1-3 salariés) : 3 500-6 500€ par an. Pour une SAS BTP moyenne (5-20 salariés) : 6 000-15 000€ par an. Tarifs incluant décennale + RC Pro + multirisque + mutuelle + flotte 1-2 véhicules.',
         },
         {
           q: 'Faut-il vraiment toutes ces assurances pour un artisan solo ?',
-          a: "Décennale + RC Pro = obligatoires/critiques. Mutuelle TNS = optionnelle mais déductible Madelin = avantage fiscal. Multirisque + Flotte = recommandées si vous avez un local d'atelier ou un véhicule utilitaire. Le pack minimum solo = décennale + RC Pro + auto pro.",
+          a: "Décennale + RC Pro = obligatoires ou critiques. Mutuelle TNS = optionnelle mais déductible Madelin = avantage fiscal. Multirisque + Flotte = recommandées si vous avez un local d'atelier ou un véhicule utilitaire. Le pack minimum solo = décennale + RC Pro + auto pro.",
         },
         {
           q: 'Peut-on changer un seul contrat du pack en cours d&apos;année ?',

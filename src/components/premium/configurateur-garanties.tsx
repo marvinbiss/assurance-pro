@@ -81,7 +81,7 @@ export function ConfigurateurGaranties({
           className="font-heading text-sm font-semibold tabular-nums text-charcoal-900"
           style={{ fontFamily: 'var(--font-heading), Sora, sans-serif' }}
         >
-          {formatPrice(basePricePerMonth)} / mois
+          {formatPrice(basePricePerMonth)} ou mois
         </span>
       </div>
 
@@ -107,7 +107,7 @@ export function ConfigurateurGaranties({
                 </p>
                 <p className="mt-1 text-sm text-charcoal-700">{g.description}</p>
                 <p className="mt-2 font-heading text-xs font-semibold uppercase tracking-wider text-secondary-700">
-                  +{formatPrice(g.pricePerMonth)} / mois
+                  +{formatPrice(g.pricePerMonth)} ou mois
                 </p>
               </div>
               <button

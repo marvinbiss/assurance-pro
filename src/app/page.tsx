@@ -103,11 +103,11 @@ const VERTICALS: readonly Vertical[] = [
     accent: 'from-accent-500 to-accent-700',
     metric: '30 secteurs',
     metierSlug: 'restaurateur',
-    imageAlt: 'Illustration local commercial / restaurant professionnel',
+    imageAlt: 'Illustration local commercial — restaurant professionnel',
   },
   {
     code: 'mutuelle-pro',
-    title: 'Mutuelle Pro / TNS',
+    title: 'Mutuelle Pro — TNS',
     desc: 'Travailleurs non-salariés, dirigeants, freelances. Loi Madelin déductible.',
     href: '/mutuelle-pro',
     Icon: Heart,
@@ -120,8 +120,8 @@ const VERTICALS: readonly Vertical[] = [
   },
   {
     code: 'assurance-vtc',
-    title: 'VTC / Taxi',
-    desc: 'Chauffeur privé, location avec chauffeur, plateformes Uber / Bolt / Heetch.',
+    title: 'VTC — Taxi',
+    desc: 'Chauffeur privé, location avec chauffeur, plateformes Uber — Bolt — Heetch.',
     href: '/assurance-vtc',
     Icon: Car,
     accent: 'from-primary-500 to-primary-700',
@@ -140,7 +140,7 @@ const VERTICALS: readonly Vertical[] = [
     badge: "Jusqu'à 5M€",
     metric: 'Couverture étendue',
     metierSlug: 'freelance-it',
-    imageAlt: 'Illustration freelance IT / cybersécurité — protection données',
+    imageAlt: 'Illustration freelance IT — cybersécurité — protection données',
   },
 ] as const
 
@@ -188,7 +188,7 @@ const TESTIMONIALS = [
     role: 'Fondatrice agence digitale',
     city: 'Paris',
     rating: 5,
-    metric: '4 devis / 24h',
+    metric: '4 devis — 24h',
     avatar:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&fm=webp&auto=format&fit=crop&crop=faces',
   },
@@ -306,7 +306,7 @@ export default function HomePage() {
                       />
                     ))}
                   </span>
-                  <strong className="font-bold text-white">4.9/5</strong>
+                  <strong className="font-bold text-white">4,9 sur 5</strong>
                   <span className="opacity-75">· 142 avis vérifiés ISO 20488</span>
                 </span>
                 <span className="hidden h-3 w-px bg-white/20 md:block" />
@@ -533,7 +533,7 @@ export default function HomePage() {
           <div className="mb-14 max-w-2xl">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-secondary-800">
               <Star className="h-3.5 w-3.5 fill-current" />
-              4.9 / 5 — 142 avis vérifiés ISO 20488
+              4,9 sur 5 — 142 avis vérifiés ISO 20488
             </div>
             <h2 className="font-heading text-4xl font-extrabold tracking-display text-charcoal-900 md:text-5xl">
               Ce que disent

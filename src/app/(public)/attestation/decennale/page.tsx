@@ -7,7 +7,7 @@ import { COMPARATIF_BTP, EXPERT_BTP, STATS_DEFAULT } from '@/lib/data/pilier-pre
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'attestation/decennale'
+const SLUG = 'attestation / decennale'
 const TITLE = 'Attestation Décennale — Modèle, mentions obligatoires, démarches'
 const TAGLINE =
   "L'attestation décennale est obligatoire pour tout BTP (Loi Spinetta). Modèle PDF, 10 mentions obligatoires, démarches d'obtention en 24h. Présentation MO."
@@ -79,8 +79,8 @@ export default function Page() {
                 (peintre, plombier, etc.)
               </li>
               <li>
-                <strong>Plafond par sinistre</strong> : montant garanti (1M€ standard AE, 2-3M€
-                SARL/SAS)
+                <strong>Plafond par sinistre</strong> : montant garanti (1M€ standard AE, 2-3M€ SARL
+                ou SAS)
               </li>
               <li>
                 <strong>Mention Loi Spinetta</strong> : &quot;Conforme aux dispositions des articles
@@ -94,7 +94,7 @@ export default function Page() {
                 <strong>Date d&apos;émission</strong> de l&apos;attestation
               </li>
               <li>
-                <strong>Signature / cachet électronique</strong> de l&apos;assureur
+                <strong>Signature — cachet électronique</strong> de l&apos;assureur
               </li>
             </ol>
           ),
@@ -142,7 +142,7 @@ export default function Page() {
             <ol>
               <li>
                 <strong>Si pas encore souscrit</strong> : devis comparatif gratuit (5 min) →
-                souscription April Pro/SMABTP/Allianz → attestation 24h chez April Pro
+                souscription April Pro, SMABTP ou Allianz → attestation 24h chez April Pro
               </li>
               <li>
                 <strong>Si déjà souscrit</strong> : connexion espace adhérent assureur →
@@ -154,7 +154,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Délai express</strong> : 4-24h chez April Pro BTP (le plus rapide). 24-48h
-                chez SMABTP. 48-72h chez Allianz Pro/MMA Pro BTP/AXA Pro BTP
+                chez SMABTP. 48-72h chez Allianz Pro ou MMA Pro BTP ou AXA Pro BTP
               </li>
               <li>
                 <strong>Format</strong> : PDF téléchargeable, format A4, imprimable couleur ou noir
@@ -171,7 +171,7 @@ export default function Page() {
         },
         {
           q: 'Délai pour avoir attestation décennale après souscription ?',
-          a: 'April Pro BTP : 24h ouvrées (le plus rapide). SMABTP : 24-48h. Allianz Pro BTP / MMA Pro BTP : 48h. AXA Pro BTP : 48-72h. Avec urgence chantier déclarée : possible 4-12h chez April Pro et certains courtiers (parfois supplément 50-100€).',
+          a: 'April Pro BTP : 24h ouvrées (le plus rapide). SMABTP : 24-48h. Allianz Pro BTP — MMA Pro BTP : 48h. AXA Pro BTP : 48-72h. Avec urgence chantier déclarée : possible 4-12h chez April Pro et certains courtiers (parfois supplément 50-100€).',
         },
         {
           q: 'Que vaut une attestation décennale sans tampon ACPR ?',

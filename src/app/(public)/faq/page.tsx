@@ -74,7 +74,7 @@ const FAQ: FaqItem[] = [
   {
     category: 'Décennale BTP',
     q: "L'auto-entrepreneur BTP doit-il avoir une décennale ?",
-    a: "Oui. L'obligation s'applique à TOUS les statuts juridiques, y compris les auto-entrepreneurs et micro-entrepreneurs du BTP. L'amende prévue (75 000 €) est identique. Notre cabinet propose des contrats spécifiques AE à partir de 35€/mois selon le métier.",
+    a: "Oui. L'obligation s'applique à TOUS les statuts juridiques, y compris les auto-entrepreneurs et micro-entrepreneurs du BTP. L'amende prévue (75 000 €) est identique. Notre cabinet propose des contrats spécifiques AE à partir de 35€ par mois selon le métier.",
   },
   {
     category: 'Décennale BTP',
@@ -107,17 +107,17 @@ const FAQ: FaqItem[] = [
     a: 'Pour un auto-entrepreneur consultant, 500k-1M€ par sinistre suffit généralement. Pour une agence ou un freelance qui intervient sur des projets stratégiques (>50k€), prévoir 2-3M€. Pour les professions à risque élevé (médical, juridique, IT critique), 5M€+ sont recommandés.',
   },
   {
-    category: 'Mutuelle TNS / Madelin',
+    category: 'Mutuelle TNS — Madelin',
     q: "Qu'est-ce que la Loi Madelin ?",
-    a: "La Loi Madelin (1994, art. 154 bis CGI) permet aux Travailleurs Non Salariés de déduire fiscalement les cotisations de mutuelle, prévoyance et retraite. Plafond 2026 : 4 997 €/an. Économie d'impôts moyenne : 30-45% selon votre TMI.",
+    a: "La Loi Madelin (1994, art. 154 bis CGI) permet aux Travailleurs Non Salariés de déduire fiscalement les cotisations de mutuelle, prévoyance et retraite. Plafond 2026 : 4 997 € par an. Économie d'impôts moyenne : 30-45% selon votre TMI.",
   },
   {
-    category: 'Mutuelle TNS / Madelin',
+    category: 'Mutuelle TNS — Madelin',
     q: 'Auto-entrepreneur : Madelin est-il intéressant ?',
     a: "Pour les AE en micro, la Loi Madelin n'est PAS applicable (vous êtes au régime micro-fiscal sans bénéfice imposable). Mieux vaut une mutuelle « santé indépendant » non-Madelin, souvent moins chère.",
   },
   {
-    category: 'Mutuelle TNS / Madelin',
+    category: 'Mutuelle TNS — Madelin',
     q: "Quelle différence entre mutuelle TNS et mutuelle d'entreprise ?",
     a: "La mutuelle d'entreprise (collective) est obligatoirement souscrite par l'employeur pour ses salariés (depuis 2016). La mutuelle TNS est INDIVIDUELLE pour les non-salariés (gérants majoritaires SARL, EI, AE), avec déduction Madelin pour les non-AE.",
   },
@@ -152,17 +152,17 @@ const FAQ: FaqItem[] = [
     a: "Oui, la plupart des assureurs acceptent le paiement mensuel (sans frais ou avec frais 1-2%). C'est plus confortable pour la trésorerie mais légèrement plus cher qu'un paiement annuel.",
   },
   {
-    category: 'ACPR / Réclamation',
+    category: 'ACPR — Réclamation',
     q: 'Que faire si je ne suis pas satisfait du service de mon courtier ?',
     a: "Adressez votre réclamation par écrit (email ou courrier) à reclamations@vivos-assurance.fr. Conformément à la Recommandation ACPR 2024-R-02, nous accusons réception sous 10 jours ouvrés et répondons sur le fond sous 2 mois. En cas de désaccord persistant, vous pouvez saisir le Médiateur de l'Assurance.",
   },
   {
-    category: 'ACPR / Réclamation',
+    category: 'ACPR — Réclamation',
     q: "Comment vérifier qu'un courtier est ORIAS ?",
-    a: 'Sur le site officiel orias.fr, entrez le numéro ORIAS du courtier (8 chiffres). Vous obtenez sa fiche : statut (actif, suspendu, radié), catégorie, immatriculation. Tout courtier sérieux affiche son numéro ORIAS de manière cliquable sur son site (arrêté 6/12/2022).',
+    a: 'Sur le site officiel orias.fr, entrez le numéro ORIAS du courtier (8 chiffres). Vous obtenez sa fiche : statut (actif, suspendu, radié), catégorie, immatriculation. Tout courtier sérieux affiche son numéro ORIAS de manière cliquable sur son site (arrêté 6 décembre 2022).',
   },
   {
-    category: 'ACPR / Réclamation',
+    category: 'ACPR — Réclamation',
     q: 'Le courtier peut-il me conseiller un produit non-adapté ?',
     a: 'Non. La DDA (Directive Distribution Assurance, art. L. 521-4 C. assur.) impose au courtier un devoir de conseil personnalisé motivé. Il doit recueillir vos exigences, identifier vos besoins et formuler par écrit la justification du produit choisi. La Reco ACPR 2024-R-03 durcit cette traçabilité.',
   },
@@ -194,7 +194,7 @@ const CATEGORY_CONFIG: Record<string, CategoryConfig> = {
     text: 'text-secondary-700',
     gradient: 'from-secondary-500 via-secondary-600 to-secondary-700',
   },
-  'Mutuelle TNS / Madelin': {
+  'Mutuelle TNS — Madelin': {
     Icon: Heart,
     bg: 'bg-rose-50',
     text: 'text-rose-700',
@@ -212,7 +212,7 @@ const CATEGORY_CONFIG: Record<string, CategoryConfig> = {
     text: 'text-accent-700',
     gradient: 'from-accent-500 via-accent-600 to-accent-700',
   },
-  'ACPR / Réclamation': {
+  'ACPR — Réclamation': {
     Icon: FileWarning,
     bg: 'bg-violet-50',
     text: 'text-violet-700',

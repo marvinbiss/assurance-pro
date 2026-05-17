@@ -7,7 +7,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'comparateur/assurance-decennale'
+const SLUG = 'comparateur / assurance-decennale'
 const TITLE = 'Comparateur Assurance Décennale 2026 — 5 assureurs en parallèle'
 const TAGLINE =
   'Comparateur assurance décennale BTP 2026 : April Pro, SMABTP, Allianz Pro BTP, MMA Pro BTP, AXA Pro BTP. Tarifs, garanties, postériorité comparés côte à côte.'
@@ -26,7 +26,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Comparateur indépendant assurance décennale BTP 2026 : les 5 assureurs leaders en parallèle (April Pro BTP, SMABTP, Allianz Pro BTP, MMA Pro BTP, AXA Pro BTP) avec tarifs, plafonds, exclusions et postériorité comparés côte à côte. KW à 800€ CPC Google Ads (MONEY KW). Cette page synthétise les forces/faiblesses de chaque assureur et propose un comparatif par profil BTP (artisan AE, SARL 5 salariés, PME 20 salariés)."
+      intro="Comparateur indépendant assurance décennale BTP 2026 : les 5 assureurs leaders en parallèle (April Pro BTP, SMABTP, Allianz Pro BTP, MMA Pro BTP, AXA Pro BTP) avec tarifs, plafonds, exclusions et postériorité comparés côte à côte. KW à 800€ CPC Google Ads (MONEY KW). Cette page synthétise les forces ou faiblesses de chaque assureur et propose un comparatif par profil BTP (artisan AE, SARL 5 salariés, PME 20 salariés)."
       legalReference="Loi Spinetta + art. 1792 C. civ. + ORIAS"
       benefits={[
         {
@@ -56,9 +56,9 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>April Pro BTP</strong> 🥇 best AE/PME jusqu&apos;à 10 salariés :
+                <strong>April Pro BTP</strong> 🥇 best AE ou PME jusqu&apos;à 10 salariés :
                 <ul>
-                  <li>Tarifs : 950-25 000€/an</li>
+                  <li>Tarifs : 950-25 000€ par an</li>
                   <li>Plafond : 1-10M€ selon profil</li>
                   <li>Postériorité : 10 ans (légale)</li>
                   <li>Force : 100% digital, attestation 24h</li>
@@ -66,9 +66,9 @@ export default function Page() {
                 </ul>
               </li>
               <li>
-                <strong>SMABTP</strong> 🥇 best PME/grands constructeurs :
+                <strong>SMABTP</strong> 🥇 best PME ou grands constructeurs :
                 <ul>
-                  <li>Tarifs : 1 200-30 000€/an</li>
+                  <li>Tarifs : 1 200-30 000€ par an</li>
                   <li>Plafond : 1-15M€</li>
                   <li>Postériorité : 10 ans</li>
                   <li>Force : paritaire BTP, expertise sinistres top</li>
@@ -78,7 +78,7 @@ export default function Page() {
               <li>
                 <strong>Allianz Pro BTP</strong> bon multi-corps :
                 <ul>
-                  <li>Tarifs : 1 100-28 000€/an</li>
+                  <li>Tarifs : 1 100-28 000€ par an</li>
                   <li>Plafond : 1-12M€</li>
                   <li>Postériorité : 10 ans</li>
                   <li>Force : multi-corps + cyber-assurance combinée</li>
@@ -86,9 +86,9 @@ export default function Page() {
                 </ul>
               </li>
               <li>
-                <strong>MMA Pro BTP</strong> bon rapport prix/conseil :
+                <strong>MMA Pro BTP</strong> bon rapport prix ou conseil :
                 <ul>
-                  <li>Tarifs : 1 050-26 000€/an</li>
+                  <li>Tarifs : 1 050-26 000€ par an</li>
                   <li>Plafond : 1-10M€</li>
                   <li>Postériorité : 10 ans</li>
                   <li>Force : réseau agences + en ligne hybride</li>
@@ -98,7 +98,7 @@ export default function Page() {
               <li>
                 <strong>AXA Pro BTP</strong> premium grands chantiers :
                 <ul>
-                  <li>Tarifs : 1 300-35 000€/an</li>
+                  <li>Tarifs : 1 300-35 000€ par an</li>
                   <li>Plafond : 1-20M€</li>
                   <li>Postériorité : 10 ans + extension 12 ans possible</li>
                   <li>Force : premium, programmes fidélité</li>
@@ -113,31 +113,32 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Artisan AE plombier</strong> : 🥇 April Pro 1 400€/an (best)
+                <strong>Artisan AE plombier</strong> : 🥇 April Pro 1 400€ par an (best)
               </li>
               <li>
-                <strong>Artisan AE peintre</strong> : 🥇 April Pro 950€/an (best)
+                <strong>Artisan AE peintre</strong> : 🥇 April Pro 950€ par an (best)
               </li>
               <li>
-                <strong>Artisan AE maçon</strong> : 🥇 April Pro 2 400€/an (best)
+                <strong>Artisan AE maçon</strong> : 🥇 April Pro 2 400€ par an (best)
               </li>
               <li>
-                <strong>Artisan AE électricien</strong> : 🥇 April Pro 1 200€/an (best)
+                <strong>Artisan AE électricien</strong> : 🥇 April Pro 1 200€ par an (best)
               </li>
               <li>
-                <strong>SARL BTP 5 salariés</strong> : 🥇 April Pro / SMABTP 4 500-8 000€/an
+                <strong>SARL BTP 5 salariés</strong> : 🥇 April Pro ou SMABTP 4 500-8 000€ par an
               </li>
               <li>
-                <strong>SARL BTP 10 salariés</strong> : 🥇 SMABTP 8 000-12 000€/an
+                <strong>SARL BTP 10 salariés</strong> : 🥇 SMABTP 8 000-12 000€ par an
               </li>
               <li>
-                <strong>PME BTP 20 salariés</strong> : 🥇 SMABTP 15 000-25 000€/an
+                <strong>PME BTP 20 salariés</strong> : 🥇 SMABTP 15 000-25 000€ par an
               </li>
               <li>
-                <strong>Constructeur CMI</strong> : 🥇 SMABTP ou AXA Pro 20 000-35 000€/an
+                <strong>Constructeur CMI</strong> : 🥇 SMABTP ou AXA Pro 20 000-35 000€ par an
               </li>
               <li>
-                <strong>Promoteur grands chantiers</strong> : 🥇 AXA Pro ou Allianz Pro 30 000€+/an
+                <strong>Promoteur grands chantiers</strong> : 🥇 AXA Pro ou Allianz Pro 30 000€+ par
+                an
               </li>
             </ul>
           ),
@@ -166,7 +167,7 @@ export default function Page() {
                   <li>Franchise (300-3 000€)</li>
                   <li>Exclusions (lire intégralement)</li>
                   <li>Postériorité (mini 10 ans, idéal 12 ans AXA)</li>
-                  <li>Solidité financière (A+/A/B+)</li>
+                  <li>Solidité financière (A+/A ou B+)</li>
                 </ul>
               </li>
               <li>
@@ -187,7 +188,7 @@ export default function Page() {
         },
         {
           q: 'Économies réelles via comparateur ?',
-          a: 'Économies typiques : -20-40% vs souscription directe assureur unique. Sur prime 10 000€/an PME BTP = 2 000-4 000€/an économisés. Sur 10 ans (durée moyenne contrat) = 20 000-40 000€ économisés.',
+          a: 'Économies typiques : -20-40% vs souscription directe assureur unique. Sur prime 10 000€ par an PME BTP = 2 000-4 000€ par an économisés. Sur 10 ans (durée moyenne contrat) = 20 000-40 000€ économisés.',
         },
         {
           q: 'Pourquoi prix varient autant ?',

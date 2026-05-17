@@ -36,7 +36,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance santé entreprise (ou mutuelle collective d'entreprise) est OBLIGATOIRE pour TOUS les employeurs du secteur privé en France depuis l'Accord National Interprofessionnel (ANI) du 11 janvier 2013, transcrit dans la loi du 14 juin 2013 (effet 1er janvier 2016). L'employeur doit obligatoirement proposer un contrat collectif de complémentaire santé à TOUS les salariés, prendre en charge AU MINIMUM 50% de la cotisation et garantir AU MINIMUM le « panier de soins » défini par le décret 2014-1025 (consultations, médicaments, dentaire, optique 100% Santé, hospitalisation). L'absence de mise en place expose l'employeur à : redressement URSSAF (rappel des cotisations sociales sur les frais médicaux que les salariés ont dû payer eux-mêmes), dommages-intérêts versés aux salariés non-couverts, refus de l'inspection du travail. Le tarif moyen pour une PME 20 salariés démarre à 1 800 € HT/an de prise en charge employeur. Cette page détaille les obligations exactes, les exemptions possibles, les tarifs 2026 et compare 6 assureurs santé collective."
+      intro="L'assurance santé entreprise (ou mutuelle collective d'entreprise) est OBLIGATOIRE pour TOUS les employeurs du secteur privé en France depuis l'Accord National Interprofessionnel (ANI) du 11 janvier 2013, transcrit dans la loi du 14 juin 2013 (effet 1er janvier 2016). L'employeur doit obligatoirement proposer un contrat collectif de complémentaire santé à TOUS les salariés, prendre en charge AU MINIMUM 50% de la cotisation et garantir AU MINIMUM le « panier de soins » défini par le décret 2014-1025 (consultations, médicaments, dentaire, optique 100% Santé, hospitalisation). L'absence de mise en place expose l'employeur à : redressement URSSAF (rappel des cotisations sociales sur les frais médicaux que les salariés ont dû payer eux-mêmes), dommages-intérêts versés aux salariés non-couverts, refus de l'inspection du travail. Le tarif moyen pour une PME 20 salariés démarre à 1 800 € HT par an de prise en charge employeur. Cette page détaille les obligations exactes, les exemptions possibles, les tarifs 2026 et compare 6 assureurs santé collective."
       legalReference="ANI du 11 janvier 2013 + Loi du 14 juin 2013 + Décret 2014-1025 (panier minimum)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -59,8 +59,8 @@ export default function Page() {
         },
         {
           icon: '👥',
-          title: 'À partir de 1 800 €/an',
-          desc: 'PME 20 salariés (part employeur 50%). PME 50 salariés : 4 800-7 200€/an',
+          title: 'À partir de 1 800 € par an',
+          desc: 'PME 20 salariés (part employeur 50%). PME 50 salariés : 4 800-7 200€ par an',
         },
       ]}
       sections={[
@@ -71,7 +71,7 @@ export default function Page() {
               <ol>
                 <li>
                   <strong>Mise en place obligatoire</strong> via DUE (Décision Unilatérale
-                  Employeur) ou accord de branche/entreprise. Affichage des conditions dans
+                  Employeur) ou accord de branche ou entreprise. Affichage des conditions dans
                   l&apos;entreprise + remise notice à chaque salarié.
                 </li>
                 <li>
@@ -103,8 +103,8 @@ export default function Page() {
               <h3>Cas de dispense possibles pour les salariés</h3>
               <ul>
                 <li>Salarié déjà couvert en tant qu&apos;ayant droit (conjoint employeur)</li>
-                <li>CDD &lt; 12 mois ou contrat à temps partiel &lt; 15h/semaine</li>
-                <li>Apprenti / stagiaire</li>
+                <li>CDD &lt; 12 mois ou contrat à temps partiel &lt; 15h par semaine</li>
+                <li>Apprenti — stagiaire</li>
                 <li>Salarié bénéficiant déjà d&apos;une CSS (Complémentaire Santé Solidaire)</li>
               </ul>
             </>
@@ -154,9 +154,9 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables : âge moyen salariés (~+1,5%/an), composition famille (option famille
-                +50-80%), secteur (BTP/transport majoré sinistralité), niveau de garanties choisi
-                (base / confort / premium), région (Paris +15%).
+                Variables : âge moyen salariés (~+1,5% par an), composition famille (option famille
+                +50-80%), secteur (BTP ou transport majoré sinistralité), niveau de garanties choisi
+                (base ou confort ou premium), région (Paris +15%).
               </p>
             </>
           ),
@@ -194,7 +194,7 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>Allianz Santé</strong>
                     </td>
-                    <td className="border p-2">PME / ETI tous secteurs</td>
+                    <td className="border p-2">PME — ETI tous secteurs</td>
                     <td className="border p-2">
                       Réseau santé conventionné, gestion sinistre rapide
                     </td>
@@ -212,7 +212,7 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>MMA Santé</strong>
                     </td>
-                    <td className="border p-2">TPE / PME locales</td>
+                    <td className="border p-2">TPE — PME locales</td>
                     <td className="border p-2">Réseau agences physique, conseiller dédié</td>
                   </tr>
                   <tr>
@@ -279,7 +279,7 @@ export default function Page() {
         },
         {
           q: "Combien coûte la mutuelle collective d'une PME 20 salariés ?",
-          a: 'Coût total annuel : 7 200-10 800€ (formule équilibrée). Part employeur 50% : 3 600-5 400€/an. Variables : âge moyen salariés, secteur (BTP/transport majoré), niveau de garanties (base/confort/premium), région (Paris +15%). Devis comparatif gratuit chez notre cabinet ORIAS sous 24h.',
+          a: 'Coût total annuel : 7 200-10 800€ (formule équilibrée). Part employeur 50% : 3 600-5 400€ par an. Variables : âge moyen salariés, secteur (BTP ou transport majoré), niveau de garanties (base, confort ou premium), région (Paris +15%). Devis comparatif gratuit chez notre cabinet ORIAS sous 24h.',
         },
         {
           q: 'Quel est le « panier de soins minimum » obligatoire ?',
@@ -291,15 +291,15 @@ export default function Page() {
         },
         {
           q: 'Comment dispenser un salarié de la mutuelle collective ?',
-          a: "Cas de dispense possibles : (1) salarié déjà couvert comme ayant droit (conjoint employeur), (2) CDD < 12 mois ou temps partiel < 15h/semaine, (3) apprenti/stagiaire, (4) bénéficiaire CSS (Complémentaire Santé Solidaire). Demande écrite du salarié + justificatif. Mention dans la notice d'information remise par l'employeur.",
+          a: "Cas de dispense possibles : (1) salarié déjà couvert comme ayant droit (conjoint employeur), (2) CDD < 12 mois ou temps partiel < 15h par semaine, (3) apprenti ou stagiaire, (4) bénéficiaire CSS (Complémentaire Santé Solidaire). Demande écrite du salarié + justificatif. Mention dans la notice d'information remise par l'employeur.",
         },
         {
           q: 'Le dirigeant peut-il être couvert par la mutuelle collective ?',
-          a: 'DIRIGEANT ASSIMILÉ SALARIÉ (président SAS/SASU, gérant minoritaire SARL) : OUI, peut être inclus dans le contrat collectif (régime fiscal salarié). DIRIGEANT TNS (gérant majoritaire SARL, EI, EURL) : NON, doit souscrire une mutuelle TNS Madelin individuelle distincte (régime fiscal différent).',
+          a: 'DIRIGEANT ASSIMILÉ SALARIÉ (président SAS ou SASU, gérant minoritaire SARL) : OUI, peut être inclus dans le contrat collectif (régime fiscal salarié). DIRIGEANT TNS (gérant majoritaire SARL, EI, EURL) : NON, doit souscrire une mutuelle TNS Madelin individuelle distincte (régime fiscal différent).',
         },
         {
           q: 'Combien de temps pour mettre en place une mutuelle collective ?',
-          a: 'Notre cabinet ORIAS gère le processus complet en 4-6 semaines : audit besoin (1 sem) + comparatif 5 assureurs (1 sem) + consultation CSE si applicable (2 sem) + choix véhicule juridique (DUE/accord) + communication salariés + signature contrat. Effet : 1er du mois suivant la signature. Forfait accompagnement : 850-1 800€ HT selon taille.',
+          a: 'Notre cabinet ORIAS gère le processus complet en 4-6 semaines : audit besoin (1 sem) + comparatif 5 assureurs (1 sem) + consultation CSE si applicable (2 sem) + choix véhicule juridique (DUE / accord) + communication salariés + signature contrat. Effet : 1er du mois suivant la signature. Forfait accompagnement : 850-1 800€ HT selon taille.',
         },
       ]}
     />
