@@ -72,6 +72,38 @@ import { ParallaxLayer } from '@/components/motion/dynamic/ParallaxLayerDynamic'
 import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
 
 type CalculatorGarantie = 'decennale' | 'rc-pro' | 'multirisque-pro' | 'cyber'
+
+/**
+ * Auto-dispatch garantie depuis slug si non fournie explicitement par la page.
+ * Couvre les 66 pages PilierLayout sans calculatorGarantie= explicite.
+ */
+function inferCalculatorGarantie(slug: string): CalculatorGarantie {
+  const s = slug.toLowerCase()
+  if (s.includes('decennale') || s.includes('spinetta') || s.includes('garantie-dommage')) {
+    return 'decennale'
+  }
+  if (s.includes('cyber') || s.includes('rgpd') || s.includes('ransomware')) {
+    return 'cyber'
+  }
+  if (
+    s.includes('multirisque') ||
+    s.includes('mutuelle') ||
+    s.includes('sante') ||
+    s.includes('madelin') ||
+    s.includes('prevoyance') ||
+    s.includes('local') ||
+    s.includes('flotte') ||
+    s.includes('auto') ||
+    s.includes('vtc') ||
+    s.includes('taxi') ||
+    s.includes('transport') ||
+    s.includes('moto')
+  ) {
+    return 'multirisque-pro'
+  }
+  // Default fallback : RC Pro couvre la majorité (consultants, freelances, services pros).
+  return 'rc-pro'
+}
 import {
   getBreadcrumbSchema,
   getServiceSchema,
@@ -346,27 +378,31 @@ export async function PilierLayout({
         </div>
       </section>
 
-      {/* Calculateur tarif inline (premium conversion) */}
-      {calculatorGarantie ? (
-        <section className="bg-sand-50 py-16 md:py-20">
-          <div className="container mx-auto max-w-4xl px-4">
-            <RevealOnScroll>
-              <div className="mb-8 text-center">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-700">
-                  Estimation instantanée
+      {/* Calculateur tarif inline (premium conversion) — toujours présent.
+          Si calculatorGarantie pas fourni explicitement, auto-dispatch via slug. */}
+      {(() => {
+        const garantie = calculatorGarantie ?? inferCalculatorGarantie(slug)
+        return (
+          <section className="bg-sand-50 py-16 md:py-20">
+            <div className="container mx-auto max-w-4xl px-4">
+              <RevealOnScroll>
+                <div className="mb-8 text-center">
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-700">
+                    Estimation instantanée
+                  </div>
+                  <h2
+                    className="font-heading text-3xl font-medium leading-tight tracking-tight text-charcoal-900 md:text-4xl"
+                    style={{ fontFamily: 'var(--font-heading), Fraunces, serif' }}
+                  >
+                    Combien va vous coûter votre assurance ?
+                  </h2>
                 </div>
-                <h2
-                  className="font-heading text-3xl font-medium leading-tight tracking-tight text-charcoal-900 md:text-4xl"
-                  style={{ fontFamily: 'var(--font-heading), Fraunces, serif' }}
-                >
-                  Combien va vous coûter votre assurance ?
-                </h2>
-              </div>
-              <TarifCalculator garantie={calculatorGarantie} />
-            </RevealOnScroll>
-          </div>
-        </section>
-      ) : null}
+                <TarifCalculator garantie={garantie} />
+              </RevealOnScroll>
+            </div>
+          </section>
+        )
+      })()}
 
       {/* Comparatif assureurs table */}
       {comparatifRows && comparatifRows.length > 0 ? (

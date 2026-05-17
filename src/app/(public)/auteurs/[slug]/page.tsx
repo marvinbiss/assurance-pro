@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, BookOpen, Linkedin, ShieldCheck } from 'lucide-react'
 import { SvgAvatar } from '@/components/blog/blocks/svg-avatar'
+import { InlineCta } from '@/components/cta/inline-cta'
 import { SITE_URL } from '@/lib/seo/config'
 import { AUTHORS } from '@/lib/data/blog-authors'
 import { getAllPosts } from '@/lib/data/blog-posts'
@@ -160,6 +161,13 @@ export default async function AuthorPage(props: { params: Promise<Params> }) {
             ))}
           </ul>
         )}
+      </section>
+
+      <section className="container mx-auto max-w-4xl px-4 pb-16">
+        <InlineCta
+          title={`Avis sur votre situation — par ${author.name}`}
+          description="Conseil motivé écrit conforme art. L. 521-4 du Code des assurances. Devis sous 24h ouvrées."
+        />
       </section>
     </main>
   )

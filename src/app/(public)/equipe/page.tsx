@@ -6,6 +6,7 @@ import { EQUIPE } from '@/lib/data/equipe'
 import { SITE_URL } from '@/lib/seo/config'
 import { PageHero } from '@/components/layout/PageHero'
 import { PAGE_PHOTOS } from '@/lib/data/photo-library'
+import { InlineCta } from '@/components/cta/inline-cta'
 
 export const metadata: Metadata = {
   title: "L'équipe — Courtiers ORIAS Vivos Assurance",
@@ -169,6 +170,13 @@ export default function EquipePage() {
             ))}
           </ul>
         </section>
+
+        <div className="mt-12">
+          <InlineCta
+            title="Parlez à un courtier ORIAS dédié"
+            description="Notre équipe étudie votre situation et négocie 3 devis personnalisés auprès de 10+ assureurs partenaires."
+          />
+        </div>
       </div>
     </main>
   )
