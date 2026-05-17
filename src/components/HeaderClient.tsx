@@ -110,6 +110,19 @@ export default function HeaderClient() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Fermer mega-menu sur Escape (a11y WCAG 2.1.1)
+  useEffect(() => {
+    if (!verticalsOpen && !mobileOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setVerticalsOpen(false)
+        setMobileOpen(false)
+      }
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [verticalsOpen, mobileOpen])
+
   // Header toujours glassmorph + charcoal text (lisible sur tous fonds).
   // Au scroll : ajoute shadow + border pour profondeur supplémentaire.
   const navColor = 'text-charcoal-700 dark:text-charcoal-200'
@@ -136,15 +149,25 @@ export default function HeaderClient() {
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-8 lg:flex">
-            {/* Garanties mega menu */}
+            {/* Garanties mega menu — accessible (Esc + focus + ARIA) */}
             <div
               className="relative"
               onMouseEnter={() => setVerticalsOpen(true)}
               onMouseLeave={() => setVerticalsOpen(false)}
+              onFocus={() => setVerticalsOpen(true)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                  setVerticalsOpen(false)
+                }
+              }}
             >
               <button
                 type="button"
-                className={`flex items-center gap-1.5 text-[15px] font-semibold ${navColor} transition-colors ${navHover}`}
+                onClick={() => setVerticalsOpen((v) => !v)}
+                aria-expanded={verticalsOpen}
+                aria-controls="garanties-mega-menu"
+                aria-haspopup="true"
+                className={`flex min-h-[44px] items-center gap-1.5 px-2 text-[15px] font-semibold ${navColor} transition-colors ${navHover}`}
               >
                 Garanties
                 <ChevronDown
@@ -152,11 +175,16 @@ export default function HeaderClient() {
                     verticalsOpen ? 'rotate-180' : ''
                   }`}
                   strokeWidth={2.4}
+                  aria-hidden="true"
                 />
               </button>
 
               {verticalsOpen && (
-                <div className="absolute left-1/2 top-full -translate-x-1/2 pt-4">
+                <div
+                  id="garanties-mega-menu"
+                  role="menu"
+                  className="absolute left-1/2 top-full -translate-x-1/2 pt-4"
+                >
                   <div className="w-[760px] overflow-hidden rounded-3xl border border-charcoal-100 bg-white shadow-premium-lg dark:border-charcoal-800 dark:bg-charcoal-900">
                     <div className="grid grid-cols-3">
                       {/* Colonne 1+2 : Liens catégories */}
@@ -258,19 +286,22 @@ export default function HeaderClient() {
           {/* Desktop CTAs */}
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="tel:+33651858930"
-              className={`inline-flex items-center gap-1.5 text-sm font-bold tabular-nums ${navColor} transition-colors ${navHover}`}
-              aria-label="Appeler le cabinet"
+              href="tel:+33182885127"
+              className={`inline-flex min-h-[44px] items-center gap-1.5 px-2 text-sm font-bold tabular-nums ${navColor} transition-colors ${navHover}`}
+              aria-label="Appeler le cabinet au 01 82 88 51 27"
             >
-              <Phone className="h-4 w-4" strokeWidth={2.2} />
-              06 51 85 89 30
+              <Phone className="h-4 w-4" strokeWidth={2.2} aria-hidden="true" />
+              01 82 88 51 27
             </a>
             <Link
               href="/devis"
-              className="group inline-flex items-center gap-1.5 rounded-xl bg-primary-500 px-5 py-2.5 text-sm font-bold text-white shadow-cta transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
+              className="group inline-flex min-h-[44px] items-center gap-1.5 rounded-xl bg-primary-500 px-5 py-3 text-sm font-bold text-white shadow-cta transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
             >
               {CTA_TEXTS.short}
-              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              <ArrowRight
+                className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
             </Link>
           </div>
 
@@ -278,16 +309,22 @@ export default function HeaderClient() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`rounded-lg p-2 ${navColor} transition-colors hover:bg-white/10 lg:hidden`}
+            className={`flex h-11 w-11 items-center justify-center rounded-lg ${navColor} transition-colors hover:bg-white/10 lg:hidden`}
             aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu-panel"
           >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileOpen ? (
+              <X className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            )}
           </button>
         </div>
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="border-t border-charcoal-100 py-4 lg:hidden">
+          <div id="mobile-menu-panel" className="border-t border-charcoal-100 py-4 lg:hidden">
             <p className="mb-2 px-2 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
               Garanties
             </p>
