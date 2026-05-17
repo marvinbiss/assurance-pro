@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { AnimatedStepIcon } from '@/components/motion/animated-step-icon'
 
 interface ProcessStep {
   n: string
@@ -113,6 +114,9 @@ export function EditorialProcessSteps({ steps, className = '' }: EditorialProces
             </span>
 
             <div className="md:mb-6 md:flex-1">
+              <div className="mb-4 flex items-center gap-3 text-primary-700">
+                <AnimatedStepIcon step={((i % 3) + 1) as 1 | 2 | 3} className="h-12 w-12" />
+              </div>
               <h3 className="mb-3 font-heading text-2xl font-semibold text-charcoal-900 md:text-3xl">
                 {step.title}
               </h3>
