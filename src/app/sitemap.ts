@@ -356,6 +356,149 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const programmaticEntries = await getProgrammaticEntries(now)
 
+  // ────────────────────────────────────────────────────────────────────────────
+  // Fallback combinatoires (si Supabase vide → garantit coverage minimale 3 500+)
+  // Génère pages comparateur/tarif/guide/prix/devis × garanties × villes/métiers.
+  // Routes existent déjà côté code (templates dynamic ƒ). Sitemap déclenche crawl.
+  // ────────────────────────────────────────────────────────────────────────────
+  const GARANTIES = ['decennale', 'rc-pro', 'multirisque-pro', 'mutuelle-pro', 'cyber', 'vtc']
+  const METIERS_TOP = [
+    // BTP (15)
+    'macon',
+    'plombier',
+    'electricien',
+    'couvreur-zingueur',
+    'peintre-plaquiste',
+    'charpentier',
+    'carreleur',
+    'maitre-oeuvre',
+    'photovoltaique',
+    'menuisier-interieur',
+    'plaquiste-platrier',
+    'facadier-ite',
+    'etancheur',
+    'charpentier-bois',
+    'installateur-photovoltaique',
+    // Conseil / freelance (12)
+    'auto-entrepreneur',
+    'consultant',
+    'freelance-informatique',
+    'graphiste',
+    'photographe',
+    'coach-sportif',
+    'esthetique',
+    'community-manager',
+    'designer',
+    'traducteur',
+    'formateur',
+    'expert-comptable',
+    // Pro réglementé (6)
+    'avocat',
+    'medecin',
+    'paramedical',
+    'sante-paramedical',
+    'agent-immobilier',
+    'immobilier',
+    // Service (8)
+    'restaurateur',
+    'commerce',
+    'taxi',
+    'vtc',
+    'coiffeur',
+    'agence-web',
+    'transport-marchandises',
+    'micro-entreprise',
+  ]
+  const STATUTS = ['auto-entrepreneur', 'sarl', 'sas', 'micro-entreprise', 'sasu']
+  const TOP_VILLES = villeSlugs // tous les 102 villes (au lieu top 100)
+  const VILLES_50 = villeSlugs.slice(0, 50) // top 50 pour combinatoires denses
+
+  // Comparateur : garantie × ville (600 URLs)
+  const comparateurFallback = GARANTIES.flatMap((g) =>
+    TOP_VILLES.map((v) => ({
+      url: `${BASE_URL}/comparateur/${g}/${v}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as ChangeFrequency,
+      priority: 0.7,
+    }))
+  )
+
+  // Tarif : garantie × métier (144 URLs)
+  const tarifFallback = GARANTIES.flatMap((g) =>
+    METIERS_TOP.map((m) => ({
+      url: `${BASE_URL}/tarif/${g}/${m}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as ChangeFrequency,
+      priority: 0.75,
+    }))
+  )
+
+  // Guide : garantie × métier (144 URLs)
+  const guideFallback = GARANTIES.flatMap((g) =>
+    METIERS_TOP.map((m) => ({
+      url: `${BASE_URL}/guide/${g}/${m}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as ChangeFrequency,
+      priority: 0.65,
+    }))
+  )
+
+  // Prix : garantie × métier × statut (METIERS_TOP × STATUTS)
+  const prixFallback = GARANTIES.flatMap((g) =>
+    METIERS_TOP.flatMap((m) =>
+      STATUTS.map((s) => ({
+        url: `${BASE_URL}/prix/${g}/${m}/${s}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as ChangeFrequency,
+        priority: 0.6,
+      }))
+    )
+  )
+
+  // Pillar metier × ville top (decennale métier dans 50 villes)
+  const DECENNALE_METIERS_KEYS = [
+    'carreleur',
+    'macon',
+    'plombier',
+    'electricien',
+    'couvreur-zingueur',
+    'peintre-plaquiste',
+    'charpentier',
+    'maitre-oeuvre',
+    'photovoltaique',
+    'auto-entrepreneur',
+    'micro-entreprise',
+  ]
+  const decennaleMetierVilleFallback = DECENNALE_METIERS_KEYS.flatMap((m) =>
+    VILLES_50.map((v) => ({
+      url: `${BASE_URL}/comparateur/decennale-${m}/${v}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as ChangeFrequency,
+      priority: 0.65,
+    }))
+  )
+
+  // Devis : garantie × métier (144 URLs)
+  const devisFallback = GARANTIES.flatMap((g) =>
+    METIERS_TOP.map((m) => ({
+      url: `${BASE_URL}/devis/${g}/${m}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as ChangeFrequency,
+      priority: 0.85,
+    }))
+  )
+
+  // Dédup : si Supabase a déjà fourni l'URL, on garde la version Supabase (priorité enrichie).
+  const programmaticUrls = new Set(programmaticEntries.map((e) => e.url))
+  const fallback = [
+    ...comparateurFallback,
+    ...tarifFallback,
+    ...guideFallback,
+    ...prixFallback,
+    ...devisFallback,
+    ...decennaleMetierVilleFallback,
+  ].filter((e) => !programmaticUrls.has(e.url))
+
   return [
     ...staticEntries,
     ...decennaleSlugs,
@@ -366,5 +509,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...blogCategories,
     ...membres,
     ...programmaticEntries,
+    ...fallback,
   ]
 }
