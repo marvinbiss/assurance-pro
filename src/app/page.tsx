@@ -6,8 +6,10 @@
  * gradients premium, lucide icons cohérentes, bento boxes asymétriques.
  */
 
+import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { HERO_PHOTOS } from '@/lib/data/photo-library'
 import {
   ArrowRight,
   ShieldCheck,
@@ -597,6 +599,78 @@ export default function HomePage() {
                 ))}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SPLIT IMAGE + TEXT — humanise marque (avant CTA final) */}
+      <section className="bg-white py-20 md:py-28">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-premium">
+              <Image
+                src={HERO_PHOTOS.poignee.src}
+                alt={HERO_PHOTOS.poignee.alt}
+                fill
+                sizes="(min-width: 1024px) 540px, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal-950/60 via-transparent to-transparent p-6">
+                <p className="font-display-premium text-lg italic text-white md:text-xl">
+                  « Un courtier qui prend le téléphone le jour du sinistre. »
+                </p>
+              </div>
+            </div>
+            <div>
+              <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-secondary-50 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-secondary-800">
+                Engagement courtage
+              </span>
+              <h2 className="mb-5 font-display-premium font-heading text-3xl font-extrabold leading-tight tracking-tight text-charcoal-900 md:text-4xl">
+                Pas un numéro vert.
+                <br />
+                <span className="text-primary-700">Un courtier ORIAS nommé.</span>
+              </h2>
+              <p className="mb-6 text-base leading-relaxed text-charcoal-700 md:text-lg">
+                Conseil motivé conforme art. L. 521-4 du Code des assurances. Comparaison négociée
+                sur 10+ assureurs partenaires. Accompagnement sinistre à vos côtés — pas un script,
+                un humain.
+              </p>
+              <ul className="space-y-3 text-sm text-charcoal-700">
+                <li className="flex items-start gap-3">
+                  <ShieldCheck
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600"
+                    strokeWidth={2.4}
+                    aria-hidden="true"
+                  />
+                  <span>
+                    <strong className="text-charcoal-900">Conseil motivé écrit</strong> — vous savez
+                    pourquoi on vous propose ce contrat.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Award
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-secondary-600"
+                    strokeWidth={2.4}
+                    aria-hidden="true"
+                  />
+                  <span>
+                    <strong className="text-charcoal-900">Zéro frais de courtage</strong> —
+                    rémunérés par les assureurs, pas vous.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-600"
+                    strokeWidth={2.4}
+                    aria-hidden="true"
+                  />
+                  <span>
+                    <strong className="text-charcoal-900">Accompagnement sinistre</strong> —
+                    courtier nommé, joignable, qui négocie avec l'assureur.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
