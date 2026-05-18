@@ -365,7 +365,7 @@ export function buildSchemaOrg(enrichment: PageEnrichmentRow) {
       url: canonical,
       provider: {
         '@type': 'InsuranceAgency',
-        name: 'Vivos Vivos Assurance',
+        name: 'Vivos Assurance',
         url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr',
       },
       areaServed: enrichment.ville_nom
