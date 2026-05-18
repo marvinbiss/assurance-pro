@@ -1,6 +1,9 @@
 import '@testing-library/jest-dom/vitest'
 import { vi } from 'vitest'
 
+// Mock 'server-only' Next.js guard (n'existe pas en jsdom)
+vi.mock('server-only', () => ({}))
+
 // jsdom n'implémente pas matchMedia → polyfill nécessaire pour les composants
 // qui détectent prefers-reduced-motion (ex: RevealOnScroll, motion wrappers).
 if (typeof window !== 'undefined' && !window.matchMedia) {

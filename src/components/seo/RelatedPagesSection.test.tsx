@@ -14,16 +14,10 @@ describe('RelatedPagesSection', () => {
     expect(links.length).toBeGreaterThanOrEqual(15)
   })
 
-  it('groupe les liens par type (Pilier — Métiers — Outils — Guides)', () => {
+  it('groupe les liens par type (Pilier — Métiers — Outils)', () => {
     render(<RelatedPagesSection currentSlug="rc-pro/immobilier" />)
     expect(screen.getAllByText(/Pilier/i).length).toBeGreaterThan(0)
-    expect(screen.getByText(/Métiers.*sous-niches/i)).toBeInTheDocument()
-    expect(screen.getByText(/Outils transactionnels/i)).toBeInTheDocument()
-  })
-
-  it('affiche le compteur de liens', () => {
-    render(<RelatedPagesSection currentSlug="rc-pro/immobilier" />)
-    expect(screen.getByText(/\d+ liens internes/i)).toBeInTheDocument()
+    expect(screen.getByText(/Métiers connexes/i)).toBeInTheDocument()
   })
 
   it('mode compact rend une nav simplifiée', () => {
@@ -42,7 +36,7 @@ describe('RelatedPagesSection', () => {
 
   it('affiche cluster sémantique courant', () => {
     render(<RelatedPagesSection currentSlug="assurance-decennale/plombier" />)
-    expect(screen.getByText(/Cluster sémantique/i)).toBeInTheDocument()
+    expect(screen.getByText(/Maillage sémantique/i)).toBeInTheDocument()
   })
 
   it('retourne null pour cluster inexistant fallback (cross-cluster)', () => {

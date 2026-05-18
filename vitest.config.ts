@@ -23,6 +23,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      // Mock 'server-only' Next.js guard pour permettre tests RAG/Supabase
+      'server-only': path.resolve(__dirname, './src/test/server-only-mock.ts'),
     },
   },
 })
