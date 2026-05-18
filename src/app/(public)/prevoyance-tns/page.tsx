@@ -45,7 +45,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La prévoyance TNS est l'assurance qui protège un Travailleur Non Salarié (artisan, commerçant, profession libérale, gérant majoritaire) contre les conséquences financières d'un arrêt de travail (maladie, accident), d'une invalidité ou d'un décès. Pour un TNS, le régime obligatoire de Sécurité Sociale verse des indemnités journalières (IJ) très inférieures à celles d'un salarié — typiquement 22 à 65 €/jour selon le revenu — et seulement après 3 jours de carence. Pour un artisan dégageant 50 k€ de bénéfice annuel, la perte de revenu en cas d'arrêt prolongé peut atteindre 80% du revenu habituel. La prévoyance privée comble ce gap : indemnités journalières dès J0, rente invalidité jusqu'à 70% du revenu, capital décès jusqu'à 8 ans de revenus pour la famille. Conformément à la Loi Madelin (art. 154 bis CGI), les cotisations sont déductibles du bénéfice imposable. Cette page distingue la prévoyance TNS de la mutuelle santé (page dédiée /mutuelle-tns), détaille les garanties indispensables, les tarifs 2026 par profil et compare les principaux contrats."
+      intro="La prévoyance TNS est l'assurance qui protège un Travailleur Non Salarié (artisan, commerçant, profession libérale, gérant majoritaire) contre les conséquences financières d'un arrêt de travail (maladie, accident), d'une invalidité ou d'un décès. Pour un TNS, le régime obligatoire de Sécurité Sociale verse des indemnités journalières (IJ) très inférieures à celles d'un salarié — typiquement 22 à 65 € par jour selon le revenu — et seulement après 3 jours de carence. Pour un artisan dégageant 50 k€ de bénéfice annuel, la perte de revenu en cas d'arrêt prolongé peut atteindre 80% du revenu habituel. La prévoyance privée comble ce gap : indemnités journalières dès J0, rente invalidité jusqu'à 70% du revenu, capital décès jusqu'à 8 ans de revenus pour la famille. Conformément à la Loi Madelin (art. 154 bis CGI), les cotisations sont déductibles du bénéfice imposable. Cette page distingue la prévoyance TNS de la mutuelle santé (page dédiée /mutuelle-tns), détaille les garanties indispensables, les tarifs 2026 par profil et compare les principaux contrats."
       legalReference="Article 154 bis du CGI — Loi Madelin du 11 février 1994"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -54,7 +54,7 @@ export default function Page() {
         {
           icon: '🩹',
           title: 'IJ dès J0',
-          desc: 'Indemnité journalière sans carence (vs 3-7 jours pour la Sécu) — choix du montant 50 à 500€/jour',
+          desc: 'Indemnité journalière sans carence (vs 3-7 jours pour la Sécu) — choix du montant 50 à 500€ par jour',
         },
         {
           icon: '♿',
@@ -117,8 +117,8 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>Cotisation moyenne TNS 35 ans</strong>
                     </td>
-                    <td className="border p-2">42 € – 65 €/mois</td>
-                    <td className="border p-2">85 € – 220 €/mois</td>
+                    <td className="border p-2">42 € – 65 € par mois</td>
+                    <td className="border p-2">85 € – 220 € par mois</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -134,7 +134,7 @@ export default function Page() {
                   Pour un artisan, la PRÉVOYANCE est encore plus critique que la mutuelle
                 </strong>{' '}
                 : un arrêt de travail de 3 mois suite à un accident BTP = revenus à zéro (la Sécu
-                verse ~22-65 €/jour seulement). Sans prévoyance, c&apos;est l&apos;asphyxie
+                verse ~22-65 € par jour seulement). Sans prévoyance, c&apos;est l&apos;asphyxie
                 financière garantie. Voir aussi notre page dédiée mutuelle TNS pour la
                 complémentaire santé.
               </p>
@@ -147,7 +147,7 @@ export default function Page() {
             <>
               <p>
                 Tarifs indicatifs basés sur les barèmes 2026 de nos 6 partenaires (April Pro, MMA
-                Pro, Generali, Allianz Vie, Aon, MetLife) — formule équilibrée : IJ 100€/jour +
+                Pro, Generali, Allianz Vie, Aon, MetLife) — formule équilibrée : IJ 100€ par jour +
                 invalidité 70% du revenu + capital décès 4 ans :
               </p>
               <table className="w-full border-collapse text-sm">
@@ -175,7 +175,7 @@ export default function Page() {
                     <td className="border p-2 text-right">180 € – 320 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Dirigeant SARL/SAS gérant majoritaire 45 ans</td>
+                    <td className="border p-2">Dirigeant SARL ou SAS gérant majoritaire 45 ans</td>
                     <td className="border p-2 text-right">100 k€</td>
                     <td className="border p-2 text-right">280 € – 480 €</td>
                   </tr>
@@ -192,10 +192,10 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables : âge (×1,5%/an), tabagisme (+30 à +60%), catégorie de risque
+                Variables : âge (×1,5% par an), tabagisme (+30 à +60%), catégorie de risque
                 professionnel (BTP &gt; libéral &gt; tertiaire), niveau d&apos;IJ choisi, franchise
-                (15j / 30j / 90j), durée de versement (1 095 jours = 3 ans standard). Examen médical
-                complémentaire au-delà de 200€/jour d&apos;IJ.
+                (15j ou 30j ou 90j), durée de versement (1 095 jours = 3 ans standard). Examen
+                médical complémentaire au-delà de 200€ par jour d&apos;IJ.
               </p>
             </>
           ),
@@ -206,8 +206,8 @@ export default function Page() {
             <>
               <ol>
                 <li>
-                  <strong>Indemnités journalières (IJ)</strong> : choix du montant (50 à 500
-                  €/jour), franchise (15j / 30j / 90j), durée maximale 1 095 jours. Pour un artisan
+                  <strong>Indemnités journalières (IJ)</strong> : choix du montant (50 à 500 € par
+                  jour), franchise (15j ou 30j ou 90j), durée maximale 1 095 jours. Pour un artisan
                   : franchise 30j + IJ = 80% du revenu net journalier
                 </li>
                 <li>
@@ -257,8 +257,8 @@ export default function Page() {
               <p>Avec PASS 2026 = 47 100 €, pour un bénéfice de 60 k€ :</p>
               <ul>
                 <li>Plafond annuel = ~5 826 € (commun santé + prévoyance)</li>
-                <li>Si vous cotisez 2 200 €/an en prévoyance : 100% déductibles</li>
-                <li>Économie d&apos;impôt nette à TMI 30% : ~660 €/an</li>
+                <li>Si vous cotisez 2 200 € par an en prévoyance : 100% déductibles</li>
+                <li>Économie d&apos;impôt nette à TMI 30% : ~660 € par an</li>
                 <li>+ économie cotisations sociales (~25-32% selon statut)</li>
               </ul>
               <p>
@@ -278,19 +278,19 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une prévoyance TNS en 2026 ?',
-          a: "Démarre à 68€/mois pour un consultant tertiaire 30 ans non-fumeur (formule équilibrée IJ 100€/jour + invalidité 70% + capital décès 4 ans). Médiane marché : 128-220€/mois pour un artisan BTP 35 ans (catégorie risque B). Variables : âge, statut tabagique, catégorie de risque professionnel (BTP > libéral > tertiaire), niveau d'IJ choisi.",
+          a: "Démarre à 68€ par mois pour un consultant tertiaire 30 ans non-fumeur (formule équilibrée IJ 100€ par jour + invalidité 70% + capital décès 4 ans). Médiane marché : 128-220€ par mois pour un artisan BTP 35 ans (catégorie risque B). Variables : âge, statut tabagique, catégorie de risque professionnel (BTP > libéral > tertiaire), niveau d'IJ choisi.",
         },
         {
           q: 'Pourquoi la prévoyance est-elle plus critique que la mutuelle pour un artisan ?',
-          a: "Parce qu'un arrêt de travail = revenus à zéro pour un artisan TNS. La Sécu ne verse que 22-65€/jour d'IJ après 3 jours de carence. Pour un artisan dégageant 50 k€/an de bénéfice (~150€/jour de revenu net), c'est 60-85% de perte de revenu. Sans prévoyance, un arrêt de 2-3 mois = asphyxie financière (charges fixes + remboursement prêt pro continuent à courir).",
+          a: "Parce qu'un arrêt de travail = revenus à zéro pour un artisan TNS. La Sécu ne verse que 22-65€ par jour d'IJ après 3 jours de carence. Pour un artisan dégageant 50 k€ par an de bénéfice (~150€ par jour de revenu net), c'est 60-85% de perte de revenu. Sans prévoyance, un arrêt de 2-3 mois = asphyxie financière (charges fixes + remboursement prêt pro continuent à courir).",
         },
         {
           q: "Quel niveau d'IJ choisir ?",
-          a: "Calcul : IJ = 80% du revenu NET journalier souhaité (la Sécu verse 22-65€/jour qui s'ajoutent à votre IJ privée). Pour un revenu net de 150€/jour : IJ ~120€/jour est cohérent. Au-delà de 200€/jour d'IJ, examen médical complémentaire requis. Plafond pratique : 500€/jour.",
+          a: "Calcul : IJ = 80% du revenu NET journalier souhaité (la Sécu verse 22-65€ par jour qui s'ajoutent à votre IJ privée). Pour un revenu net de 150€ par jour : IJ ~120€ par jour est cohérent. Au-delà de 200€ par jour d'IJ, examen médical complémentaire requis. Plafond pratique : 500€ par jour.",
         },
         {
           q: 'Auto-entrepreneur : peut-il souscrire une prévoyance Madelin ?',
-          a: "Pas en régime micro-fiscal classique (versement libératoire) — pas de déduction Madelin possible. Pour bénéficier de Madelin, basculer au régime réel d'imposition. Démarche pertinente dès que le bénéfice dépasse ~30 k€/an. Alternative : prévoyance individuelle non-Madelin (cotisation NON déductible mais accessible à tous statuts).",
+          a: "Pas en régime micro-fiscal classique (versement libératoire) — pas de déduction Madelin possible. Pour bénéficier de Madelin, basculer au régime réel d'imposition. Démarche pertinente dès que le bénéfice dépasse ~30 k€ par an. Alternative : prévoyance individuelle non-Madelin (cotisation NON déductible mais accessible à tous statuts).",
         },
         {
           q: 'À quel âge limite peut-on souscrire une prévoyance TNS ?',

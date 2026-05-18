@@ -40,16 +40,19 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
     updatedAt: '2026-05-31',
     readTime: '11 min',
     sources: [
-      LEGIFRANCE('Loi 78-12 du 4 janvier 1978 (Spinetta)', 'loda/id/JORFTEXT000000522321'),
+      LEGIFRANCE('Loi 78-12 du 4 janvier 1978 (Spinetta)', 'loda, id ou JORFTEXT000000522321'),
       LEGIFRANCE(
         'Code des assurances art. L. 241-1 à L. 243-9',
-        'codes/section_lc/LEGITEXT000006073984/LEGISCTA000006154629'
+        'codes ou section_lc ou LEGITEXT000006073984/LEGISCTA000006154629'
       ),
       LEGIFRANCE(
         'Code civil art. 1792 à 1792-7',
-        'codes/section_lc/LEGITEXT000006070721/LEGISCTA000006136355'
+        'codes ou section_lc ou LEGITEXT000006070721/LEGISCTA000006136355'
       ),
-      LEGIFRANCE('Arrêté du 6 décembre 2022 (cliquabilité ORIAS)', 'jorf/id/JORFTEXT000046718521'),
+      LEGIFRANCE(
+        'Arrêté du 6 décembre 2022 (cliquabilité ORIAS)',
+        'jorf, id ou JORFTEXT000046718521'
+      ),
       { label: 'AQC SYCODÉS 2024', url: 'https://qualiteconstruction.com/observatoire/sycodes/' },
       ACPR('ACPR Rapport annuel 2024'),
     ],
@@ -140,7 +143,7 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
             '**Mention attestation décennale sur devis et factures obligatoire depuis 2024**. Effet : nullité des devis et factures non conformes.',
             '**Contrôles ACPR renforcés en 2026** : +47 % de sanctions infligées en 2024 vs 2023 selon le rapport annuel ACPR.',
             '**Nouvelle nomenclature AQC SYCODÉS 2024** : sinistralité plus précise par micro-métier. Impact sur la tarification décennale (étancheur +12 %, photovoltaïque +9 %).',
-            '**Recommandation ACPR 2024-R-03** (applicable 31/12/2025) : traçabilité du devoir de conseil renforcée (hash SHA-256, conservation 10 ans).',
+            '**Recommandation ACPR 2024-R-03** (applicable 31 décembre 2025) : traçabilité du devoir de conseil renforcée (hash SHA-256, conservation 10 ans).',
             '**Loi Climat 2024** : nouveaux ouvrages soumis (panneaux photovoltaïques de + de 9 kW), exigences RE 2020 intégrées au champ décennal.',
           ],
         },
@@ -209,15 +212,18 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
     updatedAt: '2026-06-01',
     readTime: '9 min',
     sources: [
-      LEGIFRANCE('Loi 2014-344 (Hamon)', 'loda/id/JORFTEXT000028738036'),
-      LEGIFRANCE('Code des assurances art. L. 113-15-2', 'codes/article_lc/LEGIARTI000028744931'),
+      LEGIFRANCE('Loi 2014-344 (Hamon)', 'loda, id ou JORFTEXT000028738036'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 113-15-2',
+        'codes ou article_lc ou LEGIARTI000028744931'
+      ),
       LEGIFRANCE(
         'Code des assurances art. L. 113-12 (Chatel)',
-        'codes/article_lc/LEGIARTI000006792516'
+        'codes ou article_lc ou LEGIARTI000006792516'
       ),
       LEGIFRANCE(
         'Code des assurances art. L. 113-9 (fausse déclaration)',
-        'codes/article_lc/LEGIARTI000006792508'
+        'codes ou article_lc ou LEGIARTI000006792508'
       ),
     ],
     toc: [
@@ -292,7 +298,7 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
             "Envoyer la lettre de résiliation à l'ancien assureur avec mention 'Loi Hamon'",
             "Vérifier que la date d'effet de la résiliation est POSTÉRIEURE à la date d'effet du nouveau contrat (zéro coupure)",
             "Demander à l'ancien assureur une attestation de fin de contrat",
-            'Demander au nouvel assureur une attestation immédiatement (à conserver sur devis/factures)',
+            'Demander au nouvel assureur une attestation immédiatement (à conserver sur devis ou factures)',
           ],
         },
         callout: {
@@ -361,17 +367,20 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
     title: 'Loi Madelin TNS : optimisation fiscale 2026 (plafonds + cas pratiques)',
     description:
       'Guide complet 2026 de la Loi Madelin pour TNS. Plafonds (4 997 € santé + 2 935 € retraite), économies fiscales TMI 30/41/45%, cas pratiques 3 profils, comparatif PER Loi PACTE.',
-    category: 'Mutuelle / TNS',
+    category: 'Mutuelle — TNS',
     tags: ['loi madelin', 'tns', 'optimisation fiscale', 'déduction', 'plafonds 2026'],
     ...AUTHOR,
     publishedAt: '2026-06-03',
     updatedAt: '2026-06-03',
     readTime: '10 min',
     sources: [
-      LEGIFRANCE('CGI art. 154 bis (Madelin)', 'codes/article_lc/LEGIARTI000028441933'),
-      LEGIFRANCE('Loi 94-126 du 11 février 1994', 'loda/id/JORFTEXT000000729294'),
-      LEGIFRANCE('Loi PACTE 2019 (PER)', 'loda/id/JORFTEXT000038496102'),
-      LEGIFRANCE('CGI art. 39 (déductibilité charges)', 'codes/article_lc/LEGIARTI000044979340'),
+      LEGIFRANCE('CGI art. 154 bis (Madelin)', 'codes ou article_lc ou LEGIARTI000028441933'),
+      LEGIFRANCE('Loi 94-126 du 11 février 1994', 'loda, id ou JORFTEXT000000729294'),
+      LEGIFRANCE('Loi PACTE 2019 (PER)', 'loda, id ou JORFTEXT000038496102'),
+      LEGIFRANCE(
+        'CGI art. 39 (déductibilité charges)',
+        'codes ou article_lc ou LEGIARTI000044979340'
+      ),
       { label: 'URSSAF PASS 2026', url: 'https://www.urssaf.fr/' },
     ],
     toc: [
@@ -391,7 +400,7 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         paragraphs: [
           "La Loi Madelin du 11 février 1994 (codifiée à l'article 154 bis du Code Général des Impôts) permet aux Travailleurs Non-Salariés (TNS) de déduire fiscalement les cotisations versées à des contrats d'assurance complémentaire santé, prévoyance, retraite et perte d'emploi. L'objectif politique : offrir aux indépendants un mécanisme de protection sociale équivalent à celui des salariés (mutuelle d'entreprise + complémentaire retraite).",
           "Le mécanisme est simple : pour chaque euro de cotisation versé, votre bénéfice imposable est réduit du même montant. Vous économisez donc votre TMI × cotisation en impôt sur le revenu. Plus votre TMI est élevé, plus l'avantage fiscal est important.",
-          "Concrètement, un TNS au TMI 41 % qui cotise~ 5 000  €/an en Madelin santé économise 2 050 € d'impôt l'année concernée. Sur 10 ans, l'économie cumulée atteint 20 500 € — équivalent à 4 années de cotisations payées par l'État.",
+          "Concrètement, un TNS au TMI 41 % qui cotise ~5 000 € par an en Madelin santé économise 2 050 € d'impôt l'année concernée. Sur 10 ans, l'économie cumulée atteint 20 500 € — équivalent à 4 années de cotisations payées par l'État.",
         ],
         callout: {
           tone: 'warning',
@@ -407,7 +416,7 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
           items: [
             "**Être TNS au sens fiscal** : exploitant individuel (BIC, BNC), gérant majoritaire de SARL, associé unique d'EURL, gérant non rémunéré d'EARL.",
             '**Être imposé au régime réel** : BIC réel, BNC réel, IS. Le régime micro-fiscal (AE, micro-BIC, micro-BNC) EXCLUT la Loi Madelin.',
-            '**Être à jour de ses cotisations URSSAF obligatoires** : santé de base CPAM/SSI + retraite SSI.',
+            '**Être à jour de ses cotisations URSSAF obligatoires** : santé de base CPAM ou SSI + retraite SSI.',
             "**Le contrat doit être éligible Madelin** : mention obligatoire 'éligible Loi Madelin' sur le bulletin de souscription et l'attestation annuelle.",
             "**Verser les cotisations à titre personnel** (pas par l'entreprise pour le compte du TNS).",
             "**Conservation des justificatifs** : attestations annuelles fournies par l'assureur, à conserver 10 ans pour contrôle fiscal.",
@@ -419,10 +428,10 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         h2: '3. Plafonds 2026 (santé + retraite)',
         paragraphs: [
           'Plafonds calculés sur le PASS (Plafond Annuel Sécurité Sociale 2026 = 47 100 €) :',
-          '**Santé + Prévoyance combinés** : 3,75 % × PASS + 7 % du bénéfice imposable, dans la limite globale de 3 % × 8 PASS. Calcul concret : 3,75 % × 47 100 = 1 766 € + 7 % du bénéfice. Pour un bénéfice 50 k€ : 1 766 + 3 500 = 5 266 €. Plafond effectif typique : **~4 ~997  €/an**.',
-          '**Retraite supplémentaire Madelin** : 10 % × PASS + 25 % × bénéfice excédant le PASS. Plafond minimum 2026 : **~2 935  €/an**. Pour les TNS hauts revenus, peut atteindre 10 000+~  €/an déductibles.',
+          '**Santé + Prévoyance combinés** : 3,75 % × PASS + 7 % du bénéfice imposable, dans la limite globale de 3 % × 8 PASS. Calcul concret : 3,75 % × 47 100 = 1 766 € + 7 % du bénéfice. Pour un bénéfice 50 k€ : 1 766 + 3 500 = 5 266 €. Plafond effectif typique : **~4 997 € par an**.',
+          '**Retraite supplémentaire Madelin** : 10 % × PASS + 25 % × bénéfice excédant le PASS. Plafond minimum 2026 : **~2 935 € par an**. Pour les TNS hauts revenus, peut atteindre 10 000+~ € par an déductibles.',
           "**Perte d'emploi** : 2,5 % × PASS + 1,875 % × bénéfice imposable. Plafond modeste mais peut être pertinent pour TNS en démarrage.",
-          '**Total déductible théorique max combiné** : ~12 000-15 ~000  €/an pour TNS au bénéfice 80-150 k€.',
+          '**Total déductible théorique max combiné** : ~12 000-15 000 € par an pour TNS au bénéfice 80-150 k€.',
         ],
       },
       {
@@ -434,10 +443,10 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         list: {
           items: [
             'TMI 0 % (bénéfice < 11 295 €) : économie 0 € — Madelin pas pertinent',
-            'TMI 11 % (bénéfice 11 295 - 28 797 €) : économie~ 550  €/an',
-            'TMI 30 % (bénéfice 28 797 - 82 341 €) : économie~ 1 500  €/an',
-            'TMI 41 % (bénéfice 82 341 - 177 106 €) : économie~ 2 050  €/an',
-            'TMI 45 % (bénéfice > 177 106 €) : économie~ 2 250  €/an',
+            'TMI 11 % (bénéfice 11 295 - 28 797 €) : économie ~550 € par an',
+            'TMI 30 % (bénéfice 28 797 - 82 341 €) : économie ~1 500 € par an',
+            'TMI 41 % (bénéfice 82 341 - 177 106 €) : économie ~2 050 € par an',
+            'TMI 45 % (bénéfice > 177 106 €) : économie ~2 250 € par an',
           ],
         },
       },
@@ -446,9 +455,9 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         h2: '5. Cas pratiques 3 profils',
         paragraphs: [
           'Cas réels anonymisés issus de notre portefeuille 2024 :',
-          "**Cas 1 — Artisan plombier EI** (bénéfice 45 k€, TMI 30 %, célibataire) : Madelin santé~ 2 800  €/an = économie d'impôts~ 840  €/an. ROI : 30 % du montant cotisé immédiatement.",
-          "**Cas 2 — Consultant SARL gérant majoritaire** (bénéfice 80 k€, TMI 41 %, marié 1 enfant) : Madelin santé + prévoyance~ 5 200  €/an = économie~ 2 130  €/an. Sur 20 ans (jusqu'à la retraite) : économie cumulée 42 600 €.",
-          "**Cas 3 — Médecin libéral EI** (bénéfice 150 k€, TMI 45 %, marié 2 enfants) : Madelin santé 5 000 € + Madelin retraite supplémentaire 7 000 € =~ 12 000  €/an cotisations déductibles. Économie : 12 000 × 45 % = **~5 400  €/an d'impôt** économisé. Sur une carrière de 25 ans : économie cumulée 135 000 € via le seul levier Madelin.",
+          "**Cas 1 — Artisan plombier EI** (bénéfice 45 k€, TMI 30 %, célibataire) : Madelin santé ~2 800 € par an = économie d'impôts ~840 € par an. ROI : 30 % du montant cotisé immédiatement.",
+          "**Cas 2 — Consultant SARL gérant majoritaire** (bénéfice 80 k€, TMI 41 %, marié 1 enfant) : Madelin santé + prévoyance ~5 200 € par an = économie ~2 130 € par an. Sur 20 ans (jusqu'à la retraite) : économie cumulée 42 600 €.",
+          "**Cas 3 — Médecin libéral EI** (bénéfice 150 k€, TMI 45 %, marié 2 enfants) : Madelin santé 5 000 € + Madelin retraite supplémentaire 7 000 € = ~12 000 € par an cotisations déductibles. Économie : 12 000 × 45 % = **~5 400 € par an d'impôt** économisé. Sur une carrière de 25 ans : économie cumulée 135 000 € via le seul levier Madelin.",
         ],
       },
       {
@@ -489,8 +498,8 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         h2: 'FAQ',
         paragraphs: [
           "**Suis-je éligible Madelin en tant qu'auto-entrepreneur ?** NON. Le régime micro-fiscal des AE exclut la Loi Madelin. Préférez une mutuelle santé indépendant non-Madelin, souvent 15-20 % moins chère sans avantage fiscal.",
-          '**Quelle différence entre Madelin santé et Madelin retraite ?** Madelin santé = mutuelle complémentaire pour soins quotidiens, plafond ~4 ~997  €/an. Madelin retraite = épargne long terme pour rente viagère post-65 ans, plafond ~2 ~935  €/an minimum.',
-          "**Puis-je cumuler les 3 Madelin (santé, prévoyance, retraite) ?** OUI, les 3 sont des contrats distincts avec plafonds cumulables (sous conditions). Optimisation possible pour TNS hauts revenus jusqu'à ~12 ~000  €/an déductibles.",
+          '**Quelle différence entre Madelin santé et Madelin retraite ?** Madelin santé = mutuelle complémentaire pour soins quotidiens, plafond ~4 997 € par an. Madelin retraite = épargne long terme pour rente viagère post-65 ans, plafond ~2 935 € par an minimum.',
+          "**Puis-je cumuler les 3 Madelin (santé, prévoyance, retraite) ?** OUI, les 3 sont des contrats distincts avec plafonds cumulables (sous conditions). Optimisation possible pour TNS hauts revenus jusqu'à ~12 000 € par an déductibles.",
           "**Que se passe-t-il si je dépasse le plafond ?** Le surplus n'est PAS déductible mais peut quand même être versé (pour augmenter les garanties). À éviter sauf besoin spécifique.",
           '**Comment optimiser entre Madelin et PER ?** Pour TNS modeste : PER plus souple. Pour TNS hauts revenus (TMI 41+ %) : cumuler les 2 maximise la déduction. Consultez votre expert-comptable.',
           "**Le Madelin existe-t-il encore en 2026 ?** OUI, il n'a PAS été supprimé par la Loi PACTE 2019. Il cohabite avec le PER. Les contrats Madelin existants continuent + de nouveaux contrats peuvent être souscrits.",
@@ -514,7 +523,10 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
     updatedAt: '2026-06-05',
     readTime: '8 min',
     sources: [
-      LEGIFRANCE('Code des assurances art. L. 521-4', 'codes/article_lc/LEGIARTI000036330029'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 521-4',
+        'codes ou article_lc ou LEGIARTI000036330029'
+      ),
       {
         label: 'Directive UE 2016/97 (DDA)',
         url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016L0097',
@@ -522,9 +534,9 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
       ACPR('Recommandation ACPR 2024-R-03 (devoir de conseil)'),
       LEGIFRANCE(
         'Code des assurances art. L. 521-2 (transparence)',
-        'codes/article_lc/LEGIARTI000036330033'
+        'codes ou article_lc ou LEGIARTI000036330033'
       ),
-      LEGIFRANCE('Ordonnance 2018-361 (transposition DDA)', 'loda/id/JORFTEXT000037027841'),
+      LEGIFRANCE('Ordonnance 2018-361 (transposition DDA)', 'loda, id ou JORFTEXT000037027841'),
     ],
     toc: [
       { id: 'principe', title: '1. Principe du devoir de conseil' },
@@ -547,7 +559,7 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         ],
         callout: {
           tone: 'info',
-          text: "Le devoir de conseil s'applique à TOUS les contrats d'assurance distribués par un courtier, qu'il s'agisse d'un AE consultant souscrivant une RC Pro à ~180  €/an ou d'un grand groupe industriel souscrivant une décennale à ~200 000  €/an. La proportionnalité de l'analyse peut varier, mais l'obligation existe.",
+          text: "Le devoir de conseil s'applique à TOUS les contrats d'assurance distribués par un courtier, qu'il s'agisse d'un AE consultant souscrivant une RC Pro à ~180 € par an ou d'un grand groupe industriel souscrivant une décennale à ~200 000 € par an. La proportionnalité de l'analyse peut varier, mais l'obligation existe.",
         },
       },
       {
@@ -639,7 +651,7 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
             "**Comparaison multi-assureurs** : demander explicitement quels assureurs ont été interrogés. Un courtier qui ne propose qu'une seule offre est suspect.",
             '**Recommandation écrite motivée** : exigez ce document avant signature. Sans lui, le courtier ne respecte pas son devoir de conseil.',
             '**Transparence des commissions** (art. L. 521-2 C. assur.) : un courtier doit communiquer sur demande écrite le montant de ses commissions perçues sur votre contrat.',
-            "**Garantie financière et RCP courtier** : tout courtier doit disposer d'une garantie financière minimum 115 000 € + une RCP minimum 1,85 M€/sinistre (art. L. 512-6 et L. 512-7 C. assur.).",
+            "**Garantie financière et RCP courtier** : tout courtier doit disposer d'une garantie financière minimum 115 000 € + une RCP minimum 1,85 M€ par sinistre (art. L. 512-6 et L. 512-7 C. assur.).",
           ],
         },
       },

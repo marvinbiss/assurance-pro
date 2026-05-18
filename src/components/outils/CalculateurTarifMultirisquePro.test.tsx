@@ -14,14 +14,14 @@ describe('CalculateurTarifMultirisquePro — UI', () => {
   it('affiche cotisation annuelle + mensuelle', () => {
     render(<CalculateurTarifMultirisquePro />)
     /* "€" et "/an" sont dans des spans séparés → matcher /an et /mois */
-    expect(screen.getAllByText(/\/an/i).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/\/mois/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/ par an/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/ par mois/i).length).toBeGreaterThan(0)
   })
 
   it('affiche garanties incluses dans formule choisie', () => {
     render(<CalculateurTarifMultirisquePro />)
     expect(screen.getByText(/Garanties incluses dans cette formule/i)).toBeInTheDocument()
-    expect(screen.getByText(/Incendie \/ explosion/i)).toBeInTheDocument()
+    expect(screen.getByText(/Incendie — explosion/i)).toBeInTheDocument()
   })
 
   it('toggle perte exploitation modifie tarif', () => {

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
+import { PAGE_PHOTOS } from '@/lib/data/photo-library'
 import {
   ArrowRight,
   Sparkles,
@@ -39,10 +41,18 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       {/* Hero */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
-        <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90" />
+        <Image
+          src={PAGE_PHOTOS.contact.src}
+          alt={PAGE_PHOTOS.contact.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-25"
+        />
+        <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-80" />
         <div
           className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-secondary-400/25 blur-3xl"
           aria-hidden="true"
@@ -68,7 +78,7 @@ export default function ContactPage() {
             <Sparkles className="h-3.5 w-3.5 text-secondary-300" strokeWidth={2.4} />
             Cabinet ORIAS &middot; Réponse sous 24 h
           </span>
-          <h1 className="font-display-premium mb-5 max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
+          <h1 className="mb-5 max-w-3xl font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl">
             Parlons de votre
             <br />
             <span className="text-secondary-200">situation pro.</span>
@@ -108,7 +118,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {/* Téléphone */}
             <a
-              href="tel:+33651858930"
+              href="tel:+33182885127"
               className="group relative flex flex-col overflow-hidden rounded-3xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-premium"
             >
               <span
@@ -122,7 +132,7 @@ export default function ContactPage() {
                 Téléphone
               </p>
               <p className="mb-2 font-heading text-2xl font-extrabold tabular-nums tracking-tight text-charcoal-900">
-                06 51 85 89 30
+                01 82 88 51 27
               </p>
               <p className="mb-5 flex-1 text-sm text-charcoal-600">
                 Conseiller ORIAS dédié. Lundi–vendredi 9h–19h. Sans engagement.
@@ -353,7 +363,8 @@ export default function ContactPage() {
                   Adresse du cabinet
                 </p>
                 <p className="font-heading text-lg font-extrabold text-charcoal-900">
-                  {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'}
+                  {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ??
+                    "Cabinet en Île-de-France (adresse précise publiée à l'attribution ORIAS)"}
                 </p>
                 <p className="mt-1 text-sm text-charcoal-600">Sur rendez-vous uniquement.</p>
               </div>

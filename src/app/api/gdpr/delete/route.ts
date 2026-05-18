@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
   }
   const parsed = PostSchema.safeParse(body)
   if (!parsed.success) {
-    return NextResponse.json({ error: 'Email ou consentement invalide.' }, { status: 400 })
+    return NextResponse.json({ error: 'Email / consentement invalide.' }, { status: 400 })
   }
   const email = parsed.data.email.toLowerCase()
 
@@ -113,7 +113,7 @@ export async function GET(req: NextRequest) {
   if (!token) return NextResponse.json({ error: 'Token manquant.' }, { status: 400 })
 
   const verified = verifyGdprToken('delete', token)
-  if (!verified) return NextResponse.json({ error: 'Token invalide ou expiré.' }, { status: 400 })
+  if (!verified) return NextResponse.json({ error: 'Token invalide / expiré.' }, { status: 400 })
 
   const { email, expiresAt, tokenHash } = verified
   const admin = createPiiAdminClient()
@@ -184,7 +184,7 @@ export async function GET(req: NextRequest) {
       'gdpr-delete partial anonymization — manual review required'
     )
     captureApiException(new Error('gdpr-delete partial anonymization'), {
-      route: 'api/gdpr/delete',
+      route: 'api, gdpr ou delete',
       category: 'gdpr',
       extra: { emailHash: hashEmail(email).slice(0, 12), errorCount: errors.length },
     })

@@ -6,8 +6,10 @@
  * gradients premium, lucide icons cohérentes, bento boxes asymétriques.
  */
 
+import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { HERO_PHOTOS } from '@/lib/data/photo-library'
 import {
   ArrowRight,
   ShieldCheck,
@@ -26,10 +28,15 @@ import {
 } from 'lucide-react'
 import { TrustBadgesRow } from '@/components/conversion/TrustBadgesRow'
 import { MockOfferCard } from '@/components/home/MockOfferCard'
+import { BigStatsBlock } from '@/components/home/big-stats-block'
+import { TransparencyWidget } from '@/components/home/transparency-widget'
+import { HeroBackground } from '@/components/home/HeroBackground'
 import { DevisCTASection, EditorialProcessSteps, EditorialTestimonial } from '@/components/premium'
 import { IllustrationForMetier } from '@/components/premium/illustrations'
 import { CountUp } from '@/components/motion/CountUp'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
+import { MagneticCta } from '@/components/motion/magnetic-cta'
+import { ScrollProgressSection } from '@/components/motion/scroll-progress-section'
 import { CTA_TEXTS, IS_PRE_ORIAS } from '@/lib/config/pre-orias'
 
 export const metadata: Metadata = {
@@ -97,11 +104,11 @@ const VERTICALS: readonly Vertical[] = [
     accent: 'from-accent-500 to-accent-700',
     metric: '30 secteurs',
     metierSlug: 'restaurateur',
-    imageAlt: 'Illustration local commercial / restaurant professionnel',
+    imageAlt: 'Illustration local commercial — restaurant professionnel',
   },
   {
     code: 'mutuelle-pro',
-    title: 'Mutuelle Pro / TNS',
+    title: 'Mutuelle Pro — TNS',
     desc: 'Travailleurs non-salariés, dirigeants, freelances. Loi Madelin déductible.',
     href: '/mutuelle-pro',
     Icon: Heart,
@@ -114,8 +121,8 @@ const VERTICALS: readonly Vertical[] = [
   },
   {
     code: 'assurance-vtc',
-    title: 'VTC / Taxi',
-    desc: 'Chauffeur privé, location avec chauffeur, plateformes Uber / Bolt / Heetch.',
+    title: 'VTC — Taxi',
+    desc: 'Chauffeur privé, location avec chauffeur, plateformes Uber — Bolt — Heetch.',
     href: '/assurance-vtc',
     Icon: Car,
     accent: 'from-primary-500 to-primary-700',
@@ -134,7 +141,7 @@ const VERTICALS: readonly Vertical[] = [
     badge: "Jusqu'à 5M€",
     metric: 'Couverture étendue',
     metierSlug: 'freelance-it',
-    imageAlt: 'Illustration freelance IT / cybersécurité — protection données',
+    imageAlt: 'Illustration freelance IT — cybersécurité — protection données',
   },
 ] as const
 
@@ -163,6 +170,8 @@ const PROCESS_STEPS = [
   },
 ] as const
 
+// Anti-pattern Luke: zero stock photos. Avatars supprimés (dead URLs Unsplash).
+// EditorialTestimonial affiche initiales auteur via CSS gradient brand.
 const TESTIMONIALS = [
   {
     quote:
@@ -172,8 +181,6 @@ const TESTIMONIALS = [
     city: 'Lyon',
     rating: 5,
     metric: '-32%',
-    avatar:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&fm=webp&auto=format&fit=crop&crop=faces',
   },
   {
     quote:
@@ -182,9 +189,7 @@ const TESTIMONIALS = [
     role: 'Fondatrice agence digitale',
     city: 'Paris',
     rating: 5,
-    metric: '4 devis / 24h',
-    avatar:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&fm=webp&auto=format&fit=crop&crop=faces',
+    metric: '4 devis — 24h',
   },
   {
     quote:
@@ -194,8 +199,6 @@ const TESTIMONIALS = [
     city: 'Bordeaux',
     rating: 5,
     metric: 'Sinistre géré',
-    avatar:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80&fm=webp&auto=format&fit=crop&crop=faces',
   },
 ] as const
 
@@ -227,24 +230,8 @@ export default function HomePage() {
           HERO — gradient hero warm animé + radial blobs + trust signals
           ═══════════════════════════════════════════════════════════════════ */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
-        {/* Mesh gradient background — animé subtilement */}
-        <div
-          className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90"
-          aria-hidden="true"
-        />
-
-        {/* Radial blobs decoratifs */}
-        <div
-          className="pointer-events-none absolute -left-32 -top-32 h-[600px] w-[600px] rounded-full bg-secondary-500/30 blur-[140px]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-primary-400/30 blur-[120px]"
-          aria-hidden="true"
-        />
-
-        {/* Hero pattern subtle */}
-        <div className="absolute inset-0 bg-hero-pattern opacity-30" aria-hidden="true" />
+        {/* Hero background — MP4 si dispo, mesh shader fallback (Luke spec) */}
+        <HeroBackground videoSrc={null} />
 
         <div className="container relative mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
@@ -253,41 +240,36 @@ export default function HomePage() {
               {/* Eyebrow ORIAS pill */}
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
                 <ShieldCheck className="h-3.5 w-3.5" />
-                ORIAS n° {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'}
+                ORIAS n° {process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"}
                 <span className="ml-1 text-secondary-300">· ACPR · CSCA</span>
               </div>
 
-              {/* H1 typographie display premium */}
-              <h1 className="font-display-premium mb-6 font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[5rem]">
-                Votre assurance pro,
+              {/* H1 typographie display premium XL — sobre, sans gradient */}
+              <h1 className="mb-6 font-display-premium font-heading text-5xl font-medium leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[6.5rem]">
+                L&apos;assurance pro
                 <br />
-                <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent">
-                  comparée et négociée
-                </span>
-                <br />
-                en 2 minutes.
+                <span className="italic text-secondary-200">qui tient ses promesses.</span>
               </h1>
+              <p className="mb-10 max-w-xl text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
+                Conseil motivé &middot; Garanties négociées &middot; Sinistre accompagné
+              </p>
 
               <p className="mb-10 max-w-xl text-lg text-white/85 md:text-xl">
                 Décennale, RC&nbsp;Pro, Multirisque, Mutuelle&nbsp;TNS, VTC, Cyber. Recevez 3 devis
                 personnalisés en moins de 24 heures auprès de nos partenaires reconnus.
               </p>
 
-              {/* CTAs */}
-              <div className="mb-10 flex flex-wrap gap-3">
-                <Link
-                  href="/devis"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
-                >
-                  {CTA_TEXTS.primary}
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-                <a
-                  href="#verticaux"
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
-                >
-                  Découvrir les garanties
-                </a>
+              {/* CTA unique — Luke spec: never 2 competing CTAs in hero */}
+              <div className="mb-10">
+                <MagneticCta>
+                  <Link
+                    href="/devis"
+                    className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
+                  >
+                    {CTA_TEXTS.primary}
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </MagneticCta>
               </div>
 
               {/* Trust ribbon — avis Trustpilot inline */}
@@ -302,7 +284,7 @@ export default function HomePage() {
                       />
                     ))}
                   </span>
-                  <strong className="font-bold text-white">4.9/5</strong>
+                  <strong className="font-bold text-white">4,9 sur 5</strong>
                   <span className="opacity-75">· 142 avis vérifiés ISO 20488</span>
                 </span>
                 <span className="hidden h-3 w-px bg-white/20 md:block" />
@@ -399,8 +381,8 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           VERTICALES — Bento box asymétrique
           ═══════════════════════════════════════════════════════════════════ */}
-      <section id="verticaux" className="relative bg-sand-50 py-20 md:py-28">
-        <div className="container mx-auto max-w-6xl px-4">
+      <section id="verticaux" className="relative bg-sand-50 py-20 dark:bg-charcoal-950 md:py-28">
+        <ScrollProgressSection className="container mx-auto max-w-6xl px-4">
           {/* Eyebrow + heading */}
           <RevealOnScroll translateY={28}>
             <div className="mb-14 max-w-2xl">
@@ -431,7 +413,7 @@ export default function HomePage() {
               >
                 <Link
                   href={v.href}
-                  className={`mount-fade-up group relative flex h-full flex-col overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover`}
+                  className={`mount-fade-up group relative flex h-full flex-col overflow-hidden rounded-2xl border border-sand-300 bg-white transition-all duration-500 hover:-translate-y-0.5 hover:border-primary-200`}
                 >
                   {/* Illustration SVG sur-mesure — aspect 16/9 (DESIGN.md Atelier Premium) */}
                   <div className="relative aspect-[16/9] w-full overflow-hidden bg-sand-100">
@@ -488,13 +470,13 @@ export default function HomePage() {
               </RevealOnScroll>
             ))}
           </div>
-        </div>
+        </ScrollProgressSection>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
           PROCESS — 3 étapes timeline
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-white py-20 md:py-28">
+      <section className="relative bg-white py-28 md:py-40">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="mb-14 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-700">
@@ -515,15 +497,21 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* BIG STATS BLOCK — Alan/Lemonade XL style */}
+      <BigStatsBlock />
+
+      {/* TRANSPARENCY WIDGET — Lemonade-style "où va votre cotisation" donut */}
+      <TransparencyWidget />
+
       {/* ═══════════════════════════════════════════════════════════════════
           TESTIMONIALS — Cards avec quote + rating + metric
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-sand-100 py-20 md:py-28">
+      <section className="relative overflow-hidden bg-sand-100 py-20 dark:bg-charcoal-900 md:py-28">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="mb-14 max-w-2xl">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-secondary-800">
               <Star className="h-3.5 w-3.5 fill-current" />
-              4.9 / 5 — 142 avis vérifiés ISO 20488
+              4,9 sur 5 — 142 avis vérifiés ISO 20488
             </div>
             <h2 className="font-heading text-4xl font-extrabold tracking-display text-charcoal-900 md:text-5xl">
               Ce que disent
@@ -553,7 +541,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           PARTENAIRES — Logos grayscale → color hover
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white py-24 md:py-32">
         <div className="container mx-auto max-w-5xl px-4 text-center">
           <h2 className="mb-3 font-heading text-2xl font-bold text-charcoal-900 md:text-3xl">
             Nos partenaires assureurs
@@ -592,6 +580,78 @@ export default function HomePage() {
                 ))}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SPLIT IMAGE + TEXT — humanise marque (avant CTA final) */}
+      <section className="bg-white py-28 md:py-40">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-premium">
+              <Image
+                src={HERO_PHOTOS.poignee.src}
+                alt={HERO_PHOTOS.poignee.alt}
+                fill
+                sizes="(min-width: 1024px) 540px, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal-950/60 via-transparent to-transparent p-6">
+                <p className="font-display-premium text-lg italic text-white md:text-xl">
+                  « Un courtier qui prend le téléphone le jour du sinistre. »
+                </p>
+              </div>
+            </div>
+            <div>
+              <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-secondary-50 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-secondary-800">
+                Engagement courtage
+              </span>
+              <h2 className="mb-5 font-display-premium font-heading text-3xl font-extrabold leading-tight tracking-tight text-charcoal-900 md:text-4xl">
+                Pas un numéro vert.
+                <br />
+                <span className="text-primary-700">Un courtier ORIAS nommé.</span>
+              </h2>
+              <p className="mb-6 text-base leading-relaxed text-charcoal-700 md:text-lg">
+                Conseil motivé conforme art. L. 521-4 du Code des assurances. Comparaison négociée
+                sur 10+ assureurs partenaires. Accompagnement sinistre à vos côtés — pas un script,
+                un humain.
+              </p>
+              <ul className="space-y-3 text-sm text-charcoal-700">
+                <li className="flex items-start gap-3">
+                  <ShieldCheck
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600"
+                    strokeWidth={2.4}
+                    aria-hidden="true"
+                  />
+                  <span>
+                    <strong className="text-charcoal-900">Conseil motivé écrit</strong> — vous savez
+                    pourquoi on vous propose ce contrat.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Award
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-secondary-600"
+                    strokeWidth={2.4}
+                    aria-hidden="true"
+                  />
+                  <span>
+                    <strong className="text-charcoal-900">Zéro frais de courtage</strong> —
+                    rémunérés par les assureurs, pas vous.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-600"
+                    strokeWidth={2.4}
+                    aria-hidden="true"
+                  />
+                  <span>
+                    <strong className="text-charcoal-900">Accompagnement sinistre</strong> —
+                    courtier nommé, joignable, qui négocie avec l'assureur.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

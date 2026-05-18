@@ -136,7 +136,7 @@ export function CalculateurTarifMultirisquePro() {
         </div>
         <div>
           <label className="mb-2 block text-sm font-semibold" htmlFor="mr-mob">
-            Valeur mobilier/matériel :{' '}
+            Valeur mobilier ou matériel :{' '}
             <span className="text-primary-700">{valeurMobilier.toLocaleString('fr-FR')} €</span>
           </label>
           <input
@@ -188,12 +188,12 @@ export function CalculateurTarifMultirisquePro() {
       <div className="mt-6 rounded-lg border-2 border-orange-300 bg-gradient-to-br from-orange-50 to-red-50 p-6">
         <p className="mb-2 text-sm text-gray-600">Estimation cotisation multirisque pro 2026</p>
         <p className="mb-2 text-4xl font-extrabold text-orange-900 md:text-5xl">
-          {r.cotisationAnnuelle.toLocaleString('fr-FR')} €<span className="text-2xl">/an</span>
+          {r.cotisationAnnuelle.toLocaleString('fr-FR')} €<span className="text-2xl"> par an</span>
         </p>
         <p className="text-sm text-gray-700">
-          Soit <strong>{r.cotisationMensuelle.toLocaleString('fr-FR')} €/mois</strong>. Estimation
-          basée sur barèmes 2026 de 7 assureurs partenaires (MMA Pro, AXA Pro, Allianz Pro,
-          Generali, MAIF Pro, Pro BTP MR, April Pro).
+          Soit <strong>{r.cotisationMensuelle.toLocaleString('fr-FR')} € par mois</strong>.
+          Estimation basée sur barèmes 2026 de 7 assureurs partenaires (MMA Pro, AXA Pro, Allianz
+          Pro, Generali, MAIF Pro, Pro BTP MR, April Pro).
         </p>
 
         <div className="mt-4 rounded border border-orange-200 bg-white p-4">
@@ -217,10 +217,10 @@ export function CalculateurTarifMultirisquePro() {
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
-              Tarif base au m² : <strong>{r.detail.base} €/m²/an</strong>
+              Tarif base au m² : <strong>{r.detail.base} € par m² par an</strong>
             </li>
             <li>Coef surface (économies échelle) : ×{r.detail.coefSurface.toFixed(2)}</li>
-            <li>Coef statut (locataire/propriétaire) : ×{r.detail.coefStatut.toFixed(2)}</li>
+            <li>Coef statut (locataire ou propriétaire) : ×{r.detail.coefStatut.toFixed(2)}</li>
             <li>Coef CA : ×{r.detail.coefCA.toFixed(2)}</li>
             <li>Coef formule : ×{r.detail.coefFormule.toFixed(2)}</li>
             <li>Coef mobilier déclaré : ×{r.detail.coefMobilier.toFixed(2)}</li>
@@ -239,7 +239,7 @@ export function CalculateurTarifMultirisquePro() {
 
       <p className="text-xs italic text-gray-500">
         ⚠️ Estimation <strong>indicative</strong>. Tarif réel variable ±20% selon : présence
-        sprinklers/alarme/coffre-fort (rabais), proximité caserne pompiers, antécédents 5 ans,
+        sprinklers, alarme ou coffre-fort (rabais), proximité caserne pompiers, antécédents 5 ans,
         activités annexes (laboratoire, stockage matières dangereuses). Conformité ACPR 2024-R-02.
       </p>
     </div>

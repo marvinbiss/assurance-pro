@@ -12,7 +12,7 @@ import { NewsletterForm } from './NewsletterForm'
 export function NewsletterBanner() {
   return (
     <section
-      className="border-y border-charcoal-100 bg-sand-50 py-14"
+      className="border-y border-charcoal-100 bg-sand-50 py-14 dark:bg-charcoal-900"
       aria-labelledby="newsletter-banner-title"
     >
       <div className="container mx-auto max-w-5xl px-4">

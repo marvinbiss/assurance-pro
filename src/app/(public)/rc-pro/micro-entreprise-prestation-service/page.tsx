@@ -14,7 +14,7 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'rc-pro/micro-entreprise-prestation-service'
+const SLUG = 'rc-pro / micro-entreprise-prestation-service'
 const TITLE = 'RC Pro micro-entreprise prestation de service — Pack 2026'
 const TAGLINE =
   "L'assurance RC pro pour micro-entreprises de prestation de services (BNC) : conseil, design, formation, freelance digital. Madelin déductible si réel."
@@ -22,7 +22,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro micro-entreprise prestation de service (BNC) : couverture freelance/consultant + plateformes B2B. Madelin déductible au régime réel. Tarifs 220-580€/an. Devis ORIAS sous 24h.',
+    'RC Pro micro-entreprise prestation de service (BNC) : couverture freelance ou consultant + plateformes B2B. Madelin déductible au régime réel. Tarifs 220-580€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -33,7 +33,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La micro-entreprise de prestation de services (régime BNC — Bénéfice Non Commercial) couvre les freelances et consultants : développeur web, designer, rédacteur, traducteur, photographe, formateur, coach, conseil. Plafond CA 2026 : 77 700€ HT/an (au-delà : bascule au régime réel obligatoire). La RC Pro est EXIGÉE par 78% des plateformes B2B (Malt, Crème de la Crème, ComeUp Pro, Upwork) à l'inscription. Pack standard : RC Pro 1,5-3 M€ + cyber assurance (si manipulation données client) + protection juridique. Tarifs 2026 accessibles : 220-580€/an. Cette page renvoie vers nos piliers spécialisés selon votre métier."
+      intro="La micro-entreprise de prestation de services (régime BNC — Bénéfice Non Commercial) couvre les freelances et consultants : développeur web, designer, rédacteur, traducteur, photographe, formateur, coach, conseil. Plafond CA 2026 : 77 700€ HT par an (au-delà : bascule au régime réel obligatoire). La RC Pro est EXIGÉE par 78% des plateformes B2B (Malt, Crème de la Crème, ComeUp Pro, Upwork) à l'inscription. Pack standard : RC Pro 1,5-3 M€ + cyber assurance (si manipulation données client) + protection juridique. Tarifs 2026 accessibles : 220-580€ par an. Cette page renvoie vers nos piliers spécialisés selon votre métier."
       legalReference="Loi 9 août 2016 (statut micro-entrepreneur) + Code des assurances L. 113-1"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -54,12 +54,12 @@ export default function Page() {
         {
           icon: '💰',
           title: 'Madelin si régime réel',
-          desc: 'Au régime micro-fiscal : Madelin NON applicable. Au régime réel : oui (économie ~1 750€/an pour 60k€)',
+          desc: 'Au régime micro-fiscal : Madelin NON applicable. Au régime réel : oui (économie ~1 750€ par an pour 60k€)',
         },
         {
           icon: '⚡',
-          title: 'À partir de 220 €/an',
-          desc: 'Freelance digital sans antécédent. Senior IT : 580-980€/an',
+          title: 'À partir de 220 € par an',
+          desc: 'Freelance digital sans antécédent. Senior IT : 580-980€ par an',
         },
       ]}
       sections={[
@@ -72,7 +72,7 @@ export default function Page() {
                   <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     RC Pro auto-entrepreneur
                   </Link>{' '}
-                  — pilier complet AE/micro-entrepreneur
+                  — pilier complet AE / micro-entrepreneur
                 </li>
                 <li>
                   <Link href="/assurance-micro-entreprise" className="text-primary-600 underline">
@@ -110,7 +110,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte la RC Pro micro-entreprise prestation de service ?',
-          a: 'Démarre à 220€/an pour freelance digital sans antécédent. Médiane marché : 280-480€/an. Senior IT : 580-980€/an. Variables : métier, CA déclaré, plafond RC choisi (1,5-5 M€).',
+          a: 'Démarre à 220€ par an pour freelance digital sans antécédent. Médiane marché : 280-480€ par an. Senior IT : 580-980€ par an. Variables : métier, CA déclaré, plafond RC choisi (1,5-5 M€).',
         },
         {
           q: 'Plus de détails ?',

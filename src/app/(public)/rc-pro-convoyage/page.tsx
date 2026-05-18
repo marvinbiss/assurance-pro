@@ -15,7 +15,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro convoyage : convoyeur véhicules (auto, moto, camion), animaux (chevaux, NAC), personnes (chauffeur privé). Tarif 350-1 800€/an. Auto-mission complémentaire.',
+    'RC Pro convoyage : convoyeur véhicules (auto, moto, camion), animaux (chevaux, NAC), personnes (chauffeur privé). Tarif 350-1 800€ par an. Auto-mission complémentaire.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -49,7 +49,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '350-1 800€/an',
+          title: '350-1 800€ par an',
           desc: 'AE 350-650€ • SARL convoyage spécialisé 800-1 800€',
         },
       ]}
@@ -109,27 +109,27 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Convoyeur véhicules AE (occasionnel)</strong> : 350-550€/an
+                <strong>Convoyeur véhicules AE (occasionnel)</strong> : 350-550€ par an
               </li>
               <li>
-                <strong>Convoyeur véhicules régulier SARL</strong> : 800-1 500€/an
+                <strong>Convoyeur véhicules régulier SARL</strong> : 800-1 500€ par an
               </li>
               <li>
-                <strong>Convoyeur véhicules de luxe</strong> : 1 200-3 500€/an (plafond élevé
+                <strong>Convoyeur véhicules de luxe</strong> : 1 200-3 500€ par an (plafond élevé
                 requis)
               </li>
               <li>
-                <strong>Convoyeur chevaux occasionnel</strong> : 450-750€/an
+                <strong>Convoyeur chevaux occasionnel</strong> : 450-750€ par an
               </li>
               <li>
                 <strong>Convoyeur chevaux régulier (centre équestre, courses)</strong> : 1 200-2
-                800€/an
+                800€ par an
               </li>
               <li>
-                <strong>Convoyeur dirigeant / VIP</strong> : 600-1 500€/an (avec RC Pro VTC)
+                <strong>Convoyeur dirigeant — VIP</strong> : 600-1 500€ par an (avec RC Pro VTC)
               </li>
               <li>
-                <strong>Convoyeur NAC / animaux exotiques</strong> : 600-1 200€/an (peu
+                <strong>Convoyeur NAC — animaux exotiques</strong> : 600-1 200€ par an (peu
                 d&apos;assureurs)
               </li>
             </ul>
@@ -147,7 +147,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une RC Pro convoyage de luxe (Porsche, Ferrari) ?',
-          a: 'Pour convoyeur véhicules &gt; 100k€ valeur : 1 200-3 500€/an avec plafond 3-5M€ recommandé. Allianz Pro et Hiscox sont les principaux acteurs. Vérifier limite valeur véhicule au contrat.',
+          a: 'Pour convoyeur véhicules &gt; 100k€ valeur : 1 200-3 500€ par an avec plafond 3-5M€ recommandé. Allianz Pro et Hiscox sont les principaux acteurs. Vérifier limite valeur véhicule au contrat.',
         },
         {
           q: 'Comment souscrire ma RC Pro convoyage ?',

@@ -7,15 +7,15 @@ import { EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pilier-premium-default
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'prix/mutuelle-pro-btp-tarif'
+const SLUG = 'prix / mutuelle-pro-btp-tarif'
 const TITLE = 'Mutuelle PRO BTP Tarif — Prix par âge et formule 2026'
 const TAGLINE =
-  'Tarifs détaillés PRO BTP Mutuelle 2026 par âge (25-65+) et formule (S1-S4) : de 38€/mois (S1 jeune) à 230€/mois (S4 senior). Comparatif April Pro Santé.'
+  'Tarifs détaillés PRO BTP Mutuelle 2026 par âge (25-65+) et formule (S1-S4) : de 38€ par mois (S1 jeune) à 230€ par mois (S4 senior). Comparatif April Pro Santé.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Tarif PRO BTP Mutuelle 2026 : S1 38-95€/mois, S2 55-140€/mois, S3 85-180€/mois, S4 115-230€/mois. Comparatif honnête vs April Pro Santé (-15-25%).',
+    'Tarif PRO BTP Mutuelle 2026 : S1 38-95€ par mois, S2 55-140€ par mois, S3 85-180€ par mois, S4 115-230€ par mois. Comparatif honnête vs April Pro Santé (-15-25%).',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -33,18 +33,18 @@ export default function Page() {
       benefits={[
         {
           icon: '💰',
-          title: 'S1 dès 38€/mois',
+          title: 'S1 dès 38€ par mois',
           desc: 'Formule économique 25-45 ans (couverture base)',
         },
         {
           icon: '🏥',
-          title: 'S4 jusqu&apos;à 230€/mois',
+          title: 'S4 jusqu&apos;à 230€ par mois',
           desc: 'Haut de gamme couverture étendue 60+ ans',
         },
         {
           icon: '💼',
           title: 'Madelin déductible TNS',
-          desc: 'Cotisations déductibles résultat imposable artisans/EI',
+          desc: 'Cotisations déductibles résultat imposable artisans ou EI',
         },
         {
           icon: '🆚',
@@ -58,16 +58,17 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>S1 (économique)</strong> : 38-55€/mois (25-45 ans) → 65-95€/mois (60+ ans)
+                <strong>S1 (économique)</strong> : 38-55€ par mois (25-45 ans) → 65-95€ par mois
+                (60+ ans)
               </li>
               <li>
-                <strong>S2 (équilibré)</strong> : 55-85€/mois → 95-140€/mois
+                <strong>S2 (équilibré)</strong> : 55-85€ par mois → 95-140€ par mois
               </li>
               <li>
-                <strong>S3 (renforcé)</strong> : 85-115€/mois → 140-180€/mois
+                <strong>S3 (renforcé)</strong> : 85-115€ par mois → 140-180€ par mois
               </li>
               <li>
-                <strong>S4 (haut de gamme)</strong> : 115-150€/mois → 180-230€/mois
+                <strong>S4 (haut de gamme)</strong> : 115-150€ par mois → 180-230€ par mois
               </li>
             </ul>
           ),
@@ -97,19 +98,19 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>PRO BTP S3 P3</strong> (TNS 40 ans) : 95-115€/mois
+                <strong>PRO BTP S3 P3</strong> (TNS 40 ans) : 95-115€ par mois
               </li>
               <li>
-                <strong>April Pro Santé S3 équiv.</strong> : 70-95€/mois (-15-25%)
+                <strong>April Pro Santé S3 équiv.</strong> : 70-95€ par mois (-15-25%)
               </li>
               <li>
-                <strong>Harmonie Mutuelle BTP S3</strong> : 80-105€/mois
+                <strong>Harmonie Mutuelle BTP S3</strong> : 80-105€ par mois
               </li>
               <li>
-                <strong>MMA Mutuelle Pro Niv 3</strong> : 85-110€/mois
+                <strong>MMA Mutuelle Pro Niv 3</strong> : 85-110€ par mois
               </li>
               <li>
-                <strong>Aon Santé Pro</strong> : 95-130€/mois (premium)
+                <strong>Aon Santé Pro</strong> : 95-130€ par mois (premium)
               </li>
             </ul>
           ),
@@ -118,11 +119,11 @@ export default function Page() {
       faq={[
         {
           q: 'Tarif PRO BTP pour un artisan 45 ans S3 ?',
-          a: 'Formule S3 standard TNS 45 ans : 95-115€/mois (PRO BTP). Madelin déductible si statut TNS au régime réel. Économie fiscale 22-45% prime selon TMI.',
+          a: 'Formule S3 standard TNS 45 ans : 95-115€ par mois (PRO BTP). Madelin déductible si statut TNS au régime réel. Économie fiscale 22-45% prime selon TMI.',
         },
         {
           q: 'PRO BTP en famille combien ?',
-          a: 'Famille 2 enfants S3 P3 TNS 40 ans : 220-280€/mois total. Conjoint sans activité bénéficie tarif TNS individuel. Enfants 3+ : gratuits.',
+          a: 'Famille 2 enfants S3 P3 TNS 40 ans : 220-280€ par mois total. Conjoint sans activité bénéficie tarif TNS individuel. Enfants 3+ : gratuits.',
         },
         {
           q: 'Madelin déductible PRO BTP ?',

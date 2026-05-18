@@ -207,10 +207,10 @@ export function ReclamationForm() {
               — Choisir —
             </option>
             <option value="conseil">Devoir de conseil</option>
-            <option value="souscription">Souscription / Tarif</option>
+            <option value="souscription">Souscription — Tarif</option>
             <option value="sinistre">Gestion sinistre</option>
             <option value="resiliation">Résiliation</option>
-            <option value="facturation">Facturation / Cotisation</option>
+            <option value="facturation">Facturation — Cotisation</option>
             <option value="rgpd">Données personnelles (RGPD)</option>
             <option value="autre">Autre</option>
           </select>

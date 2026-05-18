@@ -21,12 +21,12 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/modele-devis-pro'
+const SLUG = 'outils / modele-devis-pro'
 
 export const metadata: Metadata = {
   title: 'Modèle devis pro PDF — Générateur gratuit auto-entrepreneur 2026',
   description:
-    'Générez vos devis professionnels au format PDF en 2 minutes. Conforme art. L. 111-1 C. conso + arrêté 27/03/2017 BTP. Auto-entrepreneur, EI, EURL, SARL, SASU. Inclut zone signature « Bon pour accord » et mention assurance pro. Téléchargement immédiat, gratuit.',
+    'Générez vos devis professionnels au format PDF en 2 minutes. Conforme art. L. 111-1 C. conso + arrêté 27 mars 2017 BTP. Auto-entrepreneur, EI, EURL, SARL, SASU. Inclut zone signature « Bon pour accord » et mention assurance pro. Téléchargement immédiat, gratuit.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: 'Modèle devis pro PDF — Générateur gratuit 2026',
@@ -49,7 +49,7 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            / <span>Modèle devis pro PDF</span>
+            › <span>Modèle devis pro PDF</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ 100% gratuit, sans inscription, sans limite
@@ -130,7 +130,7 @@ export default async function Page() {
               <strong>Identité client</strong> : raison sociale, adresse, SIRET (si B2B)
             </li>
             <li>
-              <strong>Désignation détaillée</strong> des produits/services + quantités + prix
+              <strong>Désignation détaillée</strong> des produits ou services + quantités + prix
               unitaires HT
             </li>
             <li>
@@ -254,7 +254,7 @@ export default async function Page() {
             operatingSystem: 'Any',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
             description:
-              'Générateur gratuit de modèle de devis pro au format PDF. Conforme art. L. 111-1 C. conso + arrêté 27/03/2017 BTP. Zone signature « Bon pour accord » incluse.',
+              'Générateur gratuit de modèle de devis pro au format PDF. Conforme art. L. 111-1 C. conso + arrêté 27 mars 2017 BTP. Zone signature « Bon pour accord » incluse.',
           },
           nonce
         )}

@@ -51,7 +51,7 @@ export default function Page() {
         {
           icon: '🔐',
           title: 'Cyber-assurance option',
-          desc: 'Recommandée si données client sensibles : +150-2 000€/an selon profil',
+          desc: 'Recommandée si données client sensibles : +150-2 000€ par an selon profil',
         },
         {
           icon: '📋',
@@ -65,7 +65,7 @@ export default function Page() {
           body: (
             <ol>
               <li>
-                <strong>Plafond par sinistre</strong> : minimum 1M€ AE, 2-3M€ SARL/SAS, 5M€+ pour
+                <strong>Plafond par sinistre</strong> : minimum 1M€ AE, 2-3M€ SARL ou SAS, 5M€+ pour
                 activités à risque (cybersécurité, hébergeur, données sensibles)
               </li>
               <li>
@@ -100,20 +100,20 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Hiscox</strong> : leader services intellectuels IT. Best price AE
-                (95-220€/an). Postériorité 10 ans. Cyber combinée excellente.
+                <strong>Hiscox</strong> : leader services intellectuels IT. Best price AE (95-220€
+                par an). Postériorité 10 ans. Cyber combinée excellente.
               </li>
               <li>
-                <strong>Stello</strong> : challenger pure-digital. Best AE (90-200€/an),
+                <strong>Stello</strong> : challenger pure-digital. Best AE (90-200€ par an),
                 souscription full online. Postériorité 5 ans.
               </li>
               <li>
-                <strong>Allianz Pro</strong> : couverture large, idéal SARL/SAS PME. Postériorité 5
-                ans. Cyber en option.
+                <strong>Allianz Pro</strong> : couverture large, idéal SARL ou SAS PME. Postériorité
+                5 ans. Cyber en option.
               </li>
               <li>
-                <strong>MMA Pro</strong> : équilibré, fort sur SARL/SAS &gt; 100k€ CA. Cyber moins
-                développée.
+                <strong>MMA Pro</strong> : équilibré, fort sur SARL ou SAS &gt; 100k€ CA. Cyber
+                moins développée.
               </li>
               <li>
                 <strong>AXA Pro</strong> : couverture premium, assistance haut de gamme, prime +20%
@@ -127,7 +127,7 @@ export default function Page() {
           body: (
             <ol>
               <li>
-                <strong>Devis personnalisé</strong> : statut juridique (AE/SARL/SAS), CA
+                <strong>Devis personnalisé</strong> : statut juridique (AE, SARL ou SAS), CA
                 prévisionnel, activité IT précise (dev, conseil, hébergeur, sécurité), zone
                 géographique, ancienneté
               </li>
@@ -156,11 +156,11 @@ export default function Page() {
       faq={[
         {
           q: 'Souscription RC Pro IT en ligne — pièces nécessaires ?',
-          a: 'SIRET (Insee.fr), justificatif identité, attestation activité (ACOSS pour AE, K-bis pour SARL/SAS), RIB. Toutes via upload digital, validation &lt; 24h ouvrées.',
+          a: 'SIRET (Insee.fr), justificatif identité, attestation activité (ACOSS pour AE, K-bis pour SARL ou SAS), RIB. Toutes via upload digital, validation &lt; 24h ouvrées.',
         },
         {
           q: 'Cyber-assurance vraiment indispensable ?',
-          a: 'Recommandée fortement si : 1) Vous hébergez/traitez données client, 2) Vous gérez des sites e-commerce, 3) Vous faites de la cybersécurité, 4) Vous avez subi tentative phishing/intrusion. Pour pure prestation conseil sans données : optionnelle.',
+          a: 'Recommandée fortement si : 1) Vous hébergez ou traitez données client, 2) Vous gérez des sites e-commerce, 3) Vous faites de la cybersécurité, 4) Vous avez subi tentative phishing ou intrusion. Pour pure prestation conseil sans données : optionnelle.',
         },
         {
           q: 'Quel délai pour avoir mon attestation ?',

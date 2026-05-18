@@ -26,14 +26,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'assurance-bureau'
-const TITLE = 'Assurance bureau professionnel — Multirisque TPE/PME 2026'
+const TITLE = 'Assurance bureau professionnel — Multirisque TPE / PME 2026'
 const TAGLINE =
-  "L'assurance multirisque pour bureaux professionnels : TPE, PME, coworking, indépendants. Couverture incendie, vol, dégâts des eaux, RC exploitation, perte d'exploitation. À partir de 220 €/an."
+  "L'assurance multirisque pour bureaux professionnels : TPE, PME, coworking, indépendants. Couverture incendie, vol, dégâts des eaux, RC exploitation, perte d'exploitation. À partir de 220 € par an."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Assurance bureau professionnel : multirisque TPE/PME (incendie, vol, dégâts eaux, RC exploitation), équipement informatique, perte d'exploitation. Tarifs négociés à partir de 220 €/an. Devis gratuit ORIAS sous 24h.",
+    "Assurance bureau professionnel : multirisque TPE ou PME (incendie, vol, dégâts eaux, RC exploitation), équipement informatique, perte d'exploitation. Tarifs négociés à partir de 220 € par an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
@@ -49,7 +49,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance bureau professionnel est une multirisque pro adaptée au format de local le plus répandu pour les TPE, PME, indépendants en local séparé, agences (web, communication, immobilière), cabinets (avocats, comptables, conseil) et espaces de coworking. Elle couvre les principaux risques pour un local sans clientèle reçue de masse ni stock significatif : incendie, vol, dégâts des eaux, événements climatiques, bris de glace, ainsi que l'équipement informatique (postes de travail, serveurs, écrans, périphériques) qui représente souvent l'essentiel de la valeur du contenu. Les tarifs 2026 démarrent à 220 € HT/an pour un bureau indépendant de 30 m² jusqu'à 1 200 € HT/an pour un cabinet de 200 m² avec serveur informatique. Distincte de l'assurance local commercial (qui cible les commerces avec vitrine et stock) et de la multirisque pro générique (qui couvre tous secteurs sans spécialisation), l'assurance bureau optimise la prime pour ce profil de risque modéré."
+      intro="L'assurance bureau professionnel est une multirisque pro adaptée au format de local le plus répandu pour les TPE, PME, indépendants en local séparé, agences (web, communication, immobilière), cabinets (avocats, comptables, conseil) et espaces de coworking. Elle couvre les principaux risques pour un local sans clientèle reçue de masse ni stock significatif : incendie, vol, dégâts des eaux, événements climatiques, bris de glace, ainsi que l'équipement informatique (postes de travail, serveurs, écrans, périphériques) qui représente souvent l'essentiel de la valeur du contenu. Les tarifs 2026 démarrent à 220 € HT par an pour un bureau indépendant de 30 m² jusqu'à 1 200 € HT par an pour un cabinet de 200 m² avec serveur informatique. Distincte de l'assurance local commercial (qui cible les commerces avec vitrine et stock) et de la multirisque pro générique (qui couvre tous secteurs sans spécialisation), l'assurance bureau optimise la prime pour ce profil de risque modéré."
       legalReference="Article 1733 du Code civil (bail commercial) + clauses standard MRP bureaux"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -69,7 +69,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 220 €/an',
+          title: 'À partir de 220 € par an',
           desc: 'Bureau 30 m² indépendant, couverture standard. Optimisé pour profil risque modéré',
         },
         {
@@ -127,29 +127,29 @@ export default function Page() {
                 <thead>
                   <tr className="bg-gray-100">
                     <th className="border p-2 text-left">Profil</th>
-                    <th className="border p-2 text-right">Surface / capacité</th>
+                    <th className="border p-2 text-right">Surface — capacité</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td className="border p-2">Indépendant en bureau séparé (province)</td>
-                    <td className="border p-2 text-right">25 m² / 1 personne</td>
+                    <td className="border p-2 text-right">25 m² — 1 personne</td>
                     <td className="border p-2 text-right">220 € – 380 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">TPE conseil / consulting</td>
-                    <td className="border p-2 text-right">50 m² / 3 personnes</td>
+                    <td className="border p-2">TPE conseil — consulting</td>
+                    <td className="border p-2 text-right">50 m² — 3 personnes</td>
                     <td className="border p-2 text-right">320 € – 540 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Agence web / communication</td>
-                    <td className="border p-2 text-right">80 m² / 6 personnes</td>
+                    <td className="border p-2">Agence web — communication</td>
+                    <td className="border p-2 text-right">80 m² — 6 personnes</td>
                     <td className="border p-2 text-right">480 € – 780 €</td>
                   </tr>
                   <tr>
                     <td className="border p-2">Cabinet d&apos;expertise comptable</td>
-                    <td className="border p-2 text-right">120 m² / 8 personnes</td>
+                    <td className="border p-2 text-right">120 m² — 8 personnes</td>
                     <td className="border p-2 text-right">680 € – 1 100 €</td>
                   </tr>
                   <tr>
@@ -256,7 +256,7 @@ export default function Page() {
                   confidentialité) recommandées.
                 </li>
                 <li>
-                  <strong>Tarif</strong> : très accessible, démarre à 180€/an pour un poste fixe
+                  <strong>Tarif</strong> : très accessible, démarre à 180€ par an pour un poste fixe
                   avec laptop + écran + petit matériel.
                 </li>
               </ul>
@@ -280,16 +280,16 @@ export default function Page() {
               <p>
                 La plupart des assureurs habitation (MAAF, MAIF, MMA, Allianz, AXA) proposent une
                 option « activité professionnelle à domicile » à ajouter au contrat existant. Coût :
-                ~80-150 €/an supplémentaires. Avantage : simple, pas de nouveau contrat. Limite :
-                couverture de la RC pro souvent plafonnée à 200-500 k€ (insuffisant pour des
+                ~80-150 € par an supplémentaires. Avantage : simple, pas de nouveau contrat. Limite
+                : couverture de la RC pro souvent plafonnée à 200-500 k€ (insuffisant pour des
                 activités à risque comme le conseil financier ou IT).
               </p>
               <h3>Option 2 : Assurance bureau dédiée (recommandée pour activités à risque)</h3>
               <p>
                 Souscrire un contrat « bureau pro à domicile » distinct, qui couvre spécifiquement
                 l&apos;équipement pro, la RC pro à plafond élevé (1-2 M€) et les visiteurs reçus à
-                domicile. Coût : 220-380 €/an. Indispensable pour avocats, conseillers financiers,
-                consultants IT à fort CA.
+                domicile. Coût : 220-380 € par an. Indispensable pour avocats, conseillers
+                financiers, consultants IT à fort CA.
               </p>
               <p>
                 <strong>Attention</strong> : si vous recevez des CLIENTS à votre domicile,
@@ -307,11 +307,11 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'un bureau de 30 m² pour un indépendant ?",
-          a: "Démarre à 220€/an pour une couverture standard en province (incendie, vol, dégâts eaux, RC exploitation). Médiane marché : 280-380€/an. Variables : valeur de l'équipement informatique déclaré, zone géographique (Paris +20-40%), présence d'alarme/vidéosurveillance (-10 à -20%), antécédents sinistres.",
+          a: "Démarre à 220€ par an pour une couverture standard en province (incendie, vol, dégâts eaux, RC exploitation). Médiane marché : 280-380€ par an. Variables : valeur de l'équipement informatique déclaré, zone géographique (Paris +20-40%), présence d'alarme ou vidéosurveillance (-10 à -20%), antécédents sinistres.",
         },
         {
           q: 'Mon assurance bureau couvre-t-elle mon ordinateur portable utilisé en déplacement ?',
-          a: "Pas automatiquement. La garantie standard couvre uniquement le matériel à l'INTÉRIEUR du local. Pour couvrir les laptops utilisés en déplacement (RDV client, télétravail occasionnel, conférences), il faut souscrire l'option « équipement informatique nomade » ou « tous risques informatique » (+50-120€/an typique). FORTEMENT recommandée pour 100% des activités tertiaires.",
+          a: "Pas automatiquement. La garantie standard couvre uniquement le matériel à l'INTÉRIEUR du local. Pour couvrir les laptops utilisés en déplacement (RDV client, télétravail occasionnel, conférences), il faut souscrire l'option « équipement informatique nomade » ou « tous risques informatique » (+50-120€ par an typique). FORTEMENT recommandée pour 100% des activités tertiaires.",
         },
         {
           q: 'Quelle différence entre assurance bureau et assurance local commercial ?',
@@ -319,11 +319,11 @@ export default function Page() {
         },
         {
           q: 'Coworking : qui assure quoi entre le gestionnaire et le résident ?',
-          a: 'Gestionnaire = assure le local (multirisque immeuble + RC espaces communs). Résident permanent = assure SON équipement perso (laptop, écrans, mobilier) ET sa RC pro. Vérifier la couverture du « vol entre résidents » (souvent EXCLU dans les contrats standards). Tarif accessible : 180-320€/an pour un poste fixe en coworking.',
+          a: 'Gestionnaire = assure le local (multirisque immeuble + RC espaces communs). Résident permanent = assure SON équipement perso (laptop, écrans, mobilier) ET sa RC pro. Vérifier la couverture du « vol entre résidents » (souvent EXCLU dans les contrats standards). Tarif accessible : 180-320€ par an pour un poste fixe en coworking.',
         },
         {
           q: 'Faut-il une garantie cyber pour un bureau pro ?',
-          a: "OUI — fortement recommandée pour 100% des bureaux. Coût moyen d'un sinistre cyber pour une TPE/PME en 2026 : 25 000-80 000€ (notification CNIL, rétablissement systèmes, perte d'exploitation, frais juridiques RGPD). Tarif d'une garantie cyber pro : 80-280€/an supplémentaire. ROI évident dès qu'on stocke des données clients (RGPD).",
+          a: "OUI — fortement recommandée pour 100% des bureaux. Coût moyen d'un sinistre cyber pour une TPE ou PME en 2026 : 25 000-80 000€ (notification CNIL, rétablissement systèmes, perte d'exploitation, frais juridiques RGPD). Tarif d'une garantie cyber pro : 80-280€ par an supplémentaire. ROI évident dès qu'on stocke des données clients (RGPD).",
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance bureau ?',

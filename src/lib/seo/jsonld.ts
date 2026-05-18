@@ -15,7 +15,7 @@ import { companyIdentity, isCompanyRegistered, getSocialLinks } from '@/lib/conf
 export function getOrganizationSchema() {
   const socialLinks = getSocialLinks()
   const registered = isCompanyRegistered()
-  const ORIAS = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
+  const ORIAS = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"
 
   return {
     '@context': 'https://schema.org',

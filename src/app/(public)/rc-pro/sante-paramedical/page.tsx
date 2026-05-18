@@ -15,15 +15,15 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'rc-pro/sante-paramedical'
-const TITLE = 'RC Pro santé paramédical 2026 — OBLIGATOIRE art. L. 1142-2 CSP (220-680€/an)'
+const SLUG = 'rc-pro / sante-paramedical'
+const TITLE = 'RC Pro santé paramédical 2026 — OBLIGATOIRE art. L. 1142-2 CSP (220-680€ par an)'
 const TAGLINE =
   'La RC Pro obligatoire pour kinésithérapeutes, infirmiers libéraux, ostéopathes, sages-femmes, orthophonistes : couverture responsabilité médicale + dommages corporels patient.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro santé paramédical 2026 : OBLIGATOIRE art. L. 1142-2 CSP. Couverture kiné, infirmier libéral, ostéopathe, sage-femme, orthophoniste, podologue. Responsabilité médicale + dommages corporels patient. Sinistralité 2,7%. Tarifs 220-680€/an libéral, 1 800-4 500€/an cabinet. Devis ORIAS 24h.',
+    'RC Pro santé paramédical 2026 : OBLIGATOIRE art. L. 1142-2 CSP. Couverture kiné, infirmier libéral, ostéopathe, sage-femme, orthophoniste, podologue. Responsabilité médicale + dommages corporels patient. Sinistralité 2,7%. Tarifs 220-680€ par an libéral, 1 800-4 500€ par an cabinet. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -34,7 +34,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro est OBLIGATOIRE pour TOUTES les professions de santé en exercice libéral en France (art. L. 1142-2 du Code de la Santé Publique — Loi Kouchner du 4 mars 2002), y compris : kinésithérapeutes, infirmiers libéraux, ostéopathes (art. 75 Loi 2002-303), sages-femmes, orthophonistes, pédicures-podologues, ergothérapeutes, psychomotriciens, manipulateurs radio. Sanctions absence : 45 000€ d'amende + 5 ans d'emprisonnement (art. L. 1142-25 CSP) + radiation Ordre. Sinistralité ACPR 2024 : 2,7% — recours principalement sur dommages corporels patient (chute lors d'une séance, mauvaise manipulation, défaut conseil thérapeutique). Tarifs 2026 : 220-680 €/an pour libéral solo, 1 800-4 500 €/an pour cabinet SCM avec 3-5 praticiens."
+      intro="La RC Pro est OBLIGATOIRE pour TOUTES les professions de santé en exercice libéral en France (art. L. 1142-2 du Code de la Santé Publique — Loi Kouchner du 4 mars 2002), y compris : kinésithérapeutes, infirmiers libéraux, ostéopathes (art. 75 Loi 2002-303), sages-femmes, orthophonistes, pédicures-podologues, ergothérapeutes, psychomotriciens, manipulateurs radio. Sanctions absence : 45 000€ d'amende + 5 ans d'emprisonnement (art. L. 1142-25 CSP) + radiation Ordre. Sinistralité ACPR 2024 : 2,7% — recours principalement sur dommages corporels patient (chute lors d'une séance, mauvaise manipulation, défaut conseil thérapeutique). Tarifs 2026 : 220-680 € par an pour libéral solo, 1 800-4 500 € par an pour cabinet SCM avec 3-5 praticiens."
       legalReference="Art. L. 1142-2 CSP (Loi Kouchner) + sanctions L. 1142-25 + Code déontologie ordres professionnels"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -59,8 +59,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '220-680 €/an libéral',
-          desc: 'Libéral solo : 220-680€. Cabinet SCM 3-5 praticiens : 1 800-4 500€/an. Hôpital : 5 000+€/an',
+          title: '220-680 € par an libéral',
+          desc: 'Libéral solo : 220-680€. Cabinet SCM 3-5 praticiens : 1 800-4 500€ par an. Hôpital : 5 000+€ par an',
         },
       ]}
       sections={[
@@ -79,7 +79,7 @@ export default function Page() {
                   injection ratée
                 </li>
                 <li>
-                  <strong>Défaut diagnostic (16%)</strong> — kiné/ostéo n&apos;ayant pas orienté
+                  <strong>Défaut diagnostic (16%)</strong> — kiné ou ostéo n&apos;ayant pas orienté
                   vers médecin
                 </li>
                 <li>
@@ -94,7 +94,7 @@ export default function Page() {
               <p className="mt-3 border-l-4 border-primary-500 bg-primary-50 p-3">
                 <strong>Sinistre moyen 2024</strong> : 24 800€. Plafond garantie recommandé :{' '}
                 <strong>1 000 000€</strong> minimum (vs 600 000€ minimum Ordre kiné). Pour
-                ostéopathes spécialisés viscéral/crânien : <strong>2 000 000€</strong>.
+                ostéopathes spécialisés viscéral ou crânien : <strong>2 000 000€</strong>.
               </p>
             </div>
           ),
@@ -114,37 +114,37 @@ export default function Page() {
                 <tbody>
                   <tr>
                     <td className="border p-2">Kinésithérapeute</td>
-                    <td className="border p-2 text-right">220 € – 480 €/an</td>
+                    <td className="border p-2 text-right">220 € – 480 € par an</td>
                     <td className="border p-2">2,5 %</td>
                   </tr>
                   <tr>
                     <td className="border p-2">Infirmier libéral</td>
-                    <td className="border p-2 text-right">280 € – 580 €/an</td>
+                    <td className="border p-2 text-right">280 € – 580 € par an</td>
                     <td className="border p-2">3,1 % (injections, perfusions)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">Ostéopathe</td>
-                    <td className="border p-2 text-right">240 € – 520 €/an</td>
+                    <td className="border p-2 text-right">240 € – 520 € par an</td>
                     <td className="border p-2">2,2 %</td>
                   </tr>
                   <tr>
                     <td className="border p-2">Sage-femme libérale</td>
-                    <td className="border p-2 text-right">380 € – 780 €/an</td>
+                    <td className="border p-2 text-right">380 € – 780 € par an</td>
                     <td className="border p-2">3,8 % (suivi grossesse à risque)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">Orthophoniste</td>
-                    <td className="border p-2 text-right">200 € – 420 €/an</td>
+                    <td className="border p-2 text-right">200 € – 420 € par an</td>
                     <td className="border p-2">1,8 %</td>
                   </tr>
                   <tr>
                     <td className="border p-2">Pédicure-podologue</td>
-                    <td className="border p-2 text-right">260 € – 540 €/an</td>
+                    <td className="border p-2 text-right">260 € – 540 € par an</td>
                     <td className="border p-2">2,4 %</td>
                   </tr>
                   <tr>
                     <td className="border p-2">Ergothérapeute</td>
-                    <td className="border p-2 text-right">220 € – 480 €/an</td>
+                    <td className="border p-2 text-right">220 € – 480 € par an</td>
                     <td className="border p-2">1,9 %</td>
                   </tr>
                 </tbody>
@@ -186,7 +186,7 @@ export default function Page() {
       faq={[
         {
           q: 'RC Pro paramédical OBLIGATOIRE ?',
-          a: "OUI absolument. Art. L. 1142-2 CSP s'applique à TOUTES les professions de santé libérales. Sanctions absence : 45 000€ amende + 5 ans prison (art. L. 1142-25 CSP) + radiation Ordre/ARS. Vérification annuelle par Ordre/ARS.",
+          a: "OUI absolument. Art. L. 1142-2 CSP s'applique à TOUTES les professions de santé libérales. Sanctions absence : 45 000€ amende + 5 ans prison (art. L. 1142-25 CSP) + radiation Ordre ou ARS. Vérification annuelle par Ordre ou ARS.",
         },
         {
           q: 'Plafond minimum imposé par Ordre ?',
@@ -194,11 +194,11 @@ export default function Page() {
         },
         {
           q: 'Téléconsultation : couverte ?',
-          a: "OUI mais vérifier votre contrat. Depuis 2020, la téléconsultation paramédicale s'est développée (kiné post-COVID, ostéo conseils, orthophonie). Tous les contrats récents (2023+) la couvrent par défaut. Si votre contrat est plus ancien, ajouter une option téléconsultation (+30-80€/an).",
+          a: "OUI mais vérifier votre contrat. Depuis 2020, la téléconsultation paramédicale s'est développée (kiné post-COVID, ostéo conseils, orthophonie). Tous les contrats récents (2023+) la couvrent par défaut. Si votre contrat est plus ancien, ajouter une option téléconsultation (+30-80€ par an).",
         },
         {
           q: 'Tarif RC Pro paramédical 2026 ?',
-          a: "Voir tableau ci-dessus par profession. Variables : antécédents (relevé d'information ACPR), zone (Paris/IDF +15%), spécialisations (ostéo viscéral/crânien sur-prime +20%), exercice mixte cabinet+domicile (+10%).",
+          a: "Voir tableau ci-dessus par profession. Variables : antécédents (relevé d'information ACPR), zone (Paris ou IDF +15%), spécialisations (ostéo viscéral ou crânien sur-prime +20%), exercice mixte cabinet+domicile (+10%).",
         },
       ]}
     />

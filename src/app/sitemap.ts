@@ -34,16 +34,16 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'rc-pro-medecin', priority: 0.85, changeFrequency: 'monthly' },
 
   // Sprint 1 KPMG — piliers data-driven (Ahrefs vol >= 100, KD <= 30)
-  { path: 'mutuelle-pro-btp', priority: 0.95, changeFrequency: 'weekly' }, // 16 000 vol/mois
-  { path: 'mutuelle-tns', priority: 0.9, changeFrequency: 'weekly' }, // 1 400 vol/mois
-  { path: 'rc-pro/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' }, // 1 900 vol/mois
-  { path: 'assurance-decennale/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' }, // 800 vol/mois
-  { path: 'assurance-homme-cle', priority: 0.85, changeFrequency: 'weekly' }, // 1 100 vol/mois
+  { path: 'mutuelle-pro-btp', priority: 0.95, changeFrequency: 'weekly' }, // 16 000 vol par mois
+  { path: 'mutuelle-tns', priority: 0.9, changeFrequency: 'weekly' }, // 1 400 vol par mois
+  { path: 'rc-pro/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' }, // 1 900 vol par mois
+  { path: 'assurance-decennale/auto-entrepreneur', priority: 0.9, changeFrequency: 'weekly' }, // 800 vol par mois
+  { path: 'assurance-homme-cle', priority: 0.85, changeFrequency: 'weekly' }, // 1 100 vol par mois
 
   // Sprint 1 KPMG — guides juridiques (long-tail concentré + concurrents validés)
   { path: 'guides/attestation-decennale', priority: 0.85, changeFrequency: 'monthly' }, // 600 vol KD 1 (famille 1 800)
   { path: 'guides/dommages-ouvrage', priority: 0.85, changeFrequency: 'monthly' }, // 400 vol (famille 1 200)
-  { path: 'guides/parfait-achevement', priority: 0.8, changeFrequency: 'monthly' }, // april capte 1 052 vis/mois
+  { path: 'guides/parfait-achevement', priority: 0.8, changeFrequency: 'monthly' }, // april capte 1 052 vis par mois
 
   // Sprint 1 KPMG — 3 piliers verticaux à fort CPC (KD 0-1, 78-99% marché vacant)
   { path: 'assurance-local-commercial', priority: 0.9, changeFrequency: 'weekly' }, // 800 vol KD 0 CPC 600€ (famille 1 550)
@@ -227,15 +227,35 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
 
 async function getProgrammaticEntries(now: Date): Promise<MetadataRoute.Sitemap> {
   try {
-    const [prixSlugs, comparateurSlugs, guideSlugs, devisSlugs, tarifSlugs] = await Promise.all([
+    // Live Supabase (dev/prod avec env vars DB configurées)
+    const [prixLive, comparateurLive, guideLive, devisLive, tarifLive] = await Promise.all([
       getEligibleSlugsForTemplate('prix_garantie_ville_statut', 15),
       getEligibleSlugsForTemplate('comparateur_garantie_ville', 15),
       getEligibleSlugsForTemplate('guide_metier_ville', 15),
-      // 'devis' réutilise template prix_garantie_ville_statut côté DB
-      // mais filtre par préfixe slug. Si pas distinct, on dérive.
       getEligibleSlugsForTemplate('prix_garantie_ville_statut', 15),
       getEligibleSlugsForTemplate('tarif', 15),
     ])
+
+    // Fallback snapshot committé (build CI sans DB env, 5832 slugs garantis)
+    const { PSEO_SLUGS_SNAPSHOT } = await import('@/lib/data/pseo-slugs-snapshot')
+    const prixSlugs =
+      prixLive.length > 0
+        ? prixLive
+        : (PSEO_SLUGS_SNAPSHOT.prix_garantie_ville_statut as readonly string[])
+    const comparateurSlugs =
+      comparateurLive.length > 0
+        ? comparateurLive
+        : (PSEO_SLUGS_SNAPSHOT.comparateur_garantie_ville as readonly string[])
+    const guideSlugs =
+      guideLive.length > 0
+        ? guideLive
+        : (PSEO_SLUGS_SNAPSHOT.guide_metier_ville as readonly string[])
+    const devisSlugs =
+      devisLive.length > 0
+        ? devisLive
+        : (PSEO_SLUGS_SNAPSHOT.prix_garantie_ville_statut as readonly string[])
+    const tarifSlugs =
+      tarifLive.length > 0 ? tarifLive : (PSEO_SLUGS_SNAPSHOT.tarif as readonly string[])
 
     return [
       ...prixSlugs

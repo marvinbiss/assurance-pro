@@ -6,7 +6,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'devis/assurance-decennale-auto-entrepreneur'
+const SLUG = 'devis / assurance-decennale-auto-entrepreneur'
 const TITLE = 'Devis Assurance Décennale Auto Entrepreneur — Comparatif 24h'
 const TAGLINE =
   'Obtenez gratuitement votre devis décennale auto-entrepreneur en 5 minutes. Comparatif April Pro vs SMABTP vs Allianz Pro. Attestation 24h.'
@@ -14,7 +14,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Devis décennale AE gratuit en 5 min. April Pro best price 950€/an peintre, 1 400€/an plombier. Comparatif April / SMABTP / Allianz. Attestation 24h.',
+    'Devis décennale AE gratuit en 5 min. April Pro best price 950€ par an peintre, 1 400€ par an plombier. Comparatif April — SMABTP — Allianz. Attestation 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -31,7 +31,7 @@ export default function Page() {
         {
           icon: '💰',
           title: 'Best price garanti',
-          desc: 'April Pro AE peintre 950€/an • plombier 1 400€/an • maçon 1 800€/an',
+          desc: 'April Pro AE peintre 950€ par an • plombier 1 400€ par an • maçon 1 800€ par an',
         },
         {
           icon: '⚡',
@@ -82,28 +82,28 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Peintre AE</strong> : 950-1 400€/an
+                <strong>Peintre AE</strong> : 950-1 400€ par an
               </li>
               <li>
-                <strong>Plâtrier AE</strong> : 1 100-1 600€/an
+                <strong>Plâtrier AE</strong> : 1 100-1 600€ par an
               </li>
               <li>
-                <strong>Carreleur AE</strong> : 1 200-1 700€/an
+                <strong>Carreleur AE</strong> : 1 200-1 700€ par an
               </li>
               <li>
-                <strong>Plombier AE</strong> : 1 400-2 100€/an
+                <strong>Plombier AE</strong> : 1 400-2 100€ par an
               </li>
               <li>
-                <strong>Électricien AE</strong> : 1 500-2 200€/an
+                <strong>Électricien AE</strong> : 1 500-2 200€ par an
               </li>
               <li>
-                <strong>Maçon AE</strong> : 1 800-2 800€/an
+                <strong>Maçon AE</strong> : 1 800-2 800€ par an
               </li>
               <li>
-                <strong>Couvreur AE</strong> : 2 200-3 500€/an
+                <strong>Couvreur AE</strong> : 2 200-3 500€ par an
               </li>
               <li>
-                <strong>Multi-services BTP AE</strong> : 2 200-3 500€/an
+                <strong>Multi-services BTP AE</strong> : 2 200-3 500€ par an
               </li>
             </ul>
           ),
@@ -113,9 +113,9 @@ export default function Page() {
           body: (
             <ul>
               <li>SIRET valide (vérifié Insee.fr — &lt; 3 mois)</li>
-              <li>Attestation ACOSS / URSSAF AE</li>
+              <li>Attestation ACOSS — URSSAF AE</li>
               <li>CNI ou passeport recto-verso</li>
-              <li>Justificatif activité BTP (CAP/BEP/diplôme OU expérience 3+ ans)</li>
+              <li>Justificatif activité BTP (CAP, BEP ou diplôme OU expérience 3+ ans)</li>
               <li>CA prévisionnel 12 mois (honnête)</li>
               <li>Antécédents sinistralité 36 mois (déclaration honneur)</li>
               <li>RIB pour paiement</li>
@@ -130,11 +130,11 @@ export default function Page() {
         },
         {
           q: 'Décennale AE peintre la moins chère ?',
-          a: 'April Pro BTP à 950€/an (plafond 1M€, postériorité 10 ans, formule standard). Best price marché vérifié 2026. En-dessous = SUSPECT (assureur non-agréé ACPR ou exclusions étendues).',
+          a: 'April Pro BTP à 950€ par an (plafond 1M€, postériorité 10 ans, formule standard). Best price marché vérifié 2026. En-dessous = SUSPECT (assureur non-agréé ACPR ou exclusions étendues).',
         },
         {
           q: 'Délai pour avoir attestation après devis ?',
-          a: '24h ouvrées chez April Pro (le plus rapide). 48h Allianz Pro / MMA Pro BTP. 72h AXA Pro BTP. Demander devis sans engagement, comparer, souscrire = délai total 1-3 jours ouvrés.',
+          a: '24h ouvrées chez April Pro (le plus rapide). 48h Allianz Pro — MMA Pro BTP. 72h AXA Pro BTP. Demander devis sans engagement, comparer, souscrire = délai total 1-3 jours ouvrés.',
         },
         {
           q: 'Le devis est-il vraiment gratuit ?',

@@ -42,9 +42,9 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code des assurances art. L. 212-1 à L. 212-3 (BCT)',
-        'codes/section_lc/LEGITEXT000006073984/LEGISCTA000006154608'
+        'codes ou section_lc ou LEGITEXT000006073984/LEGISCTA000006154608'
       ),
-      LEGIFRANCE('Décret n° 78-1093 du 21 nov 1978', 'loda/id/JORFTEXT000000522321'),
+      LEGIFRANCE('Décret n° 78-1093 du 21 nov 1978', 'loda, id ou JORFTEXT000000522321'),
       {
         label: 'BCT — Bureau Central de Tarification',
         url: 'https://www.bureaucentraldetarification.com.fr/',
@@ -136,9 +136,9 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
         id: 'cas',
         h2: '6. 3 cas pratiques',
         paragraphs: [
-          "Cas 1 — Maçon avec 3 sinistres en 4 ans : 3 refus d'assureurs majeurs. BCT impose AXA à ~220 €/mois (vs ~100 €/mois marché) avec plafond 500 K€/1 M€. Imposition acceptée.",
-          'Cas 2 — Jeune couvreur sans expérience : 4 refus pour profil débutant. BCT impose Generali à ~180 €/mois avec formation Qualibat obligatoire dans les 12 mois. Tarif normalisé après 2 ans sans sinistre.',
-          "Cas 3 — Médecin libéral après gros sinistre : 5 refus suite à un sinistre 250 000 €. BCT impose AXA à ~800 €/mois (vs ~350 €/mois marché). Continuité d'exercice préservée.",
+          "Cas 1 — Maçon avec 3 sinistres en 4 ans : 3 refus d'assureurs majeurs. BCT impose AXA à ~220 € par mois (vs ~100 € par mois marché) avec plafond 500 K€ ou 1 M€. Imposition acceptée.",
+          'Cas 2 — Jeune couvreur sans expérience : 4 refus pour profil débutant. BCT impose Generali à ~180 € par mois avec formation Qualibat obligatoire dans les 12 mois. Tarif normalisé après 2 ans sans sinistre.',
+          "Cas 3 — Médecin libéral après gros sinistre : 5 refus suite à un sinistre 250 000 €. BCT impose AXA à ~800 € par mois (vs ~350 € par mois marché). Continuité d'exercice préservée.",
         ],
       },
       {
@@ -175,9 +175,9 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
       ACPR('Recommandation ACPR 2024-R-02 — traitement réclamations'),
       LEGIFRANCE(
         'Code monétaire et financier art. L. 612-29-1',
-        'codes/article_lc/LEGIARTI000027790018'
+        'codes ou article_lc ou LEGIARTI000027790018'
       ),
-      LEGIFRANCE('DDA Directive 2016/97', 'jorf/id/JORFTEXT000035402090'),
+      LEGIFRANCE('DDA Directive 2016/97', 'jorf, id ou JORFTEXT000035402090'),
     ],
     toc: [
       { id: 'contexte', title: '1. Contexte + entrée en vigueur 2024' },
@@ -308,8 +308,15 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
     publishedAt: '2026-07-10',
     updatedAt: '2026-07-10',
     readTime: '11 min',
+    lead: "41 % des PME françaises ont subi une attaque cyber en 2024 — coût moyen 178 000 €. La cyber assurance n'est plus une option : c'est la dernière ligne de défense face à un risque qui explose chaque année.",
+    keyTakeaways: [
+      "Coût moyen d'une attaque PME en 2024 : 178 000 € (ANSSI)",
+      "Sanctions CNIL jusqu'à 20 M€ ou 4 % du CA mondial",
+      '7 garanties indispensables : ransomware, RGPD, fraude au président, perte exploitation, frais notification, e-réputation, expertise forensique',
+      'Tarifs PME 20-100 salariés : 1 500 à 8 000 € par an selon CA et secteur',
+    ],
     sources: [
-      LEGIFRANCE('Loi Informatique et Libertés (RGPD)', 'jorf/id/JORFTEXT000037085952'),
+      LEGIFRANCE('Loi Informatique et Libertés (RGPD)', 'jorf, id ou JORFTEXT000037085952'),
       { label: 'CNIL — sanctions 2024', url: 'https://www.cnil.fr/' },
       { label: 'ANSSI — guide cyber sécurité PME', url: 'https://www.ssi.gouv.fr/' },
       { label: 'AMRAE — Lumière sur la cyber 2024', url: 'https://www.amrae.fr/' },
@@ -319,7 +326,7 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
       { id: 'sinistralite', title: '2. Sinistralité cyber 2024' },
       { id: 'garanties', title: '3. 7 garanties indispensables' },
       { id: 'ransomware', title: '4. Garantie ransomware' },
-      { id: 'rgpd', title: '5. Garantie RGPD/CNIL' },
+      { id: 'rgpd', title: '5. Garantie RGPD ou CNIL' },
       { id: 'tarifs', title: '6. Tarifs PME 2026' },
       { id: 'prevention', title: '7. 7 mesures de prévention' },
       { id: 'faq', title: 'FAQ' },
@@ -330,25 +337,51 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
         h2: '1. Enjeux cyber PME en 2026',
         paragraphs: [
           "La menace cyber a EXPLOSÉ pour les PME françaises depuis 2020. Selon le rapport ANSSI 2024 : 41 % des PME ont subi une attaque cyber en 2024 (vs 28 % en 2022). Coût moyen d'une attaque pour une PME : 178 000 € (frais directs + indirects + perte exploitation).",
-          "Types d'attaques principales : ransomware (45 %), phishing/fraude au président (28 %), fuite de données (15 %), DDoS (8 %), espionnage industriel (4 %). Les secteurs les plus visés : industrie/manufacturing, santé, finance, services professionnels.",
+          "Types d'attaques principales : ransomware (45 %), phishing ou fraude au président (28 %), fuite de données (15 %), DDoS (8 %), espionnage industriel (4 %). Les secteurs les plus visés : industrie ou manufacturing, santé, finance, services professionnels.",
           "Conséquences typiques : arrêt activité 7 à 45 jours, perte de données critiques, atteinte réputation, sanction CNIL (jusqu'à 20 M€ ou 4 % du CA mondial), demandes de rançon (entre 5 K€ et 500 K€).",
         ],
       },
       {
         id: 'sinistralite',
         h2: '2. Sinistralité cyber 2024 (rapport AMRAE)',
-        paragraphs: ['Chiffres clés sinistralité cyber 2024 :'],
-        list: {
-          items: [
-            '**Nombre attaques déclarées** : 12 800 (vs 8 900 en 2023, +44 %)',
-            '**Coût moyen sinistre PME** : 178 000 €',
-            '**Coût moyen sinistre ETI** : 1,8 M€',
-            '**Coût moyen sinistre groupe (GE)** : 8,5 M€',
-            "**Taux de paiement de rançons** : 38 % des cas (en baisse depuis 2022 grâce à l'ANSSI)",
-            '**Délai moyen de récupération** : 23 jours (PME), 18 jours (ETI)',
-            '**Sinistres RGPD/CNIL** : 850 sanctions en 2024 (vs 420 en 2023)',
-          ],
-        },
+        paragraphs: [],
+        blocks: [
+          {
+            kind: 'prose',
+            text: 'Le rapport AMRAE 2024 chiffre une explosion historique des sinistres cyber en France. Les PME absorbent le choc de plein fouet :',
+          },
+          {
+            kind: 'keyFigures',
+            items: [
+              { value: '12 800', label: 'attaques déclarées 2024', source: 'AMRAE' },
+              { value: '+44 %', label: 'vs 2023', source: 'AMRAE' },
+              { value: '178 k€', label: 'coût moyen PME', source: 'AMRAE' },
+              { value: '23 j', label: 'délai récupération', source: 'AMRAE' },
+            ],
+          },
+          {
+            kind: 'list',
+            variant: 'check',
+            items: [
+              'Coût moyen sinistre ETI : 1,8 M€',
+              'Coût moyen sinistre groupe (GE) : 8,5 M€',
+              "Taux de paiement de rançons : 38 % des cas (en baisse depuis 2022 grâce à l'ANSSI)",
+              'Sinistres RGPD ou CNIL : 850 sanctions en 2024 (vs 420 en 2023)',
+            ],
+          },
+          {
+            kind: 'callout',
+            tone: 'warning',
+            title: 'Tendance 2025',
+            text: "Les attaques ciblant les sous-traitants BTP ont triplé en 2024. Si vous êtes prestataire d'un grand groupe, votre exposition est désormais maximale.",
+          },
+          {
+            kind: 'pullQuote',
+            text: "Aucune PME française ne peut plus se considérer comme une cible négligeable. La question n'est plus 'si' mais 'quand'.",
+            attribution: 'Rapport ANSSI 2024',
+            sourceUrl: 'https://www.ssi.gouv.fr/',
+          },
+        ],
       },
       {
         id: 'garanties',
@@ -359,7 +392,7 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
           items: [
             '**Ransomware** : prise en charge négociation, paiement rançon, restauration systèmes',
             '**Atteinte aux données** : notification clients, frais expertise CNIL, sanctions RGPD',
-            '**Fraude au président / FOVI** : indemnisation des transferts frauduleux',
+            '**Fraude au président — FOVI** : indemnisation des transferts frauduleux',
             "**Perte d'exploitation** : 60 à 180 jours de marge brute selon contrat",
             '**Frais de gestion de crise** : communicants, juristes, experts forensic',
             '**E-réputation** : nettoyage référencement, communication post-crise',
@@ -387,7 +420,7 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
       },
       {
         id: 'rgpd',
-        h2: '5. Garantie RGPD/CNIL',
+        h2: '5. Garantie RGPD ou CNIL',
         paragraphs: ['La garantie RGPD couvre :'],
         list: {
           items: [
@@ -408,10 +441,10 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
         paragraphs: ['Tarifs moyens 2026 cyber assurance PME selon taille :'],
         list: {
           items: [
-            '**PME < 10 salariés (CA < 1 M€)** : 30 à ~80 €/mois (plafond 250 K€)',
-            '**PME 10-50 salariés (CA 1-10 M€)** : 100 à ~300 €/mois (plafond 1 M€)',
-            '**PME 50-250 salariés (CA 10-50 M€)** : 400 à 1 ~200 €/mois (plafond 2-5 M€)',
-            '**Surcoût secteur santé / finance** : +30 à +50 % (risque accru)',
+            '**PME < 10 salariés (CA < 1 M€)** : 30 à ~80 € par mois (plafond 250 K€)',
+            '**PME 10-50 salariés (CA 1-10 M€)** : 100 à ~300 € par mois (plafond 1 M€)',
+            '**PME 50-250 salariés (CA 10-50 M€)** : 400 à 1 200 € par mois (plafond 2-5 M€)',
+            '**Surcoût secteur santé — finance** : +30 à +50 % (risque accru)',
             '**Bonus mesures de sécurité** : -15 à -25 % avec MFA + sauvegardes externes + EDR',
           ],
         },
@@ -425,8 +458,8 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
           items: [
             '**MFA généralisée** : authentification multi-facteurs sur tous les comptes critiques',
             '**Sauvegardes 3-2-1** : 3 copies, 2 supports différents, 1 hors site (idéalement déconnectée)',
-            '**EDR/XDR** : solution de détection avancée des menaces (CrowdStrike, SentinelOne)',
-            '**Formation collaborateurs** : sensibilisation phishing 2x/an (40 % des attaques passent par les emails)',
+            '**EDR ou XDR** : solution de détection avancée des menaces (CrowdStrike, SentinelOne)',
+            '**Formation collaborateurs** : sensibilisation phishing 2x par an (40 % des attaques passent par les emails)',
             '**Patch management** : mise à jour systèmes < 30 jours, urgences < 72 h',
             '**Plan de continuité** : procédures écrites pour gérer une attaque, équipe identifiée',
             "**Audit annuel** : test d'intrusion + audit RGPD par un cabinet spécialisé",
@@ -443,7 +476,7 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
         paragraphs: ['Réponses aux questions fréquentes sur la cyber assurance :'],
         list: {
           items: [
-            '**Cyber pour TPE 1 salarié : pertinent ?** OUI si données clients (RGPD) ou activité en ligne. Tarif minimum 20-30 €/mois pour plafond 100 K€.',
+            '**Cyber pour TPE 1 salarié : pertinent ?** OUI si données clients (RGPD) ou activité en ligne. Tarif minimum 20-30 € par mois pour plafond 100 K€.',
             '**Cyber et RC Pro : double emploi ?** NON. La RC Pro couvre la faute professionnelle classique. La cyber couvre les attaques externes. Complémentaires.',
             '**Refus cyber pour mauvaise hygiène IT : possible ?** OUI. Les assureurs auditent désormais le niveau de sécurité avant souscription (questionnaire 50-100 questions).',
             "**Cyber et garantie collaborative (groupements) : avantages ?** Possible chez certains assureurs : -30 à -40 % en mutualisant le risque avec d'autres PME du même secteur.",

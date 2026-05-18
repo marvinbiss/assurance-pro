@@ -35,7 +35,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance commerce : multirisque commerçant (vitrine, stock, RC client, perte exploitation), couverture incendie, vol, vandalisme. Tarifs négociés à partir de 380 €/an. Comparatif 8 assureurs. Devis gratuit ORIAS sous 24h.',
+    'Assurance commerce : multirisque commerçant (vitrine, stock, RC client, perte exploitation), couverture incendie, vol, vandalisme. Tarifs négociés à partir de 380 € par an. Comparatif 8 assureurs. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -46,7 +46,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance commerce est une multirisque pro spécifiquement calibrée pour les commerçants : boutiques, magasins de détail, commerces alimentaires, prêt-à-porter, bijouterie, fleuriste, opticien, librairie, esthéticienne, coiffeur, pressing, tabac-presse, ainsi que les commerces ambulants (food trucks, marchés, foires). Elle couvre les principaux risques : incendie, vol avec effraction, vandalisme, dégâts des eaux, événements climatiques, bris de glace (vitrine), responsabilité civile vis-à-vis des clients (chute, intoxication non-alimentaire, casse de vêtement), pertes d'exploitation pendant la durée de fermeture suite à sinistre, et marchandises stockées. Les tarifs 2026 démarrent à 380 € HT/an pour une boutique 50 m² en province jusqu'à 2 800 €/an pour une bijouterie centre-ville Paris. Cette page détaille les garanties indispensables par type de commerce, les tarifs réels et les pièges à éviter (sous-évaluation du stock, exclusion vol nuit sans alarme NF)."
+      intro="L'assurance commerce est une multirisque pro spécifiquement calibrée pour les commerçants : boutiques, magasins de détail, commerces alimentaires, prêt-à-porter, bijouterie, fleuriste, opticien, librairie, esthéticienne, coiffeur, pressing, tabac-presse, ainsi que les commerces ambulants (food trucks, marchés, foires). Elle couvre les principaux risques : incendie, vol avec effraction, vandalisme, dégâts des eaux, événements climatiques, bris de glace (vitrine), responsabilité civile vis-à-vis des clients (chute, intoxication non-alimentaire, casse de vêtement), pertes d'exploitation pendant la durée de fermeture suite à sinistre, et marchandises stockées. Les tarifs 2026 démarrent à 380 € HT par an pour une boutique 50 m² en province jusqu'à 2 800 € par an pour une bijouterie centre-ville Paris. Cette page détaille les garanties indispensables par type de commerce, les tarifs réels et les pièges à éviter (sous-évaluation du stock, exclusion vol nuit sans alarme NF)."
       legalReference="Article 1733 C. civ. (bail commercial) + clauses standard MRP commerçant"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -66,8 +66,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 380 €/an',
-          desc: 'Boutique 50 m² province. Médiane marché 580-980€/an',
+          title: 'À partir de 380 € par an',
+          desc: 'Boutique 50 m² province. Médiane marché 580-980€ par an',
         },
         {
           icon: '🚨',
@@ -118,7 +118,7 @@ export default function Page() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border p-2">Boutique vêtements / accessoires province</td>
+                    <td className="border p-2">Boutique vêtements — accessoires province</td>
                     <td className="border p-2 text-right">50 m²</td>
                     <td className="border p-2 text-right">380 € – 680 €</td>
                   </tr>
@@ -128,12 +128,12 @@ export default function Page() {
                     <td className="border p-2 text-right">680 € – 1 200 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Coiffeur / institut beauté</td>
+                    <td className="border p-2">Coiffeur — institut beauté</td>
                     <td className="border p-2 text-right">60 m²</td>
                     <td className="border p-2 text-right">420 € – 720 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Fleuriste / animalerie</td>
+                    <td className="border p-2">Fleuriste — animalerie</td>
                     <td className="border p-2 text-right">50 m²</td>
                     <td className="border p-2 text-right">380 € – 620 €</td>
                   </tr>
@@ -143,7 +143,7 @@ export default function Page() {
                     <td className="border p-2 text-right">820 € – 1 480 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Bijouterie / horlogerie centre-ville</td>
+                    <td className="border p-2">Bijouterie — horlogerie centre-ville</td>
                     <td className="border p-2 text-right">60 m²</td>
                     <td className="border p-2 text-right">1 200 € – 2 800 €</td>
                   </tr>
@@ -155,12 +155,12 @@ export default function Page() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Commerce ambulant / food truck</td>
+                    <td className="border p-2">Commerce ambulant — food truck</td>
                     <td className="border p-2 text-right">véhicule</td>
                     <td className="border p-2 text-right">480 € – 880 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Boucherie / poissonnerie</td>
+                    <td className="border p-2">Boucherie — poissonnerie</td>
                     <td className="border p-2 text-right">80 m²</td>
                     <td className="border p-2 text-right">580 € – 980 € (panne frigo critique)</td>
                   </tr>
@@ -216,11 +216,11 @@ export default function Page() {
           ),
         },
         {
-          h2: 'Cas particulier : commerce ambulant / food truck / marchés',
+          h2: 'Cas particulier : commerce ambulant — food truck — marchés',
           body: (
             <>
               <p>
-                Un commerce ambulant (food truck, marchand sur marchés/foires, vente à domicile)
+                Un commerce ambulant (food truck, marchand sur marchés ou foires, vente à domicile)
                 cumule 2 risques principaux : véhicule + activité. Son assurance doit couvrir :
               </p>
               <ul>
@@ -231,7 +231,7 @@ export default function Page() {
                   <strong>Marchandises transportées</strong> (vol pendant transport, gel, accident)
                 </li>
                 <li>
-                  <strong>RC pro / RC client</strong> sur tous les emplacements occupés (foires,
+                  <strong>RC pro — RC client</strong> sur tous les emplacements occupés (foires,
                   marchés, événements)
                 </li>
                 <li>
@@ -243,7 +243,7 @@ export default function Page() {
                 </li>
               </ul>
               <p>
-                Tarif 2026 commerce ambulant : 480-880 €/an pour 200 jours d&apos;exploitation.
+                Tarif 2026 commerce ambulant : 480-880 € par an pour 200 jours d&apos;exploitation.
                 Notre cabinet propose un contrat dédié « Commerce mobile pro » négocié avec Wakam et
                 Hiscox.
               </p>
@@ -258,7 +258,7 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'une boutique de 50 m² ?",
-          a: "Démarre à 380€/an pour une boutique vêtements en province sans antécédent. Médiane marché : 580-980€/an. Variables : zone géographique (Paris +30-50%), valeur du stock, présence d'alarme NF (-15-25%), horaires d'ouverture (commerces nocturnes majorés).",
+          a: "Démarre à 380€ par an pour une boutique vêtements en province sans antécédent. Médiane marché : 580-980€ par an. Variables : zone géographique (Paris +30-50%), valeur du stock, présence d'alarme NF (-15-25%), horaires d'ouverture (commerces nocturnes majorés).",
         },
         {
           q: 'Comment évaluer correctement la valeur du stock à assurer ?',
@@ -270,7 +270,7 @@ export default function Page() {
         },
         {
           q: 'Bijouterie : assurance spécifique ou contrat commerce standard suffit ?',
-          a: 'ASSURANCE SPÉCIFIQUE OBLIGATOIRE. Les contrats commerce standards excluent les bijoux/montres/métaux précieux au-delà de 5 000-15 000€ de valeur cumulée. Une bijouterie a typiquement 100-500 k€ de stock — il faut un contrat « Joaillerie / Horlogerie » dédié avec coffre certifié EN 1143-1, alarme intrusion certifiée APSAD, télésurveillance et limitation des stocks vitrine. Tarif : 1 200-2 800€/an minimum.',
+          a: 'ASSURANCE SPÉCIFIQUE OBLIGATOIRE. Les contrats commerce standards excluent les bijoux, montres ou métaux précieux au-delà de 5 000-15 000€ de valeur cumulée. Une bijouterie a typiquement 100-500 k€ de stock — il faut un contrat « Joaillerie — Horlogerie » dédié avec coffre certifié EN 1143-1, alarme intrusion certifiée APSAD, télésurveillance et limitation des stocks vitrine. Tarif : 1 200-2 800€ par an minimum.',
         },
         {
           q: "Comment fonctionne la perte d'exploitation pour un commerce ?",

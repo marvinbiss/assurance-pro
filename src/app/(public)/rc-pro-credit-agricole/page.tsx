@@ -19,7 +19,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro Crédit Agricole (Pacifica) : assureur bancaire accessible si client CA. Tarif 280-1 500€/an. Comparatif vs Hiscox, MMA, Allianz Pro — quel choix pour qui ?',
+    'RC Pro Crédit Agricole (Pacifica) : assureur bancaire accessible si client CA. Tarif 280-1 500€ par an. Comparatif vs Hiscox, MMA, Allianz Pro — quel choix pour qui ?',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Le Crédit Agricole propose une RC Pro via Pacifica, sa filiale assurance créée en 1990 (groupe Crédit Agricole Assurances). L'offre cible principalement les pros déjà clients du Crédit Agricole pour leurs services bancaires (compte pro, prêt, terminal de paiement), avec une logique de bancassurance et de pack global. Cette page analyse l'offre Pacifica RC Pro, ses points forts/faibles et la compare aux spécialistes pro (MMA, Hiscox, Allianz Pro)."
+      intro="Le Crédit Agricole propose une RC Pro via Pacifica, sa filiale assurance créée en 1990 (groupe Crédit Agricole Assurances). L'offre cible principalement les pros déjà clients du Crédit Agricole pour leurs services bancaires (compte pro, prêt, terminal de paiement), avec une logique de bancassurance et de pack global. Cette page analyse l'offre Pacifica RC Pro, ses points forts ou faibles et la compare aux spécialistes pro (MMA, Hiscox, Allianz Pro)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -45,11 +45,11 @@ export default function Page() {
         {
           icon: '🛡️',
           title: 'Plafond 500k€-2M€',
-          desc: 'Standard 500k€ AE, jusqu&apos;à 2M€ SARL/SAS PME',
+          desc: 'Standard 500k€ AE, jusqu&apos;à 2M€ SARL ou SAS PME',
         },
         {
           icon: '💰',
-          title: '280-1 500€/an',
+          title: '280-1 500€ par an',
           desc: 'AE 280-500€ • SARL services 600-1 200€ • SAS PME 1 200-1 500€',
         },
         {
@@ -72,11 +72,11 @@ export default function Page() {
                 France (le plus dense)
               </li>
               <li>
-                <strong>Conseil pro intégré</strong> : chargé de compte pro CA peut
-                prescrire/conseiller assurances pro
+                <strong>Conseil pro intégré</strong> : chargé de compte pro CA peut prescrire ou
+                conseiller assurances pro
               </li>
               <li>
-                <strong>Tarifs corrects sur AE</strong> : 280-500€/an, milieu de marché
+                <strong>Tarifs corrects sur AE</strong> : 280-500€ par an, milieu de marché
               </li>
               <li>
                 <strong>Solidité financière A</strong> (groupe Crédit Agricole Assurances)
@@ -104,7 +104,7 @@ export default function Page() {
                 exigeants
               </li>
               <li>
-                <strong>Pas de RC Pro BTP décennale</strong> : pour BTP, April Pro / SMABTP / MMA
+                <strong>Pas de RC Pro BTP décennale</strong> : pour BTP, April Pro ou SMABTP ou MMA
                 plus pertinents
               </li>
               <li>
@@ -120,19 +120,20 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Choisir Crédit Agricole</strong> si : déjà client CA bancaire, souhaitez 1
-                seul interlocuteur banque+assurance, activité simple AE/TPE avec besoins standards
+                seul interlocuteur banque+assurance, activité simple AE ou TPE avec besoins
+                standards
               </li>
               <li>
                 <strong>Choisir MMA Pro</strong> si : recherchez assureur pur pro avec réseau
-                agences, SARL/SAS PME tous secteurs, pack multi-contrats étendu
+                agences, SARL ou SAS PME tous secteurs, pack multi-contrats étendu
               </li>
               <li>
-                <strong>Choisir Hiscox</strong> si : freelance/AE services intellectuels, plafond
+                <strong>Choisir Hiscox</strong> si : freelance ou AE services intellectuels, plafond
                 1M€+ requis, postériorité 10 ans souhaitée
               </li>
               <li>
                 <strong>Choisir Allianz Pro</strong> si : couverture multi-secteurs (services + BTP
-                + agriculture), bon rapport prix/services PME
+                + agriculture), bon rapport prix ou services PME
               </li>
               <li>
                 <strong>Choisir Generali Pro</strong> si : cyber-assurance combinée prioritaire,
@@ -149,11 +150,11 @@ export default function Page() {
         },
         {
           q: 'Quel tarif CA RC Pro pour un AE consultant ?',
-          a: 'AE consultant CA &lt; 80k€ : 280-450€/an (Pacifica AE). Pour comparaison : Hiscox 95-180€/an, MMA 250-380€/an. Crédit Agricole rentable surtout si pack bancassurance avec compte pro CA.',
+          a: 'AE consultant CA &lt; 80k€ : 280-450€ par an (Pacifica AE). Pour comparaison : Hiscox 95-180€ par an, MMA 250-380€ par an. Crédit Agricole rentable surtout si pack bancassurance avec compte pro CA.',
         },
         {
           q: 'CA RC Pro couvre-t-elle le BTP ?',
-          a: 'Pacifica fait de la RC Pro BTP standard (sans décennale). Pour décennale BTP : April Pro Crédit Agricole partenaire, ou SMABTP/MMA Pro directement. À comparer pour pack global.',
+          a: 'Pacifica fait de la RC Pro BTP standard (sans décennale). Pour décennale BTP : April Pro Crédit Agricole partenaire, ou SMABTP ou MMA Pro directement. À comparer pour pack global.',
         },
         {
           q: 'Comment résilier Crédit Agricole RC Pro ?',

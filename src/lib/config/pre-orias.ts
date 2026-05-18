@@ -24,9 +24,14 @@ export const ORIAS_EXPECTED_DATE = process.env.NEXT_PUBLIC_ORIAS_EXPECTED_DATE ?
 export const PRE_ORIAS_NOTIFY_EMAIL =
   process.env.NEXT_PUBLIC_PRE_ORIAS_NOTIFY_EMAIL ?? 'contact@vivos-assurance.fr'
 
-/** Textes CTAs adaptés selon le mode */
+/** Textes CTAs adaptés selon le mode.
+ *
+ * Reframe pre-ORIAS (audit UX 2026-05) : transformer "attente" en "privilège".
+ * Le CTA primary garde "Devis 2 min" pour cohérence cross-pages, la page /devis
+ * explique le statut pré-ORIAS + offre une pré-réservation prioritaire.
+ */
 export const CTA_TEXTS = {
-  primary: IS_PRE_ORIAS ? 'Être notifié au lancement' : 'Obtenir mon devis gratuit',
-  short: IS_PRE_ORIAS ? 'Préinscription' : 'Devis gratuit',
-  start: IS_PRE_ORIAS ? 'Rejoindre la liste' : 'Démarrer mon devis',
+  primary: IS_PRE_ORIAS ? 'Réserver mon tarif négocié' : 'Obtenir mon devis gratuit',
+  short: 'Devis 2 min',
+  start: IS_PRE_ORIAS ? 'Pré-réserver ma place' : 'Démarrer mon devis',
 } as const

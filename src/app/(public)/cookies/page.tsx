@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Politique cookies',
     description:
-      'Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d\\',
+      "Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d'audience, marketing. Gestion du consentement RGPD.",
     url: `${SITE_URL}/cookies`,
     type: 'website',
   },
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Politique cookies',
     description:
-      'Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d\\',
+      "Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d'audience, marketing. Gestion du consentement RGPD.",
   },
 }
 
 export default function CookiesPage() {
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Cookies' }]}
         eyebrow="Politique cookies · CNIL"
@@ -125,7 +125,7 @@ export default function CookiesPage() {
             <tbody>
               <tr>
                 <td>Meta Pixel</td>
-                <td>Mesure conversion campagnes Facebook/Instagram</td>
+                <td>Mesure conversion campagnes Facebook ou Instagram</td>
                 <td>90 jours</td>
                 <td>Meta Platforms Ireland Ltd</td>
               </tr>

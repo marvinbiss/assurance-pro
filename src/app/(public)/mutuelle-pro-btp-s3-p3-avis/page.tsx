@@ -15,7 +15,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'PRO BTP S3 P3 : analyse complète de la formule intermédiaire renforcée. Garanties hospi, dentaire, optique, méd. douces. Avis adhérents, tarifs 65-140€/mois, alternatives.',
+    'PRO BTP S3 P3 : analyse complète de la formule intermédiaire renforcée. Garanties hospi, dentaire, optique, méd. douces. Avis adhérents, tarifs 65-140€ par mois, alternatives.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -26,7 +26,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La mutuelle PRO BTP propose 4 niveaux de garanties (S1 économique → S4 premium) déclinés en sous-formules P1 à P4 (modules options). La formule S3 P3 correspond au niveau intermédiaire renforcé : couverture solide hospitalisation, dentaire, optique et médecines douces, à un tarif intermédiaire (65-140€/mois selon âge). Cette page détaille les garanties exactes, donne des retours d'adhérents et compare avec les alternatives privées (April Pro Santé S3 équivalent, Harmonie Mutuelle BTP, MMA Mutuelle Pro)."
+      intro="La mutuelle PRO BTP propose 4 niveaux de garanties (S1 économique → S4 premium) déclinés en sous-formules P1 à P4 (modules options). La formule S3 P3 correspond au niveau intermédiaire renforcé : couverture solide hospitalisation, dentaire, optique et médecines douces, à un tarif intermédiaire (65-140€ par mois selon âge). Cette page détaille les garanties exactes, donne des retours d'adhérents et compare avec les alternatives privées (April Pro Santé S3 équivalent, Harmonie Mutuelle BTP, MMA Mutuelle Pro)."
       socialProofStats={STATS_DEFAULT}
       expertBio={EXPERT_DEFAULT}
       benefits={[
@@ -38,16 +38,16 @@ export default function Page() {
         {
           icon: '🦷',
           title: 'Dentaire renforcé P3',
-          desc: 'Implants + couronnes + ortho adulte. Forfait 1 200-1 500€/an',
+          desc: 'Implants + couronnes + ortho adulte. Forfait 1 200-1 500€ par an',
         },
         {
           icon: '👓',
           title: 'Optique étendue',
-          desc: 'Verres complexes + lentilles + forfait 400-500€/2 ans',
+          desc: 'Verres complexes + lentilles + forfait 400-500€ par 2 ans',
         },
         {
           icon: '💰',
-          title: '65-140€/mois',
+          title: '65-140€ par mois',
           desc: 'Selon âge : 25-45 ans 65€ • 45-60 ans 95€ • 60+ ans 140€',
         },
       ]}
@@ -58,19 +58,19 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Hospitalisation</strong> : 100% BR + dépassements jusqu&apos;à 300% BR,
-                forfait journalier illimité, chambre particulière 70€/jour, télémédecine incluse
+                forfait journalier illimité, chambre particulière 70€ par jour, télémédecine incluse
               </li>
               <li>
                 <strong>Dentaire</strong> : 100% RAC0 sur soins courants, 250% BR sur prothèses
-                (implants couverts à hauteur de 1 500€/dent), orthodontie adulte 800€/an
+                (implants couverts à hauteur de 1 500€ par dent), orthodontie adulte 800€ par an
               </li>
               <li>
-                <strong>Optique</strong> : 100% RAC0 + 350€/verres complexes/2 ans, lentilles
-                250€/an, chirurgie réfractive 600€/œil (forfait à vie)
+                <strong>Optique</strong> : 100% RAC0 + 350€ par verres complexes/2 ans, lentilles
+                250€ par an, chirurgie réfractive 600€/œil (forfait à vie)
               </li>
               <li>
-                <strong>Médecines douces</strong> : 30€/séance ostéo/chiro/étiopathe, limite 6
-                séances/an
+                <strong>Médecines douces</strong> : 30€ par séance ostéo, chiro ou étiopathe, limite
+                6 séances par an
               </li>
               <li>
                 <strong>Cures thermales</strong> : prise en charge complément BR
@@ -117,23 +117,23 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>PRO BTP S3 P3</strong> : 65-140€/mois — solide mais cher. Avantage :
+                <strong>PRO BTP S3 P3</strong> : 65-140€ par mois — solide mais cher. Avantage :
                 institution paritaire BTP.
               </li>
               <li>
-                <strong>April Pro Santé S3 équiv.</strong> : 55-110€/mois — best price, garanties
-                très proches. Idéal TNS jeune.
+                <strong>April Pro Santé S3 équiv.</strong> : 55-110€ par mois — best price,
+                garanties très proches. Idéal TNS jeune.
               </li>
               <li>
-                <strong>Harmonie Mutuelle BTP S3</strong> : 60-125€/mois — paritaire (groupe VYV),
-                forfait ortho meilleur.
+                <strong>Harmonie Mutuelle BTP S3</strong> : 60-125€ par mois — paritaire (groupe
+                VYV), forfait ortho meilleur.
               </li>
               <li>
-                <strong>MMA Mutuelle Pro Niv 3</strong> : 70-130€/mois — flexibilité formules, bon
-                dentaire/optique.
+                <strong>MMA Mutuelle Pro Niv 3</strong> : 70-130€ par mois — flexibilité formules,
+                bon dentaire ou optique.
               </li>
               <li>
-                <strong>Aon Santé Pro</strong> : 80-160€/mois — premium, plafonds étendus.
+                <strong>Aon Santé Pro</strong> : 80-160€ par mois — premium, plafonds étendus.
               </li>
             </ul>
           ),
@@ -146,7 +146,7 @@ export default function Page() {
         },
         {
           q: 'Quel tarif PRO BTP S3 P3 pour un artisan de 45 ans ?',
-          a: 'Tarif standard 2026 : 95-115€/mois (TNS). En famille (conjoint + 2 enfants) : 220-280€/mois. Madelin déductible si statut TNS.',
+          a: 'Tarif standard 2026 : 95-115€ par mois (TNS). En famille (conjoint + 2 enfants) : 220-280€ par mois. Madelin déductible si statut TNS.',
         },
         {
           q: 'PRO BTP S3 P3 vs April Pro S3 : lequel choisir ?',

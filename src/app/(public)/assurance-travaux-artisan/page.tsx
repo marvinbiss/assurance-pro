@@ -18,7 +18,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance travaux artisan : pack chantier complet (décennale Loi Spinetta + RC pro travaux + TRC + garantie outillage + véhicule pro). Pour artisans BTP réalisant des chantiers réguliers. Tarifs 980-2 800€/an. Devis ORIAS sous 24h.',
+    'Assurance travaux artisan : pack chantier complet (décennale Loi Spinetta + RC pro travaux + TRC + garantie outillage + véhicule pro). Pour artisans BTP réalisant des chantiers réguliers. Tarifs 980-2 800€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -29,7 +29,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance travaux artisan désigne le pack standard d'assurances nécessaires à un artisan BTP réalisant des chantiers de construction, rénovation ou aménagement. Elle combine 5 garanties : (1) décennale OBLIGATOIRE Loi Spinetta — couvre les dommages affectant la solidité de l'ouvrage 10 ans après réception, (2) RC pro travaux — couvre les dommages causés AUX TIERS PENDANT le chantier (voisin, passant, client), (3) TRC (Tous Risques Chantier) recommandée pour gros chantiers — couvre les dommages AU CHANTIER LUI-MÊME, (4) garantie outillage embarqué — couvre l'outillage transporté + matériel sur chantier, (5) véhicule pro avec garantie marchandises. Tarifs 2026 : 980-2 800€/an selon métier et taille. Cette page renvoie vers nos piliers spécialisés."
+      intro="L'assurance travaux artisan désigne le pack standard d'assurances nécessaires à un artisan BTP réalisant des chantiers de construction, rénovation ou aménagement. Elle combine 5 garanties : (1) décennale OBLIGATOIRE Loi Spinetta — couvre les dommages affectant la solidité de l'ouvrage 10 ans après réception, (2) RC pro travaux — couvre les dommages causés AUX TIERS PENDANT le chantier (voisin, passant, client), (3) TRC (Tous Risques Chantier) recommandée pour gros chantiers — couvre les dommages AU CHANTIER LUI-MÊME, (4) garantie outillage embarqué — couvre l'outillage transporté + matériel sur chantier, (5) véhicule pro avec garantie marchandises. Tarifs 2026 : 980-2 800€ par an selon métier et taille. Cette page renvoie vers nos piliers spécialisés."
       legalReference="Loi Spinetta + Code des assurances + DTU"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -54,8 +54,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '980 € à 2 800 €/an',
-          desc: 'AE peintre : 980€/an. SARL maçonnerie 5 salariés : 2 800-6 800€/an',
+          title: '980 € à 2 800 € par an',
+          desc: 'AE peintre : 980€ par an. SARL maçonnerie 5 salariés : 2 800-6 800€ par an',
         },
       ]}
       sections={[
@@ -112,11 +112,11 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance travaux d'un artisan en 2026 ?",
-          a: 'AE peintre : 980€/an. AE plombier/électricien : 1 280-1 980€/an. AE maçon : 1 580-2 380€/an. SARL maçonnerie 5 salariés : 2 800-6 800€/an. Variables : métier (sinistralité AQC), CA, antécédents.',
+          a: 'AE peintre : 980€ par an. AE plombier ou électricien : 1 280-1 980€ par an. AE maçon : 1 580-2 380€ par an. SARL maçonnerie 5 salariés : 2 800-6 800€ par an. Variables : métier (sinistralité AQC), CA, antécédents.',
         },
         {
           q: 'Garantie outillage embarqué : utile ?',
-          a: "OUI — un fourgon plombier transporte typiquement 10-25 k€ d'outillage. La garantie outillage couvre le vol nocturne (effraction véhicule) et les dommages sur chantier. Coût : 80-200€/an. Indispensable.",
+          a: "OUI — un fourgon plombier transporte typiquement 10-25 k€ d'outillage. La garantie outillage couvre le vol nocturne (effraction véhicule) et les dommages sur chantier. Coût : 80-200€ par an. Indispensable.",
         },
         {
           q: 'Plus de détails sur les garanties travaux ?',

@@ -45,7 +45,7 @@ export default function Page() {
       legalReference="Article 39 du CGI (charges déductibles) + jurisprudence Cass. com. 1995"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
-      calculatorGarantie="rc-pro"
+      calculatorGarantie="homme-cle"
       expertBio={EXPERT_SERVICES}
       comparatifRows={COMPARATIF_SERVICES}
       benefits={[
@@ -62,7 +62,7 @@ export default function Page() {
         {
           icon: '🏦',
           title: 'Garantie bancaire',
-          desc: 'Souvent exigée par les banques pour octroi/maintien de prêt PME (10-25% du capital prêté)',
+          desc: 'Souvent exigée par les banques pour octroi ou maintien de prêt PME (10-25% du capital prêté)',
         },
         {
           icon: '⚡',
@@ -104,10 +104,10 @@ export default function Page() {
                 </li>
               </ul>
               <p>
-                Profils typiques assurés : fondateurs / dirigeants de PME (CA &lt; 10 M€), associés
+                Profils typiques assurés : fondateurs ou dirigeants de PME (CA &lt; 10 M€), associés
                 de cabinets de professions libérales (médecins, avocats, notaires,
                 experts-comptables), CTO de start-ups en levée de fonds, directeurs commerciaux ETI,
-                sportifs/artistes générant les revenus d&apos;une société ad-hoc.
+                sportifs ou artistes générant les revenus d&apos;une société ad-hoc.
               </p>
             </>
           ),
@@ -207,7 +207,7 @@ export default function Page() {
               <p>3 méthodes de dimensionnement, à combiner :</p>
               <ol>
                 <li>
-                  <strong>Méthode du multiple de salaire / rémunération</strong> : capital = 3 à 5
+                  <strong>Méthode du multiple de salaire — rémunération</strong> : capital = 3 à 5
                   ans de rémunération brute annuelle de la personne (salaire + dividendes pour
                   gérants TNS).
                 </li>
@@ -234,11 +234,11 @@ export default function Page() {
       faq={[
         {
           q: 'Qui peut souscrire une assurance homme-clé ?',
-          a: "L'entreprise est souscriptrice ET bénéficiaire (jamais la personne assurée individuellement). Toutes formes juridiques éligibles : SARL, SAS, SASU, EURL, SCI à objet commercial, professions libérales en BNC ou SELARL. Statut TPE/PME/ETI/start-up indifférent.",
+          a: "L'entreprise est souscriptrice ET bénéficiaire (jamais la personne assurée individuellement). Toutes formes juridiques éligibles : SARL, SAS, SASU, EURL, SCI à objet commercial, professions libérales en BNC ou SELARL. Statut TPE, PME, ETI ou start-up indifférent.",
         },
         {
           q: 'Combien coûte une assurance homme-clé pour un dirigeant de PME ?',
-          a: "Pour un dirigeant 40 ans non-fumeur sans antécédent médical, capital 300 k€ : ~580 à 920 €/an. Pour un capital 500 k€ : ~980 à 1 580 €/an. Tarifs fonction de l'âge, du statut tabagique, de la profession (sportif > BTP > tertiaire) et des antécédents médicaux.",
+          a: "Pour un dirigeant 40 ans non-fumeur sans antécédent médical, capital 300 k€ : ~580 à 920 € par an. Pour un capital 500 k€ : ~980 à 1 580 € par an. Tarifs fonction de l'âge, du statut tabagique, de la profession (sportif > BTP > tertiaire) et des antécédents médicaux.",
         },
         {
           q: 'Les cotisations homme-clé sont-elles déductibles fiscalement ?',
@@ -250,7 +250,7 @@ export default function Page() {
         },
         {
           q: 'La banque exige-t-elle une assurance homme-clé pour un prêt PME ?',
-          a: 'Très fréquent pour les prêts > 200 k€ ou les financements LBO/MBO. Les banques exigent typiquement un capital homme-clé égal à 10-25% du capital prêté, avec délégation de bénéfice partielle au profit de la banque (en cas de décès, le capital rembourse en priorité le prêt restant dû).',
+          a: 'Très fréquent pour les prêts > 200 k€ ou les financements LBO ou MBO. Les banques exigent typiquement un capital homme-clé égal à 10-25% du capital prêté, avec délégation de bénéfice partielle au profit de la banque (en cas de décès, le capital rembourse en priorité le prêt restant dû).',
         },
         {
           q: "Que se passe-t-il si je quitte l'entreprise (vente, retraite) ?",

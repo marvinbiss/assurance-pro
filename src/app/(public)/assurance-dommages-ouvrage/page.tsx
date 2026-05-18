@@ -38,11 +38,11 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance dommages-ouvrage (DO) est OBLIGATOIRE pour tout maître d'ouvrage faisant réaliser des travaux de construction (article L. 242-1 du Code des assurances, Loi Spinetta du 4 janvier 1978) : particulier construisant sa maison individuelle, promoteur immobilier, copropriété, syndic faisant des travaux de gros œuvre, vendeur immobilier d'un bien neuf. Elle doit être souscrite AVANT le démarrage du chantier (avant la déclaration d'ouverture en mairie pour les CMI). Son rôle : pré-financer immédiatement la réparation des sinistres relevant de la garantie décennale (10 ans après réception), sans attendre la résolution juridique sur l'identité du responsable. Prix moyen 2026 : 2 à 5% du coût total HT des travaux (versement unique à la signature). Cette page est dédiée à la SOUSCRIPTION et au DEVIS DO. Pour comprendre la mécanique juridique en détail, voir notre /guides/dommages-ouvrage."
+      intro="L'assurance dommages-ouvrage (DO) est OBLIGATOIRE pour tout maître d'ouvrage faisant réaliser des travaux de construction (article L. 242-1 du Code des assurances, Loi Spinetta du 4 janvier 1978) : particulier construisant sa maison individuelle, promoteur immobilier, copropriété, syndic faisant des travaux de gros œuvre, vendeur immobilier d'un bien neuf. Elle doit être souscrite AVANT le démarrage du chantier (avant la déclaration d'ouverture en mairie pour les CMI). Son rôle : pré-financer immédiatement la réparation des sinistres relevant de la garantie décennale (10 ans après réception), sans attendre la résolution juridique sur l'identité du responsable. Prix moyen 2026 : 2 à 5% du coût total HT des travaux (versement unique à la signature). Cette page est dédiée à la SOUSCRIPTION et au DEVIS DO. Pour comprendre la mécanique juridique en détail, voir notre /guides ou dommages-ouvrage."
       legalReference="Article L. 242-1 du Code des assurances + Loi Spinetta du 4 janvier 1978"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
-      calculatorGarantie="decennale"
+      calculatorGarantie="dommages-ouvrage"
       expertBio={EXPERT_BTP}
       comparatifRows={COMPARATIF_BTP}
       benefits={[
@@ -138,7 +138,7 @@ export default function Page() {
                     <td className="border p-2 text-right">2-4%</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Extension / rénovation lourde</td>
+                    <td className="border p-2">Extension — rénovation lourde</td>
                     <td className="border p-2 text-right">80 000 €</td>
                     <td className="border p-2 text-right">2 400 € – 4 800 €</td>
                     <td className="border p-2 text-right">3-6%</td>
@@ -170,9 +170,10 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables qui font monter la prime : zone sismique (+30%), terrain argileux/instable
-                (+20-50%), présence nappe phréatique (+15%), architecture complexe (porte-à-faux,
-                sous-sol immergé), souscription après ouverture chantier (+10-30%, parfois refus).
+                Variables qui font monter la prime : zone sismique (+30%), terrain argileux ou
+                instable (+20-50%), présence nappe phréatique (+15%), architecture complexe
+                (porte-à-faux, sous-sol immergé), souscription après ouverture chantier (+10-30%,
+                parfois refus).
               </p>
             </>
           ),

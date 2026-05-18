@@ -6,7 +6,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'courtier/en-assurance-decennale'
+const SLUG = 'courtier / en-assurance-decennale'
 const TITLE = 'Courtier En Assurance Décennale — Sélection rigoureuse 2026'
 const TAGLINE =
   'Guide pour choisir son courtier en assurance décennale : 8 critères de sélection + 4 pièges à éviter + recommandations spécialistes ORIAS BTP 2026.'
@@ -82,7 +82,8 @@ export default function Page() {
                 légale 2023)
               </li>
               <li>
-                <strong>Avis vérifiés</strong> : Trustpilot/Google &gt; 4.0/5 sur 50+ avis BTP
+                <strong>Avis vérifiés</strong> : Trustpilot ou Google &gt; 4,0 sur 5 sur 50+ avis
+                BTP
               </li>
             </ol>
           ),

@@ -25,12 +25,12 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/devis-assurance-decennale'
+const SLUG = 'outils / devis-assurance-decennale'
 
 export const metadata: Metadata = {
   title: 'Devis assurance décennale 2026 — Comparateur 8 assureurs BTP en 2 minutes',
   description:
-    'Devis assurance décennale gratuit en 2 minutes : comparatif 8 assureurs spécialisés BTP (SMABTP, MAAF Pro, Hiscox, April Pro, AXA Pro, Allianz, Wakam, Generali). Tarifs 480-1 540€/an. Attestation 24h. Conseil ORIAS sous 24h.',
+    'Devis assurance décennale gratuit en 2 minutes : comparatif 8 assureurs spécialisés BTP (SMABTP, MAAF Pro, Hiscox, April Pro, AXA Pro, Allianz, Wakam, Generali). Tarifs 480-1 540€ par an. Attestation 24h. Conseil ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: 'Devis assurance décennale 2026 — Comparateur 8 assureurs BTP',
@@ -52,11 +52,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/assurance-decennale" className="hover:underline">
               Décennale
             </Link>{' '}
-            / <span>Devis décennale</span>
+            › <span>Devis décennale</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-red-500/90 px-3 py-1 text-sm font-semibold text-white">
             ⚠️ OBLIGATION LÉGALE — LOI SPINETTA
@@ -66,8 +66,9 @@ export default async function Page() {
           </h1>
           <p className="mb-6 max-w-3xl text-lg opacity-95 md:text-xl">
             Comparateur des 8 assureurs spécialisés BTP (SMABTP, MAAF Pro, Hiscox, April Pro, AXA
-            Pro, Allianz, Wakam, Generali). Tarifs négociés <strong>à partir de 480 €/an</strong>.
-            Attestation conforme arrêté 23 janvier 2024 sous <strong>24h</strong>. Sans engagement.
+            Pro, Allianz, Wakam, Generali). Tarifs négociés{' '}
+            <strong>à partir de 480 € par an</strong>. Attestation conforme arrêté 23 janvier 2024
+            sous <strong>24h</strong>. Sans engagement.
           </p>
           <div className="grid grid-cols-2 gap-4 text-sm md:grid-cols-4">
             <div className="rounded bg-white/10 p-3">
@@ -110,7 +111,7 @@ export default async function Page() {
             </thead>
             <tbody>
               <tr>
-                <td className="border p-2">Peintre / plaquiste</td>
+                <td className="border p-2">Peintre — plaquiste</td>
                 <td className="border p-2 text-right">480 € – 760 €</td>
                 <td className="border p-2">3,1 %</td>
               </tr>

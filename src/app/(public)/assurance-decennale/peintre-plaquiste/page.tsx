@@ -12,14 +12,14 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-decennale/peintre-plaquiste'
-const TITLE = 'Décennale peintre-plaquiste 2026 — Tarifs 480-760€/an AE (les plus bas du BTP)'
+const TITLE = 'Décennale peintre-plaquiste 2026 — Tarifs 480-760€ par an AE (les plus bas du BTP)'
 const TAGLINE =
   'La décennale obligatoire pour peintre-plaquiste : couverture spécifique défauts cloisons sèches, joints, isolation phonique. Sinistralité AQC 3,1% (la plus faible BTP).'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale peintre-plaquiste 2026 : OBLIGATOIRE Loi Spinetta. Couverture défauts cloisons sèches BA13/BA15, joints lisses/jeux, isolation thermique/phonique cloisons. Sinistralité AQC 3,1% (la plus faible). Tarifs 480-760€/an AE, 4 800-9 200€/an SARL 5 sal. Devis ORIAS sous 24h.',
+    'Décennale peintre-plaquiste 2026 : OBLIGATOIRE Loi Spinetta. Couverture défauts cloisons sèches BA13/BA15, joints lisses ou jeux, isolation thermique ou phonique cloisons. Sinistralité AQC 3,1% (la plus faible). Tarifs 480-760€ par an AE, 4 800-9 200€ par an SARL 5 sal. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance décennale peintre-plaquiste est OBLIGATOIRE pour tout artisan peintre, plaquiste ou poseur de cloisons sèches en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 3,1% — LA PLUS FAIBLE du BTP, ce qui explique des tarifs très compétitifs (480-760 €/an pour AE). Sinistres principaux : défauts cloisons sèches BA13/BA15 (jeux, fissures jonctions), défauts d'isolation thermique/phonique entre cloisons. Tarifs 2026 : 480-760 €/an pour AE (CA <50k€), 4 800-9 200 €/an pour SARL avec 5 salariés."
+      intro="L'assurance décennale peintre-plaquiste est OBLIGATOIRE pour tout artisan peintre, plaquiste ou poseur de cloisons sèches en France (Loi Spinetta — art. L. 241-1 C. assur.). Sinistralité AQC SYCODÉS 2024 : 3,1% — LA PLUS FAIBLE du BTP, ce qui explique des tarifs très compétitifs (480-760 € par an pour AE). Sinistres principaux : défauts cloisons sèches BA13/BA15 (jeux, fissures jonctions), défauts d'isolation thermique ou phonique entre cloisons. Tarifs 2026 : 480-760 € par an pour AE (CA <50k€), 4 800-9 200 € par an pour SARL avec 5 salariés."
       legalReference="Loi Spinetta + DTU 25.41 (plâtrerie) + DTU 59.1 (peinture)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -51,12 +51,12 @@ export default function Page() {
         {
           icon: '🧱',
           title: 'BA13 + isolation cloisons',
-          desc: 'Couverture spécifique défauts plaquage, joints lisses/jeux, isolation phonique/thermique',
+          desc: 'Couverture spécifique défauts plaquage, joints lisses ou jeux, isolation phonique ou thermique',
         },
         {
           icon: '💰',
-          title: '480-760 €/an AE',
-          desc: 'AE peintre-plaquiste CA <50k€. Tarif le plus bas du BTP. SARL 5 sal : 4 800-9 200€/an',
+          title: '480-760 € par an AE',
+          desc: 'AE peintre-plaquiste CA <50k€. Tarif le plus bas du BTP. SARL 5 sal : 4 800-9 200€ par an',
         },
       ]}
       sections={[
@@ -67,16 +67,16 @@ export default function Page() {
               <p>Top 4 sinistres décennaux peintre-plaquiste :</p>
               <ul>
                 <li>
-                  <strong>Cloisons BA13 défaillantes (38%)</strong> — fissures jonctions
-                  plafond/mur, déformation
+                  <strong>Cloisons BA13 défaillantes (38%)</strong> — fissures jonctions plafond ou
+                  mur, déformation
                 </li>
                 <li>
                   <strong>Joints visibles (24%)</strong> — bandes mal posées, joints qui craquellent
                   à 1 an
                 </li>
                 <li>
-                  <strong>Isolation thermique/phonique défaillante (20%)</strong> — pont thermique
-                  cloisons
+                  <strong>Isolation thermique ou phonique défaillante (20%)</strong> — pont
+                  thermique cloisons
                 </li>
                 <li>
                   <strong>Peinture qui s&apos;écaille structurellement (12%)</strong> — défaut
@@ -131,11 +131,11 @@ export default function Page() {
         },
         {
           q: 'Tarif décennale peintre-plaquiste 2026 ?',
-          a: 'AE peintre-plaquiste : 480-760 €/an (le plus bas du BTP). EURL/SASU : 580-920 €/an. SARL 5 salariés : 4 800-9 200 €/an. SAS 10+ salariés : 9 200-14 800 €/an. Bonus fidélité après 5 ans : -7%.',
+          a: 'AE peintre-plaquiste : 480-760 € par an (le plus bas du BTP). EURL ou SASU : 580-920 € par an. SARL 5 salariés : 4 800-9 200 € par an. SAS 10+ salariés : 9 200-14 800 € par an. Bonus fidélité après 5 ans : -7%.',
         },
         {
           q: 'Plaquiste pur (sans peinture) : tarif ?',
-          a: "Légèrement supérieur : 540-820 €/an AE. Le plaquiste pur prend plus de risques structurels (cloisons porteuses ou semi-porteuses). Si vous faites les 2 (peinture + plaquiste), prenez la décennale 'peintre-plaquiste' standard à 480-760€.",
+          a: "Légèrement supérieur : 540-820 € par an AE. Le plaquiste pur prend plus de risques structurels (cloisons porteuses ou semi-porteuses). Si vous faites les 2 (peinture + plaquiste), prenez la décennale 'peintre-plaquiste' standard à 480-760€.",
         },
       ]}
     />

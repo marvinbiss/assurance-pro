@@ -27,7 +27,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance flotte automobile professionnelle (4+ véhicules) : contrat mutualisé, économie 20-30% vs assurance individuelle, gestion centralisée des sinistres, reporting consolidé. Tarifs négociés à partir de 580 €/véhicule. Devis gratuit ORIAS sous 24h.',
+    'Assurance flotte automobile professionnelle (4+ véhicules) : contrat mutualisé, économie 20-30% vs assurance individuelle, gestion centralisée des sinistres, reporting consolidé. Tarifs négociés à partir de 580 € par véhicule. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -38,7 +38,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance flotte automobile est un contrat mutualisé qui couvre l'ensemble des véhicules professionnels d'une même entreprise dans une seule police. Ouverte à partir de 4 véhicules (seuil standard chez la majorité des assureurs), elle permet d'économiser 20 à 30% par rapport à des contrats individuels grâce à la mutualisation des risques, simplifie la gestion (1 interlocuteur, 1 échéance, ajout/retrait sans avenant complexe) et offre un reporting consolidé pour suivre la sinistralité interne. Les flottes peuvent être hétérogènes : utilitaires, voitures de fonction, camions, deux-roues, véhicules spéciaux (frigorifiques, ADR). Les tarifs 2026 démarrent à 580 € HT/véhicule pour une flotte de 10 utilitaires standards jusqu'à 2 800 € HT/véhicule pour une flotte mixte avec poids lourds ADR. Cette page distingue l'assurance flotte du contrat véhicule individuel et présente les bonnes pratiques de gestion."
+      intro="L'assurance flotte automobile est un contrat mutualisé qui couvre l'ensemble des véhicules professionnels d'une même entreprise dans une seule police. Ouverte à partir de 4 véhicules (seuil standard chez la majorité des assureurs), elle permet d'économiser 20 à 30% par rapport à des contrats individuels grâce à la mutualisation des risques, simplifie la gestion (1 interlocuteur, 1 échéance, ajout ou retrait sans avenant complexe) et offre un reporting consolidé pour suivre la sinistralité interne. Les flottes peuvent être hétérogènes : utilitaires, voitures de fonction, camions, deux-roues, véhicules spéciaux (frigorifiques, ADR). Les tarifs 2026 démarrent à 580 € HT par véhicule pour une flotte de 10 utilitaires standards jusqu'à 2 800 € HT par véhicule pour une flotte mixte avec poids lourds ADR. Cette page distingue l'assurance flotte du contrat véhicule individuel et présente les bonnes pratiques de gestion."
       legalReference="Article L. 211-1 du Code des assurances + Code de la route"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -53,17 +53,17 @@ export default function Page() {
         {
           icon: '📊',
           title: 'Gestion centralisée',
-          desc: '1 interlocuteur, 1 échéance, reporting mensuel/annuel sinistralité',
+          desc: '1 interlocuteur, 1 échéance, reporting mensuel ou annuel sinistralité',
         },
         {
           icon: '⚡',
           title: 'Avenant flexible',
-          desc: 'Ajout/retrait de véhicule simplifié, sans relancer un contrat individuel',
+          desc: 'Ajout ou retrait de véhicule simplifié, sans relancer un contrat individuel',
         },
         {
           icon: '💰',
-          title: '580 €/véhicule',
-          desc: 'Flotte 10 utilitaires standards. Flotte PL ADR : 2 800€/véhicule',
+          title: '580 € par véhicule',
+          desc: 'Flotte 10 utilitaires standards. Flotte PL ADR : 2 800€ par véhicule',
         },
       ]}
       sections={[
@@ -73,8 +73,8 @@ export default function Page() {
             <>
               <p>
                 Le seuil standard chez la majorité des assureurs :{' '}
-                <strong>4 véhicules minimum</strong> détenus en pleine propriété ou en LLD/LOA par
-                la même entreprise. Certains assureurs spécialistes acceptent dès 3 véhicules.
+                <strong>4 véhicules minimum</strong> détenus en pleine propriété ou en LLD ou LOA
+                par la même entreprise. Certains assureurs spécialistes acceptent dès 3 véhicules.
               </p>
               <p>ROI immédiat à partir de 4 véhicules :</p>
               <table className="w-full border-collapse text-sm">
@@ -124,7 +124,7 @@ export default function Page() {
                 <thead>
                   <tr className="bg-gray-100">
                     <th className="border p-2 text-left">Type de flotte</th>
-                    <th className="border p-2 text-right">Tarif moyen / véhicule / an</th>
+                    <th className="border p-2 text-right">Tarif moyen — véhicule — an</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -139,7 +139,7 @@ export default function Page() {
                     <td className="border p-2 text-right">680 € – 1 280 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Camion / poids lourd standard</td>
+                    <td className="border p-2">Camion — poids lourd standard</td>
                     <td className="border p-2 text-right">1 480 € – 2 200 €</td>
                   </tr>
                   <tr>
@@ -162,7 +162,7 @@ export default function Page() {
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
                 Variables : kilométrage annuel global flotte, sinistralité historique (3 dernières
-                années), profil conducteurs (jeunes / expérimentés / formés eco-conduite), zone
+                années), profil conducteurs (jeunes ou expérimentés ou formés eco-conduite), zone
                 géographique, présence de boîtiers télématiques (-15-25% possible avec « pay how you
                 drive »).
               </p>
@@ -177,7 +177,8 @@ export default function Page() {
                 <li>
                   <strong>Inventaire à jour</strong> : maintenir un fichier centralisé
                   (immatriculation, modèle, conducteur affecté, km annuel, dates contrôle
-                  technique). Notification immédiate à l&apos;assureur en cas d&apos;ajout/retrait.
+                  technique). Notification immédiate à l&apos;assureur en cas d&apos;ajout ou
+                  retrait.
                 </li>
                 <li>
                   <strong>Politique conducteur</strong> : règles claires (pas d&apos;alcool, pas de
@@ -210,8 +211,8 @@ export default function Page() {
               <ul>
                 <li>
                   <strong>Véhicule de remplacement 24h/24</strong> pendant immobilisation pour
-                  réparation/sinistre — critique pour les flottes opérationnelles (livraison, BTP,
-                  taxi)
+                  réparation par sinistre — critique pour les flottes opérationnelles (livraison,
+                  BTP, taxi)
                 </li>
                 <li>
                   <strong>Assistance 0 km</strong> : panne, dépannage, remorquage depuis
@@ -229,8 +230,8 @@ export default function Page() {
                   )
                 </li>
                 <li>
-                  <strong>Garantie conducteur étendue</strong> : capital décès/invalidité/IJ pour le
-                  conducteur (la RC standard couvre les TIERS, pas le conducteur lui-même)
+                  <strong>Garantie conducteur étendue</strong> : capital décès, invalidité ou IJ
+                  pour le conducteur (la RC standard couvre les TIERS, pas le conducteur lui-même)
                 </li>
                 <li>
                   <strong>Bris du matériel embarqué</strong> : PC pro, GPS, terminal CB, instruments
@@ -238,11 +239,11 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Garantie « auto-partage »</strong> : véhicule utilisé par plusieurs
-                  salariés/conducteurs occasionnels
+                  salariés ou conducteurs occasionnels
                 </li>
                 <li>
                   <strong>Garantie « expatriation temporaire »</strong> : couverture étendue UE /
-                  Maroc / Algérie pour véhicules effectuant des missions internationales
+                  Maroc ou Algérie pour véhicules effectuant des missions internationales
                 </li>
               </ul>
             </>
@@ -256,15 +257,15 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'une flotte de 10 utilitaires en 2026 ?",
-          a: 'Démarre à 5 800€/an pour 10 utilitaires standards (Berlingo, Trafic, Boxer) sans antécédent particulier — soit ~580€/véhicule. Médiane marché : 6 800-8 800€/an. Variables : kilométrage annuel cumulé, sinistralité 3 dernières années, profils conducteurs, présence boîtiers télématiques.',
+          a: 'Démarre à 5 800€ par an pour 10 utilitaires standards (Berlingo, Trafic, Boxer) sans antécédent particulier — soit ~580€ par véhicule. Médiane marché : 6 800-8 800€ par an. Variables : kilométrage annuel cumulé, sinistralité 3 dernières années, profils conducteurs, présence boîtiers télématiques.',
         },
         {
           q: 'Comment fonctionne le bonus-malus en flotte ?',
-          a: "DIFFÉRENT du bonus-malus auto particulier. En flotte, le calcul se fait sur le RATIO COÛT SINISTRES / PRIME ANNUELLE de la flotte sur 3 ans glissants. Si ratio < 50% : remise 10-25% sur prime N+1. Si ratio > 100% : majoration 15-50%. La sinistralité d'un seul véhicule peut donc impacter l'ensemble de la flotte — d'où l'importance d'identifier les conducteurs à risque.",
+          a: "DIFFÉRENT du bonus-malus auto particulier. En flotte, le calcul se fait sur le RATIO COÛT SINISTRES — PRIME ANNUELLE de la flotte sur 3 ans glissants. Si ratio < 50% : remise 10-25% sur prime N+1. Si ratio > 100% : majoration 15-50%. La sinistralité d'un seul véhicule peut donc impacter l'ensemble de la flotte — d'où l'importance d'identifier les conducteurs à risque.",
         },
         {
           q: 'Boîtier télématique : obligatoire en flotte ?',
-          a: 'Pas obligatoire mais FORTEMENT recommandé. Permet : (1) tarification « pay how you drive » avec économie 15-25%, (2) identification des conducteurs à risque (excès de vitesse, freinages brusques), (3) géolocalisation en cas de vol, (4) optimisation des trajets (économie carburant 5-10%). Coût : 5-15€/mois/véhicule, ROI immédiat.',
+          a: 'Pas obligatoire mais FORTEMENT recommandé. Permet : (1) tarification « pay how you drive » avec économie 15-25%, (2) identification des conducteurs à risque (excès de vitesse, freinages brusques), (3) géolocalisation en cas de vol, (4) optimisation des trajets (économie carburant 5-10%). Coût : 5-15€ par mois par véhicule, ROI immédiat.',
         },
         {
           q: "Ajout d'un véhicule en cours d'année : démarche ?",

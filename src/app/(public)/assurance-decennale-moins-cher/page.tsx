@@ -47,12 +47,12 @@ export default function Page() {
         {
           icon: '⚠️',
           title: 'Pièges à éviter',
-          desc: 'Contrats low-cost avec exclusions étendues / plafonds insuffisants',
+          desc: 'Contrats low-cost avec exclusions étendues — plafonds insuffisants',
         },
         {
           icon: '🔍',
           title: 'Tarifs marché vérifiés',
-          desc: 'Fourchettes April Pro / SMABTP / Allianz / MMA / AXA 2026',
+          desc: 'Fourchettes April Pro — SMABTP — Allianz — MMA — AXA 2026',
         },
       ]}
       sections={[
@@ -71,7 +71,7 @@ export default function Page() {
                 sinistre.
               </li>
               <li>
-                <strong>Obtenir certifications Qualibat / RGE</strong> selon métier. Qualibat 2111
+                <strong>Obtenir certifications Qualibat — RGE</strong> selon métier. Qualibat 2111
                 (maçon), 3111 (couvreur), 5121 (plombier). <strong>Économie : -5-10%</strong>. Bonus
                 : crédibilité chez clients.
               </li>
@@ -100,34 +100,35 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Peintre AE le plus bas</strong> : 950€/an chez April Pro (formule standard,
-                plafond 1M€)
+                <strong>Peintre AE le plus bas</strong> : 950€ par an chez April Pro (formule
+                standard, plafond 1M€)
               </li>
               <li>
-                <strong>Plâtrier AE le plus bas</strong> : 1 100€/an chez April Pro
+                <strong>Plâtrier AE le plus bas</strong> : 1 100€ par an chez April Pro
               </li>
               <li>
-                <strong>Carreleur AE le plus bas</strong> : 1 200€/an chez April Pro ou Allianz Pro
+                <strong>Carreleur AE le plus bas</strong> : 1 200€ par an chez April Pro ou Allianz
+                Pro
               </li>
               <li>
-                <strong>Plombier AE le plus bas</strong> : 1 400€/an chez April Pro
+                <strong>Plombier AE le plus bas</strong> : 1 400€ par an chez April Pro
               </li>
               <li>
-                <strong>Électricien AE le plus bas</strong> : 1 500€/an chez April Pro
+                <strong>Électricien AE le plus bas</strong> : 1 500€ par an chez April Pro
               </li>
               <li>
-                <strong>Maçon AE le plus bas</strong> : 1 800€/an chez April Pro
+                <strong>Maçon AE le plus bas</strong> : 1 800€ par an chez April Pro
               </li>
               <li>
-                <strong>Multi-services BTP AE le plus bas</strong> : 2 200€/an chez April Pro (pack
-                5-10 métiers)
+                <strong>Multi-services BTP AE le plus bas</strong> : 2 200€ par an chez April Pro
+                (pack 5-10 métiers)
               </li>
               <li>
-                <strong>Couvreur AE</strong> : minimum 2 200€/an chez April Pro (risque)
+                <strong>Couvreur AE</strong> : minimum 2 200€ par an chez April Pro (risque)
               </li>
               <li>
-                <strong>SARL BTP 3 salariés</strong> : minimum 2 200€/an chez April Pro selon métier
-                principal
+                <strong>SARL BTP 3 salariés</strong> : minimum 2 200€ par an chez April Pro selon
+                métier principal
               </li>
               <li>
                 En-dessous de ces prix : <strong>SUSPECT</strong> (arnaque, assureur non-agréé ACPR,
@@ -141,9 +142,9 @@ export default function Page() {
           body: (
             <ol>
               <li>
-                <strong>Plafond insuffisant</strong> : certains contrats à 800€/an plafonnent à 500
-                000€/sinistre — insuffisant pour chantiers &gt; 200k€. Plafond mini recommandé : 1M€
-                AE, 2-3M€ SARL/SAS.
+                <strong>Plafond insuffisant</strong> : certains contrats à 800€ par an plafonnent à
+                500 000€ par sinistre — insuffisant pour chantiers &gt; 200k€. Plafond mini
+                recommandé : 1M€ AE, 2-3M€ SARL ou SAS.
               </li>
               <li>
                 <strong>Exclusions étendues</strong> : sous-traitance non-déclarée, travaux
@@ -157,7 +158,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Assureur non agréé ACPR</strong> : assureur étranger sans passeport européen
-                LPS valide = non-reconnu par notaire / maître d&apos;ouvrage. Vérifier sur Refassu
+                LPS valide = non-reconnu par notaire ou maître d&apos;ouvrage. Vérifier sur Refassu
                 ACPR avant souscription.
               </li>
             </ol>
@@ -166,8 +167,8 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: 'Décennale à 800€/an pour artisan BTP, c&apos;est possible ?',
-          a: 'Pour un peintre AE : oui chez April Pro (950€/an minimum). En-dessous de 800€/an = SUSPECT : 1) Plafond insuffisant (&lt; 500k€), 2) Exclusions étendues, 3) Assureur non-agréé ACPR. Toujours vérifier le contrat dans le détail avant de signer.',
+          q: 'Décennale à 800€ par an pour artisan BTP, c&apos;est possible ?',
+          a: 'Pour un peintre AE : oui chez April Pro (950€ par an minimum). En-dessous de 800€ par an = SUSPECT : 1) Plafond insuffisant (&lt; 500k€), 2) Exclusions étendues, 3) Assureur non-agréé ACPR. Toujours vérifier le contrat dans le détail avant de signer.',
         },
         {
           q: 'Quelle décennale est la moins chère sur le marché ?',
@@ -175,7 +176,7 @@ export default function Page() {
         },
         {
           q: 'Combien d&apos;économies réelles en appliquant les 7 leviers ?',
-          a: 'Sur un cas type AE plombier prime de base 2 000€/an : levier 1 (comparer) -300€, levier 2 (franchise) -250€, levier 3 (Qualibat) -100€, levier 4 (pack) -200€, levier 5 (antériorité) -200€, levier 6 (CA) -150€, levier 7 (paiement annuel) -80€. Total -1 280€/an soit -64% — mais en réalité environ -30-40% car cumul partiel.',
+          a: 'Sur un cas type AE plombier prime de base 2 000€ par an : levier 1 (comparer) -300€, levier 2 (franchise) -250€, levier 3 (Qualibat) -100€, levier 4 (pack) -200€, levier 5 (antériorité) -200€, levier 6 (CA) -150€, levier 7 (paiement annuel) -80€. Total -1 280€ par an soit -64% — mais en réalité environ -30-40% car cumul partiel.',
         },
         {
           q: 'Comment vérifier qu&apos;un assureur est agréé ACPR ?',

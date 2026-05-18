@@ -9,7 +9,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/quelle-assurance-professionnelle-choisir'
+const SLUG = 'guides / quelle-assurance-professionnelle-choisir'
 const TITLE = 'Quelle assurance professionnelle choisir en 2026 — Guide complet'
 const TAGLINE =
   'Le guide pour identifier les assurances professionnelles indispensables selon votre profil : métier, statut juridique, taille entreprise. Méthode en 5 étapes.'
@@ -58,12 +58,12 @@ export default function Page() {
           h2: 'Quelle assurance choisir selon mon profil ?',
           body: (
             <>
-              <h3>Auto-entrepreneur / freelance solo</h3>
+              <h3>Auto-entrepreneur — freelance solo</h3>
               <ul>
                 <li>
                   RC Pro adaptée — voir{' '}
                   <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
-                    /rc-pro/auto-entrepreneur
+                    /rc-pro ou auto-entrepreneur
                   </Link>
                 </li>
                 <li>
@@ -109,7 +109,7 @@ export default function Page() {
                   avec stock + bris glace + RC client
                 </li>
               </ul>
-              <h3>Restaurateur / hôtelier</h3>
+              <h3>Restaurateur — hôtelier</h3>
               <ul>
                 <li>
                   <Link href="/assurance-restaurant" className="text-primary-600 underline">
@@ -118,7 +118,7 @@ export default function Page() {
                   avec garantie intoxication alimentaire
                 </li>
               </ul>
-              <h3>Cabinet libéral / consulting / agence</h3>
+              <h3>Cabinet libéral — consulting — agence</h3>
               <ul>
                 <li>
                   <Link href="/assurance-bureau" className="text-primary-600 underline">
@@ -142,7 +142,7 @@ export default function Page() {
                   recommandée
                 </li>
               </ul>
-              <h3>VTC / Taxi</h3>
+              <h3>VTC — Taxi</h3>
               <ul>
                 <li>
                   <Link href="/assurance-vtc" className="text-primary-600 underline">
@@ -155,11 +155,11 @@ export default function Page() {
                   avec garantie ADS-licence
                 </li>
               </ul>
-              <h3>PME / ETI avec salariés</h3>
+              <h3>PME — ETI avec salariés</h3>
               <ul>
                 <li>
                   <Link href="/assurance-entreprise" className="text-primary-600 underline">
-                    Pack TPE/PME/ETI complet
+                    Pack TPE, PME ou ETI complet
                   </Link>
                 </li>
                 <li>
@@ -183,7 +183,7 @@ export default function Page() {
                   href="/guides/devis-assurance-professionnelle"
                   className="text-primary-600 underline"
                 >
-                  /guides/devis-assurance-professionnelle
+                  /guides ou devis-assurance-professionnelle
                 </Link>{' '}
                 qui détaille la procédure complète de demande de devis en 5 étapes + documents à
                 préparer + 5 pièges à éviter.

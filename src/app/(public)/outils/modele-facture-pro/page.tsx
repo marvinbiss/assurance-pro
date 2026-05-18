@@ -22,7 +22,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/modele-facture-pro'
+const SLUG = 'outils / modele-facture-pro'
 
 export const metadata: Metadata = {
   title: 'Modèle facture pro PDF — Générateur gratuit auto-entrepreneur 2026',
@@ -50,7 +50,7 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            / <span>Modèle facture pro PDF</span>
+            › <span>Modèle facture pro PDF</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ 100% gratuit, sans inscription, sans limite
@@ -129,14 +129,14 @@ export default async function Page() {
               <strong>Date d&apos;émission</strong> + date d&apos;échéance
             </li>
             <li>
-              <strong>Désignation détaillée</strong> des produits/services + quantités + prix
+              <strong>Désignation détaillée</strong> des produits ou services + quantités + prix
               unitaires HT
             </li>
             <li>
               <strong>Total HT + TVA + TTC</strong> avec taux applicable
             </li>
             <li>
-              <strong>Conditions de paiement</strong> (délai max 60 jours / 45 jours fin de mois —
+              <strong>Conditions de paiement</strong> (délai max 60 jours ou 45 jours fin de mois —
               Loi LME 2008)
             </li>
             <li>
@@ -164,7 +164,7 @@ export default async function Page() {
           <p className="mx-auto mb-6 max-w-2xl text-lg opacity-95">
             Depuis le décret 2024, l&apos;assurance pro doit obligatoirement figurer sur les
             factures pour les artisans BTP (Loi Spinetta), professions de santé, conseil financier
-            (CGP/CIF) et transport. Notre cabinet ORIAS vous transmet sous 24h 3 à 5 propositions
+            (CGP ou CIF) et transport. Notre cabinet ORIAS vous transmet sous 24h 3 à 5 propositions
             adaptées.
           </p>
           <div className="flex flex-col justify-center gap-3 md:flex-row">
@@ -196,7 +196,7 @@ export default async function Page() {
             operatingSystem: 'Any',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
             description:
-              'Générateur gratuit de modèle de facture pro au format PDF. Conforme art. L. 441-9 C. com. + arrêté 22/03/2017. Auto-entrepreneur, EI, EURL, SARL, SASU.',
+              'Générateur gratuit de modèle de facture pro au format PDF. Conforme art. L. 441-9 C. com. + arrêté 22 mars 2017. Auto-entrepreneur, EI, EURL, SARL, SASU.',
             featureList: [
               'Mentions légales obligatoires art. L. 441-9 C. com.',
               'Génération PDF côté navigateur (RGPD compliant)',

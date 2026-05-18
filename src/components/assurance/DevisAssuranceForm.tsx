@@ -295,7 +295,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 className="w-full rounded border p-2"
               >
                 <option value="">Sélectionner...</option>
-                <option value="auto_entrepreneur">Auto-entrepreneur / Micro</option>
+                <option value="auto_entrepreneur">Auto-entrepreneur — Micro</option>
                 <option value="ei">Entreprise Individuelle (EI)</option>
                 <option value="eurl">EURL</option>
                 <option value="sarl">SARL</option>

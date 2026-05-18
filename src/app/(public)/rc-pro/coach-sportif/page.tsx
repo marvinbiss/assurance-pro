@@ -13,15 +13,15 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'rc-pro/coach-sportif'
+const SLUG = 'rc-pro / coach-sportif'
 const TITLE = 'RC Pro coach sportif — OBLIGATOIRE 2026 (Code du sport L. 321-7)'
 const TAGLINE =
-  "L'assurance RC pro OBLIGATOIRE pour coachs sportifs : Code du sport. Couvre blessures clients, malaise cardiaque, dommages matériel salle. Tarifs 220-580€/an."
+  "L'assurance RC pro OBLIGATOIRE pour coachs sportifs : Code du sport. Couvre blessures clients, malaise cardiaque, dommages matériel salle. Tarifs 220-580€ par an."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro coach sportif OBLIGATOIRE (Code du sport L. 321-7). Couvre blessures clients pendant séance, malaise cardiaque, dommages matériel salle. Coach à domicile, en salle, en plein air. Tarifs 220-580€/an. Devis ORIAS sous 24h.',
+    'RC Pro coach sportif OBLIGATOIRE (Code du sport L. 321-7). Couvre blessures clients pendant séance, malaise cardiaque, dommages matériel salle. Coach à domicile, en salle, en plein air. Tarifs 220-580€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -32,7 +32,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro coach sportif est LÉGALEMENT OBLIGATOIRE en France selon l'article L. 321-7 du Code du sport, pour TOUT éducateur sportif (coach personnel, prof yoga/pilates/crossfit, moniteur de fitness, coach running). Sanction absence : retrait de la carte professionnelle d'éducateur sportif + interdiction d'exercer + sanctions pénales. Elle couvre les sinistres typiques du métier : blessure du client pendant la séance (faux mouvement, surentraînement, mauvaise consigne), malaise cardiaque (prévention par questionnaire de santé obligatoire avant 1re séance), dommages au matériel de la salle/du domicile client (mur fissuré, miroir cassé). Tarifs 2026 accessibles : 220-580€/an pour un coach indépendant. Conditions cumulatives : carte professionnelle d'éducateur sportif + diplôme reconnu (BPJEPS, DEUST, DEJEPS) + RC Pro en cours de validité."
+      intro="La RC Pro coach sportif est LÉGALEMENT OBLIGATOIRE en France selon l'article L. 321-7 du Code du sport, pour TOUT éducateur sportif (coach personnel, prof yoga, pilates ou crossfit, moniteur de fitness, coach running). Sanction absence : retrait de la carte professionnelle d'éducateur sportif + interdiction d'exercer + sanctions pénales. Elle couvre les sinistres typiques du métier : blessure du client pendant la séance (faux mouvement, surentraînement, mauvaise consigne), malaise cardiaque (prévention par questionnaire de santé obligatoire avant 1re séance), dommages au matériel de la salle ou du domicile client (mur fissuré, miroir cassé). Tarifs 2026 accessibles : 220-580€ par an pour un coach indépendant. Conditions cumulatives : carte professionnelle d'éducateur sportif + diplôme reconnu (BPJEPS, DEUST, DEJEPS) + RC Pro en cours de validité."
       legalReference="Article L. 321-7 du Code du sport + L. 212-1 (qualification éducateur sportif)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -57,8 +57,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 220 €/an',
-          desc: 'Coach indépendant solo. Salle de sport 5 coachs : 880-1 480€/an',
+          title: 'À partir de 220 € par an',
+          desc: 'Coach indépendant solo. Salle de sport 5 coachs : 880-1 480€ par an',
         },
       ]}
       sections={[
@@ -79,11 +79,11 @@ export default function Page() {
                     <td className="border p-2 text-right">220 € – 380 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">AE prof yoga/pilates studio loué</td>
+                    <td className="border p-2">AE prof yoga ou pilates studio loué</td>
                     <td className="border p-2 text-right">280 € – 480 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">AE coach crossfit / fonctionnel</td>
+                    <td className="border p-2">AE coach crossfit — fonctionnel</td>
                     <td className="border p-2 text-right">380 € – 580 €</td>
                   </tr>
                   <tr>
@@ -107,7 +107,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte la RC Pro coach sportif en 2026 ?',
-          a: 'AE coach personnel : 220-380€/an. AE prof yoga/pilates : 280-480€/an. AE crossfit : 380-580€/an. Moniteur sport spécialisé : 480-980€/an. Salle de sport 5 coachs : 880-1 480€/an.',
+          a: 'AE coach personnel : 220-380€ par an. AE prof yoga ou pilates : 280-480€ par an. AE crossfit : 380-580€ par an. Moniteur sport spécialisé : 480-980€ par an. Salle de sport 5 coachs : 880-1 480€ par an.',
         },
         {
           q: 'Malaise cardiaque client : suis-je couvert ?',

@@ -10,12 +10,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-decennale-plombier'
 const TITLE = 'Assurance Décennale Plombier — Obligation, tarifs, comparatif 2026'
 const TAGLINE =
-  'Le plombier est soumis à la décennale (Loi Spinetta). Tarif AE 1 400-2 100€/an, SARL 1 800-3 500€/an. Sinistralité 18% AQC. Comparatif April Pro, SMABTP.'
+  'Le plombier est soumis à la décennale (Loi Spinetta). Tarif AE 1 400-2 100€ par an, SARL 1 800-3 500€ par an. Sinistralité 18% AQC. Comparatif April Pro, SMABTP.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance décennale plombier : obligation Loi Spinetta. AE 1 400-2 100€/an, plombier-chauffagiste 1 600-2 500€/an, SARL 1 800-3 500€/an. April Pro / SMABTP / Allianz.',
+    'Assurance décennale plombier : obligation Loi Spinetta. AE 1 400-2 100€ par an, plombier-chauffagiste 1 600-2 500€ par an, SARL 1 800-3 500€ par an. April Pro — SMABTP — Allianz.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -46,7 +46,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '1 400-3 500€/an',
+          title: '1 400-3 500€ par an',
           desc: 'AE 1 400-2 100€ • Plombier-chauffagiste AE 1 600-2 500€ • SARL 1 800-3 500€',
         },
         {
@@ -62,7 +62,7 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Fuite canalisation encastrée</strong> : raccord mal soudé ou joint
-                défectueux dans mur/dalle. Sinistre N+1 à N+5 (eau infiltre lentement).
+                défectueux dans mur ou dalle. Sinistre N+1 à N+5 (eau infiltre lentement).
                 Indemnisation moy. 5-15k€.
               </li>
               <li>
@@ -107,7 +107,7 @@ export default function Page() {
                 prime décennale.
               </li>
               <li>
-                <strong>Sous-traitance fréquente</strong> : plomberie/chauffage souvent
+                <strong>Sous-traitance fréquente</strong> : plomberie ou chauffage souvent
                 sous-traitée. Vérifier que sous-traitant déclaré et assuré pour ne pas tomber en
                 responsabilité non-couverte.
               </li>
@@ -126,20 +126,20 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>April Pro BTP</strong> : best price AE plombier 1 400-1 900€/an.
+                <strong>April Pro BTP</strong> : best price AE plombier 1 400-1 900€ par an.
                 Souscription en ligne, attestation 24-48h.
               </li>
               <li>
-                <strong>SMABTP</strong> : institution paritaire BTP, prime équilibrée 1 600-2
-                100€/an. Expertise sinistres reconnue.
+                <strong>SMABTP</strong> : institution paritaire BTP, prime équilibrée 1 600-2 100€
+                par an. Expertise sinistres reconnue.
               </li>
               <li>
-                <strong>Allianz Pro BTP</strong> : couverture large, prime moyenne 1 700-2 200€/an.
-                Pack BTP global.
+                <strong>Allianz Pro BTP</strong> : couverture large, prime moyenne 1 700-2 200€ par
+                an. Pack BTP global.
               </li>
               <li>
-                <strong>MMA Pro BTP</strong> : équilibré SARL/SAS, prime 1 800-2 400€/an pour AE.
-                Réseau agences 1 500+.
+                <strong>MMA Pro BTP</strong> : équilibré SARL ou SAS, prime 1 800-2 400€ par an pour
+                AE. Réseau agences 1 500+.
               </li>
               <li>
                 <strong>AXA Pro BTP</strong> : couverture premium, prime +15-25% vs April Pro mais
@@ -152,7 +152,7 @@ export default function Page() {
       faq={[
         {
           q: 'Tarif décennale plombier auto-entrepreneur 2026 ?',
-          a: 'AE plombier débutant (CA &lt; 50k€) : 1 400-1 800€/an chez April Pro ou Allianz Pro. AE plombier expérimenté (CA 50-100k€) : 1 800-2 100€/an. Plombier-chauffagiste : +15-25% (cumul risques).',
+          a: 'AE plombier débutant (CA &lt; 50k€) : 1 400-1 800€ par an chez April Pro ou Allianz Pro. AE plombier expérimenté (CA 50-100k€) : 1 800-2 100€ par an. Plombier-chauffagiste : +15-25% (cumul risques).',
         },
         {
           q: 'La décennale plombier couvre-t-elle la pose PAC ?',
@@ -164,7 +164,7 @@ export default function Page() {
         },
         {
           q: 'Comment réduire ma prime décennale plombier ?',
-          a: '1) Comparer 5 assureurs spé BTP via courtier ORIAS (-15-25%). 2) Augmenter franchise à 1 500-2 000€ (-12-18%). 3) Qualifications RGE/Qualibat (-5-10%). 4) Pack RC Pro + Décennale + Multirisque (-15-25%). Économie cumulée potentielle : 30-50%.',
+          a: '1) Comparer 5 assureurs spé BTP via courtier ORIAS (-15-25%). 2) Augmenter franchise à 1 500-2 000€ (-12-18%). 3) Qualifications RGE ou Qualibat (-5-10%). 4) Pack RC Pro + Décennale + Multirisque (-15-25%). Économie cumulée potentielle : 30-50%.',
         },
       ]}
       relatedMetiers={[

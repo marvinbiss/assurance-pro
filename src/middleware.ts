@@ -131,7 +131,10 @@ const PUBLIC_CACHE_EXACT = new Set<string>([
   '/selection-assureurs',
 ])
 
-const PUBLIC_CACHE_VALUE = 'public, s-maxage=86400, stale-while-revalidate=604800'
+// Note: anciennement utilisé pour cache CDN public, désormais incompatible avec
+// CSP nonce per-request (cf. bloc Cache-Control plus bas). Conservé en commentaire
+// pour historique. Si on migre CSP à hash-based, restaurer la valeur ici.
+// const PUBLIC_CACHE_VALUE = 'public, s-maxage=86400, stale-while-revalidate=604800'
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
@@ -177,12 +180,18 @@ export async function middleware(request: NextRequest) {
   response.headers.set('x-nonce', nonce)
   response.headers.set('x-pathname', pathname)
 
+  // CSP nonce regenéré à chaque requête → incompatible avec cache CDN HTML.
+  // Cacher le HTML ferait servir un HTML avec ancien nonce inline pendant que
+  // le header CSP en demande un nouveau → scripts bloqués (bug "page blanche"
+  // à la première visite, fix après navigation Next router).
+  // On force no-cache HTML sur pages avec inline scripts (toutes via root layout).
+  // Assets statiques (_next/static/*) restent cachés via next.config.js headers().
   if (
     PUBLIC_CACHE_EXACT.has(pathname) ||
     PUBLIC_CACHE_PREFIXES.some((p) => pathname.startsWith(p))
   ) {
-    response.headers.set('Cache-Control', PUBLIC_CACHE_VALUE)
-    response.headers.set('CDN-Cache-Control', PUBLIC_CACHE_VALUE)
+    response.headers.set('Cache-Control', 'private, no-cache, no-store, max-age=0, must-revalidate')
+    response.headers.set('CDN-Cache-Control', 'no-store')
   }
 
   return addCspHeaders(response, nonce)

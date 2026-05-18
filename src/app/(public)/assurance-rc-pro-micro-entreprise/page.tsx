@@ -12,14 +12,14 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-rc-pro-micro-entreprise'
-const TITLE = 'Assurance RC Pro Micro Entreprise — Statuts AE/EI/EURL, tarifs 2026'
+const TITLE = 'Assurance RC Pro Micro Entreprise — Statuts AE, EI / EURL, tarifs 2026'
 const TAGLINE =
-  'La RC Pro micro-entreprise couvre 3 statuts : AE, EI (ex-régime micro), EURL micro. Spécificités et tarifs 95-450€/an selon profil.'
+  'La RC Pro micro-entreprise couvre 3 statuts : AE, EI (ex-régime micro), EURL micro. Spécificités et tarifs 95-450€ par an selon profil.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro micro-entreprise : AE, EI, EURL régime micro. Tarifs 95-450€/an. Plafond 1M€ standard. Hiscox best price services, April Pro BTP, Allianz multi-secteurs.',
+    'RC Pro micro-entreprise : AE, EI, EURL régime micro. Tarifs 95-450€ par an. Plafond 1M€ standard. Hiscox best price services, April Pro BTP, Allianz multi-secteurs.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -45,17 +45,17 @@ export default function Page() {
         {
           icon: '🛡️',
           title: 'Plafond 1M€ standard',
-          desc: 'Suffisant pour CA &lt; 80k€ services / 200k€ vente',
+          desc: 'Suffisant pour CA &lt; 80k€ services — 200k€ vente',
         },
         {
           icon: '💰',
-          title: '95-450€/an',
+          title: '95-450€ par an',
           desc: 'Services 95-220€ • Esthétique 180-350€ • BTP 250-450€',
         },
         {
           icon: '💼',
           title: 'Déductible Madelin TNS',
-          desc: 'Cotisations RC Pro déductibles du résultat imposable (artisans/EI)',
+          desc: 'Cotisations RC Pro déductibles du résultat imposable (artisans ou EI)',
         },
       ]}
       sections={[
@@ -65,13 +65,13 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Auto-entrepreneur (AE)</strong> : statut le plus populaire depuis 2009.
-                Régime fiscal et social simplifié. Plafond CA : 77 700€ services / 188 700€ vente
+                Régime fiscal et social simplifié. Plafond CA : 77 700€ services ou 188 700€ vente
                 (2024). Statut TNS.
               </li>
               <li>
                 <strong>Entreprise Individuelle (EI) en régime micro</strong> : option régime micro
                 disponible si CA &lt; plafond. Différence avec AE : pas de protection patrimoine
-                personnel (depuis Loi Madelin 2022, séparation patrimoine pro/perso améliorée).
+                personnel (depuis Loi Madelin 2022, séparation patrimoine pro ou perso améliorée).
               </li>
               <li>
                 <strong>EURL en régime micro</strong> : rare. EURL est généralement au régime réel.
@@ -86,35 +86,35 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Services intellectuels</strong> (consultant, IT, designer, photographe,
-                marketing) : 95-220€/an
+                marketing) : 95-220€ par an
               </li>
               <li>
                 <strong>Services à la personne</strong> (ménage, jardinage, garde enfants) :
-                180-300€/an
+                180-300€ par an
               </li>
               <li>
-                <strong>Esthétique / coiffure à domicile</strong> : 180-350€/an
+                <strong>Esthétique — coiffure à domicile</strong> : 180-350€ par an
               </li>
               <li>
-                <strong>Coaching / formation</strong> : 150-300€/an
+                <strong>Coaching — formation</strong> : 150-300€ par an
               </li>
               <li>
-                <strong>Coach sportif / yoga</strong> : 200-400€/an
+                <strong>Coach sportif — yoga</strong> : 200-400€ par an
               </li>
               <li>
-                <strong>BTP (en complément décennale)</strong> : 250-450€/an
+                <strong>BTP (en complément décennale)</strong> : 250-450€ par an
               </li>
               <li>
-                <strong>E-commerce / dropshipping</strong> : 200-450€/an
+                <strong>E-commerce — dropshipping</strong> : 200-450€ par an
               </li>
               <li>
-                <strong>Restauration ambulante</strong> (food truck, traiteur) : 350-700€/an
+                <strong>Restauration ambulante</strong> (food truck, traiteur) : 350-700€ par an
               </li>
               <li>
-                <strong>Médical / paramédical</strong> : 800-2 500€/an (réglementaire)
+                <strong>Médical — paramédical</strong> : 800-2 500€ par an (réglementaire)
               </li>
               <li>
-                <strong>VTC / taxi</strong> : 280-650€/an (décret 2014-371)
+                <strong>VTC — taxi</strong> : 280-650€ par an (décret 2014-371)
               </li>
             </ul>
           ),
@@ -125,14 +125,15 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Déductibilité Madelin</strong> (art. 154 bis CGI) : cotisations RC Pro
-                déductibles du résultat imposable pour AE/EI artisans en TNS
+                déductibles du résultat imposable pour AE ou EI artisans en TNS
               </li>
               <li>
                 <strong>Économie fiscale typique</strong> : -22-45% du montant de la prime selon
                 tranche marginale d&apos;imposition
               </li>
               <li>
-                <strong>Exemple</strong> : prime 220€/an × tranche 30% TMI = économie fiscale 66€/an
+                <strong>Exemple</strong> : prime 220€ par an × tranche 30% TMI = économie fiscale
+                66€ par an
               </li>
               <li>
                 <strong>Conditions</strong> : statut TNS confirmé + déclaration au régime réel ou
@@ -157,15 +158,15 @@ export default function Page() {
         },
         {
           q: 'Quelle RC Pro la moins chère micro-entreprise services ?',
-          a: 'Hiscox = best price global services intellectuels (95-220€/an) + postériorité 10 ans (unique). Stello = challenger digital pure (90-200€/an). Allianz Pro pour couverture multi-secteurs (180-380€/an).',
+          a: 'Hiscox = best price global services intellectuels (95-220€ par an) + postériorité 10 ans (unique). Stello = challenger digital pure (90-200€ par an). Allianz Pro pour couverture multi-secteurs (180-380€ par an).',
         },
         {
           q: 'RC Pro micro-entreprise déductible des impôts ?',
-          a: 'OUI pour artisans / EI en TNS au régime réel ou simplifié (déductible Madelin art. 154 bis CGI). NON pour AE en versement libératoire (régime simplifié forfaitaire). Économie fiscale 22-45% du montant prime selon TMI.',
+          a: 'OUI pour artisans — EI en TNS au régime réel ou simplifié (déductible Madelin art. 154 bis CGI). NON pour AE en versement libératoire (régime simplifié forfaitaire). Économie fiscale 22-45% du montant prime selon TMI.',
         },
         {
           q: 'Plafond CA RC Pro micro-entreprise ?',
-          a: "Le plafond du REGIME MICRO (fiscal) est 77 700€ services / 188 700€ vente. AU-DELÀ : passage au régime réel obligatoire mais l'AE/EI reste possible. La RC Pro elle n'a pas de plafond CA — vous pouvez avoir une RC Pro à n'importe quel CA, tarif ajusté selon CA déclaré.",
+          a: "Le plafond du REGIME MICRO (fiscal) est 77 700€ services — 188 700€ vente. AU-DELÀ : passage au régime réel obligatoire mais l'AE ou EI reste possible. La RC Pro elle n'a pas de plafond CA — vous pouvez avoir une RC Pro à n'importe quel CA, tarif ajusté selon CA déclaré.",
         },
       ]}
       relatedMetiers={[

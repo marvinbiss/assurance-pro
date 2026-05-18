@@ -11,22 +11,24 @@ export const metadata: Metadata = {
     "Fiches IPID standardisées DDA pour chaque produit d'assurance distribué : décennale, RC Pro, mutuelle TNS, cyber, multirisque, VTC.",
   alternates: { canonical: `${SITE_URL}/ipid` },
   openGraph: {
-    title: 'IPID — Fiches d\\',
-    description: 'Fiches IPID standardisées DDA pour chaque produit d\\',
+    title: "IPID — Fiches d'information produit",
+    description:
+      "Fiches IPID standardisées DDA pour chaque produit d'assurance distribué : décennale, RC Pro, mutuelle TNS, cyber, multirisque, VTC.",
     url: `${SITE_URL}/ipid`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IPID — Fiches d\\',
-    description: 'Fiches IPID standardisées DDA pour chaque produit d\\',
+    title: "IPID — Fiches d'information produit",
+    description:
+      "Fiches IPID standardisées DDA pour chaque produit d'assurance distribué : décennale, RC Pro, mutuelle TNS, cyber, multirisque, VTC.",
   },
 }
 
 export default function IpidIndexPage() {
   const products = Object.values(IPID_PRODUCTS)
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'IPID' }]}
         eyebrow="Documents d'Information Produit · DDA art. 20-8"

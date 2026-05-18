@@ -170,7 +170,7 @@ export function BookACallEmbed({
             )}
             {state === 'error' && (
               <span className="text-primary-600">
-                {errorMsg ? `Erreur : ${errorMsg}.` : 'Erreur.'} Réessayez ou appelez-nous.
+                {errorMsg ? `Erreur : ${errorMsg}.` : 'Erreur.'} Réessayez / appelez-nous.
               </span>
             )}
           </div>

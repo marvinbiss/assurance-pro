@@ -10,12 +10,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-decennale-terrassement'
 const TITLE = 'Assurance Décennale Terrassement — Risques élevés, tarifs 2026'
 const TAGLINE =
-  'Le terrassier (TP) est soumis à une décennale renforcée : risques élevés (effondrements, glissements, instabilité sol). Tarif AE 2 800-4 500€/an, SARL 5 000-12 000€/an.'
+  'Le terrassier (TP) est soumis à une décennale renforcée : risques élevés (effondrements, glissements, instabilité sol). Tarif AE 2 800-4 500€ par an, SARL 5 000-12 000€ par an.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale terrassement : risques élevés (effondrement, glissement terrain), Loi Spinetta. AE 2 800-4 500€/an, SARL TP 5 000-12 000€/an. Étude sol obligatoire.',
+    'Décennale terrassement : risques élevés (effondrement, glissement terrain), Loi Spinetta. AE 2 800-4 500€ par an, SARL TP 5 000-12 000€ par an. Étude sol obligatoire.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -46,7 +46,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '2 800-12 000€/an',
+          title: '2 800-12 000€ par an',
           desc: 'AE 2 800-4 500€ • SARL 5 000-8 000€ • SAS TP PME 8 000-12 000€+',
         },
         {
@@ -67,7 +67,7 @@ export default function Page() {
                 <strong>Préparation fondations</strong> : fouilles, semelles, radiers
               </li>
               <li>
-                <strong>Réseaux enterrés</strong> : assainissement, drainage, canalisations EU/EP
+                <strong>Réseaux enterrés</strong> : assainissement, drainage, canalisations EU ou EP
               </li>
               <li>
                 <strong>Soutènement</strong> : murs de soutènement, palplanches, pieux
@@ -109,8 +109,8 @@ export default function Page() {
                 fouilles + sous-sols voisins. 30-150k€.
               </li>
               <li>
-                <strong>Rupture canalisations enterrées</strong> : touche réseau gaz/électricité/eau
-                lors fouilles. 20-200k€.
+                <strong>Rupture canalisations enterrées</strong> : touche réseau gaz, électricité ou
+                eau lors fouilles. 20-200k€.
               </li>
               <li>
                 <strong>Mouvement de terrain post-réception</strong> : tassement progressif 2-5 ans
@@ -124,27 +124,30 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Terrassier AE débutant (CA &lt; 80k€)</strong> : 2 800-3 800€/an, plafond
-                1-2M€
+                <strong>Terrassier AE débutant (CA &lt; 80k€)</strong> : 2 800-3 800€ par an,
+                plafond 1-2M€
               </li>
               <li>
-                <strong>Terrassier AE expérimenté (3+ ans)</strong> : 3 500-4 500€/an, plafond 2-3M€
+                <strong>Terrassier AE expérimenté (3+ ans)</strong> : 3 500-4 500€ par an, plafond
+                2-3M€
               </li>
               <li>
-                <strong>SARL terrassement (1-5 salariés)</strong> : 5 000-8 000€/an, plafond 3M€
+                <strong>SARL terrassement (1-5 salariés)</strong> : 5 000-8 000€ par an, plafond 3M€
               </li>
               <li>
-                <strong>SAS TP moyenne (5-15 salariés)</strong> : 7 500-15 000€/an, plafond 3-5M€
+                <strong>SAS TP moyenne (5-15 salariés)</strong> : 7 500-15 000€ par an, plafond
+                3-5M€
               </li>
               <li>
-                <strong>SAS TP grosse (15-50 salariés)</strong> : 12 000-30 000€/an, plafond 5-10M€
+                <strong>SAS TP grosse (15-50 salariés)</strong> : 12 000-30 000€ par an, plafond
+                5-10M€
               </li>
               <li>
-                <strong>Spécialiste foreur géothermie</strong> : 4 500-9 000€/an (qualification RGE
-                Qualibat + extension géothermie)
+                <strong>Spécialiste foreur géothermie</strong> : 4 500-9 000€ par an (qualification
+                RGE Qualibat + extension géothermie)
               </li>
               <li>
-                <strong>VRD avec réseaux gaz/électricité</strong> : prime +20-30% (risque accru
+                <strong>VRD avec réseaux gaz ou électricité</strong> : prime +20-30% (risque accru
                 réseaux enterrés)
               </li>
             </ul>
@@ -154,7 +157,7 @@ export default function Page() {
       faq={[
         {
           q: 'Pourquoi la décennale terrassement est-elle si chère ?',
-          a: 'Le terrassement génère 8-12% des sinistres décennaux BTP (AQC SYCODÉS) avec des sinistres MAJEURS (effondrement, glissement terrain = 100k-1M€). Sinistralité moyenne du métier × 3 vs un peintre. Tarif AE terrassier 2 800-4 500€/an vs peintre 950€/an.',
+          a: 'Le terrassement génère 8-12% des sinistres décennaux BTP (AQC SYCODÉS) avec des sinistres MAJEURS (effondrement, glissement terrain = 100k-1M€). Sinistralité moyenne du métier × 3 vs un peintre. Tarif AE terrassier 2 800-4 500€ par an vs peintre 950€ par an.',
         },
         {
           q: 'Une étude de sol est-elle obligatoire avant terrassement ?',

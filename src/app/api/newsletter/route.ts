@@ -14,7 +14,7 @@ const newsletterSchema = z.object({
 })
 
 const CONSENT_TEXT_FR =
-  "J'accepte de recevoir la newsletter mensuelle d'Vivos Assurance et je peux me désinscrire à tout moment."
+  "J'accepte de recevoir la newsletter mensuelle Vivos Assurance et je peux me désinscrire à tout moment."
 
 const WELCOME_HTML = `
 <!doctype html>
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
     const body = await request.json()
     const parsed = newsletterSchema.safeParse(body)
     if (!parsed.success) {
-      return NextResponse.json({ error: 'Email ou consentement invalide.' }, { status: 400 })
+      return NextResponse.json({ error: 'Email / consentement invalide.' }, { status: 400 })
     }
     const { email } = parsed.data
 

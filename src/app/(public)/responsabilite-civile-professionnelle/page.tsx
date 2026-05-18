@@ -44,7 +44,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RCP / RC Pro 2026 : 21 métiers obligatoires, plafonds 1,5-5 M€, tarifs négociés ORIAS. Comparatif 5 assureurs. Devis 24h.',
+    'RCP — RC Pro 2026 : 21 métiers obligatoires, plafonds 1,5-5 M€, tarifs négociés ORIAS. Comparatif 5 assureurs. Devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
@@ -72,22 +72,22 @@ export default function Page() {
         {
           icon: '⚖️',
           title: '21 métiers obligatoires',
-          desc: 'BTP, santé, juridique, conseil financier (CGP/CIF/IOBSP), transport, sport, esthétique invasive, sécurité',
+          desc: 'BTP, santé, juridique, conseil financier (CGP, CIF ou IOBSP), transport, sport, esthétique invasive, sécurité',
         },
         {
           icon: '🛡️',
           title: 'Plafond 1,5 à 10 M€',
-          desc: 'Standard 1,5 M€/sinistre. Conseil financier (CGP/CIF) : 5 M€ obligatoire (homologation ACPR)',
+          desc: 'Standard 1,5 M€ par sinistre. Conseil financier (CGP ou CIF) : 5 M€ obligatoire (homologation ACPR)',
         },
         {
           icon: '💰',
-          title: 'Tarif 89 € à 5 800 €/an',
-          desc: "Freelance digital sans antécédent : 89-180 €/an. Cabinet d'expertise comptable : 1 200-3 800 €/an",
+          title: 'Tarif 89 € à 5 800 € par an',
+          desc: "Freelance digital sans antécédent : 89-180 € par an. Cabinet d'expertise comptable : 1 200-3 800 € par an",
         },
         {
           icon: '📋',
           title: 'Conforme arrêté 2024',
-          desc: "Mention obligatoire de l'attestation sur tous les devis/factures depuis 1er juillet 2024",
+          desc: "Mention obligatoire de l'attestation sur tous les devis / factures depuis 1er juillet 2024",
         },
       ]}
       sections={[
@@ -117,7 +117,7 @@ export default function Page() {
                 </li>
               </ul>
               <p>
-                3 types de fautes sont couvertes : faute, erreur, omission ou négligence dans
+                3 types de fautes sont couvertes : faute, erreur, omission / négligence dans
                 l&apos;exécution de la prestation. La <strong>faute intentionnelle</strong> reste
                 toujours exclue (c&apos;est le principe d&apos;ordre public de l&apos;assurance).
               </p>
@@ -132,7 +132,7 @@ export default function Page() {
                 <thead>
                   <tr className="bg-gray-100">
                     <th className="border p-2 text-left">Activité</th>
-                    <th className="border p-2 text-right">Plafond recommandé / sinistre</th>
+                    <th className="border p-2 text-right">Plafond recommandé — sinistre</th>
                     <th className="border p-2 text-right">Plafond annuel cumulé</th>
                   </tr>
                 </thead>
@@ -148,7 +148,7 @@ export default function Page() {
                     <td className="border p-2 text-right">4 000 000 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Conseil IT / DevOps / cybersécurité</td>
+                    <td className="border p-2">Conseil IT — DevOps — cybersécurité</td>
                     <td className="border p-2 text-right">5 000 000 €</td>
                     <td className="border p-2 text-right">10 000 000 €</td>
                   </tr>
@@ -158,7 +158,7 @@ export default function Page() {
                     <td className="border p-2 text-right">5 000 000 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">CGP / CIF / IOBSP</td>
+                    <td className="border p-2">CGP — CIF — IOBSP</td>
                     <td className="border p-2 text-right">5 000 000 €</td>
                     <td className="border p-2 text-right">obligation ACPR</td>
                   </tr>
@@ -168,7 +168,7 @@ export default function Page() {
                     <td className="border p-2 text-right">obligation Conseil National</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Médecin / paramédical</td>
+                    <td className="border p-2">Médecin — paramédical</td>
                     <td className="border p-2 text-right">8 000 000 €</td>
                     <td className="border p-2 text-right">obligation L. 1142-2 CSP</td>
                   </tr>
@@ -197,7 +197,7 @@ export default function Page() {
                 <tbody>
                   <tr>
                     <td className="border p-2">
-                      <strong>RC Pro / RCP</strong>
+                      <strong>RC Pro — RCP</strong>
                     </td>
                     <td className="border p-2">Dommages causés à un tiers PENDANT la prestation</td>
                     <td className="border p-2">Tous pros</td>
@@ -232,7 +232,7 @@ export default function Page() {
                       <strong>RC Mandataire social</strong>
                     </td>
                     <td className="border p-2">Faute de gestion du dirigeant envers la société</td>
-                    <td className="border p-2">Dirigeants SARL/SAS</td>
+                    <td className="border p-2">Dirigeants SARL ou SAS</td>
                   </tr>
                 </tbody>
               </table>
@@ -255,7 +255,7 @@ export default function Page() {
                   <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     RC Pro auto-entrepreneur
                   </Link>{' '}
-                  — guide spécifique AE/micro
+                  — guide spécifique AE ou micro
                 </li>
                 <li>
                   <Link href="/rc-pro/informatique" className="text-primary-600 underline">
@@ -285,7 +285,7 @@ export default function Page() {
         },
         {
           q: "Que risque ma profession réglementée si je n'ai pas de RCP ?",
-          a: "Avocat : radiation par le Conseil National + sanction disciplinaire. Médecin : suspension par le Conseil de l'Ordre + amende pénale. CGP/CIF/IOBSP : retrait d'agrément ACPR (impossibilité d'exercer). Expert-comptable : sanction Ordre des Experts-Comptables. La RCP est une condition d'inscription au tableau.",
+          a: "Avocat : radiation par le Conseil National + sanction disciplinaire. Médecin : suspension par le Conseil de l'Ordre + amende pénale. CGP, CIF ou IOBSP : retrait d'agrément ACPR (impossibilité d'exercer). Expert-comptable : sanction Ordre des Experts-Comptables. La RCP est une condition d'inscription au tableau.",
         },
         {
           q: "Mon client B2B peut-il m'imposer une RCP avec plafond élevé ?",
@@ -309,11 +309,11 @@ export default function Page() {
         },
         {
           q: 'Combien ça coûte vraiment une RCP en 2026 ?',
-          a: "Démarre à 89 €/an pour un freelance digital sans antécédent (plafond 1,5 M€). Médiane : 180-340 €/an. Cabinet d'expertise comptable : 1 200-3 800 €/an. CGP/CIF agréé ACPR : 2 800-5 800 €/an. Variables : métier, CA déclaré, plafonds choisis, antécédents, territoire (France/UE/monde).",
+          a: "Démarre à 89 € par an pour un freelance digital sans antécédent (plafond 1,5 M€). Médiane : 180-340 € par an. Cabinet d'expertise comptable : 1 200-3 800 € par an. CGP ou CIF agréé ACPR : 2 800-5 800 € par an. Variables : métier, CA déclaré, plafonds choisis, antécédents, territoire (France, UE ou monde).",
         },
         {
           q: 'Quel plafond de RCP choisir pour ne pas être sous-couvert ?',
-          a: 'Standard 1,5 M€/sinistre + 3 M€/an pour la majorité des activités. Conseil IT à fort impact : 5 M€ minimum. Conseil financier (CGP/CIF) : 5 M€ obligatoire ACPR. Médecin/paramédical : 8 M€ obligatoire (L. 1142-2). Architecte : 8 M€ obligatoire (Loi MOP). Plafond trop bas = exposition patrimoine personnel.',
+          a: 'Standard 1,5 M€ par sinistre + 3 M€ par an pour la majorité des activités. Conseil IT à fort impact : 5 M€ minimum. Conseil financier (CGP ou CIF) : 5 M€ obligatoire ACPR. Médecin ou paramédical : 8 M€ obligatoire (L. 1142-2). Architecte : 8 M€ obligatoire (Loi MOP). Plafond trop bas = exposition patrimoine personnel.',
         },
         {
           q: 'Mon assureur peut-il me résilier après un sinistre ?',
@@ -325,7 +325,7 @@ export default function Page() {
         },
         {
           q: 'Puis-je déduire ma prime RCP de mes impôts ?',
-          a: 'Oui en intégralité si vous êtes en BIC réel, BNC déclaration contrôlée ou IS (SARL/SAS/EURL) — charge professionnelle déductible 100%. Auto-entrepreneur au micro-BIC/BNC : non déductible (régime forfaitaire), mais la prime reste 100% à votre charge sans franchise ni plafond de remboursement.',
+          a: 'Oui en intégralité si vous êtes en BIC réel, BNC déclaration contrôlée ou IS (SARL, SAS ou EURL) — charge professionnelle déductible 100%. Auto-entrepreneur au micro-BIC ou BNC : non déductible (régime forfaitaire), mais la prime reste 100% à votre charge sans franchise ni plafond de remboursement.',
         },
         {
           q: 'Combien de temps pour obtenir mon attestation RCP ?',
@@ -333,7 +333,7 @@ export default function Page() {
         },
         {
           q: "Combien de temps prend l'indemnisation d'un sinistre RCP ?",
-          a: "Délai moyen : 3 à 12 mois selon la complexité (expertise contradictoire, judiciarisation). L'assureur a 30 jours pour proposer une indemnisation après expertise. Préservez TOUTES les preuves dès la mise en cause : e-mails, contrats, livrables, devis, échanges WhatsApp/Slack. Pas d'accord direct avec le client sans avis assureur.",
+          a: "Délai moyen : 3 à 12 mois selon la complexité (expertise contradictoire, judiciarisation). L'assureur a 30 jours pour proposer une indemnisation après expertise. Préservez TOUTES les preuves dès la mise en cause : e-mails, contrats, livrables, devis, échanges WhatsApp ou Slack. Pas d'accord direct avec le client sans avis assureur.",
         },
         {
           q: 'Différence entre RCP et RC Exploitation : laquelle me faut-il ?',
@@ -345,7 +345,7 @@ export default function Page() {
         },
         {
           q: 'La RCP couvre-t-elle aussi le dirigeant pour faute de gestion ?',
-          a: "Non. La RCP couvre l'exercice professionnel de l'entreprise envers les clients/tiers. Pour la faute de gestion du dirigeant (art. L. 223-22 Code de commerce SARL, L. 225-251 SAS), il faut une RC Mandataire Social (D&O) distincte. Indispensable pour les SAS/SARL > 5 salariés ou avec investisseurs.",
+          a: "Non. La RCP couvre l'exercice professionnel de l'entreprise envers les clients ou tiers. Pour la faute de gestion du dirigeant (art. L. 223-22 Code de commerce SARL, L. 225-251 SAS), il faut une RC Mandataire Social (D&O) distincte. Indispensable pour les SAS ou SARL > 5 salariés ou avec investisseurs.",
         },
       ]}
     />

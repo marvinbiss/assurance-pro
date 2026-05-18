@@ -19,7 +19,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro informatique : freelance dev 95-220€/an, ESN 800-3 500€/an, agence web 350-1 200€/an. Cyber-assurance combinée recommandée. Plafond 1-5M€ selon profil.',
+    'RC Pro informatique : freelance dev 95-220€ par an, ESN 800-3 500€ par an, agence web 350-1 200€ par an. Cyber-assurance combinée recommandée. Plafond 1-5M€ selon profil.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -39,7 +39,7 @@ export default function Page() {
       benefits={[
         {
           icon: '💻',
-          title: 'Freelance dev / consultant IT',
+          title: 'Freelance dev — consultant IT',
           desc: 'Couverture erreurs code, bugs critiques, retards livraison',
         },
         {
@@ -47,11 +47,11 @@ export default function Page() {
           title: 'Cyber-assurance combinée',
           desc: 'Couvre fuite de données, ransomware, attaques (option clé)',
         },
-        { icon: '🏢', title: 'ESN / agence web', desc: 'Plafond étendu 2-5M€ recommandé selon CA' },
+        { icon: '🏢', title: 'ESN — agence web', desc: 'Plafond étendu 2-5M€ recommandé selon CA' },
         {
           icon: '💰',
-          title: 'À partir de 95€/an',
-          desc: 'AE freelance dev. ESN/SAS 800-3 500€/an selon CA',
+          title: 'À partir de 95€ par an',
+          desc: 'AE freelance dev. ESN ou SAS 800-3 500€ par an selon CA',
         },
       ]}
       sections={[
@@ -90,26 +90,29 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Auto-entrepreneur freelance dev</strong> (CA &lt; 80k€) : 95-220€/an,
+                <strong>Auto-entrepreneur freelance dev</strong> (CA &lt; 80k€) : 95-220€ par an,
                 plafond 1M€
               </li>
               <li>
-                <strong>Freelance senior IT (consultant)</strong> : 180-400€/an, plafond 2M€
+                <strong>Freelance senior IT (consultant)</strong> : 180-400€ par an, plafond 2M€
               </li>
               <li>
-                <strong>SASU dev / SARL TPE (CA 100-300k€)</strong> : 450-1 200€/an, plafond 2-3M€
+                <strong>SASU dev — SARL TPE (CA 100-300k€)</strong> : 450-1 200€ par an, plafond
+                2-3M€
               </li>
               <li>
-                <strong>Agence web TPE (5-10 personnes)</strong> : 800-2 000€/an, plafond 3M€
+                <strong>Agence web TPE (5-10 personnes)</strong> : 800-2 000€ par an, plafond 3M€
               </li>
               <li>
-                <strong>ESN moyenne (10-50 consultants)</strong> : 2 500-8 000€/an, plafond 3-5M€
+                <strong>ESN moyenne (10-50 consultants)</strong> : 2 500-8 000€ par an, plafond
+                3-5M€
               </li>
               <li>
-                <strong>ESN grosse (100+ consultants)</strong> : 8 000-50 000€/an, plafond 5-10M€
+                <strong>ESN grosse (100+ consultants)</strong> : 8 000-50 000€ par an, plafond
+                5-10M€
               </li>
               <li>
-                <strong>Cybersécurité spécialisée</strong> : 3 000-25 000€/an (risque ×3-5)
+                <strong>Cybersécurité spécialisée</strong> : 3 000-25 000€ par an (risque ×3-5)
               </li>
             </ul>
           ),
@@ -131,9 +134,9 @@ export default function Page() {
                 <strong>Cyber-assurance combinée recommandée</strong> :
               </p>
               <ul>
-                <li>AE freelance : +150-400€/an</li>
-                <li>SARL/SASU : +500-2 000€/an</li>
-                <li>ESN/PME : +2 000-15 000€/an</li>
+                <li>AE freelance : +150-400€ par an</li>
+                <li>SARL ou SASU : +500-2 000€ par an</li>
+                <li>ESN ou PME : +2 000-15 000€ par an</li>
               </ul>
             </>
           ),
@@ -142,7 +145,7 @@ export default function Page() {
       faq={[
         {
           q: 'Quelle RC Pro pour un développeur freelance ?',
-          a: 'Hiscox ou Stello pour AE / CA &lt; 80k€ : 95-220€/an avec plafond 1M€ + postériorité 10 ans. Ajouter cyber-assurance +150-300€/an si vous gérez des données client sensibles.',
+          a: 'Hiscox ou Stello pour AE — CA &lt; 80k€ : 95-220€ par an avec plafond 1M€ + postériorité 10 ans. Ajouter cyber-assurance +150-300€ par an si vous gérez des données client sensibles.',
         },
         {
           q: 'Faut-il aussi une cyber-assurance ?',
@@ -150,7 +153,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une RC Pro pour une ESN ?',
-          a: 'ESN moyenne (20-50 consultants) : 2 500-8 000€/an chez Hiscox ou Allianz Pro, plafond 3-5M€. Ajouter cyber : +2 000-10 000€/an. Pack global = négociation possible -15-25%.',
+          a: 'ESN moyenne (20-50 consultants) : 2 500-8 000€ par an chez Hiscox ou Allianz Pro, plafond 3-5M€. Ajouter cyber : +2 000-10 000€ par an. Pack global = négociation possible -15-25%.',
         },
         {
           q: 'RC Pro IT couvre-t-elle le retard de livraison ?',

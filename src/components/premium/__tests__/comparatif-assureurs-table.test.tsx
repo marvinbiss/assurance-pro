@@ -18,7 +18,7 @@ const ROWS: readonly ComparatifAssureurRow[] = [
   {
     assureur: 'SMABTP',
     color: '#1A4F8B',
-    prix: '1 200 €/an',
+    prix: '1 200 € par an',
     plafond: '8 M€',
     delai: '48h',
     recommande: true,
@@ -26,7 +26,7 @@ const ROWS: readonly ComparatifAssureurRow[] = [
   {
     assureur: 'Hiscox',
     color: '#7B2CBF',
-    prix: '1 450 €/an',
+    prix: '1 450 € par an',
     plafond: '10 M€',
     delai: '24h',
   },

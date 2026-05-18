@@ -63,7 +63,7 @@ export default function RessourcesPage() {
   const ressources = getAllRessources()
 
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Ressources' }]}
         eyebrow="Bibliothèque gratuite"
@@ -78,13 +78,13 @@ export default function RessourcesPage() {
         description={
           <>
             Guides pratiques, check-lists, modèles de lettres, calculs fiscaux — rédigés par
-            l&apos;équipe Vivos Assurance et conformes aux obligations ACPR/DDA 2026. Téléchargez,
-            imprimez, partagez librement.
+            l&apos;équipe Vivos Assurance et conformes aux obligations ACPR ou DDA 2026.
+            Téléchargez, imprimez, partagez librement.
           </>
         }
         meta={[
           { Icon: Download, label: 'Téléchargement libre' },
-          { Icon: ShieldCheck, label: 'Conforme ACPR/DDA' },
+          { Icon: ShieldCheck, label: 'Conforme ACPR ou DDA' },
           { Icon: BookOpen, label: `${ressources.length} ressources` },
         ]}
       />

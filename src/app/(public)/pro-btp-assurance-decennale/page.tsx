@@ -47,7 +47,7 @@ export default function Page() {
         {
           icon: '⚡',
           title: 'April Pro BTP',
-          desc: 'Privé, best price AE / SARL, souscription en ligne possible',
+          desc: 'Privé, best price AE — SARL, souscription en ligne possible',
         },
         {
           icon: '❌',
@@ -121,8 +121,8 @@ export default function Page() {
                 </li>
               </ul>
               <p>
-                Tarif typique : AE peintre 950-1 400€/an, SARL plombier 2 000-3 500€/an, SAS BTP PME
-                4 500-12 000€/an.
+                Tarif typique : AE peintre 950-1 400€ par an, SARL plombier 2 000-3 500€ par an, SAS
+                BTP PME 4 500-12 000€ par an.
               </p>
             </>
           ),
@@ -137,8 +137,8 @@ export default function Page() {
               </p>
               <ul>
                 <li>
-                  <strong>Best price BTP AE</strong> : 950-1 200€/an pour peintre, 1 400-1 800€/an
-                  pour plombier
+                  <strong>Best price BTP AE</strong> : 950-1 200€ par an pour peintre, 1 400-1 800€
+                  par an pour plombier
                 </li>
                 <li>
                   <strong>Souscription 100% en ligne</strong> : attestation rapide (24-48h)
@@ -147,7 +147,7 @@ export default function Page() {
                   <strong>Couverture standard BTP</strong> : 52 métiers Qualibat couverts
                 </li>
                 <li>
-                  <strong>Plafond 1-2M€ standard</strong> AE/SARL, 3-5M€ SAS PME
+                  <strong>Plafond 1-2M€ standard</strong> AE ou SARL, 3-5M€ SAS PME
                 </li>
                 <li>
                   <strong>Pack BTP</strong> : décennale + RC Pro + auto pro = -15-25%
@@ -172,7 +172,7 @@ export default function Page() {
         },
         {
           q: 'SMABTP ou April Pro BTP pour ma décennale ?',
-          a: 'April Pro BTP = best price AE/SARL (souvent -10-20% vs SMABTP). SMABTP = expertise BTP maximale + gestion sinistres reconnue. Notre courtier ORIAS compare les 2 + Allianz Pro BTP + MMA Pro BTP + AXA Pro BTP.',
+          a: 'April Pro BTP = best price AE ou SARL (souvent -10-20% vs SMABTP). SMABTP = expertise BTP maximale + gestion sinistres reconnue. Notre courtier ORIAS compare les 2 + Allianz Pro BTP + MMA Pro BTP + AXA Pro BTP.',
         },
         {
           q: 'Peut-on cumuler PRO BTP santé + SMABTP décennale ?',

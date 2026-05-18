@@ -9,7 +9,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/franchise-assurance-pro'
+const SLUG = 'guides / franchise-assurance-pro'
 const TITLE = 'Franchise assurance pro 2026 — Comment bien la choisir ?'
 const TAGLINE =
   "La franchise assurance pro : montant à votre charge en cas de sinistre. Choisir 300€ vs 5 000€ peut faire varier votre cotisation de 30%. Stratégie d'optimisation."
@@ -17,7 +17,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Franchise assurance pro 2026 : guide complet pour bien choisir sa franchise (RC Pro, décennale, multirisque). Impact tarifaire jusqu'à -30%. 4 paliers standard 300€/750€/1500€/3000€/5000€. Stratégie selon profil sinistralité.",
+    "Franchise assurance pro 2026 : guide complet pour bien choisir sa franchise (RC Pro, décennale, multirisque). Impact tarifaire jusqu'à -30%. 4 paliers standard 300€, 750€, 1500€, 3000€ ou 5000€. Stratégie selon profil sinistralité.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'article' },
 }
@@ -28,19 +28,19 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La franchise en assurance professionnelle est le montant qui RESTE À VOTRE CHARGE en cas de sinistre, déduit de l'indemnité versée par l'assureur. Plus la franchise est élevée, plus votre cotisation annuelle baisse (jusqu'à -30%). Plus elle est basse, plus vous êtes protégé en cas de petit sinistre mais plus vous payez de cotisation. Cette page détaille les 5 paliers standard du marché (300€/750€/1500€/3000€/5000€), leur impact tarifaire et la stratégie d'optimisation selon votre profil de sinistralité (artisan/commerçant/profession libérale)."
+      intro="La franchise en assurance professionnelle est le montant qui RESTE À VOTRE CHARGE en cas de sinistre, déduit de l'indemnité versée par l'assureur. Plus la franchise est élevée, plus votre cotisation annuelle baisse (jusqu'à -30%). Plus elle est basse, plus vous êtes protégé en cas de petit sinistre mais plus vous payez de cotisation. Cette page détaille les 5 paliers standard du marché (300€, 750€, 1500€, 3000€ ou 5000€), leur impact tarifaire et la stratégie d'optimisation selon votre profil de sinistralité (artisan, commerçant ou profession libérale)."
       legalReference="Art. L. 113-1 C. assur. (clauses contractuelles d'assurance)"
       isObligatoire={false}
       benefits={[
         {
           icon: '💰',
           title: 'Impact tarifaire ±30%',
-          desc: 'Franchise 5000€ = -30% cotisation vs 300€. Économie réelle 200-2 000€/an selon contrat',
+          desc: 'Franchise 5000€ = -30% cotisation vs 300€. Économie réelle 200-2 000€ par an selon contrat',
         },
         {
           icon: '⚖️',
           title: '5 paliers standard marché',
-          desc: '300€ (sur-prime) / 750€ / 1500€ (standard) / 3000€ (rabais) / 5000€ (rabais maximum)',
+          desc: '300€ (sur-prime) — 750€ — 1500€ (standard) — 3000€ (rabais) — 5000€ (rabais maximum)',
         },
         {
           icon: '🎯',
@@ -81,14 +81,16 @@ export default function Page() {
                       <strong>750 €</strong>
                     </td>
                     <td className="border p-2">×1,05</td>
-                    <td className="border p-2">AE/EI activité standard</td>
+                    <td className="border p-2">AE ou EI activité standard</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
                       <strong>1 500 €</strong>
                     </td>
                     <td className="border p-2">×1,00 (référence)</td>
-                    <td className="border p-2">EI/EURL/SARL standard — choix par défaut marché</td>
+                    <td className="border p-2">
+                      EI, EURL ou SARL standard — choix par défaut marché
+                    </td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -96,7 +98,7 @@ export default function Page() {
                     </td>
                     <td className="border p-2">×0,92 (rabais)</td>
                     <td className="border p-2">
-                      SARL/SAS avec trésorerie — peut absorber petits sinistres
+                      SARL ou SAS avec trésorerie — peut absorber petits sinistres
                     </td>
                   </tr>
                   <tr>
@@ -105,7 +107,7 @@ export default function Page() {
                     </td>
                     <td className="border p-2">×0,85 (rabais maximum)</td>
                     <td className="border p-2">
-                      PME/ETI 50+ salariés — forte capacité auto-assurance
+                      PME ou ETI 50+ salariés — forte capacité auto-assurance
                     </td>
                   </tr>
                 </tbody>
@@ -119,20 +121,20 @@ export default function Page() {
             <div>
               <h3 className="mb-2 font-bold">Profil 1 : AE solo CA &lt;50k€</h3>
               <p className="text-sm">
-                Franchise <strong>750€</strong>. Économie cotisation marginale (-50€/an), mais
+                Franchise <strong>750€</strong>. Économie cotisation marginale (-50€ par an), mais
                 protection préservée pour petits sinistres fréquents (chute outils, dégât matériel
                 client). À éviter : franchise 3 000€+ qui pourrait vous mettre en difficulté de
                 trésorerie.
               </p>
-              <h3 className="mb-2 mt-4 font-bold">Profil 2 : EURL/SARL CA 100-300k€</h3>
+              <h3 className="mb-2 mt-4 font-bold">Profil 2 : EURL ou SARL CA 100-300k€</h3>
               <p className="text-sm">
                 Franchise <strong>1 500€</strong> (standard) OU <strong>3 000€</strong> si
-                trésorerie &gt;6 mois charges. Économie 200-450€/an avec franchise 3000€ =
+                trésorerie &gt;6 mois charges. Économie 200-450€ par an avec franchise 3000€ =
                 équivalent 2 mois cotisation économisée.
               </p>
-              <h3 className="mb-2 mt-4 font-bold">Profil 3 : SARL/SAS 5-20 salariés</h3>
+              <h3 className="mb-2 mt-4 font-bold">Profil 3 : SARL ou SAS 5-20 salariés</h3>
               <p className="text-sm">
-                Franchise <strong>3 000€</strong>. Économie significative (~500-1500€/an) avec
+                Franchise <strong>3 000€</strong>. Économie significative (~500-1500€ par an) avec
                 capacité d&apos;absorber petits sinistres sur fonds propres. Pour grands sinistres
                 (&gt;3 000€), l&apos;assurance prend le relais sans question.
               </p>
@@ -140,7 +142,7 @@ export default function Page() {
               <p className="text-sm">
                 Franchise <strong>5 000€</strong> ou plus (parfois jusqu&apos;à 25 000€ négociable).
                 Stratégie d&apos;auto-assurance partielle : payer en cash les sinistres &lt;5 000€ +
-                assurer uniquement les sinistres majeurs. Économie cotisation 2 000-8 000€/an.
+                assurer uniquement les sinistres majeurs. Économie cotisation 2 000-8 000€ par an.
               </p>
             </div>
           ),
@@ -184,11 +186,11 @@ export default function Page() {
         },
         {
           q: 'Franchise différente par garantie : possible ?',
-          a: "OUI sur la plupart des contrats RC Pro/multirisque. Exemple typique : franchise 750€ sur RC dommages corporels (rare mais coûteux), 1 500€ sur dommages matériels (fréquent), 5 000€ sur perte d'exploitation (rare et lourd). Notre cabinet ORIAS calibre ces 3 franchises au cas par cas pour optimiser tarif/protection.",
+          a: "OUI sur la plupart des contrats RC Pro ou multirisque. Exemple typique : franchise 750€ sur RC dommages corporels (rare mais coûteux), 1 500€ sur dommages matériels (fréquent), 5 000€ sur perte d'exploitation (rare et lourd). Notre cabinet ORIAS calibre ces 3 franchises au cas par cas pour optimiser tarif ou protection.",
         },
         {
           q: 'Franchise nulle (zéro) : ça existe ?',
-          a: 'TRÈS RARE et toujours déconseillé. Sur-prime de +30 à +50%. Justifié uniquement pour : médecins libéraux haute responsabilité (sinistres systématiquement &gt;100k€), avocats fiscalistes affaires (idem). Pour 99% des autres profils : franchise 750-1 500€ minimum est l&apos;optimum tarif/protection.',
+          a: 'TRÈS RARE et toujours déconseillé. Sur-prime de +30 à +50%. Justifié uniquement pour : médecins libéraux haute responsabilité (sinistres systématiquement &gt;100k€), avocats fiscalistes affaires (idem). Pour 99% des autres profils : franchise 750-1 500€ minimum est l&apos;optimum tarif ou protection.',
         },
         {
           q: 'Puis-je négocier la franchise après souscription ?',

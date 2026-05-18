@@ -17,7 +17,7 @@ const STATS_4 = [
   { value: '3 247', label: 'Artisans assurés' },
   { value: '−32%', label: 'Économie moyenne' },
   { value: '24h', label: 'Attestation' },
-  { value: '4.9/5', label: '142 avis vérifiés' },
+  { value: '4,9 sur 5', label: '142 avis vérifiés' },
 ]
 
 const STATS_6 = [
@@ -32,7 +32,7 @@ describe('SocialProofHero', () => {
     expect(screen.getByText('3 247')).toBeInTheDocument()
     expect(screen.getByText(/Artisans assurés/i)).toBeInTheDocument()
     expect(screen.getByText('−32%')).toBeInTheDocument()
-    expect(screen.getByText('4.9/5')).toBeInTheDocument()
+    expect(screen.getByText('4,9 sur 5')).toBeInTheDocument()
   })
 
   it('plafonne à 4 stats max (6 fournies → 4 affichées)', () => {

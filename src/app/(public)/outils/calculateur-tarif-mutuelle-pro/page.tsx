@@ -29,7 +29,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/calculateur-tarif-mutuelle-pro'
+const SLUG = 'outils / calculateur-tarif-mutuelle-pro'
 
 export const metadata: Metadata = {
   title: 'Calculateur tarif mutuelle pro 2026 — TNS Madelin & Loi ANI (gratuit)',
@@ -56,11 +56,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/mutuelle-pro-btp" className="hover:underline">
               Mutuelle pro
             </Link>{' '}
-            / <span>Calculateur tarif</span>
+            › <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ TNS Madelin + Loi ANI — Estimation 30 secondes
@@ -119,23 +119,24 @@ export default async function Page() {
           <h2 className="mb-4 text-2xl font-bold">Comprendre les 4 niveaux de couverture</h2>
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-r border-l-4 border-gray-400 bg-white p-4">
-              <h3 className="mb-1 font-bold">Socle ANI minimal — 32 €/mois</h3>
+              <h3 className="mb-1 font-bold">Socle ANI minimal — 32 € par mois</h3>
               <p className="text-sm">
                 Couverture obligatoire Loi ANI (art. R. 911-3 CSS). Remboursement 100% Base Sécurité
-                sociale + 100% santé sur lunettes/dentaire de classe A. Aucun dépassement honoraires
-                couvert. <strong>Adapté</strong> : salariés 25-35 ans en bonne santé sans famille.
+                sociale + 100% santé sur lunettes ou dentaire de classe A. Aucun dépassement
+                honoraires couvert. <strong>Adapté</strong> : salariés 25-35 ans en bonne santé sans
+                famille.
               </p>
             </div>
             <div className="rounded-r border-l-4 border-emerald-500 bg-white p-4">
-              <h3 className="mb-1 font-bold">Standard — 58 €/mois (recommandée)</h3>
+              <h3 className="mb-1 font-bold">Standard — 58 € par mois (recommandée)</h3>
               <p className="text-sm">
-                125% BR consultations + dentaire 200% (couronne 600€) + optique 350€/équipement.
-                Hospitalisation chambre particulière. <strong>Adapté</strong> : 80% des
-                travailleurs/familles avec besoins santé courants.
+                125% BR consultations + dentaire 200% (couronne 600€) + optique 350€ par équipement.
+                Hospitalisation chambre particulière. <strong>Adapté</strong> : 80% des travailleurs
+                ou familles avec besoins santé courants.
               </p>
             </div>
             <div className="rounded-r border-l-4 border-teal-500 bg-white p-4">
-              <h3 className="mb-1 font-bold">Confort — 92 €/mois</h3>
+              <h3 className="mb-1 font-bold">Confort — 92 € par mois</h3>
               <p className="text-sm">
                 200% BR + médecines douces (ostéo, étiopathie, sophrologie) + chambre particulière
                 100% + dentaire 300%. <strong>Adapté</strong> : familles avec enfants, dirigeants
@@ -143,11 +144,11 @@ export default async function Page() {
               </p>
             </div>
             <div className="rounded-r border-l-4 border-cyan-700 bg-white p-4">
-              <h3 className="mb-1 font-bold">Premium — 145 €/mois</h3>
+              <h3 className="mb-1 font-bold">Premium — 145 € par mois</h3>
               <p className="text-sm">
-                300% BR + remboursement intégral lunettes/dentaire/implants/orthodontie adulte +
-                assistance internationale. <strong>Adapté</strong> : dirigeants 50+ ans, professions
-                libérales à fort revenu, expatriés, familles nombreuses.
+                300% BR + remboursement intégral lunettes, dentaire, implants ou orthodontie adulte
+                + assistance internationale. <strong>Adapté</strong> : dirigeants 50+ ans,
+                professions libérales à fort revenu, expatriés, familles nombreuses.
               </p>
             </div>
           </div>
@@ -198,7 +199,7 @@ export default async function Page() {
                   <strong>Avantage fiscal</strong>
                 </td>
                 <td className="border p-2">
-                  Cotisations déductibles BIC/BNC (loi Madelin art. 154 bis CGI)
+                  Cotisations déductibles BIC ou BNC (loi Madelin art. 154 bis CGI)
                 </td>
                 <td className="border p-2">
                   Part employeur charge déductible IS, part salarié déductible IR
@@ -208,17 +209,17 @@ export default async function Page() {
                 <td className="border p-2">
                   <strong>Plafond déduction</strong>
                 </td>
-                <td className="border p-2">3,75% PASS + 7% PASS (≈ 7 200 €/an 2026)</td>
-                <td className="border p-2">5% PASS + 2% rémunération (≈ 4 000 €/an 2026)</td>
+                <td className="border p-2">3,75% PASS + 7% PASS (≈ 7 200 € par an 2026)</td>
+                <td className="border p-2">5% PASS + 2% rémunération (≈ 4 000 € par an 2026)</td>
               </tr>
               <tr>
                 <td className="border p-2">
                   <strong>Tarif moyen 2026</strong>
                 </td>
                 <td className="border p-2">
-                  68 €/mois adulte (+18% vs salarié — pas de couverture employeur)
+                  68 € par mois adulte (+18% vs salarié — pas de couverture employeur)
                 </td>
-                <td className="border p-2">58 €/mois adulte référence</td>
+                <td className="border p-2">58 € par mois adulte référence</td>
               </tr>
             </tbody>
           </table>
@@ -275,10 +276,10 @@ export default async function Page() {
               'Calculateur interactif tarif mutuelle santé pro 2026. Double cible TNS Madelin + Loi ANI collective. 5 coefficients publics ACPR. 8 mutuelles comparées.',
             featureList: [
               'Calcul instantané 100% client-side (RGPD)',
-              'Double mode : TNS Madelin individuel / Loi ANI collective',
+              'Double mode : TNS Madelin individuel — Loi ANI collective',
               'Calcul automatique part employeur (50% Loi ANI)',
               'Barèmes 2026 réels 8 mutuelles partenaires',
-              '4 niveaux garantie (socle ANI / standard / confort / premium)',
+              '4 niveaux garantie (socle ANI — standard — confort — premium)',
             ],
           },
           nonce

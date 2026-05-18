@@ -2,15 +2,16 @@ import { Metadata } from 'next'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Blog — Conseils et actualités travaux',
+  title: 'Blog Assurance Pro — Conseils ORIAS BTP, RC Pro, cyber',
   description:
-    'Conseils pratiques, guides et actualités pour tous vos projets de travaux. Rénovation, décoration, entretien maison.',
+    "Analyses, sources légales et chiffres officiels (Légifrance, ACPR, AQC) sur l'assurance professionnelle BTP, RC Pro, cyber et mutuelle TNS. Conseils motivés par nos courtiers ORIAS.",
   alternates: {
     canonical: `${SITE_URL}/blog`,
   },
   openGraph: {
-    title: 'Blog — Conseils et actualités travaux',
-    description: 'Conseils pratiques, guides et actualités pour tous vos projets de travaux.',
+    title: 'Blog Assurance Pro — Conseils ORIAS',
+    description:
+      'Analyses sourcées (Légifrance, ACPR, AQC) sur assurance pro BTP, RC Pro, cyber et mutuelle TNS.',
     url: `${SITE_URL}/blog`,
   },
   robots: {

@@ -34,14 +34,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'assurance-entreprise'
-const TITLE = 'Assurance entreprise — Pack TPE/PME/ETI 2026 (toutes garanties)'
+const TITLE = 'Assurance entreprise — Pack TPE, PME / ETI 2026 (toutes garanties)'
 const TAGLINE =
   "L'assurance globale pour TPE, PME et ETI : RC entreprise, multirisque, mutuelle collective, prévoyance dirigeants, cyber, flotte. Tarifs négociés, conseil ORIAS dédié."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance entreprise TPE/PME : pack RC + multirisque + mutuelle ANI + cyber + flotte. Tarifs dès 980€/an. Comparatif ORIAS 24h.',
+    'Assurance entreprise TPE ou PME : pack RC + multirisque + mutuelle ANI + cyber + flotte. Tarifs dès 980€ par an. Comparatif ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
@@ -58,8 +58,8 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance entreprise désigne l'ensemble des garanties qu'une société (TPE, PME, ETI) doit ou peut souscrire pour sécuriser son activité, son patrimoine, ses dirigeants et ses salariés. Elle se décompose en 7 grandes briques : RC entreprise (responsabilité civile envers tiers), multirisque locaux/matériel/stock, mutuelle santé collective (obligation ANI 2013 pour tous les employeurs), prévoyance collective ou dirigeants, RC mandataire social (RCMS pour les dirigeants SARL/SAS), cyber assurance et flotte automobile. Selon la taille (effectif, CA), le secteur d'activité et le statut juridique (SARL, SAS, SA, SCI), certaines garanties sont OBLIGATOIRES (mutuelle salariés, RC selon métier réglementé, multirisque bail commercial) et d'autres FORTEMENT RECOMMANDÉES (cyber, RCMS, prévoyance dirigeants). Le tarif d'un pack complet 2026 démarre à 980 € HT/an pour une TPE 5 salariés en bureau jusqu'à 25 000 € HT/an pour une PME 50 personnes en site industriel. Cette page récapitule par TAILLE D'ENTREPRISE les garanties indispensables et redirige vers nos pages-piliers spécialisées."
-      legalReference="Code des assurances + Loi 14/06/2013 (ANI mutuelle) + Loi Sapin II (RCMS) + RGPD"
+      intro="L'assurance entreprise désigne l'ensemble des garanties qu'une société (TPE, PME, ETI) doit / peut souscrire pour sécuriser son activité, son patrimoine, ses dirigeants et ses salariés. Elle se décompose en 7 grandes briques : RC entreprise (responsabilité civile envers tiers), multirisque locaux, matériel / stock, mutuelle santé collective (obligation ANI 2013 pour tous les employeurs), prévoyance collective / dirigeants, RC mandataire social (RCMS pour les dirigeants SARL / SAS), cyber assurance et flotte automobile. Selon la taille (effectif, CA), le secteur d'activité et le statut juridique (SARL, SAS, SA, SCI), certaines garanties sont OBLIGATOIRES (mutuelle salariés, RC selon métier réglementé, multirisque bail commercial) et d'autres FORTEMENT RECOMMANDÉES (cyber, RCMS, prévoyance dirigeants). Le tarif d'un pack complet 2026 démarre à 980 € HT par an pour une TPE 5 salariés en bureau jusqu'à 25 000 € HT par an pour une PME 50 personnes en site industriel. Cette page récapitule par TAILLE D'ENTREPRISE les garanties indispensables et redirige vers nos pages-piliers spécialisées."
+      legalReference="Code des assurances + Loi 14 juin 2013 (ANI mutuelle) + Loi Sapin II (RCMS) + RGPD"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="multirisque-pro"
@@ -78,13 +78,13 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 980 €/an',
-          desc: 'TPE 5 salariés bureau. PME 20 personnes : 4 800-9 200€/an. ETI 100 personnes : 18-45k€/an',
+          title: 'À partir de 980 € par an',
+          desc: 'TPE 5 salariés bureau. PME 20 personnes : 4 800-9 200€ par an. ETI 100 personnes : 18-45k€ par an',
         },
         {
           icon: '🛡️',
           title: 'RC Mandataire social',
-          desc: 'Protège le dirigeant SARL/SAS contre les actions en faute de gestion (sinistre type 50-500k€)',
+          desc: 'Protège le dirigeant SARL ou SAS contre les actions en faute de gestion (sinistre type 50-500k€)',
         },
       ]}
       sections={[
@@ -155,7 +155,7 @@ export default function Page() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border p-2">TPE 5 salariés bureau / agence</td>
+                    <td className="border p-2">TPE 5 salariés bureau — agence</td>
                     <td className="border p-2 text-right">980 € – 1 800 €</td>
                   </tr>
                   <tr>
@@ -203,7 +203,7 @@ export default function Page() {
                     href="/responsabilite-civile-professionnelle"
                     className="text-primary-600 underline"
                   >
-                    RC Pro / RCP
+                    RC Pro ou RCP
                   </Link>{' '}
                   — pilier complet
                 </li>
@@ -228,11 +228,11 @@ export default function Page() {
                   </Link>
                 </li>
               </ul>
-              <h3>Par taille / type</h3>
+              <h3>Par taille — type</h3>
               <ul>
                 <li>
                   <Link href="/assurance-micro-entreprise" className="text-primary-600 underline">
-                    Micro-entreprise / TPE &lt; 10
+                    Micro-entreprise ou TPE &lt; 10
                   </Link>
                 </li>
                 <li>
@@ -252,7 +252,7 @@ export default function Page() {
                 </li>
                 <li>
                   <Link href="/assurance-bureau" className="text-primary-600 underline">
-                    Pack bureau / coworking
+                    Pack bureau ou coworking
                   </Link>
                 </li>
                 <li>
@@ -290,7 +290,7 @@ export default function Page() {
         },
         {
           q: "Que se passe-t-il si je n'ai pas mis en place la mutuelle collective ANI ?",
-          a: "Sanctions cumulées : redressement URSSAF avec rappel des cotisations sur 3 ans + majorations (25-50%), dommages-intérêts envers les salariés non-couverts (jusqu'à 6 mois de salaire/personne devant les Prud'hommes), exclusion des allègements de cotisations Fillon, amende contraventionnelle 1 500€/salarié. Total typique pour PME 20 salariés : 30-80 k€.",
+          a: "Sanctions cumulées : redressement URSSAF avec rappel des cotisations sur 3 ans + majorations (25-50%), dommages-intérêts envers les salariés non-couverts (jusqu'à 6 mois de salaire par personne devant les Prud'hommes), exclusion des allègements de cotisations Fillon, amende contraventionnelle 1 500€ par salarié. Total typique pour PME 20 salariés : 30-80 k€.",
         },
         {
           q: "Suis-je obligé d'avoir un Document Unique d'Évaluation des Risques (DUER) ?",
@@ -298,7 +298,7 @@ export default function Page() {
         },
         {
           q: 'Suis-je couvert si un salarié subit un accident du travail ?',
-          a: "L'AT/MP (accidents du travail/maladies professionnelles) est couvert par la branche AT de la Sécurité sociale (cotisations employeur 1-7% du salaire selon secteur). Mais en cas de FAUTE INEXCUSABLE de l'employeur (art. L. 452-1 C. SS), le salarié peut obtenir une indemnité complémentaire devant le TJ. La garantie « responsabilité civile employeur » (RCE) couvre ce risque (sinistre médian 80-300 k€).",
+          a: "L'AT ou MP (accidents du travail ou maladies professionnelles) est couvert par la branche AT de la Sécurité sociale (cotisations employeur 1-7% du salaire selon secteur). Mais en cas de FAUTE INEXCUSABLE de l'employeur (art. L. 452-1 C. SS), le salarié peut obtenir une indemnité complémentaire devant le TJ. La garantie « responsabilité civile employeur » (RCE) couvre ce risque (sinistre médian 80-300 k€).",
         },
         {
           q: 'Suis-je couvert pour les dommages matériels causés par un salarié à un tiers ?',
@@ -306,11 +306,11 @@ export default function Page() {
         },
         {
           q: "L'assurance perte d'exploitation est-elle utile pour ma PME ?",
-          a: "OUI fortement recommandée. Couvre la perte de CA et les frais fixes après un sinistre matériel (incendie, dégâts des eaux, bris machine, cyberattaque). Calcul : marge brute annuelle / 12 × nombre de mois d'interruption. Pour une PME 20 salariés CA 2 M€, sinistre type 6 mois = 350-500 k€ d'indemnisation. Tarif : 0,8-2% du CA assuré.",
+          a: "OUI fortement recommandée. Couvre la perte de CA et les frais fixes après un sinistre matériel (incendie, dégâts des eaux, bris machine, cyberattaque). Calcul : marge brute annuelle — 12 × nombre de mois d'interruption. Pour une PME 20 salariés CA 2 M€, sinistre type 6 mois = 350-500 k€ d'indemnisation. Tarif : 0,8-2% du CA assuré.",
         },
         {
           q: "Combien coûte l'assurance d'une PME 20 salariés ?",
-          a: "Démarre à 4 800€/an pour une PME services en bureau. Médiane marché : 6 800-9 200€/an. PME industrielle ou BTP : 12-18 k€/an (sinistralité plus élevée). Variables : secteur, présence d'un site industriel, exposition cyber, flotte automobile, valeur du matériel pro, sinistralité historique des 5 dernières années.",
+          a: "Démarre à 4 800€ par an pour une PME services en bureau. Médiane marché : 6 800-9 200€ par an. PME industrielle ou BTP : 12-18 k€ par an (sinistralité plus élevée). Variables : secteur, présence d'un site industriel, exposition cyber, flotte automobile, valeur du matériel pro, sinistralité historique des 5 dernières années.",
         },
         {
           q: 'Quel plafond de garantie RC entreprise choisir ?',
@@ -322,11 +322,11 @@ export default function Page() {
         },
         {
           q: 'RCMS : utile pour un dirigeant de SARL ?',
-          a: "OUI fortement recommandée. La RC Mandataire Social (ou D&O — Directors & Officers) couvre la responsabilité personnelle du dirigeant en cas d'action en faute de gestion (par les associés, l'URSSAF, les créanciers, le mandataire judiciaire). Sinistre type : 50-500 k€ pour PME, jusqu'à plusieurs M€ en ETI. Tarif : 800-3 800€/an pour PME selon CA. Loi Sapin II renforce le risque pénal du dirigeant.",
+          a: "OUI fortement recommandée. La RC Mandataire Social (ou D&O — Directors & Officers) couvre la responsabilité personnelle du dirigeant en cas d'action en faute de gestion (par les associés, l'URSSAF, les créanciers, le mandataire judiciaire). Sinistre type : 50-500 k€ pour PME, jusqu'à plusieurs M€ en ETI. Tarif : 800-3 800€ par an pour PME selon CA. Loi Sapin II renforce le risque pénal du dirigeant.",
         },
         {
           q: 'Cyber assurance : indispensable en 2026 ?',
-          a: "OUI pour 95% des entreprises. Coût moyen d'un sinistre cyber pour une TPE/PME : 25 000-150 000€ (notification CNIL sous 72h — RGPD art. 33, frais juridiques RGPD, perte exploitation, restauration de données, frais de communication). Tarif cyber : 200-2 800€/an selon taille. Directive NIS 2 (transposée en France oct. 2024) impose des obligations renforcées pour 15 000+ entités.",
+          a: "OUI pour 95% des entreprises. Coût moyen d'un sinistre cyber pour une TPE ou PME : 25 000-150 000€ (notification CNIL sous 72h — RGPD art. 33, frais juridiques RGPD, perte exploitation, restauration de données, frais de communication). Tarif cyber : 200-2 800€ par an selon taille. Directive NIS 2 (transposée en France oct. 2024) impose des obligations renforcées pour 15 000+ entités.",
         },
         {
           q: "Suis-je obligé d'assurer ma flotte automobile pro ?",

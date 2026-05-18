@@ -45,14 +45,16 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     name: 'Plombier',
     aliases: ['Plombier-chauffagiste', 'Plombier sanitaire'],
     nafCodes: ['4322A', '4322B'],
-    tagline: 'Décennale plombier — Couverture obligatoire pour vos travaux d\'eau, gaz et chauffage.',
-    intro: 'En tant que plombier, vous êtes soumis à l\'obligation de garantie décennale (Loi Spinetta) pour tous vos travaux affectant la solidité de l\'ouvrage : canalisations encastrées, raccords chauffe-eau, équipements de chauffage central, installations sanitaires intégrées au bâti. La sinistralité métier (7,2% selon l\'AQC) est principalement liée aux dégâts des eaux encastrés, qui peuvent émerger plusieurs années après les travaux.',
+    tagline:
+      'Décennale plombier — Couverture obligatoire pour vos travaux d’eau, gaz et chauffage.',
+    intro:
+      'En tant que plombier, vous êtes soumis à l’obligation de garantie décennale (Loi Spinetta) pour tous vos travaux affectant la solidité de l’ouvrage : canalisations encastrées, raccords chauffe-eau, équipements de chauffage central, installations sanitaires intégrées au bâti. La sinistralité métier (7,2% selon l’AQC) est principalement liée aux dégâts des eaux encastrés, qui peuvent émerger plusieurs années après les travaux.',
     sinistraliteAqc: 7.2,
     coutSinistreMoyen: 9800,
     topCauses: [
       { cause: 'Dégât des eaux encastré', pct: 35 },
       { cause: 'Fuites raccord chauffe-eau', pct: 22 },
-      { cause: 'Pression / coup de bélier', pct: 13 },
+      { cause: 'Pression — coup de bélier', pct: 13 },
     ],
     tarifs: {
       auto_entrepreneur: { min: 800, max: 1600 },
@@ -63,14 +65,14 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     garantiesSpecifiques: [
       'Garantie dégâts des eaux étendue',
       'Couverture canalisations encastrées',
-      'Bris de matériel sanitaire / outillage',
+      'Bris de matériel sanitaire — outillage',
       'RC chantier (dommages aux existants)',
     ],
     risques: [
       'Dégâts des eaux suite à raccord défectueux',
       'Fuites de gaz (responsabilité pénale)',
-      'Choc thermique / coup de bélier',
-      'Erreur d\'installation chauffage',
+      'Choc thermique — coup de bélier',
+      'Erreur d’installation chauffage',
     ],
     niveauRisque: 3,
     icon: '🔧',
@@ -82,12 +84,14 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     name: 'Électricien',
     aliases: ['Électricien bâtiment', 'Domoticien'],
     nafCodes: ['4321A'],
-    tagline: 'Décennale électricien — Protégez-vous contre les risques d\'incendie et de mise en cause Consuel.',
-    intro: 'L\'électricien doit obligatoirement souscrire une garantie décennale pour ses installations électriques fixes (tableau, câblage encastré, mise à la terre, courants forts/faibles). Le risque d\'incendie d\'origine électrique (27% des sinistres AQC) en fait l\'un des métiers les plus surveillés par les assureurs. La conformité Consuel + NF C 15-100 est systématiquement vérifiée en cas de sinistre.',
+    tagline:
+      'Décennale électricien — Protégez-vous contre les risques d’incendie et de mise en cause Consuel.',
+    intro:
+      'L’électricien doit obligatoirement souscrire une garantie décennale pour ses installations électriques fixes (tableau, câblage encastré, mise à la terre, courants forts ou faibles). Le risque d’incendie d’origine électrique (27% des sinistres AQC) en fait l’un des métiers les plus surveillés par les assureurs. La conformité Consuel + NF C 15-100 est systématiquement vérifiée en cas de sinistre.',
     sinistraliteAqc: 5.8,
     coutSinistreMoyen: 11200,
     topCauses: [
-      { cause: 'Court-circuit / incendie origine électrique', pct: 27 },
+      { cause: 'Court-circuit — incendie origine électrique', pct: 27 },
       { cause: 'Défaut tableau électrique', pct: 18 },
       { cause: 'Mise à la terre défaillante', pct: 14 },
     ],
@@ -104,7 +108,7 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       'RC dommages tableau électrique',
     ],
     risques: [
-      'Incendie suite à défaut d\'installation',
+      'Incendie suite à défaut d’installation',
       'Non-conformité NF C 15-100',
       'Électrocution tiers',
       'Court-circuit cause de panne matérielle',
@@ -119,14 +123,16 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     name: 'Maçon',
     aliases: ['Maçonnerie générale', 'Maçon béton armé'],
     nafCodes: ['4399C', '4120A'],
-    tagline: 'Décennale maçon — La couverture indispensable pour vos travaux structurels (gros œuvre).',
-    intro: 'En gros œuvre BTP, le maçon est soumis à la décennale la plus engageante : ses ouvrages (murs porteurs, fondations, dalles, structures béton) déterminent la solidité même du bâtiment pendant 10 ans. Avec une sinistralité élevée (9,8%) et un coût moyen de sinistre de 18 500€, la décennale maçon figure parmi les plus chères du BTP. Notre cabinet ORIAS négocie pour vous les meilleures conditions auprès des spécialistes (SMABTP, Hiscox, Generali Pro).',
+    tagline:
+      'Décennale maçon — La couverture indispensable pour vos travaux structurels (gros œuvre).',
+    intro:
+      'En gros œuvre BTP, le maçon est soumis à la décennale la plus engageante : ses ouvrages (murs porteurs, fondations, dalles, structures béton) déterminent la solidité même du bâtiment pendant 10 ans. Avec une sinistralité élevée (9,8%) et un coût moyen de sinistre de 18 500€, la décennale maçon figure parmi les plus chères du BTP. Notre cabinet ORIAS négocie pour vous les meilleures conditions auprès des spécialistes (SMABTP, Hiscox, Generali Pro).',
     sinistraliteAqc: 9.8,
     coutSinistreMoyen: 18500,
     topCauses: [
       { cause: 'Fissures structurelles', pct: 32 },
-      { cause: 'Affaissement / tassement', pct: 18 },
-      { cause: 'Défaut d\'étanchéité', pct: 15 },
+      { cause: 'Affaissement — tassement', pct: 18 },
+      { cause: 'Défaut d’étanchéité', pct: 15 },
     ],
     tarifs: {
       auto_entrepreneur: { min: 1200, max: 2200 },
@@ -142,9 +148,9 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     ],
     risques: [
       'Fissures structurelles évolutives',
-      'Affaissement / tassement de fondations',
-      'Effondrement partiel d\'ouvrage',
-      'Défaut d\'étude de sol',
+      'Affaissement — tassement de fondations',
+      'Effondrement partiel d’ouvrage',
+      'Défaut d’étude de sol',
     ],
     niveauRisque: 4,
     icon: '🧱',
@@ -156,14 +162,16 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     name: 'Couvreur-zingueur',
     aliases: ['Couvreur ardoise', 'Couvreur tuile', 'Étancheur toiture'],
     nafCodes: ['4391A', '4391B'],
-    tagline: 'Décennale couvreur — La sinistralité la plus élevée du BTP. Protégez-vous des infiltrations.',
-    intro: 'Le couvreur-zingueur fait face à la plus forte sinistralité du BTP (11,2% selon l\'AQC), majoritairement due aux infiltrations de toiture qui peuvent émerger plusieurs années après les travaux. Le coût moyen d\'un sinistre atteint 22 000 € et certains assureurs deviennent réticents à couvrir ce métier. Notre cabinet travaille avec des spécialistes (SMABTP, MMA Pro, Generali) pour vous obtenir une couverture adaptée même avec antécédents.',
+    tagline:
+      'Décennale couvreur — La sinistralité la plus élevée du BTP. Protégez-vous des infiltrations.',
+    intro:
+      'Le couvreur-zingueur fait face à la plus forte sinistralité du BTP (11,2% selon l’AQC), majoritairement due aux infiltrations de toiture qui peuvent émerger plusieurs années après les travaux. Le coût moyen d’un sinistre atteint 22 000 € et certains assureurs deviennent réticents à couvrir ce métier. Notre cabinet travaille avec des spécialistes (SMABTP, MMA Pro, Generali) pour vous obtenir une couverture adaptée même avec antécédents.',
     sinistraliteAqc: 11.2,
     coutSinistreMoyen: 22000,
     topCauses: [
       { cause: 'Infiltrations toiture', pct: 41 },
-      { cause: 'Défaut d\'étanchéité raccord', pct: 22 },
-      { cause: 'Décrochage tuiles/ardoises', pct: 14 },
+      { cause: 'Défaut d’étanchéité raccord', pct: 22 },
+      { cause: 'Décrochage tuiles ou ardoises', pct: 14 },
     ],
     tarifs: {
       auto_entrepreneur: { min: 1500, max: 2500 },
@@ -179,8 +187,8 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     ],
     risques: [
       'Infiltrations 5-10 ans après travaux',
-      'Défaut d\'étanchéité raccords (cheminée, fenêtres de toit)',
-      'Décrochage tuiles/ardoises (tempête)',
+      'Défaut d’étanchéité raccords (cheminée, fenêtres de toit)',
+      'Décrochage tuiles ou ardoises (tempête)',
       'Chute matériaux ou personne (RC chantier)',
     ],
     niveauRisque: 5,
@@ -193,12 +201,13 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     name: 'Peintre en bâtiment',
     aliases: ['Peintre décorateur', 'Façadier peintre'],
     nafCodes: ['4334Z'],
-    tagline: 'Décennale peintre — La couverture la moins chère du BTP. À partir de 500€/an.',
-    intro: 'Le peintre en bâtiment bénéficie de la sinistralité la plus faible du BTP (3,4% AQC), grâce à la nature non structurelle de ses travaux. Cela se traduit par les tarifs de décennale les plus accessibles du secteur, à partir de 500€/an pour un auto-entrepreneur. La décennale n\'est obligatoire que pour les travaux affectant la solidité (peintures de protection, traitements anti-humidité), mais nos clients peintres souscrivent aussi systématiquement une RC Pro pour les dommages aux biens des clients.',
+    tagline: 'Décennale peintre — La couverture la moins chère du BTP. À partir de 500€ par an.',
+    intro:
+      'Le peintre en bâtiment bénéficie de la sinistralité la plus faible du BTP (3,4% AQC), grâce à la nature non structurelle de ses travaux. Cela se traduit par les tarifs de décennale les plus accessibles du secteur, à partir de 500€ par an pour un auto-entrepreneur. La décennale n’est obligatoire que pour les travaux affectant la solidité (peintures de protection, traitements anti-humidité), mais nos clients peintres souscrivent aussi systématiquement une RC Pro pour les dommages aux biens des clients.',
     sinistraliteAqc: 3.4,
     coutSinistreMoyen: 4800,
     topCauses: [
-      { cause: 'Décollement enduit/peinture', pct: 38 },
+      { cause: 'Décollement enduit ou peinture', pct: 38 },
       { cause: 'Cloquage humidité', pct: 21 },
       { cause: 'Fissures peinture sur support', pct: 15 },
     ],
@@ -210,12 +219,12 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     },
     garantiesSpecifiques: [
       'RC Pro dommages aux biens (mobilier, parquets)',
-      'Garantie cloquage / décollement',
+      'Garantie cloquage — décollement',
       'Couverture peintures techniques (anti-humidité, ignifuges)',
       'Multirisque pour atelier',
     ],
     risques: [
-      'Décollement / cloquage de peinture',
+      'Décollement — cloquage de peinture',
       'Dommages aux biens du client (mobilier, sols)',
       'Tâches accidentelles',
       'Allergies aux produits',
@@ -231,7 +240,8 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Charpente traditionnelle', 'Charpente industrielle'],
     nafCodes: ['4391A'],
     tagline: 'Décennale charpentier — Couverture pour vos travaux de structure bois.',
-    intro: 'Le charpentier bois intervient sur la structure même du bâtiment, ce qui le soumet à une décennale engageante (sinistralité 8,4% selon l\'AQC). Les sinistres concernent principalement les affaissements de charpente, défauts d\'assemblage et attaques d\'insectes xylophages non détectées. Avec un coût moyen de sinistre de 24 500€, la couverture doit être solide. Nos partenaires SMABTP et Hiscox proposent des contrats spécifiques aux structures bois.',
+    intro:
+      'Le charpentier bois intervient sur la structure même du bâtiment, ce qui le soumet à une décennale engageante (sinistralité 8,4% selon l’AQC). Les sinistres concernent principalement les affaissements de charpente, défauts d’assemblage et attaques d’insectes xylophages non détectées. Avec un coût moyen de sinistre de 24 500€, la couverture doit être solide. Nos partenaires SMABTP et Hiscox proposent des contrats spécifiques aux structures bois.',
     sinistraliteAqc: 8.4,
     coutSinistreMoyen: 24500,
     topCauses: [
@@ -268,7 +278,8 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Carreleur mosaïste', 'Solier carreleur'],
     nafCodes: ['4333Z'],
     tagline: 'Décennale carreleur — Couverture des décollements et infiltrations sols-murs.',
-    intro: 'Le carreleur est soumis à la décennale pour ses travaux de pose de carrelage scellé/collé, sols et murs, susceptibles de générer des dommages décennaux : décollements, fissures de joints, infiltrations sous carrelage en zones humides. Sinistralité 5,9% (AQC), coût moyen 7 400€. Notre cabinet ORIAS propose des tarifs négociés à partir de 900€/an pour un auto-entrepreneur.',
+    intro:
+      'Le carreleur est soumis à la décennale pour ses travaux de pose de carrelage scellé ou collé, sols et murs, susceptibles de générer des dommages décennaux : décollements, fissures de joints, infiltrations sous carrelage en zones humides. Sinistralité 5,9% (AQC), coût moyen 7 400€. Notre cabinet ORIAS propose des tarifs négociés à partir de 900€ par an pour un auto-entrepreneur.',
     sinistraliteAqc: 5.9,
     coutSinistreMoyen: 7400,
     topCauses: [
@@ -283,7 +294,7 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       grand_compte: { min: 3200, max: 5500 },
     },
     garantiesSpecifiques: [
-      'Garantie décollement / désaffleurement',
+      'Garantie décollement — désaffleurement',
       'Couverture infiltrations zones humides (douche, terrasse)',
       'RC dommages aux biens',
       'Multirisque atelier',
@@ -291,7 +302,7 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     risques: [
       'Décollement de carrelage 2-5 ans après pose',
       'Fissures de joints (mouvement support)',
-      'Infiltrations en salle de bain / terrasse',
+      'Infiltrations en salle de bain — terrasse',
       'Chute carrelage mural',
     ],
     niveauRisque: 2,
@@ -301,15 +312,16 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
 
   'plaquiste-platrier': {
     slug: 'plaquiste-platrier',
-    name: 'Plaquiste / plâtrier',
+    name: 'Plaquiste — plâtrier',
     aliases: ['Plaquiste', 'Plâtrier'],
     nafCodes: ['4331Z'],
     tagline: 'Décennale plaquiste — Cloisons, plafonds, isolation. Tarifs accessibles.',
-    intro: 'Le plaquiste-plâtrier intervient sur cloisons, faux-plafonds, isolation et finitions plâtrerie. Sinistralité moyenne (4,6% AQC), principalement liée aux fissures de placo et défauts d\'acoustique. Tarifs décennale très accessibles pour un auto-entrepreneur (à partir de 800€/an).',
+    intro:
+      'Le plaquiste-plâtrier intervient sur cloisons, faux-plafonds, isolation et finitions plâtrerie. Sinistralité moyenne (4,6% AQC), principalement liée aux fissures de placo et défauts d’acoustique. Tarifs décennale très accessibles pour un auto-entrepreneur (à partir de 800€ par an).',
     sinistraliteAqc: 4.6,
     coutSinistreMoyen: 6200,
     topCauses: [
-      { cause: 'Fissures placo / cloisons', pct: 29 },
+      { cause: 'Fissures placo — cloisons', pct: 29 },
       { cause: 'Décollement enduits', pct: 18 },
       { cause: 'Défaut acoustique non garanti', pct: 11 },
     ],
@@ -326,7 +338,7 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       'Multirisque atelier',
     ],
     risques: [
-      'Fissures placo / cloisons (mouvements bâti)',
+      'Fissures placo — cloisons (mouvements bâti)',
       'Décollement enduits',
       'Défaut acoustique non conforme',
       'Affaissement faux-plafonds',
@@ -342,7 +354,8 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Menuisier agenceur', 'Menuisier ébéniste'],
     nafCodes: ['4332A'],
     tagline: 'Décennale menuisier — Aménagement intérieur, escaliers, parquet, agencement.',
-    intro: 'Le menuisier intérieur intervient sur portes intérieures, escaliers, agencements (cuisine, dressing, bibliothèque), parquets cloués/collés. La décennale s\'applique pour les ouvrages affectant la solidité (escaliers intégrés, agencements muraux scellés). Sinistralité faible-moyenne (4,2%).',
+    intro:
+      'Le menuisier intérieur intervient sur portes intérieures, escaliers, agencements (cuisine, dressing, bibliothèque), parquets cloués ou collés. La décennale s’applique pour les ouvrages affectant la solidité (escaliers intégrés, agencements muraux scellés). Sinistralité faible-moyenne (4,2%).',
     sinistraliteAqc: 4.2,
     coutSinistreMoyen: 5800,
     topCauses: [
@@ -365,7 +378,7 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     risques: [
       'Affaissement escalier intégré',
       'Décollement parquet collé',
-      'Vrillage / déformation menuiseries (bois)',
+      'Vrillage — déformation menuiseries (bois)',
       'Casse machine (combinée, dégauchisseuse)',
     ],
     niveauRisque: 2,
@@ -375,11 +388,12 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
 
   'facadier-ite': {
     slug: 'facadier-ite',
-    name: 'Façadier / ITE',
+    name: 'Façadier — ITE',
     aliases: ['Façadier ravaleur', 'ITE Isolation thermique extérieure'],
     nafCodes: ['4399C', '4329B'],
     tagline: 'Décennale façadier — La sinistralité ITE en hausse. Couverture incontournable.',
-    intro: 'Le façadier (ravalement classique) et le poseur d\'isolation thermique extérieure (ITE) sont en première ligne avec une sinistralité élevée (8,7% AQC). L\'ITE notamment voit ses sinistres exploser depuis 2020 (décollement, fissures, infiltrations). Coût moyen 16 800€. Nos partenaires Generali et MMA proposent des contrats adaptés pour les façadiers RGE.',
+    intro:
+      'Le façadier (ravalement classique) et le poseur d’isolation thermique extérieure (ITE) sont en première ligne avec une sinistralité élevée (8,7% AQC). L’ITE notamment voit ses sinistres exploser depuis 2020 (décollement, fissures, infiltrations). Coût moyen 16 800€. Nos partenaires Generali et MMA proposent des contrats adaptés pour les façadiers RGE.',
     sinistraliteAqc: 8.7,
     coutSinistreMoyen: 16800,
     topCauses: [
@@ -402,7 +416,7 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     risques: [
       'Décollement ITE 2-7 ans après pose',
       'Fissures façade (dilatation, mouvements bâti)',
-      'Infiltrations enduit / défaut étanchéité',
+      'Infiltrations enduit — défaut étanchéité',
       'Chute matériaux travail en hauteur',
     ],
     niveauRisque: 4,
@@ -416,13 +430,14 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Étanchéité toiture-terrasse', 'Étanchéité bâtiment'],
     nafCodes: ['4399A'],
     tagline: 'Décennale étancheur — Le métier le plus sinistré du BTP (13,5%).',
-    intro: 'L\'étancheur fait face à la sinistralité la plus élevée du BTP (13,5% selon l\'AQC), avec un coût moyen de sinistre de 28 500€. Les infiltrations de toitures-terrasses, défauts de relevés et acrotères sont les principales causes. Beaucoup d\'assureurs refusent de couvrir ce métier ou appliquent des surprimes importantes. Notre cabinet travaille avec les rares spécialistes (SMABTP, MMA, Hiscox) pour obtenir une couverture viable.',
+    intro:
+      'L’étancheur fait face à la sinistralité la plus élevée du BTP (13,5% selon l’AQC), avec un coût moyen de sinistre de 28 500€. Les infiltrations de toitures-terrasses, défauts de relevés et acrotères sont les principales causes. Beaucoup d’assureurs refusent de couvrir ce métier ou appliquent des surprimes importantes. Notre cabinet travaille avec les rares spécialistes (SMABTP, MMA, Hiscox) pour obtenir une couverture viable.',
     sinistraliteAqc: 13.5,
     coutSinistreMoyen: 28500,
     topCauses: [
       { cause: 'Infiltrations toiture-terrasse', pct: 48 },
       { cause: 'Décollement membrane', pct: 22 },
-      { cause: 'Défauts relevés / acrotères', pct: 18 },
+      { cause: 'Défauts relevés — acrotères', pct: 18 },
     ],
     tarifs: {
       auto_entrepreneur: { min: 2000, max: 3500 },
@@ -434,12 +449,12 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       'Garantie infiltrations renforcée',
       'Couverture étanchéité bitumineuse + membranes synthétiques',
       'RC chute travail en hauteur',
-      'Garantie relevés / acrotères',
+      'Garantie relevés — acrotères',
     ],
     risques: [
       'Infiltrations 3-8 ans après pose',
       'Décollement de membrane',
-      'Défaut de raccord acrotères / évacuations',
+      'Défaut de raccord acrotères — évacuations',
       'Chute travail en hauteur',
     ],
     niveauRisque: 5,
@@ -453,7 +468,8 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Installateur PV', 'Installateur solaire'],
     nafCodes: ['4321A', '4329A'],
     tagline: 'Décennale photovoltaïque — Marché émergent, garanties spécifiques 2025.',
-    intro: 'L\'installateur photovoltaïque (RGE QualiPV) est tenu à une décennale spécifique pour les installations en surimposition ou intégrées. Avec l\'obligation d\'équipement des bâtiments tertiaires neufs >500m² depuis 2025 et le boom du résidentiel, le marché explose. Sinistralité 9,4% (AQC), majoritairement liée à l\'étanchéité de toiture après pose et aux défauts de connexion électrique. Notre cabinet propose des contrats spécifiques RGE adaptés.',
+    intro:
+      'L’installateur photovoltaïque (RGE QualiPV) est tenu à une décennale spécifique pour les installations en surimposition ou intégrées. Avec l’obligation d’équipement des bâtiments tertiaires neufs >500m² depuis 2025 et le boom du résidentiel, le marché explose. Sinistralité 9,4% (AQC), majoritairement liée à l’étanchéité de toiture après pose et aux défauts de connexion électrique. Notre cabinet propose des contrats spécifiques RGE adaptés.',
     sinistraliteAqc: 9.4,
     coutSinistreMoyen: 14500,
     topCauses: [
@@ -475,7 +491,7 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     ],
     risques: [
       'Infiltration toiture après pose',
-      'Court-circuit / défaut connexion',
+      'Court-circuit — défaut connexion',
       'Vol panneaux (multirisque)',
       'Décrochage panneaux (tempête)',
     ],
@@ -492,7 +508,8 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Poseur fenêtres', 'Poseur portes-fenêtres'],
     nafCodes: ['4332A'],
     tagline: 'Décennale menuisier extérieur — Pose fenêtres, portes-fenêtres, vérandas.',
-    intro: 'La pose de menuiseries extérieures (fenêtres alu/PVC/bois, baies vitrées, vérandas) engage votre décennale dès qu\'elle affecte l\'étanchéité ou la solidité de l\'ouvrage. Sinistralité 6,5% AQC, principalement liée aux infiltrations en pied de baie.',
+    intro:
+      'La pose de menuiseries extérieures (fenêtres alu, PVC ou bois, baies vitrées, vérandas) engage votre décennale dès qu’elle affecte l’étanchéité ou la solidité de l’ouvrage. Sinistralité 6,5% AQC, principalement liée aux infiltrations en pied de baie.',
     sinistraliteAqc: 6.5,
     coutSinistreMoyen: 8200,
     topCauses: [
@@ -508,7 +525,11 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       pme_100k_250k: { min: 3800, max: 7500 },
       grand_compte: { min: 7500, max: 14000 },
     },
-    garantiesSpecifiques: ['Garantie pose étanchéité', 'RC dommages vitrage', 'Tous Risques Chantier'],
+    garantiesSpecifiques: [
+      'Garantie pose étanchéité',
+      'RC dommages vitrage',
+      'Tous Risques Chantier',
+    ],
     risques: ['Infiltrations différées', 'Casse stockage', 'Erreur cotation'],
     niveauRisque: 3,
     icon: '🪟',
@@ -520,14 +541,15 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Chauffagiste', 'Pompes à chaleur'],
     nafCodes: ['4322B'],
     tagline: 'Décennale plombier-chauffagiste — Pompes à chaleur, chaudières, plancher chauffant.',
-    intro: 'Spécialiste du chauffage (chaudières, PAC, plancher chauffant), vous êtes soumis à la décennale pour tout équipement intégré au bâti. Risque accru lié à la pose RGE — Audit ANAH ouvert.',
+    intro:
+      'Spécialiste du chauffage (chaudières, PAC, plancher chauffant), vous êtes soumis à la décennale pour tout équipement intégré au bâti. Risque accru lié à la pose RGE — Audit ANAH ouvert.',
     sinistraliteAqc: 7.8,
     coutSinistreMoyen: 11500,
     topCauses: [
       { cause: 'Fuite plancher chauffant', pct: 28 },
       { cause: 'Défaut PAC (groupe extérieur)', pct: 22 },
       { cause: 'Évacuation chaudière mal posée', pct: 18 },
-      { cause: 'Surchauffe / sécurité', pct: 15 },
+      { cause: 'Surchauffe — sécurité', pct: 15 },
       { cause: 'Autres', pct: 17 },
     ],
     tarifs: {
@@ -536,7 +558,12 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       pme_100k_250k: { min: 4800, max: 9500 },
       grand_compte: { min: 9500, max: 18000 },
     },
-    garantiesSpecifiques: ['Garantie RGE QualiPAC', 'Garantie RGE Qualibois', 'RC tiers (CO)', 'Garantie matériel'],
+    garantiesSpecifiques: [
+      'Garantie RGE QualiPAC',
+      'Garantie RGE Qualibois',
+      'RC tiers (CO)',
+      'Garantie matériel',
+    ],
     risques: ['Intoxication CO', 'Fuite frigorigène', 'Surchauffe matériel'],
     niveauRisque: 4,
     icon: '🔥',
@@ -548,7 +575,8 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Métallier', 'Ferronnier'],
     nafCodes: ['2511Z'],
     tagline: 'Décennale serrurier métallier — Garde-corps, escaliers métalliques, structures.',
-    intro: 'La pose de structures métalliques porteuses (garde-corps, escaliers, mezzanines) engage la décennale au titre de la solidité ouvrage. Risque chute de personne = sinistralité corporelle élevée.',
+    intro:
+      'La pose de structures métalliques porteuses (garde-corps, escaliers, mezzanines) engage la décennale au titre de la solidité ouvrage. Risque chute de personne = sinistralité corporelle élevée.',
     sinistraliteAqc: 5.2,
     coutSinistreMoyen: 14000,
     topCauses: [
@@ -569,13 +597,14 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     icon: '🔧',
     nbEntreprisesFrance: 12000,
   },
-  'terrassier': {
+  terrassier: {
     slug: 'terrassier',
     name: 'Terrassier',
     aliases: ['Travaux terrassement', 'Excavation'],
     nafCodes: ['4312A', '4312B'],
     tagline: 'Décennale terrassier — Fondations, viabilisation, soutènement.',
-    intro: 'Vos travaux de fondations et soutènement sont les premiers à engager la décennale (art. 1792 C. civ.). Sinistralité élevée pour les murs de soutènement et fondations sur sol argileux (RGA).',
+    intro:
+      'Vos travaux de fondations et soutènement sont les premiers à engager la décennale (art. 1792 C. civ.). Sinistralité élevée pour les murs de soutènement et fondations sur sol argileux (RGA).',
     sinistraliteAqc: 8.5,
     coutSinistreMoyen: 22000,
     topCauses: [
@@ -590,19 +619,24 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       pme_100k_250k: { min: 6500, max: 13000 },
       grand_compte: { min: 13000, max: 25000 },
     },
-    garantiesSpecifiques: ['Garantie sol étude G2', 'TRC obligatoire', 'RC dommages réseaux enterrés'],
+    garantiesSpecifiques: [
+      'Garantie sol étude G2',
+      'TRC obligatoire',
+      'RC dommages réseaux enterrés',
+    ],
     risques: ['Tassement', 'Endommagement réseaux', 'Effondrement'],
     niveauRisque: 5,
     icon: '🚜',
     nbEntreprisesFrance: 8500,
   },
-  'demolisseur': {
+  demolisseur: {
     slug: 'demolisseur',
     name: 'Démolisseur',
     aliases: ['Travaux démolition'],
     nafCodes: ['4311Z'],
     tagline: 'Décennale et RC démolisseur — Désamiantage, démolition partielle, dégagement.',
-    intro: 'La démolition partielle (avec maintien d\'une structure adjacente) engage la décennale si elle affecte la solidité résiduelle. Risques majeurs : chute de gravats, présence amiante, défaut étaiement.',
+    intro:
+      'La démolition partielle (avec maintien d’une structure adjacente) engage la décennale si elle affecte la solidité résiduelle. Risques majeurs : chute de gravats, présence amiante, défaut étaiement.',
     sinistraliteAqc: 4.8,
     coutSinistreMoyen: 28000,
     topCauses: [
@@ -623,17 +657,18 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     icon: '🔨',
     nbEntreprisesFrance: 4200,
   },
-  'paysagiste': {
+  paysagiste: {
     slug: 'paysagiste',
     name: 'Paysagiste',
     aliases: ['Entrepreneur paysage', 'Jardinier-paysagiste'],
     nafCodes: ['8130Z'],
     tagline: 'Décennale paysagiste — Murs, terrasses, piscines, arrosage intégré.',
-    intro: 'Vos aménagements bâtis (murs, terrasses bois/composite, piscines, plages, arrosage automatique encastré) engagent la décennale. Le simple entretien végétal est exclu.',
+    intro:
+      'Vos aménagements bâtis (murs, terrasses bois ou composite, piscines, plages, arrosage automatique encastré) engagent la décennale. Le simple entretien végétal est exclu.',
     sinistraliteAqc: 4.2,
     coutSinistreMoyen: 7800,
     topCauses: [
-      { cause: 'Étanchéité piscine / bassin', pct: 30 },
+      { cause: 'Étanchéité piscine — bassin', pct: 30 },
       { cause: 'Glissement terrasse bois', pct: 22 },
       { cause: 'Mur soutènement', pct: 18 },
       { cause: 'Autres', pct: 30 },
@@ -644,19 +679,24 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       pme_100k_250k: { min: 2800, max: 5500 },
       grand_compte: { min: 5500, max: 11000 },
     },
-    garantiesSpecifiques: ['Garantie étanchéité piscine', 'RC chute branches', 'Multirisque outillage'],
+    garantiesSpecifiques: [
+      'Garantie étanchéité piscine',
+      'RC chute branches',
+      'Multirisque outillage',
+    ],
     risques: ['Étanchéité piscine', 'Mur écroulé', 'Casse arrosage gel'],
     niveauRisque: 3,
     icon: '🌳',
     nbEntreprisesFrance: 32000,
   },
-  'pisciniste': {
+  pisciniste: {
     slug: 'pisciniste',
     name: 'Pisciniste',
     aliases: ['Constructeur de piscines', 'Spa & piscines'],
     nafCodes: ['4399C'],
     tagline: 'Décennale pisciniste — Construction piscine enterrée, étanchéité, local technique.',
-    intro: 'La construction de piscines enterrées engage la décennale au titre de la solidité ouvrage et de l\'étanchéité. Risque sinistralité élevé sur les liners et structures béton.',
+    intro:
+      'La construction de piscines enterrées engage la décennale au titre de la solidité ouvrage et de l’étanchéité. Risque sinistralité élevé sur les liners et structures béton.',
     sinistraliteAqc: 9.2,
     coutSinistreMoyen: 18500,
     topCauses: [
@@ -677,13 +717,14 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     icon: '🏊',
     nbEntreprisesFrance: 3800,
   },
-  'climatisation': {
+  climatisation: {
     slug: 'climatisation',
     name: 'Climatisation',
     aliases: ['Frigoriste', 'Climaticien'],
     nafCodes: ['4322B'],
     tagline: 'Décennale climatisation — Pose split, VRV, attestation capacité fluides F-Gaz.',
-    intro: 'La pose de climatiseurs (split, multi-split, VRV) engage la décennale dès que le matériel est intégré au bâti (groupes extérieurs scellés, gaines encastrées). Attestation capacité F-Gaz obligatoire.',
+    intro:
+      'La pose de climatiseurs (split, multi-split, VRV) engage la décennale dès que le matériel est intégré au bâti (groupes extérieurs scellés, gaines encastrées). Attestation capacité F-Gaz obligatoire.',
     sinistraliteAqc: 6.0,
     coutSinistreMoyen: 9800,
     topCauses: [
@@ -699,7 +740,7 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       grand_compte: { min: 8500, max: 16000 },
     },
     garantiesSpecifiques: ['Garantie F-Gaz', 'RC dommages condensation', 'Garantie matériel'],
-    risques: ['Fuite frigorigène', 'Vibration / bruit voisinage', 'Erreur dimensionnement'],
+    risques: ['Fuite frigorigène', 'Vibration — bruit voisinage', 'Erreur dimensionnement'],
     niveauRisque: 3,
     icon: '❄️',
     nbEntreprisesFrance: 8500,
@@ -709,8 +750,9 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     name: 'Isolation thermique',
     aliases: ['ITE', 'ITI', 'Isolation combles'],
     nafCodes: ['4329A'],
-    tagline: 'Décennale ITE / ITI — Polyuréthane, laine, ouate de cellulose, RGE QualiPV.',
-    intro: 'L\'isolation thermique (ITE par l\'extérieur, ITI par l\'intérieur, soufflage combles) engage la décennale dès que la pose affecte l\'enveloppe. Marché tendu post-MaPrimeRénov\' avec une sinistralité en hausse.',
+    tagline: 'Décennale ITE — ITI — Polyuréthane, laine, ouate de cellulose, RGE QualiPV.',
+    intro:
+      'L’isolation thermique (ITE par l’extérieur, ITI par l’intérieur, soufflage combles) engage la décennale dès que la pose affecte l’enveloppe. Marché tendu post-MaPrimeRénov’ avec une sinistralité en hausse.',
     sinistraliteAqc: 7.0,
     coutSinistreMoyen: 12500,
     topCauses: [
@@ -737,11 +779,12 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Parquetier', 'Moquettiste', 'PVC'],
     nafCodes: ['4333Z'],
     tagline: 'Décennale sols souples — Parquet, PVC, moquette, linoléum, vitrification.',
-    intro: 'La pose de sols souples (parquet flottant ou collé, PVC, lino, moquette, vitrification) engage la décennale si elle affecte la solidité du support ou la planéité.',
+    intro:
+      'La pose de sols souples (parquet flottant ou collé, PVC, lino, moquette, vitrification) engage la décennale si elle affecte la solidité du support ou la planéité.',
     sinistraliteAqc: 3.8,
     coutSinistreMoyen: 5200,
     topCauses: [
-      { cause: 'Décollement / cloque', pct: 35 },
+      { cause: 'Décollement — cloque', pct: 35 },
       { cause: 'Défaut planéité support', pct: 22 },
       { cause: 'Remontée humidité', pct: 18 },
       { cause: 'Autres', pct: 25 },
@@ -758,13 +801,14 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     icon: '🪵',
     nbEntreprisesFrance: 14000,
   },
-  'cuisiniste': {
+  cuisiniste: {
     slug: 'cuisiniste',
     name: 'Cuisiniste',
     aliases: ['Installateur cuisines', 'Salle de bain'],
     nafCodes: ['4332B'],
     tagline: 'Décennale cuisiniste — Pose cuisine équipée, plan travail, électroménager intégré.',
-    intro: 'La pose de cuisines équipées et salles de bain engage la décennale lorsque les éléments sont intégrés (raccordements eau/gaz/électrique, plans encastrés). Sinistralité plomberie majoritaire.',
+    intro:
+      'La pose de cuisines équipées et salles de bain engage la décennale lorsque les éléments sont intégrés (raccordements eau, gaz ou électrique, plans encastrés). Sinistralité plomberie majoritaire.',
     sinistraliteAqc: 4.5,
     coutSinistreMoyen: 6800,
     topCauses: [
@@ -779,19 +823,24 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       pme_100k_250k: { min: 2800, max: 5500 },
       grand_compte: { min: 5500, max: 11000 },
     },
-    garantiesSpecifiques: ['Garantie pose plomberie', 'RC dommages mobilier', 'Multirisque atelier'],
+    garantiesSpecifiques: [
+      'Garantie pose plomberie',
+      'RC dommages mobilier',
+      'Multirisque atelier',
+    ],
     risques: ['Fuites raccords', 'Défaut électrique', 'Casse transport'],
     niveauRisque: 2,
     icon: '🍳',
     nbEntreprisesFrance: 11000,
   },
-  'fumiste': {
+  fumiste: {
     slug: 'fumiste',
     name: 'Fumiste',
     aliases: ['Poseur de cheminées', 'Ramonage'],
     nafCodes: ['4329A'],
     tagline: 'Décennale fumiste — Cheminées, poêles, conduits, ramonage qualifié.',
-    intro: 'La pose de cheminées et conduits de fumée (insert, poêle à bois, granulés) engage la décennale et la sécurité incendie. Risque CO + feu de cheminée.',
+    intro:
+      'La pose de cheminées et conduits de fumée (insert, poêle à bois, granulés) engage la décennale et la sécurité incendie. Risque CO + feu de cheminée.',
     sinistraliteAqc: 5.5,
     coutSinistreMoyen: 13000,
     topCauses: [
@@ -806,19 +855,24 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       pme_100k_250k: { min: 3800, max: 7500 },
       grand_compte: { min: 7500, max: 14000 },
     },
-    garantiesSpecifiques: ['Garantie RGE Qualibois', 'RC tiers (CO + incendie)', 'Garantie conduit'],
+    garantiesSpecifiques: [
+      'Garantie RGE Qualibois',
+      'RC tiers (CO + incendie)',
+      'Garantie conduit',
+    ],
     risques: ['Feu cheminée', 'CO', 'Fissure conduit'],
     niveauRisque: 4,
     icon: '🔥',
     nbEntreprisesFrance: 4500,
   },
-  'puisatier': {
+  puisatier: {
     slug: 'puisatier',
     name: 'Puisatier-foreur',
     aliases: ['Forage puits', 'Géothermie'],
     nafCodes: ['4399C'],
     tagline: 'Décennale puisatier — Forage puits, captage géothermique, sondage.',
-    intro: 'Les forages (puits, géothermie verticale, sondage) engagent la décennale en raison de leur impact sur les fondations et la nappe phréatique. Sinistralité forage géothermique en forte hausse.',
+    intro:
+      'Les forages (puits, géothermie verticale, sondage) engagent la décennale en raison de leur impact sur les fondations et la nappe phréatique. Sinistralité forage géothermique en forte hausse.',
     sinistraliteAqc: 6.8,
     coutSinistreMoyen: 24000,
     topCauses: [
@@ -845,7 +899,8 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Domoticien', 'Smart home installer'],
     nafCodes: ['4321A'],
     tagline: 'Décennale domotique — KNX, ZigBee, courants faibles, fibre, sécurité.',
-    intro: 'L\'installation domotique (KNX, ZigBee, courants faibles, alarme, vidéosurveillance, fibre intégrée) engage la décennale au titre de la solidité électrique. Marché en forte croissance.',
+    intro:
+      'L’installation domotique (KNX, ZigBee, courants faibles, alarme, vidéosurveillance, fibre intégrée) engage la décennale au titre de la solidité électrique. Marché en forte croissance.',
     sinistraliteAqc: 4.5,
     coutSinistreMoyen: 7500,
     topCauses: [
@@ -869,10 +924,11 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
   'multi-services-btp': {
     slug: 'multi-services-btp',
     name: 'Multi-services BTP',
-    aliases: ['Tous corps d\'état', 'TCE'],
+    aliases: ['Tous corps d’état', 'TCE'],
     nafCodes: ['4399Z'],
-    tagline: 'Décennale multi-services BTP — Petits travaux, rénovation tous corps d\'état.',
-    intro: 'L\'activité multi-services BTP (petits travaux, rénovation TCE) cumule les risques de plusieurs métiers. La décennale couvre l\'ensemble dès qu\'il y a impact sur la solidité.',
+    tagline: 'Décennale multi-services BTP — Petits travaux, rénovation tous corps d’état.',
+    intro:
+      'L’activité multi-services BTP (petits travaux, rénovation TCE) cumule les risques de plusieurs métiers. La décennale couvre l’ensemble dès qu’il y a impact sur la solidité.',
     sinistraliteAqc: 6.5,
     coutSinistreMoyen: 9500,
     topCauses: [
@@ -888,18 +944,23 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       grand_compte: { min: 10000, max: 19000 },
     },
     garantiesSpecifiques: ['RC TCE étendue', 'TRC obligatoire si gros œuvre', 'RC dommages voisin'],
-    risques: ['Activités multiples mal déclarées', 'Coordination', 'Garanties limitées par activité'],
+    risques: [
+      'Activités multiples mal déclarées',
+      'Coordination',
+      'Garanties limitées par activité',
+    ],
     niveauRisque: 4,
     icon: '🛠️',
     nbEntreprisesFrance: 25000,
   },
-  'ravalement': {
+  ravalement: {
     slug: 'ravalement',
     name: 'Ravalement de façade',
     aliases: ['Ravalement enduits', 'Façadier'],
     nafCodes: ['4399A'],
     tagline: 'Décennale ravalement — Enduit, peinture façade, hydrofuge, traitements.',
-    intro: 'Le ravalement engage la décennale au titre de l\'étanchéité de la façade et de la durabilité de l\'enduit. Échéance ravalement obligatoire tous les 10 ans dans certaines villes.',
+    intro:
+      'Le ravalement engage la décennale au titre de l’étanchéité de la façade et de la durabilité de l’enduit. Échéance ravalement obligatoire tous les 10 ans dans certaines villes.',
     sinistraliteAqc: 5.0,
     coutSinistreMoyen: 8500,
     topCauses: [
@@ -920,13 +981,14 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     icon: '🏚️',
     nbEntreprisesFrance: 16000,
   },
-  'placoplatre': {
+  placoplatre: {
     slug: 'placoplatre',
     name: 'Plâtrerie placoplâtre',
     aliases: ['Plâtrier', 'Cloisons sèches'],
     nafCodes: ['4332B'],
     tagline: 'Décennale plâtrier — Cloisons sèches, plafonds, doublage, faux-plafond.',
-    intro: 'La pose de cloisons sèches, doublages et plafonds engage la décennale au titre de la solidité des cloisons et de l\'isolation acoustique. Sinistralité cloisons en zone humide en hausse.',
+    intro:
+      'La pose de cloisons sèches, doublages et plafonds engage la décennale au titre de la solidité des cloisons et de l’isolation acoustique. Sinistralité cloisons en zone humide en hausse.',
     sinistraliteAqc: 4.0,
     coutSinistreMoyen: 6200,
     topCauses: [
@@ -953,13 +1015,14 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
     aliases: ['Installateur PV résidentiel'],
     nafCodes: ['4321A'],
     tagline: 'Décennale photovoltaïque résidentiel — Pose toiture, raccordement Enedis.',
-    intro: 'La pose de panneaux PV résidentiels engage la décennale (étanchéité toiture + raccordement électrique). Marché Linky/MaPrimeRénov\' en forte croissance.',
+    intro:
+      'La pose de panneaux PV résidentiels engage la décennale (étanchéité toiture + raccordement électrique). Marché Linky ou MaPrimeRénov’ en forte croissance.',
     sinistraliteAqc: 7.5,
     coutSinistreMoyen: 16000,
     topCauses: [
       { cause: 'Infiltration toiture pose PV', pct: 38 },
       { cause: 'Raccordement défaillant', pct: 22 },
-      { cause: 'Surchauffe / arc électrique', pct: 18 },
+      { cause: 'Surchauffe — arc électrique', pct: 18 },
       { cause: 'Autres', pct: 22 },
     ],
     tarifs: {
@@ -968,7 +1031,11 @@ export const DECENNALE_METIERS: Record<string, MetierBtp> = {
       pme_100k_250k: { min: 5500, max: 11000 },
       grand_compte: { min: 11000, max: 21000 },
     },
-    garantiesSpecifiques: ['Garantie RGE QualiPV', 'Garantie étanchéité toiture', 'RC raccordement'],
+    garantiesSpecifiques: [
+      'Garantie RGE QualiPV',
+      'Garantie étanchéité toiture',
+      'RC raccordement',
+    ],
     risques: ['Infiltration', 'Arc électrique', 'Vol panneaux'],
     niveauRisque: 4,
     icon: '☀️',

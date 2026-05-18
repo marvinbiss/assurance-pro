@@ -22,7 +22,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro : guide complet souscription. Obligations par profession, plafonds recommandés, exclusions à connaître, comparatif Hiscox / Allianz / AXA. Attestation immédiate après devis.',
+    'RC Pro : guide complet souscription. Obligations par profession, plafonds recommandés, exclusions à connaître, comparatif Hiscox — Allianz — AXA. Attestation immédiate après devis.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -69,7 +69,7 @@ export default function Page() {
               <ol>
                 <li>
                   <strong>Plafond par sinistre + plafond annuel</strong> : minimum 500 000€ pour
-                  services intellectuels, 1-2M€ pour BTP/conseil, 5M€+ pour activités à risque
+                  services intellectuels, 1-2M€ pour BTP ou conseil, 5M€+ pour activités à risque
                   (médical, financier, cyber).
                 </li>
                 <li>
@@ -106,11 +106,11 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <strong>Freelance IT / Consultant</strong> : 500k€-2M€ (CA &lt; 100k€) → 2-5M€ (CA
+                  <strong>Freelance IT — Consultant</strong> : 500k€-2M€ (CA &lt; 100k€) → 2-5M€ (CA
                   &gt; 500k€)
                 </li>
                 <li>
-                  <strong>Agence web / Communication</strong> : 1-3M€
+                  <strong>Agence web — Communication</strong> : 1-3M€
                 </li>
                 <li>
                   <strong>Consultant management</strong> : 2-5M€
@@ -125,7 +125,7 @@ export default function Page() {
                   <strong>Avocat</strong> : 5-10M€ (Conseil de l&apos;Ordre minimum)
                 </li>
                 <li>
-                  <strong>Cyber-sécurité / Hébergeur</strong> : 5-25M€
+                  <strong>Cyber-sécurité — Hébergeur</strong> : 5-25M€
                 </li>
               </ul>
             </>
@@ -137,7 +137,7 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <strong>Sous-assurer pour économiser 50€/an</strong> : un sinistre = 30-200k€
+                  <strong>Sous-assurer pour économiser 50€ par an</strong> : un sinistre = 30-200k€
                   moyen. Le delta de prime = peanuts.
                 </li>
                 <li>
@@ -164,7 +164,7 @@ export default function Page() {
       faq={[
         {
           q: 'Quelle est la meilleure RC Pro pour un consultant freelance ?',
-          a: 'Pour un consultant freelance services intellectuels (CA < 100k€), Hiscox et Stello proposent souvent le meilleur rapport prix/garanties (95-180€/an, plafond 1M€, postériorité 10 ans). Allianz Pro et AXA Pro sont plus chers (~250-400€/an) mais inclus des services annexes.',
+          a: 'Pour un consultant freelance services intellectuels (CA < 100k€), Hiscox et Stello proposent souvent le meilleur rapport prix ou garanties (95-180€ par an, plafond 1M€, postériorité 10 ans). Allianz Pro et AXA Pro sont plus chers (~250-400€ par an) mais inclus des services annexes.',
         },
         {
           q: 'Combien de temps pour obtenir une attestation RC Pro ?',

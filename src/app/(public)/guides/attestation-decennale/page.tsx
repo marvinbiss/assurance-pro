@@ -26,7 +26,7 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 
-const SLUG = 'guides/attestation-decennale'
+const SLUG = 'guides / attestation-decennale'
 const TITLE = 'Attestation décennale — Modèle, mentions obligatoires et délai 2026'
 const TAGLINE =
   "Tout savoir sur l'attestation d'assurance décennale : mentions obligatoires depuis 2024, modèle PDF téléchargeable, délais d'obtention et sanctions en cas d'absence."
@@ -82,8 +82,8 @@ export default function Page() {
             <>
               <p>
                 L&apos;attestation d&apos;assurance décennale est un document écrit délivré par
-                l&apos;assureur à l&apos;artisan ou à l&apos;entreprise BTP qu&apos;il garantit.
-                Elle a 4 fonctions juridiques :
+                l&apos;assureur à l&apos;artisan / à l&apos;entreprise BTP qu&apos;il garantit. Elle
+                a 4 fonctions juridiques :
               </p>
               <ul>
                 <li>
@@ -140,7 +140,7 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Activités professionnelles couvertes</strong> avec références précises aux
-                  nomenclatures (NAF + nomenclatures FFB/CAPEB)
+                  nomenclatures (NAF + nomenclatures FFB ou CAPEB)
                 </li>
                 <li>
                   <strong>Zone géographique de couverture</strong> (France métropolitaine, DOM, UE,
@@ -163,8 +163,8 @@ export default function Page() {
                   médiateur de l&apos;assurance (Reco ACPR 2024-R-02)
                 </li>
                 <li>
-                  <strong>Date d&apos;établissement de l&apos;attestation</strong> et
-                  signature/cachet de l&apos;assureur
+                  <strong>Date d&apos;établissement de l&apos;attestation</strong> et signature ou
+                  cachet de l&apos;assureur
                 </li>
               </ol>
             </>
@@ -261,7 +261,7 @@ export default function Page() {
             <>
               <p>
                 Voici un modèle conforme à l&apos;arrêté du 23 janvier 2024, à utiliser comme
-                référence pour vérifier la conformité de votre propre attestation ou pour la fournir
+                référence pour vérifier la conformité de votre propre attestation / pour la fournir
                 à votre assureur en cas de demande d&apos;émission :
               </p>
               <p className="my-4 border-l-4 border-primary-500 bg-primary-50 p-4">

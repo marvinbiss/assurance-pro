@@ -15,14 +15,14 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-restaurant-en-ligne'
-const TITLE = 'Assurance restaurant en ligne 2026 — Souscription 100% digitale (480-2 800€/an)'
+const TITLE = 'Assurance restaurant en ligne 2026 — Souscription 100% digitale (480-2 800€ par an)'
 const TAGLINE =
   'Souscrivez votre assurance restaurant 100% en ligne en 10 minutes : multirisque restaurant + RC Pro + perte exploitation + intoxications alimentaires + dommages électroménager.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance restaurant en ligne 2026 : souscription 100% digitale en 10 min. Multirisque restaurant (incendie, dégâts eaux, vol) + RC Pro intoxications alimentaires + perte exploitation + dommages cuisine pro. Tarifs 480-2 800€/an. 6 assureurs spécialisés HCR. Devis 24h.',
+    'Assurance restaurant en ligne 2026 : souscription 100% digitale en 10 min. Multirisque restaurant (incendie, dégâts eaux, vol) + RC Pro intoxications alimentaires + perte exploitation + dommages cuisine pro. Tarifs 480-2 800€ par an. 6 assureurs spécialisés HCR. Devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -33,7 +33,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance restaurant en ligne désigne la souscription 100% digitale d'un pack assurances complet pour restaurateurs/traiteurs/bars/HCR : multirisque restaurant (incendie, dégâts des eaux, vol, vandalisme), RC Pro intoxications alimentaires, perte d'exploitation, dommages électroménager (frigos pro, fours, chaudières), bris de glace vitrines. Souscription 100% en ligne en 10 minutes pour les profils standards (restaurant traditionnel, snack, brasserie). Tarifs 2026 : 480-2 800 €/an pour restaurant standard <100m², 3 200-12 000 €/an pour restaurant SARL avec terrasse + cuisine ouverte. 6 assureurs HCR spécialisés (MMA Pro Resto, AXA Pro HCR, Allianz Pro Resto, Generali, Hiscox Pro, MAAF Pro)."
+      intro="L'assurance restaurant en ligne désigne la souscription 100% digitale d'un pack assurances complet pour restaurateurs, traiteurs, bars / HCR : multirisque restaurant (incendie, dégâts des eaux, vol, vandalisme), RC Pro intoxications alimentaires, perte d'exploitation, dommages électroménager (frigos pro, fours, chaudières), bris de glace vitrines. Souscription 100% en ligne en 10 minutes pour les profils standards (restaurant traditionnel, snack, brasserie). Tarifs 2026 : 480-2 800 € par an pour restaurant standard <100m², 3 200-12 000 € par an pour restaurant SARL avec terrasse + cuisine ouverte. 6 assureurs HCR spécialisés (MMA Pro Resto, AXA Pro HCR, Allianz Pro Resto, Generali, Hiscox Pro, MAAF Pro)."
       legalReference="Code conso art. L. 412-1 (sécurité alimentaire) + arrêté HACCP + RC Pro tutélée Convention HCR"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -54,12 +54,12 @@ export default function Page() {
         {
           icon: '🔥',
           title: 'Multirisque restaurant',
-          desc: 'Incendie cuisine + dégâts eaux + vol caisse/coffre + vandalisme + bris vitrines',
+          desc: 'Incendie cuisine + dégâts eaux + vol caisse ou coffre + vandalisme + bris vitrines',
         },
         {
           icon: '💰',
-          title: '480-2 800 €/an standard',
-          desc: 'Restaurant <100m² : 480-1 480€. SARL terrasse+cuisine ouverte : 3 200-12 000€/an',
+          title: '480-2 800 € par an standard',
+          desc: 'Restaurant <100m² : 480-1 480€. SARL terrasse+cuisine ouverte : 3 200-12 000€ par an',
         },
       ]}
       sections={[
@@ -77,7 +77,7 @@ export default function Page() {
                 <tbody>
                   <tr>
                     <td className="border p-2">
-                      <strong>Incendie/explosion</strong>
+                      <strong>Incendie ou explosion</strong>
                     </td>
                     <td className="border p-2">
                       Indemnité reconstruction local + matériel cuisine pro
@@ -93,7 +93,7 @@ export default function Page() {
                   </tr>
                   <tr>
                     <td className="border p-2">
-                      <strong>Vol / vandalisme</strong>
+                      <strong>Vol — vandalisme</strong>
                     </td>
                     <td className="border p-2">
                       Vol caisse + coffre + matériel + vandalisme nocturne
@@ -170,15 +170,15 @@ export default function Page() {
         },
         {
           q: 'Intoxication alimentaire : que couvre la RC Pro ?',
-          a: "Recours clients (frais médicaux, indemnité préjudice moral, perte revenus salariés du client en arrêt) suite à intoxication causée par votre cuisine. Sinistre moyen 2024 : 8 500€/personne. Sinistre groupé (mariage de 80 personnes intoxiquées par buffet) : 200-680 000€. D'où importance plafond garantie ≥1M€.",
+          a: "Recours clients (frais médicaux, indemnité préjudice moral, perte revenus salariés du client en arrêt) suite à intoxication causée par votre cuisine. Sinistre moyen 2024 : 8 500€ par personne. Sinistre groupé (mariage de 80 personnes intoxiquées par buffet) : 200-680 000€. D'où importance plafond garantie ≥1M€.",
         },
         {
           q: 'Plafond RC Pro recommandé restaurateur ?',
-          a: '<strong>500 000 €</strong> = restaurant moins 50 couverts/jour. <strong>1 000 000 €</strong> = restaurant standard 50-150 couverts. <strong>2-5 000 000 €</strong> = restaurant gastronomique, traiteur événementiel (mariages 80+ personnes), restaurant chaîne avec multiples établissements.',
+          a: '<strong>500 000 €</strong> = restaurant moins 50 couverts par jour. <strong>1 000 000 €</strong> = restaurant standard 50-150 couverts. <strong>2-5 000 000 €</strong> = restaurant gastronomique, traiteur événementiel (mariages 80+ personnes), restaurant chaîne avec multiples établissements.',
         },
         {
           q: 'Tarif assurance restaurant 2026 ?',
-          a: 'Restaurant traditionnel <100m² (CA <300k€) : 480-1 480 €/an. Restaurant standard 100-200m² (CA 300-800k€) : 1 480-3 200 €/an. Restaurant gastronomique ou avec terrasse importante (CA 800k€-2M€) : 3 200-8 500 €/an. Brasserie hôtel-restaurant : 8 500-22 000 €/an. Variables : zone (Paris/Côte d&apos;Azur +25%), antécédents.',
+          a: 'Restaurant traditionnel <100m² (CA <300k€) : 480-1 480 € par an. Restaurant standard 100-200m² (CA 300-800k€) : 1 480-3 200 € par an. Restaurant gastronomique ou avec terrasse importante (CA 800k€-2M€) : 3 200-8 500 € par an. Brasserie hôtel-restaurant : 8 500-22 000 € par an. Variables : zone (Paris ou Côte d&apos;Azur +25%), antécédents.',
         },
       ]}
     />

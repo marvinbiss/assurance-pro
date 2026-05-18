@@ -19,7 +19,7 @@ interface TrustBadgesProps {
 }
 
 export function TrustBadges({ variant = 'default', className = '' }: TrustBadgesProps) {
-  const ORIAS = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
+  const ORIAS = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"
 
   const badges = [
     {

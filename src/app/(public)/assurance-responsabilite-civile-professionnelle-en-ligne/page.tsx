@@ -19,7 +19,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance responsabilité civile professionnelle en ligne : comparateur 5 assureurs + souscription 5 min + attestation immédiate. AE 95€/an, SAS 1800€/an.',
+    'Assurance responsabilité civile professionnelle en ligne : comparateur 5 assureurs + souscription 5 min + attestation immédiate. AE 95€ par an, SAS 1800€ par an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -130,7 +130,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Extension internationale</strong> (+25-40%) : UE seul ou monde entier (sauf
-                USA/Canada parfois exclu)
+                USA ou Canada parfois exclu)
               </li>
               <li>
                 <strong>Décennale</strong> : OBLIGATOIRE BTP (Loi Spinetta art. 1792 C. civ.)
@@ -146,11 +146,11 @@ export default function Page() {
         },
         {
           q: 'En ligne possible pour tous statuts ?',
-          a: 'OUI pour AE/EURL/SARL/SAS jusqu&apos;à environ 5 000€/an de prime. Au-delà (SAS PME complexes, libéral réglementé multi-spécialités), parcours hybride recommandé : devis en ligne + finalisation conseiller téléphone/visio.',
+          a: 'OUI pour AE, EURL, SARL ou SAS jusqu&apos;à environ 5 000€ par an de prime. Au-delà (SAS PME complexes, libéral réglementé multi-spécialités), parcours hybride recommandé : devis en ligne + finalisation conseiller téléphone ou visio.',
         },
         {
           q: 'Quels documents fournir en ligne ?',
-          a: 'SIRET (obligatoire), Kbis ou ACOSS attestation (AE), RIB (prélèvement), pièce identité dirigeant. Cas particuliers : diplôme/agrément ordre professionnel (avocat, médecin), attestations expérience BTP (10 ans pour décennale).',
+          a: 'SIRET (obligatoire), Kbis ou ACOSS attestation (AE), RIB (prélèvement), pièce identité dirigeant. Cas particuliers : diplôme ou agrément ordre professionnel (avocat, médecin), attestations expérience BTP (10 ans pour décennale).',
         },
       ]}
       relatedMetiers={[

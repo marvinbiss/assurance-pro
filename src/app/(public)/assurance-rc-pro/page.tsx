@@ -17,7 +17,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance RC Pro : tarif à partir de 95€/an (auto-entrepreneur), 180€/an (SARL). Couverture dommages corporels, matériels, immatériels. Comparatif Hiscox, Allianz, AXA, MMA. Devis gratuit en 24h.',
+    'Assurance RC Pro : tarif à partir de 95€ par an (auto-entrepreneur), 180€ par an (SARL). Couverture dommages corporels, matériels, immatériels. Comparatif Hiscox, Allianz, AXA, MMA. Devis gratuit en 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -43,8 +43,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 95€/an',
-          desc: 'Tarif auto-entrepreneur freelance services. SARL/SAS : 180€+/an',
+          title: 'À partir de 95€ par an',
+          desc: 'Tarif auto-entrepreneur freelance services. SARL ou SAS : 180€+ par an',
         },
         {
           icon: '⚡',
@@ -119,24 +119,24 @@ export default function Page() {
               <ul>
                 <li>
                   <strong>Auto-entrepreneur services intellectuels</strong> (consultant, freelance
-                  IT) : 95-180€/an
+                  IT) : 95-180€ par an
                 </li>
                 <li>
                   <strong>Auto-entrepreneur services à la personne</strong> (coach, formateur) :
-                  120-250€/an
+                  120-250€ par an
                 </li>
                 <li>
-                  <strong>Auto-entrepreneur BTP</strong> (en complément décennale) : 250-450€/an
+                  <strong>Auto-entrepreneur BTP</strong> (en complément décennale) : 250-450€ par an
                 </li>
                 <li>
-                  <strong>SARL/SAS PME services</strong> : 350-900€/an
+                  <strong>SARL ou SAS PME services</strong> : 350-900€ par an
                 </li>
                 <li>
-                  <strong>Profession réglementée</strong> (médecin, avocat) : 500-2 500€/an
+                  <strong>Profession réglementée</strong> (médecin, avocat) : 500-2 500€ par an
                 </li>
                 <li>
                   <strong>Activité à risque</strong> (cyber, financier, médical spécialisé) : 1
-                  000-15 000€/an
+                  000-15 000€ par an
                 </li>
               </ul>
             </>
@@ -146,7 +146,7 @@ export default function Page() {
       faq={[
         {
           q: 'La RC Pro est-elle obligatoire pour un auto-entrepreneur ?',
-          a: 'Cela dépend de votre activité. Obligatoire pour les professions réglementées (médical, juridique, immobilier, BTP). Recommandée pour toutes les autres activités B2B où votre conseil/prestation peut causer un préjudice client.',
+          a: 'Cela dépend de votre activité. Obligatoire pour les professions réglementées (médical, juridique, immobilier, BTP). Recommandée pour toutes les autres activités B2B où votre conseil ou prestation peut causer un préjudice client.',
         },
         {
           q: 'Quelle différence entre RC Pro et RC Exploitation ?',
@@ -154,7 +154,7 @@ export default function Page() {
         },
         {
           q: 'Que se passe-t-il si je n&apos;ai pas de RC Pro et qu&apos;un client me poursuit ?',
-          a: 'Vous payez sur vos fonds personnels. Pour une SARL/SAS, le patrimoine personnel du dirigeant peut être engagé en cas de faute de gestion. Un sinistre RC Pro coûte en moyenne 30 000-80 000€ — vs une prime annuelle de 100-500€.',
+          a: 'Vous payez sur vos fonds personnels. Pour une SARL ou SAS, le patrimoine personnel du dirigeant peut être engagé en cas de faute de gestion. Un sinistre RC Pro coûte en moyenne 30 000-80 000€ — vs une prime annuelle de 100-500€.',
         },
         {
           q: 'Comment obtenir une attestation RC Pro rapidement ?',

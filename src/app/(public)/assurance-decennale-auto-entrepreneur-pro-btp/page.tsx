@@ -10,12 +10,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-decennale-auto-entrepreneur-pro-btp'
 const TITLE = 'Assurance Décennale Auto Entrepreneur Pro BTP — Pack complet 2026'
 const TAGLINE =
-  'Pack décennale + mutuelle PRO BTP pour auto-entrepreneur BTP : décennale via April Pro/SMABTP + santé PRO BTP TNS. Coût pack 2 800-4 500€/an.'
+  'Pack décennale + mutuelle PRO BTP pour auto-entrepreneur BTP : décennale via April Pro ou SMABTP + santé PRO BTP TNS. Coût pack 2 800-4 500€ par an.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale AE BTP + Mutuelle PRO BTP : pack complet artisan. Décennale 950-2 800€/an + Mutuelle PRO BTP 65-120€/mois TNS. Coût total 2 800-4 500€/an.',
+    'Décennale AE BTP + Mutuelle PRO BTP : pack complet artisan. Décennale 950-2 800€ par an + Mutuelle PRO BTP 65-120€ par mois TNS. Coût total 2 800-4 500€ par an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -26,7 +26,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'auto-entrepreneur BTP a besoin de 2 assurances principales : 1) la décennale (obligatoire Loi Spinetta) souscrite via April Pro BTP, SMABTP ou Allianz Pro BTP, et 2) la mutuelle PRO BTP TNS (recommandée, déductible Madelin) souscrite via PRO BTP, April Pro Santé ou Harmonie BTP. Cette page détaille le pack complet pour AE BTP — coût total annuel et optimisations possibles."
+      intro="L'auto-entrepreneur BTP a besoin de 2 assurances principales : 1) la décennale (obligatoire Loi Spinetta) souscrite via April Pro BTP, SMABTP / Allianz Pro BTP, et 2) la mutuelle PRO BTP TNS (recommandée, déductible Madelin) souscrite via PRO BTP, April Pro Santé / Harmonie BTP. Cette page détaille le pack complet pour AE BTP — coût total annuel et optimisations possibles."
       legalReference="Décennale : Loi Spinetta + art. 1792 • Mutuelle TNS : Loi Madelin art. 154 bis CGI"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -46,13 +46,13 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'Pack 2 800-4 500€/an',
-          desc: 'Décennale 950-2 800€/an + mutuelle 65-120€/mois',
+          title: 'Pack 2 800-4 500€ par an',
+          desc: 'Décennale 950-2 800€ par an + mutuelle 65-120€ par mois',
         },
         {
           icon: '📦',
           title: '+ RC Pro recommandée',
-          desc: 'Complément décennale +250-450€/an pour AE BTP',
+          desc: 'Complément décennale +250-450€ par an pour AE BTP',
         },
       ]}
       sections={[
@@ -61,28 +61,28 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Décennale BTP</strong> (OBLIGATOIRE Loi Spinetta) : 950-3 500€/an selon
+                <strong>Décennale BTP</strong> (OBLIGATOIRE Loi Spinetta) : 950-3 500€ par an selon
                 métier — April Pro best price AE
               </li>
               <li>
-                <strong>RC Pro Bâtiment</strong> (recommandée) : 250-450€/an — couvre dommages
+                <strong>RC Pro Bâtiment</strong> (recommandée) : 250-450€ par an — couvre dommages
                 PENDANT chantier (avant réception)
               </li>
               <li>
-                <strong>Mutuelle santé TNS BTP</strong> (recommandée + déductible Madelin) :
-                65-120€/mois selon âge — PRO BTP S3 ou April Pro Santé
+                <strong>Mutuelle santé TNS BTP</strong> (recommandée + déductible Madelin) : 65-120€
+                par mois selon âge — PRO BTP S3 ou April Pro Santé
               </li>
               <li>
                 <strong>Multirisque pro</strong> (optionnel) : si local atelier ou stockage matériel
-                — 350-650€/an
+                — 350-650€ par an
               </li>
               <li>
-                <strong>Auto-mission</strong> (si véhicule perso utilisé pro) : 80-180€/an extension
-                assurance auto
+                <strong>Auto-mission</strong> (si véhicule perso utilisé pro) : 80-180€ par an
+                extension assurance auto
               </li>
               <li>
-                <strong>Protection juridique</strong> (optionnel) : 60-150€/an — litiges clients,
-                prud&apos;hommes, administration
+                <strong>Protection juridique</strong> (optionnel) : 60-150€ par an — litiges
+                clients, prud&apos;hommes, administration
               </li>
             </ul>
           ),
@@ -93,31 +93,31 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Peintre AE</strong> : 950€ décennale + 250€ RC Pro + 780€ mutuelle TNS ={' '}
-                <strong>1 980€/an pack minimum</strong> (sans options)
+                <strong>1 980€ par an pack minimum</strong> (sans options)
               </li>
               <li>
                 <strong>Plombier AE</strong> : 1 400€ + 400€ + 900€ mutuelle ={' '}
-                <strong>2 700€/an pack minimum</strong>
+                <strong>2 700€ par an pack minimum</strong>
               </li>
               <li>
                 <strong>Électricien AE</strong> : 1 500€ + 450€ + 900€ ={' '}
-                <strong>2 850€/an pack minimum</strong>
+                <strong>2 850€ par an pack minimum</strong>
               </li>
               <li>
                 <strong>Maçon AE</strong> : 1 800€ + 500€ + 1 080€ ={' '}
-                <strong>3 380€/an pack minimum</strong>
+                <strong>3 380€ par an pack minimum</strong>
               </li>
               <li>
                 <strong>Couvreur AE</strong> : 2 200€ + 600€ + 1 080€ ={' '}
-                <strong>3 880€/an pack minimum</strong>
+                <strong>3 880€ par an pack minimum</strong>
               </li>
               <li>
                 <strong>Multi-services BTP AE</strong> : 2 200€ + 600€ + 1 080€ ={' '}
-                <strong>3 880€/an pack minimum</strong>
+                <strong>3 880€ par an pack minimum</strong>
               </li>
               <li>
                 Avec options (multirisque + auto-mission + protection juridique) :{' '}
-                <strong>+500-1 200€/an</strong>
+                <strong>+500-1 200€ par an</strong>
               </li>
             </ul>
           ),
@@ -127,11 +127,11 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Mutuelle TNS Madelin</strong> : 780-1 080€/an déductible (économie 22-45%
-                TMI)
+                <strong>Mutuelle TNS Madelin</strong> : 780-1 080€ par an déductible (économie
+                22-45% TMI)
               </li>
               <li>
-                <strong>Prévoyance TNS Madelin</strong> : 500-1 500€/an déductible (recommandée)
+                <strong>Prévoyance TNS Madelin</strong> : 500-1 500€ par an déductible (recommandée)
               </li>
               <li>
                 <strong>Retraite TNS Madelin</strong> : déductible jusqu&apos;à 10% revenu net + 15%
@@ -142,8 +142,8 @@ export default function Page() {
                 régime réel — pas en versement libératoire)
               </li>
               <li>
-                <strong>Économie fiscale cumulée Madelin TNS</strong> : 800-3 000€/an selon profil
-                et TMI
+                <strong>Économie fiscale cumulée Madelin TNS</strong> : 800-3 000€ par an selon
+                profil et TMI
               </li>
               <li>
                 <strong>Conditions</strong> : statut TNS confirmé + déclaration au régime réel ou
@@ -156,7 +156,7 @@ export default function Page() {
       faq={[
         {
           q: 'Comment optimiser pack assurance AE BTP ?',
-          a: '1) Comparer 5 assureurs spé BTP pour décennale (-15-25% économie). 2) Souscrire pack décennale + RC Pro chez même assureur (-15-20%). 3) Choisir mutuelle TNS Madelin déductible (-22-45% impôts). 4) Augmenter franchise décennale (-12-18%). Économie totale potentielle : 1 000-2 500€/an pour AE BTP standard.',
+          a: '1) Comparer 5 assureurs spé BTP pour décennale (-15-25% économie). 2) Souscrire pack décennale + RC Pro chez même assureur (-15-20%). 3) Choisir mutuelle TNS Madelin déductible (-22-45% impôts). 4) Augmenter franchise décennale (-12-18%). Économie totale potentielle : 1 000-2 500€ par an pour AE BTP standard.',
         },
         {
           q: 'PRO BTP fait-il la décennale ?',
@@ -164,7 +164,7 @@ export default function Page() {
         },
         {
           q: 'Coût annuel total AE BTP plombier débutant ?',
-          a: 'Pack minimum AE plombier débutant : 2 700€/an (décennale 1 400€ + RC Pro 400€ + mutuelle TNS 900€). Avec options recommandées : 3 200-3 500€/an. Soit 225-290€/mois. À budgéter dans business plan AE.',
+          a: 'Pack minimum AE plombier débutant : 2 700€ par an (décennale 1 400€ + RC Pro 400€ + mutuelle TNS 900€). Avec options recommandées : 3 200-3 500€ par an. Soit 225-290€ par mois. À budgéter dans business plan AE.',
         },
         {
           q: 'Mutuelle PRO BTP pour AE BTP est-elle obligatoire ?',

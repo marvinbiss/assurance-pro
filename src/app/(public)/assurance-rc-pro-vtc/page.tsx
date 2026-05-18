@@ -13,11 +13,11 @@ export const revalidate = 86400
 const SLUG = 'assurance-rc-pro-vtc'
 const TITLE = 'Assurance RC Pro VTC — Souscription en ligne, attestation immédiate'
 const TAGLINE =
-  'Souscrire votre RC Pro VTC en 5 minutes : devis personnalisé selon votre profil, comparatif Wakam / Stello / Hiscox / AXA, attestation conforme EVTC téléchargeable immédiatement.'
+  'Souscrire votre RC Pro VTC en 5 minutes : devis personnalisé selon votre profil, comparatif Wakam — Stello — Hiscox — AXA, attestation conforme EVTC téléchargeable immédiatement.'
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance RC Pro VTC : souscription en ligne, plafond 1.5M€ corporel + 1M€ matériel (mini légal), tarifs à partir de 280€/an. Comparatif assureurs + attestation immédiate.',
+    'Assurance RC Pro VTC : souscription en ligne, plafond 1.5M€ corporel + 1M€ matériel (mini légal), tarifs à partir de 280€ par an. Comparatif assureurs + attestation immédiate.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -63,8 +63,8 @@ export default function Page() {
             <>
               <ol>
                 <li>
-                  <strong>Devis personnalisé</strong> : statut (AE/SARL/SAS), ancienneté permis B,
-                  sinistralité 36 mois, véhicule, zone d&apos;exploitation
+                  <strong>Devis personnalisé</strong> : statut (AE, SARL ou SAS), ancienneté permis
+                  B, sinistralité 36 mois, véhicule, zone d&apos;exploitation
                 </li>
                 <li>
                   <strong>Comparaison 4 assureurs</strong> : tableau prix + garanties + franchises
@@ -93,12 +93,13 @@ export default function Page() {
               <ul>
                 <li>
                   <strong>Protection juridique</strong> : prise en charge des litiges avec clients
-                  (réclamations, retours via Uber/Bolt), administration (PV, contrôles) ou autres
-                  usagers de la route. +60-120€/an.
+                  (réclamations, retours via Uber ou Bolt), administration (PV, contrôles) ou autres
+                  usagers de la route. +60-120€ par an.
                 </li>
                 <li>
                   <strong>Perte d&apos;exploitation</strong> : indemnité journalière si votre
-                  véhicule est immobilisé suite à sinistre. +80-180€/an, idéal si VTC à temps plein.
+                  véhicule est immobilisé suite à sinistre. +80-180€ par an, idéal si VTC à temps
+                  plein.
                 </li>
                 <li>
                   <strong>Assistance véhicule étendue</strong> : remorquage + véhicule de
@@ -119,19 +120,19 @@ export default function Page() {
               <ul>
                 <li>
                   <strong>Wakam</strong> : leader VTC France. Best price sur profils débutants
-                  (280-350€/an). 100% digital. Attestation immédiate.
+                  (280-350€ par an). 100% digital. Attestation immédiate.
                 </li>
                 <li>
                   <strong>Stello</strong> : challenger pure-mobilité. Auto + RC Pro intégrées. Bon
-                  rapport prix/garanties (350-450€/an). Service client reconnu.
+                  rapport prix ou garanties (350-450€ par an). Service client reconnu.
                 </li>
                 <li>
                   <strong>Hiscox</strong> : haut de gamme, plafonds étendus 3-5M€, idéal VTC
-                  limousine / mariage / événementiel (450-800€/an).
+                  limousine ou mariage ou événementiel (450-800€ par an).
                 </li>
                 <li>
                   <strong>AXA Pro</strong> : couverture solide + assistance national, prime plus
-                  élevée (500-900€/an), idéal sociétés VTC multi-chauffeurs.
+                  élevée (500-900€ par an), idéal sociétés VTC multi-chauffeurs.
                 </li>
               </ul>
             </>
@@ -145,7 +146,7 @@ export default function Page() {
         },
         {
           q: 'Quelle est la meilleure assurance RC Pro VTC en 2026 ?',
-          a: 'Pour un débutant AE avec véhicule standard : Wakam (best price 280-350€/an). Pour un VTC expérimenté SARL : Stello ou Hiscox selon plafond souhaité. Pour activité haut de gamme/limousine : Hiscox 1er choix.',
+          a: 'Pour un débutant AE avec véhicule standard : Wakam (best price 280-350€ par an). Pour un VTC expérimenté SARL : Stello ou Hiscox selon plafond souhaité. Pour activité haut de gamme ou limousine : Hiscox 1er choix.',
         },
         {
           q: 'Combien de temps pour avoir mon attestation RC Pro VTC ?',

@@ -92,8 +92,8 @@ export default function Page() {
             <>
               <ol>
                 <li>
-                  Vérifier dans votre espace adhérent le statut (reçu / en cours / payé / en attente
-                  de pièce)
+                  Vérifier dans votre espace adhérent le statut (reçu ou en cours ou payé ou en
+                  attente de pièce)
                 </li>
                 <li>Vérifier que votre RIB est à jour</li>
                 <li>Appeler le 0 970 80 80 80 (numéro adhérent en main)</li>

@@ -57,7 +57,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance professionnelle désigne l'ensemble des garanties qu'un entrepreneur, indépendant, profession libérale, artisan, commerçant ou dirigeant doit ou peut souscrire pour exercer son activité en sécurité. Elle se décompose en 6 grandes familles : la responsabilité civile professionnelle (RC Pro / RCP — couvre les dommages causés aux tiers), la décennale BTP (Loi Spinetta, obligatoire pour les artisans du Bâtiment), la multirisque pro (locaux, vol, incendie, dégâts des eaux), la mutuelle santé TNS (Loi Madelin déductible), la prévoyance (IJ + invalidité + capital décès) et la cyber assurance (de plus en plus critique avec la digitalisation). Selon votre métier, statut juridique et taille d'entreprise, certaines garanties sont légalement obligatoires (décennale BTP, RC Pro santé/juridique/conseil financier) et d'autres sont fortement recommandées. Cette page-pilier vous oriente vers le bon contrat selon votre profil et compare les 8 principaux assureurs distribués en France."
+      intro="L'assurance professionnelle désigne l'ensemble des garanties qu'un entrepreneur, indépendant, profession libérale, artisan, commerçant ou dirigeant doit ou peut souscrire pour exercer son activité en sécurité. Elle se décompose en 6 grandes familles : la responsabilité civile professionnelle (RC Pro — RCP — couvre les dommages causés aux tiers), la décennale BTP (Loi Spinetta, obligatoire pour les artisans du Bâtiment), la multirisque pro (locaux, vol, incendie, dégâts des eaux), la mutuelle santé TNS (Loi Madelin déductible), la prévoyance (IJ + invalidité + capital décès) et la cyber assurance (de plus en plus critique avec la digitalisation). Selon votre métier, statut juridique et taille d'entreprise, certaines garanties sont légalement obligatoires (décennale BTP, RC Pro santé, juridique ou conseil financier) et d'autres sont fortement recommandées. Cette page-pilier vous oriente vers le bon contrat selon votre profil et compare les 8 principaux assureurs distribués en France."
       legalReference="Code des assurances + Loi Spinetta + Loi Madelin + ACPR + DDA"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -72,7 +72,7 @@ export default function Page() {
         {
           icon: '⚖️',
           title: '21 métiers obligatoires',
-          desc: 'BTP (décennale), santé, juridique, conseil financier (CGP/CIF), transport, sport encadré',
+          desc: 'BTP (décennale), santé, juridique, conseil financier (CGP ou CIF), transport, sport encadré',
         },
         {
           icon: '💰',
@@ -145,7 +145,7 @@ export default function Page() {
                       <strong>RC Pro sport</strong>
                     </td>
                     <td className="border p-2">
-                      Coach sportif, prof yoga, moniteur ski/escalade/équitation
+                      Coach sportif, prof yoga, moniteur ski, escalade ou équitation
                     </td>
                     <td className="border p-2">L. 321-7 Code du sport</td>
                   </tr>
@@ -163,7 +163,7 @@ export default function Page() {
                     <td className="border p-2">
                       Tous employeurs (50% pris en charge employeur min.)
                     </td>
-                    <td className="border p-2">Loi 14/06/2013 (ANI)</td>
+                    <td className="border p-2">Loi 14 juin 2013 (ANI)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -181,13 +181,13 @@ export default function Page() {
           h2: 'Quelle assurance pro choisir selon mon profil ?',
           body: (
             <>
-              <h3>Auto-entrepreneur / freelance digital</h3>
+              <h3>Auto-entrepreneur — freelance digital</h3>
               <ul>
                 <li>
                   <Link href="/rc-pro/auto-entrepreneur" className="text-primary-600 underline">
                     RC Pro AE
                   </Link>{' '}
-                  — exigée par 78% des plateformes B2B (89-340€/an)
+                  — exigée par 78% des plateformes B2B (89-340€ par an)
                 </li>
                 <li>
                   Mutuelle individuelle Madelin (au régime réel) — voir{' '}
@@ -235,7 +235,7 @@ export default function Page() {
                   avec stock + bris de glace + RC client
                 </li>
               </ul>
-              <h3>Restaurateur / hôtelier</h3>
+              <h3>Restaurateur — hôtelier</h3>
               <ul>
                 <li>
                   <Link href="/assurance-restaurant" className="text-primary-600 underline">
@@ -244,7 +244,7 @@ export default function Page() {
                   avec garantie intoxication alimentaire + bris matériel pro
                 </li>
               </ul>
-              <h3>Cabinet libéral / consulting / agence</h3>
+              <h3>Cabinet libéral — consulting — agence</h3>
               <ul>
                 <li>
                   <Link href="/assurance-bureau" className="text-primary-600 underline">
@@ -259,7 +259,7 @@ export default function Page() {
                   >
                     RC Pro
                   </Link>{' '}
-                  avec plafond adapté (5 M€ pour conseil IT/financier)
+                  avec plafond adapté (5 M€ pour conseil IT ou financier)
                 </li>
                 <li>
                   Cyber assurance recommandée — voir{' '}
@@ -268,7 +268,7 @@ export default function Page() {
                   </Link>
                 </li>
               </ul>
-              <h3>VTC / Taxi</h3>
+              <h3>VTC — Taxi</h3>
               <ul>
                 <li>
                   <Link href="/assurance-vtc" className="text-primary-600 underline">
@@ -322,7 +322,7 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>MAAF Pro</strong>
                     </td>
-                    <td className="border p-2">TPE / PME / artisans</td>
+                    <td className="border p-2">TPE — PME — artisans</td>
                     <td className="border p-2">Mutualiste, sans actionnaire</td>
                   </tr>
                   <tr>
@@ -370,7 +370,7 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Évaluer les risques RÉELS</strong> de votre activité (sinistralité métier,
-                  volume CA, nombre de clients/mois)
+                  volume CA, nombre de clients par mois)
                 </li>
                 <li>
                   <strong>Définir les plafonds</strong> proportionnés (RC Pro : 1,5 à 10 M€ selon
@@ -401,7 +401,7 @@ export default function Page() {
         },
         {
           q: "Que se passe-t-il si je n'ai pas l'assurance pro obligatoire pour mon métier ?",
-          a: "Sanctions cumulées selon le métier : artisan BTP sans décennale = 75 000€ amende + 6 mois prison + interdiction d'exercer (Loi Spinetta). Professionnel santé sans RC = exclusion ordre + responsabilité personnelle illimitée. Conseil financier sans RC ACPR = radiation ORIAS. Employeur sans mutuelle ANI = redressement URSSAF + dommages-intérêts salariés (jusqu'à 6 mois de salaire/personne).",
+          a: "Sanctions cumulées selon le métier : artisan BTP sans décennale = 75 000€ amende + 6 mois prison + interdiction d'exercer (Loi Spinetta). Professionnel santé sans RC = exclusion ordre + responsabilité personnelle illimitée. Conseil financier sans RC ACPR = radiation ORIAS. Employeur sans mutuelle ANI = redressement URSSAF + dommages-intérêts salariés (jusqu'à 6 mois de salaire par personne).",
         },
         {
           q: "Suis-je obligé d'avoir une RC Pro si je suis auto-entrepreneur ?",
@@ -409,19 +409,19 @@ export default function Page() {
         },
         {
           q: 'Quelle est la différence entre RC Pro et RC Exploitation ?',
-          a: "RC EXPLOITATION : dommages causés à un tiers PENDANT l'exploitation (un client glisse dans votre boutique, le café renversé sur le laptop d'un visiteur). RC PROFESSIONNELLE : dommages causés par une FAUTE PROFESSIONNELLE (erreur de conseil, retard de livraison, défaut de prestation). Les deux sont souvent souscrites ensemble dans un pack « RC pro complète » à 200-800€/an pour une TPE.",
+          a: "RC EXPLOITATION : dommages causés à un tiers PENDANT l'exploitation (un client glisse dans votre boutique, le café renversé sur le laptop d'un visiteur). RC PROFESSIONNELLE : dommages causés par une FAUTE PROFESSIONNELLE (erreur de conseil, retard de livraison, défaut de prestation). Les deux sont souvent souscrites ensemble dans un pack « RC pro complète » à 200-800€ par an pour une TPE.",
         },
         {
           q: 'Quelle assurance pro choisir pour un auto-entrepreneur ?',
-          a: 'Pour un AE digital/freelance non-réglementé : RC Pro (89-180€/an) suffit légalement, mais souscrire en plus une mutuelle Madelin (au régime réel) + prévoyance Madelin est fortement recommandé. Pour un AE BTP : décennale OBLIGATOIRE + RC Pro travaux + véhicule pro. Pour un AE VTC/taxi : pack VTC/taxi spécialisé OBLIGATOIRE.',
+          a: 'Pour un AE digital ou freelance non-réglementé : RC Pro (89-180€ par an) suffit légalement, mais souscrire en plus une mutuelle Madelin (au régime réel) + prévoyance Madelin est fortement recommandé. Pour un AE BTP : décennale OBLIGATOIRE + RC Pro travaux + véhicule pro. Pour un AE VTC ou taxi : pack VTC ou taxi spécialisé OBLIGATOIRE.',
         },
         {
           q: "Suis-je couvert par ma RC Pro si je travaille pour un client à l'étranger ?",
-          a: 'Pas automatiquement. Vérifiez la « clause territoriale » de votre contrat : la plupart des RC Pro couvrent UE/EEE par défaut, mais excluent USA/Canada (sinistralité élevée). Extension monde entier (hors USA/Canada) : +15-30% de prime. Extension USA/Canada : +50-100% du fait des indemnités américaines (class actions, dommages punitifs). Indispensable pour SaaS exportateurs.',
+          a: 'Pas automatiquement. Vérifiez la « clause territoriale » de votre contrat : la plupart des RC Pro couvrent UE ou EEE par défaut, mais excluent USA ou Canada (sinistralité élevée). Extension monde entier (hors USA ou Canada) : +15-30% de prime. Extension USA ou Canada : +50-100% du fait des indemnités américaines (class actions, dommages punitifs). Indispensable pour SaaS exportateurs.',
         },
         {
-          q: 'Suis-je couvert si je commets une erreur dans mon conseil/prestation ?',
-          a: "OUI via la garantie « faute professionnelle » incluse dans la RC Pro. Couvre les conséquences pécuniaires d'une erreur, omission ou négligence professionnelle (mauvais conseil, retard de livraison, défaut de qualité). Plafonds typiques : 150 000€ pour AE digital à 10M€ pour CGP/CIF. Franchise classique : 500-3 000€ selon CA. Hiscox et Allianz Pro sont leaders sur ce risque.",
+          q: 'Suis-je couvert si je commets une erreur dans mon conseil ou prestation ?',
+          a: "OUI via la garantie « faute professionnelle » incluse dans la RC Pro. Couvre les conséquences pécuniaires d'une erreur, omission ou négligence professionnelle (mauvais conseil, retard de livraison, défaut de qualité). Plafonds typiques : 150 000€ pour AE digital à 10M€ pour CGP ou CIF. Franchise classique : 500-3 000€ selon CA. Hiscox et Allianz Pro sont leaders sur ce risque.",
         },
         {
           q: 'Que couvre la garantie « dommages aux biens confiés » ?',
@@ -429,11 +429,11 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une assurance professionnelle complète ?',
-          a: 'Pour un AE freelance digital : 200-500€/an pour RC Pro + mutuelle individuelle. Pour un artisan BTP solo : 980-2 380€/an pour pack décennale + RC + auto. Pour une TPE 5 salariés : 2 800-5 800€/an pour pack complet (RC + multirisque + auto + mutuelle collective). Pour une PME 20 salariés : 8 000-25 000€/an. Pour une ETI 100 salariés : 18-45 000€/an.',
+          a: 'Pour un AE freelance digital : 200-500€ par an pour RC Pro + mutuelle individuelle. Pour un artisan BTP solo : 980-2 380€ par an pour pack décennale + RC + auto. Pour une TPE 5 salariés : 2 800-5 800€ par an pour pack complet (RC + multirisque + auto + mutuelle collective). Pour une PME 20 salariés : 8 000-25 000€ par an. Pour une ETI 100 salariés : 18-45 000€ par an.',
         },
         {
           q: 'Quel plafond de garantie RC Pro choisir ?',
-          a: "Règle empirique : plafond = 3 à 5 fois le sinistre maximum prévisible de votre activité. AE digital/freelance : 150 000-1 M€. PME services : 1-5 M€. Conseil IT critique : 5-10 M€. CGP/CIF : 5 M€ MINIMUM imposé par l'ACPR (art. L. 541-3 CMF). Architectes DPLG : 8 M€ recommandé. Au-delà de 10 M€, structuration en garantie principale + excess layers.",
+          a: "Règle empirique : plafond = 3 à 5 fois le sinistre maximum prévisible de votre activité. AE digital ou freelance : 150 000-1 M€. PME services : 1-5 M€. Conseil IT critique : 5-10 M€. CGP ou CIF : 5 M€ MINIMUM imposé par l'ACPR (art. L. 541-3 CMF). Architectes DPLG : 8 M€ recommandé. Au-delà de 10 M€, structuration en garantie principale + excess layers.",
         },
         {
           q: 'Puis-je résilier mon assurance pro à tout moment ?',
@@ -453,7 +453,7 @@ export default function Page() {
         },
         {
           q: 'Cyber assurance : utile pour mon entreprise ?',
-          a: "OUI pour 95% des entreprises en 2026. Coût moyen d'un sinistre cyber pour une TPE/PME : 25 000-80 000€ (notification CNIL, rétablissement, perte exploitation, frais juridiques RGPD art. 33). Tarif cyber : 80-280€/an pour TPE. ROI évident dès qu'on stocke des données clients. Directive NIS 2 renforce les obligations depuis octobre 2024 pour 15 000+ entités essentielles/importantes.",
+          a: "OUI pour 95% des entreprises en 2026. Coût moyen d'un sinistre cyber pour une TPE ou PME : 25 000-80 000€ (notification CNIL, rétablissement, perte exploitation, frais juridiques RGPD art. 33). Tarif cyber : 80-280€ par an pour TPE. ROI évident dès qu'on stocke des données clients. Directive NIS 2 renforce les obligations depuis octobre 2024 pour 15 000+ entités essentielles ou importantes.",
         },
         {
           q: "Mutuelle d'entreprise : obligation pour quels employeurs ?",

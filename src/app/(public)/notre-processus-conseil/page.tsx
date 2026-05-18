@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function ProcessusPage() {
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Cabinet' }, { label: 'Processus conseil' }]}
         eyebrow="DDA art. L. 521-4 · ACPR 2024-R-03"
@@ -124,8 +124,8 @@ export default function ProcessusPage() {
 
           <h2>Étape 5 — Traçabilité immuable et audit ACPR</h2>
           <p>
-            Conformément à la <strong>Recommandation ACPR 2024-R-03</strong> (applicable au
-            31/12/2025), chaque dossier conseil est&nbsp;:
+            Conformément à la <strong>Recommandation ACPR 2024-R-03</strong> (applicable au 31
+            décembre 2025), chaque dossier conseil est&nbsp;:
           </p>
           <ul>
             <li>Stocké dans une base de données dédiée</li>

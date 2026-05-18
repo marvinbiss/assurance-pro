@@ -196,8 +196,8 @@ export function AttestationRcProPDF({ data }: { data: RcProAttestationData }) {
             l&apos;arrêté du 23 janvier 2024. Il NE constitue PAS une attestation d&apos;assurance
             valable juridiquement. Seule une attestation émise et signée par votre assureur réel a
             une valeur opposable aux tiers. Pour obtenir une attestation conforme et opposable :
-            souscrivez votre RC Pro chez un courtier ORIAS sous 24h sur
-            https://vivos-assurance.fr/outils/devis-rc-pro
+            souscrivez votre RC Pro chez un courtier ORIAS sous 24h sur https://vivos-assurance.fr,
+            outils ou devis-rc-pro
           </Text>
         </View>
 

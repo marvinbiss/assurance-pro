@@ -14,7 +14,7 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'rc-pro/photographe'
+const SLUG = 'rc-pro / photographe'
 const TITLE = 'RC Pro photographe — Tarifs 2026 (mariage, événementiel, studio)'
 const TAGLINE =
   "L'assurance RC pro pour photographes et vidéastes : mariage, événementiel, studio, corporate. Couvre matériel client + perte fichiers + droit à l'image."
@@ -22,7 +22,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "RC Pro photographe : couverture perte fichiers (carte SD, disque dur), casse matériel client, droit à l'image, retard livraison événement. Plafond 1,5-3 M€. Tarifs 280-680€/an. Devis ORIAS sous 24h.",
+    "RC Pro photographe : couverture perte fichiers (carte SD, disque dur), casse matériel client, droit à l'image, retard livraison événement. Plafond 1,5-3 M€. Tarifs 280-680€ par an. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -33,7 +33,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro photographe couvre les sinistres typiques du métier : perte de fichiers numériques (carte SD défectueuse, disque dur crashé, vol équipement avec photos non sauvegardées), casse de matériel client (vase, décoration de mariage), droit à l'image (publication non autorisée), retard de livraison sur événement (non-respect contractuel mariage), erreur de cadrage majeure non rattrapable. Pour les photographes mariage, le risque #1 est la PERTE DE FICHIERS — un mariage non livré peut générer 8 000-50 000€ de dommages-intérêts. Tarifs 2026 : 280-680€/an pour AE photographe, 580-1 480€/an pour SARL studio avec 1-3 salariés. Cette page distingue les profils et détaille les garanties indispensables."
+      intro="La RC Pro photographe couvre les sinistres typiques du métier : perte de fichiers numériques (carte SD défectueuse, disque dur crashé, vol équipement avec photos non sauvegardées), casse de matériel client (vase, décoration de mariage), droit à l'image (publication non autorisée), retard de livraison sur événement (non-respect contractuel mariage), erreur de cadrage majeure non rattrapable. Pour les photographes mariage, le risque #1 est la PERTE DE FICHIERS — un mariage non livré peut générer 8 000-50 000€ de dommages-intérêts. Tarifs 2026 : 280-680€ par an pour AE photographe, 580-1 480€ par an pour SARL studio avec 1-3 salariés. Cette page distingue les profils et détaille les garanties indispensables."
       legalReference="Code des assurances L. 113-1 + Code civil (responsabilité contractuelle) + RGPD (droit à l'image)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -58,8 +58,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 280 €/an',
-          desc: 'AE photographe événementiel solo. SARL studio : 580-1 480€/an',
+          title: 'À partir de 280 € par an',
+          desc: 'AE photographe événementiel solo. SARL studio : 580-1 480€ par an',
         },
       ]}
       sections={[
@@ -86,7 +86,7 @@ export default function Page() {
                     <td className="border p-2 text-right">380 € – 680 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">EI photographe corporate / industriel</td>
+                    <td className="border p-2">EI photographe corporate — industriel</td>
                     <td className="border p-2 text-right">480 € – 880 €</td>
                   </tr>
                   <tr>
@@ -122,15 +122,15 @@ export default function Page() {
         },
         {
           q: 'Perte de fichiers mariage : quelle indemnisation ?',
-          a: "Sinistre type 8 000-50 000€ (dommages-intérêts pour préjudice moral + perte de souvenirs irremplaçables + remboursement prestation). Couvert par RC Pro photographe avec garantie « perte de données » ACTIVÉE (souvent en option +60-150€/an). FORTEMENT recommandé pour mariage (1 oubli sauvegarde = ruine personnelle). Bonne pratique : double sauvegarde sur 2 cartes + cloud + disque dur immédiatement après l'événement.",
+          a: "Sinistre type 8 000-50 000€ (dommages-intérêts pour préjudice moral + perte de souvenirs irremplaçables + remboursement prestation). Couvert par RC Pro photographe avec garantie « perte de données » ACTIVÉE (souvent en option +60-150€ par an). FORTEMENT recommandé pour mariage (1 oubli sauvegarde = ruine personnelle). Bonne pratique : double sauvegarde sur 2 cartes + cloud + disque dur immédiatement après l'événement.",
         },
         {
           q: 'Combien coûte la RC Pro photographe en 2026 ?',
-          a: 'AE événementiel solo : 280-480€/an. AE mariage : 380-680€/an. EI corporate : 480-880€/an. SARL studio : 880-1 480€/an. Vidéaste drone : 580-1 200€/an (autorisation DGAC + assurance spécifique drone).',
+          a: 'AE événementiel solo : 280-480€ par an. AE mariage : 380-680€ par an. EI corporate : 480-880€ par an. SARL studio : 880-1 480€ par an. Vidéaste drone : 580-1 200€ par an (autorisation DGAC + assurance spécifique drone).',
         },
         {
           q: 'Drone vidéo : assurance spécifique ?',
-          a: 'OUI obligatoire : RC pro spécifique drone + autorisation DGAC (déclaration ou agrément selon poids). Couverture des dommages causés par le drone (chute, collision, perte). Tarif additionnel : 200-500€/an. Indispensable pour vidéaste pro avec drone.',
+          a: 'OUI obligatoire : RC pro spécifique drone + autorisation DGAC (déclaration ou agrément selon poids). Couverture des dommages causés par le drone (chute, collision, perte). Tarif additionnel : 200-500€ par an. Indispensable pour vidéaste pro avec drone.',
         },
       ]}
     />

@@ -11,7 +11,7 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'prix/assurance-rc-pro-tarif'
+const SLUG = 'prix / assurance-rc-pro-tarif'
 const TITLE = 'Assurance RC Pro Tarif — Barème détaillé 2026 par option'
 const TAGLINE =
   'Barème tarif assurance RC Pro 2026 : tarif de base + options (cyber, juridique, dommages aux biens) + ajustements (franchise, plafond, postériorité).'
@@ -66,8 +66,8 @@ export default function Page() {
               <li>
                 <strong>Tarif de base</strong> (déterminé par 4 facteurs) :
                 <ul>
-                  <li>Activité (services/BTP/libéral) : poids 40%</li>
-                  <li>Statut juridique (AE/SARL/SAS) : poids 25%</li>
+                  <li>Activité (services, BTP ou libéral) : poids 40%</li>
+                  <li>Statut juridique (AE, SARL ou SAS) : poids 25%</li>
                   <li>Chiffre d&apos;affaires : poids 25%</li>
                   <li>Antécédents sinistres : poids 10%</li>
                 </ul>
@@ -91,7 +91,7 @@ export default function Page() {
                     Perte d&apos;exploitation : <strong>+20-30%</strong>
                   </li>
                   <li>
-                    Extension internationale : <strong>+25-40%</strong> (UE/monde)
+                    Extension internationale : <strong>+25-40%</strong> (UE ou monde)
                   </li>
                 </ul>
               </li>
@@ -123,23 +123,23 @@ export default function Page() {
           body: (
             <ol>
               <li>
-                <strong>Tarif base Hiscox</strong> : 120€/an (AE services IT, CA 50k€, sans
+                <strong>Tarif base Hiscox</strong> : 120€ par an (AE services IT, CA 50k€, sans
                 sinistre)
               </li>
               <li>
-                + Cyber-assurance : +30€ → <strong>150€/an</strong>
+                + Cyber-assurance : +30€ → <strong>150€ par an</strong>
               </li>
               <li>
-                + Plafond porté 1M→2M€ : +37€ → <strong>187€/an</strong>
+                + Plafond porté 1M→2M€ : +37€ → <strong>187€ par an</strong>
               </li>
               <li>
-                + Postériorité 10 ans Hiscox (inclus) : +0€ → <strong>187€/an</strong>
+                + Postériorité 10 ans Hiscox (inclus) : +0€ → <strong>187€ par an</strong>
               </li>
               <li>
-                − Franchise +500€ : -28€ → <strong>159€/an</strong>
+                − Franchise +500€ : -28€ → <strong>159€ par an</strong>
               </li>
               <li>
-                − Paiement annuel : -10€ → <strong>149€/an final</strong>
+                − Paiement annuel : -10€ → <strong>149€ par an final</strong>
               </li>
             </ol>
           ),
@@ -149,22 +149,22 @@ export default function Page() {
           body: (
             <ol>
               <li>
-                <strong>Tarif base Allianz Pro</strong> : 700€/an (SARL services CA 200k€)
+                <strong>Tarif base Allianz Pro</strong> : 700€ par an (SARL services CA 200k€)
               </li>
               <li>
-                + Cyber-assurance : +175€ → <strong>875€/an</strong>
+                + Cyber-assurance : +175€ → <strong>875€ par an</strong>
               </li>
               <li>
-                + Protection juridique : +35€ → <strong>910€/an</strong>
+                + Protection juridique : +35€ → <strong>910€ par an</strong>
               </li>
               <li>
-                + Plafond 1M€ standard (inclus) : +0€ → <strong>910€/an</strong>
+                + Plafond 1M€ standard (inclus) : +0€ → <strong>910€ par an</strong>
               </li>
               <li>
-                − Franchise +800€ : -136€ → <strong>774€/an</strong>
+                − Franchise +800€ : -136€ → <strong>774€ par an</strong>
               </li>
               <li>
-                − Pack multi-contrats Allianz : -116€ → <strong>658€/an final</strong>
+                − Pack multi-contrats Allianz : -116€ → <strong>658€ par an final</strong>
               </li>
             </ol>
           ),
@@ -177,11 +177,11 @@ export default function Page() {
         },
         {
           q: 'Quelles options sont vraiment indispensables ?',
-          a: 'Pour IT/services digitaux : cyber-assurance (+15-30%) INDISPENSABLE. Pour libéral réglementé : protection juridique (+5%) recommandée. Pour BTP : décennale OBLIGATOIRE en plus. Pour autres : RC Pro de base + protection juridique suffit souvent.',
+          a: 'Pour IT ou services digitaux : cyber-assurance (+15-30%) INDISPENSABLE. Pour libéral réglementé : protection juridique (+5%) recommandée. Pour BTP : décennale OBLIGATOIRE en plus. Pour autres : RC Pro de base + protection juridique suffit souvent.',
         },
         {
           q: 'Plafond 1M€ ou 2M€ ?',
-          a: 'Dépend de votre risque réel : AE freelance services CA < 100k€ → 500k-1M€ suffit. SARL/SAS services > 500k€ CA → 1-2M€ recommandé. SAS PME > 1M€ CA ou BTP gros chantiers → 2-5M€. Sur-assurance coûte cher inutilement.',
+          a: 'Dépend de votre risque réel : AE freelance services CA < 100k€ → 500k-1M€ suffit. SARL ou SAS services > 500k€ CA → 1-2M€ recommandé. SAS PME > 1M€ CA ou BTP gros chantiers → 2-5M€. Sur-assurance coûte cher inutilement.',
         },
       ]}
       relatedMetiers={[

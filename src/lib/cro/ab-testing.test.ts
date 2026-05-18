@@ -7,7 +7,7 @@ import {
   AB_COOKIE_NAME,
 } from './ab-testing'
 
-describe('A/B Testing primitives', () => {
+describe('A / B Testing primitives', () => {
   describe('assignVariant', () => {
     it('assigne variante stable pour même visitorId', () => {
       const exp = { id: 'sticky-cta-color', variants: ['blue', 'orange', 'emerald'] as const }
@@ -51,7 +51,7 @@ describe('A/B Testing primitives', () => {
     })
   })
 
-  describe('parseAbCookie / serializeAbCookie', () => {
+  describe('parseAbCookie — serializeAbCookie', () => {
     it('parse vide → Map vide', () => {
       expect(parseAbCookie(null).size).toBe(0)
       expect(parseAbCookie('').size).toBe(0)

@@ -45,7 +45,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     shortDef:
       "Directive sur la Distribution d'Assurances (UE 2016/97), encadre la commercialisation d'assurance.",
     fullDef:
-      "La DDA (Directive Distribution d'Assurances), transposée en droit français en 2018, impose : devoir de conseil (analyse exigences/besoins), transparence rémunération intermédiaire, formation continue 15h/an des distributeurs, gouvernance produit (POG).",
+      "La DDA (Directive Distribution d'Assurances), transposée en droit français en 2018, impose : devoir de conseil (analyse exigences ou besoins), transparence rémunération intermédiaire, formation continue 15h par an des distributeurs, gouvernance produit (POG).",
     legalRef: 'Directive UE 2016/97 + art. L. 521-1 C. assur.',
     related: ['acpr', 'csca', 'pog'],
   },
@@ -56,7 +56,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     shortDef:
       "Chambre Syndicale des Courtiers d'Assurances, principal syndicat professionnel français.",
     fullDef:
-      "La CSCA fédère 1 500+ cabinets de courtage en assurance représentant 80% du chiffre d'affaires courtage français. Elle défend les intérêts professionnels, propose formation et certification, et dialogue avec ACPR/Bercy.",
+      "La CSCA fédère 1 500+ cabinets de courtage en assurance représentant 80% du chiffre d'affaires courtage français. Elle défend les intérêts professionnels, propose formation et certification, et dialogue avec ACPR ou Bercy.",
     related: ['orias', 'acpr'],
   },
   {
@@ -104,9 +104,9 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     id: 'loi-madelin',
     term: 'Loi Madelin',
     shortDef:
-      'Régime fiscal permettant aux TNS de déduire leurs cotisations prévoyance/santé/retraite.',
+      'Régime fiscal permettant aux TNS de déduire leurs cotisations prévoyance, santé ou retraite.',
     fullDef:
-      'Loi du 11 février 1994 (art. 154 bis CGI) permettant aux Travailleurs Non-Salariés (AE, EI, EURL, gérants majoritaires) de déduire fiscalement les cotisations versées aux contrats de prévoyance, santé et retraite. Plafond 2026 : 3,75% PASS + 7% au-delà ≈ 7 200 €/an pour CA 100k€.',
+      'Loi du 11 février 1994 (art. 154 bis CGI) permettant aux Travailleurs Non-Salariés (AE, EI, EURL, gérants majoritaires) de déduire fiscalement les cotisations versées aux contrats de prévoyance, santé et retraite. Plafond 2026 : 3,75% PASS + 7% au-delà ≈ 7 200 € par an pour CA 100k€.',
     legalRef: 'Art. 154 bis CGI',
     related: ['tns', 'prevoyance', 'mutuelle-tns'],
   },
@@ -116,7 +116,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     termCode: 'TNS',
     shortDef: 'Travailleur Non Salarié — auto-entrepreneur, EI, EURL, gérant majoritaire SARL.',
     fullDef:
-      'Statut social applicable aux travailleurs indépendants : auto-entrepreneurs, entreprises individuelles, EURL gérants majoritaires, SARL gérants majoritaires, professions libérales. Cotisations sociales URSSAF/CIPAV. Bénéficient du régime fiscal Madelin.',
+      'Statut social applicable aux travailleurs indépendants : auto-entrepreneurs, entreprises individuelles, EURL gérants majoritaires, SARL gérants majoritaires, professions libérales. Cotisations sociales URSSAF ou CIPAV. Bénéficient du régime fiscal Madelin.',
     related: ['loi-madelin', 'mutuelle-tns', 'prevoyance'],
   },
   {
@@ -162,7 +162,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     shortDef:
       "Document remis par l'assureur prouvant que l'artisan est couvert par une décennale en cours.",
     fullDef:
-      "L'attestation décennale est délivrée par l'assureur et doit comporter 11 mentions obligatoires (arrêté du 23 janvier 2024) : identité assureur/assuré, numéro police, période validité, activités couvertes, zone géographique, garanties + plafonds, mention Loi Spinetta, référence intermédiaire ORIAS, modalités réclamation, date émission.",
+      "L'attestation décennale est délivrée par l'assureur et doit comporter 11 mentions obligatoires (arrêté du 23 janvier 2024) : identité assureur ou assuré, numéro police, période validité, activités couvertes, zone géographique, garanties + plafonds, mention Loi Spinetta, référence intermédiaire ORIAS, modalités réclamation, date émission.",
     legalRef: 'Arrêté du 23 janvier 2024',
     related: ['decennale', 'loi-spinetta', 'orias'],
   },
@@ -204,7 +204,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     shortDef:
       'Règlement Général sur la Protection des Données (UE 2016/679) en vigueur depuis 2018.',
     fullDef:
-      "Le RGPD (Règlement UE 2016/679) impose à toute entreprise traitant des données personnelles : registre des traitements, consentement explicite, droits (accès/rectification/suppression/portabilité), notification breach 72h, DPO si traitement à grande échelle. Sanctions : jusqu'à 4% CA mondial OU 20 M€.",
+      "Le RGPD (Règlement UE 2016/679) impose à toute entreprise traitant des données personnelles : registre des traitements, consentement explicite, droits (accès, rectification, suppression ou portabilité), notification breach 72h, DPO si traitement à grande échelle. Sanctions : jusqu'à 4% CA mondial OU 20 M€.",
     legalRef: 'Règlement UE 2016/679 + Loi Informatique et Libertés modifiée',
     related: ['cyber-assurance', 'cnil'],
   },

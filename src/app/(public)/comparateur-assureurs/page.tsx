@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/comparateur-assureurs`,
   },
   openGraph: {
-    title: 'Comparateur d\\',
+    title: "Comparateur d'assureurs pro 2026 — 10 compagnies",
     description:
       'Comparez les 10 principaux assureurs pro français. Hiscox, April Pro, Allianz, MMA, Generali, AXA, MAAF, SMABTP, Wakam, Stello. Tarifs, garanties, spécialités.',
     url: `${SITE_URL}/comparateur-assureurs`,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Comparateur d\\',
+    title: "Comparateur d'assureurs pro 2026 — 10 compagnies",
     description:
       'Comparez les 10 principaux assureurs pro français. Hiscox, April Pro, Allianz, MMA, Generali, AXA, MAAF, SMABTP, Wakam, Stello. Tarifs, garanties, spécialités.',
   },
@@ -55,7 +55,7 @@ const ASSUREURS: Assureur[] = [
       'Garanties étendues (cyber inclus)',
       'Excellence service sinistre',
     ],
-    specialites: ['Consultants', 'IT/Digital', 'RC Pro étendue', 'Cyber'],
+    specialites: ['Consultants', 'IT ou Digital', 'RC Pro étendue', 'Cyber'],
     rating: 4.6,
     acprAgrement: true,
     csaMember: true,
@@ -84,12 +84,12 @@ const ASSUREURS: Assureur[] = [
       'Couverture internationale',
       'Solutions sur-mesure ETI',
     ],
-    specialites: ['Multirisque PME/ETI', 'Flotte auto pro', 'RC Pro grandes structures'],
+    specialites: ['Multirisque PME ou ETI', 'Flotte auto pro', 'RC Pro grandes structures'],
     rating: 4.3,
     acprAgrement: true,
     csaMember: true,
     tarif: 'eur_eur_eur',
-    bestFor: 'PME / ETI, multirisque pro',
+    bestFor: 'PME — ETI, multirisque pro',
   },
   {
     name: 'MMA Pro',
@@ -118,14 +118,14 @@ const ASSUREURS: Assureur[] = [
   {
     name: 'AXA Pro',
     slug: 'axa-pro',
-    description: 'Géant français, solutions complètes pour TPE/PME tous secteurs.',
+    description: 'Géant français, solutions complètes pour TPE ou PME tous secteurs.',
     forces: ['Catalogue complet', 'Solidité maximale', 'Plateforme digitale moderne'],
     specialites: ['Multirisque pro', 'Flotte', 'Cyber pro'],
     rating: 4.3,
     acprAgrement: true,
     csaMember: true,
     tarif: 'eur_eur_eur',
-    bestFor: 'TPE/PME tous secteurs',
+    bestFor: 'TPE ou PME tous secteurs',
   },
   {
     name: 'MAAF Pro',
@@ -158,7 +158,7 @@ const ASSUREURS: Assureur[] = [
     description:
       'Assurtech française innovante, spécialiste des nouveaux métiers (VTC, e-commerce, freelance).',
     forces: ['Souscription 100% digitale', 'Tarifs ajustés en temps réel', 'Spécialiste niches'],
-    specialites: ['VTC / Taxi', 'E-commerce', 'Freelance'],
+    specialites: ['VTC — Taxi', 'E-commerce', 'Freelance'],
     rating: 4.3,
     acprAgrement: true,
     csaMember: true,
@@ -168,7 +168,8 @@ const ASSUREURS: Assureur[] = [
   {
     name: 'Stello',
     slug: 'stello',
-    description: 'Assurtech B2B française, expertise consultants/freelances et auto-entrepreneurs.',
+    description:
+      'Assurtech B2B française, expertise consultants ou freelances et auto-entrepreneurs.',
     forces: [
       'Tarifs auto-entrepreneur attractifs',
       'Pack RC Pro + Cyber + Prévoyance',
@@ -189,7 +190,7 @@ function tarifDisplay(tarif: Assureur['tarif']): string {
 
 export default function ComparateurAssureursPage() {
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Comparateur' }]}
         eyebrow="10 assureurs leaders pro"

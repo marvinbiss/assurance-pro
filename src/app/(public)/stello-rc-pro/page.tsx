@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'stello-rc-pro'
 const TITLE = 'Stello RC Pro — Avis, garanties, tarifs digital 2026'
 const TAGLINE =
-  'Stello est un challenger 100% digital pour la RC Pro freelance et VTC. Analyse complète des garanties, tarifs 90-450€/an et comparatif avec Hiscox, Wakam.'
+  'Stello est un challenger 100% digital pour la RC Pro freelance et VTC. Analyse complète des garanties, tarifs 90-450€ par an et comparatif avec Hiscox, Wakam.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Stello RC Pro : assureur digital pure leader VTC + freelance services. Souscription 100% en ligne. Tarif AE 90-200€/an, VTC 350-450€/an. Comparatif Hiscox/Wakam.',
+    'Stello RC Pro : assureur digital pure leader VTC + freelance services. Souscription 100% en ligne. Tarif AE 90-200€ par an, VTC 350-450€ par an. Comparatif Hiscox ou Wakam.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -49,7 +49,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '90-450€/an',
+          title: '90-450€ par an',
           desc: 'AE freelance 90-200€ • VTC AE 350-450€ • SARL services 300-700€',
         },
         {
@@ -68,7 +68,7 @@ export default function Page() {
                 upload, paiement CB, attestation immédiate
               </li>
               <li>
-                <strong>Tarifs compétitifs</strong> : AE freelance services 90-200€/an (rivalise
+                <strong>Tarifs compétitifs</strong> : AE freelance services 90-200€ par an (rivalise
                 avec Hiscox best price)
               </li>
               <li>
@@ -86,7 +86,7 @@ export default function Page() {
                 <strong>Pas de papier</strong> : 100% dématérialisé, écolo + rapide
               </li>
               <li>
-                <strong>Plafond standard 1M€</strong> : suffisant pour la majorité AE/freelance
+                <strong>Plafond standard 1M€</strong> : suffisant pour la majorité AE ou freelance
               </li>
             </ul>
           ),
@@ -111,14 +111,14 @@ export default function Page() {
                 décourager certains pros traditionnels
               </li>
               <li>
-                <strong>Solidité financière A-</strong> (challenger, moins établi que Allianz/AXA)
+                <strong>Solidité financière A-</strong> (challenger, moins établi qu’Allianz ou AXA)
               </li>
               <li>
                 <strong>Cyber-assurance limitée</strong> : module basique en option
               </li>
               <li>
-                <strong>Tarifs SARL/SAS PME moins compétitifs</strong> : à partir CA 200k€, MMA Pro
-                ou Allianz Pro souvent mieux placés
+                <strong>Tarifs SARL ou SAS PME moins compétitifs</strong> : à partir CA 200k€, MMA
+                Pro ou Allianz Pro souvent mieux placés
               </li>
             </ul>
           ),
@@ -137,7 +137,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Wakam</strong> : leader VTC France (vs Stello challenger). Tarifs très
-                compétitifs VTC débutant (280-350€/an). 100% digital.
+                compétitifs VTC débutant (280-350€ par an). 100% digital.
               </li>
               <li>
                 <strong>Pour AE freelance services intellectuels</strong> : Stello et Hiscox au
@@ -148,8 +148,8 @@ export default function Page() {
                 contrat 2-en-1.
               </li>
               <li>
-                <strong>Pour SARL/SAS PME</strong> : préférer MMA Pro ou Allianz Pro (Stello moins
-                compétitif sur ce segment).
+                <strong>Pour SARL ou SAS PME</strong> : préférer MMA Pro ou Allianz Pro (Stello
+                moins compétitif sur ce segment).
               </li>
             </ul>
           ),
@@ -158,15 +158,15 @@ export default function Page() {
       faq={[
         {
           q: 'Stello est-il un assureur fiable ?',
-          a: 'Oui, agréé ACPR (registre Refassu), solidité financière A-, &gt; 50 000 sociétaires en 2026. Réputation forte sur VTC + freelance. Pour activités plus complexes ou plafonds &gt; 1.5M€, préférer Hiscox/MMA/Allianz.',
+          a: 'Oui, agréé ACPR (registre Refassu), solidité financière A-, &gt; 50 000 sociétaires en 2026. Réputation forte sur VTC + freelance. Pour activités plus complexes ou plafonds &gt; 1.5M€, préférer Hiscox, MMA ou Allianz.',
         },
         {
           q: 'Combien coûte Stello RC Pro pour un freelance ?',
-          a: 'AE freelance services intellectuels CA &lt; 80k€ : 90-200€/an avec plafond 1M€. Best price avec Hiscox sur ce segment. Cyber-assurance basique en option : +120-300€/an.',
+          a: 'AE freelance services intellectuels CA &lt; 80k€ : 90-200€ par an avec plafond 1M€. Best price avec Hiscox sur ce segment. Cyber-assurance basique en option : +120-300€ par an.',
         },
         {
           q: 'Stello propose-t-il une RC Pro VTC ?',
-          a: 'Oui, c&apos;est son cœur de cible. Contrat 2-en-1 (auto VTC + RC Pro VTC) : 350-450€/an pour AE débutant. Avantage : 1 seul contrat à gérer. Concurrent direct : Wakam (best price pur).',
+          a: 'Oui, c&apos;est son cœur de cible. Contrat 2-en-1 (auto VTC + RC Pro VTC) : 350-450€ par an pour AE débutant. Avantage : 1 seul contrat à gérer. Concurrent direct : Wakam (best price pur).',
         },
         {
           q: 'Comment résilier Stello ?',

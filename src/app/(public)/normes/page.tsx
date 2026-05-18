@@ -70,7 +70,7 @@ const NORMES: Norme[] = [
     title: 'Loi Naegelen',
     reference: 'Loi 2020-901 + décret 2022-34',
     description:
-      'Encadre le démarchage téléphonique : 10h-13h et 14h-20h, max 4 appels/mois, intégration Bloctel.',
+      'Encadre le démarchage téléphonique : 10h-13h et 14h-20h, max 4 appels par mois, intégration Bloctel.',
   },
   {
     title: 'DDA — Directive Distribution Assurance',
@@ -82,13 +82,13 @@ const NORMES: Norme[] = [
     title: 'Recommandation ACPR 2024-R-02',
     reference: 'ACPR, 2 juillet 2024',
     description:
-      'Traitement des réclamations : accusé sous 10 jours, réponse fond sous 2 mois, registre obligatoire. Applicable au 31/12/2025.',
+      'Traitement des réclamations : accusé sous 10 jours, réponse fond sous 2 mois, registre obligatoire. Applicable au 31 décembre 2025.',
   },
   {
     title: 'Recommandation ACPR 2024-R-03',
     reference: 'ACPR, 21 novembre 2024',
     description:
-      'Recueil des informations relatives au client (devoir de conseil DDA). Durcit la traçabilité du conseil personnalisé. Applicable au 31/12/2025.',
+      'Recueil des informations relatives au client (devoir de conseil DDA). Durcit la traçabilité du conseil personnalisé. Applicable au 31 décembre 2025.',
   },
   {
     title: 'RGPD',
@@ -106,7 +106,7 @@ const NORMES: Norme[] = [
 
 export default function NormesPage() {
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Normes' }]}
         eyebrow="Conformité ACPR · ORIAS"
@@ -145,7 +145,7 @@ export default function NormesPage() {
           <h2 className="mb-4 text-xl font-bold">Notre conformité</h2>
           <ul className="space-y-2">
             <li>✅ Immatriculation ORIAS active (vérifiable sur orias.fr)</li>
-            <li>✅ RCP renforcée 5 M€/sinistre — 7,5 M€/an</li>
+            <li>✅ RCP renforcée 5 M€ par sinistre — 7,5 M€ par an</li>
             <li>✅ Garantie financière conforme L. 512-7 C. assur.</li>
             <li>✅ Adhésion CSCA active</li>
             <li>✅ Procédure réclamations 2024-R-02 opérationnelle</li>
@@ -153,7 +153,7 @@ export default function NormesPage() {
             <li>✅ DPO externe désigné</li>
             <li>✅ Registre des traitements RGPD à jour</li>
             <li>✅ Audit juridique annuel</li>
-            <li>✅ Veille réglementaire trimestrielle ACPR/EIOPA/CNIL</li>
+            <li>✅ Veille réglementaire trimestrielle ACPR, EIOPA ou CNIL</li>
           </ul>
         </section>
 
@@ -204,7 +204,7 @@ export default function NormesPage() {
               </span>
             </li>
             <li>
-              <strong>Médiation de l\'Assurance</strong>
+              <strong>Médiation de l’Assurance</strong>
               <br />
               <span className="text-sm text-gray-600">
                 TSA 50110, 75441 Paris cedex 09 —{' '}

@@ -174,11 +174,11 @@ function getRateLimiter(): UpstashRateLimiter | MemoryRateLimiter {
 // Configurations alignées sur les routes courtage existantes uniquement.
 const RATE_LIMITS_INTERNAL = {
   api: { window: 60 * 1000, max: 60 }, // général
-  devis: { window: 60 * 1000, max: 10 }, // /api/devis-assurance
-  reclamation: { window: 300 * 1000, max: 3 }, // /api/reclamation (anti-spam)
-  contact: { window: 300 * 1000, max: 3 }, // /api/contact (sends email)
-  newsletter: { window: 300 * 1000, max: 3 }, // /api/newsletter (sends email)
-  gdpr: { window: 300 * 1000, max: 5 }, // /api/gdpr/* (DB export/delete)
+  devis: { window: 60 * 1000, max: 10 }, // /api ou devis-assurance
+  reclamation: { window: 300 * 1000, max: 3 }, // /api ou reclamation (anti-spam)
+  contact: { window: 300 * 1000, max: 3 }, // /api ou contact (sends email)
+  newsletter: { window: 300 * 1000, max: 3 }, // /api ou newsletter (sends email)
+  gdpr: { window: 300 * 1000, max: 5 }, // /api ou gdpr/* (DB export ou delete)
   admin: { window: 60 * 1000, max: 30 }, // /api/admin/*
   cron: { window: 60 * 1000, max: 10, failOpen: true }, // /api/cron/* (fail-open)
   webhook: { window: 60 * 1000, max: 200, failOpen: true }, // /api/revalidate, indexnow callbacks

@@ -19,7 +19,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro Immobilier obligatoire Loi Hoguet (art. 49 loi 70-9) : agent immobilier, mandataire, syndic, gestion locative. Plafond 305k€-2M€ mini. Tarif 350-2 500€/an.',
+    'RC Pro Immobilier obligatoire Loi Hoguet (art. 49 loi 70-9) : agent immobilier, mandataire, syndic, gestion locative. Plafond 305k€-2M€ mini. Tarif 350-2 500€ par an.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -50,7 +50,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '350-2 500€/an',
+          title: '350-2 500€ par an',
           desc: 'Mandataire indépendant 350-600€ • Agence 800-2 500€ selon CA',
         },
         {
@@ -129,25 +129,25 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Mandataire indépendant débutant (1ère année)</strong> : 350-500€/an
+                <strong>Mandataire indépendant débutant (1ère année)</strong> : 350-500€ par an
               </li>
               <li>
-                <strong>Mandataire expérimenté (CA &gt; 80k€)</strong> : 500-800€/an
+                <strong>Mandataire expérimenté (CA &gt; 80k€)</strong> : 500-800€ par an
               </li>
               <li>
-                <strong>Agence immobilière TPE (1-5 salariés)</strong> : 800-1 800€/an
+                <strong>Agence immobilière TPE (1-5 salariés)</strong> : 800-1 800€ par an
               </li>
               <li>
-                <strong>Agence PME (5-20 salariés)</strong> : 1 800-3 500€/an
+                <strong>Agence PME (5-20 salariés)</strong> : 1 800-3 500€ par an
               </li>
               <li>
-                <strong>Réseau franchise + mandataires</strong> : 3 000-8 000€/an
+                <strong>Réseau franchise + mandataires</strong> : 3 000-8 000€ par an
               </li>
               <li>
-                <strong>Syndic moyenne taille (200-500 lots)</strong> : 1 200-2 800€/an
+                <strong>Syndic moyenne taille (200-500 lots)</strong> : 1 200-2 800€ par an
               </li>
               <li>
-                <strong>Marchand de biens</strong> : 2 000-6 000€/an (risque élevé)
+                <strong>Marchand de biens</strong> : 2 000-6 000€ par an (risque élevé)
               </li>
             </ul>
           ),
@@ -160,7 +160,7 @@ export default function Page() {
         },
         {
           q: 'Un mandataire indépendant doit-il avoir sa RC Pro ?',
-          a: 'Oui obligatoire. Soit via la RC Pro globale du réseau (vérifier qu&apos;il y est inscrit), soit en RC Pro personnelle complémentaire. Pour un mandataire indépendant 100% : RC Pro personnelle obligatoire (350-600€/an).',
+          a: 'Oui obligatoire. Soit via la RC Pro globale du réseau (vérifier qu&apos;il y est inscrit), soit en RC Pro personnelle complémentaire. Pour un mandataire indépendant 100% : RC Pro personnelle obligatoire (350-600€ par an).',
         },
         {
           q: 'Combien de temps de couverture postérieure après cessation ?',
@@ -168,7 +168,7 @@ export default function Page() {
         },
         {
           q: 'Quels assureurs en RC Pro Immobilier ?',
-          a: 'Allianz Pro Immobilier (leader), MMA Pro Immobilier, AXA Pro Immobilier, Generali Pro, April Pro Immobilier. Notre courtier ORIAS compare ces 5 selon profil (transaction/gestion/syndic).',
+          a: 'Allianz Pro Immobilier (leader), MMA Pro Immobilier, AXA Pro Immobilier, Generali Pro, April Pro Immobilier. Notre courtier ORIAS compare ces 5 selon profil (transaction, gestion / syndic).',
         },
       ]}
       relatedMetiers={[

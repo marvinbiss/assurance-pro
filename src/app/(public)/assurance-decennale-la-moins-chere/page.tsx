@@ -10,12 +10,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-decennale-la-moins-chere'
 const TITLE = 'Assurance Décennale La Moins Chère — Classement 2026 par métier'
 const TAGLINE =
-  'Classement précis 2026 des assurances décennales les moins chères par métier BTP. April Pro best price AE/SARL. Tarifs vérifiés du peintre au couvreur.'
+  'Classement précis 2026 des assurances décennales les moins chères par métier BTP. April Pro best price AE ou SARL. Tarifs vérifiés du peintre au couvreur.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Décennale la moins chère 2026 : April Pro best price AE peintre 950€/an, plombier 1 400€/an, maçon 1 800€/an. Comparatif honnête April vs SMABTP vs Allianz.',
+    'Décennale la moins chère 2026 : April Pro best price AE peintre 950€ par an, plombier 1 400€ par an, maçon 1 800€ par an. Comparatif honnête April vs SMABTP vs Allianz.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -26,7 +26,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Quelle est l'assurance décennale LA moins chère sur le marché en 2026 ? Le classement varie selon votre métier BTP, votre statut juridique (AE/SARL/SAS) et votre CA. Cette page fournit le classement précis VÉRIFIÉ pour chaque profil typique, basé sur les fourchettes tarifaires réelles 2026 des 5 assureurs leaders : April Pro BTP, SMABTP, Allianz Pro BTP, MMA Pro BTP, AXA Pro BTP."
+      intro="Quelle est l'assurance décennale LA moins chère sur le marché en 2026 ? Le classement varie selon votre métier BTP, votre statut juridique (AE, SARL ou SAS) et votre CA. Cette page fournit le classement précis VÉRIFIÉ pour chaque profil typique, basé sur les fourchettes tarifaires réelles 2026 des 5 assureurs leaders : April Pro BTP, SMABTP, Allianz Pro BTP, MMA Pro BTP, AXA Pro BTP."
       legalReference="Loi Spinetta + art. 1792 Code civil + art. L. 241-1 C. assur."
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -36,7 +36,7 @@ export default function Page() {
       benefits={[
         {
           icon: '🥇',
-          title: 'April Pro = best price AE/SARL',
+          title: 'April Pro = best price AE ou SARL',
           desc: 'Leader best price BTP -10-20% vs autres assureurs',
         },
         {
@@ -91,7 +91,7 @@ export default function Page() {
                 <strong>Charpentier bois</strong> : 🥇 April Pro 2 400€ • 🥈 SMABTP 2 500€
               </li>
               <li>
-                <strong>Terrassier/TP</strong> : 🥇 April Pro 2 800€ • 🥈 SMABTP 2 900€
+                <strong>Terrassier ou TP</strong> : 🥇 April Pro 2 800€ • 🥈 SMABTP 2 900€
               </li>
               <li>
                 <strong>Multi-services BTP</strong> : 🥇 April Pro 2 500€ • 🥈 SMABTP 2 650€
@@ -100,12 +100,12 @@ export default function Page() {
           ),
         },
         {
-          h2: 'Classement décennale moins chère par profil SARL/SAS',
+          h2: 'Classement décennale moins chère par profil SARL ou SAS',
           body: (
             <ul>
               <li>
-                <strong>SARL plomberie (3 salariés)</strong> : 🥇 April Pro 2 200€/an • 🥈 SMABTP 2
-                350€ • MMA Pro BTP 2 450€
+                <strong>SARL plomberie (3 salariés)</strong> : 🥇 April Pro 2 200€ par an • 🥈
+                SMABTP 2 350€ • MMA Pro BTP 2 450€
               </li>
               <li>
                 <strong>SARL électricité (5 salariés)</strong> : 🥇 April Pro 3 200€ • 🥈 SMABTP 3
@@ -139,16 +139,16 @@ export default function Page() {
           body: (
             <ol>
               <li>
-                <strong>Vérifier plafond minimum 1M€ AE / 2M€ SARL/SAS</strong>. En-dessous : risque
-                insuffisance en cas gros sinistre.
+                <strong>Vérifier plafond minimum 1M€ AE — 2M€ SARL ou SAS</strong>. En-dessous :
+                risque insuffisance en cas gros sinistre.
               </li>
               <li>
                 <strong>Vérifier postériorité 10 ans</strong> (standard légal). En-dessous (5 ans) =
                 exposition perso pour 5 dernières années.
               </li>
               <li>
-                <strong>Vérifier exclusions clés</strong> : sous-traitance déclarée, RGE/Qualibat si
-                nécessaire, métiers spéciaux (piscine, photovoltaïque) si applicable.
+                <strong>Vérifier exclusions clés</strong> : sous-traitance déclarée, RGE ou Qualibat
+                si nécessaire, métiers spéciaux (piscine, photovoltaïque) si applicable.
               </li>
             </ol>
           ),
@@ -160,8 +160,8 @@ export default function Page() {
           a: 'April Pro BTP est le best price global pour AE et SARL BTP (-10-20% vs concurrents pour profil équivalent). Pour SARL multi-corps et SAS PME, SMABTP devient compétitif. Comparer toujours April Pro + SMABTP + Allianz Pro minimum.',
         },
         {
-          q: 'Décennale à 700€/an existe ?',
-          a: "Non, c'est trop bas pour un BTP réel agréé ACPR. En-dessous de 950€/an (peintre AE le moins risqué) = suspicion : 1) Assureur non agréé ACPR, 2) Plafond &lt; 500k€ (insuffisant), 3) Exclusions étendues. NE PAS SIGNER sans vérification approfondie.",
+          q: 'Décennale à 700€ par an existe ?',
+          a: "Non, c'est trop bas pour un BTP réel agréé ACPR. En-dessous de 950€ par an (peintre AE le moins risqué) = suspicion : 1) Assureur non agréé ACPR, 2) Plafond &lt; 500k€ (insuffisant), 3) Exclusions étendues. NE PAS SIGNER sans vérification approfondie.",
         },
         {
           q: 'Pourquoi April Pro est-il le moins cher ?',

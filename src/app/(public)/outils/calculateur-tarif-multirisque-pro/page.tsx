@@ -19,7 +19,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/calculateur-tarif-multirisque-pro'
+const SLUG = 'outils / calculateur-tarif-multirisque-pro'
 
 export const metadata: Metadata = {
   title: 'Calculateur tarif multirisque pro 2026 — Bureau, commerce, atelier (gratuit)',
@@ -45,11 +45,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/multirisque-pro" className="hover:underline">
               Multirisque pro
             </Link>{' '}
-            / <span>Calculateur tarif</span>
+            › <span>Calculateur tarif</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ 7 types locaux + 7 assureurs comparés
@@ -108,44 +108,44 @@ export default async function Page() {
             <thead>
               <tr className="bg-orange-50">
                 <th className="border p-2 text-left">Type de locaux</th>
-                <th className="border p-2 text-right">Tarif base m²/an</th>
+                <th className="border p-2 text-right">Tarif base m² par an</th>
                 <th className="border p-2 text-left">Sinistralité dominante</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="border p-2">Entrepôt / stockage</td>
-                <td className="border p-2 text-right">3,80 €/m²</td>
+                <td className="border p-2">Entrepôt — stockage</td>
+                <td className="border p-2 text-right">3,80 € par m²</td>
                 <td className="border p-2">Vol marchandises, incendie</td>
               </tr>
               <tr>
                 <td className="border p-2">Bureau</td>
-                <td className="border p-2 text-right">4,20 €/m²</td>
+                <td className="border p-2 text-right">4,20 € par m²</td>
                 <td className="border p-2">Dégâts eaux, vol matériel IT</td>
               </tr>
               <tr>
                 <td className="border p-2">Commerce de détail</td>
-                <td className="border p-2 text-right">6,80 €/m²</td>
+                <td className="border p-2 text-right">6,80 € par m²</td>
                 <td className="border p-2">Vol caisse, vandalisme nocturne</td>
               </tr>
               <tr>
-                <td className="border p-2">Showroom / magasin</td>
-                <td className="border p-2 text-right">7,20 €/m²</td>
+                <td className="border p-2">Showroom — magasin</td>
+                <td className="border p-2 text-right">7,20 € par m²</td>
                 <td className="border p-2">Bris vitrine, vol expositions</td>
               </tr>
               <tr>
                 <td className="border p-2">Atelier</td>
-                <td className="border p-2 text-right">7,50 €/m²</td>
+                <td className="border p-2 text-right">7,50 € par m²</td>
                 <td className="border p-2">Incendie machines, accidents corporels</td>
               </tr>
               <tr>
-                <td className="border p-2">Cabinet médical / paramédical</td>
-                <td className="border p-2 text-right">8,20 €/m²</td>
+                <td className="border p-2">Cabinet médical — paramédical</td>
+                <td className="border p-2 text-right">8,20 € par m²</td>
                 <td className="border p-2">Vol équipement médical, dégâts eaux</td>
               </tr>
               <tr>
-                <td className="border p-2">Restaurant / brasserie</td>
-                <td className="border p-2 text-right">11,50 €/m²</td>
+                <td className="border p-2">Restaurant — brasserie</td>
+                <td className="border p-2 text-right">11,50 € par m²</td>
                 <td className="border p-2">Incendie cuisine, intoxications, vol</td>
               </tr>
             </tbody>
@@ -164,9 +164,9 @@ export default async function Page() {
           </h2>
           <p className="text-sm">
             Cette estimation a une <strong>valeur indicative uniquement</strong>. Tarif réel
-            variable ±20% selon : présence sprinklers/alarme/coffre-fort (rabais 5-15%), proximité
-            caserne pompiers (-5%), antécédents 5 ans, activités annexes (laboratoire, matières
-            dangereuses, ERP recevant public). Conformité ACPR 2024-R-02.
+            variable ±20% selon : présence sprinklers, alarme ou coffre-fort (rabais 5-15%),
+            proximité caserne pompiers (-5%), antécédents 5 ans, activités annexes (laboratoire,
+            matières dangereuses, ERP recevant public). Conformité ACPR 2024-R-02.
           </p>
         </div>
       </section>

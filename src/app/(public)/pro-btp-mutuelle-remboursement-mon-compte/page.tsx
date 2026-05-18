@@ -172,7 +172,7 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>MMA Mutuelle Pro</strong> : flexibilité formules + bonne couverture
-                  optique/dentaire
+                  optique ou dentaire
                 </li>
                 <li>
                   <strong>Aon Santé Pro</strong> : haut de gamme pour dirigeants avec gros besoins
@@ -180,7 +180,7 @@ export default function Page() {
               </ul>
               <p>
                 Notre courtier partenaire ORIAS peut comparer gratuitement votre formule PRO BTP
-                actuelle vs ces 4 alternatives — gain typique 200-600€/an sur les profils TNS
+                actuelle vs ces 4 alternatives — gain typique 200-600€ par an sur les profils TNS
                 jeunes.
               </p>
             </>
@@ -198,7 +198,7 @@ export default function Page() {
         },
         {
           q: 'Mon remboursement PRO BTP n&apos;arrive pas, que faire ?',
-          a: '1) Vérifier dans Mon compte le statut du dossier (reçu/en cours/payé). 2) Vérifier que votre RIB est à jour. 3) Si > 15 jours sans nouvelle, appeler le 0 970 80 80 80. 4) Email à reclamation@probtp.com en cas de blocage.',
+          a: '1) Vérifier dans Mon compte le statut du dossier (reçu ou en cours ou payé). 2) Vérifier que votre RIB est à jour. 3) Si > 15 jours sans nouvelle, appeler le 0 970 80 80 80. 4) Email à reclamation@probtp.com en cas de blocage.',
         },
         {
           q: 'Puis-je résilier PRO BTP pour aller chez un autre assureur ?',

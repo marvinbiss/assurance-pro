@@ -15,7 +15,7 @@ export const revalidate = 86400
 const SLUG = 'mma-assurance-rc-pro'
 const TITLE = 'MMA Assurance RC Pro — Souscription, démarches, agences 2026'
 const TAGLINE =
-  'Souscrire votre RC Pro chez MMA : démarches en agence ou en ligne, devis personnalisé, pack multi-contrats. Guide complet 2026.'
+  'Souscrire votre RC Pro chez MMA : démarches en agence / en ligne, devis personnalisé, pack multi-contrats. Guide complet 2026.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -65,12 +65,12 @@ export default function Page() {
           body: (
             <ol>
               <li>
-                Localiser votre agence MMA via <strong>mma.fr/agence-mma</strong> (recherche par
+                Localiser votre agence MMA via <strong>mma.fr ou agence-mma</strong> (recherche par
                 code postal)
               </li>
               <li>Prendre RDV (téléphone ou en ligne) — 1 semaine de délai typique</li>
               <li>
-                Préparer dossier : SIRET, K-bis (SARL/SAS) ou attestation activité (AE),
+                Préparer dossier : SIRET, K-bis (SARL ou SAS) ou attestation activité (AE),
                 justificatif identité
               </li>
               <li>RDV en agence : étude personnalisée 30-60 min avec conseiller MMA</li>
@@ -137,11 +137,11 @@ export default function Page() {
         },
         {
           q: 'Quel pack MMA pour une SARL BTP ?',
-          a: 'Pack idéal : RC Pro BTP + Décennale + Multirisque BTP + Flotte utilitaire + Mutuelle Pro BTP. Remise paquet -20-25% vs souscriptions séparées. Économie typique : 2 000-5 000€/an pour SARL BTP 5-10 salariés.',
+          a: 'Pack idéal : RC Pro BTP + Décennale + Multirisque BTP + Flotte utilitaire + Mutuelle Pro BTP. Remise paquet -20-25% vs souscriptions séparées. Économie typique : 2 000-5 000€ par an pour SARL BTP 5-10 salariés.',
         },
         {
           q: 'MMA est-il moins cher que les autres assureurs ?',
-          a: 'Pas systématiquement. MMA est compétitif sur SARL/SAS PME avec pack multi-contrats. Pour AE freelance services simples, Hiscox ou Stello restent 30-50% moins chers. Notre courtier ORIAS peut comparer.',
+          a: 'Pas systématiquement. MMA est compétitif sur SARL ou SAS PME avec pack multi-contrats. Pour AE freelance services simples, Hiscox ou Stello restent 30-50% moins chers. Notre courtier ORIAS peut comparer.',
         },
       ]}
       relatedMetiers={[

@@ -35,7 +35,7 @@ const TOP_VILLES = [...VILLES_TOP100]
   .slice(0, 8)
   .map((v) => ({ label: v.nom, href: `/rc-pro/${v.slug}` }))
 
-const ORIAS_NUMBER = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
+const ORIAS_NUMBER = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"
 
 const FOOTER_GROUPS = [
   {
@@ -44,8 +44,8 @@ const FOOTER_GROUPS = [
       { label: 'Décennale BTP', href: '/assurance-decennale' },
       { label: 'RC Pro', href: '/rc-pro' },
       { label: 'Multirisque Pro', href: '/multirisque-pro' },
-      { label: 'Mutuelle / TNS', href: '/mutuelle-pro' },
-      { label: 'VTC / Taxi', href: '/assurance-vtc' },
+      { label: 'Mutuelle — TNS', href: '/mutuelle-pro' },
+      { label: 'VTC — Taxi', href: '/assurance-vtc' },
       { label: 'Cyber assurance', href: '/cyber-assurance' },
     ],
   },
@@ -110,16 +110,19 @@ export default function Footer() {
               <VivosLogo size="lg" variant="light" />
             </Link>
 
+            <p className="mb-3 max-w-sm font-display-premium text-base italic leading-snug text-charcoal-100">
+              L&apos;assurance pro qui tient ses promesses.
+            </p>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-charcoal-400">
-              Cabinet de courtage indépendant spécialiste de l'assurance professionnelle. 17
-              verticaux couverts. 10+ assureurs partenaires.
+              Cabinet de courtage indépendant ORIAS — pour les pros qui veulent être vraiment
+              protégés. 17 verticaux, 10+ assureurs partenaires, zéro frais de courtage.
             </p>
 
             <ul className="space-y-2.5 text-sm">
               <li className="flex items-center gap-2.5 text-charcoal-300">
                 <Phone className="h-4 w-4 text-primary-400" strokeWidth={2.2} />
-                <a href="tel:+33651858930" className="font-bold tabular-nums hover:text-white">
-                  06 51 85 89 30
+                <a href="tel:+33182885127" className="font-bold tabular-nums hover:text-white">
+                  01 82 88 51 27
                 </a>
               </li>
               <li className="flex items-center gap-2.5 text-charcoal-300">
@@ -134,7 +137,8 @@ export default function Footer() {
                   strokeWidth={2.2}
                 />
                 <span className="text-charcoal-400">
-                  {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'}
+                  {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ??
+                    "Cabinet en Île-de-France (adresse précise publiée à l'attribution ORIAS)"}
                 </span>
               </li>
             </ul>
@@ -295,7 +299,7 @@ export default function Footer() {
           <p>
             <strong className="text-charcoal-300">Éditeur</strong> :{' '}
             {process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Vivos Assurance SAS'} — SIRET{' '}
-            {process.env.NEXT_PUBLIC_LEGAL_SIRET ?? 'XXX XXX XXX 00000'}.{' '}
+            {process.env.NEXT_PUBLIC_LEGAL_SIRET ?? "En cours d'attribution"}.{' '}
             <strong className="text-charcoal-300">Hébergeur</strong> : Vercel Inc., USA —{' '}
             <a
               href="https://vercel.com"

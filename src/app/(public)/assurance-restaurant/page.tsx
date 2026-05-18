@@ -35,7 +35,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Assurance restaurant : multirisque pro (incendie cuisine, vol, dégâts eaux), RC pro intoxication alimentaire, perte d'exploitation, RC client. Tarifs négociés à partir de 680 €/an. Devis gratuit ORIAS sous 24h.",
+    "Assurance restaurant : multirisque pro (incendie cuisine, vol, dégâts eaux), RC pro intoxication alimentaire, perte d'exploitation, RC client. Tarifs négociés à partir de 680 € par an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
@@ -51,7 +51,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance restaurant est un pack multirisque professionnel spécifiquement conçu pour les établissements de restauration : restaurants traditionnels, brasseries, bistrots, pizzerias, food trucks, restaurants rapides (kebab, sushi), traiteurs, gîtes-restaurants. Elle combine la couverture multirisque du local (incendie cuisine, vol, dégâts des eaux, événements climatiques) avec une RC pro spécifique au métier (intoxication alimentaire, allergies alimentaires non signalées, casse de matériel client) et une garantie pertes d'exploitation calibrée sur la saisonnalité du secteur. Les tarifs 2026 démarrent à 680 € HT/an pour un restaurant traditionnel de 40 couverts en province et peuvent monter à 3 200 €/an pour une brasserie parisienne avec licence IV (alcool fort) et terrasse. Cette page détaille les garanties indispensables, les obligations légales (HACCP, licences débit de boissons), les tarifs par profil et les pièges à éviter (sous-déclaration du chiffre d'affaires, exclusion intoxication alimentaire massive)."
+      intro="L'assurance restaurant est un pack multirisque professionnel spécifiquement conçu pour les établissements de restauration : restaurants traditionnels, brasseries, bistrots, pizzerias, food trucks, restaurants rapides (kebab, sushi), traiteurs, gîtes-restaurants. Elle combine la couverture multirisque du local (incendie cuisine, vol, dégâts des eaux, événements climatiques) avec une RC pro spécifique au métier (intoxication alimentaire, allergies alimentaires non signalées, casse de matériel client) et une garantie pertes d'exploitation calibrée sur la saisonnalité du secteur. Les tarifs 2026 démarrent à 680 € HT par an pour un restaurant traditionnel de 40 couverts en province et peuvent monter à 3 200 € par an pour une brasserie parisienne avec licence IV (alcool fort) et terrasse. Cette page détaille les garanties indispensables, les obligations légales (HACCP, licences débit de boissons), les tarifs par profil et les pièges à éviter (sous-déclaration du chiffre d'affaires, exclusion intoxication alimentaire massive)."
       legalReference="Article 1733 C. civ. (bail commercial) + Loi du 9 juillet 1991 (HACCP) + arrêté du 8 octobre 2013 (licences)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -72,7 +72,7 @@ export default function Page() {
         {
           icon: '💰',
           title: "Perte d'exploitation calibrée",
-          desc: 'Indemnise la perte de marge pendant fermeture sanitaire / sinistre, ajustée à la saisonnalité',
+          desc: 'Indemnise la perte de marge pendant fermeture sanitaire — sinistre, ajustée à la saisonnalité',
         },
         {
           icon: '🚪',
@@ -130,7 +130,7 @@ export default function Page() {
                 <thead>
                   <tr className="bg-gray-100">
                     <th className="border p-2 text-left">Type d&apos;établissement</th>
-                    <th className="border p-2 text-right">Couverts / capacité</th>
+                    <th className="border p-2 text-right">Couverts — capacité</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>
                 </thead>
@@ -141,22 +141,22 @@ export default function Page() {
                     <td className="border p-2 text-right">680 € – 1 200 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Brasserie / bistrot Paris ou grande ville</td>
+                    <td className="border p-2">Brasserie — bistrot Paris ou grande ville</td>
                     <td className="border p-2 text-right">80 couverts</td>
                     <td className="border p-2 text-right">1 380 € – 2 480 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Pizzeria / kebab / restaurant rapide</td>
+                    <td className="border p-2">Pizzeria — kebab — restaurant rapide</td>
                     <td className="border p-2 text-right">30 couverts</td>
                     <td className="border p-2 text-right">580 € – 980 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Food truck / restauration mobile</td>
+                    <td className="border p-2">Food truck — restauration mobile</td>
                     <td className="border p-2 text-right">N/A</td>
                     <td className="border p-2 text-right">480 € – 880 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Bar à vins / bistrot avec licence IV</td>
+                    <td className="border p-2">Bar à vins — bistrot avec licence IV</td>
                     <td className="border p-2 text-right">30 couverts</td>
                     <td className="border p-2 text-right">980 € – 1 680 €</td>
                   </tr>
@@ -171,17 +171,17 @@ export default function Page() {
                     <td className="border p-2 text-right">2 800 € – 5 600 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Discothèque / club avec restauration</td>
+                    <td className="border p-2">Discothèque — club avec restauration</td>
                     <td className="border p-2 text-right">200 places</td>
                     <td className="border p-2 text-right">3 800 € – 8 200 €</td>
                   </tr>
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables : surface salle + cuisine, présence terrasse, licence (II / III / IV),
-                ouverture nocturne, type de cuisine (friteuse augmente le risque), DSP / concession,
-                antécédents sinistres. Un restaurant avec licence IV (alcool fort) paie ~30-50% plus
-                cher qu&apos;un restaurant sans alcool.
+                Variables : surface salle + cuisine, présence terrasse, licence (II ou III ou IV),
+                ouverture nocturne, type de cuisine (friteuse augmente le risque), DSP ou
+                concession, antécédents sinistres. Un restaurant avec licence IV (alcool fort) paie
+                ~30-50% plus cher qu&apos;un restaurant sans alcool.
               </p>
             </>
           ),
@@ -259,8 +259,8 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Cas grave</strong> (hospitalisation, séquelles, décès) : indemnisation
-                  jusqu&apos;à 500 000 €/victime — plus la fermeture administrative et le préjudice
-                  réputationnel
+                  jusqu&apos;à 500 000 € par victime — plus la fermeture administrative et le
+                  préjudice réputationnel
                 </li>
               </ul>
               <p>
@@ -322,8 +322,8 @@ export default function Page() {
               </ul>
               <p>
                 <strong>Bon à savoir</strong> : depuis le décret 2024-318 (en vigueur 1er juillet
-                2024), les restaurants servant plus de 50 couverts/jour doivent mentionner sur leur
-                carte la présence d&apos;un contrat d&apos;assurance RC pro avec garantie
+                2024), les restaurants servant plus de 50 couverts par jour doivent mentionner sur
+                leur carte la présence d&apos;un contrat d&apos;assurance RC pro avec garantie
                 intoxication alimentaire (obligation d&apos;information consommateur).
               </p>
             </>
@@ -337,7 +337,7 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'un restaurant en 2026 ?",
-          a: "Démarre à 680€/an pour un restaurant traditionnel province (40 couverts) jusqu'à 5 600€/an pour un hôtel-restaurant 30 chambres. Médiane marché : 980-1 680€/an. Variables : surface, licences, ouverture nocturne, présence terrasse, type de cuisine (friteuse augmente le risque), antécédents sinistres.",
+          a: "Démarre à 680€ par an pour un restaurant traditionnel province (40 couverts) jusqu'à 5 600€ par an pour un hôtel-restaurant 30 chambres. Médiane marché : 980-1 680€ par an. Variables : surface, licences, ouverture nocturne, présence terrasse, type de cuisine (friteuse augmente le risque), antécédents sinistres.",
         },
         {
           q: 'Que couvre la garantie intoxication alimentaire ?',
@@ -345,7 +345,7 @@ export default function Page() {
         },
         {
           q: 'Mon assurance restaurant couvre-t-elle le matériel professionnel (four, friteuse) ?',
-          a: 'Pas automatiquement — la garantie « bris du matériel pro » est généralement EN OPTION (ajout ~80-150€/an). VIVEMENT recommandée car un four pro coûte 8 000-25 000€ à remplacer, une friteuse pro 3 000-8 000€, une chambre froide 6 000-15 000€. Sans cette garantie, casse = sortie de trésorerie immédiate.',
+          a: 'Pas automatiquement — la garantie « bris du matériel pro » est généralement EN OPTION (ajout ~80-150€ par an). VIVEMENT recommandée car un four pro coûte 8 000-25 000€ à remplacer, une friteuse pro 3 000-8 000€, une chambre froide 6 000-15 000€. Sans cette garantie, casse = sortie de trésorerie immédiate.',
         },
         {
           q: "Comment fonctionne la garantie pertes d'exploitation pour un restaurant saisonnier ?",
@@ -353,7 +353,7 @@ export default function Page() {
         },
         {
           q: 'Food truck : quelle assurance spécifique ?',
-          a: 'Triple couverture nécessaire : (1) RC pro restauration + intoxication alimentaire, (2) Multirisque du véhicule (camion + équipement cuisine + stock), (3) RC exploitation pour les emplacements (foires, événements, marchés). Tarif moyen 2026 : 480-880€/an pour un food truck en exploitation 200 jours/an. Vérifier la couverture en cas de stationnement la nuit (effraction, vol, incendie criminel).',
+          a: 'Triple couverture nécessaire : (1) RC pro restauration + intoxication alimentaire, (2) Multirisque du véhicule (camion + équipement cuisine + stock), (3) RC exploitation pour les emplacements (foires, événements, marchés). Tarif moyen 2026 : 480-880€ par an pour un food truck en exploitation 200 jours par an. Vérifier la couverture en cas de stationnement la nuit (effraction, vol, incendie criminel).',
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance restaurant ?',

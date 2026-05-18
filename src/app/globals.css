@@ -3,21 +3,189 @@
 @tailwind utilities;
 
 /* ===========================================
+   Mesh gradient shader animé — GPU only
+   =========================================== */
+.mesh-shader {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(at 22% 28%, rgba(43, 77, 133, 0.55) 0%, transparent 40%),
+    radial-gradient(at 82% 18%, rgba(184, 151, 90, 0.35) 0%, transparent 36%),
+    radial-gradient(at 78% 82%, rgba(20, 44, 85, 0.55) 0%, transparent 38%),
+    radial-gradient(at 18% 82%, rgba(156, 127, 72, 0.25) 0%, transparent 38%),
+    radial-gradient(at 50% 50%, #060f20 0%, #060f20 70%);
+  filter: saturate(105%);
+  animation: meshDrift 32s ease-in-out infinite alternate;
+  will-change: background-position;
+}
+@keyframes meshDrift {
+  0% {
+    background-position:
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      50% 50%;
+  }
+  100% {
+    background-position:
+      6% 4%,
+      94% 6%,
+      94% 96%,
+      6% 94%,
+      50% 50%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mesh-shader {
+    animation: none;
+  }
+}
+
+/* ===========================================
+   View Transitions API (Next 15 experimental)
+   =========================================== */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 220ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  ::view-transition-old(root) {
+    animation-name: vt-fade-out;
+  }
+  ::view-transition-new(root) {
+    animation-name: vt-fade-in;
+  }
+  @keyframes vt-fade-out {
+    to {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+  @keyframes vt-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+  }
+}
+
+/* ===========================================
+   Skeleton shimmer
+   =========================================== */
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.skeleton-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.dark .skeleton-shimmer::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 100%
+  );
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer::after {
+    animation: none;
+  }
+}
+
+/* ===========================================
+   Print stylesheet — premium editorial
+   =========================================== */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  header,
+  footer,
+  nav[aria-label="Fil d'Ariane"],
+  aside.sticky,
+  [data-print='hide'],
+  button,
+  .noise-overlay,
+  [aria-label='Progression de lecture'],
+  [aria-label='Changer de thème'],
+  [aria-label*='Activer le mode'] {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+  article,
+  section {
+    page-break-inside: avoid;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+    color: #000 !important;
+  }
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.85em;
+    color: #555;
+  }
+  a[href^='#']::after,
+  a[href^='mailto:']::after {
+    content: '';
+  }
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  .shadow-soft,
+  .shadow-premium,
+  .shadow-premium-lg {
+    box-shadow: none !important;
+  }
+  pre,
+  blockquote,
+  table {
+    page-break-inside: avoid;
+  }
+}
+
+/* ===========================================
    Assurance Pro — Brand CSS Variables
    =========================================== */
 
 @layer base {
   :root {
     /* Brand Colors — Terracotta-first palette */
-    --brand-primary: #e86b4b;
-    --brand-primary-light: #ef9171;
-    --brand-primary-dark: #c24b2a;
-    --brand-primary-50: #fdf1ec;
-    --brand-primary-100: #faddcf;
+    --brand-primary: #2b4d85;
+    --brand-primary-light: #5071a1;
+    --brand-primary-dark: #142c55;
+    --brand-primary-50: #eef2f8;
+    --brand-primary-100: #d7dfec;
 
-    --brand-secondary: #e8960a;
-    --brand-secondary-light: #f2b523;
-    --brand-secondary-dark: #c97308;
+    --brand-secondary: #b8975a;
+    --brand-secondary-light: #c9a961;
+    --brand-secondary-dark: #9c7f48;
 
     --brand-success: #3d8b68;
     --brand-success-light: #55a882;

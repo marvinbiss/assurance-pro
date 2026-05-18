@@ -49,10 +49,13 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
     sources: [
       AQC,
       ACPR('Observatoire ACPR — tarifs assurance pro 2024'),
-      LEGIFRANCE('Code des assurances art. L. 113-1', 'codes/article_lc/LEGIARTI000006792500'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 113-1',
+        'codes ou article_lc ou LEGIARTI000006792500'
+      ),
       LEGIFRANCE(
         'Code des assurances art. L. 521-2 (transparence)',
-        'codes/article_lc/LEGIARTI000036330033'
+        'codes ou article_lc ou LEGIARTI000036330033'
       ),
       { label: 'FFA Observatoire 2024', url: 'https://www.franceassureurs.fr/' },
     ],
@@ -79,13 +82,13 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
           ordered: true,
           items: [
             '**Métier exercé (impact 30-45 %)** : sinistralité statistique. Étancheur paie 5× plus que peintre.',
-            '**Statut juridique (impact 25-100 %)** : AE consultant~ 180  €/an, même en SARL 340 € (+89 %), SASU 360 € (+100 %).',
+            '**Statut juridique (impact 25-100 %)** : AE consultant ~180 € par an, même en SARL 340 € (+89 %), SASU 360 € (+100 %).',
             "**Chiffre d'affaires (impact 15-30 %)** : paliers < 30 k€, 30-77 k€, 77-150 k€, 150-300 k€, > 300 k€.",
             '**Ancienneté (impact ±20 %)** : < 2 ans +20 % surprime, > 5 ans propre bonus -10 à -15 %.',
             '**Antécédents sinistres (impact ±50 %)** : RI 3-5 ans propre = -20 %, RI 2+ sinistres = +30 à +50 %.',
-            '**Zone géographique (impact ±30 %)** : Paris/IDF +15 %, DOM cyclonique +30 %, zones inondables +20 %.',
+            '**Zone géographique (impact ±30 %)** : Paris ou IDF +15 %, DOM cyclonique +30 %, zones inondables +20 %.',
             '**Garanties choisies (impact ±25 %)** : plafond, franchise, options cyber, juridique, perte exploitation.',
-            '**Effectif salarié (impact +40 %/salarié)** : responsabilité élargie au préposé.',
+            '**Effectif salarié (impact +40 % par salarié)** : responsabilité élargie au préposé.',
           ],
         },
         callout: {
@@ -97,25 +100,25 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         id: 'tarifs-verticaux',
         h2: '2. Tarifs 2026 par grand vertical',
         paragraphs: [
-          "Fourchettes annuelles HT 2026 négociées par notre cabinet auprès des 10 assureurs partenaires. Profil 'standard' : AE/SARL CA 50-100 k€, sans antécédent sinistre, zone normale.",
+          "Fourchettes annuelles HT 2026 négociées par notre cabinet auprès des 10 assureurs partenaires. Profil 'standard' : AE ou SARL CA 50-100 k€, sans antécédent sinistre, zone normale.",
         ],
         list: {
           items: [
-            '**Décennale BTP** : 1 200 - ~3 500  €/an. Étancheur le plus cher (2 000-3 500), peintre le moins cher (1 200-1 800).',
-            '**RC Pro services** (consultant, freelance, coach) : 90 - ~280  €/an.',
-            '**RC Pro professions réglementées** (médical, juridique, immo) : 320 - ~1 500  €/an.',
-            '**Multirisque pro** (local commercial) : 380 - ~980  €/an selon surface.',
-            '**Mutuelle TNS Madelin** : 720 - ~1 800  €/an (60-150 €/mois).',
-            '**Cyber assurance PME** : 280 - ~1 200  €/an pour plafond 250 k€.',
-            '**Assurance VTC** : 1 800 - ~3 200  €/an pour véhicule unique.',
-            '**Protection juridique pro** : 180 - ~380  €/an.',
-            '**Assurance auto pro VUL** : 480 - ~1 580  €/an.',
-            '**Flotte 5 véhicules** : 5 200 - ~12 000  €/an.',
+            '**Décennale BTP** : 1 200 - ~3 500 € par an. Étancheur le plus cher (2 000-3 500), peintre le moins cher (1 200-1 800).',
+            '**RC Pro services** (consultant, freelance, coach) : 90 - ~280 € par an.',
+            '**RC Pro professions réglementées** (médical, juridique, immo) : 320 - ~1 500 € par an.',
+            '**Multirisque pro** (local commercial) : 380 - ~980 € par an selon surface.',
+            '**Mutuelle TNS Madelin** : 720 - ~1 800 € par an (60-150 € par mois).',
+            '**Cyber assurance PME** : 280 - ~1 200 € par an pour plafond 250 k€.',
+            '**Assurance VTC** : 1 800 - ~3 200 € par an pour véhicule unique.',
+            '**Protection juridique pro** : 180 - ~380 € par an.',
+            '**Assurance auto pro VUL** : 480 - ~1 580 € par an.',
+            '**Flotte 5 véhicules** : 5 200 - ~12 000 € par an.',
           ],
         },
         callout: {
           tone: 'success',
-          text: 'Pour un AE BTP CA 60 k€ avec véhicule et atelier : budget TOTAL annuel ~3 200-4 ~200  €/an, soit ~5-7 % du CA.',
+          text: 'Pour un AE BTP CA 60 k€ avec véhicule et atelier : budget TOTAL annuel ~3 200-4 200 € par an, soit ~5-7 % du CA.',
         },
       },
       {
@@ -126,12 +129,12 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'AE/micro :~ 180  €/an (référence)',
-            'EI classique :~ 220  €/an (+22 %)',
-            'EURL :~ 280  €/an (+55 %)',
-            'SARL gérant majoritaire :~ 340  €/an (+89 %)',
-            'SASU :~ 360  €/an (+100 %)',
-            'SAS multi-associés :~ 380  €/an (+111 %)',
+            'AE ou micro : ~180 € par an (référence)',
+            'EI classique : ~220 € par an (+22 %)',
+            'EURL : ~280 € par an (+55 %)',
+            'SARL gérant majoritaire : ~340 € par an (+89 %)',
+            'SASU : ~360 € par an (+100 %)',
+            'SAS multi-associés : ~380 € par an (+111 %)',
           ],
         },
       },
@@ -141,11 +144,11 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         paragraphs: ['**Top 5 métiers les MOINS chers** (RC Pro tout compris, AE CA < 50 k€) :'],
         list: {
           items: [
-            'Formateur indépendant : 90-180 €/an',
-            'Coach pro/business : 100-220 €/an',
-            'Traducteur indépendant : 100-200 €/an',
-            'Web designer/freelance créatif : 120-240 €/an',
-            'Photographe événementiel : 140-280 €/an',
+            'Formateur indépendant : 90-180 € par an',
+            'Coach pro ou business : 100-220 € par an',
+            'Traducteur indépendant : 100-200 € par an',
+            'Web designer ou freelance créatif : 120-240 € par an',
+            'Photographe événementiel : 140-280 € par an',
           ],
         },
       },
@@ -187,7 +190,7 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         h2: '7. Pourquoi le courtage est gratuit',
         paragraphs: [
           "Notre rémunération est versée par les compagnies d'assurance partenaires sous forme de commissions (15-25 % de la prime). Aucun frais facturé au client final. C'est le modèle standard du courtage français (art. L. 521-2 C. assur. — transparence DDA).",
-          "Pour un contrat décennale~ 2 000  €/an, notre commission moyenne représente 300-500 €. Cette commission n'augmente PAS votre prime : le tarif via courtier est identique (voire moins cher) au tarif direct, car les assureurs préfèrent le canal courtage (acquisition client moins coûteuse pour eux).",
+          "Pour un contrat décennale ~2 000 € par an, notre commission moyenne représente 300-500 €. Cette commission n'augmente PAS votre prime : le tarif via courtier est identique (voire moins cher) au tarif direct, car les assureurs préfèrent le canal courtage (acquisition client moins coûteuse pour eux).",
           "Avantage client : négociation, mise en concurrence, expertise sélection, gestion sinistres — SANS surcoût. L'un des rares cas où l'intermédiation génère de la valeur sans coût pour le client final.",
         ],
       },
@@ -196,18 +199,18 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         h2: '8. 4 cas pratiques (budgets réels)',
         paragraphs: [
           'Budgets totaux annuels 2026 observés sur 4 profils types :',
-          '**Profil 1 — Consultant marketing AE (CA 60 k€)** : RC Pro 120 € + Cyber 320 € + Mutuelle TNS 720 € = **~1 160  €/an** (ratio 1,9 % CA).',
-          '**Profil 2 — Coach sportif AE indoor (CA 35 k€)** : RC Pro 220 € + Multirisque 380 € + Mutuelle 600 € = **~1 200  €/an** (ratio 3,4 %).',
-          '**Profil 3 — Plombier AE BTP (CA 60 k€)** : Décennale 1 800 € + RC Pro Exploitation 280 € + Multirisque 420 € + Auto pro 680 € + Mutuelle 720 € = **~3 900  €/an** (ratio 6,5 %).',
-          '**Profil 4 — Cabinet médical SARL 3 associés (CA 350 k€)** : RC Pro médicale 1 200 €×3 + Multirisque 580 € + Cyber 480 € + Mutuelle Madelin 1 200 €×3 = **~8 060  €/an** total cabinet (ratio 2,3 %).',
+          '**Profil 1 — Consultant marketing AE (CA 60 k€)** : RC Pro 120 € + Cyber 320 € + Mutuelle TNS 720 € = **~1 160 € par an** (ratio 1,9 % CA).',
+          '**Profil 2 — Coach sportif AE indoor (CA 35 k€)** : RC Pro 220 € + Multirisque 380 € + Mutuelle 600 € = **~1 200 € par an** (ratio 3,4 %).',
+          '**Profil 3 — Plombier AE BTP (CA 60 k€)** : Décennale 1 800 € + RC Pro Exploitation 280 € + Multirisque 420 € + Auto pro 680 € + Mutuelle 720 € = **~3 900 € par an** (ratio 6,5 %).',
+          '**Profil 4 — Cabinet médical SARL 3 associés (CA 350 k€)** : RC Pro médicale 1 200 €×3 + Multirisque 580 € + Cyber 480 € + Mutuelle Madelin 1 200 €×3 = **~8 060 € par an** total cabinet (ratio 2,3 %).',
         ],
       },
       {
         id: 'faq',
         h2: 'FAQ',
         paragraphs: [
-          '**Combien coûte une assurance pro en 2026 ?** 90-280 €/an pour freelance services, 1 200-3 ~500  €/an pour BTP, 8-22 k€/an pour chirurgien. Budget moyen AE/SARL standard : 1 500-2 ~500  €/an.',
-          "**Est-ce déductible des impôts ?** TNS au régime réel BIC/BNC : OUI (charges d'exploitation). AE en micro-fiscal : NON (abattement forfaitaire couvre les charges).",
+          '**Combien coûte une assurance pro en 2026 ?** 90-280 € par an pour freelance services, 1 200-3 500 € par an pour BTP, 8-22 k€ par an pour chirurgien. Budget moyen AE ou SARL standard : 1 500-2 500 € par an.',
+          "**Est-ce déductible des impôts ?** TNS au régime réel BIC ou BNC : OUI (charges d'exploitation). AE en micro-fiscal : NON (abattement forfaitaire couvre les charges).",
           '**Comment savoir si je paye trop ?** Comparer 3-5 devis assureurs. Si votre prime est > 20 % au-dessus de la médiane, vous payez trop. Audit gratuit chez Vivos.',
           '**Y a-t-il un coût caché avec le courtage ?** NON. Rémunération exclusive par commissions assureur. Détail communicable sur demande (art. L. 521-2 C. assur.).',
           "**Quand changer d'assureur ?** Si prime augmente > 10 % sans justification, c'est un bon moment. Loi Hamon depuis 2014 : résiliation après 1 an + préavis 1 mois.",
@@ -224,7 +227,7 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
     slug: 'decennale-pas-chere-5-strategies-economies',
     title: 'Décennale pas chère 2026 : 5 stratégies de courtier pour économiser 30 %',
     description:
-      '5 leviers concrets de courtier ORIAS pour obtenir une décennale moins chère en 2026 sans sacrifier la couverture. Cas concret maçon AE : 2 400 € →~ 1 600  €/an. Études anonymisées 487 dossiers.',
+      '5 leviers concrets de courtier ORIAS pour obtenir une décennale moins chère en 2026 sans sacrifier la couverture. Cas concret maçon AE : 2 400 € →~ 1 600 € par an. Études anonymisées 487 dossiers.',
     category: 'BTP',
     tags: ['décennale pas cher', 'économiser', 'courtier', 'btp'],
     ...AUTHOR,
@@ -235,11 +238,11 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
       AQC,
       LEGIFRANCE(
         'Code des assurances art. L. 113-15-2 (Hamon)',
-        'codes/article_lc/LEGIARTI000028744931'
+        'codes ou article_lc ou LEGIARTI000028744931'
       ),
       LEGIFRANCE(
         'Code des assurances art. R. 250-1 (BCT)',
-        'codes/section_lc/LEGITEXT000006073984/LEGISCTA000006156706'
+        'codes ou section_lc ou LEGITEXT000006073984/LEGISCTA000006156706'
       ),
       { label: 'FFB Chiffres-clés 2024', url: 'https://www.ffbatiment.fr/' },
     ],
@@ -259,7 +262,7 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         id: 'pourquoi-cher',
         h2: '1. Pourquoi la décennale est si chère',
         paragraphs: [
-          "La décennale BTP est l'assurance pro la plus chère du marché français, prime moyenne 1 800-2 ~500  €/an pour AE BTP standard. Cette cherté reflète plusieurs réalités économiques :",
+          "La décennale BTP est l'assurance pro la plus chère du marché français, prime moyenne 1 800-2 500 € par an pour AE BTP standard. Cette cherté reflète plusieurs réalités économiques :",
           '**(1) Engagement long (10 ans après réception)** : mobilisation de capitaux importants en mise en réserve technique.',
           '**(2) Coût moyen sinistre élevé** : 8 500-28 500 € selon métier (AQC SYCODÉS 2024). Un sinistre peut absorber 5-10 années de primes.',
           '**(3) Sinistralité métier élevée** : 8-13 % vs 2-3 % en RC Pro services. 1 chantier sur 10 génère un sinistre déclaré.',
@@ -276,10 +279,10 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Maçon AE CA 60 k€ : franchise 0 → 500 € = -180 €/an (-9 %)',
-            'Maçon AE CA 60 k€ : franchise 0 → 1 000 € = -350 €/an (-18 %)',
-            'Plombier AE CA 80 k€ : franchise 0 → 750 € = -280 €/an (-14 %)',
-            'Électricien SARL CA 150 k€ : franchise 0 → 1 500 € = -480 €/an (-15 %)',
+            'Maçon AE CA 60 k€ : franchise 0 → 500 € = -180 € par an (-9 %)',
+            'Maçon AE CA 60 k€ : franchise 0 → 1 000 € = -350 € par an (-18 %)',
+            'Plombier AE CA 80 k€ : franchise 0 → 750 € = -280 € par an (-14 %)',
+            'Électricien SARL CA 150 k€ : franchise 0 → 1 500 € = -480 € par an (-15 %)',
           ],
         },
         callout: {
@@ -296,10 +299,10 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            'Peintre AE : 5 M€ → 2 M€ = -220 €/an (-15 %)',
-            'Maçon AE : 5 M€ → 3 M€ = -360 €/an (-18 %)',
-            'Plombier AE : 5 M€ → 2 M€ = -480 €/an (-22 %)',
-            'Couvreur SARL : 5 M€ → 3 M€ = -650 €/an (-25 %)',
+            'Peintre AE : 5 M€ → 2 M€ = -220 € par an (-15 %)',
+            'Maçon AE : 5 M€ → 3 M€ = -360 € par an (-18 %)',
+            'Plombier AE : 5 M€ → 2 M€ = -480 € par an (-22 %)',
+            'Couvreur SARL : 5 M€ → 3 M€ = -650 € par an (-25 %)',
           ],
         },
         callout: {
@@ -326,7 +329,7 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         h2: '5. Levier 4 — Historique valorisé (-20 %)',
         paragraphs: [
           "Si vos 3-5 dernières années sont sans sinistre, votre relevé d'information (RI) est un actif précieux. Beaucoup d'artisans ne savent pas le présenter aux assureurs.",
-          "**Méthode courtier** : présenter RI accompagné d'un dossier qualification (chantiers types, certifications RGE/Qualibat, attestations clients, absence litige).",
+          "**Méthode courtier** : présenter RI accompagné d'un dossier qualification (chantiers types, certifications RGE ou Qualibat, attestations clients, absence litige).",
         ],
         list: {
           items: [
@@ -350,7 +353,7 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
             'Recommandation motivée écrite (devoir conseil DDA art. L. 521-4)',
             'Gestion sinistres au nom du client (accélération 40 jours)',
             'Renouvellement annuel optimisé',
-            'Veille réglementaire ACPR/Spinetta',
+            'Veille réglementaire ACPR ou Spinetta',
             'Accompagnement transitions (changement statut)',
           ],
         },
@@ -360,9 +363,9 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         h2: '7. Cas pratique maçon AE (2 400 → 1 600 €)',
         paragraphs: [
           'Cas réel anonymisé 2024. Profil : maçon AE 8 ans expérience, CA 60 k€, IDF, sans sinistre 5 ans, affilié CAPEB.',
-          '**Prime initiale** (direct, reconduit tacitement 3 ans) :~ 2 400  €/an, plafond 5 M€, franchise 0 €.',
+          '**Prime initiale** (direct, reconduit tacitement 3 ans) : ~2 400 € par an, plafond 5 M€, franchise 0 €.',
           '**Démarche** : audit contrat + mise en concurrence 4 assureurs (SMABTP, Allianz Pro, MMA, April Pro).',
-          '**Résultat** : nouveau contrat SMABTP à ~1 600  €/an. Économie :~ 800  €/an (-33 %).',
+          '**Résultat** : nouveau contrat SMABTP à ~1 600 € par an. Économie : ~800 € par an (-33 %).',
         ],
         list: {
           items: [
@@ -421,10 +424,16 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
     updatedAt: '2026-05-30',
     readTime: '10 min',
     sources: [
-      LEGIFRANCE('Code des assurances art. L. 241-1', 'codes/article_lc/LEGIARTI000006794155'),
-      LEGIFRANCE('Code des assurances art. L. 242-1', 'codes/article_lc/LEGIARTI000006794216'),
-      LEGIFRANCE('Code civil art. 1792', 'codes/article_lc/LEGIARTI000006442458'),
-      LEGIFRANCE('Loi 78-12 (Spinetta)', 'loda/id/JORFTEXT000000522321'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 241-1',
+        'codes ou article_lc ou LEGIARTI000006794155'
+      ),
+      LEGIFRANCE(
+        'Code des assurances art. L. 242-1',
+        'codes ou article_lc ou LEGIARTI000006794216'
+      ),
+      LEGIFRANCE('Code civil art. 1792', 'codes ou article_lc ou LEGIARTI000006442458'),
+      LEGIFRANCE('Loi 78-12 (Spinetta)', 'loda, id ou JORFTEXT000000522321'),
       AQC,
     ],
     toc: [
@@ -533,7 +542,7 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         h2: '7. Sanctions absence',
         paragraphs: [
           '**Absence décennale (artisan)** : 75 000 € amende + 6 mois prison + interdiction 1-5 ans + responsabilité illimitée patrimoine perso.',
-          "**Absence DO (maître d'ouvrage)** : pas de sanction pénale pour particulier construction habitation principale (exception légale). MAIS impossibilité de vendre dans 10 ans sans clause spécifique + engagement responsabilité personnelle vs acquéreurs futurs. Pour promoteurs/pros : amende administrative jusqu'à 75 000 €.",
+          "**Absence DO (maître d'ouvrage)** : pas de sanction pénale pour particulier construction habitation principale (exception légale). MAIS impossibilité de vendre dans 10 ans sans clause spécifique + engagement responsabilité personnelle vs acquéreurs futurs. Pour promoteurs ou pros : amende administrative jusqu'à 75 000 €.",
         ],
       },
       {
@@ -595,12 +604,12 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         list: {
           ordered: true,
           items: [
-            "**Solidité financière (25 %)** : score Pappers /100 + rating S&P/Moody's. Cible > 70/100.",
+            "**Solidité financière (25 %)** : score Pappers /100 + rating S&P ou Moody's. Cible > 70/100.",
             '**Qualité service sinistres (25 %)** : délai indemnisation, taux litiges médiation, Trustpilot ISO 20488.',
             '**Plafonds standards (15 %)** : 1-5 M€ RC Pro, 2-10 M€ décennale.',
             '**Spécialités sectorielles (15 %)** : profondeur expertise sur vertical donné.',
             '**Prix moyen négocié (10 %)** : rapport qualité-prix.',
-            '**Innovation / digital (10 %)** : tarifeur en ligne, signature électronique, mobile, 24/7.',
+            '**Innovation — digital (10 %)** : tarifeur en ligne, signature électronique, mobile, 24/7.',
           ],
         },
       },
@@ -608,13 +617,13 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         id: 'top3',
         h2: '2. Top 3 généralistes (Hiscox, April, Allianz)',
         paragraphs: [
-          '**1. Hiscox** (Trustpilot 4,6/5 · Pappers 92/100 · Note 87/100)',
-          'Leader RC Pro tech/consulting. Britannique présent en France depuis 1995. Tarifeur instantané 5 min. Excellence sinistres (délai moyen 28 jours vs 45 marché). Tarifs premium mais justifiés.',
+          '**1. Hiscox** (Trustpilot 4,6 sur 5 · Pappers 92/100 · Note 87/100)',
+          'Leader RC Pro tech ou consulting. Britannique présent en France depuis 1995. Tarifeur instantané 5 min. Excellence sinistres (délai moyen 28 jours vs 45 marché). Tarifs premium mais justifiés.',
           'Cible : consultants senior, agences digitales premium, freelances IT critique, professions libérales tech.',
-          '**2. April Pro** (Trustpilot 4,4/5 · Pappers 85/100 · Note 84/100)',
+          '**2. April Pro** (Trustpilot 4,4 sur 5 · Pappers 85/100 · Note 84/100)',
           'Référence courtage français. Plateforme mature. Tarifs très compétitifs BTP multi-vertical (décennale + RC Pro + Multirisque combiné). Catalogue 80 % activités pro françaises.',
           'Cible : artisans BTP multi-métiers, TPE 1-10 salariés, professions services classiques.',
-          '**3. Allianz Pro** (Trustpilot 4,3/5 · Pappers 96/100 · Note 83/100)',
+          '**3. Allianz Pro** (Trustpilot 4,3 sur 5 · Pappers 96/100 · Note 83/100)',
           'Géant mondial, solidité AA S&P. Idéal ETI et grands comptes (plafonds 10-50 M€) ou couverture internationale. Réseau expertise dense.',
           'Cible : PME 50+ salariés, ETI, professions plafond élevé (chirurgie, IT critique, BTP grands chantiers).',
         ],
@@ -624,11 +633,11 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         h2: '3. Spécialistes par vertical',
         paragraphs: [
           '**SMABTP** (Note 86/100 BTP, faible hors BTP)',
-          'LEADER absolu décennale BTP (28 % parts marché). Profondeur métier inégalée 12 métiers BTP. Tarifs compétitifs artisans propres + bonus CAPEB/FFB.',
+          'LEADER absolu décennale BTP (28 % parts marché). Profondeur métier inégalée 12 métiers BTP. Tarifs compétitifs artisans propres + bonus CAPEB ou FFB.',
           '**MMA Pro** (81/100)',
           'Top auto pro et flotte (15 % parts auto pro). Excellence VUL, flottes 5-50 véhicules, leasing pro. Complémentaire SMABTP en décennale.',
           '**Generali Pro** (80/100)',
-          'Top 3 santé/mutuelle TNS (12 % parts). Réseau Itelis dense, plafonds optique/dentaire, médecine douce généreuse. Idéal TNS wellness.',
+          'Top 3 santé ou mutuelle TNS (12 % parts). Réseau Itelis dense, plafonds optique ou dentaire, médecine douce généreuse. Idéal TNS wellness.',
           '**AXA Pro** (79/100)',
           "Équilibre tous segments. Bon Madelin TNS, bonne hospi, réseau Itelis. 'Plan B fiable' partout. Souvent seconde position matrice décision.",
         ],
@@ -640,7 +649,7 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
           '**Wakam** (74/100)',
           'Insurtech 100 % digital fondée 2017. UX excellente, tarifeur instantané, signature fluide. Spécialisé RC Pro freelances + professions digitales. Tarifs compétitifs profils standards. Faible adapté profils complexes ou réglementés.',
           '**Stello** (71/100)',
-          "Nouveau-né 2024, agressif tarifs AE débutants. Plateforme moderne, prix d'appel (RC Pro AE consultant~ 78  €/an). Surveillance pérennité (Pappers 68/100, encore bas).",
+          "Nouveau-né 2024, agressif tarifs AE débutants. Plateforme moderne, prix d'appel (RC Pro AE consultant ~78 € par an). Surveillance pérennité (Pappers 68/100, encore bas).",
           '**MAAF Pro** (76/100)',
           'Référence collectivités, professions sociales (MJPM, mandataires). Bonne capacité décennale complément SMABTP. Faiblesse : digital en retard.',
         ],
@@ -653,14 +662,14 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
           items: [
             '**AE consultant CA < 50 k€** : Wakam ou Stello (compétitifs, UX rapide)',
             '**SARL service CA 100-300 k€** : April Pro ou Allianz Pro',
-            '**Artisan BTP AE/SARL** : SMABTP en décennale + MMA en complément RC/Multi/Auto',
-            '**Médecin libéral/paramédical** : Generali Pro Santé (mutuelle Madelin) + MAAF (RC médicale)',
-            '**Avocat libéral/notaire** : Hiscox (RC Pro premium) + Allianz (Multirisque cabinet)',
+            '**Artisan BTP AE ou SARL** : SMABTP en décennale + MMA en complément RC, Multi ou Auto',
+            '**Médecin libéral ou paramédical** : Generali Pro Santé (mutuelle Madelin) + MAAF (RC médicale)',
+            '**Avocat libéral ou notaire** : Hiscox (RC Pro premium) + Allianz (Multirisque cabinet)',
             '**Freelance IT critique** : Hiscox (RC étendue) + cyber dédiée Hiscox',
             '**Agent immobilier** : April Pro (Loi Hoguet) + AXA (Multirisque agence)',
-            '**E-commerce/agence digitale** : Wakam (RC Pro freelance) + Hiscox (Cyber)',
+            '**E-commerce ou agence digitale** : Wakam (RC Pro freelance) + Hiscox (Cyber)',
             '**PME 10-50 salariés multi-vertical** : Allianz Pro (capacité)',
-            '**ETI/grand compte** : Hiscox (premium) ou Generali Italia (capacité internationale)',
+            '**ETI ou grand compte** : Hiscox (premium) ou Generali Italia (capacité internationale)',
           ],
         },
         callout: {
@@ -687,7 +696,7 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         paragraphs: [
           'Pour construire notre matrice comparative, nous avons collecté pour chaque assureur 14 indicateurs sur les 12 derniers mois, croisés ensuite avec les retours terrain de nos clients courtage. Chaque indicateur est noté de 0 à 10, puis pondéré selon son impact réel sur la satisfaction client constatée en pratique.',
           "Les sources de données : (1) comptes annuels déposés auprès de l'ACPR — accessibles sur le site institutionnel —, (2) avis clients agrégés Trustpilot certifiés ISO 20488, (3) données Pappers (santé financière, dirigeants, capitaux), (4) registre ORIAS pour vérification immatriculation des distributeurs partenaires, (5) jurisprudence — décisions de la médiation de l'assurance publiées au rapport annuel.",
-          "Cette méthodologie est revue annuellement par notre comité courtage. La pondération des critères peut évoluer selon les retours marché : par exemple, l'importance du critère « digital / signature électronique » a augmenté de +5 points depuis 2023, reflet de l'attente client post-Covid.",
+          "Cette méthodologie est revue annuellement par notre comité courtage. La pondération des critères peut évoluer selon les retours marché : par exemple, l'importance du critère « digital — signature électronique » a augmenté de +5 points depuis 2023, reflet de l'attente client post-Covid.",
         ],
       },
       {
@@ -699,10 +708,10 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         list: {
           ordered: true,
           items: [
-            '**Concentration des grands acteurs** : depuis 2021, 5 fusions/acquisitions importantes ont réduit le nombre de compagnies indépendantes. Les groupes Allianz, AXA, Generali, MAAF/MMA captent désormais une part majoritaire du marché RC Pro et multirisque.',
+            '**Concentration des grands acteurs** : depuis 2021, 5 fusions ou acquisitions importantes ont réduit le nombre de compagnies indépendantes. Les groupes Allianz, AXA, Generali, MAAF ou MMA captent désormais une part majoritaire du marché RC Pro et multirisque.',
             '**Émergence des insurtech** : Wakam, Stello, Luko Pro, +Simple ont conquis ~15 % du marché RC Pro freelance grâce à un tarifeur en ligne instantané et une UX moderne. Pression baissière sur les tarifs des profils standards.',
             "**Durcissement décennale BTP** : après plusieurs faillites d'assureurs spécialisés non-agréés UE en 2019-2021 (SFS Insurance, CBL, Elite), l'ACPR a renforcé les contrôles. Les artisans BTP doivent désormais privilégier les assureurs agréés UE avec solvabilité confirmée.",
-            "**Hausse tarifaire générale post-2022** : +18 % en moyenne sur la décennale, +9 % sur la RC Pro entre 2022 et 2026. Causes : inflation des matériaux (+35 %), augmentation des coûts de main-d'œuvre, hausse de la sinistralité ITE / panneaux solaires.",
+            "**Hausse tarifaire générale post-2022** : +18 % en moyenne sur la décennale, +9 % sur la RC Pro entre 2022 et 2026. Causes : inflation des matériaux (+35 %), augmentation des coûts de main-d'œuvre, hausse de la sinistralité ITE — panneaux solaires.",
           ],
         },
       },
@@ -726,7 +735,7 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
             "**Délai d'émission attestation** : certains assureurs émettent l'attestation décennale en 4 h ouvrées, d'autres en 5 à 10 jours ouvrés. Crucial pour les artisans qui démarrent un chantier urgent.",
             "**Service de gestion des sinistres** : interlocuteur unique vs centre d'appels, langues parlées, horaires, application mobile pour déclarer un sinistre en photo.",
             "**Réseau d'experts agréés** : densité géographique des experts d'assurance mandatés, délai moyen d'intervention sur place.",
-            "**Politique de bonus / fidélité** : certains assureurs proposent un bonus de fidélité de -5 % à -15 % au bout de 3 à 5 ans sans sinistre. D'autres ne pratiquent aucun bonus.",
+            "**Politique de bonus — fidélité** : certains assureurs proposent un bonus de fidélité de -5 % à -15 % au bout de 3 à 5 ans sans sinistre. D'autres ne pratiquent aucun bonus.",
             '**Conditions de résiliation** : préavis Loi Chatel, délais de remboursement au prorata, traitement des sinistres en cours en cas de résiliation.',
           ],
         },
@@ -735,9 +744,9 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         id: 'cas-profils',
         h2: '11. Cas pratiques : 3 profils types',
         paragraphs: [
-          "**Profil 1 — Consultant IT freelance CA ~80 k€/an** : choix optimal Hiscox RC Pro + cyber. Justification : profil tech à risque modéré, valeur ajoutée d'un assureur britannique avec expertise IT critique. Tarif annuel constaté : 850 à 1 400 €/an pour 2 M€ de plafond + 250 k€ cyber.",
-          '**Profil 2 — Maçon micro-entrepreneur CA ~40 k€/an** : choix optimal SMABTP décennale + April Pro pour le pack RC/multirisque/auto. Justification : SMABTP est le spécialiste absolu de la décennale BTP avec une expertise métier inégalée. April Pro complète pour les autres garanties à tarif compétitif.',
-          '**Profil 3 — Cabinet conseil 12 salariés CA ~1,5 M€** : choix optimal Allianz Pro multipack (RC Pro + cyber + multirisque + flotte). Justification : capacité financière (plafond 5 M€), équilibre tarif/qualité, gestion centralisée des sinistres pour une équipe multi-salariés.',
+          "**Profil 1 — Consultant IT freelance CA ~80 k€ par an** : choix optimal Hiscox RC Pro + cyber. Justification : profil tech à risque modéré, valeur ajoutée d'un assureur britannique avec expertise IT critique. Tarif annuel constaté : 850 à 1 400 € par an pour 2 M€ de plafond + 250 k€ cyber.",
+          '**Profil 2 — Maçon micro-entrepreneur CA ~40 k€ par an** : choix optimal SMABTP décennale + April Pro pour le pack RC, multirisque ou auto. Justification : SMABTP est le spécialiste absolu de la décennale BTP avec une expertise métier inégalée. April Pro complète pour les autres garanties à tarif compétitif.',
+          '**Profil 3 — Cabinet conseil 12 salariés CA ~1,5 M€** : choix optimal Allianz Pro multipack (RC Pro + cyber + multirisque + flotte). Justification : capacité financière (plafond 5 M€), équilibre tarif ou qualité, gestion centralisée des sinistres pour une équipe multi-salariés.',
         ],
         callout: {
           tone: 'info',
@@ -749,8 +758,8 @@ export const BLOG_POSTS_BATCH_3: Record<string, BlogPost> = {
         h2: 'FAQ',
         paragraphs: [
           "**Quel est le meilleur assureur pro 2026 ?** Hiscox (87/100) pour profils premium, April Pro (84) pour multi-vertical BTP, Allianz Pro (83) pour PME-ETI. 'Meilleur' dépend de votre profil.",
-          "**Comment savoir si un assureur est solide ?** (1) Pappers > 70/100, (2) rating S&P/Moody's minimum A-, (3) agrément ACPR vérifié, (4) fonds propres comptes annuels.",
-          '**Différence Hiscox vs April Pro ?** Hiscox = premium tech/consulting, tarifs élevés, service excellent. April Pro = multi-vertical avec forte expertise BTP, tarifs accessibles, catalogue large.',
+          "**Comment savoir si un assureur est solide ?** (1) Pappers > 70/100, (2) rating S&P ou Moody's minimum A-, (3) agrément ACPR vérifié, (4) fonds propres comptes annuels.",
+          '**Différence Hiscox vs April Pro ?** Hiscox = premium tech ou consulting, tarifs élevés, service excellent. April Pro = multi-vertical avec forte expertise BTP, tarifs accessibles, catalogue large.',
           "**Peut-on changer d'assureur facilement ?** OUI via Loi Hamon (depuis 2014) : résiliation après 1 an avec préavis 1 mois. Bascule sans coupure couverture.",
           '**Risque insurtech (Wakam, Stello) ?** Modéré si solidité vérifiée. Wakam (Pappers 78) sécurisant. Stello (68) plus risqué mais pour AE RC Pro simple, risque limité.',
           "**Qui décide quel assureur me convient ?** Courtier ORIAS analyse profil + met en concurrence 3-5 assureurs + recommandation motivée écrite. Vous décidez en final sur base d'analyse impartiale.",

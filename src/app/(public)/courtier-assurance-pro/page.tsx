@@ -52,7 +52,7 @@ export default function Page() {
         },
         {
           icon: '🛡️',
-          title: 'Conformité ACPR/DDA',
+          title: 'Conformité ACPR ou DDA',
           desc: 'Devoir de conseil tracé (Recommandation 2024-R-03). RCP 1,92 M€ minimum',
         },
         {
@@ -125,7 +125,7 @@ export default function Page() {
                   conformité ACPR 2024-R-03
                 </li>
                 <li>
-                  <strong>Signature électronique</strong> (5 min) : DocuSign / Yousign + paiement
+                  <strong>Signature électronique</strong> (5 min) : DocuSign ou Yousign + paiement
                   1re cotisation
                 </li>
                 <li>
@@ -187,7 +187,7 @@ export default function Page() {
         },
         {
           q: "Comment vérifier qu'un courtier est bien immatriculé ORIAS ?",
-          a: 'Cliquer sur le numéro ORIAS du courtier (obligation arrêté 6/12/2022) qui doit être lien CLIQUABLE vers orias.fr. Sur orias.fr → recherche par numéro → vérifier : statut actif, catégorie I (courtier), RCP en cours de validité, garantie financière en cours.',
+          a: 'Cliquer sur le numéro ORIAS du courtier (obligation arrêté 6 décembre 2022) qui doit être lien CLIQUABLE vers orias.fr. Sur orias.fr → recherche par numéro → vérifier : statut actif, catégorie I (courtier), RCP en cours de validité, garantie financière en cours.',
         },
         {
           q: "Pourquoi passer par un courtier plutôt que directement par l'assureur ?",

@@ -55,11 +55,93 @@ const EMOJI_ICON_MAP: Record<string, LucideIcon> = {
 import { ExpertBio, SocialProofHero, TrustBadgesAcpr } from '@/components/premium'
 // Below-fold heavy sections — lazy-loaded to keep First Load JS small.
 import { ComparatifAssureursTable, DevisCTASection, TarifCalculator } from './pilier-sections-lazy'
+import Image from 'next/image'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
+import { MagneticCta } from '@/components/motion/magnetic-cta'
+import { HERO_PHOTOS } from '@/lib/data/photo-library'
+
+function pickHeroPhoto(slug: string): { src: string; alt: string } {
+  const s = slug.toLowerCase()
+  if (s.includes('decennale') || s.includes('btp') || s.includes('artisan'))
+    return HERO_PHOTOS.chantier
+  if (s.includes('mutuelle') || s.includes('sante')) return HERO_PHOTOS.conseil
+  if (s.includes('equipe') || s.includes('collectif')) return HERO_PHOTOS.equipe
+  return HERO_PHOTOS.bureau
+}
 import { ParallaxLayer } from '@/components/motion/dynamic/ParallaxLayerDynamic'
 import { TiltCard } from '@/components/motion/dynamic/TiltCardDynamic'
 
-type CalculatorGarantie = 'decennale' | 'rc-pro' | 'multirisque-pro' | 'cyber'
+type CalculatorGarantie =
+  | 'decennale'
+  | 'rc-pro'
+  | 'multirisque-pro'
+  | 'cyber'
+  | 'mutuelle-pro'
+  | 'vtc'
+  | 'flotte-auto'
+  | 'dommages-ouvrage'
+  | 'tous-risques-chantier'
+  | 'transport-marchandises'
+  | 'moto-pro'
+  | 'prevoyance'
+  | 'protection-juridique'
+  | 'homme-cle'
+
+/**
+ * Auto-dispatch garantie depuis slug si non fournie explicitement par la page.
+ * Couvre les 130+ pages PilierLayout sans calculatorGarantie= explicite.
+ *
+ * Ordre des tests = priorité de match (spécifique → générique).
+ * Les patterns longs/composés DOIVENT être testés avant les patterns courts.
+ */
+function inferCalculatorGarantie(slug: string): CalculatorGarantie {
+  const s = slug.toLowerCase()
+
+  // ----- Patterns composés / longs (priorité haute) -----
+  if (s.includes('dommages-ouvrage') || s.includes('dommage-ouvrage')) return 'dommages-ouvrage'
+  if (s.includes('tous-risques-chantier') || s.includes('trc-chantier')) {
+    return 'tous-risques-chantier'
+  }
+  if (s.includes('transport-marchandises') || s.includes('marchandises-transport')) {
+    return 'transport-marchandises'
+  }
+  if (s.includes('homme-cle') || s.includes('hommecle') || s.includes('homme-clef')) {
+    return 'homme-cle'
+  }
+  if (s.includes('protection-juridique') || s.includes('juridique-pro')) {
+    return 'protection-juridique'
+  }
+  if (
+    s.includes('flotte') ||
+    s.includes('voiture-pro') ||
+    s.includes('auto-professionnelle') ||
+    s.includes('voiture-professionnelle') ||
+    s.includes('auto-entreprise')
+  ) {
+    return 'flotte-auto'
+  }
+  if (s.includes('moto-pro') || s.includes('moto-professionnelle') || s.includes('coursier')) {
+    return 'moto-pro'
+  }
+  if (s.includes('prevoyance')) return 'prevoyance'
+  if (s.includes('convoyage')) return 'transport-marchandises'
+
+  // ----- Patterns spécifiques -----
+  if (s.includes('decennale') || s.includes('spinetta') || s.includes('parfait-achevement')) {
+    return 'decennale'
+  }
+  if (s.includes('cyber') || s.includes('rgpd') || s.includes('ransomware')) return 'cyber'
+  if (s.includes('vtc') || s.includes('taxi') || s.includes('chauffeur')) return 'vtc'
+  if (s.includes('mutuelle') || s.includes('madelin') || s.includes('sante') || s.includes('tns')) {
+    return 'mutuelle-pro'
+  }
+  if (s.includes('multirisque') || s.includes('local') || s.includes('commerce')) {
+    return 'multirisque-pro'
+  }
+
+  // Default fallback : RC Pro couvre la majorité (consultants, freelances, services pros).
+  return 'rc-pro'
+}
 import {
   getBreadcrumbSchema,
   getServiceSchema,
@@ -162,14 +244,28 @@ export async function PilierLayout({
   const nonce = (await headers()).get('x-nonce') ?? undefined
 
   return (
-    <article className="min-h-screen">
+    <article className="min-h-screen dark:bg-charcoal-950">
       {/* ═══════════════════════════════════════════════════════════════════
           HERO — gradient terra + breadcrumb + CTAs + legal ref
           ═══════════════════════════════════════════════════════════════════ */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
+        {/* Cover photo background — priority for LCP */}
+        {(() => {
+          const photo = pickHeroPhoto(slug)
+          return (
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover opacity-25"
+            />
+          )
+        })()}
         {/* Mesh gradient animé */}
         <div
-          className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-90"
+          className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-80"
           aria-hidden="true"
         />
         {/* Radial blobs decoratifs — parallax scroll + mouse */}
@@ -220,7 +316,7 @@ export async function PilierLayout({
           )}
 
           {/* H1 typographie display premium */}
-          <h1 className="font-display-premium mb-6 max-w-4xl font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[4.5rem]">
+          <h1 className="mb-6 max-w-4xl font-display-premium font-heading text-4xl font-extrabold leading-[1.05] tracking-display sm:text-5xl md:text-6xl lg:text-[4.5rem]">
             {title}
           </h1>
 
@@ -228,13 +324,15 @@ export async function PilierLayout({
 
           {/* CTAs */}
           <div className="mb-10 flex flex-wrap gap-3">
-            <Link
-              href={`/devis?garantie=${slug}`}
-              className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
-            >
-              {CTA_TEXTS.primary}
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
+            <MagneticCta>
+              <Link
+                href={`/devis?garantie=${slug}`}
+                className="group inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-base font-bold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-cta-hover"
+              >
+                {CTA_TEXTS.primary}
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </MagneticCta>
             <a
               href="#faq"
               className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
@@ -259,7 +357,7 @@ export async function PilierLayout({
 
       {/* Social proof stats band (sand-50 sous hero) */}
       {socialProofStats && socialProofStats.length > 0 ? (
-        <section className="border-y border-sand-300 bg-sand-50 py-10 md:py-12">
+        <section className="border-y border-sand-300 bg-sand-50 py-10 dark:bg-charcoal-900 md:py-12">
           <div className="container mx-auto max-w-6xl px-4">
             <SocialProofHero stats={socialProofStats} />
           </div>
@@ -270,12 +368,12 @@ export async function PilierLayout({
           BÉNÉFICES — Cards avec icons gradient
           ═══════════════════════════════════════════════════════════════════ */}
       {benefits.length > 0 ? (
-        <section className="bg-sand-50 py-16 md:py-20">
+        <section className="bg-sand-50 py-24 md:py-32">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {benefits.map((b, idx) => (
                 <RevealOnScroll key={b.title} delay={idx * 80} translateY={28}>
-                  <TiltCard maxTilt={4} glowColor="rgba(232, 107, 75, 0.12)">
+                  <TiltCard maxTilt={4} glowColor="rgba(43, 77, 133, 0.12)">
                     <div className="group relative h-full overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft transition-[box-shadow] duration-300 hover:shadow-card-hover">
                       <div
                         className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 transition-opacity group-hover:opacity-100"
@@ -306,7 +404,7 @@ export async function PilierLayout({
       {/* ═══════════════════════════════════════════════════════════════════
           INTRO — Texte introductif avec eyebrow
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white py-24 md:py-32">
         <div className="container mx-auto max-w-4xl px-4">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-700">
             <Sparkles className="h-3.5 w-3.5" />
@@ -318,31 +416,35 @@ export async function PilierLayout({
         </div>
       </section>
 
-      {/* Calculateur tarif inline (premium conversion) */}
-      {calculatorGarantie ? (
-        <section className="bg-sand-50 py-16 md:py-20">
-          <div className="container mx-auto max-w-4xl px-4">
-            <RevealOnScroll>
-              <div className="mb-8 text-center">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-700">
-                  Estimation instantanée
+      {/* Calculateur tarif inline (premium conversion) — toujours présent.
+          Si calculatorGarantie pas fourni explicitement, auto-dispatch via slug. */}
+      {(() => {
+        const garantie = calculatorGarantie ?? inferCalculatorGarantie(slug)
+        return (
+          <section className="bg-sand-50 py-24 md:py-32">
+            <div className="container mx-auto max-w-4xl px-4">
+              <RevealOnScroll>
+                <div className="mb-8 text-center">
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-700">
+                    Estimation instantanée
+                  </div>
+                  <h2
+                    className="font-heading text-3xl font-medium leading-tight tracking-tight text-charcoal-900 md:text-4xl"
+                    style={{ fontFamily: 'var(--font-heading), Fraunces, serif' }}
+                  >
+                    Combien va vous coûter votre assurance ?
+                  </h2>
                 </div>
-                <h2
-                  className="font-heading text-3xl font-medium leading-tight tracking-tight text-charcoal-900 md:text-4xl"
-                  style={{ fontFamily: 'var(--font-heading), Fraunces, serif' }}
-                >
-                  Combien va vous coûter votre assurance ?
-                </h2>
-              </div>
-              <TarifCalculator garantie={calculatorGarantie} />
-            </RevealOnScroll>
-          </div>
-        </section>
-      ) : null}
+                <TarifCalculator garantie={garantie} />
+              </RevealOnScroll>
+            </div>
+          </section>
+        )
+      })()}
 
       {/* Comparatif assureurs table */}
       {comparatifRows && comparatifRows.length > 0 ? (
-        <section className="bg-white py-16 md:py-20">
+        <section className="bg-white py-24 md:py-32">
           <div className="container mx-auto max-w-5xl px-4">
             <RevealOnScroll>
               <div className="mb-8 text-center">
@@ -368,7 +470,7 @@ export async function PilierLayout({
       {sections.map((s, idx) => (
         <section
           key={s.h2}
-          className={`py-16 md:py-20 ${idx % 2 === 0 ? 'bg-sand-50' : 'bg-white'}`}
+          className={`py-24 md:py-32 ${idx % 2 === 0 ? 'bg-sand-50' : 'bg-white'}`}
         >
           <div className="container mx-auto max-w-4xl px-4">
             <RevealOnScroll translateY={28}>
@@ -393,7 +495,7 @@ export async function PilierLayout({
 
       {/* Expert bio courtier — E-E-A-T YMYL signal */}
       {expertBio ? (
-        <section className="bg-sand-50 py-16 md:py-20">
+        <section className="bg-sand-50 py-24 md:py-32">
           <div className="container mx-auto max-w-4xl px-4">
             <RevealOnScroll>
               <div className="mb-8">
@@ -417,7 +519,7 @@ export async function PilierLayout({
           RELATED MÉTIERS — Grid links premium
           ═══════════════════════════════════════════════════════════════════ */}
       {relatedMetiers && relatedMetiers.length > 0 ? (
-        <section className="bg-white py-16 md:py-20">
+        <section className="bg-white py-24 md:py-32">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="mb-10 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-700">

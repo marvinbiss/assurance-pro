@@ -64,7 +64,7 @@ const TYPES_ASSURANCE = [
   'Prévoyance TNS',
   'Cyber assurance',
   'Protection juridique professionnelle',
-  'Assurance auto/véhicule professionnel',
+  'Assurance auto par véhicule professionnel',
   'Assurance flotte automobile',
   'Autre',
 ]

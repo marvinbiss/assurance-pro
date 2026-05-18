@@ -29,7 +29,7 @@ export default function Page() {
       intro="PRO BTP (l'institution paritaire du Bâtiment) propose en complément de sa mutuelle santé une offre d'assurance auto spécifique aux professionnels du BTP : utilitaires légers, camionnettes, camions de chantier, flotte. Cette page compare l'offre PRO BTP Auto vs les alternatives privées (Allianz Pro, MMA Flotte, AXA Flotte) et détaille les leviers d'économies pour les entreprises BTP multi-véhicules."
       legalReference="art. L. 211-1 C. assur. (obligation assurance automobile)"
       socialProofStats={STATS_DEFAULT}
-      calculatorGarantie="decennale"
+      calculatorGarantie="flotte-auto"
       expertBio={EXPERT_BTP}
       comparatifRows={COMPARATIF_BTP}
       benefits={[
@@ -89,8 +89,8 @@ export default function Page() {
                 en ligne avancée, tarif compétitif &gt;5 véhicules.
               </li>
               <li>
-                <strong>MMA Flotte BTP</strong> : spécialiste BTP également, bon rapport
-                prix/services pour SARL/SAS 3-15 véhicules.
+                <strong>MMA Flotte BTP</strong> : spécialiste BTP également, bon rapport prix ou
+                services pour SARL ou SAS 3-15 véhicules.
               </li>
               <li>
                 <strong>AXA Flotte Pro</strong> : couverture étendue, assistance haut de gamme,
@@ -112,11 +112,11 @@ export default function Page() {
                 moyen (vs N comptes individuels)
               </li>
               <li>
-                <strong>Telematics / boîtier</strong> : -10-20% prime si conduite vertueuse trackée
+                <strong>Telematics — boîtier</strong> : -10-20% prime si conduite vertueuse trackée
               </li>
               <li>
-                <strong>Augmenter franchise par sinistre</strong> : -15-20% prime à 1 500-3
-                000€/sinistre
+                <strong>Augmenter franchise par sinistre</strong> : -15-20% prime à 1 500-3 000€ par
+                sinistre
               </li>
               <li>
                 <strong>Pack BTP global</strong> : mutuelle + auto + décennale + multirisque =

@@ -225,17 +225,18 @@ export function CalculateurTarifDecennale() {
         </p>
         <p className="text-sm text-gray-700">
           Médiane indicative :{' '}
-          <strong>{resultat.fourchetteMediane.toLocaleString('fr-FR')} €/an</strong> (≈{' '}
-          {Math.round(resultat.fourchetteMediane / 12).toLocaleString('fr-FR')} €/mois). Fourchette
-          basée sur les barèmes 2026 de nos 8 assureurs partenaires (SMABTP, MAAF Pro, April Pro,
-          Hiscox, AXA Pro, Allianz, Wakam, Generali). Devis officiel personnalisé sous 24h.
+          <strong>{resultat.fourchetteMediane.toLocaleString('fr-FR')} € par an</strong> (≈{' '}
+          {Math.round(resultat.fourchetteMediane / 12).toLocaleString('fr-FR')} € par mois).
+          Fourchette basée sur les barèmes 2026 de nos 8 assureurs partenaires (SMABTP, MAAF Pro,
+          April Pro, Hiscox, AXA Pro, Allianz, Wakam, Generali). Devis officiel personnalisé sous
+          24h.
         </p>
 
         <details className="mt-4 text-xs text-gray-600">
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
-              Tarif base métier : <strong>{Math.round(resultat.detail.base)} €/an</strong>
+              Tarif base métier : <strong>{Math.round(resultat.detail.base)} € par an</strong>
             </li>
             <li>Coef CA : ×{resultat.detail.coefCA.toFixed(2)}</li>
             <li>Coef forme juridique : ×{resultat.detail.coefForme.toFixed(2)}</li>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cyber Vivos Assurance — Ransomware, RGPD breach',
     description:
-      'Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu\\',
+      "Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu'à 5M€.",
     url: `${SITE_URL}/cyber-assurance`,
     type: 'website',
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cyber Vivos Assurance — Ransomware, RGPD breach',
     description:
-      'Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu\\',
+      "Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu'à 5M€.",
   },
 }
 
@@ -71,11 +71,11 @@ export default function CyberAssurancePage() {
                 <strong>RC fuite de données</strong>&nbsp;: indemnisation des tiers victimes
               </li>
               <li>
-                <strong>Sanctions CNIL</strong> (selon contrats)&nbsp;: jusqu\'à 4% CA mondial pour
+                <strong>Sanctions CNIL</strong> (selon contrats)&nbsp;: jusqu’à 4% CA mondial pour
                 RGPD
               </li>
               <li>
-                <strong>Perte d\'exploitation</strong>&nbsp;: CA non réalisé pendant l\'incident
+                <strong>Perte d’exploitation</strong>&nbsp;: CA non réalisé pendant l’incident
               </li>
               <li>
                 <strong>Fraude au président</strong> et social engineering (option)
@@ -91,7 +91,7 @@ export default function CyberAssurancePage() {
           body: (
             <p>
               Toute entreprise traitant des données ou ayant une présence digitale&nbsp;:
-              e-commerce, ESN/SSII, agences web/digital, freelances IT, professions libérales
+              e-commerce, ESN ou SSII, agences web ou digital, freelances IT, professions libérales
               (cabinets médicaux, avocats, experts-comptables qui détiennent des données sensibles),
               commerces avec terminal de paiement, PME industrielles connectées (IoT).{' '}
               <strong>Indispensable en 2026 pour toute structure &gt;10 salariés.</strong>
@@ -177,7 +177,7 @@ export default function CyberAssurancePage() {
         },
         {
           q: 'Combien coûte vraiment une cyber assurance en 2026 ?',
-          a: 'Tarifs 2026 : 350-1 000€/an pour un freelance IT (plafond 250k-1M€), 1 500-9 000€/an pour une agence web 10-30 salariés (plafond 1-5M€), 3 000-18 000€/an pour une PME 50-100 salariés. Tarifs en hausse de 15-25%/an depuis 2022 du fait de la sinistralité ransomware.',
+          a: 'Tarifs 2026 : 350-1 000€ par an pour un freelance IT (plafond 250k-1M€), 1 500-9 000€ par an pour une agence web 10-30 salariés (plafond 1-5M€), 3 000-18 000€ par an pour une PME 50-100 salariés. Tarifs en hausse de 15-25% par an depuis 2022 du fait de la sinistralité ransomware.',
         },
         {
           q: 'Puis-je résilier ma cyber assurance à tout moment ?',
@@ -185,7 +185,7 @@ export default function CyberAssurancePage() {
         },
         {
           q: 'Quels prérequis techniques pour souscrire ?',
-          a: 'Les assureurs exigent généralement : sauvegardes régulières (3-2-1), authentification multi-facteurs (MFA) pour les accès admin, mises à jour automatiques, formation des employés, EDR/antivirus pro, plan de réponse à incident documenté. Pour les contrats >2M€ : audit technique externe obligatoire.',
+          a: 'Les assureurs exigent généralement : sauvegardes régulières (3-2-1), authentification multi-facteurs (MFA) pour les accès admin, mises à jour automatiques, formation des employés, EDR ou antivirus pro, plan de réponse à incident documenté. Pour les contrats >2M€ : audit technique externe obligatoire.',
         },
         {
           q: 'Délai de prise en charge en cas de cyberattaque ?',

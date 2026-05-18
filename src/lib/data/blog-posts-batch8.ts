@@ -45,8 +45,14 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
     updatedAt: '2026-06-26',
     readTime: '11 min',
     sources: [
-      LEGIFRANCE('Code des assurances art. L. 113-2', 'codes/article_lc/LEGIARTI000006792479'),
-      LEGIFRANCE('Code civil art. 1792-4-1 (forclusion)', 'codes/article_lc/LEGIARTI000006442542'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 113-2',
+        'codes ou article_lc ou LEGIARTI000006792479'
+      ),
+      LEGIFRANCE(
+        'Code civil art. 1792-4-1 (forclusion)',
+        'codes ou article_lc ou LEGIARTI000006442542'
+      ),
       {
         label: 'AQC SYCODÉS — sinistralité 2024',
         url: 'https://qualiteconstruction.com/observatoire/sycodes/',
@@ -89,7 +95,7 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
         list: {
           ordered: true,
           items: [
-            '**Documenter immédiatement** : photos/vidéos avec date métadonnées, mesures, schémas, témoignages',
+            '**Documenter immédiatement** : photos ou vidéos avec date métadonnées, mesures, schémas, témoignages',
             '**Sécuriser les lieux** : ne pas démolir ni réparer avant expertise (sauf urgence absolue)',
             "**Conserver les preuves** : matériaux défectueux, traces d'infiltration, fissures visibles",
             "**Identifier l'artisan responsable** : retrouver l'attestation décennale émise lors du chantier",
@@ -140,7 +146,7 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
         },
         callout: {
           tone: 'info',
-          text: "Durée typique d'une expertise contradictoire : 2 à 4 h sur place + 2 à 4 semaines de rédaction du rapport. Pour sinistres complexes : 2 à 3 visites espacées (avant/pendant/après travaux conservatoires).",
+          text: "Durée typique d'une expertise contradictoire : 2 à 4 h sur place + 2 à 4 semaines de rédaction du rapport. Pour sinistres complexes : 2 à 3 visites espacées (avant, pendant ou après travaux conservatoires).",
         },
       },
       {
@@ -154,7 +160,7 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
             "**Chiffrage des dommages** : matériel, main d'œuvre, frais annexes (déménagement, hébergement)",
             "**Franchise applicable** : déduite de l'indemnité (typiquement 500 à 2 000 € en décennale)",
             '**Plafond garantie** : vérification que le sinistre ne dépasse pas les plafonds du contrat',
-            "**Application des règles de coassurance/sous-assurance** : si le contrat sous-assurait l'ouvrage",
+            "**Application des règles de coassurance ou sous-assurance** : si le contrat sous-assurait l'ouvrage",
           ],
         },
       },
@@ -197,7 +203,7 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
             "**Délai dépassé : que faire ?** Envoyer la déclaration AVEC justificatif du retard (hospitalisation, force majeure, ignorance légitime). L'assureur peut accepter au cas par cas.",
             "**Expertise contestée : recours ?** Demander une CONTRE-EXPERTISE (à vos frais initialement, parfois remboursée si différence avérée). Ou saisir le médiateur de l'assurance.",
             '**Indemnisation insuffisante : recours ?** 4 options : négociation amiable, contre-expertise, médiation, action judiciaire (Tribunal Judiciaire pour > 10 000 €).',
-            '**Sinistre après 10 ans : possible recours ?** Décennale impossible. Mais responsabilité contractuelle de droit commun reste mobilisable pendant 30 ans pour dol/fraude prouvée (Cour de Cassation 2019).',
+            '**Sinistre après 10 ans : possible recours ?** Décennale impossible. Mais responsabilité contractuelle de droit commun reste mobilisable pendant 30 ans pour dol ou fraude prouvée (Cour de Cassation 2019).',
           ],
         },
       },
@@ -221,7 +227,7 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code de la consommation art. L. 612-1 (médiation)',
-        'codes/article_lc/LEGIARTI000032224989'
+        'codes ou article_lc ou LEGIARTI000032224989'
       ),
       MEDIATION('Médiation Assurance — saisine gratuite'),
       ACPR('ACPR — réclamation contre assureur'),
@@ -383,7 +389,10 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
     updatedAt: '2026-06-30',
     readTime: '9 min',
     sources: [
-      LEGIFRANCE('Code de la consommation art. L. 612-1', 'codes/article_lc/LEGIARTI000032224989'),
+      LEGIFRANCE(
+        'Code de la consommation art. L. 612-1',
+        'codes ou article_lc ou LEGIARTI000032224989'
+      ),
       MEDIATION('Médiation Assurance — saisine'),
       {
         label: 'Rapport annuel médiation 2024',
@@ -529,14 +538,17 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
         url: 'https://qualiteconstruction.com/observatoire/sycodes/',
       },
       { label: 'FFB — Statistiques sinistres 2024', url: 'https://www.ffbatiment.fr/' },
-      LEGIFRANCE('Code des assurances art. L. 241-1', 'codes/article_lc/LEGIARTI000006792975'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 241-1',
+        'codes ou article_lc ou LEGIARTI000006792975'
+      ),
     ],
     toc: [
       { id: 'sycodes', title: "1. AQC SYCODÉS : qu'est-ce ?" },
       { id: 'top-metiers', title: '2. Top 10 métiers à risque' },
       { id: 'cout-moyen', title: '3. Coût moyen des sinistres' },
       { id: 'evolutions', title: '4. Évolutions 2020-2024' },
-      { id: 'rge', title: '5. Impact certifications RGE/Qualibat' },
+      { id: 'rge', title: '5. Impact certifications RGE ou Qualibat' },
       { id: 'prevention', title: '6. Recommandations préventives' },
       { id: 'faq', title: 'FAQ' },
     ],
@@ -547,7 +559,7 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
         paragraphs: [
           "L'AQC (Agence Qualité Construction) gère depuis 1995 l'observatoire SYCODÉS (Suivi des Coûts et des Désordres Sinistres). Il collecte les données de sinistralité de la majorité des assureurs construction français (Allianz, AXA, MAAF, Generali, etc.).",
           "Volume traité 2024 : 75 000 sinistres décennaux examinés, 18 milliards d'euros d'indemnisations brutes, segmentation par métier, région, type d'ouvrage, cause sinistrale.",
-          'Données 2024 disponibles publiquement sur qualiteconstruction.com/observatoire/sycodes/. Référence absolue pour calibrer les primes décennales en France.',
+          'Données 2024 disponibles publiquement sur qualiteconstruction.com, observatoire ou sycodes/. Référence absolue pour calibrer les primes décennales en France.',
         ],
       },
       {
@@ -580,14 +592,14 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
         paragraphs: ["Coût moyen d'indemnisation par sinistre décennal 2024 :"],
         list: {
           items: [
-            '**Étanchéité (piscine/toiture)** : 45 000 € (le plus élevé)',
+            '**Étanchéité (piscine ou toiture)** : 45 000 € (le plus élevé)',
             '**Charpente** : 38 000 €',
-            '**Maçonnerie/gros œuvre** : 32 000 €',
+            '**Maçonnerie ou gros œuvre** : 32 000 €',
             '**Isolation thermique** : 28 500 €',
-            '**Plomberie/chauffage** : 18 500 €',
-            '**Carrelage/sols** : 14 200 €',
+            '**Plomberie ou chauffage** : 18 500 €',
+            '**Carrelage ou sols** : 14 200 €',
             '**Électricité** : 12 800 €',
-            '**Peinture (intérieur/extérieur)** : 8 500 €',
+            '**Peinture (intérieur ou extérieur)** : 8 500 €',
           ],
         },
         callout: {
@@ -611,7 +623,7 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
       },
       {
         id: 'rge',
-        h2: '5. Impact certifications RGE/Qualibat',
+        h2: '5. Impact certifications RGE ou Qualibat',
         paragraphs: ['Les certifications réduisent significativement la sinistralité :'],
         list: {
           items: [
@@ -635,9 +647,9 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
           ordered: true,
           items: [
             '**Obtenir RGE + Qualibat** : -35 % sinistralité + image de marque',
-            '**Formation continue 14 h/an** : se tenir à jour des nouvelles normes RT2020, RE2020',
+            '**Formation continue 14 h par an** : se tenir à jour des nouvelles normes RT2020, RE2020',
             '**Auto-contrôle systématique** : check-list de chantier (étanchéité, niveau, conformité)',
-            "**Documentation chantier rigoureuse** : photos avant/pendant/après, fiches matériaux, plans d'exécution",
+            "**Documentation chantier rigoureuse** : photos avant, pendant ou après, fiches matériaux, plans d'exécution",
             '**Sous-traitance qualifiée** : vérifier RGE + décennale de chaque sous-traitant',
             '**Suivi maintenance** : proposer contrats SAV 1-2 ans post-réception pour détecter défauts précoces',
             '**Assurance dommages-ouvrage côté client** : encourager systématiquement (allège la pression décennale)',
@@ -651,7 +663,7 @@ export const BLOG_POSTS_BATCH_8: Record<string, BlogPost> = {
         list: {
           items: [
             '**Sinistralité réelle vs déclarée : écart ?** Sous-déclaration estimée 15-20 %. Les artisans préfèrent parfois assumer eux-mêmes les petits sinistres pour préserver leur bonus.',
-            "**Sinistralité réelle vs primes : équilibre ?** Marge brute assureurs 25-35 % sur la décennale. Compense les sinistres graves et les frais d'expertise/gestion.",
+            "**Sinistralité réelle vs primes : équilibre ?** Marge brute assureurs 25-35 % sur la décennale. Compense les sinistres graves et les frais d'expertise ou gestion.",
             "**Sinistre fréquent : continuer à exercer ?** Au-delà de 3 sinistres en 5 ans, refus d'assurance possible (article L. 113-2). Risque exclusion du marché.",
             '**Sinistralité accident chantier vs décennale : confusion ?** Distinction : accident chantier = RC Pro (1 an), décennale = défauts structurels (10 ans). 2 contrats différents.',
           ],

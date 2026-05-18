@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function OfflinePage() {
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <div className="container mx-auto flex min-h-[80vh] max-w-2xl flex-col items-center justify-center px-4 py-14 text-center">
         <span className="mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-secondary-100 text-secondary-700">
           <WifiOff className="h-8 w-8" strokeWidth={2.2} />
@@ -54,7 +54,7 @@ export default function OfflinePage() {
 
         <p className="mt-8 inline-flex items-center gap-1.5 text-xs text-charcoal-500">
           <MessageCircle className="h-3.5 w-3.5" strokeWidth={2.4} />
-          Besoin d&apos;aide ? Rappelez-vous au 06 51 85 89 30 (sans connexion Internet)
+          Besoin d&apos;aide ? Rappelez-vous au 01 82 88 51 27 (sans connexion Internet)
         </p>
       </div>
     </main>

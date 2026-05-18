@@ -11,7 +11,7 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'attestation/d-assurance-rc-pro'
+const SLUG = 'attestation / d-assurance-rc-pro'
 const TITLE = "Attestation d'Assurance RC Pro — Obtenir + modèle PDF"
 const TAGLINE =
   "Comment obtenir votre attestation d'assurance RC Pro : démarches, modèle PDF, mentions obligatoires et utilisation. Téléchargeable en 24h après souscription."
@@ -45,7 +45,7 @@ export default function Page() {
         {
           icon: '⚡',
           title: 'Téléchargeable 24h',
-          desc: 'Après souscription RC Pro (Hiscox/Stello immédiat)',
+          desc: 'Après souscription RC Pro (Hiscox ou Stello immédiat)',
         },
         {
           icon: '✅',
@@ -68,7 +68,7 @@ export default function Page() {
                 ACPR
               </li>
               <li>
-                <strong>Identité de l&apos;assuré</strong> : nom/raison sociale + SIRET + adresse
+                <strong>Identité de l&apos;assuré</strong> : nom ou raison sociale + SIRET + adresse
               </li>
               <li>
                 <strong>Numéro de contrat</strong> : référence interne assureur
@@ -80,7 +80,7 @@ export default function Page() {
                 <strong>Plafond par sinistre</strong> : montant maximum indemnisable (500k€-10M€)
               </li>
               <li>
-                <strong>Plafond annuel cumulé</strong> : limite tous sinistres / an
+                <strong>Plafond annuel cumulé</strong> : limite tous sinistres ou an
               </li>
               <li>
                 <strong>Activité couverte</strong> : nomenclature précise (services intellectuels,
@@ -100,8 +100,8 @@ export default function Page() {
           body: (
             <ol>
               <li>
-                <strong>Souscription RC Pro</strong> : si pas encore fait, demander devis
-                (Hiscox/Stello = best price, attestation immédiate)
+                <strong>Souscription RC Pro</strong> : si pas encore fait, demander devis (Hiscox ou
+                Stello = best price, attestation immédiate)
               </li>
               <li>
                 <strong>Espace adhérent</strong> : connecter sur portail assureur avec n° contrat
@@ -110,8 +110,8 @@ export default function Page() {
                 <strong>Onglet &quot;Mes documents&quot;</strong> → &quot;Attestation RC Pro&quot;
               </li>
               <li>
-                <strong>Téléchargement PDF</strong> : immédiat (Hiscox/Stello) ou sous 24h ouvrées
-                (autres)
+                <strong>Téléchargement PDF</strong> : immédiat (Hiscox ou Stello) ou sous 24h
+                ouvrées (autres)
               </li>
               <li>
                 <strong>Envoi aux clients</strong> : par email avec votre proposition commerciale
@@ -157,7 +157,7 @@ export default function Page() {
       faq={[
         {
           q: "Délai pour obtenir l'attestation RC Pro ?",
-          a: 'Immédiat (téléchargement direct espace adhérent) chez Hiscox et Stello. 24h ouvrées chez April Pro BTP. 24-48h Allianz Pro / MMA. 48-72h AXA Pro. Notre courtier ORIAS facilite démarches express.',
+          a: 'Immédiat (téléchargement direct espace adhérent) chez Hiscox et Stello. 24h ouvrées chez April Pro BTP. 24-48h Allianz Pro — MMA. 48-72h AXA Pro. Notre courtier ORIAS facilite démarches express.',
         },
         {
           q: 'Combien de temps est valable une attestation ?',

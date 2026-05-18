@@ -58,7 +58,7 @@ export const RESSOURCES: Record<string, Ressource> = {
           items: [
             'Conseil & expertise : conseillers en investissements financiers (CIF), experts-comptables, avocats, notaires',
             'Santé & bien-être : ostéopathes, psychothérapeutes, esthéticiennes prothésistes ongulaires',
-            'Immobilier : agents immobiliers, syndics, marchands de biens, courtiers (carte T/G/S obligatoire)',
+            'Immobilier : agents immobiliers, syndics, marchands de biens, courtiers (carte T, G ou S obligatoire)',
             'Sport & loisirs : éducateurs sportifs déclarés, moniteurs de plongée, guides de haute montagne',
             'Transport : VTC, taxis, transporteurs de marchandises, ambulanciers',
             'Animaux : éducateurs canins, ostéopathes animaliers, dog-sitters professionnels',
@@ -78,14 +78,14 @@ export const RESSOURCES: Record<string, Ressource> = {
         ],
         list: {
           items: [
-            '**Conseil/freelance services** : ~15 à ~35 €/mois (180-420 €/an)',
-            '**Coach professionnel** : ~18 à ~35 €/mois',
-            '**Esthéticienne / praticienne bien-être** : ~22 à ~40 €/mois',
-            '**Agent immobilier (carte T)** : ~90 à ~140 €/mois',
-            '**VTC indépendant** : ~75 à ~130 €/mois (hors assurance véhicule pro)',
-            '**Kinésithérapeute libéral** : ~30 à ~50 €/mois',
-            '**Médecin généraliste libéral** : ~200 à ~400 €/mois',
-            '**Avocat libéral** : ~80 à ~130 €/mois',
+            '**Conseil ou freelance services** : ~15 à ~35 € par mois (180-420 € par an)',
+            '**Coach professionnel** : ~18 à ~35 € par mois',
+            '**Esthéticienne — praticienne bien-être** : ~22 à ~40 € par mois',
+            '**Agent immobilier (carte T)** : ~90 à ~140 € par mois',
+            '**VTC indépendant** : ~75 à ~130 € par mois (hors assurance véhicule pro)',
+            '**Kinésithérapeute libéral** : ~30 à ~50 € par mois',
+            '**Médecin généraliste libéral** : ~200 à ~400 € par mois',
+            '**Avocat libéral** : ~80 à ~130 € par mois',
           ],
         },
         callout: {
@@ -99,7 +99,7 @@ export const RESSOURCES: Record<string, Ressource> = {
         list: {
           ordered: true,
           items: [
-            "**Activités assurées** : liste exacte avec code APE/NAF. Une activité non listée n'est pas couverte.",
+            "**Activités assurées** : liste exacte avec code APE ou NAF. Une activité non listée n'est pas couverte.",
             '**Plafond par sinistre + par année** : minimum 500 k€ pour la plupart des métiers, 1 M€+ pour B2B exigeant.',
             "**Zone géographique** : France métro, DOM-TOM, UE, monde. Vérifier si vous travaillez à l'étranger.",
             '**Franchise** : montant restant à charge par sinistre (typiquement 200-1 000 €).',
@@ -115,7 +115,7 @@ export const RESSOURCES: Record<string, Ressource> = {
         list: {
           ordered: true,
           items: [
-            '**Identifier votre profil de risque** : code APE/NAF, CA prévisionnel, zone géographique, antécédents.',
+            '**Identifier votre profil de risque** : code APE ou NAF, CA prévisionnel, zone géographique, antécédents.',
             '**Demander des devis multi-assureurs** via un courtier ORIAS (8-12 assureurs interrogés en 4 h).',
             '**Comparer les contrats** : plafonds, exclusions, garanties subséquentes, prix.',
             '**Souscrire** par signature électronique qualifiée eIDAS — attestation émise sous 4 h ouvrées.',
@@ -209,7 +209,7 @@ export const RESSOURCES: Record<string, Ressource> = {
           ordered: true,
           items: [
             "Nom et adresse de l'assureur",
-            'Numéro de contrat / police',
+            'Numéro de contrat — police',
             'Période de validité (début + fin)',
             'Zone géographique couverte',
             'Activités garanties (listées précisément)',
@@ -238,7 +238,7 @@ export const RESSOURCES: Record<string, Ressource> = {
           items: [
             'Score Pappers > 70/100 (santé financière)',
             'Agrément ACPR valide (vérifiable sur acpr.banque-france.fr)',
-            "Rating S&P / Moody's >= A- (Solvency II)",
+            "Rating S&P — Moody's >= A- (Solvency II)",
             'Présent depuis > 5 ans pour la décennale (visibilité 10 ans nécessaire)',
           ],
         },
@@ -267,7 +267,7 @@ export const RESSOURCES: Record<string, Ressource> = {
           ordered: true,
           items: [
             'Préparer Kbis ou avis SIRENE (< 3 mois)',
-            'Lister activités exactes avec codes APE/NAF',
+            'Lister activités exactes avec codes APE ou NAF',
             'Recenser antécédents sinistres 5 dernières années',
             'Demander devis multi-assureurs via courtier ORIAS',
             'Comparer plafonds, franchises, exclusions',
@@ -426,7 +426,7 @@ export const RESSOURCES: Record<string, Ressource> = {
         },
         callout: {
           tone: 'warning',
-          text: "Pour passer du régime micro au régime réel : option à exercer auprès de l'administration fiscale avant le 1ᵉʳ février de l'année. Analyse coût/bénéfice à faire avec votre expert-comptable.",
+          text: "Pour passer du régime micro au régime réel : option à exercer auprès de l'administration fiscale avant le 1ᵉʳ février de l'année. Analyse coût ou bénéfice à faire avec votre expert-comptable.",
         },
       },
       {
@@ -436,14 +436,14 @@ export const RESSOURCES: Record<string, Ressource> = {
         ],
         list: {
           items: [
-            '**Santé** : 3,75 % du PASS + 7 % du PASS dans la limite de 3 % de 8 PASS, soit ~3 850 €/an maximum pour un TNS célibataire.',
-            '**Retraite (PER ou Madelin retraite)** : 10 % du PASS + 25 % de la fraction de bénéfice supérieure au PASS, plafonné à 8 PASS soit ~87 000 €/an maximum.',
-            '**Prévoyance (décès, invalidité, incapacité)** : 1,875 % du PASS + 3,75 % du bénéfice imposable, plafonné à 8 PASS soit ~7 500 €/an typiquement.',
+            '**Santé** : 3,75 % du PASS + 7 % du PASS dans la limite de 3 % de 8 PASS, soit ~3 850 € par an maximum pour un TNS célibataire.',
+            '**Retraite (PER ou Madelin retraite)** : 10 % du PASS + 25 % de la fraction de bénéfice supérieure au PASS, plafonné à 8 PASS soit ~87 000 € par an maximum.',
+            '**Prévoyance (décès, invalidité, incapacité)** : 1,875 % du PASS + 3,75 % du bénéfice imposable, plafonné à 8 PASS soit ~7 500 € par an typiquement.',
           ],
         },
         callout: {
           tone: 'info',
-          text: "Les 3 plafonds sont CUMULABLES. Un TNS peut donc déduire jusqu'à environ 100 000 €/an cumulé (santé + retraite + prévoyance) selon son revenu.",
+          text: "Les 3 plafonds sont CUMULABLES. Un TNS peut donc déduire jusqu'à environ 100 000 € par an cumulé (santé + retraite + prévoyance) selon son revenu.",
         },
       },
       {
@@ -453,9 +453,9 @@ export const RESSOURCES: Record<string, Ressource> = {
         ],
         list: {
           items: [
-            'Cotisation mutuelle Madelin : 80 €/mois = 960 €/an déductibles → économie IR ~288 €/an + économie URSSAF ~250 €/an = 538 €/an net (coût réel mutuelle 422 €/an)',
-            'Cotisation PER Madelin retraite : 200 €/mois = 2 400 €/an déductibles → économie IR ~720 €/an + URSSAF ~624 €/an = 1 344 €/an (coût réel 1 056 €/an)',
-            'Total déductions : 3 360 €/an → économies totales ~1 882 €/an (~56 % du coût brut)',
+            'Cotisation mutuelle Madelin : 80 € par mois = 960 € par an déductibles → économie IR ~288 € par an + économie URSSAF ~250 € par an = 538 € par an net (coût réel mutuelle 422 € par an)',
+            'Cotisation PER Madelin retraite : 200 € par mois = 2 400 € par an déductibles → économie IR ~720 € par an + URSSAF ~624 € par an = 1 344 € par an (coût réel 1 056 € par an)',
+            'Total déductions : 3 360 € par an → économies totales ~1 882 € par an (~56 % du coût brut)',
           ],
         },
       },
@@ -468,8 +468,8 @@ export const RESSOURCES: Record<string, Ressource> = {
             "**Souscrire un contrat labellisé Madelin** : vérifier la mention « contrat Madelin loi 94-126 » sur l'IPID.",
             "**Cotiser régulièrement** : versements mensuels ou trimestriels obligatoires. Un arrêt = perte du bénéfice fiscal sur l'année.",
             '**Conserver les justificatifs 6 ans** : attestations annuelles, contrats, échéanciers.',
-            '**Déclarer sur la 2042 C-PRO** : ligne dédiée selon le type (santé/prévoyance/retraite).',
-            '**Respecter les plafonds** : santé ~3 850 €/an, retraite ~87 000 €/an, prévoyance ~7 500 €/an.',
+            '**Déclarer sur la 2042 C-PRO** : ligne dédiée selon le type (santé, prévoyance ou retraite).',
+            '**Respecter les plafonds** : santé ~3 850 € par an, retraite ~87 000 € par an, prévoyance ~7 500 € par an.',
           ],
         },
       },

@@ -22,7 +22,7 @@ describe('slugify', () => {
     expect(slugify(long).length).toBeLessThanOrEqual(80)
   })
 
-  it('retire tirets en début/fin', () => {
+  it('retire tirets en début / fin', () => {
     expect(slugify('  Hello   ')).toBe('hello')
     expect(slugify('---test---')).toBe('test')
   })

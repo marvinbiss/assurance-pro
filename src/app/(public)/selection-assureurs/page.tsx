@@ -7,24 +7,26 @@ import { PageHero } from '@/components/layout/PageHero'
 export const metadata: Metadata = {
   title: 'Comment nous sélectionnons nos assureurs partenaires',
   description:
-    "Méthodologie de sélection des 10 assureurs partenaires d'Vivos Assurance : critères de solvabilité, qualité de gestion sinistres, indépendance, transparence.",
+    'Méthodologie de sélection des 10 assureurs partenaires Vivos Assurance : critères de solvabilité, qualité de gestion sinistres, indépendance, transparence.',
   alternates: { canonical: `${SITE_URL}/selection-assureurs` },
   openGraph: {
     title: 'Comment nous sélectionnons nos assureurs partenaires',
-    description: 'Méthodologie de sélection des 10 assureurs partenaires d\\',
+    description:
+      'Méthodologie de sélection des 10 assureurs partenaires Vivos Assurance : critères de solvabilité, qualité de gestion sinistres, indépendance, transparence.',
     url: `${SITE_URL}/selection-assureurs`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Comment nous sélectionnons nos assureurs partenaires',
-    description: 'Méthodologie de sélection des 10 assureurs partenaires d\\',
+    description:
+      'Méthodologie de sélection des 10 assureurs partenaires Vivos Assurance : critères de solvabilité, qualité de gestion sinistres, indépendance, transparence.',
   },
 }
 
 export default function SelectionPage() {
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Cabinet' }, { label: 'Sélection assureurs' }]}
         eyebrow="Méthodologie publique"
@@ -68,7 +70,7 @@ export default function SelectionPage() {
             <li>Délai moyen d&apos;ouverture du dossier sinistre (objectif &lt; 5 jours)</li>
             <li>Délai moyen d&apos;indemnisation (objectif &lt; 60 jours)</li>
             <li>Taux de litiges en médiation (objectif &lt; 2 %)</li>
-            <li>Note de satisfaction client post-sinistre (objectif &gt; 4 / 5)</li>
+            <li>Note de satisfaction client post-sinistre (objectif &gt; 4 sur 5)</li>
           </ul>
           <p>
             Un partenaire dont les indicateurs se dégradent significativement (deux trimestres
@@ -82,7 +84,7 @@ export default function SelectionPage() {
           <ul>
             <li>SMABTP, Allianz Pro, MAAF — décennale BTP</li>
             <li>Hiscox, AXA Pro — RC Pro et professions réglementées</li>
-            <li>April Pro — santé/prévoyance TNS Madelin</li>
+            <li>April Pro — santé ou prévoyance TNS Madelin</li>
             <li>Wakam, Stello — auto pro et VTC</li>
             <li>MMA, Generali — multirisque pro et grandes lignes</li>
           </ul>

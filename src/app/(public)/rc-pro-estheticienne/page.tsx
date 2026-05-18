@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'rc-pro-estheticienne'
 const TITLE = 'RC Pro Esthéticienne — Soins, allergies, brûlures, tarifs 2026'
 const TAGLINE =
-  "L'esthéticienne (à domicile ou en institut) doit avoir une RC Pro pour couvrir réactions allergiques, brûlures épilation, dommages cutanés. Tarif 180-450€/an."
+  "L'esthéticienne (à domicile ou en institut) doit avoir une RC Pro pour couvrir réactions allergiques, brûlures épilation, dommages cutanés. Tarif 180-450€ par an."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro esthéticienne : couvre allergies, brûlures épilation laser, dommages soins. Tarif AE 180-350€/an, institut 350-750€/an. Comparatif assureurs spécialisés beauté.',
+    'RC Pro esthéticienne : couvre allergies, brûlures épilation laser, dommages soins. Tarif AE 180-350€ par an, institut 350-750€ par an. Comparatif assureurs spécialisés beauté.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -45,17 +45,17 @@ export default function Page() {
         {
           icon: '⚠️',
           title: 'Allergies + brûlures',
-          desc: 'Réactions cosmétiques, brûlures cire/laser, dermatites de contact',
+          desc: 'Réactions cosmétiques, brûlures cire ou laser, dermatites de contact',
         },
         {
           icon: '💰',
-          title: '180-750€/an',
+          title: '180-750€ par an',
           desc: 'AE à domicile 180-350€ • Institut TPE 350-550€ • Institut + équipe 550-750€',
         },
         {
           icon: '🛡️',
           title: 'Plafond 500k€-1M€',
-          desc: 'Recommandé 1M€ si épilation laser/IPL (risque brûlure majeur)',
+          desc: 'Recommandé 1M€ si épilation laser ou IPL (risque brûlure majeur)',
         },
       ]}
       sections={[
@@ -72,7 +72,7 @@ export default function Page() {
                 arrachement peau. Indemnisation 1-5k€.
               </li>
               <li>
-                <strong>Brûlure épilation laser/IPL sans qualification</strong> (CAP esthétique +
+                <strong>Brûlure épilation laser ou IPL sans qualification</strong> (CAP esthétique +
                 formation laser obligatoire) : 10-50k€ + sanction pénale.
               </li>
               <li>
@@ -87,8 +87,8 @@ export default function Page() {
                 <strong>Tâche brûlure soin chimique</strong> : peeling, gommage agressif. 2-10k€.
               </li>
               <li>
-                <strong>Dommages bijoux/vêtements client</strong> : produits qui tachent ou abîment.
-                200-2k€.
+                <strong>Dommages bijoux ou vêtements client</strong> : produits qui tachent ou
+                abîment. 200-2k€.
               </li>
             </ul>
           ),
@@ -98,19 +98,19 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Épilation laser/IPL</strong> : extension obligatoire si vous proposez ce
+                <strong>Épilation laser ou IPL</strong> : extension obligatoire si vous proposez ce
                 service. Sans qualification + assurance dédiée = exercice illégal de la médecine.
               </li>
               <li>
                 <strong>Soins amincissants (cryolipolyse, presso, radiofréquence)</strong> :
-                extension &quot;appareils esthétiques médicaux&quot;. +100-300€/an.
+                extension &quot;appareils esthétiques médicaux&quot;. +100-300€ par an.
               </li>
               <li>
-                <strong>Maquillage permanent / dermopigmentation</strong> : extension &quot;tatouage
+                <strong>Maquillage permanent — dermopigmentation</strong> : extension &quot;tatouage
                 cosmétique&quot;. Formation et assurance dédiée requises.
               </li>
               <li>
-                <strong>Onglerie / prothèses ongulaires</strong> : couvert RC Pro standard.
+                <strong>Onglerie — prothèses ongulaires</strong> : couvert RC Pro standard.
               </li>
               <li>
                 <strong>Vente produits cosmétiques</strong> : extension RC Produits (couvre
@@ -129,27 +129,28 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Auto-entrepreneur à domicile</strong> (épilation + manucure + soins visage)
-                : 180-280€/an
+                : 180-280€ par an
               </li>
               <li>
-                <strong>Auto-entrepreneur avec onglerie</strong> : 220-350€/an
+                <strong>Auto-entrepreneur avec onglerie</strong> : 220-350€ par an
               </li>
               <li>
-                <strong>Institut TPE indépendant</strong> (1-2 esthéticiennes) : 350-550€/an
+                <strong>Institut TPE indépendant</strong> (1-2 esthéticiennes) : 350-550€ par an
               </li>
               <li>
-                <strong>Institut + épilation laser/IPL</strong> : 550-900€/an (extension
+                <strong>Institut + épilation laser ou IPL</strong> : 550-900€ par an (extension
                 obligatoire)
               </li>
               <li>
-                <strong>Spa / centre bien-être PME</strong> : 700-1 500€/an (RC Pro + multirisque)
+                <strong>Spa — centre bien-être PME</strong> : 700-1 500€ par an (RC Pro +
+                multirisque)
               </li>
               <li>
-                <strong>Esthéticienne + maquillage permanent</strong> : 450-800€/an (extension
+                <strong>Esthéticienne + maquillage permanent</strong> : 450-800€ par an (extension
                 tatouage)
               </li>
               <li>
-                <strong>Centre amincissant / cryolipolyse</strong> : 800-2 000€/an (appareils
+                <strong>Centre amincissant — cryolipolyse</strong> : 800-2 000€ par an (appareils
                 médicaux)
               </li>
             </ul>
@@ -159,19 +160,19 @@ export default function Page() {
       faq={[
         {
           q: 'Une esthéticienne à domicile doit-elle avoir une RC Pro ?',
-          a: 'OUI obligatoire. L&apos;exercice à domicile expose à des sinistres (allergies, brûlures, dommages mobilier client). Tarif AE à domicile : 180-280€/an. Préciser à la souscription le statut &quot;à domicile&quot; (couverture déplacement incluse).',
+          a: 'OUI obligatoire. L&apos;exercice à domicile expose à des sinistres (allergies, brûlures, dommages mobilier client). Tarif AE à domicile : 180-280€ par an. Préciser à la souscription le statut &quot;à domicile&quot; (couverture déplacement incluse).',
         },
         {
           q: 'Quelle assurance pour épilation laser ?',
-          a: "Extension obligatoire à votre RC Pro standard. Coût additionnel : +200-400€/an. Sans cette extension + qualification médicale, l'épilation laser/IPL est exercice illégal de la médecine (sanctions pénales).",
+          a: "Extension obligatoire à votre RC Pro standard. Coût additionnel : +200-400€ par an. Sans cette extension + qualification médicale, l'épilation laser ou IPL est exercice illégal de la médecine (sanctions pénales).",
         },
         {
           q: 'RC Pro esthéticienne couvre-t-elle les produits cosmétiques revendus ?',
-          a: 'Non par défaut. Extension &quot;RC Produits&quot; nécessaire : +50-150€/an. Couvre la responsabilité pour produits cosmétiques revendus en cas de réaction client.',
+          a: 'Non par défaut. Extension &quot;RC Produits&quot; nécessaire : +50-150€ par an. Couvre la responsabilité pour produits cosmétiques revendus en cas de réaction client.',
         },
         {
           q: 'Combien coûte une RC Pro pour un institut de beauté ?',
-          a: 'Institut TPE 1-2 esthéticiennes : 350-550€/an. Avec épilation laser : 550-900€/an. Avec maquillage permanent : 450-800€/an. Spa/centre bien-être PME : 700-1 500€/an. Notre courtier ORIAS compare 5 assureurs spé beauté.',
+          a: 'Institut TPE 1-2 esthéticiennes : 350-550€ par an. Avec épilation laser : 550-900€ par an. Avec maquillage permanent : 450-800€ par an. Spa ou centre bien-être PME : 700-1 500€ par an. Notre courtier ORIAS compare 5 assureurs spé beauté.',
         },
       ]}
       relatedMetiers={[

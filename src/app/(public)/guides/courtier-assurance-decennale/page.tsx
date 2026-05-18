@@ -10,7 +10,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/courtier-assurance-decennale'
+const SLUG = 'guides / courtier-assurance-decennale'
 const TITLE = 'Courtier assurance décennale 2026 — Comment bien le choisir ?'
 const TAGLINE =
   'Le rôle du courtier assurance décennale : analyse adéquation, mise en concurrence 8 assureurs BTP, négociation tarif, gestion sinistres. ORIAS obligatoire.'
@@ -179,7 +179,7 @@ export default function Page() {
       faq={[
         {
           q: 'Comment vérifier l&apos;inscription ORIAS d&apos;un courtier ?',
-          a: "Aller sur orias.fr → cliquer 'Vérifier un intermédiaire' → saisir nom ou numéro ORIAS (8 chiffres). Le registre indique le statut actif/radié, les catégories d'inscription (A pour intermédiaire, B pour courtier), et la date d'inscription. Notre cabinet : ORIAS n° XX XX XX XX (à compléter).",
+          a: "Aller sur orias.fr → cliquer 'Vérifier un intermédiaire' → saisir nom ou numéro ORIAS (8 chiffres). Le registre indique le statut actif ou radié, les catégories d'inscription (A pour intermédiaire, B pour courtier), et la date d'inscription. Notre cabinet : ORIAS n° XX XX XX XX (à compléter).",
         },
         {
           q: 'Combien coûte un courtier décennale ?',
@@ -191,7 +191,7 @@ export default function Page() {
         },
         {
           q: 'Notre cabinet est-il un courtier décennale spécialisé ?',
-          a: 'OUI. Inscription ORIAS active, spécialisation BTP exclusive, partenariats avec 8 assureurs BTP majeurs (SMABTP, MAAF Pro, April Pro BTP, AXA Pro BTP, Allianz Pro BTP, Hiscox, Wakam, Generali), équipe expérimentée 10+ ans BTP, service sinistre dédié 24/7. Devis officiel sous 24h sur /outils/devis-assurance-decennale.',
+          a: 'OUI. Inscription ORIAS active, spécialisation BTP exclusive, partenariats avec 8 assureurs BTP majeurs (SMABTP, MAAF Pro, April Pro BTP, AXA Pro BTP, Allianz Pro BTP, Hiscox, Wakam, Generali), équipe expérimentée 10+ ans BTP, service sinistre dédié 24/7. Devis officiel sous 24h sur /outils ou devis-assurance-decennale.',
         },
       ]}
     />

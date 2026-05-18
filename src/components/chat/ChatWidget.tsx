@@ -153,7 +153,7 @@ export function ChatWidget() {
         type="button"
         aria-label={open ? 'Fermer le chat' : "Ouvrir l'assistant IA"}
         onClick={() => setOpen((v) => !v)}
-        className="group fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-premium-lg transition-all duration-300 hover:scale-110 hover:shadow-glow-clay focus:outline-none focus:ring-4 focus:ring-primary-300/50"
+        className="group fixed bottom-6 right-6 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-premium-lg transition-all duration-300 hover:scale-110 hover:shadow-glow-clay focus:outline-none focus:ring-4 focus:ring-primary-300/50 md:flex"
       >
         {open ? (
           <X className="h-6 w-6" strokeWidth={2.4} />
@@ -171,7 +171,7 @@ export function ChatWidget() {
       {/* Chat panel */}
       {open && (
         <div
-          className="fixed bottom-24 right-6 z-50 flex h-[600px] w-[400px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl border border-charcoal-200 bg-white shadow-premium-lg"
+          className="fixed bottom-24 right-6 z-50 hidden h-[600px] w-[400px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl border border-charcoal-200 bg-white shadow-premium-lg md:flex"
           role="dialog"
           aria-label="Assistant IA Vivos Assurance"
         >

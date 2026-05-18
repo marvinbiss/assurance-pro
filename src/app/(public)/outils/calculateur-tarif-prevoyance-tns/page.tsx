@@ -21,7 +21,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/calculateur-tarif-prevoyance-tns'
+const SLUG = 'outils / calculateur-tarif-prevoyance-tns'
 
 export const metadata: Metadata = {
   title: 'Calculateur prévoyance TNS Madelin 2026 — Estimation immédiate (gratuit)',
@@ -47,11 +47,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/prevoyance-artisan" className="hover:underline">
               Prévoyance
             </Link>{' '}
-            / <span>Calculateur TNS Madelin</span>
+            › <span>Calculateur TNS Madelin</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-emerald-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ Loi Madelin — Déduction fiscale CGI 154 bis intégrée
@@ -97,7 +97,7 @@ export default async function Page() {
           <p className="mb-6 text-gray-600">
             Le calcul est <strong>100% côté navigateur</strong>. Estimation indicative basée sur
             barèmes 2026 des 7 assureurs prévoyance TNS partenaires. Plafond Madelin 2026 :{' '}
-            <strong>3,75% PASS + 7%</strong> au-delà ≈ 7 200 €/an déductibles pour CA 100k€.
+            <strong>3,75% PASS + 7%</strong> au-delà ≈ 7 200 € par an déductibles pour CA 100k€.
           </p>
           <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
             <CalculateurPrevoyanceTns />
@@ -125,14 +125,16 @@ export default async function Page() {
                 <td className="border p-2">
                   <strong>Arrêt maladie</strong>
                 </td>
-                <td className="border p-2">IJ 56 €/jour mini après 3 jours carence (CIPAV/SSI)</td>
+                <td className="border p-2">
+                  IJ 56 € par jour mini après 3 jours carence (CIPAV ou SSI)
+                </td>
                 <td className="border p-2">~70-80% du revenu</td>
               </tr>
               <tr>
                 <td className="border p-2">
                   <strong>Invalidité totale</strong>
                 </td>
-                <td className="border p-2">Pension ~1 200-2 200€/mois</td>
+                <td className="border p-2">Pension ~1 200-2 200€ par mois</td>
                 <td className="border p-2">~50-70% du revenu</td>
               </tr>
               <tr>
@@ -146,20 +148,21 @@ export default async function Page() {
                 <td className="border p-2">
                   <strong>Décès (rente enfants)</strong>
                 </td>
-                <td className="border p-2">Allocation orphelin ~150€/mois</td>
+                <td className="border p-2">Allocation orphelin ~150€ par mois</td>
                 <td className="border p-2">100% besoin éducation</td>
               </tr>
             </tbody>
           </table>
           <p className="mt-4 border-l-4 border-amber-500 bg-amber-100 p-3 text-sm">
-            <strong>Exemple concret</strong> : consultant 45 ans, CA 80 000 €/an. Arrêt maladie 90
-            jours.
+            <strong>Exemple concret</strong> : consultant 45 ans, CA 80 000 € par an. Arrêt maladie
+            90 jours.
             <br />
-            Sans prévoyance TNS : SSI verse 56€/j × 87j = <strong>4 872 €</strong>. Perte revenus :
-            80 000 × 90/365 = <strong>19 726 €</strong>. Manque : <strong>14 854 €</strong>.
+            Sans prévoyance TNS : SSI verse 56€ par jour × 87j = <strong>4 872 €</strong>. Perte
+            revenus : 80 000 × 90/365 = <strong>19 726 €</strong>. Manque :{' '}
+            <strong>14 854 €</strong>.
             <br />
-            Avec prévoyance TNS standard : IJ 80% × 219€/j × 87j = <strong>15 244 €</strong>. Perte
-            couverte à 95%.
+            Avec prévoyance TNS standard : IJ 80% × 219€ par jour × 87j = <strong>15 244 €</strong>.
+            Perte couverte à 95%.
           </p>
         </div>
       </section>
@@ -191,7 +194,7 @@ export default async function Page() {
               href="/prevoyance-artisan"
               className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-amber-700 shadow-lg transition hover:bg-gray-100"
             >
-              → Pilier prévoyance artisan/TNS
+              → Pilier prévoyance artisan / TNS
             </Link>
             <Link
               href="/mutuelle-sante-tns"

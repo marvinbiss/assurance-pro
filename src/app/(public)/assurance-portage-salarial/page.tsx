@@ -33,7 +33,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Le portage salarial est un statut hybride : le freelance porté est SALARIÉ de la société de portage (régime général SS, couverture chômage, mutuelle collective obligatoire ANI 2013) tout en exerçant son activité comme un indépendant chez ses clients. La société de portage souscrit traditionnellement une RC PRO COLLECTIVE qui couvre tous ses portés — MAIS le plafond standard est souvent 1,5 M€ par sinistre, INSUFFISANT pour les freelances IT seniors, conseil financier, ou ayant des clients institutionnels (grands groupes, ETI, collectivités) qui exigent 5-10 M€. Cette page détaille la couverture standard du portage, les insuffisances classiques et comment souscrire une RC Pro complémentaire individuelle (+580-1 200€/an pour passer à 5 M€)."
+      intro="Le portage salarial est un statut hybride : le freelance porté est SALARIÉ de la société de portage (régime général SS, couverture chômage, mutuelle collective obligatoire ANI 2013) tout en exerçant son activité comme un indépendant chez ses clients. La société de portage souscrit traditionnellement une RC PRO COLLECTIVE qui couvre tous ses portés — MAIS le plafond standard est souvent 1,5 M€ par sinistre, INSUFFISANT pour les freelances IT seniors, conseil financier, ou ayant des clients institutionnels (grands groupes, ETI, collectivités) qui exigent 5-10 M€. Cette page détaille la couverture standard du portage, les insuffisances classiques et comment souscrire une RC Pro complémentaire individuelle (+580-1 200€ par an pour passer à 5 M€)."
       legalReference="Convention collective portage salarial 2017 + Code du travail L. 1254-1 et s."
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -54,7 +54,7 @@ export default function Page() {
         {
           icon: '🛡️',
           title: 'RC complémentaire 5 M€',
-          desc: 'À souscrire individuellement pour clients institutionnels (+580-1 200€/an)',
+          desc: 'À souscrire individuellement pour clients institutionnels (+580-1 200€ par an)',
         },
         {
           icon: '💰',
@@ -69,8 +69,8 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <strong>RC pro collective</strong> : plafond standard 1,5 M€/sinistre (à VÉRIFIER
-                  auprès de votre société de portage)
+                  <strong>RC pro collective</strong> : plafond standard 1,5 M€ par sinistre (à
+                  VÉRIFIER auprès de votre société de portage)
                 </li>
                 <li>
                   <strong>Mutuelle collective ANI 2013</strong> : panier minimum garanti, prise en
@@ -99,14 +99,14 @@ export default function Page() {
               <ol>
                 <li>
                   <strong>Clients institutionnels exigeant ≥ 5 M€</strong> (grands groupes, ETI,
-                  collectivités). Solution : RC Pro complémentaire individuelle 5 M€ (+580-1
-                  200€/an)
+                  collectivités). Solution : RC Pro complémentaire individuelle 5 M€ (+580-1 200€
+                  par an)
                 </li>
                 <li>
                   <strong>Métier IT à risque systémique</strong> (DevOps, cybersécurité, architecte
                   cloud) — voir{' '}
                   <Link href="/rc-pro/informatique" className="text-primary-600 underline">
-                    /rc-pro/informatique
+                    /rc-pro ou informatique
                   </Link>{' '}
                   (CPC 1 300€)
                 </li>
@@ -122,15 +122,15 @@ export default function Page() {
       faq={[
         {
           q: 'Le portage salarial inclut-il vraiment une RC Pro ?',
-          a: 'OUI dans 100% des sociétés de portage (obligation conventionnelle). MAIS plafond standard 1,5 M€/sinistre — INSUFFISANT pour clients institutionnels (5-10 M€ exigés). Vérifier auprès de votre société de portage le plafond exact + les exclusions.',
+          a: 'OUI dans 100% des sociétés de portage (obligation conventionnelle). MAIS plafond standard 1,5 M€ par sinistre — INSUFFISANT pour clients institutionnels (5-10 M€ exigés). Vérifier auprès de votre société de portage le plafond exact + les exclusions.',
         },
         {
           q: 'Combien coûte le portage salarial total ?',
-          a: 'Frais société de portage : 5-10% du CA HT. Cotisations sociales : ~50% du salaire brut versé (vs ~30-45% en TNS). Coût total ~50-60% du CA HT en charges + frais. À comparer avec EURL/SARL gérant majoritaire (TNS) qui peut être plus avantageux dès 50k€ de CA.',
+          a: 'Frais société de portage : 5-10% du CA HT. Cotisations sociales : ~50% du salaire brut versé (vs ~30-45% en TNS). Coût total ~50-60% du CA HT en charges + frais. À comparer avec EURL ou SARL gérant majoritaire (TNS) qui peut être plus avantageux dès 50k€ de CA.',
         },
         {
           q: 'Faut-il compléter avec une RC Pro individuelle ?',
-          a: 'OUI si vos clients exigent 5-10 M€ de plafond, ou si vous êtes IT à risque systémique. Tarif RC Pro individuelle 5 M€ : 580-1 200€/an supplémentaires. ROI évident sur 1 mission grand compte.',
+          a: 'OUI si vos clients exigent 5-10 M€ de plafond,/si vous êtes IT à risque systémique. Tarif RC Pro individuelle 5 M€ : 580-1 200€ par an supplémentaires. ROI évident sur 1 mission grand compte.',
         },
       ]}
     />

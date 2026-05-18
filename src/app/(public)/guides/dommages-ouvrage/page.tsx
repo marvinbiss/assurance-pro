@@ -26,7 +26,7 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 
-const SLUG = 'guides/dommages-ouvrage'
+const SLUG = 'guides / dommages-ouvrage'
 const TITLE = 'Assurance dommages-ouvrage — Obligation, prix et différence avec la décennale'
 const TAGLINE =
   "L'assurance dommages-ouvrage (DO) protège le maître d'ouvrage en pré-financant la réparation des sinistres décennaux, sans attendre l'identification du responsable. Guide complet 2026."
@@ -98,7 +98,7 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>Souscripteur</strong>
                     </td>
-                    <td className="border p-2">L&apos;artisan / l&apos;entreprise BTP</td>
+                    <td className="border p-2">L&apos;artisan — l&apos;entreprise BTP</td>
                     <td className="border p-2">
                       Le maître d&apos;ouvrage (particulier, promoteur, copro)
                     </td>
@@ -139,7 +139,7 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>Prix</strong>
                     </td>
-                    <td className="border p-2">480-1 540€/an pour un AE BTP</td>
+                    <td className="border p-2">480-1 540€ par an pour un AE BTP</td>
                     <td className="border p-2">2-5% du coût HT des travaux (prime unique)</td>
                   </tr>
                   <tr>
@@ -233,7 +233,7 @@ export default function Page() {
                     <td className="border p-2 text-right">2,5-5%</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Extension / rénovation lourde</td>
+                    <td className="border p-2">Extension — rénovation lourde</td>
                     <td className="border p-2 text-right">80 000 €</td>
                     <td className="border p-2 text-right">2 400 € – 4 800 €</td>
                     <td className="border p-2 text-right">3-6%</td>
@@ -253,9 +253,10 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables qui font monter la prime : zone sismique (+30%), terrain argileux/instable
-                (+20-50%), présence de nappe phréatique (+15%), architecture complexe (porte-à-faux,
-                sous-sol immergé), assurance pas souscrite « avant ouverture chantier » (+10-30%).
+                Variables qui font monter la prime : zone sismique (+30%), terrain argileux ou
+                instable (+20-50%), présence de nappe phréatique (+15%), architecture complexe
+                (porte-à-faux, sous-sol immergé), assurance pas souscrite « avant ouverture chantier
+                » (+10-30%).
               </p>
             </>
           ),
@@ -272,7 +273,7 @@ export default function Page() {
               <ol>
                 <li>
                   <strong>Déclaration du sinistre</strong> par le maître d&apos;ouvrage à son
-                  assureur DO (lettre recommandée + preuves photos/vidéos), sous 5 jours après la
+                  assureur DO (lettre recommandée + preuves photos ou vidéos), sous 5 jours après la
                   découverte
                 </li>
                 <li>

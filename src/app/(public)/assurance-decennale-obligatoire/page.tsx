@@ -66,7 +66,7 @@ export default function Page() {
               </p>
               <ol>
                 <li>
-                  Tout architecte, entrepreneur, technicien ou autre personne liée au maître de
+                  Tout architecte, entrepreneur, technicien / autre personne liée au maître de
                   l&apos;ouvrage par un contrat de louage d&apos;ouvrage
                 </li>
                 <li>

@@ -28,14 +28,14 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
     const m = r.metier
     return {
       title: `Assurance décennale ${m.name} 2026 — Tarifs + comparatif`,
-      description: `${m.tagline} Sinistralité ${m.sinistraliteAqc}% (AQC). Tarifs négociés à partir de ${m.tarifs.auto_entrepreneur.min}€/an pour les auto-entrepreneurs. Devis gratuit en 24h.`,
+      description: `${m.tagline} Sinistralité ${m.sinistraliteAqc}% (AQC). Tarifs négociés à partir de ${m.tarifs.auto_entrepreneur.min}€ par an pour les auto-entrepreneurs. Devis gratuit en 24h.`,
       alternates: { canonical: `${SITE_URL}/assurance-decennale/${m.slug}` },
     }
   }
   const v = r.ville
   return {
     title: `Assurance décennale ${v.nom} (${v.departementCode}) — Tarifs artisans BTP 2026`,
-    description: `Garantie décennale obligatoire pour les artisans BTP de ${v.nom}. ~${v.artisansBtpEstime.toLocaleString('fr-FR')} entreprises BTP locales. Tarifs négociés à partir de 480€/an. Devis gratuit ORIAS sous 24h.`,
+    description: `Garantie décennale obligatoire pour les artisans BTP de ${v.nom}. ~${v.artisansBtpEstime.toLocaleString('fr-FR')} entreprises BTP locales. Tarifs négociés à partir de 480€ par an. Devis gratuit ORIAS sous 24h.`,
     alternates: { canonical: `${SITE_URL}/assurance-decennale/${v.slug}` },
   }
 }
@@ -77,7 +77,7 @@ export default async function DecennaleSlugPage(props: { params: Promise<Params>
           },
           {
             icon: '💰',
-            title: `À partir de ${m.tarifs.auto_entrepreneur.min}€/an`,
+            title: `À partir de ${m.tarifs.auto_entrepreneur.min}€ par an`,
             desc: 'Tarif auto-entrepreneur',
           },
           { icon: '⚡', title: 'Attestation 24h', desc: 'Délivrée après souscription' },
@@ -214,7 +214,7 @@ export default async function DecennaleSlugPage(props: { params: Promise<Params>
           },
           {
             q: `Combien coûte la décennale ${m.name} pour un auto-entrepreneur ?`,
-            a: `À partir de ${m.tarifs.auto_entrepreneur.min}€/an pour un auto-entrepreneur ${m.name} avec CA < 50k€. Le tarif moyen se situe entre ${m.tarifs.auto_entrepreneur.min}€ et ${m.tarifs.auto_entrepreneur.max}€ selon votre ancienneté et vos antécédents.`,
+            a: `À partir de ${m.tarifs.auto_entrepreneur.min}€ par an pour un auto-entrepreneur ${m.name} avec CA < 50k€. Le tarif moyen se situe entre ${m.tarifs.auto_entrepreneur.min}€ et ${m.tarifs.auto_entrepreneur.max}€ selon votre ancienneté et vos antécédents.`,
           },
           {
             q: `Quelle est la sinistralité moyenne d'un ${m.name} ?`,

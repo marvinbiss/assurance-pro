@@ -40,7 +40,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance artisan : décennale BTP obligatoire, RC pro, multirisque atelier/véhicule, mutuelle TNS, prévoyance Madelin. Pack négocié à partir de 980 €/an. 8 assureurs comparés. Devis gratuit ORIAS sous 24h.',
+    'Assurance artisan : décennale BTP obligatoire, RC pro, multirisque atelier par véhicule, mutuelle TNS, prévoyance Madelin. Pack négocié à partir de 980 € par an. 8 assureurs comparés. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -51,7 +51,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance artisan désigne l'ensemble des contrats indispensables à l'exercice d'une activité artisanale en France : décennale Loi Spinetta (obligatoire pour les artisans BTP), RC Pro (responsabilité civile professionnelle envers les clients), multirisque atelier/véhicule pro, mutuelle santé TNS et prévoyance Madelin. Selon le métier, certaines garanties sont légalement obligatoires (décennale BTP, RC santé) et d'autres sont fortement recommandées. Le tarif d'un pack complet 2026 démarre à 980 € HT/an pour un artisan AE peintre province (RC + décennale couplées) jusqu'à 5 800 €/an pour un artisan SARL maçonnerie/couverture avec véhicule pro et 3 salariés. Cette page récapitule par TYPE D'ARTISAN les garanties indispensables, les tarifs réels et redirige vers nos pages-piliers spécialisées (décennale auto-entrepreneur, mutuelle pro BTP, prévoyance TNS, etc.)."
+      intro="L'assurance artisan désigne l'ensemble des contrats indispensables à l'exercice d'une activité artisanale en France : décennale Loi Spinetta (obligatoire pour les artisans BTP), RC Pro (responsabilité civile professionnelle envers les clients), multirisque atelier par véhicule pro, mutuelle santé TNS et prévoyance Madelin. Selon le métier, certaines garanties sont légalement obligatoires (décennale BTP, RC santé) et d'autres sont fortement recommandées. Le tarif d'un pack complet 2026 démarre à 980 € HT par an pour un artisan AE peintre province (RC + décennale couplées) jusqu'à 5 800 € par an pour un artisan SARL maçonnerie / couverture avec véhicule pro et 3 salariés. Cette page récapitule par TYPE D'ARTISAN les garanties indispensables, les tarifs réels et redirige vers nos pages-piliers spécialisées (décennale auto-entrepreneur, mutuelle pro BTP, prévoyance TNS, etc.)."
       legalReference="Loi Spinetta (L. 241-1 C. assur.) + Loi Madelin (art. 154 bis CGI) + Code artisanat"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -72,7 +72,7 @@ export default function Page() {
         {
           icon: '💼',
           title: 'Madelin déductible',
-          desc: 'Mutuelle + prévoyance déductibles du bénéfice imposable (économie ~1 750€/an pour 60k€ bénéfice)',
+          desc: 'Mutuelle + prévoyance déductibles du bénéfice imposable (économie ~1 750€ par an pour 60k€ bénéfice)',
         },
         {
           icon: '🚐',
@@ -124,7 +124,7 @@ export default function Page() {
                   </tr>
                   <tr>
                     <td className="border p-2">
-                      <strong>Auto pro / utilitaire</strong>
+                      <strong>Auto pro — utilitaire</strong>
                     </td>
                     <td className="border p-2">✅ OBLIGATOIRE (RC circulation)</td>
                     <td className="border p-2">✅ OBLIGATOIRE</td>
@@ -136,7 +136,7 @@ export default function Page() {
                     </td>
                     <td className="border p-2">⚠️ Obligation salariés (ANI 2013)</td>
                     <td className="border p-2">⚠️ Obligation salariés (ANI 2013)</td>
-                    <td className="border p-2">Loi 14/06/2013</td>
+                    <td className="border p-2">Loi 14 juin 2013</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -162,8 +162,8 @@ export default function Page() {
           body: (
             <>
               <p>
-                Tarifs indicatifs PACK COMPLET (décennale + RC + véhicule pro hors
-                mutuelle/prévoyance personnelles) :
+                Tarifs indicatifs PACK COMPLET (décennale + RC + véhicule pro hors mutuelle ou
+                prévoyance personnelles) :
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
@@ -204,7 +204,7 @@ export default function Page() {
                     <td className="border p-2 text-right">680 € – 1 100 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">AE coiffeur / esthéticienne à domicile</td>
+                    <td className="border p-2">AE coiffeur — esthéticienne à domicile</td>
                     <td className="border p-2 text-right">480 € – 820 €</td>
                   </tr>
                   <tr>
@@ -214,7 +214,7 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables : statut (AE / EI / EURL / SARL / SAS), CA prévisionnel, antécédents
+                Variables : statut (AE ou EI ou EURL ou SARL ou SAS), CA prévisionnel, antécédents
                 sinistres, label RGE, présence salariés, taille flotte automobile. Contrats Pack BTP
                 négociés avec SMABTP, MAAF Pro, AXA Pro, Allianz Pro, Hiscox, April Pro, MMA Pro,
                 Wakam.
@@ -284,7 +284,7 @@ export default function Page() {
                   <Link href="/assurance-bureau" className="text-primary-600 underline">
                     Assurance bureau
                   </Link>{' '}
-                  — pour artisans en cabinet/bureau
+                  — pour artisans en cabinet ou bureau
                 </li>
               </ul>
             </>
@@ -313,16 +313,16 @@ export default function Page() {
                   <strong>Action sociale</strong> (vacances Domaine, aides aux familles)
                 </li>
                 <li>
-                  <strong>Assurance vie / épargne</strong> (PRO BTP Épargne)
+                  <strong>Assurance vie — épargne</strong> (PRO BTP Épargne)
                 </li>
                 <li>
-                  <strong>Auto / habitation</strong> (PRO BTP Assurances)
+                  <strong>Auto — habitation</strong> (PRO BTP Assurances)
                 </li>
               </ul>
               <p>
                 Pour un artisan BTP, PRO BTP peut être un choix par défaut, mais notre cabinet
                 compare souvent à d&apos;autres acteurs (April, MMA, Aon, Generali) pour trouver le
-                meilleur rapport garanties/cotisation selon le profil. Voir notre page comparatif
+                meilleur rapport garanties ou cotisation selon le profil. Voir notre page comparatif
                 dédiée :{' '}
                 <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                   /mutuelle-pro-btp
@@ -340,7 +340,7 @@ export default function Page() {
         },
         {
           q: 'Combien coûte un pack assurance complet pour un artisan AE ?',
-          a: "Démarre à 980€/an pour un AE peintre BTP sans antécédent (décennale + RC + auto pro). Médiane marché AE BTP : 1 280-2 380€/an selon métier. Artisan SARL avec salariés : 2 880-7 200€/an. Hors BTP : 480-1 100€/an pour AE coiffeur/artisan d'art. Variables : métier, statut, CA, antécédents, présence salariés.",
+          a: "Démarre à 980€ par an pour un AE peintre BTP sans antécédent (décennale + RC + auto pro). Médiane marché AE BTP : 1 280-2 380€ par an selon métier. Artisan SARL avec salariés : 2 880-7 200€ par an. Hors BTP : 480-1 100€ par an pour AE coiffeur ou artisan d'art. Variables : métier, statut, CA, antécédents, présence salariés.",
         },
         {
           q: 'Différence entre PRO BTP et April Pro Santé ?',
@@ -352,7 +352,7 @@ export default function Page() {
         },
         {
           q: 'Auto-entrepreneur artisan : Madelin déductible ?',
-          a: "Pas en régime micro-fiscal classique (versement libératoire). Pour bénéficier de Madelin (mutuelle + prévoyance déductibles), basculer au régime réel d'imposition. Démarche pertinente dès que le bénéfice dépasse ~30 k€/an. Un artisan AE BTP à 50 k€ de bénéfice qui bascule au réel + active Madelin économise typiquement 1 200-1 800€/an d'impôts.",
+          a: "Pas en régime micro-fiscal classique (versement libératoire). Pour bénéficier de Madelin (mutuelle + prévoyance déductibles), basculer au régime réel d'imposition. Démarche pertinente dès que le bénéfice dépasse ~30 k€ par an. Un artisan AE BTP à 50 k€ de bénéfice qui bascule au réel + active Madelin économise typiquement 1 200-1 800€ par an d'impôts.",
         },
         {
           q: "Comment optimiser le coût total des assurances d'un artisan ?",

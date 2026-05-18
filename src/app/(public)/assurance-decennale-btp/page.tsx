@@ -37,7 +37,7 @@ export default function Page() {
         {
           icon: '🏗️',
           title: '52 métiers BTP couverts',
-          desc: 'Gros œuvre, second œuvre, finitions, équipements techniques, RGE/Qualibat',
+          desc: 'Gros œuvre, second œuvre, finitions, équipements techniques, RGE ou Qualibat',
         },
         {
           icon: '⚖️',
@@ -46,7 +46,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '950€-15 000€/an',
+          title: '950€-15 000€ par an',
           desc: 'AE peintre 950€ • Maçon SARL 2 500-5 000€ • Multi-services BTP SAS 15 000€+',
         },
         {
@@ -60,26 +60,26 @@ export default function Page() {
           h2: 'Les 52 métiers BTP soumis à décennale',
           body: (
             <>
-              <p>Liste exhaustive (catégories Qualibat/RGE) :</p>
+              <p>Liste exhaustive (catégories Qualibat ou RGE) :</p>
               <ul>
                 <li>
-                  <strong>Gros œuvre</strong> (6) : Maçon, terrassier, charpentier bois/métal,
+                  <strong>Gros œuvre</strong> (6) : Maçon, terrassier, charpentier bois ou métal,
                   démolisseur, foreur géothermie
                 </li>
                 <li>
-                  <strong>Couverture/étanchéité</strong> (4) : Couvreur-zingueur, étancheur,
+                  <strong>Couverture ou étanchéité</strong> (4) : Couvreur-zingueur, étancheur,
                   bardeur, façadier ITE
                 </li>
                 <li>
-                  <strong>Plomberie/CVC</strong> (5) : Plombier, chauffagiste, climaticien,
+                  <strong>Plomberie ou CVC</strong> (5) : Plombier, chauffagiste, climaticien,
                   sanitaire
                 </li>
                 <li>
-                  <strong>Électricité/domotique</strong> (4) : Électricien, domoticien, alarme,
-                  fibre/réseau
+                  <strong>Électricité ou domotique</strong> (4) : Électricien, domoticien, alarme,
+                  fibre ou réseau
                 </li>
                 <li>
-                  <strong>Menuiserie</strong> (5) : Menuisier int/ext, agenceur/cuisiniste,
+                  <strong>Menuiserie</strong> (5) : Menuisier int ou ext, agenceur ou cuisiniste,
                   escaliéreur, parqueteur
                 </li>
                 <li>
@@ -91,15 +91,15 @@ export default function Page() {
                   ascensoriste, cheminée, véranda
                 </li>
                 <li>
-                  <strong>Conception/MOE</strong> (6) : Architecte intérieur, DPLG, MOE, BET,
+                  <strong>Conception ou MOE</strong> (6) : Architecte intérieur, DPLG, MOE, BET,
                   économiste, géomètre
                 </li>
                 <li>
                   <strong>Promotion</strong> (3) : CMI, promoteur, sous-traitant BTP
                 </li>
                 <li>
-                  <strong>RGE/énergie</strong> (5) : Photovoltaïque, PAC, poêle bois, isolation
-                  ITE/ITI, multi-services
+                  <strong>RGE ou énergie</strong> (5) : Photovoltaïque, PAC, poêle bois, isolation
+                  ITE ou ITI, multi-services
                 </li>
               </ul>
             </>
@@ -127,8 +127,8 @@ export default function Page() {
                   Idéal multi-services et structures complexes.
                 </li>
                 <li>
-                  <strong>MMA Pro</strong> : alternative équilibrée, bon rapport prix/garanties pour
-                  SARL moyennes.
+                  <strong>MMA Pro</strong> : alternative équilibrée, bon rapport prix ou garanties
+                  pour SARL moyennes.
                 </li>
               </ul>
             </>
@@ -139,20 +139,20 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Couverture/étanchéité</strong> : 24% des sinistres décennaux (le plus
+                <strong>Couverture ou étanchéité</strong> : 24% des sinistres décennaux (le plus
                 exposé)
               </li>
               <li>
-                <strong>Plomberie/CVC</strong> : 18% (infiltrations, fuites)
+                <strong>Plomberie ou CVC</strong> : 18% (infiltrations, fuites)
               </li>
               <li>
-                <strong>Façades/ITE</strong> : 14%
+                <strong>Façades ou ITE</strong> : 14%
               </li>
               <li>
-                <strong>Gros œuvre/maçonnerie</strong> : 12% (fissures structurelles)
+                <strong>Gros œuvre ou maçonnerie</strong> : 12% (fissures structurelles)
               </li>
               <li>
-                <strong>Carrelage/revêtements</strong> : 9%
+                <strong>Carrelage ou revêtements</strong> : 9%
               </li>
               <li>
                 <strong>Menuiserie ext.</strong> : 7%
@@ -167,7 +167,7 @@ export default function Page() {
       faq={[
         {
           q: 'Quel est le prix d&apos;une décennale BTP ?',
-          a: 'AE peintre 950€/an, plombier AE 1 400€, maçon SARL 2 500-5 000€, multi-services BTP SAS 3 500-15 000€+ selon CA et sinistralité.',
+          a: 'AE peintre 950€ par an, plombier AE 1 400€, maçon SARL 2 500-5 000€, multi-services BTP SAS 3 500-15 000€+ selon CA et sinistralité.',
         },
         {
           q: 'La décennale BTP couvre-t-elle la sous-traitance ?',
@@ -175,7 +175,7 @@ export default function Page() {
         },
         {
           q: 'Comment réduire ma prime décennale BTP ?',
-          a: '1) Comparer 5 assureurs spécialisés BTP via courtier ORIAS (-15-25%). 2) Augmenter franchise (-12-18%). 3) Obtenir Qualibat/RGE (-5-10%). 4) Regrouper RC Pro + Décennale (-8-12%).',
+          a: '1) Comparer 5 assureurs spécialisés BTP via courtier ORIAS (-15-25%). 2) Augmenter franchise (-12-18%). 3) Obtenir Qualibat ou RGE (-5-10%). 4) Regrouper RC Pro + Décennale (-8-12%).',
         },
         {
           q: 'Que se passe-t-il si un sinistre déclenche ma décennale ?',

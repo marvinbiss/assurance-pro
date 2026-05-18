@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { calculerMutuelle } from './tarif-mutuelle-pro'
 
 describe('Calculateur tarif mutuelle pro', () => {
-  it('Salarié 40 ans formule standard ≈ 58€/mois', () => {
+  it('Salarié 40 ans formule standard ≈ 58€ par mois', () => {
     const r = calculerMutuelle({
       formule: 'standard',
       age: 40,

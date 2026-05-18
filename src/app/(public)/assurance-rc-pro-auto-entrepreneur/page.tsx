@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-rc-pro-auto-entrepreneur'
 const TITLE = 'Assurance RC Pro Auto Entrepreneur — Souscription, comparatif, tarifs'
 const TAGLINE =
-  'Souscrire une RC Pro en tant qu&apos;auto-entrepreneur : démarches simplifiées, comparatif 5 assureurs, tarifs 95-450€/an. Hiscox best price, Stello digital.'
+  'Souscrire une RC Pro en tant qu&apos;auto-entrepreneur : démarches simplifiées, comparatif 5 assureurs, tarifs 95-450€ par an. Hiscox best price, Stello digital.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance RC Pro auto-entrepreneur : souscription en ligne 5 min. Hiscox 95-220€/an (services), April Pro 250-450€/an (BTP). Comparatif honnête 5 assureurs.',
+    'Assurance RC Pro auto-entrepreneur : souscription en ligne 5 min. Hiscox 95-220€ par an (services), April Pro 250-450€ par an (BTP). Comparatif honnête 5 assureurs.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -49,8 +49,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '95-450€/an',
-          desc: 'Services AE 95-220€ • BTP AE 250-450€ • Médical/régl. 800€+',
+          title: '95-450€ par an',
+          desc: 'Services AE 95-220€ • BTP AE 250-450€ • Médical ou régl. 800€+',
         },
         {
           icon: '🔍',
@@ -67,14 +67,15 @@ export default function Page() {
                 <strong>SIRET valide</strong> (vérifié Insee.fr — &lt; 3 mois)
               </li>
               <li>
-                <strong>Attestation ACOSS / URSSAF</strong> (justificatif activité AE —
+                <strong>Attestation ACOSS — URSSAF</strong> (justificatif activité AE —
                 téléchargeable autoentrepreneur.urssaf.fr)
               </li>
               <li>
                 <strong>CNI ou passeport recto-verso</strong>
               </li>
               <li>
-                <strong>Justificatif activité</strong> : diplôme, CAP/BEP, qualification, expérience
+                <strong>Justificatif activité</strong> : diplôme, CAP ou BEP, qualification,
+                expérience
               </li>
               <li>
                 <strong>CA prévisionnel 12 mois</strong> (estimation honnête)
@@ -93,25 +94,25 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Hiscox</strong> : 🥇 Best price AE services intellectuels (95-220€/an),
+                <strong>Hiscox</strong> : 🥇 Best price AE services intellectuels (95-220€ par an),
                 postériorité 10 ans (unique marché), plafond 1M€ standard. Souscription en ligne 5
                 min.
               </li>
               <li>
-                <strong>Stello</strong> : challenger 100% digital. Tarif AE 90-200€/an, postériorité
-                5 ans. App mobile native.
+                <strong>Stello</strong> : challenger 100% digital. Tarif AE 90-200€ par an,
+                postériorité 5 ans. App mobile native.
               </li>
               <li>
                 <strong>Allianz Pro</strong> : couverture la plus large (services + BTP +
-                agriculture). Tarif AE 180-380€/an. Réseau d&apos;agences.
+                agriculture). Tarif AE 180-380€ par an. Réseau d&apos;agences.
               </li>
               <li>
-                <strong>MMA Pro</strong> : équilibré, réseau 1 500+ agences. Tarif AE 250-450€/an.
-                Pack multi-contrats si auto/habitation.
+                <strong>MMA Pro</strong> : équilibré, réseau 1 500+ agences. Tarif AE 250-450€ par
+                an. Pack multi-contrats si auto ou habitation.
               </li>
               <li>
-                <strong>April Pro BTP</strong> : 🥇 Best price AE BTP (250-450€/an, en complément
-                décennale 950-2 800€/an). Souscription en ligne 24h.
+                <strong>April Pro BTP</strong> : 🥇 Best price AE BTP (250-450€ par an, en
+                complément décennale 950-2 800€ par an). Souscription en ligne 24h.
               </li>
             </ul>
           ),
@@ -150,20 +151,20 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: 'AE / micro-entrepreneur : pareil pour la RC Pro ?',
+          q: 'AE — micro-entrepreneur : pareil pour la RC Pro ?',
           a: 'OUI, les termes &quot;auto-entrepreneur&quot; et &quot;micro-entrepreneur&quot; désignent le même statut depuis 2016 (fusion régimes). Les assureurs traitent les 2 identiquement. Tarifs identiques.',
         },
         {
           q: 'Hiscox ou Stello pour un AE freelance ?',
-          a: 'Hiscox = best price global services intellectuels + postériorité 10 ans (unique). Stello = 100% digital + app mobile native. Tarifs très proches (95-220€/an). Hiscox gagne sur postériorité.',
+          a: 'Hiscox = best price global services intellectuels + postériorité 10 ans (unique). Stello = 100% digital + app mobile native. Tarifs très proches (95-220€ par an). Hiscox gagne sur postériorité.',
         },
         {
           q: 'Souscrire une RC Pro AE sans expérience préalable ?',
-          a: 'Possible chez certains assureurs (Hiscox, Stello acceptent débutants). D&apos;autres exigent 1-3 ans d&apos;expérience minimum (Allianz Pro, AXA Pro). Pour AE BTP : qualification CAP/BEP/diplôme ou 3 ans d&apos;expérience requis chez la plupart.',
+          a: 'Possible chez certains assureurs (Hiscox, Stello acceptent débutants). D&apos;autres exigent 1-3 ans d&apos;expérience minimum (Allianz Pro, AXA Pro). Pour AE BTP : qualification CAP, BEP ou diplôme ou 3 ans d&apos;expérience requis chez la plupart.',
         },
         {
           q: 'Combien de temps pour recevoir mon attestation AE ?',
-          a: 'Hiscox / Stello : immédiat après paiement (téléchargement espace adhérent). Allianz Pro / MMA : 24-48h ouvrées. April Pro BTP : 24h ouvrées. En cas urgence chantier : choisir Hiscox ou Stello pour réception immédiate.',
+          a: 'Hiscox — Stello : immédiat après paiement (téléchargement espace adhérent). Allianz Pro — MMA : 24-48h ouvrées. April Pro BTP : 24h ouvrées. En cas urgence chantier : choisir Hiscox ou Stello pour réception immédiate.',
         },
       ]}
       relatedMetiers={[

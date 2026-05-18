@@ -43,7 +43,7 @@ export default function Page() {
         {
           icon: '🏥',
           title: '4 niveaux S1-S4',
-          desc: 'De 40€/mois (jeune actif) à 180€/mois (couverture max)',
+          desc: 'De 40€ par mois (jeune actif) à 180€ par mois (couverture max)',
         },
         {
           icon: '💼',
@@ -53,7 +53,7 @@ export default function Page() {
         {
           icon: '🔄',
           title: 'Alternatives possibles',
-          desc: 'April Pro / Harmonie / MMA souvent ±15-20% selon profil',
+          desc: 'April Pro — Harmonie — MMA souvent ±15-20% selon profil',
         },
       ]}
       sections={[
@@ -75,7 +75,7 @@ export default function Page() {
               <ul>
                 <li>Salariés du BTP (couverture collective ANI 2013 obligatoire depuis 2016)</li>
                 <li>Artisans, EI, EURL, SASU en activité dans le BTP</li>
-                <li>Dirigeants de SARL/SAS BTP</li>
+                <li>Dirigeants de SARL ou SAS BTP</li>
                 <li>Conjoints collaborateurs et ayants droit</li>
                 <li>Retraités de la branche</li>
               </ul>
@@ -92,22 +92,23 @@ export default function Page() {
               </p>
               <ul>
                 <li>
-                  <strong>S1 (économique)</strong> : 38-55€/mois (25-45 ans) → 65-95€/mois (60+ ans)
+                  <strong>S1 (économique)</strong> : 38-55€ par mois (25-45 ans) → 65-95€ par mois
+                  (60+ ans)
                 </li>
                 <li>
-                  <strong>S2 (équilibré)</strong> : 55-85€/mois → 95-140€/mois
+                  <strong>S2 (équilibré)</strong> : 55-85€ par mois → 95-140€ par mois
                 </li>
                 <li>
-                  <strong>S3 (renforcé)</strong> : 85-115€/mois → 140-180€/mois
+                  <strong>S3 (renforcé)</strong> : 85-115€ par mois → 140-180€ par mois
                 </li>
                 <li>
-                  <strong>S4 (haut de gamme)</strong> : 115-150€/mois → 180-230€/mois
+                  <strong>S4 (haut de gamme)</strong> : 115-150€ par mois → 180-230€ par mois
                 </li>
               </ul>
               <p>
                 Pour comparaison, <strong>April Pro Santé</strong> propose souvent un niveau
-                équivalent S3 à 75-95€/mois pour un TNS de 40 ans (économie possible de 10-25€/mois
-                selon profil et région).
+                équivalent S3 à 75-95€ par mois pour un TNS de 40 ans (économie possible de 10-25€
+                par mois selon profil et région).
               </p>
             </>
           ),
@@ -123,9 +124,9 @@ export default function Page() {
               </p>
               <p>
                 <strong>Une alternative privée peut être plus avantageuse si vous êtes</strong> :
-                TNS souhaitant optimiser le rapport prix/garanties via la loi Madelin, jeune artisan
-                avec peu de besoins santé (forfait base), ou dirigeant avec des besoins spécifiques
-                (orthodontie famille, médecines douces, hospitalisation haut de gamme).
+                TNS souhaitant optimiser le rapport prix ou garanties via la loi Madelin, jeune
+                artisan avec peu de besoins santé (forfait base), ou dirigeant avec des besoins
+                spécifiques (orthodontie famille, médecines douces, hospitalisation haut de gamme).
               </p>
               <p>
                 Notre courtier partenaire ORIAS compare PRO BTP + 8 autres assureurs santé pro pour
@@ -151,7 +152,7 @@ export default function Page() {
         },
         {
           q: 'Quelle est la différence entre PRO BTP et April Pro ?',
-          a: 'PRO BTP = institution paritaire (à but non lucratif, gouvernance patronat/syndicats). April Pro = courtier assurance privé (groupe APRIL, coté en bourse). PRO BTP a un historique BTP fort ; April Pro propose souvent plus de flexibilité sur les niveaux de garanties et un meilleur prix sur les profils TNS jeunes.',
+          a: 'PRO BTP = institution paritaire (à but non lucratif, gouvernance patronat ou syndicats). April Pro = courtier assurance privé (groupe APRIL, coté en bourse). PRO BTP a un historique BTP fort ; April Pro propose souvent plus de flexibilité sur les niveaux de garanties et un meilleur prix sur les profils TNS jeunes.',
         },
       ]}
       relatedMetiers={[

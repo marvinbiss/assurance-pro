@@ -42,11 +42,11 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Code de commerce art. L. 110-1 (activités commerciales)',
-        'codes/article_lc/LEGIARTI000006219254'
+        'codes ou article_lc ou LEGIARTI000006219254'
       ),
       LEGIFRANCE(
         'Code des assurances art. L. 241-1 (décennale)',
-        'codes/article_lc/LEGIARTI000006792975'
+        'codes ou article_lc ou LEGIARTI000006792975'
       ),
       URSSAF('URSSAF auto-entrepreneur — obligations 2026'),
       {
@@ -69,10 +69,10 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         id: 'definition',
         h2: '1. Auto-entrepreneur : définition + chiffres 2026',
         paragraphs: [
-          "L'auto-entrepreneur (officiellement « micro-entrepreneur » depuis 2016) est un régime simplifié de la micro-entreprise individuelle. Au 1ᵉʳ janvier 2026, on compte 2,8 millions d'auto-entrepreneurs actifs en France selon l'URSSAF, soit +18 % par rapport à 2023. Les secteurs les plus représentés sont : services à la personne (28 %), BTP (19 %), conseil/informatique (17 %), commerce ambulant (12 %).",
+          "L'auto-entrepreneur (officiellement « micro-entrepreneur » depuis 2016) est un régime simplifié de la micro-entreprise individuelle. Au 1ᵉʳ janvier 2026, on compte 2,8 millions d'auto-entrepreneurs actifs en France selon l'URSSAF, soit +18 % par rapport à 2023. Les secteurs les plus représentés sont : services à la personne (28 %), BTP (19 %), conseil ou informatique (17 %), commerce ambulant (12 %).",
           "Le régime auto-entrepreneur a 3 caractéristiques fiscales majeures : (1) franchise en base de TVA jusqu'à 36 800 € HT pour les services et 91 900 € HT pour les ventes, (2) prélèvement libératoire forfaitaire URSSAF sur le chiffre d'affaires (12,3 % à 23,2 % selon activité), (3) abattement forfaitaire fiscal de 34 % à 71 % sur le CA pour calculer l'impôt sur le revenu.",
           "**ATTENTION** : malgré sa simplicité administrative, l'auto-entrepreneur est SOUMIS aux mêmes obligations d'assurance que toute autre forme juridique (SARL, SAS, EI classique). Le statut n'exonère PAS des obligations légales du Code des assurances et du Code civil.",
-          "Les obligations d'assurance varient selon 3 critères : (1) la nature de l'activité (BTP/RC pro/optionnel), (2) le chiffre d'affaires (pas d'obligation directe mais impact sur primes), (3) le contexte d'exercice (B2B/B2C, en ligne/physique).",
+          "Les obligations d'assurance varient selon 3 critères : (1) la nature de l'activité (BTP ou RC pro ou optionnel), (2) le chiffre d'affaires (pas d'obligation directe mais impact sur primes), (3) le contexte d'exercice (B2B ou B2C, en ligne ou physique).",
         ],
       },
       {
@@ -86,7 +86,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
           items: [
             '**Conseil & expertise** : conseillers en propriété industrielle, en investissements financiers (CIF), experts-comptables, avocats, notaires',
             '**Santé & bien-être** : ostéopathes, psychothérapeutes, esthéticiennes prothésistes ongulaires, sophrologues exerçant en cabinet',
-            '**Immobilier** : agents immobiliers, syndics de copropriété, marchands de biens, courtiers en assurance ou crédit (carte T/G/S obligatoire)',
+            '**Immobilier** : agents immobiliers, syndics de copropriété, marchands de biens, courtiers en assurance ou crédit (carte T, G ou S obligatoire)',
             "**Sport & loisirs** : éducateurs sportifs déclarés, moniteurs de plongée, guides de haute montagne, professeurs d'arts martiaux",
             '**Transport** : VTC, taxis, transporteurs de marchandises, ambulanciers, déménageurs',
             '**Animaux** : éducateurs canins, ostéopathes animaliers, dog-sitters professionnels (Code rural)',
@@ -122,7 +122,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         h2: '4. Multirisque pro — utile mais non-obligatoire',
         paragraphs: [
           "La multirisque professionnelle n'est PAS obligatoire pour l'auto-entrepreneur, mais devient indispensable dès qu'il y a : (1) un local pro (boutique, atelier, cabinet), (2) du matériel de valeur (>2 000 €), (3) un stock de marchandises, (4) une activité au domicile non couverte par l'habitation classique.",
-          "Garanties incluses typiquement : incendie, dégât des eaux, vol/vandalisme, bris de glace, perte d'exploitation, dommages matériel pro, RC exploitation (différente de la RC pro). Le tarif moyen 2026 d'une multirisque auto-entrepreneur est de ~25 €/mois pour un local de moins de 50 m² avec 10 000 € de matériel.",
+          "Garanties incluses typiquement : incendie, dégât des eaux, vol ou vandalisme, bris de glace, perte d'exploitation, dommages matériel pro, RC exploitation (différente de la RC pro). Le tarif moyen 2026 d'une multirisque auto-entrepreneur est de ~25 € par mois pour un local de moins de 50 m² avec 10 000 € de matériel.",
         ],
       },
       {
@@ -131,7 +131,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         paragraphs: [
           "L'auto-entrepreneur est affilié au régime des Travailleurs Non Salariés (TNS) et bénéficie depuis 2026 de la couverture santé universelle de base (Assurance Maladie). Cependant, le ticket modérateur, les dépassements d'honoraires, les soins dentaires et l'optique restent à sa charge.",
           "**Loi Madelin (art. 154 bis CGI)** : depuis 1994, les cotisations de mutuelle santé sont DÉDUCTIBLES du bénéfice imposable de l'auto-entrepreneur, dans la limite de 3,75 % du PASS + 7 % du PASS. Plafond 2026 : 3 858 € par an pour une famille moyenne.",
-          'Tarifs 2026 mutuelles TNS Madelin : ~40 €/mois (formule économique, jeune dirigeant), ~80 €/mois (formule famille équilibrée), ~150 €/mois (formule premium avec hospitalisation chambre particulière).',
+          'Tarifs 2026 mutuelles TNS Madelin : ~40 € par mois (formule économique, jeune dirigeant), ~80 € par mois (formule famille équilibrée), ~150 € par mois (formule premium avec hospitalisation chambre particulière).',
         ],
       },
       {
@@ -140,13 +140,13 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         paragraphs: ['Voici les tarifs moyens 2026 pour un auto-entrepreneur (CA < 40 000 €) :'],
         list: {
           items: [
-            '**RC Pro conseil/services** : 15 à ~35 €/mois selon CA et profession (250 K€ à 1 M€ garantie)',
-            '**Décennale BTP simple métier** : 60 à ~90 €/mois (maçon, peintre, plombier) — 500 K€ minimum',
-            "**Décennale BTP multi-métiers** : 120 à ~200 €/mois (entreprise généraliste 3-5 corps d'état)",
-            '**Multirisque pro local 50 m²** : 25 à ~45 €/mois',
-            '**Cyber assurance** : 20 à ~40 €/mois (utile pour activités en ligne, e-commerce, prestation IT)',
-            '**Mutuelle TNS Madelin famille** : 80 à ~150 €/mois (déductible fiscalement)',
-            '**Protection juridique** : 12 à ~25 €/mois (couvre litiges clients, URSSAF, fournisseurs)',
+            '**RC Pro conseil ou services** : 15 à ~35 € par mois selon CA et profession (250 K€ à 1 M€ garantie)',
+            '**Décennale BTP simple métier** : 60 à ~90 € par mois (maçon, peintre, plombier) — 500 K€ minimum',
+            "**Décennale BTP multi-métiers** : 120 à ~200 € par mois (entreprise généraliste 3-5 corps d'état)",
+            '**Multirisque pro local 50 m²** : 25 à ~45 € par mois',
+            '**Cyber assurance** : 20 à ~40 € par mois (utile pour activités en ligne, e-commerce, prestation IT)',
+            '**Mutuelle TNS Madelin famille** : 80 à ~150 € par mois (déductible fiscalement)',
+            '**Protection juridique** : 12 à ~25 € par mois (couvre litiges clients, URSSAF, fournisseurs)',
           ],
         },
       },
@@ -175,7 +175,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
           items: [
             '**Auto-entrepreneur sans RC Pro pour métier non-obligatoire : risqué ?** OUI. Même si non-obligatoire légalement, un client peut engager votre responsabilité personnelle illimitée en cas de dommage. Patrimoine personnel saisissable.',
             "**Décennale auto-entrepreneur BTP first chantier : faut-il avoir l'attestation avant ?** OUI, art. L. 243-2. Souscription AVANT chaque chantier obligatoire. Notre cabinet émet l'attestation en 4 h ouvrées.",
-            "**Combien coûte la décennale auto-entrepreneur en 2026 ?** 60 à ~200 €/mois selon métier et chiffre d'affaires. Maçon CA 30 K€ : ~65 €/mois. Multi-métiers CA 80 K€ : ~150 €/mois.",
+            "**Combien coûte la décennale auto-entrepreneur en 2026 ?** 60 à ~200 € par mois selon métier et chiffre d'affaires. Maçon CA 30 K€ : ~65 € par mois. Multi-métiers CA 80 K€ : ~150 € par mois.",
             "**Mutuelle Madelin auto-entrepreneur : à partir de quand devient déductible ?** Dès l'année de souscription, sur la déclaration de revenus 2042 C-PRO. Limite 2026 : 3,75 % PASS + 7 % PASS.",
             "**Auto-entrepreneur et URSSAF : impact du défaut d'assurance ?** L'URSSAF ne contrôle pas les assurances directement, mais peut signaler les défauts aux organismes de contrôle (DGCCRF, ACPR). Risque de signalement Tracfin si fraude.",
           ],
@@ -199,7 +199,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
     updatedAt: '2026-06-03',
     readTime: '10 min',
     sources: [
-      LEGIFRANCE('Loi PACTE 2019 (suppression seuils micro)', 'jorf/id/JORFTEXT000038496102'),
+      LEGIFRANCE('Loi PACTE 2019 (suppression seuils micro)', 'jorf, id ou JORFTEXT000038496102'),
       URSSAF('URSSAF micro-entrepreneur — plafonds 2026'),
       {
         label: 'INSEE — démographie micro-entreprises 2024',
@@ -233,13 +233,13 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         list: {
           items: [
             '**Vente de marchandises, fourniture de logement** : 91 900 € HT (188 700 € sur 2 ans cumulés)',
-            '**Prestations de services / professions libérales** : 36 800 € HT (77 700 € sur 2 ans cumulés)',
+            '**Prestations de services — professions libérales** : 36 800 € HT (77 700 € sur 2 ans cumulés)',
             '**Mixte (vente + services)** : 91 900 € global ET 36 800 € pour la partie services',
           ],
         },
         callout: {
           tone: 'info',
-          text: "Au-delà de 2 dépassements consécutifs (2 années de suite), le micro-entrepreneur bascule automatiquement au régime réel d'imposition (EI classique ou EURL/SASU au choix).",
+          text: "Au-delà de 2 dépassements consécutifs (2 années de suite), le micro-entrepreneur bascule automatiquement au régime réel d'imposition (EI classique ou EURL ou SASU au choix).",
         },
       },
       {
@@ -254,7 +254,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
             '**Décennale obligatoire** pour 30 métiers BTP (gros œuvre, second œuvre, métiers spécialisés)',
             "**Multirisque pro** : non-obligatoire mais indispensable dès qu'il y a un local + matériel",
             '**Mutuelle TNS Madelin** : optionnelle, déductible fiscalement',
-            '**Cyber assurance** : non-obligatoire mais pertinente pour activités en ligne/IT',
+            '**Cyber assurance** : non-obligatoire mais pertinente pour activités en ligne ou IT',
           ],
         },
       },
@@ -264,12 +264,12 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         paragraphs: ['Tarifs moyens 2026 micro-entreprise (CA < 50 K€) :'],
         list: {
           items: [
-            '**Conseil/freelance** : RC Pro 15-30 €/mois, multirisque 0 € (pas de local), mutuelle ~80 €/mois',
-            '**Artisan BTP** : décennale 70-120 €/mois, RC Pro incluse, multirisque outils ~25 €/mois',
-            '**Esthétique/coiffure** : RC Pro ~25 €/mois, multirisque salon ~35 €/mois, mutuelle ~80 €/mois',
-            '**E-commerce** : RC Pro ~20 €/mois, cyber ~25 €/mois, multirisque stock ~30 €/mois',
-            '**VTC/taxi** : RC Pro pro auto 80-150 €/mois (incluant assurance pro du véhicule)',
-            '**Bien-être/sport** : RC Pro ~25 €/mois (sport-éducateur), assurance corporel ~15 €/mois',
+            '**Conseil ou freelance** : RC Pro 15-30 € par mois, multirisque 0 € (pas de local), mutuelle ~80 € par mois',
+            '**Artisan BTP** : décennale 70-120 € par mois, RC Pro incluse, multirisque outils ~25 € par mois',
+            '**Esthétique ou coiffure** : RC Pro ~25 € par mois, multirisque salon ~35 € par mois, mutuelle ~80 € par mois',
+            '**E-commerce** : RC Pro ~20 € par mois, cyber ~25 € par mois, multirisque stock ~30 € par mois',
+            '**VTC ou taxi** : RC Pro pro auto 80-150 € par mois (incluant assurance pro du véhicule)',
+            '**Bien-être ou sport** : RC Pro ~25 € par mois (sport-éducateur), assurance corporel ~15 € par mois',
           ],
         },
       },
@@ -280,7 +280,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         list: {
           ordered: true,
           items: [
-            "**Identification de l'activité** : code APE/NAF officiel, description précise, expérience pro, formations/diplômes",
+            "**Identification de l'activité** : code APE ou NAF officiel, description précise, expérience pro, formations ou diplômes",
             '**Recueil des besoins** : RC Pro, décennale, multirisque, cyber, mutuelle (selon obligations + risques)',
             '**Comparaison multi-assureurs** : un courtier ORIAS comme notre cabinet compare 8 à 12 assureurs partenaires',
             '**Souscription + paiement** : signature électronique, paiement mensualisé, attestation émise sous 24 h',
@@ -310,7 +310,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
     slug: 'micro-entreprise-btp-assurances-2026',
     title: 'Micro-entreprise BTP : 4 assurances obligatoires en 2026',
     description:
-      'Guide 2026 des 4 assurances obligatoires/recommandées pour artisan BTP en micro-entreprise. Décennale, RC Pro, multirisque, dommages-ouvrage. Tarifs, sanctions, démarches ORIAS.',
+      'Guide 2026 des 4 assurances obligatoires ou recommandées pour artisan BTP en micro-entreprise. Décennale, RC Pro, multirisque, dommages-ouvrage. Tarifs, sanctions, démarches ORIAS.',
     category: 'BTP',
     tags: ['btp', 'micro-entreprise', 'artisan', 'décennale', 'rc pro'],
     ...AUTHOR,
@@ -318,10 +318,13 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
     updatedAt: '2026-06-05',
     readTime: '11 min',
     sources: [
-      LEGIFRANCE('Code des assurances art. L. 241-1', 'codes/article_lc/LEGIARTI000006792975'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 241-1',
+        'codes ou article_lc ou LEGIARTI000006792975'
+      ),
       LEGIFRANCE(
         'Code civil art. 1792 (responsabilité décennale)',
-        'codes/article_lc/LEGIARTI000006442525'
+        'codes ou article_lc ou LEGIARTI000006442525'
       ),
       {
         label: 'AQC SYCODÉS 2024 — sinistralité',
@@ -343,7 +346,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         h2: '1. Enjeux BTP micro-entreprise',
         paragraphs: [
           "Le BTP est le secteur le plus risqué pour un micro-entrepreneur : sinistralité moyenne 2024 selon AQC SYCODÉS = 1 sinistre pour 5 chantiers, montant moyen de réparation = 28 500 €. Une absence d'assurance décennale peut donc ruiner durablement un artisan.",
-          "30 métiers BTP sont concernés par l'obligation décennale en 2026 : maçons, plombiers, électriciens, charpentiers, couvreurs, peintres, carreleurs, plaquistes, isolateurs, façadiers, menuisiers, terrassiers, escaliers/balustrades, étancheurs, ravaleurs, ferronniers, paysagistes-terrassiers, vérandalistes, poseurs PAC/solaires, ramoneurs, désamianteurs, démolisseurs, étanchéistes piscine, sols souples spécialisés, sols spéciaux durs, agenceurs cuisine/bain, électricité spécialisée (domotique), plomberie sanitaire avancée, géomètres-experts, dessinateurs métreurs (sauf études).",
+          "30 métiers BTP sont concernés par l'obligation décennale en 2026 : maçons, plombiers, électriciens, charpentiers, couvreurs, peintres, carreleurs, plaquistes, isolateurs, façadiers, menuisiers, terrassiers, escaliers ou balustrades, étancheurs, ravaleurs, ferronniers, paysagistes-terrassiers, vérandalistes, poseurs PAC ou solaires, ramoneurs, désamianteurs, démolisseurs, étanchéistes piscine, sols souples spécialisés, sols spéciaux durs, agenceurs cuisine ou bain, électricité spécialisée (domotique), plomberie sanitaire avancée, géomètres-experts, dessinateurs métreurs (sauf études).",
         ],
       },
       {
@@ -355,11 +358,11 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            '**Maçon CA 30 K€** : ~65 €/mois (~780  €/an)',
-            '**Plombier CA 40 K€** : ~75 €/mois (~900  €/an)',
-            '**Électricien CA 35 K€** : ~70 €/mois (~840  €/an)',
-            '**Couvreur CA 45 K€** : ~95 €/mois (~1 140  €/an) — métier à risque élevé',
-            '**Multi-métiers généraliste CA 50 K€** : ~120 €/mois (~1 440  €/an)',
+            '**Maçon CA 30 K€** : ~65 € par mois (~780  € par an)',
+            '**Plombier CA 40 K€** : ~75 € par mois (~900  € par an)',
+            '**Électricien CA 35 K€** : ~70 € par mois (~840  € par an)',
+            '**Couvreur CA 45 K€** : ~95 € par mois (~1 140  € par an) — métier à risque élevé',
+            '**Multi-métiers généraliste CA 50 K€** : ~120 € par mois (~1 440  € par an)',
           ],
         },
         callout: {
@@ -375,13 +378,13 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
           items: [
             '**Pendant le chantier** : dommages à des tiers (passant blessé, mur du voisin endommagé)',
             "**Pendant 10 ans après réception** : dommages aux biens du client autres que l'ouvrage lui-même",
-            '**Pollution / nuisances** : si le chantier cause une pollution accidentelle',
+            '**Pollution — nuisances** : si le chantier cause une pollution accidentelle',
             "**Atteinte à l'environnement** : pour les métiers avec produits chimiques (peintres, étanchéistes)",
           ],
         },
         callout: {
           tone: 'info',
-          text: 'La RC Pro est généralement INCLUSE dans le contrat décennale chez la plupart des assureurs (Allianz, AXA, Generali, MAAF). Tarif additionnel : 0 à ~15 €/mois selon métier.',
+          text: 'La RC Pro est généralement INCLUSE dans le contrat décennale chez la plupart des assureurs (Allianz, AXA, Generali, MAAF). Tarif additionnel : 0 à ~15 € par mois selon métier.',
         },
       },
       {
@@ -390,10 +393,10 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         paragraphs: ['Pour un micro-entrepreneur BTP, la multirisque pro protège :'],
         list: {
           items: [
-            '**Atelier/local pro** : incendie, dégât des eaux, vol, vandalisme',
+            '**Atelier ou local pro** : incendie, dégât des eaux, vol, vandalisme',
             '**Matériel pro** : outils, machines, échafaudages, échelles (10 000 à 30 000 € valeur moyenne)',
             '**Véhicule pro** : camionnette, fourgon (à compléter par assurance auto pro)',
-            '**Stock de matériaux** : couverture vol/incendie',
+            '**Stock de matériaux** : couverture vol ou incendie',
             "**Perte d'exploitation** : 1 à 3 mois de CA en cas d'arrêt forcé",
           ],
         },
@@ -410,9 +413,9 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         id: 'cas-pratiques',
         h2: '6. 3 cas pratiques',
         paragraphs: [
-          'Cas pratique 1 — Maçon CA 35 K€ : décennale ~70 €/mois + multirisque outils ~20 €/mois = ~90 €/mois (~1 080  €/an, soit 3 % du CA). Recommandation : OK, équilibre coût/risque.',
-          'Cas pratique 2 — Couvreur CA 60 K€ : décennale ~110 €/mois + multirisque outils + véhicule ~50 €/mois = ~160 €/mois (~1 920  €/an, soit 3,2 % du CA). Recommandation : ajouter cyber ~20 €/mois pour devis/factures.',
-          'Cas pratique 3 — Multi-métiers (maçon + plâtrier + peintre) CA 80 K€ : décennale ~145 €/mois + multirisque ~40 €/mois = ~185 €/mois (~2 220  €/an, soit 2,8 % du CA). Recommandation : revoir la stratégie — basculer en EI classique ou EURL pour optimiser fiscalité.',
+          'Cas pratique 1 — Maçon CA 35 K€ : décennale ~70 € par mois + multirisque outils ~20 € par mois = ~90 € par mois (~1 080  € par an, soit 3 % du CA). Recommandation : OK, équilibre coût ou risque.',
+          'Cas pratique 2 — Couvreur CA 60 K€ : décennale ~110 € par mois + multirisque outils + véhicule ~50 € par mois = ~160 € par mois (~1 920  € par an, soit 3,2 % du CA). Recommandation : ajouter cyber ~20 € par mois pour devis ou factures.',
+          'Cas pratique 3 — Multi-métiers (maçon + plâtrier + peintre) CA 80 K€ : décennale ~145 € par mois + multirisque ~40 € par mois = ~185 € par mois (~2 220  € par an, soit 2,8 % du CA). Recommandation : revoir la stratégie — basculer en EI classique ou EURL pour optimiser fiscalité.',
         ],
       },
       {
@@ -424,7 +427,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
             '**BTP sans décennale : risques réels ?** Catastrophique. Sinistralité moyenne 28 500 €. Patrimoine personnel saisissable (auto-entrepreneur = responsabilité illimitée). Risque pénal (75 000 € amende + 6 mois prison).',
             "**Décennale micro-entreprise BTP first chantier : souscrire AVANT ?** OBLIGATOIRE. Art. L. 243-2. Notre cabinet émet l'attestation en 4 à 24 h ouvrées.",
             "**Sous-traitance BTP : qui assure ?** Chaque entreprise (donneur d'ordre ET sous-traitant) doit avoir sa propre décennale. Sous-traitance sans décennale = faute lourde du donneur d'ordre.",
-            '**Auto-entrepreneur BTP + salarié : RC Employeur obligatoire ?** OUI. Code du travail art. L. 4121-1 + DUERP. Tarif : 80 à ~150  €/an pour 1 salarié.',
+            '**Auto-entrepreneur BTP + salarié : RC Employeur obligatoire ?** OUI. Code du travail art. L. 4121-1 + DUERP. Tarif : 80 à ~150  € par an pour 1 salarié.',
           ],
         },
       },
@@ -436,7 +439,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
   // ════════════════════════════════════════════════════════════════════
   'statut-juridique-assurance-pro-comparatif': {
     slug: 'statut-juridique-assurance-pro-comparatif',
-    title: 'Statut juridique et assurance pro : comparatif EI / SASU / EURL / micro',
+    title: 'Statut juridique et assurance pro : comparatif EI — SASU — EURL — micro',
     description:
       'Comparatif 2026 statut juridique vs assurance pro. Impact micro-entreprise, EI, EIRL, EURL, SASU, SARL sur RC Pro, décennale, multirisque. Quel statut optimise les primes ?',
     category: 'Conseil',
@@ -446,8 +449,11 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
     updatedAt: '2026-06-07',
     readTime: '11 min',
     sources: [
-      LEGIFRANCE('Code de commerce art. L. 223-1 (SARL)', 'codes/article_lc/LEGIARTI000006219252'),
-      LEGIFRANCE('Loi PACTE 22 mai 2019', 'jorf/id/JORFTEXT000038496102'),
+      LEGIFRANCE(
+        'Code de commerce art. L. 223-1 (SARL)',
+        'codes ou article_lc ou LEGIARTI000006219252'
+      ),
+      LEGIFRANCE('Loi PACTE 22 mai 2019', 'jorf, id ou JORFTEXT000038496102'),
       {
         label: 'INSEE — démographie entreprises 2024',
         url: 'https://www.insee.fr/fr/statistiques',
@@ -456,10 +462,10 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
     toc: [
       { id: 'enjeux', title: '1. Pourquoi le statut impacte les assurances' },
       { id: 'micro', title: '2. Micro-entreprise' },
-      { id: 'ei-eirl', title: '3. EI / EIRL (depuis 2022 unifiés)' },
+      { id: 'ei-eirl', title: '3. EI — EIRL (depuis 2022 unifiés)' },
       { id: 'eurl', title: '4. EURL' },
       { id: 'sasu', title: '5. SASU' },
-      { id: 'sarl-sas', title: '6. SARL / SAS (multi-associés)' },
+      { id: 'sarl-sas', title: '6. SARL — SAS (multi-associés)' },
       { id: 'tableau', title: '7. Tableau comparatif' },
       { id: 'faq', title: 'FAQ' },
     ],
@@ -475,13 +481,13 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
           items: [
             '**Responsabilité du dirigeant** : illimitée (EI, micro) ou limitée aux apports (EURL, SASU, SARL, SAS)',
             '**Régime social** : TNS (micro, EI, EURL avec gérant majoritaire) ou assimilé-salarié (SASU, SAS)',
-            '**Primes RC Pro** : variation 10 à 30 % selon statut (assureurs voient EI/micro comme plus risqués)',
-            '**Patrimoine personnel** : saisissable en EI/micro, protégé en SASU/EURL/SARL/SAS',
+            '**Primes RC Pro** : variation 10 à 30 % selon statut (assureurs voient EI ou micro comme plus risqués)',
+            '**Patrimoine personnel** : saisissable en EI ou micro, protégé en SASU, EURL, SARL ou SAS',
           ],
         },
         callout: {
           tone: 'info',
-          text: "Depuis la Loi du 14 février 2022, l'EI bénéficie d'une séparation automatique patrimoine pro/perso. Mais la responsabilité dans le cadre des dettes pro reste personnelle.",
+          text: "Depuis la Loi du 14 février 2022, l'EI bénéficie d'une séparation automatique patrimoine pro ou perso. Mais la responsabilité dans le cadre des dettes pro reste personnelle.",
         },
       },
       {
@@ -501,7 +507,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
       },
       {
         id: 'ei-eirl',
-        h2: '3. EI / EIRL — Entreprise Individuelle',
+        h2: '3. EI — EIRL — Entreprise Individuelle',
         paragraphs: [
           "Depuis le 15 mai 2022, l'EIRL a été supprimée et fusionnée avec l'EI : séparation patrimoines automatique. Impact assurance :",
         ],
@@ -521,7 +527,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            '**RC Pro** : tarifs identiques à SARL/SAS standard',
+            '**RC Pro** : tarifs identiques à SARL ou SAS standard',
             '**Décennale BTP** : tarifs identiques',
             '**Régime social gérant majoritaire** : TNS (mutuelle Madelin déductible)',
             '**Patrimoine personnel** : préservé sauf garantie bancaire personnelle',
@@ -532,20 +538,20 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         id: 'sasu',
         h2: '5. SASU — Société par Actions Simplifiée Unipersonnelle',
         paragraphs: [
-          'Forme préférée des freelances/dirigeants depuis 2017 pour sa flexibilité. Impact assurance :',
+          'Forme préférée des freelances ou dirigeants depuis 2017 pour sa flexibilité. Impact assurance :',
         ],
         list: {
           items: [
             '**RC Pro** : tarifs les plus avantageux (assureurs préfèrent SASU pour la séparation nette)',
             '**Décennale BTP** : tarifs identiques aux autres formes sociétaires',
             '**Régime social assimilé-salarié** : mutuelle entreprise possible (article 83), pas Madelin',
-            '**Cotisations sociales** : 75 % de la rémunération (vs 40-45 % pour TNS) MAIS meilleure protection chômage/maladie',
+            '**Cotisations sociales** : 75 % de la rémunération (vs 40-45 % pour TNS) MAIS meilleure protection chômage ou maladie',
           ],
         },
       },
       {
         id: 'sarl-sas',
-        h2: '6. SARL / SAS — multi-associés',
+        h2: '6. SARL — SAS — multi-associés',
         paragraphs: ['Sociétés avec 2 associés ou plus. Impact assurance :'],
         list: {
           items: [
@@ -568,7 +574,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
             '**EI (post-2022)** : RC Pro +10 %, séparation patrimoines auto, régime TNS',
             '**EURL** : RC Pro standard, gérant TNS, statut sociétaire (banques préfèrent)',
             '**SASU** : RC Pro -5 %, régime assimilé-salarié, charges sociales élevées mais meilleure couverture',
-            '**SARL/SAS** : RC Pro standard, recommandé multirisque + D&O dès 200 K€ CA',
+            '**SARL ou SAS** : RC Pro standard, recommandé multirisque + D&O dès 200 K€ CA',
           ],
         },
       },
@@ -578,9 +584,9 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         paragraphs: ['Réponses aux questions fréquentes sur le sujet :'],
         list: {
           items: [
-            "**Changer de statut pour réduire les primes : pertinent ?** Marginalement. Économie de 50 à ~150  €/an sur les primes, mais coûts de transformation et changement de régime social peuvent annuler. Privilégier le statut adapté à l'activité.",
+            "**Changer de statut pour réduire les primes : pertinent ?** Marginalement. Économie de 50 à ~150  € par an sur les primes, mais coûts de transformation et changement de régime social peuvent annuler. Privilégier le statut adapté à l'activité.",
             "**SASU vs SARL : impact réel sur RC Pro ?** Quasi-nul. La différence se joue plutôt sur la nature de l'activité et le CA que sur la forme juridique.",
-            '**Micro-entreprise vers SASU : démarches ?** Cessation micro + création SASU (formalités CFE/INPI). Compter 1 mois et 200 à 500 € de frais notariés/comptables.',
+            '**Micro-entreprise vers SASU : démarches ?** Cessation micro + création SASU (formalités CFE ou INPI). Compter 1 mois et 200 à 500 € de frais notariés ou comptables.',
             '**Holding + SAS opérationnelle : impact assurance ?** La RC Pro suit la SAS opérationnelle. La holding peut souscrire une RC Mandataires Sociaux (D&O) qui couvre les dirigeants des deux entités.',
           ],
         },

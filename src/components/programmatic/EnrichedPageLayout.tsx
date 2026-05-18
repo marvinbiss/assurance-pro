@@ -52,6 +52,78 @@ const VARIANT_ICONS: Record<Variant, LucideIcon> = {
   tarif: TrendingUp,
 }
 
+/**
+ * Construit un breadcrumb enrichi multi-niveaux avec liens parents cliquables.
+ *
+ * Niveau 1: Accueil (géré par PageHero)
+ * Niveau 2: Garantie (lien vers pilier hub si garantie_code dispo)
+ * Niveau 3: Métier (lien vers /garantie/metier si applicable)
+ * Niveau 4: Ville ou statut (label seulement, page courante)
+ * Niveau 5: Variant (label seulement, page courante)
+ *
+ * Tous les niveaux émettent du JSON-LD BreadcrumbList (cf. PageHero).
+ */
+function buildEnrichedBreadcrumbs(
+  enrichment: PageEnrichmentRow,
+  variant: Variant
+): Array<{ label: string; href?: string }> {
+  const crumbs: Array<{ label: string; href?: string }> = []
+
+  // Niveau 2 — Garantie (lien hub)
+  if (enrichment.garantie_label && enrichment.garantie_code) {
+    const garantieHref = mapGarantieCodeToHub(enrichment.garantie_code)
+    crumbs.push({ label: enrichment.garantie_label, href: garantieHref })
+  } else {
+    crumbs.push({ label: enrichment.garantie_label ?? 'Garantie' })
+  }
+
+  // Niveau 3 — Métier (lien vers /tarif/garantie/metier si on n'est pas déjà sur cette page)
+  if (enrichment.metier_nom && enrichment.metier_code && enrichment.garantie_code) {
+    const metierHref = `/tarif/${enrichment.garantie_code}/${enrichment.metier_code}`
+    const isCurrentPage = enrichment.page_slug === metierHref.slice(1)
+    crumbs.push({
+      label: enrichment.metier_nom,
+      ...(isCurrentPage ? {} : { href: metierHref }),
+    })
+  }
+
+  // Niveau 4 — Ville (label seulement, jamais cliquable car page la plus profonde)
+  if (enrichment.ville_nom) {
+    crumbs.push({ label: enrichment.ville_nom })
+  }
+
+  // Niveau 4bis — Statut juridique (si pas de ville)
+  if (!enrichment.ville_nom && enrichment.statut_label) {
+    crumbs.push({ label: enrichment.statut_label })
+  }
+
+  // Niveau final — Variant (toujours dernier, label seulement)
+  crumbs.push({ label: VARIANT_LABELS[variant] })
+
+  return crumbs
+}
+
+/**
+ * Mappe un code garantie (depuis kw_universe) vers son URL hub.
+ * Couvre les 9 garanties principales du site.
+ */
+function mapGarantieCodeToHub(code: string): string {
+  const c = code.toLowerCase()
+  if (c.includes('decennale')) return '/assurance-decennale'
+  if (c.includes('rc-pro') || c.includes('rc_pro')) return '/rc-pro'
+  if (c.includes('cyber')) return '/cyber-assurance'
+  if (c.includes('multirisque')) return '/multirisque-pro'
+  if (c.includes('mutuelle')) return '/mutuelle-pro'
+  if (c.includes('vtc')) return '/assurance-vtc'
+  if (c.includes('dommages-ouvrage') || c.includes('do')) return '/assurance-dommages-ouvrage'
+  if (c.includes('tous-risques-chantier') || c.includes('trc'))
+    return '/assurance-tous-risques-chantier'
+  if (c.includes('protection-juridique')) return '/protection-juridique-professionnelle'
+  if (c.includes('prevoyance')) return '/prevoyance-tns'
+  // Fallback générique
+  return `/${code}`
+}
+
 export async function EnrichedPageLayout({
   enrichment,
   variant,
@@ -70,10 +142,7 @@ export async function EnrichedPageLayout({
       ))}
 
       <PageHero
-        breadcrumbs={[
-          { label: enrichment.garantie_label ?? 'Garantie' },
-          { label: VARIANT_LABELS[variant] },
-        ]}
+        breadcrumbs={buildEnrichedBreadcrumbs(enrichment, variant)}
         eyebrow={`${VARIANT_LABELS[variant]} · ${new Date().getFullYear()}`}
         EyebrowIcon={VARIANT_ICONS[variant]}
         title={headline}
@@ -181,7 +250,7 @@ function PrixCell({
       >
         {Math.round(value).toLocaleString('fr-FR')}
         <span className="text-xl">€</span>
-        <span className="ml-1 text-base font-normal text-charcoal-500">/an</span>
+        <span className="ml-1 text-base font-normal text-charcoal-500"> par an</span>
       </div>
     </div>
   )
@@ -195,7 +264,7 @@ function TrustSources({ enrichment }: { enrichment: PageEnrichmentRow }) {
   if (enrichment.jurisprudence_refs?.length > 0) sources.push('Légifrance')
   if (enrichment.assureurs_top3_jsonb?.length > 0) sources.push('Pappers')
   if (enrichment.avis_top_jsonb?.length > 0) sources.push('Trustpilot ISO 20488')
-  if (enrichment.stats_sectorielles_jsonb?.length > 0) sources.push('FFA/FFB/CAPEB')
+  if (enrichment.stats_sectorielles_jsonb?.length > 0) sources.push('FFA, FFB / CAPEB')
 
   if (sources.length === 0) return null
   return (

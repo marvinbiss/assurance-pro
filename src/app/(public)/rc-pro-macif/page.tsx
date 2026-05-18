@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'rc-pro-macif'
 const TITLE = 'RC Pro MACIF — Mutualiste, avis et alternatives 2026'
 const TAGLINE =
-  'La MACIF (Mutuelle Assurance des Commerçants et Industriels de France) propose une RC Pro mutualiste. Analyse des garanties, tarifs 200-1 500€/an et comparatif.'
+  'La MACIF (Mutuelle Assurance des Commerçants et Industriels de France) propose une RC Pro mutualiste. Analyse des garanties, tarifs 200-1 500€ par an et comparatif.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'MACIF RC Pro : assureur mutualiste 5M sociétaires. Plafond 500k€-1M€, tarif 200-1 500€/an. Comparatif avec MAIF, MMA, Matmut, Hiscox.',
+    'MACIF RC Pro : assureur mutualiste 5M sociétaires. Plafond 500k€-1M€, tarif 200-1 500€ par an. Comparatif avec MAIF, MMA, Matmut, Hiscox.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La MACIF (Mutuelle Assurance des Commerçants et Industriels de France) est un assureur mutualiste français créé en 1960, regroupant 5 millions de sociétaires. Son offre RC Pro cible principalement les commerçants, artisans et professions libérales, avec une approche mutualiste sans actionnaires. Cette page analyse l'offre MACIF RC Pro, ses points forts/faibles, et la compare aux autres mutualistes (MAIF, Matmut) et aux spécialistes pro (MMA, Hiscox)."
+      intro="La MACIF (Mutuelle Assurance des Commerçants et Industriels de France) est un assureur mutualiste français créé en 1960, regroupant 5 millions de sociétaires. Son offre RC Pro cible principalement les commerçants, artisans et professions libérales, avec une approche mutualiste sans actionnaires. Cette page analyse l'offre MACIF RC Pro, ses points forts ou faibles, et la compare aux autres mutualistes (MAIF, Matmut) et aux spécialistes pro (MMA, Hiscox)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -45,11 +45,11 @@ export default function Page() {
         {
           icon: '🛡️',
           title: 'Plafond 500k€-1M€',
-          desc: 'Standard AE 500k€, SARL/SAS 1M€ (recommandé)',
+          desc: 'Standard AE 500k€, SARL ou SAS 1M€ (recommandé)',
         },
         {
           icon: '💰',
-          title: '200-1 500€/an',
+          title: '200-1 500€ par an',
           desc: 'AE 200-400€ • SARL services 500-900€ • SAS PME 900-1 500€',
         },
         {
@@ -72,7 +72,7 @@ export default function Page() {
                 personnel
               </li>
               <li>
-                <strong>Tarifs corrects sur AE</strong> : 200-400€/an, milieu de marché
+                <strong>Tarifs corrects sur AE</strong> : 200-400€ par an, milieu de marché
               </li>
               <li>
                 <strong>Solidité financière A-</strong> (notation S&amp;P)
@@ -108,8 +108,8 @@ export default function Page() {
                 <strong>Cyber-assurance basique</strong> : module simple en option
               </li>
               <li>
-                <strong>Souscription pas 100% digitale</strong> : passage souvent par
-                téléphone/point d&apos;accueil
+                <strong>Souscription pas 100% digitale</strong> : passage souvent par téléphone ou
+                point d&apos;accueil
               </li>
             </ul>
           ),
@@ -123,8 +123,8 @@ export default function Page() {
                 points.
               </li>
               <li>
-                <strong>MAIF</strong> : top sur associations + ESS + professions libérales
-                social/culture. Réseau 250 agences.
+                <strong>MAIF</strong> : top sur associations + ESS + professions libérales social ou
+                culture. Réseau 250 agences.
               </li>
               <li>
                 <strong>Matmut</strong> : TPE et particuliers. Pack multi-contrats si déjà client.
@@ -147,15 +147,15 @@ export default function Page() {
       faq={[
         {
           q: 'MACIF RC Pro est-elle adaptée à un freelance ?',
-          a: 'Pour AE freelance services intellectuels (consultant, IT, designer) : MACIF est correcte (200-400€/an) mais Hiscox/Stello sont 30-50% moins chers avec garanties supérieures (plafond 1M€ standard, postériorité 10 ans Hiscox).',
+          a: 'Pour AE freelance services intellectuels (consultant, IT, designer) : MACIF est correcte (200-400€ par an) mais Hiscox ou Stello sont 30-50% moins chers avec garanties supérieures (plafond 1M€ standard, postériorité 10 ans Hiscox).',
         },
         {
           q: 'MACIF couvre-t-elle les commerçants ?',
-          a: 'Oui, c&apos;est même son cœur de cible historique. RC Pro Commerçant MACIF + Multirisque Pro Commerçant = pack complet à 800-1 800€/an. Concurrents directs : Allianz Pro Commerce, MMA Pro Commerce.',
+          a: 'Oui, c&apos;est même son cœur de cible historique. RC Pro Commerçant MACIF + Multirisque Pro Commerçant = pack complet à 800-1 800€ par an. Concurrents directs : Allianz Pro Commerce, MMA Pro Commerce.',
         },
         {
           q: 'Comment souscrire MACIF RC Pro ?',
-          a: 'Via macif.fr → onglet &quot;Pro&quot; → &quot;RC Pro&quot;. Devis en ligne possible, finalisation souvent par téléphone ou en point d&apos;accueil MACIF. Délai 24-72h pour attestation.',
+          a: 'Via macif.fr → onglet &quot;Pro&quot; → &quot;RC Pro&quot;. Devis en ligne possible, finalisation souvent par téléphone / en point d&apos;accueil MACIF. Délai 24-72h pour attestation.',
         },
         {
           q: 'MACIF vs MAIF pour un consultant ?',

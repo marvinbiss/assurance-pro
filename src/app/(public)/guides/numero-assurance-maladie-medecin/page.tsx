@@ -9,7 +9,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/numero-assurance-maladie-medecin'
+const SLUG = 'guides / numero-assurance-maladie-medecin'
 const TITLE = 'Numéro assurance maladie médecin (RPPS, ADELI, AM) — Guide 2026'
 const TAGLINE =
   "Tout savoir sur les numéros d'identification médecin : RPPS (Répertoire Partagé Pros Santé), ADELI, numéro AM, numéro CPS. À quoi servent-ils ? Comment les obtenir ?"
@@ -28,7 +28,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Un médecin libéral en France utilise plusieurs NUMÉROS D'IDENTIFICATION distincts qui génèrent souvent de la confusion : le RPPS (Répertoire Partagé des Professionnels de Santé — 11 chiffres, identifiant unique national depuis 2016, remplace progressivement ADELI), le numéro ADELI (9 chiffres, ancien système 1989-2016, encore utilisé pour certaines démarches), le numéro AM (Assurance Maladie, attribué lors du conventionnement Sécu, format AAANNNNN), la CPS (Carte de Professionnel de Santé, équivalent carte d'identité numérique pour signer électroniquement les documents de santé). Chaque numéro a un usage spécifique : facturation Sécu, conventionnement, télétransmission, prescriptions sécurisées, etc. Cette page détaille chaque numéro, son utilité et les démarches d'obtention/renouvellement."
+      intro="Un médecin libéral en France utilise plusieurs NUMÉROS D'IDENTIFICATION distincts qui génèrent souvent de la confusion : le RPPS (Répertoire Partagé des Professionnels de Santé — 11 chiffres, identifiant unique national depuis 2016, remplace progressivement ADELI), le numéro ADELI (9 chiffres, ancien système 1989-2016, encore utilisé pour certaines démarches), le numéro AM (Assurance Maladie, attribué lors du conventionnement Sécu, format AAANNNNN), la CPS (Carte de Professionnel de Santé, équivalent carte d'identité numérique pour signer électroniquement les documents de santé). Chaque numéro a un usage spécifique : facturation Sécu, conventionnement, télétransmission, prescriptions sécurisées, etc. Cette page détaille chaque numéro, son utilité et les démarches d'obtention ou renouvellement."
       legalReference="Code de la santé publique L. 4111-1 et s. + Décret 2016-1872 (RPPS unifié)"
       isObligatoire={true}
       benefits={[

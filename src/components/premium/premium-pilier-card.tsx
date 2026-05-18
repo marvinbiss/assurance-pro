@@ -40,7 +40,7 @@ export function PremiumPilierCard({
   const isFeatured = variant === 'featured'
 
   return (
-    <TiltCard maxTilt={5} glowColor="rgba(232, 107, 75, 0.14)" className={className}>
+    <TiltCard maxTilt={5} glowColor="rgba(43, 77, 133, 0.14)" className={className}>
       <article
         className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-white p-6 transition-[box-shadow,border-color] duration-300 ease-enter md:p-7 ${
           isFeatured ? 'border-sand-400 shadow-md' : 'border-sand-300 shadow-sm'

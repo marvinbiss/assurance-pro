@@ -11,7 +11,7 @@ describe('gdpr-token', () => {
     process.env.GDPR_EXPORT_TOKEN_SECRET = EXPORT_SECRET
   })
 
-  describe('signGdprToken / verifyGdprToken — round-trip', () => {
+  describe('signGdprToken — verifyGdprToken — round-trip', () => {
     it('round-trips a delete token', () => {
       const exp = Date.now() + 60_000
       const token = signGdprToken('delete', 'user@example.com', exp)

@@ -18,7 +18,7 @@ const DEFAULT_STATS: Stat[] = [
   {
     value: '24h',
     label: 'Devis et attestation',
-    hint: 'Recontact priorisé selon profil HOT/WARM/COLD',
+    hint: 'Recontact priorisé selon profil HOT, WARM ou COLD',
   },
   {
     value: '0€',

@@ -108,7 +108,7 @@ export async function POST(req: NextRequest) {
   }
   const parsed = PostSchema.safeParse(body)
   if (!parsed.success) {
-    return NextResponse.json({ error: 'Email ou consentement invalide.' }, { status: 400 })
+    return NextResponse.json({ error: 'Email / consentement invalide.' }, { status: 400 })
   }
   const email = parsed.data.email.toLowerCase()
 
@@ -159,7 +159,7 @@ export async function GET(req: NextRequest) {
   if (!token) return NextResponse.json({ error: 'Token manquant.' }, { status: 400 })
 
   const verified = verifyGdprToken('export', token)
-  if (!verified) return NextResponse.json({ error: 'Token invalide ou expiré.' }, { status: 400 })
+  if (!verified) return NextResponse.json({ error: 'Token invalide / expiré.' }, { status: 400 })
 
   const { email, expiresAt, tokenHash } = verified
   const admin = createPiiAdminClient()
@@ -243,7 +243,7 @@ export async function GET(req: NextRequest) {
   } catch (err) {
     logger.error({ err }, 'gdpr-export retrieval failed')
     captureApiException(err, {
-      route: 'api/gdpr/export',
+      route: 'api, gdpr ou export',
       category: 'gdpr',
       extra: { stage: 'retrieval' },
     })

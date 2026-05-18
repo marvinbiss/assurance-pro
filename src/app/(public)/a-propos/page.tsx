@@ -1,11 +1,30 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Award, Building2, ShieldCheck, Scale, Mail, Sparkles } from 'lucide-react'
+import {
+  ArrowRight,
+  Award,
+  Building2,
+  ShieldCheck,
+  Scale,
+  Mail,
+  Sparkles,
+  Headphones,
+} from 'lucide-react'
+import Image from 'next/image'
+import { MANIFESTO, BRAND, BRAND_PROMISES } from '@/lib/brand/brand-voice'
+import { BrandOrnament } from '@/components/brand/brand-ornament'
+import { HERO_PHOTOS } from '@/lib/data/photo-library'
+
+const PROMISE_ICONS = {
+  ShieldCheck,
+  Scale,
+  Headphones,
+} as const
 import { buildOriasFicheUrl, formatOriasDisplay, buildOriasRegistryUrl } from '@/lib/api/orias'
 import { SITE_URL } from '@/lib/seo/config'
 import { PageHero } from '@/components/layout/PageHero'
 
-const ORIAS = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
+const ORIAS = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"
 
 const PARTENAIRES = [
   'Hiscox',
@@ -44,7 +63,7 @@ export default function AProposPage() {
   const oriasFormatted = formatOriasDisplay(ORIAS.replace(/\s/g, '') || '07000000')
 
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Cabinet' }, { label: 'À propos' }]}
         eyebrow="Cabinet ORIAS &middot; Indépendant"
@@ -70,6 +89,61 @@ export default function AProposPage() {
         ]}
       />
 
+      {/* Brand manifesto + 3 promises */}
+      <section className="container mx-auto max-w-5xl px-4 pt-14">
+        <div className="mb-10 flex justify-center">
+          <BrandOrnament variant="arc" />
+        </div>
+        <p className="mx-auto mb-4 max-w-3xl text-center font-display-premium text-2xl italic leading-snug text-charcoal-900 md:text-3xl">
+          « {MANIFESTO.hero} »
+        </p>
+        <p className="mx-auto mb-12 max-w-2xl text-center text-base leading-relaxed text-charcoal-600">
+          {BRAND.taglineLong}
+        </p>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {BRAND_PROMISES.map((promise) => {
+            const Icon = PROMISE_ICONS[promise.Icon as keyof typeof PROMISE_ICONS]
+            return (
+              <article
+                key={promise.title}
+                className="rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft"
+              >
+                <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-soft">
+                  <Icon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
+                </span>
+                <h3 className="mb-2 font-heading text-lg font-extrabold tracking-tight text-charcoal-900">
+                  {promise.title}
+                </h3>
+                <p className="m-0 text-sm leading-relaxed text-charcoal-700">{promise.body}</p>
+              </article>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Image team / office full-bleed */}
+      <section className="container mx-auto max-w-5xl px-4 pt-10">
+        <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl shadow-premium">
+          <Image
+            src={HERO_PHOTOS.equipe.src}
+            alt={HERO_PHOTOS.equipe.alt}
+            fill
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-charcoal-950/10 to-transparent"
+            aria-hidden="true"
+          />
+          <div className="absolute bottom-6 left-6 right-6 text-white">
+            <p className="font-display-premium text-xl italic leading-snug md:text-2xl">
+              « Vivos signifie les vivants. C&apos;est la promesse d&apos;une assurance qui suit
+              votre activité — pas l&apos;inverse. »
+            </p>
+          </div>
+        </div>
+      </section>
+
       <div className="container mx-auto max-w-4xl px-4 py-14">
         <article className="pilier-prose prose prose-lg max-w-none text-charcoal-700">
           <h2>Qui sommes-nous ?</h2>
@@ -85,8 +159,8 @@ export default function AProposPage() {
             Notre cabinet est spécialisé dans l&apos;
             <strong>assurance professionnelle multi-vertical</strong> : artisans du BTP, professions
             libérales, services aux entreprises, restauration, commerce, médical, juridique,
-            transport (VTC/Taxi), e-commerce et cyber. Nous travaillons avec un panel de plus de 10
-            assureurs partenaires (Hiscox, April Pro, Allianz Pro, MMA, Generali, AXA Pro, MAAF,
+            transport (VTC ou Taxi), e-commerce et cyber. Nous travaillons avec un panel de plus de
+            10 assureurs partenaires (Hiscox, April Pro, Allianz Pro, MMA, Generali, AXA Pro, MAAF,
             SMABTP, Wakam, Stello&hellip;) afin de comparer pour vous les meilleures offres du
             marché.
           </p>

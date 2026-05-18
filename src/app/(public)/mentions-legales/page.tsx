@@ -26,16 +26,18 @@ export const metadata: Metadata = {
 }
 
 export default function MentionsLegalesPage() {
-  const orias = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
+  const orias = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"
   const editor = process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Vivos Assurance SAS'
-  const siret = process.env.NEXT_PUBLIC_LEGAL_SIRET ?? 'XXX XXX XXX 00000'
+  const siret = process.env.NEXT_PUBLIC_LEGAL_SIRET ?? "En cours d'attribution"
   const rcs = process.env.NEXT_PUBLIC_LEGAL_RCS ?? 'RCS Paris'
   const capital = process.env.NEXT_PUBLIC_LEGAL_CAPITAL ?? '10 000 €'
-  const address = process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'
+  const address =
+    process.env.NEXT_PUBLIC_LEGAL_ADDRESS ??
+    "Cabinet en Île-de-France (adresse précise publiée à l'attribution ORIAS)"
   const tva = process.env.NEXT_PUBLIC_LEGAL_TVA ?? 'FRXX XXX XXX XXX'
 
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Mentions légales' }]}
         eyebrow="Information légale obligatoire"
@@ -113,8 +115,8 @@ export default function MentionsLegalesPage() {
             Conformément aux articles L. 512-6 et L. 512-7 du Code des assurances, le cabinet
             dispose d&apos;une <strong>Garantie Financière</strong> et d&apos;une{' '}
             <strong>RCP</strong> auprès d&apos;un assureur agréé. Plafonds :{' '}
-            <strong>5 000 000 € par sinistre / 7 500 000 € par année</strong>
-            (au-delà du minimum légal de 1 850 000 € / 2 500 000 €).
+            <strong>5 000 000 € par sinistre — 7 500 000 € par année</strong>
+            (au-delà du minimum légal de 1 850 000 € ou 2 500 000 €).
           </p>
 
           <h2>7. Adhésion à une association professionnelle agréée</h2>

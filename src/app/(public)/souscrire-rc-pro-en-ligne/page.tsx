@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'souscrire-rc-pro-en-ligne'
 const TITLE = 'Souscrire RC Pro En Ligne — Guide complet 2026'
 const TAGLINE =
-  'Guide pour souscrire votre RC Pro 100% en ligne en 2026 : étapes, documents requis, comparaison assureurs, choix optimal. Best price Hiscox 95€/an AE.'
+  'Guide pour souscrire votre RC Pro 100% en ligne en 2026 : étapes, documents requis, comparaison assureurs, choix optimal. Best price Hiscox 95€ par an AE.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Souscrire RC Pro en ligne : guide complet — étapes, documents, comparaison Hiscox/Stello/Allianz/MMA/AXA, choix optimal. 5 min, attestation immédiate.',
+    'Souscrire RC Pro en ligne : guide complet — étapes, documents, comparaison Hiscox, Stello, Allianz, MMA / AXA, choix optimal. 5 min, attestation immédiate.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -45,7 +45,7 @@ export default function Page() {
         {
           icon: '📋',
           title: 'Documents à préparer',
-          desc: 'SIRET, Kbis/ACOSS, RIB, identité, justificatifs sectoriels',
+          desc: 'SIRET, Kbis ou ACOSS, RIB, identité, justificatifs sectoriels',
         },
         {
           icon: '🆚',
@@ -67,8 +67,8 @@ export default function Page() {
                 <strong>SIRET</strong> : obligatoire, obtenu via INPI ou INSEE après immatriculation
               </li>
               <li>
-                <strong>Kbis</strong> (SARL/SAS) OU <strong>ACOSS attestation</strong> (AE) : - de 3
-                mois
+                <strong>Kbis</strong> (SARL ou SAS) OU <strong>ACOSS attestation</strong> (AE) : -
+                de 3 mois
               </li>
               <li>
                 <strong>RIB IBAN</strong> : prélèvement automatique ou paiement CB
@@ -131,11 +131,11 @@ export default function Page() {
                 <strong>AE BTP</strong> : 🥇 April Pro BTP (spécialiste + décennale combinée)
               </li>
               <li>
-                <strong>AE coach sportif / formateur</strong> : 🥇 Allianz Pro (couverture
+                <strong>AE coach sportif — formateur</strong> : 🥇 Allianz Pro (couverture
                 corporelle adaptée)
               </li>
               <li>
-                <strong>AE VTC</strong> : 🥇 Wakam ou Stello (contrat 2-en-1 auto+RC)
+                <strong>AE VTC</strong> : 🥇 Wakam / Stello (contrat 2-en-1 auto+RC)
               </li>
               <li>
                 <strong>SARL services 100-500k€ CA</strong> : 🥇 Hiscox ou Allianz Pro selon options
@@ -145,7 +145,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>Libéral réglementé</strong> : Caisse spécialisée (MACSF santé, MAF
-                architectes) ou Allianz/AXA Pro
+                architectes) ou Allianz ou AXA Pro
               </li>
             </ul>
           ),
@@ -154,15 +154,15 @@ export default function Page() {
       faq={[
         {
           q: 'Erreur sur formulaire après validation ?',
-          a: 'Loi Hamon : 14 jours rétractation possibles après souscription. Modification SIRET / activité gratuite via support. Modification plafond/franchise = avenant tarifé. Modification radicale = résiliation + nouvelle souscription.',
+          a: 'Loi Hamon : 14 jours rétractation possibles après souscription. Modification SIRET — activité gratuite via support. Modification plafond ou franchise = avenant tarifé. Modification radicale = résiliation + nouvelle souscription.',
         },
         {
           q: 'Comment savoir si offre vraiment compétitive ?',
-          a: 'Comparer 3-5 assureurs minimum. Tarif compétitif = fourchette basse profil. Ex : AE consultant IT = 95-180€/an → 95-130€ très compétitif. Au-delà 200€/an pour ce profil = à challenger.',
+          a: 'Comparer 3-5 assureurs minimum. Tarif compétitif = fourchette basse profil. Ex : AE consultant IT = 95-180€ par an → 95-130€ très compétitif. Au-delà 200€ par an pour ce profil = à challenger.',
         },
         {
           q: 'Délai souscription si activité commence demain ?',
-          a: 'Souscription en ligne pure (Hiscox/Stello) : effet immédiat ou date au choix dans 30 jours. Attestation téléchargeable immédiate. Cas particulier BTP : attestation décennale parfois 24-48h ouvrées (vérifications expérience).',
+          a: 'Souscription en ligne pure (Hiscox ou Stello) : effet immédiat ou date au choix dans 30 jours. Attestation téléchargeable immédiate. Cas particulier BTP : attestation décennale parfois 24-48h ouvrées (vérifications expérience).',
         },
       ]}
       relatedMetiers={[

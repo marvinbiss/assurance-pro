@@ -6,7 +6,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'devis/rc-pro-en-ligne'
+const SLUG = 'devis / rc-pro-en-ligne'
 const TITLE = 'Devis RC Pro En Ligne — 100% digital, attestation immédiate'
 const TAGLINE =
   'Devis RC Pro 100% en ligne en 5 min. Hiscox + Stello en pure digital. Attestation téléchargeable immédiatement après paiement. Sans rendez-vous.'
@@ -14,7 +14,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Devis RC Pro en ligne 100% digital. Hiscox 95€/an + Stello 90€/an best price. Souscription 5 min, attestation immédiate. Sans rendez-vous physique.',
+    'Devis RC Pro en ligne 100% digital. Hiscox 95€ par an + Stello 90€ par an best price. Souscription 5 min, attestation immédiate. Sans rendez-vous physique.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -56,14 +56,14 @@ export default function Page() {
             <ul>
               <li>
                 <strong>Hiscox</strong> : groupe britannique, présent France depuis 1993.
-                Spécialiste services intellectuels (consultant, IT, designer). 100% digital pour
-                AE/SASU. Postériorité 10 ans (unique marché). Solidité A+ S&amp;P. Tarif AE :
-                95-220€/an.
+                Spécialiste services intellectuels (consultant, IT, designer). 100% digital pour AE
+                ou SASU. Postériorité 10 ans (unique marché). Solidité A+ S&amp;P. Tarif AE :
+                95-220€ par an.
               </li>
               <li>
                 <strong>Stello</strong> : challenger français créé 2019. Spécialiste mobilités pro +
                 freelance services. App mobile native. Contrat 2-en-1 auto+RC Pro pour VTC.
-                Postériorité 5 ans. Solidité A-. Tarif AE : 90-200€/an.
+                Postériorité 5 ans. Solidité A-. Tarif AE : 90-200€ par an.
               </li>
             </ul>
           ),
@@ -81,11 +81,12 @@ export default function Page() {
                 postériorité affichés
               </li>
               <li>
-                <strong>Étape 3 — Saisie infos</strong> (1 min) : SIRET, identité, ACOSS/Kbis, RIB
+                <strong>Étape 3 — Saisie infos</strong> (1 min) : SIRET, identité, ACOSS ou Kbis,
+                RIB
               </li>
               <li>
-                <strong>Étape 4 — Paiement sécurisé</strong> (30 sec) : CB ou prélèvement,
-                annuel/mensuel
+                <strong>Étape 4 — Paiement sécurisé</strong> (30 sec) : CB ou prélèvement, annuel ou
+                mensuel
               </li>
               <li>
                 <strong>Étape 5 — Téléchargement attestation</strong> (immédiat) : PDF dans espace
@@ -131,7 +132,7 @@ export default function Page() {
       faq={[
         {
           q: 'Quels assureurs proposent vraiment 100% en ligne ?',
-          a: 'Hiscox et Stello sont les seuls 100% pure digital sur le segment AE/freelance services. Allianz Pro et MMA proposent en ligne mais finalisent souvent par téléphone. AXA Pro requiert souvent passage agence. April Pro BTP en ligne pour AE BTP.',
+          a: 'Hiscox et Stello sont les seuls 100% pure digital sur le segment AE ou freelance services. Allianz Pro et MMA proposent en ligne mais finalisent souvent par téléphone. AXA Pro requiert souvent passage agence. April Pro BTP en ligne pour AE BTP.',
         },
         {
           q: 'Souscription en ligne aussi sûre qu&apos;en agence ?',
@@ -139,11 +140,11 @@ export default function Page() {
         },
         {
           q: 'Délai attestation après paiement ?',
-          a: 'Immédiat (téléchargement direct espace adhérent) chez Hiscox et Stello. Allianz Pro / MMA : 24h ouvrées en ligne. April Pro BTP : 24h ouvrées. AXA Pro : 48-72h.',
+          a: 'Immédiat (téléchargement direct espace adhérent) chez Hiscox et Stello. Allianz Pro — MMA : 24h ouvrées en ligne. April Pro BTP : 24h ouvrées. AXA Pro : 48-72h.',
         },
         {
           q: 'Pour quel profil en ligne adapté ?',
-          a: 'IDÉAL : AE/freelance services intellectuels (consultant, IT, designer), SASU services, VTC débutant. À ÉVITER : SAS PME avec besoins complexes (multi-corps BTP, profession libérale réglementée) où conseil humain ajoute de la valeur.',
+          a: 'IDÉAL : AE ou freelance services intellectuels (consultant, IT, designer), SASU services, VTC débutant. À ÉVITER : SAS PME avec besoins complexes (multi-corps BTP, profession libérale réglementée) où conseil humain ajoute de la valeur.',
         },
       ]}
       relatedMetiers={[

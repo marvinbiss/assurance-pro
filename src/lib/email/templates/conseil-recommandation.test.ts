@@ -10,17 +10,16 @@ describe('conseilRecommandationTemplate', () => {
     metier: 'plombier',
     produitRecommande: 'Décennale Pack PME',
     partenaireRecommande: 'SMABTP',
-    motivationChoix:
-      'Plafond et exclusions adaptés à un plombier auto-entrepreneur (CA < 50k€).',
+    motivationChoix: 'Plafond et exclusions adaptés à un plombier auto-entrepreneur (CA < 50k€).',
     alternativesExaminees: [
       { partenaire: 'MMA', raison_ecart: 'Tarif 18% plus élevé pour profil équivalent' },
-      { partenaire: 'Hiscox', raison_ecart: 'N\'accepte pas les < 2 ans d\'ancienneté' },
+      { partenaire: 'Hiscox', raison_ecart: "N'accepte pas les < 2 ans d'ancienneté" },
     ],
     nombreContratsAnalyses: 8,
     plafondGarantie: '500 000 €',
     cotisationAnnuelle: '850 € HT',
     signatureCourtier: 'Marie Martin',
-    oriasCourtier: '07 0XX XXX',
+    oriasCourtier: "En cours d'attribution",
     signatureHash: 'a'.repeat(64),
   }
 

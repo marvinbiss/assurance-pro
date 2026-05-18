@@ -155,7 +155,7 @@ export const METIERS: MetierTarif[] = [
   },
   {
     id: 'peintre-ext',
-    label: 'Peintre extérieur / ravaleur',
+    label: 'Peintre extérieur — ravaleur',
     garanties: ['decennale', 'rc-pro', 'multirisque'],
     fourchettes: { decennale: [960, 1600], 'rc-pro': [220, 420], multirisque: [240, 500] },
     decennaleObligatoire: true,
@@ -191,7 +191,7 @@ export const METIERS: MetierTarif[] = [
   },
   {
     id: 'consultant-it',
-    label: 'Consultant IT / dev',
+    label: 'Consultant IT — dev',
     garanties: ['rc-pro', 'cyber'],
     fourchettes: { 'rc-pro': [240, 540], cyber: [400, 900] },
   },
@@ -327,7 +327,7 @@ export const METIERS: MetierTarif[] = [
   },
   {
     id: 'web-designer',
-    label: 'Web designer / freelance créatif',
+    label: 'Web designer — freelance créatif',
     garanties: ['rc-pro', 'cyber'],
     fourchettes: { 'rc-pro': [144, 288], cyber: [300, 700] },
   },
@@ -353,7 +353,7 @@ export const METIERS: MetierTarif[] = [
 ]
 
 export const STATUTS: Array<{ id: Statut; label: string }> = [
-  { id: 'micro', label: 'Micro-entreprise / Auto-entrepreneur' },
+  { id: 'micro', label: 'Micro-entreprise — Auto-entrepreneur' },
   { id: 'ei', label: 'Entreprise individuelle (EI)' },
   { id: 'eurl', label: 'EURL' },
   { id: 'sasu', label: 'SASU' },
@@ -397,7 +397,7 @@ const GARANTIE_LABELS: Record<Garantie, string> = {
   multirisque: 'Multirisque Professionnelle',
   'mutuelle-tns': 'Mutuelle TNS Madelin',
   cyber: 'Cyber Assurance',
-  'auto-pro': 'Auto pro / Flotte',
+  'auto-pro': 'Auto pro — Flotte',
 }
 
 export function simulate(input: SimulationInput): SimulationResult | null {

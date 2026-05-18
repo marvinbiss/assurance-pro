@@ -19,7 +19,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Prévoyance artisan BTP : IJ dès J0 (vs 3 j Sécu), rente invalidité jusqu'à 70% du revenu, capital décès, garantie agression chantier. Madelin déductible. Comparatif PRO BTP, April BTP, Harmonie. Tarifs 128-380€/mois. Devis ORIAS sous 24h.",
+    "Prévoyance artisan BTP : IJ dès J0 (vs 3 j Sécu), rente invalidité jusqu'à 70% du revenu, capital décès, garantie agression chantier. Madelin déductible. Comparatif PRO BTP, April BTP, Harmonie. Tarifs 128-380€ par mois. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La prévoyance artisan est calibrée sur les risques spécifiques du secteur BTP : sinistralité corporelle élevée (chutes de hauteur, dorsalgies, troubles musculo-squelettiques), risque cardiovasculaire (efforts physiques intenses), risque vibrations (outils électriques portatifs), risque chimique (peintures, isolants). Pour un artisan TNS solo, un arrêt de travail = revenus à zéro (la Sécu artisans verse seulement 22-65€/jour après 3 jours de carence). Sans prévoyance privée, l'asphyxie financière est rapide (charges fixes 1 800-3 200€/mois entre matériel, véhicule pro, assurances, logement). Le pack standard combine : IJ dès J0 (typiquement 100-200€/jour), rente invalidité 70% du revenu, capital décès 4-8 ans de revenus pour la famille, garantie agression chantier (vol matériel, agression sur site). Conformément à la Loi Madelin, cotisations déductibles BNC pour les TNS au régime réel. Tarifs 2026 : 128-380€/mois selon profil."
+      intro="La prévoyance artisan est calibrée sur les risques spécifiques du secteur BTP : sinistralité corporelle élevée (chutes de hauteur, dorsalgies, troubles musculo-squelettiques), risque cardiovasculaire (efforts physiques intenses), risque vibrations (outils électriques portatifs), risque chimique (peintures, isolants). Pour un artisan TNS solo, un arrêt de travail = revenus à zéro (la Sécu artisans verse seulement 22-65€ par jour après 3 jours de carence). Sans prévoyance privée, l'asphyxie financière est rapide (charges fixes 1 800-3 200€ par mois entre matériel, véhicule pro, assurances, logement). Le pack standard combine : IJ dès J0 (typiquement 100-200€ par jour), rente invalidité 70% du revenu, capital décès 4-8 ans de revenus pour la famille, garantie agression chantier (vol matériel, agression sur site). Conformément à la Loi Madelin, cotisations déductibles BNC pour les TNS au régime réel. Tarifs 2026 : 128-380€ par mois selon profil."
       legalReference="Article 154 bis du CGI (Loi Madelin) + Code des assurances"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -54,7 +54,7 @@ export default function Page() {
         {
           icon: '💰',
           title: 'Madelin déductible',
-          desc: 'Cotisations déductibles BNC au régime réel — économie ~1 750€/an pour 60k€ bénéfice',
+          desc: 'Cotisations déductibles BNC au régime réel — économie ~1 750€ par an pour 60k€ bénéfice',
         },
       ]}
       sections={[
@@ -68,7 +68,7 @@ export default function Page() {
                   des AT mortels selon CNAM 2024)
                 </li>
                 <li>
-                  <strong>Dorsalgies / TMS</strong> : 65% des artisans BTP en souffrent à un moment
+                  <strong>Dorsalgies — TMS</strong> : 65% des artisans BTP en souffrent à un moment
                   de leur carrière (INRS)
                 </li>
                 <li>
@@ -81,7 +81,7 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Vol matériel chantier</strong> : 1 artisan BTP sur 3 victime de vol
-                  matériel/outillage dans sa carrière (FFB 2024)
+                  matériel ou outillage dans sa carrière (FFB 2024)
                 </li>
                 <li>
                   <strong>Agression sur chantier</strong> : risque réel en zone urbaine sensible
@@ -103,15 +103,15 @@ export default function Page() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border p-2">Peintre / plaquiste 35 ans (catégorie risque B)</td>
+                    <td className="border p-2">Peintre — plaquiste 35 ans (catégorie risque B)</td>
                     <td className="border p-2 text-right">128 € – 180 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Plombier / électricien 35 ans (catégorie B)</td>
+                    <td className="border p-2">Plombier — électricien 35 ans (catégorie B)</td>
                     <td className="border p-2 text-right">148 € – 220 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Maçon / charpentier 38 ans (catégorie C)</td>
+                    <td className="border p-2">Maçon — charpentier 38 ans (catégorie C)</td>
                     <td className="border p-2 text-right">180 € – 280 €</td>
                   </tr>
                   <tr>
@@ -127,8 +127,8 @@ export default function Page() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs italic text-gray-600">
-                Variables : âge (~+1,5%/an), tabagisme (+30-60%), antécédents médicaux, niveau IJ
-                choisi, durée garantie (1 095 jours = 3 ans standard).
+                Variables : âge (~+1,5% par an), tabagisme (+30-60%), antécédents médicaux, niveau
+                IJ choisi, durée garantie (1 095 jours = 3 ans standard).
               </p>
             </>
           ),
@@ -148,7 +148,7 @@ export default function Page() {
                   <Link href="/mutuelle-pro-btp" className="text-primary-600 underline">
                     Mutuelle pro BTP
                   </Link>{' '}
-                  — santé complémentaire (16k vol/mois)
+                  — santé complémentaire (16k vol par mois)
                 </li>
                 <li>
                   <Link href="/assurance-artisan" className="text-primary-600 underline">
@@ -164,15 +164,15 @@ export default function Page() {
       faq={[
         {
           q: 'Pourquoi la prévoyance est-elle critique pour un artisan ?',
-          a: "Parce qu'un arrêt de travail = revenus à zéro pour artisan TNS. La Sécu artisans verse seulement 22-65€/jour après 3 jours de carence. Pour un artisan dégageant 50 k€/an de bénéfice (~150€/jour de revenu net), c'est 60-85% de perte de revenu. Un arrêt de 2-3 mois = asphyxie financière (charges fixes 1 800-3 200€/mois).",
+          a: "Parce qu'un arrêt de travail = revenus à zéro pour artisan TNS. La Sécu artisans verse seulement 22-65€ par jour après 3 jours de carence. Pour un artisan dégageant 50 k€ par an de bénéfice (~150€ par jour de revenu net), c'est 60-85% de perte de revenu. Un arrêt de 2-3 mois = asphyxie financière (charges fixes 1 800-3 200€ par mois).",
         },
         {
           q: 'Combien coûte une prévoyance artisan en 2026 ?',
-          a: '128-180€/mois pour peintre/plaquiste 35 ans. 148-220€/mois pour plombier/électricien. 180-280€/mois pour maçon/charpentier. 220-380€/mois pour couvreur-zingueur (catégorie risque max). Madelin déductible BNC au régime réel.',
+          a: '128-180€ par mois pour peintre ou plaquiste 35 ans. 148-220€ par mois pour plombier ou électricien. 180-280€ par mois pour maçon ou charpentier. 220-380€ par mois pour couvreur-zingueur (catégorie risque max). Madelin déductible BNC au régime réel.',
         },
         {
           q: 'Garantie agression chantier : utile vraiment ?',
-          a: "OUI — 1 artisan BTP sur 3 victime de vol matériel/outillage dans sa carrière (FFB 2024). Risque agression réel en zone urbaine sensible. Coût garantie : ~30-60€/an supplémentaire. Capital majoré (×2) en cas d'agression sur site.",
+          a: "OUI — 1 artisan BTP sur 3 victime de vol matériel ou outillage dans sa carrière (FFB 2024). Risque agression réel en zone urbaine sensible. Coût garantie : ~30-60€ par an supplémentaire. Capital majoré (×2) en cas d'agression sur site.",
         },
         {
           q: 'Différence avec la mutuelle pro BTP ?',
@@ -180,7 +180,7 @@ export default function Page() {
         },
         {
           q: 'Combien de temps pour souscrire ?',
-          a: "24h via notre formulaire avec 3 propositions (PRO BTP, April BTP, Harmonie BTP, Generali BTP). Examen médical complémentaire au-delà de 200€/jour d'IJ. Effet 1er du mois suivant standard.",
+          a: "24h via notre formulaire avec 3 propositions (PRO BTP, April BTP, Harmonie BTP, Generali BTP). Examen médical complémentaire au-delà de 200€ par jour d'IJ. Effet 1er du mois suivant standard.",
         },
       ]}
     />

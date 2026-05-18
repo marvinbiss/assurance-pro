@@ -22,8 +22,11 @@ export const revalidate = 86400
 type Params = { garantie: string; metier: string }
 
 export async function generateStaticParams() {
-  const slugs = await getEligibleSlugsForTemplate('tarif', 15)
-  return slugs
+  const liveSlugs = await getEligibleSlugsForTemplate('tarif', 15)
+  const { PSEO_SLUGS_SNAPSHOT } = await import('@/lib/data/pseo-slugs-snapshot')
+  const snapshotSlugs = PSEO_SLUGS_SNAPSHOT.tarif as readonly string[]
+  const allSlugs = liveSlugs.length > 0 ? liveSlugs : snapshotSlugs
+  return [...allSlugs]
     .filter((s) => s.startsWith('tarif/'))
     .map((slug) => {
       const [, garantie, metier] = slug.split('/')

@@ -11,25 +11,29 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/fic` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Fiche d\\',
-    description: 'Fiche d\\',
+    title: "Fiche d'Information Précontractuelle (FIC)",
+    description:
+      "Fiche d'information précontractuelle de notre cabinet de courtage ORIAS. Identité, statut, rémunération, conseil, conformité DDA art. L. 521-2 du Code des assurances.",
     url: `${SITE_URL}/fic`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fiche d\\',
-    description: 'Fiche d\\',
+    title: "Fiche d'Information Précontractuelle (FIC)",
+    description:
+      "Fiche d'information précontractuelle de notre cabinet de courtage ORIAS. Identité, statut, rémunération, conseil, conformité DDA art. L. 521-2 du Code des assurances.",
   },
 }
 
 export default function FicPage() {
-  const orias = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? '07 0XX XXX'
+  const orias = process.env.NEXT_PUBLIC_ORIAS_NUMBER ?? "En cours d'attribution"
   const editor = process.env.NEXT_PUBLIC_LEGAL_EDITOR ?? 'Vivos Assurance SAS'
-  const address = process.env.NEXT_PUBLIC_LEGAL_ADDRESS ?? 'XX rue de la Paix, 75000 Paris'
+  const address =
+    process.env.NEXT_PUBLIC_LEGAL_ADDRESS ??
+    "Cabinet en Île-de-France (adresse précise publiée à l'attribution ORIAS)"
 
   return (
-    <main className="min-h-screen bg-sand-50">
+    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'FIC (DDA)' }]}
         eyebrow="Fiche d'Information Cabinet · DDA"
@@ -155,7 +159,7 @@ export default function FicPage() {
             Conformément aux articles L. 512-6 et L. 512-7 du Code des assurances, le cabinet
             dispose d&apos;une <strong>Garantie Financière</strong> et d&apos;une{' '}
             <strong>RCP</strong> auprès d&apos;un assureur agréé. Plafonds&nbsp;:{' '}
-            <strong>5 M€ par sinistre / 7,5 M€ par année</strong>.
+            <strong>5 M€ par sinistre — 7,5 M€ par année</strong>.
           </p>
 
           <h2>7. Devoir de conseil (art. L. 521-4)</h2>
@@ -166,7 +170,7 @@ export default function FicPage() {
             <li>Formulons par écrit une recommandation personnalisée et motivée.</li>
             <li>
               Documentons la traçabilité du conseil (Recommandation ACPR 2024-R-03 — applicable au
-              31/12/2025).
+              31 décembre 2025).
             </li>
           </ol>
 

@@ -10,7 +10,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/responsabilite-civile-professionnelle-informatique'
+const SLUG = 'guides / responsabilite-civile-professionnelle-informatique'
 const TITLE = 'Responsabilité civile professionnelle informatique 2026 — Guide complet'
 const TAGLINE =
   'Tout sur la RC pro informatique : 5 risques spécifiques (RGPD, cyber, propriété intellectuelle, défaut conseil, perte données client). 6 assureurs IT spécialisés.'
@@ -18,7 +18,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Responsabilité civile professionnelle informatique 2026 : 5 risques spécifiques IT (breach RGPD, cyberattaque, propriété intellectuelle, défaut conseil tech, perte données client). 6 assureurs spécialisés (Hiscox, Beazley, AIG, AXA Cyber, Allianz, Wakam). Tarifs 180-1 200€/an freelance, 2 800-12 000€/an SSII. Devis ORIAS 24h.',
+    'Responsabilité civile professionnelle informatique 2026 : 5 risques spécifiques IT (breach RGPD, cyberattaque, propriété intellectuelle, défaut conseil tech, perte données client). 6 assureurs spécialisés (Hiscox, Beazley, AIG, AXA Cyber, Allianz, Wakam). Tarifs 180-1 200€ par an freelance, 2 800-12 000€ par an SSII. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'article' },
 }
@@ -29,7 +29,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La responsabilité civile professionnelle informatique (RC pro IT) couvre 5 risques très spécifiques au secteur IT, qui n'existent pas sur une RC pro généraliste : (1) breach RGPD entraînant sanctions CNIL et notification massive clients, (2) cyberattaque/ransomware sur l'infrastructure du client suite à une faille introduite par le freelance/SSII, (3) atteinte à la propriété intellectuelle (utilisation code sous licence non conforme, plagiat), (4) défaut de conseil tech (architecture mal dimensionnée, choix techno obsolète), (5) perte/altération de données client (mauvaise migration, bug de prod). Sinistralité ACPR 2024 secteur IT : 2,1% — sinistre moyen 65 000€ (top 5 des sinistres RC pro tous secteurs). Tarifs 2026 : 180-1 200 €/an pour freelance IT, 2 800-12 000 €/an pour SSII PME 5-50 salariés."
+      intro="La responsabilité civile professionnelle informatique (RC pro IT) couvre 5 risques très spécifiques au secteur IT, qui n'existent pas sur une RC pro généraliste : (1) breach RGPD entraînant sanctions CNIL et notification massive clients, (2) cyberattaque ou ransomware sur l'infrastructure du client suite à une faille introduite par le freelance ou SSII, (3) atteinte à la propriété intellectuelle (utilisation code sous licence non conforme, plagiat), (4) défaut de conseil tech (architecture mal dimensionnée, choix techno obsolète), (5) perte ou altération de données client (mauvaise migration, bug de prod). Sinistralité ACPR 2024 secteur IT : 2,1% — sinistre moyen 65 000€ (top 5 des sinistres RC pro tous secteurs). Tarifs 2026 : 180-1 200 € par an pour freelance IT, 2 800-12 000 € par an pour SSII PME 5-50 salariés."
       legalReference="RGPD UE 2016/679 + Code propriété intellectuelle + art. 1147 C. civ. (responsabilité contractuelle)"
       isObligatoire={false}
       benefits={[
@@ -50,8 +50,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '180-1 200 €/an freelance',
-          desc: 'Freelance IT : 180-1 200€. SSII PME 5-50 sal : 2 800-12 000€/an. Plafond mini 1M€ recommandé',
+          title: '180-1 200 € par an freelance',
+          desc: 'Freelance IT : 180-1 200€. SSII PME 5-50 sal : 2 800-12 000€ par an. Plafond mini 1M€ recommandé',
         },
       ]}
       sections={[
@@ -80,10 +80,10 @@ export default function Page() {
               <h3 className="mb-2 font-bold">4. Défaut conseil tech</h3>
               <p className="mb-3 text-sm">
                 Sinistre type : architecture micro-services sur-dimensionnée pour startup → cloud
-                bills 50k€/mois inutiles → recours client. Couverture : indemnité perte chance +
+                bills 50k€ par mois inutiles → recours client. Couverture : indemnité perte chance +
                 frais re-conception.
               </p>
-              <h3 className="mb-2 font-bold">5. Perte/altération données client</h3>
+              <h3 className="mb-2 font-bold">5. Perte ou altération données client</h3>
               <p className="mb-3 text-sm">
                 Sinistre type : migration BDD bug → 6 mois de transactions perdues. Couverture :
                 restauration données + indemnité perte d&apos;exploitation client + frais experts
@@ -100,7 +100,7 @@ export default function Page() {
                 <thead>
                   <tr className="bg-primary-50">
                     <th className="border p-2 text-left">Profil IT</th>
-                    <th className="border p-2 text-right">Tarif/an</th>
+                    <th className="border p-2 text-right">Tarif par an</th>
                     <th className="border p-2 text-left">Plafond recommandé</th>
                   </tr>
                 </thead>
@@ -181,15 +181,15 @@ export default function Page() {
         },
         {
           q: 'Différence avec cyber assurance ?',
-          a: 'RC Pro IT = couvre votre RESPONSABILITÉ envers les clients (recours clients pour breach/cyber/PI). Cyber assurance = couvre VOS PROPRES pertes (votre infrastructure attaquée, votre rançon, vos données perdues). Les 2 sont complémentaires — pack groupé recommandé pour SSII (économie 8-15%).',
+          a: 'RC Pro IT = couvre votre RESPONSABILITÉ envers les clients (recours clients pour breach, cyber ou PI). Cyber assurance = couvre VOS PROPRES pertes (votre infrastructure attaquée, votre rançon, vos données perdues). Les 2 sont complémentaires — pack groupé recommandé pour SSII (économie 8-15%).',
         },
         {
           q: 'Plafond garantie : 500k€ ou 1M€ ?',
-          a: '<strong>500 000 €</strong> = freelance IT avec missions <50k€ et clients TPE/PME. <strong>1 000 000 €</strong> = freelance senior avec missions 50-200k€ et/ou clients grand compte (banque, assurance, santé). <strong>2-5 000 000 €</strong> = SSII avec contrats &gt;500k€ ou éditeur SaaS avec ARR significatif.',
+          a: '<strong>500 000 €</strong> = freelance IT avec missions <50k€ et clients TPE ou PME. <strong>1 000 000 €</strong> = freelance senior avec missions 50-200k€ et ou ou clients grand compte (banque, assurance, santé). <strong>2-5 000 000 €</strong> = SSII avec contrats &gt;500k€ ou éditeur SaaS avec ARR significatif.',
         },
         {
           q: 'Tarif RC Pro IT 2026 ?',
-          a: 'Voir tableau ci-dessus. Variables : type de mission (développement vs ops vs conseil — ops majoré +30%), exposition RGPD (manipulation données santé/finance majoré +25-50%), géographie clients (international +15%), antécédents 5 ans (relevé propre = -15% bonus).',
+          a: 'Voir tableau ci-dessus. Variables : type de mission (développement vs ops vs conseil — ops majoré +30%), exposition RGPD (manipulation données santé ou finance majoré +25-50%), géographie clients (international +15%), antécédents 5 ans (relevé propre = -15% bonus).',
         },
       ]}
     />

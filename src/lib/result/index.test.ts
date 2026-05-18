@@ -99,7 +99,7 @@ describe('domainErrorToStatus', () => {
   it('maps RateLimited to 429', () => {
     expect(domainErrorToStatus({ code: 'RateLimited', retryAfterMs: 1000 })).toBe(429)
   })
-  it('maps Database/External/Internal to 500', () => {
+  it('maps Database, External / Internal to 500', () => {
     expect(domainErrorToStatus({ code: 'Database', query: 'x', cause: null })).toBe(500)
     expect(domainErrorToStatus({ code: 'External', service: 'x', cause: null })).toBe(500)
     expect(domainErrorToStatus({ code: 'Internal', cause: null })).toBe(500)

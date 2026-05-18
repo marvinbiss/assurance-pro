@@ -8,7 +8,7 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/resiliation-assurance-professionnelle'
+const SLUG = 'guides / resiliation-assurance-professionnelle'
 const TITLE = 'Résiliation assurance professionnelle — Loi Hamon, infra-annuelle 2026'
 const TAGLINE =
   'Comment résilier son assurance professionnelle : Loi Hamon, résiliation infra-annuelle, lettre type, délais, mandat nouveau courtier. Guide complet 2026.'
@@ -160,7 +160,7 @@ Cordialement,
         },
         {
           q: "L'assureur peut-il refuser ma résiliation Loi Hamon ?",
-          a: "NON si vous avez plus d'1 an d'engagement et que vous notifiez par écrit (LR/AR ou espace assuré). Tout refus est ABUSIF et signalable à l'ACPR (autorité de contrôle des assurances) ou au Médiateur de l'Assurance (gratuit, mediation-assurance.org).",
+          a: "NON si vous avez plus d'1 an d'engagement et que vous notifiez par écrit (LR ou AR ou espace assuré). Tout refus est ABUSIF et signalable à l'ACPR (autorité de contrôle des assurances) ou au Médiateur de l'Assurance (gratuit, mediation-assurance.org).",
         },
       ]}
     />

@@ -62,7 +62,7 @@ export function RcProVilleTemplate({ ville }: { ville: VilleData }) {
             label="Freelances & TPE"
             value={`~${ville.freelancesEstime.toLocaleString('fr-FR')}`}
           />
-          <Stat icon="💰" label="À partir de" value="95€/an" />
+          <Stat icon="💰" label="À partir de" value="95€ par an" />
         </div>
 
         <section className="prose prose-lg mb-10 max-w-none">
@@ -90,15 +90,15 @@ export function RcProVilleTemplate({ ville }: { ville: VilleData }) {
             </thead>
             <tbody>
               <tr>
-                <td className="border border-gray-300 p-2">Auto-entrepreneur / freelance</td>
+                <td className="border border-gray-300 p-2">Auto-entrepreneur — freelance</td>
                 <td className="border border-gray-300 p-2 text-right">95 € – 380 €</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-2">EI / EURL (CA &lt; 100 k€)</td>
+                <td className="border border-gray-300 p-2">EI — EURL (CA &lt; 100 k€)</td>
                 <td className="border border-gray-300 p-2 text-right">280 € – 850 €</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-2">SARL / SAS (CA 100-500 k€)</td>
+                <td className="border border-gray-300 p-2">SARL — SAS (CA 100-500 k€)</td>
                 <td className="border border-gray-300 p-2 text-right">850 € – 3 200 €</td>
               </tr>
               <tr>

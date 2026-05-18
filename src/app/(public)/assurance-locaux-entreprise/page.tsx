@@ -32,7 +32,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Assurance locaux entreprise : multirisque siège social, atelier, entrepôt, dépôt. Couverture incendie, vol, vandalisme, dégâts des eaux, événements climatiques, perte d'exploitation. Tarifs négociés à partir de 480 €/an. Devis gratuit ORIAS sous 24h.",
+    "Assurance locaux entreprise : multirisque siège social, atelier, entrepôt, dépôt. Couverture incendie, vol, vandalisme, dégâts des eaux, événements climatiques, perte d'exploitation. Tarifs négociés à partir de 480 € par an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -43,7 +43,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance locaux entreprise est la multirisque professionnelle qui couvre les locaux d'exploitation d'une entreprise : siège social, ateliers de production, entrepôts de stockage, dépôts logistiques, agences secondaires, locaux annexes. Elle se distingue des contrats spécifiques commerce ou bureau en couvrant les configurations multi-sites, les locaux de grande surface (>500 m²) et les sites industriels avec stocks et matériel pro de forte valeur. Les garanties principales : incendie + foudre + explosion, vol par effraction, vandalisme, dégâts des eaux, événements climatiques (tempête, grêle, neige), bris de glace, RC exploitation envers les tiers, et pertes d'exploitation pendant la durée d'indisponibilité du local. Les tarifs 2026 démarrent à 480 € HT/an pour un petit local annexe (40 m²) jusqu'à 25 000 € HT/an pour un site industriel multi-sites."
+      intro="L'assurance locaux entreprise est la multirisque professionnelle qui couvre les locaux d'exploitation d'une entreprise : siège social, ateliers de production, entrepôts de stockage, dépôts logistiques, agences secondaires, locaux annexes. Elle se distingue des contrats spécifiques commerce ou bureau en couvrant les configurations multi-sites, les locaux de grande surface (>500 m²) et les sites industriels avec stocks et matériel pro de forte valeur. Les garanties principales : incendie + foudre + explosion, vol par effraction, vandalisme, dégâts des eaux, événements climatiques (tempête, grêle, neige), bris de glace, RC exploitation envers les tiers, et pertes d'exploitation pendant la durée d'indisponibilité du local. Les tarifs 2026 démarrent à 480 € HT par an pour un petit local annexe (40 m²) jusqu'à 25 000 € HT par an pour un site industriel multi-sites."
       legalReference="Article 1733 du Code civil (bail commercial) + clauses standard MRP"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -68,8 +68,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 480 €/an',
-          desc: 'Petit local annexe 40 m². Site industriel multi-sites : 12 000-25 000€/an',
+          title: 'À partir de 480 € par an',
+          desc: 'Petit local annexe 40 m². Site industriel multi-sites : 12 000-25 000€ par an',
         },
       ]}
       sections={[
@@ -105,7 +105,7 @@ export default function Page() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Restaurant / hôtel / brasserie (HCR)</td>
+                    <td className="border p-2">Restaurant — hôtel — brasserie (HCR)</td>
                     <td className="border p-2">
                       <Link href="/assurance-restaurant" className="text-primary-600 underline">
                         /assurance-restaurant
@@ -114,7 +114,7 @@ export default function Page() {
                   </tr>
                   <tr>
                     <td className="border p-2">
-                      <strong>Atelier / entrepôt / dépôt / siège multi-sites</strong>
+                      <strong>Atelier — entrepôt — dépôt — siège multi-sites</strong>
                     </td>
                     <td className="border p-2">
                       <strong>Cette page (/assurance-locaux-entreprise)</strong>
@@ -139,7 +139,7 @@ export default function Page() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border p-2">Local annexe / dépôt simple</td>
+                    <td className="border p-2">Local annexe — dépôt simple</td>
                     <td className="border p-2 text-right">40 m²</td>
                     <td className="border p-2 text-right">480 € – 780 €</td>
                   </tr>
@@ -197,7 +197,7 @@ export default function Page() {
                   échéancier)
                 </li>
                 <li>
-                  <strong>Avantage</strong> : ajout/retrait de site simplifié (avenant unique)
+                  <strong>Avantage</strong> : ajout ou retrait de site simplifié (avenant unique)
                 </li>
                 <li>
                   <strong>Limite</strong> : un sinistre majeur sur 1 site peut épuiser le plafond
@@ -247,7 +247,8 @@ export default function Page() {
                   équipements informatiques (souvent oublié)
                 </li>
                 <li>
-                  <strong>RC exploitation</strong> : dommages causés aux visiteurs/livreurs/voisins
+                  <strong>RC exploitation</strong> : dommages causés aux visiteurs, livreurs ou
+                  voisins
                 </li>
                 <li>
                   <strong>Pertes d&apos;exploitation</strong> : marge brute × durée
@@ -272,15 +273,15 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'un atelier de 150 m² ?",
-          a: "Démarre à 680€/an pour un atelier artisan sans antécédent, en province. Médiane marché : 980-1 480€/an. Variables : type de matériel pro (machines outils, fours, presses), valeur du stock matières premières, zone géographique, présence d'alarme NF + télésurveillance, classement ICPE.",
+          a: "Démarre à 680€ par an pour un atelier artisan sans antécédent, en province. Médiane marché : 980-1 480€ par an. Variables : type de matériel pro (machines outils, fours, presses), valeur du stock matières premières, zone géographique, présence d'alarme NF + télésurveillance, classement ICPE.",
         },
         {
           q: 'Multi-sites : un seul contrat ou plusieurs ?',
-          a: "Pour PME < 500 salariés avec sites homogènes : contrat multi-sites mutualisé (économie 15-25%, gestion unique). Pour ETI avec sites hétérogènes (bureau tertiaire + usine + entrepôt) : contrats séparés pour avoir des plafonds indépendants par site et choisir l'assureur le plus adapté à chaque spécialité (SMABTP / Allianz / AXA). Notre cabinet conseille selon votre profil.",
+          a: "Pour PME < 500 salariés avec sites homogènes : contrat multi-sites mutualisé (économie 15-25%, gestion unique). Pour ETI avec sites hétérogènes (bureau tertiaire + usine + entrepôt) : contrats séparés pour avoir des plafonds indépendants par site et choisir l'assureur le plus adapté à chaque spécialité (SMABTP — Allianz — AXA). Notre cabinet conseille selon votre profil.",
         },
         {
           q: 'ICPE : quelles garanties supplémentaires ?',
-          a: "Pour un site classé ICPE (Installations Classées pour la Protection de l'Environnement), garanties supplémentaires obligatoires : RC environnementale (Loi du 1er août 2008), garantie pollution accidentelle, garantie de remise en état du site (caution démantèlement), responsabilité des dirigeants pénalement engageables. Tarif : +30 à +120% selon classement (déclaration / enregistrement / autorisation).",
+          a: "Pour un site classé ICPE (Installations Classées pour la Protection de l'Environnement), garanties supplémentaires obligatoires : RC environnementale (Loi du 1er août 2008), garantie pollution accidentelle, garantie de remise en état du site (caution démantèlement), responsabilité des dirigeants pénalement engageables. Tarif : +30 à +120% selon classement (déclaration — enregistrement — autorisation).",
         },
         {
           q: 'Stock à déclaration variable : possible ?',
@@ -288,7 +289,7 @@ export default function Page() {
         },
         {
           q: "Comment fonctionne la perte d'exploitation pour un site industriel ?",
-          a: "Compense la perte de MARGE BRUTE pendant la durée de fermeture/inactivité du site suite à sinistre couvert. Calcul : marge brute mensuelle × durée d'indisponibilité (12-24 mois recommandé pour site industriel — la reconstruction d'un atelier prend ~9-15 mois en pratique). Inclut les frais fixes qui continuent à courir (loyers, salaires structurels, charges).",
+          a: "Compense la perte de MARGE BRUTE pendant la durée de fermeture ou inactivité du site suite à sinistre couvert. Calcul : marge brute mensuelle × durée d'indisponibilité (12-24 mois recommandé pour site industriel — la reconstruction d'un atelier prend ~9-15 mois en pratique). Inclut les frais fixes qui continuent à courir (loyers, salaires structurels, charges).",
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance locaux entreprise ?',

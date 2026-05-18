@@ -21,15 +21,15 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 
-const SLUG = 'rc-pro/auto-entrepreneur'
+const SLUG = 'rc-pro / auto-entrepreneur'
 const TITLE = 'RC Pro auto-entrepreneur — Tarifs 2026 et obligations légales'
 const TAGLINE =
-  "L'assurance Responsabilité Civile Professionnelle pour micro-entrepreneurs et auto-entrepreneurs : obligations métier, tarifs négociés à partir de 89€/an, devis ORIAS sous 24h."
+  "L'assurance Responsabilité Civile Professionnelle pour micro-entrepreneurs et auto-entrepreneurs : obligations métier, tarifs négociés à partir de 89€ par an, devis ORIAS sous 24h."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro auto-entrepreneur : couverture obligatoire pour 21 métiers, recommandée pour tous. Tarifs négociés à partir de 89€/an. Conseil ORIAS, attestation immédiate. Devis gratuit sous 24h.',
+    'RC Pro auto-entrepreneur : couverture obligatoire pour 21 métiers, recommandée pour tous. Tarifs négociés à partir de 89€ par an. Conseil ORIAS, attestation immédiate. Devis gratuit sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
@@ -45,7 +45,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro (Responsabilité Civile Professionnelle) auto-entrepreneur couvre les dommages corporels, matériels ou immatériels que vous causez à un tiers (client, fournisseur, passant) dans le cadre de votre activité. Elle est légalement obligatoire pour 21 métiers réglementés (BTP, santé, droit, conseil financier, transport...) mais fortement recommandée pour TOUS les auto-entrepreneurs. Les tarifs démarrent à 89 € HT/an pour un freelance digital sans antécédent, et peuvent monter à 800-1 200 €/an pour un consultant IT à fort chiffre d'affaires. Cette page détaille les obligations par métier, les tarifs 2026 par activité et les pièges à éviter (sous-déclaration de CA, exclusion de garantie cyber, absence d'indemnisation après cessation)."
+      intro="La RC Pro (Responsabilité Civile Professionnelle) auto-entrepreneur couvre les dommages corporels, matériels ou immatériels que vous causez à un tiers (client, fournisseur, passant) dans le cadre de votre activité. Elle est légalement obligatoire pour 21 métiers réglementés (BTP, santé, droit, conseil financier, transport...) mais fortement recommandée pour TOUS les auto-entrepreneurs. Les tarifs démarrent à 89 € HT par an pour un freelance digital sans antécédent, et peuvent monter à 800-1 200 € par an pour un consultant IT à fort chiffre d'affaires. Cette page détaille les obligations par métier, les tarifs 2026 par activité et les pièges à éviter (sous-déclaration de CA, exclusion de garantie cyber, absence d'indemnisation après cessation)."
       legalReference="Article L. 113-1 du Code des assurances + obligations métier (L. 241-1 BTP, L. 1142-2 santé, L. 6321-1 transport...)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -60,8 +60,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 89 €/an',
-          desc: 'Freelance digital sans antécédent. Tarif moyen secteur 180-340 €/an',
+          title: 'À partir de 89 € par an',
+          desc: 'Freelance digital sans antécédent. Tarif moyen secteur 180-340 € par an',
         },
         {
           icon: '⚡',
@@ -76,7 +76,7 @@ export default function Page() {
       ]}
       sections={[
         {
-          h2: 'RC Pro auto-entrepreneur : obligation ou recommandation ?',
+          h2: 'RC Pro auto-entrepreneur : obligation / recommandation ?',
           body: (
             <>
               <p>
@@ -97,7 +97,7 @@ export default function Page() {
                   expert-comptable indépendant)
                 </li>
                 <li>
-                  <strong>Conseil financier</strong> (CGP, CIF, IOBSP) — homologation ACPR/AMF
+                  <strong>Conseil financier</strong> (CGP, CIF, IOBSP) — homologation ACPR ou AMF
                 </li>
                 <li>
                   <strong>Transport de personnes</strong> (VTC, taxi, LVC) — RC pro spécifique
@@ -119,7 +119,7 @@ export default function Page() {
               </ul>
               <p>
                 Pour les autres activités (consulting, freelance digital, design, e-commerce,
-                photographe, rédaction web, formation hors sport/santé), la RC Pro est{' '}
+                photographe, rédaction web, formation hors sport ou santé), la RC Pro est{' '}
                 <strong>fortement recommandée</strong>
                 mais pas légalement obligatoire. En pratique, 78 % des plateformes B2B (Malt, Crème
                 de la Crème, ComeUp Pro, Upwork France) exigent une attestation RC Pro pour valider
@@ -154,27 +154,27 @@ export default function Page() {
                     <td className="border p-2 text-right">89 € – 180 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Consultant management / marketing</td>
+                    <td className="border p-2">Consultant management — marketing</td>
                     <td className="border p-2">30-60 k€</td>
                     <td className="border p-2 text-right">240 € – 480 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Consultant IT / DevOps freelance</td>
+                    <td className="border p-2">Consultant IT — DevOps freelance</td>
                     <td className="border p-2">60-77 k€ (plafond AE BNC)</td>
                     <td className="border p-2 text-right">480 € – 980 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Coach sportif / prof yoga</td>
+                    <td className="border p-2">Coach sportif — prof yoga</td>
                     <td className="border p-2">&lt; 50 k€</td>
                     <td className="border p-2 text-right">160 € – 320 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Esthéticienne / prothésiste ongulaire AE</td>
+                    <td className="border p-2">Esthéticienne — prothésiste ongulaire AE</td>
                     <td className="border p-2">&lt; 50 k€</td>
                     <td className="border p-2 text-right">220 € – 380 €</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Photographe / vidéaste événementiel</td>
+                    <td className="border p-2">Photographe — vidéaste événementiel</td>
                     <td className="border p-2">&lt; 50 k€</td>
                     <td className="border p-2 text-right">180 € – 320 €</td>
                   </tr>
@@ -188,7 +188,7 @@ export default function Page() {
                   <tr>
                     <td className="border p-2">VTC AE</td>
                     <td className="border p-2">&lt; 77 k€</td>
-                    <td className="border p-2 text-right">650 € – 1 400 €/an</td>
+                    <td className="border p-2 text-right">650 € – 1 400 € par an</td>
                   </tr>
                 </tbody>
               </table>
@@ -288,11 +288,11 @@ export default function Page() {
       faq={[
         {
           q: "Tous les auto-entrepreneurs ont-ils l'obligation de souscrire une RC Pro ?",
-          a: "Non. Légalement obligatoire uniquement pour 21 métiers réglementés (BTP, santé, juridique, conseil financier, transport, sport, esthétique invasive, sécurité privée). Pour les autres (consulting, digital, e-commerce, photographe, formation hors sport/santé), elle reste FORTEMENT recommandée — 78% des plateformes B2B la demandent à l'inscription.",
+          a: "Non. Légalement obligatoire uniquement pour 21 métiers réglementés (BTP, santé, juridique, conseil financier, transport, sport, esthétique invasive, sécurité privée). Pour les autres (consulting, digital, e-commerce, photographe, formation hors sport ou santé), elle reste FORTEMENT recommandée — 78% des plateformes B2B la demandent à l'inscription.",
         },
         {
           q: "Quel est le tarif d'une RC Pro auto-entrepreneur en 2026 ?",
-          a: 'Démarre à 89€ HT/an pour un freelance digital sans antécédent. Médiane marché : 180-340 €/an. Plafond pratique : 1 200 €/an pour artisan BTP avec décennale couplée, 1 400 €/an pour VTC AE. Tarif fonction du métier, du CA déclaré, des antécédents et du territoire couvert.',
+          a: 'Démarre à 89€ HT par an pour un freelance digital sans antécédent. Médiane marché : 180-340 € par an. Plafond pratique : 1 200 € par an pour artisan BTP avec décennale couplée, 1 400 € par an pour VTC AE. Tarif fonction du métier, du CA déclaré, des antécédents et du territoire couvert.',
         },
         {
           q: 'Comment obtenir une attestation RC Pro auto-entrepreneur ?',
@@ -300,7 +300,7 @@ export default function Page() {
         },
         {
           q: 'RC Pro auto-entrepreneur : est-elle déductible fiscalement ?',
-          a: "Au régime micro-fiscal classique (versement libératoire), NON — pas de déduction possible. Au régime réel d'imposition (option à activer auprès du SIE), OUI — déductible intégralement du bénéfice imposable. À étudier dès que votre bénéfice dépasse ~30 k€/an.",
+          a: "Au régime micro-fiscal classique (versement libératoire), NON — pas de déduction possible. Au régime réel d'imposition (option à activer auprès du SIE), OUI — déductible intégralement du bénéfice imposable. À étudier dès que votre bénéfice dépasse ~30 k€ par an.",
         },
         {
           q: "Que se passe-t-il si j'arrête mon auto-entreprise ?",
@@ -312,7 +312,7 @@ export default function Page() {
         },
         {
           q: 'RC Pro et décennale, quelle différence pour un auto-entrepreneur du BTP ?',
-          a: "Deux garanties distinctes, toutes les deux obligatoires pour les artisans BTP : RC Pro = couvre les dommages PENDANT le chantier (ex : tuile qui tombe sur la voiture du voisin pendant les travaux). Décennale = couvre les dommages PENDANT 10 ANS APRÈS RÉCEPTION qui affectent la solidité de l'ouvrage (ex : fissure structurelle qui apparaît 4 ans après). Souvent groupées dans un même contrat « pack BTP » pour ~480 à 1 200 €/an pour un AE.",
+          a: "Deux garanties distinctes, toutes les deux obligatoires pour les artisans BTP : RC Pro = couvre les dommages PENDANT le chantier (ex : tuile qui tombe sur la voiture du voisin pendant les travaux). Décennale = couvre les dommages PENDANT 10 ANS APRÈS RÉCEPTION qui affectent la solidité de l'ouvrage (ex : fissure structurelle qui apparaît 4 ans après). Souvent groupées dans un même contrat « pack BTP » pour ~480 à 1 200 € par an pour un AE.",
         },
       ]}
     />

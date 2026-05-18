@@ -14,7 +14,7 @@ describe('RelatedPagesSection', () => {
     expect(links.length).toBeGreaterThanOrEqual(15)
   })
 
-  it('groupe les liens par type (Pilier / Métiers / Outils / Guides)', () => {
+  it('groupe les liens par type (Pilier — Métiers — Outils — Guides)', () => {
     render(<RelatedPagesSection currentSlug="rc-pro/immobilier" />)
     expect(screen.getAllByText(/Pilier/i).length).toBeGreaterThan(0)
     expect(screen.getByText(/Métiers.*sous-niches/i)).toBeInTheDocument()

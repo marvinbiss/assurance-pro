@@ -3,7 +3,7 @@ import { calculerTarif, METIER_LABELS, getSinistraliteAQC } from './tarif-decenn
 
 describe('Calculateur tarif décennale', () => {
   describe('Profils types AQC SYCODÉS 2024', () => {
-    it('AE peintre CA 30k = tarif minimum BTP (480-760€/an)', () => {
+    it('AE peintre CA 30k = tarif minimum BTP (480-760€ par an)', () => {
       const r = calculerTarif({
         metier: 'peintre-plaquiste',
         ca: 30000,
@@ -42,7 +42,7 @@ describe('Calculateur tarif décennale', () => {
       expect(couvreur.fourchetteMediane).toBeGreaterThan(peintre.fourchetteMediane * 1.4)
     })
 
-    it('SARL maçon 5 salariés CA 500k = tarif élevé (5 800-15 000€/an)', () => {
+    it('SARL maçon 5 salariés CA 500k = tarif élevé (5 800-15 000€ par an)', () => {
       const r = calculerTarif({
         metier: 'macon',
         ca: 500000,

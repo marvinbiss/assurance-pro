@@ -11,7 +11,7 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'attestation/responsabilite-civile-professionnelle'
+const SLUG = 'attestation / responsabilite-civile-professionnelle'
 const TITLE = 'Attestation Responsabilité Civile Professionnelle — Modèle + démarches'
 const TAGLINE =
   "Modèle officiel d'attestation RC Pro + démarches d'obtention 24h. Mentions obligatoires, exemple PDF, utilisation client B2B et conformité ACPR."
@@ -45,7 +45,7 @@ export default function Page() {
         {
           icon: '⚡',
           title: 'Délivrance rapide',
-          desc: 'Immédiat Hiscox/Stello, 24h April Pro, 48h Allianz/MMA',
+          desc: 'Immédiat Hiscox ou Stello, 24h April Pro, 48h Allianz ou MMA',
         },
         {
           icon: '✅',
@@ -67,7 +67,7 @@ export default function Page() {
                 <strong>En-tête assureur</strong> : raison sociale, adresse, agrément ACPR + numéro
               </li>
               <li>
-                <strong>Identification assuré</strong> : raison sociale/nom, SIRET, adresse, n°
+                <strong>Identification assuré</strong> : raison sociale ou nom, SIRET, adresse, n°
                 client
               </li>
               <li>
@@ -84,12 +84,12 @@ export default function Page() {
                 <strong>Plafonds de garantie</strong> :
                 <ul>
                   <li>Par sinistre : 500k€-10M€ selon profil</li>
-                  <li>Annuel cumulé : 2x à 5x plafond/sinistre standard</li>
+                  <li>Annuel cumulé : 2x à 5x plafond par sinistre standard</li>
                 </ul>
               </li>
               <li>
                 <strong>Mention ORIAS</strong> du courtier (si applicable) + lien cliquable orias.fr
-                (arrêté 6/12/2022)
+                (arrêté 6 décembre 2022)
               </li>
               <li>
                 <strong>Date d&apos;émission</strong> de l&apos;attestation
@@ -116,13 +116,13 @@ export default function Page() {
                 sélectionner &quot;Attestation RC Pro&quot;
               </li>
               <li>
-                <strong>Téléchargement PDF</strong> : immédiat Hiscox/Stello, 24-48h autres
+                <strong>Téléchargement PDF</strong> : immédiat Hiscox ou Stello, 24-48h autres
               </li>
               <li>
                 <strong>Vérification mentions</strong> : numéro contrat, période, plafond, activité
               </li>
               <li>
-                <strong>Envoi clients/partenaires</strong> : par email avec votre proposition
+                <strong>Envoi clients ou partenaires</strong> : par email avec votre proposition
                 commerciale
               </li>
               <li>
@@ -137,7 +137,7 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Consultant / freelance services intellectuels</strong> : présentation
+                <strong>Consultant — freelance services intellectuels</strong> : présentation
                 clients B2B grand compte (contrats &gt; 10k€)
               </li>
               <li>

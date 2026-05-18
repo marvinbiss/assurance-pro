@@ -7,45 +7,46 @@ const SIZE = { width: 1200, height: 630 }
 
 type PaletteEntry = { bg: string; accent: string; label: string }
 
+// Brand palette : terracotta + honey + charcoal warm (DESIGN.md Atelier Premium)
 const CATEGORY_PALETTE = {
   pilier: {
-    bg: 'linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%)',
-    accent: '#fbbf24',
+    bg: 'linear-gradient(135deg, #1c1917 0%, #c24b2a 60%, #e86b4b 100%)',
+    accent: '#f2b523',
     label: 'GUIDE',
   },
   prix: {
-    bg: 'linear-gradient(135deg, #166534 0%, #16a34a 100%)',
-    accent: '#fef08a',
+    bg: 'linear-gradient(135deg, #1c1917 0%, #614f43 50%, #c24b2a 100%)',
+    accent: '#f2b523',
     label: 'TARIFS',
   },
   devis: {
-    bg: 'linear-gradient(135deg, #7c2d12 0%, #ea580c 100%)',
-    accent: '#fed7aa',
+    bg: 'linear-gradient(135deg, #1c1917 0%, #e86b4b 65%, #f2b523 100%)',
+    accent: '#fbe5d1',
     label: 'DEVIS',
   },
   attestation: {
-    bg: 'linear-gradient(135deg, #6b21a8 0%, #a855f7 100%)',
-    accent: '#f3e8ff',
+    bg: 'linear-gradient(135deg, #1c1917 0%, #614f43 50%, #c97308 100%)',
+    accent: '#fbe5d1',
     label: 'ATTESTATION',
   },
   souscription: {
-    bg: 'linear-gradient(135deg, #0c4a6e 0%, #0891b2 100%)',
-    accent: '#cffafe',
+    bg: 'linear-gradient(135deg, #0f0e0c 0%, #c24b2a 60%, #e86b4b 100%)',
+    accent: '#fbe5d1',
     label: 'EN LIGNE',
   },
   comparateur: {
-    bg: 'linear-gradient(135deg, #581c87 0%, #c026d3 100%)',
-    accent: '#fae8ff',
+    bg: 'linear-gradient(135deg, #1c1917 0%, #c97308 50%, #e8960a 100%)',
+    accent: '#fbe5d1',
     label: 'COMPARATEUR',
   },
   courtier: {
-    bg: 'linear-gradient(135deg, #831843 0%, #db2777 100%)',
-    accent: '#fce7f3',
-    label: 'COURTIER',
+    bg: 'linear-gradient(135deg, #0f0e0c 0%, #614f43 50%, #c24b2a 100%)',
+    accent: '#f2b523',
+    label: 'COURTIER ORIAS',
   },
   default: {
-    bg: 'linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%)',
-    accent: '#fbbf24',
+    bg: 'linear-gradient(135deg, #1c1917 0%, #c24b2a 60%, #e86b4b 100%)',
+    accent: '#f2b523',
     label: 'ASSURANCE PRO',
   },
 } as const satisfies Record<string, PaletteEntry>
@@ -58,7 +59,7 @@ function truncate(text: string, max: number): string {
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
 
-  const title = truncate(searchParams.get('title')?.trim() || 'Vivos Assurancefessionnelle', 90)
+  const title = truncate(searchParams.get('title')?.trim() || 'Vivos Assurance professionnelle', 90)
   const subtitle = truncate(searchParams.get('subtitle')?.trim() || '', 120)
   const categoryKey = (searchParams.get('category')?.trim().toLowerCase() ||
     'default') as keyof typeof CATEGORY_PALETTE
@@ -103,18 +104,20 @@ export async function GET(req: NextRequest) {
               display: 'flex',
               width: 44,
               height: 44,
-              borderRadius: 999,
-              background: '#fff',
-              color: '#1d4ed8',
+              borderRadius: 12,
+              background: 'linear-gradient(135deg, #e86b4b 0%, #c24b2a 100%)',
+              color: '#fff',
               alignItems: 'center',
               justifyContent: 'center',
               fontWeight: 800,
               fontSize: 22,
+              fontFamily: 'serif',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
             }}
           >
-            AP
+            V
           </span>
-          VIVOS · COURTIER ORIAS
+          VIVOS ASSURANCE · COURTIER ORIAS
         </div>
         <div
           style={{

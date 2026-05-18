@@ -235,8 +235,9 @@ export function CalculateurTarifVtc() {
           {r.fourchetteHaute.toLocaleString('fr-FR')} €
         </p>
         <p className="text-sm text-gray-700">
-          Médiane indicative : <strong>{r.fourchetteMediane.toLocaleString('fr-FR')} €/an</strong>{' '}
-          (≈ {Math.round(r.fourchetteMediane / 12).toLocaleString('fr-FR')} €/mois). Fourchette
+          Médiane indicative :{' '}
+          <strong>{r.fourchetteMediane.toLocaleString('fr-FR')} € par an</strong> (≈{' '}
+          {Math.round(r.fourchetteMediane / 12).toLocaleString('fr-FR')} € par mois). Fourchette
           basée sur les barèmes 2026 de nos 6 assureurs spécialisés VTC (AXA Pro, Allianz Pro,
           Wakam, MMA, AMV, Opteven Mobility). Devis officiel personnalisé sous 24h.
         </p>
@@ -245,7 +246,7 @@ export function CalculateurTarifVtc() {
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
-              Tarif base profil : <strong>{Math.round(r.detail.base)} €/an</strong>
+              Tarif base profil : <strong>{Math.round(r.detail.base)} € par an</strong>
             </li>
             <li>Coef âge chauffeur : ×{r.detail.coefAge.toFixed(2)}</li>
             <li>Coef ancienneté permis B : ×{r.detail.coefPermis.toFixed(2)}</li>

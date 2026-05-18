@@ -11,15 +11,15 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'prix/rc-pro'
+const SLUG = 'prix / rc-pro'
 const TITLE = 'Prix RC Pro 2026 — Combien coûte une responsabilité civile pro ?'
 const TAGLINE =
-  'Prix RC Pro 2026 par profil : AE 95-450€/an, SARL 350-2 800€/an, SAS PME 2 500-15 000€/an. Comparatif Hiscox vs Stello vs Allianz vs MMA vs AXA.'
+  'Prix RC Pro 2026 par profil : AE 95-450€ par an, SARL 350-2 800€ par an, SAS PME 2 500-15 000€ par an. Comparatif Hiscox vs Stello vs Allianz vs MMA vs AXA.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Prix RC Pro 2026 : grilles vérifiées par profil et activité. Best price Hiscox 95€/an AE. Comparatif 5 assureurs leaders en parallèle.',
+    'Prix RC Pro 2026 : grilles vérifiées par profil et activité. Best price Hiscox 95€ par an AE. Comparatif 5 assureurs leaders en parallèle.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Prix RC Pro 2026 vérifiés sur 1 000+ devis réels : fourchettes par statut juridique (AE, SARL, SAS), par activité (services/BTP/libéral/immobilier) et par assureur (5 leaders comparés). Best price 2026 = Hiscox 95€/an pour AE services intellectuels avec plafond 1M€ et postériorité unique 10 ans."
+      intro="Prix RC Pro 2026 vérifiés sur 1 000+ devis réels : fourchettes par statut juridique (AE, SARL, SAS), par activité (services, BTP, libéral ou immobilier) et par assureur (5 leaders comparés). Best price 2026 = Hiscox 95€ par an pour AE services intellectuels avec plafond 1M€ et postériorité unique 10 ans."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -44,7 +44,7 @@ export default function Page() {
         },
         {
           icon: '🥇',
-          title: 'Best price 95€/an',
+          title: 'Best price 95€ par an',
           desc: 'Hiscox AE services intellectuels — leader marché',
         },
         {
@@ -64,34 +64,36 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Auto-entrepreneur services</strong> : 95-280€/an (best Hiscox)
+                <strong>Auto-entrepreneur services</strong> : 95-280€ par an (best Hiscox)
               </li>
               <li>
-                <strong>Auto-entrepreneur BTP</strong> : 250-450€/an RC Pro (best April Pro) +
+                <strong>Auto-entrepreneur BTP</strong> : 250-450€ par an RC Pro (best April Pro) +
                 décennale
               </li>
               <li>
-                <strong>SARL services CA 100-300k€</strong> : 600-1 200€/an (best Hiscox/Allianz)
+                <strong>SARL services CA 100-300k€</strong> : 600-1 200€ par an (best Hiscox ou
+                Allianz)
               </li>
               <li>
-                <strong>SARL services CA 300-500k€</strong> : 900-1 800€/an (best Allianz Pro)
+                <strong>SARL services CA 300-500k€</strong> : 900-1 800€ par an (best Allianz Pro)
               </li>
               <li>
-                <strong>SAS PME services CA 500k-1M€</strong> : 1 400-2 800€/an (best
-                Allianz/Hiscox)
+                <strong>SAS PME services CA 500k-1M€</strong> : 1 400-2 800€ par an (best Allianz ou
+                Hiscox)
               </li>
               <li>
-                <strong>SAS PME services CA 1-3M€</strong> : 2 500-5 000€/an (best courtier négocié)
+                <strong>SAS PME services CA 1-3M€</strong> : 2 500-5 000€ par an (best courtier
+                négocié)
               </li>
               <li>
-                <strong>SARL BTP 5 salariés</strong> : 600-1 200€/an RC Pro + 4 500-8 000€/an
-                décennale
+                <strong>SARL BTP 5 salariés</strong> : 600-1 200€ par an RC Pro + 4 500-8 000€ par
+                an décennale
               </li>
               <li>
-                <strong>Libéral réglementé</strong> : 800-5 000€/an
+                <strong>Libéral réglementé</strong> : 800-5 000€ par an
               </li>
               <li>
-                <strong>Immobilier</strong> : 600-2 500€/an + caution Galian/CGI
+                <strong>Immobilier</strong> : 600-2 500€ par an + caution Galian ou CGI
               </li>
             </ul>
           ),
@@ -101,8 +103,8 @@ export default function Page() {
           body: (
             <ol>
               <li>
-                <strong>Activité</strong> (poids 40%) : services intellectuels = moins cher,
-                BTP/médical = plus cher
+                <strong>Activité</strong> (poids 40%) : services intellectuels = moins cher, BTP ou
+                médical = plus cher
               </li>
               <li>
                 <strong>Statut juridique</strong> (poids 25%) : AE moins cher (CA limité), SAS PME
@@ -131,28 +133,29 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                🥇 <strong>Consultant freelance IT</strong> : Hiscox 95-180€/an
+                🥇 <strong>Consultant freelance IT</strong> : Hiscox 95-180€ par an
               </li>
               <li>
-                🥇 <strong>Designer / photographe</strong> : Hiscox/Stello 110-220€/an
+                🥇 <strong>Designer — photographe</strong> : Hiscox ou Stello 110-220€ par an
               </li>
               <li>
-                🥇 <strong>Coach sportif</strong> : Allianz Pro 220-380€/an (couverture corporelle)
+                🥇 <strong>Coach sportif</strong> : Allianz Pro 220-380€ par an (couverture
+                corporelle)
               </li>
               <li>
-                🥇 <strong>Esthéticienne à domicile</strong> : Allianz Pro 180-280€/an
+                🥇 <strong>Esthéticienne à domicile</strong> : Allianz Pro 180-280€ par an
               </li>
               <li>
-                🥇 <strong>Plombier BTP AE</strong> : April Pro 300-450€/an + décennale
+                🥇 <strong>Plombier BTP AE</strong> : April Pro 300-450€ par an + décennale
               </li>
               <li>
-                🥇 <strong>VTC AE</strong> : Wakam/Stello 280-450€/an (2-en-1 auto+RC)
+                🥇 <strong>VTC AE</strong> : Wakam / Stello 280-450€ par an (2-en-1 auto+RC)
               </li>
               <li>
-                🥇 <strong>E-commerce boutique</strong> : Hiscox 200-350€/an
+                🥇 <strong>E-commerce boutique</strong> : Hiscox 200-350€ par an
               </li>
               <li>
-                🥇 <strong>Architecte SARL</strong> : MAF (mutuelle architectes) 1 200-2 500€/an
+                🥇 <strong>Architecte SARL</strong> : MAF (mutuelle architectes) 1 200-2 500€ par an
               </li>
             </ul>
           ),
@@ -161,7 +164,7 @@ export default function Page() {
       faq={[
         {
           q: 'Prix RC Pro vraiment si bas ?',
-          a: 'OUI pour AE services intellectuels : Hiscox 95€/an = 8€/mois. Possible car : 100% digital + spécialisation services (sinistralité contrôlée) + volume marché France. ATTENTION : prix monte rapidement si BTP, médical, libéral réglementé ou CA important.',
+          a: 'OUI pour AE services intellectuels : Hiscox 95€ par an = 8€ par mois. Possible car : 100% digital + spécialisation services (sinistralité contrôlée) + volume marché France. ATTENTION : prix monte rapidement si BTP, médical, libéral réglementé ou CA important.',
         },
         {
           q: 'Différence prix entre Hiscox 95€ et MMA 250€ pour même profil ?',

@@ -14,7 +14,7 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'rc-pro/sasu'
+const SLUG = 'rc-pro / sasu'
 const TITLE = 'RC Pro SASU — Tarifs 2026 (président assimilé salarié)'
 const TAGLINE =
   "L'assurance RC pro pour SASU : couverture président assimilé salarié, plafond adapté CA, RCMS dirigeant. Tous secteurs."
@@ -22,7 +22,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro SASU : couverture adaptée au statut SASU (président assimilé salarié). Plafonds 1,5-10 M€ selon métier. RCMS dirigeant recommandée. Tarifs 380-2 200€/an. Devis ORIAS sous 24h.',
+    'RC Pro SASU : couverture adaptée au statut SASU (président assimilé salarié). Plafonds 1,5-10 M€ selon métier. RCMS dirigeant recommandée. Tarifs 380-2 200€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -33,7 +33,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro SASU est la responsabilité civile professionnelle adaptée au statut SASU (Société par Actions Simplifiée Unipersonnelle). Particularité fiscale et sociale : le PRÉSIDENT de SASU est ASSIMILÉ SALARIÉ (vs gérant majoritaire SARL ou EI qui sont TNS). Pour la RC Pro, cela ne change pas grand-chose au contrat lui-même — la SASU souscrit comme n'importe quelle société. La différence importante est sur la MUTUELLE et la PRÉVOYANCE (régime collectif vs Madelin). Le pack standard SASU combine : RC pro adaptée au métier (3-10 M€), RCMS dirigeant (protection responsabilité personnelle président), cyber assurance, multirisque local si applicable. Tarifs 2026 : 380-2 200€/an selon CA et métier. Voir notre pilier complet <a href='/assurance-sasu' class='text-primary-600 underline'>/assurance-sasu</a> pour le pack global."
+      intro="La RC Pro SASU est la responsabilité civile professionnelle adaptée au statut SASU (Société par Actions Simplifiée Unipersonnelle). Particularité fiscale et sociale : le PRÉSIDENT de SASU est ASSIMILÉ SALARIÉ (vs gérant majoritaire SARL / EI qui sont TNS). Pour la RC Pro, cela ne change pas grand-chose au contrat lui-même — la SASU souscrit comme n'importe quelle société. La différence importante est sur la MUTUELLE et la PRÉVOYANCE (régime collectif vs Madelin). Le pack standard SASU combine : RC pro adaptée au métier (3-10 M€), RCMS dirigeant (protection responsabilité personnelle président), cyber assurance, multirisque local si applicable. Tarifs 2026 : 380-2 200€ par an selon CA et métier. Voir notre pilier complet <a href='/assurance-sasu' class='text-primary-600 underline'>/assurance-sasu</a> pour le pack global."
       legalReference="Code de commerce L. 227-1 et s. (SASU) + Code des assurances L. 113-1"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -58,8 +58,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: 'À partir de 380 €/an',
-          desc: 'SASU freelance solo. SASU consulting senior : 1 480-2 200€/an',
+          title: 'À partir de 380 € par an',
+          desc: 'SASU freelance solo. SASU consulting senior : 1 480-2 200€ par an',
         },
       ]}
       sections={[
@@ -101,11 +101,11 @@ export default function Page() {
         },
         {
           q: 'Combien coûte la RC Pro pour une SASU en 2026 ?',
-          a: '380-580€/an pour SASU freelance digital. 980-1 480€/an pour SASU consulting management. 1 480-2 200€/an pour SASU consulting IT/finance senior. Variables : CA, plafond RC choisi, métier.',
+          a: '380-580€ par an pour SASU freelance digital. 980-1 480€ par an pour SASU consulting management. 1 480-2 200€ par an pour SASU consulting IT ou finance senior. Variables : CA, plafond RC choisi, métier.',
         },
         {
           q: 'RCMS pour président SASU : utile ?',
-          a: 'OUI fortement recommandée. La RC Mandataire Social couvre la responsabilité PERSONNELLE du président SASU en cas de faute de gestion (poursuite par associés futurs, URSSAF, créanciers). Sinistre type : 50-500 k€. Tarif : 600-1 800€/an. Indispensable si levée de fonds prévue.',
+          a: 'OUI fortement recommandée. La RC Mandataire Social couvre la responsabilité PERSONNELLE du président SASU en cas de faute de gestion (poursuite par associés futurs, URSSAF, créanciers). Sinistre type : 50-500 k€. Tarif : 600-1 800€ par an. Indispensable si levée de fonds prévue.',
         },
       ]}
     />

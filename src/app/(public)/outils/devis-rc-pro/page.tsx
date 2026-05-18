@@ -27,12 +27,12 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400
 
-const SLUG = 'outils/devis-rc-pro'
+const SLUG = 'outils / devis-rc-pro'
 
 export const metadata: Metadata = {
   title: 'Devis RC Pro 2026 — Comparateur 8 assureurs en 2 minutes',
   description:
-    'Devis RC Pro gratuit en 2 minutes : comparatif 8 assureurs (Hiscox, AXA Pro, Allianz Pro, MMA Pro, MAAF Pro, April Pro, Generali, Wakam). Tarifs 89-2 800€/an. Conseil ORIAS sous 24h. Sans engagement.',
+    'Devis RC Pro gratuit en 2 minutes : comparatif 8 assureurs (Hiscox, AXA Pro, Allianz Pro, MMA Pro, MAAF Pro, April Pro, Generali, Wakam). Tarifs 89-2 800€ par an. Conseil ORIAS sous 24h. Sans engagement.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: 'Devis RC Pro 2026 — Comparateur 8 assureurs gratuit',
@@ -55,11 +55,11 @@ export default async function Page() {
             <Link href="/" className="hover:underline">
               Accueil
             </Link>{' '}
-            /{' '}
+            ›{' '}
             <Link href="/responsabilite-civile-professionnelle" className="hover:underline">
               RC Pro
             </Link>{' '}
-            / <span>Devis RC Pro</span>
+            › <span>Devis RC Pro</span>
           </nav>
           <span className="mb-4 inline-block rounded-full bg-green-500/90 px-3 py-1 text-sm font-semibold text-white">
             ✓ Devis gratuit en 2 minutes
@@ -126,7 +126,7 @@ export default async function Page() {
                 <td className="border p-2 text-right">980 € – 1 480 €</td>
               </tr>
               <tr>
-                <td className="border p-2">Freelance IT / DevOps</td>
+                <td className="border p-2">Freelance IT — DevOps</td>
                 <td className="border p-2 text-right">5 M€</td>
                 <td className="border p-2 text-right">780 € – 1 280 €</td>
               </tr>
@@ -136,7 +136,7 @@ export default async function Page() {
                 <td className="border p-2 text-right">1 200 € – 2 800 €</td>
               </tr>
               <tr>
-                <td className="border p-2">CGP / CIF agréé ACPR</td>
+                <td className="border p-2">CGP — CIF agréé ACPR</td>
                 <td className="border p-2 text-right">5 M€ obl.</td>
                 <td className="border p-2 text-right">1 800 € – 3 800 €</td>
               </tr>
@@ -175,7 +175,7 @@ export default async function Page() {
               vous
             </li>
             <li>
-              🛡️ <strong>Conformité ACPR/DDA</strong> : devoir de conseil tracé (Reco 2024-R-03)
+              🛡️ <strong>Conformité ACPR ou DDA</strong> : devoir de conseil tracé (Reco 2024-R-03)
             </li>
             <li>
               ⚡ <strong>Réactivité 24h</strong> : 3-5 propositions sous 24h ouvrées

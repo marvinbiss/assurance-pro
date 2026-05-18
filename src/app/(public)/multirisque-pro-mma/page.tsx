@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'multirisque-pro-mma'
 const TITLE = 'Multirisque Pro MMA — Garanties, tarifs et alternatives 2026'
 const TAGLINE =
-  "MMA propose une multirisque pro couvrant locaux, stock, matériel et perte d'exploitation. Analyse des garanties, tarifs 350-2 800€/an et comparatif avec Allianz Pro, AXA, Hiscox."
+  "MMA propose une multirisque pro couvrant locaux, stock, matériel et perte d'exploitation. Analyse des garanties, tarifs 350-2 800€ par an et comparatif avec Allianz Pro, AXA, Hiscox."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'MMA Multirisque Pro : couverture locaux + contenu + perte exploitation. Tarif 350-2 800€/an (commerce TPE/PME). Pack BTP/services dispo. Comparatif Allianz, AXA, Generali.',
+    'MMA Multirisque Pro : couverture locaux + contenu + perte exploitation. Tarif 350-2 800€ par an (commerce TPE ou PME). Pack BTP ou services dispo. Comparatif Allianz, AXA, Generali.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="MMA Pro propose une multirisque professionnelle (MRP) modulaire couvrant les locaux, le contenu (mobilier, stock, matériel), la perte d'exploitation et la RC Exploitation. Adaptée aux SARL/SAS PME (commerce, restauration, services, BTP), elle peut être combinée avec RC Pro et flotte auto pour bénéficier d'une remise paquet de 15-25%."
+      intro="MMA Pro propose une multirisque professionnelle (MRP) modulaire couvrant les locaux, le contenu (mobilier, stock, matériel), la perte d'exploitation et la RC Exploitation. Adaptée aux SARL ou SAS PME (commerce, restauration, services, BTP), elle peut être combinée avec RC Pro et flotte auto pour bénéficier d'une remise paquet de 15-25%."
       legalReference="art. L. 121-2 et s. C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="multirisque-pro"
@@ -54,7 +54,7 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '350-2 800€/an',
+          title: '350-2 800€ par an',
           desc: 'TPE commerce 350-650€ • PME services 850-1 800€ • PME BTP 1 200-2 800€',
         },
       ]}
@@ -64,7 +64,7 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Incendie / explosion</strong> : locaux + contenu, valeur à neuf disponible
+                <strong>Incendie — explosion</strong> : locaux + contenu, valeur à neuf disponible
                 en option
               </li>
               <li>
@@ -98,8 +98,8 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Pack global SARL/PME</strong> : MMA permet de combiner RC Pro + MRP + Flotte
-                + Mutuelle avec remise paquet 15-25% — un des packages les plus attractifs du
+                <strong>Pack global SARL ou PME</strong> : MMA permet de combiner RC Pro + MRP +
+                Flotte + Mutuelle avec remise paquet 15-25% — un des packages les plus attractifs du
                 marché.
               </li>
               <li>
@@ -132,8 +132,8 @@ export default function Page() {
                 développé que Hiscox ou Generali.
               </li>
               <li>
-                <strong>Pas leader sur restaurants/CHR</strong> : Allianz Pro ou April Pro souvent
-                mieux placés pour restauration risque incendie cuisine.
+                <strong>Pas leader sur restaurants ou CHR</strong> : Allianz Pro ou April Pro
+                souvent mieux placés pour restauration risque incendie cuisine.
               </li>
               <li>
                 <strong>Souscription pas 100% digitale</strong> : passage en agence ou téléphone
@@ -146,19 +146,19 @@ export default function Page() {
       faq={[
         {
           q: 'Quel tarif MMA Multirisque Pro pour un commerce TPE ?',
-          a: 'Boutique 30-80m² centre-ville : 350-650€/an (vol, incendie, bris glace). Avec perte d&apos;exploitation : 550-950€/an. En zone à risque (centre ancien, métro/RER) : prime +15-25%.',
+          a: 'Boutique 30-80m² centre-ville : 350-650€ par an (vol, incendie, bris glace). Avec perte d&apos;exploitation : 550-950€ par an. En zone à risque (centre ancien, métro ou RER) : prime +15-25%.',
         },
         {
           q: 'MMA couvre-t-il les restaurants ?',
-          a: 'Oui mais pas leader sur ce segment. Restaurant traditionnel TPE chez MMA : 1 000-1 800€/an. Allianz Pro ou April Pro souvent plus compétitifs (-15-25%) sur restauration. À comparer.',
+          a: 'Oui mais pas leader sur ce segment. Restaurant traditionnel TPE chez MMA : 1 000-1 800€ par an. Allianz Pro ou April Pro souvent plus compétitifs (-15-25%) sur restauration. À comparer.',
         },
         {
           q: 'Le pack MMA RC Pro + MRP est-il intéressant ?',
-          a: 'Oui, remise paquet 15-25% vs souscriptions séparées. Pour SARL/SAS PME services (CA 200-500k€) : RC Pro 900€ + MRP 1 100€ = 2 000€ séparés vs 1 600€ pack = économie 400€/an.',
+          a: 'Oui, remise paquet 15-25% vs souscriptions séparées. Pour SARL ou SAS PME services (CA 200-500k€) : RC Pro 900€ + MRP 1 100€ = 2 000€ séparés vs 1 600€ pack = économie 400€ par an.',
         },
         {
           q: 'Comment déclarer un sinistre MMA Multirisque ?',
-          a: 'Téléphone agence MMA ou plateforme en ligne mma.fr. Délai 5 jours ouvrés pour déclaration. Vol/cambriolage : porter plainte préalable obligatoire. Expert MMA mandaté sous 7-15 jours selon gravité.',
+          a: 'Téléphone agence MMA ou plateforme en ligne mma.fr. Délai 5 jours ouvrés pour déclaration. Vol ou cambriolage : porter plainte préalable obligatoire. Expert MMA mandaté sous 7-15 jours selon gravité.',
         },
       ]}
       relatedMetiers={[

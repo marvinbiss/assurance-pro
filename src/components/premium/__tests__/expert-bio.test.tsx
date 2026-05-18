@@ -45,7 +45,7 @@ describe('ExpertBio', () => {
     expect(screen.getByText('M')).toBeInTheDocument()
   })
 
-  it('avec avatar → Image next/image avec alt descriptif', () => {
+  it('avec avatar → Image next / image avec alt descriptif', () => {
     render(<ExpertBio {...BASE_PROPS} avatar="/avatar.jpg" />)
     const img = screen.getByAltText(/Portrait de Marvin Bissohong/i)
     expect(img).toBeInTheDocument()

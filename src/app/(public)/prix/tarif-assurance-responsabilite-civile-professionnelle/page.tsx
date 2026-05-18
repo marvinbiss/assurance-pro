@@ -11,15 +11,15 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'prix/tarif-assurance-responsabilite-civile-professionnelle'
+const SLUG = 'prix / tarif-assurance-responsabilite-civile-professionnelle'
 const TITLE = 'Tarif Assurance Responsabilité Civile Professionnelle 2026'
 const TAGLINE =
-  'Tarif assurance responsabilité civile professionnelle 2026 : grilles complètes par profil et activité. AE 95€/an, SARL 600€/an, SAS PME 1 500€/an.'
+  'Tarif assurance responsabilité civile professionnelle 2026 : grilles complètes par profil et activité. AE 95€ par an, SARL 600€ par an, SAS PME 1 500€ par an.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Tarif assurance RC Pro 2026 vérifié : AE dès 95€/an, SARL 350-2 800€, SAS PME 2 500-15 000€. Comparatif 5 assureurs en parallèle.',
+    'Tarif assurance RC Pro 2026 vérifié : AE dès 95€ par an, SARL 350-2 800€, SAS PME 2 500-15 000€. Comparatif 5 assureurs en parallèle.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Tarif détaillé de l'assurance responsabilité civile professionnelle (RC Pro) en 2026, vérifié sur 1 000+ devis réels. Cette page présente les grilles tarifaires complètes par statut juridique, par activité et par assureur. Best price 2026 = Hiscox 95€/an pour AE services intellectuels (plafond 1M€ + postériorité 10 ans incluses)."
+      intro="Tarif détaillé de l'assurance responsabilité civile professionnelle (RC Pro) en 2026, vérifié sur 1 000+ devis réels. Cette page présente les grilles tarifaires complètes par statut juridique, par activité et par assureur. Best price 2026 = Hiscox 95€ par an pour AE services intellectuels (plafond 1M€ + postériorité 10 ans incluses)."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -45,7 +45,7 @@ export default function Page() {
         {
           icon: '🥇',
           title: 'Best price identifié',
-          desc: 'Hiscox 95€/an leader marché AE services',
+          desc: 'Hiscox 95€ par an leader marché AE services',
         },
         {
           icon: '📈',
@@ -64,29 +64,29 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Micro-entreprise / auto-entrepreneur</strong> :
+                <strong>Micro-entreprise — auto-entrepreneur</strong> :
                 <ul>
-                  <li>Services intellectuels : 95-280€/an (best Hiscox)</li>
-                  <li>Services manuels : 180-400€/an</li>
-                  <li>BTP + décennale : 250-450€/an RC Pro + décennale obligatoire</li>
+                  <li>Services intellectuels : 95-280€ par an (best Hiscox)</li>
+                  <li>Services manuels : 180-400€ par an</li>
+                  <li>BTP + décennale : 250-450€ par an RC Pro + décennale obligatoire</li>
                 </ul>
               </li>
               <li>
-                <strong>EURL / SARL unipersonnelle</strong> :
+                <strong>EURL — SARL unipersonnelle</strong> :
                 <ul>
-                  <li>Services CA &lt; 100k€ : 350-700€/an</li>
-                  <li>Services CA 100-300k€ : 600-1 200€/an</li>
+                  <li>Services CA &lt; 100k€ : 350-700€ par an</li>
+                  <li>Services CA 100-300k€ : 600-1 200€ par an</li>
                 </ul>
               </li>
               <li>
-                <strong>SARL multi-associés</strong> : 700-3 000€/an
+                <strong>SARL multi-associés</strong> : 700-3 000€ par an
               </li>
               <li>
-                <strong>SAS / SASU services</strong> :
+                <strong>SAS — SASU services</strong> :
                 <ul>
-                  <li>CA 500k-1M€ : 1 400-2 800€/an</li>
-                  <li>CA 1-3M€ : 2 500-5 000€/an</li>
-                  <li>CA 3-10M€ : 4 500-15 000€/an (négocié)</li>
+                  <li>CA 500k-1M€ : 1 400-2 800€ par an</li>
+                  <li>CA 1-3M€ : 2 500-5 000€ par an</li>
+                  <li>CA 3-10M€ : 4 500-15 000€ par an (négocié)</li>
                 </ul>
               </li>
             </ul>
@@ -97,33 +97,33 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Services intellectuels</strong> (consultant, IT, design) : 95-280€/an AE —
-                600-1 200€/an SARL
+                <strong>Services intellectuels</strong> (consultant, IT, design) : 95-280€ par an AE
+                — 600-1 200€ par an SARL
               </li>
               <li>
-                <strong>Services personnes</strong> (coach, formateur, esthéticienne) : 150-400€/an
-                AE — 800-1 500€/an SARL
+                <strong>Services personnes</strong> (coach, formateur, esthéticienne) : 150-400€ par
+                an AE — 800-1 500€ par an SARL
               </li>
               <li>
-                <strong>BTP</strong> (artisan/PME) : 250-1 500€/an RC Pro + 950-25 000€/an décennale
-                obligatoire
+                <strong>BTP</strong> (artisan / PME) : 250-1 500€ par an RC Pro + 950-25 000€ par an
+                décennale obligatoire
               </li>
               <li>
-                <strong>Libéral réglementé</strong> (avocat, expert-comptable, notaire) : 800-5
-                000€/an
+                <strong>Libéral réglementé</strong> (avocat, expert-comptable, notaire) : 800-5 000€
+                par an
               </li>
               <li>
-                <strong>Médical / paramédical</strong> : 250-3 500€/an
+                <strong>Médical — paramédical</strong> : 250-3 500€ par an
               </li>
               <li>
-                <strong>Immobilier</strong> (agent, syndic, courtier) : 600-2 500€/an + caution
+                <strong>Immobilier</strong> (agent, syndic, courtier) : 600-2 500€ par an + caution
               </li>
               <li>
-                <strong>Mobilité</strong> (VTC, livreur, taxi) : 280-2 000€/an (souvent 2-en-1
+                <strong>Mobilité</strong> (VTC, livreur, taxi) : 280-2 000€ par an (souvent 2-en-1
                 auto+RC)
               </li>
               <li>
-                <strong>Commerce / e-commerce</strong> : 200-1 500€/an
+                <strong>Commerce — e-commerce</strong> : 200-1 500€ par an
               </li>
             </ul>
           ),
@@ -133,26 +133,29 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Hiscox</strong> : best AE/SARL services intellectuels — 95-2 800€/an selon
-                CA
+                <strong>Hiscox</strong> : best AE ou SARL services intellectuels — 95-2 800€ par an
+                selon CA
               </li>
               <li>
-                <strong>Stello</strong> : challenger digital pure — 90-2 500€/an, postériorité 5 ans
+                <strong>Stello</strong> : challenger digital pure — 90-2 500€ par an, postériorité 5
+                ans
               </li>
               <li>
-                <strong>Allianz Pro</strong> : multi-secteurs — 180-8 000€/an selon profil
+                <strong>Allianz Pro</strong> : multi-secteurs — 180-8 000€ par an selon profil
               </li>
               <li>
-                <strong>MMA Pro</strong> : réseau agences — 250-7 500€/an, conseil personnalisé
+                <strong>MMA Pro</strong> : réseau agences — 250-7 500€ par an, conseil personnalisé
               </li>
               <li>
-                <strong>AXA Pro</strong> : premium — 280-12 000€/an, programmes fidélité
+                <strong>AXA Pro</strong> : premium — 280-12 000€ par an, programmes fidélité
               </li>
               <li>
-                <strong>April Pro BTP</strong> : spécialiste BTP — 250-15 000€/an (RC + décennale)
+                <strong>April Pro BTP</strong> : spécialiste BTP — 250-15 000€ par an (RC +
+                décennale)
               </li>
               <li>
-                <strong>SMABTP</strong> : paritaire BTP — 350-25 000€/an, expertise sinistres BTP
+                <strong>SMABTP</strong> : paritaire BTP — 350-25 000€ par an, expertise sinistres
+                BTP
               </li>
             </ul>
           ),
@@ -161,11 +164,11 @@ export default function Page() {
       faq={[
         {
           q: 'Tarif RC Pro évolue chaque année ?',
-          a: 'OUI mais lentement : inflation contenue +1-3%/an. Renouvellement annuel automatique sauf résiliation. Pas de hausse brutale si sans sinistre. Renégocier tous les 2-3 ans via courtier ORIAS pour rester compétitif.',
+          a: 'OUI mais lentement : inflation contenue +1-3% par an. Renouvellement annuel automatique sauf résiliation. Pas de hausse brutale si sans sinistre. Renégocier tous les 2-3 ans via courtier ORIAS pour rester compétitif.',
         },
         {
           q: 'Peut-on négocier le tarif ?',
-          a: 'NON sur tarifs Hiscox/Stello (tarification automatique). OUI sur tarifs Allianz/MMA/AXA via courtier ORIAS (économies 15-30% négociées). OUI sur grands comptes SAS PME (négociation directe).',
+          a: 'NON sur tarifs Hiscox ou Stello (tarification automatique). OUI sur tarifs Allianz, MMA ou AXA via courtier ORIAS (économies 15-30% négociées). OUI sur grands comptes SAS PME (négociation directe).',
         },
         {
           q: 'Tarif RC Pro premier emploi vs après 5 ans ?',

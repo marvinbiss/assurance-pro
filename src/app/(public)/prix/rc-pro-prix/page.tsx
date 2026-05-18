@@ -10,18 +10,18 @@ import {
 import { buildPageMetadata } from '@/lib/seo/page-metadata'
 
 export const revalidate = 86400
-const SLUG = 'prix/rc-pro-prix'
+const SLUG = 'prix / rc-pro-prix'
 const TITLE = 'RC Pro Prix 2026 — Combien coûte la responsabilité civile pro ?'
 const TAGLINE =
-  'RC Pro prix 2026 : AE dès 95€/an, SARL 600€/an, SAS PME 1 500€/an. Grilles par activité + 6 leviers économies + 4 pièges low-cost.'
+  'RC Pro prix 2026 : AE dès 95€ par an, SARL 600€ par an, SAS PME 1 500€ par an. Grilles par activité + 6 leviers économies + 4 pièges low-cost.'
 
 export const metadata = buildPageMetadata({
   slug: SLUG,
   title: TITLE,
   tagline: TAGLINE,
   description:
-    'RC Pro prix vérifié 2026 par statut/activité. Hiscox 95€/an best AE services. Allianz 600€/an SARL. 6 leviers économies. CPC 300€.',
-  price: 'dès 95€/an',
+    'RC Pro prix vérifié 2026 par statut ou activité. Hiscox 95€ par an best AE services. Allianz 600€ par an SARL. 6 leviers économies. CPC 300€.',
+  price: 'dès 95€ par an',
 })
 
 export default function Page() {
@@ -30,14 +30,18 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="Combien coûte vraiment une RC Pro en 2026 ? Cette page synthétique répond à la question prix avec les fourchettes vérifiées par profil : auto-entrepreneur dès 95€/an chez Hiscox, SARL services à partir de 350€/an, SAS PME 1 500-5 000€/an, professions à risque (BTP, médical, libéral réglementé) jusqu'à 10-15 000€/an. Détail des 6 leviers d'économies et des 4 pièges à éviter."
+      intro="Combien coûte vraiment une RC Pro en 2026 ? Cette page synthétique répond à la question prix avec les fourchettes vérifiées par profil : auto-entrepreneur dès 95€ par an chez Hiscox, SARL services à partir de 350€ par an, SAS PME 1 500-5 000€ par an, professions à risque (BTP, médical, libéral réglementé) jusqu'à 10-15 000€ par an. Détail des 6 leviers d'économies et des 4 pièges à éviter."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
       expertBio={EXPERT_SERVICES}
       comparatifRows={COMPARATIF_SERVICES}
       benefits={[
-        { icon: '💰', title: 'Dès 95€/an AE', desc: 'Hiscox best price AE services intellectuels' },
+        {
+          icon: '💰',
+          title: 'Dès 95€ par an AE',
+          desc: 'Hiscox best price AE services intellectuels',
+        },
         { icon: '📊', title: 'Grilles par profil', desc: 'AE, SARL, SAS PME, libéral réglementé' },
         {
           icon: '🚀',
@@ -56,33 +60,34 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Auto-entrepreneur</strong> : 95-450€/an (best Hiscox 95€)
+                <strong>Auto-entrepreneur</strong> : 95-450€ par an (best Hiscox 95€)
               </li>
               <li>
-                <strong>SARL services</strong> : 350-2 800€/an (best Hiscox/Allianz Pro)
+                <strong>SARL services</strong> : 350-2 800€ par an (best Hiscox ou Allianz Pro)
               </li>
               <li>
-                <strong>SAS PME services</strong> : 2 500-15 000€/an (négocié courtier)
+                <strong>SAS PME services</strong> : 2 500-15 000€ par an (négocié courtier)
               </li>
               <li>
-                <strong>SARL BTP</strong> : 600-1 500€/an RC Pro + 4 500-8 000€/an décennale
+                <strong>SARL BTP</strong> : 600-1 500€ par an RC Pro + 4 500-8 000€ par an décennale
               </li>
               <li>
-                <strong>SAS BTP 20 salariés</strong> : 2 500-5 000€/an RC Pro + 15-25 000€/an
-                décennale
+                <strong>SAS BTP 20 salariés</strong> : 2 500-5 000€ par an RC Pro + 15-25 000€ par
+                an décennale
               </li>
               <li>
                 <strong>Libéral réglementé</strong> (avocat, expert-comptable, architecte) : 800-5
-                000€/an
+                000€ par an
               </li>
               <li>
-                <strong>Médical / paramédical</strong> : 250-3 500€/an (selon spécialité)
+                <strong>Médical — paramédical</strong> : 250-3 500€ par an (selon spécialité)
               </li>
               <li>
-                <strong>Immobilier</strong> : 600-2 500€/an + caution Galian/CGI 2 000-15 000€/an
+                <strong>Immobilier</strong> : 600-2 500€ par an + caution Galian ou CGI 2 000-15
+                000€ par an
               </li>
               <li>
-                <strong>Mobilité (VTC)</strong> : 280-2 000€/an (selon flotte)
+                <strong>Mobilité (VTC)</strong> : 280-2 000€ par an (selon flotte)
               </li>
             </ul>
           ),
@@ -122,7 +127,7 @@ export default function Page() {
             <ol>
               <li>
                 <strong>Plafond insuffisant &lt; 500k€</strong> : risque sous-assurance grave. Mini
-                AE : 500k€. Mini SARL/SAS : 1M€.
+                AE : 500k€. Mini SARL ou SAS : 1M€.
               </li>
               <li>
                 <strong>Exclusions étendues cachées</strong> : cyber, sous-traitance, conseil
@@ -143,15 +148,15 @@ export default function Page() {
       faq={[
         {
           q: 'Pourquoi RC Pro coûte si peu cher chez Hiscox ?',
-          a: '1) Modèle 100% digital sur services intellectuels (économies opérationnelles). 2) Spécialisation services (sinistralité contrôlée vs BTP/médical). 3) Volume marché France (30 ans présent, économies échelle). 4) Solidité financière A+ (groupe britannique). Prix répercuté en prime client.',
+          a: '1) Modèle 100% digital sur services intellectuels (économies opérationnelles). 2) Spécialisation services (sinistralité contrôlée vs BTP ou médical). 3) Volume marché France (30 ans présent, économies échelle). 4) Solidité financière A+ (groupe britannique). Prix répercuté en prime client.',
         },
         {
           q: 'À partir de quel CA souscrire RC Pro ?',
-          a: 'RC Pro recommandée dès le 1er euro de CA. Coût Hiscox = 95€/an = 8€/mois pour AE services = ridicule vs sinistre potentiel (30k-1M€). Souscription dès activation auto-entreprise idéale.',
+          a: 'RC Pro recommandée dès le 1er euro de CA. Coût Hiscox = 95€ par an = 8€ par mois pour AE services = ridicule vs sinistre potentiel (30k-1M€). Souscription dès activation auto-entreprise idéale.',
         },
         {
           q: 'Comment savoir si mon tarif est compétitif ?',
-          a: 'Comparer 3-5 assureurs via courtier ORIAS. Tarif compétitif = dans la fourchette basse de votre profil (ex: AE consultant IT = 95-180€/an, donc 95-130€ compétitif, 180€ acceptable, 250€+ trop cher). Devis gratuit en 5 min.',
+          a: 'Comparer 3-5 assureurs via courtier ORIAS. Tarif compétitif = dans la fourchette basse de votre profil (ex: AE consultant IT = 95-180€ par an, donc 95-130€ compétitif, 180€ acceptable, 250€+ trop cher). Devis gratuit en 5 min.',
         },
       ]}
       relatedMetiers={[

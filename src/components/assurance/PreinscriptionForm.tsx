@@ -102,7 +102,7 @@ export function PreinscriptionForm({ defaultVertical }: PreinscriptionFormProps)
           <option value="rc_pro">Responsabilité Civile Pro</option>
           <option value="multirisque">Multirisque Pro</option>
           <option value="mutuelle">Mutuelle TNS (Madelin)</option>
-          <option value="vtc">Assurance VTC / Taxi</option>
+          <option value="vtc">Assurance VTC — Taxi</option>
           <option value="cyber">Cyber assurance</option>
           <option value="autre">Autre</option>
         </select>

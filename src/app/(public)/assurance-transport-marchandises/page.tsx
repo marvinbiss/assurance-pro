@@ -27,7 +27,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance transport de marchandises : RC pro transporteur (LOTI/CMR), garantie facultés (marchandises transportées tous risques), responsabilité contractuelle, garantie ad valorem. Tarifs à partir de 1 480 €/an. Devis gratuit ORIAS sous 24h.',
+    'Assurance transport de marchandises : RC pro transporteur (LOTI ou CMR), garantie facultés (marchandises transportées tous risques), responsabilité contractuelle, garantie ad valorem. Tarifs à partir de 1 480 € par an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -38,7 +38,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance transport de marchandises est l'ensemble des garanties indispensables à toute entreprise de transport routier (TPE artisan transporteur, PME, grands comptes), de logistique, de messagerie ou de livraison express. Elle se décompose en 3 briques principales : RC Pro transporteur (responsabilité du transporteur en cas de perte/avarie/retard de la marchandise — encadrée par la convention CMR pour le transport international et la LOTI pour le national), garantie facultés (assurance des marchandises transportées tous risques — perte, vol, accident, événements climatiques), et garantie contractuelle CMR/LOTI (limitations de responsabilité réglementaires : 8,33 DTS/kg en CMR international, indemnité forfaitaire en LOTI national). Les tarifs 2026 démarrent à 1 480 € HT/an pour un artisan-transporteur solo avec 1 utilitaire jusqu'à 25 000 € HT/an pour une flotte de 10 poids lourds spécialisés (frigorifique, ADR matières dangereuses). Cette page détaille les obligations légales, les plafonds CMR/LOTI, les tarifs par profil et l'articulation avec l'assurance véhicule pro."
+      intro="L'assurance transport de marchandises est l'ensemble des garanties indispensables à toute entreprise de transport routier (TPE artisan transporteur, PME, grands comptes), de logistique, de messagerie ou de livraison express. Elle se décompose en 3 briques principales : RC Pro transporteur (responsabilité du transporteur en cas de perte, avarie ou retard de la marchandise — encadrée par la convention CMR pour le transport international et la LOTI pour le national), garantie facultés (assurance des marchandises transportées tous risques — perte, vol, accident, événements climatiques), et garantie contractuelle CMR ou LOTI (limitations de responsabilité réglementaires : 8,33 DTS ou kg en CMR international, indemnité forfaitaire en LOTI national). Les tarifs 2026 démarrent à 1 480 € HT par an pour un artisan-transporteur solo avec 1 utilitaire jusqu'à 25 000 € HT par an pour une flotte de 10 poids lourds spécialisés (frigorifique, ADR matières dangereuses). Cette page détaille les obligations légales, les plafonds CMR ou LOTI, les tarifs par profil et l'articulation avec l'assurance véhicule pro."
       legalReference="Convention CMR (transport international) + Loi LOTI (transport national) + Code des transports"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -57,13 +57,13 @@ export default function Page() {
         },
         {
           icon: '⚖️',
-          title: 'Plafonds CMR/LOTI',
-          desc: 'Limitations légales : 8,33 DTS/kg en CMR international (~10€/kg), forfait LOTI national',
+          title: 'Plafonds CMR ou LOTI',
+          desc: 'Limitations légales : 8,33 DTS ou kg en CMR international (~10€ par kg), forfait LOTI national',
         },
         {
           icon: '💰',
-          title: 'À partir de 1 480 €/an',
-          desc: 'Artisan-transporteur 1 utilitaire. PME 5 camions : 8 800-15 000€/an. Flotte 10 PL : 25 000€/an',
+          title: 'À partir de 1 480 € par an',
+          desc: 'Artisan-transporteur 1 utilitaire. PME 5 camions : 8 800-15 000€ par an. Flotte 10 PL : 25 000€ par an',
         },
       ]}
       sections={[
@@ -76,13 +76,13 @@ export default function Page() {
                   <strong>RC Pro Transporteur (OBLIGATOIRE)</strong> : couvre la responsabilité
                   contractuelle du transporteur en cas de perte, avarie ou retard de la marchandise
                   dans le respect des plafonds CMR (international) ou LOTI (national). Plafond CMR :
-                  8,33 DTS/kg (~10 €/kg en 2026). Plafond LOTI : indemnité forfaitaire à la tonne
-                  selon barème.
+                  8,33 DTS ou kg (~10 € par kg en 2026). Plafond LOTI : indemnité forfaitaire à la
+                  tonne selon barème.
                 </li>
                 <li>
                   <strong>Garantie facultés (RECOMMANDÉE)</strong> : assure les MARCHANDISES
                   TRANSPORTÉES elles-mêmes tous risques (vol, accident, incendie, événements
-                  climatiques, mauvaise manutention) AU-DELÀ des plafonds CMR/LOTI. Permet de
+                  climatiques, mauvaise manutention) AU-DELÀ des plafonds CMR ou LOTI. Permet de
                   garantir la valeur réelle des marchandises (pas seulement le forfait kg).
                 </li>
                 <li>
@@ -97,7 +97,7 @@ export default function Page() {
                 <li>Transport ADR matières dangereuses (hydrocarbures, chimie, gaz)</li>
                 <li>Transport frigorifique (rupture de chaîne du froid)</li>
                 <li>Transport d&apos;animaux vivants</li>
-                <li>Transport d&apos;œuvres d&apos;art / objets précieux</li>
+                <li>Transport d&apos;œuvres d&apos;art — objets précieux</li>
                 <li>Transport sous température dirigée (médicaments, vaccins)</li>
               </ul>
             </>
@@ -146,7 +146,7 @@ export default function Page() {
                     <td className="border p-2 text-right">+50 à +120% du pack standard</td>
                   </tr>
                   <tr>
-                    <td className="border p-2">Transport œuvres d&apos;art / précieux</td>
+                    <td className="border p-2">Transport œuvres d&apos;art — précieux</td>
                     <td className="border p-2 text-right">Tarification ad hoc (1-3% valeur)</td>
                   </tr>
                 </tbody>
@@ -179,26 +179,26 @@ export default function Page() {
                   <tr>
                     <td className="border p-2">Transport routier INTERNATIONAL</td>
                     <td className="border p-2">Convention CMR (1956)</td>
-                    <td className="border p-2 text-right">8,33 DTS/kg (~10 €/kg en 2026)</td>
+                    <td className="border p-2 text-right">8,33 DTS ou kg (~10 € par kg en 2026)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">Transport routier NATIONAL France</td>
                     <td className="border p-2">Loi LOTI + contrats types</td>
                     <td className="border p-2 text-right">
-                      23 €/kg ou 750 €/colis (selon contrat type)
+                      23 € par kg ou 750 € par colis (selon contrat type)
                     </td>
                   </tr>
                   <tr>
                     <td className="border p-2">Transport messagerie</td>
                     <td className="border p-2">Contrat type messagerie 2017</td>
                     <td className="border p-2 text-right">
-                      23 €/kg ou 690 €/envoi (le moins élevé)
+                      23 € par kg ou 690 € par envoi (le moins élevé)
                     </td>
                   </tr>
                   <tr>
                     <td className="border p-2">Transport express</td>
                     <td className="border p-2">Contrat type express 2017</td>
-                    <td className="border p-2 text-right">23 €/kg ou 690 €/envoi</td>
+                    <td className="border p-2 text-right">23 € par kg ou 690 € par envoi</td>
                   </tr>
                 </tbody>
               </table>
@@ -251,19 +251,19 @@ export default function Page() {
         },
         {
           q: "Combien coûte l'assurance d'un transporteur en 2026 ?",
-          a: 'Démarre à 1 480€/an pour un artisan-transporteur solo avec 1 utilitaire 3,5t en national. Médiane marché : 2 800-4 800€/an pour 1 PL. PME 5 camions : 8 800-15 000€/an. Flotte 10 PL international : 18-28k€/an. Variables : type marchandises, zone (national/UE/monde), kilométrage, ADR/frigorifique.',
+          a: 'Démarre à 1 480€ par an pour un artisan-transporteur solo avec 1 utilitaire 3,5t en national. Médiane marché : 2 800-4 800€ par an pour 1 PL. PME 5 camions : 8 800-15 000€ par an. Flotte 10 PL international : 18-28k€ par an. Variables : type marchandises, zone (national, UE ou monde), kilométrage, ADR ou frigorifique.',
         },
         {
           q: 'Quelle différence entre RC Pro transporteur et garantie facultés ?',
-          a: 'RC PRO TRANSPORTEUR couvre la responsabilité du transporteur dans la limite des plafonds CMR (~10€/kg) ou LOTI (23€/kg). GARANTIE FACULTÉS couvre la VALEUR RÉELLE des marchandises transportées AU-DELÀ des plafonds — indispensable pour matériel haute valeur. Les 2 sont complémentaires.',
+          a: 'RC PRO TRANSPORTEUR couvre la responsabilité du transporteur dans la limite des plafonds CMR (~10€ par kg) ou LOTI (23€ par kg). GARANTIE FACULTÉS couvre la VALEUR RÉELLE des marchandises transportées AU-DELÀ des plafonds — indispensable pour matériel haute valeur. Les 2 sont complémentaires.',
         },
         {
           q: 'Plafond CMR : que se passe-t-il pour du matériel haute valeur ?',
-          a: "La CMR limite l'indemnisation à 8,33 DTS/kg (~10€/kg en 2026). Pour 30 kg de matériel électronique valant 8 000€ → indemnisation CMR ~300€ seulement. Pour récupérer la valeur réelle : (1) souscrire une garantie facultés tous risques sur les marchandises, OU (2) faire une DÉCLARATION AD VALOREM au moment du chargement (mais surcoût payé par le donneur d'ordre).",
+          a: "La CMR limite l'indemnisation à 8,33 DTS ou kg (~10€ par kg en 2026). Pour 30 kg de matériel électronique valant 8 000€ → indemnisation CMR ~300€ seulement. Pour récupérer la valeur réelle : (1) souscrire une garantie facultés tous risques sur les marchandises, OU (2) faire une DÉCLARATION AD VALOREM au moment du chargement (mais surcoût payé par le donneur d'ordre).",
         },
         {
           q: "Transport ADR matières dangereuses : surcoût d'assurance ?",
-          a: "OUI très significatif : +50 à +120% du pack standard. Justification : risques majorés (incendie, explosion, pollution) + obligations réglementaires renforcées (conducteur formé ADR, véhicule certifié, plan d'urgence). Tarif type 2026 : 4 800-12 000€/an pour 1 PL ADR national, 8 800-22 000€/an pour 1 PL ADR international.",
+          a: "OUI très significatif : +50 à +120% du pack standard. Justification : risques majorés (incendie, explosion, pollution) + obligations réglementaires renforcées (conducteur formé ADR, véhicule certifié, plan d'urgence). Tarif type 2026 : 4 800-12 000€ par an pour 1 PL ADR national, 8 800-22 000€ par an pour 1 PL ADR international.",
         },
         {
           q: 'Mon véhicule pro est-il automatiquement assuré pour transporter des marchandises ?',

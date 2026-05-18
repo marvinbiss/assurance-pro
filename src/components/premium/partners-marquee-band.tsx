@@ -25,7 +25,7 @@ export function PartnersMarqueeBand({
   return (
     <section
       aria-label={label}
-      className={`group/marquee relative overflow-hidden border-y border-sand-300 bg-sand-50 py-8 ${className}`}
+      className={`group/marquee relative overflow-hidden border-y border-sand-300 bg-sand-50 py-8 dark:bg-charcoal-900 ${className}`}
     >
       <div className="mb-4 text-center">
         <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-charcoal-500">

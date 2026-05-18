@@ -179,8 +179,8 @@ export function CalculateurTarifCyber() {
           {r.fourchetteHaute.toLocaleString('fr-FR')} €
         </p>
         <p className="text-sm text-gray-700">
-          Médiane : <strong>{r.fourchetteMediane.toLocaleString('fr-FR')} €/an</strong> (≈{' '}
-          {Math.round(r.fourchetteMediane / 12).toLocaleString('fr-FR')} €/mois). Plafond :{' '}
+          Médiane : <strong>{r.fourchetteMediane.toLocaleString('fr-FR')} € par an</strong> (≈{' '}
+          {Math.round(r.fourchetteMediane / 12).toLocaleString('fr-FR')} € par mois). Plafond :{' '}
           <strong>{plafond.toLocaleString('fr-FR')} €</strong> par sinistre. Fourchette basée sur
           barèmes 2026 de 6 assureurs cyber spécialisés (Hiscox CyberClear, Stoïk, Beazley, AIG
           CyberEdge, AXA Cyber Secure, Allianz Cyber Risk).
@@ -214,7 +214,7 @@ export function CalculateurTarifCyber() {
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
-              Tarif base secteur : <strong>{Math.round(r.detail.base)} €/an</strong>
+              Tarif base secteur : <strong>{Math.round(r.detail.base)} € par an</strong>
             </li>
             <li>Coef CA : ×{r.detail.coefCA.toFixed(2)}</li>
             <li>Coef volume données : ×{r.detail.coefDonnees.toFixed(2)}</li>
@@ -235,7 +235,8 @@ export function CalculateurTarifCyber() {
       <p className="text-xs italic text-gray-500">
         ⚠️ Estimation <strong>indicative</strong>. Tarif réel variable ±25% selon : audit cyber
         préalable (questionnaire ACPR), antécédents incidents 5 ans, dépendance fournisseurs cloud
-        (AWS/Azure/GCP), géographie data centers, présence DPO certifié. Conformité ACPR 2024-R-02.
+        (AWS, Azure ou GCP), géographie data centers, présence DPO certifié. Conformité ACPR
+        2024-R-02.
       </p>
     </div>
   )

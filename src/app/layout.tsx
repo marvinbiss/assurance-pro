@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { headers } from 'next/headers'
-import { DM_Sans, Fraunces } from 'next/font/google'
+import { Geist, Fraunces } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import { PreOriasBanner } from '@/components/PreOriasBanner'
@@ -17,22 +17,22 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
+import { CursorTrail } from '@/components/motion/cursor-trail'
 
-const dmSans = DM_Sans({
+// Geist — sans-serif Vercel-grade (Luke Premium Workflow spec). Display optical.
+const dmSans = Geist({
   subsets: ['latin'],
   variable: '--font-dm-sans',
   display: 'swap',
   adjustFontFallback: true,
 })
 
-// Fraunces — variable serif éditoriale premium (axes opsz + SOFT + wght continu)
-// Élève instantanément le brand vers "Editorial Luxury Artisanal"
+// Fraunces — serif éditorial moderne (GT Sectra-like, Luke spec). Optical sizes.
 const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-heading',
   display: 'swap',
-  style: ['normal'],
-  axes: ['opsz', 'SOFT'],
+  axes: ['SOFT', 'WONK', 'opsz'],
   adjustFontFallback: true,
 })
 
@@ -45,8 +45,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#E86B4B' },
-    { media: '(prefers-color-scheme: dark)', color: '#C24B2A' },
+    { media: '(prefers-color-scheme: light)', color: '#2B4D85' },
+    { media: '(prefers-color-scheme: dark)', color: '#142C55' },
   ],
   colorScheme: 'light',
 }
@@ -128,7 +128,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="fr" className={`scroll-smooth ${dmSans.variable} ${fraunces.variable}`}>
       <head>
         {/* PWA Meta Tags (apple-mobile-web-app, mobile-web-app-capable, theme-color handled by metadata/viewport exports) */}
-        <meta name="msapplication-TileColor" content="#E86B4B" />
+        <meta name="msapplication-TileColor" content="#2B4D85" />
         <meta name="msapplication-tap-highlight" content="no" />
 
         {/* LLM discovery — llms.txt (GEO/AEO optimization) */}
@@ -170,7 +170,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_SUPABASE_URL || ''} />
         <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_SUPABASE_URL || ''} />
 
-        {/* Preconnect for images - Unsplash */}
+        {/* Preconnect Unsplash — encore utilisé par blog-covers (à migrer Nano Banana) */}
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
@@ -208,6 +208,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Footer />
         <ClientOnlyFooterHelpers />
         <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
+        <CursorTrail />
       </body>
     </html>
   )

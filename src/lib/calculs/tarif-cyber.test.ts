@@ -16,7 +16,7 @@ describe('Calculateur tarif cyber assurance', () => {
     expect(r.fourchetteMediane).toBeLessThan(3000)
   })
 
-  it('Santé/médical = secteur RGPD le plus risqué', () => {
+  it('Santé / médical = secteur RGPD le plus risqué', () => {
     const tpe = calculerCyber({
       secteur: 'tpe-services',
       ca: 500000,

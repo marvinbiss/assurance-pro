@@ -5,9 +5,9 @@ export interface IllustrationProps {
 }
 
 export const ACCENT_STROKE = {
-  primary: '#C24B2A',
+  primary: '#1B3A6D',
   forest: '#3D8B68',
-  honey: '#E8960A',
+  honey: '#B8975A',
 } as const
 
 export const BASE_STROKE = '#45403B'

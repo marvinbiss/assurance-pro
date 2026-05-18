@@ -26,7 +26,7 @@ const ACCENTS = {
 export function DisambiguationPage({ statut, intro, options }: DisambiguationPageProps) {
   return (
     <article className="min-h-screen bg-sand-50">
-      <section className="relative overflow-hidden bg-sand-50 py-20 md:py-28">
+      <section className="relative overflow-hidden bg-sand-50 py-20 dark:bg-charcoal-900 md:py-28">
         <GrainOverlay opacity={0.04} />
 
         <div className="container relative mx-auto max-w-5xl px-6 lg:px-12">

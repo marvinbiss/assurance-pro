@@ -19,7 +19,7 @@ describe('branded types', () => {
       expect(toPageSlug('prix/rc-pro/consultant')).toBe('prix/rc-pro/consultant')
     })
 
-    it('normalizes leading/trailing slashes', () => {
+    it('normalizes leading / trailing slashes', () => {
       expect(toPageSlug('/rc-pro/')).toBe('rc-pro')
       expect(toPageSlug('//prix/rc-pro//')).toBe('prix/rc-pro')
     })
@@ -40,7 +40,7 @@ describe('branded types', () => {
     })
   })
 
-  describe('SIRET / SIREN', () => {
+  describe('SIRET — SIREN', () => {
     it('accepts valid SIRET', () => {
       expect(toSIRET('12345678901234')).toBe('12345678901234')
       expect(toSIRET('123 456 789 01234')).toBe('12345678901234') // strip spaces

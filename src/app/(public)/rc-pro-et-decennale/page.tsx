@@ -37,7 +37,7 @@ export default function Page() {
         {
           icon: '🔧',
           title: 'RC Pro = pendant chantier',
-          desc: 'Dommages causés à clients/tiers durant prestation',
+          desc: 'Dommages causés à clients ou tiers durant prestation',
         },
         {
           icon: '🏗️',
@@ -163,7 +163,7 @@ export default function Page() {
         },
         {
           q: 'Pack RC Pro + Décennale : combien d&apos;économies ?',
-          a: 'Économies typiques pack vs séparé : AE peintre -150€/an, AE plombier -300€/an, SARL BTP 5 salariés -1 200€/an, SAS BTP PME 10 salariés -1 800€/an. Soit -15-20% en moyenne.',
+          a: 'Économies typiques pack vs séparé : AE peintre -150€ par an, AE plombier -300€ par an, SARL BTP 5 salariés -1 200€ par an, SAS BTP PME 10 salariés -1 800€ par an. Soit -15-20% en moyenne.',
         },
         {
           q: 'Quel assureur pour pack RC Pro + Décennale BTP ?',

@@ -1,3 +1,5 @@
+import 'server-only'
+
 /**
  * Singletons partagés pour clients LLM — évite double connection pool.
  *

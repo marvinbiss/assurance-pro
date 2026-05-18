@@ -8,15 +8,15 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/carte-professionnelle-assurance'
+const SLUG = 'guides / carte-professionnelle-assurance'
 const TITLE = 'Carte professionnelle assurance — Obtention, ORIAS, IAS 2026'
 const TAGLINE =
-  'Tout savoir sur la carte professionnelle assurance (IAS) : conditions, formation 150h, immatriculation ORIAS, niveau I/II/III, démarches 2026.'
+  'Tout savoir sur la carte professionnelle assurance (IAS) : conditions, formation 150h, immatriculation ORIAS, niveau I, II ou III, démarches 2026.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Carte professionnelle assurance (IAS) : conditions d'obtention, formation 150h obligatoire, immatriculation ORIAS, niveau I (courtier) / II (mandataire) / III (mandataire intermédiaire). Démarches complètes + sanctions absence.",
+    "Carte professionnelle assurance (IAS) : conditions d'obtention, formation 150h obligatoire, immatriculation ORIAS, niveau I (courtier) — II (mandataire) — III (mandataire intermédiaire). Démarches complètes + sanctions absence.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'article' },
 }
@@ -27,7 +27,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La carte professionnelle assurance — officiellement IAS (Intermédiaire en Assurance) — est obligatoire pour exercer une activité de distribution d'assurance en France (courtier, mandataire d'assureur, mandataire d'intermédiaire). Elle est délivrée par l'ORIAS (Organisme pour le Registre des Intermédiaires en Assurance) après vérification de 4 conditions cumulatives : honorabilité (casier judiciaire vierge), capacité professionnelle (formation 150h minimum + diplôme), couverture RCP de 1 920 000€ minimum, et garantie financière. Cette page détaille les 3 niveaux (I/II/III), les démarches d'inscription, les coûts et les sanctions en cas d'exercice sans IAS (jusqu'à 3 ans de prison)."
+      intro="La carte professionnelle assurance — officiellement IAS (Intermédiaire en Assurance) — est obligatoire pour exercer une activité de distribution d'assurance en France (courtier, mandataire d'assureur, mandataire d'intermédiaire). Elle est délivrée par l'ORIAS (Organisme pour le Registre des Intermédiaires en Assurance) après vérification de 4 conditions cumulatives : honorabilité (casier judiciaire vierge), capacité professionnelle (formation 150h minimum + diplôme), couverture RCP de 1 920 000€ minimum, et garantie financière. Cette page détaille les 3 niveaux (I, II ou III), les démarches d'inscription, les coûts et les sanctions en cas d'exercice sans IAS (jusqu'à 3 ans de prison)."
       legalReference="Articles L. 511-1 et suivants du Code des assurances + Décret 2007-1270"
       isObligatoire={true}
       benefits={[
@@ -44,12 +44,12 @@ export default function Page() {
         {
           icon: '🎓',
           title: 'Formation 150h',
-          desc: 'Niveau I (courtier) : 150h obligatoires. Niveau II/III : 80-150h selon profil',
+          desc: 'Niveau I (courtier) : 150h obligatoires. Niveau II ou III : 80-150h selon profil',
         },
         {
           icon: '💰',
           title: 'Coût IAS annuel',
-          desc: '40€ inscription + RCP 700-2 000€/an + formation initiale ~2 500€',
+          desc: '40€ inscription + RCP 700-2 000€ par an + formation initiale ~2 500€',
         },
       ]}
       sections={[
@@ -116,7 +116,8 @@ export default function Page() {
                   formation, RCP, garantie financière, casier judiciaire)
                 </li>
                 <li>
-                  <strong>Paiement frais</strong> : 40€ d&apos;inscription + 25€/an de cotisation
+                  <strong>Paiement frais</strong> : 40€ d&apos;inscription + 25€ par an de
+                  cotisation
                 </li>
                 <li>
                   <strong>Délai d&apos;instruction</strong> : 3-6 semaines (selon volume dossiers
@@ -124,8 +125,8 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Numéro IAS attribué</strong> : 7-8 chiffres + lettre de catégorie. Mention
-                  OBLIGATOIRE sur tous les documents commerciaux + cliquable vers orias.fr (arrêté
-                  6/12/2022)
+                  OBLIGATOIRE sur tous les documents commerciaux + cliquable vers orias.fr (arrêté 6
+                  décembre 2022)
                 </li>
               </ol>
             </>
@@ -139,11 +140,11 @@ export default function Page() {
         },
         {
           q: "Quelle formation pour obtenir l'IAS niveau I (courtier) ?",
-          a: "Formation 150 heures obligatoire (sauf si diplôme niveau bac+2 dans le domaine OU 4 ans d'expérience dans le secteur). Coût formation initiale : ~2 500€. Formation continue ensuite : 15h/an obligatoire (DDA art. L. 511-2).",
+          a: "Formation 150 heures obligatoire (sauf si diplôme niveau bac+2 dans le domaine OU 4 ans d'expérience dans le secteur). Coût formation initiale : ~2 500€. Formation continue ensuite : 15h par an obligatoire (DDA art. L. 511-2).",
         },
         {
           q: 'Combien coûte la carte IAS par an ?',
-          a: 'Inscription ORIAS : 40€ une fois. Cotisation annuelle : 25€. Plus : RCP intermédiaire 700-2 000€/an (1,92 M€ minimum) + garantie financière 50 000€ + formation continue 15h/an (~500€/an). Coût total annuel : ~1 500-3 000€.',
+          a: 'Inscription ORIAS : 40€ une fois. Cotisation annuelle : 25€. Plus : RCP intermédiaire 700-2 000€ par an (1,92 M€ minimum) + garantie financière 50 000€ + formation continue 15h par an (~500€ par an). Coût total annuel : ~1 500-3 000€.',
         },
         {
           q: 'Combien de temps pour obtenir la carte IAS ?',

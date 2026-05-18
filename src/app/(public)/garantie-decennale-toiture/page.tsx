@@ -15,7 +15,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Garantie décennale toiture : obligation Loi Spinetta pour couvreur, étancheur, charpentier. Tarif 1 800-3 500€/an (AE) à 4 500€/an (SARL). Infiltrations + effondrement couverts.',
+    'Garantie décennale toiture : obligation Loi Spinetta pour couvreur, étancheur, charpentier. Tarif 1 800-3 500€ par an (AE) à 4 500€ par an (SARL). Infiltrations + effondrement couverts.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -46,13 +46,13 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '1 800-4 500€/an',
-          desc: 'AE 1 800-3 500€ • SARL/SAS 2 800-4 500€+ (risque élevé)',
+          title: '1 800-4 500€ par an',
+          desc: 'AE 1 800-3 500€ • SARL ou SAS 2 800-4 500€+ (risque élevé)',
         },
         {
           icon: '🏗️',
           title: '4 métiers concernés',
-          desc: 'Couvreur, étancheur, charpentier bois/métal, bardeur',
+          desc: 'Couvreur, étancheur, charpentier bois ou métal, bardeur',
         },
       ]}
       sections={[
@@ -68,7 +68,7 @@ export default function Page() {
                   Infiltrations par solins, faîtage, raccords cheminée — sinistre N+2 à N+8 fréquent
                 </li>
                 <li>Glissement de tuiles, soulèvement par vent fort</li>
-                <li>Défauts d&apos;étanchéité bardage / zinguerie</li>
+                <li>Défauts d&apos;étanchéité bardage — zinguerie</li>
                 <li>Effondrement charpente (rare mais catastrophique : 100 000-500 000€)</li>
                 <li>Condensation sous toiture mal ventilée → moisissures combles</li>
               </ul>
@@ -84,25 +84,25 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Couvreur-zingueur auto-entrepreneur</strong> : 2 200-3 500€/an
+                <strong>Couvreur-zingueur auto-entrepreneur</strong> : 2 200-3 500€ par an
               </li>
               <li>
-                <strong>Étancheur AE</strong> (terrasse + toits-terrasses) : 2 500-4 200€/an
+                <strong>Étancheur AE</strong> (terrasse + toits-terrasses) : 2 500-4 200€ par an
               </li>
               <li>
-                <strong>Charpentier bois AE</strong> : 2 400-3 800€/an
+                <strong>Charpentier bois AE</strong> : 2 400-3 800€ par an
               </li>
               <li>
-                <strong>Charpentier métallique AE</strong> : 2 800-4 500€/an
+                <strong>Charpentier métallique AE</strong> : 2 800-4 500€ par an
               </li>
               <li>
-                <strong>Bardeur AE</strong> : 2 200-3 500€/an
+                <strong>Bardeur AE</strong> : 2 200-3 500€ par an
               </li>
               <li>
-                <strong>SARL/SAS couvreur</strong> : 3 500-7 500€/an
+                <strong>SARL ou SAS couvreur</strong> : 3 500-7 500€ par an
               </li>
               <li>
-                <strong>SARL/SAS étancheur</strong> : 4 000-9 000€/an
+                <strong>SARL ou SAS étancheur</strong> : 4 000-9 000€ par an
               </li>
             </ul>
           ),
@@ -123,7 +123,7 @@ export default function Page() {
                   <strong>Qualibat 4411, 4413</strong> (charpente bois)
                 </li>
                 <li>
-                  <strong>RGE Qualibat / RGE Qualit&apos;EnR</strong> pour les couvreurs PV
+                  <strong>RGE Qualibat — RGE Qualit&apos;EnR</strong> pour les couvreurs PV
                 </li>
                 <li>
                   <strong>SOPREMA Pro, IKO Pro</strong> certifications fabricants étanchéité
@@ -140,7 +140,7 @@ export default function Page() {
         },
         {
           q: 'Quel plafond pour une décennale couvreur ?',
-          a: 'Minimum légal Spinetta : non plafonné (couverture intégrale du sinistre dans la limite contractuelle). Les assureurs fixent généralement 1-2M€ par sinistre pour AE, 3-5M€ pour SARL/SAS. Vérifier sur attestation.',
+          a: 'Minimum légal Spinetta : non plafonné (couverture intégrale du sinistre dans la limite contractuelle). Les assureurs fixent généralement 1-2M€ par sinistre pour AE, 3-5M€ pour SARL ou SAS. Vérifier sur attestation.',
         },
         {
           q: 'Que se passe-t-il si je sous-traite la couverture ?',
@@ -148,7 +148,7 @@ export default function Page() {
         },
         {
           q: 'La décennale couvre-t-elle les panneaux photovoltaïques en toiture ?',
-          a: "Oui, mais nécessite une qualification RGE + souvent une extension décennale photovoltaïque. Sans cette extension, l'installation PV est exclue. Couverture spécifique 800-2 000€/an additionnel.",
+          a: "Oui, mais nécessite une qualification RGE + souvent une extension décennale photovoltaïque. Sans cette extension, l'installation PV est exclue. Couverture spécifique 800-2 000€ par an additionnel.",
         },
       ]}
       relatedMetiers={[

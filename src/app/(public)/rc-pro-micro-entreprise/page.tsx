@@ -14,12 +14,12 @@ export const revalidate = 86400
 const SLUG = 'rc-pro-micro-entreprise'
 const TITLE = 'RC Pro Micro Entreprise — Obligation, sinistres, comparatif 2026'
 const TAGLINE =
-  'La RC Pro micro-entreprise protège votre patrimoine personnel contre les sinistres clients. Tarif 95-450€/an selon activité. Hiscox, Stello, April Pro comparatif.'
+  'La RC Pro micro-entreprise protège votre patrimoine personnel contre les sinistres clients. Tarif 95-450€ par an selon activité. Hiscox, Stello, April Pro comparatif.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro micro-entreprise : protection patrimoine perso AE/EI. Tarifs 95-450€/an. Hiscox 95€ services, April Pro 250€ BTP. Comparatif 5 assureurs spécialisés.',
+    'RC Pro micro-entreprise : protection patrimoine perso AE ou EI. Tarifs 95-450€ par an. Hiscox 95€ services, April Pro 250€ BTP. Comparatif 5 assureurs spécialisés.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro micro-entreprise est essentielle pour TOUT auto-entrepreneur ou EI en régime micro : elle protège votre patrimoine personnel contre les sinistres causés à des clients dans votre activité. Sans RC Pro, le micro-entrepreneur engage sa responsabilité personnelle illimitée (vs responsabilité limitée d'une SARL/SAS). Sinistre moyen micro-entreprise : 5-30k€ — sortie de poche directe sans RC Pro."
+      intro="La RC Pro micro-entreprise est essentielle pour TOUT auto-entrepreneur ou EI en régime micro : elle protège votre patrimoine personnel contre les sinistres causés à des clients dans votre activité. Sans RC Pro, le micro-entrepreneur engage sa responsabilité personnelle illimitée (vs responsabilité limitée d'une SARL ou SAS). Sinistre moyen micro-entreprise : 5-30k€ — sortie de poche directe sans RC Pro."
       legalReference="art. L. 124-3 + L. 121-2 C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="rc-pro"
@@ -44,13 +44,13 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '95-450€/an selon activité',
+          title: '95-450€ par an selon activité',
           desc: 'Services 95-220€ • BTP 250-450€ • Médical 800€+',
         },
         {
           icon: '⚖️',
           title: 'Obligation par profession',
-          desc: 'Médical, juridique, immobilier, BTP, taxi/VTC',
+          desc: 'Médical, juridique, immobilier, BTP, taxi ou VTC',
         },
         {
           icon: '📈',
@@ -102,23 +102,23 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>Hiscox</strong> : 🥇 best price services intellectuels AE (95-220€/an),
+                <strong>Hiscox</strong> : 🥇 best price services intellectuels AE (95-220€ par an),
                 postériorité 10 ans (unique), plafond 1M€
               </li>
               <li>
-                <strong>Stello</strong> : challenger 100% digital (90-200€/an), app mobile native,
-                postériorité 5 ans
+                <strong>Stello</strong> : challenger 100% digital (90-200€ par an), app mobile
+                native, postériorité 5 ans
               </li>
               <li>
                 <strong>Allianz Pro</strong> : couverture la plus large (services + BTP +
-                agriculture), 180-380€/an
+                agriculture), 180-380€ par an
               </li>
               <li>
-                <strong>MMA Pro</strong> : équilibré, réseau 1 500+ agences, 250-450€/an pour AE
+                <strong>MMA Pro</strong> : équilibré, réseau 1 500+ agences, 250-450€ par an pour AE
               </li>
               <li>
                 <strong>April Pro BTP</strong> : 🥇 best price AE BTP en complément décennale
-                (250-450€/an)
+                (250-450€ par an)
               </li>
             </ul>
           ),
@@ -128,8 +128,8 @@ export default function Page() {
           body: (
             <ol>
               <li>
-                <strong>Activité précise</strong> : services intellectuels (Hiscox/Stello), BTP
-                (April Pro), médical (assureurs spé), commerce (Allianz Pro/MMA)
+                <strong>Activité précise</strong> : services intellectuels (Hiscox ou Stello), BTP
+                (April Pro), médical (assureurs spé), commerce (Allianz Pro ou MMA)
               </li>
               <li>
                 <strong>Plafond</strong> : 500k€ minimum AE petite activité, 1M€ standard
@@ -153,19 +153,19 @@ export default function Page() {
       faq={[
         {
           q: 'RC Pro micro-entreprise vraiment indispensable ?',
-          a: 'OUI quasi-systématiquement. Sans RC Pro, sinistre client = saisie possible de votre patrimoine personnel (compte bancaire, voiture, biens immobiliers). Prime 95-450€/an vs sinistre potentiel 5-30k€ — ROI évident. Obligatoire pour professions réglementées.',
+          a: 'OUI quasi-systématiquement. Sans RC Pro, sinistre client = saisie possible de votre patrimoine personnel (compte bancaire, voiture, biens immobiliers). Prime 95-450€ par an vs sinistre potentiel 5-30k€ — ROI évident. Obligatoire pour professions réglementées.',
         },
         {
           q: 'Tarif RC Pro pour micro-entreprise débutante ?',
-          a: 'AE services intellectuels CA &lt; 30k€ : 95-150€/an chez Hiscox ou Stello. AE BTP débutant : 250-400€/an chez April Pro (en complément décennale 950-2 800€/an). AE esthéticienne : 180-280€/an. AE coach sportif : 200-300€/an.',
+          a: 'AE services intellectuels CA &lt; 30k€ : 95-150€ par an chez Hiscox ou Stello. AE BTP débutant : 250-400€ par an chez April Pro (en complément décennale 950-2 800€ par an). AE esthéticienne : 180-280€ par an. AE coach sportif : 200-300€ par an.',
         },
         {
           q: 'RC Pro micro-entreprise vs SARL : différence ?',
-          a: 'RC Pro micro = 95-450€/an (plafond standard 500k€-1M€). RC Pro SARL = 350-1 500€/an (plafond 1-3M€). Différence majeure : SARL a responsabilité limitée capital social, micro-entreprise = patrimoine perso engagé. RC Pro encore plus critique en micro.',
+          a: 'RC Pro micro = 95-450€ par an (plafond standard 500k€-1M€). RC Pro SARL = 350-1 500€ par an (plafond 1-3M€). Différence majeure : SARL a responsabilité limitée capital social, micro-entreprise = patrimoine perso engagé. RC Pro encore plus critique en micro.',
         },
         {
           q: 'Comment choisir entre Hiscox et April Pro pour AE BTP ?',
-          a: 'Pour AE BTP : April Pro BTP est leader (best price 250-450€/an RC Pro + 950-2 800€/an décennale). Hiscox ne fait PAS de décennale BTP. Pour AE services intellectuels : Hiscox best price 95-220€/an. Choisir selon votre activité principale.',
+          a: 'Pour AE BTP : April Pro BTP est leader (best price 250-450€ par an RC Pro + 950-2 800€ par an décennale). Hiscox ne fait PAS de décennale BTP. Pour AE services intellectuels : Hiscox best price 95-220€ par an. Choisir selon votre activité principale.',
         },
       ]}
       relatedMetiers={[

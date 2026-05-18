@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
   const now = Date.now()
   const ageMs = now - data.issued_at
   if (ageMs < -60_000 || ageMs > 5 * 60_000) {
-    return NextResponse.json({ error: 'Token expiré ou clock skew trop large.' }, { status: 400 })
+    return NextResponse.json({ error: 'Token expiré / clock skew trop large.' }, { status: 400 })
   }
 
   try {
@@ -115,7 +115,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Service indisponible.' }, { status: 500 })
     }
     if (!nonceData || nonceData.length === 0) {
-      logger.warn({ nonce: data.nonce.slice(0, 8) }, 'admin-conseil-recommandation: nonce replay rejected')
+      logger.warn(
+        { nonce: data.nonce.slice(0, 8) },
+        'admin-conseil-recommandation: nonce replay rejected'
+      )
       return NextResponse.json({ error: 'Nonce déjà consommé.' }, { status: 409 })
     }
 
@@ -167,7 +170,9 @@ export async function POST(req: NextRequest) {
       if (Array.isArray(value)) return '[' + value.map(sortedStringify).join(',') + ']'
       const obj = value as Record<string, unknown>
       const keys = Object.keys(obj).sort()
-      return '{' + keys.map((k) => JSON.stringify(k) + ':' + sortedStringify(obj[k])).join(',') + '}'
+      return (
+        '{' + keys.map((k) => JSON.stringify(k) + ':' + sortedStringify(obj[k])).join(',') + '}'
+      )
     }
     const fullPayload = { besoins: conseil.besoins, recommandations, reference: data.reference }
     const newHash = createHash('sha256').update(sortedStringify(fullPayload)).digest('hex')
@@ -192,14 +197,23 @@ export async function POST(req: NextRequest) {
     })
 
     if (insertErr) {
-      logger.error({ err: insertErr, reference: data.reference }, 'conseil-recommandation insert failed')
+      logger.error(
+        { err: insertErr, reference: data.reference },
+        'conseil-recommandation insert failed'
+      )
       return NextResponse.json({ error: 'Persistence indisponible' }, { status: 500 })
     }
 
     // 4) Met à jour le statut du lead (audit error explicit)
-    const { error: statusErr } = await admin.from('leads').update({ status: 'quoted' }).eq('id', lead.id)
+    const { error: statusErr } = await admin
+      .from('leads')
+      .update({ status: 'quoted' })
+      .eq('id', lead.id)
     if (statusErr) {
-      logger.warn({ err: statusErr, leadId: lead.id }, 'conseil-recommandation: status update failed')
+      logger.warn(
+        { err: statusErr, leadId: lead.id },
+        'conseil-recommandation: status update failed'
+      )
     }
 
     // Audit log : qui/quand/quel dossier (preuve d'appel admin opposable)

@@ -10,8 +10,8 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'guides/assurance-decennale-immediate'
-const TITLE = 'Assurance décennale immédiate 2026 — Attestation 6h ou 24h (procédure express)'
+const SLUG = 'guides / assurance-decennale-immediate'
+const TITLE = 'Assurance décennale immédiate 2026 — Attestation 6h / 24h (procédure express)'
 const TAGLINE =
   "Besoin d'une décennale en urgence pour démarrer un chantier ? Procédure express : attestation provisoire en 6h, attestation conforme arrêté 23 janvier 2024 sous 24h."
 
@@ -46,7 +46,7 @@ export default function Page() {
         {
           icon: '📋',
           title: '8 documents pré-checkés',
-          desc: 'Liste documents à préparer pour valider en express : KBIS, RIB, attestations URSSAF/RSI…',
+          desc: 'Liste documents à préparer pour valider en express : KBIS, RIB, attestations URSSAF ou RSI…',
         },
         {
           icon: '💰',
@@ -95,7 +95,7 @@ export default function Page() {
                   </tr>
                   <tr>
                     <td className="border p-2">Profils acceptés</td>
-                    <td className="border p-2">AE/EI/EURL/SASU profil simple</td>
+                    <td className="border p-2">AE, EI, EURL ou SASU profil simple</td>
                     <td className="border p-2">Tous profils (y compris flottes)</td>
                   </tr>
                 </tbody>
@@ -122,18 +122,18 @@ export default function Page() {
                   sociales)
                 </li>
                 <li>
-                  <strong>Attestation fiscale</strong> de moins de 6 mois (à jour TVA/IS)
+                  <strong>Attestation fiscale</strong> de moins de 6 mois (à jour TVA ou IS)
                 </li>
                 <li>
                   <strong>Relevé d&apos;information assureur précédent</strong> (sur 5 ans — si déjà
                   assuré)
                 </li>
                 <li>
-                  <strong>Liste des activités BTP exercées</strong> (codes NAF + nomenclature
-                  FFB/CAPEB)
+                  <strong>Liste des activités BTP exercées</strong> (codes NAF + nomenclature FFB ou
+                  CAPEB)
                 </li>
                 <li>
-                  <strong>CV/diplômes du dirigeant</strong> + qualifications RGE/Qualibat si
+                  <strong>CV ou diplômes du dirigeant</strong> + qualifications RGE ou Qualibat si
                   applicable
                 </li>
                 <li>
@@ -195,7 +195,7 @@ export default function Page() {
         },
         {
           q: 'Express 6h : pour qui ?',
-          a: "Pour artisans BTP en démarrage de chantier urgent : réponse appel d'offres MaPrimeRénov' avec délai serré, remplacement d'une entreprise défaillante sur un chantier en cours, urgence client (assurance habitation client exigeant attestation pour valider sinistre). Profils acceptés : AE/EI/EURL/SASU profil simple (CA <300k€, ≤2 salariés).",
+          a: "Pour artisans BTP en démarrage de chantier urgent : réponse appel d'offres MaPrimeRénov' avec délai serré, remplacement d'une entreprise défaillante sur un chantier en cours, urgence client (assurance habitation client exigeant attestation pour valider sinistre). Profils acceptés : AE, EI, EURL ou SASU profil simple (CA <300k€, ≤2 salariés).",
         },
         {
           q: 'Sur-prime Express : combien ?',

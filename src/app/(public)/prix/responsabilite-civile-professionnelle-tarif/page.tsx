@@ -11,15 +11,15 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'prix/responsabilite-civile-professionnelle-tarif'
+const SLUG = 'prix / responsabilite-civile-professionnelle-tarif'
 const TITLE = 'Tarif Responsabilité Civile Professionnelle — Prix 2026 par activité'
 const TAGLINE =
-  'Tarifs RC Pro 2026 détaillés par activité (services, BTP, médical, immobilier) et statut juridique. Hiscox 95€/an best AE, MMA 600€/an SARL PME.'
+  'Tarifs RC Pro 2026 détaillés par activité (services, BTP, médical, immobilier) et statut juridique. Hiscox 95€ par an best AE, MMA 600€ par an SARL PME.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Tarif RC Pro 2026 : AE services 95-220€/an, AE BTP 250-450€/an, SARL 350-1500€/an, médical 800-2500€/an. Comparatif 5 assureurs détaillé.',
+    'Tarif RC Pro 2026 : AE services 95-220€ par an, AE BTP 250-450€ par an, SARL 350-1500€ par an, médical 800-2500€ par an. Comparatif 5 assureurs détaillé.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -52,7 +52,11 @@ export default function Page() {
           title: 'Tous statuts',
           desc: 'AE, EI, EURL, SARL, SASU, SAS, profession libérale',
         },
-        { icon: '💰', title: 'Dès 95€/an', desc: 'Best price Hiscox AE services intellectuels' },
+        {
+          icon: '💰',
+          title: 'Dès 95€ par an',
+          desc: 'Best price Hiscox AE services intellectuels',
+        },
       ]}
       sections={[
         {
@@ -60,37 +64,38 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>AE services intellectuels</strong> (consultant, IT, designer) : 95-220€/an
+                <strong>AE services intellectuels</strong> (consultant, IT, designer) : 95-220€ par
+                an
               </li>
               <li>
-                <strong>AE coaching/formation</strong> : 150-300€/an
+                <strong>AE coaching ou formation</strong> : 150-300€ par an
               </li>
               <li>
-                <strong>AE esthétique/coiffure à domicile</strong> : 180-350€/an
+                <strong>AE esthétique ou coiffure à domicile</strong> : 180-350€ par an
               </li>
               <li>
-                <strong>AE BTP</strong> (+ décennale obligatoire) : 250-450€/an
+                <strong>AE BTP</strong> (+ décennale obligatoire) : 250-450€ par an
               </li>
               <li>
-                <strong>SASU services CA &lt; 100k€</strong> : 350-550€/an
+                <strong>SASU services CA &lt; 100k€</strong> : 350-550€ par an
               </li>
               <li>
-                <strong>SARL services CA 100-300k€</strong> : 600-1 200€/an
+                <strong>SARL services CA 100-300k€</strong> : 600-1 200€ par an
               </li>
               <li>
-                <strong>SAS PME CA 300k-1M€</strong> : 1 200-2 500€/an
+                <strong>SAS PME CA 300k-1M€</strong> : 1 200-2 500€ par an
               </li>
               <li>
-                <strong>Agent immobilier Carte T</strong> : 350-1 800€/an (Hoguet)
+                <strong>Agent immobilier Carte T</strong> : 350-1 800€ par an (Hoguet)
               </li>
               <li>
-                <strong>Médecin libéral</strong> : 800-1 500€/an
+                <strong>Médecin libéral</strong> : 800-1 500€ par an
               </li>
               <li>
-                <strong>Avocat</strong> : 500-1 500€/an (Ordre)
+                <strong>Avocat</strong> : 500-1 500€ par an (Ordre)
               </li>
               <li>
-                <strong>Architecte DPLG</strong> : 2 500-5 000€/an + décennale
+                <strong>Architecte DPLG</strong> : 2 500-5 000€ par an + décennale
               </li>
             </ul>
           ),
@@ -107,7 +112,7 @@ export default function Page() {
                 <strong>CA déclaré</strong> : prime augmente proportionnellement
               </li>
               <li>
-                <strong>Statut juridique</strong> : AE moins cher que SARL/SAS pour activité
+                <strong>Statut juridique</strong> : AE moins cher que SARL ou SAS pour activité
                 équivalente
               </li>
               <li>
@@ -120,7 +125,8 @@ export default function Page() {
                 <strong>Ancienneté + sinistralité</strong> : 3+ ans sans sinistre = -10-15%
               </li>
               <li>
-                <strong>Cyber-assurance combinée</strong> : +150-2000€/an si activité IT/digital
+                <strong>Cyber-assurance combinée</strong> : +150-2000€ par an si activité IT ou
+                digital
               </li>
             </ul>
           ),
@@ -130,17 +136,18 @@ export default function Page() {
           body: (
             <ul>
               <li>
-                <strong>AE services intellectuels</strong> : 🥇 Hiscox 95-220€/an • Stello
-                90-200€/an
+                <strong>AE services intellectuels</strong> : 🥇 Hiscox 95-220€ par an • Stello
+                90-200€ par an
               </li>
               <li>
-                <strong>AE BTP</strong> : 🥇 April Pro 250-450€/an (en + décennale)
+                <strong>AE BTP</strong> : 🥇 April Pro 250-450€ par an (en + décennale)
               </li>
               <li>
-                <strong>SARL services</strong> : Allianz Pro 350-900€/an • MMA Pro 380-1000€/an
+                <strong>SARL services</strong> : Allianz Pro 350-900€ par an • MMA Pro 380-1000€ par
+                an
               </li>
               <li>
-                <strong>SAS PME</strong> : Allianz Pro 1200-2500€/an • MMA Pro 1500-2800€/an
+                <strong>SAS PME</strong> : Allianz Pro 1200-2500€ par an • MMA Pro 1500-2800€ par an
               </li>
               <li>
                 <strong>Profession libérale médicale</strong> : assureurs spécialisés Ordre dédié
@@ -152,11 +159,11 @@ export default function Page() {
       faq={[
         {
           q: 'Tarif RC Pro AE freelance débutant ?',
-          a: 'AE services intellectuels (consultant, IT, designer) CA &lt; 50k€ : 95-150€/an chez Hiscox ou Stello (best price). Plafond 500k€-1M€. Postériorité 5-10 ans selon assureur.',
+          a: 'AE services intellectuels (consultant, IT, designer) CA &lt; 50k€ : 95-150€ par an chez Hiscox ou Stello (best price). Plafond 500k€-1M€. Postériorité 5-10 ans selon assureur.',
         },
         {
           q: 'Tarif RC Pro pour SARL services 300k€ CA ?',
-          a: 'SARL services CA 200-300k€ : 600-1 200€/an chez Hiscox, Allianz Pro ou MMA. Plafond 1-2M€ recommandé. Cyber-assurance combinée : +500-1500€/an si activité IT/digital.',
+          a: 'SARL services CA 200-300k€ : 600-1 200€ par an chez Hiscox, Allianz Pro ou MMA. Plafond 1-2M€ recommandé. Cyber-assurance combinée : +500-1500€ par an si activité IT ou digital.',
         },
         {
           q: 'Comment réduire mon tarif RC Pro ?',

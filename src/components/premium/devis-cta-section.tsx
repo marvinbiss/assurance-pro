@@ -1,5 +1,7 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2, Clock, ShieldCheck } from 'lucide-react'
+import { PAGE_PHOTOS } from '@/lib/data/photo-library'
 import { GrainOverlay } from './grain-overlay'
 import { MagneticButton } from '@/components/motion/dynamic/MagneticButtonDynamic'
 import { ParallaxLayer } from '@/components/motion/dynamic/ParallaxLayerDynamic'
@@ -30,6 +32,13 @@ export function DevisCTASection({
     <section
       className={`relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28 ${className}`}
     >
+      <Image
+        src={PAGE_PHOTOS.ctaFinal.src}
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-15"
+      />
       <GrainOverlay opacity={0.06} />
       <ParallaxLayer
         speed={0.25}

@@ -17,15 +17,15 @@ import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pili
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'rc-pro/transport-marchandises'
-const TITLE = 'RC Pro transporteur marchandises 2026 — CMR + national (380-1 800€/an)'
+const SLUG = 'rc-pro / transport-marchandises'
+const TITLE = 'RC Pro transporteur marchandises 2026 — CMR + national (380-1 800€ par an)'
 const TAGLINE =
   'La RC Pro obligatoire pour transporteurs marchandises : couverture Convention CMR (international) + art. L. 132-1 C. transp. (national). Plafonds règlementaires + garantie complément possible.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro transport marchandises 2026 : OBLIGATOIRE Convention CMR (international) + art. L. 132-1 C. transp. (national). Plafonds règlementaires CMR : 8,33 DTS/kg (≈10€/kg). Garantie ad valorem complémentaire possible. Tarifs 380-1 800€/an AE/EI, 5 200-12 000€/an SARL flotte. Devis ORIAS sous 24h.',
+    'RC Pro transport marchandises 2026 : OBLIGATOIRE Convention CMR (international) + art. L. 132-1 C. transp. (national). Plafonds règlementaires CMR : 8,33 DTS ou kg (≈10€ par kg). Garantie ad valorem complémentaire possible. Tarifs 380-1 800€ par an AE ou EI, 5 200-12 000€ par an SARL flotte. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -36,8 +36,8 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro est OBLIGATOIRE pour tout transporteur de marchandises (transport routier, déménagement, livraison professionnelle, coursier urbain) en France et à l'international (Convention CMR Genève 19 mai 1956 + art. L. 132-1 C. transp.). Elle couvre la responsabilité du transporteur en cas de perte, vol, détérioration ou retard sur les marchandises confiées. Plafonds règlementaires : Convention CMR = 8,33 DTS/kg (≈10€/kg en 2026), Code transport national = 23€/kg pour transports < 3T et 14€/kg pour transports > 3T. Au-delà, les clients peuvent souscrire une garantie 'ad valorem' complémentaire. Tarifs 2026 : 380-1 800 €/an pour AE/EI coursier-livraison, 5 200-12 000 €/an pour SARL flotte 5 véhicules."
-      legalReference="Convention CMR (Genève 19/05/1956) + art. L. 132-1 C. transp. + Décret 2017-1198 (LOTI)"
+      intro="La RC Pro est OBLIGATOIRE pour tout transporteur de marchandises (transport routier, déménagement, livraison professionnelle, coursier urbain) en France et à l'international (Convention CMR Genève 19 mai 1956 + art. L. 132-1 C. transp.). Elle couvre la responsabilité du transporteur en cas de perte, vol, détérioration ou retard sur les marchandises confiées. Plafonds règlementaires : Convention CMR = 8,33 DTS ou kg (≈10€ par kg en 2026), Code transport national = 23€ par kg pour transports < 3T et 14€ par kg pour transports > 3T. Au-delà, les clients peuvent souscrire une garantie 'ad valorem' complémentaire. Tarifs 2026 : 380-1 800 € par an pour AE ou EI coursier-livraison, 5 200-12 000 € par an pour SARL flotte 5 véhicules."
+      legalReference="Convention CMR (Genève 19 mai 1956) + art. L. 132-1 C. transp. + Décret 2017-1198 (LOTI)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
       expertBio={EXPERT_SERVICES}
@@ -51,7 +51,7 @@ export default function Page() {
         {
           icon: '📦',
           title: 'Marchandises confiées',
-          desc: 'Couverture perte, vol, détérioration, retard. Plafonds règlementaires CMR/L. 132-1 + ad valorem',
+          desc: 'Couverture perte, vol, détérioration, retard. Plafonds règlementaires CMR ou L. 132-1 + ad valorem',
         },
         {
           icon: '🚛',
@@ -60,8 +60,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '380-1 800 €/an AE/EI',
-          desc: 'AE coursier urbain 380-680€. EI livraison régionale 720-1 280€. SARL flotte 5 véhicules : 5 200-12 000€/an',
+          title: '380-1 800 € par an AE ou EI',
+          desc: 'AE coursier urbain 380-680€. EI livraison régionale 720-1 280€. SARL flotte 5 véhicules : 5 200-12 000€ par an',
         },
       ]}
       sections={[
@@ -82,28 +82,28 @@ export default function Page() {
                     <td className="border p-2">International (UE + tous pays signataires CMR)</td>
                     <td className="border p-2">Convention CMR Genève 1956</td>
                     <td className="border p-2">
-                      <strong>8,33 DTS/kg</strong> (≈10€/kg 2026)
+                      <strong>8,33 DTS ou kg</strong> (≈10€ par kg 2026)
                     </td>
                   </tr>
                   <tr>
                     <td className="border p-2">National &lt; 3 tonnes</td>
                     <td className="border p-2">Art. L. 132-1 C. transp. + Contrat type</td>
                     <td className="border p-2">
-                      <strong>23€/kg</strong> (limite envoi 750€/colis)
+                      <strong>23€ par kg</strong> (limite envoi 750€ par colis)
                     </td>
                   </tr>
                   <tr>
                     <td className="border p-2">National &gt; 3 tonnes</td>
                     <td className="border p-2">Art. L. 132-1 C. transp. + Contrat type</td>
                     <td className="border p-2">
-                      <strong>14€/kg</strong> (limite envoi 2 300€/colis)
+                      <strong>14€ par kg</strong> (limite envoi 2 300€ par colis)
                     </td>
                   </tr>
                   <tr>
                     <td className="border p-2">Déménagement</td>
                     <td className="border p-2">Décret 2017-1198 (LOTI déménagement)</td>
                     <td className="border p-2">
-                      <strong>Forfait 76€/m³</strong> ou valeur déclarée
+                      <strong>Forfait 76€ par m³</strong> ou valeur déclarée
                     </td>
                   </tr>
                 </tbody>
@@ -136,7 +136,7 @@ export default function Page() {
                   forfaitaire
                 </li>
                 <li>
-                  <strong>Erreur destinataire / livraison perdue (12%)</strong>
+                  <strong>Erreur destinataire — livraison perdue (12%)</strong>
                 </li>
                 <li>
                   <strong>Sinistres ADR matières dangereuses (8%)</strong> — défaut signalisation,
@@ -182,7 +182,7 @@ export default function Page() {
       faq={[
         {
           q: 'RC Pro transport obligatoire ?',
-          a: 'OUI absolument dès le 1er transport commercial de marchandises. Convention CMR pour international (signée par 55+ pays UE/Russie/Iran/Maroc), art. L. 132-1 C. transp. pour national. Sanctions absence : amende 7 500€ + retrait licence transport (Loi LOTI). Carte conducteur DGITM bloquée.',
+          a: 'OUI absolument dès le 1er transport commercial de marchandises. Convention CMR pour international (signée par 55+ pays UE, Russie, Iran ou Maroc), art. L. 132-1 C. transp. pour national. Sanctions absence : amende 7 500€ + retrait licence transport (Loi LOTI). Carte conducteur DGITM bloquée.',
         },
         {
           q: 'Plafond CMR : suffisant pour mon activité ?',
@@ -190,11 +190,11 @@ export default function Page() {
         },
         {
           q: 'ADR matières dangereuses : RC Pro spécifique ?',
-          a: 'OUI obligatoire (Accord ADR Genève 30 sept 1957). Sur-prime +30-80% du tarif RC Pro standard. Couverture pollution accidentelle obligatoire (art. L. 162-1 C. env.) + responsabilité dépollution. Conseiller à la sécurité ADR (CSS) obligatoire si >50T/an transportées.',
+          a: 'OUI obligatoire (Accord ADR Genève 30 sept 1957). Sur-prime +30-80% du tarif RC Pro standard. Couverture pollution accidentelle obligatoire (art. L. 162-1 C. env.) + responsabilité dépollution. Conseiller à la sécurité ADR (CSS) obligatoire si >50T par an transportées.',
         },
         {
           q: 'Tarif RC Pro transport 2026 ?',
-          a: 'AE coursier urbain (CA <50k€) : 380-680 €/an. EI livraison régionale : 720-1 280 €/an. EURL transport interrégional : 1 100-2 200 €/an. SARL flotte 5 véhicules : 5 200-12 000 €/an. SAS flotte 20+ véhicules : 22 000-58 000 €/an. Variables : zone (Paris +20%), ADR (+30-80%), international (+15%).',
+          a: 'AE coursier urbain (CA <50k€) : 380-680 € par an. EI livraison régionale : 720-1 280 € par an. EURL transport interrégional : 1 100-2 200 € par an. SARL flotte 5 véhicules : 5 200-12 000 € par an. SAS flotte 20+ véhicules : 22 000-58 000 € par an. Variables : zone (Paris +20%), ADR (+30-80%), international (+15%).',
         },
       ]}
     />

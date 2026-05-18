@@ -10,7 +10,14 @@
  * - FFA 2024 (sinistralité multirisque pro par secteur)
  */
 
-export type TypeLocaux = 'bureau' | 'commerce' | 'restaurant' | 'atelier' | 'entrepot' | 'cabinet-medical' | 'showroom-magasin'
+export type TypeLocaux =
+  | 'bureau'
+  | 'commerce'
+  | 'restaurant'
+  | 'atelier'
+  | 'entrepot'
+  | 'cabinet-medical'
+  | 'showroom-magasin'
 
 export type Statut = 'locataire' | 'proprietaire-occupant'
 
@@ -20,7 +27,7 @@ export interface MultirisqueInput {
   typeLocaux: TypeLocaux
   surface: number /* m² */
   statut: Statut
-  ca: number /* € HT/an */
+  ca: number /* € HT par an */
   formule: Formule
   valeurMobilier: number /* € — valeur mobilier + matériel */
   pertesExploitation: boolean /* inclure garantie perte exploitation ? */
@@ -44,18 +51,18 @@ export interface MultirisqueResultat {
 }
 
 const TARIF_BASE_LOCAUX: Record<TypeLocaux, { perM2: number }> = {
-  bureau: { perM2: 4.2 }, /* 4,20€/m²/an base */
+  bureau: { perM2: 4.2 } /* 4,20€ par m² par an base */,
   commerce: { perM2: 6.8 },
-  restaurant: { perM2: 11.5 }, /* sur-prime cuisine + intoxications */
+  restaurant: { perM2: 11.5 } /* sur-prime cuisine + intoxications */,
   atelier: { perM2: 7.5 },
-  entrepot: { perM2: 3.8 }, /* moins de personnel = moins de risques */
+  entrepot: { perM2: 3.8 } /* moins de personnel = moins de risques */,
   'cabinet-medical': { perM2: 8.2 },
   'showroom-magasin': { perM2: 7.2 },
 }
 
 const COEF_STATUT: Record<Statut, number> = {
-  locataire: 1.0, /* RC locative + dommages mobilier */
-  'proprietaire-occupant': 1.45, /* + reconstruction immeuble */
+  locataire: 1.0 /* RC locative + dommages mobilier */,
+  'proprietaire-occupant': 1.45 /* + reconstruction immeuble */,
 }
 
 const COEF_FORMULE: Record<Formule, { coef: number; description: string }> = {
@@ -108,18 +115,39 @@ export function calculerMultirisque(input: MultirisqueInput): MultirisqueResulta
   const cZone = COEF_ZONE[input.zone]
   const cPE = input.pertesExploitation ? 1.18 : 1.0
 
-  const cotAn = Math.round((coutSurface * cSurf * cStat * cCA * cFor * cMob * cZone * cPE) / 10) * 10
+  const cotAn =
+    Math.round((coutSurface * cSurf * cStat * cCA * cFor * cMob * cZone * cPE) / 10) * 10
   const cotMois = Math.round(cotAn / 12)
 
   const garanties = [
-    { nom: 'Incendie / explosion', couvert: true, plafond: 'Reconstruction local + matériel' },
-    { nom: 'Dégâts des eaux', couvert: input.formule !== 'essentielle', plafond: '500 000 € standard' },
-    { nom: 'Vol / vandalisme', couvert: input.formule !== 'essentielle', plafond: 'Valeur mobilier déclaré' },
-    { nom: 'Bris de glace', couvert: input.formule !== 'essentielle', plafond: '15 000 € standard' },
-    { nom: 'Perte d\'exploitation', couvert: input.pertesExploitation, plafond: 'CA × 6-24 mois' },
-    { nom: 'RC locataire/propriétaire', couvert: true, plafond: '1 500 000 €' },
-    { nom: 'Catastrophes naturelles', couvert: input.formule === 'confort' || input.formule === 'premium', plafond: 'Valeur immeuble (Loi 1982)' },
-    { nom: 'Protection juridique', couvert: input.formule === 'premium', plafond: '20 000 €/an' },
+    { nom: 'Incendie — explosion', couvert: true, plafond: 'Reconstruction local + matériel' },
+    {
+      nom: 'Dégâts des eaux',
+      couvert: input.formule !== 'essentielle',
+      plafond: '500 000 € standard',
+    },
+    {
+      nom: 'Vol — vandalisme',
+      couvert: input.formule !== 'essentielle',
+      plafond: 'Valeur mobilier déclaré',
+    },
+    {
+      nom: 'Bris de glace',
+      couvert: input.formule !== 'essentielle',
+      plafond: '15 000 € standard',
+    },
+    { nom: 'Perte d’exploitation', couvert: input.pertesExploitation, plafond: 'CA × 6-24 mois' },
+    { nom: 'RC locataire ou propriétaire', couvert: true, plafond: '1 500 000 €' },
+    {
+      nom: 'Catastrophes naturelles',
+      couvert: input.formule === 'confort' || input.formule === 'premium',
+      plafond: 'Valeur immeuble (Loi 1982)',
+    },
+    {
+      nom: 'Protection juridique',
+      couvert: input.formule === 'premium',
+      plafond: '20 000 € par an',
+    },
   ]
 
   return {
@@ -140,13 +168,13 @@ export function calculerMultirisque(input: MultirisqueInput): MultirisqueResulta
 }
 
 export const TYPE_LOCAUX_LABELS: Record<TypeLocaux, string> = {
-  bureau: 'Bureau (4,20 €/m² base)',
-  commerce: 'Commerce de détail (6,80 €/m²)',
-  restaurant: 'Restaurant / brasserie (11,50 €/m²)',
-  atelier: 'Atelier (7,50 €/m²)',
-  entrepot: 'Entrepôt / stockage (3,80 €/m²)',
-  'cabinet-medical': 'Cabinet médical / paramédical (8,20 €/m²)',
-  'showroom-magasin': 'Showroom / magasin (7,20 €/m²)',
+  bureau: 'Bureau (4,20 € par m² base)',
+  commerce: 'Commerce de détail (6,80 € par m²)',
+  restaurant: 'Restaurant — brasserie (11,50 € par m²)',
+  atelier: 'Atelier (7,50 € par m²)',
+  entrepot: 'Entrepôt — stockage (3,80 € par m²)',
+  'cabinet-medical': 'Cabinet médical — paramédical (8,20 € par m²)',
+  'showroom-magasin': 'Showroom — magasin (7,20 € par m²)',
 }
 
 export const STATUT_LABELS: Record<Statut, string> = {
@@ -163,7 +191,7 @@ export const FORMULE_LABELS: Record<Formule, string> = {
 
 export const ZONE_LABELS: Record<MultirisqueInput['zone'], string> = {
   metropole: 'France métropolitaine (hors IDF)',
-  'paris-idf': 'Paris / Île-de-France (+22%)',
+  'paris-idf': 'Paris — Île-de-France (+22%)',
   corse: 'Corse (+8%)',
   dom: 'DOM (+32%)',
 }

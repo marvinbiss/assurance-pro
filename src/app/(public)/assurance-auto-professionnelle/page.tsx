@@ -11,14 +11,14 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-auto-professionnelle'
-const TITLE = 'Assurance auto professionnelle 2026 — Véhicules pro tous usages (480-2 800€/an)'
+const TITLE = 'Assurance auto professionnelle 2026 — Véhicules pro tous usages (480-2 800€ par an)'
 const TAGLINE =
   "L'assurance auto professionnelle pour véhicule à usage pro : VUL, VL société, voiture commerciale, véhicule de fonction. Différente de l'assurance auto perso. Obligation art. L. 211-1 C. assur."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance auto professionnelle 2026 : OBLIGATOIRE pour tout véhicule à usage pro (art. L. 211-1 C. assur.). Couvre VUL, VL société, voiture commerciale, véhicule de fonction. Tarifs 480-2 800€/an selon profil. Distinct assurance auto perso. Devis ORIAS 24h.',
+    'Assurance auto professionnelle 2026 : OBLIGATOIRE pour tout véhicule à usage pro (art. L. 211-1 C. assur.). Couvre VUL, VL société, voiture commerciale, véhicule de fonction. Tarifs 480-2 800€ par an selon profil. Distinct assurance auto perso. Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -29,7 +29,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance auto professionnelle est OBLIGATOIRE pour tout véhicule utilisé à des fins professionnelles en France (art. L. 211-1 du Code des assurances). Elle est DISTINCTE de l'assurance auto personnelle car les risques pro sont différents : kilométrage plus élevé (~25-50 000 km/an vs 12 000 perso), trajets professionnels (visites client, livraison, chantier), véhicule souvent stationné en zone urbaine dense, transport occasionnel de matériel. Ne PAS déclarer l'usage pro sur une assurance auto perso = NULLITÉ du contrat en cas de sinistre (art. L. 113-9 C. assur.). Tarifs 2026 : 480-2 800 €/an pour véhicule unique selon profil. 6 assureurs partenaires (MMA Pro Auto, AXA Pro Auto, Allianz Pro Auto, Generali, MAIF Pro, MACIF Pro)."
+      intro="L'assurance auto professionnelle est OBLIGATOIRE pour tout véhicule utilisé à des fins professionnelles en France (art. L. 211-1 du Code des assurances). Elle est DISTINCTE de l'assurance auto personnelle car les risques pro sont différents : kilométrage plus élevé (~25-50 000 km par an vs 12 000 perso), trajets professionnels (visites client, livraison, chantier), véhicule souvent stationné en zone urbaine dense, transport occasionnel de matériel. Ne PAS déclarer l'usage pro sur une assurance auto perso = NULLITÉ du contrat en cas de sinistre (art. L. 113-9 C. assur.). Tarifs 2026 : 480-2 800 € par an pour véhicule unique selon profil. 6 assureurs partenaires (MMA Pro Auto, AXA Pro Auto, Allianz Pro Auto, Generali, MAIF Pro, MACIF Pro)."
       legalReference="Art. L. 211-1 C. assur. (obligation) + L. 113-9 (nullité fausse déclaration usage)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -53,8 +53,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '480-2 800 €/an unique',
-          desc: 'Véhicule unique 480-1 280€. Flotte 5 véhicules : 5 200-12 000€/an. Variables : usage, zone, antécédents',
+          title: '480-2 800 € par an unique',
+          desc: 'Véhicule unique 480-1 280€. Flotte 5 véhicules : 5 200-12 000€ par an. Variables : usage, zone, antécédents',
         },
       ]}
       sections={[
@@ -93,8 +93,8 @@ export default function Page() {
                   </tr>
                   <tr>
                     <td className="border p-2">Tarif moyen 2026</td>
-                    <td className="border p-2">480-980 €/an</td>
-                    <td className="border p-2">680-1 580 €/an (+25-40%)</td>
+                    <td className="border p-2">480-980 € par an</td>
+                    <td className="border p-2">680-1 580 € par an (+25-40%)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">Garanties supplémentaires</td>
@@ -139,19 +139,19 @@ export default function Page() {
       faq={[
         {
           q: 'Auto perso peut couvrir usage pro occasionnel ?',
-          a: "OUI mais avec déclaration explicite à votre assureur ('usage privé + trajets travail' ou 'usage privé + déplacements professionnels occasionnels'). Sans déclaration, tout sinistre survenant en trajet pro = NULLITÉ contrat. Au-delà de 5 000 km pro/an : passer en auto pro est obligatoire.",
+          a: "OUI mais avec déclaration explicite à votre assureur ('usage privé + trajets travail' ou 'usage privé + déplacements professionnels occasionnels'). Sans déclaration, tout sinistre survenant en trajet pro = NULLITÉ contrat. Au-delà de 5 000 km pro par an : passer en auto pro est obligatoire.",
         },
         {
           q: 'Véhicule au nom de la société : assurance pro obligatoire ?',
-          a: "OUI absolument. Tout véhicule immatriculé au nom d'une société (carte grise au nom SARL/SAS/EURL/SASU) doit être assuré en auto pro. Aucune exception même si usage 100% privé du dirigeant. Sanction : amende 3 750€ + immobilisation véhicule.",
+          a: "OUI absolument. Tout véhicule immatriculé au nom d'une société (carte grise au nom SARL, SAS, EURL ou SASU) doit être assuré en auto pro. Aucune exception même si usage 100% privé du dirigeant. Sanction : amende 3 750€ + immobilisation véhicule.",
         },
         {
           q: 'Tarif assurance auto pro 2026 ?',
-          a: 'VL société véhicule unique (CA <500k€, conducteur 35-55 ans, métropole, antécédents propres) : 680-1 280 €/an. VUL utilitaire : 880-1 580 €/an. Voiture commerciale haut kilométrage (50k+ km/an) : 1 280-2 200 €/an. Flotte 5 véhicules : 5 200-12 000 €/an. Variables : zone (Paris +20%), antécédents, formule.',
+          a: 'VL société véhicule unique (CA <500k€, conducteur 35-55 ans, métropole, antécédents propres) : 680-1 280 € par an. VUL utilitaire : 880-1 580 € par an. Voiture commerciale haut kilométrage (50k+ km par an) : 1 280-2 200 € par an. Flotte 5 véhicules : 5 200-12 000 € par an. Variables : zone (Paris +20%), antécédents, formule.',
         },
         {
           q: 'Différence avec assurance VTC ?',
-          a: 'Assurance VTC = transport DE PASSAGERS contre rémunération (Loi LOTI). Garantie spécifique passagers + RC pro corporels passagers. Assurance auto pro = transport BIENS/MATÉRIEL ou usage pro sans transport personnes payant. Voir notre /outils/calculateur-tarif-vtc pour VTC spécifique.',
+          a: 'Assurance VTC = transport DE PASSAGERS contre rémunération (Loi LOTI). Garantie spécifique passagers + RC pro corporels passagers. Assurance auto pro = transport BIENS ou MATÉRIEL ou usage pro sans transport personnes payant. Voir notre /outils ou calculateur-tarif-vtc pour VTC spécifique.',
         },
       ]}
     />

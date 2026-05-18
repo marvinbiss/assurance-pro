@@ -45,8 +45,14 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
     updatedAt: '2026-06-10',
     readTime: '10 min',
     sources: [
-      LEGIFRANCE('Code des assurances art. L. 124-1', 'codes/article_lc/LEGIARTI000006792570'),
-      LEGIFRANCE('Arrêté du 6 décembre 2022 (cliquabilité ORIAS)', 'jorf/id/JORFTEXT000046718521'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 124-1',
+        'codes ou article_lc ou LEGIARTI000006792570'
+      ),
+      LEGIFRANCE(
+        'Arrêté du 6 décembre 2022 (cliquabilité ORIAS)',
+        'jorf, id ou JORFTEXT000046718521'
+      ),
       ORIAS('ORIAS — vérification courtier'),
       ACPR('ACPR — contrôle attestations'),
     ],
@@ -88,7 +94,7 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
           items: [
             "**Nom commercial + raison sociale + n° SIRET** de l'assuré",
             "**Adresse complète** du siège social + lieu(x) d'exercice si différent",
-            '**Activité(s) assurée(s)** : description précise des métiers couverts (code APE/NAF + libellé)',
+            '**Activité(s) assurée(s)** : description précise des métiers couverts (code APE ou NAF + libellé)',
             "**Nom + adresse de l'assureur** + n° SIREN de la compagnie",
             "**Nom + n° ORIAS du courtier intermédiaire** avec mention cliquable depuis l'arrêté du 6 décembre 2022",
             "**N° de police d'assurance** RC Pro souscrite",
@@ -158,8 +164,8 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
         list: {
           ordered: true,
           items: [
-            "**Identification de l'activité** : code APE/NAF officiel, description précise, expérience pro, formations/diplômes",
-            '**Évaluation des risques** : CA prévisionnel, zone géographique, clientèle B2B/B2C, antécédents',
+            "**Identification de l'activité** : code APE ou NAF officiel, description précise, expérience pro, formations ou diplômes",
+            '**Évaluation des risques** : CA prévisionnel, zone géographique, clientèle B2B ou B2C, antécédents',
             '**Comparaison multi-assureurs** : un courtier ORIAS interroge 8 à 12 assureurs partenaires en moins de 4 h',
             '**Souscription + paiement** : signature électronique qualifiée, paiement par prélèvement, attestation PDF envoyée par courriel immédiatement',
           ],
@@ -198,10 +204,13 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
     sources: [
       LEGIFRANCE(
         'Loi Hamon 17 mars 2014 (art. L. 113-15-2 C. assur.)',
-        'jorf/id/JORFTEXT000028738036'
+        'jorf, id ou JORFTEXT000028738036'
       ),
-      LEGIFRANCE('Loi Chatel 28 janvier 2005', 'jorf/id/JORFTEXT000000444571'),
-      LEGIFRANCE('Code des assurances art. L. 113-12', 'codes/article_lc/LEGIARTI000006792511'),
+      LEGIFRANCE('Loi Chatel 28 janvier 2005', 'jorf, id ou JORFTEXT000000444571'),
+      LEGIFRANCE(
+        'Code des assurances art. L. 113-12',
+        'codes ou article_lc ou LEGIARTI000006792511'
+      ),
     ],
     toc: [
       { id: 'cadre', title: '1. Cadre légal résiliation assurance pro' },
@@ -271,7 +280,7 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
       {
         id: 'motif',
         h2: '4. Résiliation pour motif (sinistre, changement)',
-        paragraphs: ['Plusieurs motifs permettent une résiliation hors cadre Hamon/Chatel :'],
+        paragraphs: ['Plusieurs motifs permettent une résiliation hors cadre Hamon ou Chatel :'],
         list: {
           items: [
             "**Changement de situation** (art. L. 113-16) : changement de domicile, situation matrimoniale, profession, régime matrimonial — résiliation 3 mois après l'événement",
@@ -357,8 +366,8 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
     updatedAt: '2026-06-14',
     readTime: '10 min',
     sources: [
-      LEGIFRANCE('Loi Hoguet du 2 janvier 1970', 'loda/id/JORFTEXT000000875432'),
-      LEGIFRANCE('Loi ALUR du 24 mars 2014', 'jorf/id/JORFTEXT000028772256'),
+      LEGIFRANCE('Loi Hoguet du 2 janvier 1970', 'loda, id ou JORFTEXT000000875432'),
+      LEGIFRANCE('Loi ALUR du 24 mars 2014', 'jorf, id ou JORFTEXT000028772256'),
       ORIAS('ORIAS — registre intermédiaires'),
     ],
     toc: [
@@ -366,7 +375,7 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
       { id: 'carte-t', title: '2. Carte T — transactions immobilières' },
       { id: 'carte-g', title: '3. Carte G — gestion locative' },
       { id: 'carte-s', title: '4. Carte S — syndic de copropriété' },
-      { id: 'courtier-orias', title: '5. Courtier ORIAS (CIF/IOBSP/IAS)' },
+      { id: 'courtier-orias', title: '5. Courtier ORIAS (CIF, IOBSP ou IAS)' },
       { id: 'rc-pro', title: '6. RC Pro obligatoire' },
       { id: 'demarches', title: "7. Démarches d'obtention" },
       { id: 'faq', title: 'FAQ' },
@@ -378,7 +387,7 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
         paragraphs: [
           "La Loi Hoguet du 2 janvier 1970 (modifiée par Loi ALUR 2014) impose aux professionnels de l'immobilier et du courtage la détention de cartes professionnelles spécifiques selon leur activité. Ces cartes sont délivrées par la Chambre de Commerce et d'Industrie (CCI) après vérification des conditions de capacité professionnelle.",
           "L'obtention d'une carte professionnelle suppose : (1) garantie financière souscrite, (2) RC Pro adaptée souscrite, (3) condition de capacité professionnelle (diplôme ou expérience), (4) honorabilité (casier judiciaire vierge), (5) inscription au registre du commerce.",
-          "Les cartes sont valables 3 ans renouvelables. Renouvellement conditionné à la justification d'une formation continue (obligation FCO ALUR : 14 h/an ou 42 h sur 3 ans).",
+          "Les cartes sont valables 3 ans renouvelables. Renouvellement conditionné à la justification d'une formation continue (obligation FCO ALUR : 14 h par an ou 42 h sur 3 ans).",
         ],
       },
       {
@@ -406,7 +415,7 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
           items: [
             '**Conditions obtention** : identiques carte T',
             '**Garantie financière** : minimum 110 000 €',
-            '**RC Pro** : 500 000 € / 1 M€ identiques',
+            '**RC Pro** : 500 000 € — 1 M€ identiques',
             '**Particularité 2026** : obligation détention en compte séquestre des dépôts garantie (CARPA équivalente immobilier)',
           ],
         },
@@ -421,8 +430,8 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
           items: [
             '**Conditions obtention** : identiques carte T + formation spécifique syndic 30 h',
             '**Garantie financière** : minimum 110 000 €',
-            '**RC Pro** : 800 000 € / 1,5 M€ — niveau supérieur du fait responsabilité élargie',
-            '**Particularité** : obligation formation continue spécifique syndic 14 h/an',
+            '**RC Pro** : 800 000 € — 1,5 M€ — niveau supérieur du fait responsabilité élargie',
+            '**Particularité** : obligation formation continue spécifique syndic 14 h par an',
           ],
         },
       },
@@ -454,12 +463,12 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            '**Carte T (transactions)** : 500 000 € / sinistre + 1 M€ / année',
-            '**Carte G (gestion)** : 500 000 € / sinistre + 1 M€ / année',
-            '**Carte S (syndic)** : 800 000 € / sinistre + 1,5 M€ / année',
-            '**Courtier ORIAS IAS** : 1,5 M€ / sinistre + 2 M€ / année',
-            '**Courtier ORIAS IOBSP** : 500 000 € / sinistre + 800 000 € / année',
-            '**CIF** : 150 000 € / sinistre + 300 000 € / année',
+            '**Carte T (transactions)** : 500 000 € — sinistre + 1 M€ — année',
+            '**Carte G (gestion)** : 500 000 € — sinistre + 1 M€ — année',
+            '**Carte S (syndic)** : 800 000 € — sinistre + 1,5 M€ — année',
+            '**Courtier ORIAS IAS** : 1,5 M€ — sinistre + 2 M€ — année',
+            '**Courtier ORIAS IOBSP** : 500 000 € — sinistre + 800 000 € — année',
+            '**CIF** : 150 000 € — sinistre + 300 000 € — année',
           ],
         },
       },
@@ -505,7 +514,7 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
     slug: 'ipid-fiche-information-produit-assurance',
     title: "IPID 2026 : fiche d'information produit d'assurance expliquée",
     description:
-      'Guide 2026 IPID (Insurance Product Information Document). Obligatoire depuis 2018, format standardisé EIOPA, 7 sections, distinction RC Pro/décennale/multirisque, sanctions absence.',
+      'Guide 2026 IPID (Insurance Product Information Document). Obligatoire depuis 2018, format standardisé EIOPA, 7 sections, distinction RC Pro, décennale ou multirisque, sanctions absence.',
     category: 'Réglementation',
     tags: ['ipid', 'fiche information', 'eiopa', 'dda', 'standardisation'],
     ...AUTHOR,
@@ -513,8 +522,14 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
     updatedAt: '2026-06-16',
     readTime: '9 min',
     sources: [
-      LEGIFRANCE('Directive Distribution Assurance (DDA) 2016/97', 'jorf/id/JORFTEXT000035402090'),
-      LEGIFRANCE('Code des assurances art. L. 112-2', 'codes/article_lc/LEGIARTI000006792456'),
+      LEGIFRANCE(
+        'Directive Distribution Assurance (DDA) 2016/97',
+        'jorf, id ou JORFTEXT000035402090'
+      ),
+      LEGIFRANCE(
+        'Code des assurances art. L. 112-2',
+        'codes ou article_lc ou LEGIARTI000006792456'
+      ),
       {
         label: 'EIOPA — Insurance Product Information Document',
         url: 'https://www.eiopa.europa.eu/',
@@ -524,7 +539,7 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
       { id: 'definition', title: '1. IPID : définition + cadre légal' },
       { id: 'format', title: '2. Format standardisé EIOPA — 7 sections' },
       { id: 'contenu', title: '3. Contenu obligatoire des 7 sections' },
-      { id: 'distinction', title: '4. Distinction IPID / FIC / CGV' },
+      { id: 'distinction', title: '4. Distinction IPID — FIC — CGV' },
       { id: 'remise', title: '5. Modalités de remise' },
       { id: 'sanctions', title: "6. Sanctions en cas d'absence" },
       { id: 'faq', title: 'FAQ' },
@@ -582,14 +597,14 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
       },
       {
         id: 'distinction',
-        h2: '4. Distinction IPID / FIC / CGV',
+        h2: '4. Distinction IPID — FIC — CGV',
         paragraphs: ['3 documents distincts en assurance, à ne pas confondre :'],
         list: {
           ordered: true,
           items: [
             '**IPID (Insurance Product Information Document)** : fiche standardisée 2-3 pages, OBLIGATOIRE avant souscription, format EIOPA standardisé européen',
             "**FIC (Fiche d'Information Conseil)** : document du courtier (art. L. 521-4) justifiant la recommandation personnalisée — pas standardisé, contenu libre mais doit comporter recueil exigences + justification choix produit",
-            "**CGV/CGU (Conditions Générales)** : contrat complet 20-50 pages, l'IPID en est un résumé. Le client peut demander les CGV avant signature.",
+            "**CGV / CGU (Conditions Générales)** : contrat complet 20-50 pages, l'IPID en est un résumé. Le client peut demander les CGV avant signature.",
           ],
         },
       },
@@ -613,7 +628,7 @@ export const BLOG_POSTS_BATCH_6: Record<string, BlogPost> = {
         paragraphs: ["L'absence d'IPID ou la remise tardive expose à plusieurs sanctions :"],
         list: {
           items: [
-            "**Sanction ACPR** : avertissement, blâme, amende administrative jusqu'à 100 M€ pour les compagnies / 5 M€ pour les courtiers",
+            "**Sanction ACPR** : avertissement, blâme, amende administrative jusqu'à 100 M€ pour les compagnies — 5 M€ pour les courtiers",
             '**Nullité du contrat** : possible à la demande du client dans les 30 jours suivant la souscription',
             '**Responsabilité civile** : indemnisation du préjudice subi par le client (dommages-intérêts)',
             '**Atteinte à la réputation** : publication des sanctions sur le site ACPR (« Name & Shame »)',

@@ -33,7 +33,7 @@ export const EXTENSIONS: Record<string, Extension> = {
         h2: '6. Comprendre la composition de la prime décennale',
         paragraphs: [
           "Pour négocier efficacement, il faut comprendre comment l'assureur construit sa prime décennale. La structure type d'une prime se décompose en 4 postes : (1) le « risque pur » technique calculé sur la sinistralité historique du métier, (2) le chargement commercial et de gestion (10 à 18 %), (3) la marge de réassurance (3 à 8 %), (4) les taxes parafiscales et contributions (10 à 16 % selon les régions).",
-          "Pour un artisan maçon avec une prime brute de l'ordre de 80 €/mois, la part « risque pur » représente environ 50 €/mois — le reste correspond aux frais de fonctionnement et marges. C'est précisément sur ces postes annexes qu'un courtier peut négocier, en sélectionnant les assureurs ayant la structure de coûts la plus efficiente.",
+          "Pour un artisan maçon avec une prime brute de l'ordre de 80 € par mois, la part « risque pur » représente environ 50 € par mois — le reste correspond aux frais de fonctionnement et marges. C'est précisément sur ces postes annexes qu'un courtier peut négocier, en sélectionnant les assureurs ayant la structure de coûts la plus efficiente.",
           "Connaître cette décomposition permet aussi de réagir intelligemment à une hausse tarifaire : si votre prime augmente de +12 % sans aggravation de votre sinistralité, c'est probablement un ajustement commercial négociable, pas une réelle réévaluation du risque.",
         ],
       },
@@ -53,7 +53,7 @@ export const EXTENSIONS: Record<string, Extension> = {
         },
         callout: {
           tone: 'info',
-          text: "Le coût d'adhésion (typiquement 200 à 600 €/an selon la fédération) est généralement amorti dès la première année par les économies sur la décennale + RC pro. Bonus : accès à des formations qualifiantes valorisées par les assureurs.",
+          text: "Le coût d'adhésion (typiquement 200 à 600 € par an selon la fédération) est généralement amorti dès la première année par les économies sur la décennale + RC pro. Bonus : accès à des formations qualifiantes valorisées par les assureurs.",
         },
       },
       {
@@ -131,7 +131,7 @@ export const EXTENSIONS: Record<string, Extension> = {
         paragraphs: [
           "La Loi du 14 février 2022 a profondément modifié le paysage des statuts individuels en France. L'EIRL (Entreprise Individuelle à Responsabilité Limitée) a été SUPPRIMÉE et fusionnée avec l'EI classique, qui bénéficie désormais automatiquement de la séparation des patrimoines professionnel et personnel.",
           "Conséquence pour l'assurance : la distinction historique entre EI « risquée » et EIRL « protégée » a disparu. Tous les EI sont désormais traités de manière équivalente par les assureurs, avec une protection patrimoniale automatique sauf renonciation explicite (généralement demandée par les banques pour les crédits professionnels).",
-          "Cette unification a légèrement réduit l'écart tarifaire entre EI et formes sociétaires (EURL/SASU/SARL/SAS) : aujourd'hui, la différence de prime RC Pro entre EI et SASU se situe autour de +5 à +10 %, contre +15 à +20 % avant 2022.",
+          "Cette unification a légèrement réduit l'écart tarifaire entre EI et formes sociétaires (EURL, SASU, SARL ou SAS) : aujourd'hui, la différence de prime RC Pro entre EI et SASU se situe autour de +5 à +10 %, contre +15 à +20 % avant 2022.",
         ],
       },
       {
@@ -142,10 +142,10 @@ export const EXTENSIONS: Record<string, Extension> = {
         ],
         list: {
           items: [
-            "**Micro-entreprise** : régime forfaitaire (abattement 34 % BIC services, 50 % BIC ventes, 71 % BIC marchandises). Les primes d'assurance NE SONT PAS déductibles directement — elles sont incluses dans l'abattement forfaitaire. Plafond CA inchangé en 2026 : 91 900 € / 36 800 €.",
+            "**Micro-entreprise** : régime forfaitaire (abattement 34 % BIC services, 50 % BIC ventes, 71 % BIC marchandises). Les primes d'assurance NE SONT PAS déductibles directement — elles sont incluses dans l'abattement forfaitaire. Plafond CA inchangé en 2026 : 91 900 € — 36 800 €.",
             "**EI au régime réel** : primes d'assurance pro intégralement déductibles du bénéfice imposable. Possibilité de déduire aussi les frais kilométriques, télécoms pro, formations.",
-            '**EURL / SASU au régime IS** : primes déductibles + possibilité de cumuler une mutuelle Madelin (TNS si EURL gérant majoritaire) ou article 83 (assimilé-salarié si SASU).',
-            '**SARL / SAS** : optimisation possible via rémunération du dirigeant + dividendes, mutuelle entreprise pour les salariés (loi ANI), RC mandataires sociaux déductible.',
+            '**EURL — SASU au régime IS** : primes déductibles + possibilité de cumuler une mutuelle Madelin (TNS si EURL gérant majoritaire) ou article 83 (assimilé-salarié si SASU).',
+            '**SARL — SAS** : optimisation possible via rémunération du dirigeant + dividendes, mutuelle entreprise pour les salariés (loi ANI), RC mandataires sociaux déductible.',
           ],
         },
       },
@@ -161,7 +161,7 @@ export const EXTENSIONS: Record<string, Extension> = {
             '**EI** : risque de mise en cause du patrimoine personnel via renonciation à la séparation (souvent demandée par les banques). Recommandation : RC personnelle vie privée renforcée + protection juridique.',
             '**EURL** : risque de remise en cause de la limitation de responsabilité en cas de faute de gestion grave (jurisprudence Lagarde 2018). Recommandation : RC Mandataires Sociaux (D&O).',
             '**SASU** : risque cyber accru pour les freelances IT en SASU (clientèle B2B avec données sensibles). Recommandation : cyber assurance dédiée + RC Pro étendue.',
-            "**SARL / SAS** : risque social (litiges salariés, prud'hommes), RC employeur obligatoire + protection juridique sociale.",
+            "**SARL — SAS** : risque social (litiges salariés, prud'hommes), RC employeur obligatoire + protection juridique sociale.",
           ],
         },
       },
@@ -169,9 +169,9 @@ export const EXTENSIONS: Record<string, Extension> = {
         id: 'cas-pratiques-statut',
         h2: '11. 3 cas pratiques détaillés',
         paragraphs: [
-          '**Cas 1 — Plombier auto-entrepreneur CA ~35 k€** : RC Pro + décennale BTP (~85 €/mois). Mutuelle TNS Madelin déductible (~75 €/mois). Total assurance : ~160 €/mois soit 5,5 % du CA. Recommandation : bascule en EI au régime réel dès que CA > 40 k€ pour déduire les primes.',
-          '**Cas 2 — Consultante IT en SASU CA ~120 k€** : RC Pro 250 k€ ~30 €/mois + cyber 250 k€ ~30 €/mois. Mutuelle article 83 (assimilé-salarié) ~80 €/mois. Total : ~140 €/mois soit 1,4 % du CA. Avantages : protection chômage, retraite cadres, déductibilité totale.',
-          '**Cas 3 — SARL conseil 3 associés CA ~450 k€** : RC Pro ~95 €/mois + D&O Mandataires Sociaux ~120 €/mois + multirisque bureaux ~75 €/mois + protection juridique sociale ~40 €/mois. Total : ~330 €/mois soit 0,9 % du CA. Couverture complète multi-associés avec protection des dirigeants individuels.',
+          '**Cas 1 — Plombier auto-entrepreneur CA ~35 k€** : RC Pro + décennale BTP (~85 € par mois). Mutuelle TNS Madelin déductible (~75 € par mois). Total assurance : ~160 € par mois soit 5,5 % du CA. Recommandation : bascule en EI au régime réel dès que CA > 40 k€ pour déduire les primes.',
+          '**Cas 2 — Consultante IT en SASU CA ~120 k€** : RC Pro 250 k€ ~30 € par mois + cyber 250 k€ ~30 € par mois. Mutuelle article 83 (assimilé-salarié) ~80 € par mois. Total : ~140 € par mois soit 1,4 % du CA. Avantages : protection chômage, retraite cadres, déductibilité totale.',
+          '**Cas 3 — SARL conseil 3 associés CA ~450 k€** : RC Pro ~95 € par mois + D&O Mandataires Sociaux ~120 € par mois + multirisque bureaux ~75 € par mois + protection juridique sociale ~40 € par mois. Total : ~330 € par mois soit 0,9 % du CA. Couverture complète multi-associés avec protection des dirigeants individuels.',
         ],
       },
     ],
@@ -203,8 +203,8 @@ export const EXTENSIONS: Record<string, Extension> = {
         h2: '8. Mutuelle TNS Madelin pour micro-entrepreneur',
         paragraphs: [
           'Depuis 1994, la Loi Madelin (art. 154 bis CGI) permet aux Travailleurs Non Salariés (TNS), dont les micro-entrepreneurs, de déduire de leur bénéfice imposable les cotisations versées au titre de leur mutuelle santé, leur prévoyance, et leur retraite complémentaire.',
-          'Le plafond de déduction santé en 2026 est de 4 997 €/an pour un TNS célibataire et 7 200 €/an pour une famille (calculé sur 3,75 % du PASS + 7 % du PASS). La quasi-totalité des micro-entrepreneurs reste largement en deçà du plafond, ce qui rend la déduction intégralement utile.',
-          "**ATTENTION** : pour bénéficier de la Madelin, le micro-entrepreneur doit être au régime RÉEL d'imposition (BIC ou BNC réel), PAS au régime micro-fiscal forfaitaire. Cela implique parfois de basculer du régime micro vers le régime réel, ce qui mérite une analyse coût/bénéfice individuelle.",
+          'Le plafond de déduction santé en 2026 est de 4 997 € par an pour un TNS célibataire et 7 200 € par an pour une famille (calculé sur 3,75 % du PASS + 7 % du PASS). La quasi-totalité des micro-entrepreneurs reste largement en deçà du plafond, ce qui rend la déduction intégralement utile.',
+          "**ATTENTION** : pour bénéficier de la Madelin, le micro-entrepreneur doit être au régime RÉEL d'imposition (BIC ou BNC réel), PAS au régime micro-fiscal forfaitaire. Cela implique parfois de basculer du régime micro vers le régime réel, ce qui mérite une analyse coût ou bénéfice individuelle.",
         ],
       },
       {
@@ -215,12 +215,12 @@ export const EXTENSIONS: Record<string, Extension> = {
         ],
         list: {
           items: [
-            '**Services à la personne** (28 % des micro) : RC Pro obligatoire + multirisque domicile client + protection juridique. Tarif typique : ~25 €/mois.',
-            '**BTP** (19 %) : décennale + RC Pro + multirisque outils. Tarif : ~80-150 €/mois selon métier.',
-            '**Conseil/IT** (17 %) : RC Pro + cyber assurance. Tarif : ~40-60 €/mois.',
-            '**Commerce ambulant** (12 %) : multirisque marchandises + RC Pro + assurance véhicule pro. Tarif : ~50-90 €/mois.',
-            '**Bien-être/sport** : RC Pro corporelle + multirisque local. Tarif : ~35-60 €/mois.',
-            '**Animaux** (éducateurs canins, dog-sitters) : RC Pro animaux + protection juridique. Tarif : ~25-40 €/mois.',
+            '**Services à la personne** (28 % des micro) : RC Pro obligatoire + multirisque domicile client + protection juridique. Tarif typique : ~25 € par mois.',
+            '**BTP** (19 %) : décennale + RC Pro + multirisque outils. Tarif : ~80-150 € par mois selon métier.',
+            '**Conseil ou IT** (17 %) : RC Pro + cyber assurance. Tarif : ~40-60 € par mois.',
+            '**Commerce ambulant** (12 %) : multirisque marchandises + RC Pro + assurance véhicule pro. Tarif : ~50-90 € par mois.',
+            '**Bien-être ou sport** : RC Pro corporelle + multirisque local. Tarif : ~35-60 € par mois.',
+            '**Animaux** (éducateurs canins, dog-sitters) : RC Pro animaux + protection juridique. Tarif : ~25-40 € par mois.',
           ],
         },
       },
@@ -262,7 +262,7 @@ export const EXTENSIONS: Record<string, Extension> = {
           "Les certifications RGE (Reconnu Garant de l'Environnement) et Qualibat ont un impact significatif sur la sinistralité et donc sur les primes décennales. Les assureurs intègrent désormais ces certifications dans leur tarification :",
           "**RGE** : certification obligatoire pour faire bénéficier le client des aides publiques (MaPrimeRénov', CEE). Elle impose une formation de 7 jours + un audit régulier. Les artisans RGE ont une sinistralité d'environ -35 % par rapport aux non-RGE, ce qui se traduit par une réduction de prime de -10 à -20 % chez la plupart des assureurs.",
           '**Qualibat** : certification de qualité professionnelle BTP, déclinée en niveaux 1 à 5 étoiles selon expérience et compétences. Un artisan Qualibat 3 étoiles bénéficie typiquement de -15 % sur sa décennale, et un 5 étoiles peut atteindre -30 % chez certains assureurs comme SMABTP.',
-          "Investir dans ces certifications est généralement rentable dès la deuxième année : coût annuel de l'ordre de 300 à 800 €, économies de prime de 500 à 1 200 €/an + accès à de nouveaux marchés (chantiers publics, clients exigeant RGE).",
+          "Investir dans ces certifications est généralement rentable dès la deuxième année : coût annuel de l'ordre de 300 à 800 €, économies de prime de 500 à 1 200 € par an + accès à de nouveaux marchés (chantiers publics, clients exigeant RGE).",
         ],
       },
       {
@@ -332,14 +332,14 @@ export const EXTENSIONS: Record<string, Extension> = {
         paragraphs: [
           "Depuis la loi ALUR du 24 mars 2014, les détenteurs de cartes professionnelles immobilières (T, G, S) sont soumis à une obligation de formation continue : 14 heures par an ou 42 heures sur 3 ans, à valider auprès d'organismes agréés.",
           'Pour les courtiers ORIAS (IAS, IOBSP, CIF), la Directive Distribution Assurance (DDA) impose 15 heures de formation continue par an, articulée autour des connaissances réglementaires, des produits et des techniques de vente éthique.',
-          'Les organismes agréés sont nombreux : CNAM, IFPASS, INSEEC, ESA Business School. Coût moyen de la formation continue : 800 à 2 500 €/an selon les modalités (présentiel, e-learning, blended). Cette dépense est intégralement déductible et compte parmi les charges professionnelles.',
+          'Les organismes agréés sont nombreux : CNAM, IFPASS, INSEEC, ESA Business School. Coût moyen de la formation continue : 800 à 2 500 € par an selon les modalités (présentiel, e-learning, blended). Cette dépense est intégralement déductible et compte parmi les charges professionnelles.',
         ],
       },
       {
         id: 'renouvellement',
         h2: '9. Renouvellement de la carte tous les 3 ans',
         paragraphs: [
-          "Les cartes professionnelles T/G/S sont valables 3 ans. Le renouvellement doit être demandé au plus tard 3 mois avant l'expiration, sous peine d'interruption d'exercice. Procédure :",
+          "Les cartes professionnelles T, G ou S sont valables 3 ans. Le renouvellement doit être demandé au plus tard 3 mois avant l'expiration, sous peine d'interruption d'exercice. Procédure :",
         ],
         list: {
           ordered: true,
@@ -414,7 +414,7 @@ export const EXTENSIONS: Record<string, Extension> = {
         list: {
           ordered: true,
           items: [
-            "**Activités assurées correspondent à votre profil réel** : code APE/NAF + libellé doivent être exacts. Une activité non listée n'est pas couverte.",
+            "**Activités assurées correspondent à votre profil réel** : code APE ou NAF + libellé doivent être exacts. Une activité non listée n'est pas couverte.",
             "**Zone géographique** : France métropolitaine, DOM-TOM, UE, monde. Si vous travaillez à l'étranger occasionnellement, vérifier la couverture.",
             '**Plafonds par sinistre ET par année** : les sous-plafonds peuvent rendre le plafond global illusoire (exemple : 1 M€ global mais 50 k€ par poste de garantie).',
             '**Franchises** : valeur en euros ou en pourcentage. Une franchise de 10 % du montant du sinistre peut être très coûteuse.',
@@ -453,7 +453,7 @@ export const EXTENSIONS: Record<string, Extension> = {
     toc: [
       { id: 'hausse-tarifaire', title: '8. Hausse tarifaire 2022-2026 par segment' },
       { id: 'profils-types', title: '9. Profils types : 4 cas de tarification' },
-      { id: 'rge-impact', title: '10. Impact des certifications RGE/Qualibat sur les primes' },
+      { id: 'rge-impact', title: '10. Impact des certifications RGE ou Qualibat sur les primes' },
       { id: 'simulateur', title: '11. Comment utiliser un simulateur en ligne' },
     ],
     sections: [
@@ -466,11 +466,11 @@ export const EXTENSIONS: Record<string, Extension> = {
         list: {
           items: [
             "**Étanchéité (piscine, toiture-terrasse)** : +28 % cumulé entre 2022 et 2026. Métier le plus risqué, peu d'assureurs preneurs.",
-            '**Couverture / charpente** : +18 % cumulé. Hausse modérée grâce aux progrès des formations Qualibat.',
+            '**Couverture — charpente** : +18 % cumulé. Hausse modérée grâce aux progrès des formations Qualibat.',
             "**ITE (Isolation Thermique Extérieure)** : +45 % cumulé. Explosion liée à MaPrimeRénov', artisans non formés, qualité variable.",
             "**Gros œuvre maçonnerie** : +15 % cumulé. Stable car bassin d'assureurs concurrentiel.",
-            '**Plomberie / électricité** : +12 % cumulé. Métiers à sinistralité maîtrisée.',
-            '**Peinture / sols** : +8 % cumulé. Métiers à faible sinistralité.',
+            '**Plomberie — électricité** : +12 % cumulé. Métiers à sinistralité maîtrisée.',
+            '**Peinture — sols** : +8 % cumulé. Métiers à faible sinistralité.',
           ],
         },
         callout: {
@@ -483,15 +483,15 @@ export const EXTENSIONS: Record<string, Extension> = {
         h2: '9. Profils types : 4 cas de tarification',
         paragraphs: [
           'Pour illustrer concrètement la tarification décennale, voici 4 profils types et leurs primes constatées en 2026 :',
-          "**Profil 1 — Maçon AE débutant CA ~28 k€** : ~70 €/mois (840 €/an) avec plafond 500 k€. Pas de bonus, franchise 500 €. Tarif standard pour un démarrage d'activité.",
-          '**Profil 2 — Maçon EI confirmé CA ~80 k€ + 5 ans expérience** : ~95 €/mois (1 140 €/an) plafond 800 k€. Bonus -10 % expérience appliqué. Multi-métiers exclus.',
-          '**Profil 3 — Multi-métiers SARL CA ~250 k€ + 3 salariés** : ~280 €/mois (3 360 €/an) plafond 1,5 M€. Bonus -15 % Qualibat 3 étoiles. Multirisque RC Pro inclus.',
-          '**Profil 4 — Couvreur RGE EI CA ~120 k€** : ~135 €/mois (1 620 €/an) plafond 1 M€. Bonus cumulé -30 % (RGE + 8 ans sans sinistre).',
+          "**Profil 1 — Maçon AE débutant CA ~28 k€** : ~70 € par mois (840 € par an) avec plafond 500 k€. Pas de bonus, franchise 500 €. Tarif standard pour un démarrage d'activité.",
+          '**Profil 2 — Maçon EI confirmé CA ~80 k€ + 5 ans expérience** : ~95 € par mois (1 140 € par an) plafond 800 k€. Bonus -10 % expérience appliqué. Multi-métiers exclus.',
+          '**Profil 3 — Multi-métiers SARL CA ~250 k€ + 3 salariés** : ~280 € par mois (3 360 € par an) plafond 1,5 M€. Bonus -15 % Qualibat 3 étoiles. Multirisque RC Pro inclus.',
+          '**Profil 4 — Couvreur RGE EI CA ~120 k€** : ~135 € par mois (1 620 € par an) plafond 1 M€. Bonus cumulé -30 % (RGE + 8 ans sans sinistre).',
         ],
       },
       {
         id: 'rge-impact',
-        h2: '10. Impact des certifications RGE/Qualibat sur les primes',
+        h2: '10. Impact des certifications RGE ou Qualibat sur les primes',
         paragraphs: [
           'Comme évoqué dans la méthodologie de tarification, les certifications RGE et Qualibat ont un impact direct et chiffré sur les primes décennales :',
         ],
@@ -502,7 +502,7 @@ export const EXTENSIONS: Record<string, Extension> = {
             '**Qualibat 3 étoiles** : économie ~15 à 20 %.',
             '**Qualibat 4-5 étoiles** : économie ~25 à 35 % (équivalent grandes entreprises).',
             "**Cumul RGE + Qualibat 3+** : économie cumulée jusqu'à 40 % (plafonné par certains assureurs).",
-            '**Compagnonnage / diplôme BTS-BAC pro** : économie ~5 % chez quelques assureurs (SMABTP notamment).',
+            '**Compagnonnage — diplôme BTS-BAC pro** : économie ~5 % chez quelques assureurs (SMABTP notamment).',
           ],
         },
       },
@@ -515,9 +515,9 @@ export const EXTENSIONS: Record<string, Extension> = {
         list: {
           ordered: true,
           items: [
-            "**Code APE/NAF exact** : ne pas se contenter d'un libellé approximatif. Vérifier le code officiel sur l'INSEE.",
+            "**Code APE ou NAF exact** : ne pas se contenter d'un libellé approximatif. Vérifier le code officiel sur l'INSEE.",
             "**Chiffre d'affaires prévisionnel** : honnêtement estimé, à la baisse plutôt qu'à la hausse pour éviter mauvaises surprises.",
-            "**Expérience pro** : nombre d'années, formations, certifications RGE/Qualibat.",
+            "**Expérience pro** : nombre d'années, formations, certifications RGE ou Qualibat.",
             '**Antécédents sinistres** : déclarer tous les sinistres des 5 dernières années, même mineurs.',
             "**Plafond souhaité** : 500 k€ (minimum légal), 800 k€, 1 M€, ou plus selon donneurs d'ordre.",
           ],
@@ -550,11 +550,11 @@ export const EXTENSIONS: Record<string, Extension> = {
         ],
         list: {
           items: [
-            '**Conseil / IT** : +5 à +12 % cumulé. Marché concurrentiel, pression baissière par insurtech (Wakam, Stello, Luko Pro).',
+            '**Conseil — IT** : +5 à +12 % cumulé. Marché concurrentiel, pression baissière par insurtech (Wakam, Stello, Luko Pro).',
             '**Santé libérale** : +18 à +25 %. Hausse de la sinistralité corporelle, contentieux croissants.',
-            '**Immobilier (cartes T/G/S)** : +12 %. Hausse modérée mais stable.',
+            '**Immobilier (cartes T, G ou S)** : +12 %. Hausse modérée mais stable.',
             '**Transport (VTC, taxi)** : +20 à +28 %. Sinistralité accidents en hausse, plafonds RC corporelle revalorisés.',
-            '**Sport / loisirs** : +15 %. Augmentation modérée, surveillance accrue post-incidents.',
+            '**Sport — loisirs** : +15 %. Augmentation modérée, surveillance accrue post-incidents.',
             '**Cyber assurance dédiée** : +50 % entre 2022 et 2026. Explosion liée au ransomware.',
           ],
         },
@@ -572,7 +572,7 @@ export const EXTENSIONS: Record<string, Extension> = {
         id: 'plafonds-conseils',
         h2: '10. Quel plafond de garantie choisir selon votre CA ?',
         paragraphs: [
-          "Le choix du plafond de garantie est l'un des leviers les plus importants pour optimiser le rapport coût/protection :",
+          "Le choix du plafond de garantie est l'un des leviers les plus importants pour optimiser le rapport coût ou protection :",
         ],
         list: {
           items: [
@@ -592,10 +592,10 @@ export const EXTENSIONS: Record<string, Extension> = {
         id: 'cas-pratiques-rc',
         h2: '11. 4 cas pratiques détaillés',
         paragraphs: [
-          '**Cas 1 — Consultant SaaS CA ~120 k€** : RC Pro 1 M€ ~30 €/mois + cyber 250 k€ ~28 €/mois = 58 €/mois soit 0,6 % du CA. Plafond aligné sur valeur 1 mission stratégique × 5.',
-          '**Cas 2 — Cabinet expertise comptable 3 associés CA ~600 k€** : RC Pro 2 M€ ~180 €/mois + protection juridique ~40 €/mois = 220 €/mois soit 0,4 % du CA. Plafond exigé par la profession.',
-          '**Cas 3 — Agence immobilière carte T CA ~250 k€** : RC Pro 1 M€ ~95 €/mois + garantie financière 110 k€ obligatoire = 130 €/mois total. Conformité Loi Hoguet.',
-          '**Cas 4 — Chirurgien libéral CA ~400 k€** : RC Pro médicale 6 M€ ~2 100 €/mois (la plus chère). Tarif élevé lié à la sinistralité corporelle médicale + obligation Loi Kouchner depuis 2002.',
+          '**Cas 1 — Consultant SaaS CA ~120 k€** : RC Pro 1 M€ ~30 € par mois + cyber 250 k€ ~28 € par mois = 58 € par mois soit 0,6 % du CA. Plafond aligné sur valeur 1 mission stratégique × 5.',
+          '**Cas 2 — Cabinet expertise comptable 3 associés CA ~600 k€** : RC Pro 2 M€ ~180 € par mois + protection juridique ~40 € par mois = 220 € par mois soit 0,4 % du CA. Plafond exigé par la profession.',
+          '**Cas 3 — Agence immobilière carte T CA ~250 k€** : RC Pro 1 M€ ~95 € par mois + garantie financière 110 k€ obligatoire = 130 € par mois total. Conformité Loi Hoguet.',
+          '**Cas 4 — Chirurgien libéral CA ~400 k€** : RC Pro médicale 6 M€ ~2 100 € par mois (la plus chère). Tarif élevé lié à la sinistralité corporelle médicale + obligation Loi Kouchner depuis 2002.',
         ],
       },
       {
@@ -804,7 +804,7 @@ export const EXTENSIONS: Record<string, Extension> = {
           "L'observatoire SYCODÉS de l'AQC (Agence Qualité Construction) collecte ses données auprès d'un panel d'assureurs construction représentant l'essentiel du marché français. La méthodologie repose sur 3 piliers :",
           "**Collecte** : chaque assureur partenaire transmet à l'AQC une base anonymisée de tous les sinistres décennaux clos au cours de l'année. Cela inclut : date du sinistre, métier concerné, type de désordre, coût d'indemnisation, durée d'instruction.",
           "**Traitement** : l'AQC nettoie les données (élimination des doublons, harmonisation des typologies), puis les segmente selon une nomenclature standardisée (12 grandes familles de métiers, 30 types de désordres).",
-          "**Publication** : un rapport annuel public est publié vers septembre de l'année suivante (rapport 2024 = publié sept. 2025). Les données sont accessibles sur qualiteconstruction.com/observatoire/sycodes/. Représentativité estimée : >85 % du marché décennal français.",
+          "**Publication** : un rapport annuel public est publié vers septembre de l'année suivante (rapport 2024 = publié sept. 2025). Les données sont accessibles sur qualiteconstruction.com, observatoire ou sycodes/. Représentativité estimée : >85 % du marché décennal français.",
         ],
       },
       {
@@ -832,14 +832,14 @@ export const EXTENSIONS: Record<string, Extension> = {
         list: {
           items: [
             '**Effondrement structurel partiel** : coût moyen ~85 000 € — typiquement charpente ou plancher.',
-            '**Infiltration toiture / étanchéité défaillante** : ~28 000 € — couverture, étanchéité plate.',
+            '**Infiltration toiture — étanchéité défaillante** : ~28 000 € — couverture, étanchéité plate.',
             '**Fissures structurelles façade ou refend** : ~32 000 € — souvent liées au sol ou aux fondations.',
             "**Défaut d'isolation thermique ITE** : ~22 000 € — boom des sinistres post-MaPrimeRénov'.",
-            '**Dysfonctionnement chauffage / pompe à chaleur** : ~18 000 € — installations récentes.',
+            '**Dysfonctionnement chauffage — pompe à chaleur** : ~18 000 € — installations récentes.',
             "**Défaut d'étanchéité piscine** : ~45 000 € — sinistralité maximum, métier très spécialisé.",
             '**Sinistre électrique avec dommages structurels** : ~14 000 €.',
-            '**Défaut de pose carrelage / parquet** : ~9 000 €.',
-            '**Défaut de peinture / revêtement intérieur** : ~7 000 €.',
+            '**Défaut de pose carrelage — parquet** : ~9 000 €.',
+            '**Défaut de peinture — revêtement intérieur** : ~7 000 €.',
           ],
         },
       },
@@ -1006,10 +1006,10 @@ export const EXTENSIONS: Record<string, Extension> = {
         ],
         list: {
           items: [
-            '**Manymore / +Simple Pro** : CRM courtage avec module réclamations intégré. Coût : 80 à 150 €/mois selon volume.',
-            '**Insureo** : SaaS courtage français avec workflow réclamations + signatures électroniques + archivage immuable. Coût : 120 à 250 €/mois.',
+            '**Manymore — +Simple Pro** : CRM courtage avec module réclamations intégré. Coût : 80 à 150 € par mois selon volume.',
+            '**Insureo** : SaaS courtage français avec workflow réclamations + signatures électroniques + archivage immuable. Coût : 120 à 250 € par mois.',
             '**WeProov** : spécialisé sinistres et réclamations, blockchain pour traçabilité. Coût : sur devis.',
-            '**Solutions internes Excel + signatures électroniques DocuSign** : minimum viable pour les petits cabinets. Coût : ~30 €/mois.',
+            '**Solutions internes Excel + signatures électroniques DocuSign** : minimum viable pour les petits cabinets. Coût : ~30 € par mois.',
             '**Modules ERP comme Sage** : adaptés pour les courtiers multi-activités. Coût intégré au licensing global.',
           ],
         },
@@ -1130,7 +1130,7 @@ export const EXTENSIONS: Record<string, Extension> = {
           items: [
             "**Étape 1 — Souscription du nouveau contrat** : finaliser la souscription avec date d'effet PROGRAMMÉE 30 jours plus tard (correspondant au délai Loi Hamon).",
             '**Étape 2 — Envoi LRAR résiliation** : envoyer la lettre Loi Hamon le JOUR de la souscription du nouveau contrat. Effet résiliation = 30 jours après réception.',
-            '**Étape 3 — Confirmation par les 2 assureurs** : récupérer les confirmations écrites avec les dates de fin / début de chaque contrat.',
+            '**Étape 3 — Confirmation par les 2 assureurs** : récupérer les confirmations écrites avec les dates de fin — début de chaque contrat.',
             '**Étape 4 — Période de chevauchement** : pendant ~5-10 jours, les 2 contrats sont actifs. Sécurité maximale. Coût supplémentaire ~10-30 € pour ce chevauchement.',
             "**Étape 5 — Régularisation des primes** : récupération auprès de l'ancien assureur du prorata des primes payées d'avance. Délai légal 30 jours.",
           ],
@@ -1168,11 +1168,11 @@ export const EXTENSIONS: Record<string, Extension> = {
         ],
         list: {
           items: [
-            '**Services / conseil non-réglementés** : 0,5 à 1,5 % du CA. Profil à faible risque.',
+            '**Services — conseil non-réglementés** : 0,5 à 1,5 % du CA. Profil à faible risque.',
             '**Services réglementés (avocat, expert-comptable, agent immobilier)** : 1 à 3 % du CA.',
             '**BTP gros œuvre** : 3 à 5 % du CA. Décennale + RC Pro + multirisque + auto pro.',
             "**Santé libérale (médecin, kiné)** : 1 à 3 % du CA, jusqu'à 8 % pour les chirurgiens.",
-            '**E-commerce / IT** : 1 à 2 % du CA + cyber assurance recommandée.',
+            '**E-commerce — IT** : 1 à 2 % du CA + cyber assurance recommandée.',
             '**Transport (VTC, taxi)** : 4 à 7 % du CA (RC Pro + assurance pro véhicule).',
           ],
         },
@@ -1185,11 +1185,11 @@ export const EXTENSIONS: Record<string, Extension> = {
         id: 'cas-secteurs-prix',
         h2: "10. 5 cas pratiques par secteur d'activité",
         paragraphs: [
-          '**Cas 1 — Consultant IT freelance CA ~80 k€** : RC Pro 1 M€ (~360 €/an) + cyber 250 k€ (~336 €/an) + multirisque domicile pro (~180 €/an) = ~876 €/an soit 1,1 % du CA.',
-          '**Cas 2 — Maçon AE CA ~40 k€** : Décennale (~840 €/an) + RC Pro 500 k€ (~360 €/an) + multirisque outils (~240 €/an) = ~1 440 €/an soit 3,6 % du CA.',
-          '**Cas 3 — Cabinet expertise comptable 3 associés CA ~600 k€** : RC Pro 2 M€ (~2 160 €/an) + multirisque bureaux (~600 €/an) + D&O Mandataires (~1 440 €/an) + cyber 1 M€ (~1 200 €/an) = ~5 400 €/an soit 0,9 % du CA.',
-          '**Cas 4 — Esthéticienne SARL CA ~150 k€** : RC Pro 500 k€ (~300 €/an) + multirisque salon (~540 €/an) + RC employeur (~180 €/an) = ~1 020 €/an soit 0,7 % du CA.',
-          '**Cas 5 — VTC AE CA ~50 k€** : RC Pro + assurance pro véhicule + protection juridique = ~2 400 €/an soit 4,8 % du CA. Tarif élevé lié au risque accidents.',
+          '**Cas 1 — Consultant IT freelance CA ~80 k€** : RC Pro 1 M€ (~360 € par an) + cyber 250 k€ (~336 € par an) + multirisque domicile pro (~180 € par an) = ~876 € par an soit 1,1 % du CA.',
+          '**Cas 2 — Maçon AE CA ~40 k€** : Décennale (~840 € par an) + RC Pro 500 k€ (~360 € par an) + multirisque outils (~240 € par an) = ~1 440 € par an soit 3,6 % du CA.',
+          '**Cas 3 — Cabinet expertise comptable 3 associés CA ~600 k€** : RC Pro 2 M€ (~2 160 € par an) + multirisque bureaux (~600 € par an) + D&O Mandataires (~1 440 € par an) + cyber 1 M€ (~1 200 € par an) = ~5 400 € par an soit 0,9 % du CA.',
+          '**Cas 4 — Esthéticienne SARL CA ~150 k€** : RC Pro 500 k€ (~300 € par an) + multirisque salon (~540 € par an) + RC employeur (~180 € par an) = ~1 020 € par an soit 0,7 % du CA.',
+          '**Cas 5 — VTC AE CA ~50 k€** : RC Pro + assurance pro véhicule + protection juridique = ~2 400 € par an soit 4,8 % du CA. Tarif élevé lié au risque accidents.',
         ],
       },
       {
@@ -1202,7 +1202,7 @@ export const EXTENSIONS: Record<string, Extension> = {
             "**Reconduire tacitement chaque année sans renégocier** : le marché évolue, vos besoins aussi. Renégocier tous les 2-3 ans = 15 à 30 % d'économie.",
             '**Souscrire un plafond trop bas pour économiser** : un sinistre dépassant votre plafond engage votre patrimoine personnel. Toujours aligner sur 5× la valeur du plus gros contrat.',
             '**Ne pas combiner les garanties chez un seul assureur** : un pack RC + multirisque + cyber chez un seul assureur peut donner 10 à 20 % de réduction vs 3 contrats séparés.',
-            "**Choisir le moins cher sans vérifier la solidité de l'assureur** : un assureur insolvable ne paie pas. Toujours vérifier Pappers > 70/100 + agrément ACPR + ratings S&P/Moody's.",
+            "**Choisir le moins cher sans vérifier la solidité de l'assureur** : un assureur insolvable ne paie pas. Toujours vérifier Pappers > 70/100 + agrément ACPR + ratings S&P ou Moody's.",
           ],
         },
       },
@@ -1331,7 +1331,7 @@ export const EXTENSIONS: Record<string, Extension> = {
           'Une question fréquente : ma RC Pro inclut-elle déjà la cyber ? Réponse : généralement pas suffisamment.',
           '**RC Pro classique** : couvre la responsabilité civile envers les tiers (clients, partenaires) en cas de défaut professionnel. Elle peut couvrir certains aspects cyber (fuite de données par négligence) mais avec des plafonds très limités (souvent <100 k€) et des exclusions fortes.',
           "**Cyber assurance dédiée** : couvre l'ENSEMBLE des conséquences cyber : ransomware, fraude au président, perte d'exploitation, sanctions CNIL, e-réputation, frais d'expertise forensic. Plafonds plus élevés (250 k€ à 5 M€).",
-          '**Articulation optimale** : conserver une RC Pro avec cyber « extension » à 250 k€ pour les petits incidents + souscrire une cyber dédiée pour les risques majeurs (ransomware, RGPD). Coût total typique : 60 à 200 €/mois selon taille PME.',
+          '**Articulation optimale** : conserver une RC Pro avec cyber « extension » à 250 k€ pour les petits incidents + souscrire une cyber dédiée pour les risques majeurs (ransomware, RGPD). Coût total typique : 60 à 200 € par mois selon taille PME.',
         ],
         callout: {
           tone: 'success',
@@ -1412,7 +1412,7 @@ const BOOSTS: Record<string, Extension> = {
         list: {
           ordered: true,
           items: [
-            "**Étape 1 — Cartographie des risques** : lister vos activités exactes (code APE/NAF), vos lieux d'exercice, votre matériel professionnel, votre clientèle B2B/B2C, vos zones géographiques. Cette cartographie sert de base à toutes les démarches.",
+            "**Étape 1 — Cartographie des risques** : lister vos activités exactes (code APE ou NAF), vos lieux d'exercice, votre matériel professionnel, votre clientèle B2B ou B2C, vos zones géographiques. Cette cartographie sert de base à toutes les démarches.",
             '**Étape 2 — Identification des obligations légales** : pour les 15 métiers à RC Pro obligatoire et les 30 métiers BTP à décennale obligatoire, les démarches sont prioritaires et non-négociables.',
             '**Étape 3 — Demande de devis multi-assureurs** : un courtier ORIAS interroge 8 à 12 assureurs partenaires en moins de 4 h. Comparaison côte à côte des tarifs, plafonds, exclusions, franchises.',
             "**Étape 4 — Analyse comparative motivée** : conformément au devoir de conseil DDA, le courtier remet une recommandation écrite justifiant le choix du produit, les alternatives examinées, et l'adéquation au profil de risque.",
@@ -1441,8 +1441,8 @@ const BOOSTS: Record<string, Extension> = {
           items: [
             "**Auto-contrôle systématique sur chantier** : check-list écrite avant chaque étape clé (fondations, étanchéité, mise hors d'eau, finitions). Réduit la sinistralité de 25 à 35 % selon les études AQC.",
             "**Photographie systématique des étapes critiques** : permet de prouver la conformité de l'exécution en cas de litige. Réduit les contentieux de 40 %.",
-            '**Formation continue Qualibat / RGE** : 14 à 30 heures par an. Réduit la sinistralité de 35 à 45 % selon les certifications obtenues.',
-            "**Coordination renforcée avec le maître d'œuvre** : réunions hebdomadaires de chantier avec compte-rendu écrit. Réduit les défauts de conception/exécution de 30 %.",
+            '**Formation continue Qualibat — RGE** : 14 à 30 heures par an. Réduit la sinistralité de 35 à 45 % selon les certifications obtenues.',
+            "**Coordination renforcée avec le maître d'œuvre** : réunions hebdomadaires de chantier avec compte-rendu écrit. Réduit les défauts de conception ou exécution de 30 %.",
             '**Audit qualité indépendant en fin de chantier** : bureau de contrôle (Apave, Bureau Veritas, Socotec) pour les ouvrages > 150 k€. Coût 0,3 à 0,8 % du budget mais réduit la sinistralité de 50 % en moyenne.',
           ],
         },
@@ -1468,13 +1468,13 @@ const BOOSTS: Record<string, Extension> = {
             '**Micro-entreprise** — Simplicité +++, primes -10 % vs sociétés, mais primes non déductibles. Idéal CA < 50 k€ et profils services non-réglementés.',
             '**EI régime réel** — Bon compromis. Primes déductibles, séparation patrimoniale automatique depuis 2022, régime TNS. Idéal CA 50-150 k€.',
             '**EURL** — Statut sociétaire plus crédible auprès des banques et grands comptes. Gérant TNS, mutuelle Madelin déductible. Idéal CA 100-500 k€.',
-            '**SASU** — Régime assimilé-salarié, meilleure protection sociale (retraite cadres, chômage si conditions). Mutuelle entreprise déductible. Idéal CA > 200 k€ ou freelance IT/conseil senior.',
-            '**SARL / SAS** — Multi-associés. Possibilité D&O Mandataires Sociaux, optimisation rémunération + dividendes. Idéal projets multi-associés ou levée de fonds.',
+            '**SASU** — Régime assimilé-salarié, meilleure protection sociale (retraite cadres, chômage si conditions). Mutuelle entreprise déductible. Idéal CA > 200 k€ ou freelance IT ou conseil senior.',
+            '**SARL — SAS** — Multi-associés. Possibilité D&O Mandataires Sociaux, optimisation rémunération + dividendes. Idéal projets multi-associés ou levée de fonds.',
           ],
         },
         callout: {
           tone: 'warning',
-          text: 'Le choix du statut a un impact pluri-annuel. Avant transformation, faire un audit avec un expert-comptable + courtier ORIAS pour quantifier coût/bénéfice sur 3-5 ans.',
+          text: 'Le choix du statut a un impact pluri-annuel. Avant transformation, faire un audit avec un expert-comptable + courtier ORIAS pour quantifier coût ou bénéfice sur 3-5 ans.',
         },
       },
     ],
@@ -1487,7 +1487,7 @@ const BOOSTS: Record<string, Extension> = {
         id: 'optimiser-prime',
         h2: '13. Comment optimiser concrètement votre prime RC Pro',
         paragraphs: [
-          'Pour optimiser concrètement votre prime RC Pro et obtenir le meilleur rapport coût/protection, 4 actions concrètes à mettre en œuvre :',
+          'Pour optimiser concrètement votre prime RC Pro et obtenir le meilleur rapport coût ou protection, 4 actions concrètes à mettre en œuvre :',
         ],
         list: {
           ordered: true,
@@ -1514,8 +1514,8 @@ const BOOSTS: Record<string, Extension> = {
         list: {
           ordered: true,
           items: [
-            '**Quelles activités sont précisément couvertes ?** Exiger la liste exacte avec codes APE/NAF. Une activité accessoire non listée peut ne pas être couverte.',
-            '**Quel est le plafond par sinistre ET par année ?** Vérifier que les 2 sont au minimum 500 k€ / 1 M€ (plancher légal). Demander si des sous-plafonds existent par poste de garantie.',
+            '**Quelles activités sont précisément couvertes ?** Exiger la liste exacte avec codes APE ou NAF. Une activité accessoire non listée peut ne pas être couverte.',
+            '**Quel est le plafond par sinistre ET par année ?** Vérifier que les 2 sont au minimum 500 k€ — 1 M€ (plancher légal). Demander si des sous-plafonds existent par poste de garantie.',
             "**Quelle est la zone géographique de couverture ?** France métropolitaine, DOM-TOM, UE, monde. Important si vous travaillez à l'étranger occasionnellement.",
             "**Y a-t-il une période de carence ?** Délai entre la signature et la prise d'effet. Souvent 0 jour pour les renouvellements, 5 à 30 jours pour les nouvelles souscriptions.",
             '**La sous-traitance est-elle couverte ?** Vérifier les conditions exactes : déclaration préalable, plafond du sous-traitant, garantie autonome.',
@@ -1572,7 +1572,7 @@ const BOOSTS: Record<string, Extension> = {
         },
         callout: {
           tone: 'info',
-          text: "Le PASS 2026 est de 46 368 €. Plafond Madelin santé pour un TNS : 4 997 €/an, retraite jusqu'à environ 87 000 €/an. Notre cabinet peut vous accompagner pour optimiser l'utilisation des 3 plafonds.",
+          text: "Le PASS 2026 est de 46 368 €. Plafond Madelin santé pour un TNS : 4 997 € par an, retraite jusqu'à environ 87 000 € par an. Notre cabinet peut vous accompagner pour optimiser l'utilisation des 3 plafonds.",
         },
       },
     ],
@@ -1647,12 +1647,12 @@ const BOOSTS: Record<string, Extension> = {
         ],
         list: {
           items: [
-            '**Coût** : médiation GRATUITE / Tribunal Judiciaire 2 000 à 5 000 € HT (avocat + frais procédure).',
-            '**Délai** : médiation 3 à 5 mois / Tribunal 12 à 24 mois en première instance.',
-            "**Taux de succès** : médiation 50 % favorable à l'assuré / Tribunal 35 à 45 % selon les statistiques.",
-            '**Force juridique** : recommandation médiateur NON contraignante mais 85 % suivie / décision tribunal CONTRAIGNANTE.',
-            '**Confidentialité** : médiation confidentielle / procédure judiciaire publique (audiences ouvertes).',
-            "**Pression sur l'assureur** : médiation = pression réputationnelle / tribunal = sanction financière directe.",
+            '**Coût** : médiation GRATUITE — Tribunal Judiciaire 2 000 à 5 000 € HT (avocat + frais procédure).',
+            '**Délai** : médiation 3 à 5 mois — Tribunal 12 à 24 mois en première instance.',
+            "**Taux de succès** : médiation 50 % favorable à l'assuré — Tribunal 35 à 45 % selon les statistiques.",
+            '**Force juridique** : recommandation médiateur NON contraignante mais 85 % suivie — décision tribunal CONTRAIGNANTE.',
+            '**Confidentialité** : médiation confidentielle — procédure judiciaire publique (audiences ouvertes).',
+            "**Pression sur l'assureur** : médiation = pression réputationnelle — tribunal = sanction financière directe.",
           ],
         },
       },
@@ -1695,7 +1695,7 @@ const BOOSTS: Record<string, Extension> = {
             "**MFA généralisée** : tous les comptes administrateurs, emails, accès distants. Sans MFA, refus probable de l'assureur.",
             '**Sauvegardes 3-2-1** : 3 copies, 2 supports différents, 1 hors site. Tester les restaurations 1 fois par trimestre.',
             '**Patch management** : politique formalisée, mises à jour critiques sous 72 h, audits trimestriels.',
-            '**EDR/XDR déployé** : sur tous les endpoints. Solutions CrowdStrike, SentinelOne, Microsoft Defender for Business.',
+            '**EDR ou XDR déployé** : sur tous les endpoints. Solutions CrowdStrike, SentinelOne, Microsoft Defender for Business.',
             "**Formation collaborateurs** : 2 sessions par an minimum sur le phishing, l'ingénierie sociale, les bonnes pratiques.",
             '**Plan de réponse aux incidents** : document écrit, équipe de gestion de crise identifiée, procédures testées.',
             '**Conformité RGPD** : registre des traitements à jour, DPO désigné si > 250 salariés ou traitements sensibles.',
@@ -1711,7 +1711,7 @@ const BOOSTS: Record<string, Extension> = {
         ],
         list: {
           items: [
-            '**EDR/XDR (sécurité endpoints)** : ~30 % du budget cyber. Outil le plus impactant en prévention.',
+            '**EDR ou XDR (sécurité endpoints)** : ~30 % du budget cyber. Outil le plus impactant en prévention.',
             "**Sauvegardes & disaster recovery** : ~25 %. Garantit la continuité d'activité après incident.",
             '**Cyber assurance** : ~20 %. Filet de sécurité financière.',
             '**Formation & sensibilisation** : ~10 %. Souvent sous-investi, pourtant 40 % des attaques passent par les emails.',
@@ -1721,7 +1721,7 @@ const BOOSTS: Record<string, Extension> = {
         },
         callout: {
           tone: 'success',
-          text: 'Pour une PME de 30 salariés avec budget IT 80 k€, prévoir 3 à 5 k€/an de cyber sécurité (hors salaires) et 2 à 4 k€/an de cyber assurance. ROI typique : retour sur investissement en moins de 18 mois.',
+          text: 'Pour une PME de 30 salariés avec budget IT 80 k€, prévoir 3 à 5 k€ par an de cyber sécurité (hors salaires) et 2 à 4 k€ par an de cyber assurance. ROI typique : retour sur investissement en moins de 18 mois.',
         },
       },
     ],
@@ -1744,7 +1744,7 @@ const FINAL_BOOSTS: Record<string, Extension> = {
         id: 'cas-renouvellement',
         h2: '14. Cas pratique de renouvellement réussi',
         paragraphs: [
-          "Pour illustrer concrètement les économies réalisables par la renégociation, voici un cas pratique constaté chez un client de notre cabinet en 2024 : cabinet de conseil 5 salariés, CA ~450 k€, ancienne prime RC Pro à 3 200 €/an pour un plafond 2 M€. Après audit par notre cabinet ORIAS, mise en concurrence de 8 assureurs partenaires, le client a obtenu un nouveau contrat à 2 240 €/an pour le même plafond (économie 30 %), avec des garanties subséquente et défense recours étendues. Le contrat a été basculé sans interruption de couverture via la Loi Hamon. Le cabinet a réinvesti l'économie de 960 €/an dans une cyber assurance dédiée — une couverture précédemment manquante.",
+          "Pour illustrer concrètement les économies réalisables par la renégociation, voici un cas pratique constaté chez un client de notre cabinet en 2024 : cabinet de conseil 5 salariés, CA ~450 k€, ancienne prime RC Pro à 3 200 € par an pour un plafond 2 M€. Après audit par notre cabinet ORIAS, mise en concurrence de 8 assureurs partenaires, le client a obtenu un nouveau contrat à 2 240 € par an pour le même plafond (économie 30 %), avec des garanties subséquente et défense recours étendues. Le contrat a été basculé sans interruption de couverture via la Loi Hamon. Le cabinet a réinvesti l'économie de 960 € par an dans une cyber assurance dédiée — une couverture précédemment manquante.",
         ],
       },
     ],
@@ -1809,7 +1809,7 @@ const FINAL_BOOSTS: Record<string, Extension> = {
         id: 'enseignements-2024',
         h2: '13. Enseignements clés du rapport 2024',
         paragraphs: [
-          "Le rapport AQC SYCODÉS 2024 fournit plusieurs enseignements stratégiques pour les acteurs du BTP. Premier enseignement : la sinistralité reste fortement concentrée sur quelques métiers (étanchéité, couverture, ITE) qui représentent à eux seuls 45 % des sinistres totaux. Deuxième enseignement : la sinistralité diminue significativement avec les certifications RGE/Qualibat — un argument fort pour investir dans la formation continue. Troisième enseignement : les sinistres liés aux énergies renouvelables (PAC, panneaux solaires, isolation) sont en explosion (+85 % depuis 2020), ce qui implique des programmes de formation accélérés pour les artisans concernés. Quatrième enseignement : le coût moyen des sinistres augmente plus vite que l'inflation générale, traduisant la hausse des coûts de main-d'œuvre et de matériaux dans la reconstruction. Ces enseignements doivent guider les politiques de prévention des artisans et les négociations tarifaires avec les assureurs.",
+          "Le rapport AQC SYCODÉS 2024 fournit plusieurs enseignements stratégiques pour les acteurs du BTP. Premier enseignement : la sinistralité reste fortement concentrée sur quelques métiers (étanchéité, couverture, ITE) qui représentent à eux seuls 45 % des sinistres totaux. Deuxième enseignement : la sinistralité diminue significativement avec les certifications RGE ou Qualibat — un argument fort pour investir dans la formation continue. Troisième enseignement : les sinistres liés aux énergies renouvelables (PAC, panneaux solaires, isolation) sont en explosion (+85 % depuis 2020), ce qui implique des programmes de formation accélérés pour les artisans concernés. Quatrième enseignement : le coût moyen des sinistres augmente plus vite que l'inflation générale, traduisant la hausse des coûts de main-d'œuvre et de matériaux dans la reconstruction. Ces enseignements doivent guider les politiques de prévention des artisans et les négociations tarifaires avec les assureurs.",
         ],
       },
     ],

@@ -21,15 +21,15 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
-const SLUG = 'rc-pro/immobilier'
-const TITLE = 'RC Pro agent immobilier 2026 — OBLIGATOIRE Loi Hoguet (tarifs 280-920€/an)'
+const SLUG = 'rc-pro / immobilier'
+const TITLE = 'RC Pro agent immobilier 2026 — OBLIGATOIRE Loi Hoguet (tarifs 280-920€ par an)'
 const TAGLINE =
   'La RC Pro obligatoire pour agents immobiliers et mandataires : couverture défaut conseil, erreur estimation, vice de procuration, manquement obligation information. Loi Hoguet.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'RC Pro agent immobilier 2026 : OBLIGATOIRE Loi Hoguet (art. 49 L. 70-9). Couverture défaut conseil mandant, erreur estimation, vice procuration, manquement information acquéreur. Sinistralité 4,1%. Tarifs 280-920€/an AE/EI, 1 800-4 200€/an SARL agence. Devis ORIAS sous 24h.',
+    'RC Pro agent immobilier 2026 : OBLIGATOIRE Loi Hoguet (art. 49 L. 70-9). Couverture défaut conseil mandant, erreur estimation, vice procuration, manquement information acquéreur. Sinistralité 4,1%. Tarifs 280-920€ par an AE ou EI, 1 800-4 200€ par an SARL agence. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -40,7 +40,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro est OBLIGATOIRE pour tout agent immobilier ou mandataire en France (Loi Hoguet — art. 49 Loi n° 70-9 du 2 janvier 1970 + art. 4 Décret n° 72-678 du 20 juillet 1972). Sans RC Pro valide : retrait immédiat de la carte professionnelle T (transaction) ou G (gestion locative) par la CCI, amende 7 500€, interdiction d'exercer. Sinistralité ACPR 2024 : 4,1% (mandats vente, défauts conseil, erreurs estimation, vices procuration). Tarifs 2026 : 280-920 €/an pour AE/EI mandataire, 1 800-4 200 €/an pour SARL avec agence."
+      intro="La RC Pro est OBLIGATOIRE pour tout agent immobilier / mandataire en France (Loi Hoguet — art. 49 Loi n° 70-9 du 2 janvier 1970 + art. 4 Décret n° 72-678 du 20 juillet 1972). Sans RC Pro valide : retrait immédiat de la carte professionnelle T (transaction) ou G (gestion locative) par la CCI, amende 7 500€, interdiction d'exercer. Sinistralité ACPR 2024 : 4,1% (mandats vente, défauts conseil, erreurs estimation, vices procuration). Tarifs 2026 : 280-920 € par an pour AE / EI mandataire, 1 800-4 200 € par an pour SARL avec agence."
       legalReference="Loi Hoguet — art. 49 L. 70-9 du 2 janvier 1970 + art. 4 Décret 72-678"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -51,12 +51,12 @@ export default function Page() {
         {
           icon: '⚖️',
           title: 'OBLIGATION Loi Hoguet',
-          desc: 'RC Pro obligatoire pour carte T/G. Retrait carte immédiat si défaut. Amende 7 500€',
+          desc: 'RC Pro obligatoire pour carte T ou G. Retrait carte immédiat si défaut. Amende 7 500€',
         },
         {
           icon: '📝',
           title: 'Défaut conseil + estimation',
-          desc: 'Couverture mandats vente sous-évalués/sur-évalués + manquement information acquéreur',
+          desc: 'Couverture mandats vente sous-évalués ou sur-évalués + manquement information acquéreur',
         },
         {
           icon: '⚠️',
@@ -65,8 +65,8 @@ export default function Page() {
         },
         {
           icon: '💰',
-          title: '280-920 €/an AE',
-          desc: 'Mandataire AE : 280-560€. Agence SARL 5 sal : 1 800-4 200€/an. ETI 20+ : 8 000-15 000€/an',
+          title: '280-920 € par an AE',
+          desc: 'Mandataire AE : 280-560€. Agence SARL 5 sal : 1 800-4 200€ par an. ETI 20+ : 8 000-15 000€ par an',
         },
       ]}
       sections={[
@@ -91,8 +91,8 @@ export default function Page() {
                   <strong>Vices procuration vendeur (12%)</strong> — procuration invalide ou périmée
                 </li>
                 <li>
-                  <strong>Défauts diagnostics obligatoires (8%)</strong> — DPE absent, plomb/amiante
-                  non communiqué
+                  <strong>Défauts diagnostics obligatoires (8%)</strong> — DPE absent, plomb ou
+                  amiante non communiqué
                 </li>
               </ul>
               <p className="mt-3 border-l-4 border-primary-500 bg-primary-50 p-3">
@@ -104,10 +104,12 @@ export default function Page() {
           ),
         },
         {
-          h2: 'Carte professionnelle T / G — exigences CCI',
+          h2: 'Carte professionnelle T — G — exigences CCI',
           body: (
             <div>
-              <p>Pour obtenir/renouveler votre carte professionnelle CCI, vous devez fournir :</p>
+              <p>
+                Pour obtenir ou renouveler votre carte professionnelle CCI, vous devez fournir :
+              </p>
               <ol>
                 <li>
                   <strong>Attestation RC Pro</strong> à jour avec mentions Loi Hoguet
@@ -168,11 +170,11 @@ export default function Page() {
       faq={[
         {
           q: 'RC Pro obligatoire mandataire indépendant ?',
-          a: "OUI absolument. Loi Hoguet s'applique à TOUS les agents/mandataires immobiliers (mandataire indépendant rattaché à une agence, mandataire pour réseau M2C/IAD/Capifrance, agent commercial). Sans RC Pro valide : retrait carte T/G + radiation registre RSAC + amende 7 500€.",
+          a: "OUI absolument. Loi Hoguet s'applique à TOUS les agents ou mandataires immobiliers (mandataire indépendant rattaché à une agence, mandataire pour réseau M2C, IAD ou Capifrance, agent commercial). Sans RC Pro valide : retrait carte T ou G + radiation registre RSAC + amende 7 500€.",
         },
         {
           q: 'Plafond RC Pro immobilier recommandé ?',
-          a: "Loi Hoguet n'impose pas de plafond légal — c'est à vous de l'évaluer. Recommandations : <strong>500 000€</strong> = mandataire transactions <300k€ ; <strong>1 000 000€</strong> = standard agences ; <strong>2 000 000€</strong> = transactions >500k€ (Paris/IDF/Côte d'Azur) ; <strong>5 000 000€</strong> = transactions luxe ou marchés professionnels.",
+          a: "Loi Hoguet n'impose pas de plafond légal — c'est à vous de l'évaluer. Recommandations : <strong>500 000€</strong> = mandataire transactions <300k€ ; <strong>1 000 000€</strong> = standard agences ; <strong>2 000 000€</strong> = transactions >500k€ (Paris, IDF ou Côte d'Azur) ; <strong>5 000 000€</strong> = transactions luxe ou marchés professionnels.",
         },
         {
           q: 'Garantie financière obligatoire en plus de RC Pro ?',
@@ -180,7 +182,7 @@ export default function Page() {
         },
         {
           q: 'Tarif RC Pro immobilier 2026 ?',
-          a: 'Mandataire AE/EI (CA <50k€) : 280-560 €/an. Mandataire EURL/SASU : 380-720 €/an. Agence SARL 5 salariés : 1 800-4 200 €/an. ETI 20+ salariés : 8 000-15 000 €/an. Variables : ancienneté, zone (Paris/IDF +20%), antécédents, plafond garantie souhaité.',
+          a: 'Mandataire AE ou EI (CA <50k€) : 280-560 € par an. Mandataire EURL ou SASU : 380-720 € par an. Agence SARL 5 salariés : 1 800-4 200 € par an. ETI 20+ salariés : 8 000-15 000 € par an. Variables : ancienneté, zone (Paris ou IDF +20%), antécédents, plafond garantie souhaité.',
         },
       ]}
     />

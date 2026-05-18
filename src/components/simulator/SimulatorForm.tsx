@@ -315,7 +315,7 @@ export function SimulatorForm({ defaultGaranties }: SimulatorFormProps) {
           <div className="rounded-2xl border border-secondary-200 bg-secondary-50 p-5 text-sm text-charcoal-700">
             <strong className="text-secondary-800">⚠️ Estimation indicative.</strong> Pour obtenir
             un devis personnalisé ferme prenant en compte votre situation exacte (zone géographique,
-            ancienneté, certifications RGE/Qualibat, options spécifiques), demandez un devis
+            ancienneté, certifications RGE ou Qualibat, options spécifiques), demandez un devis
             personnalisé.
           </div>
 

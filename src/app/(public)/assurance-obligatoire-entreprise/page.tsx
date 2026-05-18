@@ -22,7 +22,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Liste exhaustive 2026 des assurances OBLIGATOIRES par entreprise : décennale BTP, RC Pro santé/juridique/conseil financier/transport/sport, multirisque bail commercial, mutuelle collective ANI, auto pro. Sanctions absence + références légales. Devis ORIAS sous 24h.',
+    'Liste exhaustive 2026 des assurances OBLIGATOIRES par entreprise : décennale BTP, RC Pro santé, juridique ou conseil financier, transport ou sport, multirisque bail commercial, mutuelle collective ANI, auto pro. Sanctions absence + références légales. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -149,7 +149,7 @@ export default function Page() {
                     </td>
                     <td className="border p-2">Tous employeurs (50% employeur min)</td>
                     <td className="border p-2">Redressement URSSAF + dommages-intérêts salariés</td>
-                    <td className="border p-2">Loi 14/06/2013 (ANI)</td>
+                    <td className="border p-2">Loi 14 juin 2013 (ANI)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -210,7 +210,7 @@ export default function Page() {
       faq={[
         {
           q: 'Quelles sont les assurances obligatoires pour une entreprise en France ?',
-          a: 'Selon le métier et le statut : DÉCENNALE pour artisans BTP (L. 241-1 C. assur.), RC Pro santé / juridique / conseil financier (CGP, CIF, IOBSP) / transport / sport / esthétique invasive / sécurité privée. Pour TOUS les EMPLOYEURS : mutuelle collective ANI 2013. Pour TOUT véhicule : RC circulation auto pro. Pour LOCATAIRES bail commercial : multirisque local.',
+          a: 'Selon le métier et le statut : DÉCENNALE pour artisans BTP (L. 241-1 C. assur.), RC Pro santé — juridique — conseil financier (CGP, CIF, IOBSP) — transport — sport — esthétique invasive — sécurité privée. Pour TOUS les EMPLOYEURS : mutuelle collective ANI 2013. Pour TOUT véhicule : RC circulation auto pro. Pour LOCATAIRES bail commercial : multirisque local.',
         },
         {
           q: "Sanctions en cas d'absence d'assurance obligatoire ?",

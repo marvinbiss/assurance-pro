@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import { CalculateurPrevoyanceTns } from './CalculateurPrevoyanceTns'
 
 describe('CalculateurPrevoyanceTns — UI', () => {
-  it('rend profession + formule + sliders age/revenus', () => {
+  it('rend profession + formule + sliders age / revenus', () => {
     render(<CalculateurPrevoyanceTns />)
     expect(screen.getByLabelText(/Profession/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/Niveau de couverture/i)).toBeInTheDocument()
@@ -13,7 +13,7 @@ describe('CalculateurPrevoyanceTns — UI', () => {
 
   it('affiche cotisation mensuelle', () => {
     render(<CalculateurPrevoyanceTns />)
-    expect(screen.getAllByText(/€\/mois/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/€ par mois/i).length).toBeGreaterThan(0)
   })
 
   it('affiche IJ + rente invalidité + capital décès', () => {

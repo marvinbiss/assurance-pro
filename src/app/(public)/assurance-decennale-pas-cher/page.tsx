@@ -18,7 +18,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Décennale pas chère : tarif à partir de 950€/an (auto-entrepreneur peintre), 1 800€/an (SARL maçon). 7 leviers d'économies, pièges à éviter, comparatif Hiscox vs April vs SMABTP.",
+    "Décennale pas chère : tarif à partir de 950€ par an (auto-entrepreneur peintre), 1 800€ par an (SARL maçon). 7 leviers d'économies, pièges à éviter, comparatif Hiscox vs April vs SMABTP.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -29,7 +29,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La garantie décennale est obligatoire pour tous les constructeurs (Loi Spinetta 1978, art. 1792 Code civil) — mais son coût varie de 950€/an à 8 000€/an+ selon votre métier, statut, sinistralité et assureur choisi. Cette page détaille les 7 leviers concrets pour réduire significativement votre prime décennale sans sacrifier la conformité ni les garanties critiques."
+      intro="La garantie décennale est obligatoire pour tous les constructeurs (Loi Spinetta 1978, art. 1792 Code civil) — mais son coût varie de 950€ par an à 8 000€ par an+ selon votre métier, statut, sinistralité et assureur choisi. Cette page détaille les 7 leviers concrets pour réduire significativement votre prime décennale sans sacrifier la conformité ni les garanties critiques."
       legalReference="Loi Spinetta 1978 + art. 1792 Code civil + art. L. 241-1 Code assurances"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -45,7 +45,7 @@ export default function Page() {
         {
           icon: '⚖️',
           title: 'Conformité préservée',
-          desc: 'Plafonds + qualifications RGE/Qualibat respectés',
+          desc: 'Plafonds + qualifications RGE ou Qualibat respectés',
         },
         {
           icon: '🏗️',
@@ -66,7 +66,7 @@ export default function Page() {
               <ol>
                 <li>
                   <strong>Comparer 5 assureurs minimum</strong> : la prime varie de ×2 entre Hiscox
-                  / April Pro / SMABTP / Allianz / AXA pour un même profil.
+                  ou April Pro ou SMABTP ou Allianz ou AXA pour un même profil.
                 </li>
                 <li>
                   <strong>Augmenter la franchise</strong> : passer de 1 500€ à 3 000€ peut réduire
@@ -77,7 +77,7 @@ export default function Page() {
                   sous-traitance), c&apos;est l&apos;assiette de la prime.
                 </li>
                 <li>
-                  <strong>Obtenir une certification RGE/Qualibat</strong> : peut donner -5 à -10%
+                  <strong>Obtenir une certification RGE ou Qualibat</strong> : peut donner -5 à -10%
                   chez certains assureurs.
                 </li>
                 <li>
@@ -102,37 +102,37 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <strong>Peintre auto-entrepreneur</strong> : 950-1 400€/an
+                  <strong>Peintre auto-entrepreneur</strong> : 950-1 400€ par an
                 </li>
                 <li>
-                  <strong>Plâtrier auto-entrepreneur</strong> : 1 100-1 600€/an
+                  <strong>Plâtrier auto-entrepreneur</strong> : 1 100-1 600€ par an
                 </li>
                 <li>
-                  <strong>Carreleur AE</strong> : 1 200-1 700€/an
+                  <strong>Carreleur AE</strong> : 1 200-1 700€ par an
                 </li>
                 <li>
-                  <strong>Plombier AE</strong> : 1 400-2 100€/an
+                  <strong>Plombier AE</strong> : 1 400-2 100€ par an
                 </li>
                 <li>
-                  <strong>Électricien AE</strong> : 1 500-2 200€/an
+                  <strong>Électricien AE</strong> : 1 500-2 200€ par an
                 </li>
                 <li>
-                  <strong>Maçon AE</strong> : 1 800-2 800€/an
+                  <strong>Maçon AE</strong> : 1 800-2 800€ par an
                 </li>
                 <li>
-                  <strong>Couvreur AE</strong> : 2 200-3 500€/an (risque élevé)
+                  <strong>Couvreur AE</strong> : 2 200-3 500€ par an (risque élevé)
                 </li>
                 <li>
-                  <strong>Charpentier AE</strong> : 2 400-3 800€/an
+                  <strong>Charpentier AE</strong> : 2 400-3 800€ par an
                 </li>
                 <li>
-                  <strong>Plombier SARL/EURL</strong> : 1 800-3 500€/an
+                  <strong>Plombier SARL ou EURL</strong> : 1 800-3 500€ par an
                 </li>
                 <li>
-                  <strong>Maçon SARL/EURL</strong> : 2 500-5 000€/an
+                  <strong>Maçon SARL ou EURL</strong> : 2 500-5 000€ par an
                 </li>
                 <li>
-                  <strong>Multi-services BTP SAS</strong> : 3 500-8 000€/an+
+                  <strong>Multi-services BTP SAS</strong> : 3 500-8 000€ par an+
                 </li>
               </ul>
             </>
@@ -159,11 +159,12 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Assureurs non-conformes</strong> : un assureur basé hors UE non agréé ACPR
-                  n&apos;est pas reconnu par le maître d&apos;ouvrage / notaire.
+                  n&apos;est pas reconnu par le maître d&apos;ouvrage ou notaire.
                 </li>
                 <li>
-                  <strong>Devis &quot;décennale + DO&quot; à 800€/an</strong> : trop beau pour être
-                  vrai = arnaque courante. Une vraie décennale BTP démarre à 950€/an minimum.
+                  <strong>Devis &quot;décennale + DO&quot; à 800€ par an</strong> : trop beau pour
+                  être vrai = arnaque courante. Une vraie décennale BTP démarre à 950€ par an
+                  minimum.
                 </li>
               </ul>
             </>
@@ -173,7 +174,7 @@ export default function Page() {
       faq={[
         {
           q: 'Quel est le tarif minimum d&apos;une décennale conforme ?',
-          a: "Pour un auto-entrepreneur peintre (métier le moins risqué), comptez 950-1 400€/an chez April Pro ou Hiscox. En-dessous de 800€/an pour un BTP réel = suspicion d'arnaque ou de défaut de conformité.",
+          a: "Pour un auto-entrepreneur peintre (métier le moins risqué), comptez 950-1 400€ par an chez April Pro ou Hiscox. En-dessous de 800€ par an pour un BTP réel = suspicion d'arnaque ou de défaut de conformité.",
         },
         {
           q: 'Comment réduire ma prime décennale de 30% ?',
@@ -181,7 +182,7 @@ export default function Page() {
         },
         {
           q: 'Puis-je avoir une décennale moins chère en auto-entrepreneur qu&apos;en SARL ?',
-          a: 'Oui généralement. Le statut auto-entrepreneur impacte la prime via la plafonnement du CA (77 700€ services / 188 700€ vente). Prime moyenne AE = -30 à -50% vs SARL même activité même CA.',
+          a: 'Oui généralement. Le statut auto-entrepreneur impacte la prime via la plafonnement du CA (77 700€ services — 188 700€ vente). Prime moyenne AE = -30 à -50% vs SARL même activité même CA.',
         },
         {
           q: 'Les assureurs étrangers sont-ils moins chers ?',

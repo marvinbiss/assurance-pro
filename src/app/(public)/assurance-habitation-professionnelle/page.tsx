@@ -21,7 +21,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Assurance habitation professionnelle : extension de l'habitation pour activité pro à domicile. Couvre équipement pro, RC visiteurs business, multirisque local pro à domicile. Tarifs 120-380 €/an supplémentaires. Devis ORIAS sous 24h.",
+    "Assurance habitation professionnelle : extension de l'habitation pour activité pro à domicile. Couvre équipement pro, RC visiteurs business, multirisque local pro à domicile. Tarifs 120-380 € par an supplémentaires. Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -32,7 +32,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance habitation professionnelle est l'extension de votre contrat habitation classique pour couvrir une activité professionnelle exercée à votre DOMICILE : freelance, consultant, professions libérales (médecin remplaçant, avocat à domicile, kiné, ostéo), artisans réparateurs (couture, retouches, bijouterie atelier), enseignants/coachs particuliers, e-commerce stocké à domicile. Particularité critique : votre assurance HABITATION CLASSIQUE (MAAF, MAIF, MMA, Allianz, AXA Habitation) NE COUVRE PAS l'activité professionnelle — équipement pro, visiteurs business, stock pro stocké chez vous, RC pro. Sans extension, un sinistre est REJETÉ pour « usage non déclaré » (art. L. 113-2 C. assur.). 2 options : extension habitation (+80-150€/an) pour activité légère sans visiteur, ou contrat pro à domicile dédié (220-380€/an) pour activité avec visiteurs ou stock significatif. Cette page détaille les 2 options et leurs limites."
+      intro="L'assurance habitation professionnelle est l'extension de votre contrat habitation classique pour couvrir une activité professionnelle exercée à votre DOMICILE : freelance, consultant, professions libérales (médecin remplaçant, avocat à domicile, kiné, ostéo), artisans réparateurs (couture, retouches, bijouterie atelier), enseignants ou coachs particuliers, e-commerce stocké à domicile. Particularité critique : votre assurance HABITATION CLASSIQUE (MAAF, MAIF, MMA, Allianz, AXA Habitation) NE COUVRE PAS l'activité professionnelle — équipement pro, visiteurs business, stock pro stocké chez vous, RC pro. Sans extension, un sinistre est REJETÉ pour « usage non déclaré » (art. L. 113-2 C. assur.). 2 options : extension habitation (+80-150€ par an) pour activité légère sans visiteur, ou contrat pro à domicile dédié (220-380€ par an) pour activité avec visiteurs ou stock significatif. Cette page détaille les 2 options et leurs limites."
       legalReference="Article L. 113-2 du Code des assurances + Code de la consommation (visiteurs business)"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -43,7 +43,7 @@ export default function Page() {
         {
           icon: '🏡',
           title: 'Extension ou dédié',
-          desc: '2 options : extension habitation (+80-150€/an) ou contrat pro à domicile dédié (220-380€/an)',
+          desc: '2 options : extension habitation (+80-150€ par an) ou contrat pro à domicile dédié (220-380€ par an)',
         },
         {
           icon: '💼',
@@ -112,8 +112,8 @@ export default function Page() {
                     <td className="border p-2">
                       <strong>Tarif</strong>
                     </td>
-                    <td className="border p-2">+80 à 150€/an</td>
-                    <td className="border p-2">220-380€/an (séparé)</td>
+                    <td className="border p-2">+80 à 150€ par an</td>
+                    <td className="border p-2">220-380€ par an (séparé)</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -163,11 +163,11 @@ export default function Page() {
         },
         {
           q: 'Combien coûte une extension habitation pour usage pro ?',
-          a: "Option 1 (extension habitation) : +80-150€/an supplémentaires. Couvre équipement pro jusqu'à 5-10k€, mais EXCLUT visiteurs business et RC pro. Option 2 (contrat pro à domicile dédié) : 220-380€/an séparé, couverture étendue jusqu'à 30-50k€ + visiteurs business. Option 1 OK pour freelance digital sans RDV. Option 2 indispensable pour profession libérale (médecin, avocat, kiné, ostéo) recevant des clients.",
+          a: "Option 1 (extension habitation) : +80-150€ par an supplémentaires. Couvre équipement pro jusqu'à 5-10k€, mais EXCLUT visiteurs business et RC pro. Option 2 (contrat pro à domicile dédié) : 220-380€ par an séparé, couverture étendue jusqu'à 30-50k€ + visiteurs business. Option 1 OK pour freelance digital sans RDV. Option 2 indispensable pour profession libérale (médecin, avocat, kiné, ostéo) recevant des clients.",
         },
         {
           q: "Visiteurs business à mon domicile : qui paie en cas d'accident ?",
-          a: 'Sans extension pro à domicile : VOUS PERSONNELLEMENT (la RC habitation perso ne couvre pas la responsabilité PROFESSIONNELLE). Avec extension Option 2 : votre assureur paie. Critique pour profession libérale recevant 5+ clients/semaine à domicile.',
+          a: 'Sans extension pro à domicile : VOUS PERSONNELLEMENT (la RC habitation perso ne couvre pas la responsabilité PROFESSIONNELLE). Avec extension Option 2 : votre assureur paie. Critique pour profession libérale recevant 5+ clients par semaine à domicile.',
         },
         {
           q: 'E-commerce stocké à domicile : couvert ?',

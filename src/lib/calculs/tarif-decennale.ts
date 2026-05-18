@@ -35,7 +35,7 @@ export type Zone = 'metropole' | 'dom' | 'corse'
 
 export interface TarifInput {
   metier: Metier
-  ca: number /* € HT/an prévisionnel */
+  ca: number /* € HT par an prévisionnel */
   formeJuridique: FormeJuridique
   effectif: number /* nombre de salariés */
   antecedents: Antecedents
@@ -86,7 +86,7 @@ const COEF_ANTECEDENTS: Record<Antecedents, number> = {
   aucun: 1.0,
   '1-sinistre': 1.25,
   '2-sinistres': 1.6,
-  '3-plus': 2.1, /* devient quasi inassurable au-delà */
+  '3-plus': 2.1 /* devient quasi inassurable au-delà */,
 }
 
 const COEF_ZONE: Record<Zone, number> = {
@@ -167,7 +167,7 @@ export function calculerTarif(input: TarifInput): TarifResultat {
 }
 
 export const METIER_LABELS: Record<Metier, string> = {
-  'peintre-plaquiste': 'Peintre / plaquiste',
+  'peintre-plaquiste': 'Peintre — plaquiste',
   electricien: 'Électricien BTP',
   plombier: 'Plombier-chauffagiste',
   carreleur: 'Carreleur',
@@ -175,7 +175,7 @@ export const METIER_LABELS: Record<Metier, string> = {
   macon: 'Maçon — gros œuvre',
   'couvreur-zingueur': 'Couvreur-zingueur',
   'rge-photovoltaique': 'RGE photovoltaïque',
-  'terrassier-vrd': 'Terrassier / VRD',
+  'terrassier-vrd': 'Terrassier — VRD',
   charpentier: 'Charpentier',
 }
 

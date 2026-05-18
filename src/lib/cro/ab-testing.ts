@@ -4,7 +4,7 @@
  * Pattern : assigne une variante stable à chaque visiteur via cookie 50j.
  * Évite le flicker de variant entre pages (variant assignée 1× puis persistée).
  *
- * Usage server-side via headers().get('cookie') ou client-side via document.cookie.
+ * Usage server-side via headers().get('cookie') / client-side via document.cookie.
  *
  * Tracking : chaque assignation push événement GTM `ab_assignment` pour cohort GA4.
  */

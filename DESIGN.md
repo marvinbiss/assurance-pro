@@ -26,11 +26,11 @@
 
 ## Typography
 
-- **Display (hero, H1, statements):** **Fraunces** — variable serif optical-size. Personnalité chaleureuse, lettres "g" et "a" caractérielles. Soft 9 / Wonky 1 weight 500-700. Use sparingly: hero one-liner, pilier H1, quotes éditoriales.
-- **Heading (H2-H4, section titles):** **Sora** — variable sans, weight 600-700. Géométrique stable, lisible toutes tailles. Substitue Fraunces dans contextes denses (dashboard, devis form).
-- **Body:** **DM Sans** — variable, weight 400-500. Optimal lisibilité longue lecture YMYL (réglementation, exclusions, conditions). Tracking 0 à 1.05rem, tracking -0.005em ≥1.25rem.
-- **UI / Labels / Buttons:** **Sora** weight 500-600, tracking 0.01em, uppercase optionnel pour CTAs secondaires uniquement.
-- **Data / Tables / Numbers:** **DM Sans tabular-nums** (`font-variant-numeric: tabular-nums`). Stats prix, pourcentages, dates.
+- **Display (hero, H1, statements):** **Playfair Display** — serif éditorial classique. Signal trust YMYL premium (cabinet conseil corporate). Weights 400/600/700/800/900. Use sparingly: hero one-liner, pilier H1, quotes éditoriales.
+- **Heading (H2-H4, section titles):** **Inter** — variable sans, weight 600-700. Corporate universel (Stripe/Linear-grade), lisible toutes tailles.
+- **Body:** **Inter** — variable, weight 400-500. Optimal lisibilité longue lecture YMYL (réglementation, exclusions, conditions). Tracking 0 à 1.05rem, tracking -0.005em ≥1.25rem.
+- **UI / Labels / Buttons:** **Inter** weight 500-600, tracking 0.01em, uppercase optionnel pour CTAs secondaires uniquement.
+- **Data / Tables / Numbers:** **Inter tabular-nums** (`font-variant-numeric: tabular-nums`). Stats prix, pourcentages, dates.
 - **Code (rare):** **JetBrains Mono** weight 400.
 - **Loading strategy:** `next/font/google` self-hosted. Display swap. Preload Fraunces + Sora + DM Sans uniquement. Subset latin-ext (accents français FR).
 
@@ -53,26 +53,26 @@
 
 ## Color
 
-**Approach: balanced** — Terracotta primary (warm trust), Honey gold (premium signals only), Forest green (verified/trust), Sand neutrals (canvas).
+**Approach: balanced corporate YMYL** — Midnight Navy primary (trust banque/cabinet), Antique Gold (premium signals only), Forest green (verified/trust), Sand neutrals (canvas). Refonte 2026-05 depuis Terracotta vers alignment standard secteur assurance pro France (Hiscox/AXA/Allianz/Generali).
 
 ### Brand palette
 
-| Token         | Hex       | Role                                 |
-| ------------- | --------- | ------------------------------------ |
-| `primary-50`  | `#FDF1EC` | Backgrounds soft, hero overlays      |
-| `primary-100` | `#FADDCF` | Surfaces secondaires, badges légers  |
-| `primary-200` | `#F5BAA0` | Hover surfaces                       |
-| `primary-400` | `#E86B4B` | **PRIMARY** — CTAs, brand accents    |
-| `primary-500` | `#D4553A` | Hover CTA                            |
-| `primary-600` | `#C24B2A` | Active CTA, focus rings              |
-| `primary-700` | `#A33E22` | Text-on-light when terracotta needed |
-| `primary-900` | `#6B2916` | Dark mode terracotta                 |
+| Token         | Hex       | Role                                |
+| ------------- | --------- | ----------------------------------- |
+| `primary-50`  | `#EEF2F8` | Backgrounds soft, hero overlays     |
+| `primary-100` | `#D7DFEC` | Surfaces secondaires, badges légers |
+| `primary-200` | `#AFBFD9` | Hover surfaces                      |
+| `primary-500` | `#2B4D85` | **PRIMARY** — CTAs, brand accents   |
+| `primary-600` | `#1B3A6D` | Hover CTA                           |
+| `primary-700` | `#142C55` | Active CTA, focus rings             |
+| `primary-800` | `#0E2040` | Text-on-light when navy needed      |
+| `primary-950` | `#060F20` | Hero charcoal abyss                 |
 
-| Token           | Hex       | Role                                          |
-| --------------- | --------- | --------------------------------------------- |
-| `secondary-400` | `#F2B523` | **HONEY** — Premium badges, awards, top-rated |
-| `secondary-500` | `#E8960A` | Hover honey                                   |
-| `secondary-50`  | `#FEFAEC` | Background "premium" sections                 |
+| Token           | Hex       | Role                                                 |
+| --------------- | --------- | ---------------------------------------------------- |
+| `secondary-400` | `#C9A961` | **ANTIQUE GOLD** — Premium badges, awards, top-rated |
+| `secondary-500` | `#B8975A` | Hover gold                                           |
+| `secondary-50`  | `#FBF7EC` | Background "premium" sections                        |
 
 | Token        | Hex       | Role                                           |
 | ------------ | --------- | ---------------------------------------------- |

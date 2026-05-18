@@ -262,7 +262,7 @@ export function buildPageTitle(enrichment: PageEnrichmentRow): string {
 
   const base = parts.join(' ')
   if (enrichment.prix_min_eur && enrichment.prix_max_eur) {
-    return `${base} — Tarif ${Math.round(enrichment.prix_min_eur)}-${Math.round(enrichment.prix_max_eur)}€/an | Vivos Assurance`
+    return `${base} — Tarif ${Math.round(enrichment.prix_min_eur)}-${Math.round(enrichment.prix_max_eur)}€ par an | Vivos Assurance`
   }
   return `${base} — Devis gratuit | Vivos Assurance`
 }
@@ -282,7 +282,7 @@ export function buildPageDescription(enrichment: PageEnrichmentRow): string {
 
   if (enrichment.prix_min_eur && enrichment.prix_med_eur) {
     parts.push(
-      `Tarif marché à partir de ${Math.round(enrichment.prix_min_eur)}€/an (médian ${Math.round(enrichment.prix_med_eur)}€).`
+      `Tarif marché à partir de ${Math.round(enrichment.prix_min_eur)}€ par an (médian ${Math.round(enrichment.prix_med_eur)}€).`
     )
   }
 
@@ -454,7 +454,7 @@ export function buildSchemaOrg(enrichment: PageEnrichmentRow) {
   if (enrichment.prix_min_eur && enrichment.prix_max_eur && enrichment.garantie_label) {
     faqItems.push({
       q: `Quel est le prix de ${enrichment.garantie_label}${enrichment.metier_nom ? ` pour un ${enrichment.metier_nom}` : ''} ?`,
-      a: `Le tarif marché 2026 s'étend de ${Math.round(enrichment.prix_min_eur)}€/an à ${Math.round(enrichment.prix_max_eur)}€/an, avec une médiane de ${enrichment.prix_med_eur ? Math.round(enrichment.prix_med_eur) : '—'}€/an. Devis personnalisé via courtier ORIAS partenaire.`,
+      a: `Le tarif marché 2026 s'étend de ${Math.round(enrichment.prix_min_eur)}€ par an à ${Math.round(enrichment.prix_max_eur)}€ par an, avec une médiane de ${enrichment.prix_med_eur ? Math.round(enrichment.prix_med_eur) : '—'}€ par an. Devis personnalisé via courtier ORIAS partenaire.`,
     })
   }
   if (enrichment.sinistralite_pct && enrichment.garantie_label) {
