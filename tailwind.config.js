@@ -37,19 +37,7 @@ module.exports = {
           900: '#534327',
           950: '#2F2614',
         },
-        // Clay - Kept for backward compat, aliased to primary
-        clay: {
-          50:  '#FDF1EC',
-          100: '#FADDCF',
-          200: '#F5BAA0',
-          300: '#EF9171',
-          400: '#E86B4B',
-          500: '#D4553A',
-          600: '#C24B2A',
-          700: '#A33E22',
-          800: '#85321C',
-          900: '#6B2916',
-        },
+        // Clay — DEAD (purgé, 0 usage en code) — supprimé pour réduire bundle CSS
         // Sand - Warm neutrals (backgrounds, surfaces)
         sand: {
           50:  '#FDFAF7',
@@ -118,17 +106,17 @@ module.exports = {
         'premium-lg': '0 25px 60px -15px rgba(28, 25, 23, 0.14)',
         'glass': '0 8px 32px rgba(28, 25, 23, 0.06)',
         'glass-lg': '0 8px 32px rgba(28, 25, 23, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
-        'glow-clay': '0 0 30px rgba(232, 107, 75, 0.3)',
+        'glow-clay': '0 0 30px rgba(43, 77, 133, 0.30)', // alias = glow primary (legacy)
         'inner-glow': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
-        'card-hover': '0 20px 40px -12px rgba(28, 25, 23, 0.1), 0 8px 20px -8px rgba(232, 107, 75, 0.08)',
-        'cta': '0 4px 14px 0 rgba(232, 107, 75, 0.3)',
-        'cta-hover': '0 8px 25px 0 rgba(212, 85, 58, 0.4)',
-        // DESIGN.md --shadow-premium terracotta-tinted for hero CTAs
-        'premium-terra': '0 20px 40px -12px rgba(232, 107, 75, 0.18)',
+        'card-hover': '0 20px 40px -12px rgba(28, 25, 23, 0.10), 0 8px 20px -8px rgba(43, 77, 133, 0.08)',
+        'cta': '0 4px 14px 0 rgba(43, 77, 133, 0.30)',
+        'cta-hover': '0 8px 25px 0 rgba(20, 44, 85, 0.40)',
+        // Premium shadow primary-tinted (recalibré post-migration terra→navy)
+        'premium-terra': '0 20px 40px -12px rgba(43, 77, 133, 0.18)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-primary': 'linear-gradient(135deg, #E86B4B 0%, #C24B2A 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #2B4D85 0%, #142C55 100%)',
         'gradient-secondary': 'linear-gradient(135deg, #e8960a 0%, #c97308 100%)',
         'gradient-hero': 'linear-gradient(135deg, #1C1917 0%, #302C28 50%, #45403B 100%)',
         'gradient-hero-warm': 'linear-gradient(135deg, #060F20 0%, #142C55 50%, #2B4D85 100%)',

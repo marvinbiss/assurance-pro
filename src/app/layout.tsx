@@ -17,7 +17,7 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
-import { CursorTrail } from '@/components/motion/cursor-trail'
+// CursorTrail retiré (gimmick desktop-only, perçu non-premium)
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
@@ -210,7 +210,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Footer />
         <ClientOnlyFooterHelpers />
         <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
-        <CursorTrail />
         <Analytics />
         <SpeedInsights />
       </body>

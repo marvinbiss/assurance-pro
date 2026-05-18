@@ -245,12 +245,12 @@ export default function HomePage() {
               </div>
 
               {/* H1 typographie display premium XL — sobre, sans gradient */}
-              <h1 className="mb-6 font-display-premium font-heading text-5xl font-medium leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[6.5rem]">
+              <h1 className="mb-6 font-display-premium font-heading text-4xl font-medium leading-[1.02] tracking-tight text-white sm:text-5xl md:text-7xl lg:text-[6.5rem]">
                 L&apos;assurance pro
                 <br />
                 <span className="italic text-secondary-200">qui tient ses promesses.</span>
               </h1>
-              <p className="mb-10 max-w-xl text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
+              <p className="mb-10 max-w-xl text-sm font-semibold uppercase tracking-[0.12em] text-white/60">
                 Conseil motivé &middot; Garanties négociées &middot; Sinistre accompagné
               </p>
 
@@ -357,14 +357,21 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Trust indicators row — count-up animés */}
-          <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md md:grid-cols-4">
+      {/* TrustBadgesRow conservé (logos partenaires inline) */}
+      <TrustBadgesRow />
+
+      {/* Trust indicators row — extraits du hero (Hiscox-grade restraint) */}
+      <section className="bg-charcoal-900 py-12">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md md:grid-cols-4">
             {TRUST_INDICATORS.map((t, i) => (
               <RevealOnScroll key={t.label} delay={i * 80}>
                 <div className="bg-charcoal-900/30 px-5 py-5 backdrop-blur-md">
                   <t.Icon className="mb-2 h-5 w-5 text-secondary-300" strokeWidth={2.2} />
-                  <div className="font-heading text-3xl font-extrabold tabular-nums tracking-tight md:text-4xl">
+                  <div className="font-heading text-3xl font-extrabold tabular-nums tracking-tight text-white md:text-4xl">
                     <CountUp value={t.value} suffix={t.suffix} duration={1600} />
                   </div>
                   <div className="mt-1 text-xs font-medium text-white/75 md:text-sm">{t.label}</div>
@@ -374,9 +381,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* TrustBadgesRow conservé (logos partenaires inline) */}
-      <TrustBadgesRow />
 
       {/* ═══════════════════════════════════════════════════════════════════
           VERTICALES — Bento box asymétrique
