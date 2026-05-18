@@ -10,7 +10,7 @@
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CalculateurTarifMultirisquePro } from '@/components/outils/CalculateurTarifMultirisquePro'
+import { TarifCalculator } from '@/components/premium/tarif-calculator'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -96,7 +96,7 @@ export default async function Page() {
             Pro, Allianz Pro, Generali, MAIF Pro, Pro BTP MR, April Pro).
           </p>
           <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-            <CalculateurTarifMultirisquePro />
+            <TarifCalculator garantie="multirisque-pro" />
           </div>
         </div>
       </section>

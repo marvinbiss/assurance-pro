@@ -28,7 +28,7 @@
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CalculateurTarifRcPro } from '@/components/outils/CalculateurTarifRcPro'
+import { TarifCalculator } from '@/components/premium/tarif-calculator'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -119,7 +119,7 @@ export default async function Page() {
             Wakam, April Pro).
           </p>
           <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-            <CalculateurTarifRcPro />
+            <TarifCalculator garantie="rc-pro" />
           </div>
         </div>
       </section>

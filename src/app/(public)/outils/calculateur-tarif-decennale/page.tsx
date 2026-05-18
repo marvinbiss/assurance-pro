@@ -27,7 +27,7 @@
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CalculateurTarifDecennale } from '@/components/outils/CalculateurTarifDecennale'
+import { TarifCalculator } from '@/components/premium/tarif-calculator'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -118,7 +118,7 @@ export default async function Page() {
             Generali).
           </p>
           <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-            <CalculateurTarifDecennale />
+            <TarifCalculator garantie="decennale" />
           </div>
         </div>
       </section>

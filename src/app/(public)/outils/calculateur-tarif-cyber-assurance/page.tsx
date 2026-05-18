@@ -14,7 +14,7 @@
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CalculateurTarifCyber } from '@/components/outils/CalculateurTarifCyber'
+import { TarifCalculator } from '@/components/premium/tarif-calculator'
 import { StickyConversionBar } from '@/components/cro/StickyConversionBar'
 import { SITE_URL } from '@/lib/seo/config'
 import { headers } from 'next/headers'
@@ -100,7 +100,7 @@ export default async function Page() {
             cyber partenaires.
           </p>
           <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-            <CalculateurTarifCyber />
+            <TarifCalculator garantie="cyber" />
           </div>
         </div>
       </section>
