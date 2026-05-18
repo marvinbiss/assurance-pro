@@ -1,41 +1,39 @@
-name: CI
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-env:
-  NEXT_BUILD_SKIP_DB: "1"
-  NEXT_PUBLIC_SITE_URL: "https://vivos-assurance.fr"
-  NEXT_PUBLIC_SUPABASE_URL: "https://stub.supabase.co"
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: "stub-anon-key"
-
-jobs:
-  lint-test-build:
-    name: Lint + Test + Build
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Type check
-        run: npx tsc --noEmit
-
-      - name: Lint (eslint flat config)
-        run: npx eslint . --max-warnings=100
-
-      - name: Unit tests (vitest)
-        run: npx vitest run --reporter=default
-
-      - name: Build (Next.js)
-        run: npm run build
+ on:                                     
+    push:                                                                                                 
+      branches: [main]                                                                                    
+    pull_request:
+      branches: [main]                                                                                    
+                  
+  env:
+    NEXT_BUILD_SKIP_DB: "1"
+    NEXT_PUBLIC_SITE_URL: "https://assurance-pro.fr"
+    NEXT_PUBLIC_SUPABASE_URL: "https://stub.supabase.co"
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: "stub-anon-key"
+                                                                                                          
+  jobs:                                   
+    lint-test-build:                                                                                      
+      name: Lint + Test + Build                                                                           
+      runs-on: ubuntu-latest                                                                              
+      timeout-minutes: 15                                                                                 
+      steps:                              
+        - uses: actions/checkout@v4
+                                                                                                          
+        - uses: actions/setup-node@v4         
+          with:                                                                                           
+            node-version: "20"
+            cache: "npm"                                                                                  
+  
+        - name: Install dependencies                                                                      
+          run: npm ci --no-audit --no-fund
+                                              
+        - name: Type check                
+          run: npx tsc --noEmit
+                                                                                                          
+        - name: Lint (eslint flat config)
+          run: npx eslint .                                                                               
+                                              
+        - name: Unit tests (vitest)       
+          run: npx vitest run --reporter=default
+                                                                                                          
+        - name: Build (Next.js static export) 
+          run: npm run build                   
