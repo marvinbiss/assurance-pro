@@ -16,14 +16,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'RC Pro Avocat — Comparez les contrats CNB',
-    description: 'RC Pro avocat conforme aux exigences du CNB et de l\\',
+    description:
+      "RC Pro avocat conforme aux exigences du CNB et de l'Ordre. Comparaison sur 6 assureurs spécialistes. Devis personnalisé en 24h.",
     url: `${SITE_URL}/rc-pro-avocat`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'RC Pro Avocat — Comparez les contrats CNB',
-    description: 'RC Pro avocat conforme aux exigences du CNB et de l\\',
+    description:
+      "RC Pro avocat conforme aux exigences du CNB et de l'Ordre. Comparaison sur 6 assureurs spécialistes. Devis personnalisé en 24h.",
   },
 }
 

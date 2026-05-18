@@ -11,15 +11,17 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/fic` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Fiche d\\',
-    description: 'Fiche d\\',
+    title: "Fiche d'Information Précontractuelle (FIC)",
+    description:
+      "Fiche d'information précontractuelle de notre cabinet de courtage ORIAS. Identité, statut, rémunération, conseil, conformité DDA art. L. 521-2 du Code des assurances.",
     url: `${SITE_URL}/fic`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fiche d\\',
-    description: 'Fiche d\\',
+    title: "Fiche d'Information Précontractuelle (FIC)",
+    description:
+      "Fiche d'information précontractuelle de notre cabinet de courtage ORIAS. Identité, statut, rémunération, conseil, conformité DDA art. L. 521-2 du Code des assurances.",
   },
 }
 

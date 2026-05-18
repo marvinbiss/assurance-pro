@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Politique cookies',
     description:
-      'Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d\\',
+      "Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d'audience, marketing. Gestion du consentement RGPD.",
     url: `${SITE_URL}/cookies`,
     type: 'website',
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Politique cookies',
     description:
-      'Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d\\',
+      "Politique cookies du cabinet de courtage ORIAS Vivos Assurance. Cookies essentiels, mesure d'audience, marketing. Gestion du consentement RGPD.",
   },
 }
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Médiation — Réclamation et résolution de litige',
     description:
-      'Procédure de médiation conforme à la Recommandation ACPR 2024-R-02. Réclamation interne puis Médiateur de l\\',
+      "Procédure de médiation conforme à la Recommandation ACPR 2024-R-02. Réclamation interne puis Médiateur de l'Assurance.",
     url: `${SITE_URL}/mediation`,
     type: 'website',
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Médiation — Réclamation et résolution de litige',
     description:
-      'Procédure de médiation conforme à la Recommandation ACPR 2024-R-02. Réclamation interne puis Médiateur de l\\',
+      "Procédure de médiation conforme à la Recommandation ACPR 2024-R-02. Réclamation interne puis Médiateur de l'Assurance.",
   },
 }
 

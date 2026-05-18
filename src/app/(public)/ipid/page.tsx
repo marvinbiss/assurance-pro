@@ -11,15 +11,17 @@ export const metadata: Metadata = {
     "Fiches IPID standardisées DDA pour chaque produit d'assurance distribué : décennale, RC Pro, mutuelle TNS, cyber, multirisque, VTC.",
   alternates: { canonical: `${SITE_URL}/ipid` },
   openGraph: {
-    title: 'IPID — Fiches d\\',
-    description: 'Fiches IPID standardisées DDA pour chaque produit d\\',
+    title: "IPID — Fiches d'information produit",
+    description:
+      "Fiches IPID standardisées DDA pour chaque produit d'assurance distribué : décennale, RC Pro, mutuelle TNS, cyber, multirisque, VTC.",
     url: `${SITE_URL}/ipid`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IPID — Fiches d\\',
-    description: 'Fiches IPID standardisées DDA pour chaque produit d\\',
+    title: "IPID — Fiches d'information produit",
+    description:
+      "Fiches IPID standardisées DDA pour chaque produit d'assurance distribué : décennale, RC Pro, mutuelle TNS, cyber, multirisque, VTC.",
   },
 }
 

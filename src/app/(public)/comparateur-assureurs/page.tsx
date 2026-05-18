@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/comparateur-assureurs`,
   },
   openGraph: {
-    title: 'Comparateur d\\',
+    title: "Comparateur d'assureurs pro 2026 — 10 compagnies",
     description:
       'Comparez les 10 principaux assureurs pro français. Hiscox, April Pro, Allianz, MMA, Generali, AXA, MAAF, SMABTP, Wakam, Stello. Tarifs, garanties, spécialités.',
     url: `${SITE_URL}/comparateur-assureurs`,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Comparateur d\\',
+    title: "Comparateur d'assureurs pro 2026 — 10 compagnies",
     description:
       'Comparez les 10 principaux assureurs pro français. Hiscox, April Pro, Allianz, MMA, Generali, AXA, MAAF, SMABTP, Wakam, Stello. Tarifs, garanties, spécialités.',
   },

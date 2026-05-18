@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cyber Vivos Assurance — Ransomware, RGPD breach',
     description:
-      'Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu\\',
+      "Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu'à 5M€.",
     url: `${SITE_URL}/cyber-assurance`,
     type: 'website',
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cyber Vivos Assurance — Ransomware, RGPD breach',
     description:
-      'Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu\\',
+      "Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu'à 5M€.",
   },
 }
 

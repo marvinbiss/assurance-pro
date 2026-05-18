@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Multirisque Professionnelle — Local, stock, exploitation',
     description:
-      'Comparez votre Multirisque Pro auprès de 10 assureurs. Local commercial, atelier, bureau, stock. Vol, incendie, dégâts des eaux, perte d\\',
+      "Comparez votre Multirisque Pro auprès de 10 assureurs. Local commercial, atelier, bureau, stock. Vol, incendie, dégâts des eaux, perte d'exploitation.",
     url: `${SITE_URL}/multirisque-pro`,
     type: 'website',
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Multirisque Professionnelle — Local, stock, exploitation | Assurance P',
     description:
-      'Comparez votre Multirisque Pro auprès de 10 assureurs. Local commercial, atelier, bureau, stock. Vol, incendie, dégâts des eaux, perte d\\',
+      "Comparez votre Multirisque Pro auprès de 10 assureurs. Local commercial, atelier, bureau, stock. Vol, incendie, dégâts des eaux, perte d'exploitation.",
   },
 }
 
