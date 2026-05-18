@@ -711,16 +711,21 @@ export async function PilierLayout({
               </h2>
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {relatedMetiers.map((m) => (
-                <Link
-                  key={m.slug}
-                  href={`/${slug}/${m.slug}`}
-                  className="group flex items-center justify-between gap-2 rounded-xl border border-charcoal-100 bg-white px-4 py-3.5 text-sm font-semibold text-charcoal-800 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-200 hover:bg-sand-50 hover:text-primary-700"
-                >
-                  <span>{m.name}</span>
-                  <ArrowRight className="h-3.5 w-3.5 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
-                </Link>
-              ))}
+              {relatedMetiers.map((m) => {
+                // FIX 404: slug peut être 2-segments ('rc-pro/freelance-it') ou 1 ('assurance-decennale')
+                // Extraire toujours le 1er segment (verticale racine) pour produire /verticale/metier (2 segments max)
+                const verticalRoot = slug.split('/')[0]
+                return (
+                  <Link
+                    key={m.slug}
+                    href={`/${verticalRoot}/${m.slug}`}
+                    className="group flex items-center justify-between gap-2 rounded-xl border border-charcoal-100 bg-white px-4 py-3.5 text-sm font-semibold text-charcoal-800 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-200 hover:bg-sand-50 hover:text-primary-700"
+                  >
+                    <span>{m.name}</span>
+                    <ArrowRight className="h-3.5 w-3.5 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
+                  </Link>
+                )
+              })}
             </div>
           </div>
         </section>
