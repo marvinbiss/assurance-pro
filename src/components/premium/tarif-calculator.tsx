@@ -205,7 +205,7 @@ const METIERS_RC_PRO: readonly MetierOption[] = [
 const METIERS_MULTIRISQUE: readonly MetierOption[] = [
   // Commerce de bouche (Coover / AssurResto 2026 — local SARL CA 80k)
   { value: 'restaurant', label: 'Restaurant — brasserie', base: 1400, spread: 0.3 },
-  { value: 'boulangerie', label: 'Boulangerie — pâtisserie', base: 1100, spread: 0.3 },
+  { value: 'boulangerie', label: 'Boulangerie — pâtisserie', base: 850, spread: 0.32 },
   { value: 'boucherie', label: 'Boucherie — charcuterie', base: 1100, spread: 0.3 },
   { value: 'primeur-caviste', label: 'Primeur — caviste — fromagerie', base: 660, spread: 0.34 },
   { value: 'traiteur', label: 'Traiteur — food truck', base: 740, spread: 0.34 },
@@ -247,10 +247,10 @@ const METIERS_MULTIRISQUE: readonly MetierOption[] = [
   { value: 'garage-auto', label: 'Garage — carrosserie automobile', base: 1700, spread: 0.28 },
   { value: 'depot-btp', label: 'Showroom — dépôt BTP', base: 880, spread: 0.32 },
   // Hôtellerie & tourisme
-  { value: 'hotel', label: 'Hôtel — résidence', base: 2400, spread: 0.28 },
+  { value: 'hotel', label: 'Hôtel — résidence', base: 1800, spread: 0.3 },
   { value: 'camping-gite', label: 'Camping — gîte — chambre d’hôtes', base: 920, spread: 0.32 },
   // Sport, loisir, éducation
-  { value: 'salle-sport', label: 'Salle de sport — école de danse', base: 1100, spread: 0.3 },
+  { value: 'salle-sport', label: 'Salle de sport — école de danse', base: 850, spread: 0.32 },
   {
     value: 'autoecole-formation',
     label: 'Auto-école — organisme de formation',
@@ -287,8 +287,8 @@ const METIERS_CYBER: readonly MetierOption[] = [
   {
     value: 'retail-omnicanal',
     label: 'Retail omnicanal — réseau magasins',
-    base: 1380,
-    spread: 0.36,
+    base: 1800,
+    spread: 0.34,
   },
   // Services pro
   { value: 'tpe-services', label: 'TPE services (<10 salariés)', base: 750, spread: 0.36 },
@@ -299,14 +299,14 @@ const METIERS_CYBER: readonly MetierOption[] = [
     base: 920,
     spread: 0.36,
   },
-  { value: 'cabinet-avocat', label: 'Cabinet avocat — RGPD — DPO', base: 1900, spread: 0.32 },
-  { value: 'expert-comptable', label: 'Expert-comptable — paie', base: 2100, spread: 0.32 },
-  { value: 'courtier-iobsp', label: 'Courtier IOBSP — assurance — immo', base: 1900, spread: 0.32 },
+  { value: 'cabinet-avocat', label: 'Cabinet avocat — RGPD — DPO', base: 2400, spread: 0.3 },
+  { value: 'expert-comptable', label: 'Expert-comptable — paie', base: 2600, spread: 0.3 },
+  { value: 'courtier-iobsp', label: 'Courtier IOBSP — assurance — immo', base: 2400, spread: 0.3 },
   {
     value: 'finance-courtage',
     label: 'Finance — gestion privée — fintech',
-    base: 4500,
-    spread: 0.3,
+    base: 5800,
+    spread: 0.28,
   },
   // Santé
   { value: 'sante', label: 'Acteur santé — cabinet', base: 2800, spread: 0.32 },
@@ -320,8 +320,8 @@ const METIERS_CYBER: readonly MetierOption[] = [
   {
     value: 'laboratoire-imagerie',
     label: 'Laboratoire — imagerie médicale',
-    base: 1850,
-    spread: 0.32,
+    base: 2400,
+    spread: 0.3,
   },
   {
     value: 'pharmacie-connectee',
@@ -334,8 +334,8 @@ const METIERS_CYBER: readonly MetierOption[] = [
   {
     value: 'transport-logistique',
     label: 'Transport — logistique — flotte connectée',
-    base: 1450,
-    spread: 0.36,
+    base: 1900,
+    spread: 0.34,
   },
   // Hôtellerie connectée
   {
@@ -1572,9 +1572,11 @@ function useTrcForm() {
   const [complexite, setComplexite] = useState<ComplexiteChantier>('standard')
 
   const range = useMemo<Range>(() => {
-    // Base TRC ~0,4% coût chantier × durée × complexité
-    const mid = coutChantier * 0.004 * dureeChantierMod(duree) * COMPLEXITE_MOD[complexite]
-    return spreadRange(mid, 0.26)
+    // Base TRC 0,20% coût chantier × durée × complexité
+    // Calibré marché 2026 (assurance-btp.net 0.15-0.30%, SMABTP TRC, Verspieren)
+    // Ancien 0.4% sur-cotait +60-150% vs marché
+    const mid = coutChantier * 0.002 * dureeChantierMod(duree) * COMPLEXITE_MOD[complexite]
+    return spreadRange(mid, 0.28)
   }, [coutChantier, duree, complexite])
 
   return {
@@ -2053,15 +2055,17 @@ function useHcForm() {
   const [secteur, setSecteur] = useState<SecteurHc>('services-conseil')
 
   const range = useMemo<Range>(() => {
-    // Base = capital × factor × nbDirigeants × caMul léger
+    // Base = capital × factor × nbDirigeants × caMul × coeff calibrage
+    // Coeff 1.8 (vs 0.7 ancien) — calibré Verspieren/Albingia/MetLife 2026
+    // Cible: 500k cap × services-conseil × 40y = ~650€/an (marché 600-1200)
     const mid =
       (capital / 100_000) *
       HC_FACTOR_PER_100K[secteur] *
       100 *
       nbDirigeants *
       caMultiplier(ca) *
-      0.7
-    return spreadRange(mid, 0.3)
+      1.8
+    return spreadRange(mid, 0.28)
   }, [ca, capital, nbDirigeants, secteur])
 
   return {
