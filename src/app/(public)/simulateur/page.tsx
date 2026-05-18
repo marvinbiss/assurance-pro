@@ -68,7 +68,7 @@ export default async function SimulateurPage() {
   }
 
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <script {...jsonLdScriptProps(schema, nonce)} />
 
       <PageHero
@@ -135,6 +135,6 @@ export default async function SimulateurPage() {
           </p>
         </div>
       </div>
-    </main>
+    </div>
   )
 }

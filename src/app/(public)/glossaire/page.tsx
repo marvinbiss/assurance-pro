@@ -274,7 +274,7 @@ const TERMS_BY_LETTER = ALPHABET.map((letter) => ({
 
 export default function GlossairePage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <BreadcrumbSchema items={[{ label: 'Glossaire' }]} />
       {/* Hero */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
@@ -446,6 +446,6 @@ export default function GlossairePage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

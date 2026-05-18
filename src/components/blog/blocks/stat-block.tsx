@@ -31,7 +31,7 @@ export function StatBlock({ value, label, trend, trendValue, source }: StatBlock
           </span>
         )}
       </div>
-      <figcaption className="mt-3 text-sm font-bold uppercase tracking-wider text-charcoal-600 dark:text-charcoal-400">
+      <figcaption className="mt-3 text-sm font-bold uppercase tracking-wider text-charcoal-600 dark:text-charcoal-500">
         {label}
       </figcaption>
       {source && (

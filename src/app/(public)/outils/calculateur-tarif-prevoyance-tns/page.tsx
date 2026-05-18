@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <header className="bg-gradient-to-br from-amber-700 to-orange-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
@@ -235,6 +235,6 @@ export default async function Page() {
         trustSignal="7 assureurs comparés • Loi Madelin déductible • ORIAS"
         variant="amber"
       />
-    </main>
+    </div>
   )
 }

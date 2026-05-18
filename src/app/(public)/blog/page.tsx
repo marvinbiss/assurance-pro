@@ -113,7 +113,7 @@ export default function BlogPage() {
   const featuredConfig = featured ? configForCategory(featured.category) : DEFAULT_CONFIG
 
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <BreadcrumbSchema items={[{ label: 'Blog' }]} />
       {/* Hero */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
@@ -452,6 +452,6 @@ export default function BlogPage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

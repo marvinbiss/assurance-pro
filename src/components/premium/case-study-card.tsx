@@ -49,7 +49,7 @@ export function CaseStudyCard({
           <p className="font-heading text-base font-semibold text-charcoal-900">{fullName}</p>
           <p className="font-heading text-sm text-charcoal-500">
             {client.metier}
-            <span className="mx-1.5 text-charcoal-400">·</span>
+            <span className="mx-1.5 text-charcoal-500">·</span>
             {client.city}
           </p>
         </div>

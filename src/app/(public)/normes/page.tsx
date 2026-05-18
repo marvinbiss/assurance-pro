@@ -106,7 +106,7 @@ const NORMES: Norme[] = [
 
 export default function NormesPage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Normes' }]}
         eyebrow="Conformité ACPR · ORIAS"
@@ -221,6 +221,6 @@ export default function NormesPage() {
           </ul>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

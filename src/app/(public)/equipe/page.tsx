@@ -38,7 +38,7 @@ const ENGAGEMENTS = [
 export default function EquipePage() {
   const membres = Object.values(EQUIPE)
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Cabinet' }, { label: "L'équipe" }]}
         eyebrow="Pôles d'expertise sectoriels"
@@ -178,6 +178,6 @@ export default function EquipePage() {
           />
         </div>
       </div>
-    </main>
+    </div>
   )
 }

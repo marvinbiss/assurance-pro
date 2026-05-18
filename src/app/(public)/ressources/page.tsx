@@ -63,7 +63,7 @@ export default function RessourcesPage() {
   const ressources = getAllRessources()
 
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Ressources' }]}
         eyebrow="Bibliothèque gratuite"
@@ -162,6 +162,6 @@ export default function RessourcesPage() {
           </Stagger>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

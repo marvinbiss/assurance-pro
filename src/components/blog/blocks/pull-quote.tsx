@@ -18,7 +18,7 @@ export function PullQuote({ text, attribution, sourceUrl }: PullQuoteProps) {
         “{text}”
       </p>
       {attribution && (
-        <footer className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-charcoal-500 dark:text-charcoal-400">
+        <footer className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-charcoal-500 dark:text-charcoal-500">
           <span aria-hidden="true">—</span>
           {sourceUrl ? (
             <a

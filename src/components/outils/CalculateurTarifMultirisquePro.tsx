@@ -203,10 +203,10 @@ export function CalculateurTarifMultirisquePro() {
           <ul className="space-y-1 text-sm">
             {r.garanties.map((g) => (
               <li key={g.nom} className="flex items-center gap-2">
-                <span className={g.couvert ? 'text-emerald-600' : 'text-charcoal-400'}>
+                <span className={g.couvert ? 'text-emerald-600' : 'text-charcoal-500'}>
                   {g.couvert ? '✓' : '✗'}
                 </span>
-                <span className={g.couvert ? 'font-semibold' : 'text-charcoal-400'}>{g.nom}</span>
+                <span className={g.couvert ? 'font-semibold' : 'text-charcoal-500'}>{g.nom}</span>
                 {g.couvert && <span className="text-xs text-charcoal-500">— {g.plafond}</span>}
               </li>
             ))}

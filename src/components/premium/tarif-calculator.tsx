@@ -2520,7 +2520,7 @@ function ResultBlock({ range, hint }: { range: Range; hint: string }) {
         style={{ fontFamily: 'var(--font-heading), Fraunces, serif', fontWeight: 500 }}
       >
         {formatEuros(range.min)}
-        <span className="mx-2 text-charcoal-400">→</span>
+        <span className="mx-2 text-charcoal-500">→</span>
         {formatEuros(range.max)}
         <span className="font-body ml-1 align-baseline text-base font-normal text-charcoal-600">
           par an

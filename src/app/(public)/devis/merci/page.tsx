@@ -43,7 +43,7 @@ export default async function MerciPage({
   const sla = SLA_BY_SEGMENT[segment] ?? SLA_BY_SEGMENT.warm
 
   return (
-    <main className="flex min-h-screen items-start justify-center bg-sand-50 px-4 py-12">
+    <div className="flex min-h-screen items-start justify-center bg-sand-50 px-4 py-12">
       <div className="w-full max-w-2xl rounded-lg bg-white p-8 shadow md:p-12">
         <div className="text-center">
           <div
@@ -161,6 +161,6 @@ export default async function MerciPage({
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   )
 }

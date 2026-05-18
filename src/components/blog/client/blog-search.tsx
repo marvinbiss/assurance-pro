@@ -69,7 +69,7 @@ export function BlogSearch({ items, limit = 6 }: BlogSearchProps) {
     <div className="relative">
       <div className="relative">
         <Search
-          className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-charcoal-400"
+          className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-charcoal-500"
           strokeWidth={2.4}
           aria-hidden="true"
         />
@@ -83,7 +83,7 @@ export function BlogSearch({ items, limit = 6 }: BlogSearchProps) {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Rechercher un sujet (cyber, décennale, RC Pro…)"
           autoComplete="off"
-          className="w-full rounded-2xl border border-charcoal-100 bg-white py-4 pl-12 pr-12 text-base text-charcoal-900 placeholder:text-charcoal-400 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 dark:border-charcoal-800 dark:bg-charcoal-900 dark:text-white dark:placeholder:text-charcoal-500"
+          className="w-full rounded-2xl border border-charcoal-100 bg-white py-4 pl-12 pr-12 text-base text-charcoal-900 placeholder:text-charcoal-500 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 dark:border-charcoal-800 dark:bg-charcoal-900 dark:text-white dark:placeholder:text-charcoal-500"
         />
         {query && (
           <button
@@ -104,7 +104,7 @@ export function BlogSearch({ items, limit = 6 }: BlogSearchProps) {
           className="absolute inset-x-0 top-full z-30 mt-2 max-h-[420px] overflow-y-auto rounded-2xl border border-charcoal-100 bg-white shadow-premium-lg dark:border-charcoal-800 dark:bg-charcoal-900"
         >
           {results.length === 0 ? (
-            <p className="p-5 text-sm text-charcoal-600 dark:text-charcoal-400">
+            <p className="p-5 text-sm text-charcoal-600 dark:text-charcoal-500">
               Aucun résultat pour <span className="font-bold">{debounced}</span>.
             </p>
           ) : (

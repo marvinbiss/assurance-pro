@@ -50,7 +50,7 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
   }
 
   return (
-    <main className="min-h-screen bg-white py-10">
+    <div className="min-h-screen bg-white py-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -170,7 +170,7 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
           </section>
         )}
       </div>
-    </main>
+    </div>
   )
 }
 

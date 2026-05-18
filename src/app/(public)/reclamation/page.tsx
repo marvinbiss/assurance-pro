@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function ReclamationPage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Réclamation' }]}
         eyebrow="Reco ACPR 2024-R-02"
@@ -187,6 +187,6 @@ export default function ReclamationPage() {
           </p>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

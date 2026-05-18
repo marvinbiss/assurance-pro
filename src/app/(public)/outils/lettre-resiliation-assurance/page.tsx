@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* HERO */}
       <header className="bg-gradient-to-br from-rose-700 to-pink-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
@@ -234,6 +234,6 @@ export default async function Page() {
           nonce
         )}
       />
-    </main>
+    </div>
   )
 }

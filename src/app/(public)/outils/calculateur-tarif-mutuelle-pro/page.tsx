@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <header className="bg-gradient-to-br from-emerald-700 to-teal-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
@@ -291,6 +291,6 @@ export default async function Page() {
         trustSignal="Loi ANI calculée • TNS Madelin déductible • ORIAS"
         variant="emerald"
       />
-    </main>
+    </div>
   )
 }

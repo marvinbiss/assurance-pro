@@ -90,7 +90,7 @@ export default function NotFound() {
                   <div className="mt-0.5 text-xs text-charcoal-600">{s.desc}</div>
                 </div>
                 <ArrowRight
-                  className="mt-2.5 h-4 w-4 flex-shrink-0 text-charcoal-400 transition-all group-hover:translate-x-0.5 group-hover:text-primary-700"
+                  className="mt-2.5 h-4 w-4 flex-shrink-0 text-charcoal-500 transition-all group-hover:translate-x-0.5 group-hover:text-primary-700"
                   strokeWidth={2.4}
                 />
               </Link>

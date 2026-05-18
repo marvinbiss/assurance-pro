@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function ProcessusPage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Cabinet' }, { label: 'Processus conseil' }]}
         eyebrow="DDA art. L. 521-4 · ACPR 2024-R-03"
@@ -190,6 +190,6 @@ export default function ProcessusPage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

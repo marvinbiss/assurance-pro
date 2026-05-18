@@ -55,7 +55,7 @@ export default async function AuthorPage(props: { params: Promise<Params> }) {
   }
 
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <script {...jsonLdScriptProps(personSchema, nonce)} />
       <BreadcrumbSchema
         items={[{ label: 'Auteurs', href: '/methodologie' }, { label: author.name }]}
@@ -136,7 +136,7 @@ export default async function AuthorPage(props: { params: Promise<Params> }) {
           </h2>
         </header>
         {posts.length === 0 ? (
-          <p className="text-charcoal-600 dark:text-charcoal-400">
+          <p className="text-charcoal-600 dark:text-charcoal-500">
             Aucun article publié pour le moment.
           </p>
         ) : (
@@ -169,6 +169,6 @@ export default async function AuthorPage(props: { params: Promise<Params> }) {
           description="Conseil motivé écrit conforme art. L. 521-4 du Code des assurances. Devis sous 24h ouvrées."
         />
       </section>
-    </main>
+    </div>
   )
 }

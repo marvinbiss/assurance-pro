@@ -165,7 +165,7 @@ export default async function DevisPage({
   const merged = { ...sanitizePrefill(queryPrefill), ...sanitizePrefill(prefill) }
 
   return (
-    <main className="min-h-screen bg-sand-50 py-12">
+    <div className="min-h-screen bg-sand-50 py-12">
       <div className="container mx-auto max-w-4xl px-4">
         <header className="mb-10 text-center">
           <h1 className="mb-3 text-3xl font-bold md:text-4xl">
@@ -190,6 +190,6 @@ export default async function DevisPage({
           conforme à la Recommandation ACPR 2024-R-03.
         </p>
       </div>
-    </main>
+    </div>
   )
 }

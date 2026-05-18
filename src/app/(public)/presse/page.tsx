@@ -36,7 +36,7 @@ const TYPOGRAPHY = [
 
 export default function PressePage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <BreadcrumbSchema items={[{ label: 'Espace presse' }]} />
 
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
@@ -183,6 +183,6 @@ export default function PressePage() {
           Pack logo (SVG + PNG) sur demande email — réponse 24h.
         </p>
       </section>
-    </main>
+    </div>
   )
 }

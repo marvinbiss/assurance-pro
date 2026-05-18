@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <header className="bg-gradient-to-br from-charcoal-900 via-primary-700 to-primary-900 py-16 text-white md:py-20">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
@@ -246,6 +246,6 @@ export default async function Page() {
         trustSignal="6 assureurs VTC spécialisés • Loi LOTI • ORIAS"
         variant="violet"
       />
-    </main>
+    </div>
   )
 }

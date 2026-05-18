@@ -190,7 +190,7 @@ function tarifDisplay(tarif: Assureur['tarif']): string {
 
 export default function ComparateurAssureursPage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Comparateur' }]}
         eyebrow="10 assureurs leaders pro"
@@ -401,6 +401,6 @@ export default function ComparateurAssureursPage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

@@ -106,7 +106,7 @@ export function ExitIntentPopup({
         <button
           onClick={handleDismiss}
           aria-label="Fermer le popup"
-          className="absolute right-3 top-3 h-8 w-8 text-2xl leading-none text-charcoal-400 hover:text-charcoal-700"
+          className="absolute right-3 top-3 h-8 w-8 text-2xl leading-none text-charcoal-500 hover:text-charcoal-700"
         >
           ×
         </button>

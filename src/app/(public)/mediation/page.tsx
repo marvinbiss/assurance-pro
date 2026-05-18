@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function MediationPage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Médiation' }]}
         eyebrow="Médiateur de l'Assurance"
@@ -143,6 +143,6 @@ export default function MediationPage() {
           </ul>
         </article>
       </div>
-    </main>
+    </div>
   )
 }

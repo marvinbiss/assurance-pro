@@ -73,7 +73,7 @@ export default async function BlogCategoryPage(props: { params: Promise<Params> 
   const Icon = visual.Icon
 
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       {/* Hero catégorie — cover image + stats */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-14 text-white md:py-20">
         <div className="absolute inset-0">
@@ -287,7 +287,7 @@ export default async function BlogCategoryPage(props: { params: Promise<Params> 
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
 

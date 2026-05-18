@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       {/* Hero */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
         <Image
@@ -389,6 +389,6 @@ export default function ContactPage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

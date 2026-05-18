@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function CgvPage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'CGV' }]}
         eyebrow="Conditions Générales de Vente"
@@ -153,6 +153,6 @@ export default function CgvPage() {
           </p>
         </article>
       </div>
-    </main>
+    </div>
   )
 }

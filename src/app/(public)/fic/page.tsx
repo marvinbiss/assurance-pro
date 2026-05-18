@@ -33,7 +33,7 @@ export default function FicPage() {
     "Cabinet en Île-de-France (adresse précise publiée à l'attribution ORIAS)"
 
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'FIC (DDA)' }]}
         eyebrow="Fiche d'Information Cabinet · DDA"
@@ -193,6 +193,6 @@ export default function FicPage() {
           </p>
         </article>
       </div>
-    </main>
+    </div>
   )
 }

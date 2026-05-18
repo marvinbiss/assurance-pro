@@ -97,7 +97,7 @@ export default async function RessourcePage(props: { params: Promise<Params> }) 
   }
 
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <script {...jsonLdScriptProps(schema, nonce)} />
 
       {/* Hero */}
@@ -135,7 +135,7 @@ export default async function RessourcePage(props: { params: Promise<Params> }) 
 
       {/* En-tête imprimable (visible uniquement en print) */}
       <header className="mb-6 hidden print:block">
-        <h1 className="text-2xl font-bold">{r.title}</h1>
+        <p className="text-2xl font-bold">{r.title}</p>
         <p className="text-sm text-charcoal-600">{r.description}</p>
         <p className="mt-2 text-xs text-charcoal-500">
           Vivos Assurance · Cabinet de courtage ORIAS · Mis à jour le{' '}
@@ -258,6 +258,6 @@ export default async function RessourcePage(props: { params: Promise<Params> }) 
           </footer>
         </div>
       </div>
-    </main>
+    </div>
   )
 }

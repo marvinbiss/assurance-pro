@@ -68,7 +68,7 @@ export function TestimonialsSection({
                 </div>
               </div>
               <blockquote className="text-sm italic text-charcoal-700">« {t.text} »</blockquote>
-              <p className="mt-3 text-xs text-charcoal-400">
+              <p className="mt-3 text-xs text-charcoal-500">
                 {new Date(t.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long' })}
                 {t.segment && <span className="ml-2">· {t.segment}</span>}
               </p>

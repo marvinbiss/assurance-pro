@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function CookiesPage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <PageHero
         breadcrumbs={[{ label: 'Cookies' }]}
         eyebrow="Politique cookies · CNIL"
@@ -217,6 +217,6 @@ export default function CookiesPage() {
           </p>
         </article>
       </div>
-    </main>
+    </div>
   )
 }

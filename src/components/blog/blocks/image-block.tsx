@@ -40,7 +40,7 @@ export function ImageBlock({ src, alt, caption, credit, ratio = '16/9' }: ImageB
         <figcaption className="mt-3 flex items-baseline justify-between gap-4 text-xs">
           {caption && <span className="italic text-charcoal-500">{caption}</span>}
           {credit && (
-            <span className="ml-auto font-bold uppercase tracking-wider text-charcoal-400">
+            <span className="ml-auto font-bold uppercase tracking-wider text-charcoal-500">
               © {credit}
             </span>
           )}

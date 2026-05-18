@@ -20,7 +20,7 @@ export default function Error({
   }, [error])
 
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
         <div className="hero-gradient-anim absolute inset-0 bg-gradient-hero-warm opacity-85" />
         <div className="container relative mx-auto max-w-3xl px-4 text-center">
@@ -61,6 +61,6 @@ export default function Error({
           )}
         </div>
       </section>
-    </main>
+    </div>
   )
 }

@@ -67,7 +67,7 @@ export function PreinscriptionForm({ defaultVertical }: PreinscriptionFormProps)
         </label>
         <div className="relative">
           <Mail
-            className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-charcoal-400"
+            className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-charcoal-500"
             strokeWidth={2.2}
             aria-hidden="true"
           />
@@ -79,7 +79,7 @@ export function PreinscriptionForm({ defaultVertical }: PreinscriptionFormProps)
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="vous@entreprise.fr"
-            className="w-full rounded-xl border border-charcoal-200 bg-white px-12 py-3.5 text-base text-charcoal-900 placeholder:text-charcoal-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+            className="w-full rounded-xl border border-charcoal-200 bg-white px-12 py-3.5 text-base text-charcoal-900 placeholder:text-charcoal-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
           />
         </div>
       </div>
@@ -89,7 +89,7 @@ export function PreinscriptionForm({ defaultVertical }: PreinscriptionFormProps)
           htmlFor="preinscription-vertical"
           className="mb-2 block text-sm font-bold text-charcoal-800"
         >
-          Garantie d&apos;intérêt <span className="text-charcoal-400">(optionnel)</span>
+          Garantie d&apos;intérêt <span className="text-charcoal-500">(optionnel)</span>
         </label>
         <select
           id="preinscription-vertical"

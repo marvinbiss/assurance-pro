@@ -238,7 +238,7 @@ export default function CookieConsent() {
                         disabled
                         className="h-5 w-5 rounded text-primary-600"
                       />
-                      <span className="ml-2 text-xs text-charcoal-400">Requis</span>
+                      <span className="ml-2 text-xs text-charcoal-500">Requis</span>
                     </div>
                   </div>
 

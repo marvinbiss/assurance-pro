@@ -229,7 +229,7 @@ function DensityBanner({ enrichment }: { enrichment: PageEnrichmentRow }) {
       <BarChart3 className="h-3.5 w-3.5 text-primary-700" strokeWidth={2.4} />~{' '}
       {enrichment.density_insee.toLocaleString('fr-FR')} {enrichment.metier_nom}s recensés à{' '}
       {enrichment.ville_nom}
-      <span className="text-charcoal-400">·</span>
+      <span className="text-charcoal-500">·</span>
       <span className="font-medium text-charcoal-500">
         INSEE Sirene {enrichment.enriched_at?.slice(0, 7)}
       </span>
@@ -382,7 +382,7 @@ function AssureursTop3({ enrichment }: { enrichment: PageEnrichmentRow }) {
                         />
                       </span>
                     ) : (
-                      <span className="text-charcoal-400">—</span>
+                      <span className="text-charcoal-500">—</span>
                     )}
                   </td>
                 </tr>

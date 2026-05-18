@@ -139,7 +139,7 @@ export default async function PrixPage(props: { params: Promise<Params> }) {
   const nonce = (await headers()).get('x-nonce') ?? undefined
 
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       {/* Schema.org JSON-LD — safe escape + nonce CSP */}
       {schemas.map((schema, i) => (
         <script key={i} {...jsonLdScriptProps(schema, nonce)} />
@@ -212,7 +212,7 @@ export default async function PrixPage(props: { params: Promise<Params> }) {
 
         <DisclaimerOrias />
       </article>
-    </main>
+    </div>
   )
 }
 
@@ -438,7 +438,7 @@ function ComparatifAssureurs({ enrichment }: { enrichment: PageEnrichmentRow }) 
                         />
                       </span>
                     ) : (
-                      <span className="text-charcoal-400">—</span>
+                      <span className="text-charcoal-500">—</span>
                     )}
                   </td>
                   <td className="px-5 py-3.5 text-right font-extrabold tabular-nums text-primary-700">

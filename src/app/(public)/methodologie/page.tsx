@@ -87,7 +87,7 @@ const PROCESS_STEPS: Array<{ title: string; body: string }> = [
 
 export default function MethodologiePage() {
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <BreadcrumbSchema items={[{ label: 'Méthodologie éditoriale' }]} />
 
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-16 text-white md:py-24">
@@ -295,6 +295,6 @@ export default function MethodologiePage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

@@ -35,7 +35,7 @@ export function AuthorBio({ name, role, avatar, oriasN, linkedinUrl, bio }: Auth
           <p className="m-0 font-heading text-xl font-extrabold tracking-tight text-charcoal-900 dark:text-white">
             {name}
           </p>
-          <p className="m-0 mt-1 text-xs font-bold uppercase tracking-wider text-charcoal-600 dark:text-charcoal-400">
+          <p className="m-0 mt-1 text-xs font-bold uppercase tracking-wider text-charcoal-600 dark:text-charcoal-500">
             {role}
           </p>
           <div className="mt-3 flex flex-wrap items-center gap-3">

@@ -259,7 +259,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
       : null
 
   return (
-    <main className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
+    <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <ReadingProgress />
       <script {...jsonLdScriptProps(articleSchema, nonce)} />
       {faqSchema && <script {...jsonLdScriptProps(faqSchema, nonce)} />}
@@ -481,7 +481,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
 
             {/* Share */}
             <div className="mt-10 flex items-center justify-between gap-4 border-t border-charcoal-100 pt-6 dark:border-charcoal-800">
-              <p className="text-sm font-bold text-charcoal-600 dark:text-charcoal-400">
+              <p className="text-sm font-bold text-charcoal-600 dark:text-charcoal-500">
                 Article utile ? Partagez-le.
               </p>
               <ShareButton title={post.title} url={pageUrl} />
@@ -517,7 +517,7 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
                       <span className="mt-0.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary-500 transition-transform group-hover:scale-150" />
                       <span className="flex-1 leading-snug">{s.label}</span>
                       <ArrowUpRight
-                        className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-charcoal-400 transition-colors group-hover:text-primary-700"
+                        className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-charcoal-500 transition-colors group-hover:text-primary-700"
                         strokeWidth={2.4}
                       />
                     </a>
@@ -684,6 +684,6 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
           </section>
         )}
       </div>
-    </main>
+    </div>
   )
 }

@@ -37,7 +37,7 @@ export function DisambiguationPage({ statut, intro, options }: DisambiguationPag
             <Link href="/" className="transition-colors hover:text-charcoal-900">
               Accueil
             </Link>
-            <span className="text-charcoal-400">/</span>
+            <span className="text-charcoal-500">/</span>
             <span className="text-charcoal-900">{statut}</span>
           </nav>
 

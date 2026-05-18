@@ -33,7 +33,7 @@ export default async function IpidProductPage(props: { params: Promise<Params> }
     .slice(0, 4)
 
   return (
-    <main className="min-h-screen bg-white py-12">
+    <div className="min-h-screen bg-white py-12">
       <div className="container mx-auto max-w-3xl px-4">
         <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-charcoal-600">
           <Link href="/" className="hover:underline">
@@ -140,7 +140,7 @@ export default async function IpidProductPage(props: { params: Promise<Params> }
           </section>
         )}
       </div>
-    </main>
+    </div>
   )
 }
 

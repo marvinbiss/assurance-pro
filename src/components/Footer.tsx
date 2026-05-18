@@ -113,7 +113,7 @@ export default function Footer() {
             <p className="mb-3 max-w-sm font-display-premium text-base italic leading-snug text-charcoal-100">
               L&apos;assurance pro qui tient ses promesses.
             </p>
-            <p className="mb-6 max-w-sm text-sm leading-relaxed text-charcoal-400">
+            <p className="mb-6 max-w-sm text-sm leading-relaxed text-charcoal-500">
               Cabinet de courtage indépendant ORIAS — pour les pros qui veulent être vraiment
               protégés. 17 verticaux, 10+ assureurs partenaires, zéro frais de courtage.
             </p>
@@ -136,7 +136,7 @@ export default function Footer() {
                   className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-400"
                   strokeWidth={2.2}
                 />
-                <span className="text-charcoal-400">
+                <span className="text-charcoal-500">
                   {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ??
                     "Cabinet en Île-de-France (adresse précise publiée à l'attribution ORIAS)"}
                 </span>
@@ -156,7 +156,7 @@ export default function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-charcoal-400 transition-colors hover:text-white"
+                        className="text-charcoal-500 transition-colors hover:text-white"
                       >
                         {link.label}
                       </Link>
@@ -179,7 +179,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-charcoal-400 transition-colors hover:text-primary-300"
+                    className="text-charcoal-500 transition-colors hover:text-primary-300"
                   >
                     {link.label}
                   </Link>
@@ -196,7 +196,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-charcoal-400 transition-colors hover:text-primary-300"
+                    className="text-charcoal-500 transition-colors hover:text-primary-300"
                   >
                     {link.label}
                   </Link>
@@ -213,7 +213,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-charcoal-400 transition-colors hover:text-primary-300"
+                    className="text-charcoal-500 transition-colors hover:text-primary-300"
                   >
                     {link.label}
                   </Link>
@@ -235,7 +235,7 @@ export default function Footer() {
                   Cabinet en cours d&apos;immatriculation au registre ORIAS
                 </strong>
                 {' · '}
-                <span className="text-charcoal-400">
+                <span className="text-charcoal-500">
                   Catégorie b prévue (courtier en assurance)
                 </span>
                 {' · '}
@@ -249,7 +249,7 @@ export default function Footer() {
                   orias.fr
                 </a>
                 {' · '}
-                <span className="text-charcoal-400">
+                <span className="text-charcoal-500">
                   Ouverture commerciale prévue {ORIAS_EXPECTED_DATE}. Aucun acte de distribution
                   d&apos;assurance n&apos;est effectué tant que le numéro ORIAS n&apos;est pas
                   attribué (art. L. 512-1 C. assur.).
@@ -269,7 +269,7 @@ export default function Footer() {
                   <ExternalLink className="h-3 w-3" />
                 </a>
                 {' · '}
-                <span className="text-charcoal-400">Catégorie b</span>
+                <span className="text-charcoal-500">Catégorie b</span>
                 {' · '}
                 Registre :{' '}
                 <a
@@ -281,7 +281,7 @@ export default function Footer() {
                   orias.fr
                 </a>
                 {' · '}
-                <span className="text-charcoal-400">
+                <span className="text-charcoal-500">
                   Adhérent CSCA · RCP & garantie financière conformes art. L. 512-6/7 C. assur.
                 </span>
               </div>
