@@ -461,9 +461,9 @@ function caStep(maxCa: number): number {
   return 100_000
 }
 
-/** Génère ticks 3-pts pour slider CA [0, mid, max]. */
+/** Génère ticks 3-pts pour slider CA [min, mid, max]. */
 function caTicks(maxCa: number): readonly [string, string, string] {
-  return ['0 €', formatCaShort(maxCa / 2), formatCaShort(maxCa)]
+  return ['5 k€', formatCaShort(maxCa / 2), formatCaShort(maxCa)]
 }
 
 // ---------------------------------------------------------------------------
@@ -731,9 +731,24 @@ function useDecennaleForm(defaultMetier?: string) {
 const ACTIVITE_RISQUE_MOD = { standard: 1.0, sensible: 1.28 } as const
 type ActiviteRisque = keyof typeof ACTIVITE_RISQUE_MOD
 
+/**
+ * Multiplicateur effectif (RC Pro) — sous-linéaire calibrée FFA 2026.
+ * Coeff 0.15 (vs 0.18 ancien) — lisse le saut n=0→1 (+15% vs +18%) et corrige
+ * sur-estimation n=50 (2.30 vs 2.55, marché 2.0-2.3).
+ * @0=1.0, @1=1.15, @5=1.36, @10=1.53, @50=2.30, @100=2.85
+ */
 function effectifMultiplier(n: number): number {
-  // Sous-linéaire : 0 salarié = 1.0, 10 = ~1.3, 50 = ~1.85
-  return 1 + 0.18 * Math.pow(Math.max(n, 0), 0.55)
+  return 1 + 0.15 * Math.pow(Math.max(n, 0), 0.55)
+}
+
+/**
+ * Multiplicateur effectif CYBER — courbe amortie vs RC Pro.
+ * Cyber compound caMul × effMul × dataSens dépasse marché si pleine pente.
+ * Coeff 0.12 corrige overshoot ~20% sur PME 10-50 sal (Hiscox cyber 2026).
+ * @0=1.0, @10=1.42, @50=2.04, @100=2.49
+ */
+function cyberEffectifMultiplier(n: number): number {
+  return 1 + 0.12 * Math.pow(Math.max(n, 0), 0.55)
 }
 
 function useRcProForm(defaultMetier?: string) {
@@ -833,7 +848,7 @@ function useCyberForm(defaultMetier?: string) {
       metier.base *
       caMultiplier(ca) *
       STATUT_MODIFIER[statut] *
-      effectifMultiplier(effectif) *
+      cyberEffectifMultiplier(effectif) *
       (dataSensibles ? 1.35 : 1.0)
     return spreadRange(mid, metier.spread)
   }, [metierValue, ca, statut, effectif, dataSensibles])
@@ -1011,7 +1026,7 @@ function DecennaleFields({
           label="Chiffre d'affaires annuel"
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
-          min={0}
+          min={5_000}
           max={MAX_CA}
           step={caStep(MAX_CA)}
           onChange={f.setCa}
@@ -1075,7 +1090,7 @@ function RcProFields({
           label="Chiffre d'affaires annuel"
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
-          min={0}
+          min={5_000}
           max={MAX_CA}
           step={caStep(MAX_CA)}
           onChange={f.setCa}
@@ -1193,7 +1208,7 @@ function CyberFields({
           label="Chiffre d'affaires annuel"
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
-          min={0}
+          min={5_000}
           max={MAX_CA}
           step={caStep(MAX_CA)}
           onChange={f.setCa}
@@ -1990,7 +2005,7 @@ function PjFields({ ids }: { ids: Record<string, string> }) {
           label="Chiffre d'affaires annuel"
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
-          min={0}
+          min={5_000}
           max={MAX_CA}
           step={caStep(MAX_CA)}
           onChange={f.setCa}
@@ -2086,7 +2101,7 @@ function HcFields({ ids }: { ids: Record<string, string> }) {
           label="Chiffre d'affaires entreprise"
           ariaLabel="Chiffre d'affaires annuel entreprise en euros"
           value={f.ca}
-          min={0}
+          min={5_000}
           max={MAX_CA}
           step={caStep(MAX_CA)}
           onChange={f.setCa}
