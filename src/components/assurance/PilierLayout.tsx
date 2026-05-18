@@ -144,19 +144,149 @@ function inferCalculatorGarantie(slug: string): CalculatorGarantie {
 }
 
 /**
+ * Map slug standalone → métier value (alignée catalogue TarifCalculator).
+ * Couvre les pages landing /assurance-X qui ne suivent pas le pattern /garantie/metier.
+ *
+ * Source de vérité métier values: src/components/premium/tarif-calculator.tsx
+ */
+const SLUG_TO_METIER: Record<string, string> = {
+  // ---- Multirisque-pro ----
+  'assurance-bureau': 'bureau-services',
+  'assurance-commerce': 'commerce-detail',
+  'assurance-restaurant': 'restaurant',
+  'assurance-restaurant-en-ligne': 'restaurant',
+  'assurance-local-commercial': 'commerce-detail',
+  'assurance-locaux-entreprise': 'commerce-detail',
+  'assurance-habitation-professionnelle': 'bureau-services',
+  'assurance-association': 'association',
+  'multirisque-pro-mma': 'commerce-detail',
+  'btp-pro-mutuelle': 'depot-btp',
+
+  // ---- Cyber ----
+  'assurance-e-commerce': 'ecommerce',
+
+  // ---- RC Pro (slugs alignés data + alias) ----
+  'assurance-medecin': 'medecin-generaliste',
+  'assurance-consultant-independant': 'consultant',
+  'assurance-freelance': 'freelance-it',
+  'assurance-artisan': 'multi-services-btp',
+  'rc-pro-medecin': 'medecin-generaliste',
+  'rc-pro-avocat': 'avocat',
+  'rc-pro-batiment': 'multi-services-btp',
+  'rc-pro-consultant': 'consultant',
+  'rc-pro-estheticienne': 'esthetique',
+  'rc-pro-freelance-informatique': 'freelance-it',
+  'rc-pro-informatique': 'freelance-it',
+  'rc-pro-immobilier': 'agent-immobilier',
+  'rc-pro-agent-immobilier': 'agent-immobilier',
+  'rc-pro-convoyage': 'transporteur-leger',
+  'rc-pro-pas-cher': 'consultant',
+  'rc-pro-mma': 'consultant',
+  'rc-pro-macif': 'consultant',
+  'rc-pro-maif': 'consultant',
+  'rc-pro-matmut': 'consultant',
+  'rc-pro-credit-agricole': 'consultant',
+  'hiscox-rc-pro': 'consultant',
+  'mma-assurance-rc-pro': 'consultant',
+  'stello-rc-pro': 'freelance-it',
+  'rc-pro-en-ligne': 'consultant',
+  'rc-pro-souscription-en-ligne': 'consultant',
+  'rc-pro-sasu': 'consultant',
+  'rc-pro-decennale': 'multi-services-btp',
+  'rc-pro-et-decennale': 'multi-services-btp',
+
+  // ---- Statut/générique (RC Pro fallback) ----
+  'assurance-auto-entreprise': 'commercial', // flotte-auto secteur
+  'assurance-micro-entreprise': 'auto-entrepreneur',
+  'assurance-mission-professionnelle': 'consultant',
+  'assurance-obligatoire-entreprise': 'consultant',
+  'assurance-pour-entreprise-individuelle': 'consultant',
+  'assurance-entreprise': 'consultant',
+
+  // ---- Décennale (legacy) ----
+  'assurance-btp': 'multi-services-btp',
+  'assurance-pro-btp': 'multi-services-btp',
+  'assurance-decennale-batiment': 'multi-services-btp',
+  'assurance-decennale-btp': 'multi-services-btp',
+  'assurance-decennale-maconnerie': 'macon',
+  'assurance-decennale-plombier': 'plombier',
+  'assurance-decennale-terrassement': 'terrassier',
+  'assurance-decennale-maitre-d-oeuvre': 'multi-services-btp',
+  'assurance-decennale-immediate': 'multi-services-btp',
+  'assurance-decennale-la-moins-chere': 'peintre',
+  'assurance-decennale-moins-cher': 'peintre',
+  'assurance-decennale-pas-cher': 'peintre',
+  'assurance-decennale-auto-entrepreneur': 'multi-services-btp',
+  'assurance-decennale-auto-entrepreneur-pro-btp': 'multi-services-btp',
+  'assurance-decennale-pour-auto-entrepreneur': 'multi-services-btp',
+  'assurance-decennale-obligatoire': 'multi-services-btp',
+  'decennale-assurance': 'multi-services-btp',
+  'comment-fonctionne-la-garantie-decennale': 'multi-services-btp',
+  'garantie-decennale-obligatoire-pour-quels-travaux': 'multi-services-btp',
+  'garantie-decennale-plomberie': 'plombier',
+  'garantie-decennale-toiture': 'couvreur-zingueur',
+  'garantie-decennale-travaux': 'multi-services-btp',
+  'travaux-sans-garantie-decennale': 'multi-services-btp',
+  'pro-btp-assurance-decennale': 'multi-services-btp',
+
+  // ---- Mutuelle / Santé ----
+  'mutuelle-pro-btp': 'artisan-btp',
+  'mutuelle-pro-btp-s3-p3-avis': 'artisan-btp',
+  'mutuelle-tns': 'dirigeant-tns',
+  'mutuelle-sante-tns': 'dirigeant-tns',
+  'mutuelle-dirigeant': 'dirigeant-tns',
+  'pro-btp-mutuelle': 'artisan-btp',
+  'pro-btp-mutuelle-remboursement': 'artisan-btp',
+  'pro-btp-mutuelle-remboursement-mon-compte': 'artisan-btp',
+  'assurance-sante-entreprise': 'dirigeant-tns',
+  'assurance-sante-professionnelle': 'dirigeant-tns',
+
+  // ---- VTC ----
+  'assurance-taxi': 'taxi',
+  'assurance-chauffeur-taxi': 'taxi',
+  'assurance-rc-pro-vtc': 'taxi',
+  'rc-pro-vtc': 'taxi',
+  'assurance-responsabilite-civile-professionnelle-vtc': 'taxi',
+
+  // ---- Flotte auto ----
+  'assurance-flotte-automobile': 'utilitaire',
+  'assurance-voiture-professionnelle': 'utilitaire',
+  'assurance-voiture-pro-btp': 'utilitaire',
+  'assurance-auto-professionnelle': 'utilitaire',
+  'pro-btp-assurance-auto': 'utilitaire',
+
+  // ---- Moto ----
+  'assurance-moto-professionnelle': 'livraison',
+
+  // ---- Spécifiques ----
+  'assurance-portage-salarial': 'consultant',
+  'assurance-sasu': 'consultant',
+  sasu: 'consultant',
+  'auto-entrepreneur': 'auto-entrepreneur',
+  'micro-entreprise': 'auto-entrepreneur',
+}
+
+/**
  * Extrait le slug métier depuis l'URL pour préselection dans TarifCalculator.
  *
- * Heuristique:
- * - Slug pilier seul (ex: 'assurance-decennale') → undefined (pas de métier)
- * - Slug avec sous-segment (ex: 'rc-pro/medecin-generaliste') → dernier segment
- * - Slug composé hyphené (ex: 'rc-pro-medecin') → métier extrait après prefix garantie
+ * Stratégie (priorité décroissante):
+ * 1. Lookup SLUG_TO_METIER (mappings standalone landings explicites)
+ * 2. Slug avec sous-segment (ex: 'rc-pro/medecin-generaliste') → dernier segment
+ * 3. Pattern hyphéné (ex: 'rc-pro-medecin') → métier extrait après prefix garantie
+ * 4. undefined (fallback transparent au 1er catalogue)
  */
 function extractMetierFromSlug(slug: string): string | undefined {
+  // 1. Map explicite
+  const mapped = SLUG_TO_METIER[slug]
+  if (mapped) return mapped
+
+  // 2. Slug avec /
   const segments = slug.split('/').filter(Boolean)
   if (segments.length >= 2) {
     return segments[segments.length - 1]
   }
-  // Pattern hyphéné: rc-pro-medecin, assurance-decennale-plombier, etc.
+
+  // 3. Pattern hyphéné après prefix garantie
   const known = [
     'assurance-decennale-',
     'decennale-',
@@ -168,6 +298,7 @@ function extractMetierFromSlug(slug: string): string | undefined {
     'mutuelle-tns-',
     'assurance-vtc-',
     'vtc-',
+    'assurance-',
   ]
   for (const prefix of known) {
     if (slug.startsWith(prefix)) {
