@@ -3,7 +3,7 @@
  *
  * Source : Supabase RPC get_eligible_slugs_for_template (cache enrichment).
  * Généré par : scripts/snapshot-pseo-slugs.mjs
- * Date : 2026-05-17T17:08:30.439Z
+ * Date : 2026-05-18T21:06:35.330Z
  * Total : 5832 slugs
  *
  * Permet generateStaticParams sans Supabase en build CI/prod (fallback).

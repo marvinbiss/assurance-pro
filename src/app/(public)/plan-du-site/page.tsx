@@ -772,7 +772,7 @@ export default function PlanDuSitePage() {
               </Link>
             </li>
             <li className="break-inside-avoid">
-              <Link href="/garantie-decennale-travaux" className={smallLinkClass}>
+              <Link href="/assurance-decennale" className={smallLinkClass}>
                 Décennale travaux
               </Link>
             </li>
@@ -782,7 +782,7 @@ export default function PlanDuSitePage() {
               </Link>
             </li>
             <li className="break-inside-avoid">
-              <Link href="/decennale-assurance" className={smallLinkClass}>
+              <Link href="/assurance-decennale" className={smallLinkClass}>
                 Décennale assurance
               </Link>
             </li>

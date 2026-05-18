@@ -183,11 +183,11 @@ const nextConfig = {
       { source: '/assurance-rc-pro-mma', destination: '/rc-pro-mma', permanent: true },
 
       // RC Pro × auto-entrepreneur (5 variants → 1 winner)
-      { source: '/assurance-rc-pro-auto-entrepreneur', destination: '/rc-pro-auto-entrepreneur', permanent: true },
-      { source: '/responsabilite-civile-professionnelle-auto-entrepreneur', destination: '/rc-pro-auto-entrepreneur', permanent: true },
-      { source: '/assurance-rc-pro-auto-entrepreneur-en-ligne', destination: '/rc-pro-auto-entrepreneur', permanent: true },
-      { source: '/assurance-rc-pro-auto-entrepreneur-pas-cher', destination: '/rc-pro-auto-entrepreneur', permanent: true },
-      { source: '/assurance-responsabilite-civile-professionnelle-auto-entrepreneur', destination: '/rc-pro-auto-entrepreneur', permanent: true },
+      { source: '/assurance-rc-pro-auto-entrepreneur', destination: '/rc-pro/auto-entrepreneur', permanent: true },
+      { source: '/responsabilite-civile-professionnelle-auto-entrepreneur', destination: '/rc-pro/auto-entrepreneur', permanent: true },
+      { source: '/assurance-rc-pro-auto-entrepreneur-en-ligne', destination: '/rc-pro/auto-entrepreneur', permanent: true },
+      { source: '/assurance-rc-pro-auto-entrepreneur-pas-cher', destination: '/rc-pro/auto-entrepreneur', permanent: true },
+      { source: '/assurance-responsabilite-civile-professionnelle-auto-entrepreneur', destination: '/rc-pro/auto-entrepreneur', permanent: true },
 
       // Mutuelle BTP (3 inversions → 1 winner)
       { source: '/btp-pro-mutuelle', destination: '/mutuelle-pro-btp', permanent: true },

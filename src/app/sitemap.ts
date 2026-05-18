@@ -118,7 +118,7 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
 
   // Sprint 2 Lot 14 : 5 piliers/guides spécialisés
   { path: 'rc-pro/vtc', priority: 0.85, changeFrequency: 'weekly' }, // RC Pro VTC sous-route
-  { path: 'mutuelle-sante-tns', priority: 0.85, changeFrequency: 'weekly' }, // 200 vol KD 4 CPC 600€
+  { path: 'mutuelle-tns', priority: 0.85, changeFrequency: 'weekly' }, // canonical (mutuelle-sante-tns 301 → mutuelle-tns)
   { path: 'guides/assurance-rgpd', priority: 0.8, changeFrequency: 'monthly' }, // RGPD entreprise
   { path: 'assurance-decennale/photovoltaique', priority: 0.85, changeFrequency: 'weekly' }, // RGE PV sous-route
   {

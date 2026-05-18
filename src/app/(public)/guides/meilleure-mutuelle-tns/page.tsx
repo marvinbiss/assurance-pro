@@ -201,7 +201,7 @@ export default function Page() {
                 </Link>
               </li>
               <li>
-                <Link href="/mutuelle-sante-tns" className="text-primary-600 underline">
+                <Link href="/mutuelle-tns" className="text-primary-600 underline">
                   Pilier mutuelle santé TNS
                 </Link>
               </li>

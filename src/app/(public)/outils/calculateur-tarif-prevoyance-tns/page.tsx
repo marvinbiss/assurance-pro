@@ -197,7 +197,7 @@ export default async function Page() {
               → Pilier prévoyance artisan / TNS
             </Link>
             <Link
-              href="/mutuelle-sante-tns"
+              href="/mutuelle-tns"
               className="inline-block rounded-lg border border-white/30 bg-amber-800 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-amber-900"
             >
               → Mutuelle santé TNS
