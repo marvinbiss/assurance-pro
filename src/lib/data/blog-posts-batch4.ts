@@ -400,7 +400,7 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         paragraphs: [
           "La Loi Madelin du 11 février 1994 (codifiée à l'article 154 bis du Code Général des Impôts) permet aux Travailleurs Non-Salariés (TNS) de déduire fiscalement les cotisations versées à des contrats d'assurance complémentaire santé, prévoyance, retraite et perte d'emploi. L'objectif politique : offrir aux indépendants un mécanisme de protection sociale équivalent à celui des salariés (mutuelle d'entreprise + complémentaire retraite).",
           "Le mécanisme est simple : pour chaque euro de cotisation versé, votre bénéfice imposable est réduit du même montant. Vous économisez donc votre TMI × cotisation en impôt sur le revenu. Plus votre TMI est élevé, plus l'avantage fiscal est important.",
-          "Concrètement, un TNS au TMI 41 % qui cotise~ 5 000  € par an en Madelin santé économise 2 050 € d'impôt l'année concernée. Sur 10 ans, l'économie cumulée atteint 20 500 € — équivalent à 4 années de cotisations payées par l'État.",
+          "Concrètement, un TNS au TMI 41 % qui cotise ~5 000 € par an en Madelin santé économise 2 050 € d'impôt l'année concernée. Sur 10 ans, l'économie cumulée atteint 20 500 € — équivalent à 4 années de cotisations payées par l'État.",
         ],
         callout: {
           tone: 'warning',
@@ -428,10 +428,10 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         h2: '3. Plafonds 2026 (santé + retraite)',
         paragraphs: [
           'Plafonds calculés sur le PASS (Plafond Annuel Sécurité Sociale 2026 = 47 100 €) :',
-          '**Santé + Prévoyance combinés** : 3,75 % × PASS + 7 % du bénéfice imposable, dans la limite globale de 3 % × 8 PASS. Calcul concret : 3,75 % × 47 100 = 1 766 € + 7 % du bénéfice. Pour un bénéfice 50 k€ : 1 766 + 3 500 = 5 266 €. Plafond effectif typique : **~4 ~997  € par an**.',
-          '**Retraite supplémentaire Madelin** : 10 % × PASS + 25 % × bénéfice excédant le PASS. Plafond minimum 2026 : **~2 935  € par an**. Pour les TNS hauts revenus, peut atteindre 10 000+~  € par an déductibles.',
+          '**Santé + Prévoyance combinés** : 3,75 % × PASS + 7 % du bénéfice imposable, dans la limite globale de 3 % × 8 PASS. Calcul concret : 3,75 % × 47 100 = 1 766 € + 7 % du bénéfice. Pour un bénéfice 50 k€ : 1 766 + 3 500 = 5 266 €. Plafond effectif typique : **~4 997 € par an**.',
+          '**Retraite supplémentaire Madelin** : 10 % × PASS + 25 % × bénéfice excédant le PASS. Plafond minimum 2026 : **~2 935 € par an**. Pour les TNS hauts revenus, peut atteindre 10 000+~ € par an déductibles.',
           "**Perte d'emploi** : 2,5 % × PASS + 1,875 % × bénéfice imposable. Plafond modeste mais peut être pertinent pour TNS en démarrage.",
-          '**Total déductible théorique max combiné** : ~12 000-15 ~000  € par an pour TNS au bénéfice 80-150 k€.',
+          '**Total déductible théorique max combiné** : ~12 000-15 000 € par an pour TNS au bénéfice 80-150 k€.',
         ],
       },
       {
@@ -443,10 +443,10 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         list: {
           items: [
             'TMI 0 % (bénéfice < 11 295 €) : économie 0 € — Madelin pas pertinent',
-            'TMI 11 % (bénéfice 11 295 - 28 797 €) : économie~ 550  € par an',
-            'TMI 30 % (bénéfice 28 797 - 82 341 €) : économie~ 1 500  € par an',
-            'TMI 41 % (bénéfice 82 341 - 177 106 €) : économie~ 2 050  € par an',
-            'TMI 45 % (bénéfice > 177 106 €) : économie~ 2 250  € par an',
+            'TMI 11 % (bénéfice 11 295 - 28 797 €) : économie ~550 € par an',
+            'TMI 30 % (bénéfice 28 797 - 82 341 €) : économie ~1 500 € par an',
+            'TMI 41 % (bénéfice 82 341 - 177 106 €) : économie ~2 050 € par an',
+            'TMI 45 % (bénéfice > 177 106 €) : économie ~2 250 € par an',
           ],
         },
       },
@@ -455,9 +455,9 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         h2: '5. Cas pratiques 3 profils',
         paragraphs: [
           'Cas réels anonymisés issus de notre portefeuille 2024 :',
-          "**Cas 1 — Artisan plombier EI** (bénéfice 45 k€, TMI 30 %, célibataire) : Madelin santé~ 2 800  € par an = économie d'impôts~ 840  € par an. ROI : 30 % du montant cotisé immédiatement.",
-          "**Cas 2 — Consultant SARL gérant majoritaire** (bénéfice 80 k€, TMI 41 %, marié 1 enfant) : Madelin santé + prévoyance~ 5 200  € par an = économie~ 2 130  € par an. Sur 20 ans (jusqu'à la retraite) : économie cumulée 42 600 €.",
-          "**Cas 3 — Médecin libéral EI** (bénéfice 150 k€, TMI 45 %, marié 2 enfants) : Madelin santé 5 000 € + Madelin retraite supplémentaire 7 000 € =~ 12 000  € par an cotisations déductibles. Économie : 12 000 × 45 % = **~5 400  € par an d'impôt** économisé. Sur une carrière de 25 ans : économie cumulée 135 000 € via le seul levier Madelin.",
+          "**Cas 1 — Artisan plombier EI** (bénéfice 45 k€, TMI 30 %, célibataire) : Madelin santé ~2 800 € par an = économie d'impôts ~840 € par an. ROI : 30 % du montant cotisé immédiatement.",
+          "**Cas 2 — Consultant SARL gérant majoritaire** (bénéfice 80 k€, TMI 41 %, marié 1 enfant) : Madelin santé + prévoyance ~5 200 € par an = économie ~2 130 € par an. Sur 20 ans (jusqu'à la retraite) : économie cumulée 42 600 €.",
+          "**Cas 3 — Médecin libéral EI** (bénéfice 150 k€, TMI 45 %, marié 2 enfants) : Madelin santé 5 000 € + Madelin retraite supplémentaire 7 000 € = ~12 000 € par an cotisations déductibles. Économie : 12 000 × 45 % = **~5 400 € par an d'impôt** économisé. Sur une carrière de 25 ans : économie cumulée 135 000 € via le seul levier Madelin.",
         ],
       },
       {
@@ -498,8 +498,8 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         h2: 'FAQ',
         paragraphs: [
           "**Suis-je éligible Madelin en tant qu'auto-entrepreneur ?** NON. Le régime micro-fiscal des AE exclut la Loi Madelin. Préférez une mutuelle santé indépendant non-Madelin, souvent 15-20 % moins chère sans avantage fiscal.",
-          '**Quelle différence entre Madelin santé et Madelin retraite ?** Madelin santé = mutuelle complémentaire pour soins quotidiens, plafond ~4 ~997  € par an. Madelin retraite = épargne long terme pour rente viagère post-65 ans, plafond ~2 ~935  € par an minimum.',
-          "**Puis-je cumuler les 3 Madelin (santé, prévoyance, retraite) ?** OUI, les 3 sont des contrats distincts avec plafonds cumulables (sous conditions). Optimisation possible pour TNS hauts revenus jusqu'à ~12 ~000  € par an déductibles.",
+          '**Quelle différence entre Madelin santé et Madelin retraite ?** Madelin santé = mutuelle complémentaire pour soins quotidiens, plafond ~4 997 € par an. Madelin retraite = épargne long terme pour rente viagère post-65 ans, plafond ~2 935 € par an minimum.',
+          "**Puis-je cumuler les 3 Madelin (santé, prévoyance, retraite) ?** OUI, les 3 sont des contrats distincts avec plafonds cumulables (sous conditions). Optimisation possible pour TNS hauts revenus jusqu'à ~12 000 € par an déductibles.",
           "**Que se passe-t-il si je dépasse le plafond ?** Le surplus n'est PAS déductible mais peut quand même être versé (pour augmenter les garanties). À éviter sauf besoin spécifique.",
           '**Comment optimiser entre Madelin et PER ?** Pour TNS modeste : PER plus souple. Pour TNS hauts revenus (TMI 41+ %) : cumuler les 2 maximise la déduction. Consultez votre expert-comptable.',
           "**Le Madelin existe-t-il encore en 2026 ?** OUI, il n'a PAS été supprimé par la Loi PACTE 2019. Il cohabite avec le PER. Les contrats Madelin existants continuent + de nouveaux contrats peuvent être souscrits.",
@@ -559,7 +559,7 @@ export const BLOG_POSTS_BATCH_4: Record<string, BlogPost> = {
         ],
         callout: {
           tone: 'info',
-          text: "Le devoir de conseil s'applique à TOUS les contrats d'assurance distribués par un courtier, qu'il s'agisse d'un AE consultant souscrivant une RC Pro à ~180  € par an ou d'un grand groupe industriel souscrivant une décennale à ~200 000  € par an. La proportionnalité de l'analyse peut varier, mais l'obligation existe.",
+          text: "Le devoir de conseil s'applique à TOUS les contrats d'assurance distribués par un courtier, qu'il s'agisse d'un AE consultant souscrivant une RC Pro à ~180 € par an ou d'un grand groupe industriel souscrivant une décennale à ~200 000 € par an. La proportionnalité de l'analyse peut varier, mais l'obligation existe.",
         },
       },
       {

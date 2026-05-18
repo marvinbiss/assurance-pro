@@ -111,8 +111,7 @@ export default function Page() {
                 décourager certains pros traditionnels
               </li>
               <li>
-                <strong>Solidité financière A-</strong> (challenger, moins établi que Allianz ou
-                AXA)
+                <strong>Solidité financière A-</strong> (challenger, moins établi qu’Allianz ou AXA)
               </li>
               <li>
                 <strong>Cyber-assurance limitée</strong> : module basique en option

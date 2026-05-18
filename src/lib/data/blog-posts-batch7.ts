@@ -86,8 +86,8 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
         ],
         list: {
           items: [
-            '**Maçon généraliste** : 75 à ~110 € par mois (900-1 ~320  € par an)',
-            '**Terrassier** : 85 à ~130 € par mois (1 020-1 ~560  € par an)',
+            '**Maçon généraliste** : 75 à ~110 € par mois (900-1 320 € par an)',
+            '**Terrassier** : 85 à ~130 € par mois (1 020-1 560 € par an)',
             '**Charpentier bois** : 80 à ~115 € par mois',
             '**Charpentier métallique** : 100 à ~150 € par mois (risque levage)',
             '**Couvreur zingueur** : 110 à ~160 € par mois (chute hauteur)',
@@ -269,7 +269,7 @@ export const BLOG_POSTS_BATCH_7: Record<string, BlogPost> = {
           items: [
             '**Médecin libéral généraliste** : 200 à ~400 € par mois (RC très élevée, obligation 11 février 2002)',
             '**Médecin spécialiste hors chirurgie** : 250 à ~500 € par mois',
-            '**Médecin chirurgien** : 800 à 2 ~500 € par mois (le plus cher)',
+            '**Médecin chirurgien** : 800 à 2 500 € par mois (le plus cher)',
             '**Kinésithérapeute libéral** : 30 à ~50 € par mois',
             '**Ostéopathe** : 25 à ~45 € par mois',
             '**Esthéticienne — praticienne bien-être** : 22 à ~40 € par mois',

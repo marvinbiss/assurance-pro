@@ -159,7 +159,7 @@ export default function Page() {
               <p className="mb-3 text-sm">
                 Force : excellent rapport qualité ou prix pour consultants ou IT freelances,
                 prévoyance complémentaire intégrable. Faiblesse : moins fort sur médecines douces
-                que Apicil.
+                qu’Apicil.
               </p>
               <h3 className="mb-2 font-bold">Allianz Pro ⭐⭐⭐⭐</h3>
               <p className="mb-3 text-sm">

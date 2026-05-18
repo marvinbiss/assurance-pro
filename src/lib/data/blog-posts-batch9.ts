@@ -443,7 +443,7 @@ export const BLOG_POSTS_BATCH_9: Record<string, BlogPost> = {
           items: [
             '**PME < 10 salariés (CA < 1 M€)** : 30 à ~80 € par mois (plafond 250 K€)',
             '**PME 10-50 salariés (CA 1-10 M€)** : 100 à ~300 € par mois (plafond 1 M€)',
-            '**PME 50-250 salariés (CA 10-50 M€)** : 400 à 1 ~200 € par mois (plafond 2-5 M€)',
+            '**PME 50-250 salariés (CA 10-50 M€)** : 400 à 1 200 € par mois (plafond 2-5 M€)',
             '**Surcoût secteur santé — finance** : +30 à +50 % (risque accru)',
             '**Bonus mesures de sécurité** : -15 à -25 % avec MFA + sauvegardes externes + EDR',
           ],
