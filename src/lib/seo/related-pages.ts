@@ -421,11 +421,13 @@ export function selectContextualLinks(currentSlug: string, _max = 15): RelatedLi
   const guides = cluster.guides.filter((g) => !isCurrent(g.href))
   result.push(...guides)
 
-  /* Si toujours <15, complète avec hubs cross-cluster (voir aussi) */
-  if (result.length < 15) {
-    const crossLinks = getCrossClusterLinks(currentSlug, 15 - result.length, [cluster.id])
-    result.push(...crossLinks)
-  }
+  /* TOUJOURS ajouter 4-5 hubs cross-cluster (topical authority transverse).
+   * Même si le cluster a déjà 15+ liens, on force la diagonalisation pour
+   * éviter le cloisonnement par silo (décennale → mutuelle/cyber/multirisque).
+   * Best practice SEO 2024 : pillar pages doivent référencer leurs siblings. */
+  const crossLinkCount = result.length < 15 ? Math.max(15 - result.length, 4) : 4
+  const crossLinks = getCrossClusterLinks(currentSlug, crossLinkCount, [cluster.id])
+  result.push(...crossLinks)
 
   return result
 }
