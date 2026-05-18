@@ -333,23 +333,8 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Badge flottant -32% — anim float subtle */}
-              <div
-                className="float-anim absolute -right-4 -top-4 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 px-3.5 py-2.5 text-xs font-extrabold uppercase tracking-wider text-white shadow-glow-clay"
-                style={{ ['--rot' as string]: '6deg', transform: 'rotate(6deg)' }}
-              >
-                -32% économie moy.
-              </div>
-
-              {/* Badge ORIAS flottant */}
-              <div
-                className="float-anim absolute -bottom-3 -left-3 rounded-xl bg-white/95 px-3.5 py-2 text-[10px] font-extrabold uppercase tracking-wider text-charcoal-900 shadow-premium backdrop-blur-sm"
-                style={{
-                  ['--rot' as string]: '-3deg',
-                  transform: 'rotate(-3deg)',
-                  animationDelay: '1.5s',
-                }}
-              >
+              {/* Badge ORIAS — restraint Hiscox/Lazard (1 badge max) */}
+              <div className="absolute -bottom-3 -left-3 rounded-xl bg-white/95 px-3.5 py-2 text-[10px] font-extrabold uppercase tracking-wider text-charcoal-900 shadow-premium backdrop-blur-sm">
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck className="h-3.5 w-3.5 text-accent-600" strokeWidth={2.4} />
                   ORIAS · ACPR
