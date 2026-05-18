@@ -329,7 +329,7 @@ export default async function FaqPage() {
                   <span
                     className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${cfg.gradient} shadow-soft`}
                   >
-                    <cfg.Icon className="h-6 w-6 text-white" strokeWidth={2.2} />
+                    <cfg.Icon className="h-6 w-6 text-white" strokeWidth={2.4} />
                   </span>
                   <div>
                     <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900">

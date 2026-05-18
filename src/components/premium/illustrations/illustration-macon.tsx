@@ -16,7 +16,7 @@ export function IllustrationMacon({
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
+      strokeWidth={2}
     >
       {/* Brick stack */}
       <rect x="38" y="118" width="64" height="20" fill={SAND_FILL} stroke={BASE_STROKE} />
@@ -28,7 +28,7 @@ export function IllustrationMacon({
       <line x1="44" y1="124" x2="54" y2="124" stroke={BASE_STROKE} />
       <line x1="56" y1="144" x2="68" y2="144" stroke={BASE_STROKE} />
       {/* Trowel */}
-      <line x1="138" y1="42" x2="118" y2="62" stroke={BASE_STROKE} strokeWidth={2.5} />
+      <line x1="138" y1="42" x2="118" y2="62" stroke={BASE_STROKE} strokeWidth={2.4} />
       <line x1="142" y1="38" x2="148" y2="32" stroke={BASE_STROKE} strokeWidth={3} />
       <path d="M118 62 L98 92 L88 82 Z" fill={SAND_FILL} stroke={accentColor} strokeWidth={2} />
       <line x1="108" y1="72" x2="98" y2="82" stroke={accentColor} />

@@ -489,7 +489,7 @@ function AvisBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
             key={i}
             className="relative overflow-hidden rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft"
           >
-            <Quote className="absolute right-4 top-4 h-8 w-8 text-primary-100" strokeWidth={1.5} />
+            <Quote className="absolute right-4 top-4 h-8 w-8 text-primary-100" strokeWidth={2} />
             <div className="mb-3 flex items-center gap-1">
               {Array.from({ length: a.note }).map((_, j) => (
                 <Star

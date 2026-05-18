@@ -16,7 +16,7 @@ export function IllustrationPlombier({
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
+      strokeWidth={2}
     >
       {/* Pipe U-bend */}
       <path
@@ -37,7 +37,7 @@ export function IllustrationPlombier({
       {/* Water drop */}
       <path d="M100 150 Q92 162 100 172 Q108 162 100 150 Z" fill={SAND_FILL} stroke={accentColor} />
       {/* Wrench */}
-      <line x1="60" y1="34" x2="92" y2="66" stroke={accentColor} strokeWidth={2.5} />
+      <line x1="60" y1="34" x2="92" y2="66" stroke={accentColor} strokeWidth={2.4} />
       <path
         d="M56 30 Q44 30 44 42 Q44 50 52 52 L60 44 L68 52 Q72 48 70 40 Q66 30 56 30 Z"
         fill={SAND_FILL}

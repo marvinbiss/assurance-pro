@@ -16,7 +16,7 @@ export function IllustrationCarreleur({
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
+      strokeWidth={2}
     >
       {/* Tile grid 3x3 */}
       {[0, 1, 2].map((row) =>

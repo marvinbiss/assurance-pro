@@ -116,7 +116,7 @@ export function RelatedPagesSection({
   return (
     <section
       aria-label="Pages connexes"
-      className="border-t border-charcoal-100 bg-white py-24 md:py-32"
+      className="border-t border-charcoal-100 bg-white py-20 md:py-28"
     >
       <div className="container mx-auto max-w-6xl px-4">
         {/* Header section */}
@@ -150,7 +150,7 @@ export function RelatedPagesSection({
                     className={`flex h-9 w-9 items-center justify-center rounded-xl ${cfg.iconBg} ${cfg.iconColor}`}
                     aria-hidden="true"
                   >
-                    <cfg.Icon className="h-4.5 w-4.5" strokeWidth={2.2} />
+                    <cfg.Icon className="h-4.5 w-4.5" strokeWidth={2.4} />
                   </span>
                   <h3 className="font-heading text-base font-bold text-charcoal-900">
                     {cfg.label}

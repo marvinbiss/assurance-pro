@@ -198,7 +198,7 @@ export default function HeaderClient() {
                             <span
                               className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl transition-transform group-hover:scale-110 ${v.color}`}
                             >
-                              <v.Icon className="h-5 w-5" strokeWidth={2.2} />
+                              <v.Icon className="h-5 w-5" strokeWidth={2.4} />
                             </span>
                             <div className="flex-1 leading-tight">
                               <div className="font-heading text-sm font-bold text-charcoal-900 group-hover:text-primary-700">
@@ -290,7 +290,7 @@ export default function HeaderClient() {
               className={`inline-flex min-h-[44px] items-center gap-1.5 px-2 text-sm font-bold tabular-nums ${navColor} transition-colors ${navHover}`}
               aria-label="Appeler le cabinet au 01 82 88 51 27"
             >
-              <Phone className="h-4 w-4" strokeWidth={2.2} aria-hidden="true" />
+              <Phone className="h-4 w-4" strokeWidth={2.4} aria-hidden="true" />
               01 82 88 51 27
             </a>
             <Link
@@ -339,7 +339,7 @@ export default function HeaderClient() {
                   <span
                     className={`flex h-9 w-9 items-center justify-center rounded-lg ${v.color}`}
                   >
-                    <v.Icon className="h-4 w-4" strokeWidth={2.2} />
+                    <v.Icon className="h-4 w-4" strokeWidth={2.4} />
                   </span>
                   <div>
                     <div className="text-sm font-semibold text-charcoal-800">{v.label}</div>

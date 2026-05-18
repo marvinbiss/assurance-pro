@@ -42,7 +42,7 @@ export default function ReclamationPage() {
         <section className="mb-8 overflow-hidden rounded-2xl border border-amber-100 bg-gradient-to-br from-amber-50/60 to-white p-6 shadow-soft">
           <header className="mb-4 flex items-start gap-3">
             <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 shadow-soft">
-              <FileWarning className="h-5 w-5 text-white" strokeWidth={2.2} />
+              <FileWarning className="h-5 w-5 text-white" strokeWidth={2.4} />
             </span>
             <div>
               <p className="text-xs font-extrabold uppercase tracking-wider text-amber-700">
@@ -87,7 +87,7 @@ export default function ReclamationPage() {
         <section className="mb-8">
           <header className="mb-6 flex items-start gap-3">
             <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 shadow-glow-clay">
-              <ListOrdered className="h-5 w-5 text-white" strokeWidth={2.2} />
+              <ListOrdered className="h-5 w-5 text-white" strokeWidth={2.4} />
             </span>
             <div>
               <p className="text-xs font-extrabold uppercase tracking-wider text-primary-700">

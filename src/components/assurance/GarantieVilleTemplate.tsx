@@ -256,7 +256,7 @@ function StatCard({
       <div
         className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} shadow-soft`}
       >
-        <Icon className="h-5 w-5 text-white" strokeWidth={2.2} />
+        <Icon className="h-5 w-5 text-white" strokeWidth={2.4} />
       </div>
       <div className="mb-1 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
         {label}

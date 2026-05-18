@@ -289,7 +289,7 @@ export default function HomePage() {
                 </span>
                 <span className="hidden h-3 w-px bg-white/20 md:block" />
                 <span className="inline-flex items-center gap-1.5">
-                  <Users className="h-3.5 w-3.5" strokeWidth={2.5} />
+                  <Users className="h-3.5 w-3.5" strokeWidth={2.4} />
                   <strong className="font-bold text-white">1 200+ pros</strong> assurés
                 </span>
               </div>
@@ -323,11 +323,11 @@ export default function HomePage() {
                 {/* Footer mock */}
                 <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-[11px] text-white/80">
                   <span className="inline-flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5" strokeWidth={2.5} />
+                    <Clock className="h-3.5 w-3.5" strokeWidth={2.4} />
                     Devis sous 24h
                   </span>
                   <span className="inline-flex items-center gap-1.5">
-                    <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2.5} />
+                    <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2.4} />
                     Sans engagement
                   </span>
                 </div>
@@ -351,7 +351,7 @@ export default function HomePage() {
                 }}
               >
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="h-3.5 w-3.5 text-accent-600" strokeWidth={2.5} />
+                  <ShieldCheck className="h-3.5 w-3.5 text-accent-600" strokeWidth={2.4} />
                   ORIAS · ACPR
                 </span>
               </div>
@@ -364,13 +364,13 @@ export default function HomePage() {
       <TrustBadgesRow />
 
       {/* Trust indicators row — extraits du hero (Hiscox-grade restraint) */}
-      <section className="bg-charcoal-900 py-12">
+      <section className="bg-charcoal-900 py-16">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md md:grid-cols-4">
             {TRUST_INDICATORS.map((t, i) => (
               <RevealOnScroll key={t.label} delay={i * 80}>
                 <div className="bg-charcoal-900/30 px-5 py-5 backdrop-blur-md">
-                  <t.Icon className="mb-2 h-5 w-5 text-secondary-300" strokeWidth={2.2} />
+                  <t.Icon className="mb-2 h-5 w-5 text-secondary-300" strokeWidth={2.4} />
                   <div className="font-heading text-3xl font-extrabold tabular-nums tracking-tight text-white md:text-4xl">
                     <CountUp value={t.value} suffix={t.suffix} duration={1600} />
                   </div>
@@ -437,7 +437,7 @@ export default function HomePage() {
                       <div
                         className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${v.accent} text-white shadow-card-hover ring-2 ring-white/40 transition-transform duration-300 group-hover:scale-110`}
                       >
-                        <v.Icon className="h-5 w-5" strokeWidth={2.2} />
+                        <v.Icon className="h-5 w-5" strokeWidth={2.4} />
                       </div>
                       {v.badge && (
                         <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-900 backdrop-blur-sm">
@@ -545,7 +545,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           PARTENAIRES — Logos grayscale → color hover
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-24 md:py-32">
+      <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto max-w-5xl px-4 text-center">
           <h2 className="mb-3 font-heading text-2xl font-bold text-charcoal-900 md:text-3xl">
             Nos partenaires assureurs

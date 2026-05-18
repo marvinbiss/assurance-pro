@@ -126,7 +126,7 @@ export default function ContactPage() {
                 aria-hidden="true"
               />
               <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 shadow-glow-clay transition-transform group-hover:scale-110">
-                <Phone className="h-7 w-7 text-white" strokeWidth={2.2} />
+                <Phone className="h-7 w-7 text-white" strokeWidth={2.4} />
               </div>
               <p className="mb-1 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
                 Téléphone
@@ -153,7 +153,7 @@ export default function ContactPage() {
                 aria-hidden="true"
               />
               <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-secondary-500 to-secondary-700 shadow-soft transition-transform group-hover:scale-110">
-                <Mail className="h-7 w-7 text-white" strokeWidth={2.2} />
+                <Mail className="h-7 w-7 text-white" strokeWidth={2.4} />
               </div>
               <p className="mb-1 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
                 Email général
@@ -180,7 +180,7 @@ export default function ContactPage() {
                 aria-hidden="true"
               />
               <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-accent-700 shadow-soft transition-transform group-hover:scale-110">
-                <CheckCircle2 className="h-7 w-7 text-white" strokeWidth={2.2} />
+                <CheckCircle2 className="h-7 w-7 text-white" strokeWidth={2.4} />
               </div>
               <p className="mb-1 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
                 Demande de devis
@@ -205,7 +205,7 @@ export default function ContactPage() {
           <article className="overflow-hidden rounded-3xl border border-charcoal-100 bg-white shadow-soft">
             <div className="flex items-start gap-4 border-b border-charcoal-100 bg-gradient-to-br from-amber-50 to-white p-7">
               <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 shadow-soft">
-                <FileWarning className="h-6 w-6 text-white" strokeWidth={2.2} />
+                <FileWarning className="h-6 w-6 text-white" strokeWidth={2.4} />
               </span>
               <div className="flex-1">
                 <p className="mb-1 text-xs font-extrabold uppercase tracking-wider text-amber-700">
@@ -288,7 +288,7 @@ export default function ContactPage() {
           <article className="overflow-hidden rounded-3xl border border-charcoal-100 bg-white shadow-soft">
             <div className="flex items-start gap-4 border-b border-charcoal-100 bg-gradient-to-br from-accent-50 to-white p-7">
               <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-accent-700 shadow-soft">
-                <Lock className="h-6 w-6 text-white" strokeWidth={2.2} />
+                <Lock className="h-6 w-6 text-white" strokeWidth={2.4} />
               </span>
               <div className="flex-1">
                 <p className="mb-1 text-xs font-extrabold uppercase tracking-wider text-accent-700">
@@ -356,7 +356,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="flex items-start gap-4">
               <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-primary-50">
-                <MapPin className="h-6 w-6 text-primary-700" strokeWidth={2.2} />
+                <MapPin className="h-6 w-6 text-primary-700" strokeWidth={2.4} />
               </span>
               <div>
                 <p className="mb-1 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">
@@ -372,7 +372,7 @@ export default function ContactPage() {
 
             <div className="flex items-start gap-4">
               <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-secondary-50">
-                <Clock className="h-6 w-6 text-secondary-700" strokeWidth={2.2} />
+                <Clock className="h-6 w-6 text-secondary-700" strokeWidth={2.4} />
               </span>
               <div>
                 <p className="mb-1 text-xs font-extrabold uppercase tracking-wider text-charcoal-500">

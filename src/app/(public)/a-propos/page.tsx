@@ -109,7 +109,7 @@ export default function AProposPage() {
                 className="rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft"
               >
                 <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-soft">
-                  <Icon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
+                  <Icon className="h-5 w-5" strokeWidth={2.4} aria-hidden="true" />
                 </span>
                 <h3 className="mb-2 font-heading text-lg font-extrabold tracking-tight text-charcoal-900">
                   {promise.title}

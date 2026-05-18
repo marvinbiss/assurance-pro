@@ -16,7 +16,7 @@ export function IllustrationPlaquiste({
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
+      strokeWidth={2}
     >
       {/* BA13 board (perspective) */}
       <path

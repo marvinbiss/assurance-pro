@@ -45,7 +45,7 @@ export function BigStatsBlock() {
             <article key={s.label} className="bg-white p-8 md:p-10">
               <s.Icon
                 className="mb-6 h-7 w-7 text-primary-600"
-                strokeWidth={2.2}
+                strokeWidth={2.4}
                 aria-hidden="true"
               />
               <div className="font-display-premium text-5xl font-extrabold tabular-nums leading-none tracking-tight text-charcoal-900 md:text-7xl">

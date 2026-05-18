@@ -81,7 +81,7 @@ export default function NotFound() {
                 <span
                   className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${s.gradient} shadow-soft transition-transform group-hover:scale-110`}
                 >
-                  <s.Icon className="h-5 w-5 text-white" strokeWidth={2.2} />
+                  <s.Icon className="h-5 w-5 text-white" strokeWidth={2.4} />
                 </span>
                 <div className="flex-1 leading-tight">
                   <div className="font-heading font-extrabold text-charcoal-900 group-hover:text-primary-700">

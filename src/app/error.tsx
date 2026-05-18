@@ -24,7 +24,7 @@ export default function Error({
     <div className="flex min-h-screen items-center justify-center bg-sand-50 p-4">
       <div className="w-full max-w-md text-center">
         <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-700 shadow-glow-clay">
-          <AlertTriangle className="h-10 w-10 text-white" strokeWidth={2.2} />
+          <AlertTriangle className="h-10 w-10 text-white" strokeWidth={2.4} />
         </div>
         <h1 className="mb-4 font-heading text-3xl font-extrabold tracking-tight text-charcoal-900">
           Oups ! Une erreur est survenue

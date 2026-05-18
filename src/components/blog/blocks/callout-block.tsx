@@ -52,7 +52,7 @@ export function CalloutBlock({ tone, title, text }: CalloutBlockProps) {
         className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl ${theme.iconBg}`}
         aria-hidden="true"
       >
-        <theme.Icon className="h-5 w-5" strokeWidth={2.2} />
+        <theme.Icon className="h-5 w-5" strokeWidth={2.4} />
       </div>
       <div className="flex-1">
         <div className="mb-1 text-xs font-extrabold uppercase tracking-wider text-charcoal-700">

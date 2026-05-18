@@ -16,7 +16,7 @@ export function IllustrationElectricien({
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
+      strokeWidth={2}
     >
       {/* Multimeter body */}
       <rect x="48" y="80" width="80" height="92" rx="6" fill={SAND_FILL} stroke={BASE_STROKE} />
@@ -41,8 +41,8 @@ export function IllustrationElectricien({
       <circle cx="100" cy="162" r="3" fill="white" stroke={BASE_STROKE} />
       <circle cx="112" cy="162" r="3" fill="white" stroke={BASE_STROKE} />
       {/* Probe wires */}
-      <path d="M58 80 Q60 50 90 36" stroke={accentColor} strokeWidth={2.5} fill="none" />
-      <path d="M118 80 Q140 50 156 30" stroke={BASE_STROKE} strokeWidth={2.5} fill="none" />
+      <path d="M58 80 Q60 50 90 36" stroke={accentColor} strokeWidth={2.4} fill="none" />
+      <path d="M118 80 Q140 50 156 30" stroke={BASE_STROKE} strokeWidth={2.4} fill="none" />
       {/* Probe tips */}
       <line x1="86" y1="32" x2="94" y2="40" stroke={accentColor} strokeWidth={3} />
       <line x1="152" y1="26" x2="160" y2="34" stroke={BASE_STROKE} strokeWidth={3} />

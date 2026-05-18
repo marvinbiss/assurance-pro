@@ -16,7 +16,7 @@ export function IllustrationPeintre({
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
+      strokeWidth={2}
     >
       {/* Brush handle */}
       <line x1="30" y1="40" x2="80" y2="90" stroke={BASE_STROKE} strokeWidth={3} />

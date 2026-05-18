@@ -120,13 +120,13 @@ export default function Footer() {
 
             <ul className="space-y-2.5 text-sm">
               <li className="flex items-center gap-2.5 text-charcoal-300">
-                <Phone className="h-4 w-4 text-primary-400" strokeWidth={2.2} />
+                <Phone className="h-4 w-4 text-primary-400" strokeWidth={2.4} />
                 <a href="tel:+33182885127" className="font-bold tabular-nums hover:text-white">
                   01 82 88 51 27
                 </a>
               </li>
               <li className="flex items-center gap-2.5 text-charcoal-300">
-                <Mail className="h-4 w-4 text-primary-400" strokeWidth={2.2} />
+                <Mail className="h-4 w-4 text-primary-400" strokeWidth={2.4} />
                 <a href="mailto:contact@vivos-assurance.fr" className="hover:text-white">
                   contact@vivos-assurance.fr
                 </a>
@@ -134,7 +134,7 @@ export default function Footer() {
               <li className="flex items-start gap-2.5 text-charcoal-300">
                 <MapPin
                   className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-400"
-                  strokeWidth={2.2}
+                  strokeWidth={2.4}
                 />
                 <span className="text-charcoal-500">
                   {process.env.NEXT_PUBLIC_LEGAL_ADDRESS ??
@@ -227,7 +227,7 @@ export default function Footer() {
         <div className="mb-8 rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 backdrop-blur-sm">
           <div className="flex flex-wrap items-center gap-5">
             <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 shadow-glow-clay">
-              <ShieldCheck className="h-6 w-6 text-white" strokeWidth={2.2} />
+              <ShieldCheck className="h-6 w-6 text-white" strokeWidth={2.4} />
             </div>
             {IS_PRE_ORIAS ? (
               <div className="flex-1 text-sm leading-relaxed text-charcoal-300">

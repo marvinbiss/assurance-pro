@@ -16,7 +16,7 @@ export function IllustrationCouvreur({
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
+      strokeWidth={2}
     >
       {/* Roof slope baseline */}
       <line x1="20" y1="170" x2="180" y2="100" stroke={BASE_STROKE} strokeWidth={2} />
@@ -37,7 +37,7 @@ export function IllustrationCouvreur({
                   d={`M${cx - 11} ${ty + 8} Q${cx} ${ty - 4} ${cx + 11} ${ty + 8}`}
                   fill={SAND_FILL}
                   stroke={row === 1 && col === 3 ? accentColor : BASE_STROKE}
-                  strokeWidth={1.5}
+                  strokeWidth={2}
                 />
               )
             })}
@@ -45,7 +45,7 @@ export function IllustrationCouvreur({
         )
       })}
       {/* Screwdriver */}
-      <line x1="48" y1="40" x2="88" y2="80" stroke={BASE_STROKE} strokeWidth={2.5} />
+      <line x1="48" y1="40" x2="88" y2="80" stroke={BASE_STROKE} strokeWidth={2.4} />
       <rect
         x="32"
         y="24"

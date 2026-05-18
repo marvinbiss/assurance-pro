@@ -146,7 +146,7 @@ export default function EquipePage() {
         <section className="overflow-hidden rounded-3xl border border-charcoal-100 bg-white p-8 shadow-soft md:p-12">
           <header className="mb-8 flex items-start gap-4">
             <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-secondary-500 to-secondary-700 shadow-soft">
-              <Award className="h-6 w-6 text-white" strokeWidth={2.2} />
+              <Award className="h-6 w-6 text-white" strokeWidth={2.4} />
             </span>
             <div>
               <span className="mb-1 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-secondary-700">

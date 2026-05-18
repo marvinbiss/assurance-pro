@@ -43,7 +43,7 @@ export function PreinscriptionForm({ defaultVertical }: PreinscriptionFormProps)
     return (
       <div className="rounded-3xl border border-secondary-200 bg-gradient-to-br from-secondary-50 to-white p-8 text-center shadow-soft md:p-12">
         <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-secondary-100">
-          <CheckCircle2 className="h-8 w-8 text-secondary-700" strokeWidth={2.2} />
+          <CheckCircle2 className="h-8 w-8 text-secondary-700" strokeWidth={2.4} />
         </div>
         <h2 className="mb-3 font-heading text-2xl font-extrabold text-charcoal-900 md:text-3xl">
           Préinscription confirmée
@@ -68,7 +68,7 @@ export function PreinscriptionForm({ defaultVertical }: PreinscriptionFormProps)
         <div className="relative">
           <Mail
             className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-charcoal-500"
-            strokeWidth={2.2}
+            strokeWidth={2.4}
             aria-hidden="true"
           />
           <input

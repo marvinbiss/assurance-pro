@@ -16,7 +16,7 @@ export function IllustrationMenuisier({
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
+      strokeWidth={2}
     >
       {/* Plank (perspective) */}
       <rect x="20" y="124" width="160" height="32" fill={SAND_FILL} stroke={BASE_STROKE} />

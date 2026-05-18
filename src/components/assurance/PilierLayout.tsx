@@ -524,7 +524,7 @@ export async function PilierLayout({
           {/* Référence légale en pill */}
           {legalReference ? (
             <div className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-charcoal-900/30 px-4 py-2 text-sm text-white/85 backdrop-blur-sm">
-              <Scale className="h-4 w-4 text-secondary-300" strokeWidth={2.2} />
+              <Scale className="h-4 w-4 text-secondary-300" strokeWidth={2.4} />
               <span className="font-medium">Référence légale :</span>
               <span className="text-white">{legalReference}</span>
             </div>
@@ -548,7 +548,7 @@ export async function PilierLayout({
           BÉNÉFICES — Cards avec icons gradient
           ═══════════════════════════════════════════════════════════════════ */}
       {benefits.length > 0 ? (
-        <section className="bg-sand-50 py-24 md:py-32">
+        <section className="bg-sand-50 py-20 md:py-28">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {benefits.map((b, idx) => (
@@ -584,7 +584,7 @@ export async function PilierLayout({
       {/* ═══════════════════════════════════════════════════════════════════
           INTRO — Texte introductif avec eyebrow
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-24 md:py-32">
+      <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-4">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-700">
             <Sparkles className="h-3.5 w-3.5" />
@@ -601,7 +601,7 @@ export async function PilierLayout({
       {(() => {
         const garantie = calculatorGarantie ?? inferCalculatorGarantie(slug)
         return (
-          <section className="bg-sand-50 py-24 md:py-32">
+          <section className="bg-sand-50 py-20 md:py-28">
             <div className="container mx-auto max-w-4xl px-4">
               <RevealOnScroll>
                 <div className="mb-8 text-center">
@@ -624,7 +624,7 @@ export async function PilierLayout({
 
       {/* Comparatif assureurs table */}
       {comparatifRows && comparatifRows.length > 0 ? (
-        <section className="bg-white py-24 md:py-32">
+        <section className="bg-white py-20 md:py-28">
           <div className="container mx-auto max-w-5xl px-4">
             <RevealOnScroll>
               <div className="mb-8 text-center">
@@ -675,7 +675,7 @@ export async function PilierLayout({
 
       {/* Expert bio courtier — E-E-A-T YMYL signal */}
       {expertBio ? (
-        <section className="bg-sand-50 py-24 md:py-32">
+        <section className="bg-sand-50 py-20 md:py-28">
           <div className="container mx-auto max-w-4xl px-4">
             <RevealOnScroll>
               <div className="mb-8">
@@ -699,7 +699,7 @@ export async function PilierLayout({
           RELATED MÉTIERS — Grid links premium
           ═══════════════════════════════════════════════════════════════════ */}
       {relatedMetiers && relatedMetiers.length > 0 ? (
-        <section className="bg-white py-24 md:py-32">
+        <section className="bg-white py-20 md:py-28">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="mb-10 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-700">

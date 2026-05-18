@@ -16,7 +16,7 @@ export function IllustrationCharpentier({
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
+      strokeWidth={2}
     >
       {/* Plank */}
       <rect x="20" y="130" width="160" height="28" fill={SAND_FILL} stroke={BASE_STROKE} />

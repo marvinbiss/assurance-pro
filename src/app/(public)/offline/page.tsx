@@ -14,7 +14,7 @@ export default function OfflinePage() {
     <div className="min-h-screen bg-sand-50 dark:bg-charcoal-950">
       <div className="container mx-auto flex min-h-[80vh] max-w-2xl flex-col items-center justify-center px-4 py-14 text-center">
         <span className="mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-secondary-100 text-secondary-700">
-          <WifiOff className="h-8 w-8" strokeWidth={2.2} />
+          <WifiOff className="h-8 w-8" strokeWidth={2.4} />
         </span>
 
         <h1 className="mb-3 font-heading text-3xl font-extrabold tracking-tight text-charcoal-900 md:text-4xl">

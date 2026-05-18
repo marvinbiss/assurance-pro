@@ -43,7 +43,7 @@ export function TrustBadgesRow() {
                 className={`flex h-10 w-10 items-center justify-center rounded-xl bg-white ${item.color} shadow-soft`}
                 aria-hidden="true"
               >
-                <item.Icon className="h-5 w-5" strokeWidth={2.2} />
+                <item.Icon className="h-5 w-5" strokeWidth={2.4} />
               </span>
               <div>
                 <div className="font-heading text-sm font-extrabold leading-tight text-charcoal-900">

@@ -148,7 +148,7 @@ export default function MethodologiePage() {
               className="rounded-2xl border border-charcoal-100 bg-white p-6 shadow-soft dark:border-charcoal-800 dark:bg-charcoal-900"
             >
               <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-soft">
-                <p.Icon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
+                <p.Icon className="h-5 w-5" strokeWidth={2.4} aria-hidden="true" />
               </span>
               <h3 className="mb-2 font-heading text-base font-extrabold tracking-tight text-charcoal-900 dark:text-white">
                 {p.title}
