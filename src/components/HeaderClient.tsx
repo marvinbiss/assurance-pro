@@ -276,7 +276,7 @@ export default function HeaderClient() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`text-[15px] font-semibold ${navColor} transition-colors ${navHover}`}
+                className={`rounded-md px-2 py-1 text-[15px] font-semibold ${navColor} transition-colors ${navHover} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2`}
               >
                 {l.label}
               </Link>
