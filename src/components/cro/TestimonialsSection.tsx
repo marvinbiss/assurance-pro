@@ -6,7 +6,12 @@
  *
  * IMPORTANT : témoignages doivent être RÉELS (avis clients vérifiables).
  * Ne JAMAIS inventer — risque CNIL + pratique commerciale trompeuse art. L. 121-1 C. conso.
+ *
+ * Sécurité: utilise jsonLdScriptProps (escape < > & U+2028/9) au lieu de
+ * dangerouslySetInnerHTML brut pour éviter XSS sur testimonials user-generated.
  */
+
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 
 interface Testimonial {
   authorName: string
@@ -77,36 +82,34 @@ export function TestimonialsSection({
         </div>
       </div>
 
-      {/* Schema.org AggregateRating + Reviews — rich snippets Google SERP */}
+      {/* Schema.org AggregateRating + Reviews — rich snippets Google SERP
+          Sécurité: jsonLdScriptProps escape < > & U+2028/U+2029 (XSS-safe). */}
       {!skipSchema && (
         <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'Vivos Assurance',
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: avgRating.toFixed(1),
-                reviewCount: testimonials.length,
+          {...jsonLdScriptProps({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Vivos Assurance',
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: avgRating.toFixed(1),
+              reviewCount: testimonials.length,
+              bestRating: '5',
+              worstRating: '1',
+            },
+            review: testimonials.map((t) => ({
+              '@type': 'Review',
+              author: { '@type': 'Person', name: t.authorName },
+              datePublished: t.date,
+              reviewBody: t.text,
+              reviewRating: {
+                '@type': 'Rating',
+                ratingValue: String(t.rating),
                 bestRating: '5',
                 worstRating: '1',
               },
-              review: testimonials.map((t) => ({
-                '@type': 'Review',
-                author: { '@type': 'Person', name: t.authorName },
-                datePublished: t.date,
-                reviewBody: t.text,
-                reviewRating: {
-                  '@type': 'Rating',
-                  ratingValue: String(t.rating),
-                  bestRating: '5',
-                  worstRating: '1',
-                },
-              })),
-            }),
-          }}
+            })),
+          })}
         />
       )}
     </section>
