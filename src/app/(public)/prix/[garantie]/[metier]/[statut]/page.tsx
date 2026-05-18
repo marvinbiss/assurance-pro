@@ -40,6 +40,28 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 import { PageHero } from '@/components/layout/PageHero'
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
+import { TarifCalculator } from '@/components/assurance/pilier-sections-lazy'
+import type { Garantie as CalcGarantie } from '@/components/premium/tarif-calculator'
+
+function mapGarantieToCalculator(code: string | null): CalcGarantie | null {
+  if (!code) return null
+  const c = code.toLowerCase()
+  if (c.includes('decennale')) return 'decennale'
+  if (c.includes('rc-pro') || c === 'rc_pro') return 'rc-pro'
+  if (c.includes('cyber')) return 'cyber'
+  if (c.includes('multirisque')) return 'multirisque-pro'
+  if (c.includes('mutuelle')) return 'mutuelle-pro'
+  if (c.includes('vtc') || c.includes('taxi')) return 'vtc'
+  if (c.includes('dommages-ouvrage')) return 'dommages-ouvrage'
+  if (c.includes('tous-risques-chantier') || c === 'trc') return 'tous-risques-chantier'
+  if (c.includes('transport-marchandises')) return 'transport-marchandises'
+  if (c.includes('moto-pro')) return 'moto-pro'
+  if (c.includes('protection-juridique')) return 'protection-juridique'
+  if (c.includes('homme-cle')) return 'homme-cle'
+  if (c.includes('prevoyance')) return 'prevoyance'
+  if (c.includes('flotte')) return 'flotte-auto'
+  return 'rc-pro'
+}
 
 // ────────────────────────────────────────────────────────────────────────────
 // Configuration Next.js App Router
@@ -166,6 +188,20 @@ export default async function PrixPage(props: { params: Promise<Params> }) {
         <StatsSectoriellesBlock enrichment={enrichment} />
 
         <AvisVerifiesBlock enrichment={enrichment} />
+
+        {/* Estimateur tarifaire — calculator vertical-specific avec préselection métier */}
+        {(() => {
+          const calcG = mapGarantieToCalculator(enrichment.garantie_code)
+          if (!calcG) return null
+          return (
+            <div className="mt-14">
+              <TarifCalculator
+                garantie={calcG}
+                defaultMetier={enrichment.metier_code ?? undefined}
+              />
+            </div>
+          )
+        })()}
 
         {showDevisForm && <DevisFormCTA enrichment={enrichment} />}
 

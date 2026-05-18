@@ -25,6 +25,8 @@ import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 import { DevisAssuranceForm } from '@/components/assurance/DevisAssuranceForm'
 import { PageHero } from '@/components/layout/PageHero'
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection'
+import { TarifCalculator } from '@/components/assurance/pilier-sections-lazy'
+import type { Garantie } from '@/components/premium/tarif-calculator'
 
 type Variant = 'prix' | 'comparateur' | 'guide' | 'devis' | 'tarif'
 
@@ -104,6 +106,30 @@ function buildEnrichedBreadcrumbs(
 }
 
 /**
+ * Mappe un code garantie (depuis kw_universe / enrichment) vers le type Garantie
+ * accepté par TarifCalculator. Couvre les 14 verticales.
+ */
+function mapGarantieCodeToCalculator(code: string | null): Garantie | null {
+  if (!code) return null
+  const c = code.toLowerCase()
+  if (c.includes('decennale')) return 'decennale'
+  if (c.includes('rc-pro') || c === 'rc_pro' || c === 'rcpro') return 'rc-pro'
+  if (c.includes('cyber')) return 'cyber'
+  if (c.includes('multirisque')) return 'multirisque-pro'
+  if (c.includes('mutuelle')) return 'mutuelle-pro'
+  if (c.includes('vtc') || c.includes('taxi')) return 'vtc'
+  if (c.includes('dommages-ouvrage') || c === 'do') return 'dommages-ouvrage'
+  if (c.includes('tous-risques-chantier') || c === 'trc') return 'tous-risques-chantier'
+  if (c.includes('transport-marchandises')) return 'transport-marchandises'
+  if (c.includes('moto-pro') || c.includes('moto-professionnelle')) return 'moto-pro'
+  if (c.includes('protection-juridique')) return 'protection-juridique'
+  if (c.includes('homme-cle')) return 'homme-cle'
+  if (c.includes('prevoyance')) return 'prevoyance'
+  if (c.includes('flotte')) return 'flotte-auto'
+  return 'rc-pro' // fallback générique
+}
+
+/**
  * Mappe un code garantie (depuis kw_universe) vers son URL hub.
  * Couvre les 9 garanties principales du site.
  */
@@ -134,6 +160,7 @@ export async function EnrichedPageLayout({
   const schemas = buildSchemaOrg(enrichment)
   const showDevis = shouldShowDevisForm(enrichment)
   const nonce = (await headers()).get('x-nonce') ?? undefined
+  const calculatorGarantie = mapGarantieCodeToCalculator(enrichment.garantie_code)
 
   return (
     <main className="min-h-screen bg-sand-50">
@@ -168,6 +195,16 @@ export async function EnrichedPageLayout({
 
         {enrichment.avis_top_jsonb?.filter((a) => a.iso_20488)?.length > 0 && (
           <AvisBlock enrichment={enrichment} />
+        )}
+
+        {/* Estimateur tarifaire — calculator vertical-specific avec préselection métier */}
+        {calculatorGarantie && (
+          <div className="mt-14">
+            <TarifCalculator
+              garantie={calculatorGarantie}
+              defaultMetier={enrichment.metier_code ?? undefined}
+            />
+          </div>
         )}
 
         {showDevis && <DevisCta enrichment={enrichment} />}
