@@ -227,7 +227,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               <select
                 value={data.garantie_code}
                 onChange={(e) => update('garantie_code', e.target.value)}
-                className="w-full rounded border p-2"
+                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
               >
                 <option value="">Sélectionner...</option>
                 <option value="decennale">Garantie décennale</option>
@@ -248,7 +248,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 value={data.metier_code}
                 onChange={(e) => update('metier_code', e.target.value)}
                 placeholder="Plombier, électricien, VTC, médecin..."
-                className="w-full rounded border p-2"
+                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
               />
             </Field>
 
@@ -258,7 +258,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                   type="text"
                   value={data.ville}
                   onChange={(e) => update('ville', e.target.value)}
-                  className="w-full rounded border p-2"
+                  className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
                 />
               </Field>
               <Field label="Code postal">
@@ -268,7 +268,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                   onChange={(e) => update('postal_code', e.target.value)}
                   pattern="\d{5}"
                   maxLength={5}
-                  className="w-full rounded border p-2"
+                  className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
                 />
               </Field>
             </div>
@@ -277,7 +277,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               <select
                 value={data.ca_range}
                 onChange={(e) => update('ca_range', e.target.value)}
-                className="w-full rounded border p-2"
+                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
               >
                 <option value="">Sélectionner...</option>
                 <option value="lt_50k">Moins de 50 000 €</option>
@@ -292,7 +292,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               <select
                 value={data.statut_juridique}
                 onChange={(e) => update('statut_juridique', e.target.value)}
-                className="w-full rounded border p-2"
+                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
               >
                 <option value="">Sélectionner...</option>
                 <option value="auto_entrepreneur">Auto-entrepreneur — Micro</option>
@@ -309,7 +309,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               type="button"
               onClick={() => setStep(2)}
               disabled={!canGoStep2}
-              className="w-full rounded bg-primary-600 py-3 font-semibold text-white disabled:bg-sand-300"
+              className="w-full rounded-xl bg-primary-600 px-6 py-4 font-semibold text-white shadow-cta transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-cta-hover focus-visible:ring-4 focus-visible:ring-primary-200 disabled:cursor-not-allowed disabled:bg-sand-300 disabled:shadow-none disabled:hover:transform-none"
             >
               Continuer →
             </button>
@@ -329,7 +329,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 max={50}
                 value={data.anciennete_annees}
                 onChange={(e) => update('anciennete_annees', Number(e.target.value))}
-                className="w-full rounded border p-2"
+                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
               />
             </Field>
 
@@ -340,7 +340,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 max={20}
                 value={data.sinistralite_36m}
                 onChange={(e) => update('sinistralite_36m', Number(e.target.value))}
-                className="w-full rounded border p-2"
+                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
               />
             </Field>
 
@@ -399,7 +399,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 type="button"
                 onClick={() => setStep(3)}
                 disabled={!canGoStep3}
-                className="flex-1 rounded bg-primary-600 py-3 font-semibold text-white disabled:bg-sand-300"
+                className="flex-1 rounded-xl bg-primary-600 px-6 py-4 font-semibold text-white shadow-cta transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-cta-hover focus-visible:ring-4 focus-visible:ring-primary-200 disabled:cursor-not-allowed disabled:bg-sand-300 disabled:shadow-none disabled:hover:transform-none"
               >
                 Continuer →
               </button>
@@ -420,7 +420,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                   name="prenom"
                   value={data.prenom}
                   onChange={(e) => update('prenom', e.target.value)}
-                  className="w-full rounded border p-2"
+                  className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
                   autoComplete="given-name"
                   required
                   maxLength={80}
@@ -432,7 +432,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                   name="nom"
                   value={data.nom}
                   onChange={(e) => update('nom', e.target.value)}
-                  className="w-full rounded border p-2"
+                  className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
                   autoComplete="family-name"
                   required
                   maxLength={80}
@@ -446,7 +446,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 name="email"
                 value={data.email}
                 onChange={(e) => update('email', e.target.value)}
-                className="w-full rounded border p-2"
+                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
                 autoComplete="email"
                 inputMode="email"
                 required
@@ -461,7 +461,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 value={data.telephone}
                 onChange={(e) => update('telephone', e.target.value)}
                 pattern="[0-9 +]+"
-                className="w-full rounded border p-2"
+                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
                 autoComplete="tel"
                 inputMode="tel"
                 required
@@ -476,7 +476,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 value={data.siret}
                 onChange={(e) => update('siret', e.target.value)}
                 maxLength={14}
-                className="w-full rounded border p-2"
+                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-charcoal-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
                 autoComplete="organization-identifier"
                 inputMode="numeric"
                 pattern="\d{14}"
@@ -570,7 +570,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               <button
                 type="submit"
                 disabled={!canSubmit || submitting}
-                className="flex-1 rounded bg-primary-600 py-3 font-semibold text-white disabled:bg-sand-300"
+                className="flex-1 rounded-xl bg-primary-600 px-6 py-4 font-semibold text-white shadow-cta transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-cta-hover focus-visible:ring-4 focus-visible:ring-primary-200 disabled:cursor-not-allowed disabled:bg-sand-300 disabled:shadow-none disabled:hover:transform-none"
               >
                 {submitting ? 'Envoi...' : 'Recevoir mon devis →'}
               </button>
