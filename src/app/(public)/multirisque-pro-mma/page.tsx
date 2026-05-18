@@ -30,7 +30,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="MMA Pro propose une multirisque professionnelle (MRP) modulaire couvrant les locaux, le contenu (mobilier, stock, matériel), la perte d'exploitation et la RC Exploitation. Adaptée aux SARL ou SAS PME (commerce, restauration, services, BTP), elle peut être combinée avec RC Pro et flotte auto pour bénéficier d'une remise paquet de 15-25%."
+      intro="MMA Pro propose une Multirisque Professionnelle (MRP) modulaire couvrant les locaux, le contenu (mobilier, stock, matériel), la perte d'exploitation et la RC Exploitation. Adaptée aux SARL ou SAS PME (commerce, restauration, services, BTP), elle peut être combinée avec RC Pro et flotte auto pour bénéficier d'une remise paquet de 15-25%."
       legalReference="art. L. 121-2 et s. C. assur."
       socialProofStats={STATS_DEFAULT}
       calculatorGarantie="multirisque-pro"

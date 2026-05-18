@@ -11,7 +11,10 @@ import { z } from 'zod'
 
 const PdfDownloadButton = dynamic(
   () => import('./FacturePdfDownloadButton').then((m) => m.FacturePdfDownloadButton),
-  { ssr: false, loading: () => <span className="text-sm text-gray-500">Préparation du PDF…</span> }
+  {
+    ssr: false,
+    loading: () => <span className="text-sm text-charcoal-500">Préparation du PDF…</span>,
+  }
 )
 
 const ligneSchema = z.object({
@@ -131,7 +134,7 @@ export function FactureForm() {
   return (
     <form onSubmit={handleGenerate} className="space-y-4">
       {/* Émetteur */}
-      <fieldset className="rounded-lg border border-gray-200 p-4">
+      <fieldset className="rounded-lg border border-sand-200 p-4">
         <legend className="px-2 text-sm font-semibold">1. Vos informations (émetteur)</legend>
         <div className="mt-2 grid gap-3 md:grid-cols-2">
           <Field label="Raison sociale — Nom" required error={errors.emetteurNom}>
@@ -139,7 +142,7 @@ export function FactureForm() {
               type="text"
               value={data.emetteurNom}
               onChange={(e) => update('emetteurNom', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
               placeholder="Ex : Jean DUPONT"
             />
@@ -149,7 +152,7 @@ export function FactureForm() {
               type="text"
               value={data.emetteurFormeJuridique}
               onChange={(e) => update('emetteurFormeJuridique', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -158,7 +161,7 @@ export function FactureForm() {
               type="text"
               value={data.emetteurAdresse}
               onChange={(e) => update('emetteurAdresse', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -168,7 +171,7 @@ export function FactureForm() {
               value={data.emetteurSiret}
               onChange={(e) => update('emetteurSiret', e.target.value)}
               placeholder="123 456 789 00012"
-              className="w-full rounded border border-gray-300 px-3 py-2 font-mono"
+              className="w-full rounded border border-sand-300 px-3 py-2 font-mono"
               required
             />
           </Field>
@@ -178,7 +181,7 @@ export function FactureForm() {
               value={data.emetteurTva}
               onChange={(e) => update('emetteurTva', e.target.value)}
               placeholder="FR12345678901"
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
             />
           </Field>
           <Field label="Email">
@@ -186,7 +189,7 @@ export function FactureForm() {
               type="email"
               value={data.emetteurEmail}
               onChange={(e) => update('emetteurEmail', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
             />
           </Field>
           <Field label="Téléphone">
@@ -194,7 +197,7 @@ export function FactureForm() {
               type="tel"
               value={data.emetteurTelephone}
               onChange={(e) => update('emetteurTelephone', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
             />
           </Field>
         </div>
@@ -209,7 +212,7 @@ export function FactureForm() {
                 value={data.emetteurAssureur}
                 onChange={(e) => update('emetteurAssureur', e.target.value)}
                 placeholder="SMABTP, Hiscox, AXA Pro..."
-                className="w-full rounded border border-gray-300 px-3 py-2"
+                className="w-full rounded border border-sand-300 px-3 py-2"
               />
             </Field>
             <Field label="N° de police">
@@ -217,7 +220,7 @@ export function FactureForm() {
                 type="text"
                 value={data.emetteurAssurancePolice}
                 onChange={(e) => update('emetteurAssurancePolice', e.target.value)}
-                className="w-full rounded border border-gray-300 px-3 py-2"
+                className="w-full rounded border border-sand-300 px-3 py-2"
               />
             </Field>
           </div>
@@ -225,7 +228,7 @@ export function FactureForm() {
       </fieldset>
 
       {/* Destinataire */}
-      <fieldset className="rounded-lg border border-gray-200 p-4">
+      <fieldset className="rounded-lg border border-sand-200 p-4">
         <legend className="px-2 text-sm font-semibold">2. Client (destinataire)</legend>
         <div className="mt-2 grid gap-3 md:grid-cols-2">
           <Field label="Raison sociale — Nom" required error={errors.destinataireNom}>
@@ -233,7 +236,7 @@ export function FactureForm() {
               type="text"
               value={data.destinataireNom}
               onChange={(e) => update('destinataireNom', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -242,7 +245,7 @@ export function FactureForm() {
               type="text"
               value={data.destinataireAdresse}
               onChange={(e) => update('destinataireAdresse', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -251,7 +254,7 @@ export function FactureForm() {
               type="text"
               value={data.destinataireSiret}
               onChange={(e) => update('destinataireSiret', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2 font-mono"
+              className="w-full rounded border border-sand-300 px-3 py-2 font-mono"
             />
           </Field>
           <Field label="N° TVA (si client B2B UE)">
@@ -259,14 +262,14 @@ export function FactureForm() {
               type="text"
               value={data.destinataireTva}
               onChange={(e) => update('destinataireTva', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
             />
           </Field>
         </div>
       </fieldset>
 
       {/* Méta */}
-      <fieldset className="rounded-lg border border-gray-200 p-4">
+      <fieldset className="rounded-lg border border-sand-200 p-4">
         <legend className="px-2 text-sm font-semibold">3. Détails facture</legend>
         <div className="mt-2 grid gap-3 md:grid-cols-3">
           <Field label="N° facture" required>
@@ -274,7 +277,7 @@ export function FactureForm() {
               type="text"
               value={data.numeroFacture}
               onChange={(e) => update('numeroFacture', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -283,7 +286,7 @@ export function FactureForm() {
               type="date"
               value={data.dateFacture}
               onChange={(e) => update('dateFacture', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -292,7 +295,7 @@ export function FactureForm() {
               type="date"
               value={data.dateEcheance}
               onChange={(e) => update('dateEcheance', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -304,7 +307,7 @@ export function FactureForm() {
               step="0.1"
               value={data.tauxTva}
               onChange={(e) => update('tauxTva', Number(e.target.value))}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -313,14 +316,14 @@ export function FactureForm() {
               type="text"
               value={data.conditionsPaiement}
               onChange={(e) => update('conditionsPaiement', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
             />
           </Field>
         </div>
       </fieldset>
 
       {/* Lignes */}
-      <fieldset className="rounded-lg border border-gray-200 p-4">
+      <fieldset className="rounded-lg border border-sand-200 p-4">
         <legend className="px-2 text-sm font-semibold">4. Prestations facturées</legend>
         <div className="mt-2 space-y-2">
           {data.lignes.map((l, i) => (
@@ -331,7 +334,7 @@ export function FactureForm() {
                   value={l.description}
                   onChange={(e) => updateLigne(i, 'description', e.target.value)}
                   placeholder="Description"
-                  className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+                  className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
                   required
                 />
               </div>
@@ -343,7 +346,7 @@ export function FactureForm() {
                   value={l.quantite}
                   onChange={(e) => updateLigne(i, 'quantite', Number(e.target.value))}
                   placeholder="Qté"
-                  className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+                  className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
                   required
                 />
               </div>
@@ -355,7 +358,7 @@ export function FactureForm() {
                   value={l.prixUnitaire}
                   onChange={(e) => updateLigne(i, 'prixUnitaire', Number(e.target.value))}
                   placeholder="PU HT"
-                  className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+                  className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
                   required
                 />
               </div>
@@ -427,7 +430,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1 block text-sm font-medium text-gray-700">
+      <span className="mb-1 block text-sm font-medium text-charcoal-700">
         {label}
         {required && <span className="text-red-500"> *</span>}
       </span>

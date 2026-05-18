@@ -15,9 +15,9 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-consultant-independant'
-const TITLE = 'Assurance consultant indépendant — Pack 2026 (RC pro 5 M€, mutuelle, prévoyance)'
+const TITLE = 'Assurance consultant indépendant — Pack 2026 (RC Pro 5 M€, mutuelle, prévoyance)'
 const TAGLINE =
-  "L'assurance pour consultants indépendants : RC pro avec plafond élevé (5 M€), mutuelle TNS, prévoyance, protection juridique. Tous statuts (EI, EURL, SASU, portage)."
+  "L'assurance pour consultants indépendants : RC Pro avec plafond élevé (5 M€), mutuelle TNS, prévoyance, protection juridique. Tous statuts (EI, EURL, SASU, portage)."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -69,7 +69,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Spécialité</th>
                     <th className="border p-2 text-right">RC Pro</th>
                     <th className="border p-2 text-right">Pack complet</th>

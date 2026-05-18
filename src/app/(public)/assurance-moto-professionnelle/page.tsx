@@ -13,12 +13,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-moto-professionnelle'
 const TITLE = 'Assurance moto professionnelle — 2 roues utilitaire 2026 (livreur, taxi-moto)'
 const TAGLINE =
-  "L'assurance dédiée aux 2 roues à usage pro : livreur Uber Eats ou Deliveroo, taxi-moto, coursier, commercial nomade. RC pro + tous risques + équipement."
+  "L'assurance dédiée aux 2 roues à usage pro : livreur Uber Eats ou Deliveroo, taxi-moto, coursier, commercial nomade. RC Pro + tous risques + équipement."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance moto professionnelle : 2 roues utilitaire (livreur Uber Eats ou Deliveroo, taxi-moto, coursier, commercial). RC pro + tous risques + équipement + conducteur étendue. Tarifs 680-1 580€ par an. Devis ORIAS sous 24h.',
+    'Assurance moto professionnelle : 2 roues utilitaire (livreur Uber Eats ou Deliveroo, taxi-moto, coursier, commercial). RC Pro + tous risques + équipement + conducteur étendue. Tarifs 680-1 580€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -29,7 +29,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance moto professionnelle couvre les 2 roues motorisés (scooter, moto, mobylette électrique, vélo cargo électrique) utilisés pour une activité professionnelle : livraison repas (Uber Eats, Deliveroo, Just Eat, Stuart), taxi-moto parisien, coursier B2B, commercial nomade urbain, artisan en intervention rapide. Le tarif RC Pro 2 roues est généralement plus élevé que pour une voiture (sinistralité corporelle conducteur 5x supérieure) mais reste accessible : 680-1 580 € par an selon profil. Le pack standard combine : RC pro circulation (passagers + tiers), tous risques (vol, incendie, vandalisme), équipement obligatoire (casque, gants, chaussures), garantie conducteur étendue (capital décès ou invalidité majoré 2 roues), assistance 0 km. Cette page distingue les 4 profils types et détaille les tarifs."
+      intro="L'assurance moto professionnelle couvre les 2 roues motorisés (scooter, moto, mobylette électrique, vélo cargo électrique) utilisés pour une activité professionnelle : livraison repas (Uber Eats, Deliveroo, Just Eat, Stuart), taxi-moto parisien, coursier B2B, commercial nomade urbain, artisan en intervention rapide. Le tarif RC Pro 2 roues est généralement plus élevé que pour une voiture (sinistralité corporelle conducteur 5x supérieure) mais reste accessible : 680-1 580 € par an selon profil. Le pack standard combine : RC Pro circulation (passagers + tiers), tous risques (vol, incendie, vandalisme), équipement obligatoire (casque, gants, chaussures), garantie conducteur étendue (capital décès ou invalidité majoré 2 roues), assistance 0 km. Cette page distingue les 4 profils types et détaille les tarifs."
       legalReference="Article L. 211-1 du Code des assurances + Code de la route 2 roues"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -38,7 +38,7 @@ export default function Page() {
       benefits={[
         {
           icon: '🛵',
-          title: 'RC pro 2 roues',
+          title: 'RC Pro 2 roues',
           desc: "Plafond corporel illimité. Sinistralité majorée → tarif plus élevé qu'auto pro",
         },
         {
@@ -64,7 +64,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>
@@ -98,7 +98,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : km annuels, antécédents conducteur, ancienneté permis A ou A2, zone
                 (Paris IDF +20-30%), cylindrée.
               </p>
@@ -138,7 +138,7 @@ export default function Page() {
       faq={[
         {
           q: "L'assurance moto pro est-elle obligatoire ?",
-          a: 'OUI — RC circulation OBLIGATOIRE pour tout 2 roues motorisé (Code des assurances L. 211-1). Sanctions absence : 75 000€ amende + 6 mois prison + immobilisation véhicule + suspension permis. Pour usage pro : RC pro circulation spécifique (vs RC auto perso) — plafond corporel illimité.',
+          a: 'OUI — RC circulation OBLIGATOIRE pour tout 2 roues motorisé (Code des assurances L. 211-1). Sanctions absence : 75 000€ amende + 6 mois prison + immobilisation véhicule + suspension permis. Pour usage pro : RC Pro circulation spécifique (vs RC auto perso) — plafond corporel illimité.',
         },
         {
           q: "Combien coûte l'assurance d'un livreur Uber Eats — Deliveroo ?",
@@ -146,11 +146,11 @@ export default function Page() {
         },
         {
           q: 'Vélo cargo électrique pro : assurance différente ?',
-          a: 'OUI — assurance dédiée 2 roues non motorisés ou électriques < 25 km par heure. Tarif accessible : 280-480€ par an (vs 680€+ pour scooter). RC pro + vol vélo (cargo électrique = 3 000-7 000€ à neuf) + garantie batterie.',
+          a: 'OUI — assurance dédiée 2 roues non motorisés ou électriques < 25 km par heure. Tarif accessible : 280-480€ par an (vs 680€+ pour scooter). RC Pro + vol vélo (cargo électrique = 3 000-7 000€ à neuf) + garantie batterie.',
         },
         {
           q: 'Taxi-moto parisien : assurance spécifique ?',
-          a: "OUI — RC pro chauffeur taxi-moto + couverture passagers obligatoire. Tarif 1 280-1 580€ par an pour moto 600cc+. Garantie ADS-licence si artisan-taxi-moto. Voir aussi <a href='/assurance-taxi' class='text-primary-600 underline'>/assurance-taxi</a>.",
+          a: "OUI — RC Pro chauffeur taxi-moto + couverture passagers obligatoire. Tarif 1 280-1 580€ par an pour moto 600cc+. Garantie ADS-licence si artisan-taxi-moto. Voir aussi <a href='/assurance-taxi' class='text-primary-600 underline'>/assurance-taxi</a>.",
         },
         {
           q: 'Équipement (casque, gants) : couvert ?',

@@ -43,7 +43,7 @@ export default async function MerciPage({
   const sla = SLA_BY_SEGMENT[segment] ?? SLA_BY_SEGMENT.warm
 
   return (
-    <main className="flex min-h-screen items-start justify-center bg-gray-50 px-4 py-12">
+    <main className="flex min-h-screen items-start justify-center bg-sand-50 px-4 py-12">
       <div className="w-full max-w-2xl rounded-lg bg-white p-8 shadow md:p-12">
         <div className="text-center">
           <div
@@ -53,11 +53,13 @@ export default async function MerciPage({
             ✓
           </div>
           <h1 className="mb-2 text-3xl font-bold">Demande bien reçue</h1>
-          <p className="mb-6 text-gray-600">Un email de confirmation vient de vous être envoyé.</p>
+          <p className="mb-6 text-charcoal-600">
+            Un email de confirmation vient de vous être envoyé.
+          </p>
 
           {reference && (
-            <div className="mb-6 inline-block rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <p className="mb-1 text-xs uppercase tracking-wide text-gray-500">
+            <div className="mb-6 inline-block rounded-lg border border-sand-200 bg-sand-50 p-4">
+              <p className="mb-1 text-xs uppercase tracking-wide text-charcoal-500">
                 Référence dossier
               </p>
               <p className="font-mono text-lg font-bold">{reference}</p>
@@ -131,7 +133,7 @@ export default async function MerciPage({
           </p>
         </div>
 
-        <div className="mb-6 text-xs leading-relaxed text-gray-500">
+        <div className="mb-6 text-xs leading-relaxed text-charcoal-500">
           <p className="mb-2">
             <strong>Conformité ACPR.</strong> Conformément à la Recommandation ACPR 2024-R-03, votre
             demande déclenche la traçabilité du conseil. Les exigences que vous avez déclarées sont
@@ -147,7 +149,7 @@ export default async function MerciPage({
         <div className="flex flex-col justify-center gap-3 md:flex-row">
           <Link
             href="/comparateur-assureurs"
-            className="rounded-lg border border-gray-300 px-5 py-2.5 text-center font-semibold hover:bg-gray-50"
+            className="rounded-lg border border-sand-300 px-5 py-2.5 text-center font-semibold hover:bg-sand-50"
           >
             Voir le comparateur
           </Link>

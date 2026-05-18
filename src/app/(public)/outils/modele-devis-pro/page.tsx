@@ -92,21 +92,21 @@ export default async function Page() {
       <section className="py-12">
         <div className="container mx-auto max-w-3xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez votre devis</h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             Le PDF est généré <strong>côté navigateur</strong> — vos données restent privées,
             <strong> aucune information n&apos;est envoyée à nos serveurs</strong>.
           </p>
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-lg border border-sand-200 bg-white p-6 shadow-sm">
             <DevisForm />
           </div>
         </div>
       </section>
 
       {/* MENTIONS OBLIGATOIRES */}
-      <section className="bg-gray-50 py-12">
+      <section className="bg-sand-50 py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Mentions obligatoires sur un devis pro 2026</h2>
-          <p className="mb-4 text-sm text-gray-700">
+          <p className="mb-4 text-sm text-charcoal-700">
             Imposées par l&apos;<strong>article L. 111-1 du Code de la consommation</strong>,
             l&apos;art. L. 441-3 C. com. et l&apos;arrêté du 27 mars 2017 (devis BTP &gt; 150 €).
             Sanctions absence : amende administrative (art. L. 131-3 C. conso).
@@ -160,7 +160,7 @@ export default async function Page() {
           <h2 className="mb-4 text-xl font-bold">Devis vs facture : quelles différences ?</h2>
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="bg-gray-100">
+              <tr className="bg-sand-100">
                 <th className="border p-2 text-left">Critère</th>
                 <th className="border p-2 text-left">Devis</th>
                 <th className="border p-2 text-left">Facture</th>
@@ -228,13 +228,13 @@ export default async function Page() {
           <div className="flex flex-col justify-center gap-3 md:flex-row">
             <Link
               href="/outils/devis-rc-pro"
-              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-teal-700 shadow-lg transition hover:bg-gray-100"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-teal-700 shadow-lg transition hover:bg-sand-100"
             >
               → Devis RC Pro (2 min)
             </Link>
             <Link
               href="/outils/devis-assurance-decennale"
-              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-teal-700 shadow-lg transition hover:bg-gray-100"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-teal-700 shadow-lg transition hover:bg-sand-100"
             >
               → Devis décennale (2 min)
             </Link>

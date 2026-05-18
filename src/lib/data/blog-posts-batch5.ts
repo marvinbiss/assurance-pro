@@ -72,7 +72,7 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
           "L'auto-entrepreneur (officiellement « micro-entrepreneur » depuis 2016) est un régime simplifié de la micro-entreprise individuelle. Au 1ᵉʳ janvier 2026, on compte 2,8 millions d'auto-entrepreneurs actifs en France selon l'URSSAF, soit +18 % par rapport à 2023. Les secteurs les plus représentés sont : services à la personne (28 %), BTP (19 %), conseil ou informatique (17 %), commerce ambulant (12 %).",
           "Le régime auto-entrepreneur a 3 caractéristiques fiscales majeures : (1) franchise en base de TVA jusqu'à 36 800 € HT pour les services et 91 900 € HT pour les ventes, (2) prélèvement libératoire forfaitaire URSSAF sur le chiffre d'affaires (12,3 % à 23,2 % selon activité), (3) abattement forfaitaire fiscal de 34 % à 71 % sur le CA pour calculer l'impôt sur le revenu.",
           "**ATTENTION** : malgré sa simplicité administrative, l'auto-entrepreneur est SOUMIS aux mêmes obligations d'assurance que toute autre forme juridique (SARL, SAS, EI classique). Le statut n'exonère PAS des obligations légales du Code des assurances et du Code civil.",
-          "Les obligations d'assurance varient selon 3 critères : (1) la nature de l'activité (BTP ou RC pro ou optionnel), (2) le chiffre d'affaires (pas d'obligation directe mais impact sur primes), (3) le contexte d'exercice (B2B ou B2C, en ligne ou physique).",
+          "Les obligations d'assurance varient selon 3 critères : (1) la nature de l'activité (BTP ou RC Pro ou optionnel), (2) le chiffre d'affaires (pas d'obligation directe mais impact sur primes), (3) le contexte d'exercice (B2B ou B2C, en ligne ou physique).",
         ],
       },
       {
@@ -121,8 +121,8 @@ export const BLOG_POSTS_BATCH_5: Record<string, BlogPost> = {
         id: 'multirisque',
         h2: '4. Multirisque pro — utile mais non-obligatoire',
         paragraphs: [
-          "La multirisque professionnelle n'est PAS obligatoire pour l'auto-entrepreneur, mais devient indispensable dès qu'il y a : (1) un local pro (boutique, atelier, cabinet), (2) du matériel de valeur (>2 000 €), (3) un stock de marchandises, (4) une activité au domicile non couverte par l'habitation classique.",
-          "Garanties incluses typiquement : incendie, dégât des eaux, vol ou vandalisme, bris de glace, perte d'exploitation, dommages matériel pro, RC exploitation (différente de la RC pro). Le tarif moyen 2026 d'une multirisque auto-entrepreneur est de ~25 € par mois pour un local de moins de 50 m² avec 10 000 € de matériel.",
+          "La Multirisque Professionnelle n'est PAS obligatoire pour l'auto-entrepreneur, mais devient indispensable dès qu'il y a : (1) un local pro (boutique, atelier, cabinet), (2) du matériel de valeur (>2 000 €), (3) un stock de marchandises, (4) une activité au domicile non couverte par l'habitation classique.",
+          "Garanties incluses typiquement : incendie, dégât des eaux, vol ou vandalisme, bris de glace, perte d'exploitation, dommages matériel pro, RC exploitation (différente de la RC Pro). Le tarif moyen 2026 d'une multirisque auto-entrepreneur est de ~25 € par mois pour un local de moins de 50 m² avec 10 000 € de matériel.",
         ],
       },
       {

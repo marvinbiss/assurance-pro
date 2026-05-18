@@ -600,7 +600,7 @@ export default function PlanDuSitePage() {
               </li>
               <li>
                 <Link href="/multirisque-pro" className={linkClass}>
-                  Multirisque professionnelle
+                  Multirisque Professionnelle
                 </Link>
               </li>
               <li>
@@ -1039,7 +1039,7 @@ export default function PlanDuSitePage() {
           </ul>
         </section>
 
-        <div className="mt-12 rounded-lg bg-gray-50 p-6 text-sm text-gray-600 dark:bg-charcoal-900 dark:text-sand-300">
+        <div className="mt-12 rounded-lg bg-sand-50 p-6 text-sm text-charcoal-600 dark:bg-charcoal-900 dark:text-sand-300">
           <p>
             <strong>Sitemap XML :</strong>{' '}
             <Link href="/sitemap.xml" className="font-semibold text-primary-700 underline">

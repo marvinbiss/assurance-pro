@@ -60,7 +60,7 @@ export default function MutuelleProPage() {
           body: (
             <table className="my-4 w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-sand-100">
                   <th className="border p-2 text-left">Poste</th>
                   <th className="border p-2 text-right">Essentiel</th>
                   <th className="border p-2 text-right">Confort</th>

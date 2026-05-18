@@ -104,7 +104,7 @@ export default async function Page() {
       </header>
 
       {/* TARIFS RÉFÉRENCE */}
-      <section className="border-b bg-gray-50 py-10">
+      <section className="border-b bg-sand-50 py-10">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Tarifs mutuelle pro 2026 par profil</h2>
           <table className="w-full border-collapse text-sm">
@@ -148,7 +148,7 @@ export default async function Page() {
               </tr>
             </tbody>
           </table>
-          <p className="mt-2 text-xs italic text-gray-600">
+          <p className="mt-2 text-xs italic text-charcoal-600">
             Loi Madelin (art. 154 bis CGI) : pour TNS au régime réel, cotisations mutuelle +
             prévoyance déductibles dans plafond commun ~5 800 € par an pour 60 k€ de bénéfice
             (économie d&apos;impôt nette ~1 750 € par an à TMI 30%).
@@ -160,7 +160,7 @@ export default async function Page() {
       <section className="py-12">
         <div className="container mx-auto max-w-3xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Démarrer mon comparatif mutuelle pro</h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             3 étapes — 2 minutes. Vos données sont transmises uniquement aux 3-5 mutuelles
             sélectionnées pour votre profil (TNS, dirigeant assimilé salarié, BTP). Conformité RGPD
             + ACPR 2024-R-03 (devoir de conseil tracé).
@@ -243,7 +243,7 @@ export default async function Page() {
           </h2>
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="bg-gray-100">
+              <tr className="bg-sand-100">
                 <th className="border p-2 text-left">Statut</th>
                 <th className="border p-2 text-left">Régime</th>
                 <th className="border p-2 text-left">Madelin éligible</th>

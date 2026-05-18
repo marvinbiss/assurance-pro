@@ -102,19 +102,19 @@ export default async function Page() {
       <section className="py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez votre profil</h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             Le calcul est <strong>100% côté navigateur</strong> — vos données ne sont pas envoyées à
             nos serveurs. Estimation indicative basée sur barèmes mutualisés DREES 2024 + grilles
             2026 partenaires (Pro BTP, Apicil, Malakoff Humanis, Harmonie Mutuelle, AG2R La
             Mondiale, Allianz, Generali, Klesia).
           </p>
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-lg border border-sand-200 bg-white p-6 shadow-sm">
             <TarifCalculator garantie="mutuelle-pro" />
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 py-12">
+      <section className="bg-sand-50 py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Comprendre les 4 niveaux de couverture</h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -255,7 +255,7 @@ export default async function Page() {
           </p>
           <Link
             href="/outils/comparateur-mutuelle-pro"
-            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-emerald-700 shadow-lg transition hover:bg-gray-100"
+            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-emerald-700 shadow-lg transition hover:bg-sand-100"
           >
             → Comparateur officiel mutuelle pro (2 min, ORIAS)
           </Link>

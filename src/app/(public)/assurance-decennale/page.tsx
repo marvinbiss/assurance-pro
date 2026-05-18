@@ -174,47 +174,47 @@ export default function PilierDecennalePage() {
               </p>
               <table className="my-4 w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border border-gray-300 p-2 text-left">Métier</th>
-                    <th className="border border-gray-300 p-2 text-right">CA &lt; 50k€</th>
-                    <th className="border border-gray-300 p-2 text-right">CA 100-250k€</th>
-                    <th className="border border-gray-300 p-2 text-right">CA &gt; 500k€</th>
+                  <tr className="bg-sand-100">
+                    <th className="border border-sand-300 p-2 text-left">Métier</th>
+                    <th className="border border-sand-300 p-2 text-right">CA &lt; 50k€</th>
+                    <th className="border border-sand-300 p-2 text-right">CA 100-250k€</th>
+                    <th className="border border-sand-300 p-2 text-right">CA &gt; 500k€</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border border-gray-300 p-2">Maçon</td>
-                    <td className="border border-gray-300 p-2 text-right">1 200-2 200€</td>
-                    <td className="border border-gray-300 p-2 text-right">2 000-3 500€</td>
-                    <td className="border border-gray-300 p-2 text-right">6 000-10 000€</td>
+                    <td className="border border-sand-300 p-2">Maçon</td>
+                    <td className="border border-sand-300 p-2 text-right">1 200-2 200€</td>
+                    <td className="border border-sand-300 p-2 text-right">2 000-3 500€</td>
+                    <td className="border border-sand-300 p-2 text-right">6 000-10 000€</td>
                   </tr>
                   <tr>
-                    <td className="border border-gray-300 p-2">Couvreur</td>
-                    <td className="border border-gray-300 p-2 text-right">1 500-2 500€</td>
-                    <td className="border border-gray-300 p-2 text-right">2 200-4 000€</td>
-                    <td className="border border-gray-300 p-2 text-right">7 000-12 000€</td>
+                    <td className="border border-sand-300 p-2">Couvreur</td>
+                    <td className="border border-sand-300 p-2 text-right">1 500-2 500€</td>
+                    <td className="border border-sand-300 p-2 text-right">2 200-4 000€</td>
+                    <td className="border border-sand-300 p-2 text-right">7 000-12 000€</td>
                   </tr>
                   <tr>
-                    <td className="border border-gray-300 p-2">Plombier</td>
-                    <td className="border border-gray-300 p-2 text-right">800-1 600€</td>
-                    <td className="border border-gray-300 p-2 text-right">1 300-2 200€</td>
-                    <td className="border border-gray-300 p-2 text-right">3 500-6 000€</td>
+                    <td className="border border-sand-300 p-2">Plombier</td>
+                    <td className="border border-sand-300 p-2 text-right">800-1 600€</td>
+                    <td className="border border-sand-300 p-2 text-right">1 300-2 200€</td>
+                    <td className="border border-sand-300 p-2 text-right">3 500-6 000€</td>
                   </tr>
                   <tr>
-                    <td className="border border-gray-300 p-2">Électricien</td>
-                    <td className="border border-gray-300 p-2 text-right">600-1 200€</td>
-                    <td className="border border-gray-300 p-2 text-right">750-1 800€</td>
-                    <td className="border border-gray-300 p-2 text-right">3 000-5 000€</td>
+                    <td className="border border-sand-300 p-2">Électricien</td>
+                    <td className="border border-sand-300 p-2 text-right">600-1 200€</td>
+                    <td className="border border-sand-300 p-2 text-right">750-1 800€</td>
+                    <td className="border border-sand-300 p-2 text-right">3 000-5 000€</td>
                   </tr>
                   <tr>
-                    <td className="border border-gray-300 p-2">Peintre</td>
-                    <td className="border border-gray-300 p-2 text-right">500-1 000€</td>
-                    <td className="border border-gray-300 p-2 text-right">600-1 200€</td>
-                    <td className="border border-gray-300 p-2 text-right">2 200-3 500€</td>
+                    <td className="border border-sand-300 p-2">Peintre</td>
+                    <td className="border border-sand-300 p-2 text-right">500-1 000€</td>
+                    <td className="border border-sand-300 p-2 text-right">600-1 200€</td>
+                    <td className="border border-sand-300 p-2 text-right">2 200-3 500€</td>
                   </tr>
                 </tbody>
               </table>
-              <p className="text-xs italic text-gray-600">
+              <p className="text-xs italic text-charcoal-600">
                 Tarif indicatif basé sur les données AQC SYCODÉS 2024 et les barèmes publics des
                 assureurs partenaires. Le tarif réel dépend de votre profil et fait l’objet d’un
                 devis personnalisé.

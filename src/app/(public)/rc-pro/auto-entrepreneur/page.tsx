@@ -100,7 +100,7 @@ export default function Page() {
                   <strong>Conseil financier</strong> (CGP, CIF, IOBSP) — homologation ACPR ou AMF
                 </li>
                 <li>
-                  <strong>Transport de personnes</strong> (VTC, taxi, LVC) — RC pro spécifique
+                  <strong>Transport de personnes</strong> (VTC, taxi, LVC) — RC Pro spécifique
                 </li>
                 <li>
                   <strong>Activités sportives encadrées</strong> (coach sportif, moniteur ski, prof
@@ -141,7 +141,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Activité auto-entrepreneur</th>
                     <th className="border p-2 text-left">CA déclaré</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
@@ -192,7 +192,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Tarifs HT, hors options (cyber, RC perso dirigeant, protection juridique). Devis
                 personnalisé recommandé via notre formulaire.
               </p>

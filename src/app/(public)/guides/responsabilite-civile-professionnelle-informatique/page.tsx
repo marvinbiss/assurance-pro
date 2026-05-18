@@ -13,7 +13,7 @@ export const revalidate = 86400
 const SLUG = 'guides / responsabilite-civile-professionnelle-informatique'
 const TITLE = 'Responsabilité civile professionnelle informatique 2026 — Guide complet'
 const TAGLINE =
-  'Tout sur la RC pro informatique : 5 risques spécifiques (RGPD, cyber, propriété intellectuelle, défaut conseil, perte données client). 6 assureurs IT spécialisés.'
+  'Tout sur la RC Pro informatique : 5 risques spécifiques (RGPD, cyber, propriété intellectuelle, défaut conseil, perte données client). 6 assureurs IT spécialisés.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -29,7 +29,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La responsabilité civile professionnelle informatique (RC pro IT) couvre 5 risques très spécifiques au secteur IT, qui n'existent pas sur une RC pro généraliste : (1) breach RGPD entraînant sanctions CNIL et notification massive clients, (2) cyberattaque ou ransomware sur l'infrastructure du client suite à une faille introduite par le freelance ou SSII, (3) atteinte à la propriété intellectuelle (utilisation code sous licence non conforme, plagiat), (4) défaut de conseil tech (architecture mal dimensionnée, choix techno obsolète), (5) perte ou altération de données client (mauvaise migration, bug de prod). Sinistralité ACPR 2024 secteur IT : 2,1% — sinistre moyen 65 000€ (top 5 des sinistres RC pro tous secteurs). Tarifs 2026 : 180-1 200 € par an pour freelance IT, 2 800-12 000 € par an pour SSII PME 5-50 salariés."
+      intro="La responsabilité civile professionnelle informatique (RC Pro IT) couvre 5 risques très spécifiques au secteur IT, qui n'existent pas sur une RC Pro généraliste : (1) breach RGPD entraînant sanctions CNIL et notification massive clients, (2) cyberattaque ou ransomware sur l'infrastructure du client suite à une faille introduite par le freelance ou SSII, (3) atteinte à la propriété intellectuelle (utilisation code sous licence non conforme, plagiat), (4) défaut de conseil tech (architecture mal dimensionnée, choix techno obsolète), (5) perte ou altération de données client (mauvaise migration, bug de prod). Sinistralité ACPR 2024 secteur IT : 2,1% — sinistre moyen 65 000€ (top 5 des sinistres RC Pro tous secteurs). Tarifs 2026 : 180-1 200 € par an pour freelance IT, 2 800-12 000 € par an pour SSII PME 5-50 salariés."
       legalReference="RGPD UE 2016/679 + Code propriété intellectuelle + art. 1147 C. civ. (responsabilité contractuelle)"
       isObligatoire={false}
       benefits={[

@@ -69,7 +69,7 @@ export default function Page() {
         {
           icon: '📜',
           title: 'Article 1792-6 C. civ.',
-          desc: 'Cumul possible avec décennale, biennale, dommages-ouvrage et RC pro',
+          desc: 'Cumul possible avec décennale, biennale, dommages-ouvrage et RC Pro',
         },
       ]}
       sections={[
@@ -122,7 +122,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Garantie</th>
                     <th className="border p-2 text-left">Durée</th>
                     <th className="border p-2 text-left">Couvre quoi</th>
@@ -268,7 +268,7 @@ export default function Page() {
                   mois suivant la publication au BODACC (sinon créance éteinte)
                 </li>
                 <li>
-                  <strong>Recours contre l&apos;assurance RC pro</strong> de l&apos;artisan : la RC
+                  <strong>Recours contre l&apos;assurance RC Pro</strong> de l&apos;artisan : la RC
                   pro travaux couvre les dommages causés au maître d&apos;ouvrage pendant le
                   chantier — vérifier si le désordre relève de cette garantie
                 </li>
@@ -279,12 +279,12 @@ export default function Page() {
                 </li>
                 <li>
                   <strong>Pour les désordres GPA pure</strong> (non décennaux) : risque réel de
-                  non-récupération si pas de RC pro travaux/si l&apos;assurance refuse
+                  non-récupération si pas de RC Pro travaux/si l&apos;assurance refuse
                 </li>
               </ul>
               <p>
                 <strong>Prévention</strong> : exiger AVANT le démarrage du chantier
-                l&apos;attestation décennale ET l&apos;attestation RC pro travaux de l&apos;artisan.
+                l&apos;attestation décennale ET l&apos;attestation RC Pro travaux de l&apos;artisan.
                 C&apos;est ce qui sécurise vos recours en cas de défaillance.
               </p>
             </>
@@ -314,7 +314,7 @@ export default function Page() {
         },
         {
           q: "L'entrepreneur doit-il être assuré pour la GPA ?",
-          a: "Non — la GPA est une obligation LÉGALE de l'entrepreneur, pas une assurance. C'est lui qui doit réparer à ses frais, sans intermédiation d'une compagnie. La RC pro travaux peut couvrir certains désordres GPA si l'artisan a souscrit une telle garantie, mais ce n'est pas obligatoire — d'où l'importance de vérifier la solidité financière de l'artisan AVANT le chantier.",
+          a: "Non — la GPA est une obligation LÉGALE de l'entrepreneur, pas une assurance. C'est lui qui doit réparer à ses frais, sans intermédiation d'une compagnie. La RC Pro travaux peut couvrir certains désordres GPA si l'artisan a souscrit une telle garantie, mais ce n'est pas obligatoire — d'où l'importance de vérifier la solidité financière de l'artisan AVANT le chantier.",
         },
         {
           q: 'Modèle de lettre GPA gratuit ?',

@@ -96,7 +96,7 @@ export default async function Page() {
       </header>
 
       {/* TARIFS RÉFÉRENCE */}
-      <section className="border-b bg-gray-50 py-10">
+      <section className="border-b bg-sand-50 py-10">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">
             Tarifs décennale 2026 par métier (auto-entrepreneur)
@@ -147,7 +147,7 @@ export default async function Page() {
               </tr>
             </tbody>
           </table>
-          <p className="mt-2 text-xs italic text-gray-600">
+          <p className="mt-2 text-xs italic text-charcoal-600">
             Sources : AQC SYCODÉS 2024 + barèmes 2026 nos 8 assureurs partenaires. Pour SARL avec
             salariés, multiplier par 2-4 selon effectif.
           </p>
@@ -158,7 +158,7 @@ export default async function Page() {
       <section className="py-12">
         <div className="container mx-auto max-w-3xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Démarrer mon devis décennale</h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             3 étapes — 2 minutes. Vos données sont transmises uniquement aux 3-5 assureurs BTP
             sélectionnés pour votre métier. Conformité RGPD + ACPR 2024-R-03.
           </p>

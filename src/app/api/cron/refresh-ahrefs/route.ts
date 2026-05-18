@@ -18,7 +18,7 @@ const SEEDS = [
   'assurance professionnelle',
   'assurance entreprise',
   'multirisque pro',
-  'multirisque professionnelle',
+  'Multirisque Professionnelle',
   'dommages ouvrage',
   'tous risques chantier',
   'assurance vtc',
@@ -42,7 +42,10 @@ export async function GET(req: NextRequest) {
     const quota = await getQuota()
     logger.info(`Ahrefs quota before refresh: ${quota.units_used}/${quota.units_limit}`)
 
-    const allKeywords = new Map<string, { volume: number; difficulty: number | null; cpc: number | null }>()
+    const allKeywords = new Map<
+      string,
+      { volume: number; difficulty: number | null; cpc: number | null }
+    >()
 
     for (const seed of SEEDS) {
       try {

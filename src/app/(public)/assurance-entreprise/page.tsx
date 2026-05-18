@@ -94,7 +94,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Taille</th>
                     <th className="border p-2 text-left">Garanties OBLIGATOIRES</th>
                     <th className="border p-2 text-left">Garanties RECOMMANDÉES</th>
@@ -108,7 +108,7 @@ export default function Page() {
                     <td className="border p-2">
                       Mutuelle collective (ANI), multirisque bail, auto pro
                     </td>
-                    <td className="border p-2">RC pro selon métier, cyber, RCMS</td>
+                    <td className="border p-2">RC Pro selon métier, cyber, RCMS</td>
                   </tr>
                   <tr>
                     <td className="border p-2">
@@ -148,7 +148,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Pack annuel HT</th>
                   </tr>

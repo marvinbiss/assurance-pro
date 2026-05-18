@@ -32,7 +32,7 @@ const TAGLINE =
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Assurance taxi : pack véhicule pro + RC pro chauffeur, ADS-licence, perte d'exploitation, garanties artisan-taxi. Tarifs à partir de 1 280€ par an. Comparatif 6 assureurs spécialisés (AXA, MMA, Allianz, Wakam, Stello). Devis ORIAS sous 24h.",
+    "Assurance taxi : pack véhicule pro + RC Pro chauffeur, ADS-licence, perte d'exploitation, garanties artisan-taxi. Tarifs à partir de 1 280€ par an. Comparatif 6 assureurs spécialisés (AXA, MMA, Allianz, Wakam, Stello). Devis ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -52,7 +52,7 @@ export default function Page() {
       benefits={[
         {
           icon: '🚖',
-          title: 'RC pro chauffeur',
+          title: 'RC Pro chauffeur',
           desc: 'Couverture passagers + tiers + sinistre véhicule. Plafond 5-10 M€ par sinistre',
         },
         {
@@ -79,7 +79,7 @@ export default function Page() {
               <p>Les 2 statuts sont assurés différemment :</p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Critère</th>
                     <th className="border p-2 text-left">TAXI (artisan)</th>
                     <th className="border p-2 text-left">VTC</th>
@@ -141,7 +141,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-left">Zone</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
@@ -189,7 +189,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : km annuels (forfait 30k ou 50k ou 80k+ km), antécédents accidentels 3
                 dernières années, ancienneté permis B + carte pro &gt; 3 ans (-15%), zone
                 géographique, modèle véhicule (Tesla Model S Paris : majoration +25%).
@@ -203,7 +203,7 @@ export default function Page() {
             <>
               <ol>
                 <li>
-                  <strong>RC pro circulation tous risques</strong> — base : passagers + tiers +
+                  <strong>RC Pro circulation tous risques</strong> — base : passagers + tiers +
                   véhicule. Plafond corporel ILLIMITÉ (obligation Code des assurances)
                 </li>
                 <li>
@@ -275,7 +275,7 @@ export default function Page() {
       faq={[
         {
           q: "L'assurance taxi est-elle obligatoire ?",
-          a: "Oui, doublement : (1) RC circulation obligatoire pour TOUT véhicule (Code des assurances L. 211-1), (2) RC pro chauffeur de taxi exigée pour conserver la carte professionnelle (Code des transports). Sanctions : 75 000€ amende + interdiction d'exercer + responsabilité personnelle illimitée en cas de sinistre corporel.",
+          a: "Oui, doublement : (1) RC circulation obligatoire pour TOUT véhicule (Code des assurances L. 211-1), (2) RC Pro chauffeur de taxi exigée pour conserver la carte professionnelle (Code des transports). Sanctions : 75 000€ amende + interdiction d'exercer + responsabilité personnelle illimitée en cas de sinistre corporel.",
         },
         {
           q: 'Combien coûte une assurance taxi en 2026 ?',
@@ -295,7 +295,7 @@ export default function Page() {
         },
         {
           q: 'Locataire-gérant taxi : qui doit assurer le véhicule ?',
-          a: "Le locataire-gérant (chauffeur) doit assurer SA RC pro chauffeur + son éventuelle indemnité d'arrêt. Le propriétaire de l'ADS reste responsable de l'assurance de la licence (sauf accord contraire dans le bail). À la signature du bail, demander une attestation d'assurance locataire-gérant taxi VALIDE — l'absence engage la responsabilité du propriétaire ADS.",
+          a: "Le locataire-gérant (chauffeur) doit assurer SA RC Pro chauffeur + son éventuelle indemnité d'arrêt. Le propriétaire de l'ADS reste responsable de l'assurance de la licence (sauf accord contraire dans le bail). À la signature du bail, demander une attestation d'assurance locataire-gérant taxi VALIDE — l'absence engage la responsabilité du propriétaire ADS.",
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance taxi ?',

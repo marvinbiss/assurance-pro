@@ -127,7 +127,7 @@ export default function Page() {
               <p>Pack complet (RC Pro + multirisque cabinet + cyber + auto-mission) :</p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Spécialité</th>
                     <th className="border p-2 text-right">Plafond RC</th>
                     <th className="border p-2 text-right">Pack annuel HT</th>
@@ -185,7 +185,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : antécédents sinistres 5 dernières années (-30 à +50%), volume de
                 patientèle, présence de matériel d&apos;imagerie, surface du cabinet, zone
                 géographique (Paris +20%). MACSF (mutuelle d&apos;assurance des professions de

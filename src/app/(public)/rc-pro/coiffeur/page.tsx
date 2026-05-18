@@ -17,7 +17,7 @@ export const revalidate = 86400
 const SLUG = 'rc-pro / coiffeur'
 const TITLE = 'RC Pro coiffeur — Tarifs 2026 (salon, barbier, à domicile)'
 const TAGLINE =
-  "L'assurance RC pro pour coiffeurs : salon coiffure, barbier, coiffeur à domicile. Couverture brûlure cuir chevelu, allergie produits, casse matériel client."
+  "L'assurance RC Pro pour coiffeurs : salon coiffure, barbier, coiffeur à domicile. Couverture brûlure cuir chevelu, allergie produits, casse matériel client."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -69,7 +69,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>
@@ -97,7 +97,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Pour salon avec local : ajouter multirisque local commercial 380-680€ par an. Voir{' '}
                 <Link href="/assurance-local-commercial" className="text-primary-600 underline">
                   /assurance-local-commercial

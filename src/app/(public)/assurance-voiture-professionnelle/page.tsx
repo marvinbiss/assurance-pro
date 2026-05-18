@@ -23,14 +23,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'assurance-voiture-professionnelle'
-const TITLE = 'Assurance voiture professionnelle — Tarifs 2026, RC pro + flotte'
+const TITLE = 'Assurance voiture professionnelle — Tarifs 2026, RC Pro + flotte'
 const TAGLINE =
   "L'assurance dédiée aux véhicules professionnels : auto-mission, utilitaire, VTC, flotte. Couverture RC obligatoire + tous risques pro + marchandises. Tarifs négociés."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance voiture professionnelle : RC pro circulation obligatoire + tous risques pro + marchandises transportées. Auto-mission, utilitaire, VTC, flotte. Tarifs négociés à partir de 580€ par an. Devis gratuit ORIAS sous 24h.',
+    'Assurance voiture professionnelle : RC Pro circulation obligatoire + tous risques pro + marchandises transportées. Auto-mission, utilitaire, VTC, flotte. Tarifs négociés à partir de 580€ par an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -76,7 +76,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Usage</th>
                     <th className="border p-2 text-left">Définition</th>
                     <th className="border p-2 text-left">Contrat type</th>
@@ -129,7 +129,7 @@ export default function Page() {
                       <strong>VTC — taxi</strong>
                     </td>
                     <td className="border p-2">Transport public de personnes (carte VTC ou ADS)</td>
-                    <td className="border p-2">RC pro chauffeur dédié</td>
+                    <td className="border p-2">RC Pro chauffeur dédié</td>
                     <td className="border p-2 text-right">
                       650 – 3 800 € par an (voir{' '}
                       <Link href="/assurance-vtc" className="text-primary-600 underline">

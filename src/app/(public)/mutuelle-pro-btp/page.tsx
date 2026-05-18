@@ -125,10 +125,10 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border border-gray-300 p-2 text-left">Profil</th>
-                    <th className="border border-gray-300 p-2 text-left">Formule</th>
-                    <th className="border border-gray-300 p-2 text-right">Cotisation mensuelle</th>
+                  <tr className="bg-sand-100">
+                    <th className="border border-sand-300 p-2 text-left">Profil</th>
+                    <th className="border border-sand-300 p-2 text-left">Formule</th>
+                    <th className="border border-sand-300 p-2 text-right">Cotisation mensuelle</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -159,7 +159,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Tarifs indicatifs hors sur-complémentaires (médecines douces, optique premium).
                 Devis personnalisé recommandé via notre formulaire — gratuit, sans engagement,
                 conseil ORIAS sous 24h.
@@ -197,7 +197,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Assureur</th>
                     <th className="border p-2 text-left">Spécialité</th>
                     <th className="border p-2 text-left">Avantage clé</th>

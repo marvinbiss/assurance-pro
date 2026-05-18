@@ -25,7 +25,7 @@ export function getOrganizationSchema() {
     knowsAbout: [
       'Garantie décennale BTP',
       'Responsabilité civile professionnelle',
-      'Multirisque professionnelle',
+      'Multirisque Professionnelle',
       'Dommages-ouvrage',
       'Tous Risques Chantier',
       'Mutuelle santé TNS Madelin',

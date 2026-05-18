@@ -56,7 +56,7 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
       <div className="container mx-auto max-w-3xl px-4">
-        <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-gray-600">
+        <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-charcoal-600">
           <Link href="/" className="hover:underline">
             Accueil
           </Link>{' '}
@@ -65,12 +65,12 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
             Équipe
           </Link>{' '}
           ›{' '}
-          <span className="text-gray-900">
+          <span className="text-charcoal-900">
             {m.prenom} {m.nom}
           </span>
         </nav>
 
-        <header className="mb-6 border-b border-gray-200 pb-6">
+        <header className="mb-6 border-b border-sand-200 pb-6">
           <div className="flex items-start gap-5">
             <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-primary-700">
               {m.prenom.charAt(0)}
@@ -80,9 +80,9 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
               <h1 className="mb-1 text-2xl font-bold md:text-3xl">
                 {m.prenom} {m.nom}
               </h1>
-              <p className="mb-2 text-gray-600">{m.poste}</p>
+              <p className="mb-2 text-charcoal-600">{m.poste}</p>
               {m.oriasNumber && (
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-charcoal-500">
                   N° ORIAS&nbsp;:{' '}
                   <a
                     href="https://www.orias.fr"
@@ -131,7 +131,7 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
                 <li key={c}>• {c}</li>
               ))}
             </ul>
-            <p className="mt-2 text-xs text-gray-500">Langues&nbsp;: {m.langues.join(', ')}</p>
+            <p className="mt-2 text-xs text-charcoal-500">Langues&nbsp;: {m.langues.join(', ')}</p>
           </Block>
         </section>
 
@@ -150,19 +150,19 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
         )}
 
         {others.length > 0 && (
-          <section className="border-t border-gray-200 pt-6">
+          <section className="border-t border-sand-200 pt-6">
             <h2 className="mb-3 text-lg font-bold">Autres membres de l&apos;équipe</h2>
             <ul className="grid grid-cols-1 gap-3 text-sm md:grid-cols-3">
               {others.map((o) => (
                 <li key={o.slug}>
                   <Link
                     href={`/equipe/${o.slug}`}
-                    className="block rounded-lg border border-gray-200 bg-white p-3 transition hover:shadow-md"
+                    className="block rounded-lg border border-sand-200 bg-white p-3 transition hover:shadow-md"
                   >
-                    <div className="font-semibold text-gray-900">
+                    <div className="font-semibold text-charcoal-900">
                       {o.prenom} {o.nom}
                     </div>
-                    <div className="text-xs text-gray-500">{o.poste}</div>
+                    <div className="text-xs text-charcoal-500">{o.poste}</div>
                   </Link>
                 </li>
               ))}
@@ -176,8 +176,8 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-4">
-      <h3 className="mb-2 text-sm font-bold text-gray-900">{title}</h3>
+    <div className="rounded-lg border border-sand-200 bg-white p-4">
+      <h3 className="mb-2 text-sm font-bold text-charcoal-900">{title}</h3>
       {children}
     </div>
   )

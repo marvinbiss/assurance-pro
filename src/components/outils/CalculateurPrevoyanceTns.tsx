@@ -44,7 +44,7 @@ export function CalculateurPrevoyanceTns() {
             id="p-prof"
             value={profession}
             onChange={(e) => setProfession(e.target.value as Profession)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(PROFESSION_LABELS) as Profession[]).map((p) => (
               <option key={p} value={p}>
@@ -61,7 +61,7 @@ export function CalculateurPrevoyanceTns() {
             id="p-formule"
             value={formule}
             onChange={(e) => setFormule(e.target.value as Formule)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(FORMULE_LABELS) as Formule[]).map((f) => (
               <option key={f} value={f}>
@@ -84,7 +84,7 @@ export function CalculateurPrevoyanceTns() {
             onChange={(e) => setAge(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>20</span>
             <span>67</span>
           </div>
@@ -104,7 +104,7 @@ export function CalculateurPrevoyanceTns() {
             onChange={(e) => setRevenus(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>15 k€</span>
             <span>300 k€</span>
           </div>
@@ -124,7 +124,7 @@ export function CalculateurPrevoyanceTns() {
             onChange={(e) => setCapitalDeces(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>20 k€</span>
             <span>1 M€</span>
           </div>
@@ -144,14 +144,14 @@ export function CalculateurPrevoyanceTns() {
       </div>
 
       <div className="mt-6 rounded-lg border-2 border-amber-300 bg-gradient-to-br from-amber-50 to-orange-50 p-6">
-        <p className="mb-2 text-sm text-gray-600">
+        <p className="mb-2 text-sm text-charcoal-600">
           Estimation cotisation prévoyance TNS Madelin 2026
         </p>
         <p className="mb-2 text-4xl font-extrabold text-amber-900 md:text-5xl">
           {r.cotisationMensuelle.toLocaleString('fr-FR')} €
           <span className="text-2xl"> par mois</span>
         </p>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-charcoal-700">
           Soit <strong>{r.cotisationAnnuelle.toLocaleString('fr-FR')} € par an</strong>. Couverture
           basée sur barèmes 2026 de 7 assureurs partenaires (Generali, MMA Pro, AXA Pro, Allianz,
           Pro BTP, Apicil, Swisslife).
@@ -161,19 +161,19 @@ export function CalculateurPrevoyanceTns() {
           <p className="mb-3 text-sm font-semibold text-amber-900">Vos couvertures incluses</p>
           <div className="grid grid-cols-2 gap-3 text-sm md:grid-cols-3">
             <div className="rounded bg-amber-100 p-3">
-              <p className="text-xs text-gray-600">IJ arrêt maladie</p>
+              <p className="text-xs text-charcoal-600">IJ arrêt maladie</p>
               <p className="text-lg font-bold text-amber-900">
                 {r.ijQuotidienneCouverte} € par jour
               </p>
             </div>
             <div className="rounded bg-amber-100 p-3">
-              <p className="text-xs text-gray-600">Rente invalidité totale</p>
+              <p className="text-xs text-charcoal-600">Rente invalidité totale</p>
               <p className="text-lg font-bold text-amber-900">
                 {r.rentesInvaliditeMensuelle.toLocaleString('fr-FR')} € par mois
               </p>
             </div>
             <div className="rounded bg-amber-100 p-3">
-              <p className="text-xs text-gray-600">Capital décès</p>
+              <p className="text-xs text-charcoal-600">Capital décès</p>
               <p className="text-lg font-bold text-amber-900">
                 {r.capitalDecesEffectif.toLocaleString('fr-FR')} €
               </p>
@@ -203,7 +203,7 @@ export function CalculateurPrevoyanceTns() {
           </p>
         </div>
 
-        <details className="mt-4 text-xs text-gray-600">
+        <details className="mt-4 text-xs text-charcoal-600">
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
@@ -224,7 +224,7 @@ export function CalculateurPrevoyanceTns() {
         </a>
       </div>
 
-      <p className="text-xs italic text-gray-500">
+      <p className="text-xs italic text-charcoal-500">
         ⚠️ Estimation <strong>indicative</strong>. Tarif réel variable ±20% selon : questionnaire
         santé détaillé (antécédents médicaux 5 ans), pratiques sportives à risque (parapente,
         plongée, moto sport), zone géographique (DOM ou Corse). Conformité ACPR 2024-R-02.

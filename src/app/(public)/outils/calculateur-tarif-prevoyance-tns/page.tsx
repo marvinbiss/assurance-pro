@@ -94,21 +94,21 @@ export default async function Page() {
       <section className="py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez votre profil TNS</h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             Le calcul est <strong>100% côté navigateur</strong>. Estimation indicative basée sur
             barèmes 2026 des 7 assureurs prévoyance TNS partenaires. Plafond Madelin 2026 :{' '}
             <strong>3,75% PASS + 7%</strong> au-delà ≈ 7 200 € par an déductibles pour CA 100k€.
           </p>
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-lg border border-sand-200 bg-white p-6 shadow-sm">
             <CalculateurPrevoyanceTns />
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 py-12">
+      <section className="bg-sand-50 py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Pourquoi la prévoyance TNS est INDISPENSABLE</h2>
-          <p className="mb-4 text-sm text-gray-700">
+          <p className="mb-4 text-sm text-charcoal-700">
             Contrairement aux salariés (Sécu + prévoyance employeur), les TNS sont{' '}
             <strong>très peu couverts par le régime obligatoire</strong> :
           </p>
@@ -192,7 +192,7 @@ export default async function Page() {
           <div className="flex flex-col justify-center gap-3 md:flex-row">
             <Link
               href="/prevoyance-artisan"
-              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-amber-700 shadow-lg transition hover:bg-gray-100"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-amber-700 shadow-lg transition hover:bg-sand-100"
             >
               → Pilier prévoyance artisan / TNS
             </Link>

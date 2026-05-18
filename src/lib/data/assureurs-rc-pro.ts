@@ -38,7 +38,7 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
     noteGlobale: 4.7,
     forces: [
       'Souscription 100% en ligne (5 min)',
-      'Spécialiste cyber + RC pro IT',
+      'Spécialiste cyber + RC Pro IT',
       'Plafonds élevés (5M€+ standard)',
       'Service client anglophone',
     ],
@@ -59,7 +59,7 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
     id: 'mma-pro',
     nom: 'MMA Pro',
     groupe: 'Covéa (MMA + MAAF + GMF)',
-    sloganRcPro: 'Mutualiste française n°1 RC pro TPE',
+    sloganRcPro: 'Mutualiste française n°1 RC Pro TPE',
     agrement: 'ACPR',
     noteGlobale: 4.5,
     forces: [
@@ -136,7 +136,7 @@ export const ASSUREURS_RC_PRO: Assureur[] = [
     noteGlobale: 4.3,
     forces: [
       'Très fort sur professions médicales + paramédicales',
-      'Pack RC pro + prévoyance + retraite Madelin',
+      'Pack RC Pro + prévoyance + retraite Madelin',
       'Délais courts si dossier simple',
     ],
     faiblesses: ['Moins compétitif sur BTP', 'Tarifs moyens'],

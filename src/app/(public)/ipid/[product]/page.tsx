@@ -35,7 +35,7 @@ export default async function IpidProductPage(props: { params: Promise<Params> }
   return (
     <main className="min-h-screen bg-white py-12">
       <div className="container mx-auto max-w-3xl px-4">
-        <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-gray-600">
+        <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-charcoal-600">
           <Link href="/" className="hover:underline">
             Accueil
           </Link>{' '}
@@ -43,16 +43,16 @@ export default async function IpidProductPage(props: { params: Promise<Params> }
           <Link href="/ipid" className="hover:underline">
             IPID
           </Link>{' '}
-          › <span className="text-gray-900">{p.productName}</span>
+          › <span className="text-charcoal-900">{p.productName}</span>
         </nav>
 
-        <header className="mb-6 border-b border-gray-200 pb-6">
+        <header className="mb-6 border-b border-sand-200 pb-6">
           <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-primary-700">
             Document d&apos;Information Produit Assurance
           </p>
           <h1 className="mb-2 text-2xl font-bold md:text-3xl">{p.productName}</h1>
-          <p className="text-sm text-gray-600">{p.productType}</p>
-          <p className="text-sm text-gray-600">Distributeur : {p.insurer}</p>
+          <p className="text-sm text-charcoal-600">{p.productType}</p>
+          <p className="text-sm text-charcoal-600">Distributeur : {p.insurer}</p>
         </header>
 
         <Section title="De quel type d'assurance s'agit-il ?" icon="🛡️">
@@ -156,7 +156,7 @@ function Section({
   children: React.ReactNode
 }) {
   const toneClasses = {
-    neutral: 'border-gray-200 bg-white',
+    neutral: 'border-sand-200 bg-white',
     green: 'border-green-200 bg-green-50',
     red: 'border-red-200 bg-red-50',
     amber: 'border-amber-200 bg-amber-50',
@@ -169,7 +169,7 @@ function Section({
         </span>
         {title}
       </h2>
-      <div className="text-sm text-gray-800">{children}</div>
+      <div className="text-sm text-charcoal-800">{children}</div>
     </section>
   )
 }

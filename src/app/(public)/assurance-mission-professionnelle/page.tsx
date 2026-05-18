@@ -69,7 +69,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Critère</th>
                     <th className="border p-2 text-left">Individuelle (chaque salarié)</th>
                     <th className="border p-2 text-left">Collective (employeur)</th>
@@ -122,7 +122,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Effectif salariés</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>

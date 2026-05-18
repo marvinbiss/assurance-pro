@@ -128,7 +128,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Type de local + activité</th>
                     <th className="border p-2 text-right">Surface</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
@@ -177,7 +177,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables qui font monter la prime : zone à risque incendie (centre-ville
                 historique), stock haute valeur (&gt; 50 k€), absence de système d&apos;alarme ou
                 vidéosurveillance, ancienneté du local, antécédents sinistres. Réduction possible :
@@ -280,7 +280,7 @@ export default function Page() {
         },
         {
           q: 'Quelle est la différence entre assurance local commercial et multirisque pro (MRP) ?',
-          a: 'Aucune en pratique — ce sont les deux noms du même produit. « Assurance local commercial » est le nom marketing utilisé pour les commerces. « Multirisque professionnelle » (MRP) est le terme assurantiel technique, utilisé aussi pour les bureaux, ateliers, entrepôts. Le contrat couvre les mêmes garanties.',
+          a: 'Aucune en pratique — ce sont les deux noms du même produit. « Assurance local commercial » est le nom marketing utilisé pour les commerces. « Multirisque Professionnelle » (MRP) est le terme assurantiel technique, utilisé aussi pour les bureaux, ateliers, entrepôts. Le contrat couvre les mêmes garanties.',
         },
         {
           q: "Que couvre exactement la garantie « pertes d'exploitation » ?",

@@ -285,7 +285,7 @@ const METIERS_RC_PRO: readonly MetierOption[] = [
   { value: 'electricien-depannage', label: 'Électricien dépannage', base: 500, spread: 0.32 },
   // Statut générique
   { value: 'auto-entrepreneur', label: 'Auto-entrepreneur (autre)', base: 220, spread: 0.4 },
-  // Aliases pSEO BTP en RC Pro (généralement métiers BTP sans décennale mais avec RC pro)
+  // Aliases pSEO BTP en RC Pro (généralement métiers BTP sans décennale mais avec RC Pro)
   { value: 'macon', label: 'Maçon (RC Pro)', base: 280, spread: 0.4 },
   { value: 'electricien', label: 'Électricien (RC Pro)', base: 260, spread: 0.4 },
   { value: 'plombier', label: 'Plombier (RC Pro)', base: 260, spread: 0.4 },

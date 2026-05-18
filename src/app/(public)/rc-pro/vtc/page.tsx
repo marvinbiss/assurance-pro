@@ -13,7 +13,7 @@ export const revalidate = 86400
 const SLUG = 'rc-pro / vtc'
 const TITLE = 'RC Pro VTC — Tarifs 2026 (RC chauffeur, plafond illimité, passagers)'
 const TAGLINE =
-  "L'assurance RC pro spécifique VTC : RC chauffeur passagers + RC tiers + plafond corporel illimité. Obligation Code des transports."
+  "L'assurance RC Pro spécifique VTC : RC chauffeur passagers + RC tiers + plafond corporel illimité. Obligation Code des transports."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -44,7 +44,7 @@ export default function Page() {
         {
           icon: '⚖️',
           title: 'Plafond illimité',
-          desc: 'Plafond corporel ILLIMITÉ par obligation légale (vs 1,5-10 M€ pour RC pro standard)',
+          desc: 'Plafond corporel ILLIMITÉ par obligation légale (vs 1,5-10 M€ pour RC Pro standard)',
         },
         {
           icon: '👥',
@@ -64,7 +64,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Garantie</th>
                     <th className="border p-2 text-left">RC Pro VTC seule</th>
                     <th className="border p-2 text-left">Assurance VTC complète</th>
@@ -72,7 +72,7 @@ export default function Page() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border p-2">RC pro circulation (passagers + tiers)</td>
+                    <td className="border p-2">RC Pro circulation (passagers + tiers)</td>
                     <td className="border p-2">✅</td>
                     <td className="border p-2">✅</td>
                   </tr>

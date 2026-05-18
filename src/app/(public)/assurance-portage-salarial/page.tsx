@@ -1,6 +1,6 @@
 /**
  * Pilier — Assurance portage salarial
- * KW long-tail : "portage salarial assurance", "freelance portage RC pro"
+ * KW long-tail : "portage salarial assurance", "freelance portage RC Pro"
  */
 
 import type { Metadata } from 'next'
@@ -17,12 +17,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-portage-salarial'
 const TITLE = 'Assurance portage salarial — Couverture freelance porté 2026'
 const TAGLINE =
-  "L'assurance pour freelances en portage salarial : RC pro incluse par société de portage, mutuelle collective, prévoyance. Garanties souvent INSUFFISANTES — comment compléter."
+  "L'assurance pour freelances en portage salarial : RC Pro incluse par société de portage, mutuelle collective, prévoyance. Garanties souvent INSUFFISANTES — comment compléter."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance portage salarial : RC pro incluse par société de portage (souvent plafond 1,5 M€ INSUFFISANT pour clients institutionnels). Mutuelle collective + prévoyance + chômage. Comment compléter avec RC pro 5 M€ individuelle. Guide ORIAS.',
+    'Assurance portage salarial : RC Pro incluse par société de portage (souvent plafond 1,5 M€ INSUFFISANT pour clients institutionnels). Mutuelle collective + prévoyance + chômage. Comment compléter avec RC Pro 5 M€ individuelle. Guide ORIAS.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -48,7 +48,7 @@ export default function Page() {
         },
         {
           icon: '⚠️',
-          title: 'RC pro souvent insuffisante',
+          title: 'RC Pro souvent insuffisante',
           desc: 'Plafond standard 1,5 M€ — insuffisant pour clients institutionnels',
         },
         {
@@ -69,7 +69,7 @@ export default function Page() {
             <>
               <ul>
                 <li>
-                  <strong>RC pro collective</strong> : plafond standard 1,5 M€ par sinistre (à
+                  <strong>RC Pro collective</strong> : plafond standard 1,5 M€ par sinistre (à
                   VÉRIFIER auprès de votre société de portage)
                 </li>
                 <li>

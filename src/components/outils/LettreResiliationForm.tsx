@@ -14,7 +14,10 @@ const PdfDownloadButton = dynamic(
     import('./LettreResiliationPdfDownloadButton').then(
       (m) => m.LettreResiliationPdfDownloadButton
     ),
-  { ssr: false, loading: () => <span className="text-sm text-gray-500">Préparation du PDF…</span> }
+  {
+    ssr: false,
+    loading: () => <span className="text-sm text-charcoal-500">Préparation du PDF…</span>,
+  }
 )
 
 const schema = z.object({
@@ -59,7 +62,7 @@ const defaultData: FormData = {
 const TYPES_ASSURANCE = [
   'Responsabilité Civile Professionnelle (RC Pro)',
   'Décennale (Loi Spinetta)',
-  'Multirisque professionnelle',
+  'Multirisque Professionnelle',
   'Mutuelle santé TNS',
   'Prévoyance TNS',
   'Cyber assurance',
@@ -99,7 +102,7 @@ export function LettreResiliationForm() {
   return (
     <form onSubmit={handleGenerate} className="space-y-4">
       {/* Émetteur (vous) */}
-      <fieldset className="rounded-lg border border-gray-200 p-4">
+      <fieldset className="rounded-lg border border-sand-200 p-4">
         <legend className="px-2 text-sm font-semibold">1. Vos coordonnées (émetteur)</legend>
         <div className="mt-2 grid gap-3 md:grid-cols-2">
           <Field label="Prénom" required error={errors.assurePrenom}>
@@ -107,7 +110,7 @@ export function LettreResiliationForm() {
               type="text"
               value={data.assurePrenom}
               onChange={(e) => update('assurePrenom', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -116,7 +119,7 @@ export function LettreResiliationForm() {
               type="text"
               value={data.assureNom}
               onChange={(e) => update('assureNom', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -125,7 +128,7 @@ export function LettreResiliationForm() {
               type="text"
               value={data.assureAdresse}
               onChange={(e) => update('assureAdresse', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -136,7 +139,7 @@ export function LettreResiliationForm() {
                 value={data.assureCp}
                 onChange={(e) => update('assureCp', e.target.value)}
                 placeholder="75001"
-                className="w-full rounded border border-gray-300 px-3 py-2 font-mono"
+                className="w-full rounded border border-sand-300 px-3 py-2 font-mono"
                 required
               />
             </Field>
@@ -146,7 +149,7 @@ export function LettreResiliationForm() {
                   type="text"
                   value={data.assureVille}
                   onChange={(e) => update('assureVille', e.target.value)}
-                  className="w-full rounded border border-gray-300 px-3 py-2"
+                  className="w-full rounded border border-sand-300 px-3 py-2"
                   required
                 />
               </Field>
@@ -156,7 +159,7 @@ export function LettreResiliationForm() {
       </fieldset>
 
       {/* Destinataire (assureur) */}
-      <fieldset className="rounded-lg border border-gray-200 p-4">
+      <fieldset className="rounded-lg border border-sand-200 p-4">
         <legend className="px-2 text-sm font-semibold">
           2. Coordonnées de votre assureur (destinataire)
         </legend>
@@ -167,7 +170,7 @@ export function LettreResiliationForm() {
               value={data.assureurNom}
               onChange={(e) => update('assureurNom', e.target.value)}
               placeholder="Ex : AXA Pro, MAAF Pro, MMA Pro"
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -176,7 +179,7 @@ export function LettreResiliationForm() {
               type="text"
               value={data.assureurAdresse}
               onChange={(e) => update('assureurAdresse', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -186,7 +189,7 @@ export function LettreResiliationForm() {
                 type="text"
                 value={data.assureurCp}
                 onChange={(e) => update('assureurCp', e.target.value)}
-                className="w-full rounded border border-gray-300 px-3 py-2 font-mono"
+                className="w-full rounded border border-sand-300 px-3 py-2 font-mono"
                 required
               />
             </Field>
@@ -196,7 +199,7 @@ export function LettreResiliationForm() {
                   type="text"
                   value={data.assureurVille}
                   onChange={(e) => update('assureurVille', e.target.value)}
-                  className="w-full rounded border border-gray-300 px-3 py-2"
+                  className="w-full rounded border border-sand-300 px-3 py-2"
                   required
                 />
               </Field>
@@ -206,7 +209,7 @@ export function LettreResiliationForm() {
       </fieldset>
 
       {/* Contrat */}
-      <fieldset className="rounded-lg border border-gray-200 p-4">
+      <fieldset className="rounded-lg border border-sand-200 p-4">
         <legend className="px-2 text-sm font-semibold">3. Contrat à résilier</legend>
         <div className="mt-2 grid gap-3 md:grid-cols-2">
           <Field label="Numéro de police" required error={errors.numeroPolice}>
@@ -215,7 +218,7 @@ export function LettreResiliationForm() {
               value={data.numeroPolice}
               onChange={(e) => update('numeroPolice', e.target.value)}
               placeholder="Ex : POL-2024-XXXXXX"
-              className="w-full rounded border border-gray-300 px-3 py-2 font-mono"
+              className="w-full rounded border border-sand-300 px-3 py-2 font-mono"
               required
             />
           </Field>
@@ -223,7 +226,7 @@ export function LettreResiliationForm() {
             <select
               value={data.typeAssurance}
               onChange={(e) => update('typeAssurance', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
             >
               {TYPES_ASSURANCE.map((t) => (
                 <option key={t} value={t}>
@@ -237,7 +240,7 @@ export function LettreResiliationForm() {
               type="date"
               value={data.dateSouscription}
               onChange={(e) => update('dateSouscription', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
             <span className="mt-1 block text-xs text-amber-700">
@@ -253,10 +256,10 @@ export function LettreResiliationForm() {
               type="date"
               value={data.dateEffetResiliation}
               onChange={(e) => update('dateEffetResiliation', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
-            <span className="mt-1 block text-xs text-gray-500">
+            <span className="mt-1 block text-xs text-charcoal-500">
               Délai légal : 1 mois après réception par l&apos;assureur
             </span>
           </Field>
@@ -267,7 +270,7 @@ export function LettreResiliationForm() {
                 value={data.motif}
                 onChange={(e) => update('motif', e.target.value)}
                 placeholder="Ex : changement d'assureur, tarif trop élevé..."
-                className="w-full rounded border border-gray-300 px-3 py-2"
+                className="w-full rounded border border-sand-300 px-3 py-2"
               />
             </Field>
           </div>
@@ -292,7 +295,7 @@ export function LettreResiliationForm() {
         )}
       </div>
 
-      <p className="mt-4 text-xs italic text-gray-500">
+      <p className="mt-4 text-xs italic text-charcoal-500">
         ✅ Loi Hamon (17 mars 2014) — résiliation infra-annuelle, sans frais, sans motif. Lettre à
         imprimer + signer + envoyer en <strong>recommandé avec accusé de réception</strong>.
       </p>
@@ -313,7 +316,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1 block text-sm font-medium text-gray-700">
+      <span className="mb-1 block text-sm font-medium text-charcoal-700">
         {label}
         {required && <span className="text-red-500"> *</span>}
       </span>

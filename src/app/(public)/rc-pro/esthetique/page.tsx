@@ -16,7 +16,7 @@ export const revalidate = 86400
 const SLUG = 'rc-pro / esthetique'
 const TITLE = 'RC Pro esthéticienne — Tarifs 2026 (institut, à domicile, prothésiste)'
 const TAGLINE =
-  "L'assurance RC pro pour esthéticiennes : institut beauté, esthétique à domicile, prothésiste ongulaire, masseur bien-être. Couverture brûlure, allergie, blessure."
+  "L'assurance RC Pro pour esthéticiennes : institut beauté, esthétique à domicile, prothésiste ongulaire, masseur bien-être. Couverture brûlure, allergie, blessure."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -68,7 +68,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>

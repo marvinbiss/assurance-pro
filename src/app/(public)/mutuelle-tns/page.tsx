@@ -116,14 +116,14 @@ export default function Page() {
               <p>
                 Le plafond annuel de déduction des cotisations Madelin santé est calculé ainsi :
               </p>
-              <p className="my-3 border-l-4 border-primary-500 bg-gray-50 p-3">
+              <p className="my-3 border-l-4 border-primary-500 bg-sand-50 p-3">
                 <strong>Plafond Madelin santé = 3,75% du PASS + 7% du bénéfice imposable</strong>,
                 dans la limite de 3% de 8 PASS.
               </p>
               <p>Avec PASS 2026 = 47 100 € (estimé), cela donne :</p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2">Bénéfice imposable</th>
                     <th className="border p-2 text-right">Plafond Madelin santé annuel</th>
                   </tr>
@@ -151,7 +151,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Important : ce plafond est COMMUN à la santé ET à la prévoyance Madelin. Si vous
                 cotisez 4 000€ par an en prévoyance, il vous reste seulement (plafond − 4 000€) pour
                 la santé.
@@ -165,7 +165,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2">Assureur</th>
                     <th className="border p-2">Tarif entrée 35 ans</th>
                     <th className="border p-2">Atout</th>

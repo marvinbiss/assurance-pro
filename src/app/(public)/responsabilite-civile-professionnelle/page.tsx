@@ -130,7 +130,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Activité</th>
                     <th className="border p-2 text-right">Plafond recommandé — sinistre</th>
                     <th className="border p-2 text-right">Plafond annuel cumulé</th>
@@ -188,7 +188,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Garantie</th>
                     <th className="border p-2 text-left">Couvre</th>
                     <th className="border p-2 text-left">Pour qui</th>

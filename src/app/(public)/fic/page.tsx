@@ -45,11 +45,11 @@ export default function FicPage() {
 
       <div className="container mx-auto max-w-3xl px-4 py-14">
         <article className="pilier-prose prose prose-lg max-w-none text-charcoal-700">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-charcoal-500">
             Document précontractuel — Art. L. 521-2 du Code des assurances
           </p>
           <h1>Fiche d&apos;Information Précontractuelle (FIC)</h1>
-          <p className="text-sm text-gray-500">Version : 30 avril 2026</p>
+          <p className="text-sm text-charcoal-500">Version : 30 avril 2026</p>
 
           <p>
             Conformément à l&apos;<strong>article L. 521-2 du Code des assurances</strong>{' '}
@@ -187,7 +187,7 @@ export default function FicPage() {
             <a href="mailto:contact@vivos-assurance.fr">contact@vivos-assurance.fr</a>.
           </p>
 
-          <p className="mt-8 text-xs italic text-gray-500">
+          <p className="mt-8 text-xs italic text-charcoal-500">
             Cette fiche est conforme à l&apos;art. L. 521-2 du Code des assurances et à la
             Recommandation ACPR 2018-R-01 sur l&apos;information précontractuelle.
           </p>

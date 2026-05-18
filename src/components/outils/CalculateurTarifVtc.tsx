@@ -65,7 +65,7 @@ export function CalculateurTarifVtc() {
             id="v-profil"
             value={profil}
             onChange={(e) => setProfil(e.target.value as Profil)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(PROFIL_LABELS) as Profil[]).map((p) => (
               <option key={p} value={p}>
@@ -82,7 +82,7 @@ export function CalculateurTarifVtc() {
             id="v-zone"
             value={zone}
             onChange={(e) => setZone(e.target.value as Zone)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(ZONE_LABELS) as Zone[]).map((z) => (
               <option key={z} value={z}>
@@ -99,7 +99,7 @@ export function CalculateurTarifVtc() {
             id="v-formule"
             value={formule}
             onChange={(e) => setFormule(e.target.value as Formule)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(FORMULE_LABELS) as Formule[]).map((f) => (
               <option key={f} value={f}>
@@ -116,7 +116,7 @@ export function CalculateurTarifVtc() {
             id="v-vehicule"
             value={vehicule}
             onChange={(e) => setVehicule(e.target.value as Vehicule)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(VEHICULE_LABELS) as Vehicule[]).map((v) => (
               <option key={v} value={v}>
@@ -139,7 +139,7 @@ export function CalculateurTarifVtc() {
             onChange={(e) => setAgeChauffeur(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>21</span>
             <span>70</span>
           </div>
@@ -161,7 +161,7 @@ export function CalculateurTarifVtc() {
             onChange={(e) => setAncienneteVTC(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>Nouveau</span>
             <span>20+</span>
           </div>
@@ -183,7 +183,7 @@ export function CalculateurTarifVtc() {
             onChange={(e) => setAncienneteB(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>1 an</span>
             <span>50+</span>
           </div>
@@ -202,7 +202,7 @@ export function CalculateurTarifVtc() {
             onChange={(e) => setEffectifChauffeurs(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>Solo</span>
             <span>20+ flotte</span>
           </div>
@@ -215,7 +215,7 @@ export function CalculateurTarifVtc() {
             id="v-antecedents"
             value={antecedents}
             onChange={(e) => setAntecedents(e.target.value as Antecedents)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(ANTECEDENTS_LABELS) as Antecedents[]).map((a) => (
               <option key={a} value={a}>
@@ -227,14 +227,14 @@ export function CalculateurTarifVtc() {
       </div>
 
       <div className="mt-6 rounded-lg border-2 border-violet-300 bg-gradient-to-br from-violet-50 to-fuchsia-50 p-6">
-        <p className="mb-2 text-sm text-gray-600">
+        <p className="mb-2 text-sm text-charcoal-600">
           Estimation tarif assurance VTC 2026 (annuel HT)
         </p>
         <p className="mb-2 text-4xl font-extrabold text-violet-900 md:text-5xl">
           {r.fourchetteBasse.toLocaleString('fr-FR')} € —{' '}
           {r.fourchetteHaute.toLocaleString('fr-FR')} €
         </p>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-charcoal-700">
           Médiane indicative :{' '}
           <strong>{r.fourchetteMediane.toLocaleString('fr-FR')} € par an</strong> (≈{' '}
           {Math.round(r.fourchetteMediane / 12).toLocaleString('fr-FR')} € par mois). Fourchette
@@ -242,7 +242,7 @@ export function CalculateurTarifVtc() {
           Wakam, MMA, AMV, Opteven Mobility). Devis officiel personnalisé sous 24h.
         </p>
 
-        <details className="mt-4 text-xs text-gray-600">
+        <details className="mt-4 text-xs text-charcoal-600">
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
@@ -265,7 +265,7 @@ export function CalculateurTarifVtc() {
         </a>
       </div>
 
-      <p className="text-xs italic text-gray-500">
+      <p className="text-xs italic text-charcoal-500">
         ⚠️ Estimation <strong>indicative</strong> — pas un devis officiel. Tarif réel variable ±20%
         selon : carte VTC active (préfecture), affiliation plateforme (Uber, Bolt, Heetch),
         kilométrage annuel, garanties optionnelles (protection juridique pénale, perte de licence,

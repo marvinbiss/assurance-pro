@@ -28,14 +28,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'assurance-restaurant'
-const TITLE = "Assurance restaurant — Multirisque, RC pro, perte d'exploitation 2026"
+const TITLE = "Assurance restaurant — Multirisque, RC Pro, perte d'exploitation 2026"
 const TAGLINE =
   "L'assurance professionnelle dédiée aux restaurants, brasseries, pizzerias, food trucks : couverture incendie cuisine, intoxication alimentaire, perte d'exploitation, RC client. Tarifs négociés."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Assurance restaurant : multirisque pro (incendie cuisine, vol, dégâts eaux), RC pro intoxication alimentaire, perte d'exploitation, RC client. Tarifs négociés à partir de 680 € par an. Devis gratuit ORIAS sous 24h.",
+    "Assurance restaurant : multirisque pro (incendie cuisine, vol, dégâts eaux), RC Pro intoxication alimentaire, perte d'exploitation, RC client. Tarifs négociés à partir de 680 € par an. Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
@@ -51,7 +51,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance restaurant est un pack multirisque professionnel spécifiquement conçu pour les établissements de restauration : restaurants traditionnels, brasseries, bistrots, pizzerias, food trucks, restaurants rapides (kebab, sushi), traiteurs, gîtes-restaurants. Elle combine la couverture multirisque du local (incendie cuisine, vol, dégâts des eaux, événements climatiques) avec une RC pro spécifique au métier (intoxication alimentaire, allergies alimentaires non signalées, casse de matériel client) et une garantie pertes d'exploitation calibrée sur la saisonnalité du secteur. Les tarifs 2026 démarrent à 680 € HT par an pour un restaurant traditionnel de 40 couverts en province et peuvent monter à 3 200 € par an pour une brasserie parisienne avec licence IV (alcool fort) et terrasse. Cette page détaille les garanties indispensables, les obligations légales (HACCP, licences débit de boissons), les tarifs par profil et les pièges à éviter (sous-déclaration du chiffre d'affaires, exclusion intoxication alimentaire massive)."
+      intro="L'assurance restaurant est un pack multirisque professionnel spécifiquement conçu pour les établissements de restauration : restaurants traditionnels, brasseries, bistrots, pizzerias, food trucks, restaurants rapides (kebab, sushi), traiteurs, gîtes-restaurants. Elle combine la couverture multirisque du local (incendie cuisine, vol, dégâts des eaux, événements climatiques) avec une RC Pro spécifique au métier (intoxication alimentaire, allergies alimentaires non signalées, casse de matériel client) et une garantie pertes d'exploitation calibrée sur la saisonnalité du secteur. Les tarifs 2026 démarrent à 680 € HT par an pour un restaurant traditionnel de 40 couverts en province et peuvent monter à 3 200 € par an pour une brasserie parisienne avec licence IV (alcool fort) et terrasse. Cette page détaille les garanties indispensables, les obligations légales (HACCP, licences débit de boissons), les tarifs par profil et les pièges à éviter (sous-déclaration du chiffre d'affaires, exclusion intoxication alimentaire massive)."
       legalReference="Article 1733 C. civ. (bail commercial) + Loi du 9 juillet 1991 (HACCP) + arrêté du 8 octobre 2013 (licences)"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -128,7 +128,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Type d&apos;établissement</th>
                     <th className="border p-2 text-right">Couverts — capacité</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
@@ -177,7 +177,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : surface salle + cuisine, présence terrasse, licence (II ou III ou IV),
                 ouverture nocturne, type de cuisine (friteuse augmente le risque), DSP ou
                 concession, antécédents sinistres. Un restaurant avec licence IV (alcool fort) paie
@@ -204,7 +204,7 @@ export default function Page() {
                   &gt; 6h) — facilement 5 000-15 000 € de pertes
                 </li>
                 <li>
-                  <strong>RC pro intoxication alimentaire</strong> — couvre les dommages corporels
+                  <strong>RC Pro intoxication alimentaire</strong> — couvre les dommages corporels
                   causés à un client (TIAC, allergie alimentaire, corps étranger). Plafond
                   recommandé : 1,5 M€
                 </li>
@@ -323,7 +323,7 @@ export default function Page() {
               <p>
                 <strong>Bon à savoir</strong> : depuis le décret 2024-318 (en vigueur 1er juillet
                 2024), les restaurants servant plus de 50 couverts par jour doivent mentionner sur
-                leur carte la présence d&apos;un contrat d&apos;assurance RC pro avec garantie
+                leur carte la présence d&apos;un contrat d&apos;assurance RC Pro avec garantie
                 intoxication alimentaire (obligation d&apos;information consommateur).
               </p>
             </>
@@ -333,7 +333,7 @@ export default function Page() {
       faq={[
         {
           q: "L'assurance restaurant est-elle obligatoire ?",
-          a: 'Pas légalement (sauf cas particuliers : copropriété, ICPE > 200 couverts), mais OBLIGATOIRE CONTRACTUELLEMENT dans 100% des baux commerciaux signés en France pour la partie multirisque local. La RC pro intoxication alimentaire est exigée par les fournisseurs principaux (Métro, Coca, etc.) avant ouverture compte pro.',
+          a: 'Pas légalement (sauf cas particuliers : copropriété, ICPE > 200 couverts), mais OBLIGATOIRE CONTRACTUELLEMENT dans 100% des baux commerciaux signés en France pour la partie multirisque local. La RC Pro intoxication alimentaire est exigée par les fournisseurs principaux (Métro, Coca, etc.) avant ouverture compte pro.',
         },
         {
           q: "Combien coûte l'assurance d'un restaurant en 2026 ?",
@@ -353,7 +353,7 @@ export default function Page() {
         },
         {
           q: 'Food truck : quelle assurance spécifique ?',
-          a: 'Triple couverture nécessaire : (1) RC pro restauration + intoxication alimentaire, (2) Multirisque du véhicule (camion + équipement cuisine + stock), (3) RC exploitation pour les emplacements (foires, événements, marchés). Tarif moyen 2026 : 480-880€ par an pour un food truck en exploitation 200 jours par an. Vérifier la couverture en cas de stationnement la nuit (effraction, vol, incendie criminel).',
+          a: 'Triple couverture nécessaire : (1) RC Pro restauration + intoxication alimentaire, (2) Multirisque du véhicule (camion + équipement cuisine + stock), (3) RC exploitation pour les emplacements (foires, événements, marchés). Tarif moyen 2026 : 480-880€ par an pour un food truck en exploitation 200 jours par an. Vérifier la couverture en cas de stationnement la nuit (effraction, vol, incendie criminel).',
         },
         {
           q: 'Combien de temps pour obtenir un devis assurance restaurant ?',

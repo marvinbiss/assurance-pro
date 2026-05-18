@@ -191,7 +191,7 @@ export default function Page() {
                 <li>Paiement de la 1re cotisation (CB ou virement)</li>
                 <li>Attestation conforme 2026 téléchargeable dans les 24h suivantes</li>
               </ol>
-              <p className="text-sm italic text-gray-600">
+              <p className="text-sm italic text-charcoal-600">
                 Procédure « Express 6h » disponible pour chantiers urgents (surcoût 80 € HT,
                 attestation provisoire le jour même + finale sous 6h).
               </p>

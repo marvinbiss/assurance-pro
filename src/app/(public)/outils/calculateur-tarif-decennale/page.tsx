@@ -111,23 +111,23 @@ export default async function Page() {
       <section className="py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez votre profil</h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             Le calcul est <strong>100% côté navigateur</strong> — vos données ne sont pas envoyées à
             nos serveurs. Estimation indicative basée sur barèmes mutualisés AQC SYCODÉS 2024 +
             grilles 2026 partenaires (SMABTP, MAAF Pro, April Pro, Hiscox, AXA Pro, Allianz, Wakam,
             Generali).
           </p>
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-lg border border-sand-200 bg-white p-6 shadow-sm">
             <TarifCalculator garantie="decennale" />
           </div>
         </div>
       </section>
 
       {/* MÉTHODOLOGIE */}
-      <section className="bg-gray-50 py-12">
+      <section className="bg-sand-50 py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Comment est calculé votre tarif ?</h2>
-          <p className="mb-4 text-sm text-gray-700">
+          <p className="mb-4 text-sm text-charcoal-700">
             Notre algorithme applique 7 coefficients aux tarifs base par métier. Chaque coefficient
             est <strong>publié en clair</strong> (conformité Recommandation ACPR 2024-R-02 sur la
             transparence tarifaire des intermédiaires d&apos;assurance).
@@ -199,7 +199,7 @@ export default async function Page() {
               </tr>
             </tbody>
           </table>
-          <p className="mt-4 text-xs italic text-gray-600">
+          <p className="mt-4 text-xs italic text-charcoal-600">
             Formule :{' '}
             <code className="rounded bg-white px-1 py-0.5">
               Tarif = Base × CA × Forme × Effectif × Antécédents × Franchise × Zone × Ancienneté
@@ -241,7 +241,7 @@ export default async function Page() {
           </p>
           <Link
             href="/outils/devis-assurance-decennale"
-            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
+            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-primary-700 shadow-lg transition hover:bg-sand-100"
           >
             → Devis officiel décennale (2 min, ORIAS)
           </Link>

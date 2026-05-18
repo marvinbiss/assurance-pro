@@ -79,7 +79,7 @@ export default function Page() {
               <p>ROI immédiat à partir de 4 véhicules :</p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Nombre véhicules</th>
                     <th className="border p-2 text-right">Coût individuel cumulé</th>
                     <th className="border p-2 text-right">Coût flotte mutualisée</th>
@@ -122,7 +122,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Type de flotte</th>
                     <th className="border p-2 text-right">Tarif moyen — véhicule — an</th>
                   </tr>
@@ -160,7 +160,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : kilométrage annuel global flotte, sinistralité historique (3 dernières
                 années), profil conducteurs (jeunes ou expérimentés ou formés eco-conduite), zone
                 géographique, présence de boîtiers télématiques (-15-25% possible avec « pay how you

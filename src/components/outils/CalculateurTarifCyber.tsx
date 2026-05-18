@@ -50,7 +50,7 @@ export function CalculateurTarifCyber() {
             id="cy-secteur"
             value={secteur}
             onChange={(e) => setSecteur(e.target.value as Secteur)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(SECTEUR_LABELS) as Secteur[]).map((s) => (
               <option key={s} value={s}>
@@ -58,7 +58,7 @@ export function CalculateurTarifCyber() {
               </option>
             ))}
           </select>
-          <p className="mt-1 text-xs italic text-gray-600">
+          <p className="mt-1 text-xs italic text-charcoal-600">
             Risque RGPD : {getRisqueRGPD(secteur)}
           </p>
         </div>
@@ -70,7 +70,7 @@ export function CalculateurTarifCyber() {
             id="cy-don"
             value={donneesVolume}
             onChange={(e) => setDonneesVolume(e.target.value as DonneesVolume)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(DONNEES_LABELS) as DonneesVolume[]).map((d) => (
               <option key={d} value={d}>
@@ -87,7 +87,7 @@ export function CalculateurTarifCyber() {
             id="cy-mat"
             value={maturite}
             onChange={(e) => setMaturite(e.target.value as MaturiteCyber)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(MATURITE_LABELS) as MaturiteCyber[]).map((m) => (
               <option key={m} value={m}>
@@ -104,7 +104,7 @@ export function CalculateurTarifCyber() {
             id="cy-plafond"
             value={plafond}
             onChange={(e) => setPlafond(Number(e.target.value) as Plafond)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {PLAFONDS.map((p) => (
               <option key={p} value={p}>
@@ -121,7 +121,7 @@ export function CalculateurTarifCyber() {
             id="cy-franchise"
             value={franchise}
             onChange={(e) => setFranchise(Number(e.target.value))}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {FRANCHISES.map((f) => (
               <option key={f.value} value={f.value}>
@@ -144,7 +144,7 @@ export function CalculateurTarifCyber() {
             onChange={(e) => setCa(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>50 k€</span>
             <span>20 M€</span>
           </div>
@@ -163,7 +163,7 @@ export function CalculateurTarifCyber() {
             onChange={(e) => setEffectif(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>1</span>
             <span>250+</span>
           </div>
@@ -171,14 +171,14 @@ export function CalculateurTarifCyber() {
       </div>
 
       <div className="mt-6 rounded-lg border-2 border-slate-400 bg-gradient-to-br from-slate-100 to-slate-200 p-6">
-        <p className="mb-2 text-sm text-gray-600">
+        <p className="mb-2 text-sm text-charcoal-600">
           Estimation tarif cyber assurance 2026 (annuel HT)
         </p>
         <p className="mb-2 text-4xl font-extrabold text-slate-900 md:text-5xl">
           {r.fourchetteBasse.toLocaleString('fr-FR')} € —{' '}
           {r.fourchetteHaute.toLocaleString('fr-FR')} €
         </p>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-charcoal-700">
           Médiane : <strong>{r.fourchetteMediane.toLocaleString('fr-FR')} € par an</strong> (≈{' '}
           {Math.round(r.fourchetteMediane / 12).toLocaleString('fr-FR')} € par mois). Plafond :{' '}
           <strong>{plafond.toLocaleString('fr-FR')} €</strong> par sinistre. Fourchette basée sur
@@ -192,25 +192,25 @@ export function CalculateurTarifCyber() {
           </p>
           <div className="grid grid-cols-3 gap-3 text-xs">
             <div className="rounded bg-red-50 p-2">
-              <p className="text-gray-600">TPE</p>
+              <p className="text-charcoal-600">TPE</p>
               <p className="font-bold text-red-700">15-50 k€</p>
             </div>
             <div className="rounded bg-orange-50 p-2">
-              <p className="text-gray-600">PME</p>
+              <p className="text-charcoal-600">PME</p>
               <p className="font-bold text-orange-700">80-300 k€</p>
             </div>
             <div className="rounded bg-rose-50 p-2">
-              <p className="text-gray-600">ETI</p>
+              <p className="text-charcoal-600">ETI</p>
               <p className="font-bold text-rose-700">500 k€-3 M€</p>
             </div>
           </div>
-          <p className="mt-2 text-xs text-gray-600">
+          <p className="mt-2 text-xs text-charcoal-600">
             ROI cyber assurance : breakeven dès le 1er sinistre. <strong>1 entreprise sur 4</strong>{' '}
             subit une cyberattaque dans ses 5 premières années (ANSSI).
           </p>
         </div>
 
-        <details className="mt-4 text-xs text-gray-600">
+        <details className="mt-4 text-xs text-charcoal-600">
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
@@ -232,7 +232,7 @@ export function CalculateurTarifCyber() {
         </a>
       </div>
 
-      <p className="text-xs italic text-gray-500">
+      <p className="text-xs italic text-charcoal-500">
         ⚠️ Estimation <strong>indicative</strong>. Tarif réel variable ±25% selon : audit cyber
         préalable (questionnaire ACPR), antécédents incidents 5 ans, dépendance fournisseurs cloud
         (AWS, Azure ou GCP), géographie data centers, présence DPO certifié. Conformité ACPR

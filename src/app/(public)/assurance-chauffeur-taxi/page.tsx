@@ -39,7 +39,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance chauffeur de taxi désigne l'ensemble des garanties PERSONNELLES dont a besoin un chauffeur (artisan ou salarié) au-delà de l'assurance véhicule pro et de la RC pro chauffeur. Spécifiquement adaptée aux risques du métier : longues stations assises (problèmes lombaires, troubles vasculaires), stress urbain et nocturne (cardiovasculaire), risque d'agression dans les zones sensibles (Paris IDF, grandes métropoles), arrêts de travail = revenus à zéro pour les artisans-taxis solo. Le pack standard combine : mutuelle santé adaptée (forfait kiné ou ostéo renforcé, médecines douces), prévoyance IJ dès J0 (compense la perte de revenu), garantie invalidité, protection juridique conducteur (défense en cas de litige client ou contrôle), garantie agression (capital décès ou invalidité majoré en cas d'agression). Les tarifs 2026 démarrent à 480 € HT par an pour un chauffeur salarié province jusqu'à 1 280 € HT par an pour un artisan-taxi parisien avec couverture étendue. Cette page est complémentaire à /assurance-taxi (qui couvre le véhicule + ADS + RC pro)."
+      intro="L'assurance chauffeur de taxi désigne l'ensemble des garanties PERSONNELLES dont a besoin un chauffeur (artisan ou salarié) au-delà de l'assurance véhicule pro et de la RC Pro chauffeur. Spécifiquement adaptée aux risques du métier : longues stations assises (problèmes lombaires, troubles vasculaires), stress urbain et nocturne (cardiovasculaire), risque d'agression dans les zones sensibles (Paris IDF, grandes métropoles), arrêts de travail = revenus à zéro pour les artisans-taxis solo. Le pack standard combine : mutuelle santé adaptée (forfait kiné ou ostéo renforcé, médecines douces), prévoyance IJ dès J0 (compense la perte de revenu), garantie invalidité, protection juridique conducteur (défense en cas de litige client ou contrôle), garantie agression (capital décès ou invalidité majoré en cas d'agression). Les tarifs 2026 démarrent à 480 € HT par an pour un chauffeur salarié province jusqu'à 1 280 € HT par an pour un artisan-taxi parisien avec couverture étendue. Cette page est complémentaire à /assurance-taxi (qui couvre le véhicule + ADS + RC Pro)."
       legalReference="Loi Madelin (TNS) + Code de la santé publique + Code des transports"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -154,7 +154,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Pack annuel HT</th>
                   </tr>
@@ -186,7 +186,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : âge (~+1,5% par an), antécédents médicaux, niveau d&apos;IJ choisi (50 à
                 200€ par jour), couverture famille, zone géographique (Paris +20-30% pour le risque
                 d&apos;agression). Madelin déductible UNIQUEMENT au régime réel d&apos;imposition.
@@ -204,11 +204,11 @@ export default function Page() {
                 <Link href="/assurance-taxi" className="text-primary-600 underline">
                   /assurance-taxi
                 </Link>
-                (couverture VÉHICULE + ADS + RC pro chauffeur).
+                (couverture VÉHICULE + ADS + RC Pro chauffeur).
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Page</th>
                     <th className="border p-2 text-left">Couverture</th>
                   </tr>
@@ -221,7 +221,7 @@ export default function Page() {
                       </Link>
                     </td>
                     <td className="border p-2">
-                      Véhicule + ADS-licence (50-250k€) + RC pro chauffeur (passagers + tiers) +
+                      Véhicule + ADS-licence (50-250k€) + RC Pro chauffeur (passagers + tiers) +
                       bris de glace + vol véhicule
                     </td>
                   </tr>
@@ -238,7 +238,7 @@ export default function Page() {
               </table>
               <p className="mt-3">
                 <strong>Pack complet artisan-taxi 2026</strong> : ~3 000-5 000 € par an (assurance
-                véhicule + ADS + RC pro chauffeur + mutuelle + prévoyance + garantie agression + PJ
+                véhicule + ADS + RC Pro chauffeur + mutuelle + prévoyance + garantie agression + PJ
                 conducteur). Notre cabinet propose un « Pack Taxi 360° » négocié avec AXA Pro Taxi
                 et MMA Pro Mobilité.
               </p>
@@ -249,7 +249,7 @@ export default function Page() {
       faq={[
         {
           q: "L'assurance chauffeur de taxi est-elle obligatoire ?",
-          a: "Pas légalement (sauf RC pro chauffeur incluse dans l'assurance taxi obligatoire). Mais FORTEMENT RECOMMANDÉE : 65% des chauffeurs souffrent de lombalgies, 1 sur 5 victime d'agression au cours de sa carrière, risque cardiovasculaire +30-40% vs population générale. Pour artisan-taxi solo : prévoyance IJ CRITIQUE (un arrêt = revenus à zéro).",
+          a: "Pas légalement (sauf RC Pro chauffeur incluse dans l'assurance taxi obligatoire). Mais FORTEMENT RECOMMANDÉE : 65% des chauffeurs souffrent de lombalgies, 1 sur 5 victime d'agression au cours de sa carrière, risque cardiovasculaire +30-40% vs population générale. Pour artisan-taxi solo : prévoyance IJ CRITIQUE (un arrêt = revenus à zéro).",
         },
         {
           q: "Combien coûte l'assurance d'un chauffeur de taxi en 2026 ?",
@@ -261,7 +261,7 @@ export default function Page() {
         },
         {
           q: 'Différence entre assurance taxi et assurance chauffeur de taxi ?',
-          a: 'ASSURANCE TAXI = couverture VÉHICULE + ADS + RC pro chauffeur (passagers + tiers). ASSURANCE CHAUFFEUR DE TAXI = couverture PERSONNELLE (mutuelle santé adaptée + prévoyance IJ + invalidité + garantie agression + PJ conducteur). Les 2 sont complémentaires. Pack complet artisan-taxi : ~3 000-5 000€ par an.',
+          a: 'ASSURANCE TAXI = couverture VÉHICULE + ADS + RC Pro chauffeur (passagers + tiers). ASSURANCE CHAUFFEUR DE TAXI = couverture PERSONNELLE (mutuelle santé adaptée + prévoyance IJ + invalidité + garantie agression + PJ conducteur). Les 2 sont complémentaires. Pack complet artisan-taxi : ~3 000-5 000€ par an.',
         },
         {
           q: 'Madelin pour chauffeur de taxi : possible ?',

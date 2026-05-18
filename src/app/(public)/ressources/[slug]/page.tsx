@@ -136,12 +136,12 @@ export default async function RessourcePage(props: { params: Promise<Params> }) 
       {/* En-tête imprimable (visible uniquement en print) */}
       <header className="mb-6 hidden print:block">
         <h1 className="text-2xl font-bold">{r.title}</h1>
-        <p className="text-sm text-gray-600">{r.description}</p>
-        <p className="mt-2 text-xs text-gray-500">
+        <p className="text-sm text-charcoal-600">{r.description}</p>
+        <p className="mt-2 text-xs text-charcoal-500">
           Vivos Assurance · Cabinet de courtage ORIAS · Mis à jour le{' '}
           {new Date(r.updatedAt).toLocaleDateString('fr-FR')}
         </p>
-        <hr className="my-4 border-gray-300" />
+        <hr className="my-4 border-sand-300" />
       </header>
 
       <div className="container mx-auto max-w-3xl px-4 py-12 print:px-0 print:py-0">
@@ -249,7 +249,7 @@ export default async function RessourcePage(props: { params: Promise<Params> }) 
           </div>
 
           {/* Pied print : copyright + URL */}
-          <footer className="mt-8 hidden border-t border-gray-200 pt-4 text-xs text-gray-500 print:block">
+          <footer className="mt-8 hidden border-t border-sand-200 pt-4 text-xs text-charcoal-500 print:block">
             <p>© Vivos Assurance · Cabinet de courtage ORIAS — {url}</p>
             <p className="mt-1">
               Ce document est mis à jour régulièrement. Vérifiez la dernière version sur notre site.

@@ -165,13 +165,13 @@ export default async function DevisPage({
   const merged = { ...sanitizePrefill(queryPrefill), ...sanitizePrefill(prefill) }
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
+    <main className="min-h-screen bg-sand-50 py-12">
       <div className="container mx-auto max-w-4xl px-4">
         <header className="mb-10 text-center">
           <h1 className="mb-3 text-3xl font-bold md:text-4xl">
             Votre devis assurance pro en 2 minutes
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-charcoal-600">
             Comparé sur 10+ assureurs partenaires. Sans engagement. Réponse sous 24&nbsp;heures.
           </p>
           {crossDomainSource && (
@@ -183,7 +183,7 @@ export default async function DevisPage({
 
         <DevisAssuranceForm prefill={merged} />
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-gray-500">
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-charcoal-500">
           <strong>Information précontractuelle —</strong> Ce formulaire est un point de départ pour
           recueillir vos exigences et besoins (art.&nbsp;L.&nbsp;521-4 du Code des assurances). Un
           courtier ORIAS vous recontactera ensuite pour formuler un conseil personnalisé motivé

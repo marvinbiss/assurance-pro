@@ -70,7 +70,7 @@ export function CalculateurTarifRcPro() {
             id="calc-secteur"
             value={secteur}
             onChange={(e) => setSecteur(e.target.value as Secteur)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(SECTEUR_LABELS) as Secteur[]).map((s) => (
               <option key={s} value={s}>
@@ -88,7 +88,7 @@ export function CalculateurTarifRcPro() {
             id="calc-forme"
             value={formeJuridique}
             onChange={(e) => setFormeJuridique(e.target.value as FormeJuridique)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(FORME_LABELS) as FormeJuridique[]).map((f) => (
               <option key={f} value={f}>
@@ -106,7 +106,7 @@ export function CalculateurTarifRcPro() {
             id="calc-plafond"
             value={plafond}
             onChange={(e) => setPlafond(Number(e.target.value) as Plafond)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {PLAFONDS.map((p) => (
               <option key={p} value={p}>
@@ -131,7 +131,7 @@ export function CalculateurTarifRcPro() {
             onChange={(e) => setCa(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>10 000 €</span>
             <span>500 000 €</span>
           </div>
@@ -151,7 +151,7 @@ export function CalculateurTarifRcPro() {
             onChange={(e) => setEffectif(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>0</span>
             <span>20+</span>
           </div>
@@ -174,7 +174,7 @@ export function CalculateurTarifRcPro() {
             onChange={(e) => setAnciennete(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>Nouvel installé</span>
             <span>20 ans+</span>
           </div>
@@ -188,7 +188,7 @@ export function CalculateurTarifRcPro() {
             id="calc-antecedents"
             value={antecedents}
             onChange={(e) => setAntecedents(e.target.value as Antecedents)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(ANTECEDENTS_LABELS) as Antecedents[]).map((a) => (
               <option key={a} value={a}>
@@ -206,7 +206,7 @@ export function CalculateurTarifRcPro() {
             id="calc-franchise"
             value={franchise}
             onChange={(e) => setFranchise(Number(e.target.value))}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {FRANCHISES.map((f) => (
               <option key={f.value} value={f.value}>
@@ -219,12 +219,12 @@ export function CalculateurTarifRcPro() {
 
       {/* RÉSULTAT */}
       <div className="mt-6 rounded-lg border-2 border-primary-300 bg-gradient-to-br from-blue-50 to-indigo-50 p-6">
-        <p className="mb-2 text-sm text-gray-600">Estimation tarif RC Pro 2026 (annuel HT)</p>
+        <p className="mb-2 text-sm text-charcoal-600">Estimation tarif RC Pro 2026 (annuel HT)</p>
         <p className="mb-2 text-4xl font-extrabold text-primary-900 md:text-5xl">
           {resultat.fourchetteBasse.toLocaleString('fr-FR')} € —{' '}
           {resultat.fourchetteHaute.toLocaleString('fr-FR')} €
         </p>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-charcoal-700">
           Médiane indicative :{' '}
           <strong>{resultat.fourchetteMediane.toLocaleString('fr-FR')} € par an</strong> (≈{' '}
           {Math.round(resultat.fourchetteMediane / 12).toLocaleString('fr-FR')} € par mois).
@@ -233,7 +233,7 @@ export function CalculateurTarifRcPro() {
           24h.
         </p>
 
-        <details className="mt-4 text-xs text-gray-600">
+        <details className="mt-4 text-xs text-charcoal-600">
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
@@ -261,7 +261,7 @@ export function CalculateurTarifRcPro() {
         </a>
       </div>
 
-      <p className="text-xs italic text-gray-500">
+      <p className="text-xs italic text-charcoal-500">
         ⚠️ Cette estimation est <strong>indicative</strong> et n&apos;a aucune valeur contractuelle.
         Seul un devis officiel signé par un assureur agréé ACPR engage l&apos;assureur. Variations
         possibles selon : précision activité (codes NAF), antécédents détaillés (relevé

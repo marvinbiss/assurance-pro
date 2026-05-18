@@ -87,7 +87,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Critère</th>
                     <th className="border p-2 text-left">Garantie décennale</th>
                     <th className="border p-2 text-left">Assurance dommages-ouvrage (DO)</th>
@@ -218,7 +218,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Type de chantier</th>
                     <th className="border p-2 text-right">Coût HT travaux</th>
                     <th className="border p-2 text-right">Prime DO unique</th>
@@ -252,7 +252,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables qui font monter la prime : zone sismique (+30%), terrain argileux ou
                 instable (+20-50%), présence de nappe phréatique (+15%), architecture complexe
                 (porte-à-faux, sous-sol immergé), assurance pas souscrite « avant ouverture chantier

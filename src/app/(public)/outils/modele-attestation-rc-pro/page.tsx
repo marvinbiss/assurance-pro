@@ -100,12 +100,12 @@ export default async function Page() {
       <section className="py-12">
         <div className="container mx-auto max-w-3xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez vos informations</h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             Le PDF est généré <strong>côté navigateur</strong> — vos données restent privées,
             <strong> aucune information n&apos;est envoyée à nos serveurs</strong>. Conformité RGPD
             totale.
           </p>
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-lg border border-sand-200 bg-white p-6 shadow-sm">
             <AttestationRcProForm />
           </div>
         </div>
@@ -133,12 +133,12 @@ export default async function Page() {
       </section>
 
       {/* PLATEFORMES B2B EXIGENT L'ATTESTATION */}
-      <section className="bg-gray-50 py-12">
+      <section className="bg-sand-50 py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">
             Pourquoi vous avez besoin d&apos;une attestation RC Pro
           </h2>
-          <p className="mb-4 text-sm text-gray-700">
+          <p className="mb-4 text-sm text-charcoal-700">
             <strong>78% des plateformes B2B</strong> exigent une attestation RC Pro à
             l&apos;inscription d&apos;un freelance ou indépendant :
           </p>
@@ -191,7 +191,7 @@ export default async function Page() {
           </p>
           <Link
             href="/outils/devis-rc-pro"
-            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-purple-700 shadow-lg transition hover:bg-gray-100"
+            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-purple-700 shadow-lg transition hover:bg-sand-100"
           >
             → Devis RC Pro gratuit (2 min)
           </Link>

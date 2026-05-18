@@ -9,7 +9,7 @@
  *
  * Distinction avec /assurance-decennale : décennale = 1 GARANTIE Loi Spinetta.
  * /assurance-btp = HUB VERTICAL qui aiguille vers TOUTES les garanties BTP
- * (décennale + RC pro travaux + multirisque chantier + DO + TRC + RC chef d'entreprise).
+ * (décennale + RC Pro travaux + multirisque chantier + DO + TRC + RC chef d'entreprise).
  */
 
 import type { Metadata } from 'next'
@@ -23,12 +23,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-btp'
 const TITLE = 'Assurance BTP — Toutes garanties (décennale, RC, TRC, DO) 2026'
 const TAGLINE =
-  'Le hub assurance BTP : décennale, RC pro travaux, multirisque chantier, dommages-ouvrage, TRC, garantie financière. 8 assureurs comparés. Conseil ORIAS spécialisé.'
+  'Le hub assurance BTP : décennale, RC Pro travaux, multirisque chantier, dommages-ouvrage, TRC, garantie financière. 8 assureurs comparés. Conseil ORIAS spécialisé.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance BTP 2026 : décennale + RC pro + multirisque + DO + TRC. Comparatif 5 assureurs (SMABTP, Hiscox, April). Devis ORIAS 24h.',
+    'Assurance BTP 2026 : décennale + RC Pro + multirisque + DO + TRC. Comparatif 5 assureurs (SMABTP, Hiscox, April). Devis ORIAS 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,
@@ -56,7 +56,7 @@ export default function Page() {
         {
           icon: '🏗️',
           title: '8 garanties BTP',
-          desc: 'Décennale, RC pro travaux, multirisque, DO, TRC, garantie financière, biennale, GPA',
+          desc: 'Décennale, RC Pro travaux, multirisque, DO, TRC, garantie financière, biennale, GPA',
         },
         {
           icon: '⚖️',
@@ -81,7 +81,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Garantie</th>
                     <th className="border p-2 text-left">Obligatoire ?</th>
                     <th className="border p-2 text-left">Couvre</th>
@@ -181,7 +181,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil BTP</th>
                     <th className="border p-2 text-right">Pack annuel HT</th>
                   </tr>

@@ -117,7 +117,7 @@ const STATIC_PAGES: Array<{ path: string; priority: number; changeFrequency: Cha
   { path: 'courtier-assurance-pro', priority: 0.85, changeFrequency: 'weekly' }, // 100 vol KD 13 CPC 350€
 
   // Sprint 2 Lot 14 : 5 piliers/guides spécialisés
-  { path: 'rc-pro/vtc', priority: 0.85, changeFrequency: 'weekly' }, // RC pro VTC sous-route
+  { path: 'rc-pro/vtc', priority: 0.85, changeFrequency: 'weekly' }, // RC Pro VTC sous-route
   { path: 'mutuelle-sante-tns', priority: 0.85, changeFrequency: 'weekly' }, // 200 vol KD 4 CPC 600€
   { path: 'guides/assurance-rgpd', priority: 0.8, changeFrequency: 'monthly' }, // RGPD entreprise
   { path: 'assurance-decennale/photovoltaique', priority: 0.85, changeFrequency: 'weekly' }, // RGE PV sous-route

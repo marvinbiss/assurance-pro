@@ -163,7 +163,7 @@ export default function NormesPage() {
             <li>
               <strong>ACPR</strong> — Autorité de Contrôle Prudentiel et de Résolution
               <br />
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-charcoal-600">
                 4 Place de Budapest, CS 92459, 75436 Paris cedex 09 —{' '}
                 <a
                   href="https://acpr.banque-france.fr"
@@ -178,7 +178,7 @@ export default function NormesPage() {
             <li>
               <strong>ORIAS</strong> — Registre Unique des Intermédiaires
               <br />
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-charcoal-600">
                 <a
                   href="https://www.orias.fr"
                   target="_blank"
@@ -192,7 +192,7 @@ export default function NormesPage() {
             <li>
               <strong>CNIL</strong> — Commission Nationale Informatique et Libertés
               <br />
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-charcoal-600">
                 <a
                   href="https://www.cnil.fr"
                   target="_blank"
@@ -206,7 +206,7 @@ export default function NormesPage() {
             <li>
               <strong>Médiation de l’Assurance</strong>
               <br />
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-charcoal-600">
                 TSA 50110, 75441 Paris cedex 09 —{' '}
                 <a
                   href="https://www.mediation-assurance.org"

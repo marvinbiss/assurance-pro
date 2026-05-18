@@ -6,7 +6,7 @@
  * Famille connexe : "TRC chantier", "assurance chantier"
  *
  * Stratégie : guide éducationnel pour distinguer la TRC des autres garanties BTP
- * (décennale, RC pro travaux, DO). Cible les maîtres d'ouvrage et entreprises BTP
+ * (décennale, RC Pro travaux, DO). Cible les maîtres d'ouvrage et entreprises BTP
  * sur gros chantiers (>500k€).
  */
 
@@ -35,7 +35,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance Tous Risques Chantier (TRC) est une garantie SPÉCIFIQUE qui couvre les dommages survenant AU CHANTIER LUI-MÊME PENDANT la durée des travaux : incendie, vol de matériel et matériaux stockés, effondrement partiel, événements climatiques (tempête, inondation), vandalisme, erreur d'exécution causant un dommage à l'ouvrage en cours. Elle se distingue clairement des 3 autres garanties BTP : la décennale (couvre les dommages 10 ANS APRÈS RÉCEPTION), la dommages-ouvrage (pré-financement par le maître d'ouvrage des sinistres décennaux) et la RC pro travaux (responsabilité de l'artisan envers les tiers pendant le chantier). La TRC est généralement souscrite pour les GROS CHANTIERS (>500 000 € HT) où les enjeux financiers sont importants. Prix indicatif 2026 : 0,2 à 0,5% du coût total HT des travaux. Cette page détaille les couvertures, les exclusions, le profil idéal de souscription et compare la TRC aux autres garanties BTP."
+      intro="L'assurance Tous Risques Chantier (TRC) est une garantie SPÉCIFIQUE qui couvre les dommages survenant AU CHANTIER LUI-MÊME PENDANT la durée des travaux : incendie, vol de matériel et matériaux stockés, effondrement partiel, événements climatiques (tempête, inondation), vandalisme, erreur d'exécution causant un dommage à l'ouvrage en cours. Elle se distingue clairement des 3 autres garanties BTP : la décennale (couvre les dommages 10 ANS APRÈS RÉCEPTION), la dommages-ouvrage (pré-financement par le maître d'ouvrage des sinistres décennaux) et la RC Pro travaux (responsabilité de l'artisan envers les tiers pendant le chantier). La TRC est généralement souscrite pour les GROS CHANTIERS (>500 000 € HT) où les enjeux financiers sont importants. Prix indicatif 2026 : 0,2 à 0,5% du coût total HT des travaux. Cette page détaille les couvertures, les exclusions, le profil idéal de souscription et compare la TRC aux autres garanties BTP."
       legalReference="Articles L. 113-1 et suivants du Code des assurances + Loi MOP (marchés publics)"
       isObligatoire={false}
       benefits={[
@@ -112,12 +112,12 @@ export default function Page() {
           ),
         },
         {
-          h2: 'TRC vs décennale vs DO vs RC pro travaux : 4 garanties distinctes',
+          h2: 'TRC vs décennale vs DO vs RC Pro travaux : 4 garanties distinctes',
           body: (
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Garantie</th>
                     <th className="border p-2 text-left">Couvre QUOI</th>
                     <th className="border p-2 text-left">QUAND</th>
@@ -137,7 +137,7 @@ export default function Page() {
                   </tr>
                   <tr>
                     <td className="border p-2">
-                      <strong>RC pro travaux</strong>
+                      <strong>RC Pro travaux</strong>
                     </td>
                     <td className="border p-2">
                       Dommages causés AUX TIERS (voisin, passant, client)
@@ -166,7 +166,7 @@ export default function Page() {
               <p className="mt-3">
                 <strong>En pratique</strong> : sur un chantier de 2M€ HT, le pack assurance complet
                 du maître d&apos;ouvrage = TRC (10-30k€) + DO (40-80k€) + (chaque artisan a sa
-                décennale + RC pro). Total assurance ~3-5% du budget chantier.
+                décennale + RC Pro). Total assurance ~3-5% du budget chantier.
               </p>
             </>
           ),
@@ -177,7 +177,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Type de chantier</th>
                     <th className="border p-2 text-right">Coût HT chantier</th>
                     <th className="border p-2 text-right">Prime TRC unique</th>
@@ -216,7 +216,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : zone sismique, durée prévisionnelle du chantier, complexité technique
                 (hauteur, sous-sol, porte-à-faux), présence de bâtiments mitoyens, exposition
                 catnat, dispositifs sécurité chantier (gardiennage, vidéosurveillance, alarme).
@@ -289,7 +289,7 @@ export default function Page() {
         },
         {
           q: 'TRC : quelles exclusions classiques ?',
-          a: "Exclusions classiques : faute intentionnelle (toujours exclue), désordres décennaux (couverts par la décennale, pas la TRC), usure normale, défauts de conception (couverts par la RC pro de l'architecte ou MOE), pertes financières indirectes du maître d'ouvrage (sauf option), guerre, émeute ou terrorisme, sinistres causés par non-respect des règles de l'art (DTU).",
+          a: "Exclusions classiques : faute intentionnelle (toujours exclue), désordres décennaux (couverts par la décennale, pas la TRC), usure normale, défauts de conception (couverts par la RC Pro de l'architecte ou MOE), pertes financières indirectes du maître d'ouvrage (sauf option), guerre, émeute ou terrorisme, sinistres causés par non-respect des règles de l'art (DTU).",
         },
         {
           q: 'Combien de temps pour obtenir un devis TRC ?',

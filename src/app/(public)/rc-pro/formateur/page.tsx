@@ -16,7 +16,7 @@ export const revalidate = 86400
 const SLUG = 'rc-pro / formateur'
 const TITLE = 'RC Pro formateur — Tarifs 2026 (formateur indépendant, organisme formation)'
 const TAGLINE =
-  "L'assurance RC pro pour formateurs indépendants : RC pédagogique, casse matériel salle, dommages stagiaires. Tarifs accessibles. Conseil ORIAS."
+  "L'assurance RC Pro pour formateurs indépendants : RC pédagogique, casse matériel salle, dommages stagiaires. Tarifs accessibles. Conseil ORIAS."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -68,7 +68,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>

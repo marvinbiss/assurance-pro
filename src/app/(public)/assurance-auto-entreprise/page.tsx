@@ -19,14 +19,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'assurance-auto-entreprise'
-const TITLE = 'Assurance auto entreprise — Véhicule de société 2026 (RC pro + tous risques)'
+const TITLE = 'Assurance auto entreprise — Véhicule de société 2026 (RC Pro + tous risques)'
 const TAGLINE =
-  "L'assurance dédiée aux véhicules détenus par votre société : voiture de société, véhicule de fonction, voiture de direction. Couverture RC pro + tous risques + conducteur."
+  "L'assurance dédiée aux véhicules détenus par votre société : voiture de société, véhicule de fonction, voiture de direction. Couverture RC Pro + tous risques + conducteur."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance auto entreprise : véhicule de société (carte grise au nom de la SARL, SAS ou SCI), véhicule de fonction salarié, voiture direction. RC pro + tous risques + conducteur étendue. Tarifs 680-1 480€ par an. Comparatif 6 assureurs. Devis ORIAS sous 24h.',
+    'Assurance auto entreprise : véhicule de société (carte grise au nom de la SARL, SAS ou SCI), véhicule de fonction salarié, voiture direction. RC Pro + tous risques + conducteur étendue. Tarifs 680-1 480€ par an. Comparatif 6 assureurs. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -72,7 +72,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Usage</th>
                     <th className="border p-2 text-left">CG au nom de</th>
                     <th className="border p-2 text-left">Bénéficiaire usage</th>
@@ -141,7 +141,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>
@@ -187,7 +187,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : km annuels (forfait 15k ou 25k ou 40k+), antécédents conducteur(s),
                 profil (jeune permis, dirigeant expérimenté), zone (Paris IDF +20-40%), modèle haut
                 de gamme.
@@ -201,7 +201,7 @@ export default function Page() {
             <>
               <ol>
                 <li>
-                  <strong>RC pro circulation</strong> (obligatoire L. 211-1) : passagers + tiers +
+                  <strong>RC Pro circulation</strong> (obligatoire L. 211-1) : passagers + tiers +
                   véhicule. Plafond corporel ILLIMITÉ
                 </li>
                 <li>

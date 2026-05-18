@@ -119,7 +119,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Métier</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                     <th className="border p-2 text-left">Sinistralité AQC 2024</th>
@@ -178,7 +178,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Sources : AQC SYCODÉS 2024 + barèmes 2026 Hiscox ou April Pro ou SMABTP ou MMA ou
                 AXA Pro / Wakam / Stello / Generali. Tarifs majorés en cas d&apos;antécédent
                 sinistre (+30 à +80 % la 1re année).

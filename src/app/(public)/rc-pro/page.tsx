@@ -177,43 +177,43 @@ export default function PilierRcProPage() {
               </p>
               <table className="my-4 w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border border-gray-300 p-2 text-left">Profession</th>
-                    <th className="border border-gray-300 p-2 text-right">Auto-ent.</th>
-                    <th className="border border-gray-300 p-2 text-right">SARL ou SAS</th>
-                    <th className="border border-gray-300 p-2 text-right">CA &gt;500k</th>
+                  <tr className="bg-sand-100">
+                    <th className="border border-sand-300 p-2 text-left">Profession</th>
+                    <th className="border border-sand-300 p-2 text-right">Auto-ent.</th>
+                    <th className="border border-sand-300 p-2 text-right">SARL ou SAS</th>
+                    <th className="border border-sand-300 p-2 text-right">CA &gt;500k</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border border-gray-300 p-2">Consultant</td>
-                    <td className="border border-gray-300 p-2 text-right">144-288€</td>
-                    <td className="border border-gray-300 p-2 text-right">450-1 200€</td>
-                    <td className="border border-gray-300 p-2 text-right">2 500-5 500€</td>
+                    <td className="border border-sand-300 p-2">Consultant</td>
+                    <td className="border border-sand-300 p-2 text-right">144-288€</td>
+                    <td className="border border-sand-300 p-2 text-right">450-1 200€</td>
+                    <td className="border border-sand-300 p-2 text-right">2 500-5 500€</td>
                   </tr>
                   <tr>
-                    <td className="border border-gray-300 p-2">Agence web</td>
-                    <td className="border border-gray-300 p-2 text-right">200-380€</td>
-                    <td className="border border-gray-300 p-2 text-right">600-1 800€</td>
-                    <td className="border border-gray-300 p-2 text-right">3 200-7 000€</td>
+                    <td className="border border-sand-300 p-2">Agence web</td>
+                    <td className="border border-sand-300 p-2 text-right">200-380€</td>
+                    <td className="border border-sand-300 p-2 text-right">600-1 800€</td>
+                    <td className="border border-sand-300 p-2 text-right">3 200-7 000€</td>
                   </tr>
                   <tr>
-                    <td className="border border-gray-300 p-2">Coach pro</td>
-                    <td className="border border-gray-300 p-2 text-right">120-240€</td>
-                    <td className="border border-gray-300 p-2 text-right">350-900€</td>
-                    <td className="border border-gray-300 p-2 text-right">2 000-4 500€</td>
+                    <td className="border border-sand-300 p-2">Coach pro</td>
+                    <td className="border border-sand-300 p-2 text-right">120-240€</td>
+                    <td className="border border-sand-300 p-2 text-right">350-900€</td>
+                    <td className="border border-sand-300 p-2 text-right">2 000-4 500€</td>
                   </tr>
                   <tr>
-                    <td className="border border-gray-300 p-2">Avocat</td>
-                    <td className="border border-gray-300 p-2 text-right">N/A</td>
-                    <td className="border border-gray-300 p-2 text-right">800-2 200€</td>
-                    <td className="border border-gray-300 p-2 text-right">3 500-8 000€</td>
+                    <td className="border border-sand-300 p-2">Avocat</td>
+                    <td className="border border-sand-300 p-2 text-right">N/A</td>
+                    <td className="border border-sand-300 p-2 text-right">800-2 200€</td>
+                    <td className="border border-sand-300 p-2 text-right">3 500-8 000€</td>
                   </tr>
                   <tr>
-                    <td className="border border-gray-300 p-2">Médecin</td>
-                    <td className="border border-gray-300 p-2 text-right">N/A</td>
-                    <td className="border border-gray-300 p-2 text-right">1 200-3 500€</td>
-                    <td className="border border-gray-300 p-2 text-right">5 000-12 000€</td>
+                    <td className="border border-sand-300 p-2">Médecin</td>
+                    <td className="border border-sand-300 p-2 text-right">N/A</td>
+                    <td className="border border-sand-300 p-2 text-right">1 200-3 500€</td>
+                    <td className="border border-sand-300 p-2 text-right">5 000-12 000€</td>
                   </tr>
                 </tbody>
               </table>

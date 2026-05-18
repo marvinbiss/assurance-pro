@@ -20,14 +20,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'assurance-transport-marchandises'
-const TITLE = 'Assurance transport de marchandises — Tarifs 2026, RC pro + facultés'
+const TITLE = 'Assurance transport de marchandises — Tarifs 2026, RC Pro + facultés'
 const TAGLINE =
-  "L'assurance dédiée au transport de marchandises : RC pro transporteur, garantie facultés (marchandises transportées), responsabilité contractuelle CMR. Tarifs négociés."
+  "L'assurance dédiée au transport de marchandises : RC Pro transporteur, garantie facultés (marchandises transportées), responsabilité contractuelle CMR. Tarifs négociés."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance transport de marchandises : RC pro transporteur (LOTI ou CMR), garantie facultés (marchandises transportées tous risques), responsabilité contractuelle, garantie ad valorem. Tarifs à partir de 1 480 € par an. Devis gratuit ORIAS sous 24h.',
+    'Assurance transport de marchandises : RC Pro transporteur (LOTI ou CMR), garantie facultés (marchandises transportées tous risques), responsabilité contractuelle, garantie ad valorem. Tarifs à partir de 1 480 € par an. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -47,7 +47,7 @@ export default function Page() {
       benefits={[
         {
           icon: '🚛',
-          title: 'RC pro transporteur',
+          title: 'RC Pro transporteur',
           desc: 'OBLIGATOIRE — couvre la responsabilité du transporteur (perte, avarie, retard marchandise)',
         },
         {
@@ -109,7 +109,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Pack annuel HT</th>
                   </tr>
@@ -151,7 +151,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : type de marchandises, zone géographique (national vs UE vs monde),
                 kilométrage annuel par véhicule, antécédents sinistres, type de chargement (palettes
                 vs vrac vs colis individuels), franchise choisie.
@@ -169,7 +169,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Type</th>
                     <th className="border p-2 text-left">Cadre légal</th>
                     <th className="border p-2 text-right">Plafond responsabilité</th>

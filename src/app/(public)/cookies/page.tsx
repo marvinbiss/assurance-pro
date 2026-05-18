@@ -39,7 +39,7 @@ export default function CookiesPage() {
 
       <div className="container mx-auto max-w-3xl px-4 py-14">
         <article className="pilier-prose prose prose-lg max-w-none text-charcoal-700">
-          <p className="text-sm text-gray-500">Dernière mise à jour : 30 avril 2026</p>
+          <p className="text-sm text-charcoal-500">Dernière mise à jour : 30 avril 2026</p>
 
           <h2>1. Qu&apos;est-ce qu&apos;un cookie ?</h2>
           <p>

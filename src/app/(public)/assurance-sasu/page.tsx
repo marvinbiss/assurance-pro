@@ -16,14 +16,14 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-sasu'
-const TITLE = 'Assurance SASU — Pack 2026 (RC pro, président assimilé salarié)'
+const TITLE = 'Assurance SASU — Pack 2026 (RC Pro, président assimilé salarié)'
 const TAGLINE =
-  "L'assurance dédiée à la SASU (Société par Actions Simplifiée Unipersonnelle) : RC pro, multirisque local, mutuelle collective (président assimilé salarié), RCMS."
+  "L'assurance dédiée à la SASU (Société par Actions Simplifiée Unipersonnelle) : RC Pro, multirisque local, mutuelle collective (président assimilé salarié), RCMS."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance SASU : RC pro adaptée + multirisque local + mutuelle COLLECTIVE (président assimilé salarié, vs Madelin TNS) + RCMS dirigeant + cyber. Tarifs 580-2 800€ par an. Devis ORIAS sous 24h.',
+    'Assurance SASU : RC Pro adaptée + multirisque local + mutuelle COLLECTIVE (président assimilé salarié, vs Madelin TNS) + RCMS dirigeant + cyber. Tarifs 580-2 800€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -60,7 +60,7 @@ export default function Page() {
         {
           icon: '💰',
           title: 'À partir de 580 € par an',
-          desc: 'Pack RC pro + cyber. Pack complet avec mutuelle + RCMS : 1 800-2 800€ par an',
+          desc: 'Pack RC Pro + cyber. Pack complet avec mutuelle + RCMS : 1 800-2 800€ par an',
         },
       ]}
       sections={[
@@ -70,7 +70,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Statut</th>
                     <th className="border p-2 text-left">Régime social dirigeant</th>
                     <th className="border p-2 text-left">Madelin éligible</th>
@@ -194,7 +194,7 @@ export default function Page() {
         },
         {
           q: "SASU : combien coûte l'assurance complète en 2026 ?",
-          a: 'Pack RC pro + cyber : 580-1 200€ par an. Pack complet (RC + mutuelle collective + RCMS + cyber) : 1 800-2 800€ par an. Variables : métier, plafond RC, présence salariés, secteur.',
+          a: 'Pack RC Pro + cyber : 580-1 200€ par an. Pack complet (RC + mutuelle collective + RCMS + cyber) : 1 800-2 800€ par an. Variables : métier, plafond RC, présence salariés, secteur.',
         },
         {
           q: 'RCMS pour président SASU : utile ?',

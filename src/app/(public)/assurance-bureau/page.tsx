@@ -125,7 +125,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Surface — capacité</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
@@ -178,7 +178,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : valeur du matériel informatique déclaré, présence d&apos;un serveur
                 on-premise, zone géographique (Paris +20-40% vs province), présence d&apos;alarme +
                 vidéosurveillance (-10 à -20%), antécédents sinistres.
@@ -281,13 +281,13 @@ export default function Page() {
                 La plupart des assureurs habitation (MAAF, MAIF, MMA, Allianz, AXA) proposent une
                 option « activité professionnelle à domicile » à ajouter au contrat existant. Coût :
                 ~80-150 € par an supplémentaires. Avantage : simple, pas de nouveau contrat. Limite
-                : couverture de la RC pro souvent plafonnée à 200-500 k€ (insuffisant pour des
+                : couverture de la RC Pro souvent plafonnée à 200-500 k€ (insuffisant pour des
                 activités à risque comme le conseil financier ou IT).
               </p>
               <h3>Option 2 : Assurance bureau dédiée (recommandée pour activités à risque)</h3>
               <p>
                 Souscrire un contrat « bureau pro à domicile » distinct, qui couvre spécifiquement
-                l&apos;équipement pro, la RC pro à plafond élevé (1-2 M€) et les visiteurs reçus à
+                l&apos;équipement pro, la RC Pro à plafond élevé (1-2 M€) et les visiteurs reçus à
                 domicile. Coût : 220-380 € par an. Indispensable pour avocats, conseillers
                 financiers, consultants IT à fort CA.
               </p>
@@ -319,7 +319,7 @@ export default function Page() {
         },
         {
           q: 'Coworking : qui assure quoi entre le gestionnaire et le résident ?',
-          a: 'Gestionnaire = assure le local (multirisque immeuble + RC espaces communs). Résident permanent = assure SON équipement perso (laptop, écrans, mobilier) ET sa RC pro. Vérifier la couverture du « vol entre résidents » (souvent EXCLU dans les contrats standards). Tarif accessible : 180-320€ par an pour un poste fixe en coworking.',
+          a: 'Gestionnaire = assure le local (multirisque immeuble + RC espaces communs). Résident permanent = assure SON équipement perso (laptop, écrans, mobilier) ET sa RC Pro. Vérifier la couverture du « vol entre résidents » (souvent EXCLU dans les contrats standards). Tarif accessible : 180-320€ par an pour un poste fixe en coworking.',
         },
         {
           q: 'Faut-il une garantie cyber pour un bureau pro ?',

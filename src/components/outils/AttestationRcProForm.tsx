@@ -11,7 +11,10 @@ import { z } from 'zod'
 
 const PdfDownloadButton = dynamic(
   () => import('./RcProPdfDownloadButton').then((m) => m.RcProPdfDownloadButton),
-  { ssr: false, loading: () => <span className="text-sm text-gray-500">Préparation du PDF…</span> }
+  {
+    ssr: false,
+    loading: () => <span className="text-sm text-charcoal-500">Préparation du PDF…</span>,
+  }
 )
 
 const schema = z.object({
@@ -83,7 +86,7 @@ export function AttestationRcProForm() {
 
   return (
     <form onSubmit={handleGenerate} className="space-y-4">
-      <fieldset className="rounded-lg border border-gray-200 p-4">
+      <fieldset className="rounded-lg border border-sand-200 p-4">
         <legend className="px-2 text-sm font-semibold">1. Identité de l&apos;entreprise</legend>
         <div className="mt-2 grid gap-3 md:grid-cols-2">
           <Field label="Raison sociale" required error={errors.raisonSociale}>
@@ -92,7 +95,7 @@ export function AttestationRcProForm() {
               value={data.raisonSociale}
               onChange={(e) => update('raisonSociale', e.target.value)}
               placeholder="Ex : EURL DUPONT CONSULTING"
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -102,7 +105,7 @@ export function AttestationRcProForm() {
               onChange={(e) =>
                 update('formeJuridique', e.target.value as FormData['formeJuridique'])
               }
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
             >
               {(
                 [
@@ -128,7 +131,7 @@ export function AttestationRcProForm() {
               value={data.siret}
               onChange={(e) => update('siret', e.target.value)}
               placeholder="123 456 789 00012"
-              className="w-full rounded border border-gray-300 px-3 py-2 font-mono"
+              className="w-full rounded border border-sand-300 px-3 py-2 font-mono"
               required
             />
           </Field>
@@ -138,14 +141,14 @@ export function AttestationRcProForm() {
               value={data.adresse}
               onChange={(e) => update('adresse', e.target.value)}
               placeholder="12 rue de Rivoli, 75001 Paris"
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
         </div>
       </fieldset>
 
-      <fieldset className="rounded-lg border border-gray-200 p-4">
+      <fieldset className="rounded-lg border border-sand-200 p-4">
         <legend className="px-2 text-sm font-semibold">2. Activité couverte</legend>
         <div className="mt-2 grid gap-3 md:grid-cols-2">
           <Field label="Activité(s) exercée(s)" required error={errors.metiers}>
@@ -154,7 +157,7 @@ export function AttestationRcProForm() {
               value={data.metiers}
               onChange={(e) => update('metiers', e.target.value)}
               placeholder="Conseil management, formation"
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -164,14 +167,14 @@ export function AttestationRcProForm() {
               value={data.zoneGeographique}
               onChange={(e) => update('zoneGeographique', e.target.value)}
               placeholder="France métropolitaine + UE"
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
         </div>
       </fieldset>
 
-      <fieldset className="rounded-lg border border-gray-200 p-4">
+      <fieldset className="rounded-lg border border-sand-200 p-4">
         <legend className="px-2 text-sm font-semibold">3. Période + plafonds</legend>
         <div className="mt-2 grid gap-3 md:grid-cols-2">
           <Field label="Date de début" required error={errors.dateDebut}>
@@ -179,7 +182,7 @@ export function AttestationRcProForm() {
               type="date"
               value={data.dateDebut}
               onChange={(e) => update('dateDebut', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -188,7 +191,7 @@ export function AttestationRcProForm() {
               type="date"
               value={data.dateFin}
               onChange={(e) => update('dateFin', e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -198,7 +201,7 @@ export function AttestationRcProForm() {
               value={data.plafondParSinistre}
               onChange={(e) => update('plafondParSinistre', e.target.value)}
               placeholder="1 500 000 €"
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -208,7 +211,7 @@ export function AttestationRcProForm() {
               value={data.plafondAnnuel}
               onChange={(e) => update('plafondAnnuel', e.target.value)}
               placeholder="3 000 000 €"
-              className="w-full rounded border border-gray-300 px-3 py-2"
+              className="w-full rounded border border-sand-300 px-3 py-2"
               required
             />
           </Field>
@@ -233,7 +236,7 @@ export function AttestationRcProForm() {
         )}
       </div>
 
-      <p className="mt-4 text-xs italic text-gray-500">
+      <p className="mt-4 text-xs italic text-charcoal-500">
         ⚠️ Modèle PÉDAGOGIQUE non opposable. Pour une vraie attestation, souscrivez via notre{' '}
         <a href="/outils/devis-rc-pro" className="text-primary-600 underline">
           cabinet ORIAS sous 24h
@@ -257,7 +260,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1 block text-sm font-medium text-gray-700">
+      <span className="mb-1 block text-sm font-medium text-charcoal-700">
         {label}
         {required && <span className="text-red-500"> *</span>}
       </span>

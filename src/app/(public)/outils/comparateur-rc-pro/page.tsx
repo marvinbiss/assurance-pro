@@ -104,7 +104,7 @@ export default async function Page() {
           <h2 className="mb-4 text-2xl font-bold">
             Sélectionnez votre profil pour le tri intelligent
           </h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             Le comparateur trie automatiquement les 8 assureurs selon leur{' '}
             <strong>force par secteur</strong> (un assureur fort sur un secteur monte en tête,
             faible descend) et votre <strong>priorité personnelle</strong> (tarif, rapidité ou
@@ -114,7 +114,7 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-12">
+      <section className="bg-sand-50 py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Comment lire ce comparateur ?</h2>
           <div className="grid gap-4 text-sm md:grid-cols-2">
@@ -159,7 +159,7 @@ export default async function Page() {
           <h2 className="mb-4 text-2xl font-bold">
             Pourquoi un comparateur ne suffit pas (devoir conseil ACPR)
           </h2>
-          <p className="mb-3 text-sm text-gray-700">
+          <p className="mb-3 text-sm text-charcoal-700">
             La Recommandation ACPR 2025-R-01 impose à tout intermédiaire d&apos;assurance un
             <strong> devoir d&apos;analyse d&apos;adéquation</strong> (art. L. 521-2 C. assur.) qui
             va au-delà d&apos;une simple comparaison de prix :
@@ -207,7 +207,7 @@ export default async function Page() {
           <div className="flex flex-col justify-center gap-3 md:flex-row">
             <Link
               href="/outils/devis-rc-pro"
-              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-primary-700 shadow-lg transition hover:bg-gray-100"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-primary-700 shadow-lg transition hover:bg-sand-100"
             >
               → Devis officiel RC Pro (2 min)
             </Link>

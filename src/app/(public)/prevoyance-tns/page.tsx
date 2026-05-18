@@ -80,7 +80,7 @@ export default function Page() {
               <p>Beaucoup de TNS confondent ces deux contrats — pourtant complémentaires :</p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Critère</th>
                     <th className="border p-2 text-left">MUTUELLE santé</th>
                     <th className="border p-2 text-left">PRÉVOYANCE</th>
@@ -152,7 +152,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil TNS</th>
                     <th className="border p-2 text-right">Revenu annuel</th>
                     <th className="border p-2 text-right">Cotisation mensuelle</th>
@@ -191,7 +191,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : âge (×1,5% par an), tabagisme (+30 à +60%), catégorie de risque
                 professionnel (BTP &gt; libéral &gt; tertiaire), niveau d&apos;IJ choisi, franchise
                 (15j ou 30j ou 90j), durée de versement (1 095 jours = 3 ans standard). Examen
@@ -250,7 +250,7 @@ export default function Page() {
                 contrat Madelin sont <strong>déductibles du bénéfice imposable</strong> dans le
                 plafond annuel commun santé + prévoyance :
               </p>
-              <p className="my-3 border-l-4 border-primary-500 bg-gray-50 p-3">
+              <p className="my-3 border-l-4 border-primary-500 bg-sand-50 p-3">
                 <strong>Plafond Madelin santé + prévoyance</strong> = 3,75% du PASS + 7% du bénéfice
                 imposable, dans la limite de 3% de 8 PASS.
               </p>

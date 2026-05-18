@@ -19,14 +19,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'assurance-e-commerce'
-const TITLE = 'Assurance e-commerce — Pack 2026 (RC pro, cyber, marchandises, RGPD)'
+const TITLE = 'Assurance e-commerce — Pack 2026 (RC Pro, cyber, marchandises, RGPD)'
 const TAGLINE =
-  "L'assurance dédiée aux e-commerçants : RC pro produit + cyber assurance RGPD + assurance marchandises stockées + responsabilité expéditions. Tarifs négociés."
+  "L'assurance dédiée aux e-commerçants : RC Pro produit + cyber assurance RGPD + assurance marchandises stockées + responsabilité expéditions. Tarifs négociés."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance e-commerce : pack RC pro produits + cyber assurance (breach RGPD, fraude paiement) + assurance marchandises stockées + responsabilité livraison. Tous statuts (AE, EI, SARL, SAS). Tarifs à partir de 380€ par an. Devis ORIAS sous 24h.',
+    'Assurance e-commerce : pack RC Pro produits + cyber assurance (breach RGPD, fraude paiement) + assurance marchandises stockées + responsabilité livraison. Tous statuts (AE, EI, SARL, SAS). Tarifs à partir de 380€ par an. Devis ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -37,7 +37,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance e-commerce désigne le pack de garanties indispensables à toute activité de vente en ligne (boutique Shopify, WooCommerce, Magento, marketplace Amazon, Etsy ou Cdiscount, dropshipping, pure player digital). Elle se distingue de l'assurance commerce traditionnelle par la prédominance des risques cyber (breach RGPD, fraude au paiement, ransomware sur le back-office), des risques produit (responsabilité civile produit en cas de défaut), des risques marchandises (stockage en entrepôt + transport vers le client), et des risques juridiques transverses (litige client B2C, droit de rétractation, garantie légale de conformité). Le pack standard combine 5 garanties : RC pro produits (1,5-3 M€), cyber assurance RGPD (200-1 M€), assurance marchandises stockées + transportées, RC client + responsabilité livraison, et protection juridique B2C. Les tarifs 2026 démarrent à 380 € HT par an pour un AE e-commerce solo (CA &lt; 30k€) jusqu'à 8 800 € HT par an pour une PME e-commerce 5 salariés avec entrepôt."
+      intro="L'assurance e-commerce désigne le pack de garanties indispensables à toute activité de vente en ligne (boutique Shopify, WooCommerce, Magento, marketplace Amazon, Etsy ou Cdiscount, dropshipping, pure player digital). Elle se distingue de l'assurance commerce traditionnelle par la prédominance des risques cyber (breach RGPD, fraude au paiement, ransomware sur le back-office), des risques produit (responsabilité civile produit en cas de défaut), des risques marchandises (stockage en entrepôt + transport vers le client), et des risques juridiques transverses (litige client B2C, droit de rétractation, garantie légale de conformité). Le pack standard combine 5 garanties : RC Pro produits (1,5-3 M€), cyber assurance RGPD (200-1 M€), assurance marchandises stockées + transportées, RC client + responsabilité livraison, et protection juridique B2C. Les tarifs 2026 démarrent à 380 € HT par an pour un AE e-commerce solo (CA &lt; 30k€) jusqu'à 8 800 € HT par an pour une PME e-commerce 5 salariés avec entrepôt."
       legalReference="Code de la consommation + RGPD + LCEN art. 6-III + Loi Hamon (rétractation 14 jours)"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
@@ -104,7 +104,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Pack annuel HT</th>
                   </tr>
@@ -136,7 +136,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : CA, type de produits (alimentaire, cosmétique ou électronique majorés),
                 volume commandes par mois, présence stock physique, multi-pays UE ou monde,
                 certifications (PCI-DSS, ISO 27001).
@@ -162,7 +162,7 @@ export default function Page() {
                   >
                     RC Pro
                   </Link>{' '}
-                  — pilier complet RC pro
+                  — pilier complet RC Pro
                 </li>
                 <li>
                   <Link
@@ -190,7 +190,7 @@ export default function Page() {
       faq={[
         {
           q: "L'assurance e-commerce est-elle obligatoire ?",
-          a: "Pas légalement obligatoire (sauf RC pro sur certains produits réglementés : alimentaire, cosmétique, jouets, médicaments). MAIS fortement recommandée : 1 e-commerçant sur 4 subit un breach RGPD dans ses 5 premières années (sanctions CNIL jusqu'à 4% CA), 1 commande sur 8 génère un litige client. Sans cyber + RC produits : exposition patrimoine personnel illimitée.",
+          a: "Pas légalement obligatoire (sauf RC Pro sur certains produits réglementés : alimentaire, cosmétique, jouets, médicaments). MAIS fortement recommandée : 1 e-commerçant sur 4 subit un breach RGPD dans ses 5 premières années (sanctions CNIL jusqu'à 4% CA), 1 commande sur 8 génère un litige client. Sans cyber + RC produits : exposition patrimoine personnel illimitée.",
         },
         {
           q: "Combien coûte l'assurance d'un e-commerce en 2026 ?",

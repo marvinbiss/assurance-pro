@@ -122,7 +122,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil assuré</th>
                     <th className="border p-2 text-right">Capital assuré</th>
                     <th className="border p-2 text-right">Cotisation annuelle</th>
@@ -156,7 +156,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Tarifs hors options (rente d&apos;invalidité progressive, exonération de cotisation
                 en cas d&apos;arrêt de travail). Examen médical au-delà de 200 k€ de capital
                 (questionnaire simple en deçà).

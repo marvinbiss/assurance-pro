@@ -60,7 +60,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Numéro</th>
                     <th className="border p-2 text-left">Format</th>
                     <th className="border p-2 text-left">Utilité</th>

@@ -100,7 +100,7 @@ export default function RcProAvocatPage() {
           body: (
             <table className="my-4 w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-sand-100">
                   <th className="border p-2">Profil</th>
                   <th className="border p-2 text-right">Plafond 1,5M€</th>
                   <th className="border p-2 text-right">Plafond 5M€</th>

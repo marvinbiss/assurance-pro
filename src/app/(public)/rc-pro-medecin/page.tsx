@@ -81,7 +81,7 @@ export default function RcProMedecinPage() {
           body: (
             <table className="my-4 w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-sand-100">
                   <th className="border p-2">Spécialité</th>
                   <th className="border p-2 text-right">Plafond 8M€</th>
                 </tr>

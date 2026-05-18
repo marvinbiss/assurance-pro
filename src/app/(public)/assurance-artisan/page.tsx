@@ -21,7 +21,7 @@
  *   prendre sur les KW longue traîne hors BTP pur.
  *
  * Stratégie : pilier transverse qui aiguille vers les sous-piliers (décennale,
- * RC pro, multirisque, mutuelle, prévoyance) selon le profil artisan.
+ * RC Pro, multirisque, mutuelle, prévoyance) selon le profil artisan.
  */
 
 import type { Metadata } from 'next'
@@ -35,12 +35,12 @@ export const revalidate = 86400
 const SLUG = 'assurance-artisan'
 const TITLE = 'Assurance artisan — Pack BTP, RC, mutuelle, prévoyance 2026'
 const TAGLINE =
-  'Le pack assurance complet pour artisans : décennale obligatoire BTP, RC pro, multirisque atelier, mutuelle TNS, prévoyance. Conseil ORIAS dédié, devis gratuit sous 24h.'
+  'Le pack assurance complet pour artisans : décennale obligatoire BTP, RC Pro, multirisque atelier, mutuelle TNS, prévoyance. Conseil ORIAS dédié, devis gratuit sous 24h.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance artisan : décennale BTP obligatoire, RC pro, multirisque atelier par véhicule, mutuelle TNS, prévoyance Madelin. Pack négocié à partir de 980 € par an. 8 assureurs comparés. Devis gratuit ORIAS sous 24h.',
+    'Assurance artisan : décennale BTP obligatoire, RC Pro, multirisque atelier par véhicule, mutuelle TNS, prévoyance Madelin. Pack négocié à partir de 980 € par an. 8 assureurs comparés. Devis gratuit ORIAS sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }
@@ -88,7 +88,7 @@ export default function Page() {
               <p>Cela dépend du métier et du statut juridique :</p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Garantie</th>
                     <th className="border p-2 text-left">Artisan BTP</th>
                     <th className="border p-2 text-left">Artisan hors BTP</th>
@@ -150,7 +150,7 @@ export default function Page() {
               </table>
               <p className="mt-3">
                 <strong>Pour un artisan BTP solo en AE</strong>, le pack minimum cohérent est :
-                décennale + RC pro + véhicule pro + (mutuelle Madelin + prévoyance Madelin fortement
+                décennale + RC Pro + véhicule pro + (mutuelle Madelin + prévoyance Madelin fortement
                 recommandées). Pour un artisan SARL avec salariés : ajouter mutuelle collective
                 obligatoire (50% prise en charge employeur).
               </p>
@@ -167,7 +167,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil artisan</th>
                     <th className="border p-2 text-right">Pack complet annuel HT</th>
                   </tr>
@@ -213,7 +213,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : statut (AE ou EI ou EURL ou SARL ou SAS), CA prévisionnel, antécédents
                 sinistres, label RGE, présence salariés, taille flotte automobile. Contrats Pack BTP
                 négociés avec SMABTP, MAAF Pro, AXA Pro, Allianz Pro, Hiscox, April Pro, MMA Pro,

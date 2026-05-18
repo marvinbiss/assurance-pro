@@ -43,7 +43,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="L'assurance locaux entreprise est la multirisque professionnelle qui couvre les locaux d'exploitation d'une entreprise : siège social, ateliers de production, entrepôts de stockage, dépôts logistiques, agences secondaires, locaux annexes. Elle se distingue des contrats spécifiques commerce ou bureau en couvrant les configurations multi-sites, les locaux de grande surface (>500 m²) et les sites industriels avec stocks et matériel pro de forte valeur. Les garanties principales : incendie + foudre + explosion, vol par effraction, vandalisme, dégâts des eaux, événements climatiques (tempête, grêle, neige), bris de glace, RC exploitation envers les tiers, et pertes d'exploitation pendant la durée d'indisponibilité du local. Les tarifs 2026 démarrent à 480 € HT par an pour un petit local annexe (40 m²) jusqu'à 25 000 € HT par an pour un site industriel multi-sites."
+      intro="L'assurance locaux entreprise est la Multirisque Professionnelle qui couvre les locaux d'exploitation d'une entreprise : siège social, ateliers de production, entrepôts de stockage, dépôts logistiques, agences secondaires, locaux annexes. Elle se distingue des contrats spécifiques commerce ou bureau en couvrant les configurations multi-sites, les locaux de grande surface (>500 m²) et les sites industriels avec stocks et matériel pro de forte valeur. Les garanties principales : incendie + foudre + explosion, vol par effraction, vandalisme, dégâts des eaux, événements climatiques (tempête, grêle, neige), bris de glace, RC exploitation envers les tiers, et pertes d'exploitation pendant la durée d'indisponibilité du local. Les tarifs 2026 démarrent à 480 € HT par an pour un petit local annexe (40 m²) jusqu'à 25 000 € HT par an pour un site industriel multi-sites."
       legalReference="Article 1733 du Code civil (bail commercial) + clauses standard MRP"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
@@ -79,7 +79,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Type de local</th>
                     <th className="border p-2 text-left">Contrat dédié</th>
                   </tr>
@@ -131,7 +131,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil local</th>
                     <th className="border p-2 text-right">Surface</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
@@ -170,7 +170,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : valeur du contenu (mobilier + matériel + stock), zone (Paris +30%),
                 présence d&apos;alarme NF + télésurveillance (-15-25%), antécédents sinistres,
                 classement ICPE (Installations Classées Protection Environnement).

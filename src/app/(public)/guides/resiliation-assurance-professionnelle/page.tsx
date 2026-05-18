@@ -120,7 +120,7 @@ export default function Page() {
           h2: 'Modèle de lettre de résiliation',
           body: (
             <>
-              <p className="my-3 whitespace-pre-line border-l-4 border-primary-500 bg-gray-50 p-4 text-sm">
+              <p className="my-3 whitespace-pre-line border-l-4 border-primary-500 bg-sand-50 p-4 text-sm">
                 {`[Vos nom + prénom + adresse]
 [Date]
 

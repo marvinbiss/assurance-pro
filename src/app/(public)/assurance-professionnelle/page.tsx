@@ -92,7 +92,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Garantie</th>
                     <th className="border p-2 text-left">Obligatoire pour</th>
                     <th className="border p-2 text-left">Référence légale</th>
@@ -290,7 +290,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Assureur</th>
                     <th className="border p-2 text-left">Spécialité</th>
                     <th className="border p-2 text-left">Atout clé</th>
@@ -409,7 +409,7 @@ export default function Page() {
         },
         {
           q: 'Quelle est la différence entre RC Pro et RC Exploitation ?',
-          a: "RC EXPLOITATION : dommages causés à un tiers PENDANT l'exploitation (un client glisse dans votre boutique, le café renversé sur le laptop d'un visiteur). RC PROFESSIONNELLE : dommages causés par une FAUTE PROFESSIONNELLE (erreur de conseil, retard de livraison, défaut de prestation). Les deux sont souvent souscrites ensemble dans un pack « RC pro complète » à 200-800€ par an pour une TPE.",
+          a: "RC EXPLOITATION : dommages causés à un tiers PENDANT l'exploitation (un client glisse dans votre boutique, le café renversé sur le laptop d'un visiteur). RC PROFESSIONNELLE : dommages causés par une FAUTE PROFESSIONNELLE (erreur de conseil, retard de livraison, défaut de prestation). Les deux sont souvent souscrites ensemble dans un pack « RC Pro complète » à 200-800€ par an pour une TPE.",
         },
         {
           q: 'Quelle assurance pro choisir pour un auto-entrepreneur ?',

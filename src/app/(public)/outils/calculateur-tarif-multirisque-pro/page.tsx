@@ -1,11 +1,11 @@
 /**
- * Outil — Calculateur tarif multirisque professionnelle 2026
+ * Outil — Calculateur tarif Multirisque Professionnelle 2026
  *
  * KW Ahrefs (kw_universe) :
  * - Famille vert-multirisque_professionnelle.json : 8 KW, 1 580 vol, ROI 508k score
- * - "multirisque professionnelle" 600 vol KD 1 + tail
+ * - "Multirisque Professionnelle" 600 vol KD 1 + tail
  * - "tarif multirisque pro" / "prix multirisque pro" 80-150 vol CPC 280€
- * - "devis multirisque professionnelle" 150 vol CPC 600€
+ * - "devis Multirisque Professionnelle" 150 vol CPC 600€
  */
 
 import type { Metadata } from 'next'
@@ -24,7 +24,7 @@ const SLUG = 'outils / calculateur-tarif-multirisque-pro'
 export const metadata: Metadata = {
   title: 'Calculateur tarif multirisque pro 2026 — Bureau, commerce, atelier (gratuit)',
   description:
-    'Calculez votre tarif multirisque professionnelle 2026 en 30 secondes. 7 types de locaux (bureau, commerce, restaurant, atelier, entrepôt, cabinet médical, showroom). 7 assureurs comparés. 4 formules. Devis officiel sous 24h.',
+    'Calculez votre tarif Multirisque Professionnelle 2026 en 30 secondes. 7 types de locaux (bureau, commerce, restaurant, atelier, entrepôt, cabinet médical, showroom). 7 assureurs comparés. 4 formules. Devis officiel sous 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: 'Calculateur tarif multirisque pro 2026',
@@ -58,7 +58,7 @@ export default async function Page() {
             Calculateur tarif multirisque pro 2026
           </h1>
           <p className="mb-6 max-w-3xl text-lg opacity-95 md:text-xl">
-            Estimez immédiatement votre tarif multirisque professionnelle selon le type de locaux,
+            Estimez immédiatement votre tarif Multirisque Professionnelle selon le type de locaux,
             la surface, votre CA et le niveau de couverture souhaité.{' '}
             <strong>8 coefficients publics</strong> + barèmes 2026 de 7 assureurs partenaires.
           </p>
@@ -90,18 +90,18 @@ export default async function Page() {
       <section className="py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez votre profil locaux</h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             Le calcul est <strong>100% côté navigateur</strong>. Estimation indicative basée sur
             barèmes mutualisés FFA 2024 + grilles 2026 des 7 assureurs partenaires (MMA Pro, AXA
             Pro, Allianz Pro, Generali, MAIF Pro, Pro BTP MR, April Pro).
           </p>
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-lg border border-sand-200 bg-white p-6 shadow-sm">
             <TarifCalculator garantie="multirisque-pro" />
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 py-12">
+      <section className="bg-sand-50 py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Tarifs au m² 2026 par type de locaux</h2>
           <table className="w-full border-collapse bg-white text-sm">
@@ -150,7 +150,7 @@ export default async function Page() {
               </tr>
             </tbody>
           </table>
-          <p className="mt-3 text-xs italic text-gray-600">
+          <p className="mt-3 text-xs italic text-charcoal-600">
             Tarifs base au m² × surface × coefficients (statut, CA, formule, mobilier, zone, perte
             exploitation). Sources : FFA 2024 + grilles assureurs 2026.
           </p>
@@ -181,7 +181,7 @@ export default async function Page() {
           <div className="flex flex-col justify-center gap-3 md:flex-row">
             <Link
               href="/multirisque-pro"
-              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-orange-700 shadow-lg transition hover:bg-gray-100"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-orange-700 shadow-lg transition hover:bg-sand-100"
             >
               → Pilier multirisque pro
             </Link>
@@ -206,7 +206,7 @@ export default async function Page() {
             operatingSystem: 'Any',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
             description:
-              'Calculateur interactif multirisque professionnelle 2026. 8 coefficients publics ACPR. 7 types locaux × 7 assureurs comparés.',
+              'Calculateur interactif Multirisque Professionnelle 2026. 8 coefficients publics ACPR. 7 types locaux × 7 assureurs comparés.',
             featureList: [
               'Calcul instantané 100% client-side',
               '7 types locaux (bureau, commerce, restaurant, atelier, entrepôt, médical, showroom)',

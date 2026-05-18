@@ -53,7 +53,7 @@ export const EXTENSIONS: Record<string, Extension> = {
         },
         callout: {
           tone: 'info',
-          text: "Le coût d'adhésion (typiquement 200 à 600 € par an selon la fédération) est généralement amorti dès la première année par les économies sur la décennale + RC pro. Bonus : accès à des formations qualifiantes valorisées par les assureurs.",
+          text: "Le coût d'adhésion (typiquement 200 à 600 € par an selon la fédération) est généralement amorti dès la première année par les économies sur la décennale + RC Pro. Bonus : accès à des formations qualifiantes valorisées par les assureurs.",
         },
       },
       {

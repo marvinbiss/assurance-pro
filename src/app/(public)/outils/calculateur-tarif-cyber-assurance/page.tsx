@@ -94,18 +94,18 @@ export default async function Page() {
       <section className="py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez votre profil cyber</h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             Le calcul est <strong>100% côté navigateur</strong>. Estimation indicative basée sur
             barèmes ANSSI 2024 (statistiques attaques par taille) + grilles 2026 des 6 assureurs
             cyber partenaires.
           </p>
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-lg border border-sand-200 bg-white p-6 shadow-sm">
             <TarifCalculator garantie="cyber" />
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 py-12">
+      <section className="bg-sand-50 py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Que couvre la cyber assurance ?</h2>
           <div className="grid gap-4 text-sm md:grid-cols-2">
@@ -176,7 +176,7 @@ export default async function Page() {
           <div className="flex flex-col justify-center gap-3 md:flex-row">
             <Link
               href="/cyber-assurance"
-              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-slate-800 shadow-lg transition hover:bg-gray-100"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-slate-800 shadow-lg transition hover:bg-sand-100"
             >
               → Pilier cyber assurance
             </Link>

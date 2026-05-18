@@ -151,7 +151,7 @@ export default function Page() {
         },
         {
           q: 'Différence avec assurance VTC ?',
-          a: 'Assurance VTC = transport DE PASSAGERS contre rémunération (Loi LOTI). Garantie spécifique passagers + RC pro corporels passagers. Assurance auto pro = transport BIENS ou MATÉRIEL ou usage pro sans transport personnes payant. Voir notre /outils ou calculateur-tarif-vtc pour VTC spécifique.',
+          a: 'Assurance VTC = transport DE PASSAGERS contre rémunération (Loi LOTI). Garantie spécifique passagers + RC Pro corporels passagers. Assurance auto pro = transport BIENS ou MATÉRIEL ou usage pro sans transport personnes payant. Voir notre /outils ou calculateur-tarif-vtc pour VTC spécifique.',
         },
       ]}
     />

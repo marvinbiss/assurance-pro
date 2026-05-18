@@ -121,7 +121,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Plafond — litige</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
@@ -155,7 +155,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : CA, secteur d&apos;activité (BTP / restauration / services à forte
                 sinistralité contentieuse majorés), antécédents litiges, plafond et sous-limites
                 choisis. Souvent en option +30€ par mois sur un contrat multirisque pro existant.
@@ -170,7 +170,7 @@ export default function Page() {
               <p>Combien coûte un litige pro classique sans PJ ? Estimations 2026 :</p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Type de litige</th>
                     <th className="border p-2 text-right">Coût avocat moyen</th>
                     <th className="border p-2 text-right">Durée procédure</th>
@@ -230,7 +230,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Garantie</th>
                     <th className="border p-2 text-left">Couvre</th>
                   </tr>
@@ -289,7 +289,7 @@ export default function Page() {
           a: 'Frais avocat + procédure + huissier + expert pour : litiges contractuels (fournisseur, client, bail commercial), recouvrement créances impayées, défense en cas de contrôle fiscal, URSSAF ou inspection travail, contentieux salariés (licenciement, rupture conventionnelle), défense pénale du dirigeant (sous-limite 6-15k€), conseil juridique téléphonique illimité 7j/7.',
         },
         {
-          q: 'PJ pro vs RC pro : différence ?',
+          q: 'PJ pro vs RC Pro : différence ?',
           a: "RC PRO = paie les INDEMNITÉS versées à un TIERS lésé par votre faute. PJ PRO = paie les FRAIS D'AVOCAT pour DÉFENDRE vos intérêts (en demande ou en défense). Les 2 sont COMPLÉMENTAIRES. Exemple : client vous attaque → RC Pro paie les dommages-intérêts si condamnation, PJ Pro paie les frais d'avocat pour vous défendre.",
         },
         {

@@ -17,7 +17,7 @@ export const revalidate = 86400
 const SLUG = 'rc-pro / photographe'
 const TITLE = 'RC Pro photographe — Tarifs 2026 (mariage, événementiel, studio)'
 const TAGLINE =
-  "L'assurance RC pro pour photographes et vidéastes : mariage, événementiel, studio, corporate. Couvre matériel client + perte fichiers + droit à l'image."
+  "L'assurance RC Pro pour photographes et vidéastes : mariage, événementiel, studio, corporate. Couvre matériel client + perte fichiers + droit à l'image."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -69,7 +69,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>
@@ -99,7 +99,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Garanties optionnelles indispensables : « tous risques matériel photo » (boîtiers,
                 objectifs — souvent 15-50k€ de matériel) + « bris matériel transporté » + « location
                 matériel ». Voir{' '}
@@ -130,7 +130,7 @@ export default function Page() {
         },
         {
           q: 'Drone vidéo : assurance spécifique ?',
-          a: 'OUI obligatoire : RC pro spécifique drone + autorisation DGAC (déclaration ou agrément selon poids). Couverture des dommages causés par le drone (chute, collision, perte). Tarif additionnel : 200-500€ par an. Indispensable pour vidéaste pro avec drone.',
+          a: 'OUI obligatoire : RC Pro spécifique drone + autorisation DGAC (déclaration ou agrément selon poids). Couverture des dommages causés par le drone (chute, collision, perte). Tarif additionnel : 200-500€ par an. Indispensable pour vidéaste pro avec drone.',
         },
       ]}
     />

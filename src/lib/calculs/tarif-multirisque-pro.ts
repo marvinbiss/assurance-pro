@@ -1,5 +1,5 @@
 /**
- * Calcul tarif multirisque professionnelle 2026 — Modèle data-driven
+ * Calcul tarif Multirisque Professionnelle 2026 — Modèle data-driven
  *
  * Couvre : incendie + dégâts eaux + vol + vandalisme + bris glace +
  * perte exploitation + RC locataire/propriétaire + cat nat

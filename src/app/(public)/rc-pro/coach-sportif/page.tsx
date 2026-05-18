@@ -16,7 +16,7 @@ export const revalidate = 86400
 const SLUG = 'rc-pro / coach-sportif'
 const TITLE = 'RC Pro coach sportif — OBLIGATOIRE 2026 (Code du sport L. 321-7)'
 const TAGLINE =
-  "L'assurance RC pro OBLIGATOIRE pour coachs sportifs : Code du sport. Couvre blessures clients, malaise cardiaque, dommages matériel salle. Tarifs 220-580€ par an."
+  "L'assurance RC Pro OBLIGATOIRE pour coachs sportifs : Code du sport. Couvre blessures clients, malaise cardiaque, dommages matériel salle. Tarifs 220-580€ par an."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -68,7 +68,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
                   </tr>

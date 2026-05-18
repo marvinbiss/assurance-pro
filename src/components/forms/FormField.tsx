@@ -42,13 +42,21 @@ export function FormField({
 
   return (
     <div className={clsx('space-y-1', className)}>
-      <label htmlFor={fieldId} className="block text-sm font-medium text-gray-700">
+      <label htmlFor={fieldId} className="block text-sm font-medium text-charcoal-700">
         {label}
-        {required && <span className="text-red-500 ml-1">*</span>}
+        {required && <span className="ml-1 text-red-500">*</span>}
       </label>
       {childWithProps}
-      {error && <p id={errorId} className="text-sm text-red-600" role="alert">{error}</p>}
-      {hint && !error && <p id={hintId} className="text-sm text-gray-500">{hint}</p>}
+      {error && (
+        <p id={errorId} className="text-sm text-red-600" role="alert">
+          {error}
+        </p>
+      )}
+      {hint && !error && (
+        <p id={hintId} className="text-sm text-charcoal-500">
+          {hint}
+        </p>
+      )}
     </div>
   )
 }

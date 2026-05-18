@@ -57,7 +57,7 @@ const TERMS: Term[] = [
   {
     term: 'Bureau Central de Tarification (BCT)',
     definition:
-      "Institution permettant à un professionnel refusé par plusieurs assureurs d'obtenir une couverture obligatoire (décennale, RC pro auto). Le BCT fixe le tarif et oblige un assureur à couvrir. Recours en dernier ressort.",
+      "Institution permettant à un professionnel refusé par plusieurs assureurs d'obtenir une couverture obligatoire (décennale, RC Pro auto). Le BCT fixe le tarif et oblige un assureur à couvrir. Recours en dernier ressort.",
     related: ['Décennale'],
   },
   {
@@ -156,7 +156,7 @@ const TERMS: Term[] = [
       'Organisme indépendant chargé de résoudre amiablement les litiges entre assurés et assureurs. Saisi gratuitement après échec du recours interne. www.mediation-assurance.org.',
   },
   {
-    term: 'Multirisque professionnelle (MRP)',
+    term: 'Multirisque Professionnelle (MRP)',
     definition:
       "Contrat tout-en-un couvrant les locaux pro, leur contenu (mobilier, matériel, stocks), la perte d'exploitation et la RC Exploitation. Pas obligatoire mais incontournable pour les commerces et artisans avec atelier.",
   },

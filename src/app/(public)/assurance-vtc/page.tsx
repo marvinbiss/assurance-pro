@@ -102,7 +102,7 @@ export default function AssuranceVtcPage() {
           body: (
             <table className="my-4 w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-sand-100">
                   <th className="border p-2">Profil</th>
                   <th className="border p-2 text-right">Berline standard</th>
                   <th className="border p-2 text-right">Premium</th>

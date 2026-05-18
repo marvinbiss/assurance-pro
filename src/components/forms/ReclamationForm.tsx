@@ -80,26 +80,29 @@ export function ReclamationForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+      className="space-y-4 rounded-lg border border-sand-200 bg-white p-6 shadow-sm"
     >
       <fieldset disabled={state.status === 'submitting'} className="space-y-4">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <div>
-            <label htmlFor="civilite" className="mb-1 block text-sm font-semibold text-gray-700">
+            <label
+              htmlFor="civilite"
+              className="mb-1 block text-sm font-semibold text-charcoal-700"
+            >
               Civilité
             </label>
             <select
               id="civilite"
               name="civilite"
               required
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
             >
               <option value="M.">M.</option>
               <option value="Mme">Mme</option>
             </select>
           </div>
           <div>
-            <label htmlFor="prenom" className="mb-1 block text-sm font-semibold text-gray-700">
+            <label htmlFor="prenom" className="mb-1 block text-sm font-semibold text-charcoal-700">
               Prénom *
             </label>
             <input
@@ -107,11 +110,11 @@ export function ReclamationForm() {
               name="prenom"
               type="text"
               required
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
             />
           </div>
           <div>
-            <label htmlFor="nom" className="mb-1 block text-sm font-semibold text-gray-700">
+            <label htmlFor="nom" className="mb-1 block text-sm font-semibold text-charcoal-700">
               Nom *
             </label>
             <input
@@ -119,14 +122,14 @@ export function ReclamationForm() {
               name="nom"
               type="text"
               required
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label htmlFor="email" className="mb-1 block text-sm font-semibold text-gray-700">
+            <label htmlFor="email" className="mb-1 block text-sm font-semibold text-charcoal-700">
               Email *
             </label>
             <input
@@ -135,11 +138,14 @@ export function ReclamationForm() {
               type="email"
               required
               autoComplete="email"
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
             />
           </div>
           <div>
-            <label htmlFor="telephone" className="mb-1 block text-sm font-semibold text-gray-700">
+            <label
+              htmlFor="telephone"
+              className="mb-1 block text-sm font-semibold text-charcoal-700"
+            >
               Téléphone
             </label>
             <input
@@ -147,39 +153,39 @@ export function ReclamationForm() {
               name="telephone"
               type="tel"
               autoComplete="tel"
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="societe" className="mb-1 block text-sm font-semibold text-gray-700">
+          <label htmlFor="societe" className="mb-1 block text-sm font-semibold text-charcoal-700">
             Raison sociale (si professionnel)
           </label>
           <input
             id="societe"
             name="societe"
             type="text"
-            className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
           />
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label htmlFor="contrat" className="mb-1 block text-sm font-semibold text-gray-700">
+            <label htmlFor="contrat" className="mb-1 block text-sm font-semibold text-charcoal-700">
               N° de contrat
             </label>
             <input
               id="contrat"
               name="contrat"
               type="text"
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
             />
           </div>
           <div>
             <label
               htmlFor="sinistre_ref"
-              className="mb-1 block text-sm font-semibold text-gray-700"
+              className="mb-1 block text-sm font-semibold text-charcoal-700"
             >
               Référence sinistre
             </label>
@@ -187,13 +193,13 @@ export function ReclamationForm() {
               id="sinistre_ref"
               name="sinistre_ref"
               type="text"
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="categorie" className="mb-1 block text-sm font-semibold text-gray-700">
+          <label htmlFor="categorie" className="mb-1 block text-sm font-semibold text-charcoal-700">
             Catégorie *
           </label>
           <select
@@ -201,7 +207,7 @@ export function ReclamationForm() {
             name="categorie"
             required
             defaultValue=""
-            className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
           >
             <option value="" disabled>
               — Choisir —
@@ -217,7 +223,7 @@ export function ReclamationForm() {
         </div>
 
         <div>
-          <label htmlFor="objet" className="mb-1 block text-sm font-semibold text-gray-700">
+          <label htmlFor="objet" className="mb-1 block text-sm font-semibold text-charcoal-700">
             Objet *
           </label>
           <input
@@ -226,12 +232,12 @@ export function ReclamationForm() {
             type="text"
             required
             maxLength={200}
-            className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="mb-1 block text-sm font-semibold text-gray-700">
+          <label htmlFor="message" className="mb-1 block text-sm font-semibold text-charcoal-700">
             Message *
           </label>
           <textarea
@@ -240,12 +246,12 @@ export function ReclamationForm() {
             required
             rows={6}
             maxLength={4000}
-            className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            className="w-full rounded border border-sand-300 px-3 py-2 text-sm"
             placeholder="Décrivez précisément les faits, dates, échanges déjà eus, et la résolution attendue."
           />
         </div>
 
-        <label className="flex items-start gap-2 text-sm text-gray-700">
+        <label className="flex items-start gap-2 text-sm text-charcoal-700">
           <input type="checkbox" name="consent" required className="mt-0.5" />
           <span>
             J&apos;accepte le traitement de mes données dans le cadre du suivi de ma réclamation

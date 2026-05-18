@@ -116,7 +116,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil IT</th>
                     <th className="border p-2 text-right">Plafond</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
@@ -167,7 +167,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : CA déclaré, antécédents sinistres, certifications (ISO 27001, SOC 2,
                 ANSSI), clientèle (B2B grands comptes vs PME), territoire (France métro vs UE vs
                 monde), rétroactivité activée (oui ou non).
@@ -182,7 +182,7 @@ export default function Page() {
               <p>Deux garanties souvent confondues mais distinctes :</p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Garantie</th>
                     <th className="border p-2 text-left">Couvre</th>
                     <th className="border p-2 text-left">Sinistre type</th>

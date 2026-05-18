@@ -17,7 +17,7 @@ export const revalidate = 86400
 const SLUG = 'rc-pro / micro-entreprise-prestation-service'
 const TITLE = 'RC Pro micro-entreprise prestation de service — Pack 2026'
 const TAGLINE =
-  "L'assurance RC pro pour micro-entreprises de prestation de services (BNC) : conseil, design, formation, freelance digital. Madelin déductible si réel."
+  "L'assurance RC Pro pour micro-entreprises de prestation de services (BNC) : conseil, design, formation, freelance digital. Madelin déductible si réel."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,

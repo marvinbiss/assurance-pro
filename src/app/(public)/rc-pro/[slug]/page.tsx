@@ -136,45 +136,45 @@ export default async function RcProSlugPage(props: { params: Promise<Params> }) 
             <>
               <table className="my-4 w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border border-gray-300 p-2 text-left">Profil</th>
-                    <th className="border border-gray-300 p-2 text-right">Tarif annuel HT</th>
+                  <tr className="bg-sand-100">
+                    <th className="border border-sand-300 p-2 text-left">Profil</th>
+                    <th className="border border-sand-300 p-2 text-right">Tarif annuel HT</th>
                   </tr>
                 </thead>
                 <tbody>
                   {p.tarifs.auto_entrepreneur.max > 0 ? (
                     <tr>
-                      <td className="border border-gray-300 p-2">
+                      <td className="border border-sand-300 p-2">
                         <strong>Auto-entrepreneur</strong>
                       </td>
-                      <td className="border border-gray-300 p-2 text-right">
+                      <td className="border border-sand-300 p-2 text-right">
                         {p.tarifs.auto_entrepreneur.min}€ - {p.tarifs.auto_entrepreneur.max}€
                       </td>
                     </tr>
                   ) : null}
                   {p.tarifs.sarl_sas.max > 0 ? (
                     <tr>
-                      <td className="border border-gray-300 p-2">
+                      <td className="border border-sand-300 p-2">
                         <strong>SARL — SAS — SASU</strong>
                       </td>
-                      <td className="border border-gray-300 p-2 text-right">
+                      <td className="border border-sand-300 p-2 text-right">
                         {p.tarifs.sarl_sas.min}€ - {p.tarifs.sarl_sas.max}€
                       </td>
                     </tr>
                   ) : null}
                   {p.tarifs.grand_compte.max > 0 ? (
                     <tr>
-                      <td className="border border-gray-300 p-2">
+                      <td className="border border-sand-300 p-2">
                         <strong>Grand compte</strong> (CA &gt; 500k€)
                       </td>
-                      <td className="border border-gray-300 p-2 text-right">
+                      <td className="border border-sand-300 p-2 text-right">
                         {p.tarifs.grand_compte.min}€ - {p.tarifs.grand_compte.max}€
                       </td>
                     </tr>
                   ) : null}
                 </tbody>
               </table>
-              <p className="text-xs italic text-gray-600">
+              <p className="text-xs italic text-charcoal-600">
                 Tarifs indicatifs basés sur les barèmes 2026 de nos 10 assureurs partenaires. Le
                 tarif réel dépend de votre profil (CA, ancienneté, garanties souhaitées) et fait
                 l’objet d’un devis personnalisé.

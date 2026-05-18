@@ -110,7 +110,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Type de commerce</th>
                     <th className="border p-2 text-right">Surface</th>
                     <th className="border p-2 text-right">Tarif annuel HT</th>
@@ -166,7 +166,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : zone géographique (Paris +30-50% vs province), valeur du stock, présence
                 d&apos;alarme NF + télésurveillance (-15 à -25%), antécédents, horaires
                 d&apos;ouverture (commerces ouverts la nuit majorés).
@@ -231,7 +231,7 @@ export default function Page() {
                   <strong>Marchandises transportées</strong> (vol pendant transport, gel, accident)
                 </li>
                 <li>
-                  <strong>RC pro — RC client</strong> sur tous les emplacements occupés (foires,
+                  <strong>RC Pro — RC client</strong> sur tous les emplacements occupés (foires,
                   marchés, événements)
                 </li>
                 <li>

@@ -5,7 +5,7 @@
  * - "avocat assurance"             → 300 vol, KD 1, CPC 70€
  * - "avocat litige assurance"      → 200 vol, KD 0, CPC 60€ ⭐
  * - "avocat spécialisé en assurance" → 200 vol, KD 0, CPC 50€
- * - "assurance avocat"             → 300 vol, KD 11, CPC 50€ (couvert par RC pro avocat)
+ * - "assurance avocat"             → 300 vol, KD 11, CPC 50€ (couvert par RC Pro avocat)
  * - Famille cumulée : ~700 vol/mois (hors assurance avocat)
  *
  * Stratégie : guide pour les pros confrontés à un litige avec leur assureur
@@ -179,7 +179,7 @@ export default function Page() {
               <h3>Honoraires types 2026</h3>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Prestation</th>
                     <th className="border p-2 text-right">Coût indicatif</th>
                   </tr>

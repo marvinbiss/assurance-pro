@@ -7,7 +7,7 @@
  * - Barèmes 2026 nos 6 assureurs spécialisés VTC (AXA Pro, Allianz Pro, Wakam, MMA, AMV,
  *   Opteven Mobility)
  * - Sinistralité corporelle passagers (BAAC 2024 — Bilan Annuel Accidents Corporels)
- * - Code transport art. L. 3122-1 (obligation RC pro spécifique transport personnes)
+ * - Code transport art. L. 3122-1 (obligation RC Pro spécifique transport personnes)
  *
  * Algorithme :
  *   Tarif = Base(profil) × Coef(âge_chauffeur) × Coef(ancienneté_permis) × Coef(zone)

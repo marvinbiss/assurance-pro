@@ -96,7 +96,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil artisan</th>
                     <th className="border p-2 text-right">Cotisation mensuelle</th>
                   </tr>
@@ -126,7 +126,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : âge (~+1,5% par an), tabagisme (+30-60%), antécédents médicaux, niveau
                 IJ choisi, durée garantie (1 095 jours = 3 ans standard).
               </p>

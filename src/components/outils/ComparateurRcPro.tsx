@@ -68,7 +68,7 @@ export function ComparateurRcPro() {
             id="cp-secteur"
             value={secteur}
             onChange={(e) => setSecteur(e.target.value)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {SECTEURS.map((s) => (
               <option key={s.value} value={s.value}>
@@ -85,7 +85,7 @@ export function ComparateurRcPro() {
             id="cp-priorite"
             value={priorite}
             onChange={(e) => setPriorite(e.target.value)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {PRIORITES.map((p) => (
               <option key={p.value} value={p.value}>
@@ -111,7 +111,7 @@ export function ComparateurRcPro() {
                   ? 'border-emerald-400 ring-2 ring-emerald-100'
                   : isEvite
                     ? 'border-amber-300 opacity-75'
-                    : 'border-gray-200'
+                    : 'border-sand-200'
               }`}
             >
               <div className="mb-3 flex items-start justify-between">
@@ -132,15 +132,15 @@ export function ComparateurRcPro() {
                       </span>
                     )}
                   </div>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-charcoal-500">
                     {a.groupe} — {a.agrement}
                   </p>
-                  <p className="mt-1 text-sm italic text-gray-700">« {a.sloganRcPro} »</p>
+                  <p className="mt-1 text-sm italic text-charcoal-700">« {a.sloganRcPro} »</p>
                 </div>
                 <div className="text-right">
                   <div className="text-2xl font-bold text-primary-700">
                     {a.noteGlobale.toFixed(1)}
-                    <span className="text-sm text-gray-500">/5</span>
+                    <span className="text-sm text-charcoal-500">/5</span>
                   </div>
                   <span
                     className={`mt-1 inline-block rounded px-2 py-1 text-xs font-semibold ${tarifBadge.couleur}`}
@@ -153,7 +153,7 @@ export function ComparateurRcPro() {
               <div className="mt-3 grid gap-4 text-sm md:grid-cols-2">
                 <div>
                   <p className="mb-1 font-semibold text-emerald-700">✓ Points forts</p>
-                  <ul className="space-y-0.5 text-gray-700">
+                  <ul className="space-y-0.5 text-charcoal-700">
                     {a.forces.map((f, k) => (
                       <li key={k}>• {f}</li>
                     ))}
@@ -161,7 +161,7 @@ export function ComparateurRcPro() {
                 </div>
                 <div>
                   <p className="mb-1 font-semibold text-amber-700">⚠️ Limites</p>
-                  <ul className="space-y-0.5 text-gray-700">
+                  <ul className="space-y-0.5 text-charcoal-700">
                     {a.faiblesses.map((f, k) => (
                       <li key={k}>• {f}</li>
                     ))}
@@ -169,23 +169,23 @@ export function ComparateurRcPro() {
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-3 gap-3 rounded bg-gray-50 p-3 text-xs">
+              <div className="mt-4 grid grid-cols-3 gap-3 rounded bg-sand-50 p-3 text-xs">
                 <div>
-                  <p className="text-gray-500">Délai devis</p>
+                  <p className="text-charcoal-500">Délai devis</p>
                   <p className="font-semibold">{a.delaiDevis}</p>
                 </div>
                 <div>
-                  <p className="text-gray-500">Délai attestation</p>
+                  <p className="text-charcoal-500">Délai attestation</p>
                   <p className="font-semibold">{a.delaiAttestation}</p>
                 </div>
                 <div>
-                  <p className="text-gray-500">Spécialité</p>
+                  <p className="text-charcoal-500">Spécialité</p>
                   <p className="font-semibold">{a.specialiteJuridique}</p>
                 </div>
               </div>
 
               {a.secteursForts.length > 0 && (
-                <p className="mt-3 text-xs text-gray-600">
+                <p className="mt-3 text-xs text-charcoal-600">
                   <strong>Secteurs forts :</strong> {a.secteursForts.join(' • ')}
                 </p>
               )}
@@ -198,7 +198,7 @@ export function ComparateurRcPro() {
         <h3 className="mb-2 text-xl font-bold text-primary-900">
           Notre cabinet ORIAS sélectionne pour vous
         </h3>
-        <p className="mb-4 text-sm text-gray-700">
+        <p className="mb-4 text-sm text-charcoal-700">
           Plutôt que de comparer seul, recevez sous 24h les{' '}
           <strong>3 propositions optimales</strong> parmi ces 8 assureurs, sélectionnées selon votre
           profil exact.
@@ -211,7 +211,7 @@ export function ComparateurRcPro() {
         </a>
       </div>
 
-      <p className="text-xs italic text-gray-500">
+      <p className="text-xs italic text-charcoal-500">
         Notes attribuées par notre cabinet ORIAS (synthèse sourcing public + retour terrain
         2024-2025). Conformité Reco ACPR 2024-R-02 + 2025-R-01 (transparence comparaison + devoir
         conseil).

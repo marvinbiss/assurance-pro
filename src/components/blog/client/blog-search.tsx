@@ -81,7 +81,7 @@ export function BlogSearch({ items, limit = 6 }: BlogSearchProps) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Rechercher un sujet (cyber, décennale, RC pro…)"
+          placeholder="Rechercher un sujet (cyber, décennale, RC Pro…)"
           autoComplete="off"
           className="w-full rounded-2xl border border-charcoal-100 bg-white py-4 pl-12 pr-12 text-base text-charcoal-900 placeholder:text-charcoal-400 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 dark:border-charcoal-800 dark:bg-charcoal-900 dark:text-white dark:placeholder:text-charcoal-500"
         />

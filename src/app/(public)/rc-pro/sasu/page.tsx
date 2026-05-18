@@ -17,7 +17,7 @@ export const revalidate = 86400
 const SLUG = 'rc-pro / sasu'
 const TITLE = 'RC Pro SASU — Tarifs 2026 (président assimilé salarié)'
 const TAGLINE =
-  "L'assurance RC pro pour SASU : couverture président assimilé salarié, plafond adapté CA, RCMS dirigeant. Tous secteurs."
+  "L'assurance RC Pro pour SASU : couverture président assimilé salarié, plafond adapté CA, RCMS dirigeant. Tous secteurs."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
@@ -33,7 +33,7 @@ export default function Page() {
       slug={SLUG}
       title={TITLE}
       tagline={TAGLINE}
-      intro="La RC Pro SASU est la responsabilité civile professionnelle adaptée au statut SASU (Société par Actions Simplifiée Unipersonnelle). Particularité fiscale et sociale : le PRÉSIDENT de SASU est ASSIMILÉ SALARIÉ (vs gérant majoritaire SARL / EI qui sont TNS). Pour la RC Pro, cela ne change pas grand-chose au contrat lui-même — la SASU souscrit comme n'importe quelle société. La différence importante est sur la MUTUELLE et la PRÉVOYANCE (régime collectif vs Madelin). Le pack standard SASU combine : RC pro adaptée au métier (3-10 M€), RCMS dirigeant (protection responsabilité personnelle président), cyber assurance, multirisque local si applicable. Tarifs 2026 : 380-2 200€ par an selon CA et métier. Voir notre pilier complet <a href='/assurance-sasu' class='text-primary-600 underline'>/assurance-sasu</a> pour le pack global."
+      intro="La RC Pro SASU est la responsabilité civile professionnelle adaptée au statut SASU (Société par Actions Simplifiée Unipersonnelle). Particularité fiscale et sociale : le PRÉSIDENT de SASU est ASSIMILÉ SALARIÉ (vs gérant majoritaire SARL / EI qui sont TNS). Pour la RC Pro, cela ne change pas grand-chose au contrat lui-même — la SASU souscrit comme n'importe quelle société. La différence importante est sur la MUTUELLE et la PRÉVOYANCE (régime collectif vs Madelin). Le pack standard SASU combine : RC Pro adaptée au métier (3-10 M€), RCMS dirigeant (protection responsabilité personnelle président), cyber assurance, multirisque local si applicable. Tarifs 2026 : 380-2 200€ par an selon CA et métier. Voir notre pilier complet <a href='/assurance-sasu' class='text-primary-600 underline'>/assurance-sasu</a> pour le pack global."
       legalReference="Code de commerce L. 227-1 et s. (SASU) + Code des assurances L. 113-1"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}

@@ -13,7 +13,7 @@ export const MULTIRISQUE_PRO_CONFIG: GarantieVilleConfig = {
     {
       h2: 'Pourquoi une multirisque pro à {ville} ?',
       paragraphs: [
-        'La multirisque professionnelle (MRP) est l’assurance « tout-en-un » qui protège vos locaux, votre matériel, vos stocks et votre RC Exploitation. À {ville} comme partout en France, elle n’est pas légalement obligatoire mais elle est exigée par 90 % des bailleurs commerciaux et par tous les marchés publics.',
+        'La Multirisque Professionnelle (MRP) est l’assurance « tout-en-un » qui protège vos locaux, votre matériel, vos stocks et votre RC Exploitation. À {ville} comme partout en France, elle n’est pas légalement obligatoire mais elle est exigée par 90 % des bailleurs commerciaux et par tous les marchés publics.',
         'En zone {zonage}, le coût moyen d’un sinistre incendie ou dégât des eaux dans un local commercial est de 18 000 à 45 000 €. La MRP couvre également la perte d’exploitation pendant la période d’arrêt — souvent décisive pour la survie d’une TPE.',
       ],
     },

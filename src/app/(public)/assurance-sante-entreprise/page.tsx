@@ -119,7 +119,7 @@ export default function Page() {
               </p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil entreprise</th>
                     <th className="border p-2 text-right">Coût total annuel HT</th>
                     <th className="border p-2 text-right">Part employeur 50%</th>
@@ -153,7 +153,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Variables : âge moyen salariés (~+1,5% par an), composition famille (option famille
                 +50-80%), secteur (BTP ou transport majoré sinistralité), niveau de garanties choisi
                 (base ou confort ou premium), région (Paris +15%).
@@ -167,7 +167,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Assureur</th>
                     <th className="border p-2 text-left">Spécialité</th>
                     <th className="border p-2 text-left">Atout</th>

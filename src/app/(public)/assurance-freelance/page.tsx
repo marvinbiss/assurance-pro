@@ -99,7 +99,7 @@ export default function Page() {
               <p>Conséquences pour l&apos;assurance :</p>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Statut freelance</th>
                     <th className="border p-2 text-left">Régime social</th>
                     <th className="border p-2 text-left">Madelin déductible ?</th>
@@ -163,7 +163,7 @@ export default function Page() {
             <>
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-sand-100">
                     <th className="border p-2 text-left">Profil freelance</th>
                     <th className="border p-2 text-right">RC Pro</th>
                     <th className="border p-2 text-right">
@@ -224,7 +224,7 @@ export default function Page() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs italic text-gray-600">
+              <p className="mt-2 text-xs italic text-charcoal-600">
                 Pack complet = RC Pro + mutuelle TNS Madelin (entrée de gamme) + prévoyance TNS (IJ
                 100€ par jour). Ne comprend pas la cyber assurance (+200-400€ par an option) ni le
                 multirisque bureau si applicable.

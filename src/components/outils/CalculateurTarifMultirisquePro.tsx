@@ -52,7 +52,7 @@ export function CalculateurTarifMultirisquePro() {
             id="mr-type"
             value={typeLocaux}
             onChange={(e) => setTypeLocaux(e.target.value as TypeLocaux)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(TYPE_LOCAUX_LABELS) as TypeLocaux[]).map((t) => (
               <option key={t} value={t}>
@@ -69,7 +69,7 @@ export function CalculateurTarifMultirisquePro() {
             id="mr-statut"
             value={statut}
             onChange={(e) => setStatut(e.target.value as Statut)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(STATUT_LABELS) as Statut[]).map((s) => (
               <option key={s} value={s}>
@@ -86,7 +86,7 @@ export function CalculateurTarifMultirisquePro() {
             id="mr-formule"
             value={formule}
             onChange={(e) => setFormule(e.target.value as Formule)}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(FORMULE_LABELS) as Formule[]).map((f) => (
               <option key={f} value={f}>
@@ -94,7 +94,7 @@ export function CalculateurTarifMultirisquePro() {
               </option>
             ))}
           </select>
-          <p className="mt-1 text-xs italic text-gray-600">{getFormuleDescription(formule)}</p>
+          <p className="mt-1 text-xs italic text-charcoal-600">{getFormuleDescription(formule)}</p>
         </div>
         <div>
           <label className="mb-2 block text-sm font-semibold" htmlFor="mr-surf">
@@ -110,7 +110,7 @@ export function CalculateurTarifMultirisquePro() {
             onChange={(e) => setSurface(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>20 m²</span>
             <span>2 000 m²</span>
           </div>
@@ -129,7 +129,7 @@ export function CalculateurTarifMultirisquePro() {
             onChange={(e) => setCa(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>50 k€</span>
             <span>5 M€</span>
           </div>
@@ -149,7 +149,7 @@ export function CalculateurTarifMultirisquePro() {
             onChange={(e) => setValeurMobilier(Number(e.target.value))}
             className="w-full accent-blue-700"
           />
-          <div className="mt-1 flex justify-between text-xs text-gray-500">
+          <div className="mt-1 flex justify-between text-xs text-charcoal-500">
             <span>5 k€</span>
             <span>1 M€</span>
           </div>
@@ -162,7 +162,7 @@ export function CalculateurTarifMultirisquePro() {
             id="mr-zone"
             value={zone}
             onChange={(e) => setZone(e.target.value as MultirisqueInput['zone'])}
-            className="w-full rounded border border-gray-300 bg-white p-3 text-sm"
+            className="w-full rounded border border-sand-300 bg-white p-3 text-sm"
           >
             {(Object.keys(ZONE_LABELS) as MultirisqueInput['zone'][]).map((z) => (
               <option key={z} value={z}>
@@ -186,11 +186,11 @@ export function CalculateurTarifMultirisquePro() {
       </div>
 
       <div className="mt-6 rounded-lg border-2 border-orange-300 bg-gradient-to-br from-orange-50 to-red-50 p-6">
-        <p className="mb-2 text-sm text-gray-600">Estimation cotisation multirisque pro 2026</p>
+        <p className="mb-2 text-sm text-charcoal-600">Estimation cotisation multirisque pro 2026</p>
         <p className="mb-2 text-4xl font-extrabold text-orange-900 md:text-5xl">
           {r.cotisationAnnuelle.toLocaleString('fr-FR')} €<span className="text-2xl"> par an</span>
         </p>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-charcoal-700">
           Soit <strong>{r.cotisationMensuelle.toLocaleString('fr-FR')} € par mois</strong>.
           Estimation basée sur barèmes 2026 de 7 assureurs partenaires (MMA Pro, AXA Pro, Allianz
           Pro, Generali, MAIF Pro, Pro BTP MR, April Pro).
@@ -207,13 +207,13 @@ export function CalculateurTarifMultirisquePro() {
                   {g.couvert ? '✓' : '✗'}
                 </span>
                 <span className={g.couvert ? 'font-semibold' : 'text-gray-400'}>{g.nom}</span>
-                {g.couvert && <span className="text-xs text-gray-500">— {g.plafond}</span>}
+                {g.couvert && <span className="text-xs text-charcoal-500">— {g.plafond}</span>}
               </li>
             ))}
           </ul>
         </div>
 
-        <details className="mt-4 text-xs text-gray-600">
+        <details className="mt-4 text-xs text-charcoal-600">
           <summary className="cursor-pointer font-semibold">Voir le détail du calcul</summary>
           <ul className="mt-2 space-y-1 pl-4">
             <li>
@@ -237,7 +237,7 @@ export function CalculateurTarifMultirisquePro() {
         </a>
       </div>
 
-      <p className="text-xs italic text-gray-500">
+      <p className="text-xs italic text-charcoal-500">
         ⚠️ Estimation <strong>indicative</strong>. Tarif réel variable ±20% selon : présence
         sprinklers, alarme ou coffre-fort (rabais), proximité caserne pompiers, antécédents 5 ans,
         activités annexes (laboratoire, stockage matières dangereuses). Conformité ACPR 2024-R-02.

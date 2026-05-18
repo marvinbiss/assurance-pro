@@ -101,27 +101,27 @@ export default async function Page() {
       <section className="py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez votre profil VTC</h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-charcoal-600">
             Le calcul est <strong>100% côté navigateur</strong>. Estimation indicative basée sur
             barèmes mutualisés BAAC 2024 (Bilan Annuel Accidents Corporels) + grilles 2026
             partenaires (AXA Pro, Allianz Pro, Wakam, MMA, AMV, Opteven Mobility).
           </p>
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-lg border border-sand-200 bg-white p-6 shadow-sm">
             <TarifCalculator garantie="vtc" />
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 py-12">
+      <section className="bg-sand-50 py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Garanties obligatoires VTC (Loi LOTI)</h2>
-          <p className="mb-4 text-sm text-gray-700">
+          <p className="mb-4 text-sm text-charcoal-700">
             L&apos;activité VTC impose des garanties spécifiques au-delà de l&apos;assurance auto
             personnelle (art. L. 3122-1 Code des transports + Loi Macron 2015) :
           </p>
           <ol className="list-decimal space-y-2 pl-6 text-sm">
             <li>
-              <strong>RC pro transport personnes</strong> — couverture corporels passagers + tiers
+              <strong>RC Pro transport personnes</strong> — couverture corporels passagers + tiers
             </li>
             <li>
               <strong>Garantie usage VTC</strong> sur le véhicule (l&apos;assurance perso ne couvre
@@ -210,7 +210,7 @@ export default async function Page() {
           </p>
           <Link
             href="/outils/devis-rc-pro?secteur=transport-vtc"
-            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-violet-700 shadow-lg transition hover:bg-gray-100"
+            className="inline-block rounded-lg bg-white px-8 py-4 font-bold text-violet-700 shadow-lg transition hover:bg-sand-100"
           >
             → Devis officiel assurance VTC (2 min, ORIAS)
           </Link>
