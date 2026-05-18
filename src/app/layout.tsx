@@ -170,7 +170,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_SUPABASE_URL || ''} />
         <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_SUPABASE_URL || ''} />
 
-        {/* Preconnect for images - Unsplash */}
+        {/* Preconnect Unsplash — encore utilisé par blog-covers (à migrer Nano Banana) */}
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>

@@ -169,6 +169,8 @@ const PROCESS_STEPS = [
   },
 ] as const
 
+// Anti-pattern Luke: zero stock photos. Avatars supprimés (dead URLs Unsplash).
+// EditorialTestimonial affiche initiales auteur via CSS gradient brand.
 const TESTIMONIALS = [
   {
     quote:
@@ -178,8 +180,6 @@ const TESTIMONIALS = [
     city: 'Lyon',
     rating: 5,
     metric: '-32%',
-    avatar:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&fm=webp&auto=format&fit=crop&crop=faces',
   },
   {
     quote:
@@ -189,8 +189,6 @@ const TESTIMONIALS = [
     city: 'Paris',
     rating: 5,
     metric: '4 devis — 24h',
-    avatar:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&fm=webp&auto=format&fit=crop&crop=faces',
   },
   {
     quote:
@@ -200,8 +198,6 @@ const TESTIMONIALS = [
     city: 'Bordeaux',
     rating: 5,
     metric: 'Sinistre géré',
-    avatar:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80&fm=webp&auto=format&fit=crop&crop=faces',
   },
 ] as const
 
@@ -275,8 +271,8 @@ export default function HomePage() {
                 personnalisés en moins de 24 heures auprès de nos partenaires reconnus.
               </p>
 
-              {/* CTAs */}
-              <div className="mb-10 flex flex-wrap gap-3">
+              {/* CTA unique — Luke spec: never 2 competing CTAs in hero */}
+              <div className="mb-10">
                 <MagneticCta>
                   <Link
                     href="/devis"
@@ -286,12 +282,6 @@ export default function HomePage() {
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </MagneticCta>
-                <a
-                  href="#verticaux"
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
-                >
-                  Découvrir les garanties
-                </a>
               </div>
 
               {/* Trust ribbon — avis Trustpilot inline */}
