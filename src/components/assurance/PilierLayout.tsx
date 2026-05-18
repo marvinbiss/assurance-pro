@@ -142,6 +142,41 @@ function inferCalculatorGarantie(slug: string): CalculatorGarantie {
   // Default fallback : RC Pro couvre la majorité (consultants, freelances, services pros).
   return 'rc-pro'
 }
+
+/**
+ * Extrait le slug métier depuis l'URL pour préselection dans TarifCalculator.
+ *
+ * Heuristique:
+ * - Slug pilier seul (ex: 'assurance-decennale') → undefined (pas de métier)
+ * - Slug avec sous-segment (ex: 'rc-pro/medecin-generaliste') → dernier segment
+ * - Slug composé hyphené (ex: 'rc-pro-medecin') → métier extrait après prefix garantie
+ */
+function extractMetierFromSlug(slug: string): string | undefined {
+  const segments = slug.split('/').filter(Boolean)
+  if (segments.length >= 2) {
+    return segments[segments.length - 1]
+  }
+  // Pattern hyphéné: rc-pro-medecin, assurance-decennale-plombier, etc.
+  const known = [
+    'assurance-decennale-',
+    'decennale-',
+    'rc-pro-',
+    'multirisque-pro-',
+    'cyber-assurance-',
+    'cyber-',
+    'mutuelle-pro-',
+    'mutuelle-tns-',
+    'assurance-vtc-',
+    'vtc-',
+  ]
+  for (const prefix of known) {
+    if (slug.startsWith(prefix)) {
+      const rest = slug.slice(prefix.length)
+      if (rest.length > 0) return rest
+    }
+  }
+  return undefined
+}
 import {
   getBreadcrumbSchema,
   getServiceSchema,
@@ -435,7 +470,7 @@ export async function PilierLayout({
                     Combien va vous coûter votre assurance ?
                   </h2>
                 </div>
-                <TarifCalculator garantie={garantie} />
+                <TarifCalculator garantie={garantie} defaultMetier={extractMetierFromSlug(slug)} />
               </RevealOnScroll>
             </div>
           </section>

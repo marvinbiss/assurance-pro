@@ -46,6 +46,8 @@ type Statut = 'auto-entrepreneur' | 'sarl' | 'sas'
 export interface TarifCalculatorProps {
   garantie: Garantie
   className?: string
+  /** Slug métier à préselectionner depuis URL (ex: 'medecin-generaliste'). Fallback transparent si miss. */
+  defaultMetier?: string
 }
 
 interface MetierOption {
@@ -62,57 +64,286 @@ interface MetierOption {
 // ---------------------------------------------------------------------------
 
 const METIERS_DECENNALE: readonly MetierOption[] = [
-  { value: 'plombier', label: 'Plombier chauffagiste', base: 1100, spread: 0.32 },
-  { value: 'electricien', label: 'Électricien', base: 900, spread: 0.33 },
-  { value: 'macon', label: 'Maçon', base: 1700, spread: 0.3 },
-  { value: 'couvreur', label: 'Couvreur', base: 2000, spread: 0.25 },
+  // Risque FAIBLE
   { value: 'peintre', label: 'Peintre en bâtiment', base: 750, spread: 0.33 },
-  { value: 'menuisier', label: 'Menuisier', base: 1050, spread: 0.3 },
   { value: 'carreleur', label: 'Carreleur', base: 950, spread: 0.32 },
-  { value: 'platrier', label: 'Plâtrier-plaquiste', base: 850, spread: 0.3 },
-  { value: 'terrassier', label: 'Terrassier — VRD', base: 1600, spread: 0.3 },
-  { value: 'charpentier', label: 'Charpentier', base: 1800, spread: 0.28 },
-  { value: 'chauffagiste', label: 'Chauffagiste — clim', base: 1200, spread: 0.3 },
+  { value: 'plaquiste-platrier', label: 'Plaquiste-plâtrier', base: 850, spread: 0.3 },
+  { value: 'placoplatre', label: 'Plâtrerie placoplâtre', base: 800, spread: 0.3 },
+  { value: 'menuisier-interieur', label: 'Menuisier intérieur', base: 900, spread: 0.3 },
+  { value: 'sol-souple', label: 'Sols souples — parquet', base: 700, spread: 0.32 },
+  { value: 'cuisiniste', label: 'Cuisiniste — salle de bain', base: 850, spread: 0.32 },
+  // Risque MOYEN
+  { value: 'plombier', label: 'Plombier', base: 1100, spread: 0.32 },
+  { value: 'electricien', label: 'Électricien', base: 900, spread: 0.33 },
+  { value: 'electricien-domotique', label: 'Électricien domotique', base: 1050, spread: 0.32 },
+  {
+    value: 'menuisier-exterieur',
+    label: 'Menuisier extérieur — fenêtres',
+    base: 1200,
+    spread: 0.3,
+  },
+  { value: 'climatisation', label: 'Climatisation — frigoriste', base: 1300, spread: 0.3 },
+  { value: 'isolation-thermique', label: 'Isolation thermique (ITE/ITI)', base: 1250, spread: 0.3 },
   { value: 'paysagiste', label: 'Paysagiste avec gros œuvre', base: 950, spread: 0.32 },
+  { value: 'ravalement', label: 'Ravalement de façade', base: 1100, spread: 0.3 },
+  // Risque ÉLEVÉ
+  { value: 'plombier-chauffagiste', label: 'Plombier-chauffagiste (PAC)', base: 1400, spread: 0.3 },
+  { value: 'macon', label: 'Maçon — gros œuvre', base: 1700, spread: 0.3 },
+  { value: 'charpentier-bois', label: 'Charpentier bois', base: 1800, spread: 0.28 },
+  { value: 'facadier-ite', label: 'Façadier — ITE', base: 1900, spread: 0.28 },
+  {
+    value: 'installateur-photovoltaique',
+    label: 'Installateur photovoltaïque',
+    base: 1700,
+    spread: 0.3,
+  },
+  {
+    value: 'electricien-photovoltaique',
+    label: 'Électricien PV résidentiel',
+    base: 1750,
+    spread: 0.3,
+  },
+  { value: 'serrurier-metallier', label: 'Serrurier-métallier', base: 1500, spread: 0.3 },
+  { value: 'fumiste', label: 'Fumiste — cheminées', base: 1400, spread: 0.3 },
+  { value: 'multi-services-btp', label: 'Multi-services BTP (TCE)', base: 1600, spread: 0.3 },
+  // Risque TRÈS ÉLEVÉ
+  { value: 'couvreur-zingueur', label: 'Couvreur-zingueur', base: 2100, spread: 0.25 },
+  { value: 'etancheur', label: 'Étancheur — toiture-terrasse', base: 2700, spread: 0.25 },
+  { value: 'terrassier', label: 'Terrassier — VRD', base: 2000, spread: 0.28 },
+  { value: 'demolisseur', label: 'Démolisseur — désamiantage', base: 2800, spread: 0.25 },
+  { value: 'pisciniste', label: 'Pisciniste', base: 2300, spread: 0.27 },
+  { value: 'puisatier', label: 'Puisatier-foreur — géothermie', base: 2200, spread: 0.28 },
+  // Legacy slugs (compatibilité URLs anciennes)
+  { value: 'couvreur', label: 'Couvreur (générique)', base: 2000, spread: 0.25 },
+  { value: 'menuisier', label: 'Menuisier (générique)', base: 1050, spread: 0.3 },
+  { value: 'charpentier', label: 'Charpentier (générique)', base: 1800, spread: 0.28 },
+  { value: 'chauffagiste', label: 'Chauffagiste — clim', base: 1200, spread: 0.3 },
+  { value: 'platrier', label: 'Plâtrier-plaquiste (alt)', base: 850, spread: 0.3 },
 ] as const
 
 const METIERS_RC_PRO: readonly MetierOption[] = [
+  // Conseil / business
   { value: 'consultant', label: 'Consultant indépendant', base: 320, spread: 0.4 },
+  { value: 'conseil-rh', label: 'Consultant RH — recruteur', base: 360, spread: 0.4 },
+  { value: 'conseil-financier', label: 'CGP — CIF', base: 780, spread: 0.35 },
+  { value: 'agent-general-assurance', label: 'Agent général assurance', base: 820, spread: 0.32 },
+  { value: 'consultant-marketing', label: 'Consultant marketing digital', base: 340, spread: 0.4 },
+  { value: 'formateur', label: 'Formateur — organisme Qualiopi', base: 320, spread: 0.4 },
+  // Tech / digital / créatif
   { value: 'freelance-it', label: 'Freelance IT — dev', base: 420, spread: 0.42 },
+  { value: 'developpeur-freelance', label: 'Développeur freelance', base: 380, spread: 0.42 },
+  { value: 'data-scientist', label: 'Data scientist — ML engineer', base: 540, spread: 0.4 },
   { value: 'agence-web', label: 'Agence web — digitale', base: 580, spread: 0.4 },
-  { value: 'coach', label: 'Coach — formateur', base: 280, spread: 0.4 },
+  { value: 'webmaster', label: 'Webmaster — intégrateur', base: 280, spread: 0.4 },
+  { value: 'consultant-seo', label: 'Consultant SEO', base: 340, spread: 0.4 },
+  { value: 'community-manager', label: 'Community manager', base: 260, spread: 0.4 },
   { value: 'graphiste', label: 'Graphiste — designer', base: 260, spread: 0.4 },
-  { value: 'photographe', label: 'Photographe — vidéaste', base: 340, spread: 0.4 },
-  { value: 'avocat-conseil', label: 'Avocat — conseil juridique', base: 720, spread: 0.35 },
-  { value: 'comptable', label: 'Comptable — expert-comptable', base: 650, spread: 0.35 },
-  { value: 'architecte-interieur', label: 'Architecte d’intérieur', base: 480, spread: 0.38 },
+  { value: 'designer', label: 'Designer UX — UI', base: 280, spread: 0.4 },
+  { value: 'photographe', label: 'Photographe pro', base: 340, spread: 0.4 },
+  { value: 'videaste', label: 'Vidéaste — cameraman', base: 360, spread: 0.4 },
   { value: 'redacteur', label: 'Rédacteur — traducteur', base: 220, spread: 0.4 },
+  // Juridique / chiffre
+  { value: 'avocat', label: 'Avocat', base: 1200, spread: 0.35 },
+  { value: 'avocat-conseil', label: 'Avocat — conseil juridique', base: 720, spread: 0.35 },
+  { value: 'notaire', label: 'Notaire', base: 6800, spread: 0.3 },
+  { value: 'expert-comptable', label: 'Expert-comptable', base: 850, spread: 0.35 },
+  { value: 'comptable', label: 'Comptable', base: 650, spread: 0.35 },
+  { value: 'commissaire-aux-comptes', label: 'Commissaire aux comptes', base: 4500, spread: 0.32 },
+  { value: 'huissier', label: 'Huissier — commissaire de justice', base: 2400, spread: 0.32 },
+  { value: 'mandataire-judiciaire', label: 'Mandataire judiciaire', base: 5500, spread: 0.3 },
+  // Santé / médical (Loi Kouchner)
+  { value: 'medecin-generaliste', label: 'Médecin généraliste', base: 980, spread: 0.32 },
+  { value: 'medecin-specialiste', label: 'Médecin spécialiste', base: 2400, spread: 0.34 },
+  { value: 'chirurgien', label: 'Chirurgien', base: 12000, spread: 0.35 },
+  { value: 'sage-femme', label: 'Sage-femme libérale', base: 1100, spread: 0.32 },
+  { value: 'dentiste', label: 'Chirurgien-dentiste', base: 2200, spread: 0.32 },
+  { value: 'infirmiere-liberale', label: 'Infirmière libérale (IDEL)', base: 280, spread: 0.35 },
+  { value: 'kinesitherapeute', label: 'Kinésithérapeute', base: 320, spread: 0.35 },
+  { value: 'osteopathe', label: 'Ostéopathe', base: 380, spread: 0.35 },
+  { value: 'psychologue', label: 'Psychologue', base: 240, spread: 0.35 },
+  { value: 'pharmacien', label: 'Pharmacien titulaire', base: 2800, spread: 0.3 },
+  { value: 'veterinaire', label: 'Vétérinaire', base: 1400, spread: 0.32 },
+  // Architecture / immobilier
+  { value: 'architecte', label: 'Architecte', base: 3200, spread: 0.33 },
+  { value: 'architecte-interieur', label: 'Architecte d’intérieur', base: 480, spread: 0.38 },
+  { value: 'agent-immobilier', label: 'Agent immobilier', base: 1100, spread: 0.32 },
+  { value: 'syndic-immobilier', label: 'Syndic de copropriété', base: 1900, spread: 0.32 },
+  { value: 'diagnostic-immobilier', label: 'Diagnostiqueur immobilier', base: 1200, spread: 0.32 },
+  { value: 'geometre', label: 'Géomètre-expert', base: 1900, spread: 0.32 },
+  // Services / commerce / restauration
+  { value: 'restaurateur', label: 'Restaurateur', base: 1800, spread: 0.32 },
+  { value: 'commercant', label: 'Commerçant indépendant', base: 580, spread: 0.35 },
+  { value: 'aide-domicile', label: 'Aide à domicile', base: 480, spread: 0.35 },
+  { value: 'esthetique', label: 'Esthéticienne — institut', base: 560, spread: 0.35 },
+  { value: 'coiffeur', label: 'Coiffeur à domicile', base: 380, spread: 0.35 },
+  { value: 'agent-de-voyage', label: 'Agent de voyage', base: 1900, spread: 0.32 },
+  // Bien-être / sport
+  { value: 'coach', label: 'Coach — formateur', base: 280, spread: 0.4 },
+  { value: 'coach-pro', label: 'Coach professionnel', base: 280, spread: 0.4 },
+  { value: 'coach-sportif', label: 'Coach sportif', base: 420, spread: 0.35 },
+  { value: 'moniteur-yoga', label: 'Moniteur yoga — pilates', base: 320, spread: 0.35 },
+  { value: 'animateur-jeunesse', label: 'Animateur jeunesse (BAFA)', base: 280, spread: 0.35 },
+  // Transport / dépannage
+  { value: 'taxi', label: 'Taxi', base: 1800, spread: 0.3 },
+  { value: 'transporteur-leger', label: 'Transporteur léger — coursier', base: 1900, spread: 0.3 },
+  { value: 'serrurier-depannage', label: 'Serrurier dépannage', base: 1100, spread: 0.32 },
+  { value: 'electricien-depannage', label: 'Électricien dépannage', base: 780, spread: 0.32 },
+  // Statut générique
+  { value: 'auto-entrepreneur', label: 'Auto-entrepreneur (autre)', base: 220, spread: 0.4 },
 ] as const
 
 const METIERS_MULTIRISQUE: readonly MetierOption[] = [
-  { value: 'commerce-detail', label: 'Commerce de détail', base: 540, spread: 0.35 },
+  // Commerce de bouche
   { value: 'restaurant', label: 'Restaurant — brasserie', base: 980, spread: 0.32 },
-  { value: 'salon-coiffure', label: 'Salon coiffure — esthétique', base: 460, spread: 0.35 },
-  { value: 'bureau-services', label: 'Bureau — activité de services', base: 380, spread: 0.36 },
-  { value: 'atelier-artisan', label: 'Atelier artisan', base: 620, spread: 0.34 },
-  { value: 'cabinet-medical', label: 'Cabinet médical — paramédical', base: 540, spread: 0.33 },
   { value: 'boulangerie', label: 'Boulangerie — pâtisserie', base: 880, spread: 0.32 },
-  { value: 'garage-auto', label: 'Garage automobile', base: 1180, spread: 0.3 },
+  { value: 'boucherie', label: 'Boucherie — charcuterie', base: 820, spread: 0.32 },
+  { value: 'primeur-caviste', label: 'Primeur — caviste — fromagerie', base: 660, spread: 0.34 },
+  { value: 'traiteur', label: 'Traiteur — food truck', base: 740, spread: 0.34 },
+  // Retail spécialisé
+  { value: 'commerce-detail', label: 'Commerce de détail généraliste', base: 540, spread: 0.35 },
   { value: 'pharmacie', label: 'Pharmacie — officine', base: 1320, spread: 0.28 },
-  { value: 'hotel', label: 'Hôtellerie', base: 1450, spread: 0.3 },
+  {
+    value: 'opticien-bijoutier',
+    label: 'Opticien — bijouterie — horlogerie',
+    base: 1180,
+    spread: 0.3,
+  },
+  { value: 'librairie-presse', label: 'Librairie — presse — tabac', base: 720, spread: 0.32 },
+  { value: 'fleuriste', label: 'Fleuriste — animalerie', base: 480, spread: 0.34 },
+  // Services à la personne
+  {
+    value: 'salon-coiffure',
+    label: 'Salon coiffure — esthétique — barbier',
+    base: 460,
+    spread: 0.35,
+  },
+  {
+    value: 'pressing-cordonnerie',
+    label: 'Pressing — cordonnerie — retoucherie',
+    base: 520,
+    spread: 0.34,
+  },
+  // Cabinets / libéraux
+  { value: 'bureau-services', label: 'Bureau — activité de services', base: 380, spread: 0.36 },
+  { value: 'cabinet-medical', label: 'Cabinet médical — paramédical', base: 540, spread: 0.33 },
+  {
+    value: 'cabinet-liberal',
+    label: 'Cabinet libéral (avocat — EC — architecte)',
+    base: 620,
+    spread: 0.33,
+  },
+  // Ateliers & BTP local
+  { value: 'atelier-artisan', label: 'Atelier artisan', base: 620, spread: 0.34 },
+  { value: 'garage-auto', label: 'Garage — carrosserie automobile', base: 1180, spread: 0.3 },
+  { value: 'depot-btp', label: 'Showroom — dépôt BTP', base: 880, spread: 0.32 },
+  // Hôtellerie & tourisme
+  { value: 'hotel', label: 'Hôtel — résidence', base: 1450, spread: 0.3 },
+  { value: 'camping-gite', label: 'Camping — gîte — chambre d’hôtes', base: 920, spread: 0.32 },
+  // Sport, loisir, éducation
+  { value: 'salle-sport', label: 'Salle de sport — école de danse', base: 780, spread: 0.33 },
+  {
+    value: 'autoecole-formation',
+    label: 'Auto-école — organisme de formation',
+    base: 580,
+    spread: 0.34,
+  },
+  // E-commerce physique / stock
+  {
+    value: 'ecommerce-entrepot',
+    label: 'E-commerce avec entrepôt — stock',
+    base: 1050,
+    spread: 0.32,
+  },
+  // Industrie & associatif
+  {
+    value: 'industrie-legere',
+    label: 'Atelier de production — industrie légère',
+    base: 1380,
+    spread: 0.3,
+  },
+  { value: 'association', label: 'Association — lieu d’accueil', base: 420, spread: 0.36 },
 ] as const
 
 const METIERS_CYBER: readonly MetierOption[] = [
+  // Tech
+  { value: 'freelance-dev', label: 'Freelance IT — développeur', base: 420, spread: 0.4 },
+  { value: 'agence-digital', label: 'Agence digital — web — UX', base: 780, spread: 0.38 },
+  { value: 'esn-prestataire', label: 'ESN — prestataire IT', base: 1450, spread: 0.36 },
+  { value: 'editeur-saas', label: 'Éditeur SaaS — tech', base: 1800, spread: 0.38 },
+  { value: 'media-agence', label: 'Média — régie — agence com', base: 780, spread: 0.38 },
+  // Retail / e-commerce
+  { value: 'ecommerce', label: 'E-commerce mono-boutique', base: 920, spread: 0.4 },
+  { value: 'marketplace', label: 'Marketplace — plateforme', base: 1680, spread: 0.38 },
+  {
+    value: 'retail-omnicanal',
+    label: 'Retail omnicanal — réseau magasins',
+    base: 1380,
+    spread: 0.36,
+  },
+  // Services pro
   { value: 'tpe-services', label: 'TPE services (<10 salariés)', base: 480, spread: 0.4 },
   { value: 'pme-services', label: 'PME services (10-50)', base: 1200, spread: 0.38 },
-  { value: 'ecommerce', label: 'E-commerce — marketplace', base: 1450, spread: 0.4 },
-  { value: 'editeur-saas', label: 'Éditeur SaaS — tech', base: 1800, spread: 0.38 },
-  { value: 'cabinet-conseil', label: 'Cabinet conseil — audit', base: 920, spread: 0.36 },
+  {
+    value: 'cabinet-conseil',
+    label: 'Cabinet conseil — audit — stratégie',
+    base: 920,
+    spread: 0.36,
+  },
+  { value: 'cabinet-avocat', label: 'Cabinet avocat — RGPD — DPO', base: 1180, spread: 0.34 },
+  { value: 'expert-comptable', label: 'Expert-comptable — paie', base: 1320, spread: 0.34 },
+  { value: 'courtier-iobsp', label: 'Courtier IOBSP — assurance — immo', base: 1480, spread: 0.34 },
+  {
+    value: 'finance-courtage',
+    label: 'Finance — gestion privée — fintech',
+    base: 2100,
+    spread: 0.34,
+  },
+  // Santé
   { value: 'sante', label: 'Acteur santé — cabinet', base: 1650, spread: 0.35 },
+  {
+    value: 'cabinet-sante',
+    label: 'Cabinet médical — paramédical libéral',
+    base: 880,
+    spread: 0.36,
+  },
+  { value: 'clinique-ehpad', label: 'Clinique — EHPAD — centre santé', base: 1980, spread: 0.32 },
+  {
+    value: 'laboratoire-imagerie',
+    label: 'Laboratoire — imagerie médicale',
+    base: 1850,
+    spread: 0.32,
+  },
+  {
+    value: 'pharmacie-connectee',
+    label: 'Pharmacie — parapharmacie connectée',
+    base: 1320,
+    spread: 0.34,
+  },
+  // Industrie & logistique
   { value: 'industrie-pme', label: 'Industrie — PME production', base: 1380, spread: 0.36 },
-  { value: 'media-agence', label: 'Média — agence', base: 780, spread: 0.38 },
-  { value: 'finance-courtage', label: 'Finance — courtage', base: 2100, spread: 0.34 },
+  {
+    value: 'transport-logistique',
+    label: 'Transport — logistique — flotte connectée',
+    base: 1450,
+    spread: 0.36,
+  },
+  // Hôtellerie connectée
+  {
+    value: 'hotellerie-resto',
+    label: 'Hôtellerie — restauration (PMS — CRM)',
+    base: 980,
+    spread: 0.36,
+  },
+  // Éducation
+  {
+    value: 'ecole-formation',
+    label: 'École — organisme formation — edtech',
+    base: 740,
+    spread: 0.36,
+  },
+  // ESS / collectivités
   { value: 'association', label: 'Association — ESS', base: 360, spread: 0.4 },
+  { value: 'collectivite-osm', label: 'Collectivité — OSE NIS2', base: 2080, spread: 0.32 },
 ] as const
 
 const STATUT_MODIFIER: Readonly<Record<Statut, number>> = {
@@ -165,6 +396,20 @@ function spreadRange(mid: number, spread: number): { min: number; max: number } 
     min: roundTen(mid * (1 - spread)),
     max: roundTen(mid * (1 + spread)),
   }
+}
+
+/**
+ * Sélectionne le métier initial: priorité au defaultMetier (depuis URL slug)
+ * s'il est dans le catalogue, sinon fallback au premier élément.
+ */
+function pickInitialMetier(
+  defaultMetier: string | undefined,
+  catalog: readonly MetierOption[]
+): string {
+  if (defaultMetier && catalog.some((m) => m.value === defaultMetier)) {
+    return defaultMetier
+  }
+  return catalog[0]?.value ?? ''
 }
 
 const eurosFormatter = new Intl.NumberFormat('fr-FR', {
@@ -425,8 +670,10 @@ const SINISTRALITE_MOD: Record<Sinistralite, number> = {
   '2plus': 1.45,
 }
 
-function useDecennaleForm() {
-  const [metierValue, setMetierValue] = useState<string>(METIERS_DECENNALE[0]?.value ?? '')
+function useDecennaleForm(defaultMetier?: string) {
+  const [metierValue, setMetierValue] = useState<string>(
+    pickInitialMetier(defaultMetier, METIERS_DECENNALE)
+  )
   const [ca, setCa] = useState<number>(80_000)
   const [statut, setStatut] = useState<Statut>('sarl')
   const [anciennete, setAnciennete] = useState<Anciennete>('1-5ans')
@@ -469,8 +716,10 @@ function effectifMultiplier(n: number): number {
   return 1 + 0.18 * Math.pow(Math.max(n, 0), 0.55)
 }
 
-function useRcProForm() {
-  const [metierValue, setMetierValue] = useState<string>(METIERS_RC_PRO[0]?.value ?? '')
+function useRcProForm(defaultMetier?: string) {
+  const [metierValue, setMetierValue] = useState<string>(
+    pickInitialMetier(defaultMetier, METIERS_RC_PRO)
+  )
   const [ca, setCa] = useState<number>(80_000)
   const [statut, setStatut] = useState<Statut>('sarl')
   const [activite, setActivite] = useState<ActiviteRisque>('standard')
@@ -514,8 +763,10 @@ function contenuMultiplier(eur: number): number {
   return 0.7 + 0.3 * Math.pow(Math.max(eur, 5_000) / 20_000, 0.55)
 }
 
-function useMultirisqueForm() {
-  const [metierValue, setMetierValue] = useState<string>(METIERS_MULTIRISQUE[0]?.value ?? '')
+function useMultirisqueForm(defaultMetier?: string) {
+  const [metierValue, setMetierValue] = useState<string>(
+    pickInitialMetier(defaultMetier, METIERS_MULTIRISQUE)
+  )
   const [surface, setSurface] = useState<number>(80)
   const [contenu, setContenu] = useState<number>(40_000)
   const [statut, setStatut] = useState<Statut>('sarl')
@@ -546,8 +797,10 @@ function useMultirisqueForm() {
 
 // ---- CYBER -----------------------------------------------------------------
 
-function useCyberForm() {
-  const [metierValue, setMetierValue] = useState<string>(METIERS_CYBER[0]?.value ?? '')
+function useCyberForm(defaultMetier?: string) {
+  const [metierValue, setMetierValue] = useState<string>(
+    pickInitialMetier(defaultMetier, METIERS_CYBER)
+  )
   const [ca, setCa] = useState<number>(80_000)
   const [statut, setStatut] = useState<Statut>('sarl')
   const [effectif, setEffectif] = useState<number>(5)
@@ -707,8 +960,14 @@ function StatutField({
 // Per-vertical form renderers
 // ---------------------------------------------------------------------------
 
-function DecennaleFields({ ids }: { ids: Record<string, string> }) {
-  const f = useDecennaleForm()
+function DecennaleFields({
+  ids,
+  defaultMetier,
+}: {
+  ids: Record<string, string>
+  defaultMetier?: string
+}) {
+  const f = useDecennaleForm(defaultMetier)
   const MAX_CA = 2_000_000
   return (
     <>
@@ -765,8 +1024,14 @@ function DecennaleFields({ ids }: { ids: Record<string, string> }) {
   )
 }
 
-function RcProFields({ ids }: { ids: Record<string, string> }) {
-  const f = useRcProForm()
+function RcProFields({
+  ids,
+  defaultMetier,
+}: {
+  ids: Record<string, string>
+  defaultMetier?: string
+}) {
+  const f = useRcProForm(defaultMetier)
   const MAX_CA = 2_000_000
   return (
     <>
@@ -824,8 +1089,14 @@ function RcProFields({ ids }: { ids: Record<string, string> }) {
   )
 }
 
-function MultirisqueFields({ ids }: { ids: Record<string, string> }) {
-  const f = useMultirisqueForm()
+function MultirisqueFields({
+  ids,
+  defaultMetier,
+}: {
+  ids: Record<string, string>
+  defaultMetier?: string
+}) {
+  const f = useMultirisqueForm(defaultMetier)
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
@@ -871,8 +1142,14 @@ function MultirisqueFields({ ids }: { ids: Record<string, string> }) {
   )
 }
 
-function CyberFields({ ids }: { ids: Record<string, string> }) {
-  const f = useCyberForm()
+function CyberFields({
+  ids,
+  defaultMetier,
+}: {
+  ids: Record<string, string>
+  defaultMetier?: string
+}) {
+  const f = useCyberForm(defaultMetier)
   const MAX_CA = 10_000_000
   return (
     <>
@@ -1867,7 +2144,7 @@ function ResultBlock({ range, hint }: { range: Range; hint: string }) {
 // Root component
 // ---------------------------------------------------------------------------
 
-export function TarifCalculator({ garantie, className = '' }: TarifCalculatorProps) {
+export function TarifCalculator({ garantie, className = '', defaultMetier }: TarifCalculatorProps) {
   const reactId = useId()
   const ids = useMemo(
     () => ({
@@ -1937,10 +2214,12 @@ export function TarifCalculator({ garantie, className = '' }: TarifCalculatorPro
           </div>
         </header>
 
-        {garantie === 'decennale' && <DecennaleFields ids={ids} />}
-        {garantie === 'rc-pro' && <RcProFields ids={ids} />}
-        {garantie === 'multirisque-pro' && <MultirisqueFields ids={ids} />}
-        {garantie === 'cyber' && <CyberFields ids={ids} />}
+        {garantie === 'decennale' && <DecennaleFields ids={ids} defaultMetier={defaultMetier} />}
+        {garantie === 'rc-pro' && <RcProFields ids={ids} defaultMetier={defaultMetier} />}
+        {garantie === 'multirisque-pro' && (
+          <MultirisqueFields ids={ids} defaultMetier={defaultMetier} />
+        )}
+        {garantie === 'cyber' && <CyberFields ids={ids} defaultMetier={defaultMetier} />}
         {garantie === 'mutuelle-pro' && <MutuelleFields ids={ids} />}
         {garantie === 'vtc' && <VtcFields ids={ids} />}
         {garantie === 'flotte-auto' && <FlotteFields ids={ids} />}
