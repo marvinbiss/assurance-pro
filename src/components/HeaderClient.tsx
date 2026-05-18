@@ -193,7 +193,7 @@ export default function HeaderClient() {
                           <Link
                             key={v.href}
                             href={v.href}
-                            className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-sand-50"
+                            className="group flex min-h-[44px] items-start gap-3 rounded-xl p-3 transition-colors hover:bg-sand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2"
                           >
                             <span
                               className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl transition-transform group-hover:scale-110 ${v.color}`}

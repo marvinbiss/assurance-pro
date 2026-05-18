@@ -75,7 +75,7 @@ export function StickyMobileCta({ href, label, tel, className = '' }: StickyMobi
         <Link
           href={href}
           aria-label={`${label} — obtenir un devis en 2 minutes`}
-          className="flex-1 rounded-xl bg-primary-400 px-4 py-3 text-center font-heading text-sm font-semibold text-white shadow-cta transition-colors hover:bg-primary-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+          className="min-h-[44px] flex-1 rounded-xl bg-primary-400 px-4 py-3 text-center font-heading text-sm font-semibold text-white shadow-cta transition-colors hover:bg-primary-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
         >
           {label}
         </Link>
@@ -83,7 +83,7 @@ export function StickyMobileCta({ href, label, tel, className = '' }: StickyMobi
           <a
             href={`tel:${tel}`}
             aria-label={`Appeler le ${tel}`}
-            className="shrink-0 rounded-xl border border-sand-400 bg-white px-4 py-3 text-center font-heading text-sm font-semibold text-charcoal-900 transition-colors hover:bg-sand-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+            className="min-h-[44px] shrink-0 rounded-xl border border-sand-400 bg-white px-4 py-3 text-center font-heading text-sm font-semibold text-charcoal-900 transition-colors hover:bg-sand-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
           >
             Appeler
           </a>
