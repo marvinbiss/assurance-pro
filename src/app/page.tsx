@@ -30,6 +30,7 @@ import { TrustBadgesRow } from '@/components/conversion/TrustBadgesRow'
 import { MockOfferCard } from '@/components/home/MockOfferCard'
 import { BigStatsBlock } from '@/components/home/big-stats-block'
 import { TransparencyWidget } from '@/components/home/transparency-widget'
+import { HeroBackground } from '@/components/home/HeroBackground'
 import { DevisCTASection, EditorialProcessSteps, EditorialTestimonial } from '@/components/premium'
 import { IllustrationForMetier } from '@/components/premium/illustrations'
 import { CountUp } from '@/components/motion/CountUp'
@@ -229,21 +230,8 @@ export default function HomePage() {
           HERO — gradient hero warm animé + radial blobs + trust signals
           ═══════════════════════════════════════════════════════════════════ */}
       <section className="noise-overlay relative overflow-hidden bg-charcoal-900 py-20 text-white md:py-28">
-        {/* Mesh gradient shader animé — GPU only */}
-        <div className="mesh-shader opacity-90" aria-hidden="true" />
-
-        {/* Radial blobs decoratifs */}
-        <div
-          className="pointer-events-none absolute -left-32 -top-32 h-[600px] w-[600px] rounded-full bg-secondary-500/30 blur-[140px]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-primary-400/30 blur-[120px]"
-          aria-hidden="true"
-        />
-
-        {/* Hero pattern subtle */}
-        <div className="absolute inset-0 bg-hero-pattern opacity-30" aria-hidden="true" />
+        {/* Hero background — MP4 si dispo, mesh shader fallback (Luke spec) */}
+        <HeroBackground videoSrc={null} />
 
         <div className="container relative mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.2fr_1fr]">

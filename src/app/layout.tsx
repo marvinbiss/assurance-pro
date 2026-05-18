@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { headers } from 'next/headers'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Geist, Fraunces } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import { PreOriasBanner } from '@/components/PreOriasBanner'
@@ -19,20 +19,20 @@ import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
 import { CursorTrail } from '@/components/motion/cursor-trail'
 
-// Inter — sans-serif corporate universel (Hiscox, AXA, Stripe-grade).
-const dmSans = Inter({
+// Geist — sans-serif Vercel-grade (Luke Premium Workflow spec). Display optical.
+const dmSans = Geist({
   subsets: ['latin'],
   variable: '--font-dm-sans',
   display: 'swap',
   adjustFontFallback: true,
 })
 
-// Playfair Display — serif éditorial classique (signal trust YMYL premium).
-const fraunces = Playfair_Display({
+// Fraunces — serif éditorial moderne (GT Sectra-like, Luke spec). Optical sizes.
+const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-heading',
   display: 'swap',
-  style: ['normal'],
+  axes: ['SOFT', 'WONK', 'opsz'],
   adjustFontFallback: true,
 })
 
