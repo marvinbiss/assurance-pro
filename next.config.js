@@ -175,6 +175,9 @@ const nextConfig = {
       // Anti-cannibalisation SEO — 301 vers winner pour groupes doublons.
       // Audit Ahrefs 2026-05-17 : 80+ pages identifiées avec même intent.
       // ────────────────────────────────────────────────────────────────────
+      // /auteurs hub (404 fix — référencé plan-du-site mais aucun page.tsx racine)
+      { source: '/auteurs', destination: '/equipe', permanent: true },
+
       // Décennale auto-entrepreneur
       { source: '/assurance-decennale-pour-auto-entrepreneur', destination: '/assurance-decennale-auto-entrepreneur', permanent: true },
 
