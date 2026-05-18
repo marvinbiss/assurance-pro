@@ -156,7 +156,7 @@ export default function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-charcoal-500 transition-colors hover:text-white"
+                        className="inline-block rounded px-1 py-0.5 text-charcoal-500 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-900"
                       >
                         {link.label}
                       </Link>
