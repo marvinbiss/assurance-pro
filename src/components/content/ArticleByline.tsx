@@ -85,7 +85,7 @@ export function ArticleByline({
 
       {reviewer && (
         <>
-          <span className="text-gray-300" aria-hidden="true">
+          <span className="text-charcoal-300" aria-hidden="true">
             ·
           </span>
           <PersonLink person={reviewer} prefix="Relu par" />
@@ -94,14 +94,14 @@ export function ArticleByline({
 
       {factCheckedBy && (
         <>
-          <span className="text-gray-300" aria-hidden="true">
+          <span className="text-charcoal-300" aria-hidden="true">
             ·
           </span>
           <PersonLink person={factCheckedBy} prefix="Vérifié par" />
         </>
       )}
 
-      <span className="text-gray-300" aria-hidden="true">
+      <span className="text-charcoal-300" aria-hidden="true">
         ·
       </span>
       <time dateTime={datePublished} className="text-charcoal-600">
@@ -110,7 +110,7 @@ export function ArticleByline({
 
       {showUpdate && dateModified && (
         <>
-          <span className="text-gray-300" aria-hidden="true">
+          <span className="text-charcoal-300" aria-hidden="true">
             ·
           </span>
           <time dateTime={dateModified} className="inline-flex items-center gap-1">
@@ -126,7 +126,7 @@ export function ArticleByline({
 
       {readingTimeMinutes && (
         <>
-          <span className="text-gray-300" aria-hidden="true">
+          <span className="text-charcoal-300" aria-hidden="true">
             ·
           </span>
           <span className="text-charcoal-600">

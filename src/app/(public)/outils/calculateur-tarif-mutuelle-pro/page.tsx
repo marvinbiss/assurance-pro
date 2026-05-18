@@ -118,7 +118,7 @@ export default async function Page() {
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Comprendre les 4 niveaux de couverture</h2>
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-r border-l-4 border-gray-400 bg-white p-4">
+            <div className="rounded-r border-l-4 border-sand-400 bg-white p-4">
               <h3 className="mb-1 font-bold">Socle ANI minimal — 32 € par mois</h3>
               <p className="text-sm">
                 Couverture obligatoire Loi ANI (art. R. 911-3 CSS). Remboursement 100% Base Sécurité

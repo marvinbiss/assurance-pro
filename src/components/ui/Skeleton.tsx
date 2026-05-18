@@ -10,10 +10,7 @@ interface SkeletonProps {
  */
 export function Skeleton({ className }: SkeletonProps) {
   return (
-    <div
-      className={cn('animate-pulse rounded-md bg-gray-200', className)}
-      aria-hidden="true"
-    />
+    <div className={cn('animate-pulse rounded-md bg-sand-200', className)} aria-hidden="true" />
   )
 }
 
@@ -23,9 +20,9 @@ export function Skeleton({ className }: SkeletonProps) {
  */
 export function PageSkeleton() {
   return (
-    <div role="status" aria-label="Chargement" className="container mx-auto px-4 py-12 max-w-5xl">
-      <Skeleton className="h-10 w-2/3 mb-4" />
-      <Skeleton className="h-4 w-1/2 mb-8" />
+    <div role="status" aria-label="Chargement" className="container mx-auto max-w-5xl px-4 py-12">
+      <Skeleton className="mb-4 h-10 w-2/3" />
+      <Skeleton className="mb-8 h-4 w-1/2" />
       <div className="space-y-3">
         <Skeleton className="h-32 w-full" />
         <Skeleton className="h-32 w-full" />

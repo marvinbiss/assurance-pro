@@ -209,7 +209,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               3. Coordonnées
             </span>
           </div>
-          <div className="h-2 overflow-hidden rounded-full bg-gray-200">
+          <div className="h-2 overflow-hidden rounded-full bg-sand-200">
             <div
               className="h-full bg-primary-600 transition-all"
               style={{ width: `${(step / 3) * 100}%` }}
@@ -309,7 +309,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               type="button"
               onClick={() => setStep(2)}
               disabled={!canGoStep2}
-              className="w-full rounded bg-primary-600 py-3 font-semibold text-white disabled:bg-gray-300"
+              className="w-full rounded bg-primary-600 py-3 font-semibold text-white disabled:bg-sand-300"
             >
               Continuer →
             </button>
@@ -399,7 +399,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
                 type="button"
                 onClick={() => setStep(3)}
                 disabled={!canGoStep3}
-                className="flex-1 rounded bg-primary-600 py-3 font-semibold text-white disabled:bg-gray-300"
+                className="flex-1 rounded bg-primary-600 py-3 font-semibold text-white disabled:bg-sand-300"
               >
                 Continuer →
               </button>
@@ -570,7 +570,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               <button
                 type="submit"
                 disabled={!canSubmit || submitting}
-                className="flex-1 rounded bg-primary-600 py-3 font-semibold text-white disabled:bg-gray-300"
+                className="flex-1 rounded bg-primary-600 py-3 font-semibold text-white disabled:bg-sand-300"
               >
                 {submitting ? 'Envoi...' : 'Recevoir mon devis →'}
               </button>

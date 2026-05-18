@@ -52,7 +52,7 @@ function Stars({ count }: { count: number }) {
       {[1, 2, 3, 4, 5].map((i) => (
         <span
           key={i}
-          className={i <= count ? 'text-amber-400' : 'text-gray-300'}
+          className={i <= count ? 'text-amber-400' : 'text-charcoal-300'}
           aria-hidden="true"
         >
           ★
