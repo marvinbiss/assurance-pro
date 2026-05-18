@@ -79,134 +79,144 @@ const METIERS_DECENNALE: readonly MetierOption[] = [
   {
     value: 'menuisier-exterieur',
     label: 'Menuisier extérieur — fenêtres',
-    base: 1200,
-    spread: 0.3,
+    base: 2400,
+    spread: 0.28,
   },
-  { value: 'climatisation', label: 'Climatisation — frigoriste', base: 1300, spread: 0.3 },
-  { value: 'isolation-thermique', label: 'Isolation thermique (ITE/ITI)', base: 1250, spread: 0.3 },
+  { value: 'climatisation', label: 'Climatisation — frigoriste', base: 2400, spread: 0.28 },
+  {
+    value: 'isolation-thermique',
+    label: 'Isolation thermique (ITE/ITI)',
+    base: 2200,
+    spread: 0.28,
+  },
   { value: 'paysagiste', label: 'Paysagiste avec gros œuvre', base: 950, spread: 0.32 },
-  { value: 'ravalement', label: 'Ravalement de façade', base: 1100, spread: 0.3 },
+  { value: 'ravalement', label: 'Ravalement de façade', base: 2100, spread: 0.28 },
   // Risque ÉLEVÉ
-  { value: 'plombier-chauffagiste', label: 'Plombier-chauffagiste (PAC)', base: 1400, spread: 0.3 },
-  { value: 'macon', label: 'Maçon — gros œuvre', base: 1700, spread: 0.3 },
-  { value: 'charpentier-bois', label: 'Charpentier bois', base: 1800, spread: 0.28 },
-  { value: 'facadier-ite', label: 'Façadier — ITE', base: 1900, spread: 0.28 },
+  {
+    value: 'plombier-chauffagiste',
+    label: 'Plombier-chauffagiste (PAC)',
+    base: 2600,
+    spread: 0.28,
+  },
+  { value: 'macon', label: 'Maçon — gros œuvre', base: 2100, spread: 0.3 },
+  { value: 'charpentier-bois', label: 'Charpentier bois', base: 2200, spread: 0.28 },
+  { value: 'facadier-ite', label: 'Façadier — ITE', base: 2300, spread: 0.28 },
   {
     value: 'installateur-photovoltaique',
     label: 'Installateur photovoltaïque',
-    base: 1700,
+    base: 2100,
     spread: 0.3,
   },
   {
     value: 'electricien-photovoltaique',
     label: 'Électricien PV résidentiel',
-    base: 1750,
-    spread: 0.3,
+    base: 3000,
+    spread: 0.28,
   },
-  { value: 'serrurier-metallier', label: 'Serrurier-métallier', base: 1500, spread: 0.3 },
-  { value: 'fumiste', label: 'Fumiste — cheminées', base: 1400, spread: 0.3 },
-  { value: 'multi-services-btp', label: 'Multi-services BTP (TCE)', base: 1600, spread: 0.3 },
+  { value: 'serrurier-metallier', label: 'Serrurier-métallier', base: 2600, spread: 0.28 },
+  { value: 'fumiste', label: 'Fumiste — cheminées', base: 2400, spread: 0.28 },
+  { value: 'multi-services-btp', label: 'Multi-services BTP (TCE)', base: 2800, spread: 0.28 },
   // Risque TRÈS ÉLEVÉ
-  { value: 'couvreur-zingueur', label: 'Couvreur-zingueur', base: 2100, spread: 0.25 },
-  { value: 'etancheur', label: 'Étancheur — toiture-terrasse', base: 2700, spread: 0.25 },
-  { value: 'terrassier', label: 'Terrassier — VRD', base: 2000, spread: 0.28 },
-  { value: 'demolisseur', label: 'Démolisseur — désamiantage', base: 2800, spread: 0.25 },
-  { value: 'pisciniste', label: 'Pisciniste', base: 2300, spread: 0.27 },
-  { value: 'puisatier', label: 'Puisatier-foreur — géothermie', base: 2200, spread: 0.28 },
+  { value: 'couvreur-zingueur', label: 'Couvreur-zingueur', base: 2700, spread: 0.25 },
+  { value: 'etancheur', label: 'Étancheur — toiture-terrasse', base: 3500, spread: 0.24 },
+  { value: 'terrassier', label: 'Terrassier — VRD', base: 3500, spread: 0.26 },
+  { value: 'demolisseur', label: 'Démolisseur — désamiantage', base: 4800, spread: 0.25 },
+  { value: 'pisciniste', label: 'Pisciniste', base: 4200, spread: 0.25 },
+  { value: 'puisatier', label: 'Puisatier-foreur — géothermie', base: 3600, spread: 0.26 },
   // Legacy slugs (compatibilité URLs anciennes)
-  { value: 'couvreur', label: 'Couvreur (générique)', base: 2000, spread: 0.25 },
+  { value: 'couvreur', label: 'Couvreur (générique)', base: 2700, spread: 0.25 },
   { value: 'menuisier', label: 'Menuisier (générique)', base: 1050, spread: 0.3 },
-  { value: 'charpentier', label: 'Charpentier (générique)', base: 1800, spread: 0.28 },
-  { value: 'chauffagiste', label: 'Chauffagiste — clim', base: 1200, spread: 0.3 },
+  { value: 'charpentier', label: 'Charpentier (générique)', base: 2200, spread: 0.28 },
+  { value: 'chauffagiste', label: 'Chauffagiste — clim', base: 2400, spread: 0.28 },
   { value: 'platrier', label: 'Plâtrier-plaquiste (alt)', base: 850, spread: 0.3 },
 ] as const
 
 const METIERS_RC_PRO: readonly MetierOption[] = [
-  // Conseil / business
-  { value: 'consultant', label: 'Consultant indépendant', base: 320, spread: 0.4 },
-  { value: 'conseil-rh', label: 'Consultant RH — recruteur', base: 360, spread: 0.4 },
-  { value: 'conseil-financier', label: 'CGP — CIF', base: 780, spread: 0.35 },
-  { value: 'agent-general-assurance', label: 'Agent général assurance', base: 820, spread: 0.32 },
-  { value: 'consultant-marketing', label: 'Consultant marketing digital', base: 340, spread: 0.4 },
-  { value: 'formateur', label: 'Formateur — organisme Qualiopi', base: 320, spread: 0.4 },
+  // Conseil / business (calibré SARL CA 80k 2026)
+  { value: 'consultant', label: 'Consultant indépendant', base: 500, spread: 0.38 },
+  { value: 'conseil-rh', label: 'Consultant RH — recruteur', base: 700, spread: 0.36 },
+  { value: 'conseil-financier', label: 'CGP — CIF', base: 1600, spread: 0.32 },
+  { value: 'agent-general-assurance', label: 'Agent général assurance', base: 1800, spread: 0.3 },
+  { value: 'consultant-marketing', label: 'Consultant marketing digital', base: 580, spread: 0.38 },
+  { value: 'formateur', label: 'Formateur — organisme Qualiopi', base: 500, spread: 0.38 },
   // Tech / digital / créatif
-  { value: 'freelance-it', label: 'Freelance IT — dev', base: 420, spread: 0.42 },
-  { value: 'developpeur-freelance', label: 'Développeur freelance', base: 380, spread: 0.42 },
-  { value: 'data-scientist', label: 'Data scientist — ML engineer', base: 540, spread: 0.4 },
-  { value: 'agence-web', label: 'Agence web — digitale', base: 580, spread: 0.4 },
-  { value: 'webmaster', label: 'Webmaster — intégrateur', base: 280, spread: 0.4 },
-  { value: 'consultant-seo', label: 'Consultant SEO', base: 340, spread: 0.4 },
-  { value: 'community-manager', label: 'Community manager', base: 260, spread: 0.4 },
-  { value: 'graphiste', label: 'Graphiste — designer', base: 260, spread: 0.4 },
-  { value: 'designer', label: 'Designer UX — UI', base: 280, spread: 0.4 },
-  { value: 'photographe', label: 'Photographe pro', base: 340, spread: 0.4 },
-  { value: 'videaste', label: 'Vidéaste — cameraman', base: 360, spread: 0.4 },
-  { value: 'redacteur', label: 'Rédacteur — traducteur', base: 220, spread: 0.4 },
-  // Juridique / chiffre
-  { value: 'avocat', label: 'Avocat', base: 1200, spread: 0.35 },
-  { value: 'avocat-conseil', label: 'Avocat — conseil juridique', base: 720, spread: 0.35 },
-  { value: 'notaire', label: 'Notaire', base: 6800, spread: 0.3 },
-  { value: 'expert-comptable', label: 'Expert-comptable', base: 850, spread: 0.35 },
-  { value: 'comptable', label: 'Comptable', base: 650, spread: 0.35 },
-  { value: 'commissaire-aux-comptes', label: 'Commissaire aux comptes', base: 4500, spread: 0.32 },
-  { value: 'huissier', label: 'Huissier — commissaire de justice', base: 2400, spread: 0.32 },
-  { value: 'mandataire-judiciaire', label: 'Mandataire judiciaire', base: 5500, spread: 0.3 },
-  // Santé / médical (Loi Kouchner)
-  { value: 'medecin-generaliste', label: 'Médecin généraliste', base: 980, spread: 0.32 },
-  { value: 'medecin-specialiste', label: 'Médecin spécialiste', base: 2400, spread: 0.34 },
-  { value: 'chirurgien', label: 'Chirurgien', base: 12000, spread: 0.35 },
-  { value: 'sage-femme', label: 'Sage-femme libérale', base: 1100, spread: 0.32 },
-  { value: 'dentiste', label: 'Chirurgien-dentiste', base: 2200, spread: 0.32 },
-  { value: 'infirmiere-liberale', label: 'Infirmière libérale (IDEL)', base: 280, spread: 0.35 },
-  { value: 'kinesitherapeute', label: 'Kinésithérapeute', base: 320, spread: 0.35 },
-  { value: 'osteopathe', label: 'Ostéopathe', base: 380, spread: 0.35 },
-  { value: 'psychologue', label: 'Psychologue', base: 240, spread: 0.35 },
-  { value: 'pharmacien', label: 'Pharmacien titulaire', base: 2800, spread: 0.3 },
-  { value: 'veterinaire', label: 'Vétérinaire', base: 1400, spread: 0.32 },
-  // Architecture / immobilier
-  { value: 'architecte', label: 'Architecte', base: 3200, spread: 0.33 },
-  { value: 'architecte-interieur', label: 'Architecte d’intérieur', base: 480, spread: 0.38 },
-  { value: 'agent-immobilier', label: 'Agent immobilier', base: 1100, spread: 0.32 },
-  { value: 'syndic-immobilier', label: 'Syndic de copropriété', base: 1900, spread: 0.32 },
-  { value: 'diagnostic-immobilier', label: 'Diagnostiqueur immobilier', base: 1200, spread: 0.32 },
-  { value: 'geometre', label: 'Géomètre-expert', base: 1900, spread: 0.32 },
+  { value: 'freelance-it', label: 'Freelance IT — dev', base: 650, spread: 0.4 },
+  { value: 'developpeur-freelance', label: 'Développeur freelance', base: 600, spread: 0.4 },
+  { value: 'data-scientist', label: 'Data scientist — ML engineer', base: 850, spread: 0.38 },
+  { value: 'agence-web', label: 'Agence web — digitale', base: 950, spread: 0.38 },
+  { value: 'webmaster', label: 'Webmaster — intégrateur', base: 460, spread: 0.4 },
+  { value: 'consultant-seo', label: 'Consultant SEO', base: 580, spread: 0.4 },
+  { value: 'community-manager', label: 'Community manager', base: 420, spread: 0.4 },
+  { value: 'graphiste', label: 'Graphiste — designer', base: 420, spread: 0.4 },
+  { value: 'designer', label: 'Designer UX — UI', base: 500, spread: 0.4 },
+  { value: 'photographe', label: 'Photographe pro', base: 650, spread: 0.4 },
+  { value: 'videaste', label: 'Vidéaste — cameraman', base: 800, spread: 0.4 },
+  { value: 'redacteur', label: 'Rédacteur — traducteur', base: 380, spread: 0.4 },
+  // Juridique / chiffre (sourcé MACSF + ordres professionnels 2026)
+  { value: 'avocat', label: 'Avocat', base: 2000, spread: 0.32 },
+  { value: 'avocat-conseil', label: 'Avocat — conseil juridique', base: 1400, spread: 0.32 },
+  { value: 'notaire', label: 'Notaire', base: 8000, spread: 0.28 },
+  { value: 'expert-comptable', label: 'Expert-comptable', base: 1700, spread: 0.32 },
+  { value: 'comptable', label: 'Comptable', base: 1100, spread: 0.34 },
+  { value: 'commissaire-aux-comptes', label: 'Commissaire aux comptes', base: 5800, spread: 0.3 },
+  { value: 'huissier', label: 'Huissier — commissaire de justice', base: 2900, spread: 0.3 },
+  { value: 'mandataire-judiciaire', label: 'Mandataire judiciaire', base: 6800, spread: 0.28 },
+  // Santé / médical (MACSF / Médere 2026 — RCP libérale)
+  { value: 'medecin-generaliste', label: 'Médecin généraliste', base: 1300, spread: 0.32 },
+  { value: 'medecin-specialiste', label: 'Médecin spécialiste', base: 3200, spread: 0.32 },
+  { value: 'chirurgien', label: 'Chirurgien', base: 15000, spread: 0.32 },
+  { value: 'sage-femme', label: 'Sage-femme libérale', base: 1450, spread: 0.32 },
+  { value: 'dentiste', label: 'Chirurgien-dentiste', base: 2500, spread: 0.3 },
+  { value: 'infirmiere-liberale', label: 'Infirmière libérale (IDEL)', base: 480, spread: 0.34 },
+  { value: 'kinesitherapeute', label: 'Kinésithérapeute', base: 500, spread: 0.34 },
+  { value: 'osteopathe', label: 'Ostéopathe', base: 550, spread: 0.34 },
+  { value: 'psychologue', label: 'Psychologue', base: 420, spread: 0.34 },
+  { value: 'pharmacien', label: 'Pharmacien titulaire', base: 3500, spread: 0.28 },
+  { value: 'veterinaire', label: 'Vétérinaire', base: 1650, spread: 0.3 },
+  // Architecture / immobilier (Loi Hoguet + ordre des architectes 2026)
+  { value: 'architecte', label: 'Architecte', base: 4000, spread: 0.3 },
+  { value: 'architecte-interieur', label: 'Architecte d’intérieur', base: 700, spread: 0.36 },
+  { value: 'agent-immobilier', label: 'Agent immobilier', base: 1550, spread: 0.3 },
+  { value: 'syndic-immobilier', label: 'Syndic de copropriété', base: 2200, spread: 0.3 },
+  { value: 'diagnostic-immobilier', label: 'Diagnostiqueur immobilier', base: 1400, spread: 0.3 },
+  { value: 'geometre', label: 'Géomètre-expert', base: 2300, spread: 0.3 },
   // Services / commerce / restauration
-  { value: 'restaurateur', label: 'Restaurateur', base: 1800, spread: 0.32 },
-  { value: 'commercant', label: 'Commerçant indépendant', base: 580, spread: 0.35 },
-  { value: 'aide-domicile', label: 'Aide à domicile', base: 480, spread: 0.35 },
-  { value: 'esthetique', label: 'Esthéticienne — institut', base: 560, spread: 0.35 },
-  { value: 'coiffeur', label: 'Coiffeur à domicile', base: 380, spread: 0.35 },
-  { value: 'agent-de-voyage', label: 'Agent de voyage', base: 1900, spread: 0.32 },
+  { value: 'restaurateur', label: 'Restaurateur', base: 2200, spread: 0.3 },
+  { value: 'commercant', label: 'Commerçant indépendant', base: 780, spread: 0.34 },
+  { value: 'aide-domicile', label: 'Aide à domicile', base: 620, spread: 0.34 },
+  { value: 'esthetique', label: 'Esthéticienne — institut', base: 720, spread: 0.34 },
+  { value: 'coiffeur', label: 'Coiffeur à domicile', base: 500, spread: 0.34 },
+  { value: 'agent-de-voyage', label: 'Agent de voyage', base: 2500, spread: 0.3 },
   // Bien-être / sport
-  { value: 'coach', label: 'Coach — formateur', base: 280, spread: 0.4 },
-  { value: 'coach-pro', label: 'Coach professionnel', base: 280, spread: 0.4 },
-  { value: 'coach-sportif', label: 'Coach sportif', base: 420, spread: 0.35 },
-  { value: 'moniteur-yoga', label: 'Moniteur yoga — pilates', base: 320, spread: 0.35 },
-  { value: 'animateur-jeunesse', label: 'Animateur jeunesse (BAFA)', base: 280, spread: 0.35 },
+  { value: 'coach', label: 'Coach — formateur', base: 480, spread: 0.38 },
+  { value: 'coach-pro', label: 'Coach professionnel', base: 480, spread: 0.38 },
+  { value: 'coach-sportif', label: 'Coach sportif', base: 520, spread: 0.34 },
+  { value: 'moniteur-yoga', label: 'Moniteur yoga — pilates', base: 440, spread: 0.34 },
+  { value: 'animateur-jeunesse', label: 'Animateur jeunesse (BAFA)', base: 420, spread: 0.34 },
   // Transport / dépannage
-  { value: 'taxi', label: 'Taxi', base: 1800, spread: 0.3 },
-  { value: 'transporteur-leger', label: 'Transporteur léger — coursier', base: 1900, spread: 0.3 },
-  { value: 'serrurier-depannage', label: 'Serrurier dépannage', base: 1100, spread: 0.32 },
-  { value: 'electricien-depannage', label: 'Électricien dépannage', base: 780, spread: 0.32 },
+  { value: 'taxi', label: 'Taxi', base: 2400, spread: 0.28 },
+  { value: 'transporteur-leger', label: 'Transporteur léger — coursier', base: 2700, spread: 0.28 },
+  { value: 'serrurier-depannage', label: 'Serrurier dépannage', base: 1400, spread: 0.3 },
+  { value: 'electricien-depannage', label: 'Électricien dépannage', base: 950, spread: 0.32 },
   // Statut générique
   { value: 'auto-entrepreneur', label: 'Auto-entrepreneur (autre)', base: 220, spread: 0.4 },
 ] as const
 
 const METIERS_MULTIRISQUE: readonly MetierOption[] = [
-  // Commerce de bouche
-  { value: 'restaurant', label: 'Restaurant — brasserie', base: 980, spread: 0.32 },
-  { value: 'boulangerie', label: 'Boulangerie — pâtisserie', base: 880, spread: 0.32 },
-  { value: 'boucherie', label: 'Boucherie — charcuterie', base: 820, spread: 0.32 },
+  // Commerce de bouche (Coover / AssurResto 2026 — local SARL CA 80k)
+  { value: 'restaurant', label: 'Restaurant — brasserie', base: 1400, spread: 0.3 },
+  { value: 'boulangerie', label: 'Boulangerie — pâtisserie', base: 1100, spread: 0.3 },
+  { value: 'boucherie', label: 'Boucherie — charcuterie', base: 1100, spread: 0.3 },
   { value: 'primeur-caviste', label: 'Primeur — caviste — fromagerie', base: 660, spread: 0.34 },
   { value: 'traiteur', label: 'Traiteur — food truck', base: 740, spread: 0.34 },
   // Retail spécialisé
   { value: 'commerce-detail', label: 'Commerce de détail généraliste', base: 540, spread: 0.35 },
-  { value: 'pharmacie', label: 'Pharmacie — officine', base: 1320, spread: 0.28 },
+  { value: 'pharmacie', label: 'Pharmacie — officine', base: 1700, spread: 0.28 },
   {
     value: 'opticien-bijoutier',
     label: 'Opticien — bijouterie — horlogerie',
-    base: 1180,
-    spread: 0.3,
+    base: 1900,
+    spread: 0.28,
   },
   { value: 'librairie-presse', label: 'Librairie — presse — tabac', base: 720, spread: 0.32 },
   { value: 'fleuriste', label: 'Fleuriste — animalerie', base: 480, spread: 0.34 },
@@ -234,13 +244,13 @@ const METIERS_MULTIRISQUE: readonly MetierOption[] = [
   },
   // Ateliers & BTP local
   { value: 'atelier-artisan', label: 'Atelier artisan', base: 620, spread: 0.34 },
-  { value: 'garage-auto', label: 'Garage — carrosserie automobile', base: 1180, spread: 0.3 },
+  { value: 'garage-auto', label: 'Garage — carrosserie automobile', base: 1700, spread: 0.28 },
   { value: 'depot-btp', label: 'Showroom — dépôt BTP', base: 880, spread: 0.32 },
   // Hôtellerie & tourisme
-  { value: 'hotel', label: 'Hôtel — résidence', base: 1450, spread: 0.3 },
+  { value: 'hotel', label: 'Hôtel — résidence', base: 2400, spread: 0.28 },
   { value: 'camping-gite', label: 'Camping — gîte — chambre d’hôtes', base: 920, spread: 0.32 },
   // Sport, loisir, éducation
-  { value: 'salle-sport', label: 'Salle de sport — école de danse', base: 780, spread: 0.33 },
+  { value: 'salle-sport', label: 'Salle de sport — école de danse', base: 1100, spread: 0.3 },
   {
     value: 'autoecole-formation',
     label: 'Auto-école — organisme de formation',
@@ -251,29 +261,29 @@ const METIERS_MULTIRISQUE: readonly MetierOption[] = [
   {
     value: 'ecommerce-entrepot',
     label: 'E-commerce avec entrepôt — stock',
-    base: 1050,
-    spread: 0.32,
+    base: 1500,
+    spread: 0.3,
   },
   // Industrie & associatif
   {
     value: 'industrie-legere',
     label: 'Atelier de production — industrie légère',
-    base: 1380,
-    spread: 0.3,
+    base: 2400,
+    spread: 0.28,
   },
   { value: 'association', label: 'Association — lieu d’accueil', base: 420, spread: 0.36 },
 ] as const
 
 const METIERS_CYBER: readonly MetierOption[] = [
-  // Tech
-  { value: 'freelance-dev', label: 'Freelance IT — développeur', base: 420, spread: 0.4 },
-  { value: 'agence-digital', label: 'Agence digital — web — UX', base: 780, spread: 0.38 },
-  { value: 'esn-prestataire', label: 'ESN — prestataire IT', base: 1450, spread: 0.36 },
-  { value: 'editeur-saas', label: 'Éditeur SaaS — tech', base: 1800, spread: 0.38 },
-  { value: 'media-agence', label: 'Média — régie — agence com', base: 780, spread: 0.38 },
+  // Tech (post-NIS2 oct 2024 — Hiscox/Courtier-Digital/Axido 2026)
+  { value: 'freelance-dev', label: 'Freelance IT — développeur', base: 650, spread: 0.38 },
+  { value: 'agence-digital', label: 'Agence digital — web — UX', base: 1200, spread: 0.36 },
+  { value: 'esn-prestataire', label: 'ESN — prestataire IT', base: 3800, spread: 0.32 },
+  { value: 'editeur-saas', label: 'Éditeur SaaS — tech', base: 3500, spread: 0.34 },
+  { value: 'media-agence', label: 'Média — régie — agence com', base: 1200, spread: 0.36 },
   // Retail / e-commerce
-  { value: 'ecommerce', label: 'E-commerce mono-boutique', base: 920, spread: 0.4 },
-  { value: 'marketplace', label: 'Marketplace — plateforme', base: 1680, spread: 0.38 },
+  { value: 'ecommerce', label: 'E-commerce mono-boutique', base: 1600, spread: 0.36 },
+  { value: 'marketplace', label: 'Marketplace — plateforme', base: 4200, spread: 0.34 },
   {
     value: 'retail-omnicanal',
     label: 'Retail omnicanal — réseau magasins',
@@ -281,32 +291,32 @@ const METIERS_CYBER: readonly MetierOption[] = [
     spread: 0.36,
   },
   // Services pro
-  { value: 'tpe-services', label: 'TPE services (<10 salariés)', base: 480, spread: 0.4 },
-  { value: 'pme-services', label: 'PME services (10-50)', base: 1200, spread: 0.38 },
+  { value: 'tpe-services', label: 'TPE services (<10 salariés)', base: 750, spread: 0.36 },
+  { value: 'pme-services', label: 'PME services (10-50)', base: 2200, spread: 0.34 },
   {
     value: 'cabinet-conseil',
     label: 'Cabinet conseil — audit — stratégie',
     base: 920,
     spread: 0.36,
   },
-  { value: 'cabinet-avocat', label: 'Cabinet avocat — RGPD — DPO', base: 1180, spread: 0.34 },
-  { value: 'expert-comptable', label: 'Expert-comptable — paie', base: 1320, spread: 0.34 },
-  { value: 'courtier-iobsp', label: 'Courtier IOBSP — assurance — immo', base: 1480, spread: 0.34 },
+  { value: 'cabinet-avocat', label: 'Cabinet avocat — RGPD — DPO', base: 1900, spread: 0.32 },
+  { value: 'expert-comptable', label: 'Expert-comptable — paie', base: 2100, spread: 0.32 },
+  { value: 'courtier-iobsp', label: 'Courtier IOBSP — assurance — immo', base: 1900, spread: 0.32 },
   {
     value: 'finance-courtage',
     label: 'Finance — gestion privée — fintech',
-    base: 2100,
-    spread: 0.34,
+    base: 4500,
+    spread: 0.3,
   },
   // Santé
-  { value: 'sante', label: 'Acteur santé — cabinet', base: 1650, spread: 0.35 },
+  { value: 'sante', label: 'Acteur santé — cabinet', base: 2800, spread: 0.32 },
   {
     value: 'cabinet-sante',
     label: 'Cabinet médical — paramédical libéral',
     base: 880,
     spread: 0.36,
   },
-  { value: 'clinique-ehpad', label: 'Clinique — EHPAD — centre santé', base: 1980, spread: 0.32 },
+  { value: 'clinique-ehpad', label: 'Clinique — EHPAD — centre santé', base: 4500, spread: 0.3 },
   {
     value: 'laboratoire-imagerie',
     label: 'Laboratoire — imagerie médicale',
@@ -342,8 +352,8 @@ const METIERS_CYBER: readonly MetierOption[] = [
     spread: 0.36,
   },
   // ESS / collectivités
-  { value: 'association', label: 'Association — ESS', base: 360, spread: 0.4 },
-  { value: 'collectivite-osm', label: 'Collectivité — OSE NIS2', base: 2080, spread: 0.32 },
+  { value: 'association', label: 'Association — ESS', base: 480, spread: 0.38 },
+  { value: 'collectivite-osm', label: 'Collectivité — OSE NIS2', base: 4500, spread: 0.3 },
 ] as const
 
 const STATUT_MODIFIER: Readonly<Record<Statut, number>> = {
@@ -381,21 +391,31 @@ const GARANTIE_LABELS: Readonly<Record<Garantie, string>> = {
 
 const CA_REF = 80_000
 
-/** Multiplicateur CA — courbe sous-linéaire, plafonnée. */
+/**
+ * Multiplicateur CA — courbe sous-linéaire calibrée marché courtage FR 2026.
+ * Plafonnée à 1,5 M€ pour éviter dérive sur très gros CA (au-delà = négociation broker).
+ *
+ * Exposant 0.60 calibré vs courbes APRIL Pro / Hiscox 2026 (broker typique
+ * @150k = ×1.35-1.45, @500k = ×1.75-1.90, @1M = ×2.15-2.40).
+ */
 function caMultiplier(caEuros: number): number {
-  const ca = Math.max(caEuros, 5_000)
-  return 0.55 + 0.45 * Math.pow(ca / CA_REF, 0.55)
+  const ca = Math.max(Math.min(caEuros, 1_500_000), 5_000)
+  return 0.55 + 0.45 * Math.pow(ca / CA_REF, 0.6)
 }
 
 function roundTen(n: number): number {
   return Math.round(n / 10) * 10
 }
 
+/**
+ * Range min/max autour du mid avec garde-fou plancher 10€ (jamais 0€ affiché).
+ * Garantit min < max même sur valeurs très faibles.
+ */
 function spreadRange(mid: number, spread: number): { min: number; max: number } {
-  return {
-    min: roundTen(mid * (1 - spread)),
-    max: roundTen(mid * (1 + spread)),
-  }
+  const rawMin = roundTen(mid * (1 - spread))
+  const rawMax = roundTen(mid * (1 + spread))
+  const guardedMin = Math.max(10, rawMin)
+  return { min: guardedMin, max: Math.max(guardedMin + 10, rawMax) }
 }
 
 /**
@@ -837,10 +857,12 @@ function useCyberForm(defaultMetier?: string) {
 
 type NiveauMutuelle = 'eco' | 'median' | 'premium'
 
+// Mutuelle TNS NIVEAU_BASE (Empruntis / LeComparateurAssurance / UNOCAM 2026)
+// Calibré pour profil 40 ans 0 ayant droit (ref applyMul = 1.0).
 const NIVEAU_BASE: Record<NiveauMutuelle, number> = {
-  eco: 480,
-  median: 780,
-  premium: 1180,
+  eco: 540,
+  median: 900,
+  premium: 1450,
 }
 const NIVEAU_SPREAD: Record<NiveauMutuelle, number> = {
   eco: 0.28,
@@ -848,10 +870,14 @@ const NIVEAU_SPREAD: Record<NiveauMutuelle, number> = {
   premium: 0.24,
 }
 
+/**
+ * Multiplicateur âge mutuelle TNS — courbe UNOCAM / grilles AMC 2026.
+ * @30=0.84, @45=1.16, @60=1.72 (ratio cible 1.7 entre 30 et 60 ans).
+ * Quadratique 0.0005 calibré post-50 ans (vs 0.0006 ancien trop agressif >55).
+ */
 function ageMultiplier(age: number): number {
-  // 30 ans = 1.0, 50 ans = ~1.45, 60 ans = ~1.78
   const a = Math.max(age, 18)
-  return 0.7 + 0.012 * (a - 18) + 0.0006 * Math.pow(Math.max(a - 30, 0), 2)
+  return 0.7 + 0.012 * (a - 18) + 0.0005 * Math.pow(Math.max(a - 30, 0), 2)
 }
 
 function useMutuelleForm() {
@@ -1323,11 +1349,12 @@ function VtcFields({ ids }: { ids: Record<string, string> }) {
 type FlotteType = 'berline' | 'utilitaire' | 'mixte' | 'pl'
 type BonusMalus = 'bonus' | 'reference' | 'malus'
 
+// Flotte par véhicule — Verspieren / Argus Assurance 2026
 const FLOTTE_BASE_PER_VEHICULE: Record<FlotteType, number> = {
   berline: 720,
-  utilitaire: 880,
+  utilitaire: 780,
   mixte: 820,
-  pl: 2400,
+  pl: 3200,
 }
 const BONUS_MALUS_MOD: Record<BonusMalus, number> = {
   bonus: 0.78,
@@ -1335,9 +1362,13 @@ const BONUS_MALUS_MOD: Record<BonusMalus, number> = {
   malus: 1.38,
 }
 
+/**
+ * Remise flotte — sous-linéaire log10 calibrée marché courtage flotte 2026.
+ * @1=0.96, @10=0.88, @50=0.79, @100=0.76 (marché annonce -15 à -25% à partir 30 véh).
+ * Coeff 0.12 (vs 0.07 ancien trop conservateur).
+ */
 function nbVehiculesDiscount(n: number): number {
-  // remise flotte sous-linéaire : 1 = 1.0, 5 = 0.92, 20 = 0.82, 50 = 0.74
-  return Math.max(0.7, 1 - 0.07 * Math.log10(Math.max(n, 1) + 1))
+  return Math.max(0.65, 1 - 0.12 * Math.log10(Math.max(n, 1) + 1))
 }
 
 function useFlotteForm() {
