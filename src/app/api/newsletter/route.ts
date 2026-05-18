@@ -14,7 +14,7 @@ const newsletterSchema = z.object({
 })
 
 const CONSENT_TEXT_FR =
-  "J'accepte de recevoir la newsletter mensuelle d'Vivos Assurance et je peux me désinscrire à tout moment."
+  "J'accepte de recevoir la newsletter mensuelle Vivos Assurance et je peux me désinscrire à tout moment."
 
 const WELCOME_HTML = `
 <!doctype html>

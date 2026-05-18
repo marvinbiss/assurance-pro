@@ -7,7 +7,7 @@ import { PageHero } from '@/components/layout/PageHero'
 export const metadata: Metadata = {
   title: 'Comment nous sélectionnons nos assureurs partenaires',
   description:
-    "Méthodologie de sélection des 10 assureurs partenaires d'Vivos Assurance : critères de solvabilité, qualité de gestion sinistres, indépendance, transparence.",
+    'Méthodologie de sélection des 10 assureurs partenaires Vivos Assurance : critères de solvabilité, qualité de gestion sinistres, indépendance, transparence.',
   alternates: { canonical: `${SITE_URL}/selection-assureurs` },
   openGraph: {
     title: 'Comment nous sélectionnons nos assureurs partenaires',
@@ -70,7 +70,7 @@ export default function SelectionPage() {
             <li>Délai moyen d&apos;ouverture du dossier sinistre (objectif &lt; 5 jours)</li>
             <li>Délai moyen d&apos;indemnisation (objectif &lt; 60 jours)</li>
             <li>Taux de litiges en médiation (objectif &lt; 2 %)</li>
-            <li>Note de satisfaction client post-sinistre (objectif &gt; 4 — 5)</li>
+            <li>Note de satisfaction client post-sinistre (objectif &gt; 4 sur 5)</li>
           </ul>
           <p>
             Un partenaire dont les indicateurs se dégradent significativement (deux trimestres
