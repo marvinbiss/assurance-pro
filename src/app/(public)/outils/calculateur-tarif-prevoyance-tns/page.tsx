@@ -91,7 +91,7 @@ export default async function Page() {
         </div>
       </header>
 
-      <section className="py-12">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez votre profil TNS</h2>
           <p className="mb-6 text-charcoal-600">
@@ -105,7 +105,7 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="bg-sand-50 py-12">
+      <section className="bg-sand-50 py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Pourquoi la prévoyance TNS est INDISPENSABLE</h2>
           <p className="mb-4 text-sm text-charcoal-700">

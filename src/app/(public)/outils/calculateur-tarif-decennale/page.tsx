@@ -108,7 +108,7 @@ export default async function Page() {
       </header>
 
       {/* CALCULATEUR */}
-      <section className="py-12">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez votre profil</h2>
           <p className="mb-6 text-charcoal-600">
@@ -124,7 +124,7 @@ export default async function Page() {
       </section>
 
       {/* MÉTHODOLOGIE */}
-      <section className="bg-sand-50 py-12">
+      <section className="bg-sand-50 py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Comment est calculé votre tarif ?</h2>
           <p className="mb-4 text-sm text-charcoal-700">
@@ -249,7 +249,7 @@ export default async function Page() {
       </section>
 
       {/* FAQ */}
-      <section className="py-12">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-6 text-2xl font-bold">FAQ — Tarif décennale 2026</h2>
           <div className="space-y-5">

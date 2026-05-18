@@ -46,7 +46,7 @@ export default async function Page() {
   return (
     <main className="min-h-screen bg-white">
       {/* HERO */}
-      <header className="bg-gradient-to-br from-orange-700 to-red-900 py-12 text-white">
+      <header className="bg-gradient-to-br from-charcoal-900 via-primary-700 to-primary-900 py-16 text-white md:py-20">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
             <Link href="/" className="hover:underline">
@@ -155,7 +155,7 @@ export default async function Page() {
       </section>
 
       {/* FORMULAIRE — pré-rempli garantie_code='decennale' */}
-      <section className="py-12">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto max-w-3xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Démarrer mon devis décennale</h2>
           <p className="mb-6 text-charcoal-600">

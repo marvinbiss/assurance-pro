@@ -39,7 +39,7 @@ export default async function Page() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <main className="min-h-screen bg-white">
-      <header className="bg-gradient-to-br from-orange-700 to-red-900 py-12 text-white">
+      <header className="bg-gradient-to-br from-charcoal-900 via-primary-700 to-primary-900 py-16 text-white md:py-20">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
             <Link href="/" className="hover:underline">
@@ -87,7 +87,7 @@ export default async function Page() {
         </div>
       </header>
 
-      <section className="py-12">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez votre profil locaux</h2>
           <p className="mb-6 text-charcoal-600">
@@ -101,7 +101,7 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="bg-sand-50 py-12">
+      <section className="bg-sand-50 py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Tarifs au m² 2026 par type de locaux</h2>
           <table className="w-full border-collapse bg-white text-sm">

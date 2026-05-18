@@ -97,7 +97,7 @@ export default async function Page() {
       </header>
 
       {/* GENERATEUR */}
-      <section className="py-12">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto max-w-3xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Renseignez les informations de votre contrat</h2>
           <p className="mb-6 text-charcoal-600">
@@ -153,7 +153,7 @@ export default async function Page() {
       </section>
 
       {/* PROCÉDURE */}
-      <section className="bg-sand-50 py-12">
+      <section className="bg-sand-50 py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Procédure de résiliation en 5 étapes</h2>
           <ol className="space-y-3 text-sm">

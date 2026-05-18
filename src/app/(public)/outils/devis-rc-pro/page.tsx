@@ -150,7 +150,7 @@ export default async function Page() {
       </section>
 
       {/* FORMULAIRE — pré-rempli garantie_code='rc-pro' */}
-      <section className="py-12">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto max-w-3xl px-4">
           <h2 className="mb-2 text-2xl font-bold">Démarrer mon devis RC Pro</h2>
           <p className="mb-6 text-charcoal-600">
