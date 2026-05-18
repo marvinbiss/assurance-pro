@@ -197,7 +197,7 @@ export default async function PrixPage(props: { params: Promise<Params> }) {
             <div className="mt-14">
               <TarifCalculator
                 garantie={calcG}
-                defaultMetier={enrichment.metier_code ?? undefined}
+                defaultMetier={enrichment.metier_code?.replace(/_/g, '-') ?? undefined}
               />
             </div>
           )

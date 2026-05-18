@@ -275,7 +275,17 @@ const SLUG_TO_METIER: Record<string, string> = {
  * 3. Pattern hyphéné (ex: 'rc-pro-medecin') → métier extrait après prefix garantie
  * 4. undefined (fallback transparent au 1er catalogue)
  */
-function extractMetierFromSlug(slug: string): string | undefined {
+/** Normalise un slug métier: underscore→hyphen, lowercase, trim. */
+function normalizeMetierSlug(s: string): string {
+  return s.toLowerCase().replace(/_/g, '-').trim()
+}
+
+function extractMetierFromSlug(rawSlug: string): string | undefined {
+  const slug = normalizeMetierSlug(rawSlug)
+  return extractMetierFromSlugInternal(slug)
+}
+
+function extractMetierFromSlugInternal(slug: string): string | undefined {
   // 1. Map explicite
   const mapped = SLUG_TO_METIER[slug]
   if (mapped) return mapped
@@ -286,17 +296,21 @@ function extractMetierFromSlug(slug: string): string | undefined {
     return segments[segments.length - 1]
   }
 
-  // 3. Pattern hyphéné après prefix garantie
+  // 3. Pattern hyphéné après prefix garantie (ORDRE = LONG → COURT pour éviter
+  //    qu'un préfixe court (assurance-) ne mange un préfixe long (assurance-rc-pro-))
   const known = [
+    'assurance-responsabilite-civile-professionnelle-',
     'assurance-decennale-',
-    'decennale-',
-    'rc-pro-',
+    'assurance-rc-pro-',
+    'assurance-cyber-',
+    'assurance-vtc-',
     'multirisque-pro-',
     'cyber-assurance-',
-    'cyber-',
     'mutuelle-pro-',
     'mutuelle-tns-',
-    'assurance-vtc-',
+    'decennale-',
+    'rc-pro-',
+    'cyber-',
     'vtc-',
     'assurance-',
   ]

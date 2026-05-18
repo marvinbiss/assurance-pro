@@ -197,12 +197,14 @@ export async function EnrichedPageLayout({
           <AvisBlock enrichment={enrichment} />
         )}
 
-        {/* Estimateur tarifaire — calculator vertical-specific avec préselection métier */}
+        {/* Estimateur tarifaire — calculator vertical-specific avec préselection métier.
+            Normalise underscore→hyphen: snapshot pSEO utilise '_' (medecin_specialiste)
+            alors que catalogues TarifCalculator utilisent '-' (medecin-specialiste). */}
         {calculatorGarantie && (
           <div className="mt-14">
             <TarifCalculator
               garantie={calculatorGarantie}
-              defaultMetier={enrichment.metier_code ?? undefined}
+              defaultMetier={enrichment.metier_code?.replace(/_/g, '-') ?? undefined}
             />
           </div>
         )}
