@@ -296,8 +296,8 @@ const METIERS_CYBER: readonly MetierOption[] = [
   {
     value: 'cabinet-conseil',
     label: 'Cabinet conseil — audit — stratégie',
-    base: 920,
-    spread: 0.36,
+    base: 1100,
+    spread: 0.34,
   },
   { value: 'cabinet-avocat', label: 'Cabinet avocat — RGPD — DPO', base: 2400, spread: 0.3 },
   { value: 'expert-comptable', label: 'Expert-comptable — paie', base: 2600, spread: 0.3 },
@@ -330,7 +330,7 @@ const METIERS_CYBER: readonly MetierOption[] = [
     spread: 0.34,
   },
   // Industrie & logistique
-  { value: 'industrie-pme', label: 'Industrie — PME production', base: 1380, spread: 0.36 },
+  { value: 'industrie-pme', label: 'Industrie — PME production', base: 1700, spread: 0.34 },
   {
     value: 'transport-logistique',
     label: 'Transport — logistique — flotte connectée',
@@ -348,8 +348,8 @@ const METIERS_CYBER: readonly MetierOption[] = [
   {
     value: 'ecole-formation',
     label: 'École — organisme formation — edtech',
-    base: 740,
-    spread: 0.36,
+    base: 900,
+    spread: 0.34,
   },
   // ESS / collectivités
   { value: 'association', label: 'Association — ESS', base: 480, spread: 0.38 },
@@ -932,12 +932,22 @@ const ZONE_SPREAD: Record<ZoneVtc, number> = {
 const VEHICULE_MOD: Record<Vehicule, number> = { standard: 1.0, premium: 1.22, van: 1.35 }
 const PLATEFORME_MOD: Record<Plateforme, number> = { 'uber-bolt': 1.0, taxi: 0.92 }
 
+/**
+ * Multiplicateur ancienneté permis (VTC/moto pro).
+ * Calibré marché 2026 (AssurVTC, Wakam Pro, AssurancesVTC.com).
+ * Référence = 10 ans = 1.00 (conducteur expérimenté).
+ *
+ * @2 ans = 1.60 (jeune permis +60%, art. R.3120-8 minimum VTC 3 ans)
+ * @5 ans = 1.30 (intermédiaire +30%)
+ * @10 ans = 1.00 (référence)
+ * @20 ans = 0.92 (sénior bonus)
+ * @30 ans = 0.88 (sénior plafond)
+ */
 function permisMultiplier(years: number): number {
-  // 2 ans = 1.4 (jeune), 5 ans = 1.15, 10 ans = 1.0, 20+ = 0.92
   const y = Math.max(years, 2)
-  if (y < 5) return 1.55 - 0.075 * (y - 2)
-  if (y < 10) return 1.32 - 0.04 * (y - 5)
-  return Math.max(0.92, 1.12 - 0.012 * (y - 10))
+  if (y < 5) return 1.6 - 0.1 * (y - 2)
+  if (y < 10) return 1.3 - 0.06 * (y - 5)
+  return Math.max(0.88, 1.0 - 0.008 * (y - 10))
 }
 
 function useVtcForm() {
@@ -1651,7 +1661,7 @@ const MARCH_BASE_PER_VEH: Record<TypeMarchandises, number> = {
   standard: 1200,
   refrigeree: 1850,
   'fragile-electro': 2100,
-  'matiere-dangereuse': 3400,
+  'matiere-dangereuse': 4000,
 }
 const ZONE_TRANSPORT_MOD: Record<ZoneTransport, number> = {
   national: 1.0,
@@ -1768,10 +1778,11 @@ const MOTO_BASE: Record<Cylindree, number> = {
   '500-1000': 1380,
   'plus-1000': 1850,
 }
+// Calibré APRIL Moto/Mutuelle Motards 2026 — livraison Uber/Deliveroo risque max
 const USAGE_MOTO_MOD: Record<UsageMoto, number> = {
-  livraison: 1.45,
+  livraison: 1.55,
   coursier: 1.7,
-  location: 1.35,
+  location: 1.45,
   'demo-revente': 1.1,
 }
 
@@ -1954,11 +1965,12 @@ function PrevoyanceFields({ ids }: { ids: Record<string, string> }) {
 
 type SecteurPJ = 'commerce-services' | 'btp' | 'sante' | 'professions-libe'
 
+// Hiérarchie sinistralité Allianz/AXA PJ 2026: commerce < santé < prof-libé < btp
 const PJ_BASE: Record<SecteurPJ, number> = {
   'commerce-services': 240,
   btp: 380,
-  sante: 320,
-  'professions-libe': 290,
+  sante: 290,
+  'professions-libe': 320,
 }
 
 type LitigesPj = '0' | '1-2' | '3plus'
@@ -2172,7 +2184,11 @@ function ResultBlock({ range, hint }: { range: Range; hint: string }) {
       </p>
       <p className="mt-2 flex items-start gap-1.5 text-xs leading-relaxed text-charcoal-600">
         <TrendingDown className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent-500" aria-hidden />
-        <span>{hint} Tarif définitif après étude dossier complète.</span>
+        <span>
+          {hint} Fourchette indicative ±15&nbsp;% calibrée marché courtage FR&nbsp;2026
+          (sources&nbsp;: AQC SYCODÉS, MACSF, Coover, Hiscox, Verspieren, UNOCAM). Tarif définitif
+          après étude dossier complète (sinistralité, ancienneté, garanties spécifiques).
+        </span>
       </p>
 
       <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
