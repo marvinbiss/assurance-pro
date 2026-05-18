@@ -70,18 +70,18 @@ export function TestimonialsBlock({
   subtitle?: string
 }) {
   return (
-    <section className="bg-gray-50 py-14" aria-label="Témoignages clients">
+    <section className="bg-sand-50 py-14" aria-label="Témoignages clients">
       <div className="container mx-auto max-w-6xl px-4">
         <header className="mb-10 text-center">
           <h2 className="mb-2 text-2xl font-bold md:text-3xl">{title}</h2>
-          <p className="mx-auto max-w-2xl text-sm text-gray-600">{subtitle}</p>
+          <p className="mx-auto max-w-2xl text-sm text-charcoal-600">{subtitle}</p>
         </header>
 
         <ul className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {TESTIMONIALS.map((t) => (
             <li
               key={`${t.author}-${t.vertical}-${t.role}`}
-              className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+              className="rounded-lg border border-sand-200 bg-white p-6 shadow-sm"
             >
               <div className="mb-3 flex items-center justify-between">
                 <Stars count={t.rating} />
@@ -89,16 +89,18 @@ export function TestimonialsBlock({
                   {t.vertical}
                 </span>
               </div>
-              <blockquote className="mb-4 leading-relaxed text-gray-800">« {t.quote} »</blockquote>
-              <div className="text-sm text-gray-600">
-                <strong className="text-gray-900">{t.author}</strong> — {t.role}
+              <blockquote className="mb-4 leading-relaxed text-charcoal-800">
+                « {t.quote} »
+              </blockquote>
+              <div className="text-sm text-charcoal-600">
+                <strong className="text-charcoal-900">{t.author}</strong> — {t.role}
                 {t.city && ` · ${t.city}`}
               </div>
             </li>
           ))}
         </ul>
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-gray-500">
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-charcoal-500">
           Conformément à la norme NF Service Z74-501, les témoignages sont collectés via demande
           écrite après souscription, anonymisés (initiales) et conservés en interne pour preuve
           d&apos;authenticité. Aucun témoignage n&apos;est rémunéré.

@@ -202,7 +202,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
           aria-valuemax={3}
           aria-label={`Étape ${step} sur 3`}
         >
-          <div className="mb-2 flex items-center justify-between text-sm text-gray-500">
+          <div className="mb-2 flex items-center justify-between text-sm text-charcoal-500">
             <span className={step >= 1 ? 'font-semibold text-primary-600' : ''}>1. Activité</span>
             <span className={step >= 2 ? 'font-semibold text-primary-600' : ''}>2. Profil</span>
             <span className={step >= 3 ? 'font-semibold text-primary-600' : ''}>
@@ -483,7 +483,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               />
             </Field>
 
-            <div className="mt-6 space-y-3 rounded bg-gray-50 p-4">
+            <div className="mt-6 space-y-3 rounded bg-sand-50 p-4">
               <label className="flex items-start gap-2 text-sm">
                 <input
                   type="checkbox"
@@ -541,7 +541,7 @@ export function DevisAssuranceForm({ prefill, source_page_id, source_url, onSubm
               </label>
             </div>
 
-            <div className="text-xs italic text-gray-500">
+            <div className="text-xs italic text-charcoal-500">
               Ce contenu est informatif et ne constitue pas un conseil personnalisé au sens de
               l'article L. 521-4 du Code des assurances. Pour un conseil adapté à votre situation,
               un courtier ORIAS vous recontactera après réception du formulaire.

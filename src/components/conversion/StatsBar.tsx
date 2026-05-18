@@ -29,7 +29,7 @@ const DEFAULT_STATS: Stat[] = [
 
 export function StatsBar({ stats = DEFAULT_STATS }: { stats?: Stat[] }) {
   return (
-    <section aria-label="Chiffres-clés du cabinet" className="border-y border-gray-200 bg-white">
+    <section aria-label="Chiffres-clés du cabinet" className="border-y border-sand-200 bg-white">
       <div className="container mx-auto max-w-6xl px-4 py-10">
         <ul className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {stats.map((s) => (
@@ -37,8 +37,8 @@ export function StatsBar({ stats = DEFAULT_STATS }: { stats?: Stat[] }) {
               <div className="mb-1 text-3xl font-extrabold text-primary-700 md:text-4xl">
                 {s.value}
               </div>
-              <div className="text-sm font-semibold text-gray-900">{s.label}</div>
-              {s.hint && <div className="mt-1 text-xs text-gray-500">{s.hint}</div>}
+              <div className="text-sm font-semibold text-charcoal-900">{s.label}</div>
+              {s.hint && <div className="mt-1 text-xs text-charcoal-500">{s.hint}</div>}
             </li>
           ))}
         </ul>

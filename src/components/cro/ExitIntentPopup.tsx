@@ -106,7 +106,7 @@ export function ExitIntentPopup({
         <button
           onClick={handleDismiss}
           aria-label="Fermer le popup"
-          className="absolute right-3 top-3 h-8 w-8 text-2xl leading-none text-gray-400 hover:text-gray-700"
+          className="absolute right-3 top-3 h-8 w-8 text-2xl leading-none text-charcoal-400 hover:text-charcoal-700"
         >
           ×
         </button>
@@ -114,12 +114,12 @@ export function ExitIntentPopup({
         <div className="mb-3 text-4xl" aria-hidden="true">
           ⏱️
         </div>
-        <h2 id="exit-intent-title" className="mb-2 text-2xl font-bold text-gray-900">
+        <h2 id="exit-intent-title" className="mb-2 text-2xl font-bold text-charcoal-900">
           {title}
         </h2>
-        <p className="mb-5 text-gray-700">{message}</p>
+        <p className="mb-5 text-charcoal-700">{message}</p>
 
-        <div className="mb-5 space-y-2 text-sm text-gray-600">
+        <div className="mb-5 space-y-2 text-sm text-charcoal-600">
           <p className="flex items-center gap-2">
             <span className="font-bold text-emerald-600">✓</span> 8 assureurs comparés
           </p>
@@ -140,7 +140,7 @@ export function ExitIntentPopup({
         </Link>
         <button
           onClick={handleDismiss}
-          className="mt-2 block w-full py-2 text-sm text-gray-500 hover:text-gray-700"
+          className="mt-2 block w-full py-2 text-sm text-charcoal-500 hover:text-charcoal-700"
         >
           Non merci, je continue à parcourir
         </button>

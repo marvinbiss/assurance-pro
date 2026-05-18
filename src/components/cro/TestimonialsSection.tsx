@@ -39,16 +39,16 @@ export function TestimonialsSection({
     Math.round((testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length) * 10) / 10
 
   return (
-    <section aria-label="Témoignages clients" className="bg-gray-50 py-12">
+    <section aria-label="Témoignages clients" className="bg-sand-50 py-12">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="mb-8 text-center">
-          <h2 className="mb-2 text-3xl font-bold text-gray-900">{title}</h2>
+          <h2 className="mb-2 text-3xl font-bold text-charcoal-900">{title}</h2>
           <div className="flex items-center justify-center gap-2 text-amber-500">
             <span aria-hidden="true">
               {STAR.repeat(Math.round(avgRating))}
               {EMPTY_STAR.repeat(5 - Math.round(avgRating))}
             </span>
-            <span className="text-sm text-gray-700">
+            <span className="text-sm text-charcoal-700">
               <strong>{avgRating}/5</strong> · {testimonials.length} avis clients
             </span>
           </div>
@@ -56,19 +56,19 @@ export function TestimonialsSection({
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
-            <article key={i} className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+            <article key={i} className="rounded-lg border border-sand-200 bg-white p-5 shadow-sm">
               <div className="mb-3 flex items-start justify-between">
                 <div>
-                  <p className="font-bold text-gray-900">{t.authorName}</p>
-                  <p className="text-xs text-gray-500">{t.authorRole}</p>
+                  <p className="font-bold text-charcoal-900">{t.authorName}</p>
+                  <p className="text-xs text-charcoal-500">{t.authorRole}</p>
                 </div>
                 <div className="text-sm text-amber-500" aria-label={`${t.rating} étoiles sur 5`}>
                   {STAR.repeat(t.rating)}
                   {EMPTY_STAR.repeat(5 - t.rating)}
                 </div>
               </div>
-              <blockquote className="text-sm italic text-gray-700">« {t.text} »</blockquote>
-              <p className="mt-3 text-xs text-gray-400">
+              <blockquote className="text-sm italic text-charcoal-700">« {t.text} »</blockquote>
+              <p className="mt-3 text-xs text-charcoal-400">
                 {new Date(t.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long' })}
                 {t.segment && <span className="ml-2">· {t.segment}</span>}
               </p>

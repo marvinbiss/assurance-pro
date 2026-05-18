@@ -24,7 +24,7 @@ export function RcProVilleTemplate({ ville }: { ville: VilleData }) {
   return (
     <main className="min-h-screen bg-white py-10">
       <div className="container mx-auto max-w-4xl px-4">
-        <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-gray-600">
+        <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-charcoal-600">
           <Link href="/" className="hover:underline">
             Accueil
           </Link>{' '}
@@ -32,7 +32,7 @@ export function RcProVilleTemplate({ ville }: { ville: VilleData }) {
           <Link href="/rc-pro" className="hover:underline">
             RC Pro
           </Link>{' '}
-          › <span className="text-gray-900">{ville.nom}</span>
+          › <span className="text-charcoal-900">{ville.nom}</span>
         </nav>
 
         <header className="mb-8">
@@ -42,7 +42,7 @@ export function RcProVilleTemplate({ ville }: { ville: VilleData }) {
           <h1 className="mb-3 text-3xl font-bold md:text-4xl">
             RC Pro {ville.nom} ({ville.departementCode}) — Tarifs et devis
           </h1>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-charcoal-700">
             Responsabilité Civile Professionnelle pour les{' '}
             <strong>
               ~{ville.freelancesEstime.toLocaleString('fr-FR')} freelances, consultants et agences
@@ -83,31 +83,31 @@ export function RcProVilleTemplate({ ville }: { ville: VilleData }) {
           <h2>Tarifs RC Pro à {ville.nom}</h2>
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="bg-gray-100">
-                <th className="border border-gray-300 p-2 text-left">Profil</th>
-                <th className="border border-gray-300 p-2 text-right">Tarif annuel HT</th>
+              <tr className="bg-sand-100">
+                <th className="border border-sand-300 p-2 text-left">Profil</th>
+                <th className="border border-sand-300 p-2 text-right">Tarif annuel HT</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="border border-gray-300 p-2">Auto-entrepreneur — freelance</td>
-                <td className="border border-gray-300 p-2 text-right">95 € – 380 €</td>
+                <td className="border border-sand-300 p-2">Auto-entrepreneur — freelance</td>
+                <td className="border border-sand-300 p-2 text-right">95 € – 380 €</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-2">EI — EURL (CA &lt; 100 k€)</td>
-                <td className="border border-gray-300 p-2 text-right">280 € – 850 €</td>
+                <td className="border border-sand-300 p-2">EI — EURL (CA &lt; 100 k€)</td>
+                <td className="border border-sand-300 p-2 text-right">280 € – 850 €</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-2">SARL — SAS (CA 100-500 k€)</td>
-                <td className="border border-gray-300 p-2 text-right">850 € – 3 200 €</td>
+                <td className="border border-sand-300 p-2">SARL — SAS (CA 100-500 k€)</td>
+                <td className="border border-sand-300 p-2 text-right">850 € – 3 200 €</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-2">Grand compte (CA &gt; 500 k€)</td>
-                <td className="border border-gray-300 p-2 text-right">3 200 € – 12 000 €</td>
+                <td className="border border-sand-300 p-2">Grand compte (CA &gt; 500 k€)</td>
+                <td className="border border-sand-300 p-2 text-right">3 200 € – 12 000 €</td>
               </tr>
             </tbody>
           </table>
-          <p className="mt-2 text-xs italic text-gray-600">
+          <p className="mt-2 text-xs italic text-charcoal-600">
             Tarifs indicatifs. Le tarif réel dépend de votre activité, plafond souhaité, ancienneté
             et antécédents. Plafond standard 500k€-1M€ ; option 2M€ ou plus pour grands comptes.
           </p>
@@ -125,12 +125,12 @@ export function RcProVilleTemplate({ ville }: { ville: VilleData }) {
             <li key={p.slug}>
               <Link
                 href={`/rc-pro/${p.slug}`}
-                className="block rounded-lg border border-gray-200 bg-white p-3 transition hover:shadow-md"
+                className="block rounded-lg border border-sand-200 bg-white p-3 transition hover:shadow-md"
               >
                 <span className="mr-1 text-xl" aria-hidden="true">
                   {p.icon}
                 </span>
-                <span className="text-sm font-semibold text-gray-900">{p.name}</span>
+                <span className="text-sm font-semibold text-charcoal-900">{p.name}</span>
               </Link>
             </li>
           ))}
@@ -165,7 +165,7 @@ export function RcProVilleTemplate({ ville }: { ville: VilleData }) {
           </section>
         )}
 
-        <section className="border-t border-gray-200 pt-6">
+        <section className="border-t border-sand-200 pt-6">
           <h2 className="mb-3 text-lg font-bold">Voir aussi</h2>
           <ul className="space-y-1.5 text-sm">
             <li>
@@ -192,12 +192,12 @@ export function RcProVilleTemplate({ ville }: { ville: VilleData }) {
 
 function Stat({ icon, label, value }: { icon: string; label: string; value: string }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+    <div className="rounded-lg border border-sand-200 bg-sand-50 p-4">
       <div className="mb-1 text-2xl" aria-hidden="true">
         {icon}
       </div>
-      <div className="mb-0.5 text-xs text-gray-500">{label}</div>
-      <div className="text-base font-semibold text-gray-900">{value}</div>
+      <div className="mb-0.5 text-xs text-charcoal-500">{label}</div>
+      <div className="text-base font-semibold text-charcoal-900">{value}</div>
     </div>
   )
 }

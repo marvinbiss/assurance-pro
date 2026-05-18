@@ -198,17 +198,17 @@ export default function CookieConsent() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-charcoal-900">
                     Nous respectons votre vie privée
                   </h3>
-                  <p className="text-sm text-gray-500">Conformité RGPD</p>
+                  <p className="text-sm text-charcoal-500">Conformité RGPD</p>
                 </div>
               </div>
             </div>
 
             {/* Main content */}
             <div className="mt-4">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-charcoal-600">
                 Nous utilisons des cookies pour améliorer votre expérience, analyser le trafic et
                 personnaliser le contenu. Vous pouvez choisir les cookies que vous acceptez.
               </p>
@@ -224,10 +224,10 @@ export default function CookieConsent() {
                   className="mt-6 space-y-4 overflow-hidden"
                 >
                   {/* Necessary cookies */}
-                  <div className="flex items-center justify-between rounded-lg bg-gray-50 p-4">
+                  <div className="flex items-center justify-between rounded-lg bg-sand-50 p-4">
                     <div>
-                      <h4 className="font-medium text-gray-900">Cookies essentiels</h4>
-                      <p className="text-sm text-gray-500">
+                      <h4 className="font-medium text-charcoal-900">Cookies essentiels</h4>
+                      <p className="text-sm text-charcoal-500">
                         Nécessaires au fonctionnement du site (authentification, sécurité)
                       </p>
                     </div>
@@ -238,15 +238,15 @@ export default function CookieConsent() {
                         disabled
                         className="h-5 w-5 rounded text-primary-600"
                       />
-                      <span className="ml-2 text-xs text-gray-400">Requis</span>
+                      <span className="ml-2 text-xs text-charcoal-400">Requis</span>
                     </div>
                   </div>
 
                   {/* Analytics cookies */}
-                  <div className="flex items-center justify-between rounded-lg bg-gray-50 p-4">
+                  <div className="flex items-center justify-between rounded-lg bg-sand-50 p-4">
                     <div>
-                      <h4 className="font-medium text-gray-900">Cookies analytiques</h4>
-                      <p className="text-sm text-gray-500">
+                      <h4 className="font-medium text-charcoal-900">Cookies analytiques</h4>
+                      <p className="text-sm text-charcoal-500">
                         Nous aident à comprendre comment vous utilisez le site
                       </p>
                     </div>
@@ -264,10 +264,10 @@ export default function CookieConsent() {
                   </div>
 
                   {/* Marketing cookies */}
-                  <div className="flex items-center justify-between rounded-lg bg-gray-50 p-4">
+                  <div className="flex items-center justify-between rounded-lg bg-sand-50 p-4">
                     <div>
-                      <h4 className="font-medium text-gray-900">Cookies marketing</h4>
-                      <p className="text-sm text-gray-500">
+                      <h4 className="font-medium text-charcoal-900">Cookies marketing</h4>
+                      <p className="text-sm text-charcoal-500">
                         Utilisés pour vous proposer des publicités pertinentes
                       </p>
                     </div>
@@ -285,10 +285,10 @@ export default function CookieConsent() {
                   </div>
 
                   {/* Personalization cookies */}
-                  <div className="flex items-center justify-between rounded-lg bg-gray-50 p-4">
+                  <div className="flex items-center justify-between rounded-lg bg-sand-50 p-4">
                     <div>
-                      <h4 className="font-medium text-gray-900">Cookies de personnalisation</h4>
-                      <p className="text-sm text-gray-500">
+                      <h4 className="font-medium text-charcoal-900">Cookies de personnalisation</h4>
+                      <p className="text-sm text-charcoal-500">
                         Permettent de mémoriser vos préférences
                       </p>
                     </div>
@@ -334,7 +334,7 @@ export default function CookieConsent() {
               ) : (
                 <button
                   onClick={() => setShowDetails(true)}
-                  className="text-sm font-medium text-gray-600 underline hover:text-gray-900"
+                  className="text-sm font-medium text-charcoal-600 underline hover:text-charcoal-900"
                 >
                   Personnaliser
                 </button>
@@ -342,7 +342,7 @@ export default function CookieConsent() {
             </div>
 
             {/* Links */}
-            <div className="mt-4 flex gap-4 text-xs text-gray-500">
+            <div className="mt-4 flex gap-4 text-xs text-charcoal-500">
               <Link href="/confidentialite" className="hover:text-primary-700 hover:underline">
                 Politique de confidentialité
               </Link>

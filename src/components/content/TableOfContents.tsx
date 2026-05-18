@@ -98,8 +98,8 @@ export function TableOfContents({ items, title = 'Sommaire', className = '' }: P
         className={`sticky top-20 hidden max-h-[calc(100vh-6rem)] overflow-y-auto md:block ${className}`}
         aria-label="Sommaire de l'article"
       >
-        <p className="mb-3 text-xs font-bold uppercase tracking-wide text-gray-500">{title}</p>
-        <ol className="space-y-2 border-l-2 border-gray-200 text-sm">
+        <p className="mb-3 text-xs font-bold uppercase tracking-wide text-charcoal-500">{title}</p>
+        <ol className="space-y-2 border-l-2 border-sand-200 text-sm">
           {items.map((item, i) => {
             const isActive = activeId === item.id
             return (
@@ -109,7 +109,7 @@ export function TableOfContents({ items, title = 'Sommaire', className = '' }: P
                   className={`-ml-[2px] border-l-2 py-1 pl-3 text-left transition ${
                     isActive
                       ? 'border-primary-700 font-semibold text-primary-900'
-                      : 'border-transparent text-gray-600 hover:border-primary-300 hover:text-primary-700'
+                      : 'border-transparent text-charcoal-600 hover:border-primary-300 hover:text-primary-700'
                   }`}
                 >
                   {i + 1}. {item.label}

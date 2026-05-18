@@ -33,7 +33,7 @@ function freshnessLabel(days: number): { label: string; tone: 'fresh' | 'recent'
 const TONE_STYLES = {
   fresh: 'bg-emerald-100 text-emerald-800 border-emerald-200',
   recent: 'bg-primary-100 text-primary-800 border-primary-200',
-  older: 'bg-gray-100 text-gray-700 border-gray-200',
+  older: 'bg-sand-100 text-charcoal-700 border-sand-200',
 }
 
 export function FreshnessIndicator({ dateModified, compact = false }: FreshnessIndicatorProps) {

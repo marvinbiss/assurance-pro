@@ -64,7 +64,7 @@ export function TrustBadges({ variant = 'default', className = '' }: TrustBadges
         {badges.map((b) => (
           <span
             key={b.label}
-            className="inline-flex items-center gap-1 rounded-full border border-gray-200 bg-white px-3 py-1"
+            className="inline-flex items-center gap-1 rounded-full border border-sand-200 bg-white px-3 py-1"
           >
             <span aria-hidden="true">{b.icon}</span>
             <span className="font-semibold">{b.label}</span>
@@ -87,7 +87,7 @@ export function TrustBadges({ variant = 'default', className = '' }: TrustBadges
             </span>
             <div>
               <p className="text-xs font-semibold text-primary-900">{b.label}</p>
-              <p className="text-xs text-gray-600">{b.detail}</p>
+              <p className="text-xs text-charcoal-600">{b.detail}</p>
             </div>
           </div>
         ))}
@@ -98,7 +98,7 @@ export function TrustBadges({ variant = 'default', className = '' }: TrustBadges
   return (
     <section
       aria-label="Garanties de confiance"
-      className={`border-y border-gray-200 bg-gradient-to-r from-blue-50 via-white to-emerald-50 py-6 ${className}`}
+      className={`border-y border-sand-200 bg-gradient-to-r from-blue-50 via-white to-emerald-50 py-6 ${className}`}
     >
       <div className="container mx-auto max-w-6xl px-4">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
@@ -108,8 +108,8 @@ export function TrustBadges({ variant = 'default', className = '' }: TrustBadges
                 <div className="mb-2 text-3xl" aria-hidden="true">
                   {b.icon}
                 </div>
-                <p className="text-sm font-bold text-gray-900">{b.label}</p>
-                <p className="mt-1 text-xs text-gray-600">{b.detail}</p>
+                <p className="text-sm font-bold text-charcoal-900">{b.label}</p>
+                <p className="mt-1 text-xs text-charcoal-600">{b.detail}</p>
               </div>
             )
             if (b.href && b.external) {

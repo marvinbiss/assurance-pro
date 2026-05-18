@@ -24,7 +24,7 @@ export function DecennaleVilleTemplate({ ville }: { ville: VilleData }) {
   return (
     <main className="min-h-screen bg-white py-10">
       <div className="container mx-auto max-w-4xl px-4">
-        <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-gray-600">
+        <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-charcoal-600">
           <Link href="/" className="hover:underline">
             Accueil
           </Link>{' '}
@@ -32,7 +32,7 @@ export function DecennaleVilleTemplate({ ville }: { ville: VilleData }) {
           <Link href="/assurance-decennale" className="hover:underline">
             Assurance décennale
           </Link>{' '}
-          › <span className="text-gray-900">{ville.nom}</span>
+          › <span className="text-charcoal-900">{ville.nom}</span>
         </nav>
 
         <header className="mb-8">
@@ -42,7 +42,7 @@ export function DecennaleVilleTemplate({ ville }: { ville: VilleData }) {
           <h1 className="mb-3 text-3xl font-bold md:text-4xl">
             Assurance décennale {ville.nom} ({ville.departementCode}) — Tarifs et devis
           </h1>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-charcoal-700">
             Couverture décennale obligatoire pour les{' '}
             <strong>~{ville.artisansBtpEstime.toLocaleString('fr-FR')} artisans BTP</strong> de{' '}
             {ville.nom}. Tarifs négociés auprès de 10 assureurs partenaires, attestation 24h,
@@ -94,31 +94,31 @@ export function DecennaleVilleTemplate({ ville }: { ville: VilleData }) {
           </p>
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="bg-gray-100">
-                <th className="border border-gray-300 p-2 text-left">Profil</th>
-                <th className="border border-gray-300 p-2 text-right">Tarif annuel HT</th>
+              <tr className="bg-sand-100">
+                <th className="border border-sand-300 p-2 text-left">Profil</th>
+                <th className="border border-sand-300 p-2 text-right">Tarif annuel HT</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="border border-gray-300 p-2">Auto-entrepreneur (CA &lt; 50 k€)</td>
-                <td className="border border-gray-300 p-2 text-right">480 € – 1 200 €</td>
+                <td className="border border-sand-300 p-2">Auto-entrepreneur (CA &lt; 50 k€)</td>
+                <td className="border border-sand-300 p-2 text-right">480 € – 1 200 €</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-2">PME (CA 50-100 k€)</td>
-                <td className="border border-gray-300 p-2 text-right">1 200 € – 2 800 €</td>
+                <td className="border border-sand-300 p-2">PME (CA 50-100 k€)</td>
+                <td className="border border-sand-300 p-2 text-right">1 200 € – 2 800 €</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-2">PME (CA 100-250 k€)</td>
-                <td className="border border-gray-300 p-2 text-right">2 800 € – 6 500 €</td>
+                <td className="border border-sand-300 p-2">PME (CA 100-250 k€)</td>
+                <td className="border border-sand-300 p-2 text-right">2 800 € – 6 500 €</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-2">Grand compte (CA &gt; 500 k€)</td>
-                <td className="border border-gray-300 p-2 text-right">6 500 € – 18 000 €</td>
+                <td className="border border-sand-300 p-2">Grand compte (CA &gt; 500 k€)</td>
+                <td className="border border-sand-300 p-2 text-right">6 500 € – 18 000 €</td>
               </tr>
             </tbody>
           </table>
-          <p className="mt-2 text-xs italic text-gray-600">
+          <p className="mt-2 text-xs italic text-charcoal-600">
             Tarifs indicatifs basés sur les barèmes 2026 de nos 10 assureurs partenaires (Hiscox,
             April Pro, MMA, Generali, AXA Pro, SMABTP, Allianz Pro, MAAF, Wakam, Stello). Devis
             personnalisé recommandé.
@@ -153,12 +153,12 @@ export function DecennaleVilleTemplate({ ville }: { ville: VilleData }) {
             <li key={m.slug}>
               <Link
                 href={`/assurance-decennale/${m.slug}`}
-                className="block rounded-lg border border-gray-200 bg-white p-3 transition hover:shadow-md"
+                className="block rounded-lg border border-sand-200 bg-white p-3 transition hover:shadow-md"
               >
                 <span className="mr-1 text-xl" aria-hidden="true">
                   {m.icon}
                 </span>
-                <span className="text-sm font-semibold text-gray-900">{m.name}</span>
+                <span className="text-sm font-semibold text-charcoal-900">{m.name}</span>
               </Link>
             </li>
           ))}
@@ -196,7 +196,7 @@ export function DecennaleVilleTemplate({ ville }: { ville: VilleData }) {
           </section>
         )}
 
-        <section className="border-t border-gray-200 pt-6">
+        <section className="border-t border-sand-200 pt-6">
           <h2 className="mb-3 text-lg font-bold">Voir aussi</h2>
           <ul className="space-y-1.5 text-sm">
             <li>
@@ -223,12 +223,12 @@ export function DecennaleVilleTemplate({ ville }: { ville: VilleData }) {
 
 function Stat({ icon, label, value }: { icon: string; label: string; value: string }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+    <div className="rounded-lg border border-sand-200 bg-sand-50 p-4">
       <div className="mb-1 text-2xl" aria-hidden="true">
         {icon}
       </div>
-      <div className="mb-0.5 text-xs text-gray-500">{label}</div>
-      <div className="text-base font-semibold text-gray-900">{value}</div>
+      <div className="mb-0.5 text-xs text-charcoal-500">{label}</div>
+      <div className="text-base font-semibold text-charcoal-900">{value}</div>
     </div>
   )
 }

@@ -25,16 +25,16 @@ const VARIANT_STYLES: Record<
   NonNullable<Props['variant']>,
   { bg: string; btn: string; btnHover: string }
 > = {
-  blue: { bg: 'bg-primary-700', btn: 'bg-white text-primary-700', btnHover: 'hover:bg-gray-100' },
+  blue: { bg: 'bg-primary-700', btn: 'bg-white text-primary-700', btnHover: 'hover:bg-sand-100' },
   emerald: {
     bg: 'bg-emerald-700',
     btn: 'bg-white text-emerald-700',
-    btnHover: 'hover:bg-gray-100',
+    btnHover: 'hover:bg-sand-100',
   },
-  orange: { bg: 'bg-orange-700', btn: 'bg-white text-orange-700', btnHover: 'hover:bg-gray-100' },
-  violet: { bg: 'bg-violet-700', btn: 'bg-white text-violet-700', btnHover: 'hover:bg-gray-100' },
-  amber: { bg: 'bg-amber-700', btn: 'bg-white text-amber-800', btnHover: 'hover:bg-gray-100' },
-  slate: { bg: 'bg-slate-800', btn: 'bg-white text-slate-800', btnHover: 'hover:bg-gray-100' },
+  orange: { bg: 'bg-orange-700', btn: 'bg-white text-orange-700', btnHover: 'hover:bg-sand-100' },
+  violet: { bg: 'bg-violet-700', btn: 'bg-white text-violet-700', btnHover: 'hover:bg-sand-100' },
+  amber: { bg: 'bg-amber-700', btn: 'bg-white text-amber-800', btnHover: 'hover:bg-sand-100' },
+  slate: { bg: 'bg-slate-800', btn: 'bg-white text-slate-800', btnHover: 'hover:bg-sand-100' },
 }
 
 export function StickyConversionBar({

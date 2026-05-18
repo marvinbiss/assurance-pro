@@ -46,13 +46,13 @@ function formatDate(iso: string): string {
 
 function PersonLink({ person, prefix }: { person: BylinePerson; prefix: string }) {
   const display = (
-    <span className="font-semibold text-gray-900">
+    <span className="font-semibold text-charcoal-900">
       {person.name}
-      {person.role ? <span className="font-normal text-gray-600"> ({person.role})</span> : null}
+      {person.role ? <span className="font-normal text-charcoal-600"> ({person.role})</span> : null}
     </span>
   )
   return (
-    <span className="text-sm text-gray-600">
+    <span className="text-sm text-charcoal-600">
       {prefix}{' '}
       {person.slug ? (
         <Link href={`/equipe/${person.slug}`} className="hover:text-primary-700 hover:underline">
@@ -78,7 +78,7 @@ export function ArticleByline({
 
   return (
     <div
-      className={`flex flex-wrap items-center gap-x-4 gap-y-1 border-y border-gray-200 py-3 text-sm text-gray-600 ${className}`}
+      className={`flex flex-wrap items-center gap-x-4 gap-y-1 border-y border-sand-200 py-3 text-sm text-charcoal-600 ${className}`}
       role="contentinfo"
     >
       <PersonLink person={author} prefix="Par" />
@@ -104,7 +104,7 @@ export function ArticleByline({
       <span className="text-gray-300" aria-hidden="true">
         ·
       </span>
-      <time dateTime={datePublished} className="text-gray-600">
+      <time dateTime={datePublished} className="text-charcoal-600">
         Publié le <strong className="font-semibold">{formatDate(datePublished)}</strong>
       </time>
 
@@ -129,7 +129,7 @@ export function ArticleByline({
           <span className="text-gray-300" aria-hidden="true">
             ·
           </span>
-          <span className="text-gray-600">
+          <span className="text-charcoal-600">
             ⏱ {formatReadingTime(readingTimeMinutes)} de lecture
           </span>
         </>
