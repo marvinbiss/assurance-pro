@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { EQUIPE, getMembre, getMembreSlugs } from '@/lib/data/equipe'
 import { SITE_URL } from '@/lib/seo/config'
+import { jsonLdScriptProps } from '@/lib/seo/safe-jsonld'
 
 type Params = { slug: string }
 
@@ -51,10 +52,7 @@ export default async function MembrePage(props: { params: Promise<Params> }) {
 
   return (
     <div className="min-h-screen bg-white py-10">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
+      <script {...jsonLdScriptProps(personSchema)} />
       <div className="container mx-auto max-w-3xl px-4">
         <nav aria-label="Fil d'Ariane" className="mb-4 text-sm text-charcoal-600">
           <Link href="/" className="hover:underline">

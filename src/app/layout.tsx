@@ -18,6 +18,8 @@ import { SITE_URL } from '@/lib/seo/config'
 import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
 import { ClientOnlyWebVitals, ClientOnlyFooterHelpers } from '@/app/_components/client-only-helpers'
 import { CursorTrail } from '@/components/motion/cursor-trail'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 // Geist — sans-serif Vercel-grade (Luke Premium Workflow spec). Display optical.
 const dmSans = Geist({
@@ -209,6 +211,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ClientOnlyFooterHelpers />
         <StickyMobileCta href="/devis" label="Devis 2 min" tel="0182885127" />
         <CursorTrail />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
