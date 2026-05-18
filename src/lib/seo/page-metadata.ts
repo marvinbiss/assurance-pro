@@ -12,7 +12,7 @@
  *     title: 'Prix RC Pro 2026',
  *     tagline: 'Comparatif 5 assureurs',
  *     description: '...',
- *     price: 'dès 95€/an',  // optional, appears in OG image
+ *     price: 'dès 95€ par an',  // optional, appears in OG image
  *   })
  */
 
