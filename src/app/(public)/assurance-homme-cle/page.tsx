@@ -45,7 +45,7 @@ export default function Page() {
       legalReference="Article 39 du CGI (charges déductibles) + jurisprudence Cass. com. 1995"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
-      calculatorGarantie="rc-pro"
+      calculatorGarantie="homme-cle"
       expertBio={EXPERT_SERVICES}
       comparatifRows={COMPARATIF_SERVICES}
       benefits={[

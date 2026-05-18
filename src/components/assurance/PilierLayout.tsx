@@ -111,16 +111,25 @@ function inferCalculatorGarantie(slug: string): CalculatorGarantie {
   if (s.includes('protection-juridique') || s.includes('juridique-pro')) {
     return 'protection-juridique'
   }
-  if (s.includes('flotte') || s.includes('voiture-pro') || s.includes('auto-professionnelle')) {
+  if (
+    s.includes('flotte') ||
+    s.includes('voiture-pro') ||
+    s.includes('auto-professionnelle') ||
+    s.includes('voiture-professionnelle') ||
+    s.includes('auto-entreprise')
+  ) {
     return 'flotte-auto'
   }
   if (s.includes('moto-pro') || s.includes('moto-professionnelle') || s.includes('coursier')) {
     return 'moto-pro'
   }
   if (s.includes('prevoyance')) return 'prevoyance'
+  if (s.includes('convoyage')) return 'transport-marchandises'
 
   // ----- Patterns spécifiques -----
-  if (s.includes('decennale') || s.includes('spinetta')) return 'decennale'
+  if (s.includes('decennale') || s.includes('spinetta') || s.includes('parfait-achevement')) {
+    return 'decennale'
+  }
   if (s.includes('cyber') || s.includes('rgpd') || s.includes('ransomware')) return 'cyber'
   if (s.includes('vtc') || s.includes('taxi') || s.includes('chauffeur')) return 'vtc'
   if (s.includes('mutuelle') || s.includes('madelin') || s.includes('sante') || s.includes('tns')) {

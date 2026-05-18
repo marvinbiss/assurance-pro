@@ -42,7 +42,7 @@ export default function Page() {
       legalReference="Article L. 242-1 du Code des assurances + Loi Spinetta du 4 janvier 1978"
       isObligatoire={true}
       socialProofStats={STATS_DEFAULT}
-      calculatorGarantie="decennale"
+      calculatorGarantie="dommages-ouvrage"
       expertBio={EXPERT_BTP}
       comparatifRows={COMPARATIF_BTP}
       benefits={[

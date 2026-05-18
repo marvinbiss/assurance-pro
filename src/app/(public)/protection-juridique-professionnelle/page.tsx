@@ -42,7 +42,7 @@ export default function Page() {
       legalReference="Articles L. 127-1 et suivants du Code des assurances + RGPD article 82 (recours)"
       isObligatoire={false}
       socialProofStats={STATS_DEFAULT}
-      calculatorGarantie="rc-pro"
+      calculatorGarantie="protection-juridique"
       expertBio={EXPERT_SERVICES}
       comparatifRows={COMPARATIF_SERVICES}
       benefits={[

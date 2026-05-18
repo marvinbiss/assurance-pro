@@ -29,7 +29,7 @@ export default function Page() {
       intro="PRO BTP (l'institution paritaire du Bâtiment) propose en complément de sa mutuelle santé une offre d'assurance auto spécifique aux professionnels du BTP : utilitaires légers, camionnettes, camions de chantier, flotte. Cette page compare l'offre PRO BTP Auto vs les alternatives privées (Allianz Pro, MMA Flotte, AXA Flotte) et détaille les leviers d'économies pour les entreprises BTP multi-véhicules."
       legalReference="art. L. 211-1 C. assur. (obligation assurance automobile)"
       socialProofStats={STATS_DEFAULT}
-      calculatorGarantie="decennale"
+      calculatorGarantie="flotte-auto"
       expertBio={EXPERT_BTP}
       comparatifRows={COMPARATIF_BTP}
       benefits={[
