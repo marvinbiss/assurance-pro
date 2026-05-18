@@ -26,11 +26,11 @@ const COLORS = [
 
 const TYPOGRAPHY = [
   {
-    family: 'Playfair Display',
-    usage: 'Display, titres hero, pull quotes',
-    weight: '400, 600, 700, 800, 900',
+    family: 'Fraunces',
+    usage: 'Display, titres hero, pull quotes (axes SOFT, WONK, opsz)',
+    weight: '400, 500, 600, 700, 800, 900',
   },
-  { family: 'Inter', usage: 'Headings, body, UI, micro-copy', weight: '400, 500, 600, 700, 800' },
+  { family: 'Geist', usage: 'Headings, body, UI, micro-copy', weight: '400, 500, 600, 700, 800' },
   { family: 'JetBrains Mono', usage: 'Code, métadonnées techniques', weight: '400, 500' },
 ] as const
 
