@@ -32,7 +32,7 @@ export function PreOriasBanner() {
             href="/a-propos"
             className="hidden font-semibold text-secondary-300 underline-offset-2 hover:underline md:inline"
           >
-            En savoir plus
+            À propos du cabinet Vivos Assurance
           </Link>
         </div>
       </div>
