@@ -1,0 +1,6 @@
+Contact: mailto:security@vivos-assurance.fr
+Expires: 2027-05-19T23:59:59.000Z
+Preferred-Languages: fr, en
+Canonical: https://vivos-assurance.fr/.well-known/security.txt
+Policy: https://vivos-assurance.fr/security-policy
+Hiring: https://vivos-assurance.fr/equipe

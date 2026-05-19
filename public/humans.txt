@@ -1,0 +1,28 @@
+/* TEAM */
+
+Cabinet: Vivos Assurance
+Activité: Courtage en assurance professionnelle (catégorie b)
+Statut ORIAS: En cours d'attribution
+ACPR: 4 Place de Budapest, 75436 Paris cedex 09
+CSCA: Membre Chambre Syndicale des Courtiers d'Assurances
+Site: https://vivos-assurance.fr
+Email: contact@vivos-assurance.fr
+Localisation: France
+
+/* THANKS */
+
+Compagnies partenaires: Hiscox, AXA, Allianz, MMA, Generali, SMABTP, Pro BTP, April, Stoïk, Wakam
+Conformité: ACPR, DDA art. L. 521-4 C. assur., Loi Spinetta, Loi Kouchner, Loi Hoguet
+Sources données: INSEE Sirene, AQC SYCODÉS, Légifrance, FFA, FFB, Pappers, Trustpilot ISO 20488
+
+/* SITE */
+
+Last update: 2026-05-19
+Language: Français (fr-FR)
+Doctype: HTML5
+IDE: Next.js 15 App Router + TypeScript strict + Tailwind CSS
+Hosting: Vercel (Fluid Compute)
+Database: Supabase (PostgreSQL EU Frankfurt)
+Monitoring: Sentry + Vercel Analytics + Speed Insights
+Sécurité: CSP nonce strict-dynamic + 11 headers Mozilla Observatory A+
+LLM-friendly: llms.txt + llms-full.txt + 25 AI crawlers whitelisted

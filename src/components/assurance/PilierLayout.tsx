@@ -330,6 +330,7 @@ import {
   getAggregateRatingDirectSchema,
   getInsuranceAgencyOrganizationSchema,
   getPersonSchema,
+  getClaimReviewSchema,
 } from '@/lib/seo/jsonld'
 import { SITE_URL } from '@/lib/seo/config'
 import { SITE_AGGREGATE_RATING } from '@/lib/seo/aggregate-rating'
@@ -403,6 +404,17 @@ export interface PilierProps {
     delai: string
     recommande?: boolean
   }[]
+  /**
+   * ClaimReview JSON-LD — chiffres factuels vérifiés citables par les LLMs.
+   * Ex : { claim: "Tarif moyen décennale plombier AE 2026 = 1 400€/an",
+   *        sourceName: "AQC SYCODÉS 2026", sourceUrl: "..." }
+   */
+  factualClaims?: ReadonlyArray<{
+    claim: string
+    sourceName?: string
+    sourceUrl?: string
+    ratingText?: string
+  }>
 }
 
 export async function PilierLayout({
@@ -420,6 +432,7 @@ export async function PilierLayout({
   calculatorGarantie,
   expertBio,
   comparatifRows,
+  factualClaims,
 }: PilierProps) {
   const nonce = (await headers()).get('x-nonce') ?? undefined
 
@@ -849,6 +862,24 @@ export async function PilierLayout({
           )}
         />
       ) : null}
+      {/* ClaimReview JSON-LD — chiffres factuels (ACPR/AQC/INSEE) citables par LLMs */}
+      {factualClaims?.map((c, i) => (
+        <script
+          key={`claim-${i}`}
+          {...jsonLdScriptProps(
+            getClaimReviewSchema({
+              claim: c.claim,
+              claimUrl: `${SITE_URL}/${slug}#fact-${i}`,
+              ...(c.sourceName ? { sourceName: c.sourceName } : {}),
+              ...(c.sourceUrl ? { sourceUrl: c.sourceUrl } : {}),
+              ratingValue: 5,
+              ratingText: c.ratingText ?? 'Vérifié — source primaire',
+              reviewedBy: 'Cabinet Vivos Assurance',
+            }),
+            nonce
+          )}
+        />
+      ))}
     </article>
   )
 }

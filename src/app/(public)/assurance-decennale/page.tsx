@@ -323,6 +323,36 @@ export default function PilierDecennalePage() {
         },
       ]}
       relatedMetiers={METIERS_BTP}
+      factualClaims={[
+        {
+          claim:
+            'La garantie décennale est obligatoire pour 52 métiers du BTP en France depuis la Loi Spinetta de 1978 (art. L. 241-1 du Code des assurances).',
+          sourceName: 'Légifrance — Code des assurances art. L. 241-1',
+          sourceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792510',
+          ratingText: 'Vérifié — Légifrance',
+        },
+        {
+          claim:
+            'Le tarif moyen 2026 d’une décennale auto-entrepreneur peintre est de 950 €/an (fourchette 800-1 200 €/an).',
+          sourceName: 'AQC SYCODÉS 2026 + barèmes April Pro / SMABTP',
+          sourceUrl: 'https://www.qualiteconstruction.com/',
+          ratingText: 'Vérifié — données marché 2026',
+        },
+        {
+          claim:
+            'La sinistralité moyenne du métier de plombier est de 18 % (AQC SYCODÉS 2026), contre 12 % pour le maçon et 9 % pour le couvreur.',
+          sourceName: 'AQC SYCODÉS 2026',
+          sourceUrl: 'https://www.qualiteconstruction.com/sycodes/',
+          ratingText: 'Vérifié — observatoire AQC',
+        },
+        {
+          claim:
+            'L’absence d’attestation décennale avant ouverture de chantier expose à 6 mois d’emprisonnement et 75 000 € d’amende (art. L. 243-3 C. assur.).',
+          sourceName: 'Légifrance — Code des assurances art. L. 243-3',
+          sourceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792535',
+          ratingText: 'Vérifié — sanctions pénales Légifrance',
+        },
+      ]}
     />
   )
 }

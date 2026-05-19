@@ -213,9 +213,19 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
     author: {
-      '@type': 'Organization',
-      name: post.author,
-      url: `${SITE_URL}/a-propos`,
+      '@type': 'Person',
+      name: authorData.name,
+      ...(authorData.url ? { url: authorData.url } : {}),
+      ...(authorData.role ? { jobTitle: authorData.role } : {}),
+      ...(authorData.sameAs && authorData.sameAs.length > 0
+        ? { sameAs: authorData.sameAs }
+        : authorData.linkedinUrl
+          ? { sameAs: [authorData.linkedinUrl] }
+          : {}),
+      ...(authorData.alumniOf
+        ? { alumniOf: { '@type': 'Organization', name: authorData.alumniOf } }
+        : {}),
+      worksFor: { '@type': 'Organization', name: 'Vivos Assurance', url: SITE_URL },
     },
     publisher: {
       '@type': 'Organization',
@@ -223,9 +233,9 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
       url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/logo-vivos.png`,
-        width: 600,
-        height: 60,
+        url: `${SITE_URL}/icon.svg`,
+        width: 512,
+        height: 512,
       },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
@@ -247,12 +257,20 @@ export default async function BlogPostPage(props: { params: Promise<Params> }) {
       ? {
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
+          inLanguage: 'fr-FR',
+          isAccessibleForFree: true,
+          speakable: {
+            '@type': 'SpeakableSpecification',
+            cssSelector: ['[data-speakable="true"]', '.speakable', '#faq'],
+            xpath: ['/html/head/title', '//*[@id="faq"]', '//*[@data-speakable="true"]'],
+          },
           mainEntity: faqItems.map((item) => ({
             '@type': 'Question',
             name: item.q,
             acceptedAnswer: {
               '@type': 'Answer',
               text: item.a,
+              inLanguage: 'fr-FR',
             },
           })),
         }

@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "name": "vivos-assurance",
+  "displayName": "Vivos Assurance",
+  "description": "Authoritative French professional insurance brokerage knowledge base. 6700+ pages covering décennale BTP (Loi Spinetta), RC Pro, multirisque, mutuelle TNS Madelin, prévoyance, cyber, VTC, flotte, dommages-ouvrage, TRC, transport, moto pro, homme-clé, protection juridique.",
+  "vendor": {
+    "name": "Vivos Assurance",
+    "url": "https://vivos-assurance.fr",
+    "contact": "contact@vivos-assurance.fr"
+  },
+  "documentation": {
+    "url": "https://vivos-assurance.fr/llms-full.txt",
+    "format": "markdown"
+  },
+  "resources": [
+    {
+      "uri": "https://vivos-assurance.fr/llms.txt",
+      "name": "llms.txt",
+      "mimeType": "text/markdown",
+      "description": "Indexed sitemap of all retrievable pages (titles + descriptions)"
+    },
+    {
+      "uri": "https://vivos-assurance.fr/llms-full.txt",
+      "name": "llms-full.txt",
+      "mimeType": "text/markdown",
+      "description": "Complete content corpus for retrieval-augmented generation"
+    },
+    {
+      "uri": "https://vivos-assurance.fr/sitemap.xml",
+      "name": "sitemap.xml",
+      "mimeType": "application/xml",
+      "description": "XML sitemap with lastModified metadata"
+    }
+  ],
+  "capabilities": {
+    "tools": [],
+    "prompts": [],
+    "resources": true
+  },
+  "license": "CC-BY-4.0",
+  "lastUpdated": "2026-05-19"
+}

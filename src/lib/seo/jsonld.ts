@@ -109,44 +109,115 @@ export function getServiceSchema(params: {
 
 /**
  * Schema.org FAQPage — rich snippet questions/réponses.
+ *
+ * Inclut SpeakableSpecification (Google Assistant, Alexa, voice-first AI)
+ * et inLanguage explicite pour cibler les LLMs.
  */
 export function getFAQPageSchema(faq: { q: string; a: string }[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    inLanguage: 'fr-FR',
+    isAccessibleForFree: true,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['[data-speakable="true"]', '.speakable'],
+      xpath: ['/html/head/title', '//*[@data-speakable="true"]'],
+    },
     mainEntity: faq.map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: {
         '@type': 'Answer',
         text: f.a,
+        inLanguage: 'fr-FR',
       },
     })),
   }
 }
 
 /**
- * Schema.org Article — pour les guides juridiques (/guides/*).
+ * Schema.org Article — pour les guides juridiques (/guides/*) et blog.
+ *
+ * Améliorations LLM/AEO/GEO :
+ *   - author Person granulaire (E-E-A-T YMYL critique) avec sameAs LinkedIn
+ *   - publisher Organization avec logo ImageObject explicite (Google News + AI Overviews)
+ *   - image hero pour Discover + AI Overviews
+ *   - isAccessibleForFree pour Google AI Overviews tri prioritaire
+ *   - inLanguage pour ciblage LLMs multilingues
+ *   - articleSection pour catégorisation
+ *   - wordCount / timeRequired pour signal qualité
  */
+export interface ArticleAuthor {
+  name: string
+  url?: string
+  jobTitle?: string
+  sameAs?: string[]
+  alumniOf?: string
+}
+
 export function getArticleSchema(params: {
   headline: string
   description: string
   url: string
   datePublished?: string
   dateModified?: string
+  image?: string | string[]
+  author?: ArticleAuthor
+  articleSection?: string
+  wordCount?: number
+  timeRequiredIso?: string
 }) {
   const now = new Date().toISOString().split('T')[0]
+  const imageList = params.image
+    ? Array.isArray(params.image)
+      ? params.image
+      : [params.image]
+    : [`${SITE_URL}/opengraph-image`]
+
+  const author = params.author
+    ? {
+        '@type': 'Person' as const,
+        name: params.author.name,
+        ...(params.author.url ? { url: params.author.url } : {}),
+        ...(params.author.jobTitle ? { jobTitle: params.author.jobTitle } : {}),
+        ...(params.author.sameAs && params.author.sameAs.length > 0
+          ? { sameAs: params.author.sameAs }
+          : {}),
+        ...(params.author.alumniOf
+          ? { alumniOf: { '@type': 'Organization', name: params.author.alumniOf } }
+          : {}),
+        worksFor: { '@id': `${SITE_URL}#organization` },
+      }
+    : { '@id': `${SITE_URL}#organization` }
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: params.headline,
     description: params.description,
     url: params.url,
-    author: { '@id': `${SITE_URL}#organization` },
-    publisher: { '@id': `${SITE_URL}#organization` },
+    inLanguage: 'fr-FR',
+    isAccessibleForFree: true,
+    image: imageList,
+    author,
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}#organization`,
+      name: 'Vivos Assurance',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/icon.svg`,
+        width: 512,
+        height: 512,
+      },
+    },
     datePublished: params.datePublished ?? now,
     dateModified: params.dateModified ?? now,
     mainEntityOfPage: { '@type': 'WebPage', '@id': params.url },
+    ...(params.articleSection ? { articleSection: params.articleSection } : {}),
+    ...(params.wordCount ? { wordCount: params.wordCount } : {}),
+    ...(params.timeRequiredIso ? { timeRequired: params.timeRequiredIso } : {}),
   }
 }
 
@@ -502,4 +573,84 @@ export function getProductSchema(params: {
  */
 export function getInsuranceAgencyOrganizationSchema(): Record<string, unknown> {
   return getOrganizationSchema()
+}
+
+/**
+ * Schema.org ClaimReview — pages contenant chiffres factuels (ACPR, AQC, INSEE,
+ * Légifrance, FFA/FFB). Permet aux LLMs (ChatGPT, Claude, Perplexity, Gemini)
+ * de citer directement la donnée vérifiée avec attribution Vivos Assurance.
+ *
+ * Standard utilisé par Reuters, AFP, Le Monde, Washington Post pour fact-checking.
+ */
+export interface ClaimReviewParams {
+  claim: string // ex: "Le tarif moyen RC Pro auto-entrepreneur 2026 est 95€/an"
+  claimUrl: string // URL de la page hébergeant le claim
+  reviewedBy?: string // nom de l'auteur ou "Cabinet Vivos Assurance"
+  datePublished?: string
+  ratingValue?: 1 | 2 | 3 | 4 | 5 // 5 = True, 1 = False (échelle ClaimReview)
+  ratingText?: string // ex: "Vérifié — Source AQC SYCODÉS 2026"
+  sourceUrl?: string // URL de la source primaire (Légifrance, ACPR…)
+  sourceName?: string // ex: "AQC SYCODÉS", "ACPR", "INSEE Sirene"
+}
+
+export function getClaimReviewSchema(params: ClaimReviewParams): Record<string, unknown> {
+  const now = new Date().toISOString().split('T')[0]
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ClaimReview',
+    datePublished: params.datePublished ?? now,
+    url: params.claimUrl,
+    claimReviewed: params.claim,
+    author: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}#organization`,
+      name: 'Vivos Assurance',
+    },
+    ...(params.reviewedBy
+      ? {
+          itemReviewed: {
+            '@type': 'Claim',
+            datePublished: params.datePublished ?? now,
+            appearance: {
+              '@type': 'OpinionNewsArticle',
+              url: params.claimUrl,
+              author: {
+                '@type': 'Organization',
+                name: params.reviewedBy,
+              },
+              ...(params.sourceUrl
+                ? {
+                    citation: {
+                      '@type': 'CreativeWork',
+                      url: params.sourceUrl,
+                      name: params.sourceName ?? 'Source primaire',
+                    },
+                  }
+                : {}),
+            },
+          },
+        }
+      : {
+          itemReviewed: {
+            '@type': 'Claim',
+            datePublished: params.datePublished ?? now,
+            ...(params.sourceUrl
+              ? {
+                  citation: {
+                    '@type': 'CreativeWork',
+                    url: params.sourceUrl,
+                    name: params.sourceName ?? 'Source primaire',
+                  },
+                }
+              : {}),
+          },
+        }),
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: String(params.ratingValue ?? 5),
+      bestRating: '5',
+      worstRating: '1',
+      alternateName: params.ratingText ?? 'Vérifié',
+    },
+  }
 }

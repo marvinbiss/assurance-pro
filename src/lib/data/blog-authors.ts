@@ -5,6 +5,9 @@ export const AUTHORS: Record<string, BlogAuthor> = {
     name: 'Cabinet Vivos Assurance',
     role: 'Courtier ORIAS spécialiste BTP & RC Pro',
     bio: 'Cabinet de courtage indépendant spécialisé en assurance professionnelle BTP, RC Pro et mutuelle TNS. Conseil motivé conforme art. L. 521-4 du Code des assurances.',
+    url: 'https://vivos-assurance.fr/equipe',
+    alumniOf: 'Chambre Syndicale des Courtiers d’Assurances (CSCA)',
+    sameAs: ['https://vivos-assurance.fr/equipe', 'https://vivos-assurance.fr/a-propos'],
   },
 }
 

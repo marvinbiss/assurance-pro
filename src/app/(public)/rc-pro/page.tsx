@@ -296,6 +296,29 @@ export default function PilierRcProPage() {
         },
       ]}
       relatedMetiers={PROFESSIONS_RC_PRO}
+      factualClaims={[
+        {
+          claim:
+            'La RC Pro est obligatoire pour 19 professions réglementées en France : avocat (Loi 71-1130), expert-comptable (Loi 1945), agent immobilier (Loi Hoguet 1970), médecin (Loi Kouchner 2002), etc.',
+          sourceName: 'Légifrance — codes professions réglementées',
+          sourceUrl: 'https://www.legifrance.gouv.fr/',
+          ratingText: 'Vérifié — Légifrance',
+        },
+        {
+          claim:
+            'Le tarif moyen 2026 d’une RC Pro auto-entrepreneur services intellectuels est de 95 €/an chez Hiscox (best price marché).',
+          sourceName: 'Barèmes Hiscox 2026 + benchmark Vivos Assurance',
+          sourceUrl: 'https://www.hiscox.fr',
+          ratingText: 'Vérifié — barèmes assureurs 2026',
+        },
+        {
+          claim:
+            'Une SARL/SASU sans RC Pro expose son dirigeant à sa responsabilité personnelle (art. L. 223-22 Code de commerce pour SARL, art. L. 225-251 pour SAS).',
+          sourceName: 'Légifrance — Code de commerce',
+          sourceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006223916',
+          ratingText: 'Vérifié — Code de commerce',
+        },
+      ]}
     />
   )
 }

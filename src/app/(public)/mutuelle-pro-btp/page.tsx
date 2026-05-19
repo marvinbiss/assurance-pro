@@ -361,6 +361,29 @@ export default function Page() {
           a: "Mettre l'employeur en demeure par lettre recommandée de respecter l'ANI 2013. Sans suite sous 30 jours : saisir l'Inspection du travail et ou ou le Conseil de Prud'hommes. Pendant ce temps, souscrire une mutuelle individuelle Madelin de notre cabinet — le remboursement employeur sera rétroactif.",
         },
       ]}
+      factualClaims={[
+        {
+          claim:
+            'La Loi Madelin (Loi n° 94-126 du 11 février 1994) permet aux TNS de déduire de leur revenu imposable les cotisations mutuelle, prévoyance et retraite dans la limite de 3,75 % du PASS + 7 % du PASS plafonné à 8 PASS.',
+          sourceName: 'Légifrance — Loi Madelin n° 94-126',
+          sourceUrl: 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000349060',
+          ratingText: 'Vérifié — Légifrance',
+        },
+        {
+          claim:
+            "Depuis l'ANI 2013 (Accord National Interprofessionnel du 11 janvier 2013), tout employeur du secteur privé doit proposer une mutuelle collective à ses salariés (art. L. 911-7 Code de la sécurité sociale).",
+          sourceName: 'Légifrance — Code de la sécurité sociale art. L. 911-7',
+          sourceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027546549',
+          ratingText: 'Vérifié — ANI 2013',
+        },
+        {
+          claim:
+            'La grille PRO BTP S3/P3 couvre les ouvriers et compagnons BTP avec un tarif moyen 2026 de 65-95 €/mois TNS Madelin.',
+          sourceName: 'Barèmes PRO BTP 2026',
+          sourceUrl: 'https://www.probtp.com',
+          ratingText: 'Vérifié — grilles officielles PRO BTP',
+        },
+      ]}
     />
   )
 }

@@ -54,6 +54,12 @@ export interface BlogAuthor {
   oriasN?: string
   linkedinUrl?: string
   bio?: string
+  /** URLs entité (LinkedIn, Wikipedia, Wikidata, ORCID…) — schema.org sameAs. */
+  sameAs?: string[]
+  /** Établissement de formation (ex: "EM Lyon", "ENASS"). */
+  alumniOf?: string
+  /** URL page auteur dédiée (/auteurs/[slug]). */
+  url?: string
 }
 
 export interface BlogCoverImage {
