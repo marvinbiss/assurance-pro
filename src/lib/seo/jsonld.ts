@@ -37,6 +37,32 @@ export function getOrganizationSchema() {
     award: 'Adhérent CSCA',
     name: SITE_NAME,
     url: SITE_URL,
+    /* Régulation ACPR — signal E-E-A-T YMYL critique France */
+    regulatedBy: [
+      {
+        '@type': 'GovernmentOrganization',
+        name: 'Autorité de Contrôle Prudentiel et de Résolution (ACPR)',
+        url: 'https://acpr.banque-france.fr',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '4 Place de Budapest',
+          postalCode: '75436',
+          addressLocality: 'Paris cedex 09',
+          addressCountry: 'FR',
+        },
+      },
+      {
+        '@type': 'Organization',
+        name: 'Registre ORIAS',
+        url: 'https://www.orias.fr',
+        description: 'Registre unique des intermédiaires en assurance, banque et finance',
+      },
+      {
+        '@type': 'Organization',
+        name: "CSCA (Chambre Syndicale des Courtiers d'Assurances)",
+        url: 'https://www.csca.fr',
+      },
+    ],
     logo: {
       '@type': 'ImageObject',
       url: `${SITE_URL}/icons/icon-512x512.png`,

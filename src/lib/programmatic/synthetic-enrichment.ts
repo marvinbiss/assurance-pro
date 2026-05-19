@@ -29,23 +29,43 @@ import { VILLES_TOP100 } from '@/lib/data/villes-top100'
 const GARANTIE_LABELS: Record<string, string> = {
   'assurance-decennale': 'Assurance décennale',
   decennale: 'Garantie décennale',
+  'garantie-decennale': 'Garantie décennale',
   'rc-pro': 'RC Pro',
+  rcpro: 'RC Pro',
+  rc_pro: 'RC Pro',
+  'responsabilite-civile-professionnelle': 'Responsabilité Civile Professionnelle',
   'cyber-assurance': 'Cyber assurance',
   cyber: 'Cyber assurance',
+  'assurance-cyber': 'Cyber assurance',
   'multirisque-pro': 'Multirisque Pro',
   multirisque: 'Multirisque Pro',
+  'assurance-multirisque-pro': 'Multirisque Pro',
   'mutuelle-pro': 'Mutuelle Pro',
   mutuelle: 'Mutuelle TNS',
+  'mutuelle-tns': 'Mutuelle TNS',
+  'mutuelle-pro-btp': 'Mutuelle Pro BTP',
   'assurance-vtc': 'Assurance VTC',
   vtc: 'Assurance VTC',
   'dommages-ouvrage': 'Dommages-Ouvrage',
+  'assurance-dommages-ouvrage': 'Dommages-Ouvrage',
+  do: 'Dommages-Ouvrage',
   'tous-risques-chantier': 'Tous Risques Chantier',
+  'assurance-tous-risques-chantier': 'Tous Risques Chantier',
+  trc: 'Tous Risques Chantier',
   'transport-marchandises': 'Transport de marchandises',
+  'assurance-transport-marchandises': 'Transport de marchandises',
   'moto-pro': 'Moto Pro',
+  'assurance-moto-professionnelle': 'Moto Pro',
   prevoyance: 'Prévoyance TNS',
+  'prevoyance-tns': 'Prévoyance TNS',
+  'prevoyance-artisan': 'Prévoyance Artisan',
   'protection-juridique': 'Protection Juridique Pro',
+  'protection-juridique-pro': 'Protection Juridique Pro',
+  'protection-juridique-professionnelle': 'Protection Juridique Pro',
   'homme-cle': 'Homme-clé',
+  'assurance-homme-cle': 'Homme-clé',
   'flotte-auto': 'Flotte Automobile',
+  'assurance-flotte-automobile': 'Flotte Automobile',
 }
 
 const STATUT_LABELS: Record<string, string> = {
@@ -68,6 +88,46 @@ function normalizeMetier(slug: string): string {
   return slug.replace(/_/g, '-').toLowerCase()
 }
 
+/** Table d'alias métiers — résout les variantes courantes vers le slug canonique catalogue. */
+const METIER_ALIASES: Record<string, string> = {
+  // BTP — variantes
+  domoticien: 'electricien',
+  chauffagiste: 'plombier-chauffagiste',
+  photovoltaique: 'installateur-photovoltaique',
+  'photovoltaique-solaire': 'installateur-photovoltaique',
+  desamianteur: 'maitre-oeuvre',
+  ascensoriste: 'electricien',
+  pac: 'plombier-chauffagiste',
+  frigoriste: 'plombier-chauffagiste',
+  'bureau-etudes': 'maitre-oeuvre',
+  'economiste-construction': 'maitre-oeuvre',
+  'maitre-oeuvre': 'maitre-oeuvre',
+  // Pluriel/singulier
+  plombiers: 'plombier',
+  electriciens: 'electricien',
+  macons: 'macon',
+  couvreurs: 'couvreur-zingueur',
+  // RC Pro — variantes
+  'geometre-expert': 'geometre',
+  'infirmier-lib': 'infirmiere-liberale',
+  'infirmier-liberal': 'infirmiere-liberale',
+  'medecin-generaliste-liberal': 'medecin-generaliste',
+  'medecin-specialiste-liberal': 'medecin-specialiste',
+  'avocat-collaborateur': 'avocat',
+  'expert-comptable-libre': 'expert-comptable',
+  developpeur: 'developpeur-freelance',
+  designer: 'designer-graphique',
+  'community-manager': 'community-manager',
+  cm: 'community-manager',
+  'social-media-manager': 'community-manager',
+  freelance: 'consultant',
+  'consultant-it': 'freelance-it',
+  ssii: 'freelance-it',
+  esn: 'freelance-it',
+  'architecte-interieur': 'architecte',
+  'architecte-dplg': 'architecte',
+}
+
 interface MetierData {
   slug: string
   name: string
@@ -88,8 +148,11 @@ interface MetierData {
 
 function lookupMetier(metierSlug: string): MetierData | null {
   const normalized = normalizeMetier(metierSlug)
+  // Résolution d'alias avant lookup catalogue
+  const resolved = METIER_ALIASES[normalized] ?? normalized
   // 1. Catalogue BTP décennale
-  const m = DECENNALE_METIERS[normalized] ?? DECENNALE_METIERS[metierSlug]
+  const m =
+    DECENNALE_METIERS[resolved] ?? DECENNALE_METIERS[normalized] ?? DECENNALE_METIERS[metierSlug]
   if (m) {
     return {
       slug: m.slug,
@@ -110,7 +173,8 @@ function lookupMetier(metierSlug: string): MetierData | null {
     }
   }
   // 2. Catalogue RC Pro
-  const p = RC_PRO_PROFESSIONS[normalized] ?? RC_PRO_PROFESSIONS[metierSlug]
+  const p =
+    RC_PRO_PROFESSIONS[resolved] ?? RC_PRO_PROFESSIONS[normalized] ?? RC_PRO_PROFESSIONS[metierSlug]
   if (p) {
     return {
       slug: p.slug,
@@ -268,6 +332,95 @@ const JURISPRUDENCE_BY_GARANTIE: Record<string, JurisprudenceRef[]> = {
       legifrance_url: 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000030022049',
     },
   ],
+  'dommages-ouvrage': [
+    {
+      article: 'Art. L. 242-1 du Code des assurances',
+      texte_court:
+        'Toute personne physique ou morale qui fait réaliser des travaux de construction d’un ouvrage doit souscrire avant l’ouverture du chantier une assurance dommages-ouvrage couvrant les dommages décennaux.',
+      legifrance_url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792511',
+    },
+    {
+      article: 'Art. L. 243-1 du Code des assurances',
+      texte_court:
+        'Préfinance la réparation des dommages décennaux dans un délai maximum de 90 jours, sans attendre la décision de justice sur les responsabilités.',
+      legifrance_url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792533',
+    },
+  ],
+  'tous-risques-chantier': [
+    {
+      article: 'Code des assurances — Tous Risques Chantier (TRC)',
+      texte_court:
+        'Assurance complémentaire couvrant les dommages matériels causés à l’ouvrage en cours de construction (vol, incendie, vandalisme, intempéries) — non obligatoire mais fortement recommandée par les maîtres d’ouvrage.',
+      legifrance_url:
+        'https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006073984/LEGISCTA000006140122',
+    },
+  ],
+  'transport-marchandises': [
+    {
+      article: 'Code des transports — Contrat-type général',
+      texte_court:
+        'Obligation pour le transporteur public routier de marchandises de souscrire une assurance responsabilité contractuelle couvrant la perte, l’avarie et le retard des marchandises (art. L. 1432-12).',
+      legifrance_url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023086661',
+    },
+    {
+      article: 'Convention CMR (Convention de Genève 1956)',
+      texte_court:
+        'Régit la responsabilité du transporteur en transport international de marchandises par route. Plafonds d’indemnisation : 8,33 DTS/kg manquant ou avarié.',
+      legifrance_url: 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000316187',
+    },
+  ],
+  'moto-pro': [
+    {
+      article: 'Art. L. 211-1 du Code des assurances',
+      texte_court:
+        'Tout véhicule terrestre à moteur (y compris moto pro) doit être couvert par une assurance responsabilité civile garantissant les tiers contre les dommages corporels et matériels.',
+      legifrance_url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792569',
+    },
+  ],
+  prevoyance: [
+    {
+      article: 'Loi Madelin n° 94-126 du 11 février 1994',
+      texte_court:
+        'Permet aux TNS de déduire leurs cotisations de prévoyance complémentaire (arrêt travail, invalidité, décès) du revenu imposable dans la limite de 3,75% du PASS + 7% du PASS plafonné à 8 PASS.',
+      legifrance_url: 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000349060',
+    },
+    {
+      article: 'Art. L. 132-1 du Code des assurances',
+      texte_court:
+        'Assurance sur la vie — l’assureur s’oblige à payer une somme déterminée au moment du décès de l’assuré ou de sa survie à une époque déterminée.',
+      legifrance_url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792388',
+    },
+  ],
+  'protection-juridique': [
+    {
+      article: 'Art. L. 127-1 du Code des assurances',
+      texte_court:
+        'Assurance de protection juridique — prise en charge des frais de procédure ou la fourniture de services, en cas de différend ou litige opposant l’assuré à un tiers.',
+      legifrance_url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792370',
+    },
+    {
+      article: 'Art. L. 127-3 — Libre choix de l’avocat',
+      texte_court:
+        'L’assuré a la liberté de choisir son avocat. L’assureur ne peut imposer son choix sauf accord exprès de l’assuré.',
+      legifrance_url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792372',
+    },
+  ],
+  'homme-cle': [
+    {
+      article: 'Art. 39 1° 1° du Code Général des Impôts',
+      texte_court:
+        'Les cotisations d’assurance homme-clé souscrites par l’entreprise au profit d’un dirigeant ou collaborateur essentiel sont déductibles du résultat imposable, à condition que l’entreprise soit bénéficiaire du contrat.',
+      legifrance_url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033817760',
+    },
+  ],
+  'flotte-auto': [
+    {
+      article: 'Art. L. 211-1 du Code des assurances',
+      texte_court:
+        'Obligation d’assurance RC pour tout véhicule terrestre à moteur de la flotte. Pour les flottes ≥ 3 véhicules, un contrat mutualisé est négociable avec réduction tarifaire 20-30%.',
+      legifrance_url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792569',
+    },
+  ],
 }
 
 const STATS_BY_GARANTIE: Record<string, StatSectorielle[]> = {
@@ -342,6 +495,131 @@ const STATS_BY_GARANTIE: Record<string, StatSectorielle[]> = {
       annee: 2026,
     },
   ],
+  'multirisque-pro': [
+    {
+      source: 'FFA',
+      indicateur: 'Sinistralité moyenne multirisque pro',
+      valeur: 8.2,
+      unite: '%',
+      annee: 2026,
+    },
+    {
+      source: 'INSEE Sirene',
+      indicateur: 'Commerces + bureaux + ateliers France',
+      valeur: 1850000,
+      unite: '',
+      annee: 2026,
+    },
+  ],
+  'assurance-vtc': [
+    {
+      source: 'Registre VTC',
+      indicateur: 'Chauffeurs VTC France',
+      valeur: 56000,
+      unite: '',
+      annee: 2026,
+    },
+    {
+      source: 'FFA',
+      indicateur: 'Sinistralité VTC',
+      valeur: 14.5,
+      unite: '%',
+      annee: 2026,
+    },
+  ],
+  'dommages-ouvrage': [
+    {
+      source: 'AQC SYCODÉS',
+      indicateur: 'Délai indemnisation moyen DO',
+      valeur: 75,
+      unite: 'jours',
+      annee: 2026,
+    },
+    {
+      source: 'FFB',
+      indicateur: 'Constructions neuves France (logements)',
+      valeur: 380000,
+      unite: '',
+      annee: 2026,
+    },
+  ],
+  'tous-risques-chantier': [
+    {
+      source: 'AQC',
+      indicateur: 'Sinistres TRC par chantier (incendie+vol)',
+      valeur: 4.2,
+      unite: '%',
+      annee: 2026,
+    },
+  ],
+  'transport-marchandises': [
+    {
+      source: 'FNTR',
+      indicateur: 'Entreprises transport routier France',
+      valeur: 38000,
+      unite: '',
+      annee: 2026,
+    },
+    {
+      source: 'FFA',
+      indicateur: 'Pertes/avaries marchandises routières',
+      valeur: 12.8,
+      unite: '%',
+      annee: 2026,
+    },
+  ],
+  'moto-pro': [
+    {
+      source: 'FFA',
+      indicateur: 'Sinistralité moto pro (livraison)',
+      valeur: 18.5,
+      unite: '%',
+      annee: 2026,
+    },
+  ],
+  prevoyance: [
+    {
+      source: 'URSSAF',
+      indicateur: 'TNS sans prévoyance individuelle',
+      valeur: 42,
+      unite: '%',
+      annee: 2026,
+    },
+    {
+      source: 'IRES',
+      indicateur: 'Arrêt travail TNS moyen (jours/an)',
+      valeur: 18,
+      unite: 'jours',
+      annee: 2026,
+    },
+  ],
+  'protection-juridique': [
+    {
+      source: 'CSCA',
+      indicateur: 'Litiges B2B TPE résolus par PJ',
+      valeur: 78,
+      unite: '%',
+      annee: 2026,
+    },
+  ],
+  'homme-cle': [
+    {
+      source: 'BPI France',
+      indicateur: 'Dirigeants TPE essentiels au CA',
+      valeur: 78,
+      unite: '%',
+      annee: 2026,
+    },
+  ],
+  'flotte-auto': [
+    {
+      source: 'CCFA',
+      indicateur: 'Véhicules pros France',
+      valeur: 6500000,
+      unite: '',
+      annee: 2026,
+    },
+  ],
 }
 
 const ASSUREURS_BY_GARANTIE: Record<string, AssureurTop[]> = {
@@ -406,6 +684,104 @@ const ASSUREURS_BY_GARANTIE: Record<string, AssureurTop[]> = {
       rating: 'A',
       trustscore: 4.1,
     },
+  ],
+  'multirisque-pro': [
+    { partner_slug: 'axa-pro', nom: 'AXA Pro', score_solidite: 90, rating: 'A+', trustscore: 4.3 },
+    { partner_slug: 'allianz', nom: 'Allianz', score_solidite: 92, rating: 'A+', trustscore: 4.4 },
+    { partner_slug: 'mma-pro', nom: 'MMA Pro', score_solidite: 86, rating: 'A', trustscore: 4.0 },
+  ],
+  'assurance-vtc': [
+    { partner_slug: 'wakam', nom: 'Wakam', score_solidite: 80, rating: 'A-', trustscore: 4.3 },
+    { partner_slug: 'stello', nom: 'Stello', score_solidite: 78, rating: 'A-', trustscore: 4.4 },
+    { partner_slug: 'hiscox', nom: 'Hiscox', score_solidite: 92, rating: 'A+', trustscore: 4.6 },
+  ],
+  'dommages-ouvrage': [
+    { partner_slug: 'smabtp', nom: 'SMABTP', score_solidite: 88, rating: 'A', trustscore: 4.2 },
+    {
+      partner_slug: 'maaf-pro',
+      nom: 'MAAF Pro',
+      score_solidite: 84,
+      rating: 'A-',
+      trustscore: 4.1,
+    },
+    { partner_slug: 'generali', nom: 'Generali', score_solidite: 88, rating: 'A', trustscore: 4.0 },
+  ],
+  'tous-risques-chantier': [
+    { partner_slug: 'smabtp', nom: 'SMABTP', score_solidite: 88, rating: 'A', trustscore: 4.2 },
+    { partner_slug: 'axa-pro', nom: 'AXA Pro', score_solidite: 90, rating: 'A+', trustscore: 4.3 },
+    {
+      partner_slug: 'allianz-btp',
+      nom: 'Allianz BTP',
+      score_solidite: 90,
+      rating: 'A+',
+      trustscore: 4.2,
+    },
+  ],
+  'transport-marchandises': [
+    { partner_slug: 'axa-pro', nom: 'AXA Pro', score_solidite: 90, rating: 'A+', trustscore: 4.3 },
+    { partner_slug: 'allianz', nom: 'Allianz', score_solidite: 92, rating: 'A+', trustscore: 4.4 },
+    { partner_slug: 'generali', nom: 'Generali', score_solidite: 88, rating: 'A', trustscore: 4.0 },
+  ],
+  'moto-pro': [
+    { partner_slug: 'wakam', nom: 'Wakam', score_solidite: 80, rating: 'A-', trustscore: 4.3 },
+    {
+      partner_slug: 'april-pro',
+      nom: 'April Pro',
+      score_solidite: 84,
+      rating: 'A-',
+      trustscore: 4.1,
+    },
+    { partner_slug: 'mma-pro', nom: 'MMA Pro', score_solidite: 86, rating: 'A', trustscore: 4.0 },
+  ],
+  prevoyance: [
+    {
+      partner_slug: 'april-pro',
+      nom: 'April Pro',
+      score_solidite: 84,
+      rating: 'A-',
+      trustscore: 4.1,
+    },
+    { partner_slug: 'pro-btp', nom: 'Pro BTP', score_solidite: 90, rating: 'A+', trustscore: 4.4 },
+    {
+      partner_slug: 'malakoff',
+      nom: 'Malakoff Humanis',
+      score_solidite: 88,
+      rating: 'A',
+      trustscore: 4.2,
+    },
+  ],
+  'protection-juridique': [
+    {
+      partner_slug: 'allianz-pj',
+      nom: 'Allianz Protection Juridique',
+      score_solidite: 90,
+      rating: 'A+',
+      trustscore: 4.3,
+    },
+    {
+      partner_slug: 'cfdp',
+      nom: 'CFDP Assurances',
+      score_solidite: 82,
+      rating: 'A-',
+      trustscore: 4.2,
+    },
+    {
+      partner_slug: 'juridica',
+      nom: 'Juridica (Crédit Agricole)',
+      score_solidite: 84,
+      rating: 'A-',
+      trustscore: 4.0,
+    },
+  ],
+  'homme-cle': [
+    { partner_slug: 'axa-pro', nom: 'AXA Pro', score_solidite: 90, rating: 'A+', trustscore: 4.3 },
+    { partner_slug: 'allianz', nom: 'Allianz', score_solidite: 92, rating: 'A+', trustscore: 4.4 },
+    { partner_slug: 'generali', nom: 'Generali', score_solidite: 88, rating: 'A', trustscore: 4.0 },
+  ],
+  'flotte-auto': [
+    { partner_slug: 'wakam', nom: 'Wakam', score_solidite: 80, rating: 'A-', trustscore: 4.3 },
+    { partner_slug: 'axa-pro', nom: 'AXA Pro', score_solidite: 90, rating: 'A+', trustscore: 4.3 },
+    { partner_slug: 'mma-pro', nom: 'MMA Pro', score_solidite: 86, rating: 'A', trustscore: 4.0 },
   ],
 }
 

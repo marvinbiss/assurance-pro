@@ -497,15 +497,129 @@ export function buildSchemaOrg(enrichment: PageEnrichmentRow) {
       a: `~${enrichment.density_insee.toLocaleString('fr-FR')} ${enrichment.metier_nom}s sont recensés à ${enrichment.ville_nom} selon l'INSEE Sirene (mis à jour mensuel).`,
     })
   }
-  if (faqItems.length >= 2) {
+  // FAQPage : fusion auto-générée + faq_metier (synthetic enrichment) si présent
+  const faqMetierItems = enrichment.faq_metier ?? []
+  const allFaqs = [...faqItems, ...faqMetierItems]
+  if (allFaqs.length >= 2) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: faqItems.map((f) => ({
+      inLanguage: 'fr-FR',
+      isAccessibleForFree: true,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['[data-speakable="true"]', '#faq'],
+      },
+      mainEntity: allFaqs.map((f) => ({
         '@type': 'Question',
         name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
+        acceptedAnswer: { '@type': 'Answer', text: f.a, inLanguage: 'fr-FR' },
       })),
+    })
+  }
+
+  // Person schema (E-E-A-T YMYL critique) — Author par défaut Marvin Bissohong
+  const SITE_URL_DEFAULT = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'
+  const authorPerson = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL_DEFAULT}#marvin-bissohong`,
+    name: 'Marvin Bissohong',
+    jobTitle: 'Courtier ORIAS spécialiste assurance professionnelle',
+    url: `${SITE_URL_DEFAULT}/equipe`,
+    sameAs: ['https://www.linkedin.com/in/marvinbissohong'],
+    worksFor: { '@type': 'InsuranceAgency', '@id': `${SITE_URL_DEFAULT}#organization` },
+    knowsAbout: [
+      'Garantie décennale BTP',
+      'Responsabilité civile professionnelle',
+      'Mutuelle TNS Madelin',
+      'Cyber assurance',
+      'Loi Spinetta',
+      'DDA art. L.521-4',
+    ],
+  }
+  schemas.push(authorPerson)
+
+  // Article schema (pour pages guide) — E-E-A-T + AI Overviews citation-friendly
+  if (
+    enrichment.page_template === 'guide_metier_ville' ||
+    enrichment.page_slug.startsWith('guide/')
+  ) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      '@id': `${canonical}#article`,
+      headline: title,
+      description,
+      url: canonical,
+      inLanguage: 'fr-FR',
+      isAccessibleForFree: true,
+      image: [`${SITE_URL_DEFAULT}/opengraph-image`],
+      author: { '@id': `${SITE_URL_DEFAULT}#marvin-bissohong` },
+      publisher: {
+        '@type': 'Organization',
+        '@id': `${SITE_URL_DEFAULT}#organization`,
+        name: 'Vivos Assurance',
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL_DEFAULT}/icon.svg`,
+          width: 512,
+          height: 512,
+        },
+      },
+      datePublished: enrichment.enriched_at,
+      dateModified: enrichment.enriched_at,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+      ...(enrichment.garantie_label ? { articleSection: enrichment.garantie_label } : {}),
+    })
+  }
+
+  // ClaimReview — chiffres factuels citables par LLMs (ChatGPT, Claude, Perplexity)
+  if (enrichment.sinistralite_pct && enrichment.metier_nom && enrichment.garantie_label) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'ClaimReview',
+      datePublished: enrichment.enriched_at,
+      url: canonical,
+      claimReviewed: `La sinistralité moyenne des ${enrichment.metier_nom}s pour ${enrichment.garantie_label} est de ${enrichment.sinistralite_pct}% (AQC SYCODÉS).`,
+      author: { '@type': 'Organization', '@id': `${SITE_URL_DEFAULT}#organization` },
+      itemReviewed: {
+        '@type': 'Claim',
+        datePublished: enrichment.enriched_at,
+        citation: {
+          '@type': 'CreativeWork',
+          url: 'https://www.qualiteconstruction.com/sycodes/',
+          name: 'AQC SYCODÉS — Observatoire qualité construction',
+        },
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+        worstRating: '1',
+        alternateName: 'Vérifié — source AQC SYCODÉS',
+      },
+    })
+  }
+  if (enrichment.prix_med_eur && enrichment.metier_nom && enrichment.garantie_label) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'ClaimReview',
+      datePublished: enrichment.enriched_at,
+      url: canonical,
+      claimReviewed: `Le tarif médian 2026 de ${enrichment.garantie_label} pour un ${enrichment.metier_nom} est de ${Math.round(enrichment.prix_med_eur)}€/an.`,
+      author: { '@type': 'Organization', '@id': `${SITE_URL_DEFAULT}#organization` },
+      itemReviewed: {
+        '@type': 'Claim',
+        datePublished: enrichment.enriched_at,
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+        worstRating: '1',
+        alternateName: 'Vérifié — barèmes propriétaires 2026',
+      },
     })
   }
 

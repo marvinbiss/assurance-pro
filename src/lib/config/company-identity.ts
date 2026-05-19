@@ -42,12 +42,12 @@ export const companyIdentity = {
   partenairesEmail: 'partenaires@vivos-assurance.fr',
   careersEmail: 'careers@vivos-assurance.fr',
 
-  // Social (real profiles)
+  // Social (real profiles only — null si compte inexistant pour éviter sameAs vers 404)
   social: {
-    facebook: 'https://facebook.com/assurance-pro',
-    instagram: 'https://instagram.com/assurance-pro',
-    linkedin: 'https://linkedin.com/company/assurance-pro',
-    twitter: 'https://x.com/assurance-pro',
+    facebook: null,
+    instagram: null,
+    linkedin: process.env.COMPANY_LINKEDIN ?? null,
+    twitter: null,
   },
 
   // Hosting (Level 1 — verifiable)
@@ -72,5 +72,5 @@ export function isCompanyRegistered(): boolean {
 
 /** URLs sociales non-nulles pour schema.org sameAs. */
 export function getSocialLinks(): string[] {
-  return Object.values(companyIdentity.social).filter(Boolean)
+  return Object.values(companyIdentity.social).filter((v): v is string => Boolean(v))
 }
