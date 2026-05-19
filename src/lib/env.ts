@@ -43,7 +43,8 @@ const envSchema = z.object({
   AHREFS_API_TOKEN: z.string().optional(),
 
   // Indexation
-  INDEXNOW_API_KEY: z.string().optional(),
+  INDEXNOW_KEY: z.string().optional(),
+  INDEXNOW_API_KEY: z.string().optional(), // legacy alias, both accepted
 
   // Identité légale (mentions, FIC, IPID)
   COMPANY_LEGAL_NAME: z.string().optional(),

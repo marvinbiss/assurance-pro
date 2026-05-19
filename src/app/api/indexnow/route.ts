@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 import { SITE_URL } from '@/lib/seo/config'
 
-const INDEXNOW_KEY = process.env.INDEXNOW_API_KEY
+// Support des deux noms env pour compat: INDEXNOW_KEY (prod) + INDEXNOW_API_KEY (legacy)
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY ?? process.env.INDEXNOW_API_KEY
 
 /**
  * POST /api/indexnow — Submit URLs to IndexNow (Bing, Yandex, etc.)

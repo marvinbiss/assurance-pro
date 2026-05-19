@@ -1,7 +1,8 @@
 import { SITE_URL } from '@/lib/seo/config'
 
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/IndexNow'
-const INDEXNOW_KEY = process.env.INDEXNOW_API_KEY
+// Support des deux noms env pour compat: INDEXNOW_KEY (vivos prod) + INDEXNOW_API_KEY (legacy doc)
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY ?? process.env.INDEXNOW_API_KEY
 
 const BATCH_SIZE = 10_000
 
@@ -21,7 +22,7 @@ export async function submitToIndexNow(urls: string[]): Promise<IndexNowResult> 
     return { submitted: 0, success: false, error: 'No key or empty URL list' }
   }
 
-  const absoluteUrls = urls.map(u => u.startsWith('http') ? u : `${SITE_URL}${u}`)
+  const absoluteUrls = urls.map((u) => (u.startsWith('http') ? u : `${SITE_URL}${u}`))
 
   let totalSubmitted = 0
 
@@ -51,4 +52,3 @@ export async function submitToIndexNow(urls: string[]): Promise<IndexNowResult> 
 
   return { submitted: totalSubmitted, success: totalSubmitted > 0 }
 }
-
