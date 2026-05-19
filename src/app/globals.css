@@ -111,29 +111,73 @@
 }
 
 /* ===========================================
-   Print stylesheet — premium editorial
+   Print stylesheet — premium editorial Vivos
+   Optimisé impression article / mémoire conseil / fiche IPID
    =========================================== */
 @media print {
+  /* Page setup A4 marges éditoriales */
+  @page {
+    size: A4;
+    margin: 2cm 1.8cm 2.4cm 1.8cm;
+    @bottom-right {
+      content: counter(page) ' / ' counter(pages);
+      font-size: 9pt;
+      color: #555;
+      font-family: 'Geist', sans-serif;
+    }
+    @bottom-left {
+      content: 'vivos-assurance.fr';
+      font-size: 9pt;
+      color: #555;
+      font-family: 'Geist', sans-serif;
+    }
+  }
+
+  /* Reset couleurs imprimables */
   html,
   body {
     background: #fff !important;
-    color: #000 !important;
+    color: #1a1a1a !important;
+    font-family: 'Geist', Georgia, serif !important;
+    font-size: 11pt !important;
+    line-height: 1.55 !important;
   }
+
+  /* Cacher éléments non-imprimables */
   header,
   footer,
   nav[aria-label="Fil d'Ariane"],
   aside.sticky,
   [data-print='hide'],
   button,
+  form,
   .noise-overlay,
+  .mesh-shader,
+  .hero-gradient-anim,
+  .marquee,
   [aria-label='Progression de lecture'],
   [aria-label='Changer de thème'],
-  [aria-label*='Activer le mode'] {
+  [aria-label*='Activer le mode'],
+  [role='banner'],
+  [role='navigation'],
+  [role='complementary'],
+  iframe,
+  video,
+  audio {
     display: none !important;
   }
+
+  /* Layout impression */
   main {
     padding: 0 !important;
+    max-width: 100% !important;
   }
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Page breaks éditoriaux */
   article,
   section {
     page-break-inside: avoid;
@@ -144,29 +188,94 @@
   h4 {
     page-break-after: avoid;
     color: #000 !important;
+    font-family: 'Fraunces', Georgia, serif !important;
   }
+  h1 {
+    font-size: 24pt !important;
+    margin-top: 0 !important;
+    border-bottom: 2pt solid #2b4d85;
+    padding-bottom: 0.4em;
+  }
+  h2 {
+    font-size: 18pt !important;
+    color: #2b4d85 !important;
+    margin-top: 1.5em !important;
+  }
+  h3 {
+    font-size: 14pt !important;
+    color: #142c55 !important;
+  }
+
+  /* Liens annotés URLs (académique) */
   a[href^='http']::after {
     content: ' (' attr(href) ')';
     font-size: 0.85em;
     color: #555;
+    word-break: break-all;
+  }
+  a[href^='/']::after {
+    content: ' (vivos-assurance.fr' attr(href) ')';
+    font-size: 0.85em;
+    color: #555;
   }
   a[href^='#']::after,
-  a[href^='mailto:']::after {
+  a[href^='mailto:']::after,
+  a[href^='tel:']::after {
     content: '';
   }
+
+  /* Images + tableaux */
   img {
     max-width: 100% !important;
     page-break-inside: avoid;
+    filter: grayscale(20%);
   }
-  .shadow-soft,
-  .shadow-premium,
-  .shadow-premium-lg {
-    box-shadow: none !important;
-  }
-  pre,
-  blockquote,
   table {
     page-break-inside: avoid;
+    width: 100% !important;
+    border-collapse: collapse;
+  }
+  table th,
+  table td {
+    border: 0.5pt solid #888;
+    padding: 6pt;
+    font-size: 10pt;
+  }
+  table th {
+    background: #f0f0f0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Shadows neutralisées */
+  .shadow-soft,
+  .shadow-premium,
+  .shadow-premium-lg,
+  [class*='shadow-'] {
+    box-shadow: none !important;
+  }
+
+  /* Pre + blockquote (legal references) */
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+    border-left: 2pt solid #2b4d85;
+    padding-left: 10pt;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    background: #f8f8f8 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* DDA disclaimer + mentions légales — page break before */
+  .dda-disclaimer,
+  [data-print='legal'] {
+    page-break-before: always;
+    border-top: 1pt solid #888;
+    padding-top: 1em;
+    font-size: 9pt;
+    color: #555;
   }
 }
 
