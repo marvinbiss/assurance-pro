@@ -43,7 +43,7 @@ export default async function Page() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <div className="min-h-screen bg-white">
-      <header className="bg-gradient-to-br from-slate-700 to-slate-900 py-12 text-white">
+      <header className="bg-gradient-to-br from-charcoal-700 to-charcoal-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-sm opacity-80">
             <Link href="/" className="hover:underline">
@@ -109,7 +109,7 @@ export default async function Page() {
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-4 text-2xl font-bold">Que couvre la cyber assurance ?</h2>
           <div className="grid gap-4 text-sm md:grid-cols-2">
-            <div className="rounded-r border-l-4 border-slate-700 bg-white p-4">
+            <div className="rounded-r border-l-4 border-charcoal-700 bg-white p-4">
               <h3 className="mb-2 font-bold">🛡️ Pertes financières directes</h3>
               <ul className="space-y-1">
                 <li>• Rançon ransomware (selon contrat)</li>
@@ -118,7 +118,7 @@ export default async function Page() {
                 <li>• Perte d&apos;exploitation post-attaque</li>
               </ul>
             </div>
-            <div className="rounded-r border-l-4 border-slate-700 bg-white p-4">
+            <div className="rounded-r border-l-4 border-charcoal-700 bg-white p-4">
               <h3 className="mb-2 font-bold">⚖️ Responsabilité civile cyber</h3>
               <ul className="space-y-1">
                 <li>• Recours clients suite breach</li>
@@ -127,7 +127,7 @@ export default async function Page() {
                 <li>• Diffusion contenu illégal involontaire</li>
               </ul>
             </div>
-            <div className="rounded-r border-l-4 border-slate-700 bg-white p-4">
+            <div className="rounded-r border-l-4 border-charcoal-700 bg-white p-4">
               <h3 className="mb-2 font-bold">📞 Frais de gestion crise</h3>
               <ul className="space-y-1">
                 <li>• Expert forensique (analyse breach)</li>
@@ -136,7 +136,7 @@ export default async function Page() {
                 <li>• Notification clients (RGPD art. 34)</li>
               </ul>
             </div>
-            <div className="rounded-r border-l-4 border-slate-700 bg-white p-4">
+            <div className="rounded-r border-l-4 border-charcoal-700 bg-white p-4">
               <h3 className="mb-2 font-bold">🔧 Frais de restauration</h3>
               <ul className="space-y-1">
                 <li>• Restauration systèmes IT (réinstallation)</li>
@@ -164,7 +164,7 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-slate-700 to-slate-900 py-12 text-white">
+      <section className="bg-gradient-to-br from-charcoal-700 to-charcoal-900 py-12 text-white">
         <div className="container mx-auto max-w-4xl px-4 text-center">
           <h2 className="mb-3 text-2xl font-bold md:text-3xl">
             Prêt à protéger votre entreprise ?
@@ -176,13 +176,13 @@ export default async function Page() {
           <div className="flex flex-col justify-center gap-3 md:flex-row">
             <Link
               href="/cyber-assurance"
-              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-slate-800 shadow-lg transition hover:bg-sand-100"
+              className="inline-block rounded-lg bg-white px-6 py-3 font-bold text-charcoal-800 shadow-lg transition hover:bg-sand-100"
             >
               → Pilier cyber assurance
             </Link>
             <Link
               href="/guides/assurance-rgpd"
-              className="inline-block rounded-lg border border-white/30 bg-slate-800 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-slate-900"
+              className="inline-block rounded-lg border border-white/30 bg-charcoal-800 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-charcoal-900"
             >
               → Guide RGPD entreprise
             </Link>

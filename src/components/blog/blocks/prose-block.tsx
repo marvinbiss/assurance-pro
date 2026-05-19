@@ -26,10 +26,13 @@ function renderInline(raw: string): string {
   html = html.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_match, label, url) => {
     const safeUrl = isSafeUrl(url) ? url : '#'
     // escapeHtml double-encode déjà appliqué — url contient déjà &amp; etc.
-    return `<a href="${safeUrl}" class="font-semibold text-primary-700 underline-offset-4 hover:underline">${label}</a>`
+    return `<a href="${safeUrl}" class="font-semibold text-primary-700 underline-offset-4 hover:underline dark:text-primary-300">${label}</a>`
   })
   // bold **text**
-  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong class="font-bold text-charcoal-900">$1</strong>')
+  html = html.replace(
+    /\*\*([^*]+)\*\*/g,
+    '<strong class="font-bold text-charcoal-900 dark:text-charcoal-50">$1</strong>'
+  )
   // italic *text* (avoid bold collision: already replaced)
   html = html.replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '<em class="italic">$1</em>')
   return html
@@ -38,7 +41,7 @@ function renderInline(raw: string): string {
 export function ProseBlock({ text }: ProseBlockProps) {
   return (
     <p
-      className="my-5 text-[17px] leading-[1.75] text-charcoal-700"
+      className="my-5 text-[17px] leading-[1.75] text-charcoal-700 dark:text-charcoal-200"
       dangerouslySetInnerHTML={{ __html: renderInline(text) }}
     />
   )

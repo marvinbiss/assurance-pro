@@ -170,11 +170,11 @@ export function CalculateurTarifCyber() {
         </div>
       </div>
 
-      <div className="mt-6 rounded-lg border-2 border-slate-400 bg-gradient-to-br from-slate-100 to-slate-200 p-6">
+      <div className="mt-6 rounded-lg border-2 border-charcoal-400 bg-gradient-to-br from-charcoal-100 to-charcoal-200 p-6">
         <p className="mb-2 text-sm text-charcoal-600">
           Estimation tarif cyber assurance 2026 (annuel HT)
         </p>
-        <p className="mb-2 text-4xl font-extrabold text-slate-900 md:text-5xl">
+        <p className="mb-2 text-4xl font-extrabold text-charcoal-900 md:text-5xl">
           {r.fourchetteBasse.toLocaleString('fr-FR')} € —{' '}
           {r.fourchetteHaute.toLocaleString('fr-FR')} €
         </p>
@@ -186,8 +186,8 @@ export function CalculateurTarifCyber() {
           CyberEdge, AXA Cyber Secure, Allianz Cyber Risk).
         </p>
 
-        <div className="mt-4 rounded border border-slate-300 bg-white p-4">
-          <p className="mb-2 text-sm font-semibold text-slate-900">
+        <div className="mt-4 rounded border border-charcoal-300 bg-white p-4">
+          <p className="mb-2 text-sm font-semibold text-charcoal-900">
             ⚠️ Coût moyen sinistre cyber 2026 (ANSSI)
           </p>
           <div className="grid grid-cols-3 gap-3 text-xs">
@@ -226,7 +226,7 @@ export function CalculateurTarifCyber() {
 
         <a
           href={ctaUrl}
-          className="mt-5 inline-block w-full rounded-lg bg-slate-700 px-6 py-3 text-center font-bold text-white shadow-lg transition hover:bg-slate-800 md:w-auto"
+          className="mt-5 inline-block w-full rounded-lg bg-charcoal-700 px-6 py-3 text-center font-bold text-white shadow-lg transition hover:bg-charcoal-800 md:w-auto"
         >
           → Recevoir mon devis cyber officiel sous 24h
         </a>

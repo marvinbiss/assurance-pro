@@ -20,10 +20,12 @@ export function StepperBlock({ steps }: StepperBlockProps) {
             {i + 1}
           </span>
           <div className="flex-1 pt-1">
-            <h4 className="mb-2 font-heading text-lg font-extrabold text-charcoal-900">
+            <h4 className="mb-2 font-heading text-lg font-extrabold text-charcoal-900 dark:text-charcoal-50">
               {step.title}
             </h4>
-            <p className="text-[16px] leading-relaxed text-charcoal-700">{step.body}</p>
+            <p className="text-[16px] leading-relaxed text-charcoal-700 dark:text-charcoal-200">
+              {step.body}
+            </p>
           </div>
         </li>
       ))}

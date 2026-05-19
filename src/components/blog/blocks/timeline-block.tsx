@@ -25,14 +25,16 @@ export function TimelineBlock({ steps }: TimelineBlockProps) {
             aria-hidden="true"
           />
           <div className="flex-1 md:pt-2">
-            <p className="m-0 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+            <p className="m-0 text-xs font-extrabold uppercase tracking-wider text-primary-700 dark:text-primary-300">
               {step.when}
             </p>
-            <p className="m-0 mt-1 font-heading text-base font-extrabold text-charcoal-900">
+            <p className="m-0 mt-1 font-heading text-base font-extrabold text-charcoal-900 dark:text-charcoal-50">
               {step.label}
             </p>
             {step.detail && (
-              <p className="m-0 mt-1.5 text-xs leading-relaxed text-charcoal-600">{step.detail}</p>
+              <p className="m-0 mt-1.5 text-xs leading-relaxed text-charcoal-600 dark:text-charcoal-300">
+                {step.detail}
+              </p>
             )}
           </div>
         </li>

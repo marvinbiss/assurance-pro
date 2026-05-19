@@ -235,7 +235,7 @@ export default function HeaderClient() {
                               'Aucun frais',
                             ].map((item) => (
                               <li key={item} className="flex items-center gap-1.5">
-                                <Check className="h-3 w-3 text-secondary-300" strokeWidth={3} />
+                                <Check className="h-3 w-3 text-secondary-300" strokeWidth={2.4} />
                                 {item}
                               </li>
                             ))}

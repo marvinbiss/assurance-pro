@@ -15,12 +15,14 @@ export function ListBlock({ ordered, variant, items }: ListBlockProps) {
         {items.map((item, i) => (
           <li
             key={i}
-            className="flex items-start gap-3 rounded-xl border border-charcoal-100 bg-white/60 p-4"
+            className="flex items-start gap-3 rounded-xl border border-charcoal-100 bg-white/60 p-4 dark:border-charcoal-800 dark:bg-charcoal-900/40"
           >
-            <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-50 text-xs font-extrabold text-primary-700">
+            <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-50 text-xs font-extrabold text-primary-700 dark:bg-primary-900/40 dark:text-primary-200">
               {i + 1}
             </span>
-            <span className="flex-1 leading-relaxed text-charcoal-700">{item}</span>
+            <span className="flex-1 leading-relaxed text-charcoal-700 dark:text-charcoal-200">
+              {item}
+            </span>
           </li>
         ))}
       </ol>
@@ -32,11 +34,13 @@ export function ListBlock({ ordered, variant, items }: ListBlockProps) {
       {items.map((item, i) => (
         <li key={i} className="flex items-start gap-3">
           <CheckCircle2
-            className="mt-1 h-4 w-4 flex-shrink-0 text-secondary-600"
+            className="mt-1 h-4 w-4 flex-shrink-0 text-secondary-600 dark:text-secondary-400"
             strokeWidth={2.6}
             aria-hidden="true"
           />
-          <span className="flex-1 leading-relaxed text-charcoal-700">{item}</span>
+          <span className="flex-1 leading-relaxed text-charcoal-700 dark:text-charcoal-200">
+            {item}
+          </span>
         </li>
       ))}
     </ul>
