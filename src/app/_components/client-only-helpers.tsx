@@ -21,6 +21,13 @@ const NewsletterBanner = dynamic(
     })),
   { ssr: false }
 )
+const AdsAttributionInit = dynamic(
+  () =>
+    import('@/components/AdsAttributionInit').then((mod) => ({
+      default: mod.AdsAttributionInit,
+    })),
+  { ssr: false }
+)
 
 export function ClientOnlyWebVitals() {
   return <WebVitals />
@@ -36,6 +43,7 @@ export function ClientOnlyFooterHelpers() {
       <CookieConsent />
       <NewsletterBanner />
       <ChatWidget />
+      <AdsAttributionInit />
     </>
   )
 }

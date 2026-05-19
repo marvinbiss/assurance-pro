@@ -38,6 +38,10 @@
     {
       "path": "/api/cron/purge-tokens",
       "schedule": "30 2 * * *"
+    },
+    {
+      "path": "/api/cron/nurture-emails",
+      "schedule": "0 9 * * *"
     }
   ],
   "headers": [
@@ -48,7 +52,10 @@
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
       ]
     }
   ]

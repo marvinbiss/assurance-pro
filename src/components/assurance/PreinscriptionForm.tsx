@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { CheckCircle2, Mail, Loader2, ArrowRight, ShieldCheck } from 'lucide-react'
+import { trackAdsConversion, ADS_GOALS, hashEmail } from '@/lib/cro/ads-tracking'
 
 interface PreinscriptionFormProps {
   defaultVertical?: string
@@ -33,6 +34,16 @@ export function PreinscriptionForm({ defaultVertical }: PreinscriptionFormProps)
         throw new Error(data.error ?? 'Erreur — merci de réessayer.')
       }
       setStatus('success')
+
+      // Track ads conversion (attribué first-touch UTM via captureFirstTouch)
+      const emailHash = await hashEmail(email)
+      trackAdsConversion({
+        goal: ADS_GOALS.PREINSCRIPTION,
+        value: 0, // pas de revenue immédiat — warm lead
+        currency: 'EUR',
+        ...(vertical ? { vertical } : {}),
+        ...(emailHash ? { email_hash: emailHash } : {}),
+      })
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erreur réseau')
       setStatus('error')
