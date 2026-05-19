@@ -144,7 +144,7 @@ export default function MentionsLegalesPage() {
           <h2>10. Réclamations et médiation</h2>
           <p>
             Toute réclamation peut être adressée par formulaire dédié{' '}
-            <Link href="/reclamation">ici</Link> ou par email à{' '}
+            <Link href="/reclamation">formulaire de réclamation</Link> ou par email à{' '}
             <a href="mailto:reclamations@vivos-assurance.fr">reclamations@vivos-assurance.fr</a>. En
             cas de désaccord persistant, vous pouvez saisir le{' '}
             <strong>Médiateur de l&apos;Assurance</strong> : TSA 50110, 75441 Paris cedex 09 —{' '}

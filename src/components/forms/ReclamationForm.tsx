@@ -260,7 +260,7 @@ export function ReclamationForm() {
               href="/confidentialite"
               className="ml-1 font-semibold text-primary-700 underline-offset-2 hover:underline"
             >
-              En savoir plus
+              Lire la procédure médiation
             </a>
             .
           </span>

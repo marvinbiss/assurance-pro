@@ -562,7 +562,7 @@ export default function PlanDuSitePage() {
                 </Link>
               </li>
               <li>
-                <Link href="/courtier" className={linkClass}>
+                <Link href="/courtier-assurance-pro" className={linkClass}>
                   Courtier assurance pro
                 </Link>
               </li>
@@ -725,12 +725,12 @@ export default function PlanDuSitePage() {
               </Link>
             </li>
             <li className="break-inside-avoid">
-              <Link href="/attestation" className={smallLinkClass}>
+              <Link href="/attestation/decennale" className={smallLinkClass}>
                 Demander une attestation
               </Link>
             </li>
             <li className="break-inside-avoid">
-              <Link href="/auteurs" className={smallLinkClass}>
+              <Link href="/equipe" className={smallLinkClass}>
                 Auteurs ou experts
               </Link>
             </li>
@@ -985,7 +985,7 @@ export default function PlanDuSitePage() {
               </Link>
             </li>
             <li className="break-inside-avoid">
-              <Link href="/auteurs" className={linkClass}>
+              <Link href="/equipe" className={linkClass}>
                 Auteurs experts
               </Link>
             </li>
