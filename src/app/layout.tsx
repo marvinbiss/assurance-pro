@@ -114,9 +114,6 @@ export const metadata: Metadata = {
     },
   },
   manifest: '/manifest.json',
-  icons: {
-    icon: [{ url: '/favicon.ico', sizes: 'any' }],
-  },
   other: {
     'mobile-web-app-capable': 'yes',
   },

@@ -15,8 +15,26 @@
   "icons": [
     {
       "src": "/favicon.ico",
-      "sizes": "any",
+      "sizes": "32x32",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/opengraph-image",
@@ -31,28 +49,28 @@
       "short_name": "Devis",
       "description": "Demander un devis assurance pro personnalisé",
       "url": "/devis",
-      "icons": [{ "src": "/favicon.ico", "sizes": "any" }]
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
     },
     {
       "name": "Simulateur de prime",
       "short_name": "Simulateur",
       "description": "Estimer votre prime d'assurance pro en 2 min",
       "url": "/simulateur",
-      "icons": [{ "src": "/favicon.ico", "sizes": "any" }]
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
     },
     {
       "name": "Ressources gratuites",
       "short_name": "Ressources",
       "description": "Guides et modèles assurance pro",
       "url": "/ressources",
-      "icons": [{ "src": "/favicon.ico", "sizes": "any" }]
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
     },
     {
       "name": "Blog & guides",
       "short_name": "Blog",
       "description": "Décryptages réglementaires et guides pratiques",
       "url": "/blog",
-      "icons": [{ "src": "/favicon.ico", "sizes": "any" }]
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
     }
   ],
   "categories": ["business", "finance", "productivity"],
