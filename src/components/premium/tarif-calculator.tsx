@@ -43,6 +43,50 @@ export type Garantie =
 
 type Statut = 'auto-entrepreneur' | 'sarl' | 'sas'
 
+/**
+ * Union exhaustive des identifiants de champs du calculateur (DOM `id=` et `htmlFor=`).
+ * Typage strict — supprime les non-null assertions sur `ids.X` partout dans le composant.
+ */
+type FieldKey =
+  | 'metier'
+  | 'ca'
+  | 'statut'
+  | 'anciennete'
+  | 'sinistralite'
+  | 'activite'
+  | 'effectif'
+  | 'surface'
+  | 'contenu'
+  | 'data'
+  | 'age'
+  | 'niveau'
+  | 'ayants'
+  | 'zone'
+  | 'permis'
+  | 'vehicule'
+  | 'plateforme'
+  | 'nbVehicules'
+  | 'typeVehicule'
+  | 'bonus'
+  | 'cout'
+  | 'typeOuvrage'
+  | 'maitrise'
+  | 'coutChantier'
+  | 'duree'
+  | 'complexite'
+  | 'typeMarch'
+  | 'valeurConvoi'
+  | 'cylindree'
+  | 'usage'
+  | 'revenu'
+  | 'secteur'
+  | 'litiges'
+  | 'capital'
+  | 'nbDirigeants'
+  | 'secteurHc'
+
+type FieldIds = Readonly<Record<FieldKey, string>>
+
 export interface TarifCalculatorProps {
   garantie: Garantie
   className?: string
@@ -1355,20 +1399,14 @@ function StatutField({
 // Per-vertical form renderers
 // ---------------------------------------------------------------------------
 
-function DecennaleFields({
-  ids,
-  defaultMetier,
-}: {
-  ids: Record<string, string>
-  defaultMetier?: string
-}) {
+function DecennaleFields({ ids, defaultMetier }: { ids: FieldIds; defaultMetier?: string }) {
   const f = useDecennaleForm(defaultMetier)
   const MAX_CA = 2_000_000
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SelectField
-          id={ids.metier!}
+          id={ids.metier}
           label="Métier BTP"
           ariaLabel="Sélection du métier"
           value={f.metierValue}
@@ -1376,7 +1414,7 @@ function DecennaleFields({
           options={METIERS_DECENNALE}
         />
         <SliderField
-          id={ids.ca!}
+          id={ids.ca}
           label="Chiffre d'affaires annuel"
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
@@ -1387,9 +1425,9 @@ function DecennaleFields({
           display={formatCaShort(f.ca)}
           ticks={caTicks(MAX_CA)}
         />
-        <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
+        <StatutField id={ids.statut} value={f.statut} onChange={f.setStatut} />
         <RadioGroupField<Anciennete>
-          id={ids.anciennete!}
+          id={ids.anciennete}
           label="Ancienneté entreprise"
           value={f.anciennete}
           options={[
@@ -1400,7 +1438,7 @@ function DecennaleFields({
           onChange={f.setAnciennete}
         />
         <RadioGroupField<Sinistralite>
-          id={ids.sinistralite!}
+          id={ids.sinistralite}
           label="Sinistralité 24 derniers mois"
           value={f.sinistralite}
           options={[
@@ -1419,20 +1457,14 @@ function DecennaleFields({
   )
 }
 
-function RcProFields({
-  ids,
-  defaultMetier,
-}: {
-  ids: Record<string, string>
-  defaultMetier?: string
-}) {
+function RcProFields({ ids, defaultMetier }: { ids: FieldIds; defaultMetier?: string }) {
   const f = useRcProForm(defaultMetier)
   const MAX_CA = 2_000_000
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SelectField
-          id={ids.metier!}
+          id={ids.metier}
           label="Profession"
           ariaLabel="Sélection du métier"
           value={f.metierValue}
@@ -1440,7 +1472,7 @@ function RcProFields({
           options={METIERS_RC_PRO}
         />
         <SliderField
-          id={ids.ca!}
+          id={ids.ca}
           label="Chiffre d'affaires annuel"
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
@@ -1451,9 +1483,9 @@ function RcProFields({
           display={formatCaShort(f.ca)}
           ticks={caTicks(MAX_CA)}
         />
-        <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
+        <StatutField id={ids.statut} value={f.statut} onChange={f.setStatut} />
         <SliderField
-          id={ids.effectif!}
+          id={ids.effectif}
           label="Effectif salariés"
           ariaLabel="Nombre de salariés"
           value={f.effectif}
@@ -1465,7 +1497,7 @@ function RcProFields({
           ticks={['0', '25', '50']}
         />
         <RadioGroupField<ActiviteRisque>
-          id={ids.activite!}
+          id={ids.activite}
           label="Type de mission"
           value={f.activite}
           options={[
@@ -1484,19 +1516,13 @@ function RcProFields({
   )
 }
 
-function MultirisqueFields({
-  ids,
-  defaultMetier,
-}: {
-  ids: Record<string, string>
-  defaultMetier?: string
-}) {
+function MultirisqueFields({ ids, defaultMetier }: { ids: FieldIds; defaultMetier?: string }) {
   const f = useMultirisqueForm(defaultMetier)
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SelectField
-          id={ids.metier!}
+          id={ids.metier}
           label="Type de local"
           ariaLabel="Sélection du métier"
           value={f.metierValue}
@@ -1504,7 +1530,7 @@ function MultirisqueFields({
           options={METIERS_MULTIRISQUE}
         />
         <SliderField
-          id={ids.surface!}
+          id={ids.surface}
           label="Surface du local (m²)"
           ariaLabel="Surface du local en mètres carrés"
           value={f.surface}
@@ -1516,7 +1542,7 @@ function MultirisqueFields({
           ticks={['20 m²', '250 m²', '500 m²']}
         />
         <SliderField
-          id={ids.contenu!}
+          id={ids.contenu}
           label="Valeur du contenu (matériel + stock)"
           ariaLabel="Valeur du contenu en euros"
           value={f.contenu}
@@ -1527,7 +1553,7 @@ function MultirisqueFields({
           display={formatCaShort(f.contenu)}
           ticks={['5 k€', '2,5 M€', '5 M€']}
         />
-        <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
+        <StatutField id={ids.statut} value={f.statut} onChange={f.setStatut} />
       </div>
       <ResultBlock
         range={f.range}
@@ -1537,20 +1563,14 @@ function MultirisqueFields({
   )
 }
 
-function CyberFields({
-  ids,
-  defaultMetier,
-}: {
-  ids: Record<string, string>
-  defaultMetier?: string
-}) {
+function CyberFields({ ids, defaultMetier }: { ids: FieldIds; defaultMetier?: string }) {
   const f = useCyberForm(defaultMetier)
   const MAX_CA = 10_000_000
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SelectField
-          id={ids.metier!}
+          id={ids.metier}
           label="Secteur d'activité"
           ariaLabel="Sélection du métier"
           value={f.metierValue}
@@ -1558,7 +1578,7 @@ function CyberFields({
           options={METIERS_CYBER}
         />
         <SliderField
-          id={ids.ca!}
+          id={ids.ca}
           label="Chiffre d'affaires annuel"
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
@@ -1570,7 +1590,7 @@ function CyberFields({
           ticks={caTicks(MAX_CA)}
         />
         <SliderField
-          id={ids.effectif!}
+          id={ids.effectif}
           label="Effectif salariés"
           ariaLabel="Nombre de salariés"
           value={f.effectif}
@@ -1581,9 +1601,9 @@ function CyberFields({
           display={`${f.effectif} salarié${f.effectif > 1 ? 's' : ''}`}
           ticks={['1', '100', '200']}
         />
-        <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
+        <StatutField id={ids.statut} value={f.statut} onChange={f.setStatut} />
         <ToggleField
-          id={ids.data!}
+          id={ids.data}
           label="Données sensibles (santé, finance, données bancaires)"
           hint="Active si vous traitez des PII sensibles soumises au RGPD renforcé."
           value={f.dataSensibles}
@@ -1598,13 +1618,13 @@ function CyberFields({
   )
 }
 
-function MutuelleFields({ ids }: { ids: Record<string, string> }) {
+function MutuelleFields({ ids }: { ids: FieldIds }) {
   const f = useMutuelleForm()
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SliderField
-          id={ids.age!}
+          id={ids.age}
           label="Âge du dirigeant assuré"
           ariaLabel="Âge en années"
           value={f.age}
@@ -1616,7 +1636,7 @@ function MutuelleFields({ ids }: { ids: Record<string, string> }) {
           ticks={['20', '45', '70']}
         />
         <RadioGroupField<NiveauMutuelle>
-          id={ids.niveau!}
+          id={ids.niveau}
           label="Niveau de couverture"
           value={f.niveau}
           options={[
@@ -1627,7 +1647,7 @@ function MutuelleFields({ ids }: { ids: Record<string, string> }) {
           onChange={f.setNiveau}
         />
         <RadioGroupField<'0' | '1' | '2' | '3plus'>
-          id={ids.ayants!}
+          id={ids.ayants}
           label="Ayants droit (conjoint + enfants)"
           value={f.ayantsDroit}
           options={[
@@ -1639,7 +1659,7 @@ function MutuelleFields({ ids }: { ids: Record<string, string> }) {
           onChange={f.setAyantsDroit}
           cols={4}
         />
-        <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
+        <StatutField id={ids.statut} value={f.statut} onChange={f.setStatut} />
       </div>
       <ResultBlock
         range={f.range}
@@ -1649,13 +1669,13 @@ function MutuelleFields({ ids }: { ids: Record<string, string> }) {
   )
 }
 
-function VtcFields({ ids }: { ids: Record<string, string> }) {
+function VtcFields({ ids }: { ids: FieldIds }) {
   const f = useVtcForm()
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <RadioGroupField<ZoneVtc>
-          id={ids.zone!}
+          id={ids.zone}
           label="Zone d'exploitation"
           value={f.zone}
           options={[
@@ -1668,7 +1688,7 @@ function VtcFields({ ids }: { ids: Record<string, string> }) {
           cols={4}
         />
         <SliderField
-          id={ids.permis!}
+          id={ids.permis}
           label="Ancienneté permis B (années)"
           ariaLabel="Ancienneté du permis B en années"
           value={f.permis}
@@ -1680,7 +1700,7 @@ function VtcFields({ ids }: { ids: Record<string, string> }) {
           ticks={['2', '20', '40']}
         />
         <RadioGroupField<Vehicule>
-          id={ids.vehicule!}
+          id={ids.vehicule}
           label="Catégorie véhicule"
           value={f.vehicule}
           options={[
@@ -1691,7 +1711,7 @@ function VtcFields({ ids }: { ids: Record<string, string> }) {
           onChange={f.setVehicule}
         />
         <RadioGroupField<Plateforme>
-          id={ids.plateforme!}
+          id={ids.plateforme}
           label="Mode d'exploitation"
           value={f.plateforme}
           options={[
@@ -1701,7 +1721,7 @@ function VtcFields({ ids }: { ids: Record<string, string> }) {
           onChange={f.setPlateforme}
           cols={2}
         />
-        <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
+        <StatutField id={ids.statut} value={f.statut} onChange={f.setStatut} />
       </div>
       <ResultBlock
         range={f.range}
@@ -1762,13 +1782,13 @@ function useFlotteForm() {
   }
 }
 
-function FlotteFields({ ids }: { ids: Record<string, string> }) {
+function FlotteFields({ ids }: { ids: FieldIds }) {
   const f = useFlotteForm()
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SliderField
-          id={ids.nbVehicules!}
+          id={ids.nbVehicules}
           label="Nombre de véhicules"
           ariaLabel="Nombre de véhicules dans la flotte"
           value={f.nbVehicules}
@@ -1780,7 +1800,7 @@ function FlotteFields({ ids }: { ids: Record<string, string> }) {
           ticks={['1', '75', '150+']}
         />
         <RadioGroupField<FlotteType>
-          id={ids.typeVehicule!}
+          id={ids.typeVehicule}
           label="Type de véhicules"
           value={f.typeVehicule}
           options={[
@@ -1793,7 +1813,7 @@ function FlotteFields({ ids }: { ids: Record<string, string> }) {
           cols={4}
         />
         <RadioGroupField<BonusMalus>
-          id={ids.bonus!}
+          id={ids.bonus}
           label="Bonus-malus moyen flotte"
           value={f.bonus}
           options={[
@@ -1852,14 +1872,14 @@ function useDoForm() {
   }
 }
 
-function DoFields({ ids }: { ids: Record<string, string> }) {
+function DoFields({ ids }: { ids: FieldIds }) {
   const f = useDoForm()
   const MAX = 3_000_000
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SliderField
-          id={ids.cout!}
+          id={ids.cout}
           label="Coût total des travaux TTC"
           ariaLabel="Coût total des travaux en euros"
           value={f.coutTravaux}
@@ -1871,7 +1891,7 @@ function DoFields({ ids }: { ids: Record<string, string> }) {
           ticks={['50 k€', '1,5 M€', '3 M€']}
         />
         <RadioGroupField<TypeOuvrage>
-          id={ids.typeOuvrage!}
+          id={ids.typeOuvrage}
           label="Type d'ouvrage"
           value={f.typeOuvrage}
           options={[
@@ -1884,7 +1904,7 @@ function DoFields({ ids }: { ids: Record<string, string> }) {
           cols={4}
         />
         <RadioGroupField<Maitrise>
-          id={ids.maitrise!}
+          id={ids.maitrise}
           label="Maîtrise d'ouvrage"
           value={f.maitrise}
           options={[
@@ -1944,14 +1964,14 @@ function useTrcForm() {
   }
 }
 
-function TrcFields({ ids }: { ids: Record<string, string> }) {
+function TrcFields({ ids }: { ids: FieldIds }) {
   const f = useTrcForm()
   const MAX = 10_000_000
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SliderField
-          id={ids.coutChantier!}
+          id={ids.coutChantier}
           label="Coût total du chantier TTC"
           ariaLabel="Coût total du chantier en euros"
           value={f.coutChantier}
@@ -1963,7 +1983,7 @@ function TrcFields({ ids }: { ids: Record<string, string> }) {
           ticks={['50 k€', '5 M€', '10 M€']}
         />
         <SliderField
-          id={ids.duree!}
+          id={ids.duree}
           label="Durée du chantier (mois)"
           ariaLabel="Durée du chantier en mois"
           value={f.duree}
@@ -1975,7 +1995,7 @@ function TrcFields({ ids }: { ids: Record<string, string> }) {
           ticks={['1', '24', '48']}
         />
         <RadioGroupField<ComplexiteChantier>
-          id={ids.complexite!}
+          id={ids.complexite}
           label="Complexité technique"
           value={f.complexite}
           options={[
@@ -2047,13 +2067,13 @@ function useTransportForm() {
   }
 }
 
-function TransportFields({ ids }: { ids: Record<string, string> }) {
+function TransportFields({ ids }: { ids: FieldIds }) {
   const f = useTransportForm()
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SliderField
-          id={ids.nbVehicules!}
+          id={ids.nbVehicules}
           label="Nombre de véhicules"
           ariaLabel="Nombre de véhicules transport"
           value={f.nbVehicules}
@@ -2065,7 +2085,7 @@ function TransportFields({ ids }: { ids: Record<string, string> }) {
           ticks={['1', '50', '100']}
         />
         <SliderField
-          id={ids.valeurConvoi!}
+          id={ids.valeurConvoi}
           label="Valeur moyenne par convoi"
           ariaLabel="Valeur moyenne du convoi en euros"
           value={f.valeurConvoi}
@@ -2077,7 +2097,7 @@ function TransportFields({ ids }: { ids: Record<string, string> }) {
           ticks={['5 k€', '250 k€', '500 k€+']}
         />
         <RadioGroupField<TypeMarchandises>
-          id={ids.typeMarch!}
+          id={ids.typeMarch}
           label="Type de marchandises"
           value={f.typeMarch}
           options={[
@@ -2090,7 +2110,7 @@ function TransportFields({ ids }: { ids: Record<string, string> }) {
           cols={4}
         />
         <RadioGroupField<ZoneTransport>
-          id={ids.zone!}
+          id={ids.zone}
           label="Zone géographique"
           value={f.zone}
           options={[
@@ -2150,13 +2170,13 @@ function useMotoProForm() {
   return { cylindree, setCylindree, usage, setUsage, permis, setPermis, zone, setZone, range }
 }
 
-function MotoProFields({ ids }: { ids: Record<string, string> }) {
+function MotoProFields({ ids }: { ids: FieldIds }) {
   const f = useMotoProForm()
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <RadioGroupField<Cylindree>
-          id={ids.cylindree!}
+          id={ids.cylindree}
           label="Cylindrée"
           value={f.cylindree}
           options={[
@@ -2169,7 +2189,7 @@ function MotoProFields({ ids }: { ids: Record<string, string> }) {
           cols={4}
         />
         <RadioGroupField<UsageMoto>
-          id={ids.usage!}
+          id={ids.usage}
           label="Usage professionnel"
           value={f.usage}
           options={[
@@ -2182,7 +2202,7 @@ function MotoProFields({ ids }: { ids: Record<string, string> }) {
           cols={4}
         />
         <SliderField
-          id={ids.permis!}
+          id={ids.permis}
           label="Ancienneté permis (années)"
           ariaLabel="Ancienneté du permis A en années"
           value={f.permis}
@@ -2194,7 +2214,7 @@ function MotoProFields({ ids }: { ids: Record<string, string> }) {
           ticks={['2', '20', '40']}
         />
         <RadioGroupField<ZoneVtc>
-          id={ids.zone!}
+          id={ids.zone}
           label="Zone d'exploitation"
           value={f.zone}
           options={[
@@ -2253,13 +2273,13 @@ function usePrevoyanceForm() {
   }
 }
 
-function PrevoyanceFields({ ids }: { ids: Record<string, string> }) {
+function PrevoyanceFields({ ids }: { ids: FieldIds }) {
   const f = usePrevoyanceForm()
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SliderField
-          id={ids.revenu!}
+          id={ids.revenu}
           label="Revenu mensuel net à protéger"
           ariaLabel="Revenu mensuel en euros"
           value={f.revenuMensuel}
@@ -2271,7 +2291,7 @@ function PrevoyanceFields({ ids }: { ids: Record<string, string> }) {
           ticks={['1,5 k€', '10 k€', '20 k€+']}
         />
         <SliderField
-          id={ids.age!}
+          id={ids.age}
           label="Âge du dirigeant"
           ariaLabel="Âge en années"
           value={f.age}
@@ -2283,7 +2303,7 @@ function PrevoyanceFields({ ids }: { ids: Record<string, string> }) {
           ticks={['20', '45', '70']}
         />
         <RadioGroupField<NiveauPrevoyance>
-          id={ids.niveau!}
+          id={ids.niveau}
           label="Niveau de couverture"
           value={f.niveau}
           options={[
@@ -2293,7 +2313,7 @@ function PrevoyanceFields({ ids }: { ids: Record<string, string> }) {
           ]}
           onChange={f.setNiveau}
         />
-        <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
+        <StatutField id={ids.statut} value={f.statut} onChange={f.setStatut} />
       </div>
       <ResultBlock
         range={f.range}
@@ -2339,14 +2359,14 @@ function usePjForm() {
   return { secteur, setSecteur, ca, setCa, litiges, setLitiges, statut, setStatut, range }
 }
 
-function PjFields({ ids }: { ids: Record<string, string> }) {
+function PjFields({ ids }: { ids: FieldIds }) {
   const f = usePjForm()
   const MAX_CA = 5_000_000
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <RadioGroupField<SecteurPJ>
-          id={ids.secteur!}
+          id={ids.secteur}
           label="Secteur d'activité"
           value={f.secteur}
           options={[
@@ -2359,7 +2379,7 @@ function PjFields({ ids }: { ids: Record<string, string> }) {
           cols={4}
         />
         <SliderField
-          id={ids.ca!}
+          id={ids.ca}
           label="Chiffre d'affaires annuel"
           ariaLabel="Chiffre d'affaires annuel en euros"
           value={f.ca}
@@ -2371,7 +2391,7 @@ function PjFields({ ids }: { ids: Record<string, string> }) {
           ticks={caTicks(MAX_CA)}
         />
         <RadioGroupField<LitigesPj>
-          id={ids.litiges!}
+          id={ids.litiges}
           label="Litiges 24 derniers mois"
           value={f.litiges}
           options={[
@@ -2381,7 +2401,7 @@ function PjFields({ ids }: { ids: Record<string, string> }) {
           ]}
           onChange={f.setLitiges}
         />
-        <StatutField id={ids.statut!} value={f.statut} onChange={f.setStatut} />
+        <StatutField id={ids.statut} value={f.statut} onChange={f.setStatut} />
       </div>
       <ResultBlock
         range={f.range}
@@ -2437,7 +2457,7 @@ function useHcForm() {
   }
 }
 
-function HcFields({ ids }: { ids: Record<string, string> }) {
+function HcFields({ ids }: { ids: FieldIds }) {
   const f = useHcForm()
   const MAX_CA = 10_000_000
   const MAX_CAP = 5_000_000
@@ -2445,7 +2465,7 @@ function HcFields({ ids }: { ids: Record<string, string> }) {
     <>
       <div className="grid gap-5 md:grid-cols-2">
         <SliderField
-          id={ids.capital!}
+          id={ids.capital}
           label="Capital assuré par homme-clé"
           ariaLabel="Capital assuré en euros"
           value={f.capital}
@@ -2457,7 +2477,7 @@ function HcFields({ ids }: { ids: Record<string, string> }) {
           ticks={['100 k€', '2,5 M€', '5 M€']}
         />
         <SliderField
-          id={ids.ca!}
+          id={ids.ca}
           label="Chiffre d'affaires entreprise"
           ariaLabel="Chiffre d'affaires annuel entreprise en euros"
           value={f.ca}
@@ -2469,7 +2489,7 @@ function HcFields({ ids }: { ids: Record<string, string> }) {
           ticks={caTicks(MAX_CA)}
         />
         <SliderField
-          id={ids.nbDirigeants!}
+          id={ids.nbDirigeants}
           label="Nombre d'hommes-clés à couvrir"
           ariaLabel="Nombre d'hommes-clés"
           value={f.nbDirigeants}
@@ -2481,7 +2501,7 @@ function HcFields({ ids }: { ids: Record<string, string> }) {
           ticks={['1', '3', '5']}
         />
         <RadioGroupField<SecteurHc>
-          id={ids.secteurHc!}
+          id={ids.secteurHc}
           label="Secteur d'activité"
           value={f.secteur}
           options={[
