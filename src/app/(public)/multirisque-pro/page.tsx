@@ -8,16 +8,16 @@ import {
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Multirisque Professionnelle — Local, stock, exploitation',
+  title: 'Multirisque Pro 2026 — Local, stock, exploitation · Dès 35€/mois',
   description:
-    "Comparez votre Multirisque Pro auprès de 10 assureurs. Local commercial, atelier, bureau, stock. Vol, incendie, dégâts des eaux, perte d'exploitation.",
+    "Multirisque pro pour commerce, bureau, restaurant, atelier. Couverture local + stock + perte d'exploitation. Comparatif 10 assureurs, dès 35€/mois. Devis personnalisé en 2 min.",
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/multirisque-pro`,
   },
   openGraph: {
-    title: 'Multirisque Professionnelle — Local, stock, exploitation',
+    title: 'Multirisque Pro 2026 — Local, stock, exploitation · Dès 35€/mois',
     description:
-      "Comparez votre Multirisque Pro auprès de 10 assureurs. Local commercial, atelier, bureau, stock. Vol, incendie, dégâts des eaux, perte d'exploitation.",
+      "Multirisque pro commerce, bureau, restaurant. Local + stock + perte d'exploitation. Comparatif 10 assureurs, devis 2 min.",
     url: `${SITE_URL}/multirisque-pro`,
     type: 'website',
     images: [
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Multirisque Professionnelle — Local, stock, exploitation | Assurance P',
+    title: 'Multirisque Pro 2026 — Dès 35€/mois · Comparatif 10 assureurs',
     description:
-      "Comparez votre Multirisque Pro auprès de 10 assureurs. Local commercial, atelier, bureau, stock. Vol, incendie, dégâts des eaux, perte d'exploitation.",
+      "Multirisque pro local + stock + perte d'exploitation. Comparatif 10 assureurs, devis 2 min, attestation 24h.",
   },
 }
 

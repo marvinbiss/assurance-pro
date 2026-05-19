@@ -20,14 +20,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'assurance-flotte-automobile'
-const TITLE = 'Assurance flotte automobile — Tarifs 2026 (4+ véhicules pro)'
+const TITLE = 'Assurance Flotte Auto 2026 — Pro · Dès 350€/véhicule/an'
 const TAGLINE =
   "L'assurance dédiée aux flottes automobiles d'entreprise (≥ 4 véhicules) : contrat mutualisé, économie 20-30%, gestion centralisée, reporting consolidé."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Assurance flotte automobile professionnelle (4+ véhicules) : contrat mutualisé, économie 20-30% vs assurance individuelle, gestion centralisée des sinistres, reporting consolidé. Tarifs négociés à partir de 580 € par véhicule. Devis gratuit ORIAS sous 24h.',
+    'Assurance flotte automobile pro (BTP, services, VTC, taxi). Couverture multi-véhicules dès 3 unités. Tarif négocié -25% vs individuel, dès 350€/véhicule/an. Devis 48h, gestion centralisée.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }

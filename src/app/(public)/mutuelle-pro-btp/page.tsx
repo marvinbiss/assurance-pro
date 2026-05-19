@@ -20,14 +20,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'mutuelle-pro-btp'
-const TITLE = 'Mutuelle pro BTP — Comparatif 2026, tarifs et garanties'
+const TITLE = 'Mutuelle Pro BTP 2026 — Dès 38€/mois (Madelin) · PRO BTP, April'
 const TAGLINE =
   'La complémentaire santé dédiée aux artisans, salariés et dirigeants du BTP. Comparatif des principaux contrats, tarifs négociés et conseil ORIAS.'
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    'Mutuelle pro BTP : comparatif des contrats PRO BTP, April Pro, Harmonie BTP. Tarifs négociés à partir de 38€ par mois (formule Madelin TNS). Couverture optique, dentaire, hospitalisation. Devis gratuit sous 24h.',
+    'Mutuelle pro BTP pour artisans, conjoints collaborateurs, salariés. Comparatif PRO BTP, April Pro, Harmonie. Cotisations dès 38€/mois, Madelin déductible. Optique, dentaire, hospitalisation. Devis 24h.',
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: {
     title: TITLE,

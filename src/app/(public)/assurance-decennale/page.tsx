@@ -3,16 +3,16 @@ import { PilierLayout } from '@/components/assurance/PilierLayout'
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Assurance décennale BTP — Comparez en 2 min',
+  title: 'Décennale BTP 2026 — Comparatif 10 assureurs · Dès 950€/an',
   description:
-    'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
+    "Comparez votre garantie décennale auprès de 10 assureurs partenaires (SMABTP, Hiscox, April Pro, MMA). Économisez jusqu'à 30% · Devis 2 min · Attestation 24h. Conforme Loi Spinetta.",
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/assurance-decennale`,
   },
   openGraph: {
-    title: 'Assurance décennale BTP — Comparez en 2 min',
+    title: 'Décennale BTP 2026 — Comparatif 10 assureurs · Dès 950€/an',
     description:
-      'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
+      "Comparez votre garantie décennale auprès de 10 assureurs partenaires. Économisez jusqu'à 30%. Devis 2 min, attestation 24h. Conforme Loi Spinetta.",
     url: `${SITE_URL}/assurance-decennale`,
     type: 'website',
     images: [
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Assurance décennale BTP — Comparez en 2 min',
+    title: 'Décennale BTP 2026 — Comparatif 10 assureurs · Dès 950€/an',
     description:
-      'Comparez votre garantie décennale auprès de 10 assureurs partenaires. Maçon, plombier, électricien, couvreur… Devis gratuit en 24h, attestation immédiate après souscription.',
+      'Comparatif 10 assureurs décennale (SMABTP, Hiscox, April Pro). Économisez 30%, devis 2 min, attestation 24h.',
   },
 }
 

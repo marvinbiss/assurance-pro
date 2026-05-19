@@ -54,18 +54,30 @@ export default async function GuidePage(props: { params: Promise<Params> }) {
   const enrichment = await getPageEnrichment(slug)
   if (!enrichment) notFound()
 
+  const metier = enrichment.metier_nom ?? 'professionnel'
+  const garantie = enrichment.garantie_label ?? 'votre activité'
+  const sinPct = enrichment.sinistralite_pct
+  const tarifMed = enrichment.prix_med_eur
+
+  // Intro unique par métier × garantie (anti-HCU duplicate)
+  const intro = (
+    <>
+      Guide complet 2026 de la <strong>{garantie}</strong> pour le métier de{' '}
+      <strong>{metier}</strong>. Cadre légal applicable, obligations spécifiques, sinistralité
+      observée
+      {sinPct ? ` (${sinPct}% selon l'AQC SYCODÉS)` : ''}
+      {tarifMed ? `, tarif médian observé ${tarifMed.toLocaleString('fr-FR')}€/an` : ''}, garanties
+      recommandées et exclusions à connaître. Sources : Légifrance, AQC SYCODÉS, FFA/FFB, retours
+      terrain de notre cabinet ORIAS.
+    </>
+  )
+
   return (
     <EnrichedPageLayout
       enrichment={enrichment}
       variant="guide"
-      headline={`Guide ${enrichment.garantie_label} pour ${enrichment.metier_nom}`}
-      intro={
-        <>
-          Cadre légal, garanties recommandées, exclusions et bonnes pratiques pour les{' '}
-          {enrichment.metier_nom}s, avec références jurisprudence Légifrance et stats sinistralité
-          AQC SYCODÉS.
-        </>
-      }
+      headline={`Guide ${garantie} ${metier} 2026 — Cadre légal, tarifs, exclusions`}
+      intro={intro}
     />
   )
 }

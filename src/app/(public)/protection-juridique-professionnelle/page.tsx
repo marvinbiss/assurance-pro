@@ -20,14 +20,14 @@ import { SITE_URL } from '@/lib/seo/config'
 export const revalidate = 86400
 
 const SLUG = 'protection-juridique-professionnelle'
-const TITLE = 'Protection juridique professionnelle — Tarifs 2026 (PJ pro entreprise)'
+const TITLE = 'Protection Juridique Pro 2026 — Avocat illimité · Dès 12€/mois'
 const TAGLINE =
   "L'assurance protection juridique pour entreprises : prise en charge des frais d'avocat, conseil juridique illimité, défense pénale, recouvrement créances. Tarifs négociés."
 
 export const metadata: Metadata = {
   title: `${TITLE}`,
   description:
-    "Protection juridique professionnelle : prise en charge frais avocat (jusqu'à 30 000€ par litige), conseil juridique illimité 7j/7, défense pénale dirigeant, recouvrement créances impayées, litiges fournisseurs, bailleur ou salariés. Tarifs négociés à partir de 280 € par an. Devis gratuit ORIAS sous 24h.",
+    "Protection juridique pro avec avocat dédié, recouvrement créances jusqu'à 50k€/an, gestion litiges clients/prud'hommes/bailleur. Dès 12€/mois (280€/an). Devis gratuit ORIAS sous 24h.",
   alternates: { canonical: `${SITE_URL}/${SLUG}` },
   openGraph: { title: TITLE, description: TAGLINE, url: `${SITE_URL}/${SLUG}`, type: 'website' },
 }

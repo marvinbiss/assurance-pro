@@ -8,7 +8,7 @@ import { SITE_URL } from '@/lib/seo/config'
 
 export const revalidate = 86400
 const SLUG = 'assurance-tous-risques-chantier'
-const TITLE = 'Assurance Tous Risques Chantier (TRC) — Garanties, tarifs 2026'
+const TITLE = 'TRC 2026 — Tous Risques Chantier · Vol, incendie, intempéries'
 const TAGLINE =
   "L'assurance Tous Risques Chantier (TRC) couvre les dommages matériels durant la construction : vol, incendie, vandalisme, intempéries. Tarifs et obligation."
 

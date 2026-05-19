@@ -77,3 +77,4 @@ yarn-error.log*
 # Local Development
 .env.development.local
 tmp/
+audit-pseo-report.json

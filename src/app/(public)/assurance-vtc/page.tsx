@@ -4,16 +4,16 @@ import { COMPARATIF_AUTO, EXPERT_SERVICES, STATS_DEFAULT } from '@/lib/data/pili
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Assurance VTC — Taxi — Tarifs négociés',
+  title: 'Assurance VTC 2026 — Conforme décret 2014 · Dès 95€/mois',
   description:
-    'Comparez votre assurance VTC ou taxi auprès des spécialistes (Wakam, Hiscox, Stello). Auto-entrepreneur, SARL, plateformes Uber ou Bolt. Devis en 2 min.',
+    'Assurance VTC obligatoire (décret 2014-1725). Comparez Wakam, Stello, Hiscox. RC Pro + flotte + protection. Compatible Uber/Bolt/Heetch. Devis 5 min, attestation immédiate. Dès 95€/mois.',
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/assurance-vtc`,
   },
   openGraph: {
-    title: 'Assurance VTC — Taxi — Tarifs négociés',
+    title: 'Assurance VTC 2026 — Dès 95€/mois · Conforme décret 2014',
     description:
-      'Comparez votre assurance VTC ou taxi auprès des spécialistes (Wakam, Hiscox, Stello). Auto-entrepreneur, SARL, plateformes Uber ou Bolt. Devis en 2 min.',
+      'Assurance VTC conforme décret 2014. Wakam, Stello, Hiscox comparés. Uber/Bolt compatibles. Devis 5 min.',
     url: `${SITE_URL}/assurance-vtc`,
     type: 'website',
     images: [
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Assurance VTC — Taxi — Tarifs négociés',
+    title: 'Assurance VTC 2026 — Dès 95€/mois · Conforme décret 2014',
     description:
-      'Comparez votre assurance VTC ou taxi auprès des spécialistes (Wakam, Hiscox, Stello). Auto-entrepreneur, SARL, plateformes Uber ou Bolt. Devis en 2 min.',
+      'Comparatif Wakam, Stello, Hiscox. Compatible Uber/Bolt. Devis 5 min, attestation immédiate.',
   },
 }
 

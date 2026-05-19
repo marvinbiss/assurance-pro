@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/seo/config'
 import { PilierLayout } from '@/components/assurance/PilierLayout'
 
 export const metadata: Metadata = {
-  title: 'RC Pro — Responsabilité Civile Professionnelle',
+  title: 'RC Pro 2026 — Comparatif 10 assureurs · Dès 95€/an chez Hiscox',
   description:
-    'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
+    "RC Pro pour freelances, consultants, agences digitales et services. Comparez 10 assureurs (Hiscox dès 95€/an), couverture jusqu'à 5M€, devis 2 min, attestation immédiate. -30% vs marché.",
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/rc-pro`,
   },
   openGraph: {
-    title: 'RC Pro — Responsabilité Civile Professionnelle',
+    title: 'RC Pro 2026 — Comparatif 10 assureurs · Dès 95€/an',
     description:
-      'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
+      'RC Pro pour freelances, consultants, agences digitales. Comparez 10 assureurs (Hiscox dès 95€/an), devis 2 min, attestation immédiate.',
     url: `${SITE_URL}/rc-pro`,
     type: 'website',
     images: [
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RC Pro — Responsabilité Civile Professionnelle',
+    title: 'RC Pro 2026 — Comparatif 10 assureurs · Dès 95€/an',
     description:
-      'Comparez votre RC Pro auprès de 10 assureurs. Consultants, freelances, agences digitales, services aux entreprises. Devis gratuit en 24h.',
+      'Comparatif 10 assureurs RC Pro (Hiscox 95€/an best price). Devis 2 min, attestation immédiate.',
   },
 }
 

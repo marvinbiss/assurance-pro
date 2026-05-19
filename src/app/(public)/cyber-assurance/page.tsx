@@ -4,16 +4,16 @@ import { COMPARATIF_CYBER, EXPERT_DEFAULT, STATS_DEFAULT } from '@/lib/data/pili
 import { SITE_URL } from '@/lib/seo/config'
 
 export const metadata: Metadata = {
-  title: 'Cyber Vivos Assurance — Ransomware, RGPD breach',
+  title: "Cyber Assurance Pro 2026 — TPE/PME · Couverture jusqu'à 1M€",
   description:
-    "Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu'à 5M€.",
+    "Cyber assurance professionnelle pour TPE/PME (ransomware, RGPD, fraude au président). Comparez Stoïk, Hiscox, Beazley. Devis 2 min, dès 480€/an. Couverture jusqu'à 1M€.",
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'}/cyber-assurance`,
   },
   openGraph: {
-    title: 'Cyber Vivos Assurance — Ransomware, RGPD breach',
+    title: 'Cyber Assurance Pro 2026 — Dès 480€/an · TPE/PME',
     description:
-      "Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu'à 5M€.",
+      'Cyber assurance TPE/PME (ransomware, RGPD, fraude au président). Comparatif Stoïk, Hiscox, Beazley. Devis 2 min.',
     url: `${SITE_URL}/cyber-assurance`,
     type: 'website',
     images: [
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cyber Vivos Assurance — Ransomware, RGPD breach',
+    title: 'Cyber Assurance Pro 2026 — Dès 480€/an · TPE/PME',
     description:
-      "Comparez votre cyber assurance auprès des spécialistes (Hiscox, Stello, Coalition, AIG). E-commerce, ESN, agences digitales. Couverture jusqu'à 5M€.",
+      'Comparatif Stoïk, Hiscox, Beazley. Couverture ransomware, RGPD breach, fraude. Devis 2 min.',
   },
 }
 

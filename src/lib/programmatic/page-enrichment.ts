@@ -11,6 +11,7 @@ import * as Sentry from '@sentry/nextjs'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { ResultAsync, type DomainError, notFoundError, databaseError } from '@/lib/result'
 import { type PageSlug } from '@/lib/types/branded'
+import { buildSyntheticEnrichment } from './synthetic-enrichment'
 
 // ────────────────────────────────────────────────────────────────────────────
 // Types alignés sur app.v_page_enrichment_full (migration 015)
@@ -114,7 +115,11 @@ export interface StatSectorielle {
  *   }
  */
 export async function getPageEnrichment(pageSlug: string): Promise<PageEnrichmentRow | null> {
-  if (process.env.NEXT_BUILD_SKIP_DB === '1') return null
+  // Synthetic fallback : injecté en cas de cache vide / build sans DB / RPC échouée.
+  // Empêche les soft 404 + thin duplicate content (HCU penalty) en garantissant
+  // une row UNIQUE par slug avec data réelle (catalogues métiers + lois Légifrance).
+  if (process.env.NEXT_BUILD_SKIP_DB === '1') return buildSyntheticEnrichment(pageSlug)
+
   return Sentry.startSpan(
     { op: 'db.rpc', name: 'rpc.get_page_enrichment', attributes: { 'page.slug': pageSlug } },
     async () => {
@@ -126,9 +131,11 @@ export async function getPageEnrichment(pageSlug: string): Promise<PageEnrichmen
           extra: { pageSlug },
         })
         console.error('[page-enrichment] read error', { pageSlug, error })
-        return null
+        return buildSyntheticEnrichment(pageSlug)
       }
-      return (data as PageEnrichmentRow | null) ?? null
+      const row = (data as PageEnrichmentRow | null) ?? null
+      // RPC OK mais aucune row → fallback synthetic
+      return row ?? buildSyntheticEnrichment(pageSlug)
     }
   )
 }

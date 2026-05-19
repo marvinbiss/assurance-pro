@@ -54,17 +54,33 @@ export default async function TarifPage(props: { params: Promise<Params> }) {
   const enrichment = await getPageEnrichment(slug)
   if (!enrichment) notFound()
 
+  const metier = enrichment.metier_nom ?? 'professionnel'
+  const garantie = enrichment.garantie_label ?? 'votre activité'
+  const tarifMin = enrichment.prix_min_eur
+  const tarifMed = enrichment.prix_med_eur
+  const tarifMax = enrichment.prix_max_eur
+  const sinPct = enrichment.sinistralite_pct
+  const year = new Date().getFullYear()
+
+  // Intro unique par métier × garantie + tarifs réels (anti-HCU duplicate)
+  const intro = (
+    <>
+      Tarif {year} de la <strong>{garantie}</strong> pour les <strong>{metier}s</strong>.
+      {tarifMin && tarifMax
+        ? ` Fourchette observée ${tarifMin.toLocaleString('fr-FR')}€ – ${tarifMax.toLocaleString('fr-FR')}€ par an selon CA, ancienneté et statut juridique.`
+        : ' Fourchette dépendant de votre CA, statut juridique et sinistralité passée.'}
+      {tarifMed ? ` Médiane marché : ${tarifMed.toLocaleString('fr-FR')}€/an.` : ''}
+      {sinPct ? ` Sinistralité métier observée : ${sinPct}% (AQC SYCODÉS ${year}).` : ''} Sources :
+      barèmes propriétaires + INSEE Sirene + AQC SYCODÉS.
+    </>
+  )
+
   return (
     <EnrichedPageLayout
       enrichment={enrichment}
       variant="tarif"
-      headline={`Tarif ${enrichment.garantie_label} ${enrichment.metier_nom} en ${new Date().getFullYear()}`}
-      intro={
-        <>
-          Fourchette de prix marché pour {enrichment.metier_nom}s, agrégation devis propriétaires +
-          assureurs partenaires + ajustement sinistralité métier (AQC).
-        </>
-      }
+      headline={`Tarif ${garantie} ${metier} ${year} — Fourchette de prix marché`}
+      intro={intro}
     />
   )
 }
