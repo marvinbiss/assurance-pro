@@ -353,10 +353,20 @@ const SLUG_TO_CLUSTER: Record<string, RelatedCluster> = {
   /* Cyber */
   'cyber-assurance': CYBER_CLUSTER,
   'assurance-e-commerce': CYBER_CLUSTER,
-  /* VTC */
+  /* VTC + mobilité pro (flotte, moto, transport) */
   'assurance-vtc': VTC_CLUSTER,
   'assurance-auto-professionnelle': VTC_CLUSTER,
   'assurance-flotte-automobile': VTC_CLUSTER,
+  'assurance-moto-professionnelle': VTC_CLUSTER,
+  'assurance-transport-marchandises': VTC_CLUSTER,
+  /* Décennale étendue : DO + TRC (chantier BTP) */
+  'assurance-dommages-ouvrage': DECENNALE_CLUSTER,
+  'assurance-tous-risques-chantier': DECENNALE_CLUSTER,
+  /* Mutuelle / prévoyance étendue */
+  'prevoyance-tns': MUTUELLE_CLUSTER,
+  'assurance-homme-cle': MUTUELLE_CLUSTER,
+  /* Juridique pro → cluster RC Pro (responsabilité + défense) */
+  'protection-juridique-professionnelle': RC_PRO_CLUSTER,
 }
 
 export function getRelatedCluster(slug: string): RelatedCluster | null {

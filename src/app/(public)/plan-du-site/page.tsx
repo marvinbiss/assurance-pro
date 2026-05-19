@@ -390,6 +390,76 @@ const MUTUELLE_PAGES: Array<{ href: string; label: string }> = [
   { href: '/protection-juridique-professionnelle', label: 'Protection juridique pro' },
 ]
 
+// ---- Pages spécialisées variantes (orphan-killer)
+
+const STATUT_HUB_PAGES: Array<{ href: string; label: string }> = [
+  { href: '/auto-entrepreneur', label: 'Auto-entrepreneur (statut)' },
+  { href: '/micro-entreprise', label: 'Micro-entreprise (statut)' },
+  { href: '/sasu', label: 'SASU (statut)' },
+  { href: '/assurance-professionnelle', label: 'Assurance professionnelle (hub)' },
+  { href: '/assurance-chauffeur-taxi', label: 'Assurance chauffeur taxi' },
+]
+
+const ATTESTATION_PAGES: Array<{ href: string; label: string }> = [
+  { href: '/attestation/decennale', label: 'Attestation décennale' },
+  { href: '/attestation/decennale-pdf', label: 'Attestation décennale PDF' },
+  { href: '/attestation/assurance-decennale', label: 'Attestation assurance décennale' },
+  { href: '/attestation/rc-pro', label: 'Attestation RC Pro' },
+  { href: '/attestation/d-assurance-rc-pro', label: 'Attestation d’assurance RC Pro' },
+  {
+    href: '/attestation/responsabilite-civile-professionnelle',
+    label: 'Attestation responsabilité civile pro',
+  },
+  {
+    href: '/attestation/d-assurance-responsabilite-civile-professionnelle',
+    label: 'Attestation d’assurance RC pro (variant)',
+  },
+  {
+    href: '/attestation/de-responsabilite-civile-professionnelle',
+    label: 'Attestation de RC pro (variant)',
+  },
+]
+
+const COMPARATEUR_COURTIER_PAGES: Array<{ href: string; label: string }> = [
+  { href: '/comparateur/assurance-decennale', label: 'Comparateur décennale (hub)' },
+  { href: '/courtier/assurance-decennale', label: 'Courtier assurance décennale' },
+  { href: '/courtier/en-assurance-decennale', label: 'Courtier en assurance décennale' },
+]
+
+const DEVIS_VARIANTS_PAGES: Array<{ href: string; label: string }> = [
+  { href: '/devis/assurance-decennale', label: 'Devis assurance décennale' },
+  {
+    href: '/devis/assurance-decennale-auto-entrepreneur',
+    label: 'Devis décennale auto-entrepreneur',
+  },
+  { href: '/devis/garantie-decennale', label: 'Devis garantie décennale' },
+  { href: '/devis/rc-pro', label: 'Devis RC Pro' },
+  { href: '/devis/rc-pro-devis', label: 'Devis RC Pro (formulaire)' },
+  { href: '/devis/rc-pro-en-ligne', label: 'Devis RC Pro en ligne' },
+  { href: '/devis/assurance-rc-pro', label: 'Devis assurance RC Pro' },
+  { href: '/devis/responsabilite-civile-professionnelle', label: 'Devis RC professionnelle' },
+]
+
+const PRIX_VARIANTS_PAGES: Array<{ href: string; label: string }> = [
+  { href: '/prix/assurance-decennale-prix', label: 'Prix assurance décennale' },
+  { href: '/prix/rc-pro', label: 'Prix RC Pro' },
+  { href: '/prix/rc-pro-prix', label: 'Prix RC Pro (détaillé)' },
+  { href: '/prix/assurance-rc-pro', label: 'Prix assurance RC Pro' },
+  { href: '/prix/assurance-rc-pro-prix', label: 'Prix assurance RC Pro (détaillé)' },
+  { href: '/prix/tarif-rc-pro', label: 'Tarif RC Pro' },
+  { href: '/prix/tarif-rc-pro-auto-entrepreneur', label: 'Tarif RC Pro auto-entrepreneur' },
+  { href: '/prix/assurance-rc-pro-tarif', label: 'Tarif assurance RC Pro' },
+  { href: '/prix/responsabilite-civile-professionnelle-tarif', label: 'Tarif RC professionnelle' },
+  {
+    href: '/prix/tarif-assurance-responsabilite-civile-professionnelle',
+    label: 'Tarif assurance RC professionnelle',
+  },
+  { href: '/prix/mutuelle-pro-btp-s3-p3-prix', label: 'Mutuelle Pro BTP S3-P3 prix' },
+  { href: '/prix/mutuelle-pro-btp-s4-p4-prix', label: 'Mutuelle Pro BTP S4-P4 prix' },
+  { href: '/prix/mutuelle-pro-btp-tarif', label: 'Mutuelle Pro BTP tarif' },
+  { href: '/prix/tarif-mutuelle-pro-btp-retraite', label: 'Tarif Mutuelle Pro BTP retraite' },
+]
+
 // ---- Groupement villes par région
 
 const villesParRegion = VILLES_TOP100.reduce<Record<string, typeof VILLES_TOP100>>((acc, ville) => {
@@ -887,6 +957,76 @@ export default function PlanDuSitePage() {
           <h2 className={sectionTitle}>Mutuelle, prévoyance et juridique</h2>
           <ul className="columns-2 gap-x-6 space-y-1.5 md:columns-3">
             {MUTUELLE_PAGES.map((p) => (
+              <li key={p.href} className="break-inside-avoid">
+                <Link href={p.href} className={smallLinkClass}>
+                  {p.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* ---- Statuts juridiques hubs ---- */}
+        <section className="mt-10">
+          <h2 className={sectionTitle}>Statuts juridiques et hubs métiers</h2>
+          <ul className="columns-2 gap-x-6 space-y-1.5 md:columns-3">
+            {STATUT_HUB_PAGES.map((p) => (
+              <li key={p.href} className="break-inside-avoid">
+                <Link href={p.href} className={smallLinkClass}>
+                  {p.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* ---- Attestations PDF ---- */}
+        <section className="mt-10">
+          <h2 className={sectionTitle}>Attestations d&apos;assurance (PDF)</h2>
+          <ul className="columns-2 gap-x-6 space-y-1.5 md:columns-3">
+            {ATTESTATION_PAGES.map((p) => (
+              <li key={p.href} className="break-inside-avoid">
+                <Link href={p.href} className={smallLinkClass}>
+                  {p.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* ---- Comparateur & courtier hubs ---- */}
+        <section className="mt-10">
+          <h2 className={sectionTitle}>Comparateur et courtier (hubs décennale)</h2>
+          <ul className="columns-2 gap-x-6 space-y-1.5 md:columns-3">
+            {COMPARATEUR_COURTIER_PAGES.map((p) => (
+              <li key={p.href} className="break-inside-avoid">
+                <Link href={p.href} className={smallLinkClass}>
+                  {p.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* ---- Variantes devis ---- */}
+        <section className="mt-10">
+          <h2 className={sectionTitle}>Variantes devis</h2>
+          <ul className="columns-2 gap-x-6 space-y-1.5 md:columns-3">
+            {DEVIS_VARIANTS_PAGES.map((p) => (
+              <li key={p.href} className="break-inside-avoid">
+                <Link href={p.href} className={smallLinkClass}>
+                  {p.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* ---- Variantes prix ---- */}
+        <section className="mt-10">
+          <h2 className={sectionTitle}>Variantes prix et tarifs</h2>
+          <ul className="columns-2 gap-x-6 space-y-1.5 md:columns-3">
+            {PRIX_VARIANTS_PAGES.map((p) => (
               <li key={p.href} className="break-inside-avoid">
                 <Link href={p.href} className={smallLinkClass}>
                   {p.label}
