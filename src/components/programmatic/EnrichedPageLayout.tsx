@@ -620,7 +620,7 @@ function TopCausesBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
         )}
       </header>
       <ul className="grid gap-4 md:grid-cols-2">
-        {enrichment.top_causes!.map((c, i) => (
+        {(enrichment.top_causes ?? []).map((c, i) => (
           <li
             key={i}
             className="overflow-hidden rounded-2xl border border-accent-100 bg-gradient-to-br from-accent-50 to-white p-5 shadow-soft"
@@ -660,7 +660,7 @@ function RisquesMetierBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
         </h2>
       </header>
       <ul className="grid gap-3 md:grid-cols-2">
-        {enrichment.risques_metier!.slice(0, 6).map((r, i) => (
+        {(enrichment.risques_metier ?? []).slice(0, 6).map((r, i) => (
           <li
             key={i}
             className="flex items-start gap-3 rounded-xl border border-charcoal-100 bg-white p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary-200"
@@ -691,7 +691,7 @@ function GarantiesRecommandeesBlock({ enrichment }: { enrichment: PageEnrichment
         </h2>
       </header>
       <ul className="grid gap-3 md:grid-cols-2">
-        {enrichment.garanties_recommandees!.slice(0, 6).map((g, i) => (
+        {(enrichment.garanties_recommandees ?? []).slice(0, 6).map((g, i) => (
           <li
             key={i}
             className="flex items-start gap-3 rounded-xl border border-secondary-100 bg-gradient-to-br from-secondary-50 to-white p-4 shadow-soft"
@@ -723,7 +723,7 @@ function FaqMetierBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
         </h2>
       </header>
       <div className="space-y-4">
-        {enrichment.faq_metier!.map((f, i) => (
+        {(enrichment.faq_metier ?? []).map((f, i) => (
           <details
             key={i}
             className="group overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all hover:border-primary-200"
