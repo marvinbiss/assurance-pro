@@ -7,15 +7,18 @@
 
 import { headers } from 'next/headers'
 import {
+  AlertTriangle,
   ArrowUpRight,
   BarChart3,
   CheckCircle2,
   Euro,
+  HelpCircle,
   Quote,
   Scale,
   ShieldCheck,
   Sparkles,
   Star,
+  Target,
   TrendingUp,
   type LucideIcon,
 } from 'lucide-react'
@@ -179,6 +182,8 @@ export async function EnrichedPageLayout({
       <article className="container mx-auto max-w-5xl px-4 py-14">
         <DensityBanner enrichment={enrichment} />
 
+        {enrichment.intro_long && <MetierIntroLong enrichment={enrichment} />}
+
         {(enrichment.prix_min_eur || enrichment.prix_med_eur) && (
           <PrixGrid enrichment={enrichment} />
         )}
@@ -187,11 +192,28 @@ export async function EnrichedPageLayout({
 
         {extraSections}
 
+        {/* Sections métier-spécifiques (différenciation HCU) */}
+        {enrichment.top_causes && enrichment.top_causes.length > 0 && (
+          <TopCausesBlock enrichment={enrichment} />
+        )}
+
+        {enrichment.risques_metier && enrichment.risques_metier.length > 0 && (
+          <RisquesMetierBlock enrichment={enrichment} />
+        )}
+
+        {enrichment.garanties_recommandees && enrichment.garanties_recommandees.length > 0 && (
+          <GarantiesRecommandeesBlock enrichment={enrichment} />
+        )}
+
         {enrichment.assureurs_top3_jsonb?.length > 0 && <AssureursTop3 enrichment={enrichment} />}
 
         {enrichment.jurisprudence_refs?.length > 0 && <Jurisprudence enrichment={enrichment} />}
 
         {enrichment.stats_sectorielles_jsonb?.length > 0 && <StatsBlock enrichment={enrichment} />}
+
+        {enrichment.faq_metier && enrichment.faq_metier.length > 0 && (
+          <FaqMetierBlock enrichment={enrichment} />
+        )}
 
         {enrichment.avis_top_jsonb?.filter((a) => a.iso_20488)?.length > 0 && (
           <AvisBlock enrichment={enrichment} />
@@ -552,6 +574,172 @@ function DevisCta({ enrichment }: { enrichment: PageEnrichmentRow }) {
         </p>
       </header>
       <DevisAssuranceForm prefill={prefill} source_url={enrichment.page_slug} />
+    </section>
+  )
+}
+
+function MetierIntroLong({ enrichment }: { enrichment: PageEnrichmentRow }) {
+  if (!enrichment.intro_long) return null
+  return (
+    <section className="mb-10 rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft">
+      <p className="mb-3 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+        <Target className="h-3.5 w-3.5" strokeWidth={2.4} />
+        Contexte métier
+      </p>
+      <p className="text-base leading-relaxed text-charcoal-700">{enrichment.intro_long}</p>
+      {enrichment.reference_legale && (
+        <p className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-primary-50 px-3 py-1.5 text-xs font-bold text-primary-900">
+          <Scale className="h-3 w-3" strokeWidth={2.4} />
+          Référence légale : {enrichment.reference_legale}
+        </p>
+      )}
+    </section>
+  )
+}
+
+function TopCausesBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
+  const metier = enrichment.metier_nom ?? 'votre métier'
+  return (
+    <section className="mt-14">
+      <header className="mb-6">
+        <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-accent-700">
+          <AlertTriangle className="h-3.5 w-3.5" strokeWidth={2.4} />
+          Sinistralité observée
+        </span>
+        <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+          Top causes de sinistres pour les {metier}s
+        </h2>
+        {enrichment.cout_sinistre_moyen && (
+          <p className="mt-2 text-sm text-charcoal-600">
+            Coût moyen sinistre observé :{' '}
+            <strong className="text-accent-700">
+              {enrichment.cout_sinistre_moyen.toLocaleString('fr-FR')}€
+            </strong>{' '}
+            (source AQC SYCODÉS)
+          </p>
+        )}
+      </header>
+      <ul className="grid gap-4 md:grid-cols-2">
+        {enrichment.top_causes!.map((c, i) => (
+          <li
+            key={i}
+            className="overflow-hidden rounded-2xl border border-accent-100 bg-gradient-to-br from-accent-50 to-white p-5 shadow-soft"
+          >
+            <div className="flex items-baseline justify-between">
+              <strong className="font-heading text-base font-extrabold text-charcoal-900">
+                {c.cause}
+              </strong>
+              <span className="ml-3 font-heading text-2xl font-extrabold text-accent-700">
+                {c.pct}%
+              </span>
+            </div>
+            <div className="mt-2.5 h-2 w-full overflow-hidden rounded-full bg-accent-100">
+              <div
+                className="h-full bg-gradient-to-r from-accent-500 to-accent-700"
+                style={{ width: `${Math.min(c.pct * 2, 100)}%` }}
+              />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+function RisquesMetierBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
+  const metier = enrichment.metier_nom ?? 'votre métier'
+  return (
+    <section className="mt-14">
+      <header className="mb-6">
+        <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+          <Target className="h-3.5 w-3.5" strokeWidth={2.4} />
+          Risques spécifiques
+        </span>
+        <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+          Principaux risques pour un {metier}
+        </h2>
+      </header>
+      <ul className="grid gap-3 md:grid-cols-2">
+        {enrichment.risques_metier!.slice(0, 6).map((r, i) => (
+          <li
+            key={i}
+            className="flex items-start gap-3 rounded-xl border border-charcoal-100 bg-white p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary-200"
+          >
+            <AlertTriangle
+              className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-600"
+              strokeWidth={2.4}
+            />
+            <span className="text-sm leading-relaxed text-charcoal-700">{r}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+function GarantiesRecommandeesBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
+  const metier = enrichment.metier_nom ?? 'votre métier'
+  return (
+    <section className="mt-14">
+      <header className="mb-6">
+        <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-secondary-700">
+          <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2.4} />
+          Garanties recommandées
+        </span>
+        <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+          Couvertures à privilégier pour les {metier}s
+        </h2>
+      </header>
+      <ul className="grid gap-3 md:grid-cols-2">
+        {enrichment.garanties_recommandees!.slice(0, 6).map((g, i) => (
+          <li
+            key={i}
+            className="flex items-start gap-3 rounded-xl border border-secondary-100 bg-gradient-to-br from-secondary-50 to-white p-4 shadow-soft"
+          >
+            <CheckCircle2
+              className="mt-0.5 h-5 w-5 flex-shrink-0 text-secondary-600"
+              strokeWidth={2.6}
+            />
+            <span className="text-sm font-semibold leading-relaxed text-charcoal-800">{g}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+function FaqMetierBlock({ enrichment }: { enrichment: PageEnrichmentRow }) {
+  return (
+    <section className="mt-14">
+      <header className="mb-6">
+        <span className="mb-2 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-primary-700">
+          <HelpCircle className="h-3.5 w-3.5" strokeWidth={2.4} />
+          Questions fréquentes
+        </span>
+        <h2 className="font-heading text-2xl font-extrabold tracking-tight text-charcoal-900 md:text-3xl">
+          {enrichment.metier_nom
+            ? `Questions des ${enrichment.metier_nom}s sur la ${enrichment.garantie_label}`
+            : 'Questions fréquentes'}
+        </h2>
+      </header>
+      <div className="space-y-4">
+        {enrichment.faq_metier!.map((f, i) => (
+          <details
+            key={i}
+            className="group overflow-hidden rounded-2xl border border-charcoal-100 bg-white shadow-soft transition-all hover:border-primary-200"
+          >
+            <summary className="flex cursor-pointer items-center justify-between gap-3 p-5 font-heading font-bold text-charcoal-900 marker:hidden">
+              <span>{f.q}</span>
+              <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-700 transition-transform group-open:rotate-45">
+                +
+              </span>
+            </summary>
+            <div className="border-t border-charcoal-100 p-5 pt-4 text-sm leading-relaxed text-charcoal-700">
+              {f.a}
+            </div>
+          </details>
+        ))}
+      </div>
     </section>
   )
 }

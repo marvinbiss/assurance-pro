@@ -62,6 +62,27 @@ export interface PageEnrichmentRow {
   generation_status: GenerationStatus
   enriched_at: string
   ttl_until: string
+  /** Champs enrichis pour différenciation métier (HCU-compliance) — optionnels. */
+  top_causes?: TopCause[]
+  garanties_recommandees?: string[]
+  risques_metier?: string[]
+  faq_metier?: FaqMetier[]
+  intro_long?: string
+  cout_sinistre_moyen?: number
+  nb_entreprises_france?: number
+  niveau_risque?: number
+  obligatoire?: boolean
+  reference_legale?: string
+}
+
+export interface TopCause {
+  cause: string
+  pct: number
+}
+
+export interface FaqMetier {
+  q: string
+  a: string
 }
 
 export interface JurisprudenceRef {
