@@ -30,6 +30,7 @@ import {
   handleGenerateQuotePro,
 } from '@/lib/mcp/tools/generate-quote-pro'
 import { compareOffersToolSpec, handleCompareOffers } from '@/lib/mcp/tools/compare-offers'
+import { auditCoverageToolSpec, handleAuditCoverage } from '@/lib/mcp/tools/audit-coverage'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -42,7 +43,7 @@ const TOOLS_REGISTRY: McpToolSpec[] = [
   recueilExigencesToolSpec,
   generateQuoteProToolSpec,
   compareOffersToolSpec,
-  // audit_coverage — Sprint 3
+  auditCoverageToolSpec,
 ]
 
 // ─── Helpers ──────────────────────────────────────────────────────────────
@@ -175,7 +176,9 @@ async function handleRequest(req: JsonRpcRequest, headers: Headers): Promise<unk
         case 'compare_offers':
           result = await handleCompareOffers(params.arguments ?? {})
           break
-        // audit_coverage — Sprint 3
+        case 'audit_coverage':
+          result = await handleAuditCoverage(params.arguments ?? {})
+          break
         default:
           errorCode = 'tool_not_found'
           return rpcError(
