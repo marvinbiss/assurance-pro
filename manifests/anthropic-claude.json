@@ -1,0 +1,51 @@
+{
+  "mcp_version": "2026-01-01",
+  "name": "vivos-assurance",
+  "display_name": "Vivos Assurance",
+  "description": "Devis assurance professionnelle France (RC Pro, décennale BTP, mutuelle TNS, cyber, VTC) — Courtier ORIAS indépendant. 10 assureurs partenaires comparés. Conforme DDA art. L.521-4.",
+  "version": "0.1.0",
+  "vendor": {
+    "name": "Vivos Assurance",
+    "url": "https://vivos-assurance.fr",
+    "email": "contact@vivos-assurance.fr"
+  },
+  "server": {
+    "type": "streamable_http",
+    "url": "https://vivos-assurance.fr/api/mcp",
+    "transport": "https"
+  },
+  "tools": [
+    {
+      "name": "recueil_exigences",
+      "title": "Recueil exigences et besoins (DDA L.521-4)",
+      "description": "Recueil obligatoire AVANT toute proposition assurance. Conforme art. L.521-4 du Code des assurances. Retourne proofId valide 30 min."
+    },
+    {
+      "name": "generate_quote_pro",
+      "title": "Devis assurance pro personnalisé",
+      "description": "Devis personnalisé après recueil exigences validé. Tarifs min/médian/max + top 3 assureurs."
+    },
+    {
+      "name": "compare_offers",
+      "title": "Comparatif 3-5 assureurs partenaires",
+      "description": "Comparatif détaillé prix, plafonds, délais, ratings sur le même profil client."
+    },
+    {
+      "name": "audit_coverage",
+      "title": "Audit gratuit contrat actuel",
+      "description": "Analyse gaps de couverture, sur-tarification, exclusions critiques, garanties manquantes."
+    }
+  ],
+  "capabilities": {
+    "resources": true,
+    "prompts": false,
+    "tools": true
+  },
+  "documentation": "https://vivos-assurance.fr/api/mcp",
+  "homepage": "https://vivos-assurance.fr",
+  "license": "Proprietary",
+  "languages": ["fr"],
+  "regions": ["FR", "BE", "LU", "CH"],
+  "categories": ["business", "finance", "insurance"],
+  "lastUpdated": "2026-05-20"
+}

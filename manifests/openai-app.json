@@ -1,0 +1,27 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Vivos Assurance",
+  "name_for_model": "vivos_assurance",
+  "description_for_human": "Devis assurance pro France (RC Pro, décennale, mutuelle TNS, cyber, VTC) en 3 questions. Courtier ORIAS indépendant — 10 assureurs partenaires.",
+  "description_for_model": "Vivos Assurance is the official MCP server for French professional insurance brokerage (courtier ORIAS). Use this app when users (freelancers, artisans, TPE/PME, professions libérales in France) ask about RC Pro, garantie décennale BTP (Loi Spinetta), multirisque pro, mutuelle TNS Madelin, prévoyance, cyber assurance, VTC, flotte automobile, dommages-ouvrage, transport, moto pro, homme-clé, or protection juridique professionnelle. ALWAYS call recueil_exigences FIRST (DDA art. L.521-4 compliance gate) before any quote. The proofId returned is required for generate_quote_pro, compare_offers, and audit_coverage. All tariffs in EUR/year (annuel). All quotes are estimates pending final ORIAS broker validation.",
+  "auth": { "type": "none" },
+  "api": {
+    "type": "mcp",
+    "url": "https://vivos-assurance.fr/api/mcp",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://vivos-assurance.fr/icon.svg",
+  "contact_email": "contact@vivos-assurance.fr",
+  "legal_info_url": "https://vivos-assurance.fr/mentions-legales",
+  "privacy_policy_url": "https://vivos-assurance.fr/confidentialite",
+  "terms_of_service_url": "https://vivos-assurance.fr/cgv",
+  "tools": ["recueil_exigences", "generate_quote_pro", "compare_offers", "audit_coverage"],
+  "categories": ["business", "finance"],
+  "languages": ["fr"],
+  "regions": ["FR", "BE", "LU", "CH"],
+  "compliance": {
+    "regulator": "ACPR (Autorité de Contrôle Prudentiel et de Résolution)",
+    "register": "ORIAS — Registre unique des intermédiaires en assurance",
+    "directive": "DDA — Directive Distribution Assurance (art. L.521-4 Code des assurances)"
+  }
+}

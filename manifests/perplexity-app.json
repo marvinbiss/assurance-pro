@@ -1,0 +1,24 @@
+{
+  "schema_version": "v1",
+  "name": "Vivos Assurance",
+  "slug": "vivos-assurance",
+  "description": "Courtier ORIAS France assurance professionnelle — RC Pro, décennale, mutuelle TNS, cyber, VTC. Comparatif 10 assureurs partenaires.",
+  "tagline": "Devis assurance pro France en 3 questions",
+  "vendor": {
+    "name": "Vivos Assurance",
+    "url": "https://vivos-assurance.fr",
+    "email": "contact@vivos-assurance.fr"
+  },
+  "endpoint": {
+    "type": "mcp",
+    "url": "https://vivos-assurance.fr/api/mcp",
+    "protocol_version": "2026-01-01"
+  },
+  "tools": ["recueil_exigences", "generate_quote_pro", "compare_offers", "audit_coverage"],
+  "categories": ["finance", "insurance", "business"],
+  "languages": ["fr"],
+  "regions": ["FR"],
+  "logo": "https://vivos-assurance.fr/icon.svg",
+  "privacy_policy": "https://vivos-assurance.fr/confidentialite",
+  "terms_of_service": "https://vivos-assurance.fr/cgv"
+}

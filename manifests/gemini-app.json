@@ -1,0 +1,48 @@
+{
+  "apiVersion": "v1",
+  "kind": "GeminiApp",
+  "metadata": {
+    "name": "vivos-assurance",
+    "displayName": "Vivos Assurance",
+    "description": "Devis assurance pro France (RC Pro, décennale, mutuelle TNS, cyber) — Courtier ORIAS indépendant, comparatif 10 assureurs partenaires.",
+    "version": "0.1.0",
+    "categories": ["business", "finance"],
+    "languages": ["fr"],
+    "regions": ["FR"]
+  },
+  "spec": {
+    "server": {
+      "type": "MCP",
+      "endpoint": "https://vivos-assurance.fr/api/mcp",
+      "protocolVersion": "2026-01-01",
+      "auth": "none"
+    },
+    "tools": [
+      {
+        "name": "recueil_exigences",
+        "description": "Recueil exigences DDA L.521-4 — gate compliance"
+      },
+      {
+        "name": "generate_quote_pro",
+        "description": "Devis personnalisé temps réel"
+      },
+      {
+        "name": "compare_offers",
+        "description": "Comparatif 3-5 assureurs partenaires"
+      },
+      {
+        "name": "audit_coverage",
+        "description": "Audit contrat actuel"
+      }
+    ],
+    "vendor": {
+      "name": "Vivos Assurance",
+      "homepage": "https://vivos-assurance.fr",
+      "contact": "contact@vivos-assurance.fr",
+      "privacyPolicy": "https://vivos-assurance.fr/confidentialite",
+      "termsOfService": "https://vivos-assurance.fr/cgv",
+      "regulator": "ACPR + ORIAS (France)"
+    },
+    "logo": "https://vivos-assurance.fr/icon.svg"
+  }
+}
