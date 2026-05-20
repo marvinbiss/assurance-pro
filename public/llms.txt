@@ -3,57 +3,75 @@
 > Courtier ORIAS indépendant. Distribue 10+ compagnies partenaires sur 17 verticaux d'assurance professionnelle : décennale BTP (Loi Spinetta), RC Pro, multirisque, mutuelle TNS Madelin, prévoyance, cyber, VTC, flotte. Conforme DDA (art. L. 521-4 C. assur.) + ACPR.
 
 Site : https://vivos-assurance.fr
-Mise à jour : 2026-05-11
-Pages indexées : 198 statiques + 5 811 programmatiques
+Mise à jour : 2026-05-20
+Pages indexées : 170 statiques + 5 811 programmatiques
+
+## AI-first pillar pages (LCO)
+
+- [Assurance Homme-Clé Dirigeant 2026 — Capital décès/invalidité fondateur PME](https://vivos-assurance.fr/ai/assurance-homme-cle-dirigeant-2026)
+- [Assurance Moto Pro Livraison 2026 — Coursier Uber Eats, Deliveroo, Stuart](https://vivos-assurance.fr/ai/assurance-moto-pro-livraison-2026)
+- [Assurance VTC 2026 — Décret 2014-1725 · Dès 95€/mois (Wakam, Stello)](https://vivos-assurance.fr/ai/assurance-vtc-decret-2014-conformite-2026)
+- [Décennale plombier auto-entrepreneur 2026 — Guide complet (tarif, garanties, pièges)](https://vivos-assurance.fr/ai/comment-choisir-decennale-plombier-auto-entrepreneur)
+- [Mutuelle TNS Madelin 2026 — Comparatif April Pro, Pro BTP, Harmonie + déductibilité](https://vivos-assurance.fr/ai/comparer-mutuelle-tns-madelin-2026)
+- [Dommages-Ouvrage 2026 — Obligation Loi Spinetta art. L.242-1 (particulier, promoteur)](https://vivos-assurance.fr/ai/dommages-ouvrage-particulier-promoteur-2026)
+- [Assurance Flotte Automobile Pro 2026 — Mutualisation, télématique, économies 25%](https://vivos-assurance.fr/ai/flotte-automobile-pro-2026)
+- [Multirisque Pro 2026 — Commerce, restaurant, bureau · Dès 35€/mois](https://vivos-assurance.fr/ai/multirisque-pro-commerce-restaurant-2026)
+- [Cyber assurance PME 2026 — Stoïk, Hiscox, Beazley · Couverture jusqu](https://vivos-assurance.fr/ai/optimiser-cyber-assurance-pme-2026)
+- [Prévoyance TNS Madelin 2026 — Arrêt travail, invalidité, décès artisans dirigeants](https://vivos-assurance.fr/ai/prevoyance-tns-madelin-2026)
+- [Protection Juridique Pro 2026 — Avocat illimité TNS dirigeants entreprises](https://vivos-assurance.fr/ai/protection-juridique-pro-2026)
+- [Tarif RC Pro freelance IT 2026 — Comparatif détaillé Hiscox, April Pro, Stoïk](https://vivos-assurance.fr/ai/quel-tarif-rc-pro-freelance-it-2026)
+- [Tous Risques Chantier (TRC) 2026 — Vol, incendie, intempéries pendant travaux](https://vivos-assurance.fr/ai/tous-risques-chantier-trc-2026)
+- [Assurance Transport Marchandises 2026 — CMR Genève + Code transports](https://vivos-assurance.fr/ai/transport-marchandises-cmr-genève-2026)
 
 ## Décennale BTP
 
-- [Assurance Décennale Auto Entrepreneur — Obligation, tarifs 950€/an](https://vivos-assurance.fr/assurance-decennale-auto-entrepreneur) — Tout auto-entrepreneur BTP est soumis à la décennale (Loi Spinetta). Tarif AE peintre 950€/an, plombier 1 400€/an, maçon 1 800€/an. Souscrip
-- [Assurance Décennale Auto Entrepreneur Pro BTP — Pack complet 2026](https://vivos-assurance.fr/assurance-decennale-auto-entrepreneur-pro-btp) — Pack décennale + mutuelle PRO BTP pour auto-entrepreneur BTP : décennale via April Pro/SMABTP + santé PRO BTP TNS. Coût pack 2 800-4 500€/an
-- [Assurance Décennale Bâtiment — 52 métiers couverts, Loi Spinetta](https://vivos-assurance.fr/assurance-decennale-batiment) — La décennale bâtiment couvre tous les corps d'état BTP : gros œuvre, second œuvre, finitions, équipements techniques. 52 métiers, tarifs 950
+- [Assurance Décennale Auto Entrepreneur — Obligation, tarifs 950€ par an](https://vivos-assurance.fr/assurance-decennale-auto-entrepreneur) — Tout auto-entrepreneur BTP est soumis à la décennale (Loi Spinetta). Tarif AE peintre 950€ par an, plombier 1 400€ par an, maçon 1 800€ par 
+- [Assurance Décennale Auto Entrepreneur Pro BTP — Pack complet 2026](https://vivos-assurance.fr/assurance-decennale-auto-entrepreneur-pro-btp) — Pack décennale + mutuelle PRO BTP pour auto-entrepreneur BTP : décennale via April Pro ou SMABTP + santé PRO BTP TNS. Coût pack 2 800-4 500€
 - [Assurance Décennale BTP — 52 métiers, tarifs, comparatif 2026](https://vivos-assurance.fr/assurance-decennale-btp) — La décennale BTP est obligatoire (Loi Spinetta) pour 52 métiers : maçon, plombier, électricien, couvreur, etc. Tarifs 2026 et comparatif Apr
 - [Assurance Décennale Immédiate — Attestation en 24h, démarrage chantier](https://vivos-assurance.fr/assurance-decennale-immediate) — Besoin d
-- [Assurance Décennale La Moins Chère — Classement 2026 par métier](https://vivos-assurance.fr/assurance-decennale-la-moins-chere) — Classement précis 2026 des assurances décennales les moins chères par métier BTP. April Pro best price AE/SARL. Tarifs vérifiés du peintre a
-- [Assurance Décennale Maçonnerie — Maçon, traditionnel, béton armé](https://vivos-assurance.fr/assurance-decennale-maconnerie) — Le maçon (traditionnel, béton armé, pierre sèche) est soumis à la décennale. Tarif AE 1 800-2 800€/an, SARL 2 500-5 000€/an. 12% sinistralit
-- [Assurance Décennale Maître d](https://vivos-assurance.fr/assurance-decennale-maitre-d-oeuvre) — Le maître d
-- [Assurance Décennale Moins Chère — 7 leviers d'économies 2026](https://vivos-assurance.fr/assurance-decennale-moins-cher) — Trouver une décennale moins chère sans sacrifier la conformité : 7 leviers concrets pour réduire votre prime, pièges à éviter et tarifs marc
 - [Assurance Décennale Obligatoire — Pour qui ? Sanctions, durée, plafonds](https://vivos-assurance.fr/assurance-decennale-obligatoire) — Tout savoir sur l'obligation de souscrire une décennale : qui est concerné (Loi Spinetta), sanctions pénales si défaut, durée 10 ans, plafon
 - [Assurance Décennale pas chère — Comparatif 2026, économisez 40%](https://vivos-assurance.fr/assurance-decennale-pas-cher) — Trouver une décennale pas chère sans sacrifier la conformité Loi Spinetta : 7 leviers pour réduire votre prime, pièges à éviter et comparati
-- [Assurance Décennale Plombier — Obligation, tarifs, comparatif 2026](https://vivos-assurance.fr/assurance-decennale-plombier) — Le plombier est soumis à la décennale (Loi Spinetta). Tarif AE 1 400-2 100€/an, SARL 1 800-3 500€/an. Sinistralité 18% AQC. Comparatif April
-- [Assurance Décennale Pour Auto Entrepreneur — Démarches simplifiées](https://vivos-assurance.fr/assurance-decennale-pour-auto-entrepreneur) — Souscrire une décennale en tant qu
-- [Assurance Décennale Terrassement — Risques élevés, tarifs 2026](https://vivos-assurance.fr/assurance-decennale-terrassement) — Le terrassier (TP) est soumis à une décennale renforcée : risques élevés (effondrements, glissements, instabilité sol). Tarif AE 2 800-4 500
-- [Assurance décennale auto-entrepreneur — Tarifs 2026 et obligation Loi Spinetta](https://vivos-assurance.fr/assurance-decennale/auto-entrepreneur) — La décennale obligatoire pour micro-entrepreneurs et auto-entrepreneurs du BTP. Tarifs négociés à partir de 480 €/an, attestation 24h, conse
-- _… et 24 autres pages décennale btp_
+- [Assurance décennale auto-entrepreneur — Tarifs 2026 et obligation Loi Spinetta](https://vivos-assurance.fr/assurance-decennale/auto-entrepreneur) — La décennale obligatoire pour micro-entrepreneurs et auto-entrepreneurs du BTP. Tarifs négociés à partir de 480 € par an, attestation 24h, c
+- [Décennale carreleur 2026 — Tarifs 560-920€ par an AE](https://vivos-assurance.fr/assurance-decennale/carreleur) — La décennale obligatoire pour carreleur : couverture spécifique fissures carrelage, défauts pose chape, étanchéité salle de bain. Sinistrali
+- [Décennale charpentier 2026 — Tarifs 690-1 320€ par an AE (charpente bois / métal)](https://vivos-assurance.fr/assurance-decennale/charpentier) — La décennale obligatoire pour charpentier : couverture spécifique charpente traditionnelle ou industrielle, fermettes, ossature bois, struct
+- [Décennale couvreur-zingueur 2026 — Tarifs 820-1 540€ par an AE](https://vivos-assurance.fr/assurance-decennale/couvreur-zingueur) — La décennale obligatoire pour couvreur-zingueur : couverture spécifique étanchéité toiture (top sinistre BTP — sinistralité AQC 13,2%), zinc
+- [Décennale électricien BTP 2026 — Tarifs 490-880€ par an AE](https://vivos-assurance.fr/assurance-decennale/electricien) — La décennale obligatoire pour électricien BTP : couverture spécifique courts-circuits, incendies tableau, mise aux normes NF C 15-100. Tarif
+- [Décennale maçon gros œuvre 2026 — Tarifs 720-1 380€ par an AE](https://vivos-assurance.fr/assurance-decennale/macon) — La décennale obligatoire pour maçon gros œuvre : couverture spécifique fissures structurelles, fondations, dalles, murs porteurs. Sinistrali
+- [Décennale maître d](https://vivos-assurance.fr/assurance-decennale/maitre-oeuvre) — La décennale obligatoire pour maîtres d
+- [Décennale micro-entreprise BTP — Tarifs 2026, Loi Spinetta](https://vivos-assurance.fr/assurance-decennale/micro-entreprise) — La décennale obligatoire pour les micro-entreprises BTP : Loi Spinetta, tarifs négociés à partir de 480€ par an, attestation 24h, conseil OR
+- [Décennale peintre-plaquiste 2026 — Tarifs 480-760€ par an AE (les plus bas du BTP)](https://vivos-assurance.fr/assurance-decennale/peintre-plaquiste) — La décennale obligatoire pour peintre-plaquiste : couverture spécifique défauts cloisons sèches, joints, isolation phonique. Sinistralité AQ
+- _… et 22 autres pages décennale btp_
 
 ## RC Pro
 
-- [Assurance RC Pro 2026 — Tarifs, garanties et comparatif](https://vivos-assurance.fr/assurance-rc-pro) — L
-- [Assurance RC Pro Auto Entrepreneur — Souscription, comparatif, tarifs](https://vivos-assurance.fr/assurance-rc-pro-auto-entrepreneur) — Souscrire une RC Pro en tant qu'auto-entrepreneur : démarches simplifiées, comparatif 5 assureurs, tarifs 95-450€/an. Hiscox best price, Ste
-- [Assurance RC Pro Auto Entrepreneur Pas Cher — Dès 95€/an chez Hiscox](https://vivos-assurance.fr/assurance-rc-pro-auto-entrepreneur-pas-cher) — RC Pro auto-entrepreneur à prix imbattable : Hiscox dès 95€/an pour AE services intellectuels. 6 leviers d'économies + classement marché 202
-- [Assurance RC Pro Informatique — Souscription, comparatif, cyber](https://vivos-assurance.fr/assurance-rc-pro-informatique) — Souscrire une assurance RC Pro informatique : guide pas à pas pour freelance dev, ESN, agence web. Comparatif 5 assureurs + cyber-assurance 
-- [Assurance RC Pro Micro Entreprise — Statuts AE/EI/EURL, tarifs 2026](https://vivos-assurance.fr/assurance-rc-pro-micro-entreprise) — La RC Pro micro-entreprise couvre 3 statuts : AE, EI (ex-régime micro), EURL micro. Spécificités et tarifs 95-450€/an selon profil.
-- [Assurance RC Pro MMA — Comparatif tarifs et garanties détaillés](https://vivos-assurance.fr/assurance-rc-pro-mma) — Analyse approfondie de l
-- [Assurance RC Pro SASU — Souscription, démarches, comparatif](https://vivos-assurance.fr/assurance-rc-pro-sasu) — Souscrire une RC Pro pour votre SASU : pièces nécessaires (K-bis, SIRET), comparatif 5 assureurs, tarifs 350-1 500€/an. Guide souscription e
-- [Assurance RC Pro VTC — Souscription en ligne, attestation immédiate](https://vivos-assurance.fr/assurance-rc-pro-vtc) — Souscrire votre RC Pro VTC en 5 minutes : devis personnalisé selon votre profil, comparatif Wakam / Stello / Hiscox / AXA, attestation confo
-- [Assurance Responsabilité Civile Professionnelle Auto-Entrepreneur](https://vivos-assurance.fr/assurance-responsabilite-civile-professionnelle-auto-entrepreneur) — Guide complet de l
-- [Assurance Responsabilité Civile Professionnelle VTC — Décret 2014](https://vivos-assurance.fr/assurance-responsabilite-civile-professionnelle-vtc) — L
-- [Attestation RC Pro — Modèle, mentions obligatoires, délai 2026](https://vivos-assurance.fr/guides/attestation-rc-pro) — Tout savoir sur l
-- [Responsabilité civile professionnelle informatique 2026 — Guide complet](https://vivos-assurance.fr/guides/responsabilite-civile-professionnelle-informatique) — Tout sur la RC pro informatique : 5 risques spécifiques (RGPD, cyber, propriété intellectuelle, défaut conseil, perte données client). 6 ass
-- [Hiscox RC Pro — Avis, garanties, tarifs et alternatives 2026](https://vivos-assurance.fr/hiscox-rc-pro) — Hiscox est l'un des leaders RC Pro en France pour les pros services intellectuels. Analyse des garanties, tarifs 95-1 200€/an et comparatif 
-- [MMA Assurance RC Pro — Souscription, démarches, agences 2026](https://vivos-assurance.fr/mma-assurance-rc-pro) — Souscrire votre RC Pro chez MMA : démarches en agence ou en ligne, devis personnalisé, pack multi-contrats. Guide complet 2026.
-- [RC Pro Agent Immobilier — Obligation Carte T, plafonds, tarifs](https://vivos-assurance.fr/rc-pro-agent-immobilier) — L
-- _… et 36 autres pages rc pro_
+- [Attestation d](https://vivos-assurance.fr/attestation / d-assurance-rc-pro) — Comment obtenir votre attestation d
+- [Attestation d](https://vivos-assurance.fr/attestation / d-assurance-responsabilite-civile-professionnelle) — Guide complet de l
+- [Attestation de Responsabilité Civile Professionnelle — Obtenir + utiliser](https://vivos-assurance.fr/attestation / de-responsabilite-civile-professionnelle) — Tout savoir sur l
+- [Attestation RC Pro — Obtenir + télécharger en 24h](https://vivos-assurance.fr/attestation / rc-pro) — Obtenir votre attestation RC Pro rapidement : démarches express, modèle PDF, mentions obligatoires. Téléchargeable en 24h chez April Pro — H
+- [Attestation Responsabilité Civile Professionnelle — Modèle + démarches](https://vivos-assurance.fr/attestation / responsabilite-civile-professionnelle) — Modèle officiel d
+- [Devis Assurance RC Pro — Comparatif gratuit 5 leaders](https://vivos-assurance.fr/devis / assurance-rc-pro) — Demande de devis assurance RC Pro gratuit : comparatif Hiscox, Stello, Allianz Pro, MMA, AXA. Tous métiers et statuts. Attestation immédiate
+- [Devis RC Pro — Gratuit en 5 min, comparatif 5 assureurs](https://vivos-assurance.fr/devis / rc-pro) — Devis RC Pro GRATUIT en 5 minutes pour tous statuts (AE, EI, SARL, SAS). Comparatif Hiscox, Stello, Allianz, MMA, AXA. Attestation immédiate
+- [RC Pro Devis — Tarifs détaillés 2026 par profil et assureur](https://vivos-assurance.fr/devis / rc-pro-devis) — Tarifs RC Pro détaillés 2026 par profil (AE, SARL ou SAS) et par assureur. Hiscox — Stello — Allianz — MMA — AXA — fourchettes précises et d
+- [Devis Responsabilité Civile Professionnelle — Comparatif 5 assureurs](https://vivos-assurance.fr/devis / responsabilite-civile-professionnelle) — Devis RC Pro GRATUIT en 5 min : Hiscox, Stello, Allianz Pro, MMA, AXA comparés. Tarifs 95-2 500€ par an selon profil. Attestation immédiate.
+- [Attestation RC Pro — Modèle, mentions obligatoires, délai 2026](https://vivos-assurance.fr/guides / attestation-rc-pro) — Tout savoir sur l
+- [Responsabilité civile professionnelle informatique 2026 — Guide complet](https://vivos-assurance.fr/guides / responsabilite-civile-professionnelle-informatique) — Tout sur la RC Pro informatique : 5 risques spécifiques (RGPD, cyber, propriété intellectuelle, défaut conseil, perte données client). 6 ass
+- [Prix Assurance RC Pro — Tarifs 2026 par profil et activité](https://vivos-assurance.fr/prix / assurance-rc-pro) — Prix assurance RC Pro 2026 vérifiés par profil. AE 95-450€ par an, SARL 350-1500€ par an, SAS PME 1200-2500€ par an. Hiscox best price globa
+- [Assurance RC Pro Prix — Comparatif tarifs 2026 par activité](https://vivos-assurance.fr/prix / assurance-rc-pro-prix) — Comparatif détaillé des prix assurance RC Pro 2026. Hiscox 95€ par an AE services. Allianz 280€ par an SARL. MMA 600€ par an PME. 5 assureur
+- [Assurance RC Pro Tarif — Barème détaillé 2026 par option](https://vivos-assurance.fr/prix / assurance-rc-pro-tarif) — Barème tarif assurance RC Pro 2026 : tarif de base + options (cyber, juridique, dommages aux biens) + ajustements (franchise, plafond, posté
+- [Prix RC Pro 2026 — Combien coûte une responsabilité civile pro ?](https://vivos-assurance.fr/prix / rc-pro) — Prix RC Pro 2026 par profil : AE 95-450€ par an, SARL 350-2 800€ par an, SAS PME 2 500-15 000€ par an. Comparatif Hiscox vs Stello vs Allian
+- _… et 33 autres pages rc pro_
 
 ## Mutuelle TNS Madelin
 
-- [BTP Pro Mutuelle — Comparatif PRO BTP, April Pro Santé, Harmonie BTP](https://vivos-assurance.fr/btp-pro-mutuelle) — Les meilleures mutuelles santé dédiées aux pros du BTP : PRO BTP, April Pro Santé, Harmonie BTP. Comparatif détaillé, tarifs et critères de 
-- [Meilleure mutuelle TNS 2026 — Comparatif 7 organismes (avis cabinet)](https://vivos-assurance.fr/guides/meilleure-mutuelle-tns) — Quelle est la meilleure mutuelle santé pour Travailleur Non Salarié en 2026 ? Comparatif honnête de 7 organismes : Apicil, Pro BTP, Malakoff
-- [Mutuelle dirigeant SASU/SAS — Régime collectif 2026](https://vivos-assurance.fr/mutuelle-dirigeant) — La mutuelle santé pour dirigeants assimilés salariés (SASU, SAS) : régime collectif optimisé, garanties cadres, déduction 100% du résultat.
-- [Mutuelle pro BTP — Comparatif 2026, tarifs et garanties](https://vivos-assurance.fr/mutuelle-pro-btp) — La complémentaire santé dédiée aux artisans, salariés et dirigeants du BTP. Comparatif des principaux contrats, tarifs négociés et conseil O
+- [Meilleure mutuelle TNS 2026 — Comparatif 7 organismes (avis cabinet)](https://vivos-assurance.fr/guides / meilleure-mutuelle-tns) — Quelle est la meilleure mutuelle santé pour Travailleur Non Salarié en 2026 ? Comparatif honnête de 7 organismes : Apicil, Pro BTP, Malakoff
+- [Mutuelle dirigeant SASU / SAS — Régime collectif 2026](https://vivos-assurance.fr/mutuelle-dirigeant) — La mutuelle santé pour dirigeants assimilés salariés (SASU, SAS) : régime collectif optimisé, garanties cadres, déduction 100% du résultat.
+- [Mutuelle Pro BTP 2026 — Dès 38€/mois (Madelin) · PRO BTP, April](https://vivos-assurance.fr/mutuelle-pro-btp) — La complémentaire santé dédiée aux artisans, salariés et dirigeants du BTP. Comparatif des principaux contrats, tarifs négociés et conseil O
 - [Mutuelle PRO BTP S3 P3 — Avis, garanties, alternatives 2026](https://vivos-assurance.fr/mutuelle-pro-btp-s3-p3-avis) — Avis et analyse du contrat PRO BTP S3 P3 (formule intermédiaire renforcée) : garanties détaillées, tarifs par âge, retours d'adhérents et co
-- [Mutuelle santé TNS — Loi Madelin 2026, comparatif Madelin santé](https://vivos-assurance.fr/mutuelle-sante-tns) — La mutuelle santé pour Travailleurs Non Salariés (TNS) : remboursements optique/dentaire renforcés, hospitalisation, médecines douces. Loi M
 - [Mutuelle TNS — Loi Madelin 2026, comparatif et tarifs](https://vivos-assurance.fr/mutuelle-tns) — La mutuelle santé déductible pour Travailleurs Non Salariés : artisans, commerçants, professions libérales, gérants majoritaires. Économies 
-- [PRO BTP Mutuelle — Tarifs 2026, garanties et alternatives](https://vivos-assurance.fr/pro-btp-mutuelle) — Tout savoir sur la mutuelle PRO BTP (le régime historique de la branche Bâtiment) : niveaux S1 à S4, tarifs par âge, comparatifs avec April 
+- [Mutuelle Pro BTP S3 P3 Prix — Grille tarifaire 2026](https://vivos-assurance.fr/prix / mutuelle-pro-btp-s3-p3-prix) — Prix de la formule Mutuelle Pro BTP S3 P3 en 2026 : 35-55€ par mois actif salarié. Couverture intermédiaire (renforts soins courants + denta
+- [Mutuelle PRO BTP S4 P4 Prix — Tarifs haut de gamme 2026](https://vivos-assurance.fr/prix / mutuelle-pro-btp-s4-p4-prix) — Prix PRO BTP S4 P4 (formule haut de gamme) : 115-230€ par mois selon âge. Garanties premium hospi + dentaire + optique + médecines douces.
+- [Mutuelle PRO BTP Tarif — Prix par âge et formule 2026](https://vivos-assurance.fr/prix / mutuelle-pro-btp-tarif) — Tarifs détaillés PRO BTP Mutuelle 2026 par âge (25-65+) et formule (S1-S4) : de 38€ par mois (S1 jeune) à 230€ par mois (S4 senior). Compara
+- [Tarif Mutuelle Pro BTP Retraite — Grilles 2026 par âge](https://vivos-assurance.fr/prix / tarif-mutuelle-pro-btp-retraite) — Tarif Mutuelle Pro BTP retraite 2026 : 50€ par mois à 60 ans, 75€ à 70 ans, 110€ à 80 ans, 140€+ à 85 ans. Anticiper budget santé retraite B
 - [PRO BTP Mutuelle Remboursement — Délais, démarches, blocages](https://vivos-assurance.fr/pro-btp-mutuelle-remboursement) — Tout savoir sur les remboursements PRO BTP : télétransmission automatique, envoi de factures papier, délais 3-10 jours ouvrés, recours en ca
 - [PRO BTP Mutuelle — Remboursement et mon compte adhérent](https://vivos-assurance.fr/pro-btp-mutuelle-remboursement-mon-compte) — Guide complet pour gérer vos remboursements PRO BTP : accès à l
 
@@ -73,86 +91,33 @@ Pages indexées : 198 statiques + 5 811 programmatiques
 
 ## Artisans & BTP
 
-- [Assurance artisan — Pack BTP, RC, mutuelle, prévoyance 2026](https://vivos-assurance.fr/assurance-artisan) — Le pack assurance complet pour artisans : décennale obligatoire BTP, RC pro, multirisque atelier, mutuelle TNS, prévoyance. Conseil ORIAS dé
-- [Assurance BTP — Toutes garanties (décennale, RC, TRC, DO) 2026](https://vivos-assurance.fr/assurance-btp) — Le hub assurance BTP : décennale, RC pro travaux, multirisque chantier, dommages-ouvrage, TRC, garantie financière. 8 assureurs comparés. Co
-- [Assurance Pro BTP — Décennale, RC Pro, Mutuelle, Multirisque 2026](https://vivos-assurance.fr/assurance-pro-btp) — Le pack assurance complet pour les pros du Bâtiment : décennale (obligatoire Spinetta), RC Pro, multirisque pro, mutuelle pro BTP et flotte 
+- [Assurance artisan — Pack BTP, RC, mutuelle, prévoyance 2026](https://vivos-assurance.fr/assurance-artisan) — Le pack assurance complet pour artisans : décennale obligatoire BTP, RC Pro, multirisque atelier, mutuelle TNS, prévoyance. Conseil ORIAS dé
+- [Assurance BTP — Toutes garanties (décennale, RC, TRC, DO) 2026](https://vivos-assurance.fr/assurance-btp) — Le hub assurance BTP : décennale, RC Pro travaux, multirisque chantier, dommages-ouvrage, TRC, garantie financière. 8 assureurs comparés. Co
+- [Vivos Assurance BTP — Décennale, RC Pro, Mutuelle, Multirisque 2026](https://vivos-assurance.fr/assurance-pro-btp) — Le pack assurance complet pour les pros du Bâtiment : décennale (obligatoire Spinetta), RC Pro, multirisque pro, mutuelle pro BTP et flotte 
 - [Assurance travaux artisan — Pack chantier 2026 (TRC, RC, décennale)](https://vivos-assurance.fr/assurance-travaux-artisan) — L
 - [Assurance Voiture Pro BTP — Utilitaires, transport matériaux](https://vivos-assurance.fr/assurance-voiture-pro-btp) — L
 - [PRO BTP Assurance Auto — Flotte BTP, utilitaires, comparatif](https://vivos-assurance.fr/pro-btp-assurance-auto) — PRO BTP propose une assurance auto dédiée au secteur BTP : utilitaires, camions, flotte de chantier. Tarifs, alternatives (Allianz Pro, MMA 
 
-## Prix & tarifs
-
-- [Assurance Décennale Prix — Tarifs 2026 par métier BTP](https://vivos-assurance.fr/prix/assurance-decennale-prix) — Prix décennale BTP 2026 : peintre AE 950€/an, plombier 1 400€/an, maçon 1 800€/an, couvreur 2 500€/an. Comparatif April Pro best price.
-- [Prix Assurance RC Pro — Tarifs 2026 par profil et activité](https://vivos-assurance.fr/prix/assurance-rc-pro) — Prix assurance RC Pro 2026 vérifiés par profil. AE 95-450€/an, SARL 350-1500€/an, SAS PME 1200-2500€/an. Hiscox best price global.
-- [Assurance RC Pro Prix — Comparatif tarifs 2026 par activité](https://vivos-assurance.fr/prix/assurance-rc-pro-prix) — Comparatif détaillé des prix assurance RC Pro 2026. Hiscox 95€/an AE services. Allianz 280€/an SARL. MMA 600€/an PME. 5 assureurs en parallè
-- [Assurance RC Pro Tarif — Barème détaillé 2026 par option](https://vivos-assurance.fr/prix/assurance-rc-pro-tarif) — Barème tarif assurance RC Pro 2026 : tarif de base + options (cyber, juridique, dommages aux biens) + ajustements (franchise, plafond, posté
-- [Mutuelle Pro BTP S3 P3 Prix — Grille tarifaire 2026](https://vivos-assurance.fr/prix/mutuelle-pro-btp-s3-p3-prix) — Prix de la formule Mutuelle Pro BTP S3 P3 en 2026 : 35-55€/mois actif salarié. Couverture intermédiaire (renforts soins courants + dentaire 
-- [Mutuelle PRO BTP S4 P4 Prix — Tarifs haut de gamme 2026](https://vivos-assurance.fr/prix/mutuelle-pro-btp-s4-p4-prix) — Prix PRO BTP S4 P4 (formule haut de gamme) : 115-230€/mois selon âge. Garanties premium hospi + dentaire + optique + médecines douces.
-- [Mutuelle PRO BTP Tarif — Prix par âge et formule 2026](https://vivos-assurance.fr/prix/mutuelle-pro-btp-tarif) — Tarifs détaillés PRO BTP Mutuelle 2026 par âge (25-65+) et formule (S1-S4) : de 38€/mois (S1 jeune) à 230€/mois (S4 senior). Comparatif Apri
-- [Prix RC Pro 2026 — Combien coûte une responsabilité civile pro ?](https://vivos-assurance.fr/prix/rc-pro) — Prix RC Pro 2026 par profil : AE 95-450€/an, SARL 350-2 800€/an, SAS PME 2 500-15 000€/an. Comparatif Hiscox vs Stello vs Allianz vs MMA vs 
-- [RC Pro Prix 2026 — Combien coûte la responsabilité civile pro ?](https://vivos-assurance.fr/prix/rc-pro-prix) — RC Pro prix 2026 : AE dès 95€/an, SARL 600€/an, SAS PME 1 500€/an. Grilles par activité + 6 leviers économies + 4 pièges low-cost.
-- [Tarif Responsabilité Civile Professionnelle — Prix 2026 par activité](https://vivos-assurance.fr/prix/responsabilite-civile-professionnelle-tarif) — Tarifs RC Pro 2026 détaillés par activité (services, BTP, médical, immobilier) et statut juridique. Hiscox 95€/an best AE, MMA 600€/an SARL 
-- [Tarif Assurance Responsabilité Civile Professionnelle 2026](https://vivos-assurance.fr/prix/tarif-assurance-responsabilite-civile-professionnelle) — Tarif assurance responsabilité civile professionnelle 2026 : grilles complètes par profil et activité. AE 95€/an, SARL 600€/an, SAS PME 1 50
-- [Tarif Mutuelle Pro BTP Retraite — Grilles 2026 par âge](https://vivos-assurance.fr/prix/tarif-mutuelle-pro-btp-retraite) — Tarif Mutuelle Pro BTP retraite 2026 : 50€/mois à 60 ans, 75€ à 70 ans, 110€ à 80 ans, 140€+ à 85 ans. Anticiper budget santé retraite BTP.
-- [Tarif RC Pro 2026 — Grilles précises par profil et assureur](https://vivos-assurance.fr/prix/tarif-rc-pro) — Grilles tarifaires RC Pro 2026 vérifiées sur 1 000+ devis : Hiscox, Stello, Allianz Pro, MMA Pro, AXA Pro. AE 95€, SARL 600€, SAS PME 1 500€
-- [Tarif RC Pro Auto-Entrepreneur — Prix 2026 par activité](https://vivos-assurance.fr/prix/tarif-rc-pro-auto-entrepreneur) — Tarif RC Pro AE 2026 : Hiscox 95€/an services intellectuels, April Pro 250€/an BTP, Allianz 220€/an coaching. Comparatif détaillé par activi
-
-## Devis
-
-- [Devis Assurance Décennale — Comparatif 5 assureurs BTP, 24h](https://vivos-assurance.fr/devis/assurance-decennale) — Devis assurance décennale GRATUIT en 5 min. Comparatif April Pro, SMABTP, Allianz, MMA, AXA. Tous métiers BTP, AE et SARL. Attestation sous 
-- [Devis Assurance Décennale Auto Entrepreneur — Comparatif 24h](https://vivos-assurance.fr/devis/assurance-decennale-auto-entrepreneur) — Obtenez gratuitement votre devis décennale auto-entrepreneur en 5 minutes. Comparatif April Pro vs SMABTP vs Allianz Pro. Attestation 24h.
-- [Devis Assurance RC Pro — Comparatif gratuit 5 leaders](https://vivos-assurance.fr/devis/assurance-rc-pro) — Demande de devis assurance RC Pro gratuit : comparatif Hiscox, Stello, Allianz Pro, MMA, AXA. Tous métiers et statuts. Attestation immédiate
-- [Devis Garantie Décennale — Comparatif 5 assureurs BTP, 24h](https://vivos-assurance.fr/devis/garantie-decennale) — Devis garantie décennale GRATUIT en 5 min. April Pro best price AE 950€/an. Comparatif SMABTP, Allianz, MMA, AXA. Attestation Loi Spinetta 2
-- [Devis RC Pro — Gratuit en 5 min, comparatif 5 assureurs](https://vivos-assurance.fr/devis/rc-pro) — Devis RC Pro GRATUIT en 5 minutes pour tous statuts (AE, EI, SARL, SAS). Comparatif Hiscox, Stello, Allianz, MMA, AXA. Attestation immédiate
-- [RC Pro Devis — Tarifs détaillés 2026 par profil et assureur](https://vivos-assurance.fr/devis/rc-pro-devis) — Tarifs RC Pro détaillés 2026 par profil (AE/SARL/SAS) et par assureur. Hiscox / Stello / Allianz / MMA / AXA — fourchettes précises et devis
-- [Devis RC Pro En Ligne — 100% digital, attestation immédiate](https://vivos-assurance.fr/devis/rc-pro-en-ligne) — Devis RC Pro 100% en ligne en 5 min. Hiscox + Stello en pure digital. Attestation téléchargeable immédiatement après paiement. Sans rendez-v
-- [Devis Responsabilité Civile Professionnelle — Comparatif 5 assureurs](https://vivos-assurance.fr/devis/responsabilite-civile-professionnelle) — Devis RC Pro GRATUIT en 5 min : Hiscox, Stello, Allianz Pro, MMA, AXA comparés. Tarifs 95-2 500€/an selon profil. Attestation immédiate.
-
-## Attestation
-
-- [Attestation Assurance Décennale — Obtenir + utiliser 2026](https://vivos-assurance.fr/attestation/assurance-decennale) — Tout sur l
-- [Attestation d](https://vivos-assurance.fr/attestation/d-assurance-rc-pro) — Comment obtenir votre attestation d
-- [Attestation d](https://vivos-assurance.fr/attestation/d-assurance-responsabilite-civile-professionnelle) — Guide complet de l
-- [Attestation de Responsabilité Civile Professionnelle — Obtenir + utiliser](https://vivos-assurance.fr/attestation/de-responsabilite-civile-professionnelle) — Tout savoir sur l
-- [Attestation Décennale — Modèle, mentions obligatoires, démarches](https://vivos-assurance.fr/attestation/decennale) — L
-- [Attestation Décennale PDF — Format, téléchargement, modèles 2026](https://vivos-assurance.fr/attestation/decennale-pdf) — Tout sur le format PDF de l
-- [Attestation RC Pro — Obtenir + télécharger en 24h](https://vivos-assurance.fr/attestation/rc-pro) — Obtenir votre attestation RC Pro rapidement : démarches express, modèle PDF, mentions obligatoires. Téléchargeable en 24h chez April Pro / H
-- [Attestation Responsabilité Civile Professionnelle — Modèle + démarches](https://vivos-assurance.fr/attestation/responsabilite-civile-professionnelle) — Modèle officiel d
-
-## Comparateur
-
-- [Comparateur Assurance Décennale 2026 — 5 assureurs en parallèle](https://vivos-assurance.fr/comparateur/assurance-decennale) — Comparateur assurance décennale BTP 2026 : April Pro, SMABTP, Allianz Pro BTP, MMA Pro BTP, AXA Pro BTP. Tarifs, garanties, postériorité com
-
-## Courtier ORIAS
-
-- [Courtier Assurance Décennale — Comparateur spécialiste BTP](https://vivos-assurance.fr/courtier/assurance-decennale) — Courtier spécialiste assurance décennale : comparez April Pro BTP, SMABTP, Allianz Pro BTP, MMA Pro BTP. Économies -20-40% vs souscription d
-- [Courtier En Assurance Décennale — Sélection rigoureuse 2026](https://vivos-assurance.fr/courtier/en-assurance-decennale) — Guide pour choisir son courtier en assurance décennale : 8 critères de sélection + 4 pièges à éviter + recommandations spécialistes ORIAS BT
-
 ## Souscription en ligne
 
-- [Assurance RC Pro Auto-Entrepreneur En Ligne — Souscription 5 min](https://vivos-assurance.fr/assurance-rc-pro-auto-entrepreneur-en-ligne) — Assurance RC Pro auto-entrepreneur 100% en ligne. Hiscox 95€/an best price. Souscription 5 min, attestation immédiate. Sans rendez-vous.
-- [Assurance RC Pro En Ligne — Souscription 5 min, attestation immédiate](https://vivos-assurance.fr/assurance-rc-pro-en-ligne) — Souscrire votre assurance RC Pro 100% en ligne en 5 min. Hiscox + Stello digital pure. Attestation téléchargeable immédiatement. Sans rendez
-- [Assurance Responsabilité Civile Professionnelle En Ligne](https://vivos-assurance.fr/assurance-responsabilite-civile-professionnelle-en-ligne) — Souscrire assurance responsabilité civile professionnelle 100% en ligne. 5 assureurs comparés (Hiscox, Stello, Allianz, MMA, AXA). 5 min, at
-- [Assurance restaurant en ligne 2026 — Souscription 100% digitale (480-2 800€/an)](https://vivos-assurance.fr/assurance-restaurant-en-ligne) — Souscrivez votre assurance restaurant 100% en ligne en 10 minutes : multirisque restaurant + RC Pro + perte exploitation + intoxications ali
-- [RC Pro En Ligne — Comparer + souscrire en 5 min](https://vivos-assurance.fr/rc-pro-en-ligne) — RC Pro 100% en ligne : comparez 5 assureurs (Hiscox, Stello, Allianz, MMA, AXA) puis souscrivez en 5 min. Attestation immédiate, sans rendez
-- [RC Pro Souscription En Ligne — Process digital complet](https://vivos-assurance.fr/rc-pro-souscription-en-ligne) — RC Pro souscription 100% en ligne : 6 étapes digitales pour souscrire votre contrat en 5 min. Hiscox + Stello + April Pro digital pure. CPC 
-- [Souscrire RC Pro En Ligne — Guide complet 2026](https://vivos-assurance.fr/souscrire-rc-pro-en-ligne) — Guide pour souscrire votre RC Pro 100% en ligne en 2026 : étapes, documents requis, comparaison assureurs, choix optimal. Best price Hiscox 
+- [Assurance restaurant en ligne 2026 — Souscription 100% digitale (480-2 800€ par an)](https://vivos-assurance.fr/assurance-restaurant-en-ligne) — Souscrivez votre assurance restaurant 100% en ligne en 10 minutes : multirisque restaurant + RC Pro + perte exploitation + intoxications ali
+- [Devis RC Pro En Ligne — 100% digital, attestation immédiate](https://vivos-assurance.fr/devis / rc-pro-en-ligne) — Devis RC Pro 100% en ligne en 5 min. Hiscox + Stello en pure digital. Attestation téléchargeable immédiatement après paiement. Sans rendez-v
 
 ## Garanties & métiers
 
 - [Assurance association loi 1901 — Pack RC + multirisque + dirigeants 2026](https://vivos-assurance.fr/assurance-association) — L
-- [Assurance auto entreprise — Véhicule de société 2026 (RC pro + tous risques)](https://vivos-assurance.fr/assurance-auto-entreprise) — L
-- [Assurance auto professionnelle 2026 — Véhicules pro tous usages (480-2 800€/an)](https://vivos-assurance.fr/assurance-auto-professionnelle) — L
-- [Assurance bureau professionnel — Multirisque TPE/PME 2026](https://vivos-assurance.fr/assurance-bureau) — L
+- [Assurance auto entreprise — Véhicule de société 2026 (RC Pro + tous risques)](https://vivos-assurance.fr/assurance-auto-entreprise) — L
+- [Assurance auto professionnelle 2026 — Véhicules pro tous usages (480-2 800€ par an)](https://vivos-assurance.fr/assurance-auto-professionnelle) — L
+- [Assurance bureau professionnel — Multirisque TPE / PME 2026](https://vivos-assurance.fr/assurance-bureau) — L
 - [Assurance chauffeur de taxi — Santé, prévoyance, protection personnelle 2026](https://vivos-assurance.fr/assurance-chauffeur-taxi) — L
 - [Assurance commerce — Multirisque commerçant 2026 (tarifs, garanties)](https://vivos-assurance.fr/assurance-commerce) — L
-- [Assurance consultant indépendant — Pack 2026 (RC pro 5 M€, mutuelle, prévoyance)](https://vivos-assurance.fr/assurance-consultant-independant) — L
+- [Assurance consultant indépendant — Pack 2026 (RC Pro 5 M€, mutuelle, prévoyance)](https://vivos-assurance.fr/assurance-consultant-independant) — L
 - [Assurance dommages-ouvrage (DO) — Souscription 2026 (particulier, promoteur)](https://vivos-assurance.fr/assurance-dommages-ouvrage) — L
-- [Assurance e-commerce — Pack 2026 (RC pro, cyber, marchandises, RGPD)](https://vivos-assurance.fr/assurance-e-commerce) — L
-- [Assurance entreprise — Pack TPE/PME/ETI 2026 (toutes garanties)](https://vivos-assurance.fr/assurance-entreprise) — L
-- [Assurance flotte automobile — Tarifs 2026 (4+ véhicules pro)](https://vivos-assurance.fr/assurance-flotte-automobile) — L
+- [Assurance e-commerce — Pack 2026 (RC Pro, cyber, marchandises, RGPD)](https://vivos-assurance.fr/assurance-e-commerce) — L
+- [Assurance entreprise — Pack TPE, PME / ETI 2026 (toutes garanties)](https://vivos-assurance.fr/assurance-entreprise) — L
+- [Assurance Flotte Auto 2026 — Pro · Dès 350€/véhicule/an](https://vivos-assurance.fr/assurance-flotte-automobile) — L
 - [Assurance freelance — Tarifs 2026 (RC Pro, mutuelle, prévoyance, cyber)](https://vivos-assurance.fr/assurance-freelance) — Le pack assurance complet pour freelances : RC Pro adaptée à votre métier, mutuelle TNS Madelin, prévoyance dès J0, cyber. Tous statuts (EI,
 - [Assurance habitation professionnelle — Pro à domicile 2026](https://vivos-assurance.fr/assurance-habitation-professionnelle) — L
-- [Assurance homme-clé — Protéger l\](https://vivos-assurance.fr/assurance-homme-cle) — L
+- [Assurance homme-clé — Protéger l](https://vivos-assurance.fr/assurance-homme-cle) — L
 - [Assurance juridique professionnelle — Frais avocat + procédure 2026](https://vivos-assurance.fr/assurance-juridique-professionnelle) — L
 - _… et 32 autres pages garanties & métiers_

@@ -8,6 +8,9 @@
     },
     "src/app/api/cron/**/*.ts": {
       "maxDuration": 60
+    },
+    "src/app/api/cron/llm-citation-tracker/route.ts": {
+      "maxDuration": 300
     }
   },
   "crons": [
@@ -42,6 +45,10 @@
     {
       "path": "/api/cron/nurture-emails",
       "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/cron/llm-citation-tracker",
+      "schedule": "0 6 * * *"
     }
   ],
   "headers": [

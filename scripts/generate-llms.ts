@@ -45,6 +45,7 @@ const LEGAL_SLUGS = new Set([
 
 function inferCategory(slug: string): string {
   const head = slug.split('/')[0] ?? ''
+  if (head === 'ai') return 'AI-first pillar pages (LCO)'
   if (LEGAL_SLUGS.has(slug)) return 'Conformité & légal'
   if (head === 'prix' || head === 'tarif') return 'Prix & tarifs'
   if (head === 'devis') return 'Devis'
@@ -131,6 +132,7 @@ function buildLlmsTxt(pages: DiscoveredPage[]): string {
   }
 
   const orderedCategories = [
+    'AI-first pillar pages (LCO)',
     'Cabinet & équipe',
     'Décennale BTP',
     'RC Pro',
