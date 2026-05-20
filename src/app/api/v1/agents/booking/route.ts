@@ -25,6 +25,7 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { sendEmail } from '@/lib/email/resend'
 import { leadConfirmationTemplate } from '@/lib/email/templates/lead-confirmation'
 import { introspectAccessToken } from '@/lib/oauth/mcp-gateway'
+import { enqueueWebhookDeliveries } from '@/lib/webhooks/dispatcher'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'
 const MARVIN_EMAIL = process.env.LEAD_NOTIFICATION_EMAIL ?? 'marvin@vivos-assurance.fr'
@@ -176,6 +177,23 @@ export async function POST(req: NextRequest) {
     .from('agent_bookings')
     .update({ marvin_notified_at: new Date().toISOString() })
     .eq('booking_reference', reference)
+
+  // Emit webhook event agent_booking.created to all subscribers
+  void enqueueWebhookDeliveries({
+    event: 'agent_booking.created',
+    payload: {
+      booking_reference: reference,
+      garantie: data.garantie,
+      metier: data.metier ?? null,
+      statut_juridique: data.statut_juridique ?? null,
+      ca_annuel: data.ca_annuel ?? null,
+      ville: data.ville ?? null,
+      agent_source: data.agent_source,
+      agent_session_id: data.agent_session_id ?? null,
+      created_at: new Date().toISOString(),
+      tracking_url: `${SITE_URL}/lead-status/${reference}`,
+    },
+  }).catch((err) => logger.error({ err, reference }, 'agent_booking webhook enqueue failed'))
 
   return NextResponse.json(
     {

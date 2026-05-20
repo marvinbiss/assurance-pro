@@ -18,6 +18,7 @@ import { logger } from '@/lib/logger'
 import { verifyCronAuthorization } from '@/lib/security/cron-auth'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { queryLLM, type LlmProvider } from '@/lib/llm-citations/tracker'
+import { enqueueWebhookDeliveries } from '@/lib/webhooks/dispatcher'
 
 const PROVIDERS: LlmProvider[] = ['openai', 'anthropic', 'perplexity', 'gemini']
 
@@ -69,6 +70,21 @@ export async function GET(req: NextRequest) {
       if (measure.cited) {
         stat.cited++
         citationsCount++
+        // Emit webhook llm_citation.detected (fire-and-forget)
+        void enqueueWebhookDeliveries({
+          event: 'llm_citation.detected',
+          payload: {
+            query: q.query,
+            category: q.category,
+            llm_provider: provider,
+            llm_model: measure.modelUsed,
+            citation_rank: measure.citationRank,
+            citation_url: measure.citationUrl,
+            citation_snippet: measure.citationSnippet,
+            competitor_cited: measure.competitorCited,
+            measured_at: new Date().toISOString(),
+          },
+        }).catch(() => undefined)
       }
       totalCostUsd += measure.costUsd ?? 0
       inserts.push({
