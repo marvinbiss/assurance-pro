@@ -25,6 +25,11 @@ import {
   type McpToolSpec,
 } from '@/lib/mcp/types'
 import { recueilExigencesToolSpec, handleRecueilExigences } from '@/lib/mcp/tools/recueil-exigences'
+import {
+  generateQuoteProToolSpec,
+  handleGenerateQuotePro,
+} from '@/lib/mcp/tools/generate-quote-pro'
+import { compareOffersToolSpec, handleCompareOffers } from '@/lib/mcp/tools/compare-offers'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -35,7 +40,9 @@ const SERVER_VERSION = '0.1.0'
 
 const TOOLS_REGISTRY: McpToolSpec[] = [
   recueilExigencesToolSpec,
-  // generate_quote_pro, compare_offers, audit_coverage — sprints suivants
+  generateQuoteProToolSpec,
+  compareOffersToolSpec,
+  // audit_coverage — Sprint 3
 ]
 
 // ─── Helpers ──────────────────────────────────────────────────────────────
@@ -162,7 +169,13 @@ async function handleRequest(req: JsonRpcRequest, headers: Headers): Promise<unk
         case 'recueil_exigences':
           result = await handleRecueilExigences(params.arguments ?? {}, ctx)
           break
-        // generate_quote_pro, compare_offers, audit_coverage — sprints suivants
+        case 'generate_quote_pro':
+          result = await handleGenerateQuotePro(params.arguments ?? {})
+          break
+        case 'compare_offers':
+          result = await handleCompareOffers(params.arguments ?? {})
+          break
+        // audit_coverage — Sprint 3
         default:
           errorCode = 'tool_not_found'
           return rpcError(
