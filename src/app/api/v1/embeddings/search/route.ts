@@ -17,6 +17,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { z } from 'zod'
 import { logger } from '@/lib/logger'
 import { retrieveSimilarPages } from '@/lib/rag'
+import { checkRateLimit } from '@/lib/security/rate-limit'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'
 
@@ -27,6 +28,9 @@ const querySchema = z.object({
 })
 
 export async function GET(req: NextRequest) {
+  const limited = await checkRateLimit(req, 'embeddings.search', { max: 60, window: 60 })
+  if (limited) return limited
+
   const searchParams = req.nextUrl.searchParams
   const parsed = querySchema.safeParse({
     q: searchParams.get('q'),

@@ -14,6 +14,7 @@
 import { createHash, createHmac, randomBytes } from 'node:crypto'
 import { logger } from '@/lib/logger'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { decryptSecret, encryptSecret } from '@/lib/crypto/envelope'
 
 export type WebhookEvent =
   | 'agent_booking.created'
@@ -44,6 +45,10 @@ export function generateWebhookSecret(): string {
 
 export function hashSecret(secret: string): string {
   return createHash('sha256').update(secret, 'utf8').digest('hex')
+}
+
+export function encryptWebhookSecret(secret: string): string {
+  return encryptSecret(secret)
 }
 
 export function signPayload(secret: string, payload: string, timestamp: number): string {
@@ -124,7 +129,7 @@ export async function processPendingDeliveries(maxBatch = 50): Promise<{
     .from('webhook_deliveries')
     .select(
       `id, endpoint_id, event_type, payload, attempts,
-       webhook_endpoints!inner(url, secret_hash)`
+       webhook_endpoints!inner(url, secret_encrypted)`
     )
     .eq('status', 'pending')
     .lte('next_retry_at', now)
@@ -148,16 +153,34 @@ export async function processPendingDeliveries(maxBatch = 50): Promise<{
     event_type: string
     payload: Record<string, unknown>
     attempts: number
-    webhook_endpoints: { url: string; secret_hash: string }
+    webhook_endpoints: { url: string; secret_encrypted: string }
   }>) {
     const ep = row.webhook_endpoints
     if (!ep) continue
 
-    // MVP: signature dummy = hash secret_hash (sufficient to detect tampering with payload+ts;
-    // production should retrieve the real secret from a secure vault).
+    // Decrypt secret at-rest (envelope AES-256-GCM) — receiver verifies with raw secret
+    let realSecret: string
+    try {
+      realSecret = decryptSecret(ep.secret_encrypted)
+    } catch (err) {
+      logger.error(
+        { err, delivery_id: row.id, endpoint_id: row.endpoint_id },
+        'webhook: secret decryption failed — likely WEBHOOK_ENCRYPTION_KEY rotated'
+      )
+      await admin
+        .from('webhook_deliveries')
+        .update({
+          status: 'dead_letter',
+          error_message: 'secret_decryption_failed',
+          delivered_at: null,
+        })
+        .eq('id', row.id)
+      deadLetter++
+      continue
+    }
     const ts = Math.floor(Date.now() / 1000)
     const payloadRaw = JSON.stringify(row.payload)
-    const sig = signPayload(ep.secret_hash, payloadRaw, ts)
+    const sig = signPayload(realSecret, payloadRaw, ts)
 
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort(), TIMEOUT_MS)

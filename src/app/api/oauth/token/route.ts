@@ -10,6 +10,7 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { z } from 'zod'
 import { exchangeCodeForTokens, refreshAccessToken } from '@/lib/oauth/mcp-gateway'
+import { checkRateLimit } from '@/lib/security/rate-limit'
 
 const authCodeSchema = z.object({
   grant_type: z.literal('authorization_code'),
@@ -26,6 +27,9 @@ const refreshSchema = z.object({
 })
 
 export async function POST(req: NextRequest) {
+  const limited = await checkRateLimit(req, 'oauth.token', { max: 20, window: 60 })
+  if (limited) return limited
+
   const ct = req.headers.get('content-type') ?? ''
   let body: Record<string, string> = {}
   if (ct.includes('application/x-www-form-urlencoded')) {

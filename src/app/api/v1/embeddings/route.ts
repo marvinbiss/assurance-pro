@@ -17,6 +17,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { z } from 'zod'
 import { logger } from '@/lib/logger'
 import { embedQuery } from '@/lib/rag'
+import { checkRateLimit } from '@/lib/security/rate-limit'
 
 const bodySchema = z.object({
   input: z.union([z.string().min(1).max(8000), z.array(z.string().min(1).max(8000)).max(10)]),
@@ -24,6 +25,9 @@ const bodySchema = z.object({
 })
 
 export async function POST(req: NextRequest) {
+  const limited = await checkRateLimit(req, 'embeddings.post', { max: 30, window: 60 })
+  if (limited) return limited
+
   let payload: unknown
   try {
     payload = await req.json()

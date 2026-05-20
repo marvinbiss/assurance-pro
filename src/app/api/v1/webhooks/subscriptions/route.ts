@@ -10,7 +10,12 @@ import { z } from 'zod'
 import { logger } from '@/lib/logger'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { introspectAccessToken } from '@/lib/oauth/mcp-gateway'
-import { generateWebhookSecret, hashSecret, SUPPORTED_EVENTS } from '@/lib/webhooks/dispatcher'
+import {
+  generateWebhookSecret,
+  hashSecret,
+  encryptWebhookSecret,
+  SUPPORTED_EVENTS,
+} from '@/lib/webhooks/dispatcher'
 
 const createSchema = z.object({
   url: z
@@ -77,12 +82,20 @@ export async function POST(req: NextRequest) {
 
   const secret = generateWebhookSecret()
   const admin = createAdminClient()
+  let secretEncrypted: string
+  try {
+    secretEncrypted = encryptWebhookSecret(secret)
+  } catch (err) {
+    logger.error({ err }, 'webhooks.create: encryption failed')
+    return NextResponse.json({ error: 'server_misconfigured' }, { status: 500 })
+  }
   const { data, error } = await admin
     .from('webhook_endpoints')
     .insert({
       oauth_client_id: auth.clientId,
       url: parsed.data.url,
       secret_hash: hashSecret(secret),
+      secret_encrypted: secretEncrypted,
       secret_preview: secret.slice(-8),
       description: parsed.data.description ?? null,
       events: parsed.data.events,

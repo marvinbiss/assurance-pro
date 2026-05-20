@@ -16,6 +16,7 @@ import {
   getActiveClient,
   generateRandomToken,
 } from '@/lib/oauth/mcp-gateway'
+import { checkRateLimit } from '@/lib/security/rate-limit'
 
 const querySchema = z.object({
   response_type: z.literal('code'),
@@ -28,6 +29,9 @@ const querySchema = z.object({
 })
 
 export async function GET(req: NextRequest) {
+  const limited = await checkRateLimit(req, 'oauth.authorize', { max: 20, window: 60 })
+  if (limited) return limited
+
   const params = querySchema.safeParse(Object.fromEntries(req.nextUrl.searchParams))
   if (!params.success) {
     return NextResponse.json(

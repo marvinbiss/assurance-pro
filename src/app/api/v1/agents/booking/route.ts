@@ -26,6 +26,7 @@ import { sendEmail } from '@/lib/email/resend'
 import { leadConfirmationTemplate } from '@/lib/email/templates/lead-confirmation'
 import { introspectAccessToken } from '@/lib/oauth/mcp-gateway'
 import { enqueueWebhookDeliveries } from '@/lib/webhooks/dispatcher'
+import { checkRateLimit } from '@/lib/security/rate-limit'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vivos-assurance.fr'
 const MARVIN_EMAIL = process.env.LEAD_NOTIFICATION_EMAIL ?? 'marvin@vivos-assurance.fr'
@@ -75,6 +76,10 @@ function generateBookingReference(): string {
 }
 
 export async function POST(req: NextRequest) {
+  // Rate limit anti-spam: 10 bookings/heure par IP/client
+  const limited = await checkRateLimit(req, 'agents.booking', { max: 10, window: 3600 })
+  if (limited) return limited
+
   let payload: unknown
   try {
     payload = await req.json()

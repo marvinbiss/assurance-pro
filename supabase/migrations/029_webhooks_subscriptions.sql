@@ -17,7 +17,9 @@ create table if not exists public.webhook_endpoints (
   oauth_client_id text references public.oauth_clients(client_id) on delete cascade,
   url text not null,
   secret_hash text not null,
-  -- SHA-256 du secret (full secret renvoyé une seule fois à création)
+  -- SHA-256 du secret (lookup index pour révocation par hash, audit)
+  secret_encrypted text not null,
+  -- AES-256-GCM(WEBHOOK_ENCRYPTION_KEY, secret) — déchiffré au moment du signing
   secret_preview text not null,
   -- 8 derniers caractères pour identification
   description text,

@@ -24,6 +24,7 @@ import {
   type McpInitializeResult,
   type McpToolSpec,
 } from '@/lib/mcp/types'
+import { introspectAccessToken } from '@/lib/oauth/mcp-gateway'
 import { recueilExigencesToolSpec, handleRecueilExigences } from '@/lib/mcp/tools/recueil-exigences'
 import {
   generateQuoteProToolSpec,
@@ -215,7 +216,31 @@ async function handleRequest(req: JsonRpcRequest, headers: Headers): Promise<unk
 
 // ─── HTTP handlers ────────────────────────────────────────────────────────
 
+// OAuth gate — production: require valid Bearer token (stores activation J+0 ORIAS)
+// Dev/staging: bypass via env MCP_REQUIRE_AUTH=false
+async function checkMcpAuth(headers: Headers): Promise<boolean> {
+  if (process.env.MCP_REQUIRE_AUTH === 'false') return true
+  const auth = headers.get('authorization')
+  if (!auth?.startsWith('Bearer ')) return false
+  const token = auth.slice(7)
+  const intro = await introspectAccessToken(token)
+  if (!intro.active) return false
+  // Scope check: au moins mcp:tools requis
+  const scopes = (intro.scope ?? '').split(' ')
+  return scopes.includes('mcp:tools')
+}
+
 export async function POST(request: Request) {
+  if (!(await checkMcpAuth(request.headers))) {
+    return NextResponse.json(
+      rpcError(null, -32001, 'OAuth Bearer token required (scope: mcp:tools)'),
+      {
+        status: 401,
+        headers: { 'www-authenticate': 'Bearer realm="vivos-mcp", scope="mcp:tools"' },
+      }
+    )
+  }
+
   let body: JsonRpcRequest | JsonRpcRequest[]
   try {
     body = (await request.json()) as JsonRpcRequest | JsonRpcRequest[]
