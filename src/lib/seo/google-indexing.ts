@@ -104,18 +104,23 @@ export async function submitToGoogleIndexing(
   })
 
   const indexing = google.indexing({ version: 'v3', auth: jwt })
-  const absolute = urls.map(toAbsoluteUrl)
   const results: IndexingUrlResult[] = []
 
   // Pool de concurrence simple : on consomme la file par tranches.
+  // `results.url` conserve l'URL d'ENTRÉE (souvent un chemin relatif), pas
+  // l'URL absolue : c'est la clé utilisée par la file `seo_index_submissions`.
+  // Ne convertir en absolu que pour l'appel API.
   let cursor = 0
   async function worker(): Promise<void> {
-    while (cursor < absolute.length) {
+    while (cursor < urls.length) {
       const idx = cursor++
-      const url = absolute[idx]
+      const url = urls[idx]
       if (url === undefined) break
+      const target = toAbsoluteUrl(url)
       try {
-        const res = await indexing.urlNotifications.publish({ requestBody: { url, type } })
+        const res = await indexing.urlNotifications.publish({
+          requestBody: { url: target, type },
+        })
         results.push({ url, ok: true, httpStatus: res.status ?? 200 })
       } catch (err: unknown) {
         const e = err as { code?: number; status?: number; message?: string }
@@ -129,7 +134,7 @@ export async function submitToGoogleIndexing(
     }
   }
 
-  await Promise.all(Array.from({ length: Math.min(concurrency, absolute.length) }, worker))
+  await Promise.all(Array.from({ length: Math.min(concurrency, urls.length) }, worker))
 
   const submitted = results.filter((r) => r.ok).length
   return { enabled: true, submitted, failed: results.length - submitted, results }

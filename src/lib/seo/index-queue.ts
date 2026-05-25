@@ -1,6 +1,11 @@
 import { createPiiAdminClient } from '@/lib/supabase/admin'
 import { buildPriorityUrlPaths } from '@/lib/seo/url-universe'
-import type { IndexingUrlResult } from '@/lib/seo/google-indexing'
+import {
+  submitToGoogleIndexing,
+  isGoogleIndexingEnabled,
+  type IndexingType,
+  type IndexingUrlResult,
+} from '@/lib/seo/google-indexing'
 
 /**
  * File d'indexation persistée dans `public.seo_index_submissions`.
@@ -76,4 +81,21 @@ export async function recordSubmissions(
       .upsert(rows.slice(i, i + UPSERT_CHUNK), { onConflict: 'url' })
     if (error) throw new Error(`recordSubmissions upsert failed: ${error.message}`)
   }
+}
+
+/**
+ * Push instantané on-publish vers Google + journalisation dans la file.
+ * Marquer `last_submitted_at` évite que le cron quotidien resoumette la même URL.
+ * No-op si désactivé. Pensé pour un appel fire-and-forget (ex: revalidation).
+ */
+export async function notifyGoogleIndexing(
+  paths: string[],
+  type: IndexingType = 'URL_UPDATED'
+): Promise<void> {
+  if (!isGoogleIndexingEnabled() || paths.length === 0) return
+  const result = await submitToGoogleIndexing(paths.slice(0, 100), type)
+  await recordSubmissions(
+    paths.map((url) => ({ url, submit_count: 0 })),
+    result.results
+  )
 }
