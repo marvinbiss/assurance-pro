@@ -1,8 +1,12 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { z } from 'zod'
 import { verifyCronAuthorization } from '@/lib/security/cron-auth'
-import { submitToGoogleIndexing, isGoogleIndexingEnabled } from '@/lib/seo/google-indexing'
-import { recordSubmissions } from '@/lib/seo/index-queue'
+import {
+  submitToGoogleIndexing,
+  isGoogleIndexingEnabled,
+  googleIndexingDailyQuota,
+} from '@/lib/seo/google-indexing'
+import { recordSubmissions, remainingQuotaToday } from '@/lib/seo/index-queue'
 import { logger } from '@/lib/logger'
 
 /**
@@ -37,7 +41,17 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const result = await submitToGoogleIndexing(parsed.data.urls, parsed.data.type)
+    // Quota journalier partagé avec le cron : on cape à ce qui reste.
+    const remaining = await remainingQuotaToday(googleIndexingDailyQuota())
+    if (remaining <= 0) {
+      return NextResponse.json(
+        { error: 'Daily quota exhausted', code: 'QUOTA_EXHAUSTED' },
+        { status: 429 }
+      )
+    }
+
+    const urls = parsed.data.urls.slice(0, remaining)
+    const result = await submitToGoogleIndexing(urls, parsed.data.type)
     // Journalise dans la file (submit_count basé sur 0 ici ; le cron consolide la rotation).
     await recordSubmissions(
       result.results.map((r) => ({ url: r.url, submit_count: 0 })),

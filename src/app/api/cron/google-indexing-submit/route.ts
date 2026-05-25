@@ -5,7 +5,12 @@ import {
   isGoogleIndexingEnabled,
   googleIndexingDailyQuota,
 } from '@/lib/seo/google-indexing'
-import { syncUrlUniverse, claimNextUrls, recordSubmissions } from '@/lib/seo/index-queue'
+import {
+  syncUrlUniverse,
+  claimNextUrls,
+  recordSubmissions,
+  remainingQuotaToday,
+} from '@/lib/seo/index-queue'
 import { logger } from '@/lib/logger'
 
 /**
@@ -34,7 +39,17 @@ export async function GET(request: Request) {
     await syncUrlUniverse()
 
     const quota = googleIndexingDailyQuota()
-    const claimed = await claimNextUrls(quota)
+    const remaining = await remainingQuotaToday(quota)
+    if (remaining <= 0) {
+      return NextResponse.json({
+        enabled: true,
+        submitted: 0,
+        message: 'daily quota exhausted',
+        quota,
+      })
+    }
+
+    const claimed = await claimNextUrls(remaining)
     if (claimed.length === 0) {
       return NextResponse.json({ enabled: true, submitted: 0, message: 'queue empty' })
     }

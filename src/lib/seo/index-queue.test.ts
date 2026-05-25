@@ -1,15 +1,19 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
 // ── Chainable Supabase mock ───────────────────────────────────
-const { fromMock, upsertMock, selectMock, eqMock, orderMock, limitMock } = vi.hoisted(() => {
-  const upsertMock = vi.fn()
-  const limitMock = vi.fn()
-  const orderMock = vi.fn(() => ({ limit: limitMock }))
-  const eqMock = vi.fn(() => ({ order: orderMock }))
-  const selectMock = vi.fn(() => ({ eq: eqMock }))
-  const fromMock = vi.fn(() => ({ upsert: upsertMock, select: selectMock }))
-  return { fromMock, upsertMock, selectMock, eqMock, orderMock, limitMock }
-})
+const { fromMock, upsertMock, selectMock, eqMock, orderMock, limitMock, gteMock } = vi.hoisted(
+  () => {
+    const upsertMock = vi.fn()
+    const limitMock = vi.fn()
+    const gteMock = vi.fn()
+    const orderMock = vi.fn(() => ({ limit: limitMock }))
+    // eq sert deux chaînes : claim (eq→order→limit) et count (eq→gte).
+    const eqMock = vi.fn(() => ({ order: orderMock, gte: gteMock }))
+    const selectMock = vi.fn(() => ({ eq: eqMock }))
+    const fromMock = vi.fn(() => ({ upsert: upsertMock, select: selectMock }))
+    return { fromMock, upsertMock, selectMock, eqMock, orderMock, limitMock, gteMock }
+  }
+)
 
 vi.mock('@/lib/supabase/admin', () => ({
   createPiiAdminClient: () => ({ from: fromMock }),
@@ -24,6 +28,7 @@ const { submitMock, enabledMock } = vi.hoisted(() => ({
 vi.mock('@/lib/seo/google-indexing', () => ({
   isGoogleIndexingEnabled: enabledMock,
   submitToGoogleIndexing: submitMock,
+  googleIndexingDailyQuota: () => 200,
 }))
 
 import {
@@ -31,6 +36,8 @@ import {
   claimNextUrls,
   recordSubmissions,
   notifyGoogleIndexing,
+  countSubmittedToday,
+  remainingQuotaToday,
 } from './index-queue'
 
 beforeEach(() => {
@@ -40,6 +47,7 @@ beforeEach(() => {
   orderMock.mockClear()
   upsertMock.mockReset().mockResolvedValue({ error: null })
   limitMock.mockReset().mockResolvedValue({ data: [], error: null })
+  gteMock.mockReset().mockResolvedValue({ count: 0, error: null })
   submitMock.mockReset()
   enabledMock.mockReset()
 })
@@ -112,6 +120,22 @@ describe('recordSubmissions', () => {
   })
 })
 
+describe('countSubmittedToday / remainingQuotaToday', () => {
+  it('counts today rows via the engine + gte(last_submitted_at) chain', async () => {
+    gteMock.mockResolvedValueOnce({ count: 42, error: null })
+    expect(await countSubmittedToday()).toBe(42)
+    expect(eqMock).toHaveBeenCalledWith('engine', 'google')
+    expect(gteMock).toHaveBeenCalled()
+  })
+
+  it('computes remaining quota, clamped at 0', async () => {
+    gteMock.mockResolvedValueOnce({ count: 180, error: null })
+    expect(await remainingQuotaToday(200)).toBe(20)
+    gteMock.mockResolvedValueOnce({ count: 250, error: null })
+    expect(await remainingQuotaToday(200)).toBe(0)
+  })
+})
+
 describe('notifyGoogleIndexing', () => {
   it('no-ops when disabled (no submit, no write)', async () => {
     enabledMock.mockReturnValue(false)
@@ -120,8 +144,16 @@ describe('notifyGoogleIndexing', () => {
     expect(upsertMock).not.toHaveBeenCalled()
   })
 
-  it('submits and records when enabled', async () => {
+  it('no-ops when the daily quota is exhausted', async () => {
     enabledMock.mockReturnValue(true)
+    gteMock.mockResolvedValueOnce({ count: 200, error: null })
+    await notifyGoogleIndexing(['/a'])
+    expect(submitMock).not.toHaveBeenCalled()
+  })
+
+  it('submits and records when enabled and within quota', async () => {
+    enabledMock.mockReturnValue(true)
+    gteMock.mockResolvedValueOnce({ count: 0, error: null })
     submitMock.mockResolvedValue({
       enabled: true,
       submitted: 1,
@@ -131,5 +163,13 @@ describe('notifyGoogleIndexing', () => {
     await notifyGoogleIndexing(['/a'], 'URL_UPDATED')
     expect(submitMock).toHaveBeenCalledWith(['/a'], 'URL_UPDATED')
     expect(upsertMock).toHaveBeenCalled()
+  })
+
+  it('caps the batch to the remaining quota', async () => {
+    enabledMock.mockReturnValue(true)
+    gteMock.mockResolvedValueOnce({ count: 199, error: null }) // 1 left
+    submitMock.mockResolvedValue({ enabled: true, submitted: 1, failed: 0, results: [] })
+    await notifyGoogleIndexing(['/a', '/b', '/c'])
+    expect(submitMock).toHaveBeenCalledWith(['/a'], 'URL_UPDATED')
   })
 })

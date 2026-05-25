@@ -3,6 +3,7 @@ import { buildPriorityUrlPaths } from '@/lib/seo/url-universe'
 import {
   submitToGoogleIndexing,
   isGoogleIndexingEnabled,
+  googleIndexingDailyQuota,
   type IndexingType,
   type IndexingUrlResult,
 } from '@/lib/seo/google-indexing'
@@ -83,19 +84,52 @@ export async function recordSubmissions(
   }
 }
 
+/** Début du jour courant en UTC (ISO). Borne pour le compteur de quota journalier. */
+function startOfUtcDayIso(): string {
+  const d = new Date()
+  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())).toISOString()
+}
+
+/**
+ * Nombre d'URLs déjà soumises aujourd'hui (UTC), cron + push manuel confondus.
+ * S'appuie sur `last_submitted_at` mis à jour par TOUTE soumission.
+ * Note : le quota Google reset en heure Pacifique ; UTC est une approximation
+ * volontairement prudente (sous-compte plutôt que sur-compte).
+ */
+export async function countSubmittedToday(): Promise<number> {
+  const supabase = createPiiAdminClient()
+  const { count, error } = await supabase
+    .from('seo_index_submissions')
+    .select('url', { count: 'exact', head: true })
+    .eq('engine', ENGINE)
+    .gte('last_submitted_at', startOfUtcDayIso())
+  if (error) throw new Error(`countSubmittedToday failed: ${error.message}`)
+  return count ?? 0
+}
+
+/** Quota restant aujourd'hui (>= 0), partagé entre cron quotidien et push manuel. */
+export async function remainingQuotaToday(quota: number): Promise<number> {
+  const used = await countSubmittedToday()
+  return Math.max(0, quota - used)
+}
+
 /**
  * Push instantané on-publish vers Google + journalisation dans la file.
  * Marquer `last_submitted_at` évite que le cron quotidien resoumette la même URL.
- * No-op si désactivé. Pensé pour un appel fire-and-forget (ex: revalidation).
+ * Respecte le quota journalier partagé. No-op si désactivé ou quota épuisé.
+ * Pensé pour un appel fire-and-forget (ex: revalidation).
  */
 export async function notifyGoogleIndexing(
   paths: string[],
   type: IndexingType = 'URL_UPDATED'
 ): Promise<void> {
   if (!isGoogleIndexingEnabled() || paths.length === 0) return
-  const result = await submitToGoogleIndexing(paths.slice(0, 100), type)
+  const remaining = await remainingQuotaToday(googleIndexingDailyQuota())
+  if (remaining <= 0) return
+  const batch = paths.slice(0, Math.min(100, remaining))
+  const result = await submitToGoogleIndexing(batch, type)
   await recordSubmissions(
-    paths.map((url) => ({ url, submit_count: 0 })),
+    batch.map((url) => ({ url, submit_count: 0 })),
     result.results
   )
 }
