@@ -35,6 +35,10 @@
       "schedule": "15 6 * * *"
     },
     {
+      "path": "/api/cron/google-indexing-submit",
+      "schedule": "30 6 * * *"
+    },
+    {
       "path": "/api/cron/sla-reclamations",
       "schedule": "0 8 * * *"
     },

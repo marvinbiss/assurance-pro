@@ -80,6 +80,10 @@ export async function POST(request: NextRequest) {
         import('@/lib/seo/indexnow')
           .then(({ submitToIndexNow }) => submitToIndexNow(revalidated))
           .catch(() => {})
+        // Push Google Indexing (no-op si GOOGLE_INDEXING_ENABLED !== 'true')
+        import('@/lib/seo/index-queue')
+          .then(({ notifyGoogleIndexing }) => notifyGoogleIndexing(revalidated))
+          .catch(() => {})
       }
 
       return NextResponse.json({
@@ -120,6 +124,10 @@ export async function POST(request: NextRequest) {
     // Notifier IndexNow (fire-and-forget)
     import('@/lib/seo/indexnow')
       .then(({ submitToIndexNow }) => submitToIndexNow([path]))
+      .catch(() => {})
+    // Push Google Indexing (no-op si GOOGLE_INDEXING_ENABLED !== 'true')
+    import('@/lib/seo/index-queue')
+      .then(({ notifyGoogleIndexing }) => notifyGoogleIndexing([path]))
       .catch(() => {})
 
     return NextResponse.json({
@@ -179,6 +187,14 @@ export async function GET(request: NextRequest) {
     for (const path of paths) {
       revalidatePath(path, 'page')
     }
+
+    // Notifier IndexNow + Google Indexing (fire-and-forget, no-op si désactivé)
+    import('@/lib/seo/indexnow')
+      .then(({ submitToIndexNow }) => submitToIndexNow(paths))
+      .catch(() => {})
+    import('@/lib/seo/index-queue')
+      .then(({ notifyGoogleIndexing }) => notifyGoogleIndexing(paths))
+      .catch(() => {})
 
     return NextResponse.json({
       revalidated: true,
